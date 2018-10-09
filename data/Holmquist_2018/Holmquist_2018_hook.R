@@ -22,5 +22,5 @@ lapply(url_list, function(x) {
   filename <- substring(filename, 56)
   filename <- gsub("\\..*","", filename)
   # Now download the file into the "data" folder
-  download.file(x, paste0(getwd(), "/Holmquist_2018", filename, ".csv"))
+  download.file(x, paste0(getwd(), "./data/Holmquist_2018/", filename, ".csv"))
 })
