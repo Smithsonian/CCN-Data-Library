@@ -1,23 +1,31 @@
+## CCRCN Data Library
+# contact: klingesd@si.edu
+
+# This script contains simple functions built to curate datasets
 
 library(tidyverse)
 
-
-gonneea_test <- Gonneea_2018
-
-
+# For conversion of depth interval values: if a dataframe
+#   has a mean depth attribute, this will create a min depth
+#   and max depth attributes
 convert_mean_depth_to_min_max <- function(dataframe, mean.depth) {
-  
+  # Set l as th length of the dataframe
   l <- length(mean.depth)
   mean.depth <- as.numeric(mean.depth)
+  # For each row....
   for (i in 1:l) {
     min <- (mean.depth[i - 1] + mean.depth[i])/2 # Take mean of previous cell and current cell
     max <- (mean.depth[i + 1] + mean.depth[i])/2 # Take mean of current cell and next cell
+      # If initial iteration...
       if (i == 1) {
-        depth_min = as.vector(min)
-        depth_max = as.vector(max)
-      }
-    depth_min[i] <- min
-    depth_max[i] <- max
+        depth_min = as.vector(min) # create depth_min vector
+        depth_max = as.vector(max) # create depth_max vector
+      } else { # If not initial iteration, add min/max
+               #  value to depth_min/max vector
+        
+          depth_min[i] <- min
+          depth_max[i] <- max
+        }
   }
 
   if (mean.depth[1] == 0) {

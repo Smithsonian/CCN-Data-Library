@@ -1,8 +1,7 @@
 ## CCRCN Data Library
 # contact: klingesd@si.edu
 
-# This script hooks in data from the Holmquist et al 2018 Scientific Reports
-#   data release. 
+# This script hooks in data from the Gonneea et al 2018
 
 
 ## Download data ########################
@@ -67,10 +66,9 @@ Gonneea_2018 <- Gonneea_2018 %>%
   Gonneea_2018 <- convert_mean_depth_to_min_max(Gonneea_2018, Gonneea_2018$Depth)
 
   
-  # warp depth
   # ours: Pb: 1 becquerel = 1 disintegration/second/kilogram
   #   her data is in 1 disintegration/g/gram
-  mutate(depth_min = Depth)
+
 
 
 
