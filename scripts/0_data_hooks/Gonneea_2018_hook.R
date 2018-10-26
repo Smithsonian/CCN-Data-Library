@@ -61,8 +61,11 @@ Gonneea_2018 <- Gonneea_2018 %>%
   rename(core_longitude = "Lon") %>%
   rename(core_elevation = "Elevation") %>%
   rename(dry_bulk_density = "DBD") %>%
-  rename(dry_bulk_density = "DBD") %>%  
+  rename(age = "Age")  
   
+  
+  Gonneea_2018 <- convert_mean_depth_to_min_max(Gonneea_2018, Gonneea_2018$Depth)
+
   
   # warp depth
   # ours: Pb: 1 becquerel = 1 disintegration/second/kilogram
