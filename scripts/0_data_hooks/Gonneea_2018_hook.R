@@ -60,14 +60,14 @@ Gonneea_2018 <- Gonneea_2018 %>%
   rename(core_longitude = "Lon") %>%
   rename(core_elevation = "Elevation") %>%
   rename(dry_bulk_density = "DBD") %>%
-  rename(age = "Age")  
-  
+  rename(age = "Age") %>%
+  rename(total_pb210_activity = `210Pb`)
   
   Gonneea_2018 <- convert_mean_depth_to_min_max(Gonneea_2018, Gonneea_2018$Depth)
 
+  gonneea_test <- Gonneea_2018
   
-  # ours: Pb: 1 becquerel = 1 disintegration/second/kilogram
-  #   her data is in 1 disintegration/g/gram
+  gonneea_test <- d_min_g_to_bec_kg(gonneea_test, '210Pb', '210Pb')
 
 
 

@@ -46,4 +46,14 @@ convert_mean_depth_to_min_max <- function(dataframe, mean.depth) {
 }       
 
 
+# ours: Pb: 1 becquerel  = 1 disintegration/second
+#   her data is in 1 
+
+# Convert disintegration/g/gram to becquerel/kilogram
+d_min_g_to_bec_kg <- function(dataframe, activity_input, output_name) {
+  dataframe <-dataframe %>%
+    as.numeric(activity_input)
+  dataframe <- dataframe %>%
+    mutate(output_name = activity_input/60/1000)
+}
 
