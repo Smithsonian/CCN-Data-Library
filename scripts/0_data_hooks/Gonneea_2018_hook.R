@@ -3,11 +3,19 @@
 
 # This script hooks in data from the Gonneea et al 2018
 
+## Assumptions made about data ###############
 
-## Download data ########################
+# that lat and long is in WGS84
+
+
+## Prep workspace #######################
 # Load RCurl, a package used to download files from a URL
 library(RCurl)
 library(tidyverse)
+library(lubridate)
+
+## Download data ########################
+
 
 # The Gonneea et al (2018) data release features a diverse suite of file types:
 #   a .jpg, a .xlsx, a .csv, and a .xml
@@ -38,7 +46,8 @@ download.file(url_list[[4]], paste0(getwd(), "./data/Gonneea_2018/original/Waquo
 ## Curate data to CCRCN Structure ########################
 
 # Import data file into R
-Gonneea_2018 <- read_csv("./data/Gonneea_2018/original/Waquoit_Core_data_release.csv", col_names = TRUE)
+Gonneea_2018 <- read_csv("./data/Gonneea_2018/original/Waquoit_Core_data_release.csv", 
+                         col_names = TRUE)
 
 # Change column names to values of first row
 # Why? Because the top 2 rows were both dedicated to column headers
@@ -58,17 +67,55 @@ Gonneea_2018 <- Gonneea_2018 %>%
   rename(core_date = "Date") %>%
   rename(core_latitude = "Lat") %>%
   rename(core_longitude = "Lon") %>%
-  rename(core_elevation = "Elevation") %>%
   rename(dry_bulk_density = "DBD") %>%
   rename(age = "Age") %>%
-  rename(total_pb210_activity = `210Pb`)
+  rename(total_pb210_activity = "210Pb") %>%
+  rename(ra226_activity = "226Ra") %>%
+  rename(excess_pb210_activity = "210Pbex") %>%
+  rename(cs137_activity = "137Cs") %>%
+  rename(be7_activity = "7Be")
   
-  Gonneea_2018 <- convert_mean_depth_to_min_max(Gonneea_2018, Gonneea_2018$Depth)
+## Curate attributes that need some a'fixin'
 
-  gonneea_test <- Gonneea_2018
+# Change core_date column to date objects
+Gonneea_2018$core_date <- as.Date(as.numeric(Gonneea_2018$core_date), 
+                                  origin = "1899-12-30")
+
+# Convert mean interval depth to min and max interval depth
+source("./scripts/1_data_formatting/curation_functions.R") # Call functions from
+# curation_functions script
+Gonneea_2018 <- convert_mean_depth_to_min_max(Gonneea_2018, Gonneea_2018$Depth)
+
+# Convert dpm/g to becquerel/kg
+  Gonneea_2018 <- Gonneea_2018 %>%
+    convert_dpm_g_to_bec_kg(total_pb210_activity, total_pb210_activity) %>%
+    convert_dpm_g_to_bec_kg(Gonneea_2018, '226Ra', ra226_activity) %>%
+    convert_dpm_g_to_bec_kg(Gonneea_2018, '210Pbex', excess_pb210_activity) %>%
+    convert_dpm_g_to_bec_kg(Gonneea_2018, '137Cs', cs137_activity) %>%
+    
+# Convert percent weights to fractions
+  convert_percent_to_fraction(Gonneea_2018, wtC, fraction_carbon) %>%
+  convert_percent_to_fraction(Gonneea_2018, wtN, fraction_carbon)
   
-  gonneea_test <- d_min_g_to_bec_kg(gonneea_test, '210Pb', '210Pb')
+## Parcel data into separate files according to data level #################
+  
+# Core data
 
+# Gonneea elevation is calculated for each depth interval. We only want elevation
+#   at the top of the core
+core_elevation <- Gonneea_2018 %>%
+  group_by(core_id) %>%
+  summarize(core_elevation = max(as.numeric(Elevation)))
+
+  Gonneea_2018_core_Data <- Gonneea_2018 %>%
+    select(core_id, core_date, core_latitude, core_longitude) %>%
+    summarize_each(funs(mean))
+    left_join(core_elevation)
+  
+  # Depth Series data
+  Gonneea_2018_depth_series_data <- Gonneea_2018 %>%
+    select(core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon)
+  
 
 
 

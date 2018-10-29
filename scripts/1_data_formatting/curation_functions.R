@@ -45,15 +45,25 @@ convert_mean_depth_to_min_max <- function(dataframe, mean.depth) {
   return(dataframe)
 }       
 
+# Convert disintegration/min/gram to becquerel/kilogram
+convert_dpm_g_to_bec_kg <- function(dataframe, activity_input, output_name) {
 
-# ours: Pb: 1 becquerel  = 1 disintegration/second
-#   her data is in 1 
+  dataframe[output_name] <- vector(mode = "numeric", length = length(dataframe[activity_input]))
+  #dataframe[output_name] <- as.numeric(dataframe[activity_input])/60 * 1000
+  # dataframe <-dataframe %>%
+  #   as.numeric(activity_input)
+  # dataframe <- dataframe %>%
+  #   # becquerel is 1 disintegration per second
+  #   # divide by 60 seconds, then multiply by 1000 grams
+  #   mutate(output_name = activity_input/60 * 1000)
+  return(dataframe)
+  
+}
 
-# Convert disintegration/g/gram to becquerel/kilogram
-d_min_g_to_bec_kg <- function(dataframe, activity_input, output_name) {
-  dataframe <-dataframe %>%
-    as.numeric(activity_input)
+# Convert percent to fraction
+
+convert_percent_to_fraction <- function(dataframe, percent, output_name) {
   dataframe <- dataframe %>%
-    mutate(output_name = activity_input/60/1000)
+    mutate(output_name = percent/100)
 }
 
