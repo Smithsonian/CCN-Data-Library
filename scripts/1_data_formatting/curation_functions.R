@@ -46,24 +46,36 @@ convert_mean_depth_to_min_max <- function(dataframe, mean.depth) {
 }       
 
 # Convert disintegration/min/gram to becquerel/kilogram
-convert_dpm_g_to_bec_kg <- function(dataframe, activity_input, output_name) {
-
-  dataframe[output_name] <- vector(mode = "numeric", length = length(dataframe[activity_input]))
-  #dataframe[output_name] <- as.numeric(dataframe[activity_input])/60 * 1000
-  # dataframe <-dataframe %>%
-  #   as.numeric(activity_input)
-  # dataframe <- dataframe %>%
-  #   # becquerel is 1 disintegration per second
-  #   # divide by 60 seconds, then multiply by 1000 grams
-  #   mutate(output_name = activity_input/60 * 1000)
-  return(dataframe)
-  
+convert_dpm_g_to_bec_kg <- function(col_input) {
+  col_output <- as.numeric(col_input)/60 * 1000
+  return(col_output)
 }
 
 # Convert percent to fraction
 
-convert_percent_to_fraction <- function(dataframe, percent, output_name) {
-  dataframe <- dataframe %>%
-    mutate(output_name = percent/100)
+convert_percent_to_fraction <- function(col_input) {
+  col_output <- as.numeric(col_input)/100
+  return(col_output)
 }
+
+
+
+
+# dataframe[output_name] <- vector(mode = "numeric", length = length(dataframe[col_name]))
+# dataframe[output_name] <- as.numeric(dataframe[col_name])/60 * 1000
+# dataframe <-dataframe %>%
+#   as.numeric(col_name)
+# col_output <- interp(x, x = output_name)
+#
+# col_output <- vector(mode = "numeric", length = length(col_input))
+#
+# col_input <- enquo(col_name)
+# col_input <- as.numeric(col_input)/60 * 1000
+# dataframe[col_output] <- col_input
+# becquerel is 1 disintegration per second
+# divide by 60 seconds, then multiply by 1000 grams
+# col_input <- interp(lazy(as.numeric(x)/60 * 1000), x = as.name(dataframe[col_name]))
+# dataframe <- dataframe %>%
+#   mutate(new = col_input)
+
 

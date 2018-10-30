@@ -75,6 +75,21 @@ Gonneea_2018 <- Gonneea_2018 %>%
   rename(cs137_activity = "137Cs") %>%
   rename(be7_activity = "7Be")
   
+# Add study_id
+Gonneea_2018$study_id <- "Gonneea_2018"
+
+# Some columns are characters when they should be numeric
+Gonneea_2018 <- Gonneea_2018 %>%
+  mutate(core_latitude = as.numeric(core_latitude)) %>%
+  mutate(core_longitude = as.numeric(core_longitude)) %>%
+  mutate(dry_bulk_density = as.numeric(dry_bulk_density)) %>%
+  mutate(age = as.numeric(age)) %>%
+  mutate(total_pb210_activity = as.numeric(total_pb210_activity)) %>%
+  mutate(ra226_activity = as.numeric(ra226_activity)) %>%
+  mutate(excess_pb210_activity = as.numeric(excess_pb210_activity)) %>%
+  mutate(cs137_activity = as.numeric(cs137_activity)) %>%
+  mutate(be7_activity = as.numeric(be7_activity))
+  
 ## Curate attributes that need some a'fixin'
 
 # Change core_date column to date objects
@@ -87,15 +102,16 @@ source("./scripts/1_data_formatting/curation_functions.R") # Call functions from
 Gonneea_2018 <- convert_mean_depth_to_min_max(Gonneea_2018, Gonneea_2018$Depth)
 
 # Convert dpm/g to becquerel/kg
-  Gonneea_2018 <- Gonneea_2018 %>%
-    convert_dpm_g_to_bec_kg(total_pb210_activity, total_pb210_activity) %>%
-    convert_dpm_g_to_bec_kg(Gonneea_2018, '226Ra', ra226_activity) %>%
-    convert_dpm_g_to_bec_kg(Gonneea_2018, '210Pbex', excess_pb210_activity) %>%
-    convert_dpm_g_to_bec_kg(Gonneea_2018, '137Cs', cs137_activity) %>%
+Gonneea_2018 <- Gonneea_2018 %>%
+  mutate(total_pb210_activity = convert_dpm_g_to_bec_kg(total_pb210_activity)) %>%
+  mutate(ra226_activity = convert_dpm_g_to_bec_kg(ra226_activity)) %>%
+  mutate(excess_pb210_activity = convert_dpm_g_to_bec_kg(excess_pb210_activity)) %>%
+  mutate(cs137_activity = convert_dpm_g_to_bec_kg(cs137_activity))
     
 # Convert percent weights to fractions
-  convert_percent_to_fraction(Gonneea_2018, wtC, fraction_carbon) %>%
-  convert_percent_to_fraction(Gonneea_2018, wtN, fraction_carbon)
+Gonneea_2018 <- Gonneea_2018 %>%
+  mutate(fraction_carbon = convert_percent_to_fraction(wtC)) %>%
+  mutate(fraction_nitrogen = convert_percent_to_fraction(wtN))
   
 ## Parcel data into separate files according to data level #################
   
@@ -106,16 +122,28 @@ Gonneea_2018 <- convert_mean_depth_to_min_max(Gonneea_2018, Gonneea_2018$Depth)
 core_elevation <- Gonneea_2018 %>%
   group_by(core_id) %>%
   summarize(core_elevation = max(as.numeric(Elevation)))
-
+  
   Gonneea_2018_core_Data <- Gonneea_2018 %>%
-    select(core_id, core_date, core_latitude, core_longitude) %>%
-    summarize_each(funs(mean))
+    group_by(study_id, core_id, core_date) %>%
+    summarize_at(c("core_latitude","core_longitude"), mean) %>%
     left_join(core_elevation)
   
   # Depth Series data
   Gonneea_2018_depth_series_data <- Gonneea_2018 %>%
-    select(core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon)
-  
+    select(study_id, core_id, depth_min, depth_max, dry_bulk_density, 
+           fraction_carbon, cs137_activity, total_pb210_activity, ra226_activity,
+           excess_pb210_activity, be7_activity, age) %>%
+    filter(depth_min != depth_max)
 
+## Export files ##############################
+  
+# Export core data
+write_csv(Gonneea_2018_core_Data, "./data/Gonneea_2018/derivative/Gonneea_2018_core_Data.csv")
+
+# Export depth series data
+write_csv(Gonneea_2018_depth_series_data, "./data/Gonneea_2018/derivative/Gonneea_2018_depth_series_data.csv")
+  
+# Export master data
+write_csv(Gonneea_2018, "./data/Gonneea_2018/derivative/Gonneea_2018.csv")
 
 
