@@ -1,7 +1,7 @@
 ## CCRCN Data Library
 # contact: klingesd@si.edu
 
-# This script hooks in data from the Gonneea et al 2018
+# This script hooks in data from the Gonneea et al 2018 data release
 
 ## Assumptions made about data ###############
 
