@@ -18,15 +18,10 @@ library(lubridate)
 
 ## Download data ########################
 
-
-# The Gonneea et al (2018) data release features a diverse suite of file types:
-#   a .jpg, a .xlsx, a .csv, and a .xml
-# So we'll need to have a custom hook for each file
-
 URL <- "https://www.sciencebase.gov/catalog/item/57b24094e4b00148d3982cce"
 BASE_URL <- "https://www.sciencebase.gov"
 
-page <- read_html(url)
+page <- read_html(URL)
 
 url_list <- page %>%
   html_nodes('.sb-download-link') %>% 
