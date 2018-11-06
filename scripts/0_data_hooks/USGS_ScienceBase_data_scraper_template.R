@@ -25,7 +25,7 @@ FILE_NAMES <- list(# Name_1, Name_2, Name_3, etc.
 #   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
 #   with whatever you include within the quotation marks.
   
-FILE_PATH <- paste0(getwd(), "" )
+FILE_PATH <- paste0(getwd(), "", "/" )
   
 ## Assumptions made about data ###############
 
