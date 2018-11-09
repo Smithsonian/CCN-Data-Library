@@ -24,8 +24,12 @@ function(input, output, session) {
         
         output$citation_display <- renderText("Citation of DOI:")
         
-        output$citation_out <- renderText(cr_cn(dois = DOI_in, format = "text",
+        # Save the citation to an R object
+        citation <- renderText(cr_cn(dois = DOI_in, format = "text",
                                                  style = style_in))
+        
+        # Pass that R object to the UI output
+        output$citation_out <- citation
       
       }
       

@@ -9,9 +9,29 @@
 ## UI ###############
 # Create header
 navbarPage( "CCRCN Data Library", id="nav",
+            
+            
 
   # Tab for contributing to the library
   tabPanel("Add to Bibliography",
+           
+           absolutePanel(
+             id = "logo", class = "panel panel-default", fixed = TRUE,
+             draggable = FALSE, top = 80, left = "auto", right = 25, bottom = "auto",
+             height = "auto", style = "background: rgba(255,0,0,.0); border: none;",
+             
+             # tells UI to use image's style CSS file 
+             # Note: if we use the style.CSS file for other features, 
+             # we'll probably need to move the below line out of this absolute panel block
+             
+             includeCSS("www/style.css"),
+             
+             tags$div(
+               tags$a(href="https://serc.si.edu/coastalcarbon",tags$img(src = "ccrcn_logo.png", 
+                                                                        id= "ccrcn_logo", width="100px", height="100px"),
+                      target="_blank")
+             )
+           ),
            
     tags$head(tags$script(src = "message-handler.js")),
            
@@ -32,7 +52,19 @@ navbarPage( "CCRCN Data Library", id="nav",
         
         # Line breaks
         tags$br(),
-        tags$br()
+        tags$br(),
+        
+        conditionalPanel(
+          
+          condition = "output.bibtex_out",
+          
+          textInput("tags", "Enter your tags here separated by commas"),
+          
+          actionButton("add_DOI", HTML("Add DOI to <br/> CCRCN bibliography"),
+                       style ='width: 250; height: 100px; text-align:center; font-size: 170%;
+                       background-color: #8bb4ef;')
+          
+          )
         
       ),
 
@@ -43,8 +75,18 @@ navbarPage( "CCRCN Data Library", id="nav",
           
           condition = "input.add_DOI == 0",
           
-          
+          tags$br(),
+          tags$br(),
+
           textOutput("citation_display"),
+          
+          tags$head(
+            tags$style("#citation_display{color: black;
+                       font-size: 18px;
+                       font-style: bold;
+                       }"
+            )
+          ),
 
           tags$br(),
       
@@ -54,6 +96,14 @@ navbarPage( "CCRCN Data Library", id="nav",
           tags$br(),
            
           textOutput("bibtex_display"),
+          
+          tags$head(
+            tags$style("#bibtex_display{color: black;
+                       font-size: 18px;
+                       font-style: bold;
+                       }"
+            )
+            ),
       
           tags$br(),
       
@@ -75,22 +125,14 @@ navbarPage( "CCRCN Data Library", id="nav",
                                }"
             )
           )
-        )
+        ),
+        
+        width = 6
       
       )
-    ),
-    
-    conditionalPanel(
-      
-      condition = "output.bibtex_out",
-      
-      textInput("tags", "Enter your tags here separated by commas"),
-      
-      actionButton("add_DOI", HTML("Add DOI to <br/> CCRCN bibliography"),
-        style ='width: 300px; height: 100px; text-align:center; font-size: 200%;
-        background-color: #8bb4ef;')
-      
     )
+    
+
     
 
   ),
@@ -126,26 +168,6 @@ navbarPage( "CCRCN Data Library", id="nav",
                     ),
                     hr(),
                     DT::dataTableOutput("ziptable")
-           ),
+           )
 
-  absolutePanel(
-    id = "logo", class = "panel panel-default", fixed = TRUE,
-    draggable = FALSE, top = "auto", left = 25, right = "auto", bottom = 80,
-    height = "auto", style = "background: rgba(255,0,0,.0); border: none;",
-    
-    # tells UI to use image's style CSS file 
-    # Note: if we use the style.CSS file for other features, 
-    # we'll probably need to move the below line out of this absolute panel block
-    
-    includeCSS("www/style.css"),
-    
-    tags$div(
-      tags$a(href="https://serc.si.edu/coastalcarbon",tags$img(src = "ccrcn_logo.png", 
-                                                               id= "ccrcn_logo", width="100px", height="100px"),
-             target="_blank")
-    )
-  )
-           
-           
-                     
 )
