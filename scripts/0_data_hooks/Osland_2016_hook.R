@@ -62,32 +62,75 @@ BASE_URL <- "https://www.sciencebase.gov"
 
 # Because Osland 2016 has multiple urls, we'll need to run this loop multiple times
  
-  page <- read_html(URL_3)
+page <- read_html(URL_3)
   
-  # Extract the url paths for each data file embedded on the webpage, and save
-  #   those paths to a list
-  url_list <- page %>%
-    html_nodes('.sb-download-link') %>% 
-    html_attr("data-url")
+# Extract the url paths for each data file embedded on the webpage, and save
+#   those paths to a list
+url_list <- page %>%
+  html_nodes('.sb-download-link') %>% 
+  html_attr("data-url")
   
-  # For each data file path on the webpage....
-  for (i in 1:length(url_list)) {
-    
-    # ...extract and download file
-    download.file(paste0(BASE_URL, url_list[[i]]), paste0(FILE_PATH, FILE_NAMES_3[[i]]),
+# For each data file path on the webpage....
+for (i in 1:length(url_list)) {
+  
+  # ...extract and download file
+  download.file(paste0(BASE_URL, url_list[[i]]), paste0(FILE_PATH, FILE_NAMES_3[[i]]),
                   mode = "wb")
-  }
+}
 
-
+## Curate data to CCRCN Structure ########################
   
-  ## Curate data to CCRCN Structure ########################
-  
-  # Read in data from .xlsx files
-  Osland_2016_soil <- read_excel(paste0(FILE_PATH, "Dataset_02_macroclimate_soil_data_2_22_2016.xlsx"))
-  Osland_2016_land_climate <- read_excel(paste0(FILE_PATH, "Dataset_03_macroclimate_landscape_and_climate_data_2_22_2016.xlsx"))
-  Osland_2016_veg <- read_excel(paste0(FILE_PATH, "Dataset_01_macroclimate_vegetation_data_all_2_24_2016.xlsx"))
+# Read in data from .xlsx files
+Osland_2016_soil <- read_excel(paste0(FILE_PATH, "Dataset_02_macroclimate_soil_data_2_22_2016.xlsx"))
+Osland_2016_land_climate <- read_excel(paste0(FILE_PATH, "Dataset_03_macroclimate_landscape_and_climate_data_2_22_2016.xlsx"))
+
+## "Soil" datasheet
+# Remove instructions at the top of sheets
+Osland_2016_soil <- Osland_2016_soil %>%
+  slice(-1:-9)
+colnames(Osland_2016_soil) <- Osland_2016_soil[1, ] # the first row will be the header
+Osland_2016_soil <- Osland_2016_soil[-1, ]
+
+# Call functions from curation_functions script
+source("./scripts/1_data_formatting/curation_functions.R") 
+
+Osland_2016_soil <- Osland_2016_soil %>%
+  rename(site_id = "estuary") %>%
+  rename(core_id = "plot") %>%
+  rename(dry_bulk_density = "bd") %>%
+  mutate(fraction_organic_matter = convert_percent_to_fraction(som)) %>%
+  select(-som) %>%
+  # CCRCN does not have standards for soil moisture content yet, but this approach
+  #   most closely aligns with other attributes
+  mutate(fraction_moisture_content = convert_percent_to_fraction(moist)) %>%
+  select(-moist)
+
+# The legend dictates that only one soil depth interval was sampled, 01-5 cm.
+# So we'll add a single set of min and max depths for each core
+
+Osland_2016_soil <- Osland_2016_soil %>%
+  mutate(depth_min = 0) %>%
+  mutate(depth_max = 15)
+
+## "vegetation" datasheet
+Osland_2016_veg <- read_excel(paste0(FILE_PATH, "Dataset_01_macroclimate_vegetation_data_all_2_24_2016.xlsx"))
+
+Osland_2016_veg <- Osland_2016_veg %>%
+  slice(-1:-9)
+colnames(Osland_2016_veg) <- Osland_2016_veg[1, ] # the first row will be the header
+Osland_2016_veg <- Osland_2016_veg[-1, ]
+
+Osland_2016_veg <- Osland_2016_veg %>%
+rename(site_id = "estuary") %>%
+  rename(core_id = "plot") %>%
+  mutate(core_date = as_date(paste0(year, "-", month, "-", day))) %>%
+  select(-year, -month, -day) %>%
+  rename(core_time = "time") %>%
+  rename(core_elevation = "elev") %>%
+  mutate(core_elevation_datum = "NAVD88")
 
 
-  
+# Transform the projection
+convert_UTM_to_latlong(Osland_2016_veg$easting, Osland_2016_veg$northing, Osland_2016_veg$zone)
   
   

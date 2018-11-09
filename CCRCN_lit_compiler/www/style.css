@@ -1,0 +1,7 @@
+#ccrcn_logo{
+	opacity: 0.7;
+}
+
+#ccrcn_logo:hover{
+    opacity: 1.0;
+}
