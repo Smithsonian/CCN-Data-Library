@@ -8,7 +8,7 @@
 # 1. Designate the target webpage to scrape for data
 #   Paste the url of the target webpage here, wrapped in quotation marks
 
-# Note: because Osland_2016 has multiple data release DOIs, we'll just run this
+# Note: because Osland_2018 has multiple data release DOIs, we'll just run this
 #   script separately for each one. Easier to read than looping through each url
 
 URL_1 <- "https://www.sciencebase.gov/catalog/item/57b24094e4b00148d3982cce"
@@ -40,7 +40,7 @@ FILE_NAMES_3 <- list("U_S_Gulf_of_Mexico_coast_TX_MS_AL_and_FL_Macroclimate_Vege
 #   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
 #   with whatever you include within the quotation marks.
   
-FILE_PATH <- paste0(getwd(), "./data/Osland_2016/original/" )
+FILE_PATH <- paste0(getwd(), "./data/Osland_2018/original/" )
   
 ## Assumptions made about data ###############
 
@@ -78,23 +78,40 @@ for (i in 1:length(url_list)) {
                   mode = "wb")
 }
 
-## Curate data to CCRCN Structure ########################
-  
-# Read in data from .xlsx files
-Osland_2016_soil <- read_excel(paste0(FILE_PATH, "Dataset_02_macroclimate_soil_data_2_22_2016.xlsx"))
-Osland_2016_land_climate <- read_excel(paste0(FILE_PATH, "Dataset_03_macroclimate_landscape_and_climate_data_2_22_2016.xlsx"))
+## Curate data to CCRCN Structure #################
 
-## "Soil" datasheet
+# Read data in
+Osland_2018_soil <- read_excel(paste0(FILE_PATH, "Dataset_02_macroclimate_soil_data_2_22_2016.xlsx"))
+Osland_2018_land_climate <- read_excel(paste0(FILE_PATH, "Dataset_03_macroclimate_landscape_and_climate_data_2_22_2016.xlsx"))
+Osland_2018_veg <- read_excel(paste0(FILE_PATH, "Dataset_01_macroclimate_vegetation_data_all_2_24_2016.xlsx"))
+
 # Remove instructions at the top of sheets
-Osland_2016_soil <- Osland_2016_soil %>%
+Osland_2018_depth_series_data <- Osland_2018_soil %>%
   slice(-1:-9)
-colnames(Osland_2016_soil) <- Osland_2016_soil[1, ] # the first row will be the header
-Osland_2016_soil <- Osland_2016_soil[-1, ]
+# the first row will be the header
+colnames(Osland_2018_depth_series_data) <- Osland_2018_depth_series_data[1, ] 
+Osland_2018_depth_series_data <- Osland_2018_depth_series_data[-1, ]
+
+Osland_2018_veg <- Osland_2018_veg %>%
+  slice(-1:-9)
+# the first row will be the header
+colnames(Osland_2018_veg) <- Osland_2018_veg[1, ] 
+Osland_2018_veg <- Osland_2018_veg[-1, ]
+
+Osland_2018_land_climate <- Osland_2018_land_climate %>%
+  slice(-1:-9)
+# the first row will be the header
+colnames(Osland_2018_land_climate) <- Osland_2018_land_climate[1, ] 
+Osland_2018_land_climate <- Osland_2018_land_climate[-1, ]
+
+## Depth series data ###################
+
+# From Osland_2018_soil
 
 # Call functions from curation_functions script
 source("./scripts/1_data_formatting/curation_functions.R") 
 
-Osland_2016_soil <- Osland_2016_soil %>%
+Osland_2018_depth_series_data <- Osland_2018_depth_series_data %>%
   rename(site_id = "estuary") %>%
   rename(core_id = "plot") %>%
   rename(dry_bulk_density = "bd") %>%
@@ -108,29 +125,92 @@ Osland_2016_soil <- Osland_2016_soil %>%
 # The legend dictates that only one soil depth interval was sampled, 01-5 cm.
 # So we'll add a single set of min and max depths for each core
 
-Osland_2016_soil <- Osland_2016_soil %>%
+Osland_2018_depth_series_data <- Osland_2018_depth_series_data %>%
   mutate(depth_min = 0) %>%
   mutate(depth_max = 15)
 
-## "vegetation" datasheet
-Osland_2016_veg <- read_excel(paste0(FILE_PATH, "Dataset_01_macroclimate_vegetation_data_all_2_24_2016.xlsx"))
+# Read out depth series data
+write.csv(Osland_2018_depth_series_data, "./data/Osland_2018/derivative/Osland_2018_depth_series_data.csv")
 
-Osland_2016_veg <- Osland_2016_veg %>%
-  slice(-1:-9)
-colnames(Osland_2016_veg) <- Osland_2016_veg[1, ] # the first row will be the header
-Osland_2016_veg <- Osland_2016_veg[-1, ]
 
-Osland_2016_veg <- Osland_2016_veg %>%
+## Core data ####################
+
+# from Osland_2018_veg
+
+# There's an unwieldy amount of columns, so we'll select them down
+Osland_2018_core_data <- Osland_2018_veg %>%
+  select(1:13)
+
+Osland_2018_core_data <- Osland_2018_core_data %>%
 rename(site_id = "estuary") %>%
-  rename(core_id = "plot") %>%
+  # current core IDs are not unique, so concatenate with site IDs
+  mutate(core_id = paste0(site_id, "_", plot)) %>%
+  # concatenate date attributes, then remove
   mutate(core_date = as_date(paste0(year, "-", month, "-", day))) %>%
   select(-year, -month, -day) %>%
+  # We don't need the transect number. Transects can be derived from coordinates
+  select(-tran) %>%
+  rename(core_notes = "criteria") %>%
   rename(core_time = "time") %>%
   rename(core_elevation = "elev") %>%
   mutate(core_elevation_datum = "NAVD88")
 
 
 # Transform the projection
-convert_UTM_to_latlong(Osland_2016_veg$easting, Osland_2016_veg$northing, Osland_2016_veg$zone)
+Osland_2018_core_data_coords <- convert_UTM_to_latlong(Osland_2018_core_data$easting, 
+                                                       Osland_2018_core_data$northing, Osland_2018_core_data$zone, Osland_2018_core_data$core_id)
+Osland_2018_core_data <-  Osland_2018_core_data %>%
+  left_join(Osland_2018_core_data_coords)
+
+# Now we can move easting, northing, and zone attributes
+Osland_2018_core_data <- Osland_2018_core_data %>%
+  select(-easting, -northing, -zone, -ID)
+
+
+## Species data ##################
+
+# Gather the species columns into one column and select just the most dominant
+#   species present per core.
+find_max <- function(df, first_col, last_col) {
+  df <- df %>%
+    gather("colname", "value", first_col:last_col) %>%
+    mutate(value = as.numeric(value)) %>%
+    filter(value == max(value))
+
+  if (df$value[[1]] == 0) {
+    df$value <- NA
+    df <- slice(df, 1)
+  }
+  df
+}
+
+# Create veg data
+
+Osland_2018_species_data <- Osland_2018_veg %>%
+  select(1:182)
+for (i in 1:nrow(Osland_2018_species_data)) {
   
-  
+  df <- slice(Osland_2018_species_data, i)
+  if (i == 1) {
+    out <- find_max(df, 19, 181)
+  } else {
+    
+    out <- rbind(out, find_max(df, 19, 181))
+  }
+}
+
+test <- Osland_2018_veg %>%
+  slice(2)
+
+test_out <- find_max(test, 19, 181)
+test_out$value
+test_out$colname
+
+
+veg <- apply(Osland_2018_veg, FUN = find_max(x, 19, 181))
+
+
+
+# create a data frame of the column headers and values for each column
+# find greatest value
+# select that, bind it to og data in  a new column

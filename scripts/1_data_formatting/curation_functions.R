@@ -58,7 +58,7 @@ convert_percent_to_fraction <- function(col_input) {
 }
 
 # Convert UTM to lat/long
-convert_UTM_to_latlong <- function(easting, northing, zone) {
+convert_UTM_to_latlong <- function(easting, northing, zone, core_id) {
   
   # Remove non-numeric characters from zone attribute
   zone <- gsub("[^0-9]", "", zone)
@@ -118,7 +118,7 @@ convert_UTM_to_latlong <- function(easting, northing, zone) {
   
   # Initialize our output dataset
   output <- matrix(nrow = 0, ncol = 2)
-  colnames(output) <- c("X", "Y")
+  colnames(output) <- c("core_longitude", "core_latitude")
   
   # We'll need to transform the projection separately for data that are in
   #   different zones. So we'll need to subset by the zone values, which we
@@ -145,17 +145,21 @@ convert_UTM_to_latlong <- function(easting, northing, zone) {
   
 
   output_sub <- na.omit(sp@coords) # Get rid of NAs again
-  colnames(output_sub) <- c("X", "Y") # Rename the output columns
+  colnames(output_sub) <- c("core_longitude", "core_latitude") # Rename the output columns
   output <- rbind(output, output_sub) # And slap the data subset into our final output
   }
   
-  output <- data.frame(output)# Turn our output into a dataframe
+  output <- data.frame(output) # Turn our output into a dataframe
   
   # Now let's add those NA rows back in
   require(DataCombine)
   for (i in 1:length(NA_rows)) {
     output <- InsertRow(data = output, NewRow = rep(NA, 2), RowNum = NA_rows[[i]])
   }
+  # And add the core_id attribute back for joining purposes
+  output <- cbind(output, core_id)
+  
+  # And output the output
   output
 }
 
