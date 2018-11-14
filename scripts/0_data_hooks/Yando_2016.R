@@ -15,7 +15,9 @@ URL <- "https://www.sciencebase.gov/catalog/item/545cfe22e4b0ba8303f7142a"
 #   THE SAME ORDER THAT THEY ARE LISTED ON THE WEBPAGE ITSELF. Include the file
 #   extension (.csv, .xlsx, etc.) in the name of the file as well.
   
-FILE_NAMES <- list(# Name_1, Name_2, Name_3, etc.
+FILE_NAMES <- list("12_data_output_site_level_synthesis_of_all_ecosystem_data_11_5_2014.csv", 
+                   "12_data_output_site_level_synthesis_of_all_ecosystem_data_11_5_2014.xlsx", 
+                   "Dataset 12- Output- site-level synthesis of all ecosystem data (5).xml "
 )
 
 # 3. Designate file path of where these data files will go in the CCRCN library
@@ -25,7 +27,7 @@ FILE_NAMES <- list(# Name_1, Name_2, Name_3, etc.
 #   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
 #   with whatever you include within the quotation marks.
   
-FILE_PATH <- paste0(getwd(), "", "/" )
+FILE_PATH <- paste0(getwd(), "/data/Yando_2016/original", "/" )
   
 ## Assumptions made about data ###############
 
