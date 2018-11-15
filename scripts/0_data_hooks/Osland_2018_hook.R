@@ -44,7 +44,6 @@ FILE_PATH <- paste0(getwd(), "./data/Osland_2018/original/" )
   
 ## Assumptions made about data ###############
 
-# that lat and long is in WGS84
 
 ## Prep workspace #######################
 # Load RCurl, a package used to download files from a URL
@@ -170,20 +169,50 @@ write.csv(Osland_2018_core_data, "./data/Osland_2018/derivative/Osland_2018_core
 
 ## Site level data #############
 
-# Remove instructions at the top of sheets
-Osland_2018_site_data <- Osland_2018_land_climate %>%
-  rename(site_id = "estuary") %>%
-  # current core IDs are not unique, so concatenate with site IDs
-  mutate(core_id = paste0(site_id, "_", plot)) %>%
+# We're going to need to add a few new columns, and aggregate out core level
+#   data up to the site level
+
+# Change value of digits so we don't have too many for the next step
+options(digits=6)
+
+# Change all attributes to numeric. we'll need this later for aggregate the data
+#   to the site level
+Osland_2018_site_data <- sapply(Osland_2018_land_climate, as.numeric)
+Osland_2018_site_data <- as.data.frame(Osland_2018_site_data) # Turn back to df
+
+# This turns site and core ID attributes to NA, so we'll need to add those back.
+#   We'll pull them from the core level data
+# NOTE: this is a dangerous cbind. If the data was re-ordered, the data will be
+#   joined incorrectly
+Osland_2018_site_data <- cbind(Osland_2018_site_data, site_id = Osland_2016_core_data$site_id,
+                               core_id = Osland_2016_core_data$core_id)
+
+# Rename and curate
+Osland_2018_site_data <- Osland_2018_site_data %>%
+  select(-ID, -tran, -plot, -estuary, -core_id, -dist) %>%
   rename(core_longitude = "lon") %>%
-  mutate(core_longitude = as.numeric(core_longitude)) %>%
   rename(core_latitude = "lat") %>%
-  mutate(core_latitude = as.numeric(core_latitude))
-  
+  rename(mean_annual_precip = "MAP") %>%
+  rename(aridity_index = "AI") %>%
+  rename(potential_evapotrans = "PET") %>%
+  rename(min_temp = "Tmin")
 
 # Find min and max lat/long for each site
 source("./scripts/1_data_formatting/curation_functions.R") 
-Osland_2018_site_data <- create_multiple_geographic_coverages(Osland_2018_site_data)
+Osland_2018_site_data_boundaries <- create_multiple_geographic_coverages(Osland_2018_site_data)
+Osland_2018_site_data <- Osland_2018_site_data %>%
+  left_join(Osland_2018_site_data_boundaries) %>% # Add site bounds in
+  select(-core_latitude, -core_longitude)
+# remove NAs before aggregation
+Osland_2018_site_data <- na.omit(Osland_2018_site_data) 
+
+# Now aggeregate data to the site level
+Osland_2018_site_data <- Osland_2018_site_data %>%
+  group_by(site_id) %>%
+  summarize_all(mean)
+
+# Write data
+write.csv(Osland_2018_site_data, "./data/Osland_2018/derivative/Osland_2018_site_data.csv")
 
 ## Species data ##################
 
@@ -242,5 +271,13 @@ Osland_2018_species_data <- out %>%
   mutate(fraction_coverage = as.numeric(fraction_coverage)) %>%
   select(site_id, core_id, species_code, fraction_coverage)
 
+# Remove the '1c' string from the species_code entries
+Osland_2018_species_data$species_code <- 
+  sapply(Osland_2018_species_data$species_code,
+    function(x) {
+      gsub("1c", "", x) # Replace '1c' with ''                                           
+   })
+
+# Write out data
 write.csv(Osland_2018_species_data, "./data/Osland_2018/derivative/Osland_2018_species_data.csv")
 
