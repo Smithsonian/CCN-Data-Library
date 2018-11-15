@@ -163,22 +163,27 @@ convert_UTM_to_latlong <- function(easting, northing, zone, core_id) {
   output
 }
 
-
-# dataframe[output_name] <- vector(mode = "numeric", length = length(dataframe[col_name]))
-# dataframe[output_name] <- as.numeric(dataframe[col_name])/60 * 1000
-# dataframe <-dataframe %>%
-#   as.numeric(col_name)
-# col_output <- interp(x, x = output_name)
-#
-# col_output <- vector(mode = "numeric", length = length(col_input))
-#
-# col_input <- enquo(col_name)
-# col_input <- as.numeric(col_input)/60 * 1000
-# dataframe[col_output] <- col_input
-# becquerel is 1 disintegration per second
-# divide by 60 seconds, then multiply by 1000 grams
-# col_input <- interp(lazy(as.numeric(x)/60 * 1000), x = as.name(dataframe[col_name]))
-# dataframe <- dataframe %>%
-#   mutate(new = col_input)
+# Create site-level bounding box from core-level locations
+create_multiple_geographic_coverages <- function(core_table) {
+  
+  subsite_bounding_box <- core_table %>%
+    # group by subsite
+    group_by(site_id) %>% 
+    # get min and max latitudes for each subsite
+    summarise(site_longitude_max = max(core_longitude),
+              site_longitude_min = min(core_longitude),
+              site_latitude_max = max(core_latitude),
+              site_latitude_min = min(core_latitude)
+    ) %>%
+    # Make a 10% buffered bounding box from the site data table
+    mutate(lon_buffer = (site_longitude_max - site_longitude_min) / 10,
+           lat_buffer = (site_latitude_max - site_latitude_min) / 10,
+           site_longitude_max = site_longitude_max + lon_buffer,
+           site_longitude_min = site_longitude_min - lon_buffer,
+           site_latitude_max = site_latitude_max + lat_buffer,
+           site_latitude_min = site_latitude_min - lat_buffer) %>%
+    dplyr::select(site_id, site_longitude_max, site_longitude_min, 
+                  site_latitude_max, site_latitude_min)
+}
 
 

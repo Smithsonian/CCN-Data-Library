@@ -142,7 +142,7 @@ Osland_2018_core_data <- Osland_2018_veg %>%
   select(1:13)
 
 Osland_2018_core_data <- Osland_2018_core_data %>%
-rename(site_id = "estuary") %>%
+  rename(site_id = "estuary") %>%
   # current core IDs are not unique, so concatenate with site IDs
   mutate(core_id = paste0(site_id, "_", plot)) %>%
   # concatenate date attributes, then remove
@@ -166,17 +166,56 @@ Osland_2018_core_data <-  Osland_2018_core_data %>%
 Osland_2018_core_data <- Osland_2018_core_data %>%
   select(-easting, -northing, -zone, -ID)
 
+write.csv(Osland_2018_core_data, "./data/Osland_2018/derivative/Osland_2018_core_data.csv")
+
+## Site level data #############
+
+# Remove instructions at the top of sheets
+Osland_2018_site_data <- Osland_2018_land_climate %>%
+  rename(site_id = "estuary") %>%
+  # current core IDs are not unique, so concatenate with site IDs
+  mutate(core_id = paste0(site_id, "_", plot)) %>%
+  rename(core_longitude = "lon") %>%
+  mutate(core_longitude = as.numeric(core_longitude)) %>%
+  rename(core_latitude = "lat") %>%
+  mutate(core_latitude = as.numeric(core_latitude))
+  
+
+# Find min and max lat/long for each site
+source("./scripts/1_data_formatting/curation_functions.R") 
+Osland_2018_site_data <- create_multiple_geographic_coverages(Osland_2018_site_data)
 
 ## Species data ##################
 
-# Gather the species columns into one column and select just the most dominant
-#   species present per core.
+# Select only the columns that correspond to the species presence in a 1-m2
+#   plot surrounding each core, plus the necessary other data
+Osland_2018_species_data <- Osland_2018_veg %>%
+  select(1:182) %>%
+  select("estuary", "plot", 16:182)
+
+# Rename site and core IDs
+Osland_2018_species_data <- Osland_2018_species_data %>%
+  rename(site_id = "estuary") %>%
+  # current core IDs are not unique, so concatenate with site IDs
+  mutate(core_id = paste0(site_id, "_", plot)) %>%
+  select(-plot)
+
+# The species presence data is currently  wide-form, with each column
+#   corresponding to the fraction area occupied by each plant species.
+# Let's write a function that can be applied to each row to change the data to
+#   long-form.
 find_max <- function(df, first_col, last_col) {
   df <- df %>%
-    gather("colname", "value", first_col:last_col) %>%
-    mutate(value = as.numeric(value)) %>%
+    # Gather the species columns into one column and select just the most dominant
+    #   species present per core.
+    gather(colname, value, first_col:last_col) %>%
+    mutate(value = value) %>%
+    # Choose just the most dominant plant species
     filter(value == max(value))
 
+  # If all of the values for the species presence columns are 0, then change the
+  #   values to NA and only use the first row. The species presence value for
+  #   the given core will now just be NA.
   if (df$value[[1]] == 0) {
     df$value <- NA
     df <- slice(df, 1)
@@ -184,33 +223,24 @@ find_max <- function(df, first_col, last_col) {
   df
 }
 
-# Create veg data
-
-Osland_2018_species_data <- Osland_2018_veg %>%
-  select(1:182)
 for (i in 1:nrow(Osland_2018_species_data)) {
   
   df <- slice(Osland_2018_species_data, i)
   if (i == 1) {
-    out <- find_max(df, 19, 181)
+    out <- find_max(df, 5, 168)
   } else {
     
-    out <- rbind(out, find_max(df, 19, 181))
+    out <- rbind(out, find_max(df, 5, 168))
   }
 }
 
-test <- Osland_2018_veg %>%
-  slice(2)
+colname <- out$colname
 
-test_out <- find_max(test, 19, 181)
-test_out$value
-test_out$colname
+Osland_2018_species_data <- out %>%
+  rename(species_code = "colname") %>%
+  rename(fraction_coverage = "value") %>%
+  mutate(fraction_coverage = as.numeric(fraction_coverage)) %>%
+  select(site_id, core_id, species_code, fraction_coverage)
 
+write.csv(Osland_2018_species_data, "./data/Osland_2018/derivative/Osland_2018_species_data.csv")
 
-veg <- apply(Osland_2018_veg, FUN = find_max(x, 19, 181))
-
-
-
-# create a data frame of the column headers and values for each column
-# find greatest value
-# select that, bind it to og data in  a new column
