@@ -33,3 +33,5 @@ Sanderman_2018 <- Sanderman_2018 %>%
 
 # Save as output data
 write.csv(Sanderman_2018, "./data/Sanderman_2018/derivative/Sanderman_core_data.csv")
+
+1583
