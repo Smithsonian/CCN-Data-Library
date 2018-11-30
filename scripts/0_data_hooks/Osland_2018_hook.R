@@ -113,6 +113,7 @@ source("./scripts/1_data_formatting/curation_functions.R")
 Osland_2018_depth_series_data <- Osland_2018_depth_series_data %>%
   rename(site_id = "estuary") %>%
   rename(core_id = "plot") %>%
+  mutate(core_id = as.factor(core_id)) %>% # Core IDs are expressed as factor not numeric
   rename(dry_bulk_density = "bd") %>%
   mutate(fraction_organic_matter = convert_percent_to_fraction(som)) %>%
   select(-som) %>%
