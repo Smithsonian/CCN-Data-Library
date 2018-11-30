@@ -17,7 +17,7 @@ Sanderman_2018 <- Sanderman_2018 %>%
   rename(core_latitude = Latitude) %>%
   rename(core_longitude = Longitude) %>%
   rename(site_id = Country) %>%
-  mutate(dry_bulk_density = (SOC..mg.cm.3.)/1000) %>%
+  mutate(organic_carbon_density = (SOC..mg.cm.3.)/1000) %>%
   select(-SOC..mg.cm.3.)
 
 
@@ -32,6 +32,5 @@ Sanderman_2018 <- Sanderman_2018 %>%
   select(-ID)
 
 # Save as output data
-write.csv(Sanderman_2018, "./data/Sanderman_2018/derivative/Sanderman_core_data.csv")
+write.csv(Sanderman_2018, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
 
-1583
