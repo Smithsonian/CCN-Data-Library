@@ -5,6 +5,7 @@
 
 library(tidyverse)
 
+## Convert mean depth to min and max depth ############
 # For conversion of depth interval values: if a dataframe
 #   has a mean depth attribute, this will create a min depth
 #   and max depth attributes
@@ -45,19 +46,19 @@ convert_mean_depth_to_min_max <- function(dataframe, mean.depth) {
   return(dataframe)
 }       
 
-# Convert disintegration/min/gram to becquerel/kilogram
+## Convert disintegration/min/gram to becquerel/kilogram ###########
 convert_dpm_g_to_bec_kg <- function(col_input) {
   col_output <- as.numeric(col_input)/60 * 1000
   return(col_output)
 }
 
-# Convert percent to fraction
+## Convert percent to fraction ###############
 convert_percent_to_fraction <- function(col_input) {
   col_output <- as.numeric(col_input)/100
   return(col_output)
 }
 
-# Convert UTM to lat/long
+## Convert UTM to lat/long ###############
 convert_UTM_to_latlong <- function(easting, northing, zone, core_id) {
   
   # Remove non-numeric characters from zone attribute
@@ -163,7 +164,7 @@ convert_UTM_to_latlong <- function(easting, northing, zone, core_id) {
   output
 }
 
-# Create site-level bounding box from core-level locations
+## Create site-level bounding box from core-level locations #############
 create_multiple_geographic_coverages <- function(core_table) {
   
   subsite_bounding_box <- core_table %>%
@@ -186,4 +187,32 @@ create_multiple_geographic_coverages <- function(core_table) {
                   site_latitude_max, site_latitude_min)
 }
 
+## Create core_IDs from subset of study ID ############
+create_core_IDs <- function(df, study_ID) {
+
+  # create list of unique study IDs
+  study_ID_list <- unique(df[, study_ID])
+
+  # Iterate through study ID list
+  for (i in 1:length(study_ID_list)) {
+    study <- subset(df, df[, study_ID] == study_ID_list[[i]])
+    
+      study <- study %>%
+        rowid_to_column("ID")
+      
+      study$core_id <- paste0(study[, study_ID], "_", study[, "ID"])
+      
+      study <- study %>%
+        select(-ID)
+    
+    # Combine back together
+    if (i == 1) {
+      df_out <- study
+    } else {
+      df_out <- bind_rows(df_out, study)
+      }
+  }
+  
+  df_out
+}
 

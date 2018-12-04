@@ -6,10 +6,12 @@
 ## Workspace prep ##########
 
 library(tidyverse)
+library(RCurl)
 
 ## Add Sanderman mangrove sites ############
 
-Sanderman_2018 <- read.csv("./data/Sanderman_2018/original/41558_2018_162_MOESM2_ESM.csv")
+
+soil_profiles <- read.csv(text=getURL("https://raw.githubusercontent.com/Smithsonian/CCRCN-Data-Library/master/data/CCRCN_synthesis/CCRCN_core_data.csv"))
 
 # Rename and recode attributes to be congruent with core data
 Sanderman_2018 <- Sanderman_2018 %>%
@@ -26,10 +28,9 @@ Sanderman_2018$study_id <- recode(Sanderman_2018$study_id,
                                        "This study" = "Sanderman et al 2018")
 
 # Create core IDs for each core
+source("./scripts/1_data_formatting/curation_functions.R")
 Sanderman_2018 <- Sanderman_2018 %>%
-  rowid_to_column("ID") %>%
-  mutate(core_id = paste0(study_id, "_", ID)) %>%
-  select(-ID)
+  create_core_IDs("study_id")
 
 # Save as output data
 write.csv(Sanderman_2018, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
