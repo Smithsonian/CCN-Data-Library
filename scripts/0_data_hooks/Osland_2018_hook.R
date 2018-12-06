@@ -120,7 +120,8 @@ Osland_2018_depth_series_data <- Osland_2018_depth_series_data %>%
   # CCRCN does not have standards for soil moisture content yet, but this approach
   #   most closely aligns with other attributes
   mutate(fraction_moisture_content = convert_percent_to_fraction(moist)) %>%
-  select(-moist)
+  select(-moist) %>%
+  mutate(study_id = "Osland_2018")
 
 # The legend dictates that only one soil depth interval was sampled, 01-5 cm.
 # So we'll add a single set of min and max depths for each core
@@ -153,7 +154,8 @@ Osland_2018_core_data <- Osland_2018_core_data %>%
   rename(core_notes = "criteria") %>%
   rename(core_time = "time") %>%
   rename(core_elevation = "elev") %>%
-  mutate(core_elevation_datum = "NAVD88")
+  mutate(core_elevation_datum = "NAVD88") %>%
+  mutate(study_id = "Osland_2018")
 
 
 # Transform the projection
@@ -196,7 +198,8 @@ Osland_2018_site_data <- Osland_2018_site_data %>%
   rename(mean_annual_precip = "MAP") %>%
   rename(aridity_index = "AI") %>%
   rename(potential_evapotrans = "PET") %>%
-  rename(min_temp = "Tmin")
+  rename(min_temp = "Tmin") %>%
+  mutate(study_id = "Osland_2018")
 
 # Find min and max lat/long for each site
 source("./scripts/1_data_formatting/curation_functions.R") 
@@ -228,7 +231,8 @@ Osland_2018_species_data <- Osland_2018_species_data %>%
   rename(site_id = "estuary") %>%
   # current core IDs are not unique, so concatenate with site IDs
   mutate(core_id = paste0(site_id, "_", plot)) %>%
-  select(-plot)
+  select(-plot) %>%
+  mutate(study_id = "Osland_2018")
 
 # The species presence data is currently  wide-form, with each column
 #   corresponding to the fraction area occupied by each plant species.
