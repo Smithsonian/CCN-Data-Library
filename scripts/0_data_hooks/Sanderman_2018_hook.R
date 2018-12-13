@@ -11,13 +11,14 @@ library(readxl)
 
 ## Add Sanderman mangrove sites ############
 
+Sanderman_2018 <- read.csv("./data/Sanderman_2018/original/41558_2018_162_MOESM2_ESM.csv")
 
 # Rename and recode attributes to be congruent with core data
 Sanderman_2018 <- Sanderman_2018 %>%
   rename(study_id = Source) %>%
   rename(core_latitude = Latitude) %>%
   rename(core_longitude = Longitude) %>%
-  rename(site_id = Country) %>%
+  rename(country = Country) %>%
   mutate(organic_carbon_density = (SOC..mg.cm.3.)/1000) %>%
   select(-SOC..mg.cm.3.)
 

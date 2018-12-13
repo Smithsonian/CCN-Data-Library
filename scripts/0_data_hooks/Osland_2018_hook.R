@@ -40,7 +40,7 @@ FILE_NAMES_3 <- list("U_S_Gulf_of_Mexico_coast_TX_MS_AL_and_FL_Macroclimate_Vege
 #   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
 #   with whatever you include within the quotation marks.
   
-FILE_PATH <- paste0(getwd(), "./data/Osland_2018/original/" )
+FILE_PATH <- paste0(getwd(), "/data/Osland_2018/original/" )
   
 ## Assumptions made about data ###############
 
