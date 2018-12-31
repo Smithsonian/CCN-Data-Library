@@ -200,7 +200,7 @@ create_core_IDs <- function(df, old_ID, new_ID) {
       study <- study %>%
         rowid_to_column("ID")
       
-      study$new <- paste0(study[, old_ID], "_", study[, "ID"])
+      study$new <- paste0(study[, old_ID], " ", study[, "ID"])
       
       colName <- new_ID
       
