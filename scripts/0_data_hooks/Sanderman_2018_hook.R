@@ -36,10 +36,13 @@ international_core_data <- international_core_data %>%
 international_core_data$study_id <- recode(international_core_data$study_id, 
                                        "This study" = "Sanderman et al 2018")
 
-# Create core IDs for each core
+# Create core and site IDs for each core
 source("./scripts/1_data_formatting/curation_functions.R")
 international_core_data <- international_core_data %>%
-  create_core_IDs("study_id")
+  create_core_IDs("study_id", "core_id")
+
+international_core_data <- international_core_data %>%
+  create_core_IDs("country", "site_id")
 
 # Save as output data
 write.csv(international_core_data, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
@@ -73,16 +76,17 @@ Sanderman_2018_USA_core_data <- Sanderman_2018_USA_core_data %>%
   rename(core_date = "Years_collected") %>%
   rename(core_length = "total_depth") %>%
   rename(core_length_flag = "full_profile") %>%
-  select(-`Landscape Unsure`, -`HGM Unsure`, -`Dominant species`, -`Mangrove type`)
+  select(-`Landscape Unsure`, -`HGM Unsure`, -`Mangrove type`)
 
 Sanderman_2018_USA_core_data$core_length_flag <- recode(Sanderman_2018_USA_core_data$core_length_flag, 
                                      Y = "core depth represents deposit depth",
                                      N = "core depth limited by length of corer")
 
 ## Site level data ##############
+
 site_data <- Sanderman_2018_USA_core_data %>%
   select(study_id, site_id, site_description, country, vegetation_class, 
-         vegetation_notes, landscape_position)
+         vegetation_notes, landscape_position, `Dominant species`)
   
 ## Core level data ##############
 
@@ -93,7 +97,7 @@ core_data <- Sanderman_2018_USA_core_data %>%
 
 ## Species data #############
 
-species_data <- site_data %>%
+species_data <- Sanderman_2018_USA_core_data %>%
   select(study_id, site_id, core_id, `Dominant species`) %>%
   rename(species_code = "Dominant species")
 
