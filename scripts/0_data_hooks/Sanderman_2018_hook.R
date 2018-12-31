@@ -9,12 +9,21 @@ library(tidyverse)
 library(RCurl)
 library(readxl)
 
-## Add Sanderman mangrove sites ############
+## Curate Sanderman international data ############
 
-Sanderman_2018 <- read.csv("./data/Sanderman_2018/original/41558_2018_162_MOESM2_ESM.csv")
+international_core_data <- read.csv("https://raw.githubusercontent.com/whrc/Mangrove-Soil-Carbon/master/R_code/41558_2018_162_MOESM2_ESM.csv")
+
+international_depthseries_data <- read.csv("https://raw.githubusercontent.com/whrc/Mangrove-Soil-Carbon/master/depth_model_comparison/soil_profiles.csv")
+
+
+# Write original data to csv files
+write.csv(international_core_data, "./data/Sanderman_2018/original/41558_2018_162_MOESM2_ESM.csv")
+write.csv(international_depthseries_data, "./data/Sanderman_2018/original/soil_profiles.csv")
+
+## International core data ###############
 
 # Rename and recode attributes to be congruent with core data
-Sanderman_2018 <- Sanderman_2018 %>%
+international_core_data <- international_core_data %>%
   rename(study_id = Source) %>%
   rename(core_latitude = Latitude) %>%
   rename(core_longitude = Longitude) %>%
@@ -24,26 +33,29 @@ Sanderman_2018 <- Sanderman_2018 %>%
 
 
 # Recode what Sanderman's study is called
-Sanderman_2018$study_id <- recode(Sanderman_2018$study_id, 
+international_core_data$study_id <- recode(international_core_data$study_id, 
                                        "This study" = "Sanderman et al 2018")
 
 # Create core IDs for each core
 source("./scripts/1_data_formatting/curation_functions.R")
-Sanderman_2018 <- Sanderman_2018 %>%
+international_core_data <- international_core_data %>%
   create_core_IDs("study_id")
 
 # Save as output data
-write.csv(Sanderman_2018, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
+write.csv(international_core_data, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
 
+## International depthseries data ####################
 
-## Curate Sanderman USA mangroves ############
+international_depthseries_data
 
-sanderman_2018_USA <- read_excel("./data/Sanderman_2018/original/mangroves for USA.xlsx",
+## Curate Sanderman USA data ############
+
+# This excel document was handed off in a personal communication
+Sanderman_2018_USA_core_data <- read_excel("./data/Sanderman_2018/original/mangroves for USA.xlsx",
                               sheet = 2)
 
-
 # Rename attributes
-sanderman_2018_USA <- sanderman_2018_USA %>%
+Sanderman_2018_USA_core_data <- Sanderman_2018_USA_core_data %>%
   rename(study_id = "Source") %>%
   mutate(study_id = gsub(" ", "_", study_id)) %>%
   rename(site_id = "Site name") %>%
@@ -63,18 +75,18 @@ sanderman_2018_USA <- sanderman_2018_USA %>%
   rename(core_length_flag = "full_profile") %>%
   select(-`Landscape Unsure`, -`HGM Unsure`, -`Dominant species`, -`Mangrove type`)
 
-sanderman_2018_USA$core_length_flag <- recode(sanderman_2018_USA$core_length_flag, 
+Sanderman_2018_USA_core_data$core_length_flag <- recode(Sanderman_2018_USA_core_data$core_length_flag, 
                                      Y = "core depth represents deposit depth",
                                      N = "core depth limited by length of corer")
 
 ## Site level data ##############
-site_data <- sanderman_2018_USA %>%
+site_data <- Sanderman_2018_USA_core_data %>%
   select(study_id, site_id, site_description, country, vegetation_class, 
          vegetation_notes, landscape_position)
   
 ## Core level data ##############
 
-core_data <- sanderman_2018_USA %>%
+core_data <- Sanderman_2018_USA_core_data %>%
   select(study_id, site_id, core_id, country, core_latitude, core_longitude, 
          core_position_accuracy_flag, core_position_accuracy, core_date, core_length, 
          core_length_flag)
@@ -98,22 +110,22 @@ study_metadata <- site_data %>%
 ## Depth series data ##############
 
 # Read in the "horizon" sheet of "mangroves for USA" excel book
-Sanderman_2018_USA_horizon <- read_excel("./data/Sanderman_2018/original/mangroves for USA.xlsx",
+dpethseries_data <- read_excel("./data/Sanderman_2018/original/mangroves for USA.xlsx",
                                  sheet = 3)
 
 # Removed first row, which displays units
-colnames(Sanderman_2018_USA_horizon) <- Sanderman_2018_USA_horizon[1, ] # the first row will be the header
-Sanderman_2018_USA_horizon <- Sanderman_2018_USA_horizon[-1, ]
+colnames(dpethseries_data) <- dpethseries_data[1, ] # the first row will be the header
+dpethseries_data <- dpethseries_data[-1, ]
 
 # Remove last few columns, which are dedicated to notes. The only note is 
 #   "No %OC given" for row 238 (M0340, deepest depth), which is already apparent
 #   (the OC column is empty)
 
-Sanderman_2018_USA_horizon <- Sanderman_2018_USA_horizon[, 1:18]
+dpethseries_data <- dpethseries_data[, 1:18]
 
 
 # Rename and recalculate attributes
-depthseries_data <- Sanderman_2018_USA_horizon %>%
+depthseries_data <- dpethseries_data %>%
   rename(site_id = "Site name") %>%
   rename(core_id = "Site #") %>%
   rename(depth_min = "U_depth") %>%
