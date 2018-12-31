@@ -188,7 +188,7 @@ create_multiple_geographic_coverages <- function(core_table) {
 }
 
 ## Create IDs from other ID ############
-create_core_IDs <- function(df, old_ID, new_ID) {
+create_new_IDs <- function(df, old_ID, new_ID) {
 
   # create list of unique study IDs
   old_ID_list <- unique(df[, old_ID])
@@ -200,7 +200,7 @@ create_core_IDs <- function(df, old_ID, new_ID) {
       study <- study %>%
         rowid_to_column("ID")
       
-      study$new <- paste0(study[, old_ID], " ", study[, "ID"])
+      study$new <- paste0(study[, old_ID], "_", study[, "ID"])
       
       colName <- new_ID
       
@@ -208,7 +208,7 @@ create_core_IDs <- function(df, old_ID, new_ID) {
         mutate(!!quo_name(colName) := new)
 
       study <- study %>%
-        select(-ID, new)
+        select(-ID, -new)
     
     # Combine back together
     if (i == 1) {

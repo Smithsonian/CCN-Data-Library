@@ -39,10 +39,10 @@ international_core_data$study_id <- recode(international_core_data$study_id,
 # Create core and site IDs for each core
 source("./scripts/1_data_formatting/curation_functions.R")
 international_core_data <- international_core_data %>%
-  create_core_IDs("study_id", "core_id")
+  create_new_IDs("study_id", "core_id")
 
 international_core_data <- international_core_data %>%
-  create_core_IDs("country", "site_id")
+  create_new_IDs("country", "site_id")
 
 # Save as output data
 write.csv(international_core_data, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
