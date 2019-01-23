@@ -24,3 +24,4 @@ lapply(url_list, function(x) {
   # Now download the file into the "data" folder
   download.file(x, paste0(getwd(), "./data/Holmquist_2018/", filename, ".csv"))
 })
+

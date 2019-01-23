@@ -64,3 +64,4 @@ write.csv(CCRCN_depthseriesdata, "./data/CCRCN_synthesis/CCRCN_depthseries_data.
 write.csv(CCRCN_impactdata, "./data/CCRCN_synthesis/CCRCN_impact_data.csv")
 write.csv(CCRCN_methodsdata, "./data/CCRCN_synthesis/CCRCN_methods_data.csv")
 write.csv(CCRCN_speciesdata, "./data/CCRCN_synthesis/CCRCN_species_data.csv")
+
