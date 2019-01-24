@@ -28,6 +28,11 @@ Osland_2018_sitedata <- read.csv("./data/Osland_2018/derivative/Osland_2018_site
 # Sanderman 2018
 Sanderman_2018_coredata <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
 
+# Schile-Beers and Megonigal 2017
+Schile_2017_depthseriesdata <- read.csv("./data/Schile-Beers_etal_2017/derivative/Schile-Beers_etal_2017_depth_series_data.csv")
+Schile_2017_coredata <- read.csv("./data/Schile-Beers_etal_2017/derivative/Schile-Beers_etal_2017_core_data.csv")
+Schile_2017_sitedata <- read.csv("./data/Schile-Beers_etal_2017/derivative/Schile-Beers_etal_2017_site_data.csv")
+
 
 ## Join datasets ######################
 
@@ -35,7 +40,8 @@ Sanderman_2018_coredata <- read.csv("./data/Sanderman_2018/derivative/Sanderman_
 CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Gonneea_2018_coredata) %>%
   bind_rows(Osland_2018_coredata) %>%
-  bind_rows(Sanderman_2018_coredata)
+  bind_rows(Sanderman_2018_coredata) %>%
+  bind_rows(Schile_2017_coredata)
 
 # Depth series data
 # The Osland core IDs are initiatlized as numeric, as they're just numbers.
@@ -43,7 +49,8 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
 Osland_2018_depthseriesdata$core_id <- as.factor(Osland_2018_depthseriesdata$core_id)
 CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Gonneea_2018_depthseriesdata) %>%
-  bind_rows(Osland_2018_depthseriesdata)
+  bind_rows(Osland_2018_depthseriesdata) %>%
+  bind_rows(Schile_2017_depthseriesdata)
 
 # Impact data
 CCRCN_impactdata <- Holmquist_2018_impactdata
@@ -55,7 +62,6 @@ CCRCN_methodsdata <- Holmquist_2018_methodsdata
 # Species data
 CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
   bind_rows(Osland_2018_speciesdata)
-
 
 ## Write datasets #############
 

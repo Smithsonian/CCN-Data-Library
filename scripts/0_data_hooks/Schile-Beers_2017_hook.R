@@ -159,4 +159,4 @@ Schile_2017_site_data <- Schile_2017_site_data %>%
             site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min))
 
 # Write data
-write.csv(Schile_2017_site_data, "./data/Schile-Beers_etal_2017/derivative/Schile_2017_site_data.csv")
+write.csv(Schile_2017_site_data, "./data/Schile-Beers_etal_2017/derivative/Schile-Beers_etal_2017_site_data.csv")
