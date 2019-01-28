@@ -93,7 +93,7 @@ Schile_2017_depth_series_data <- Schile_2017_depth_series_data %>%
   rename(fraction_organic_matter = "% organic carbon (OC)") %>%
   mutate(fraction_organic_matter = as.numeric(fraction_organic_matter) / 100) %>%
   separate(col="depth (cm)", into=c("min_depth", "max_depth"), sep="-") %>%
-  mutate(study_id = "Schile-Beers_etal_2017") %>%
+  mutate(study_id = "Schile-Beers_and_Megonigal_2017") %>%
   select(study_id, site_id, core_id, min_depth, max_depth, dry_bulk_density, fraction_organic_matter)
 
 # Read out depth series data
@@ -118,13 +118,12 @@ Schile_2017_core_data <- Schile_2017_plot_data %>%
   mutate(core_elevation_method = ifelse(XYZ == "RTK GPS", "RTK", NA)) %>%
   rename(core_latitude = "Latitude", core_longitude = "Longitude") %>%
   rename(core_elevation = "elevation") %>%
-  mutate(study_id = "Schile-Beers_etal_2017") %>%
+  mutate(study_id = "Schile-Beers_and_Megonigal_2017") %>%
   rename(core_depth = "core depth (cm)") %>%
   mutate(core_depth_flag = ifelse(core_depth<300, "core depth represents deposit depth", 
                                   ifelse(core_depth==300, "core depth limited by length of corer", NA))) %>%
   mutate(salinity_class = ifelse(salinity > 50, "brine", 
                                  ifelse(salinity < 51 & salinity > 29, "saline", "brackish"))) %>%
-  mutate(country = "United Arab Emirates") %>%
   select(study_id, site_id, core_id, core_date, core_latitude, core_longitude, 
         core_position_method, core_elevation, core_elevation_method, vegetation_notes)
   
