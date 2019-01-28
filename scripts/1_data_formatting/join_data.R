@@ -41,7 +41,8 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Gonneea_2018_coredata) %>%
   bind_rows(Osland_2018_coredata) %>%
   bind_rows(Sanderman_2018_coredata) %>%
-  bind_rows(Schile_2017_coredata)
+  bind_rows(Schile_2017_coredata) %>%
+  select(-X, -plot)
 
 # Depth series data
 # The Osland core IDs are initiatlized as numeric, as they're just numbers.
@@ -50,7 +51,8 @@ Osland_2018_depthseriesdata$core_id <- as.factor(Osland_2018_depthseriesdata$cor
 CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Gonneea_2018_depthseriesdata) %>%
   bind_rows(Osland_2018_depthseriesdata) %>%
-  bind_rows(Schile_2017_depthseriesdata)
+  bind_rows(Schile_2017_depthseriesdata) %>%
+  select(-X)
 
 # Impact data
 CCRCN_impactdata <- Holmquist_2018_impactdata
