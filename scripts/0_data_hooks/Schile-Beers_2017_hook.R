@@ -124,6 +124,7 @@ Schile_2017_core_data <- Schile_2017_plot_data %>%
                                   ifelse(core_depth==300, "core depth limited by length of corer", NA))) %>%
   mutate(salinity_class = ifelse(salinity > 50, "brine", 
                                  ifelse(salinity < 51 & salinity > 29, "saline", "brackish"))) %>%
+  mutate(country = "United Arab Emirates") %>%
   select(study_id, site_id, core_id, core_date, core_latitude, core_longitude, 
         core_position_method, core_elevation, core_elevation_method, vegetation_notes)
   
@@ -156,7 +157,8 @@ Schile_2017_site_data <- Schile_2017_site_data %>%
   group_by(site_id) %>%
   summarize(study_id = first(study_id), mean_elevation = mean(core_elevation), 
             site_longitude_max = first(site_longitude_max), site_longitude_min = first(site_longitude_min),
-            site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min))
+            site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min),
+            country = "United Arab Emirates")
 
 # Write data
 write.csv(Schile_2017_site_data, "./data/Schile-Beers_etal_2017/derivative/Schile-Beers_etal_2017_site_data.csv")
