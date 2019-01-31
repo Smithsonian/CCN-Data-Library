@@ -1,0 +1,143 @@
+## CCRCN Data Library
+# contact: klingesd@si.edu
+#          lonnemanm@si.edu
+
+# Data citation: 
+# Giblin A., I. Forbrich. 2018. PIE LTER high marsh sediment chemistry and activity measurements, 
+# Nelson Island Creek marsh, Rowley, MA. Environmental Data Initiative. 
+# https://doi.org/10.6073/pasta/d1d5cbf87602ccf51de30b87b8e46d01. Dataset accessed 1/29/2019.
+
+# Publication: 
+# Forbrich, I., A. E. Giblin, and C. S. Hopkinson. 2018. 
+# “Constraining Marsh Carbon Budgets Using Long‐Term C Burial and Contemporary Atmospheric CO2 Fluxes.” 
+# Journal of Geophysical Research: Biogeosciences 123 (3): 867–78. https://doi.org/10.1002/2017JG004336.
+
+
+## Prep workspace and scrape data #######################
+library(rvest)
+library(stringr)
+library(tidyverse)
+library(lubridate)
+
+infile1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-pie/427/1/9264db472a63733e8489e8db67846a31" 
+infile1 <- sub("^https","http",infile1) 
+dt1 <-read.csv(infile1,header=F 
+               ,skip=1
+               ,sep=","  
+               , col.names=c(
+                 "Date",     
+                 "Core.ID",     
+                 "Latitude",     
+                 "Longitude",     
+                 "Elevation",     
+                 "Name.per.Vegetation",     
+                 "section",     
+                 "section.depth..paren.cm.paren.",     
+                 "bulk.density..paren.g.per.cm3.paren.",     
+                 "C.percent.",     
+                 "N.percent.",     
+                 "v_137Cs..paren.mBq.per.g.paren.",     
+                 "v_210Pb..paren.Bq.per.g.paren.",     
+                 "v_214Pb..paren.Bq.per.g.paren.",     
+                 "v_214.Bi..paren.Bq.per.g.paren."    ), check.names=TRUE)
+
+write.csv(dt1, "./data/Giblin_2018/original/MAR-NE-MarshSedChemActivity.csv")
+
+## Process data to meet CCRCN standards ############
+
+depthseries_data <- dt1 %>%
+  rename(core_id = Core.ID, 
+         sample_id = section,
+         dry_bulk_density = bulk.density..paren.g.per.cm3.paren., 
+         section_depth = section.depth..paren.cm.paren., 
+         cs137_activity = v_137Cs..paren.mBq.per.g.paren., 
+         total_pb210_activity = v_210Pb..paren.Bq.per.g.paren.) %>%
+  mutate(fraction_carbon = C.percent. / 100,
+         # cs137 is in mBq. per gram, need to be in becquerel per kilogram
+         # no conversion of cs137 is necc because the conversion factors cancel out (1000/1000)         
+         # pb210 is in Bq. per gram, needs to be bq. per kg
+         total_pb210_activity = total_pb210_activity * 1000) %>%
+  # create unique core IDs
+  mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
+         study_id = "Forbrich et al. 2018") %>%
+  select(core_id, sample_id, study_id, dry_bulk_density, fraction_carbon, section_depth,
+         cs137_activity, total_pb210_activity)
+
+# calculate min and max depth variables 
+# I am sure there is a way to do this in dplyr but I can't figure it out right now: 
+min <- 0
+max <- 0
+depth_min <- vector(length = nrow(depthseries_data))
+depth_max <- vector(length = nrow(depthseries_data))
+
+for (i in 1:nrow(depthseries_data)) {
+  if(depthseries_data[i,"sample_id"] == 1) {
+    min <- 0
+    max <- 0
+  }
+  max <- max + depthseries_data[i,"section_depth"]
+  depth_max[i] <- max
+  depth_min[i] <- min
+  min <- max
+}
+
+depthseries_data <- cbind(depthseries_data, depth_max, depth_min)
+depthseries_data <- select(depthseries_data, -sample_id, -section_depth)
+
+write.csv(depthseries_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_depth_series_data.csv")
+
+## core level data ###################
+core_data <- dt1 %>%
+  rename(core_id = Core.ID,
+         core_date = Date, 
+         core_latitude = Latitude,
+         core_longitude = Longitude,
+         core_elevation = Elevation) %>% 
+  # create unique core IDs
+  mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
+         study_id = "Forbrich et al. 2018", 
+         core_length_flag = "core depth limited by length of corer", 
+         site_id = "Plum Island LTER", 
+         core_elevation_datum = "NAVD88") %>%
+  select(core_id, study_id, site_id, core_date, core_latitude, core_longitude, 
+         core_elevation, core_elevation_datum, core_length_flag)
+
+write.csv(core_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_core_data.csv")
+
+## Vegetation data #####################
+veggies <- dt1 %>%
+  rename(core_id = Core.ID,
+         species_code = Name.per.Vegetation) %>% 
+  # create unique core IDs
+  mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
+         study_id = "Forbrich et al. 2018", 
+         site_id = "Plum Island LTER",
+         species_code = ifelse(species_code == "S. alterniflora", "SPAL", "SPPA")) %>%
+  select(site_id, core_id, study_id, species_code)
+
+write.csv(veggies, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species_data.csv")
+
+## Site data ########################
+site_data <- core_data %>%
+  select(site_id, core_id, study_id, core_latitude, core_longitude, core_elevation)
+
+# Find min and max lat/long for each site
+source("./scripts/1_data_formatting/curation_functions.R")
+site_boundaries <- create_multiple_geographic_coverages(site_data)
+site_data <- site_data %>%
+  left_join(site_boundaries) %>% # Add site bounds in
+  select(-core_latitude, -core_longitude)
+# remove NAs before aggregation
+site_data <- na.omit(site_data)
+
+# Now aggeregate data to the site level
+site_data <- site_data %>%
+  group_by(site_id) %>%
+  summarize(study_id = first(study_id), 
+            site_longitude_max = first(site_longitude_max), site_longitude_min = first(site_longitude_min),
+            site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min)) %>%
+  mutate(site_description = "Plum Island Sound Estuary, Massachusetts, USA", 
+         vegetation_class = "seagrass")
+
+# Write data
+write.csv(site_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_site_data.csv")

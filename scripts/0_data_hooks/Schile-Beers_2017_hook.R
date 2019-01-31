@@ -35,7 +35,7 @@ FILE_NAME <- "Megonigal_J_Patrick-20170103-Abu_Dhabi_Blue_Carbon_Project_Ecologi
 #   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
 #   with whatever you include within the quotation marks.
 
-FILE_PATH <- paste0(getwd(), "/data/Schile-Beers_etal_2017/original/" )
+FILE_PATH <- paste0(getwd(), "/data/Schile-Beers_2017/original/" )
 
 ## Assumptions made about data ###############
 
@@ -92,12 +92,16 @@ Schile_2017_depth_series_data <- Schile_2017_depth_series_data %>%
   rename(dry_bulk_density = "dry bulk density (g/cm3)") %>%
   rename(fraction_organic_matter = "% organic carbon (OC)") %>%
   mutate(fraction_organic_matter = as.numeric(fraction_organic_matter) / 100) %>%
-  separate(col="depth (cm)", into=c("min_depth", "max_depth"), sep="-") %>%
+  #mutate(`depth (cm)` = gsub(">", "", `depth (cm)`)) %>%
+  separate(col="depth (cm)", into=c("depth_min", "depth_max"), sep="-") %>%
   mutate(study_id = "Schile-Beers_and_Megonigal_2017") %>%
-  select(study_id, site_id, core_id, min_depth, max_depth, dry_bulk_density, fraction_organic_matter)
+  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter) %>%
+  mutate(depth_min = ifelse(is.na(depth_max==TRUE),100,depth_min)) %>%
+  mutate(depth_min = as.numeric(depth_min), 
+         depth_max = as.numeric(depth_max))
 
 # Read out depth series data
-write.csv(Schile_2017_depth_series_data, "./data/Schile-Beers_etal_2017/derivative/Schile-Beers_etal_2017_depth_series_data.csv")
+write.csv(Schile_2017_depth_series_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_etal_2017_depth_series_data.csv")
 
 ## Core data ####################
 
@@ -127,7 +131,7 @@ Schile_2017_core_data <- Schile_2017_plot_data %>%
   select(study_id, site_id, core_id, core_date, core_latitude, core_longitude, 
         core_position_method, core_elevation, core_elevation_method, vegetation_notes)
   
-write.csv(Schile_2017_core_data, "./data/Schile-Beers_etal_2017/derivative/Schile-Beers_etal_2017_core_data.csv")
+write.csv(Schile_2017_core_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_etal_2017_core_data.csv")
 
 
 ## Site level data #############
@@ -160,4 +164,4 @@ Schile_2017_site_data <- Schile_2017_site_data %>%
             country = "United Arab Emirates")
 
 # Write data
-write.csv(Schile_2017_site_data, "./data/Schile-Beers_etal_2017/derivative/Schile-Beers_etal_2017_site_data.csv")
+write.csv(Schile_2017_site_data, "./data/Schile-Beers_etal_2017/derivative/Schile-Beers_2017_site_data.csv")

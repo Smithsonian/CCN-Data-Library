@@ -29,10 +29,22 @@ Osland_2018_sitedata <- read.csv("./data/Osland_2018/derivative/Osland_2018_site
 Sanderman_2018_coredata <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
 
 # Schile-Beers and Megonigal 2017
-Schile_2017_depthseriesdata <- read.csv("./data/Schile-Beers_etal_2017/derivative/Schile-Beers_etal_2017_depth_series_data.csv")
-Schile_2017_coredata <- read.csv("./data/Schile-Beers_etal_2017/derivative/Schile-Beers_etal_2017_core_data.csv")
-Schile_2017_sitedata <- read.csv("./data/Schile-Beers_etal_2017/derivative/Schile-Beers_etal_2017_site_data.csv")
+Schile_2017_depthseriesdata <- read.csv("./data/Schile-Beers_2017/derivative/Schile-Beers_etal_2017_depth_series_data.csv")
+Schile_2017_coredata <- read.csv("./data/Schile-Beers_2017/derivative/Schile-Beers_etal_2017_core_data.csv")
+Schile_2017_sitedata <- read.csv("./data/Schile-Beers_2017/derivative/Schile-Beers_etal_2017_site_data.csv")
 
+# Deegan et al. 2012
+Deegan_2012_coredata <- read.csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_core_data.csv")
+Deegan_2012_sitedata <- read.csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_site_data.csv")
+# because there is no guidance for biomass yet, I will remove the above ground core-level biomass data 
+Deegan_2012_coredata <- Deegan_2012_coredata %>%
+  select(-aboveground_stem_length, -aboveground_mass)
+
+# Giblin and Forbrich 2018
+Giblin_2018_coredata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_core_data.csv")
+Giblin_2018_depthseriesdata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_depth_series_data.csv")
+Giblin_2018_sitedata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_site_data.csv")
+Giblin_2018_speciesdata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species_data.csv")
 
 ## Join datasets ######################
 
@@ -42,6 +54,8 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Osland_2018_coredata) %>%
   bind_rows(Sanderman_2018_coredata) %>%
   bind_rows(Schile_2017_coredata) %>%
+  bind_rows(Deegan_2012_coredata) %>%
+  bind_rows(Giblin_2018_coredata) %>%
   select(-X, -plot)
 
 # Depth series data
@@ -52,6 +66,7 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Gonneea_2018_depthseriesdata) %>%
   bind_rows(Osland_2018_depthseriesdata) %>%
   bind_rows(Schile_2017_depthseriesdata) %>%
+  bind_rows(Giblin_2018_depthseriesdata) %>%
   select(-X)
 
 # Impact data
@@ -63,7 +78,9 @@ CCRCN_methodsdata <- Holmquist_2018_methodsdata
 
 # Species data
 CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
-  bind_rows(Osland_2018_speciesdata)
+  bind_rows(Osland_2018_speciesdata) %>%
+  bind_rows(Giblin_2018_speciesdata) %>%
+  select(-X)
 
 ## Write datasets #############
 
