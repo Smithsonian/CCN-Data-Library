@@ -8,13 +8,13 @@ Forbrich, I., A. E. Giblin, and C. S. Hopkinson. 2018. “Constraining Marsh Car
 
 Four derived .csv files:
 
-1. “Giblin_and_Forbrich_2018_core_data.csv"
+1. “Giblin_and_Forbrich_2018_cores.csv"
 
-2. "Giblin_and_Forbrich_2018_depth_series_data.csv"
+2. "Giblin_and_Forbrich_2018_depthseries.csv"
 
-3. "Giblin_and_Forbrich_2018_species_data.csv"
+3. "Giblin_and_Forbrich_2018_species.csv"
 
-4. "Giblin_and_Forbrich_2018_site_data.csv"
+4. "Giblin_and_Forbrich_2018_sites.csv"
 
 Datasets follow the structure and definitions given at CCRCN-Soils-Working-Group/data/data-syntheses/data_templates/ in the group’s GitHub, and at https://serc.si.edu/coastalcarbon/database-structure
 

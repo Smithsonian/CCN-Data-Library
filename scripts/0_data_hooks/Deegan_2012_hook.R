@@ -25,7 +25,7 @@ library(stringr)
 library(tidyverse)
 library(lubridate)
 
-# download and save below ground biomass
+## * download and save below ground biomass #########
 infile1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-pie/216/2/e2c8e7c0b2338c593f00ab988d0e9774" 
 infile1 <- sub("^https","http",infile1) 
 dt1 <-read.csv(infile1,header=F 
@@ -44,10 +44,10 @@ dt1 <-read.csv(infile1,header=F
 
 write.csv(dt1, "./data/Deegan_2012/original/LTE-TIDE-LENS-2009-below-bio.csv")
 
-# download above ground biomass data
+## * download above ground biomass data ###########
 infile2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-pie/217/2/79e90861144b45ea7c229ca40cdaba40" 
 infile2 <- sub("^https","http",infile2) 
-dt2 <-read.csv(infile1,header=F 
+dt2 <-read.csv(infile2,header=F 
                ,skip=1
                ,sep=","  
                , col.names=c(
@@ -63,8 +63,14 @@ write.csv(dt2, "./data/Deegan_2012/original/LTE-TIDE-LENS-2009-above-bio.csv")
 
 ## Prep biomass data #########
 # Warning: There is no guidance yet on biomass data 
-biomass_depthseries <- dt1
-
+biomass_depthseries <- dt1 %>%
+  rename(site_id = Location,
+         live_rhizomes = Live.Rhizomes,
+         live_roots = Live.Roots) %>%
+  mutate(core_id = paste0(site_id,Site.Number)) %>%
+  select(-Collection.Date, -Latitude, -Longitude, -Site.Number) %>%
+  separate(col="Biomass.Core.Segment", into=c("depth_min", "depth_max"), sep="-") %>%
+  mutate(study_id = "Deegan_et_al_2012")
 
 ## Prep core-level data #########
 core_data <- dt1 %>%
@@ -82,7 +88,7 @@ core_data <- dt1 %>%
          vegetation_class = "seagrass", 
          study_id = "Deegan_et_al_2012")
 
-# merge in above ground biomass data 
+## * merge in above ground biomass data  ########
 core_data_biomass <- dt2 %>%
   rename(site_id = Location) %>%
   mutate(core_id = paste0(site_id,Site.Number)) %>%
@@ -91,8 +97,6 @@ core_data_biomass <- dt2 %>%
          aboveground_mass = Aboveground.mass)
 
 core_data <- merge(core_data,core_data_biomass)
-
-write.csv(core_data, "./data/Deegan_2012/derivative/Deegan_et_al_2012_core_data.csv")
 
 ## Prep site-level data ##########
 site_data <- core_data %>%
@@ -116,6 +120,20 @@ site_data <- site_data %>%
   mutate(site_description = "Plum Island Sound Estuary, Massachusetts, USA", 
          vegetation_class = "seagrass")
 
-# Write data
-write.csv(site_data, "./data/Deegan_2012/derivative/Deegan_et_al_2012_site_data.csv")
 
+## QA/QC of data ################
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Make sure column names are formatted correctly: 
+test_colnames("cores", core_data)
+test_colnames("sites", site_data) 
+#test_colnames("biomass", biomass_depthseries) # no ccrcn guidance yet
+
+# Test relationships between core_ids at core- and depthseries-levels
+# the test returns all core-level rows that did not have a match in the depth series data
+results <- test_core_relationships(core_data, biomass_depthseries)
+
+## Write data ##################
+write.csv(core_data, "./data/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
+write.csv(site_data, "./data/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
+write.csv(biomass_depthseries, "./data/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")

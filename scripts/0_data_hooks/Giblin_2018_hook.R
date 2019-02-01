@@ -70,6 +70,7 @@ max <- 0
 depth_min <- vector(length = nrow(depthseries_data))
 depth_max <- vector(length = nrow(depthseries_data))
 
+# for each core, iterate on the section_depth to calculate min and max depth for each section
 for (i in 1:nrow(depthseries_data)) {
   if(depthseries_data[i,"sample_id"] == 1) {
     min <- 0
@@ -83,8 +84,6 @@ for (i in 1:nrow(depthseries_data)) {
 
 depthseries_data <- cbind(depthseries_data, depth_max, depth_min)
 depthseries_data <- select(depthseries_data, -sample_id, -section_depth)
-
-write.csv(depthseries_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_depth_series_data.csv")
 
 ## core level data ###################
 core_data <- dt1 %>%
@@ -102,8 +101,6 @@ core_data <- dt1 %>%
   select(core_id, study_id, site_id, core_date, core_latitude, core_longitude, 
          core_elevation, core_elevation_datum, core_length_flag)
 
-write.csv(core_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_core_data.csv")
-
 ## Vegetation data #####################
 veggies <- dt1 %>%
   rename(core_id = Core.ID,
@@ -114,8 +111,6 @@ veggies <- dt1 %>%
          site_id = "Plum Island LTER",
          species_code = ifelse(species_code == "S. alterniflora", "SPAL", "SPPA")) %>%
   select(site_id, core_id, study_id, species_code)
-
-write.csv(veggies, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species_data.csv")
 
 ## Site data ########################
 site_data <- core_data %>%
@@ -139,5 +134,20 @@ site_data <- site_data %>%
   mutate(site_description = "Plum Island Sound Estuary, Massachusetts, USA", 
          vegetation_class = "seagrass")
 
-# Write data
-write.csv(site_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_site_data.csv")
+## QA/QC of data ################
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Make sure column names are formatted correctly: 
+test_colnames("cores", core_data)
+test_colnames("sites", site_data) 
+test_colnames("depthseries", depthseries_data)
+
+# Test relationships between core_ids at core- and depthseries-levels
+# the test returns all core-level rows that did not have a match in the depth series data
+results <- test_core_relationships(core_data, depthseries_data)
+
+## Write data ################
+write.csv(site_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_sites.csv")
+write.csv(veggies, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species.csv")
+write.csv(core_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_cores.csv")
+write.csv(depthseries_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_depthseries.csv")

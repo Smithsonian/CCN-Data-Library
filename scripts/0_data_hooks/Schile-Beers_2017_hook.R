@@ -11,8 +11,6 @@
 # Schile, L. M., Kauffman, J. B., Crooks, S., Fourqurean, J. W., Glavan, J. and Megonigal, J. P. (2017), Limits on carbon sequestration in
 # arid blue carbon ecosystems. Ecol Appl, 27: 859–874. doi:10.1002/eap.1489
 
-# This is a template web scraper for Smithsonian DSpace data files
-
 ## INSTRUCTIONS ####################
 
 # 1. Designate the target webpage to scrape for data
@@ -69,8 +67,8 @@ download.file(paste0(BASE_URL, page), paste0(FILE_PATH, FILE_NAME),mode = "wb")
 ## Curate data to CCRCN Structure #################
 
 # Read data in
-Schile_2017_plot_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="plot information")
-Schile_2017_depth_series_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="soil carbon data")
+plot_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="plot information")
+raw_depthseries_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="soil carbon data")
 
 ## Depth series data ###################
 
@@ -82,35 +80,63 @@ Schile_2017_depth_series_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet=
 # 2. According to the methods in the publication, core depth was to either 3 m (the corer was 1 m long) or until parent material
 # There is no clear core_depth_flag code for the former, and I have coded it as "core depth limited by length of corer"
 
-Schile_2017_depth_series_data <- Schile_2017_depth_series_data %>%
-  rename(site_id = "Site") %>%
+depthseries_data <- raw_depthseries_data %>%
+  rename(site_id = "Site", 
+         core_length = "total core length (cm)") %>%
   # I will remove the following cores that have no or conflicting core-level entries: 
   filter(site_id != "Jubail Is. 10 yr", site_id != "Jubail Is. 7 yr", site_id != "Jubail Is. 3 yr") %>%
+  
+  # there are inconsistencies in the spelling and abbreviation of site names between the core- and depth-level data
+  # I need to make them consistent to create core_ids that match 
+  mutate(site_id = gsub("Thimiriya", "Thumayriyah", site_id)) %>%
+  mutate(site_id = gsub("Is.", "Island", site_id)) %>%
+  mutate(site_id = gsub("Al Zorah", "Ajman Al Zorah", site_id)) %>%
+  mutate(site_id = gsub(" Al ", " al ", site_id)) %>%
+  
   # Core IDs are expressed as factor not numeric
   # Paste site, ecosystem and plot values to create a unique core ID 
   mutate(core_id = as.factor(gsub(" ", "_", paste(site_id, paste(Ecosystem, plot, sep="_"), sep="_")))) %>%
+  # I will remove the following core that has no core-level entry: 
+  filter(core_id != "Al_Dabiya_1_seagrass_2") %>%
+  
   rename(dry_bulk_density = "dry bulk density (g/cm3)") %>%
   rename(fraction_organic_matter = "% organic carbon (OC)") %>%
   mutate(fraction_organic_matter = as.numeric(fraction_organic_matter) / 100) %>%
-  #mutate(`depth (cm)` = gsub(">", "", `depth (cm)`)) %>%
   separate(col="depth (cm)", into=c("depth_min", "depth_max"), sep="-") %>%
   mutate(study_id = "Schile-Beers_and_Megonigal_2017") %>%
-  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter) %>%
+  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter, core_length) %>%
   mutate(depth_min = ifelse(is.na(depth_max==TRUE),100,depth_min)) %>%
   mutate(depth_min = as.numeric(depth_min), 
-         depth_max = as.numeric(depth_max))
+         depth_max = as.numeric(depth_max)) %>%
+  
+  # The depth (cm) category does not provide depth_max if it's entered as >100. 
+  # However, the first entry for each core provides a core length.
+  # I'll group by core_id to acquire the core_length for each core and associate it with depth_max
+  group_by(core_id) %>%
+  mutate(core_length = ifelse(is.na(core_length), 0, core_length)) %>%
+  mutate(core_length = sum(core_length)) %>%
+  mutate(depth_max = ifelse(is.na(depth_max)==TRUE,core_length, depth_max)) %>%
+  select(-core_length)
 
-# Read out depth series data
-write.csv(Schile_2017_depth_series_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_etal_2017_depth_series_data.csv")
+# The depth (cm) category does not provide depth_max if it's entered as >100. 
+# However, the first entry for each core provides a core length. I'll summarize the data to get that information, 
+# then join it back 
+
 
 ## Core data ####################
 
-Schile_2017_core_data <- Schile_2017_plot_data %>%
+core_data <- plot_data %>%
   rename(site_id = "Site") %>%
   # I will remove the following cores that have no or conflicting depth series-level entries: 
   filter(site_id != "Eastern Mangrove 10 yr", site_id != "Eastern Mangrove 7 yr", site_id != "Eastern Mangrove 3 yr") %>%
   # There is a typo in the ecosystem column: plated mangrove should be planted mangrove
   mutate(Ecosystem = ifelse(Ecosystem=="plated mangrove", "planted mangrove", Ecosystem)) %>%
+  # there are inconsistencies in the spelling and abbreviation of site names between the core- and depth-level data
+  # I need to make them consistent to create core_ids that match 
+  mutate(site_id = gsub("Jaoub", "Janoub", site_id)) %>%
+  mutate(site_id = gsub("Bazam", "Basm", site_id)) %>%
+  mutate(site_id = gsub("Kalba", "Khalba", site_id)) %>%
+  mutate(site_id = gsub(" Al ", " al ", site_id)) %>%
   # Core IDs are expressed as factor not numeric
   # Paste site, ecosystem, and plot values to create a unique core ID 
   mutate(core_id = as.factor(gsub(" ", "_", paste(site_id, paste(Ecosystem, Plot, sep="_"), sep="_")))) %>%
@@ -130,8 +156,6 @@ Schile_2017_core_data <- Schile_2017_plot_data %>%
                                  ifelse(salinity < 51 & salinity > 29, "saline", "brackish"))) %>%
   select(study_id, site_id, core_id, core_date, core_latitude, core_longitude, 
         core_position_method, core_elevation, core_elevation_method, vegetation_notes)
-  
-write.csv(Schile_2017_core_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_etal_2017_core_data.csv")
 
 
 ## Site level data #############
@@ -143,25 +167,40 @@ write.csv(Schile_2017_core_data, "./data/Schile-Beers_2017/derivative/Schile-Bee
 options(digits=6)
 
 # Rename and curate
-Schile_2017_site_data <- Schile_2017_core_data %>%
+site_data <- core_data %>%
   select(site_id, core_id, study_id, core_latitude, core_longitude, core_elevation, vegetation_notes) 
   
 # Find min and max lat/long for each site
 source("./scripts/1_data_formatting/curation_functions.R")
-Schile_2017_site_data_boundaries <- create_multiple_geographic_coverages(Schile_2017_site_data)
-Schile_2017_site_data <- Schile_2017_site_data %>%
-  left_join(Schile_2017_site_data_boundaries) %>% # Add site bounds in
+site_data_boundaries <- create_multiple_geographic_coverages(site_data)
+site_data <- site_data %>%
+  left_join(site_data_boundaries) %>% # Add site bounds in
   select(-core_latitude, -core_longitude)
 # remove NAs before aggregation
-Schile_2017_site_data <- na.omit(Schile_2017_site_data)
+site_data <- na.omit(site_data)
 
 # Now aggeregate data to the site level
-Schile_2017_site_data <- Schile_2017_site_data %>%
+site_data <- site_data %>%
   group_by(site_id) %>%
-  summarize(study_id = first(study_id), mean_elevation = mean(core_elevation), 
+  summarize(study_id = first(study_id),  
             site_longitude_max = first(site_longitude_max), site_longitude_min = first(site_longitude_min),
             site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min),
             country = "United Arab Emirates")
 
+
+## QA/QC of data ################
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Make sure column names are formatted correctly: 
+test_colnames("cores", core_data)
+test_colnames("sites", site_data) # country is not in the CCRCN guidelines
+test_colnames("depthseries", depthseries_data)
+
+# Test relationships between core_ids at core- and depthseries-levels
+# the test returns all core-level rows that did not have a match in the depth series data
+results <- test_core_relationships(core_data, depthseries_data)
+
 # Write data
-write.csv(Schile_2017_site_data, "./data/Schile-Beers_etal_2017/derivative/Schile-Beers_2017_site_data.csv")
+write.csv(site_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
+write.csv(core_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
+write.csv(depthseries_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")

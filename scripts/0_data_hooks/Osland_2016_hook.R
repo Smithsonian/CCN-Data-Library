@@ -1,14 +1,23 @@
 ## CCRCN Data Library
 # contact: klingesd@si.edu
 
-# This is a template web scraper for USGS ScienceBase.gov data files
+# Data citation:
+# Osland, M.J., Grace, J.B., Stagg, C.L., Day, R.H., Hartley, S.B., Enwright, N.M., Gabler, C.A., 
+# 2016, U.S. Gulf of Mexico coast (TX, MS, AL, and FL) Vegetation, soil, and landscape data (2013-2014): 
+# U.S. Geological Survey data release, http://dx.doi.org/10.5066/F7J1017G.
+
+# Publication citation: 
+# Osland, M.J., Feher, L.C., Griffith, K.T., Cavanaugh, K.C., Enwright, N.M., Day, R.H., Stagg, C.L., 
+# Krauss, K.W., Howard, R.J., Grace, J.B., and Rogers, K., 2016, 
+# Climatic controls on the global distribution, abundance, and species richness of mangrove forests: 
+# Ecological Monographs, Accepted Online, http://dx.doi.org/10.1002/ecm.1248.
 
 ## INSTRUCTIONS ####################
 
 # 1. Designate the target webpage to scrape for data
 #   Paste the url of the target webpage here, wrapped in quotation marks
 
-# Note: because Osland_2018 has multiple data release DOIs, we'll just run this
+# Note: because Osland_2016 has multiple data release DOIs, we'll just run this
 #   script separately for each one. Easier to read than looping through each url
 
 URL_1 <- "https://www.sciencebase.gov/catalog/item/57b24094e4b00148d3982cce"
@@ -40,7 +49,7 @@ FILE_NAMES_3 <- list("U_S_Gulf_of_Mexico_coast_TX_MS_AL_and_FL_Macroclimate_Vege
 #   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
 #   with whatever you include within the quotation marks.
   
-FILE_PATH <- paste0(getwd(), "/data/Osland_2018/original/" )
+FILE_PATH <- paste0(getwd(), "/data/Osland_2016/original/" )
   
 ## Assumptions made about data ###############
 
@@ -80,72 +89,66 @@ for (i in 1:length(url_list)) {
 ## Curate data to CCRCN Structure #################
 
 # Read data in
-Osland_2018_soil <- read_excel(paste0(FILE_PATH, "Dataset_02_macroclimate_soil_data_2_22_2016.xlsx"))
-Osland_2018_land_climate <- read_excel(paste0(FILE_PATH, "Dataset_03_macroclimate_landscape_and_climate_data_2_22_2016.xlsx"))
-Osland_2018_veg <- read_excel(paste0(FILE_PATH, "Dataset_01_macroclimate_vegetation_data_all_2_24_2016.xlsx"))
+Osland_2016_soil <- read_excel(paste0(FILE_PATH, "Dataset_02_macroclimate_soil_data_2_22_2016.xlsx"))
+Osland_2016_land_climate <- read_excel(paste0(FILE_PATH, "Dataset_03_macroclimate_landscape_and_climate_data_2_22_2016.xlsx"))
+Osland_2016_veg <- read_excel(paste0(FILE_PATH, "Dataset_01_macroclimate_vegetation_data_all_2_24_2016.xlsx"))
 
 # Remove instructions at the top of sheets
-Osland_2018_depth_series_data <- Osland_2018_soil %>%
+depth_series_data <- Osland_2016_soil %>%
   slice(-1:-9)
 # the first row will be the header
-colnames(Osland_2018_depth_series_data) <- Osland_2018_depth_series_data[1, ] 
-Osland_2018_depth_series_data <- Osland_2018_depth_series_data[-1, ]
+colnames(depth_series_data) <- depth_series_data[1, ] 
+depth_series_data <- as.data.frame(depth_series_data[-1, ])
 
-Osland_2018_veg <- Osland_2018_veg %>%
+Osland_2016_veg <- Osland_2016_veg %>%
   slice(-1:-9)
 # the first row will be the header
-colnames(Osland_2018_veg) <- Osland_2018_veg[1, ] 
-Osland_2018_veg <- Osland_2018_veg[-1, ]
+colnames(Osland_2016_veg) <- Osland_2016_veg[1, ] 
+Osland_2016_veg <- Osland_2016_veg[-1, ]
 
-Osland_2018_land_climate <- Osland_2018_land_climate %>%
+Osland_2016_land_climate <- Osland_2016_land_climate %>%
   slice(-1:-9)
 # the first row will be the header
-colnames(Osland_2018_land_climate) <- Osland_2018_land_climate[1, ] 
-Osland_2018_land_climate <- Osland_2018_land_climate[-1, ]
+colnames(Osland_2016_land_climate) <- Osland_2016_land_climate[1, ] 
+Osland_2016_land_climate <- Osland_2016_land_climate[-1, ]
 
 ## Depth series data ###################
 
-# From Osland_2018_soil
+# From Osland_2016_soil
 
 # Call functions from curation_functions script
 source("./scripts/1_data_formatting/curation_functions.R") 
 
-Osland_2018_depth_series_data <- Osland_2018_depth_series_data %>%
+Osland_2016_depth_series_data <- depth_series_data %>%
   rename(site_id = "estuary") %>%
-  rename(core_id = "plot") %>%
-  mutate(core_id = as.factor(core_id)) %>% # Core IDs are expressed as factor not numeric
+  mutate(core_id = paste0(site_id, "_", plot)) %>%
+  mutate(core_id = as.factor(tolower(core_id))) %>% # Core IDs are expressed as factor not numeric
   rename(dry_bulk_density = "bd") %>%
   mutate(fraction_organic_matter = convert_percent_to_fraction(som)) %>%
-  select(-som) %>%
   # CCRCN does not have standards for soil moisture content yet, but this approach
   #   most closely aligns with other attributes
   mutate(fraction_moisture_content = convert_percent_to_fraction(moist)) %>%
-  select(-moist) %>%
+  
+  # The legend dictates that only one soil depth interval was sampled, 01-5 cm.
+  # So we'll add a single set of min and max depths for each core
+  mutate(depth_max = as.double(0), depth_min = as.double(15)) %>%
+  
+  select(-moist, -som) %>%
   mutate(study_id = "Osland_2018")
-
-# The legend dictates that only one soil depth interval was sampled, 01-5 cm.
-# So we'll add a single set of min and max depths for each core
-
-Osland_2018_depth_series_data <- Osland_2018_depth_series_data %>%
-  mutate(depth_min = 0) %>%
-  mutate(depth_max = 15)
-
-# Read out depth series data
-write.csv(Osland_2018_depth_series_data, "./data/Osland_2018/derivative/Osland_2018_depth_series_data.csv")
 
 
 ## Core data ####################
 
-# from Osland_2018_veg
+# from Osland_2016_veg
 
 # There's an unwieldy amount of columns, so we'll select them down
-Osland_2018_core_data <- Osland_2018_veg %>%
+Osland_2016_core_data <- Osland_2016_veg %>%
   select(1:13)
 
-Osland_2018_core_data <- Osland_2018_core_data %>%
+Osland_2016_core_data <- Osland_2016_core_data %>%
   rename(site_id = "estuary") %>%
   # current core IDs are not unique, so concatenate with site IDs
-  mutate(core_id = paste0(site_id, "_", plot)) %>%
+  mutate(core_id = tolower(paste0(site_id, "_", plot))) %>%
   # concatenate date attributes, then remove
   mutate(core_date = as_date(paste0(year, "-", month, "-", day))) %>%
   select(-year, -month, -day) %>%
@@ -159,16 +162,14 @@ Osland_2018_core_data <- Osland_2018_core_data %>%
 
 
 # Transform the projection
-Osland_2018_core_data_coords <- convert_UTM_to_latlong(Osland_2018_core_data$easting, 
-                                                       Osland_2018_core_data$northing, Osland_2018_core_data$zone, Osland_2018_core_data$core_id)
-Osland_2018_core_data <-  Osland_2018_core_data %>%
-  left_join(Osland_2018_core_data_coords)
+Osland_2016_core_data_coords <- convert_UTM_to_latlong(Osland_2016_core_data$easting, 
+                                                       Osland_2016_core_data$northing, Osland_2016_core_data$zone, Osland_2016_core_data$core_id)
+Osland_2016_core_data <-  Osland_2016_core_data %>%
+  left_join(Osland_2016_core_data_coords)
 
 # Now we can move easting, northing, and zone attributes
-Osland_2018_core_data <- Osland_2018_core_data %>%
+Osland_2016_core_data <- Osland_2016_core_data %>%
   select(-easting, -northing, -zone, -ID)
-
-write.csv(Osland_2018_core_data, "./data/Osland_2018/derivative/Osland_2018_core_data.csv")
 
 ## Site level data #############
 
@@ -180,59 +181,56 @@ options(digits=6)
 
 # Change all attributes to numeric. we'll need this later for aggregate the data
 #   to the site level
-Osland_2018_site_data <- sapply(Osland_2018_land_climate, as.numeric)
-Osland_2018_site_data <- as.data.frame(Osland_2018_site_data) # Turn back to df
+Osland_2016_site_data <- sapply(Osland_2016_land_climate, as.numeric)
+Osland_2016_site_data <- as.data.frame(Osland_2016_site_data) # Turn back to df
 
 # This turns site and core ID attributes to NA, so we'll need to add those back.
 #   We'll pull them from the core level data
 # NOTE: this is a dangerous cbind. If the data was re-ordered, the data will be
 #   joined incorrectly
-Osland_2018_site_data <- cbind(Osland_2018_site_data, site_id = Osland_2016_core_data$site_id,
+Osland_2016_site_data <- cbind(Osland_2016_site_data, site_id = Osland_2016_core_data$site_id,
                                core_id = Osland_2016_core_data$core_id)
 
 # Rename and curate
-Osland_2018_site_data <- Osland_2018_site_data %>%
+Osland_2016_site_data <- Osland_2016_site_data %>%
   select(-ID, -tran, -plot, -estuary, -core_id, -dist) %>%
   rename(core_longitude = "lon") %>%
   rename(core_latitude = "lat") %>%
   rename(mean_annual_precip = "MAP") %>%
   rename(aridity_index = "AI") %>%
   rename(potential_evapotrans = "PET") %>%
-  rename(min_temp = "Tmin") %>%
-  mutate(study_id = "Osland_2018")
+  rename(min_temp = "Tmin", site_elevation = elev) %>%
+  mutate(study_id = "Osland_2016")
 
 # Find min and max lat/long for each site
 source("./scripts/1_data_formatting/curation_functions.R") 
-Osland_2018_site_data_boundaries <- create_multiple_geographic_coverages(Osland_2018_site_data)
-Osland_2018_site_data <- Osland_2018_site_data %>%
-  left_join(Osland_2018_site_data_boundaries) %>% # Add site bounds in
+Osland_2016_site_data_boundaries <- create_multiple_geographic_coverages(Osland_2016_site_data)
+Osland_2016_site_data <- Osland_2016_site_data %>%
+  left_join(Osland_2016_site_data_boundaries) %>% # Add site bounds in
   select(-core_latitude, -core_longitude)
 # remove NAs before aggregation
-Osland_2018_site_data <- na.omit(Osland_2018_site_data) 
+Osland_2016_site_data <- na.omit(Osland_2016_site_data) 
 
 # Now aggeregate data to the site level
-Osland_2018_site_data <- Osland_2018_site_data %>%
+Osland_2016_site_data <- Osland_2016_site_data %>%
   group_by(site_id) %>%
   summarize_all(mean)
-
-# Write data
-write.csv(Osland_2018_site_data, "./data/Osland_2018/derivative/Osland_2018_site_data.csv")
 
 ## Species data ##################
 
 # Select only the columns that correspond to the species presence in a 1-m2
 #   plot surrounding each core, plus the necessary other data
-Osland_2018_species_data <- Osland_2018_veg %>%
+Osland_2016_species_data <- Osland_2016_veg %>%
   select(1:182) %>%
   select("estuary", "plot", 16:182)
 
 # Rename site and core IDs
-Osland_2018_species_data <- Osland_2018_species_data %>%
+Osland_2016_species_data <- Osland_2016_species_data %>%
   rename(site_id = "estuary") %>%
   # current core IDs are not unique, so concatenate with site IDs
-  mutate(core_id = paste0(site_id, "_", plot)) %>%
+  mutate(core_id = tolower(paste0(site_id, "_", plot))) %>%
   select(-plot) %>%
-  mutate(study_id = "Osland_2018")
+  mutate(study_id = "Osland_2016")
 
 # The species presence data is currently  wide-form, with each column
 #   corresponding to the fraction area occupied by each plant species.
@@ -257,9 +255,9 @@ find_max <- function(df, first_col, last_col) {
   df
 }
 
-for (i in 1:nrow(Osland_2018_species_data)) {
+for (i in 1:nrow(Osland_2016_species_data)) {
   
-  df <- slice(Osland_2018_species_data, i)
+  df <- slice(Osland_2016_species_data, i)
   if (i == 1) {
     out <- find_max(df, 5, 168)
   } else {
@@ -270,19 +268,37 @@ for (i in 1:nrow(Osland_2018_species_data)) {
 
 colname <- out$colname
 
-Osland_2018_species_data <- out %>%
+Osland_2016_species_data <- out %>%
   rename(species_code = "colname") %>%
   rename(fraction_coverage = "value") %>%
   mutate(fraction_coverage = as.numeric(fraction_coverage)) %>%
   select(site_id, core_id, species_code, fraction_coverage)
 
 # Remove the '1c' string from the species_code entries
-Osland_2018_species_data$species_code <- 
-  sapply(Osland_2018_species_data$species_code,
+Osland_2016_species_data$species_code <- 
+  sapply(Osland_2016_species_data$species_code,
     function(x) {
       gsub("1c", "", x) # Replace '1c' with ''                                           
    })
 
-# Write out data
-write.csv(Osland_2018_species_data, "./data/Osland_2018/derivative/Osland_2018_species_data.csv")
+## QA/QC of data ################
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Make sure column names are formatted correctly: 
+test_colnames("cores", Osland_2016_core_data) # plot and core_time are not in the CCRCN guidance
+test_colnames("sites", Osland_2016_site_data) # elev mean_annual_precip aridity_index potential_evapotrans min_temp TIdist GMdist
+test_colnames("depthseries", Osland_2016_depth_series_data) # fraction_moisture_content
+
+# Test relationships between core_ids at core- and depthseries-levels
+# the test returns all core-level rows that did not have a match in the depth series data
+results <- test_core_relationships(Osland_2016_core_data, Osland_2016_depth_series_data)
+
+# based on the colname tests, I'm going to remove plot and core_time from cores
+Osland_2016_core_data <- select(Osland_2016_core_data, -plot, -core_time)
+
+## Write data #################
+write.csv(Osland_2016_species_data, "./data/Osland_2016/derivative/Osland_et_al_2016_species.csv")
+write.csv(Osland_2016_depth_series_data, "./data/Osland_2016/derivative/Osland_et_al_2016_depthseries.csv")
+write.csv(Osland_2016_site_data, "./data/Osland_2016/derivative/Osland_et_al_2016_sites.csv")
+write.csv(Osland_2016_core_data, "./data/Osland_2016/derivative/Osland_et_al_2016_cores.csv")
 
