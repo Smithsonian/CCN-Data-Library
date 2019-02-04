@@ -91,6 +91,23 @@ test_colnames <- function(category, dataset) {
 ## Check core_id uniqueness ########
 # All cores in synthesis should have unique id
 
+test_unique_cores <- function(data) {
+  # First, get a list of all unique core_ids
+  core_list <- data %>%
+    group_by(core_id) %>%
+    summarize(n = n()) %>%
+    filter(n > 1)
+  
+  if(length(core_list$core_id)>0){
+    print("WARNING: check the following core_ids in the core-level data:")
+    print(core_list$core_id)
+  } else {
+    print("All core IDs are unique.")
+  }
+  
+  return(core_list)
+}
+
 ## Check for core_id relationships ########
 # All entries in core_data files should have relationships to relevant depth series and biomass datasets
 

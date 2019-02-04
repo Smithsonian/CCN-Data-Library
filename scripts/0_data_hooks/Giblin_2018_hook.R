@@ -43,6 +43,10 @@ dt1 <-read.csv(infile1,header=F
 
 write.csv(dt1, "./data/Giblin_2018/original/MAR-NE-MarshSedChemActivity.csv")
 
+# if you read in the original data from the CCRCN library: 
+#dt1 <- read.csv("./data/Giblin_2018/original/MAR-NE-MarshSedChemActivity.csv")
+#dt1 <- select(dt1, -X)
+
 ## Process data to meet CCRCN standards ############
 
 depthseries_data <- dt1 %>%
@@ -93,13 +97,14 @@ core_data <- dt1 %>%
          core_longitude = Longitude,
          core_elevation = Elevation) %>% 
   # create unique core IDs
-  mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
-         study_id = "Forbrich et al. 2018", 
+  mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep="")) %>%
+  group_by(core_id) %>%
+  summarize(core_date = first(core_date), core_latitude = first(core_latitude), 
+            core_longitude = first(core_longitude), core_elevation = first(core_elevation)) %>%
+  mutate(study_id = "Forbrich et al. 2018", 
          core_length_flag = "core depth limited by length of corer", 
          site_id = "Plum Island LTER", 
-         core_elevation_datum = "NAVD88") %>%
-  select(core_id, study_id, site_id, core_date, core_latitude, core_longitude, 
-         core_elevation, core_elevation_datum, core_length_flag)
+         core_elevation_datum = "NAVD88") 
 
 ## Vegetation data #####################
 veggies <- dt1 %>%

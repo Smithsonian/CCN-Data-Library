@@ -83,6 +83,12 @@ CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
   bind_rows(Giblin_2018_speciesdata) %>%
   select(-X)
 
+## QA #################
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Ensure all core_ids are unique
+results <- test_unique_cores(CCRCN_coredata)
+
 ## Write datasets #############
 
 write.csv(CCRCN_coredata, "./data/CCRCN_synthesis/CCRCN_core_data.csv")
