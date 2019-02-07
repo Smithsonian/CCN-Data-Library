@@ -44,7 +44,7 @@ core_data <- raw_cores %>%
          core_date = Date) %>%
   mutate(core_date = as.Date(core_date, format = "%m/%d/%Y")) %>%
   mutate(core_position_method = "handheld", 
-         study_id = "Smith_2012", site_id = "09WCC01") %>%
+         study_id = "Smith_et_al_2015", site_id = "09WCC01") %>%
   select(core_id, site_id, study_id, 
          core_date, core_latitude, core_longitude, core_position_method)
 
@@ -67,7 +67,7 @@ depthseries_data <- raw_depthseries %>%
   # establish min and max depths for each sample
   mutate(depth_interval = as.numeric(gsub("_", "", depth_interval))) %>%
   mutate(depth_min = depth_interval - 1, depth_max = depth_interval + 1,
-         study_id = "Smith_2012", site_id = "09WCC01") %>%
+         study_id = "Smith_et_al_2015", site_id = "09WCC01") %>%
   select(study_id, site_id, core_id, depth_min, depth_max,
          dry_bulk_density,
          fraction_organic_matter,

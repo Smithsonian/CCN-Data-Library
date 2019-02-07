@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml packageId="knb-lter-pie.217.2"
+  system="https://pasta.lternet.edu"
+  xmlns:cit="eml://ecoinformatics.org/literature-2.1.0"
+  xmlns:doc="eml://ecoinformatics.org/documentation-2.1.0"
+  xmlns:ds="eml://ecoinformatics.org/dataset-2.1.0"
+  xmlns:eml="eml://ecoinformatics.org/eml-2.1.0"
+  xmlns:prot="eml://ecoinformatics.org/protocol-2.1.0"
+  xmlns:res="eml://ecoinformatics.org/resource-2.1.0"
+  xmlns:stmml="http://www.xml-cml.org/schema/stmml"
+  xmlns:sw="eml://ecoinformatics.org/software-2.1.0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.0 http://nis.lternet.edu/schemas/EML/eml-2.1.0/eml.xsd">
+  <access authSystem="https://pasta.lternet.edu/authentication"
+    order="allowFirst" scope="document" system="https://pasta.lternet.edu">
+    <allow>
+      <principal>uid=PIE,o=lter,dc=ecoinformatics,dc=org</principal>
+      <permission>all</permission>
+    </allow>
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+  </access>
+  <dataset>
+    <alternateIdentifier>LTE-TIDE-LENS-2009-above-bio.02</alternateIdentifier>
+    <title>2009 LENS aboveground biomass results</title>
+    <creator id="pers-1">
+      <organizationName>Plum Island Ecosystems LTER Program</organizationName>
+      <individualName>
+        <givenName>Linda</givenName>
+        <surName>Deegan</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>The Ecosystems Center</deliveryPoint>
+        <deliveryPoint>Marine Biological Laboratory</deliveryPoint>
+        <deliveryPoint>7 MBL St.</deliveryPoint>
+        <city>Woods Hole</city>
+        <administrativeArea>MA</administrativeArea>
+        <postalCode>02543</postalCode>
+        <country>USA</country>
+      </address>
+    </creator>
+    <creator id="pers-2">
+      <organizationName>Plum Island Ecosystems LTER Program</organizationName>
+      <individualName>
+        <givenName>Duncan</givenName>
+        <surName>FitzGerald</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Boston University</deliveryPoint>
+        <deliveryPoint>Dept of Earth Sciences</deliveryPoint>
+        <deliveryPoint>675 Commonwealth Ave, Rm 141</deliveryPoint>
+        <city>Boston</city>
+        <administrativeArea>MA</administrativeArea>
+        <postalCode>02115</postalCode>
+        <country>USA</country>
+      </address>
+    </creator>
+    <creator id="pers-3">
+      <organizationName>Plum Island Ecosystems LTER Program</organizationName>
+      <individualName>
+        <givenName>Sergio</givenName>
+        <surName>Fagherazzi</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Boston University</deliveryPoint>
+        <deliveryPoint>Dept of Earth Sciences</deliveryPoint>
+        <deliveryPoint>675 Commonwealth Ave, Rm 141</deliveryPoint>
+        <city>Boston</city>
+        <administrativeArea>MA</administrativeArea>
+        <postalCode>02115</postalCode>
+        <country>USA</country>
+      </address>
+    </creator>
+    <metadataProvider>
+      <organizationName>Plum Island Ecosystems LTER Program</organizationName>
+      <address>
+        <deliveryPoint>The Ecosystems Center</deliveryPoint>
+        <deliveryPoint>Marine Biological Lab</deliveryPoint>
+        <deliveryPoint>7 MBL St</deliveryPoint>
+        <city>Woods Hole</city>
+        <administrativeArea>MA</administrativeArea>
+        <postalCode>02543</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">(508) 289 7485</phone>
+      <electronicMailAddress>pie_im@mbl.edu</electronicMailAddress>
+      <onlineUrl>http://ecosystems.mbl.edu/PIE/</onlineUrl>
+    </metadataProvider>
+    <associatedParty>
+      <individualName>
+        <givenName>Carol</givenName>
+        <surName>Wilson</surName>
+      </individualName>
+      <role>additional investigator</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Zoe</givenName>
+        <surName>Hughes</surName>
+      </individualName>
+      <role>additional investigator</role>
+    </associatedParty>
+    <pubDate>2012</pubDate>
+    <abstract>
+      <para>2009 LENS Geotechnical and Biomass Results from 72 hand auger cores (50 cm depth) retrieved from LENS and TIDE project creeks (Sweeney, West, Clubhead, Nelson) in Rowley, MA. Thirty-six of these cores were processed for aboveground biomass and belowground biomass. Results presented here are aboveground biomass. Results for belowground biomass are presented in file STP-LENS-2009-below-biomass. The remainder 36 auger cores were processed for bulk density and bulk organic content (from loss on ignition, LOI) and results are presented in STP-LENS-2009-geotechnical.</para>
+    </abstract>
+    <keywordSet>
+      <keyword>PIE LTER</keyword>
+      <keyword>TIDE</keyword>
+      <keyword>LENS</keyword>
+      <keyword>primary production</keyword>
+      <keyword>organic matter</keyword>
+      <keyword>biomass</keyword>
+      <keyword>aboveground biomass</keyword>
+    </keywordSet>
+    <intellectualRights>
+      <para>Acceptance and utilization of PIE-LTER data requires that:</para>
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para>The Principal Investigator be sent a notice stating reasons for acquiring any data and a description of the publication intentions.</para>
+          </listitem>
+          <listitem>
+            <para>The Principal Investigator of the data set be sent a copy of the report or manuscript prior to submission and be adequately cited in any resultant publications</para>
+          </listitem>
+          <listitem>
+            <para>A copy of any resultant publications should be sent to: 
+            <literalLayout>
+Principal Investigator
+Ecosystems Center
+Marine Biological Laboratory
+Woods Hole, MA 02543
+</literalLayout>
+            </para>
+          </listitem>
+        </itemizedlist>
+      </para>
+    </intellectualRights>
+    <distribution>
+      <online>
+        <url>http://ecosystems.mbl.edu/PIE/data/LTE/LTE-TIDE-LENS-2009-above-bio.html</url>
+      </online>
+    </distribution>
+    <coverage>
+      <geographicCoverage id="GEO-1">
+        <geographicDescription>"Sweeney Creek", off Rowley River, Ipswich, MA</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-70.851</westBoundingCoordinate>
+          <eastBoundingCoordinate>-70.845</eastBoundingCoordinate>
+          <northBoundingCoordinate>42.724</northBoundingCoordinate>
+          <southBoundingCoordinate>42.719</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage id="GEO-2">
+        <geographicDescription>West Creek, off Rowley River, Rowley, MA.</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-70.852</westBoundingCoordinate>
+          <eastBoundingCoordinate>-70.846</eastBoundingCoordinate>
+          <northBoundingCoordinate>42.741</northBoundingCoordinate>
+          <southBoundingCoordinate>42.736</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage id="GEO-3">
+        <geographicDescription>Clubhead Creek off Rowley River, Rowley, MA.</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-70.842</westBoundingCoordinate>
+          <eastBoundingCoordinate>-70.836</eastBoundingCoordinate>
+          <northBoundingCoordinate>42.742</northBoundingCoordinate>
+          <southBoundingCoordinate>42.738</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage id="GEO-4">
+        <geographicDescription>Nelson Island Creek, off Rowley River, Rowley,</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-70.836</westBoundingCoordinate>
+          <eastBoundingCoordinate>-70.831</eastBoundingCoordinate>
+          <northBoundingCoordinate>42.744</northBoundingCoordinate>
+          <southBoundingCoordinate>42.74</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2009-09-04</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2009-12-04</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <generalTaxonomicCoverage>Organisms Studied</generalTaxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>Genus</taxonRankName>
+          <taxonRankValue>Spartina</taxonRankValue>
+          <taxonomicClassification>
+            <taxonRankName>Species</taxonRankName>
+            <taxonRankValue>alterniflora</taxonRankValue>
+          </taxonomicClassification>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <maintenance>
+      <description>
+        <para>Version 01: February 2, 2012, data and metadata for 2009. Used MarcrosExportEML_HTML (working)pie_excel2007.xlsm 2/1/12 5:00 PM for QA/QC to EML 2.1.0</para>
+        <para>Version 02: June 20, 2013 data and metadata updated to comply with importation to Drupal and LTER PASTA. Research location name and description updated.Used MarcrosExportEML_HTML (working)pie_excel2007.xlsm 3/14/13 12:02 PM for QA/QC to EML 2.1.0</para>
+      </description>
+    </maintenance>
+    <contact>
+      <positionName>Information Manager</positionName>
+      <organizationName>LTER Network Office</organizationName>
+      <address>
+        <deliveryPoint>UNM Biology Department, MSC03-2020</deliveryPoint>
+        <deliveryPoint>1 University of New Mexico</deliveryPoint>
+        <city>Albuquerque</city>
+        <administrativeArea>NM</administrativeArea>
+        <postalCode>87131-0001</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">505 277-2535</phone>
+      <phone phonetype="fax">505 277-2541</phone>
+      <electronicMailAddress>tech-support@lternet.edu</electronicMailAddress>
+      <onlineUrl>http://www.lternet.edu</onlineUrl>
+    </contact>
+    <contact id="im" system="knb">
+      <positionName>Data Manager</positionName>
+      <address>
+        <deliveryPoint>The Ecosystems Center</deliveryPoint>
+        <deliveryPoint>Marine Biological Lab</deliveryPoint>
+        <deliveryPoint>7 MBL St</deliveryPoint>
+        <city>Woods Hole</city>
+        <administrativeArea>MA</administrativeArea>
+        <postalCode>02543</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">(508) 289 7485</phone>
+      <electronicMailAddress>pie_im@mbl.edu</electronicMailAddress>
+      <onlineUrl>http://ecosystems.mbl.edu/PIE/</onlineUrl>
+    </contact>
+    <publisher>
+      <organizationName>Plum Island Ecosystems LTER</organizationName>
+      <address>
+        <deliveryPoint>The Ecosystems Center</deliveryPoint>
+        <deliveryPoint>Marine Biological Lab</deliveryPoint>
+        <deliveryPoint>7 MBL St</deliveryPoint>
+        <city>Woods Hole</city>
+        <administrativeArea>MA</administrativeArea>
+        <postalCode>02543</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">(508) 289 7485</phone>
+      <electronicMailAddress>pie_im@mbl.edu</electronicMailAddress>
+      <onlineUrl>http://ecosystems.mbl.edu/PIE/</onlineUrl>
+    </publisher>
+    <methods>
+      <methodStep>
+        <description>
+          <para>
+            <literalLayout>
+Coring was done with a hand held  half-cylinder auger  (8cm diameter) to insure cores with little vertical compression, thus the root and soil profiles would be intact. Cores were taken from 6 small primary creeks within four major creek areas:
+
+Two primary creeks within Sweeney Creek, right and left branch (5 years fertilized - since 2004)  
+Two primary creeks within West Creek, right and left branch (used as reference since 2004) 
+One primary creek within Clubhead Creek, right branch (one year fertilized - 2009) 
+One primary creek within Nelson Creek, left branch (reference) 
+ 
+In each primary creek, 6 sites in creek bank tall-form S. alterniflora were chosen along the length of the creek, 3 on each bank.  Each site was co-located with a cross-sectional transect so that the elevation of the S. alterniflora can be determined (site # refers to white PVC transect pole #) .Latitude and longitude were noted.  At each site, we took 2 cores using the auger:  1 for root and shoot biomass centered on a single plant and 1 for geotechnical properties taken in an adjacent area. 
+
+For the biomass core, the aboveground stem(s) centered above the core was cut and stored, and the belowground core material was sectioned at the following intervals:0-5 cm, 5-10cm, 10-20cm, 20-30cm, and 30-50cm. These samples were brought back to the lab for  washing and measuring of longest stem length, aboveground dry weight, and belowground dry weight of separated roots, rhizomes, and detrital material. 
+
+
+</literalLayout>
+          </para>
+        </description>
+      </methodStep>
+    </methods>
+    <project>
+      <title>Plum Island Ecosystems Long-Term Ecological Research (PIE LTER) Program</title>
+      <personnel>
+        <individualName>
+          <givenName>Anne</givenName>
+          <surName>Giblin</surName>
+        </individualName>
+        <address>
+          <deliveryPoint>The Ecosystems Center</deliveryPoint>
+          <deliveryPoint>Marine Biological Lab</deliveryPoint>
+          <deliveryPoint>7 MBL St</deliveryPoint>
+          <city>Woods Hole</city>
+          <administrativeArea>MA</administrativeArea>
+          <postalCode>02543</postalCode>
+          <country>USA</country>
+        </address>
+        <phone phonetype="voice">(508) 289 7488</phone>
+        <electronicMailAddress>agiblin@mbl.edu</electronicMailAddress>
+        <role>Lead PI</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Hap</givenName>
+          <surName>Garritt</surName>
+        </individualName>
+        <address>
+          <deliveryPoint>The Ecosystems Center</deliveryPoint>
+          <deliveryPoint>Marine Biological Lab</deliveryPoint>
+          <deliveryPoint>7 MBL St</deliveryPoint>
+          <city>Woods Hole</city>
+          <administrativeArea>MA</administrativeArea>
+          <postalCode>02543</postalCode>
+          <country>USA</country>
+        </address>
+        <phone phonetype="voice">(508) 289 7485</phone>
+        <electronicMailAddress>pie_im@mbl.edu</electronicMailAddress>
+        <role>Information Manager</role>
+      </personnel>
+      <abstract>
+        <para>
+          <literalLayout>
+The Plum Island Ecosystems (PIE) LTER is an integrated research, education and outreach program whose goal is to develop a predictive understanding of the long-term response of watershed and estuarine ecosystems at the land-sea interface to changes in climate, land use and sea level. The principal study site is the Plum Island Sound estuary, its coupled Parker, Rowley and Ipswich River watersheds and the adjacent coastal ocean, the Gulf of Maine. The PIE LTER focuses on how several aspects of global change influence organic matter and inorganic nutrient biogeochemistry and estuarine foodwebs. The inputs of organic matter and nutrients from land, ocean and marshes interact with the external drivers (climate, land use, river discharge, sea level) to dictate the extent and degree of nutrient and organic matter processing and determine the spatial patterns of estuarine productivity and trophic structure.
+</literalLayout>
+        </para>
+      </abstract>
+      <funding>
+        <para>This material is based upon work supported by the National Science Foundation under Grants OCE-9726921, OCE-0423565. Any opinions, findings, conclusions, or recommendations expressed in the material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</para>
+      </funding>
+      <studyAreaDescription>
+        <coverage>
+          <geographicCoverage>
+            <geographicDescription>The Plum Island Ecosystems (PIE) LTER site, is located in northeastern Massachusetts, 42.72 N, 70.85 W. The PIE LTER lies at the interface of a thinly soiled, formerly glaciated New England land mass and the highly productive Gulf of Maine. Three watersheds comprise the estuarine drainage basin: Parker (155 km2), Rowley (26 km2) and Ipswich (404 km2). The Ipswich River watershed is highly urbanized with Boston "bedroom" communities encroaching in the headwater region while the Parker is less urbanized and retains a higher proportion of forest.</geographicDescription>
+            <boundingCoordinates>
+              <westBoundingCoordinate>-71.2198</westBoundingCoordinate>
+              <eastBoundingCoordinate>-70.7568</eastBoundingCoordinate>
+              <northBoundingCoordinate>42.8276</northBoundingCoordinate>
+              <southBoundingCoordinate>42.4965</southBoundingCoordinate>
+              <boundingAltitudes>
+                <altitudeMinimum>0</altitudeMinimum>
+                <altitudeMaximum>100</altitudeMaximum>
+                <altitudeUnits>meter</altitudeUnits>
+              </boundingAltitudes>
+            </boundingCoordinates>
+          </geographicCoverage>
+        </coverage>
+      </studyAreaDescription>
+    </project>
+    <dataTable>
+      <entityName>LTE-TIDE-LENS-2009-above-bio.csv</entityName>
+      <entityDescription>2009 LENS aboveground biomass results</entityDescription>
+      <physical>
+        <objectName>LTE-TIDE-LENS-2009-above-bio.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url>https://pasta.lternet.edu/package/data/eml/knb-lter-pie/217/2/79e90861144b45ea7c229ca40cdaba40</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute id=" att0.1">
+          <attributeName>Location</attributeName>
+          <attributeLabel>Location</attributeLabel>
+          <attributeDefinition>creek name and branch code</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>SW-R</code>
+                    <definition>Sweeney right</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>SW-L</code>
+                    <definition>Sweeney left</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>WE-R</code>
+                    <definition>West right</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>WE-L</code>
+                    <definition>West left</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>CL-R</code>
+                    <definition>Clubhead right</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>NE-L</code>
+                    <definition>Nelson left</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>NA = not available</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id=" att0.2">
+          <attributeName>Site Number</attributeName>
+          <attributeLabel>Site Number</attributeLabel>
+          <attributeDefinition>coring location based on pole number for each creek</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>coring location based on pole number for each creek</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>NA = not available</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id=" att0.3">
+          <attributeName>Collection Date</attributeName>
+          <attributeLabel>Collection Date</attributeLabel>
+          <attributeDefinition>date of sample collection</attributeDefinition>
+          <measurementScale>
+            <dateTime>
+              <formatString>DD-MON-YYYY</formatString>
+            </dateTime>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>NA = not available</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id=" att0.4">
+          <attributeName>Latitude</attributeName>
+          <attributeLabel>Latitude</attributeLabel>
+          <attributeDefinition>latitude</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>NA = not available</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id=" att0.5">
+          <attributeName>Longitude</attributeName>
+          <attributeLabel>Longitude</attributeLabel>
+          <attributeDefinition>longitude</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>NA = not available</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id=" att0.6">
+          <attributeName>Aboveground Stem Length</attributeName>
+          <attributeLabel>Aboveground Stem Length</attributeLabel>
+          <attributeDefinition>length of longest aboveground stem (cm)</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>NA = not available</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id=" att0.7">
+          <attributeName>Aboveground mass</attributeName>
+          <attributeLabel>Aboveground mass</attributeLabel>
+          <attributeDefinition>dry weight of aboveground stem(s) in (g)</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gram</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>NA = not available</codeExplanation>
+          </missingValueCode>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>36</numberOfRecords>
+    </dataTable>
+  </dataset>
+</eml:eml>

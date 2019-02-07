@@ -25,3 +25,7 @@ Datasets follow the structure and definitions given at CCRCN-Soils-Working-Group
 3. There are biomass data available in the original data but at this moment there are no guidelines for incorporating them into the CCRCN. 
  
 4. There is no core-level entry for al Dabiya 1 seagrass 2 depthseries entires. I've filtered it out with those in issue 1. 
+
+5. Water level data is present but not sure how to convert to inundation codes. 
+
+6. Vegetation code needs to be established for core-level

@@ -2,6 +2,7 @@
 # contact: klingesd@si.edu
 #          lonnemanm@si.edu
 
+## 1. Data and publication citations #########
 # Data citation: 
 # Schile, Lisa M. and Megonigal, J. Patrick. 2017. [Dataset] 
 # "Abu Dhabi Blue Carbon Demonstration Project." Distributed by Smithsonian Environmental Research Center. https://doi.org/10.5479/data_serc/10088/31949
@@ -11,7 +12,18 @@
 # Schile, L. M., Kauffman, J. B., Crooks, S., Fourqurean, J. W., Glavan, J. and Megonigal, J. P. (2017), Limits on carbon sequestration in
 # arid blue carbon ecosystems. Ecol Appl, 27: 859–874. doi:10.1002/eap.1489
 
-## INSTRUCTIONS ####################
+## 2. Prep workspace and scrape data from web ####################
+
+## ... 2A. Load packages #######################
+# Load RCurl, a package used to download files from a URL
+library(rvest)
+library(stringr)
+library(RCurl)
+library(tidyverse)
+library(lubridate)
+library(readxl)
+
+## ... 3B. Download data ###############
 
 # 1. Designate the target webpage to scrape for data
 #   Paste the url of the target webpage here, wrapped in quotation marks
@@ -35,20 +47,6 @@ FILE_NAME <- "Megonigal_J_Patrick-20170103-Abu_Dhabi_Blue_Carbon_Project_Ecologi
 
 FILE_PATH <- paste0(getwd(), "/data/Schile-Beers_2017/original/" )
 
-## Assumptions made about data ###############
-
-
-## Prep workspace #######################
-# Load RCurl, a package used to download files from a URL
-library(rvest)
-library(stringr)
-library(RCurl)
-library(tidyverse)
-library(lubridate)
-library(readxl)
-
-## Download data ########################
-
 # The stem of the url should always be the same
 BASE_URL <- "https://repository.si.edu"
 
@@ -64,13 +62,14 @@ page <- page %>%
 # Download the data to your file path 
 download.file(paste0(BASE_URL, page), paste0(FILE_PATH, FILE_NAME),mode = "wb")
 
-## Curate data to CCRCN Structure #################
+## 3. Curate data to CCRCN Structure #################
 
-# Read data in
+## ... 3A. Read data in ##################
 plot_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="plot information")
 raw_depthseries_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="soil carbon data")
 
-## Depth series data ###################
+
+## ... 3B. Depth series data ###################
 
 # Issues: 
 # 1. Two sites have multi-year entries for cores that either do not have matching depth series data 
@@ -123,7 +122,7 @@ depthseries_data <- raw_depthseries_data %>%
 # then join it back 
 
 
-## Core data ####################
+## ... 3C. Core data ####################
 
 core_data <- plot_data %>%
   rename(site_id = "Site") %>%
@@ -158,7 +157,7 @@ core_data <- plot_data %>%
         core_position_method, core_elevation, core_elevation_method, vegetation_notes)
 
 
-## Site level data #############
+## ... 3D. Site level data #############
 
 # We're going to need to add a few new columns, and aggregate out core level
 #   data up to the site level
@@ -188,7 +187,7 @@ site_data <- site_data %>%
             country = "United Arab Emirates")
 
 
-## QA/QC of data ################
+## 4. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
@@ -200,7 +199,8 @@ test_colnames("depthseries", depthseries_data)
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(core_data, depthseries_data)
 
-# Write data
+## 5. Write data ##############
+
 write.csv(site_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
 write.csv(core_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
 write.csv(depthseries_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")

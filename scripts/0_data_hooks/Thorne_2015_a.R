@@ -76,7 +76,15 @@ core_data <- raw_core_data %>%
   rename(core_elevation = `Elevation (m, NAVD88)`,
          cs137_peak_cm = `CS137 Peak (cm)`) %>%
   mutate(core_id = paste(Site, Core, sep="_"),
-         study_id = "Thorne et al. 2018") 
+         study_id = "Thorne et al. 2018", 
+         core_position_method = "RTK", 
+         zone = 10) 
+
+output <- convert_UTM_to_latlong(core_data$Easting, core_data$Northing, core_data$zone, core_data$core_id)
+easting <- core_data$Easting
+northing <- core_data$Northing
+zone <- core_data$zone
+core_id <- core_data$core_id
 
 
 
