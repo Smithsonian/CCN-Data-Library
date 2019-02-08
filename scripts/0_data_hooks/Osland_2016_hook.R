@@ -62,6 +62,7 @@ library(RCurl)
 library(tidyverse)
 library(lubridate)
 library(readxl)
+library(sp)
 
 ## Download data ########################
 
@@ -134,7 +135,7 @@ Osland_2016_depth_series_data <- depth_series_data %>%
   mutate(depth_max = as.double(0), depth_min = as.double(15)) %>%
   
   select(-moist, -som) %>%
-  mutate(study_id = "Osland_2018")
+  mutate(study_id = "Osland_2016")
 
 
 ## Core data ####################
@@ -158,7 +159,7 @@ Osland_2016_core_data <- Osland_2016_core_data %>%
   rename(core_time = "time") %>%
   rename(core_elevation = "elev") %>%
   mutate(core_elevation_datum = "NAVD88") %>%
-  mutate(study_id = "Osland_2018")
+  mutate(study_id = "Osland_2016")
 
 
 # Transform the projection
