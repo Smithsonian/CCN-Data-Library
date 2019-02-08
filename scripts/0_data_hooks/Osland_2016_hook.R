@@ -272,7 +272,7 @@ Osland_2016_species_data <- out %>%
   rename(species_code = "colname") %>%
   rename(fraction_coverage = "value") %>%
   mutate(fraction_coverage = as.numeric(fraction_coverage)) %>%
-  select(site_id, core_id, species_code, fraction_coverage)
+  select(study_id, site_id, core_id, species_code, fraction_coverage)
 
 # Remove the '1c' string from the species_code entries
 Osland_2016_species_data$species_code <- 
