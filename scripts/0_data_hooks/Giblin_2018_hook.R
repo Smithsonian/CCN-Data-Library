@@ -114,12 +114,12 @@ veggies <- dt1 %>%
   rename(core_id = Core.ID,
          species_code = Name.per.Vegetation) %>% 
   # create unique core IDs
-  mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
-         study_id = "Giblin and Forbrich 2018", 
+  mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep="")) %>%
+  group_by(core_id) %>%
+  summarize( study_id = "Giblin and Forbrich 2018", 
          site_id = "Plum Island LTER",
-         species_code = ifelse(species_code == "S. alterniflora", "SPAL", "SPPA")) %>%
-  select(site_id, core_id, study_id, species_code)
-
+         species_code = first(ifelse(species_code == "S. alterniflora", "SPAL", "SPPA")))
+  
 ## ... 2D. Site data ########################
 site_data <- core_data %>%
   select(site_id, core_id, study_id, core_latitude, core_longitude, core_elevation)
