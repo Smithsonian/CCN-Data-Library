@@ -9,11 +9,11 @@ library(tidyverse)
 ## Read in all data sources #################
 
 # Holmquist 2018
-Holmquist_2018_coredata <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_core_data.csv")
-Holmquist_2018_depthseriesdata <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_depth_series_data.csv")
-Holmquist_2018_impactdata <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_impact_data.csv")
-Holmquist_2018_methodsdata <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_methods_data.csv")
-Holmquist_2018_speciesdata <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_species_data.csv")
+Holmquist_2018_coredata <- read.csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_core_data.csv")
+Holmquist_2018_depthseriesdata <- read.csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_depth_series_data.csv")
+Holmquist_2018_impactdata <- read.csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_impact_data.csv")
+Holmquist_2018_methodsdata <- read.csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_methods_data.csv")
+Holmquist_2018_speciesdata <- read.csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_species_data.csv")
 
 # Gonneaa 2018
 Gonneea_2018_coredata <- read.csv("./data/Gonneea_2018/derivative/Gonneea_et_al_2018_cores.csv")

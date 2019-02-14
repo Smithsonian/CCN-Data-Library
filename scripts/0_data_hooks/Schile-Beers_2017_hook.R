@@ -22,6 +22,8 @@ library(RCurl)
 library(tidyverse)
 library(lubridate)
 library(readxl)
+library(bibtex)
+library(rcrossref)
 
 ## ... 3B. Download data ###############
 

@@ -66,7 +66,7 @@ depthseries_data <- dt1 %>%
          total_pb210_activity = total_pb210_activity * 1000) %>%
   # create unique core IDs
   mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
-         study_id = "Giblin and Forbrich 2018") %>%
+         study_id = "Giblin_and_Forbrich_2018") %>%
   select(core_id, sample_id, study_id, dry_bulk_density, fraction_carbon, section_depth,
          cs137_activity, total_pb210_activity)
 
@@ -104,9 +104,9 @@ core_data <- dt1 %>%
   group_by(core_id) %>%
   summarize(core_date = first(core_date), core_latitude = first(core_latitude), 
             core_longitude = first(core_longitude), core_elevation = first(core_elevation)) %>%
-  mutate(study_id = "Giblin and Forbrich 2018", 
+  mutate(study_id = "Giblin_and_Forbrich_2018", 
          core_length_flag = "core depth limited by length of corer", 
-         site_id = "Plum Island LTER", 
+         site_id = "Nelson_Island_Creek", 
          core_elevation_datum = "NAVD88") 
 
 ## ... 2C. Vegetation data #####################
@@ -116,9 +116,9 @@ veggies <- dt1 %>%
   # create unique core IDs
   mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep="")) %>%
   group_by(core_id) %>%
-  summarize( study_id = "Giblin and Forbrich 2018", 
-         site_id = "Plum Island LTER",
-         species_code = first(ifelse(species_code == "S. alterniflora", "SPAL", "SPPA")))
+  summarize(study_id = "Giblin_and_Forbrich_2018", 
+         site_id = "Nelson_Island_Creek",
+         species_code = first(ifelse(species_code == "S. alterniflora", "Spartina alterniflora", "Spartina patens")))
   
 ## ... 2D. Site data ########################
 site_data <- core_data %>%
