@@ -49,8 +49,9 @@ cores <- cores %>%
   # The Crooks study ID should be 2014, not 2013. 
   mutate(study_id = recode_factor(study_id,
                                   "Crooks_et_al_2013" = "Crooks_et_al_2014")) %>%
-  rename(vegetation_class = "vegetation_code") %>%
-  mutate(salinity_code = recode_factor(salinity_code,
+  rename(vegetation_class = "vegetation_code",
+         salinity_class = "salinity_code") %>%
+  mutate(salinity_class = recode_factor(salinity_class,
                                        "Bra" = "brackish",
                                        "Bra Fre" = "brackish to fresh", 
                                        "Bra Sal" = "bracish to saline",
@@ -131,7 +132,7 @@ methods <- methods %>%
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-test_colnames("cores", cores) # salinity_code should be salinity_class as per CCRCN guidance
+test_colnames("cores", cores) 
 test_colnames("depthseries", depthseries)
 test_colnames("species", species) 
 test_colnames("impacts", impacts) # impact_code should be impact_class as per CCRCN guidance
