@@ -16,6 +16,7 @@
 ## 1. Download data ################
 # Load RCurl, a package used to download files from a URL
 library(RCurl)
+library(tidyverse)
 
 # Create a list of the URLs for each data file
 url_list <- list("https://repository.si.edu/bitstream/handle/10088/35684/V1_Holmquist_2018_core_data.csv?sequence=7&isAllowed=y",
@@ -47,7 +48,27 @@ methods <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_methods_data.csv")
 cores <- cores %>%
   # The Crooks study ID should be 2014, not 2013. 
   mutate(study_id = recode_factor(study_id,
-                                  "Crooks_et_al_2013" = "Crooks_et_al_2014"))
+                                  "Crooks_et_al_2013" = "Crooks_et_al_2014")) %>%
+  rename(vegetation_class = "vegetation_code") %>%
+  mutate(salinity_code = recode_factor(salinity_code,
+                                       "Bra" = "brackish",
+                                       "Bra Fre" = "brackish to fresh", 
+                                       "Bra Sal" = "bracish to saline",
+                                       "Del" = "deltaic", 
+                                       "Est" = "estuarine", 
+                                       "Fre" = "freshwater", 
+                                       "Int" = "intermediate salinity", 
+                                       "Mes" = "mesohaline", 
+                                       "Oli" = "oligohaline",
+                                       "Pol" = "polyhaline", 
+                                       "Riv" = "riverine", 
+                                       "Sal" = "saline"
+                                       ),
+         vegetation_class = recode_factor(vegetation_class,
+                                          "EM" = "emergent", 
+                                          "FO" = "forested",
+                                          "FO/SS" = "forested to shrub"
+                                          ))
 
 depthseries <- depthseries %>%
   # The Crooks study ID should be 2014, not 2013. 
@@ -68,7 +89,7 @@ impacts <- impacts %>%
            "Nat" = "Natural", 
            "Res" = "Restoring",
            "SalImp" = "Salt Impacted"
-         ))
+         )) 
 
 # There are 77 species codes
 
@@ -106,7 +127,20 @@ methods <- methods %>%
   # The Crooks study ID should be 2014, not 2013. 
   mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014"))
 
-## 4. Write to folder ########
+## 4. QA/QC of data ################
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Make sure column names are formatted correctly: 
+test_colnames("cores", cores) # salinity_code should be salinity_class as per CCRCN guidance
+test_colnames("depthseries", depthseries)
+test_colnames("species", species) 
+test_colnames("impacts", impacts) # impact_code should be impact_class as per CCRCN guidance
+
+# Test relationships between core_ids at core- and depthseries-levels
+# the test returns all core-level rows that did not have a match in the depth series data
+results <- test_core_relationships(cores, depthseries)
+
+## 5. Write to folder ########
 write.csv(cores, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_core_data.csv")
 write.csv(depthseries, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_depth_series_data.csv")
 write.csv(impacts, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_impact_data.csv")
