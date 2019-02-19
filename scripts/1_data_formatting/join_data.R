@@ -47,6 +47,16 @@ Giblin_2018_depthseriesdata <- read.csv("./data/Giblin_2018/derivative/Giblin_an
 Giblin_2018_sitedata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_sites.csv")
 Giblin_2018_speciesdata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species.csv")
 
+#Doughty et al 2016
+Doughty_2016_cores <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_core_level.csv")
+Doughty_2016_depthseries <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_soil_depth_series.csv")
+Doughty_2016_species <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_dominant_species.csv")
+Doughty_2016_pubs <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_associated_publications.csv")
+Doughty_2016_study_info <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_study_information.csv")
+Doughty_2016_keyword <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_keywords.csv")
+Doughty_2016_funding <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_funding_sources.csv")
+Doughty_2016_authors <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_authors.csv")
+
 ## Join datasets ######################
 
 # Core data
@@ -57,6 +67,7 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Schile_2017_coredata) %>%
   bind_rows(Deegan_2012_coredata) %>%
   bind_rows(Giblin_2018_coredata) %>%
+  bind_rpws(Doughty_2016_cores) %>%
   select(-X)
 
 # Depth series data
@@ -68,6 +79,7 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Osland_2016_depthseriesdata) %>%
   bind_rows(Schile_2017_depthseriesdata) %>%
   bind_rows(Giblin_2018_depthseriesdata) %>%
+  bind_rows(Doughty_2016_depthseries) %>%
   select(-X)
 
 # Impact data
@@ -81,6 +93,7 @@ CCRCN_methodsdata <- Holmquist_2018_methodsdata
 CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
   bind_rows(Osland_2016_speciesdata) %>%
   bind_rows(Giblin_2018_speciesdata) %>%
+  bind_rows(Doughty_2016_species) %>%
   select(-X)
 
 ## QA #################
