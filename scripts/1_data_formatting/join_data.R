@@ -67,7 +67,7 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Schile_2017_coredata) %>%
   bind_rows(Deegan_2012_coredata) %>%
   bind_rows(Giblin_2018_coredata) %>%
-  bind_rpws(Doughty_2016_cores) %>%
+  bind_rows(Doughty_2016_cores) %>%
   select(-X)
 
 # Depth series data
