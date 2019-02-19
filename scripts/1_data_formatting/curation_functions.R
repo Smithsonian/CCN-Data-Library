@@ -237,3 +237,88 @@ create_new_IDs <- function(df, old_ID, new_ID) {
   df_out
 }
 
+
+## Recode salinity classes to full names ###############
+
+recode_salinity <- function(df, salinity_class) {
+  output_df <- df %>%
+    mutate(salinity_class = recode_factor(salinity_class,
+                                          "Bra" = "brackish",
+                                          "Bra Fre" = "brackish to fresh", 
+                                          "Bra Sal" = "bracish to saline",
+                                          "Del" = "deltaic", 
+                                          "Est" = "estuarine", 
+                                          "Fre" = "freshwater", 
+                                          "Int" = "intermediate salinity", 
+                                          "Mes" = "mesohaline", 
+                                          "Oli" = "oligohaline",
+                                          "Pol" = "polyhaline", 
+                                          "Riv" = "riverine", 
+                                          "Sal" = "saline"
+    ))
+  output_df
+}
+
+
+## Recode vegetation classes to full names ##############
+
+recode_vegetation <- function(df, vegetation_class) {
+  output_df <- df %>%
+    mutate(vegetation_class = recode_factor(vegetation_class,
+                                            "EM" = "emergent", 
+                                            "FO" = "forested",
+                                            "FO/SS" = "forested to shrub"
+    ))
+  output_df
+}
+
+## Recode impact classes to full names ##############
+
+recode_impact <- function(df, impact_class) {
+  output_df <- df %>%
+    mutate(impact_class = recode_factor(impact_class,
+                                       "Can" = "Canalled",
+                                       "Dik" = "Diked",
+                                       "Dit" = "Ditched",
+                                       "Eut" = "Eutrophic",
+                                       "Imp" = "Impounded",
+                                       "Man" = "Managed", 
+                                       "Nat" = "Natural", 
+                                       "Res" = "Restoring",
+                                       "SalImp" = "Salt Impacted"
+    ))
+  output_df
+}
+ 
+## Recode species codes to full names ##############
+recode_species <- function(df, species_code) {
+  output_df <- df %>%
+    mutate(species_code = recode_factor(species_code,
+                                        "AgSp" = "Agrostis spp.", "AlPh" = "Alternanthera philoxeroides", "AmCa" = "Amaranthus cannabinus", 
+                                        "AmTr" = "Ambrosia trifida", "ArAr" = "Arrow arum.", "AtFi" = "Athyrium filix-femina",
+                                        "AvGe" = "Avicennia germinans", "BaHa" = "Baccharis halimifolia", "BaMa" = "Batis maritima",
+                                        "BiLa" = "Bidens laevis", "BoMa" = "Bolboschoenus maritimus", "CaLy" = "Carex lyngbyei", "CoSe" = "Cornus sericea",  
+                                        "CuSa" = "Cuscuta salina", "DiSp" = "Distichlis spicata", "EcSpp" = "Echinochloa spp", "ElPa" = "Eleocharis palustris",
+                                        "ElSpp" = "Eleocharis spp.", "FrSa" = "Frankenia salina", "GaSh" = "Gaultheria shallon",
+                                        "GrSt" = "Grindelia stricta", "HiSpp" = "Hibiscus spp.", "ImCa" = "Impatiens capensis",
+                                        "IvFr" = "Iva frutescens","JaCa" = "Jaumea carnosa", "JuBa" = "Juncus balticus", 
+                                        "JuRo" = "Juncus roemerianus", "LoIn" = "Lonicera involucrata", "LuSpp" = "Ludwigia spp",
+                                        "LyAm" = "Lysichiton americanus", "MyGa" = "Myrica gale", 
+                                        "NuAd" = "Nuphar advena", "NyAq" = "Nyssa aquatica", "OeSa" = "Oenanthe sarmentosa",
+                                        "PaHe" = "Panicum hemitomon", "PaVa" = "Paspalum vaginatum", "PeVi" = "Peltandra virginica",
+                                        "PhAr" = "Phalaris arundinacea", "PhAu" = "Phragmites australis", "PiSi" = "Picea sitchensis", 
+                                        "PoAr" = "Polygonum arifolium", "PoPu" = "Polygonum punctatum", "PoSa" = "Polygonum sagittatum",
+                                        "PoSpp" = "Polygonum spp.","RiMa" = "Rhizophora mangle", "RoCa" = "Rosa californica",
+                                        "RoNu" = "Rosa nutkana", "RoPi" = "Rosa pisocarpa", "RuSp" = "Rubus spectabilis", 
+                                        "RuUr" = "Rubus ursinus", "SaLa" = "Sagittaria latifolia", "SaLan" = "Sagittaria lancifolia",
+                                        "SaLas" = "Salix lasiolepis", "SaPa" = "Salicornia pacifica", "SaVi" = "Salicornia virginica",
+                                        "ScAc" = "Scirpus acutus", "ScAm" = "Scirpus americanus", "ScCa" = "Schoenoplectus californicus", 
+                                        "ScTa" = "Schoenoplectus tabernaemontani", "SpAl" = "Spartina alterniflora", "SpCy" = "Spartina cynosuroides", 
+                                        "SpDo" = "Spiraea douglasii", "SpFo" = "Spartina foliosa", "SpPa" = "Spartina patens", 
+                                        "SpSpp" = "Spartina spp.", "Swamp" = "Swamp","TaDi" = "Taxodium distichum",
+                                        "TrMa" = "Triglochin maritima", "TrNa" = "Trapa natis", "TyAg" = "Typa angustifolia", 
+                                        "TyDo" = "Typa domingensis", "TyLa" = "Typha latifolia", "TySpp" = "Typha spp.",
+                                        "UnVeg" = "Un-vegetated", "ZiAq" = "Zizania aquatica", "ZiMi" = "Zizaniopsis milaceae", "Mix" = "Mix"
+    ))
+  output_df
+}       
