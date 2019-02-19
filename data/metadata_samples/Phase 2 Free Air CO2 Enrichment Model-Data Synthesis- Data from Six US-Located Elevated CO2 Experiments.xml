@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packageId="ess-dive-6264667399824bd-20181101T171341202" system="ess-dive" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 eml.xsd">
+   <dataset>
+      <title>FACE-MDS Phase 2: Data from Six US-Located Elevated CO2 Experiments</title>
+      <creator id="3642329730327206">
+         <individualName>
+            <givenName>Anthony P</givenName>
+            <surName>Walker</surName>
+         </individualName>
+         <organizationName>Oak Ridge National Laboratory</organizationName>
+         <electronicMailAddress>walkerap@ornl.gov</electronicMailAddress>
+         <userId directory="https://orcid.org">https://orcid.org/0000-0003-0557-5594</userId>
+      </creator>
+      <creator id="4735919262148009">
+         <individualName>
+            <givenName>Martin G</givenName>
+            <surName>De Kauwe</surName>
+         </individualName>
+         <organizationName>University of New South Wales</organizationName>
+         <electronicMailAddress>mdekauwe@gmail.com</electronicMailAddress>
+      </creator>
+      <creator id="6531050284073822">
+         <individualName>
+            <givenName>Lynn F</givenName>
+            <surName>Fenstermaker</surName>
+         </individualName>
+         <organizationName>Desert Research Institute</organizationName>
+         <electronicMailAddress>Lynn.Fenstermaker@dri.edu</electronicMailAddress>
+      </creator>
+      <creator id="9315603525535348">
+         <individualName>
+            <givenName>Bruce</givenName>
+            <surName>Hungate</surName>
+         </individualName>
+         <organizationName>Northern Arizona University</organizationName>
+         <electronicMailAddress>Bruce.Hungate@nau.edu</electronicMailAddress>
+      </creator>
+      <creator id="6176342286556656">
+         <individualName>
+            <givenName>Belinda</givenName>
+            <surName>Medlyn</surName>
+         </individualName>
+         <organizationName>Western Sydney University</organizationName>
+         <electronicMailAddress>B.Medlyn@westernsydney.edu.au</electronicMailAddress>
+      </creator>
+      <creator id="1151169687844000">
+         <individualName>
+            <givenName>Patrick J</givenName>
+            <surName>Megonigal</surName>
+         </individualName>
+         <organizationName>Smithsonian Environmental Research Center</organizationName>
+         <electronicMailAddress>megonigalp@si.edu</electronicMailAddress>
+      </creator>
+      <creator id="3977630915302255">
+         <individualName>
+            <givenName>Ram</givenName>
+            <surName>Oren</surName>
+         </individualName>
+         <organizationName>Duke University</organizationName>
+         <electronicMailAddress>ramoren@duke.edu</electronicMailAddress>
+      </creator>
+      <creator id="3236089997288042">
+         <individualName>
+            <givenName>Elise</givenName>
+            <surName>Pendall</surName>
+         </individualName>
+         <organizationName>Western Sydney University</organizationName>
+         <electronicMailAddress>E.Pendall@westernsydney.edu.au</electronicMailAddress>
+      </creator>
+      <creator id="6525245764168109">
+         <individualName>
+            <givenName>Alan F</givenName>
+            <surName>Talhelm</surName>
+         </individualName>
+         <organizationName>University of Idaho</organizationName>
+      </creator>
+      <creator id="6390967344700849">
+         <individualName>
+            <givenName>Sönke</givenName>
+            <surName>Zaehle</surName>
+         </individualName>
+         <organizationName>Max Planck Institute for Biogeochemistry</organizationName>
+         <electronicMailAddress>soenke.zaehle@bgc-jena.mpg.de</electronicMailAddress>
+      </creator>
+      <creator id="5401522693212444">
+         <individualName>
+            <givenName>Donald R</givenName>
+            <surName>Zak</surName>
+         </individualName>
+         <organizationName>University of Michigan</organizationName>
+         <electronicMailAddress>drzak@umich.edu</electronicMailAddress>
+      </creator>
+      <creator id="3128365748041226">
+         <individualName>
+            <givenName>Tom</givenName>
+            <surName>Boden</surName>
+         </individualName>
+         <organizationName>Oak Ridge National Laboratory</organizationName>
+      </creator>
+      <creator id="4352469833420666">
+         <individualName>
+            <givenName>Alisha LP</givenName>
+            <surName>Brown</surName>
+         </individualName>
+      </creator>
+      <creator id="8536515462646844">
+         <individualName>
+            <givenName>Andrew J</givenName>
+            <surName>Burton</surName>
+         </individualName>
+         <organizationName>Michigan Technological University</organizationName>
+         <electronicMailAddress>ajburton@mtu.edu</electronicMailAddress>
+      </creator>
+      <creator id="3074006942685549">
+         <individualName>
+            <givenName>John R</givenName>
+            <surName>Butnor</surName>
+         </individualName>
+      </creator>
+      <creator id="4786173000920876">
+         <individualName>
+            <givenName>Frank P</givenName>
+            <surName>Day</surName>
+         </individualName>
+      </creator>
+      <creator id="7195378742684316">
+         <individualName>
+            <givenName>Bert G</givenName>
+            <surName>Drake</surName>
+         </individualName>
+         <organizationName>Smithsonian Environmental Research Center</organizationName>
+      </creator>
+      <creator id="9940623157259666">
+         <individualName>
+            <givenName>Paul</givenName>
+            <surName>Dijkstra</surName>
+         </individualName>
+      </creator>
+      <creator id="4784948690904824">
+         <individualName>
+            <givenName>R Dave</givenName>
+            <surName>Evans</surName>
+         </individualName>
+         <organizationName>Washington State University</organizationName>
+      </creator>
+      <creator id="4399021798401302">
+         <individualName>
+            <givenName>Adrien C</givenName>
+            <surName>Finzi</surName>
+         </individualName>
+         <organizationName>Boston University</organizationName>
+      </creator>
+      <creator id="7700071441567582">
+         <individualName>
+            <givenName>Colleen M</givenName>
+            <surName>Iversen</surName>
+         </individualName>
+         <organizationName>Oak Ridge National Laboratory</organizationName>
+         <electronicMailAddress>iversencm@ornl.gov</electronicMailAddress>
+      </creator>
+      <creator id="7420239190834729">
+         <individualName>
+            <givenName>Robert B</givenName>
+            <surName>Jackson</surName>
+         </individualName>
+         <organizationName>Stanford University</organizationName>
+      </creator>
+      <creator id="5962193925982210">
+         <individualName>
+            <givenName>Dan</givenName>
+            <surName>LeCain</surName>
+         </individualName>
+         <organizationName>USDA ARS</organizationName>
+         <electronicMailAddress>Dan.Lecain@ARS.USDA.GOV</electronicMailAddress>
+      </creator>
+      <creator id="4609363451751883">
+         <individualName>
+            <givenName>Heather R</givenName>
+            <surName>McCarthy</surName>
+         </individualName>
+         <organizationName>University of Oklahoma</organizationName>
+      </creator>
+      <creator id="8652773615192632">
+         <individualName>
+            <givenName>Thomas L</givenName>
+            <surName>Powell</surName>
+         </individualName>
+         <organizationName>Lawrence Berkeley National Laboratory</organizationName>
+      </creator>
+      <creator id="9274063844562864">
+         <individualName>
+            <givenName>Robert S</givenName>
+            <surName>Nowak</surName>
+         </individualName>
+         <organizationName>University of Nevada–Reno</organizationName>
+      </creator>
+      <creator id="9490455272271794">
+         <individualName>
+            <givenName>Jeff S</givenName>
+            <surName>Riggs</surName>
+         </individualName>
+         <organizationName>Oak Ridge National Laboratory</organizationName>
+         <electronicMailAddress>riggsjs@ornl.gov</electronicMailAddress>
+      </creator>
+      <creator id="5020605142892726">
+         <individualName>
+            <givenName>Stanley D</givenName>
+            <surName>Smith</surName>
+         </individualName>
+         <organizationName>University of Nevada–Las Vegas</organizationName>
+      </creator>
+      <creator id="7719397765404649">
+         <individualName>
+            <givenName>Daniel B</givenName>
+            <surName>Stover</surName>
+         </individualName>
+         <organizationName>DOE Office of Science BER</organizationName>
+      </creator>
+      <creator id="1355317323354896">
+         <individualName>
+            <givenName>Lynn M</givenName>
+            <surName>Tharp</surName>
+         </individualName>
+         <organizationName>Oak Ridge National Laboratory</organizationName>
+      </creator>
+      <creator id="9539725858181892">
+         <individualName>
+            <givenName>Jeffrey M</givenName>
+            <surName>Warren</surName>
+         </individualName>
+         <organizationName>Oak Ridge National Laboratory</organizationName>
+         <electronicMailAddress>warrenjm@ornl.gov</electronicMailAddress>
+      </creator>
+      <creator id="3228875236389877">
+         <individualName>
+            <givenName>Stan D</givenName>
+            <surName>Wullschleger</surName>
+         </individualName>
+         <organizationName>Oak Ridge National Laboratory</organizationName>
+         <electronicMailAddress>wullschlegersd@ornl.gov</electronicMailAddress>
+      </creator>
+      <creator id="8993783660126191">
+         <individualName>
+            <givenName>Richard J</givenName>
+            <surName>Norby</surName>
+         </individualName>
+         <organizationName>Oak Ridge National Laboratory</organizationName>
+         <electronicMailAddress>norbyrj@ornl.gov</electronicMailAddress>
+      </creator>
+      <associatedParty id="3852225190798801">
+         <organizationName>U.S. DOE &gt; Office of Science &gt; Biological and Environmental Research (BER)</organizationName>
+         <userId directory="unknown">http://dx.doi.org/10.13039/100006206</userId>
+         <role>fundingOrganization</role>
+      </associatedParty>
+      <pubDate>2018</pubDate>
+      <abstract>
+         <para>Measured ecosystem data from five Free Air CO2 Enrichment (FACE) experiments -- Duke, Nevada Desert (NDFF), Oak Ridge (ORNL), Prairie Heating and CO2 Experiment in Wyoming (PHACE), and Rhinelander -- and one Open Top Chamber (OTC) experiment -- Kennedy Space Center. These six sites were the study sites of the FACE Model Data Synthesis (FACE-MDS) project phase 2.  File naming convention can be found in the file 'facemds-file-table-sitedata.xml' and information about variable naming convention can be found in the file 'facemds-standard-name-table-modvars.xml'. We followed the ALMA v3 convention for meteorological variables and developed a hierarchical naming scheme for ecosystem variables. Additional info can be found in the protocols in the accompanying meteorological dataset (doi:10.15485/1480328). We replaced the original naming convention mentioned in the protocol with the one described in 'facemds-standard-name-table-modvars.xml'.</para>
+      </abstract>
+      <keywordSet>
+         <keyword>EARTH SCIENCE &gt; BIOSPHERE &gt; ECOSYSTEMS</keyword>
+         <keywordThesaurus>CATEGORICAL:GCMD</keywordThesaurus>
+      </keywordSet>
+      <additionalInfo>
+         <section>
+            <title>Related References</title>
+            <para>Dijkstra, F.A., Blumenthal, D., Morgan, J.A., Pendall, E., Carrillo, Y., Follett, R.F., 2010. Contrasting effects of elevated CO2 and warming on nitrogen cycling in a semiarid grassland. New Phytologist 187, 426–437. https://doi.org/10.1111/j.1469-8137.2010.03293.x</para>
+            <para>Evans, R.D., Koyama, A., Sonderegger, D.L., Charlet, T.N., Newingham, B.A., Fenstermaker, L.F., Harlow, B., Jin, V.L., Ogle, K., Smith, S.D., Nowak, R.S., 2014. Greater ecosystem carbon in the Mojave Desert after ten years exposure to elevated CO2. Nature Climate Change 4, 394–397. https://doi.org/10.1038/nclimate2184</para>
+            <para>Hungate, B.A., Day, F.P., Dijkstra, P., Duval, B.D., Hinkle, C.R., Langley, J.A., Megonigal, J.P., Stiling, P., Johnson, D.W., Drake, B.G., 2013a. Fire, hurricane and carbon dioxide: effects on net primary production of a subtropical woodland. New Phytol 200, 767–777. https://doi.org/10.1111/nph.12409</para>
+            <para>Hungate, B.A., Dijkstra, P., Wu, Z., Duval, B.D., Day, F.P., Johnson, D.W., Megonigal, J.P., Brown, A.L.P., Garland, J.L., 2013b. Cumulative response of ecosystem carbon and nitrogen stocks to chronic CO2 exposure in a subtropical oak woodland. New Phytol 200, 753–766. https://doi.org/10.1111/nph.12333</para>
+            <para>Iversen, C.M., Hooker, T.D., Classen, A.T., Norby, R.J., 2011. Net mineralization of N at deeper soil depths as a potential mechanism for sustained forest production under elevated [CO2]. Global Change Biology 17, 1130–1139. https://doi.org/10.1111/j.1365-2486.2010.02240.x</para>
+            <para>Iversen, C.M., Keller, J.K., Garten, C.T., Norby, R.J., 2012. Soil carbon and nitrogen cycling and storage throughout the soil profile in a sweetgum plantation after 11 years of CO2-enrichment. Global Change Biology 18, 1684–1697. https://doi.org/10.1111/j.1365-2486.2012.02643.x</para>
+            <para>McCarthy, H.R., Oren, R., Finzi, A.C., Ellsworth, D.S., Kim, H.-S., Johnsen, K.H., Millar, B., 2007. Temporal dynamics and spatial variability in the enhancement of canopy leaf area under elevated atmospheric CO2. Global Change Biology 13, 2479–2497. https://doi.org/10.1111/j.1365-2486.2007.01455.x</para>
+            <para>McCarthy, H.R., Oren, R., Johnsen, K.H., Gallet-Budynek, A., Pritchard, S.G., Cook, C.W., LaDeau, S.L., Jackson, R.B., Finzi, A.C., 2010. Re-assessment of plant carbon dynamics at the Duke free-air CO(2) enrichment site: interactions of atmospheric CO(2) with nitrogen and water availability over stand development. New Phytologist 185, 514–528. https://doi.org/10.1111/j.1469-8137.2009.03078.x</para>
+            <para>Norby, R.J., Sholtis, J.D., Gunderson, C.A., Jawdy, S.S., 2003. Leaf dynamics of a deciduous forest canopy: no response to elevated CO2. Oecologia 136, 574–584. https://doi.org/10.1007/s00442-003-1296-2</para>
+            <para>Norby, R.J., Todd, D.E., Fults, J., Johnson, D.W., 2001. Allometric determination of tree growth in a CO2-enriched sweetgum stand. New Phytologist 150, 477–487. https://doi.org/10.1046/j.1469-8137.2001.00099.x</para>
+            <para>Talhelm, A.F., Pregitzer, K.S., Kubiske, M.E., Zak, D.R., Campany, C.E., Burton, A.J., Dickson, R.E., Hendrey, G.R., Isebrands, J.G., Lewin, K.F., Nagy, J., Karnosky, D.F., 2014. Elevated carbon dioxide and ozone alter productivity and ecosystem carbon content in northern temperate forests. Glob Change Biol 20, 2492–2504. https://doi.org/10.1111/gcb.12564</para>
+            <para>Zak, D.R., Pregitzer, K.S., Kubiske, M.E., Burton, A.J., 2011. Forest productivity under elevated CO2 and O3: positive feedbacks to soil N cycling sustain decade-long net primary productivity enhancement by CO2. Ecology Letters 14, 1220–1226. https://doi.org/10.1111/j.1461-0248.2011.01692.x</para>
+         </section>
+      </additionalInfo>
+      <intellectualRights>
+         <para>This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.</para>
+      </intellectualRights>
+      <coverage>
+         <geographicCoverage>
+            <geographicDescription>ORNL FACE. Free Air CO2 Enrichment experiment at Oak Ridge National Laboratory, Oak Ridge, Tennessee, USA</geographicDescription>
+            <boundingCoordinates>
+               <westBoundingCoordinate>-84.33</westBoundingCoordinate>
+               <eastBoundingCoordinate>-84.33</eastBoundingCoordinate>
+               <northBoundingCoordinate>35.9</northBoundingCoordinate>
+               <southBoundingCoordinate>35.9</southBoundingCoordinate>
+            </boundingCoordinates>
+         </geographicCoverage>
+         <geographicCoverage>
+            <geographicDescription>Duke FACE. Free Air CO2 Enrichment experiment at Duke University, Durham, North Carolina, USA</geographicDescription>
+            <boundingCoordinates>
+               <westBoundingCoordinate>-79.08</westBoundingCoordinate>
+               <eastBoundingCoordinate>-79.08</eastBoundingCoordinate>
+               <northBoundingCoordinate>35.97</northBoundingCoordinate>
+               <southBoundingCoordinate>35.97</southBoundingCoordinate>
+            </boundingCoordinates>
+         </geographicCoverage>
+         <geographicCoverage>
+            <geographicDescription>KSC OTC. Open Top Chamber CO2 enrichment experiment at Kennedy Space Center, Merritt Island, Florida, USA</geographicDescription>
+            <boundingCoordinates>
+               <westBoundingCoordinate>-80.70</westBoundingCoordinate>
+               <eastBoundingCoordinate>-80.70</eastBoundingCoordinate>
+               <northBoundingCoordinate>28.63</northBoundingCoordinate>
+               <southBoundingCoordinate>28.63</southBoundingCoordinate>
+            </boundingCoordinates>
+         </geographicCoverage>
+         <geographicCoverage>
+            <geographicDescription>Rhinelander FACE. Free Air CO2 Enrichment experiment at Harshaw Experimental Forest, Wisconsin, USA</geographicDescription>
+            <boundingCoordinates>
+               <westBoundingCoordinate>-89.63</westBoundingCoordinate>
+               <eastBoundingCoordinate>-89.63</eastBoundingCoordinate>
+               <northBoundingCoordinate>45.68</northBoundingCoordinate>
+               <southBoundingCoordinate>45.68</southBoundingCoordinate>
+            </boundingCoordinates>
+         </geographicCoverage>
+         <geographicCoverage>
+            <geographicDescription>NDFF. Free Air CO2 Enrichment experiment at the Nevada Test Site, Mojave Desert, Nevada, USA</geographicDescription>
+            <boundingCoordinates>
+               <westBoundingCoordinate>-115.96</westBoundingCoordinate>
+               <eastBoundingCoordinate>-115.96</eastBoundingCoordinate>
+               <northBoundingCoordinate>36.77</northBoundingCoordinate>
+               <southBoundingCoordinate>36.77</southBoundingCoordinate>
+            </boundingCoordinates>
+         </geographicCoverage>
+         <geographicCoverage>
+            <geographicDescription>PHACE. Prairie Heating and CO2 Erichment experiment, west of Cheyenne, Wyoming, USA</geographicDescription>
+            <boundingCoordinates>
+               <westBoundingCoordinate>-104.90</westBoundingCoordinate>
+               <eastBoundingCoordinate>-104.90</eastBoundingCoordinate>
+               <northBoundingCoordinate>41.18</northBoundingCoordinate>
+               <southBoundingCoordinate>41.18</southBoundingCoordinate>
+            </boundingCoordinates>
+         </geographicCoverage>
+         <temporalCoverage>
+            <rangeOfDates>
+               <beginDate>
+                  <calendarDate>1996</calendarDate>
+               </beginDate>
+               <endDate>
+                  <calendarDate>2013</calendarDate>
+               </endDate>
+            </rangeOfDates>
+         </temporalCoverage>
+      </coverage>
+      <contact id="8492104435559050">
+         <individualName>
+            <givenName>Anthony</givenName>
+            <surName>P Walker</surName>
+         </individualName>
+         <electronicMailAddress>walkerap@ornl.gov</electronicMailAddress>
+         <userId directory="https://orcid.org">https://orcid.org/0000-0003-0557-5594</userId>
+      </contact>
+      <publisher id="5470909668028449">
+         <organizationName>Free Air CO2 Enrichment Model Data Synthesis (FACE-MDS)</organizationName>
+      </publisher>
+      <project>
+         <title>Free Air CO2 Enrichment Model Data Synthesis (FACE-MDS)</title>
+         <personnel id="7349749339945842">
+            <individualName>
+               <givenName>Anthony</givenName>
+               <surName>Walker</surName>
+            </individualName>
+            <organizationName>Oak Ridge National Laboratory</organizationName>
+            <electronicMailAddress>walkerap@ornl.gov</electronicMailAddress>
+            <role>principalInvestigator</role>
+         </personnel>
+         <funding>
+            <para>DOE:DEAC0500OR22725</para>
+         </funding>
+      </project>
+      <otherEntity id="ess-dive-b066fce880c9316-20181119T143407571">
+         <entityName>DUKE_a.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-309469960b6ad7e-20181119T143451963">
+         <entityName>RHIN_ase.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-c89a98eacf15268-20181119T143348222">
+         <entityName>facemds-standard-name-table-modvars.xml</entityName>
+         <entityType>text/xml</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-81c37922958f428-20181119T143407623">
+         <entityName>DUKE_d.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-21d7c2c7821d6ff-20181119T143419550">
+         <entityName>KSCO_a.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-0d48ab42ed63e1d-20181119T143419583">
+         <entityName>KSCO_ase.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-16fdffec778c967-20181119T143344017">
+         <entityName>facemds-file-table-sitedata.xml</entityName>
+         <entityType>text/xml</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-5f0b6372debfac6-20181119T143407598">
+         <entityName>DUKE_ax.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-81250601a7079c0-20181119T143419571">
+         <entityName>KSCO_ase.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-eadb779e10c6eaa-20181119T143441623">
+         <entityName>ORNL_a.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-7416f4c96f9a60e-20181119T143452008">
+         <entityName>RHIN_ax.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-097a9736e75cee1-20181119T143419562">
+         <entityName>KSCO_a.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-475181cd594262a-20181119T143441635">
+         <entityName>ORNL_ase.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-5c927999c3ac802-20181119T143441691">
+         <entityName>ORNL_d.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-ddd1cfa81a329ba-20181119T143441660">
+         <entityName>ORNL_ax.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-4555209dc274c10-20181119T143419602">
+         <entityName>KSCO_ax.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-1346a0e2d636a82-20181119T143407587">
+         <entityName>DUKE_ase.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-29eb2c04385e307-20181119T143407615">
+         <entityName>DUKE_d.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-53d36721cb48556-20181119T143407578">
+         <entityName>DUKE_ase.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-68cafc89599ef56-20181119T143419594">
+         <entityName>KSCO_ax.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-d9b15528dd70a54-20181119T143451981">
+         <entityName>RHIN_ase.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-e9766d385d07ac1-20181119T143441681">
+         <entityName>ORNL_d.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-c3c11ecdc0ae737-20181119T143441608">
+         <entityName>ORNL_a.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-acfeb21448aea22-20181119T143441671">
+         <entityName>ORNL_ax.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-5825159cd217bcf-20181119T143451928">
+         <entityName>RHIN_a.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-1aac7fe35d89ee4-20181119T143407556">
+         <entityName>DUKE_a.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-2c2608e86c479a6-20181119T143451945">
+         <entityName>RHIN_a.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-dda064bcfa8250c-20181119T143451994">
+         <entityName>RHIN_ax.csv</entityName>
+         <entityType>text/csv</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-f2114e4e9b6e9bc-20181119T143407607">
+         <entityName>DUKE_ax.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+      <otherEntity id="ess-dive-7adbbc3f6e708c3-20181119T143441649">
+         <entityName>ORNL_ase.rds</entityName>
+         <entityType>application/octet-stream</entityType>
+      </otherEntity>
+   </dataset>
+</eml:eml>

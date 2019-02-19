@@ -1,0 +1,630 @@
+<?xml version="1.0"?>
+<standard_name_table pinched and modified from cf-standard-name-table-1.1.xsd>
+   <version_number>1</version_number>
+   <last_modified>2018-06-13 15:32:48Z</last_modified>
+   <institution>Oak Ridge National Laboratory</institution>
+   <contact>walkerap@ornl.gov</contact>
+   
+   <comments>This XML describes the columns in the FACE-MDS model output and site data files. 
+   These variable names can be modified:
+     - the prefix 'd' (delta) indicates the change in that variable
+     - teh suffix '_peak' indicates the maximum value of the variable within the timestep</comments>
+   <missing_data>-9999</missing_data>
+
+   <entry id="year">
+      <canonical_units>Gregorian_year</canonical_units>
+      <cmip></cmip>
+      <alma></alma>
+      <description>Year A.D.</description>
+   </entry>
+   <entry id="doy">
+      <canonical_units>d</canonical_units>
+      <cmip></cmip>
+      <alma></alma>
+      <description>Day of the year</description>
+   </entry>
+   <entry id="CO2air">
+      <canonical_units>1e-6</canonical_units>
+      <cmip></cmip>
+      <alma>CO2air</alma>
+      <description>Mean daytime (solar elevation greater than 15 degrees) volumetric atmospheric carbon dioxide concentration [CO2] in ambient CO2 treatment</description>
+   </entry>
+   <entry id="Rainf">
+      <canonical_units>kg m-2</canonical_units>
+      <cmip>pr</cmip>
+      <alma>(Rainf + Snowf) * timestep</alma>
+      <description>Precipitation (rain and snow) amount over duration of timestep</description>
+   </entry>
+   <entry id="PAR">
+      <canonical_units>umol m-2 s-1</canonical_units>
+      <cmip></cmip>
+      <alma></alma>
+      <description>Mean downwelling molar photon flux in the wavelengths absorbed by photosynthetic pigments (photosynthetically active radiation) over duration of timestep</description>
+   </entry>
+   <entry id="Tair">
+      <canonical_units>K</canonical_units>
+      <cmip></cmip>
+      <alma>Tair</alma>
+      <description>Mean air temperature over duration of timestep</description>
+   </entry>
+   <entry id="Tsoil">
+      <canonical_units>K</canonical_units>
+      <cmip></cmip>
+      <alma>SoilTemp</alma>
+      <description>Mean soil temperature over duration of timestep</description>
+   </entry>
+   <entry id="VPD">
+      <canonical_units>Pa</canonical_units>
+      <cmip></cmip>
+      <alma></alma>
+      <description>Mean vapour pressure deficit over duration of timestep</description>
+   </entry>
+   <entry id="w_rootzone">
+     <canonical_units>kg m-2</canonical_units>
+     <cmip></cmip>
+     <alma>RootMoist</alma>
+     <description>Water mass in rootzone, i.e. accessible by plants</description>
+   </entry>
+   <entry id="fn_dep">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen in deposition from atmosphere to the soil over duration of timestep, sum of wet and dry</description>
+   </entry>
+   <entry id="fc_nep">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma>NEP</alma>
+     <description>Flux Carbon, Net Ecosystem Production (NEP), net flux from atmosphere to ecosystem over duration of timestep, fc_gpp - fc_resp_eco</description>
+   </entry>
+   <entry id="fc_gpp">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma>GPP</alma>
+     <description>Flux Carbon, Gross Primary Production (GPP), gross flux from atmosphere to plants over duration of timestep</description>
+   </entry>
+   <entry id="fc_npp">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma>NPP</alma>
+     <description>Flux Carbon, Net Primary Production (GPP), net flux from atmosphere to plants over duration of timestep, fc_gpp - fc_resp_auto</description>
+   </entry>
+   <entry id="fc_root_to_soil">
+      <canonical_units>g m-2</canonical_units>
+      <cmip></cmip>
+      <alma></alma>
+      <description>Flux Carbon, exudates from roots to the soil over duration of timestep</description>
+   </entry>
+   <entry id="fc_voc_plant_to_atm">
+      <canonical_units>g m-2</canonical_units>
+      <cmip></cmip>
+      <alma></alma>
+      <description>Flux Carbon, volatile organic compounds from plants to the atmosphere over duration of timestep</description>
+   </entry>
+   <entry id="fc_resp_eco">
+      <canonical_units>g m-2</canonical_units>
+      <cmip></cmip>
+      <alma></alma>
+      <description>Flux Carbon, ecosystem respiration from ecosystem to atmosphere over duration of timestep</description>
+   </entry>
+   <entry id="fc_resp_auto">
+      <canonical_units>g m-2</canonical_units>
+      <cmip></cmip>
+      <alma>AutoResp</alma>
+      <description>Flux Carbon, total autotrophic respiration from plants to atmosphere over duration of timestep</description>
+   </entry>
+   <entry id="fc_resp_maint_leaf">
+      <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, maintenance respiration from leaves to atmosphere over duration of timestep</description>
+   </entry>
+   <entry id="fc_resp_maint_wood">
+      <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, maintenance respiration from wood to atmosphere over duration of timestep</description>
+   </entry>
+   <entry id="fc_resp_maint_froot">
+      <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, maintenance respiration from fine roots to atmosphere over duration of timestep</description>
+   </entry>
+   <entry id="fc_resp_grow_auto">
+      <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, growth respiration from plants to atmosphere over duration of timestep</description>
+   </entry>
+   <entry id="fc_resp_het">
+      <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma>HeteroResp</alma>
+     <description>Flux Carbon, total heterotrophic respiration from soil (microbes) to atmosphere over duration of timestep</description>
+   </entry>
+   <entry id="fc_resp_soil">
+      <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, total respiration from soil to atmosphere over duration of timestep, fc_resp_het + fc_resp_maint_froot + fine-root growth respiration</description>
+   </entry>
+   <entry id="fw_et">
+     <canonical_units>kg m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux water, total evapotranspiration from ecosystem to atmosphere over duration of timestep</description>
+   </entry>
+   <entry id="fw_transp">
+     <canonical_units>kg m-2</canonical_units>
+     <cmip></cmip>
+     <alma>TVeg</alma>
+     <description>Flux water, total transpiration from plants to atmosphere over duration of timestep</description>
+   </entry>
+   <entry id="fw_soil_to_atm">
+     <canonical_units>kg m-2</canonical_units>
+     <cmip></cmip>
+     <alma>ESoil</alma>
+     <description>Flux water, total evaporation from soil to atmosphere over duration of timestep</description>
+   </entry>
+   <entry id="fw_ecan">
+     <canonical_units>kg m-2</canonical_units>
+     <cmip></cmip>
+     <alma>ECanop</alma>
+     <description>Flux water, total evaporation from plants surfaces to atmosphere over duration of timestep</description>
+   </entry>
+   <entry id="fw_surfloss">
+     <canonical_units>kg m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux water, surface runoff from ecosystem over duration of timestep</description>
+   </entry>
+   <entry id="fw_subsurfloss">
+     <canonical_units>kg m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux water, drainage from ecosystem over duration of timestep</description>
+   </entry>
+   <entry id="Qle">
+     <canonical_units>W m2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux energy, latent heat over duration of timestep</description>
+   </entry>
+   <entry id="Qh">
+     <canonical_units>W m2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux energy, sensible heat over duration of timestep</description>
+   </entry>
+   <entry id="c_leaf">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Carbon mass in leaf biomass</description>
+   </entry>
+   <entry id="c_wood">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Carbon mass in wood biomass</description>
+   </entry>
+   <entry id="c_croot">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Carbon mass in coarse-root biomass</description>
+   </entry>
+   <entry id="c_froot">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Carbon mass in fine-root biomass</description>
+   </entry>
+   <entry id="c_plantstore">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Carbon mass in stored in plants, total non-structural carbohydrates</description>
+   </entry>
+   <entry id="c_litter">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Carbon mass in litter mass</description>
+   </entry>
+   <entry id="c_abglitter">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Carbon mass in above-ground litter mass</description>
+   </entry>
+   <entry id="c_blglitter">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Carbon mass in below-ground litter mass</description>
+   </entry>
+   <entry id="c_cwd">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Carbon mass in coarse woody debris</description>
+   </entry>
+   <entry id="c_soil">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Carbon mass in soil in all organic pools (not including litter)</description>
+   </entry>
+   <entry id="fc_grow_leaf">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, gross (i.e. not net of litterfall) leaf growth over duration of timestep</description>
+   </entry>
+   <entry id="fc_grow_wood">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, gross (i.e. not net of litterfall) wood growth over duration of timestep</description>
+   </entry>
+   <entry id="fc_grow_croot">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, gross (i.e. not net of litterfall) coarse-root growth over duration of timestep</description>
+   </entry>
+   <entry id="fc_grow_froot">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, gross (i.e. not net of litterfall) fine-root growth over duration of timestep</description>
+   </entry>
+   <entry id="fc_grow_repr">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, gross (i.e. not net of litterfall) in growth of reproductive organs over duration of timestep</description>
+   </entry>
+   <entry id="fc_leaf_litter">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, litterfall of leaves over duration of time period</description>
+     <!-- suffixes are appended to the variable name following an underscore -->
+     <suffixes>
+       <!-- at Duke this measurement was separated for pines and hardwoods -->
+       <plant_type>'pines' 'hardwoods'</plant_type>
+     </suffixes>
+   </entry>
+   <entry id="fc_croot_to_litter">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, litterfall of coarse-roots over duration of timestep</description>
+   </entry>
+   <entry id="fc_froot_to_litter">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, litterfall of fine-roots over duration of timestep</description>
+     <!-- suffixes are appended to the variable name following an underscore -->
+     <suffixes>
+       <!-- at Rhinelander this measurement was separated fine root <1 mm ('lt1mm') and between 1 and 2 mm (1t2mm) -->
+       <froot_size>'lt1mm' '1t2mm'</froot_size>
+     </suffixes>
+   </entry>
+   <entry id="fc_wood_to_litter">
+     <canonical_units></canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Carbon, litterfall of wood over duration of timestep</description>
+   </entry>
+   <entry id="ptrait_lai">
+     <canonical_units>m m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Plant trait, leaf area index (LAI)</description>
+   </entry>
+   <entry id="ptrait_lma">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Plant trait, leaf mass per unit area, canopy mean</description>
+   </entry>
+   <entry id="ptrait_nconc_leaf">
+     <canonical_units>g N g DW-1</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Plant trait, nitrogen concentration</description>
+   </entry>
+   <entry id="n_leaf">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Nitrogen mass in leaf biomass</description>
+   </entry>
+   <entry id="n_wood">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Nitrogen mass in wood biomass</description>
+   </entry>
+   <entry id="n_croot">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Nitrogen mass in coarse-root biomass</description>
+   </entry>
+   <entry id="n_froot">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Nitrogen mass in fine-root biomass</description>
+   </entry>
+   <entry id="n_plantstore">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Nitrogen mass in plant storage</description>
+   </entry>
+   <entry id="n_abglitter">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Nitrogen mass in above-ground litter</description>
+   </entry>
+   <entry id="n_blglitter">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Nitrogen mass in below-ground litter</description>
+   </entry>
+   <entry id="n_cwd">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Nitrogen mass in coarse woody debris</description>
+   </entry>
+   <entry id="n_soil">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Nitrogen mass in soil (total of all pools)</description>
+   </entry>
+   <entry id="n_soilmin">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Nitrogen mass in mineral soil pools</description>
+   </entry>
+   <entry id="n_soilorg">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Nitrogen mass in organic soil pools</description>
+   </entry>
+   <entry id="fn_fix">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, biological fixation over duration of timestep</description>
+   </entry>
+   <entry id="fn_leaf_to_litter">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, litterfall of leaves over duration of timestep</description>
+   </entry>
+   <entry id="fn_croot_to_litter">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, litterfall of coarse-roots over duration of timestep</description>
+   </entry>
+   <entry id="fn_froot_to_litter">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, litterfall of fine-roots over duration of timestep</description>
+   </entry>
+   <entry id="fn_wood_to_litter">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, litterfall of wood over duration of timestep</description>
+   </entry>
+   <entry id="fn_plantuptake">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, plant N uptake over duration of timestep</description>
+   </entry>
+   <entry id="fn_grossmin">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, gross mineralisation over duration of timestep</description>
+   </entry>
+   <entry id="fn_netmin">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, net mineralisation over duration of timestep</description>
+   </entry>
+   <entry id="fn_soil_to_atm">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, gasseous nitrogen losses from soil to atmosphere (volatisation and denitrification) over duration of time period</description>
+   </entry>
+   <entry id="fn_soilsubsurfloss">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, leached in soil solution over duration of timestep</description>
+   </entry>
+   <entry id="fn_grow_leaf">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, gross (i.e. not net of litterfall) leaf growth over duration of timestep</description>
+   </entry>
+   <entry id="fn_grow_wood">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, gross (i.e. not net of litterfall) wood growth over duration of timestep</description>
+   </entry>
+   <entry id="fn_grow_croot">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, gross (i.e. not net of litterfall) coarse-root growth over duration of timestep</description>
+   </entry>
+   <entry id="fn_grow_froot">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, gross (i.e. not net of litterfall) fine-root growth over duration of timestep</description>
+   </entry>
+   <entry id="APAR">
+      <canonical_units>umol m-2 s-1</canonical_units>
+      <cmip></cmip>
+      <alma></alma>
+      <description>Mean PAR absorbed by plants over duration of timestep</description>
+   </entry>
+   <entry id="ptrait_gc">
+     <canonical_units>mol m-2 s-1</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Plant trait, canopy conductance to water diffusion</description>
+   </entry>
+   <entry id="ptrait_ga">
+     <canonical_units>mol m-2 s-1</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Plant trait, aerodynamic (canopy boundary) conductance to water diffusion</description>
+   </entry>
+   <entry id="ptrait_gb">
+     <canonical_units>mol m-2 s-1</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Plant trait, (mean) leaf boundary layer conductance to water diffusion</description>
+   </entry>
+   <entry id="ptrait_waterstress">
+     <canonical_units>unitless</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Plant trait, water stress scalar</description>
+   </entry>
+   <entry id="fn_leaf_to_store">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, retranslocation of N from leaves to plant store over duration of timestep</description>
+   </entry>
+   <entry id="fn_wood_to_store">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, retranslocation of N from wood to plant store over duration of timestep</description>
+   </entry>
+   <entry id="fn_croot_to_store">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, retranslocation of N from coarse-roots to plant store over duration of timestep</description>
+   </entry>
+   <entry id="fn_froot_to_store">
+     <canonical_units>g m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Flux Nitrogen, retranslocation of N from fine-roots to plant store over duration of timestep</description>
+   </entry>
+   <entry id="w_soil">
+     <canonical_units>kg m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Water mass in soil</description>
+   </entry>
+   <entry id="w_snow">
+     <canonical_units>kg m-2</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Water mass in snow</description>
+   </entry>
+   <entry id="model">
+     <type>character</type>
+     <options>'CABL' 'CLM4' 'CLM5' 'DAYC' 'GDAY' 'ISAM' 'JULE' 'LPJG' 'OCNX' 'ORCH' 'SDVM' 'TECO'</options>
+     <model_fullname>'CABLE' 'CLM4.0' 'CLM4.5' 'DAYCENT' 'GDAY' 'ISAM' 'JULES' 'LPJ-GUESS' 'O-CN' 'ORCHIDEE' 'SDGVM' 'TECO'</model_fullname>
+     <canonical_units>NA</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Identifier for the model</description>
+   </entry>
+   <entry id="model_date">
+     <canonical_units></canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Date (in YYMMDD format) the model data were processed</description>
+   </entry>
+   <entry id="model_version">
+     <type>character</type>
+     <options></options>
+     <canonical_units>NA</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Identifier for the model version reported in data file, see model readme's</description>
+   </entry>
+   <entry id="site">
+     <type>character</type>
+     <options>'DUKE' 'KSCO' 'NDFF' 'ORNL' 'PHAC' 'RHIN'</options>
+     <canonical_units>NA</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Identifier for the experimental site</description>
+   </entry>
+   <entry id="co2">
+     <type>character</type>
+     <options>'AMB' 'ELE'</options>
+     <canonical_units>NA</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Identifier for CO2 treatment</description>
+   </entry>
+   <entry id="treatment_o3">
+     <type>character</type>
+     <options>'AMB' 'ELE'</options>
+     <canonical_units>NA</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Identifier for O3 treatment</description>
+   </entry>
+   <entry id="treatment_fertilisation">
+     <type>character</type>
+     <options>'AMB' 'ELE'</options>
+     <canonical_units>NA</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Identifier for fertilisation treatment</description>
+   </entry>
+   <entry id="treatment_warming">
+     <type>character</type>
+     <options>'AMB' 'ELE'</options>
+     <canonical_units>NA</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Identifier for warming treatment</description>
+   </entry>
+   <entry id="treatment_irrigation">
+     <type>character</type>
+     <options>'AMB' 'ELE'</options>
+     <canonical_units>NA</canonical_units>
+     <cmip></cmip>
+     <alma></alma>
+     <description>Identifier for irrigation treatment</description>
+   </entry>
+
+</standard_name_table>

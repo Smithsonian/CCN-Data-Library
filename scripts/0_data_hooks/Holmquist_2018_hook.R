@@ -44,32 +44,17 @@ impacts <-read.csv("./data/Holmquist_2018/V1_Holmquist_2018_impact_data.csv")
 species <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_species_data.csv")
 methods <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_methods_data.csv")
 
-## 3. Recode factors #################
+## 3. Recode and rename factors #################
+
+# Pull from curation functions script
+source("./scripts/1_data_formatting/curation_functions.R")
+
 cores <- cores %>%
   # The Crooks study ID should be 2014, not 2013. 
   mutate(study_id = recode_factor(study_id,
                                   "Crooks_et_al_2013" = "Crooks_et_al_2014")) %>%
   rename(vegetation_class = "vegetation_code",
-         salinity_class = "salinity_code") %>%
-  mutate(salinity_class = recode_factor(salinity_class,
-                                       "Bra" = "brackish",
-                                       "Bra Fre" = "brackish to fresh", 
-                                       "Bra Sal" = "bracish to saline",
-                                       "Del" = "deltaic", 
-                                       "Est" = "estuarine", 
-                                       "Fre" = "freshwater", 
-                                       "Int" = "intermediate salinity", 
-                                       "Mes" = "mesohaline", 
-                                       "Oli" = "oligohaline",
-                                       "Pol" = "polyhaline", 
-                                       "Riv" = "riverine", 
-                                       "Sal" = "saline"
-                                       ),
-         vegetation_class = recode_factor(vegetation_class,
-                                          "EM" = "emergent", 
-                                          "FO" = "forested",
-                                          "FO/SS" = "forested to shrub"
-                                          ))
+         salinity_class = "salinity_code")
 
 depthseries <- depthseries %>%
   # The Crooks study ID should be 2014, not 2013. 
@@ -78,52 +63,16 @@ depthseries <- depthseries %>%
 
 # There are 9 impact codes to convert to plain english
 impacts <- impacts %>%
+  rename(impact_class = "impact_code") %>%
   # The Crooks study ID should be 2014, not 2013. 
-  mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014"),
-         impact_code = recode_factor(impact_code,
-           "Can" = "Canalled",
-           "Dik" = "Diked",
-           "Dit" = "Ditched",
-           "Eut" = "Eutrophic",
-           "Imp" = "Impounded",
-           "Man" = "Managed", 
-           "Nat" = "Natural", 
-           "Res" = "Restoring",
-           "SalImp" = "Salt Impacted"
-         )) 
+  recode_impact(impact_class = impact_class)
 
 # There are 77 species codes
 
 species <- species %>%
   # The Crooks study ID should be 2014, not 2013. 
-  mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014"), 
-         species_code = recode_factor(species_code,
-            "AgSp" = "Agrostis spp.", "AlPh" = "Alternanthera philoxeroides", "AmCa" = "Amaranthus cannabinus", 
-            "AmTr" = "Ambrosia trifida", "ArAr" = "Arrow arum.", "AtFi" = "Athyrium filix-femina",
-            "AvGe" = "Avicennia germinans", "BaHa" = "Baccharis halimifolia", "BaMa" = "Batis maritima",
-            "BiLa" = "Bidens laevis", "BoMa" = "Bolboschoenus maritimus", "CaLy" = "Carex lyngbyei", "CoSe" = "Cornus sericea",  
-            "CuSa" = "Cuscuta salina", "DiSp" = "Distichlis spicata", "EcSpp" = "Echinochloa spp", "ElPa" = "Eleocharis palustris",
-            "ElSpp" = "Eleocharis spp.", "FrSa" = "Frankenia salina", "GaSh" = "Gaultheria shallon",
-            "GrSt" = "Grindelia stricta", "HiSpp" = "Hibiscus spp.", "ImCa" = "Impatiens capensis",
-            "IvFr" = "Iva frutescens","JaCa" = "Jaumea carnosa", "JuBa" = "Juncus balticus", 
-            "JuRo" = "Juncus roemerianus", "LoIn" = "Lonicera involucrata", "LuSpp" = "Ludwigia spp",
-            "LyAm" = "Lysichiton americanus", "MyGa" = "Myrica gale", 
-            "NuAd" = "Nuphar advena", "NyAq" = "Nyssa aquatica", "OeSa" = "Oenanthe sarmentosa",
-            "PaHe" = "Panicum hemitomon", "PaVa" = "Paspalum vaginatum", "PeVi" = "Peltandra virginica",
-            "PhAr" = "Phalaris arundinacea", "PhAu" = "Phragmites australis", "PiSi" = "Picea sitchensis", 
-            "PoAr" = "Polygonum arifolium", "PoPu" = "Polygonum punctatum", "PoSa" = "Polygonum sagittatum",
-            "PoSpp" = "Polygonum spp.","RiMa" = "Rhizophora mangle", "RoCa" = "Rosa californica",
-            "RoNu" = "Rosa nutkana", "RoPi" = "Rosa pisocarpa", "RuSp" = "Rubus spectabilis", 
-            "RuUr" = "Rubus ursinus", "SaLa" = "Sagittaria latifolia", "SaLan" = "Sagittaria lancifolia",
-            "SaLas" = "Salix lasiolepis", "SaPa" = "Salicornia pacifica", "SaVi" = "Salicornia virginica",
-            "ScAc" = "Scirpus acutus", "ScAm" = "Scirpus americanus", "ScCa" = "Schoenoplectus californicus", 
-            "ScTa" = "Schoenoplectus tabernaemontani", "SpAl" = "Spartina alterniflora", "SpCy" = "Spartina cynosuroides", 
-            "SpDo" = "Spiraea douglasii", "SpFo" = "Spartina foliosa", "SpPa" = "Spartina patens", 
-            "SpSpp" = "Spartina spp.", "Swamp" = "Swamp","TaDi" = "Taxodium distichum",
-            "TrMa" = "Triglochin maritima", "TrNa" = "Trapa natis", "TyAg" = "Typa angustifolia", 
-            "TyDo" = "Typa domingensis", "TyLa" = "Typha latifolia", "TySpp" = "Typha spp.",
-            "UnVeg" = "Un-vegetated", "ZiAq" = "Zizania aquatica", "ZiMi" = "Zizaniopsis milaceae", "Mix" = "Mix"))
-              
+  mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014"))
+
 methods <- methods %>%
   # The Crooks study ID should be 2014, not 2013. 
   mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014"))

@@ -11,45 +11,65 @@ library(readxl)
 
 ## Curate Sanderman international data ############
 
-international_core_data <- read.csv("https://raw.githubusercontent.com/whrc/Mangrove-Soil-Carbon/master/R_code/41558_2018_162_MOESM2_ESM.csv")
 
-international_depthseries_data <- read.csv("https://raw.githubusercontent.com/whrc/Mangrove-Soil-Carbon/master/depth_model_comparison/soil_profiles.csv")
+# This excel document was handed off in a personal communication. It corresponds
+#   to some of the data held here: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OCYUIT
+
+# This sheet ("horizon data") mirrrs much of the content that can be downloaded here:
+"https://raw.githubusercontent.com/whrc/Mangrove-Soil-Carbon/master/depth_model_comparison/soil_profiles.csv"
+
+internatl_depthseries_data_raw <- read_excel("./data/Sanderman_2018/original/WHRC-TNC mangrove soc database 100718.xlsx", 
+                                             sheet = 4)
+
+# Another sheet on the same excel document
+internatl_core_data_raw <- read_excel("./data/Sanderman_2018/original/WHRC-TNC mangrove soc database 100718.xlsx",
+                                      sheet = 3)
+
+#m Other core level data found here (but not necessary):
+"https://raw.githubusercontent.com/whrc/Mangrove-Soil-Carbon/master/R_code/41558_2018_162_MOESM2_ESM.csv"
+
+# Jon sent me some updated data as a few sites were inaccurate.
+# We'll need to insert in the new data for these sites
+internatl_depthseries_data_new <- read_excel("./data/Sanderman_2018/original/RC sites.xlsx")
+
+# Delete sites with incorrect data
+internatl_depthseries_data_raw <- internatl_depthseries_data_raw %>%
+  filter(`Site #` != "M0018" & `Site #` != "M0019" & `Site #` != "M0020" & 
+           `Site #` != "M0021") %>%
+  bind_rows(internatl_depthseries_data_new)
 
 
-# Write original data to csv files
-write.csv(international_core_data, "./data/Sanderman_2018/original/41558_2018_162_MOESM2_ESM.csv")
-write.csv(international_depthseries_data, "./data/Sanderman_2018/original/soil_profiles.csv")
+# The below code demonstrates evidence for the issue raised in 
+# https://github.com/Smithsonian/CCRCN-Data-Library/issues/4
+# Can be ignored for now
+soil_profiles <- read.csv("./data/Sanderman_2018/original/soil_profiles.csv")
+  
+soil_profiles <- soil_profiles %>%
+  rename(site_name = Site.name)
 
-## International core data ###############
+int_depth_data_test <- internatl_depthseries_data_raw %>%
+  rename(site_name = `Site name`) 
+
+absent_cores <- soil_profiles %>%
+  anti_join(int_depth_data_test, by = "site_name")
+## * international study level metadata ################
+
+
+## * international core data ###############
 
 # Rename and recode attributes to be congruent with core data
-international_core_data <- international_core_data %>%
+internatl_core_data <- internatl_core_data_raw %>%
   rename(study_id = Source) %>%
   rename(core_latitude = Latitude) %>%
   rename(core_longitude = Longitude) %>%
-  rename(country = Country) %>%
-  mutate(organic_carbon_density = (SOC..mg.cm.3.)/1000) %>%
-  select(-SOC..mg.cm.3.)
-
-
-# Recode what Sanderman's study is called
-international_core_data$study_id <- recode(international_core_data$study_id, 
-                                       "This study" = "Sanderman et al 2018")
-
-# Create core and site IDs for each core
-source("./scripts/1_data_formatting/curation_functions.R")
-international_core_data <- international_core_data %>%
-  create_new_IDs("study_id", "core_id")
-
-international_core_data <- international_core_data %>%
-  create_new_IDs("country", "site_id")
+  rename(country = Country)
 
 # Save as output data
-write.csv(international_core_data, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
+write.csv(internatl_core_data, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
 
-## International depthseries data ####################
+## internatl depthseries data ####################
 
-international_depthseries_data
+internatl_depthseries_data
 
 ## Curate Sanderman USA data ############
 
