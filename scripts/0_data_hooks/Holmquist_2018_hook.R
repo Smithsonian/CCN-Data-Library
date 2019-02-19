@@ -52,30 +52,39 @@ source("./scripts/1_data_formatting/curation_functions.R")
 cores <- cores %>%
   # The Crooks study ID should be 2014, not 2013. 
   mutate(study_id = recode_factor(study_id,
-                                  "Crooks_et_al_2013" = "Crooks_et_al_2014")) %>%
+                                  "Crooks_et_al_2013" = "Crooks_et_al_2014",
+                                  "Nuttle_1988" = "Nuttle_1996",
+                                  "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
+                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
   rename(vegetation_class = "vegetation_code",
          salinity_class = "salinity_code")
 
 depthseries <- depthseries %>%
   # The Crooks study ID should be 2014, not 2013. 
   mutate(study_id = recode_factor(study_id,
-                                  "Crooks_et_al_2013" = "Crooks_et_al_2014"))
+                                  "Crooks_et_al_2013" = "Crooks_et_al_2014",
+                                  "Nuttle_1988" = "Nuttle_1996",
+                                  "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
+                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))
 
-# There are 9 impact codes to convert to plain english
 impacts <- impacts %>%
   rename(impact_class = "impact_code") %>%
   # The Crooks study ID should be 2014, not 2013. 
   recode_impact(impact_class = impact_class)
 
-# There are 77 species codes
-
 species <- species %>%
   # The Crooks study ID should be 2014, not 2013. 
-  mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014"))
+  mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014",
+                                  "Nuttle_1988" = "Nuttle_1996",
+                                  "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
+                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))
 
 methods <- methods %>%
   # The Crooks study ID should be 2014, not 2013. 
-  mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014"))
+  mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014",
+                                  "Nuttle_1988" = "Nuttle_1996",
+                                  "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
+                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))
 
 ## 4. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
