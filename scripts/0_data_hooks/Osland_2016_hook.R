@@ -1,0 +1,362 @@
+## CCRCN Data Library
+# contact: klingesd@si.edu
+
+# Data citation:
+# Osland, M.J., Grace, J.B., Stagg, C.L., Day, R.H., Hartley, S.B., Enwright, N.M., Gabler, C.A., 
+# 2016, U.S. Gulf of Mexico coast (TX, MS, AL, and FL) Vegetation, soil, and landscape data (2013-2014): 
+# U.S. Geological Survey data release, http://dx.doi.org/10.5066/F7J1017G.
+
+# Publication citation: 
+# Osland, M.J., Feher, L.C., Griffith, K.T., Cavanaugh, K.C., Enwright, N.M., Day, R.H., Stagg, C.L., 
+# Krauss, K.W., Howard, R.J., Grace, J.B., and Rogers, K., 2016, 
+# Climatic controls on the global distribution, abundance, and species richness of mangrove forests: 
+# Ecological Monographs, Accepted Online, http://dx.doi.org/10.1002/ecm.1248.
+
+## INSTRUCTIONS ####################
+
+# 1. Designate the target webpage to scrape for data
+#   Paste the url of the target webpage here, wrapped in quotation marks
+
+# Note: because Osland_2016 has multiple data release DOIs, we'll just run this
+#   script separately for each one. Easier to read than looping through each url
+
+URL_1 <- "https://www.sciencebase.gov/catalog/item/57b24094e4b00148d3982cce"
+URL_2 <- "https://www.sciencebase.gov/catalog/item/57b240fce4b00148d3982cd0"
+URL_3 <- "https://www.sciencebase.gov/catalog/item/57aa11efe4b05e859be06932"
+
+                 
+# 2. Name the files
+#   Add the names for each file into this list, wrapped in quotation marks, IN 
+#   THE SAME ORDER THAT THEY ARE LISTED ON THE WEBPAGE ITSELF. Include the file
+#   extension (.csv, .xlsx, etc.) in the name of the file as well.
+  
+FILE_NAMES_1 <- list("U_S_Gulf_of_Mexico_coast_TX_MS_AL_and_FL_Macroclimate_Landscape_and_Climate_Data_2013_2014_.xml",
+                   "Dataset_03_macroclimate_landscape_and_climate_data_2_22_2016.xlsx"
+)
+
+FILE_NAMES_2 <- list("U_S_Gulf_of_Mexico_coast_TX_MS_AL_and_FL_Macroclimate_Soil_Data_2013_2014_.xml",
+                     "Dataset_02_macroclimate_soil_data_2_22_2016.xlsx"
+)
+
+FILE_NAMES_3 <- list("U_S_Gulf_of_Mexico_coast_TX_MS_AL_and_FL_Macroclimate_Vegetation_Data_Section_1_2013_2014_.xml",
+                     "Dataset_01_macroclimate_vegetation_data_all_2_24_2016.xlsx"
+)
+
+# 3. Designate file path of where these data files will go in the CCRCN library
+#   Paste the file path here, wrapped in quotation marks. The getwd() function 
+#   will automatically detect the working directory of the R project (in the case 
+#   of the CCRCN Data library, the location of where this repository is stored on 
+#   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
+#   with whatever you include within the quotation marks.
+  
+FILE_PATH <- paste0(getwd(), "/data/Osland_2016/original/" )
+  
+## Assumptions made about data ###############
+
+
+## Prep workspace #######################
+# Load RCurl, a package used to download files from a URL
+library(rvest)
+library(stringr)
+library(RCurl)
+library(tidyverse)
+library(lubridate)
+library(readxl)
+library(sp)
+
+## Download data ########################
+
+# The stem of the url should always be the same
+BASE_URL <- "https://www.sciencebase.gov"
+
+# Because Osland 2016 has multiple urls, we'll need to run this loop multiple times
+ 
+page <- read_html(URL_3)
+  
+# Extract the url paths for each data file embedded on the webpage, and save
+#   those paths to a list
+url_list <- page %>%
+  html_nodes('.sb-download-link') %>% 
+  html_attr("data-url")
+  
+# For each data file path on the webpage....
+for (i in 1:length(url_list)) {
+  
+  # ...extract and download file
+  download.file(paste0(BASE_URL, url_list[[i]]), paste0(FILE_PATH, FILE_NAMES_3[[i]]),
+                  mode = "wb")
+}
+
+## Curate data to CCRCN Structure #################
+
+# Read data in
+Osland_2016_soil <- read_excel(paste0(FILE_PATH, "Dataset_02_macroclimate_soil_data_2_22_2016.xlsx"))
+Osland_2016_land_climate <- read_excel(paste0(FILE_PATH, "Dataset_03_macroclimate_landscape_and_climate_data_2_22_2016.xlsx"))
+Osland_2016_veg <- read_excel(paste0(FILE_PATH, "Dataset_01_macroclimate_vegetation_data_all_2_24_2016.xlsx"))
+
+# Remove instructions at the top of sheets
+depth_series_data <- Osland_2016_soil %>%
+  slice(-1:-9)
+# the first row will be the header
+colnames(depth_series_data) <- depth_series_data[1, ] 
+depth_series_data <- as.data.frame(depth_series_data[-1, ])
+
+Osland_2016_veg <- Osland_2016_veg %>%
+  slice(-1:-9)
+# the first row will be the header
+colnames(Osland_2016_veg) <- Osland_2016_veg[1, ] 
+Osland_2016_veg <- Osland_2016_veg[-1, ]
+
+Osland_2016_land_climate <- Osland_2016_land_climate %>%
+  slice(-1:-9)
+# the first row will be the header
+colnames(Osland_2016_land_climate) <- Osland_2016_land_climate[1, ] 
+Osland_2016_land_climate <- Osland_2016_land_climate[-1, ]
+
+## Depth series data ###################
+
+# From Osland_2016_soil
+
+# Call functions from curation_functions script
+source("./scripts/1_data_formatting/curation_functions.R") 
+
+Osland_2016_depth_series_data <- depth_series_data %>%
+  rename(site_id = "estuary") %>%
+  mutate(core_id = paste0(site_id, "_", plot)) %>%
+  mutate(core_id = as.factor(tolower(core_id))) %>% # Core IDs are expressed as factor not numeric
+  rename(dry_bulk_density = "bd") %>%
+  mutate(fraction_organic_matter = convert_percent_to_fraction(som)) %>%
+  # CCRCN does not have standards for soil moisture content yet, but this approach
+  #   most closely aligns with other attributes
+  mutate(fraction_moisture_content = convert_percent_to_fraction(moist)) %>%
+  
+  # The legend dictates that only one soil depth interval was sampled, 01-5 cm.
+  # So we'll add a single set of min and max depths for each core
+  mutate(depth_max = as.double(0), depth_min = as.double(15)) %>%
+  
+  select(-moist, -som) %>%
+  mutate(study_id = "Osland_et_al_2016")
+
+
+## Core data ####################
+
+# from Osland_2016_veg
+
+# There's an unwieldy amount of columns, so we'll select them down
+Osland_2016_core_data <- Osland_2016_veg %>%
+  select(1:13)
+
+Osland_2016_core_data <- Osland_2016_core_data %>%
+  rename(site_id = "estuary") %>%
+  # current core IDs are not unique, so concatenate with site IDs
+  mutate(core_id = tolower(paste0(site_id, "_", plot))) %>%
+  # concatenate date attributes, then remove
+  mutate(core_date = as_date(paste0(year, "-", month, "-", day))) %>%
+  select(-year, -month, -day) %>%
+  # We don't need the transect number. Transects can be derived from coordinates
+  select(-tran) %>%
+  rename(core_notes = "criteria") %>%
+  rename(core_time = "time") %>%
+  rename(core_elevation = "elev") %>%
+  mutate(core_elevation_datum = "NAVD88") %>%
+  mutate(study_id = "Osland_et_al_2016")
+
+
+# Transform the projection
+Osland_2016_core_data_coords <- convert_UTM_to_latlong(Osland_2016_core_data$easting, 
+                                                       Osland_2016_core_data$northing, Osland_2016_core_data$zone, Osland_2016_core_data$core_id)
+Osland_2016_core_data <-  Osland_2016_core_data %>%
+  left_join(Osland_2016_core_data_coords)
+
+# Now we can move easting, northing, and zone attributes
+Osland_2016_core_data <- Osland_2016_core_data %>%
+  select(-easting, -northing, -zone, -ID)
+
+## Site level data #############
+
+# We're going to need to add a few new columns, and aggregate out core level
+#   data up to the site level
+
+# Change value of digits so we don't have too many for the next step
+options(digits=6)
+
+# Change all attributes to numeric. we'll need this later for aggregate the data
+#   to the site level
+Osland_2016_site_data <- sapply(Osland_2016_land_climate, as.numeric)
+Osland_2016_site_data <- as.data.frame(Osland_2016_site_data) # Turn back to df
+
+# This turns site and core ID attributes to NA, so we'll need to add those back.
+#   We'll pull them from the core level data
+# NOTE: this is a dangerous cbind. If the data was re-ordered, the data will be
+#   joined incorrectly
+Osland_2016_site_data <- cbind(Osland_2016_site_data, site_id = Osland_2016_core_data$site_id,
+                               core_id = Osland_2016_core_data$core_id)
+
+# Rename and curate
+Osland_2016_site_data <- Osland_2016_site_data %>%
+  select(-ID, -tran, -plot, -estuary, -core_id, -dist) %>%
+  rename(core_longitude = "lon") %>%
+  rename(core_latitude = "lat") %>%
+  rename(mean_annual_precip = "MAP") %>%
+  rename(aridity_index = "AI") %>%
+  rename(potential_evapotrans = "PET") %>%
+  rename(min_temp = "Tmin", site_elevation = elev) %>%
+  mutate(study_id = "Osland_et_al_2016")
+
+# Find min and max lat/long for each site
+source("./scripts/1_data_formatting/curation_functions.R") 
+Osland_2016_site_data_boundaries <- create_multiple_geographic_coverages(Osland_2016_site_data)
+Osland_2016_site_data <- Osland_2016_site_data %>%
+  left_join(Osland_2016_site_data_boundaries) %>% # Add site bounds in
+  select(-core_latitude, -core_longitude)
+# remove NAs before aggregation
+Osland_2016_site_data <- na.omit(Osland_2016_site_data) 
+
+# Now aggeregate data to the site level
+Osland_2016_site_data <- Osland_2016_site_data %>%
+  group_by(site_id) %>%
+  summarize_all(mean)
+
+## Species data ##################
+
+# Select only the columns that correspond to the species presence in a 1-m2
+#   plot surrounding each core, plus the necessary other data
+Osland_2016_species_data <- Osland_2016_veg %>%
+  select(1:182) %>%
+  select("estuary", "plot", 16:182)
+
+# Rename site and core IDs
+Osland_2016_species_data <- Osland_2016_species_data %>%
+  rename(site_id = "estuary") %>%
+  # current core IDs are not unique, so concatenate with site IDs
+  mutate(core_id = tolower(paste0(site_id, "_", plot))) %>%
+  select(-plot) %>%
+  mutate(study_id = "Osland_et_al_2016")
+
+# The species presence data is currently  wide-form, with each column
+#   corresponding to the fraction area occupied by each plant species.
+# Let's write a function that can be applied to each row to change the data to
+#   long-form.
+find_max <- function(df, first_col, last_col) {
+  df <- df %>%
+    # Gather the species columns into one column and select just the most dominant
+    #   species present per core.
+    gather(colname, value, first_col:last_col) %>%
+    mutate(value = value) %>%
+    # Choose just the most dominant plant species
+    filter(value == max(value))
+
+  # If all of the values for the species presence columns are 0, then change the
+  #   values to NA and only use the first row. The species presence value for
+  #   the given core will now just be NA.
+  if (df$value[[1]] == 0) {
+    df$value <- NA
+    df <- slice(df, 1)
+  }
+  df
+}
+
+for (i in 1:nrow(Osland_2016_species_data)) {
+  
+  df <- slice(Osland_2016_species_data, i)
+  if (i == 1) {
+    out <- find_max(df, 5, 168)
+  } else {
+    
+    out <- rbind(out, find_max(df, 5, 168))
+  }
+}
+
+colname <- out$colname
+
+Osland_2016_species_data <- out %>%
+  rename(species_code = "colname") %>%
+  rename(fraction_coverage = "value") %>%
+  mutate(fraction_coverage = as.numeric(fraction_coverage)) %>%
+  select(study_id, site_id, core_id, species_code, fraction_coverage)
+
+# Remove the '1c' string from the species_code entries
+Osland_2016_species_data$species_code <- 
+  sapply(Osland_2016_species_data$species_code,
+    function(x) {
+      gsub("1c", "", x) # Replace '1c' with ''                                           
+   })
+
+# Recode vegetation codes to plain english
+Osland_2016_species_data <- Osland_2016_species_data %>%
+  mutate(species_code = recode_factor(species_code, 
+                                       "ACAU" = "AcAu",  "ALPH" = "AlPh", "AMPARB" = "AmpArb", "AMPS" = "AmPs", "AVGE" = "AvGe", 
+"BAHA" = "BaHa", "BAMA" = "BaMa", "BOFR" = "BoFr", 
+"CHPI" = "ChPi", "CLMA" = "ClMa", "COER" = "CoEr", "CRVI" = "CrVi", "CUSP" = "CuSp", "DAEC" = "DaEc",  
+"DISP"  = "DiSp", "ELCE"  = "ElCe", "FIMCAS" = "FimCas","HAWR"= "HaWr",   "HYMU"= "HyMu",   "ILDE"= "IlDe",   "ILVO"= "IlVo",  
+"IPSA"= "IpSa",   "JURO" = "JuRo",  "KOVI"  = "KoVi", "LARA"= "LaRa", "LUAL" = "LuAl",  "LYCA"= "LyCa" ,
+"MOCE" = "MoCe",  "MOLI"  = "MoLi", "PAHA" = "PaHa","PARE"  = "PaRe", 
+"PAVA"  = "PaVa", "PAVI" = "PaVi", 
+"PHAU"  = "PhAu", "POHY" = "PoHy",  "RHMA"  = "RhMa", "RUTR" = "RuTr",  "RUVE"  = "RuVe", "SAAR" = "SaAr",  
+"SABI"  = "SaBi", "SADE" = "SaDe",  "SAV" = "SaV", "SCAM" = "ScAm",  "SCRO"  = "ScRo", "SCSC" ="ScSc",  "SEHE"  = "SeHe",
+"SEPO"  = "SePo", "SPAL" = "SpAl",  "SPBA"  = "SpBa", "SPCY" = "SpCy",  "SPPA"  = "SpPa", "SPSP" = "SpSp",  "SULI"="SuLi",
+"SYTE"  = "SyTe", "THTE" = "ThTe")) %>%
+  mutate(species_code = recode_factor(species_code,
+                             "AgSp" = "Agrostis spp.", "AlPh" = "Alternanthera philoxeroides", "AmCa" = "Amaranthus cannabinus", 
+                             "AmTr" = "Ambrosia trifida", "ArAr" = "Arrow arum.", "AtFi" = "Athyrium filix-femina",
+                             "AvGe" = "Avicennia germinans", "BaHa" = "Baccharis halimifolia", "BaMa" = "Batis maritima",
+                             "BiLa" = "Bidens laevis", "BoMa" = "Bolboschoenus maritimus", "CaLy" = "Carex lyngbyei", "CoSe" = "Cornus sericea",  
+                             "CuSa" = "Cuscuta salina", "DiSp" = "Distichlis spicata", "EcSpp" = "Echinochloa spp", "ElPa" = "Eleocharis palustris",
+                             "ElSpp" = "Eleocharis spp.", "FrSa" = "Frankenia salina", "GaSh" = "Gaultheria shallon",
+                             "GrSt" = "Grindelia stricta", "HiSpp" = "Hibiscus spp.", "ImCa" = "Impatiens capensis",
+                             "IvFr" = "Iva frutescens","JaCa" = "Jaumea carnosa", "JuBa" = "Juncus balticus", 
+                             "JuRo" = "Juncus roemerianus", "LoIn" = "Lonicera involucrata", "LuSpp" = "Ludwigia spp",
+                             "LyAm" = "Lysichiton americanus", "MyGa" = "Myrica gale", 
+                             "NuAd" = "Nuphar advena", "NyAq" = "Nyssa aquatica", "OeSa" = "Oenanthe sarmentosa",
+                             "PaHe" = "Panicum hemitomon", "PaVa" = "Paspalum vaginatum", "PeVi" = "Peltandra virginica",
+                             "PhAr" = "Phalaris arundinacea", "PhAu" = "Phragmites australis", "PiSi" = "Picea sitchensis", 
+                             "PoAr" = "Polygonum arifolium", "PoPu" = "Polygonum punctatum", "PoSa" = "Polygonum sagittatum",
+                             "PoSpp" = "Polygonum spp.","RiMa" = "Rhizophora mangle", "RoCa" = "Rosa californica",
+                             "RoNu" = "Rosa nutkana", "RoPi" = "Rosa pisocarpa", "RuSp" = "Rubus spectabilis", 
+                             "RuUr" = "Rubus ursinus", "SaLa" = "Sagittaria latifolia", "SaLan" = "Sagittaria lancifolia",
+                             "SaLas" = "Salix lasiolepis", "SaPa" = "Salicornia pacifica", "SaVi" = "Salicornia virginica",
+                             "ScAc" = "Scirpus acutus", "ScAm" = "Scirpus americanus", "ScCa" = "Schoenoplectus californicus", 
+                             "ScTa" = "Schoenoplectus tabernaemontani", "SpAl" = "Spartina alterniflora", "SpCy" = "Spartina cynosuroides", 
+                             "SpDo" = "Spiraea douglasii", "SpFo" = "Spartina foliosa", "SpPa" = "Spartina patens", 
+                             "SpSpp" = "Spartina spp.", "Swamp" = "Swamp","TaDi" = "Taxodium distichum",
+                             "TrMa" = "Triglochin maritima", "TrNa" = "Trapa natis", "TyAg" = "Typa angustifolia", 
+                             "TyDo" = "Typa domingensis", "TyLa" = "Typha latifolia", "TySpp" = "Typha spp.",
+                             "UnVeg" = "Un-vegetated", "ZiAq" = "Zizania aquatica", "ZiMi" = "Zizaniopsis milaceae", "Mix" = "Mix",
+                             "AcAu" = "Acrostichium aureum", "ALGMAT" = "Algal Mat", "ALGSRF" = "Surface Algae", 
+                             "AmpArb" = "Ampelopsis arborea", "AmPs" = "Ambrosia psilostachya", "BBF3" = "Unidentified forb", 
+                             "BBG2" = "Unidentified grass", "BoFr" = "Borrichia frutescens", "ChPi" = "Chrysopsis pilosa",
+                             "ClMa" = "Cladium mariscus", "CoEr" = "Conocarpus erectus", "CrVi" = "Crassostrea virginica",
+                             "CuSp" = "Cuscuta sp.", "DaEc" = "Dalbergia ecastaphyllum", "ElCe" = "Eleocharis cellulosa" , 
+                             "FimCas" = "Fimbristylis castanea", "HaWr" = "Halodule wrightii" , "HyMu" = "Hypericum mutilum" , "IlDe" = "Ilex decidua" ,
+                             "IlVo" = "Ilex vomitoria" , "IpSa" = "Ipomoea sagittata" , "KoVi" = "Kosteletzkya virginica" , "LaRa" = "Laguncularia racemosa",
+                             "LuAl" = "Ludwigia alternifolia" , "LyCa" = "Lycium carolinianum" , "MoCe" = "Morella cerifera",
+                             "MoLi" = "Monanthochloe littoralis" , "PaHa" = "Panicum hallii" , "PaRe" = "Panicum repens" , "PaVi" = "Panicum virgatum" , 
+                             "PoHy" = "Polygonum hydropiperoides" , "RhMa" = "Rhizophora mangle" , "RuTr" = "Rubus trivialis" , "RuVe" = "Rumex verticillatus" ,
+                             "SaAr" = "Sabatia arenicola" , "SaBi" = "Salicornia bigelovii" , "SaDe" = "Salicornia depressa" , 
+                             "SaV" = "submerged aquatic vegetation","ScRo" = "Schoenoplectus robustus" , "ScSc" = "Schizachyrium scoparium" , "SeHe" = "Sesbania herbacea",
+                             "SePo" = "Sesuvium portulacastrum" , "SpBa" = "Spartina bakeri" , "SpSp" = "Spartina spp.",
+                             "SuLi" = "Suaeda linearis" , "SyTe" = "Symphyotrichum tenuifolium" , "ThTe" = "Thalassia testudinum" 
+                             ))
+
+
+## QA/QC of data ################
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Make sure column names are formatted correctly: 
+test_colnames("cores", Osland_2016_core_data) # plot and core_time are not in the CCRCN guidance
+test_colnames("sites", Osland_2016_site_data) # elev mean_annual_precip aridity_index potential_evapotrans min_temp TIdist GMdist
+test_colnames("depthseries", Osland_2016_depth_series_data) # fraction_moisture_content
+
+# Test relationships between core_ids at core- and depthseries-levels
+# the test returns all core-level rows that did not have a match in the depth series data
+results <- test_core_relationships(Osland_2016_core_data, Osland_2016_depth_series_data)
+
+# based on the colname tests, I'm going to remove plot and core_time from cores
+Osland_2016_core_data <- select(Osland_2016_core_data, -plot, -core_time)
+
+## Write data #################
+write.csv(Osland_2016_species_data, "./data/Osland_2016/derivative/Osland_et_al_2016_species.csv")
+write.csv(Osland_2016_depth_series_data, "./data/Osland_2016/derivative/Osland_et_al_2016_depthseries.csv")
+write.csv(Osland_2016_site_data, "./data/Osland_2016/derivative/Osland_et_al_2016_sites.csv")
+write.csv(Osland_2016_core_data, "./data/Osland_2016/derivative/Osland_et_al_2016_cores.csv")
+

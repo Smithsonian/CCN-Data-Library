@@ -2,6 +2,8 @@
 # contact: klingesd@si.edu
 #          lonnemanm@si.edu
 
+## 1. Citations for data and publication ##########
+
 # Data citation: 
 # Giblin A., I. Forbrich. 2018. PIE LTER high marsh sediment chemistry and activity measurements, 
 # Nelson Island Creek marsh, Rowley, MA. Environmental Data Initiative. 
@@ -13,7 +15,7 @@
 # Journal of Geophysical Research: Biogeosciences 123 (3): 867–78. https://doi.org/10.1002/2017JG004336.
 
 
-## Prep workspace and scrape data #######################
+## 2. Prep workspace and scrape data #######################
 library(rvest)
 library(stringr)
 library(tidyverse)
@@ -43,8 +45,13 @@ dt1 <-read.csv(infile1,header=F
 
 write.csv(dt1, "./data/Giblin_2018/original/MAR-NE-MarshSedChemActivity.csv")
 
-## Process data to meet CCRCN standards ############
+# if you read in the original data from the CCRCN library: 
+#dt1 <- read.csv("./data/Giblin_2018/original/MAR-NE-MarshSedChemActivity.csv")
+#dt1 <- select(dt1, -X)
 
+## 3. Process data to meet CCRCN standards ############
+
+## ... 3A. Prep depthseries data ############
 depthseries_data <- dt1 %>%
   rename(core_id = Core.ID, 
          sample_id = section,
@@ -59,17 +66,18 @@ depthseries_data <- dt1 %>%
          total_pb210_activity = total_pb210_activity * 1000) %>%
   # create unique core IDs
   mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
-         study_id = "Forbrich et al. 2018") %>%
+         study_id = "Giblin_and_Forbrich_2018") %>%
   select(core_id, sample_id, study_id, dry_bulk_density, fraction_carbon, section_depth,
          cs137_activity, total_pb210_activity)
 
-# calculate min and max depth variables 
+## ... ... 2Ai. calculate min and max depth variables ###############
 # I am sure there is a way to do this in dplyr but I can't figure it out right now: 
 min <- 0
 max <- 0
 depth_min <- vector(length = nrow(depthseries_data))
 depth_max <- vector(length = nrow(depthseries_data))
 
+# for each core, iterate on the section_depth to calculate min and max depth for each section
 for (i in 1:nrow(depthseries_data)) {
   if(depthseries_data[i,"sample_id"] == 1) {
     min <- 0
@@ -84,9 +92,7 @@ for (i in 1:nrow(depthseries_data)) {
 depthseries_data <- cbind(depthseries_data, depth_max, depth_min)
 depthseries_data <- select(depthseries_data, -sample_id, -section_depth)
 
-write.csv(depthseries_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_depth_series_data.csv")
-
-## core level data ###################
+## ... 2B. core level data ###################
 core_data <- dt1 %>%
   rename(core_id = Core.ID,
          core_date = Date, 
@@ -94,30 +100,27 @@ core_data <- dt1 %>%
          core_longitude = Longitude,
          core_elevation = Elevation) %>% 
   # create unique core IDs
-  mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
-         study_id = "Forbrich et al. 2018", 
+  mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep="")) %>%
+  group_by(core_id) %>%
+  summarize(core_date = first(core_date), core_latitude = first(core_latitude), 
+            core_longitude = first(core_longitude), core_elevation = first(core_elevation)) %>%
+  mutate(study_id = "Giblin_and_Forbrich_2018", 
          core_length_flag = "core depth limited by length of corer", 
-         site_id = "Plum Island LTER", 
-         core_elevation_datum = "NAVD88") %>%
-  select(core_id, study_id, site_id, core_date, core_latitude, core_longitude, 
-         core_elevation, core_elevation_datum, core_length_flag)
+         site_id = "Nelson_Island_Creek", 
+         core_elevation_datum = "NAVD88") 
 
-write.csv(core_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_core_data.csv")
-
-## Vegetation data #####################
+## ... 2C. Vegetation data #####################
 veggies <- dt1 %>%
   rename(core_id = Core.ID,
          species_code = Name.per.Vegetation) %>% 
   # create unique core IDs
-  mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
-         study_id = "Forbrich et al. 2018", 
-         site_id = "Plum Island LTER",
-         species_code = ifelse(species_code == "S. alterniflora", "SPAL", "SPPA")) %>%
-  select(site_id, core_id, study_id, species_code)
-
-write.csv(veggies, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species_data.csv")
-
-## Site data ########################
+  mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep="")) %>%
+  group_by(core_id) %>%
+  summarize(study_id = "Giblin_and_Forbrich_2018", 
+         site_id = "Nelson_Island_Creek",
+         species_code = first(ifelse(species_code == "S. alterniflora", "Spartina alterniflora", "Spartina patens")))
+  
+## ... 2D. Site data ########################
 site_data <- core_data %>%
   select(site_id, core_id, study_id, core_latitude, core_longitude, core_elevation)
 
@@ -139,5 +142,20 @@ site_data <- site_data %>%
   mutate(site_description = "Plum Island Sound Estuary, Massachusetts, USA", 
          vegetation_class = "seagrass")
 
-# Write data
-write.csv(site_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_site_data.csv")
+## 3. QA/QC of data ################
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Make sure column names are formatted correctly: 
+test_colnames("cores", core_data)
+test_colnames("sites", site_data) 
+test_colnames("depthseries", depthseries_data)
+
+# Test relationships between core_ids at core- and depthseries-levels
+# the test returns all core-level rows that did not have a match in the depth series data
+results <- test_core_relationships(core_data, depthseries_data)
+
+## 4. Write data ################
+write.csv(site_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_sites.csv")
+write.csv(veggies, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species.csv")
+write.csv(core_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_cores.csv")
+write.csv(depthseries_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_depthseries.csv")

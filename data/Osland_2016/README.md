@@ -1,4 +1,4 @@
-## Osland et al 2018
+## Osland et al 2016
 
 Data source:  
 

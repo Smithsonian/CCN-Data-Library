@@ -154,8 +154,10 @@ convert_UTM_to_latlong <- function(easting, northing, zone, core_id) {
   
   # Now let's add those NA rows back in
   require(DataCombine)
-  for (i in 1:length(NA_rows)) {
-    output <- InsertRow(data = output, NewRow = rep(NA, 2), RowNum = NA_rows[[i]])
+  if(length(NA_rows) > 0){
+    for (i in 1:length(NA_rows)) {
+      output <- InsertRow(data = output, NewRow = rep(NA, 2), RowNum = NA_rows[[i]])
+    }
   }
   # And add the core_id attribute back for joining purposes
   output <- cbind(output, core_id)

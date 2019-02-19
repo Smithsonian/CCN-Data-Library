@@ -1,6 +1,11 @@
 ## CCRCN Data Library
 # contact: klingesd@si.edu
 
+# Data citation: 
+# Gonneea, M.E., O'Keefe Suttles, J.A., and Kroeger, K.D., 2018, 
+# Collection, analysis, and age-dating of sediment cores from salt marshes on the south shore of Cape Cod, Massachusetts, from 2013 through 2014: 
+# U.S. Geological Survey data release, https://doi.org/10.5066/F7H41QPP.
+
 # This script hooks in data from the Gonneea et al 2018 data release
 
 ## Assumptions made about data ###############
@@ -76,7 +81,7 @@ Gonneea_2018 <- Gonneea_2018 %>%
   rename(be7_activity = "7Be")
   
 # Add study_id
-Gonneea_2018$study_id <- "Gonneea_2018"
+Gonneea_2018$study_id <- "Gonneea_et_al_2018"
 
 # Some columns are characters when they should be numeric
 Gonneea_2018 <- Gonneea_2018 %>%
@@ -135,15 +140,28 @@ core_elevation <- Gonneea_2018 %>%
            excess_pb210_activity, be7_activity, age) %>%
     filter(depth_min != depth_max)
 
+  ## QA/QC of data ################
+  source("./scripts/1_data_formatting/qa_functions.R")
+  
+  # Make sure column names are formatted correctly: 
+  test_colnames("cores", Gonneea_2018_core_Data)
+  test_colnames("sites", site_data) # there is no derived site data
+  test_colnames("depthseries", Gonneea_2018_depth_series_data)
+  
+  # Test relationships between core_ids at core- and depthseries-levels
+  # the test returns all core-level rows that did not have a match in the depth series data
+  results <- test_core_relationships(Gonneea_2018_core_Data, Gonneea_2018_depth_series_data)
+  
+  
 ## Export files ##############################
   
 # Export core data
-write_csv(Gonneea_2018_core_Data, "./data/Gonneea_2018/derivative/Gonneea_2018_core_Data.csv")
+write_csv(Gonneea_2018_core_Data, "./data/Gonneea_2018/derivative/Gonneea_et_al_2018_cores.csv")
 
 # Export depth series data
-write_csv(Gonneea_2018_depth_series_data, "./data/Gonneea_2018/derivative/Gonneea_2018_depth_series_data.csv")
+write_csv(Gonneea_2018_depth_series_data, "./data/Gonneea_2018/derivative/Gonneea_et_al_2018_depthseries.csv")
   
 # Export master data
-write_csv(Gonneea_2018, "./data/Gonneea_2018/derivative/Gonneea_2018.csv")
+# write_csv(Gonneea_2018, "./data/Gonneea_2018/derivative/Gonneea_2018.csv")
 
 

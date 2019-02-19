@@ -1,0 +1,114 @@
+## CCRCN Data Library
+# contact: klingesd@si.edu
+#          lonnemanm@si.edu
+
+# This is a hook script for the Wetland Paleoecological Study of Southwest Coastal Louisiana: Sediment Cores and Diatom Calibration Dataset
+
+## 1. Citations ###########
+
+# Data Citation
+# Smith, K.E.L., Flocks, J.G., Steyer, G.D., and Piazza, S.C., 2015, 
+# Wetland paleoecological study of southwest coastal Louisiana—Sediment cores and diatom calibration dataset: 
+# U.S. Geological Survey Data Series 877, https://dx.doi.org/10.3133/ds877.
+
+# Publication Citation (PhD Thesis)
+# Smith, Kathryn E.L., 2012, 
+# Paleoecological study of coastal marsh in the Chenier Plain, Louisiana: Investigating the diatom composition of hurricane-deposited 
+# sediments and a diatom-based quantitative reconstruction of sea-level characteristics. 
+# PhD Thesis. University of Florida
+
+
+## 2. Prep workspace #######################
+# Load RCurl, a package used to download files from a URL
+library(tidyverse)
+library(lubridate)
+
+## 3. Data Location ########
+
+# I'm unable to scrape files from USGS. Until I figure it out, I'll download and place in original folder. 
+
+URL <- "https://pubs.usgs.gov/ds/0877/html/ds877_data.html"
+
+## 4. Import data ####################
+
+raw_depthseries <- read.csv("./data/Smith_2015/original/sediment_core_properties.txt")
+raw_cores <- read.csv("./data/Smith_2015/original/sediment_core_sites.txt")
+
+## ... 4A. Core-level data ###########
+# Although the original file says sites, it is the core-level data. 
+
+core_data <- raw_cores %>%
+  rename(core_id = Site, 
+         core_latitude = Latitude, 
+         core_longitude = Longitude,
+         core_date = Date) %>%
+  mutate(core_date = as.Date(core_date, format = "%m/%d/%Y")) %>%
+  mutate(core_position_method = "handheld", 
+         study_id = "Smith_et_al_2015", site_id = "09WCC01") %>%
+  select(core_id, site_id, study_id, 
+         core_date, core_latitude, core_longitude, core_position_method)
+
+## ... 4B. Depthseries data ##########
+
+depthseries_data <- raw_depthseries %>%
+  rename(core_id = Sample, 
+         dry_bulk_density = BD,
+         fraction_organic_matter = LOI,
+         total_pb210_activity = Pb210, total_pb210_activity_sd = Pb_error,
+         ra226_activity = Ra226, ra226_activity_sd = Ra_error,
+         cs137_activity = Cs137, cs137_activity_sd = Cs_error) %>%
+  # convert from disintegrations per minute per gram to Becquerels per kilogram
+  mutate(total_pb210_activity = total_pb210_activity * .06, total_pb210_activity_sd = total_pb210_activity_sd * .06,
+         ra226_activity = ra226_activity * .06, ra226_activity_sd = ra226_activity_sd * .06,
+         cs137_activity = cs137_activity * .06, cs137_activity_sd = cs137_activity_sd * .06) %>%
+  # convert LOI to a fraction
+  mutate(fraction_organic_matter = fraction_organic_matter / 100) %>%
+  separate(core_id, into=c("core_id", "depth_interval"), sep=10) %>%
+  # establish min and max depths for each sample
+  mutate(depth_interval = as.numeric(gsub("_", "", depth_interval))) %>%
+  mutate(depth_min = depth_interval - 1, depth_max = depth_interval + 1,
+         study_id = "Smith_et_al_2015", site_id = "09WCC01") %>%
+  select(study_id, site_id, core_id, depth_min, depth_max,
+         dry_bulk_density,
+         fraction_organic_matter,
+         total_pb210_activity, total_pb210_activity_sd,
+         ra226_activity, ra226_activity_sd,
+         cs137_activity, cs137_activity_sd)
+
+## ... 4C. Site-level data ##########
+site_data <- core_data %>%
+  select(site_id, core_id, study_id, core_latitude, core_longitude)
+
+# Find min and max lat/long for each site
+source("./scripts/1_data_formatting/curation_functions.R")
+site_boundaries <- create_multiple_geographic_coverages(site_data)
+site_data <- site_data %>%
+  left_join(site_boundaries) %>% # Add site bounds in
+  select(-core_latitude, -core_longitude)
+# remove NAs before aggregation
+site_data <- na.omit(site_data)
+
+# Now aggeregate data to the site level
+site_data <- site_data %>%
+  group_by(site_id) %>%
+  summarize(study_id = first(study_id), 
+            site_longitude_max = first(site_longitude_max), site_longitude_min = first(site_longitude_min),
+            site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min)) %>%
+  mutate(site_description = "Rockefeller Wildlife Refuge")
+
+## 5. QA/QC  ################
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Make sure column names are formatted correctly: 
+test_colnames("cores", core_data)
+test_colnames("sites", site_data) 
+test_colnames("depthseries", depthseries_data) 
+
+# Test relationships between core_ids at core- and depthseries-levels
+# the test returns all core-level rows that did not have a match in the depth series data
+results <- test_core_relationships(core_data, depthseries_data)
+
+## 6. Write data ##################
+write.csv(core_data, "./data/Smith_2015/derivative/Smith_et_al_2015_cores.csv")
+write.csv(site_data, "./data/Smith_2015/derivative/Smith_et_al_2015_sites.csv")
+write.csv(depthseries_data, "./data/Smith_2015/derivative/Smith_et_al_2015_depthseries.csv")

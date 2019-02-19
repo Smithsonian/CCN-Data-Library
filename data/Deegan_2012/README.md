@@ -15,11 +15,15 @@ Deegan, Linda A., David Samuel Johnson, R. Scott Warren, Bruce J. Peterson, John
 
 Four derived .csv files:
 
-1. Deegan_et_al_2012_core_data.csv"
+1. Deegan_et_al_2012_cores.csv"
 
-2. "Deegan_et_al_2012_site_data.csv"
+2. "Deegan_et_al_2012_sites.csv"
+
+3. "Deegan_et_al_2012_depthseries.csv"
 
 Datasets follow the structure and definitions given at CCRCN-Soils-Working-Group/data/data-syntheses/data_templates/ in the group’s GitHub, and at https://serc.si.edu/coastalcarbon/database-structure
 
 ## Issues or notes: 
- 1. Belowground biomass depth series have not been curated due to the lack of CCRCN guidance. Aboveground biomass is present at the core-level dataset.
+
+ 1. Belowground biomass depth series have not been curated due to the lack of CCRCN guidance. It is included in the depthseries csv. Aboveground biomass is present at the core-level dataset.
+
