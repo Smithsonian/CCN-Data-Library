@@ -62,7 +62,8 @@ cores <- cores %>%
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
   rename(vegetation_class = "vegetation_code",
-         salinity_class = "salinity_code")
+         salinity_class = "salinity_code",
+         core_position_method = "position_code")
 
 depthseries <- depthseries %>%
   # The Crooks study ID should be 2014, not 2013. 

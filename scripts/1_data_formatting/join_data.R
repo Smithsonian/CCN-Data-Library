@@ -83,11 +83,13 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   select(-X)
 
 # Impact data
-CCRCN_impactdata <- Holmquist_2018_impactdata
+CCRCN_impactdata <- Holmquist_2018_impactdata %>%
+  select(-X)
 
 
 # Methods data
-CCRCN_methodsdata <- Holmquist_2018_methodsdata
+CCRCN_methodsdata <- Holmquist_2018_methodsdata%>%
+  select(-X)
 
 # Species data
 CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
