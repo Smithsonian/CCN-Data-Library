@@ -282,7 +282,7 @@ Osland_2016_species_data$species_code <-
       gsub("1c", "", x) # Replace '1c' with ''                                           
    })
 
-# Recode vegetation codes to plain english
+# Recode vegetation codes to the proper format
 Osland_2016_species_data <- Osland_2016_species_data %>%
   mutate(species_code = recode_factor(species_code, 
                                        "ACAU" = "AcAu",  "ALPH" = "AlPh", "AMPARB" = "AmpArb", "AMPS" = "AmPs", "AVGE" = "AvGe", 
@@ -295,48 +295,7 @@ Osland_2016_species_data <- Osland_2016_species_data %>%
 "PHAU"  = "PhAu", "POHY" = "PoHy",  "RHMA"  = "RhMa", "RUTR" = "RuTr",  "RUVE"  = "RuVe", "SAAR" = "SaAr",  
 "SABI"  = "SaBi", "SADE" = "SaDe",  "SAV" = "SaV", "SCAM" = "ScAm",  "SCRO"  = "ScRo", "SCSC" ="ScSc",  "SEHE"  = "SeHe",
 "SEPO"  = "SePo", "SPAL" = "SpAl",  "SPBA"  = "SpBa", "SPCY" = "SpCy",  "SPPA"  = "SpPa", "SPSP" = "SpSp",  "SULI"="SuLi",
-"SYTE"  = "SyTe", "THTE" = "ThTe")) %>%
-  mutate(species_code = recode_factor(species_code,
-                             "AgSp" = "Agrostis spp.", "AlPh" = "Alternanthera philoxeroides", "AmCa" = "Amaranthus cannabinus", 
-                             "AmTr" = "Ambrosia trifida", "ArAr" = "Arrow arum.", "AtFi" = "Athyrium filix-femina",
-                             "AvGe" = "Avicennia germinans", "BaHa" = "Baccharis halimifolia", "BaMa" = "Batis maritima",
-                             "BiLa" = "Bidens laevis", "BoMa" = "Bolboschoenus maritimus", "CaLy" = "Carex lyngbyei", "CoSe" = "Cornus sericea",  
-                             "CuSa" = "Cuscuta salina", "DiSp" = "Distichlis spicata", "EcSpp" = "Echinochloa spp", "ElPa" = "Eleocharis palustris",
-                             "ElSpp" = "Eleocharis spp.", "FrSa" = "Frankenia salina", "GaSh" = "Gaultheria shallon",
-                             "GrSt" = "Grindelia stricta", "HiSpp" = "Hibiscus spp.", "ImCa" = "Impatiens capensis",
-                             "IvFr" = "Iva frutescens","JaCa" = "Jaumea carnosa", "JuBa" = "Juncus balticus", 
-                             "JuRo" = "Juncus roemerianus", "LoIn" = "Lonicera involucrata", "LuSpp" = "Ludwigia spp",
-                             "LyAm" = "Lysichiton americanus", "MyGa" = "Myrica gale", 
-                             "NuAd" = "Nuphar advena", "NyAq" = "Nyssa aquatica", "OeSa" = "Oenanthe sarmentosa",
-                             "PaHe" = "Panicum hemitomon", "PaVa" = "Paspalum vaginatum", "PeVi" = "Peltandra virginica",
-                             "PhAr" = "Phalaris arundinacea", "PhAu" = "Phragmites australis", "PiSi" = "Picea sitchensis", 
-                             "PoAr" = "Polygonum arifolium", "PoPu" = "Polygonum punctatum", "PoSa" = "Polygonum sagittatum",
-                             "PoSpp" = "Polygonum spp.","RiMa" = "Rhizophora mangle", "RoCa" = "Rosa californica",
-                             "RoNu" = "Rosa nutkana", "RoPi" = "Rosa pisocarpa", "RuSp" = "Rubus spectabilis", 
-                             "RuUr" = "Rubus ursinus", "SaLa" = "Sagittaria latifolia", "SaLan" = "Sagittaria lancifolia",
-                             "SaLas" = "Salix lasiolepis", "SaPa" = "Salicornia pacifica", "SaVi" = "Salicornia virginica",
-                             "ScAc" = "Scirpus acutus", "ScAm" = "Scirpus americanus", "ScCa" = "Schoenoplectus californicus", 
-                             "ScTa" = "Schoenoplectus tabernaemontani", "SpAl" = "Spartina alterniflora", "SpCy" = "Spartina cynosuroides", 
-                             "SpDo" = "Spiraea douglasii", "SpFo" = "Spartina foliosa", "SpPa" = "Spartina patens", 
-                             "SpSpp" = "Spartina spp.", "Swamp" = "Swamp","TaDi" = "Taxodium distichum",
-                             "TrMa" = "Triglochin maritima", "TrNa" = "Trapa natis", "TyAg" = "Typa angustifolia", 
-                             "TyDo" = "Typa domingensis", "TyLa" = "Typha latifolia", "TySpp" = "Typha spp.",
-                             "UnVeg" = "Un-vegetated", "ZiAq" = "Zizania aquatica", "ZiMi" = "Zizaniopsis milaceae", "Mix" = "Mix",
-                             "AcAu" = "Acrostichium aureum", "ALGMAT" = "Algal Mat", "ALGSRF" = "Surface Algae", 
-                             "AmpArb" = "Ampelopsis arborea", "AmPs" = "Ambrosia psilostachya", "BBF3" = "Unidentified forb", 
-                             "BBG2" = "Unidentified grass", "BoFr" = "Borrichia frutescens", "ChPi" = "Chrysopsis pilosa",
-                             "ClMa" = "Cladium mariscus", "CoEr" = "Conocarpus erectus", "CrVi" = "Crassostrea virginica",
-                             "CuSp" = "Cuscuta sp.", "DaEc" = "Dalbergia ecastaphyllum", "ElCe" = "Eleocharis cellulosa" , 
-                             "FimCas" = "Fimbristylis castanea", "HaWr" = "Halodule wrightii" , "HyMu" = "Hypericum mutilum" , "IlDe" = "Ilex decidua" ,
-                             "IlVo" = "Ilex vomitoria" , "IpSa" = "Ipomoea sagittata" , "KoVi" = "Kosteletzkya virginica" , "LaRa" = "Laguncularia racemosa",
-                             "LuAl" = "Ludwigia alternifolia" , "LyCa" = "Lycium carolinianum" , "MoCe" = "Morella cerifera",
-                             "MoLi" = "Monanthochloe littoralis" , "PaHa" = "Panicum hallii" , "PaRe" = "Panicum repens" , "PaVi" = "Panicum virgatum" , 
-                             "PoHy" = "Polygonum hydropiperoides" , "RhMa" = "Rhizophora mangle" , "RuTr" = "Rubus trivialis" , "RuVe" = "Rumex verticillatus" ,
-                             "SaAr" = "Sabatia arenicola" , "SaBi" = "Salicornia bigelovii" , "SaDe" = "Salicornia depressa" , 
-                             "SaV" = "submerged aquatic vegetation","ScRo" = "Schoenoplectus robustus" , "ScSc" = "Schizachyrium scoparium" , "SeHe" = "Sesbania herbacea",
-                             "SePo" = "Sesuvium portulacastrum" , "SpBa" = "Spartina bakeri" , "SpSp" = "Spartina spp.",
-                             "SuLi" = "Suaeda linearis" , "SyTe" = "Symphyotrichum tenuifolium" , "ThTe" = "Thalassia testudinum" 
-                             ))
+"SYTE"  = "SyTe", "THTE" = "ThTe")) 
 
 
 ## QA/QC of data ################
