@@ -76,7 +76,7 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Schile_2017_coredata) %>%
   bind_rows(Deegan_2012_coredata) %>%
   bind_rows(Giblin_2018_coredata) %>%
-  bind_rows(Doughty_2016_cores) %>%
+  #bind_rows(Doughty_2016_cores) %>%
   select(-X)
 
 # Depth series data
@@ -88,21 +88,23 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Osland_2016_depthseriesdata) %>%
   bind_rows(Schile_2017_depthseriesdata) %>%
   bind_rows(Giblin_2018_depthseriesdata) %>%
-  bind_rows(Doughty_2016_depthseries) %>%
+  #bind_rows(Doughty_2016_depthseries) %>%
   select(-X)
 
 # Impact data
-CCRCN_impactdata <- Holmquist_2018_impactdata
+CCRCN_impactdata <- Holmquist_2018_impactdata %>%
+  select(-X)
 
 
 # Methods data
-CCRCN_methodsdata <- Holmquist_2018_methodsdata
+CCRCN_methodsdata <- Holmquist_2018_methodsdata%>%
+  select(-X)
 
 # Species data
 CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
   bind_rows(Osland_2016_speciesdata) %>%
   bind_rows(Giblin_2018_speciesdata) %>%
-  bind_rows(Doughty_2016_species) %>%
+  #bind_rows(Doughty_2016_species) %>%
   select(-X)
 
 ## QA #################
