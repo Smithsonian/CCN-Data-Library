@@ -76,9 +76,9 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Schile_2017_coredata) %>%
   bind_rows(Deegan_2012_coredata) %>%
   bind_rows(Giblin_2018_coredata) %>%
-  #bind_rows(Doughty_2016_cores) %>%
+  bind_rows(Doughty_2016_cores) %>%
   select(-X)
-
+  
 # Depth series data
 # The Osland core IDs are initiatlized as numeric, as they're just numbers.
 #   Switch the core IDs to factor to match all other datasets
@@ -88,8 +88,22 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Osland_2016_depthseriesdata) %>%
   bind_rows(Schile_2017_depthseriesdata) %>%
   bind_rows(Giblin_2018_depthseriesdata) %>%
-  #bind_rows(Doughty_2016_depthseries) %>%
+  bind_rows(Doughty_2016_depthseries) %>%
   select(-X)
+
+# Add a column for aggregated fraction carbon and carbon density per core
+aggregate_carbon <- CCRCN_depthseriesdata %>%
+  select(core_id, fraction_carbon, dry_bulk_density) %>%
+  group_by(core_id) %>%
+  summarize_all(mean)
+
+# Add aggregated data to core level data
+CCRCN_coredata <- CCRCN_coredata %>%
+  left_join(aggregate_carbon)
+
+aggregate_carbon <- aggregate_carbon %>%
+  rename(mean_fraction_carbon = fraction_carbon,
+         mean_dry_bulk_density = dry_bulk_density)
 
 # Impact data
 CCRCN_impactdata <- Holmquist_2018_impactdata %>%
