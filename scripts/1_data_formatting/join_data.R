@@ -51,14 +51,14 @@ Giblin_2018_sitedata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbr
 Giblin_2018_speciesdata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species.csv")
 
 #Doughty et al 2016
-Doughty_2016_cores <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_core_level.csv")
-Doughty_2016_depthseries <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_soil_depth_series.csv")
-Doughty_2016_species <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_dominant_species.csv")
-Doughty_2016_pubs <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_associated_publications.csv")
-Doughty_2016_study_info <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_study_information.csv")
-Doughty_2016_keyword <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_keywords.csv")
-Doughty_2016_funding <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_funding_sources.csv")
-Doughty_2016_authors <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_authors.csv")
+# Doughty_2016_cores <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_core_level.csv")
+# Doughty_2016_depthseries <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_soil_depth_series.csv")
+# Doughty_2016_species <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_dominant_species.csv")
+# Doughty_2016_pubs <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_associated_publications.csv")
+# Doughty_2016_study_info <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_study_information.csv")
+# Doughty_2016_keyword <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_keywords.csv")
+# Doughty_2016_funding <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_funding_sources.csv")
+# Doughty_2016_authors <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_authors.csv")
 
 ## Join datasets ######################
 
@@ -76,7 +76,6 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Schile_2017_coredata) %>%
   bind_rows(Deegan_2012_coredata) %>%
   bind_rows(Giblin_2018_coredata) %>%
-  bind_rows(Doughty_2016_cores) %>%
   select(-X)
   
 # Depth series data
@@ -86,9 +85,9 @@ Osland_2016_depthseriesdata$core_id <- as.factor(Osland_2016_depthseriesdata$cor
 CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Gonneea_2018_depthseriesdata) %>%
   bind_rows(Osland_2016_depthseriesdata) %>%
+  bind_rows(Sanderman_2018_depthseriesdata) %>%
   bind_rows(Schile_2017_depthseriesdata) %>%
   bind_rows(Giblin_2018_depthseriesdata) %>%
-  bind_rows(Doughty_2016_depthseries) %>%
   select(-X)
 
 # Add a column for aggregated fraction carbon and carbon density per core
@@ -112,13 +111,14 @@ CCRCN_impactdata <- Holmquist_2018_impactdata %>%
 
 # Methods data
 CCRCN_methodsdata <- Holmquist_2018_methodsdata%>%
+  bind_rows(Sanderman_2018_methodsdata) %>%
   select(-X)
 
 # Species data
 CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
   bind_rows(Osland_2016_speciesdata) %>%
   bind_rows(Giblin_2018_speciesdata) %>%
-  #bind_rows(Doughty_2016_species) %>%
+  bind_rows(Sanderman_2018_speciesdata) %>%
   select(-X)
 
 ## QA #################
