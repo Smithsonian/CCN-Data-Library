@@ -101,7 +101,7 @@ aggregate_carbon <- CCRCN_depthseriesdata %>%
 CCRCN_coredata <- CCRCN_coredata %>%
   left_join(aggregate_carbon)
 
-aggregate_carbon <- aggregate_carbon %>%
+CCRCN_coredata <- CCRCN_coredata %>%
   rename(mean_fraction_carbon = fraction_carbon,
          mean_dry_bulk_density = dry_bulk_density)
 
