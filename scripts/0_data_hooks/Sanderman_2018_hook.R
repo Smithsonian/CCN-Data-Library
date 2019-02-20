@@ -8,6 +8,7 @@
 library(tidyverse)
 library(RCurl)
 library(readxl)
+library(lubridate)
 
 ## Curate Sanderman international data ############
 
@@ -30,7 +31,7 @@ internatl_core_data_raw <- read_excel("./data/Sanderman_2018/original/WHRC-TNC m
 
 # Jon sent me some updated data as a few sites were inaccurate.
 # We'll need to insert in the new data for these sites
-internatl_depthseries_data_new <- read_excel("./data/Sanderman_2018/original/RC sites.xlsx")
+internatl_depthseries_data_new <- read_excel("./data/Sanderman_2018/original/RC_sites.xlsx")
 
 # Delete sites with incorrect data
 internatl_depthseries_data_raw <- internatl_depthseries_data_raw %>%
@@ -52,189 +53,342 @@ int_depth_data_test <- internatl_depthseries_data_raw %>%
 
 absent_cores <- soil_profiles %>%
   anti_join(int_depth_data_test, by = "site_name")
-## * international study level metadata ################
 
-
-## * international core data ###############
-
-# Rename and recode attributes to be congruent with core data
-internatl_core_data <- internatl_core_data_raw %>%
+## * International study level metadata ################
+internatl_study_metadata <- internatl_core_data_raw %>%
+  rename(email = "Data_owner") %>%
   rename(study_id = Source) %>%
-  rename(core_latitude = Latitude) %>%
-  rename(core_longitude = Longitude) %>%
-  rename(country = Country)
+  select(study_id, email)
 
-# Save as output data
-write.csv(internatl_core_data, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
-
-## internatl depthseries data ####################
-
-internatl_depthseries_data
-
-## Curate Sanderman USA data ############
-
-# This excel document was handed off in a personal communication
-Sanderman_2018_USA_core_data <- read_excel("./data/Sanderman_2018/original/mangroves for USA.xlsx",
-                              sheet = 2)
+## * International core data ###############
 
 # Rename attributes
-Sanderman_2018_USA_core_data <- Sanderman_2018_USA_core_data %>%
-  rename(study_id = "Source") %>%
-  mutate(study_id = gsub(" ", "_", study_id)) %>%
-  rename(site_id = "Site name") %>%
-  mutate(site_id = gsub(" ", "_", site_id)) %>%
-  rename(core_id = "Site #") %>%
-  rename(site_description = "Location") %>%
-  rename(country = "Country") %>%
-  rename(core_latitude = "Latitude") %>%
-  rename(core_longitude = "Longitude") %>%
+internatl_core_data <- internatl_core_data_raw %>%
+  rename(study_id = Source) %>%
+  rename(site_id = Location) %>%
+  rename(core_id = `Site #`) %>%
+  rename(country = Country) %>%
+  rename(core_latitude = Latitude) %>%
+  rename(core_longitude = Longitude) %>%
   rename(core_position_accuracy_flag = "accuracy_flag") %>%
   rename(core_position_accuracy = "approx_acc") %>%
   mutate(vegetation_class = "forested") %>%
   mutate(vegetation_notes = "mangrove") %>%
   rename(landscape_position = "Landscape position") %>%
-  rename(core_date = "Years_collected") %>%
+  rename(core_date = Years_collected) %>%
   rename(core_length = "total_depth") %>%
-  rename(core_length_flag = "full_profile") %>%
-  select(-`Landscape Unsure`, -`HGM Unsure`, -`Mangrove type`)
+  rename(core_length_flag = "full_profile")
 
-Sanderman_2018_USA_core_data$core_length_flag <- recode(Sanderman_2018_USA_core_data$core_length_flag, 
-                                     Y = "core depth represents deposit depth",
-                                     N = "core depth limited by length of corer")
+# Work up year data
+# For some reason the 'N/A' coding is breaking recode(), so looks like I'll need
+#   to loop through instead
+for (i in 1:nrow(internatl_core_data)) {
+  if (internatl_core_data$core_date[[i]] == "N/A") {
+    internatl_core_data$core_date[[i]] <- NA
+  }
+}
 
-## Site level data ##############
+internatl_core_data <- internatl_core_data %>%
+  mutate(core_date = as.factor(core_date)) %>%
+  select(-`Landscape Unsure`, -`HGM Unsure`, -`Mangrove type`) %>%
+  mutate(core_length = as.numeric(core_length)) %>%
+  select(- `Site name`) %>%
+  select(study_id, country, site_id, core_id, core_latitude, core_longitude, core_date, everything())
 
-site_data <- Sanderman_2018_USA_core_data %>%
-  select(study_id, site_id, site_description, country, vegetation_class, 
-         vegetation_notes, landscape_position, `Dominant species`)
-  
-## Core level data ##############
+internatl_core_data$core_length_flag <- recode(internatl_core_data$core_length_flag, 
+                                                        Y = "core depth represents deposit depth",
+                                                        N = "core depth limited by length of corer")
 
-core_data <- Sanderman_2018_USA_core_data %>%
-  select(study_id, site_id, core_id, country, core_latitude, core_longitude, 
-         core_position_accuracy_flag, core_position_accuracy, core_date, core_length, 
-         core_length_flag)
-
-## Species data #############
-
-species_data <- Sanderman_2018_USA_core_data %>%
+## * International species data ##############
+internatl_species_data <- internatl_core_data %>%
   select(study_id, site_id, core_id, `Dominant species`) %>%
   rename(species_code = "Dominant species")
 
-# Species were input with multiple species per row. Split up so that each species
-#   entry gets a row
-species_data<- species_data %>% 
-  mutate(species_code = strsplit(as.character(species_code), ",")) %>% 
-  unnest(species_code)
+## * International methods data ############
 
-## Study level metadata ###############
-study_metadata <- site_data %>%
-  rename(email = "Data_owner")
+internatl_methods_data <- internatl_core_data %>%
+  select(study_id, country, site_id, core_id, core_latitude, core_longitude, core_date, 
+         core_position_accuracy_flag)
 
-## Depth series data ##############
-
-# Read in the "horizon" sheet of "mangroves for USA" excel book
-dpethseries_data <- read_excel("./data/Sanderman_2018/original/mangroves for USA.xlsx",
-                                 sheet = 3)
-
-# Removed first row, which displays units
-colnames(dpethseries_data) <- dpethseries_data[1, ] # the first row will be the header
-dpethseries_data <- dpethseries_data[-1, ]
-
-# Remove last few columns, which are dedicated to notes. The only note is 
-#   "No %OC given" for row 238 (M0340, deepest depth), which is already apparent
-#   (the OC column is empty)
-
-dpethseries_data <- dpethseries_data[, 1:18]
-
-
-# Rename and recalculate attributes
-depthseries_data <- dpethseries_data %>%
+## * international depthseries data ####################
+internatl_depthseries_data <- internatl_depthseries_data_raw %>%
   rename(site_id = "Site name") %>%
   rename(core_id = "Site #") %>%
   rename(depth_min = "U_depth") %>%
   mutate(depth_min = 100 * as.numeric(depth_min)) %>%
   rename(depth_max = "L_depth") %>%
   mutate(depth_max = 100 * as.numeric(depth_max)) %>%
-  rename(BD_est = "BD_new est")
+  rename(BD_est = "BD_estimated")
+
+# Add in study IDs from international core data
+internatl_depthseries_data <- internatl_core_data %>%
+  select(study_id, core_id) %>%
+  right_join(internatl_depthseries_data)
 
 # Sanderman reports the measured BD (if measured), the modeled BD, and then the 
 #   "final" BD-- the value chosen. We'll just use the final, and create a flag
 #   describing whether it was measured or modeled
-  
-depthseries_data_measured <- depthseries_data %>%
+depthseries_data_measured <- internatl_depthseries_data %>%
   filter(BD_final != BD_est) %>%
   mutate(DBD_measured_or_modeled = "measured")
 
-depthseries_data_modeled <- depthseries_data %>%
+depthseries_data_modeled <- internatl_depthseries_data %>%
   filter(BD_final == BD_est) %>%
   mutate(DBD_measured_or_modeled = "modeled")
 
-depthseries_data <- depthseries_data_measured %>%
+internatl_depthseries_data <- depthseries_data_measured %>%
   bind_rows(depthseries_data_modeled)
 
 # Back to renaming and recalculating attributes
-depthseries_data <- depthseries_data %>%
+internatl_depthseries_data <- internatl_depthseries_data %>%
   # assumption: bulk density stands for dry bulk density
   rename(dry_bulk_density = "BD_final") %>%
   # convert from [Mg m-3] to [g cm-3]...which ends up being just x 1
   mutate(dry_bulk_density = as.numeric(dry_bulk_density) * 10^6 / 10^6) %>%
   select(-BD_reported, -BD_est) %>%
-  rename(fraction_organic_matter = "SOM") %>%
+  rename(fraction_organic_matter = "SOM (%LOI)") %>%
   mutate(fraction_organic_matter = as.numeric(fraction_organic_matter) / 100)
-  
- 
-# Similar as bulk density...with organic carbon this time
-depthseries_data_measured <- depthseries_data %>%
-  filter(OC_final == OC) %>%
+
+# Similar as bulk density...organic carbon this time
+depthseries_data_measured <- internatl_depthseries_data %>%
+  filter(`TOC (%)` == OC_final) %>%
   mutate(OC_measured_or_modeled = "measured")
 
-depthseries_data_modeled <- depthseries_data %>%
-  filter(OC_final != OC | is.na(OC)) %>%
+depthseries_data_modeled <- internatl_depthseries_data %>%
+  filter(`TOC (%)` != OC_final | is.na(`TOC (%)`)) %>%
   mutate(OC_measured_or_modeled = "modeled")
 
-depthseries_data <- depthseries_data_measured %>%
+internatl_depthseries_data <- depthseries_data_measured %>%
   bind_rows(depthseries_data_modeled)
 
-# Back to renaming and recalculating attributes
-depthseries_data <- depthseries_data %>%
-  rename(fraction_carbon = "OC_final") %>%
-  mutate(fraction_carbon = as.numeric(fraction_carbon) / 100) %>%
-  # assumption: I don't know what TN means, but this appears to be some form of
-  #   nitrogren...
-  rename(fraction_nitrogen = "TN") %>%
-  mutate(fraction_nitrogen = as.numeric(fraction_nitrogen) / 100)
-
 # Similar as bulk density and organic carbon...carbon density this time
-depthseries_data_measured <- depthseries_data %>%
+depthseries_data_measured <- internatl_depthseries_data %>%
   filter(CD_calc == CD_reported) %>%
   mutate(CD_measured_or_modeled = "measured")
 
-depthseries_data_modeled <- depthseries_data %>%
+depthseries_data_modeled <- internatl_depthseries_data %>%
   filter(CD_calc != CD_reported | is.na(CD_reported)) %>%
   mutate(CD_measured_or_modeled = "modeled")
 
-depthseries_data <- depthseries_data_measured %>%
+internatl_depthseries_data <- depthseries_data_measured %>%
   bind_rows(depthseries_data_modeled)
 
 # Back to renaming and recalculating attributes
-depthseries_data <- depthseries_data %>%
+internatl_depthseries_data <- internatl_depthseries_data %>%
   rename(carbon_density = "CD_calc") %>%
-  rename(core_date = "Year_sampled")
+  rename(fraction_carbon = OC_final) %>%
+  mutate(fraction_carbon = as.numeric(fraction_carbon) / 100) %>%
+  rename(fraction_carbon_type = "TC instead of TOC?") %>%
+  mutate(carbon_profile_notes = "uses OC data if reported, otherwise used 0.5*LOI data")
 
-# Assumption: I don't know what TC and TOC are, so just leaving as is
+# Recode fraction carbon type from yes/no to more descriptive
+internatl_depthseries_data$fraction_carbon_type <- recode(internatl_depthseries_data$fraction_carbon_type,
+                                                          Y = "total carbon",
+                                                          N = "organic carbon")
+
+# NOTE ASSUMPTION: "total carbon" rows include both those studies that designate that 
+#   total carbon was measured, AND those studies that did not designate whether
+#   total carbon or organic carbon was measured (i.e. did not mention whether
+#   carbonates were removed)
 
 # Remove unwanted attributes
-depthseries_data <- depthseries_data %>%
-  select(-OC, -CD_reported, -OC_stock_reported, -Age)
+internatl_depthseries_data <- internatl_depthseries_data %>%
+  select(-mid_point, -`TOC (%)`)
+  
+## Curate Sanderman USA data SEE NOTE BELOW: US DATA NOT UNIQUE WITH INTERNATIONAL ############
+
+# It looks like apparently all of the US cores are represented in the international
+#   data...so I'm not going to bind the international and US below and am going to
+#   comment out all US processing
+# 
+# ## * US total data ###############
+# # This excel document was handed off in a personal communication
+# US_total_data_raw <- read_excel("./data/Sanderman_2018/original/mangroves for USA.xlsx",
+#                               sheet = 2)
+# 
+# # Rename attributes
+# US_total_data <- US_total_data_raw %>%
+#   rename(study_id = Source) %>%
+#   mutate(study_id = gsub(" ", "_", study_id)) %>%
+#   rename(site_id = Location) %>%
+#   mutate(site_id = gsub(" ", "_", site_id)) %>%
+#   rename(core_id = "Site #") %>%
+#   rename(country = Country) %>%
+#   rename(core_latitude = Latitude) %>%
+#   rename(core_longitude = Longitude) %>%
+#   rename(core_position_accuracy_flag = accuracy_flag) %>%
+#   rename(core_position_accuracy = approx_acc) %>%
+#   mutate(vegetation_class = "forested") %>%
+#   mutate(vegetation_notes = "mangrove") %>%
+#   rename(landscape_position = "Landscape position") %>%
+#   rename(core_date = Years_collected) %>%
+#   mutate(core_date = as.factor(core_date)) %>%
+#   rename(core_length = total_depth) %>%
+#   rename(core_length_flag = full_profile) %>%
+#   select(-`Landscape Unsure`, -`HGM Unsure`, -`Mangrove type`)
+# 
+# US_total_data$core_length_flag <- recode(US_total_data$core_length_flag, 
+#                                      Y = "core depth represents deposit depth",
+#                                      N = "core depth limited by length of corer")
+# 
+# ## * US core level data ##############
+# 
+# US_core_data <- US_total_data %>%
+#   select(study_id, site_id, core_id, country, core_latitude, core_longitude, 
+#          core_position_accuracy_flag, core_position_accuracy, core_date, core_length, 
+#          core_length_flag, vegetation_class, vegetation_notes, landscape_position, 
+#          `Dominant species`)
+# 
+# ## * US species data #############
+# 
+# US_species_data <- US_total_data %>%
+#   select(study_id, site_id, core_id, `Dominant species`) %>%
+#   rename(species_code = "Dominant species")
+# 
+# # Species were input with multiple species per row. Split up so that each species
+# #   entry gets a row
+# species_data<- species_data %>% 
+#   mutate(species_code = strsplit(as.character(species_code), ",")) %>% 
+#   unnest(species_code)
+# 
+# ## * US methods data #############
+# 
+# US_methods_data <- US_core_data %>%
+#   select(study_id, country, site_id, core_id, core_latitude, core_longitude, core_date, 
+#          core_position_accuracy_flag)
+# 
+# ## * US study level metadata ###############
+# 
+# US_study_metadata <- US_total_data %>%
+#   rename(email = "Data_owner") %>%
+#   select(study_id, email)
+# 
+# ## * US depth series data ##############
+# 
+# # Read in the "horizon" sheet of "mangroves for USA" excel book
+# US_depthseries_data_raw <- read_excel("./data/Sanderman_2018/original/mangroves for USA.xlsx",
+#                                  sheet = 3)
+# 
+# # Removed first row, which displays units
+# colnames(US_depthseries_data_raw) <- US_depthseries_data_raw[1, ] # the first row will be the header
+# US_depthseries_data_raw <- US_depthseries_data_raw[-1, ]
+# 
+# # Remove last few columns, which are dedicated to notes. The only note is 
+# #   "No %OC given" for row 238 (M0340, deepest depth), which is already apparent
+# #   (the OC column is empty)
+# 
+# US_depthseries_data_raw <- US_depthseries_data_raw[, 1:18]
+# 
+# 
+# # Rename and recalculate attributes
+# US_depthseries_data <- US_depthseries_data_raw %>%
+#   rename(site_id = "Site name") %>%
+#   rename(core_id = "Site #") %>%
+#   rename(depth_min = "U_depth") %>%
+#   mutate(depth_min = 100 * as.numeric(depth_min)) %>%
+#   rename(depth_max = "L_depth") %>%
+#   mutate(depth_max = 100 * as.numeric(depth_max)) %>%
+#   rename(BD_est = "BD_new est")
+# 
+# # Add in study IDs from international core data
+# US_depthseries_data <- US_total_data %>%
+#   select(study_id, core_id) %>%
+#   right_join(US_depthseries_data)
+# 
+# # Sanderman reports the measured BD (if measured), the modeled BD, and then the 
+# #   "final" BD-- the value chosen. We'll just use the final, and create a flag
+# #   describing whether it was measured or modeled
+#   
+# US_depthseries_data_measured <- US_depthseries_data %>%
+#   filter(BD_final != BD_est) %>%
+#   mutate(DBD_measured_or_modeled = "measured")
+# 
+# US_depthseries_data_modeled <- US_depthseries_data %>%
+#   filter(BD_final == BD_est) %>%
+#   mutate(DBD_measured_or_modeled = "modeled")
+# 
+# US_depthseries_data <- US_depthseries_data_measured %>%
+#   bind_rows(US_depthseries_data_modeled)
+# 
+# # Back to renaming and recalculating attributes
+# US_depthseries_data <- US_depthseries_data %>%
+#   # assumption: bulk density stands for dry bulk density
+#   rename(dry_bulk_density = "BD_final") %>%
+#   # convert from [Mg m-3] to [g cm-3]...which ends up being just x 1
+#   mutate(dry_bulk_density = as.numeric(dry_bulk_density) * 10^6 / 10^6) %>%
+#   select(-BD_reported, -BD_est) %>%
+#   rename(fraction_organic_matter = "SOM") %>%
+#   mutate(fraction_organic_matter = as.numeric(fraction_organic_matter) / 100)
+#   
+#  
+# # Similar as bulk density...with organic carbon this time
+# US_depthseries_data_measured <- US_depthseries_data %>%
+#   filter(OC_final == OC) %>%
+#   mutate(OC_measured_or_modeled = "measured")
+# 
+# US_depthseries_data_modeled <- US_depthseries_data %>%
+#   filter(OC_final != OC | is.na(OC)) %>%
+#   mutate(OC_measured_or_modeled = "modeled")
+# 
+# US_depthseries_data <- US_depthseries_data_measured %>%
+#   bind_rows(US_depthseries_data_modeled)
+# 
+# # Back to renaming and recalculating attributes
+# US_depthseries_data <- US_depthseries_data %>%
+#   rename(fraction_carbon = "OC_final") %>%
+#   mutate(fraction_carbon = as.numeric(fraction_carbon) / 100) %>%
+#   # assumption: I don't know what TN means, but this appears to be some form of
+#   #   nitrogren...
+#   rename(fraction_nitrogen = "TN") %>%
+#   mutate(fraction_nitrogen = as.numeric(fraction_nitrogen) / 100)
+# 
+# # Similar as bulk density and organic carbon...carbon density this time
+# US_depthseries_data_measured <- US_depthseries_data %>%
+#   filter(CD_calc == CD_reported) %>%
+#   mutate(CD_measured_or_modeled = "measured")
+# 
+# US_depthseries_data_modeled <- US_depthseries_data %>%
+#   filter(CD_calc != CD_reported | is.na(CD_reported)) %>%
+#   mutate(CD_measured_or_modeled = "modeled")
+# 
+# US_depthseries_data <- US_depthseries_data_measured %>%
+#   bind_rows(US_depthseries_data_modeled)
+# 
+# # Back to renaming and recalculating attributes
+# US_depthseries_data <- US_depthseries_data %>%
+#   rename(carbon_density = "CD_calc") %>%
+#   rename(core_date = "Year_sampled") %>%
+#   rename(fraction_carbon_type = "TC instead of TOC?") %>%
+#   mutate(carbon_profile_notes = "uses OC data if reported, otherwise used 0.5*LOI data")
+# 
+# # Recode fraction carbon type from yes/no to more descriptive
+# US_depthseries_data$fraction_carbon_type <- recode(US_depthseries_data$fraction_carbon_type,
+#                                                           Y = "total carbon",
+#                                                           N = "organic carbon")
+# 
+# # NOTE ASSUMPTION: "total carbon" rows include both those studies that designate that 
+# #   total carbon was measured, AND those studies that did not designate whether
+# #   total carbon or organic carbon was measured (i.e. did not mention whether
+# #   carbonates were removed)
+# 
+# # Remove unwanted attributes
+# US_depthseries_data <- US_depthseries_data %>%
+#   select(-OC, -CD_reported, -OC_stock_reported, -Age, -mid_point)
+# 
+# # Change data types where necessary
+# US_depthseries_data <- US_depthseries_data %>%
+#   mutate(carbon_density = as.numeric(carbon_density))
+#   
 
 ## Write data ###############
 
-write.csv(site_data, "./data/Sanderman_2018/derivative/Sanderman_2018_site_data_US.csv")
-  
-write.csv(core_data, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data_US.csv")
+write.csv(internatl_study_metadata, "./data/Sanderman_2018/derivative/Sanderman_2018_study_metadata.csv")
 
-write.csv(species_data, "./data/Sanderman_2018/derivative/Sanderman_2018_species_data_US.csv")
+write.csv(internatl_core_data, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
 
-write.csv(depthseries_data, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data_US.csv")
+write.csv(internatl_species_data, "./data/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
+
+write.csv(internatl_methods_data, "./data/Sanderman_2018/derivative/Sanderman_2018_methods_data.csv")
+
+write.csv(internatl_depthseries_data, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
 

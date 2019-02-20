@@ -27,6 +27,9 @@ Osland_2016_sitedata <- read.csv("./data/Osland_2016/derivative/Osland_et_al_201
 
 # Sanderman 2018
 Sanderman_2018_coredata <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
+Sanderman_2018_speciesdata <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
+Sanderman_2018_methodsdata <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_methods_data.csv")
+Sanderman_2018_depthseriesdata <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
 
 # Schile-Beers and Megonigal 2017
 Schile_2017_depthseriesdata <- read.csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")
@@ -60,6 +63,12 @@ Doughty_2016_authors <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN
 ## Join datasets ######################
 
 # Core data
+
+# Sanderman 2018 core dates are giving me trouble even though I already converted
+#   to factor in hook script...so just doing so again here
+Sanderman_2018_coredata$core_date <- as.factor(Sanderman_2018_coredata$core_date)
+
+# Bind
 CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Gonneea_2018_coredata) %>%
   bind_rows(Osland_2016_coredata) %>%

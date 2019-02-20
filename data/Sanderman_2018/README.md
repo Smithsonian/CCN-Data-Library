@@ -11,8 +11,15 @@ Additional data is stored in the [Harvard Dataverse here](https://dataverse.harv
 [Map visualization](https://storage.googleapis.com/gfiske1/global_mangrove/index_w_slider.html)
 
 
-### Outstanding concerns/issues:
-see issue #4
+### Outstanding concerns/issues/assumptions:
+- see issue #4
+
+- "total carbon" rows include both those studies that designate that total carbon was measured, AND those studies that did not designate whether total carbon or organic carbon was measured (i.e. did not mention whether carbonates were removed).  
+	+ I believe this applies to both international and US depth series data
+
+- I removed `OC_stock_reported`, which is measured in Mg C ha-1 and has the notes "only use if %C and BD are not reported". This could be of use perhaps? Added this to running notes for database structure recommendations. 
+
+- I used `Location` for site_id, `Site Name` and `Site #` were used as linking keys that aren't necessary anymore.
 
 
 BibTex file:
