@@ -58,6 +58,7 @@ absent_cores <- soil_profiles %>%
 internatl_study_metadata <- internatl_core_data_raw %>%
   rename(email = "Data_owner") %>%
   rename(study_id = Source) %>%
+  mutate(study_id = gsub(" ", "_",  study_id)) %>%
   select(study_id, email)
 
 ## * International core data ###############
@@ -65,6 +66,7 @@ internatl_study_metadata <- internatl_core_data_raw %>%
 # Rename attributes
 internatl_core_data <- internatl_core_data_raw %>%
   rename(study_id = Source) %>%
+  mutate(study_id = gsub(" ", "_",  study_id)) %>%
   rename(site_id = Location) %>%
   rename(core_id = `Site #`) %>%
   rename(country = Country) %>%
