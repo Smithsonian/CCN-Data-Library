@@ -63,7 +63,8 @@ cores <- cores %>%
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
   rename(vegetation_class = "vegetation_code",
          salinity_class = "salinity_code",
-         core_position_method = "position_code")
+         core_position_method = "position_code") %>%
+  filter(study_id != "Gonneea_et_al_2018")
 
 depthseries <- depthseries %>%
   # The Crooks study ID should be 2014, not 2013. 
@@ -71,26 +72,30 @@ depthseries <- depthseries %>%
                                   "Crooks_et_al_2013" = "Crooks_et_al_2014",
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
-                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))
+                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))%>%
+  filter(study_id != "Gonneea_et_al_2018")
 
 impacts <- impacts %>%
   rename(impact_class = "impact_code") %>%
   # The Crooks study ID should be 2014, not 2013. 
-  recode_impact(impact_class = impact_class)
+  recode_impact(impact_class = impact_class)%>%
+  filter(study_id != "Gonneea_et_al_2018")
 
 species <- species %>%
   # The Crooks study ID should be 2014, not 2013. 
   mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014",
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
-                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))
+                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))%>%
+  filter(study_id != "Gonneea_et_al_2018")
 
 methods <- methods %>%
   # The Crooks study ID should be 2014, not 2013. 
   mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014",
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
-                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))
+                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))%>%
+  filter(study_id != "Gonneea_et_al_2018")
 
 ## 4. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")

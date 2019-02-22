@@ -140,6 +140,41 @@ core_elevation <- Gonneea_2018 %>%
            excess_pb210_activity, be7_activity, age) %>%
     filter(depth_min != depth_max)
 
+  
+  ## Add site data ################
+  # The data is missing site IDs but we have records of them from the Holmquist et al. 2018 data release. 
+  
+  Gonneea_2018_core_Data <- Gonneea_2018_core_Data %>%
+    mutate(site_id = recode_factor(core_id, 
+                                   "EPA" = "Eel_Pond", 
+                                   "EPB" = "Eel_Pond",
+                                   "GPA" = "Great_Pond", 
+                                   "GPB" = "Great_Pond", 
+                                   "GPC" = "Great_Pond", 
+                                   "HBA" = "Hamblin_Pond",
+                                   "HBB" = "Hamblin_Pond",
+                                   "HBC" = "Hamblin_Pond", 
+                                   "SLPA" = "Sage_Log_Pond", 
+                                   "SLPB" = "Sage_Log_Pond",
+                                   "SLPC" = "Sage_Log_Pond"
+                                   ))
+  
+  
+  Gonneea_2018_depth_series_data <- Gonneea_2018_depth_series_data %>%
+    mutate(site_id = recode_factor(core_id, 
+                                   "EPA" = "Eel_Pond", 
+                                   "EPB" = "Eel_Pond",
+                                   "GPA" = "Great_Pond", 
+                                   "GPB" = "Great_Pond", 
+                                   "GPC" = "Great_Pond", 
+                                   "HBA" = "Hamblin_Pond",
+                                   "HBB" = "Hamblin_Pond",
+                                   "HBC" = "Hamblin_Pond", 
+                                   "SLPA" = "Sage_Log_Pond", 
+                                   "SLPB" = "Sage_Log_Pond",
+                                   "SLPC" = "Sage_Log_Pond"
+    ))
+  
   ## QA/QC of data ################
   source("./scripts/1_data_formatting/qa_functions.R")
   
