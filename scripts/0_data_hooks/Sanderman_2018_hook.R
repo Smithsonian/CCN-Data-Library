@@ -382,6 +382,7 @@ internatl_depthseries_data <- internatl_depthseries_data %>%
 #   mutate(carbon_density = as.numeric(carbon_density))
 #   
 
+
 ## Write data ###############
 
 write.csv(internatl_study_metadata, "./data/Sanderman_2018/derivative/Sanderman_2018_study_metadata.csv")
@@ -394,3 +395,43 @@ write.csv(internatl_methods_data, "./data/Sanderman_2018/derivative/Sanderman_20
 
 write.csv(internatl_depthseries_data, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
 
+## DOCUMENT AND FILTER UNPUBLISHED OR UN-CITED STUDIES ###################
+# read back in hooked and curated Sanderman data
+cores <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
+depthseries <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
+species <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
+
+## ... Determine which studies are cited in biblio ###########
+
+# Import CCRCN bibliography and create a list of all study IDs within Sanderman synthesis 
+# that are cited within the bibliography 
+
+library(bib2df)
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+
+studies_cited <- cores %>%
+  group_by(study_id) %>%
+  summarize(n=n()) %>%
+  filter(study_id %in% CCRCN_bib$BIBTEXKEY)
+
+# Exactly 100 studies are cited in the bibliography
+
+studies_not_cited <- cores %>%
+  group_by(study_id) %>%
+  summarize(n=n()) %>%
+  filter(!(study_id %in% CCRCN_bib$BIBTEXKEY))
+
+# 55 studies are not cited in the bibliography 
+
+## ... Filter out un-cited studies from depthseries ########## 
+
+cleaned_depthseries <- depthseries %>%
+  filter(study_id %in% studies_cited$study_id)
+
+write.csv(cleaned_depthseries, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
+
+## ... Create vector of un-cited studies ###########
+studies_Sanderman_unavailable <- as.character(studies_not_cited$study_id)
+
+# This list of studies is listed as unavailable in "carbon stocks" within the map interface
+# Modify them within the "2_datatype_processing.R" script in the map repository scripts folder

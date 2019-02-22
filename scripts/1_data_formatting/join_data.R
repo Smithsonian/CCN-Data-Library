@@ -84,7 +84,7 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
 aggregate_carbon <- CCRCN_depthseriesdata %>%
   select(core_id, fraction_carbon, dry_bulk_density) %>%
   group_by(core_id) %>%
-  summarize_all(mean)
+  summarize_at(c("fraction_carbon", "dry_bulk_density"), mean)
 
 # Add aggregated data to core level data
 CCRCN_coredata <- CCRCN_coredata %>%
