@@ -97,7 +97,39 @@ methods <- methods %>%
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))%>%
   filter(study_id != "Gonneea_et_al_2018")
 
-## 4. QA/QC of data ################
+## 4. Create study-level data ######
+# import the CCRCN bibliography 
+library(bib2df)
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+
+# there should be two entries per study: 
+# one for the primary study associated with the Study ID
+# and another for the synthesis study (Holmquist et al. 2018)
+synthesis_doi <- "10.25572/ccrcn/10088/35684"
+synthesis_study_id <- "Holmquist_et_al_2018"
+
+# link each study to the synthesis 
+study_data <- cores %>%
+  group_by(study_id) %>%
+  summarize(study_type = "synthesis",
+            bibliography_id = synthesis_study_id, 
+            doi = synthesis_doi)
+
+# link each study to primary citation and join with synthesis table
+studies <- unique(cores$study_id)
+
+study_data_primary <- CCRCN_bib %>%
+  select(BIBTEXKEY, CATEGORY, DOI) %>%
+  rename(bibliography_id = BIBTEXKEY,
+         study_type = CATEGORY,
+         doi = DOI) %>%
+  filter(bibliography_id %in% studies) %>%
+  mutate(study_id = bibliography_id, 
+         study_type = tolower(study_type)) %>%
+  select(study_id, study_type, bibliography_id, doi) %>%
+  bind_rows(study_data)
+
+## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
@@ -110,9 +142,10 @@ test_colnames("impacts", impacts) # impact_code should be impact_class as per CC
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(cores, depthseries)
 
-## 5. Write to folder ########
+## 6. Write to folder ########
 write.csv(cores, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_core_data.csv")
 write.csv(depthseries, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_depth_series_data.csv")
 write.csv(impacts, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_impact_data.csv")
 write.csv(species, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_species_data.csv")
 write.csv(methods, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_methods_data.csv")
+write.csv(study_data_primary, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_study_citations.csv")

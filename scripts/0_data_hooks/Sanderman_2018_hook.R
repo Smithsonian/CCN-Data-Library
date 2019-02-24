@@ -435,3 +435,37 @@ studies_Sanderman_unavailable <- as.character(studies_not_cited$study_id)
 
 # This list of studies is listed as unavailable in "carbon stocks" within the map interface
 # Modify them within the "2_datatype_processing.R" script in the map repository scripts folder
+
+## Generate study citation table ###################
+# there should be two entries per study: 
+# one for the primary study associated with the Study ID
+# and another for the synthesis study (Sanderman 2007)
+synthesis_doi <- "10.7910/dvn/ocyuit"
+synthesis_study_id <- "Sanderman_2017"
+
+# link each study to the synthesis 
+study_data <- cores %>%
+  group_by(study_id) %>%
+  summarize(study_type = "synthesis",
+            bibliography_id = synthesis_study_id, 
+            doi = synthesis_doi)
+
+# link each study to primary citation and join with synthesis table
+studies <- unique(cores$study_id)
+
+study_data_primary <- CCRCN_bib %>%
+  select(BIBTEXKEY, CATEGORY, DOI) %>%
+  rename(bibliography_id = BIBTEXKEY,
+         study_type = CATEGORY,
+         doi = DOI) %>%
+  filter(bibliography_id %in% studies) %>%
+  mutate(study_id = bibliography_id, 
+         study_type = tolower(study_type)) %>%
+  select(study_id, study_type, bibliography_id, doi) 
+
+study_data <- study_data %>%
+  filter(study_id %in% study_data_primary$study_id) %>%
+  bind_rows(study_data_primary)
+
+# write 
+write.csv(study_data, "./data/Sanderman_2018/derivative/Sanderman_2017_study_citations.csv")
