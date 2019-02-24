@@ -118,7 +118,8 @@ test_unique_coords <- function(data) {
     group_by(lat_long) %>%
     summarize(n = n(), 
               core_ids = paste(unique(core_id), collapse=", "),
-              study_ids = paste(unique(study_id), collapse=", ")) %>%
+              study_ids = paste(unique(study_id), collapse=", "),
+              num_studies = length(unique(study_id))) %>%
     filter(n > 1)
 
   if(length(core_list$core_ids)>0){
