@@ -96,7 +96,25 @@ site_data <- site_data %>%
             site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min)) %>%
   mutate(site_description = "Rockefeller Wildlife Refuge")
 
-## 5. QA/QC  ################
+## 5. Create study-citation table ######
+# import the CCRCN bibliography 
+library(bib2df)
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+
+# link each study to primary citation and join with synthesis table
+studies <- unique(core_data$study_id)
+
+study_data_primary <- CCRCN_bib %>%
+  select(BIBTEXKEY, CATEGORY, DOI) %>%
+  rename(bibliography_id = BIBTEXKEY,
+         study_type = CATEGORY,
+         doi = DOI) %>%
+  filter(bibliography_id %in% studies) %>%
+  mutate(study_id = bibliography_id, 
+         study_type = tolower(study_type)) %>%
+  select(study_id, study_type, bibliography_id, doi) 
+
+## 6. QA/QC  ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
@@ -108,7 +126,8 @@ test_colnames("depthseries", depthseries_data)
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(core_data, depthseries_data)
 
-## 6. Write data ##################
+## 7. Write data ##################
 write.csv(core_data, "./data/Smith_2015/derivative/Smith_et_al_2015_cores.csv")
 write.csv(site_data, "./data/Smith_2015/derivative/Smith_et_al_2015_sites.csv")
 write.csv(depthseries_data, "./data/Smith_2015/derivative/Smith_et_al_2015_depthseries.csv")
+write.csv(study_data_primary, "./data/Smith_2015/derivative/Smith_et_al_2015_study_citations.csv")

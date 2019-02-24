@@ -188,8 +188,25 @@ site_data <- site_data %>%
             site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min),
             country = "United Arab Emirates")
 
+## 4. Create study-citation table ######
+# import the CCRCN bibliography 
+library(bib2df)
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
 
-## 4. QA/QC of data ################
+# link each study to primary citation and join with synthesis table
+studies <- unique(core_data$study_id)
+
+study_data_primary <- CCRCN_bib %>%
+  select(BIBTEXKEY, CATEGORY, DOI) %>%
+  rename(bibliography_id = BIBTEXKEY,
+         study_type = CATEGORY,
+         doi = DOI) %>%
+  filter(bibliography_id %in% studies) %>%
+  mutate(study_id = bibliography_id, 
+         study_type = tolower(study_type)) %>%
+  select(study_id, study_type, bibliography_id, doi) 
+
+## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
@@ -201,8 +218,9 @@ test_colnames("depthseries", depthseries_data)
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(core_data, depthseries_data)
 
-## 5. Write data ##############
+## 6. Write data ##############
 
 write.csv(site_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
 write.csv(core_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
 write.csv(depthseries_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")
+write.csv(study_data_primary, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")

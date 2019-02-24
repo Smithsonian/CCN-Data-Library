@@ -297,6 +297,23 @@ Osland_2016_species_data <- Osland_2016_species_data %>%
 "SEPO"  = "SePo", "SPAL" = "SpAl",  "SPBA"  = "SpBa", "SPCY" = "SpCy",  "SPPA"  = "SpPa", "SPSP" = "SpSp",  "SULI"="SuLi",
 "SYTE"  = "SyTe", "THTE" = "ThTe")) 
 
+## Create study-level data ######
+# import the CCRCN bibliography 
+library(bib2df)
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+
+# link each study to primary citation and join with synthesis table
+studies <- unique(Osland_2016_core_data$study_id)
+
+study_data_primary <- CCRCN_bib %>%
+  select(BIBTEXKEY, CATEGORY, DOI) %>%
+  rename(bibliography_id = BIBTEXKEY,
+         study_type = CATEGORY,
+         doi = DOI) %>%
+  filter(bibliography_id %in% studies) %>%
+  mutate(study_id = bibliography_id, 
+         study_type = tolower(study_type)) %>%
+  select(study_id, study_type, bibliography_id, doi) 
 
 ## QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -318,4 +335,5 @@ write.csv(Osland_2016_species_data, "./data/Osland_2016/derivative/Osland_et_al_
 write.csv(Osland_2016_depth_series_data, "./data/Osland_2016/derivative/Osland_et_al_2016_depthseries.csv")
 write.csv(Osland_2016_site_data, "./data/Osland_2016/derivative/Osland_et_al_2016_sites.csv")
 write.csv(Osland_2016_core_data, "./data/Osland_2016/derivative/Osland_et_al_2016_cores.csv")
+write.csv(study_data_primary, "./data/Osland_2016/derivative/Osland_et_al_2016_study_citations.csv")
 

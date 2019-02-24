@@ -93,7 +93,7 @@ depthseries_data <- cbind(depthseries_data, depth_max, depth_min)
 depthseries_data <- select(depthseries_data, -sample_id, -section_depth)
 
 ## ... 2B. core level data ###################
-core_data <- dt1 %>%
+cores <- dt1 %>%
   rename(core_id = Core.ID,
          core_date = Date, 
          core_latitude = Latitude,
@@ -121,7 +121,7 @@ veggies <- dt1 %>%
          species_code = first(ifelse(species_code == "S. alterniflora", "Spartina alterniflora", "Spartina patens")))
   
 ## ... 2D. Site data ########################
-site_data <- core_data %>%
+site_data <- cores %>%
   select(site_id, core_id, study_id, core_latitude, core_longitude, core_elevation)
 
 # Find min and max lat/long for each site
@@ -142,20 +142,39 @@ site_data <- site_data %>%
   mutate(site_description = "Plum Island Sound Estuary, Massachusetts, USA", 
          vegetation_class = "seagrass")
 
-## 3. QA/QC of data ################
+## 3. Create study-level data ######
+# import the CCRCN bibliography 
+library(bib2df)
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+
+# link each study to primary citation and join with synthesis table
+studies <- unique(cores$study_id)
+
+study_data_primary <- CCRCN_bib %>%
+  select(BIBTEXKEY, CATEGORY, DOI) %>%
+  rename(bibliography_id = BIBTEXKEY,
+         study_type = CATEGORY,
+         doi = DOI) %>%
+  filter(bibliography_id %in% studies) %>%
+  mutate(study_id = bibliography_id, 
+         study_type = tolower(study_type)) %>%
+  select(study_id, study_type, bibliography_id, doi) 
+
+## 4. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-test_colnames("cores", core_data)
+test_colnames("cores", cores)
 test_colnames("sites", site_data) 
 test_colnames("depthseries", depthseries_data)
 
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(core_data, depthseries_data)
+results <- test_core_relationships(cores, depthseries_data)
 
-## 4. Write data ################
+## 5. Write data ################
 write.csv(site_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_sites.csv")
 write.csv(veggies, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species.csv")
-write.csv(core_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_cores.csv")
+write.csv(cores, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_cores.csv")
 write.csv(depthseries_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_depthseries.csv")
+write.csv(study_data_primary, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")

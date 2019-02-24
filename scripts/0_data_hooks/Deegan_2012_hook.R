@@ -76,7 +76,7 @@ biomass_depthseries <- dt1 %>%
   mutate(study_id = "Deegan_et_al_2012")
 
 ## ... 3B. Prep core-level data #########
-core_data <- dt1 %>%
+cores <- dt1 %>%
   rename(site_id = Location, 
          core_latitude = Latitude, 
          core_longitude = Longitude) %>%
@@ -92,17 +92,17 @@ core_data <- dt1 %>%
          study_id = "Deegan_et_al_2012")
 
 ## ... ... 3Bi. merge in above ground biomass data  ########
-core_data_biomass <- dt2 %>%
+cores_biomass <- dt2 %>%
   rename(site_id = Location) %>%
   mutate(core_id = paste0(site_id,Site.Number)) %>%
   select(core_id, Aboveground.Stem.Length, Aboveground.mass) %>%
   rename(aboveground_stem_length = Aboveground.Stem.Length, 
          aboveground_mass = Aboveground.mass)
 
-core_data <- merge(core_data,core_data_biomass)
+cores <- merge(cores,cores_biomass)
 
 ## ... 3C. Prep site-level data ##########
-site_data <- core_data %>%
+site_data <- cores %>%
   select(site_id, core_id, study_id, core_latitude, core_longitude)
 
 # Find min and max lat/long for each site
@@ -123,20 +123,38 @@ site_data <- site_data %>%
   mutate(site_description = "Plum Island Sound Estuary, Massachusetts, USA", 
          vegetation_class = "seagrass")
 
+## 4. Create study-level data ######
+# import the CCRCN bibliography 
+library(bib2df)
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
 
-## 4. QA/QC of data ################
+# link each study to primary citation and join with synthesis table
+studies <- unique(cores$study_id)
+
+study_data_primary <- CCRCN_bib %>%
+  select(BIBTEXKEY, CATEGORY, DOI) %>%
+  rename(bibliography_id = BIBTEXKEY,
+         study_type = CATEGORY,
+         doi = DOI) %>%
+  filter(bibliography_id %in% studies) %>%
+  mutate(study_id = bibliography_id, 
+         study_type = tolower(study_type)) %>%
+  select(study_id, study_type, bibliography_id, doi) 
+
+## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-test_colnames("cores", core_data)
+test_colnames("cores", cores)
 test_colnames("sites", site_data) 
 #test_colnames("biomass", biomass_depthseries) # no ccrcn guidance yet
 
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(core_data, biomass_depthseries)
+results <- test_core_relationships(cores, biomass_depthseries)
 
-## 5. Write data ##################
-write.csv(core_data, "./data/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
+## 6. Write data ##################
+write.csv(cores, "./data/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
 write.csv(site_data, "./data/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
 write.csv(biomass_depthseries, "./data/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")
+write.csv(study_data_primary, "./data/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
