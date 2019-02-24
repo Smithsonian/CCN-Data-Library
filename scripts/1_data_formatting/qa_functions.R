@@ -108,6 +108,29 @@ test_unique_cores <- function(data) {
   return(core_list)
 }
 
+## Check lat/long uniqueness ########
+# Cores in synthesis should likely have unique lat/long values
+
+test_unique_coords <- function(data) {
+  # First, get a list of all unique core_ids
+  core_list <- data %>%
+    mutate(lat_long = paste(core_latitude,core_longitude, sep=",")) %>%
+    group_by(lat_long) %>%
+    summarize(n = n(), 
+              core_ids = paste(unique(core_id), collapse=", "),
+              study_ids = paste(unique(study_id), collapse=", ")) %>%
+    filter(n > 1)
+
+  if(length(core_list$core_ids)>0){
+    print("WARNING: check the following cores in the core-level data for duplicate coordinates:")
+    print(core_list$core_ids)
+  } else {
+    print("All core coordinates are unique.")
+  }
+  
+  return(core_list)
+}
+
 ## Check for core_id relationships ########
 # All entries in core_data files should have relationships to relevant depth series and biomass datasets
 
