@@ -113,6 +113,78 @@ Osland_2016_land_climate <- Osland_2016_land_climate %>%
 colnames(Osland_2016_land_climate) <- Osland_2016_land_climate[1, ] 
 Osland_2016_land_climate <- Osland_2016_land_climate[-1, ]
 
+
+## Site level data #############
+
+# We're going to need to add a few new columns, and aggregate out core level
+#   data up to the site level
+
+# Change value of digits so we don't have too many for the next step
+options(digits=6)
+
+# Change all quantitative attributes to numeric (we'll need this later to 
+#   aggregate the data to the site level) and simultaneously rename
+Osland_2016_site_core_data <- Osland_2016_land_climate %>%
+  mutate(core_id = as.numeric(plot), core_longitude = as.numeric(lon),
+         core_latitude = as.numeric(lat), core_elevation = as.numeric(elev),
+         mean_annual_precip = as.numeric(MAP), aridity_index = as.numeric(AI),
+         potential_evapotrans = as.numeric(PET), min_daily_temp = as.numeric(Tmin)) %>%
+  rename(site_id = estuary) %>% # rename to site ID
+  select(-ID, -tran, -plot, -lon, -lat, -elev, -dist, -MAP, -AI, -PET, -Tmin, -TIdist,
+         -GMdist)
+
+# One "site", Galveston Bay, is not actually just Galveston Bay. It's too big.
+# Splitting it into multiple, geomorphologically-derived sites.
+
+# Osland_2016_site_data <- Osland_2016_site_data %>%
+#   mutate(site_id = ifelse(site_id == "Galveston_Bay" & core_latitude < 27.45
+#                           & core_longitude > -97.37 & core_latitude > 27.21
+#                           & core_longitude < -97.75, "Baffin_Bay", site_id))
+
+
+
+# Find min and max lat/long for each site
+source("./scripts/1_data_formatting/curation_functions.R") 
+Osland_2016_site_data_boundaries <- create_multiple_geographic_coverages(Osland_2016_site_core_data)
+Osland_2016_site_data <- Osland_2016_site_core_data %>%
+  left_join(Osland_2016_site_data_boundaries) %>% # Add site bounds in
+  select(-core_latitude, -core_longitude, -core_id, -core_elevation)
+# remove NAs before aggregation
+Osland_2016_site_data <- na.omit(Osland_2016_site_data) 
+
+# Now aggeregate data to the site level
+Osland_2016_site_data <- Osland_2016_site_data %>%
+  group_by(site_id) %>%
+  summarize_all(mean) %>%
+  mutate(study_id = "Osland_et_al_2016")
+
+
+
+## Core data ####################
+
+# from Osland_2016_veg and previously generated site_core data
+
+# There's an unwieldy amount of columns, so we'll select them down
+Osland_2016_core_data <- Osland_2016_veg %>%
+  select(1:13) %>%
+  rename(site_id = estuary, core_id = plot) %>%
+  mutate(core_id = as.numeric(core_id))
+
+Osland_2016_core_data <- Osland_2016_site_core_data %>%
+  left_join(Osland_2016_core_data) %>%
+  # concatenate date attributes, then remove
+  unite("core_date", c("year", "month", "day"), sep = "-") %>%
+  mutate(core_date = ymd(core_date)) %>%
+  # current core IDs are not unique, so concatenate with site IDs
+  mutate(core_id = tolower(paste0(site_id, "_", core_id))) %>%
+  rename(core_notes = "criteria") %>%
+  mutate(core_elevation_datum = "NAVD88") %>%
+  mutate(study_id = "Osland_et_al_2016") %>%
+  select(study_id, site_id, core_id, core_longitude, core_latitude, core_elevation, 
+         core_date, core_notes, core_elevation_datum)
+
+
+
 ## Depth series data ###################
 
 # From Osland_2016_soil
@@ -134,88 +206,11 @@ Osland_2016_depth_series_data <- depth_series_data %>%
   # So we'll add a single set of min and max depths for each core
   mutate(depth_max = as.double(0), depth_min = as.double(15)) %>%
   
-  select(-moist, -som) %>%
-  mutate(study_id = "Osland_et_al_2016")
+  mutate(study_id = "Osland_et_al_2016") %>%
+  # Re-order columns
+  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter,
+         fraction_moisture_content)
 
-
-## Core data ####################
-
-# from Osland_2016_veg
-
-# There's an unwieldy amount of columns, so we'll select them down
-Osland_2016_core_data <- Osland_2016_veg %>%
-  select(1:13)
-
-Osland_2016_core_data <- Osland_2016_core_data %>%
-  rename(site_id = "estuary") %>%
-  # current core IDs are not unique, so concatenate with site IDs
-  mutate(core_id = tolower(paste0(site_id, "_", plot))) %>%
-  # concatenate date attributes, then remove
-  mutate(core_date = as_date(paste0(year, "-", month, "-", day))) %>%
-  select(-year, -month, -day) %>%
-  # We don't need the transect number. Transects can be derived from coordinates
-  select(-tran) %>%
-  rename(core_notes = "criteria") %>%
-  rename(core_time = "time") %>%
-  rename(core_elevation = "elev") %>%
-  mutate(core_elevation_datum = "NAVD88") %>%
-  mutate(study_id = "Osland_et_al_2016")
-
-
-# Transform the projection
-Osland_2016_core_data_coords <- convert_UTM_to_latlong(Osland_2016_core_data$easting, 
-                                                       Osland_2016_core_data$northing, Osland_2016_core_data$zone, Osland_2016_core_data$core_id)
-Osland_2016_core_data <-  Osland_2016_core_data %>%
-  left_join(Osland_2016_core_data_coords)
-
-# Now we can move easting, northing, and zone attributes
-Osland_2016_core_data <- Osland_2016_core_data %>%
-  select(-easting, -northing, -zone, -ID)
-
-## Site level data #############
-
-# We're going to need to add a few new columns, and aggregate out core level
-#   data up to the site level
-
-# Change value of digits so we don't have too many for the next step
-options(digits=6)
-
-# Change all attributes to numeric. we'll need this later for aggregate the data
-#   to the site level
-Osland_2016_site_data <- sapply(Osland_2016_land_climate, as.numeric)
-Osland_2016_site_data <- as.data.frame(Osland_2016_site_data) # Turn back to df
-
-# This turns site and core ID attributes to NA, so we'll need to add those back.
-#   We'll pull them from the core level data
-# NOTE: this is a dangerous cbind. If the data was re-ordered, the data will be
-#   joined incorrectly
-Osland_2016_site_data <- cbind(Osland_2016_site_data, site_id = Osland_2016_core_data$site_id,
-                               core_id = Osland_2016_core_data$core_id)
-
-# Rename and curate
-Osland_2016_site_data <- Osland_2016_site_data %>%
-  select(-ID, -tran, -plot, -estuary, -core_id, -dist) %>%
-  rename(core_longitude = "lon") %>%
-  rename(core_latitude = "lat") %>%
-  rename(mean_annual_precip = "MAP") %>%
-  rename(aridity_index = "AI") %>%
-  rename(potential_evapotrans = "PET") %>%
-  rename(min_temp = "Tmin", site_elevation = elev) %>%
-  mutate(study_id = "Osland_et_al_2016")
-
-# Find min and max lat/long for each site
-source("./scripts/1_data_formatting/curation_functions.R") 
-Osland_2016_site_data_boundaries <- create_multiple_geographic_coverages(Osland_2016_site_data)
-Osland_2016_site_data <- Osland_2016_site_data %>%
-  left_join(Osland_2016_site_data_boundaries) %>% # Add site bounds in
-  select(-core_latitude, -core_longitude)
-# remove NAs before aggregation
-Osland_2016_site_data <- na.omit(Osland_2016_site_data) 
-
-# Now aggeregate data to the site level
-Osland_2016_site_data <- Osland_2016_site_data %>%
-  group_by(site_id) %>%
-  summarize_all(mean)
 
 ## Species data ##################
 
@@ -327,8 +322,6 @@ test_colnames("depthseries", Osland_2016_depth_series_data) # fraction_moisture_
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(Osland_2016_core_data, Osland_2016_depth_series_data)
 
-# based on the colname tests, I'm going to remove plot and core_time from cores
-Osland_2016_core_data <- select(Osland_2016_core_data, -plot, -core_time)
 
 ## Write data #################
 write.csv(Osland_2016_species_data, "./data/Osland_2016/derivative/Osland_et_al_2016_species.csv")
