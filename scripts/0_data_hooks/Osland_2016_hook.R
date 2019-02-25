@@ -136,7 +136,7 @@ Osland_2016_site_core_data <- Osland_2016_land_climate %>%
 # One "site", Galveston Bay, is not actually just Galveston Bay. It's too big.
 # Splitting it into multiple, geomorphologically-derived sites.
 
-# Osland_2016_site_data <- Osland_2016_site_data %>%
+# Osland_2016_site_core_data <- Osland_2016_site_core_data %>%
 #   mutate(site_id = ifelse(site_id == "Galveston_Bay" & core_latitude < 27.45
 #                           & core_longitude > -97.37 & core_latitude > 27.21
 #                           & core_longitude < -97.75, "Baffin_Bay", site_id))
