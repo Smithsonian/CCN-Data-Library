@@ -43,11 +43,11 @@ library(tidyverse)
 
 ## 2. Import data to convert codes to common plain language ####
 
-cores <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_core_data.csv")
-depthseries <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_depth_series_data.csv")
-impacts <-read.csv("./data/Holmquist_2018/V1_Holmquist_2018_impact_data.csv")
-species <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_species_data.csv")
-methods <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_methods_data.csv")
+cores <- read.csv("./data/Holmquist_2018/original/V1_Holmquist_2018_core_data.csv")
+depthseries <- read.csv("./data/Holmquist_2018/original/V1_Holmquist_2018_depth_series_data.csv")
+impacts <-read.csv("./data/Holmquist_2018/original/V1_Holmquist_2018_impact_data.csv")
+species <- read.csv("./data/Holmquist_2018/original/V1_Holmquist_2018_species_data.csv")
+methods <- read.csv("./data/Holmquist_2018/original/V1_Holmquist_2018_methods_data.csv")
 
 ## 3. Recode and rename factors #################
 
@@ -64,7 +64,15 @@ cores <- cores %>%
   rename(vegetation_class = "vegetation_code",
          salinity_class = "salinity_code",
          core_position_method = "position_code") %>%
-  filter(study_id != "Gonneea_et_al_2018")
+  filter(study_id != "Gonneea_et_al_2018") %>%
+  # Add underscores to site IDs
+  mutate(site_id = gsub(" ", "_", site_id))
+
+
+  # There's a typo with Galveston Bay sites. For some reason mutate + ifelse 
+  # was giving me issues.
+cores$site_id <- recode(cores$site_id, "Gavelston_Bay" = "Galveston_Bay")
+
 
 depthseries <- depthseries %>%
   # The Crooks study ID should be 2014, not 2013. 
