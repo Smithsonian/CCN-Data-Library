@@ -426,9 +426,10 @@ studies_not_cited <- cores %>%
 ## ... Filter out un-cited studies from depthseries ########## 
 
 cleaned_depthseries <- depthseries %>%
-  filter(study_id %in% studies_cited$study_id)
+  filter(study_id %in% studies_cited$study_id) %>%
+  select(-X)
 
-write.csv(cleaned_depthseries, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
+write.csv(cleaned_depthseries, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv", row.names = FALSE)
 
 ## ... Create vector of un-cited studies ###########
 studies_Sanderman_unavailable <- as.character(studies_not_cited$study_id)

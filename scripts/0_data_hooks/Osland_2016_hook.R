@@ -280,17 +280,18 @@ Osland_2016_species_data$species_code <-
 # Recode vegetation codes to the proper format
 Osland_2016_species_data <- Osland_2016_species_data %>%
   mutate(species_code = recode_factor(species_code, 
-                                       "ACAU" = "AcAu",  "ALPH" = "AlPh", "AMPARB" = "AmpArb", "AMPS" = "AmPs", "AVGE" = "AvGe", 
-"BAHA" = "BaHa", "BAMA" = "BaMa", "BOFR" = "BoFr", 
-"CHPI" = "ChPi", "CLMA" = "ClMa", "COER" = "CoEr", "CRVI" = "CrVi", "CUSP" = "CuSp", "DAEC" = "DaEc",  
-"DISP"  = "DiSp", "ELCE"  = "ElCe", "FIMCAS" = "FimCas","HAWR"= "HaWr",   "HYMU"= "HyMu",   "ILDE"= "IlDe",   "ILVO"= "IlVo",  
-"IPSA"= "IpSa",   "JURO" = "JuRo",  "KOVI"  = "KoVi", "LARA"= "LaRa", "LUAL" = "LuAl",  "LYCA"= "LyCa" ,
-"MOCE" = "MoCe",  "MOLI"  = "MoLi", "PAHA" = "PaHa","PARE"  = "PaRe", 
-"PAVA"  = "PaVa", "PAVI" = "PaVi", 
-"PHAU"  = "PhAu", "POHY" = "PoHy",  "RHMA"  = "RhMa", "RUTR" = "RuTr",  "RUVE"  = "RuVe", "SAAR" = "SaAr",  
-"SABI"  = "SaBi", "SADE" = "SaDe",  "SAV" = "SaV", "SCAM" = "ScAm",  "SCRO"  = "ScRo", "SCSC" ="ScSc",  "SEHE"  = "SeHe",
-"SEPO"  = "SePo", "SPAL" = "SpAl",  "SPBA"  = "SpBa", "SPCY" = "SpCy",  "SPPA"  = "SpPa", "SPSP" = "SpSp",  "SULI"="SuLi",
-"SYTE"  = "SyTe", "THTE" = "ThTe")) 
+                                      "ACAU" = "AcAu",  "ALPH" = "AlPh", "AMPARB" = "AmpArb", "AMPS" = "AmPs", "AVGE" = "AvGe", 
+                                      "BAHA" = "BaHa", "BAMA" = "BaMa", "BOFR" = "BoFr", 
+                                      "CHPI" = "ChPi", "CLMA" = "ClMa", "COER" = "CoEr", "CRVI" = "CrVi", "CUSP" = "CuSp", "DAEC" = "DaEc",  
+                                      "DISP"  = "DiSp", "ELCE"  = "ElCe", "FIMCAS" = "FimCas","HAWR"= "HaWr",   "HYMU"= "HyMu",   "ILDE"= "IlDe",   "ILVO"= "IlVo",  
+                                      "IPSA"= "IpSa",   "JURO" = "JuRo",  "KOVI"  = "KoVi", "LARA"= "LaRa", "LUAL" = "LuAl",  "LYCA"= "LyCa" ,
+                                      "MOCE" = "MoCe",  "MOLI"  = "MoLi", "PAHA" = "PaHa","PARE"  = "PaRe", 
+                                      "PAVA"  = "PaVa", "PAVI" = "PaVi", 
+                                      "PHAU"  = "PhAu", "POHY" = "PoHy",  "RHMA"  = "RhMa", "RUTR" = "RuTr",  "RUVE"  = "RuVe", "SAAR" = "SaAr",  
+                                      "SABI"  = "SaBi", "SADE" = "SaDe",  "SAV" = "SaV", "SCAM" = "ScAm",  "SCRO"  = "ScRo", "SCSC" ="ScSc",  "SEHE"  = "SeHe",
+                                      "SEPO"  = "SePo", "SPAL" = "SpAl",  "SPBA"  = "SpBa", "SPCY" = "SpCy",  "SPPA"  = "SpPa", "SPSP" = "SpSp",  "SULI"="SuLi",
+                                      "SYTE"  = "SyTe", "THTE" = "ThTe")) %>%
+  recode_species(species_code = species_code)
 
 ## Create study-level data ######
 # import the CCRCN bibliography 

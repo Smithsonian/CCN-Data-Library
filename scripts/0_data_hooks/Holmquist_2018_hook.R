@@ -66,13 +66,14 @@ cores <- cores %>%
          core_position_method = "position_code") %>%
   filter(study_id != "Gonneea_et_al_2018") %>%
   # Add underscores to site IDs
-  mutate(site_id = gsub(" ", "_", site_id))
+  mutate(site_id = gsub(" ", "_", site_id)) %>%
+  recode_salinity(salinity_class = salinity_class) %>%
+  recode_vegetation(vegetation_class = vegetation_class)
 
 
-  # There's a typo with Galveston Bay sites. For some reason mutate + ifelse 
-  # was giving me issues.
+# There's a typo with Galveston Bay sites. For some reason mutate + ifelse 
+# was giving me issues.
 cores$site_id <- recode(cores$site_id, "Gavelston_Bay" = "Galveston_Bay")
-
 
 depthseries <- depthseries %>%
   # The Crooks study ID should be 2014, not 2013. 
@@ -95,7 +96,8 @@ species <- species %>%
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))%>%
-  filter(study_id != "Gonneea_et_al_2018")
+  filter(study_id != "Gonneea_et_al_2018") %>%
+  recode_species(species_code = species_code)
 
 methods <- methods %>%
   # The Crooks study ID should be 2014, not 2013. 
