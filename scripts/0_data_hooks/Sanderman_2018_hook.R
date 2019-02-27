@@ -98,8 +98,11 @@ internatl_core_data <- internatl_core_data %>%
   select(study_id, country, site_id, core_id, core_latitude, core_longitude, core_date, everything())
 
 internatl_core_data$core_length_flag <- recode(internatl_core_data$core_length_flag, 
-                                                        Y = "core depth represents deposit depth",
-                                                        N = "core depth limited by length of corer")
+                                                        "Y" = "core depth represents deposit depth",
+                                                        "N" = "core depth limited by length of corer",
+                                                        "unsure" = "not specified",
+                                                        "unknown" = "not specified",
+                                                        "Not sure" = "not specified")
 
 ## * International species data ##############
 internatl_species_data <- internatl_core_data %>%
