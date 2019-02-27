@@ -57,6 +57,12 @@ Giblin_2018_sitedata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbr
 Giblin_2018_speciesdata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species.csv")
 Giblin_2018_citationdata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")
 
+# Smith et al. 2015
+Smith_2015_coredata <- read.csv("./data/Smith_2015/derivative/Smith_et_al_2015_cores.csv")
+Smith_2015_sitedata <- read.csv("./data/Smith_2015/derivative/Smith_et_al_2015_sites.csv")
+Smith_2015_depthseriesdata <- read.csv("./data/Smith_2015/derivative/Smith_et_al_2015_depthseries.csv")
+Smith_2015_citationdata <- read.csv("./data/Smith_2015/derivative/Smith_et_al_2015_study_citations.csv")
+
 ## Join datasets ######################
 
 # Core data
@@ -73,6 +79,7 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Schile_2017_coredata) %>%
   bind_rows(Deegan_2012_coredata) %>%
   bind_rows(Giblin_2018_coredata) %>%
+  bind_rows(Smith_2015_coredata) %>%
   select(-X)
   
 # Depth series data
@@ -85,6 +92,7 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Sanderman_2018_depthseriesdata) %>%
   bind_rows(Schile_2017_depthseriesdata) %>%
   bind_rows(Giblin_2018_depthseriesdata) %>%
+  bind_rows(Smith_2015_depthseriesdata) %>%
   select(-X)
 
 # Add a column for aggregated fraction carbon and carbon density per core
@@ -126,6 +134,7 @@ CCRCN_study_citations <- Holmquist_2018_citationdata %>%
   bind_rows(Schile_2017_citationdata) %>%
   bind_rows(Deegan_2012_citationdata) %>%
   bind_rows(Giblin_2018_citationdata) %>%
+  bind_rows(Smith_2015_citationdata) %>%
   select(-X)
 
 ## QA #################
