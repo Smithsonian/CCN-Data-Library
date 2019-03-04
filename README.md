@@ -1,4 +1,6 @@
-# CCRCN-Data-Library
+<p> <img src="https://github.com/Smithsonian/CCRCN-Data-Library/blob/master/docs/images/CCRCN icon.png?raw=true" alt="user spectrum" width=100 height=100 style="float:right;"> </img></p>
+
+# CCRCN Data Library
 _Hub for scripts that pull data from the internet, and derivative datasets hosted by CCRCN_
 
 
@@ -7,7 +9,7 @@ The Coastal Carbon Research Coordination Network (CCRCN) is a consortium of biog
 ## Resources
 Below are some additional resources related to CCRCN data archival:
 - [About the CCRCN at the Smithsonian Environmental Research Center (SERC)](https://serc.si.edu/coastalcarbon)
-- [An interactive map interface](https://ccrcn.shinyapps.io/CoastalCarbonAtlas/) that enables you to visualize, query, and download that CCRCN data library available in this repo.
+- The [Coastal Carbon Atlas](https://ccrcn.shinyapps.io/CoastalCarbonAtlas/), an interactive map interface that enables you to visualize, query, and download that CCRCN data library available in this repo.
 - See our [Data Management Plan](https://serc.si.edu/coastalcarbon/data-management-plan) for more information on how we archive and version our data library 
 - See our [Database Structure](https://serc.si.edu/coastalcarbon/database-structure) for detailed information on how the CCRCN data library is organized
 
