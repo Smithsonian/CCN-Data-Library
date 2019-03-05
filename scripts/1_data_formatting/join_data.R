@@ -115,7 +115,7 @@ CCRCN_impactdata <- Holmquist_2018_impactdata %>%
 
 
 # Methods data
-CCRCN_methodsdata <- Holmquist_2018_methodsdata%>%
+CCRCN_methodsdata <- Holmquist_2018_methodsdata %>%
   bind_rows(Sanderman_2018_methodsdata) %>%
   select(-X)
 
@@ -142,17 +142,17 @@ source("./scripts/1_data_formatting/qa_functions.R")
 
 # Ensure all core_ids are unique
 results_unique_core <- test_unique_cores(CCRCN_coredata)
-results_unique_coords <- test_unique_coords(CCRCN_coredata)
+# results_unique_coords <- test_unique_coords(CCRCN_coredata)
 
 # There almost 100 sets of coordinates that have two or more cores associated with them: 
-write.csv(results_unique_coords, "./data/QA/duplicate_cores.csv")
+write_csv(results_unique_coords, "./data/QA/duplicate_cores.csv")
 
 ## Write datasets #############
 
-write.csv(CCRCN_coredata, "./data/CCRCN_synthesis/CCRCN_core_data.csv")
-write.csv(CCRCN_depthseriesdata, "./data/CCRCN_synthesis/CCRCN_depthseries_data.csv")
-write.csv(CCRCN_impactdata, "./data/CCRCN_synthesis/CCRCN_impact_data.csv")
-write.csv(CCRCN_methodsdata, "./data/CCRCN_synthesis/CCRCN_methods_data.csv")
-write.csv(CCRCN_speciesdata, "./data/CCRCN_synthesis/CCRCN_species_data.csv")
-write.csv(CCRCN_study_citations, "./data/CCRCN_synthesis/CCRCN_study_citations.csv")
+write_csv(CCRCN_coredata, "./data/CCRCN_synthesis/CCRCN_core_data.csv")
+write_csv(CCRCN_depthseriesdata, "./data/CCRCN_synthesis/CCRCN_depthseries_data.csv")
+write_csv(CCRCN_impactdata, "./data/CCRCN_synthesis/CCRCN_impact_data.csv")
+write_csv(CCRCN_methodsdata, "./data/CCRCN_synthesis/CCRCN_methods_data.csv")
+write_csv(CCRCN_speciesdata, "./data/CCRCN_synthesis/CCRCN_species_data.csv")
+write_csv(CCRCN_study_citations, "./data/CCRCN_synthesis/CCRCN_study_citations.csv")
 
