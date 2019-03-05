@@ -112,8 +112,8 @@ internatl_species_data <- internatl_core_data %>%
 ## * International methods data ############
 
 internatl_methods_data <- internatl_core_data %>%
-  select(study_id, country, site_id, core_id, core_latitude, core_longitude, core_date, 
-         core_position_accuracy_flag)
+  group_by(study_id) %>%
+  summarize(country = first(country), n=n())
 
 ## * international depthseries data ####################
 internatl_depthseries_data <- internatl_depthseries_data_raw %>%
@@ -388,15 +388,15 @@ internatl_depthseries_data <- internatl_depthseries_data %>%
 
 ## Write data ###############
 
-write.csv(internatl_study_metadata, "./data/Sanderman_2018/derivative/Sanderman_2018_study_metadata.csv")
+write_csv(internatl_study_metadata, "./data/Sanderman_2018/derivative/Sanderman_2018_study_metadata.csv")
 
-write.csv(internatl_core_data, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
+write_csv(internatl_core_data, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
 
-write.csv(internatl_species_data, "./data/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
+write_csv(internatl_species_data, "./data/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
 
-write.csv(internatl_methods_data, "./data/Sanderman_2018/derivative/Sanderman_2018_methods_data.csv")
+write_csv(internatl_methods_data, "./data/Sanderman_2018/derivative/Sanderman_2018_methods_data.csv")
 
-write.csv(internatl_depthseries_data, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
+write_csv(internatl_depthseries_data, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
 
 ## DOCUMENT AND FILTER UNPUBLISHED OR UN-CITED STUDIES ###################
 # read back in hooked and curated Sanderman data
@@ -432,7 +432,7 @@ cleaned_depthseries <- depthseries %>%
   filter(study_id %in% studies_cited$study_id) %>%
   select(-X)
 
-write.csv(cleaned_depthseries, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv", row.names = FALSE)
+write_csv(cleaned_depthseries, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv", row.names = FALSE)
 
 ## ... Create vector of un-cited studies ###########
 studies_Sanderman_unavailable <- as.character(studies_not_cited$study_id)
@@ -472,4 +472,4 @@ study_data <- study_data %>%
   bind_rows(study_data_primary)
 
 # write 
-write.csv(study_data, "./data/Sanderman_2018/derivative/Sanderman_2017_study_citations.csv")
+write_csv(study_data, "./data/Sanderman_2018/derivative/Sanderman_2017_study_citations.csv")
