@@ -10,7 +10,10 @@ function(input, output, session) {
   # and influence what options will appear throughout the submission process
   study_information <- reactiveValues(df = study_information)
   authors <- reactiveValues(df = authors)
-  datatypes <- reactiveValues(vector = c())
+  keywords <- reactiveValues(df = data.frame())
+  associated_publications <- reactiveValues(df = associated_publications)
+  
+  # datatypes <- reactiveValues(vector = c())
   
   # action to take when submit button is pressed
   observeEvent(input$add_study_information, {
@@ -31,28 +34,81 @@ function(input, output, session) {
     
   })
   
-  observeEvent(input$confirm_datatypes, {
-    # save data type selection within a vector that will be used to generate methods options
-    # data types can be updated but we will need to test outcomes if methods are filled out and then
-    # data types available is changed by the user 
-    datatypes$vector <- input$data_types
+  # I'm not sure we'll actually need this, may be self-evident from other queries
+  # observeEvent(input$confirm_datatypes, {
+  #   # save data type selection within a vector that will be used to generate methods options
+  #   # data types can be updated but we will need to test outcomes if methods are filled out and then
+  #   # data types available is changed by the user 
+  #   datatypes$vector <- input$data_types
+  #   
+  # })
+  
+  observeEvent(input$add_keywords, {
+    # gather up keywords and organize in a table
+    keywords_vector <- strsplit(input$keywords, ",")
+    keywords$df <- as.data.frame(keywords_vector, col.names = c("key_words"))
     
   })
   
+  # When an associated publication is added, add information to new row and clear fields to add another associated publication
+  observeEvent(input$add_pub, {
+    # gather up publication information and organize in a table
+    publication <- as.data.frame(t(sapply(associated_publications_var, function(x) input[[x]])))
+    # add new row to publication table
+    associated_publications$df <- bind_rows(associated_publications$df, publication)
+    
+    # reset form info
+    shinyjs::reset("associated_publications_table")
+    
+  })
   
-  # Send data to dropbox
-  # saveData <- function(data) {
-  #   #data <- t(data)
-  #   # Create a unique file name
-  #   fileName <- sprintf("%s_study_information.csv",
-  #                       humanTime())   
-  #   
-  #   # Write the data to a temporary file locally
-  #   filePath <- file.path(tempdir(), fileName)
-  #   write.csv(data, filePath, row.names = FALSE, quote = TRUE)
-  #   
-  #   # Upload the data/publication data to Dropbox
-  #   drop_upload(filePath, path = "user_information")
-  # }
-  
+  ## 3. Send data to dropbox ##############
+  uploadData <- function(data) {
+    
+    ## ... 3A Study Information ##########
+    # Create a unique file name for each data table
+    upload_study_information <- sprintf("%s_study_information.csv", humanTime())
+
+    # Write the data to a temporary file locally
+    filePath <- file.path(tempdir(), upload_study_information)
+    write.csv(study_information$df, filePath, row.names = FALSE, quote = TRUE)
+    
+    # Upload the data/publication data to Dropbox
+    drop_upload(filePath, path = "user_information")
+    
+    ## ... 3B Authors ##########
+    # Create a unique file name for each data table
+    upload_authors <- sprintf("%s_authors.csv", humanTime())
+    
+    # Write the data to a temporary file locally
+    filePath <- file.path(tempdir(), upload_authors)
+    write.csv(authors$df, filePath, row.names = FALSE, quote = TRUE)
+    
+    # Upload the data/publication data to Dropbox
+    drop_upload(filePath, path = "user_information")
+    
+    ## ... 3C Keywords ##########
+    # Create a unique file name for each data table
+    upload_keywords <- sprintf("%s_keywords.csv", humanTime())
+    
+    # Write the data to a temporary file locally
+    filePath <- file.path(tempdir(), upload_keywords)
+    write.csv(keywords$df, filePath, row.names = FALSE, quote = TRUE)
+    
+    # Upload the data/publication data to Dropbox
+    drop_upload(filePath, path = "user_information")
+    
+    ## ... 3D Associated Publications ########
+    # Create a unique file name for each data table
+    upload_associated_publications <- sprintf("%s_associated_publications.csv", humanTime())
+    
+    # Write the data to a temporary file locally
+    filePath <- file.path(tempdir(), upload_associated_publications)
+    write.csv(associated_publications$df, filePath, row.names = FALSE, quote = TRUE)
+    
+    # Upload the data/publication data to Dropbox
+    drop_upload(filePath, path = "user_information")
+    
+  }
+
 }

@@ -29,5 +29,13 @@ authors_var <- c("last_name", "given_name", "institution", "email", "address", "
 authors <- data.frame(matrix(ncol=length(authors_var), nrow = 0))
 colnames(authors) <- authors_var
 
+associated_publications_var <- c("title_pubs", "doi_pubs", "bibtex_pubs")
+associated_publications <- data.frame(matrix(ncol = length(associated_publications_var), nrow = 0))
+colnames(associated_publications) <- associated_publications_var
+
 # function to stamp files with the time of submission
 humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
+
+coring_methods_var <- c("gouge auger", "hargas corer", "mcauley corer", "mcaffrey peat cutter", 
+                    "none specified", "other shallow corer", "piston corer", "push core", 
+                    "pvc and hammer", "russian corer", "vibracorer", "surface sample")

@@ -66,27 +66,69 @@ navbarPage("Coastal Carbon Data Submission Application", id="nav",
                     ), 
                     
                     ## ... 2C Available Datatypes #############
-                    absolutePanel(id = "datatypes_panel", class = "panel panel-default", fixed = FALSE,
+                    # I suspect I won't need this because it will be self-evident based on methods responses
+                    # But we may need it for elevation/biomass/etc 
+                    # absolutePanel(id = "datatypes_panel", class = "panel panel-default", fixed = FALSE,
+                    #               draggable = TRUE, top = "10%", left = "68%", right = "auto", bottom = "auto",
+                    #               width = "30%", height = "auto", style="padding:10px;",
+                    #               
+                    #               div(
+                    #                 id = "datatypes_table",
+                    #                 
+                    #                 tags$h3("Data Types"), tags$br(), 
+                    #                 
+                    #                 selectInput("data_types", mandatoryLabel("Choose the data-types represented by your data"),
+                    #                             c("Carbon Stocks", "Age Depth", "Biomass", "Elevation", "SSC"),
+                    #                             multiple = TRUE, width = "80%"),
+                    #                 
+                    #                 actionButton("confirm_datatypes", "Confirm data type selections", class = "btn-primary")
+                    #               )
+                    # )
+                    
+                    ## ... 2D Keywords ###########
+                    absolutePanel(id = "keywords_panel", class = "panel panel-default", fixed = FALSE,
                                   draggable = TRUE, top = "10%", left = "68%", right = "auto", bottom = "auto",
                                   width = "30%", height = "auto", style="padding:10px;",
                                   
-                                  div(
-                                    id = "datatypes_table",
-                                    
-                                    tags$h3("Data Types"), tags$br(), 
-                                    
-                                    selectInput("data_types", mandatoryLabel("Choose the data-types represented by your data"),
-                                                c("Carbon Stocks", "Age Depth", "Biomass", "Elevation", "SSC"),
-                                                multiple = TRUE, width = "80%"),
-                                    
-                                    actionButton("confirm_datatypes", "Confirm data type selections", class = "btn-primary")
+                                  div(id = "keywords_table",
+                                      tags$h3("Keywords"), 
+                                      textInput("keywords", "Enter keywords associated with your data. 
+                                                Separate multiple keywords with commas",
+                                                width="80%"),
+                                      
+                                      actionButton("add_keywords", "Submit keywords", class = "btn-primary")
+                                  )
+                    ),
+                    
+                    ## ... 2E Associated Publications ###########
+                    absolutePanel(id = "pubs_panel", class = "panel panel-default", fixed = FALSE,
+                                  draggable = TRUE, top = "50%", left = "68%", right = "auto", bottom = "auto",
+                                  width = "30%", height = "auto", style="padding:10px;",
+                                  
+                                  div(id = "associated_publications_table",
+                                      tags$h3("Associated Publications"), 
+                                      "Enter either a DOI or bibtex citation and click 'submit citation'.",
+                                      
+                                      textInput("title_pubs", "Title", width="80%"),
+                                      textInput("doi_pubs", "DOI", width = "80%"),
+                                      textInput("bibtex_pubs", "BibTeX citation", width = "80%"),
+                                      
+                                      actionButton("add_pub", "Confirm and add additional publications", class = "btn-primary")
+                                      )
+                    )
+                    
+           ),
+           
+           ## 3. Methods Metadata
+           tabPanel("Methods Metadata", 
+                    absolutePanel(id = "study_info_panel", class = "panel panel-default", fixed = FALSE,
+                                  draggable = TRUE, top = "10%", left = "3%", right = "auto", bottom = "auto",
+                                  width = "30%", height = "auto", style="padding:10px;",
+                                  
+                                  div(id = "methods_all"
+                                      
+                                      
                                   )
                     )
            )
 )
-
-# checkboxInput("need_doi", "If your dataset does not have a DOI, would you like CCRCN assistance in publically releasing your data?", FALSE),
-# selectInput("data_types", mandatory_label("Choose the data-types represented by your data"),
-#             c("Carbon Stocks", "Age Depth", "Biomass", "Elevation", "SSC"),
-#             multiple = TRUE),
-# actionButton("submit", "Submit", class = "btn-primary")
