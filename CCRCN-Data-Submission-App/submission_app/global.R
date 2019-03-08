@@ -36,6 +36,15 @@ colnames(associated_publications) <- associated_publications_var
 # function to stamp files with the time of submission
 humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
 
-coring_methods_var <- c("gouge auger", "hargas corer", "mcauley corer", "mcaffrey peat cutter", 
-                    "none specified", "other shallow corer", "piston corer", "push core", 
+coring_methods_var <- c("none specified", "gouge auger", "hargas corer", "mcauley corer", "mcaffrey peat cutter", 
+                     "other shallow corer", "piston corer", "push core", 
                     "pvc and hammer", "russian corer", "vibracorer", "surface sample")
+
+dbd_density_var <- c("not specified", "air dried to constant mass", "modeled", "freeze dried", "removed non structural water", 
+                     "time approximate", "to constant mass")
+
+compaction_flag_var <- c("not specified", "compaction qualified", "compaction quantified", 
+                         "corer limits compaction", "no obvious compaction")
+
+fraction_carbon_method_var <- c("not specified", "Craft regression", "EA", "Fourqurean regression", "Holmquist regression", "kjeldahl digestion", 
+                                "local regression", "wet oxidation")

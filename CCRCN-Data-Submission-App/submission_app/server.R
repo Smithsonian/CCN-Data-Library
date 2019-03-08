@@ -285,6 +285,434 @@ function(input, output, session) {
     }
   })
   
+  ## ... 2e Render Methods Metadata ############
+  
+  ## ... ... 2e i Universal variables ######
+  output$coring_method <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("coring_method", choices = coring_methods_var, 
+                  label=NULL, selected = NULL, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$roots_flag <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("roots_flag", choices = c("not specified", "roots and rhizomes included", "roots and rhizomes separated"), 
+                  label=NULL, selected = NULL, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$sediment_sieve_size <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      textInput("sediment_sieve_size", label=NULL, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$compaction_flag <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("compaction_flag", choices = compaction_flag_var,
+                  label=NULL, selected = NULL, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$carbon_profile_notes <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      textInput("carbon_profile_notes", label=NULL, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  ## ... ... 2e ii LOI #####################
+  output$loi_temp <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      textInput("loi_temp", label=NULL, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$loi_time <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      textInput("loi_time", label=NULL, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$loi_sample_volume <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      textInput("loi_sample_volume", label=NULL, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$loi_sample_mass <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      textInput("loi_sample_mass", label=NULL, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$loi_approx <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      checkboxInput("loi_approx", "LOI time recorded herein is an approximate estimation")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  ## ... ... 2e iii bulk density #####################
+  output$dbd_temp <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      textInput("dbd_temp", label=NULL, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$dbd_time <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      textInput("dbd_time", label=NULL, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$dbd_sample_volume <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      textInput("dbd_sample_volume", label=NULL, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$dbd_sample_mass <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      textInput("dbd_sample_mass", label=NULL, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$dbd_density <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("dbd_density", label=NULL, choices = dbd_density_var, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  ## ... ... 2e iv Fraction organic matter #############
+  
+  output$carbonates_removed <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      checkboxInput("carbonates_removed", 
+                    "Were carbonates removed prior to calculating fraction organic carbon?",
+                    width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+    
+  })
+  
+  output$carbonate_removal_method <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("carbonate_removal_method", label=NULL, choices = c("not specified", "direct acid treatment", "acid fumigation", "low carbonate soil", 
+                                                                      "carbonates not removed"), width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  ## ... ... 2e v Fraction Carbon ############
+  output$carbon_measured_or_modeled <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("carbon_measured_or_modeled", label=NULL, choices = c("not specified", "measured", "modeled"), width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$fraction_carbon_method <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("fraction_carbon_method", label=NULL, choices = fraction_carbon_method_var, width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$fraction_carbon_type <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("fraction_carbon_type", label=NULL, choices = c("not specified", "organic carbon", "total carbon"), width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  ## ... ... 2e vi Age-Depth Models ############
+  output$cs137_counting_method <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("cs137_counting_method", label=NULL, choices = c("not specified", "alpha", "gamma"), width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$pb210_counting_method <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("pb210_counting_method", label=NULL, choices = c("not specified", "alpha", "gamma"), width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$excess_pb210_rate <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("pb210_counting_method", label=NULL, choices = c("not specified", "mass accumulation", "accretion"), 
+                  width = "80%")
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$excess_pb210_model <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("pb210_counting_method", label=NULL, choices = c("not specified", "CRS", "CIC", "CFCS")) 
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$ra226_assumption <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("ra226_assumption", label=NULL, choices = c("not specified", "each sample", 
+                                                                   "total core", "at asymptote")) 
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+  })
+  
+  output$c14_counting_method <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("c14_counting_method", label=NULL, choices = c("not specified", "AMS", "beta")) 
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+    
+  })
+  
+  output$dating_notes <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      textInput("dating_notes", label=NULL) 
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+    
+  })
+  
+  output$age_depth_model_reference <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      selectInput("age_depth_model_reference", label=NULL, choices = c("YBP", "CE", "core collection date")) 
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+    
+  })
+  
+  output$age_depth_model_notes <- renderUI({
+    # New data submission: 
+    if(TRUE){
+      textInput("age_depth_model_notes", label=NULL) 
+      
+      # Continue new data submission:   
+    } else if (TRUE) {
+      
+      # Revise study metadata from library:  
+    } else {
+      
+    }
+    
+  })
+  
   ## 3. Saving data to tables ################
   # action to take when submit button is pressed
   
@@ -359,8 +787,155 @@ function(input, output, session) {
     updateCollapse(session, id = "associated_pubs_bspanel", close = "Associated Publications")
   })
   
+  ## ... 3e Methods Metadata ##############
+  ## ... ... i Universal Metadata #########
+  observeEvent(input$confirm_coring_methods, {
+    updateCollapse(session, id="core_methods_bspanel", close = "Coring Methods")
+  })
+  
+  ## ... ... ii Carbon Stock Metadata #####
+  observeEvent(input$confirm_organic_carbon, {
+    updateCollapse(session, id="carbon_measurements_bspanel", close = "Carbon Stocks")
+  })
+  
+  observeEvent(input$cancel_organic_carbon, {
+    # reset variables
+    shinyjs::reset("loi")
+    shinyjs::reset("dbd")
+    shinyjs::reset("fc")
+    shinyjs::reset("foc")
+    
+    # close the panel
+    
+    updateCollapse(session, id="carbon_measurements_bspanel", close = "Carbon Stocks")
+  })
+  
+  # LOI variables: 
+  observe({
+    if(input$loi == TRUE){
+      updateCollapse(session, id = "carbon_measurements_bspanel", open = "loi_var_bspanel")
+    }  else {
+      updateCollapse(session, id = "carbon_measurements_bspanel", close = "loi_var_bspanel")
+    }
+  })
+  
+  observeEvent(input$confirm_loi, {
+    updateCollapse(session, id = "carbon_measurements_bspanel", close = "loi_var_bspanel")
+  })
+  
+  observeEvent(input$cancel_loi, {
+    # reset LOI variables
+    shinyjs::reset("loi_table")
+    # unselect the LOI checkbox
+    shinyjs::reset("loi")
+    # close the panel
+    updateCollapse(session, id = "carbon_measurements_bspanel", close = "loi_var_bspanel")
+  })
+  
+  # DBD variables: 
+  observe({
+    if(input$dbd == TRUE){
+      updateCollapse(session, id = "carbon_measurements_bspanel", open = "dbd_bspanel")
+    } else {
+      updateCollapse(session, id = "carbon_measurements_bspanel", close = "dbd_bspanel")
+    } 
+  })
+  
+  observeEvent(input$confirm_dbd, {
+    updateCollapse(session, id = "carbon_measurements_bspanel", close = "dbd_bspanel")
+  })
+  
+  observeEvent(input$cancel_dbd, {
+    # reset dbd variables
+    shinyjs::reset("dbd_table")
+    # unselect the dbd checkbox
+    shinyjs::reset("dbd")
+    # close the panel
+    updateCollapse(session, id = "carbon_measurements_bspanel", close = "dbd_bspanel")
+  })
+  
+  # Fraction organic matter: 
+  observe({
+    if(input$fraction_organic_matter == TRUE){
+      updateCollapse(session, id = "carbon_measurements_bspanel", open = "organic_matter_bspanel")
+    } else {
+      updateCollapse(session, id = "carbon_measurements_bspanel", close = "organic_matter_bspanel")
+    } 
+  })
+  
+  observeEvent(input$confirm_fom, {
+    updateCollapse(session, id = "carbon_measurements_bspanel", close = "organic_matter_bspanel")
+  })
+  
+  observeEvent(input$cancel_fom, {
+    # reset dbd variables
+    shinyjs::reset("fraction_organic_matter_table")
+    # unselect the dbd checkbox
+    shinyjs::reset("fraction_organic_matter")
+    # close the panel
+    updateCollapse(session, id = "carbon_measurements_bspanel", close = "organic_matter_bspanel")
+  })
+  
+  # Fraction Carbon:
+  observe({
+    if(input$fraction_carbon == TRUE){
+      updateCollapse(session, id = "carbon_measurements_bspanel", open = "fraction_carbon_bspanel")
+    } else {
+      updateCollapse(session, id = "carbon_measurements_bspanel", close = "fraction_carbon_bspanel")
+    } 
+  })
+  
+  observeEvent(input$confirm_fc, {
+    updateCollapse(session, id = "carbon_measurements_bspanel", close = "fraction_carbon_bspanel")
+  })
+  
+  observeEvent(input$cancel_fc, {
+    # reset dbd variables
+    shinyjs::reset("fraction_carbon_table")
+    # unselect the dbd checkbox
+    shinyjs::reset("fraction_carbon")
+    # close the panel
+    updateCollapse(session, id = "carbon_measurements_bspanel", close = "fraction_carbon_bspanel")
+  })
+  
+  ## ... ... iii Age-Depth Metadata #######
+  observe({
+    if(input$cs137 == TRUE){
+      updateCollapse(session, id = "dating_methods_bspanel", open = "cs137_bspanel")
+    } else {
+      updateCollapse(session, id = "dating_methods_bspanel", close = "cs137_bspanel")
+    } 
+  })
+  
+  observeEvent(input$confirm_cs137, {
+    updateCollapse(session, id = "dating_methods_bspanel", close = "cs137_bspanel")
+  })
+  
+  observeEvent(input$cancel_cs137, {
+    # reset dbd variables
+    shinyjs::reset("cs137_table")
+    # unselect the dbd checkbox
+    shinyjs::reset("cs137")
+    # close the panel
+    updateCollapse(session, id = "dating_methods_bspanel", close = "cs137_bspanel")
+  })
+  
+  observeEvent(input$cancel_age_depth, {
+    # reset LOI variables
+    shinyjs::reset("age_depth_types")
+    # unselect the LOI checkbox
+    shinyjs::reset("age_depth")
+    # close the panel
+    updateCollapse(session, id = "dating_methods_bspanel", close = "ad_types_bspanel")
+  })
+  
+  
   ## 4. Send data to dropbox ##############
-  uploadData <- function(data) {
+  observeEvent(input$submit_study_information, {
+    uploadData()
+  })
+  
+  uploadData <- function() {
     
     ## ... 4A Study Information ##########
     # Create a unique file name for each data table
