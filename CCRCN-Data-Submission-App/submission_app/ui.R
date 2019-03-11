@@ -16,6 +16,35 @@
 
 navbarPage("Coastal Carbon Data Submission Application", id="nav",
            
+           tabPanel("Welcome", 
+                    
+                    absolutePanel(id = "study_info_panel", class = "panel panel-default", fixed = FALSE,
+                                  draggable = TRUE, top = "10%", left = "25%", right = "auto", bottom = "auto",
+                                  width = "50%", height = "auto", style="padding:10px;",
+                                  
+                                  div(id = "welcome_message", 
+                                      "Welcome to the Coastal Carbon Research Coordination Network's data submission application! 
+                                      This application allows you to submit data and metadata for inclusion into the coastal carbon 
+                                      data clearinghouse and revise existing metadata in the clearinghouse.", tags$br(), tags$br(), 
+                                      
+                                      "New data submissions: Tell us about your data and we will generate a custom set of templates 
+                                      to organize your data for submission.", tags$br(), tags$br(), 
+                                      
+                                      actionButton("new_submission", "Submit new data to the CCRCN data clearinghouse", 
+                                                   class = "btn-primary"), tags$br(), tags$br(), 
+                                      
+                                      "Revise existing metadata: We need help completing metadata for the data already stored in our 
+                                      clearinghouse. This includes information on authors, associated publications, and methods and 
+                                      materials. Click the button below, and select a study to begin.", tags$br(), tags$br(), 
+                                      
+                                      actionButton("edit_metadata", "Edit metadata for data in the CCRCN clearinghouse", 
+                                                   class = "btn-primary"), tags$br(), tags$br(),
+                                      
+                                      uiOutput("edit_study")
+                                      )
+                    )
+           ),
+                    
            ## 2 Study Metadata ####################
            tabPanel("Study Information",
                     
@@ -105,7 +134,10 @@ navbarPage("Coastal Carbon Data Submission Application", id="nav",
                                                                  uiOutput("doi_pubs"),
                                                                  uiOutput("bibtex_pubs"),
                                                                  
-                                                                 actionButton("add_pub", "Confirm and add additional publications", class = "btn-primary")
+                                                                 actionButton("add_pub", "Confirm and add additional publications", class = "btn-primary"),
+                                                                 actionButton("add_last_pub", "Confirm and close additional publication table",
+                                                                              class = "btn-primary")
+                                                                 
                                                              )
                                              )), 
                                   div(id="end_study_information", 
@@ -310,7 +342,7 @@ navbarPage("Coastal Carbon Data Submission Application", id="nav",
                                                                                   )
                                                                                  ),
 
-                                                                 checkboxInput("226ra", "Radium-226 (226Ra)"),
+                                                                 checkboxInput("ra226", "Radium-226 (226Ra)"),
                                                                  bsCollapsePanel(title="", 
                                                                                  value = "226ra_bspanel",
                                                                                  div(id="226ra_table", 
@@ -335,6 +367,7 @@ navbarPage("Coastal Carbon Data Submission Application", id="nav",
                                                                  checkboxInput("7be", "Beryillium-7 (7be)"),
                                                                  checkboxInput("241am", "Americium-241 (241am)"),
                                                                  
+                                                                 uiOutput("other_marker"),
                                                                  "Provide any additional notes on the process of dating the core",
                                                                  uiOutput("dating_notes"), 
                                                                  "Indicate the reference or 0 year of the age depth model", 
@@ -342,14 +375,33 @@ navbarPage("Coastal Carbon Data Submission Application", id="nav",
                                                                  "Provide any additional notes on how the age depth model was created",
                                                                  uiOutput("age_depth_model_notes"),
                                                                  
+                                                                 actionButton("confirm_age_depth", "Confirm age-depth model metadata", class = "btn-primary"),
                                                                  actionButton("cancel_age_depth", "This study did not generate age-depth models", 
                                                                               class = "btn-danger")
                                                                  
                                                              ) 
                                              )
-                                  )
+                                  ),
+                                  
+                                  div(id="end_methods_metadata", 
+                                      "Next we will ask you about metadata associated with your site, including vegetation and human impacts. 
+                                      When you're ready, select the 'Confirm materials and method metadata' button below, then click the 'Site Metadata' tab at the top of the
+                                      website navigation bar.", tags$br(), tags$br(), 
+                                      
+                                      actionButton("submit_methods_metadata", "Confirm materials and method metadata",
+                                                   class = "btn-primary"))
                                   
                     )
                     
+           ),
+           tabPanel("Download Templates", 
+                    absolutePanel(id = "universal_methods_panel", class = "panel panel-default", fixed = FALSE,
+                                  draggable = TRUE, top = "10%", left = "3%", right = "auto", bottom = "auto",
+                                  width = "94%", height = "auto", style="padding:10px;",
+                                  
+                                  shinyjs::useShinyjs(),
+                                  
+                                  downloadButton("depthseries_template", "Download soil depthseries template", class = "button")
+                    )
            )
 )
