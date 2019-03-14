@@ -8,9 +8,10 @@
 # "Abu Dhabi Blue Carbon Demonstration Project." Distributed by Smithsonian Environmental Research Center. https://doi.org/10.5479/data_serc/10088/31949
 
 
-# Publication citation: 
-# Schile, L. M., Kauffman, J. B., Crooks, S., Fourqurean, J. W., Glavan, J. and Megonigal, J. P. (2017), Limits on carbon sequestration in
-# arid blue carbon ecosystems. Ecol Appl, 27: 859–874. doi:10.1002/eap.1489
+# Citation for segrass cores: 
+# Campbell, J. E., Lacey, E. A., Decker, R. A., Crooks, S., & Fourqurean, J. W. (2015). 
+# Carbon storage in seagrass beds of Abu Dhabi, United Arab Emirates. Estuaries and Coasts, 38(1), 242-251. 
+
 
 ## 2. Prep workspace and scrape data from web ####################
 
@@ -70,6 +71,8 @@ download.file(paste0(BASE_URL, page), paste0(FILE_PATH, FILE_NAME),mode = "wb")
 plot_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="plot information")
 raw_depthseries_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="soil carbon data")
 
+# Revision to original data hook script: The cores in the "seagrass" ecosystem were initially collected as part 
+# of a separate study. I'll change their study ID to "Campbell_et_al_2015"
 
 ## ... 3B. Depth series data ###################
 
@@ -93,6 +96,7 @@ depthseries_data <- raw_depthseries_data %>%
   mutate(site_id = gsub("Is.", "Island", site_id)) %>%
   mutate(site_id = gsub("Al Zorah", "Ajman Al Zorah", site_id)) %>%
   mutate(site_id = gsub(" Al ", " al ", site_id)) %>%
+  mutate(study_id = ifelse(Ecosystem == "seagrass", "Campbell_et_al_2015", "Schile-Beers_and_Megonigal_2017")) %>%
   
   # Core IDs are expressed as factor not numeric
   # Paste site, ecosystem and plot values to create a unique core ID 
@@ -104,7 +108,6 @@ depthseries_data <- raw_depthseries_data %>%
   rename(fraction_organic_matter = "% organic carbon (OC)") %>%
   mutate(fraction_organic_matter = as.numeric(fraction_organic_matter) / 100) %>%
   separate(col="depth (cm)", into=c("depth_min", "depth_max"), sep="-") %>%
-  mutate(study_id = "Schile-Beers_and_Megonigal_2017") %>%
   select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter, core_length) %>%
   mutate(depth_min = ifelse(is.na(depth_max==TRUE),100,depth_min)) %>%
   mutate(depth_min = as.numeric(depth_min), 
@@ -138,6 +141,8 @@ core_data <- plot_data %>%
   mutate(site_id = gsub("Bazam", "Basm", site_id)) %>%
   mutate(site_id = gsub("Kalba", "Khalba", site_id)) %>%
   mutate(site_id = gsub(" Al ", " al ", site_id)) %>%
+  mutate(study_id = ifelse(Ecosystem == "seagrass", "Campbell_et_al_2015", "Schile-Beers_and_Megonigal_2017")) %>%
+  
   # Core IDs are expressed as factor not numeric
   # Paste site, ecosystem, and plot values to create a unique core ID 
   mutate(core_id = as.factor(gsub(" ", "_", paste(site_id, paste(Ecosystem, Plot, sep="_"), sep="_")))) %>%
@@ -149,7 +154,6 @@ core_data <- plot_data %>%
   mutate(core_elevation_method = ifelse(XYZ == "RTK GPS", "RTK", NA)) %>%
   rename(core_latitude = "Latitude", core_longitude = "Longitude") %>%
   rename(core_elevation = "elevation") %>%
-  mutate(study_id = "Schile-Beers_and_Megonigal_2017") %>%
   rename(core_depth = "core depth (cm)") %>%
   mutate(core_depth_flag = ifelse(core_depth<300, "core depth represents deposit depth", 
                                   ifelse(core_depth==300, "core depth limited by length of corer", NA))) %>%
@@ -157,7 +161,6 @@ core_data <- plot_data %>%
                                  ifelse(salinity < 51 & salinity > 29, "saline", "brackish"))) %>%
   select(study_id, site_id, core_id, core_date, core_latitude, core_longitude, 
         core_position_method, core_elevation, core_elevation_method, vegetation_notes)
-
 
 ## ... 3D. Site level data #############
 
@@ -177,8 +180,6 @@ site_data_boundaries <- create_multiple_geographic_coverages(site_data)
 site_data <- site_data %>%
   left_join(site_data_boundaries) %>% # Add site bounds in
   select(-core_latitude, -core_longitude)
-# remove NAs before aggregation
-site_data <- na.omit(site_data)
 
 # Now aggeregate data to the site level
 site_data <- site_data %>%
@@ -186,7 +187,8 @@ site_data <- site_data %>%
   summarize(study_id = first(study_id),  
             site_longitude_max = first(site_longitude_max), site_longitude_min = first(site_longitude_min),
             site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min),
-            country = "United Arab Emirates")
+            country = "United Arab Emirates") %>%
+  filter(is.na(site_longitude_max) == FALSE)
 
 ## 4. Create study-citation table ######
 # import the CCRCN bibliography 
@@ -205,6 +207,17 @@ study_data_primary <- CCRCN_bib %>%
   mutate(study_id = bibliography_id, 
          study_type = tolower(study_type)) %>%
   select(study_id, study_type, bibliography_id, doi) 
+
+synthesis_study_id <- "Schile-Beers_and_Megonigal_2017"
+synthesis_doi <- "10.5479/data_serc/10088/31949"
+  
+study_data_synthesis <- core_data %>%
+  filter(study_id == "Campbell_et_al_2015") %>%
+  group_by(study_id) %>%
+  summarize(study_type = "synthesis",
+            bibliography_id = synthesis_study_id, 
+            doi = synthesis_doi) %>%
+  bind_rows(study_data_primary)
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
