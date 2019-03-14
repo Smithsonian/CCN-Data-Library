@@ -142,10 +142,9 @@ source("./scripts/1_data_formatting/qa_functions.R")
 
 # Ensure all core_ids are unique
 results_unique_core <- test_unique_cores(CCRCN_coredata)
-# results_unique_coords <- test_unique_coords(CCRCN_coredata)
 
 # There almost 100 sets of coordinates that have two or more cores associated with them: 
-write_csv(results_unique_coords, "./data/QA/duplicate_cores.csv")
+write_csv(test_unique_coords(CCRCN_coredata), "./data/QA/duplicate_cores.csv")
 
 ## Write datasets #############
 

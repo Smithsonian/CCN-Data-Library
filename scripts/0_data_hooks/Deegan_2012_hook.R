@@ -88,7 +88,7 @@ cores <- dt1 %>%
   summarize(site_id = first(site_id), core_latitude = first(core_latitude), core_longitude = first(core_longitude), 
             core_date = first(core_date)) %>%
   mutate(core_length_flag = "core depth limited by length of corer", 
-         vegetation_class = "seagrass", 
+         vegetation_class = "salt marsh", 
          study_id = "Deegan_et_al_2012")
 
 ## ... ... 3Bi. merge in above ground biomass data  ########
@@ -121,7 +121,7 @@ site_data <- site_data %>%
             site_longitude_max = first(site_longitude_max), site_longitude_min = first(site_longitude_min),
             site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min)) %>%
   mutate(site_description = "Plum Island Sound Estuary, Massachusetts, USA", 
-         vegetation_class = "seagrass")
+         vegetation_class = "salt marsh")
 
 ## 4. Create study-level data ######
 # import the CCRCN bibliography 
