@@ -128,7 +128,6 @@ shinyApp(
       drop_upload(filePath, path = "user_information")
       # Upload the CSV to Dropbox
       drop_upload(input$fileCSV$datapath, path = "user_information")
-      
     }
     
     # action to take when submit button is pressed
