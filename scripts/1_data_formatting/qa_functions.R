@@ -124,7 +124,6 @@ test_unique_coords <- function(data) {
 
   if(length(core_list$core_ids)>0){
     print("WARNING: check the following cores in the core-level data for duplicate coordinates:")
-    print(core_list$core_ids)
   } else {
     print("All core coordinates are unique.")
   }
