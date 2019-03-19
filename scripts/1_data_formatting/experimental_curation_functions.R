@@ -52,54 +52,54 @@ headerTable <- headerTable %>%
          first_seen_by = "CCRCN_v1",
          controlled_ontology = as.character(controlled_ontology))
 
-## 2. Write prelim function to test column names #######
+# Eventually this should be turned into a function
+# "invalid_set" should remove all matching columns in the data frame 
 
-testColNames <- function(data, table_type, study_id) {
+## 2. Test column  names #######
+study_id <- "Schile-Beers_and_Megonigal_2017"
 
-  # An empty vector that will populated with variables that should be dropped from the data
-  invalid_set <- c()
+# An empty vector that will populated with variables that should be dropped from the data
+invalid_set <- c()
+
+# A for loop will run through each column header
+for(i in 1:length(colnames(data))){
   
-  # A for loop will run through each column header
-  for(i in 1:length(colnames(data))){
+  # get the name of the ith column
+  col_name <- colnames(data[i])
+  
+  # run through each option
+  if(col_name %in% headerTable$controlled_ontology) { # if it matches controlled vocab don't change 
     
-    # get the name of the ith column
-    col_name <- colnames(data[i])
+  } else { 
+    # if it doesn't match ask to add new synonym for controlled vocab 
+    # or ensure that variable is defined in metadata
     
-    # run through each option
-    if(col_name %in% headerTable$controlled_ontology) { # if it matches controlled vocab don't change 
+    # ask if the variable name is a synonym for a variable in the CCRCN guidance
+    print(sprintf("Should '%s' be changed to match CCRCN controlled vocabulary?", col_name), quote=FALSE)
+    # accept either "y" or "n"
+    input <- readline(prompt = "Enter either y or n ")
+    
+    if(input == "y") {
       
-    } else { 
-      # if it doesn't match ask to add new synonym for controlled vocab 
-      # or ensure that variable is defined in metadata
+      # Ask for the controlled vocab term
+      variable_name <- readline(prompt = sprintf("What controlled vocab should '%s' be changed to? ", col_name))
+      # Make sure it's actually a controlled term
+      if(variable_name %in% headerTable$controlled_ontology) {
+        # Add the new synonym - controlled variable pair to the master list, include the study ID
+        headerTable <- bind_rows(headerTable, data.frame(controlled_ontology=variable_name, synonym=col_name, first_seen_by=study_id))
+      } else { # warn the user that their input does not match the controlled ontology
+        print(sprintf("WARNING '%s' does not match existing controlled vocabulary", variable_name), quote=FALSE)
+      }
       
-      # ask if the variable name is a synonym for a variable in the CCRCN guidance
-      print(sprintf("Should '%s' be changed to match CCRCN controlled vocabulary?", col_name), quote=FALSE)
-      # accept either "y" or "n"
-      input <- readline(prompt = "Enter either y or n ")
-      
-      if(input == "y") {
-        
-        # Ask for the controlled vocab term
-        variable_name <- readline(prompt = sprintf("What controlled vocab should '%s' be changed to? ", col_name))
-        # Make sure it's actually a controlled term
-        if(variable_name %in% headerTable$controlled_ontology) {
-          # Add the new synonym - controlled variable pair to the master list, include the study ID
-          headerTable <- bind_rows(headerTable, data.frame(controlled_ontology=variable_name, synonym=col_name, first_seen_by=study_id))
-        } else { # warn the user that their input does not match the controlled ontology
-          print(sprintf("WARNING '%s' does not match existing controlled vocabulary", variable_name), quote=FALSE)
-        }
-        
       # If it is not a synonym, ask if the variable is defined in the study's metadata
-      } else {
-        print(sprintf("Is '%s' defined in the study's metadata?", col_name), quote=FALSE)
-        input_metadata <- readline(prompt = "Enter either y or n ")
-        
-        # If it is, move on to the next column, if not warn the user that the column will be dropped
-        if(input_metadata == "n") {
-          print(sprintf("WARNING '%s' will be dropped from the dataframe", col_name), quote=FALSE)
-          invalid_set <- append(invalid_set, col_name)
-        }
-        
+    } else {
+      print(sprintf("Is '%s' defined in the study's metadata?", col_name), quote=FALSE)
+      input_metadata <- readline(prompt = "Enter either y or n ")
+      
+      # If it is, move on to the next column, if not warn the user that the column will be dropped
+      if(input_metadata == "n") {
+        print(sprintf("WARNING '%s' will be dropped from the dataframe", col_name), quote=FALSE)
+        invalid_set <- append(invalid_set, col_name)
       }
       
     }
@@ -108,4 +108,3 @@ testColNames <- function(data, table_type, study_id) {
   
 }
 
-  
