@@ -63,7 +63,7 @@ Smith_2015_sitedata <- read.csv("./data/Smith_2015/derivative/Smith_et_al_2015_s
 Smith_2015_depthseriesdata <- read.csv("./data/Smith_2015/derivative/Smith_et_al_2015_depthseries.csv")
 Smith_2015_citationdata <- read.csv("./data/Smith_2015/derivative/Smith_et_al_2015_study_citations.csv")
 
-#Doughty et al 2016
+# Doughty et al 2016
 # Doughty_2016_cores <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_core_level.csv")
 # Doughty_2016_depthseries <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_soil_depth_series.csv")
 # Doughty_2016_species <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_dominant_species.csv")
@@ -72,6 +72,12 @@ Smith_2015_citationdata <- read.csv("./data/Smith_2015/derivative/Smith_et_al_20
 # Doughty_2016_keyword <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_keywords.csv")
 # Doughty_2016_funding <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_funding_sources.csv")
 # Doughty_2016_authors <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_authors.csv")
+
+# Trettin et al. 2017
+Trettin_2017_coredata <- read.csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_cores.csv")
+Trettin_2017_sitedata <- read.csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_sites.csv")
+Trettin_2017_depthseriesdata <- read.csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_depthseries.csv")
+Trettin_2017_citationdata <- read.csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
 
 ## Join datasets ######################
 
@@ -89,8 +95,9 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Schile_2017_coredata) %>%
   bind_rows(Deegan_2012_coredata) %>%
   bind_rows(Giblin_2018_coredata) %>%
-  bind_rows(Smith_2015_coredata)
-  
+  bind_rows(Smith_2015_coredata) %>%
+  bind_rows(Trettin_2017_coredata)
+
 # Depth series data
 # The Osland core IDs are initiatlized as numeric, as they're just numbers.
 #   Switch the core IDs to factor to match all other datasets
@@ -101,7 +108,8 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Sanderman_2018_depthseriesdata) %>%
   bind_rows(Schile_2017_depthseriesdata) %>%
   bind_rows(Giblin_2018_depthseriesdata) %>%
-  bind_rows(Smith_2015_depthseriesdata)
+  bind_rows(Smith_2015_depthseriesdata) %>%
+  bind_rows(Trettin_2017_depthseriesdata)
 
 # Add a column for aggregated fraction carbon and carbon density per core
 aggregate_carbon <- CCRCN_depthseriesdata %>%
@@ -122,7 +130,7 @@ CCRCN_impactdata <- Holmquist_2018_impactdata
 
 
 # Methods data
-CCRCN_methodsdata <- Holmquist_2018_methodsdata%>%
+CCRCN_methodsdata <- Holmquist_2018_methodsdata %>%
   bind_rows(Sanderman_2018_methodsdata)
 
 # Species data
@@ -139,24 +147,24 @@ CCRCN_study_citations <- Holmquist_2018_citationdata %>%
   bind_rows(Schile_2017_citationdata) %>%
   bind_rows(Deegan_2012_citationdata) %>%
   bind_rows(Giblin_2018_citationdata) %>%
-  bind_rows(Smith_2015_citationdata)
+  bind_rows(Smith_2015_citationdata) %>%
+  bind_rows(Trettin_2017_citationdata)
 
 ## QA #################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Ensure all core_ids are unique
 results_unique_core <- test_unique_cores(CCRCN_coredata)
-results_unique_coords <- test_unique_coords(CCRCN_coredata)
 
 # There almost 100 sets of coordinates that have two or more cores associated with them: 
-write.csv(results_unique_coords, "./data/QA/duplicate_cores.csv")
+write_csv(test_unique_coords(CCRCN_coredata), "./data/QA/duplicate_cores.csv")
 
 ## Write datasets #############
 
-write.csv(CCRCN_coredata, "./data/CCRCN_synthesis/CCRCN_core_data.csv")
-write.csv(CCRCN_depthseriesdata, "./data/CCRCN_synthesis/CCRCN_depthseries_data.csv")
-write.csv(CCRCN_impactdata, "./data/CCRCN_synthesis/CCRCN_impact_data.csv")
-write.csv(CCRCN_methodsdata, "./data/CCRCN_synthesis/CCRCN_methods_data.csv")
-write.csv(CCRCN_speciesdata, "./data/CCRCN_synthesis/CCRCN_species_data.csv")
-write.csv(CCRCN_study_citations, "./data/CCRCN_synthesis/CCRCN_study_citations.csv")
+write_csv(CCRCN_coredata, "./data/CCRCN_synthesis/CCRCN_core_data.csv")
+write_csv(CCRCN_depthseriesdata, "./data/CCRCN_synthesis/CCRCN_depthseries_data.csv")
+write_csv(CCRCN_impactdata, "./data/CCRCN_synthesis/CCRCN_impact_data.csv")
+write_csv(CCRCN_methodsdata, "./data/CCRCN_synthesis/CCRCN_methods_data.csv")
+write_csv(CCRCN_speciesdata, "./data/CCRCN_synthesis/CCRCN_species_data.csv")
+write_csv(CCRCN_study_citations, "./data/CCRCN_synthesis/CCRCN_study_citations.csv")
 

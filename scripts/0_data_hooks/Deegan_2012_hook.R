@@ -64,16 +64,24 @@ write_csv(dt2, "./data/Deegan_2012/original/LTE-TIDE-LENS-2009-above-bio.csv")
 
 ## 3. Curate data #################
 
-## ... 3A. prep biomass data #########
+## ... 3AA. prep biomass depthseries data #########
 # Warning: There is no guidance yet on biomass data 
 biomass_depthseries <- dt1 %>%
   rename(site_id = Location,
          live_rhizomes = Live.Rhizomes,
-         live_roots = Live.Roots) %>%
+         live_roots = Live.Roots,
+         detritus = Detritus) %>%
   mutate(core_id = paste0(site_id,Site.Number)) %>%
   select(-Collection.Date, -Latitude, -Longitude, -Site.Number) %>%
   separate(col="Biomass.Core.Segment", into=c("depth_min", "depth_max"), sep="-") %>%
   mutate(study_id = "Deegan_et_al_2012")
+
+## ... 3AB. prep biomass aggregated data ###########
+
+biomass_agg <- biomass_depthseries %>%
+  group_by(study_id, site_id, core_id) %>%
+  summarize(live_rhizomes = sum(live_rhizomes), live_roots = sum(live_roots),
+            detritus= sum(detritus))
 
 ## ... 3B. Prep core-level data #########
 cores <- dt1 %>%
@@ -88,7 +96,7 @@ cores <- dt1 %>%
   summarize(site_id = first(site_id), core_latitude = first(core_latitude), core_longitude = first(core_longitude), 
             core_date = first(core_date)) %>%
   mutate(core_length_flag = "core depth limited by length of corer", 
-         vegetation_class = "seagrass", 
+         vegetation_class = "salt marsh", 
          study_id = "Deegan_et_al_2012")
 
 ## ... ... 3Bi. merge in above ground biomass data  ########
@@ -121,7 +129,7 @@ site_data <- site_data %>%
             site_longitude_max = first(site_longitude_max), site_longitude_min = first(site_longitude_min),
             site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min)) %>%
   mutate(site_description = "Plum Island Sound Estuary, Massachusetts, USA", 
-         vegetation_class = "seagrass")
+         vegetation_class = "salt marsh")
 
 ## 4. Create study-level data ######
 # import the CCRCN bibliography 
@@ -158,3 +166,4 @@ write_csv(cores, "./data/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
 write_csv(site_data, "./data/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
 write_csv(biomass_depthseries, "./data/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")
 write_csv(study_data_primary, "./data/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
+write_csv(biomass_agg, "./data/Deegan_2012/derivative/Deegan_et_al_2012_biomass.csv")

@@ -112,8 +112,8 @@ internatl_species_data <- internatl_core_data %>%
 ## * International methods data ############
 
 internatl_methods_data <- internatl_core_data %>%
-  select(study_id, country, site_id, core_id, core_latitude, core_longitude, core_date, 
-         core_position_accuracy_flag)
+  group_by(study_id) %>%
+  summarize(country = first(country), n=n())
 
 ## * international depthseries data ####################
 internatl_depthseries_data <- internatl_depthseries_data_raw %>%
