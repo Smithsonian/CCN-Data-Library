@@ -32,19 +32,19 @@ url_list <- list("https://www.sciencebase.gov/catalog/file/get/5a748e35e4b00f54e
                  "https://www.sciencebase.gov/catalog/file/get/5a748e35e4b00f54eb19f96c?f=__disk__3e%2F2d%2Ff5%2F3e2df544c537a35007214d1fe595b45499df2f4a")
 
 # Extract Saltmarsh_AR.jpg
-download.file(url_list[[1]], paste0(getwd(), "./data/Gonneea_2018/original/Saltmarsh_AR.jpg"),
+download.file(url_list[[1]], "./data/Gonneea_2018/original/Saltmarsh_AR.jpg",
               mode = "wb")
 
 # Extract Waquoit_Core_data_release.xlsx
-download.file(url_list[[2]], paste0(getwd(), "./data/Gonneea_2018/original/Waquoit_Core_data_release.xlsx"), 
+download.file(url_list[[2]], "./data/Gonneea_2018/original/Waquoit_Core_data_release.xlsx",
               mode = "wb")
 
 # Extract Waquoit_Core_data_release.csv
-download.file(url_list[[3]], paste0(getwd(), "./data/Gonneea_2018/original/Waquoit_Core_data_release.csv"),
+download.file(url_list[[3]], "./data/Gonneea_2018/original/Waquoit_Core_data_release.csv",
               mode = "wb")
 
 # Extract Waquoit_Core_data_release_meta.xml
-download.file(url_list[[4]], paste0(getwd(), "./data/Gonneea_2018/original/Waquoit_Core_data_release_meta.xml"),
+download.file(url_list[[4]], "./data/Gonneea_2018/original/Waquoit_Core_data_release_meta.xml",
               mode = "wb")
 
 
@@ -128,31 +128,85 @@ core_elevation <- Gonneea_2018 %>%
   group_by(core_id) %>%
   summarize(core_elevation = max(as.numeric(Elevation)))
   
-  Gonneea_2018_core_Data <- Gonneea_2018 %>%
-    group_by(study_id, core_id, core_date) %>%
-    summarize_at(c("core_latitude","core_longitude"), mean) %>%
-    left_join(core_elevation)
-  
-  # Depth Series data
-  Gonneea_2018_depth_series_data <- Gonneea_2018 %>%
-    select(study_id, core_id, depth_min, depth_max, dry_bulk_density, 
-           fraction_carbon, cs137_activity, total_pb210_activity, ra226_activity,
-           excess_pb210_activity, be7_activity, age) %>%
-    filter(depth_min != depth_max)
+Gonneea_2018_core_Data <- Gonneea_2018 %>%
+  group_by(study_id, core_id, core_date) %>%
+  summarize_at(c("core_latitude","core_longitude"), mean) %>%
+  left_join(core_elevation)
 
-  ## QA/QC of data ################
-  source("./scripts/1_data_formatting/qa_functions.R")
-  
-  # Make sure column names are formatted correctly: 
-  test_colnames("cores", Gonneea_2018_core_Data)
-  test_colnames("sites", site_data) # there is no derived site data
-  test_colnames("depthseries", Gonneea_2018_depth_series_data)
-  
-  # Test relationships between core_ids at core- and depthseries-levels
-  # the test returns all core-level rows that did not have a match in the depth series data
-  results <- test_core_relationships(Gonneea_2018_core_Data, Gonneea_2018_depth_series_data)
-  
-  
+# Depth Series data
+Gonneea_2018_depth_series_data <- Gonneea_2018 %>%
+  select(study_id, core_id, depth_min, depth_max, dry_bulk_density, 
+         fraction_carbon, cs137_activity, total_pb210_activity, ra226_activity,
+         excess_pb210_activity, be7_activity, age) %>%
+  filter(depth_min != depth_max)
+
+
+## Add site data ################
+# The data is missing site IDs but we have records of them from the Holmquist et al. 2018 data release. 
+
+Gonneea_2018_core_Data <- Gonneea_2018_core_Data %>%
+  mutate(site_id = recode_factor(core_id, 
+                                 "EPA" = "Eel_Pond", 
+                                 "EPB" = "Eel_Pond",
+                                 "GPA" = "Great_Pond", 
+                                 "GPB" = "Great_Pond", 
+                                 "GPC" = "Great_Pond", 
+                                 "HBA" = "Hamblin_Pond",
+                                 "HBB" = "Hamblin_Pond",
+                                 "HBC" = "Hamblin_Pond", 
+                                 "SLPA" = "Sage_Log_Pond", 
+                                 "SLPB" = "Sage_Log_Pond",
+                                 "SLPC" = "Sage_Log_Pond"
+  ))
+
+
+Gonneea_2018_depth_series_data <- Gonneea_2018_depth_series_data %>%
+  mutate(site_id = recode_factor(core_id, 
+                                 "EPA" = "Eel_Pond", 
+                                 "EPB" = "Eel_Pond",
+                                 "GPA" = "Great_Pond", 
+                                 "GPB" = "Great_Pond", 
+                                 "GPC" = "Great_Pond", 
+                                 "HBA" = "Hamblin_Pond",
+                                 "HBB" = "Hamblin_Pond",
+                                 "HBC" = "Hamblin_Pond", 
+                                 "SLPA" = "Sage_Log_Pond", 
+                                 "SLPB" = "Sage_Log_Pond",
+                                 "SLPC" = "Sage_Log_Pond"
+  ))
+
+## Create study-level data ######
+# import the CCRCN bibliography 
+library(bib2df)
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+
+# link each study to primary citation and join with synthesis table
+studies <- unique(cores$study_id)
+
+study_data_primary <- CCRCN_bib %>%
+  select(BIBTEXKEY, CATEGORY, DOI) %>%
+  rename(bibliography_id = BIBTEXKEY,
+         study_type = CATEGORY,
+         doi = DOI) %>%
+  filter(bibliography_id %in% studies) %>%
+  mutate(study_id = bibliography_id, 
+         study_type = tolower(study_type)) %>%
+  select(study_id, study_type, bibliography_id, doi) 
+
+
+## QA/QC of data ################
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Make sure column names are formatted correctly: 
+test_colnames("cores", Gonneea_2018_core_Data)
+test_colnames("sites", site_data) # there is no derived site data
+test_colnames("depthseries", Gonneea_2018_depth_series_data)
+
+# Test relationships between core_ids at core- and depthseries-levels
+# the test returns all core-level rows that did not have a match in the depth series data
+results <- test_core_relationships(Gonneea_2018_core_Data, Gonneea_2018_depth_series_data)
+
+
 ## Export files ##############################
   
 # Export core data
@@ -164,4 +218,6 @@ write_csv(Gonneea_2018_depth_series_data, "./data/Gonneea_2018/derivative/Gonnee
 # Export master data
 # write_csv(Gonneea_2018, "./data/Gonneea_2018/derivative/Gonneea_2018.csv")
 
+# Export study-citation table
+write_csv(study_data_primary, "./data/Gonneea_2018/derivative/Gonneea_et_al_2018_study_citations.csv")
 

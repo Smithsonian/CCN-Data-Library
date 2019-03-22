@@ -43,11 +43,11 @@ library(tidyverse)
 
 ## 2. Import data to convert codes to common plain language ####
 
-cores <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_core_data.csv")
-depthseries <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_depth_series_data.csv")
-impacts <-read.csv("./data/Holmquist_2018/V1_Holmquist_2018_impact_data.csv")
-species <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_species_data.csv")
-methods <- read.csv("./data/Holmquist_2018/V1_Holmquist_2018_methods_data.csv")
+cores <- read.csv("./data/Holmquist_2018/original/V1_Holmquist_2018_core_data.csv")
+depthseries <- read.csv("./data/Holmquist_2018/original/V1_Holmquist_2018_depth_series_data.csv")
+impacts <-read.csv("./data/Holmquist_2018/original/V1_Holmquist_2018_impact_data.csv")
+species <- read.csv("./data/Holmquist_2018/original/V1_Holmquist_2018_species_data.csv")
+methods <- read.csv("./data/Holmquist_2018/original/V1_Holmquist_2018_methods_data.csv")
 
 ## 3. Recode and rename factors #################
 
@@ -63,7 +63,17 @@ cores <- cores %>%
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
   rename(vegetation_class = "vegetation_code",
          salinity_class = "salinity_code",
-         core_position_method = "position_code")
+         core_position_method = "position_code") %>%
+  filter(study_id != "Gonneea_et_al_2018") %>%
+  # Add underscores to site IDs
+  mutate(site_id = gsub(" ", "_", site_id)) %>%
+  recode_salinity(salinity_class = salinity_class) %>%
+  recode_vegetation(vegetation_class = vegetation_class)
+
+
+# There's a typo with Galveston Bay sites. For some reason mutate + ifelse 
+# was giving me issues.
+cores$site_id <- recode(cores$site_id, "Gavelston_Bay" = "Galveston_Bay")
 
 depthseries <- depthseries %>%
   # The Crooks study ID should be 2014, not 2013. 
@@ -71,28 +81,65 @@ depthseries <- depthseries %>%
                                   "Crooks_et_al_2013" = "Crooks_et_al_2014",
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
-                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))
+                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
+  filter(study_id != "Gonneea_et_al_2018")
 
 impacts <- impacts %>%
   rename(impact_class = "impact_code") %>%
   # The Crooks study ID should be 2014, not 2013. 
-  recode_impact(impact_class = impact_class)
+  recode_impact(impact_class = impact_class)%>%
+  filter(study_id != "Gonneea_et_al_2018")
 
 species <- species %>%
   # The Crooks study ID should be 2014, not 2013. 
   mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014",
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
-                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))
+                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
+  filter(study_id != "Gonneea_et_al_2018") %>%
+  recode_species(species_code = species_code)
 
 methods <- methods %>%
   # The Crooks study ID should be 2014, not 2013. 
   mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014",
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
-                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))
+                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))%>%
+  filter(study_id != "Gonneea_et_al_2018")
 
-## 4. QA/QC of data ################
+## 4. Create study-level data ######
+# import the CCRCN bibliography 
+library(bib2df)
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+
+# there should be two entries per study: 
+# one for the primary study associated with the Study ID
+# and another for the synthesis study (Holmquist et al. 2018)
+synthesis_doi <- "10.25572/ccrcn/10088/35684"
+synthesis_study_id <- "Holmquist_et_al_2018"
+
+# link each study to the synthesis 
+study_data <- cores %>%
+  group_by(study_id) %>%
+  summarize(study_type = "synthesis",
+            bibliography_id = synthesis_study_id, 
+            doi = synthesis_doi)
+
+# link each study to primary citation and join with synthesis table
+studies <- unique(cores$study_id)
+
+study_data_primary <- CCRCN_bib %>%
+  select(BIBTEXKEY, CATEGORY, DOI) %>%
+  rename(bibliography_id = BIBTEXKEY,
+         study_type = CATEGORY,
+         doi = DOI) %>%
+  filter(bibliography_id %in% studies) %>%
+  mutate(study_id = bibliography_id, 
+         study_type = tolower(study_type)) %>%
+  select(study_id, study_type, bibliography_id, doi) %>%
+  bind_rows(study_data)
+
+## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
@@ -105,9 +152,10 @@ test_colnames("impacts", impacts) # impact_code should be impact_class as per CC
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(cores, depthseries)
 
-## 5. Write to folder ########
-write.csv(cores, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_core_data.csv")
-write.csv(depthseries, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_depth_series_data.csv")
-write.csv(impacts, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_impact_data.csv")
-write.csv(species, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_species_data.csv")
-write.csv(methods, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_methods_data.csv")
+## 6. Write to folder ########
+write_csv(cores, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_core_data.csv")
+write_csv(depthseries, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_depth_series_data.csv")
+write_csv(impacts, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_impact_data.csv")
+write_csv(species, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_species_data.csv")
+write_csv(methods, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_methods_data.csv")
+write_csv(study_data_primary, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_study_citations.csv")

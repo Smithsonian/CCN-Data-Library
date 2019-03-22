@@ -238,41 +238,22 @@ create_new_IDs <- function(df, old_ID, new_ID) {
 }
 
 
-## Recode salinity classes to full names ###############
+## Recode variables ##################
 
-recode_salinity <- function(df, salinity_class) {
-  output_df <- df %>%
-    mutate(salinity_class = recode_factor(salinity_class,
-                                          "Bra" = "brackish",
-                                          "Bra Fre" = "brackish to fresh", 
-                                          "Bra Sal" = "bracish to saline",
-                                          "Del" = "deltaic", 
-                                          "Est" = "estuarine", 
-                                          "Fre" = "freshwater", 
-                                          "Int" = "intermediate salinity", 
-                                          "Mes" = "mesohaline", 
-                                          "Oli" = "oligohaline",
-                                          "Pol" = "polyhaline", 
-                                          "Riv" = "riverine", 
-                                          "Sal" = "saline"
-    ))
-  output_df
-}
-
-
-## Recode vegetation classes to full names ##############
+## ... Recode vegetation classes to full names
 
 recode_vegetation <- function(df, vegetation_class) {
   output_df <- df %>%
     mutate(vegetation_class = recode_factor(vegetation_class,
                                             "EM" = "emergent", 
                                             "FO" = "forested",
+                                            "SS" = "scrub shrub",
                                             "FO/SS" = "forested to shrub"
     ))
   output_df
 }
 
-## Recode impact classes to full names ##############
+## ... Recode impact classes to full names 
 
 recode_impact <- function(df, impact_class) {
   output_df <- df %>%
@@ -290,7 +271,7 @@ recode_impact <- function(df, impact_class) {
   output_df
 }
  
-## Recode species codes to full names ##############
+## ... Recode species codes to full names 
 recode_species <- function(df, species_code) {
   output_df <- df %>%
     mutate(species_code = recode_factor(species_code,
@@ -318,7 +299,41 @@ recode_species <- function(df, species_code) {
                                         "SpSpp" = "Spartina spp.", "Swamp" = "Swamp","TaDi" = "Taxodium distichum",
                                         "TrMa" = "Triglochin maritima", "TrNa" = "Trapa natis", "TyAg" = "Typa angustifolia", 
                                         "TyDo" = "Typa domingensis", "TyLa" = "Typha latifolia", "TySpp" = "Typha spp.",
-                                        "UnVeg" = "Un-vegetated", "ZiAq" = "Zizania aquatica", "ZiMi" = "Zizaniopsis milaceae", "Mix" = "Mix"
+                                        "UnVeg" = "Un-vegetated", "ZiAq" = "Zizania aquatica", "ZiMi" = "Zizaniopsis milaceae", "Mix" = "Mix",
+                                        "AcAu" = "Acrostichium aureum", "ALGMAT" = "Algal Mat", "ALGSRF" = "Surface Algae", 
+                                        "AmpArb" = "Ampelopsis arborea", "AmPs" = "Ambrosia psilostachya", "BBF3" = "Unidentified forb", 
+                                        "BBG2" = "Unidentified grass", "BoFr" = "Borrichia frutescens", "ChPi" = "Chrysopsis pilosa",
+                                        "ClMa" = "Cladium mariscus", "CoEr" = "Conocarpus erectus", "CrVi" = "Crassostrea virginica",
+                                        "CuSp" = "Cuscuta sp.", "DaEc" = "Dalbergia ecastaphyllum", "ElCe" = "Eleocharis cellulosa" , 
+                                        "FimCas" = "Fimbristylis castanea", "HaWr" = "Halodule wrightii" , "HyMu" = "Hypericum mutilum" , "IlDe" = "Ilex decidua" ,
+                                        "IlVo" = "Ilex vomitoria" , "IpSa" = "Ipomoea sagittata" , "KoVi" = "Kosteletzkya virginica" , "LaRa" = "Laguncularia racemosa",
+                                        "LuAl" = "Ludwigia alternifolia" , "LyCa" = "Lycium carolinianum" , "MoCe" = "Morella cerifera",
+                                        "MoLi" = "Monanthochloe littoralis" , "PaHa" = "Panicum hallii" , "PaRe" = "Panicum repens" , "PaVi" = "Panicum virgatum" , 
+                                        "PoHy" = "Polygonum hydropiperoides" , "RhMa" = "Rhizophora mangle" , "RuTr" = "Rubus trivialis" , "RuVe" = "Rumex verticillatus" ,
+                                        "SaAr" = "Sabatia arenicola" , "SaBi" = "Salicornia bigelovii" , "SaDe" = "Salicornia depressa" , 
+                                        "SaV" = "submerged aquatic vegetation","ScRo" = "Schoenoplectus robustus" , "ScSc" = "Schizachyrium scoparium" , "SeHe" = "Sesbania herbacea",
+                                        "SePo" = "Sesuvium portulacastrum" , "SpBa" = "Spartina bakeri" , "SpSp" = "Spartina spp.",
+                                        "SuLi" = "Suaeda linearis" , "SyTe" = "Symphyotrichum tenuifolium" , "ThTe" = "Thalassia testudinum" 
     ))
   output_df
 }       
+
+## ... Recode salinity codes to full names 
+recode_salinity <- function(df, salinity_class) {
+  output_df <- df %>%
+    mutate(salinity_class = recode_factor(salinity_class,
+                                          "Bra" = "brackish",
+                                          "Bra Fre" = "brackish to fresh", 
+                                          "Bra Sal" = "bracish to saline",
+                                          "Del" = "deltaic", 
+                                          "Est" = "estuarine", 
+                                          "Fre" = "freshwater", 
+                                          "Int" = "intermediate salinity", 
+                                          "Mes" = "mesohaline", 
+                                          "Oli" = "oligohaline",
+                                          "Pol" = "polyhaline", 
+                                          "Riv" = "riverine", 
+                                          "Sal" = "saline"  ))
+  
+  return(output_df)
+}
