@@ -16,7 +16,7 @@ study <- "Trettin_et_al_2017"
 library(tidyverse)
 library(readxl)
 
-raw_depthseries <- read.csv("./data/Trettin_2017/original/Zambezi_Soils.csv")
+raw_depthseries <- read_csv("./data/Trettin_2017/original/Zambezi_Soils.csv")
 
 ## 3. Curate data #############
 
@@ -26,39 +26,63 @@ raw_depthseries <- read.csv("./data/Trettin_2017/original/Zambezi_Soils.csv")
 # About 4 to 6 five cm intervals were extracted from 200 cm cores and tested
 
 depthseries <- raw_depthseries %>%
-  mutate(site_id = "Zambezi_River_Delta") %>%
+  mutate(site_id = as.character(Plot)) %>%
   mutate(study_id = study) %>%
   # Paste plot and subplot values to create a unique core ID 
   mutate(core_id = as.factor(paste(Plot, Subplot, sep="_"))) %>%
   # One sample interval has double _ _ 
-  mutate(Actual.Sample.Interval = gsub("__", "_", Actual.Sample.Interval)) %>%
   # Rename variables
-  rename(dry_bulk_density = "Bulk.Density..g.cm.3.") %>%
-  rename(percent_carbon = "X.C",
-         percent_nitrogen = "X.N") %>%
+  rename(dry_bulk_density = 'Bulk Density (g cm-3)') %>%
+  rename(percent_carbon = '%C',
+         percent_nitrogen = '%N') %>%
   mutate(fraction_carbon = percent_carbon / 100,
          fraction_nitrogen = percent_nitrogen / 100) %>%
-  separate(col="Actual.Sample.Interval", into=c("depth_min", "depth_max"), sep="_") %>%
+  separate(col='Actual Sample Interval', into=c("depth_min", "depth_max"), sep="_") %>%
   select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon, fraction_nitrogen) %>%
   mutate(depth_min = ifelse(is.na(depth_max==TRUE),100,depth_min)) %>%
   mutate(depth_min = as.numeric(depth_min), 
-         depth_max = as.numeric(depth_max)) 
+         depth_max = as.numeric(depth_max)) %>%
+  arrange(study_id, site_id, core_id, depth_min)
 
 ## ... Core-level ###########
 # We'll scale up to the core-level from the depthseries
+coreLocations <- read_csv("./data/Trettin_2017/original/Zambezi_PlotLocations.csv")
+coreLocations <- coreLocations %>%
+  mutate(site_id = as.character(Plot)) %>%
+  rename(species_code = 'Dominant Species')
+
+species <- coreLocations %>% 
+  mutate(species_code = strsplit(as.character(species_code), "; ")) %>% 
+  unnest(species_code) %>%
+  mutate(study_id = study) %>%
+  select(study_id, site_id, species_code) %>%
+  arrange(study_id, site_id, species_code)
+
+print(unique(species$species_code))
+
+species <- species %>%
+  mutate(species_code = recode_factor(species_code, "H. Littoralis" = "Heritiera littoralis",
+                "B. Gymnorrhiza" = "Bruguiera gymnorrhiza",
+                "R. Mucronata" = "Rhizophora mucronata",
+                "X. Granatum" = "Xylocarpus granatum",
+                "A. Marina" = "Avicennia marina",
+                "C. Tagal" = "Ceriops tagal",
+                "S. Alba" = "Sonneratia alba"))
 
 cores <- depthseries %>%
-  group_by(core_id) %>%
-  summarize(site_id = first(site_id), study_id = first(study_id))
+  select(study_id, site_id, core_id) %>%
+  distinct() %>%
+  left_join(coreLocations) %>%
+  rename(core_latitude = Lati, core_longitude = Long) %>%
+  select(study_id, site_id, core_id, core_latitude, core_longitude)
 
 ## ... Site-level ##########
 sites <- cores %>%
-  group_by(site_id) %>%
-  summarize(study_id = first(study_id), 
-            site_longitude_max = -18.89591,
-            site_longitude_min = -18.80846,
-            site_latitude_max = 36.30681,
-            site_latitude_min = 36.11881)
+  group_by(study_id, site_id) %>% 
+  summarize(site_longitude_max = max(core_longitude),
+            site_longitude_min = min(core_longitude),
+            site_latitude_max = max(core_latitude),
+            site_latitude_min = min(core_longitude))
 
 # West_Bounding_Coordinate: 36.30681
 # East_Bounding_Coordinate: 36.11881
@@ -87,6 +111,8 @@ source("./scripts/1_data_formatting/qa_functions.R")
 test_colnames("cores", cores)
 test_colnames("sites", sites) 
 test_colnames("depthseries", depthseries)
+test_colnames("species", species)
+
 
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
@@ -97,3 +123,4 @@ write.csv(sites, "./data/Trettin_2017/derivative/Trettin_et_al_2017_sites.csv")
 write.csv(cores, "./data/Trettin_2017/derivative/Trettin_et_al_2017_cores.csv")
 write.csv(depthseries, "./data/Trettin_2017/derivative/Trettin_et_al_2017_depthseries.csv")
 write.csv(study_data_primary, "./data/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
+write.csv(species, "./data/Trettin_2017/derivative/Trettin_et_al_2017_species.csv")
