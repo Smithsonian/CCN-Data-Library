@@ -82,7 +82,7 @@ sites <- cores %>%
   summarize(site_longitude_max = max(core_longitude),
             site_longitude_min = min(core_longitude),
             site_latitude_max = max(core_latitude),
-            site_latitude_min = min(core_longitude))
+            site_latitude_min = min(core_latitude))
 
 # West_Bounding_Coordinate: 36.30681
 # East_Bounding_Coordinate: 36.11881
@@ -124,3 +124,4 @@ write.csv(cores, "./data/Trettin_2017/derivative/Trettin_et_al_2017_cores.csv")
 write.csv(depthseries, "./data/Trettin_2017/derivative/Trettin_et_al_2017_depthseries.csv")
 write.csv(study_data_primary, "./data/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
 write.csv(species, "./data/Trettin_2017/derivative/Trettin_et_al_2017_species.csv")
+
