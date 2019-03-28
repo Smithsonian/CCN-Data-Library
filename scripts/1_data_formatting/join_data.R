@@ -9,75 +9,75 @@ library(tidyverse)
 ## Read in all data sources #################
 
 # Holmquist 2018
-Holmquist_2018_coredata <- read.csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_core_data.csv")
-Holmquist_2018_depthseriesdata <- read.csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_depth_series_data.csv")
-Holmquist_2018_impactdata <- read.csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_impact_data.csv")
-Holmquist_2018_methodsdata <- read.csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_methods_data.csv")
-Holmquist_2018_speciesdata <- read.csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_species_data.csv")
-Holmquist_2018_citationdata <- read.csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_study_citations.csv")
+Holmquist_2018_coredata <- read_csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_core_data.csv")
+Holmquist_2018_depthseriesdata <- read_csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_depth_series_data.csv")
+Holmquist_2018_impactdata <- read_csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_impact_data.csv")
+Holmquist_2018_methodsdata <- read_csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_methods_data.csv")
+Holmquist_2018_speciesdata <- read_csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_species_data.csv")
+Holmquist_2018_citationdata <- read_csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_study_citations.csv")
 
 # Gonneaa 2018
-Gonneea_2018_coredata <- read.csv("./data/Gonneea_2018/derivative/Gonneea_et_al_2018_cores.csv")
-Gonneea_2018_depthseriesdata <- read.csv("./data/Gonneea_2018/derivative/Gonneea_et_al_2018_depthseries.csv")
-Gonneea_2018_citationdata <- read.csv("./data/Gonneea_2018/derivative/Gonneea_et_al_2018_study_citations.csv")
+Gonneea_2018_coredata <- read_csv("./data/Gonneea_2018/derivative/Gonneea_et_al_2018_cores.csv")
+Gonneea_2018_depthseriesdata <- read_csv("./data/Gonneea_2018/derivative/Gonneea_et_al_2018_depthseries.csv")
+Gonneea_2018_citationdata <- read_csv("./data/Gonneea_2018/derivative/Gonneea_et_al_2018_study_citations.csv")
 
 # Osland 2016
-Osland_2016_coredata <- read.csv("./data/Osland_2016/derivative/Osland_et_al_2016_cores.csv")
-Osland_2016_depthseriesdata <- read.csv("./data/Osland_2016/derivative/Osland_et_al_2016_depthseries.csv")
-Osland_2016_speciesdata <- read.csv("./data/Osland_2016/derivative/Osland_et_al_2016_species.csv")
-Osland_2016_sitedata <- read.csv("./data/Osland_2016/derivative/Osland_et_al_2016_sites.csv")
-Osland_2016_citationdata <- read.csv("./data/Osland_2016/derivative/Osland_et_al_2016_study_citations.csv")
+Osland_2016_coredata <- read_csv("./data/Osland_2016/derivative/Osland_et_al_2016_cores.csv")
+Osland_2016_depthseriesdata <- read_csv("./data/Osland_2016/derivative/Osland_et_al_2016_depthseries.csv")
+Osland_2016_speciesdata <- read_csv("./data/Osland_2016/derivative/Osland_et_al_2016_species.csv")
+Osland_2016_sitedata <- read_csv("./data/Osland_2016/derivative/Osland_et_al_2016_sites.csv")
+Osland_2016_citationdata <- read_csv("./data/Osland_2016/derivative/Osland_et_al_2016_study_citations.csv")
 
 # Sanderman 2018
-Sanderman_2018_coredata <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
-Sanderman_2018_speciesdata <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
-Sanderman_2018_methodsdata <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_methods_data.csv")
-Sanderman_2018_depthseriesdata <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
-Sanderman_2018_citationdata <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_study_citations.csv")
+Sanderman_2018_coredata <- read_csv("./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
+Sanderman_2018_speciesdata <- read_csv("./data/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
+Sanderman_2018_methodsdata <- read_csv("./data/Sanderman_2018/derivative/Sanderman_2018_methods_data.csv")
+Sanderman_2018_depthseriesdata <- read_csv("./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
+Sanderman_2018_citationdata <- read_csv("./data/Sanderman_2018/derivative/Sanderman_2018_study_citations.csv")
 
 # Schile-Beers and Megonigal 2017
-Schile_2017_depthseriesdata <- read.csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")
-Schile_2017_coredata <- read.csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
-Schile_2017_sitedata <- read.csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
-Schile_2017_citationdata <- read.csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")
+Schile_2017_depthseriesdata <- read_csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")
+Schile_2017_coredata <- read_csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
+Schile_2017_sitedata <- read_csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
+Schile_2017_citationdata <- read_csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")
 
 # Deegan et al. 2012
-Deegan_2012_coredata <- read.csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
-Deegan_2012_sitedata <- read.csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
-Deegan_2012_citationdata <- read.csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
+Deegan_2012_coredata <- read_csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
+Deegan_2012_sitedata <- read_csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
+Deegan_2012_citationdata <- read_csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
 # because there is no guidance for biomass yet, I will remove the above ground core-level biomass data 
-# Deegan_2012_depthseriesdata <- read.csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")
+# Deegan_2012_depthseriesdata <- read_csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")
 Deegan_2012_coredata <- Deegan_2012_coredata %>%
   select(-aboveground_stem_length, -aboveground_mass)
 
 # Giblin and Forbrich 2018
-Giblin_2018_coredata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_cores.csv")
-Giblin_2018_depthseriesdata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_depthseries.csv")
-Giblin_2018_sitedata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_sites.csv")
-Giblin_2018_speciesdata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species.csv")
-Giblin_2018_citationdata <- read.csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")
+Giblin_2018_coredata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_cores.csv")
+Giblin_2018_depthseriesdata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_depthseries.csv")
+Giblin_2018_sitedata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_sites.csv")
+Giblin_2018_speciesdata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species.csv")
+Giblin_2018_citationdata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")
 
 # Smith et al. 2015
-Smith_2015_coredata <- read.csv("./data/Smith_2015/derivative/Smith_et_al_2015_cores.csv")
-Smith_2015_sitedata <- read.csv("./data/Smith_2015/derivative/Smith_et_al_2015_sites.csv")
-Smith_2015_depthseriesdata <- read.csv("./data/Smith_2015/derivative/Smith_et_al_2015_depthseries.csv")
-Smith_2015_citationdata <- read.csv("./data/Smith_2015/derivative/Smith_et_al_2015_study_citations.csv")
+Smith_2015_coredata <- read_csv("./data/Smith_2015/derivative/Smith_et_al_2015_cores.csv")
+Smith_2015_sitedata <- read_csv("./data/Smith_2015/derivative/Smith_et_al_2015_sites.csv")
+Smith_2015_depthseriesdata <- read_csv("./data/Smith_2015/derivative/Smith_et_al_2015_depthseries.csv")
+Smith_2015_citationdata <- read_csv("./data/Smith_2015/derivative/Smith_et_al_2015_study_citations.csv")
 
 # Doughty et al 2016
-# Doughty_2016_cores <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_core_level.csv")
-# Doughty_2016_depthseries <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_soil_depth_series.csv")
-# Doughty_2016_species <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_dominant_species.csv")
-# Doughty_2016_pubs <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_associated_publications.csv")
-# Doughty_2016_study_info <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_study_information.csv")
-# Doughty_2016_keyword <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_keywords.csv")
-# Doughty_2016_funding <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_funding_sources.csv")
-# Doughty_2016_authors <- read.csv("./data/Doughty_2016/original/Doughty2016_CCRCN_authors.csv")
+# Doughty_2016_cores <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_core_level.csv")
+# Doughty_2016_depthseries <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_soil_depth_series.csv")
+# Doughty_2016_species <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_dominant_species.csv")
+# Doughty_2016_pubs <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_associated_publications.csv")
+# Doughty_2016_study_info <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_study_information.csv")
+# Doughty_2016_keyword <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_keywords.csv")
+# Doughty_2016_funding <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_funding_sources.csv")
+# Doughty_2016_authors <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_authors.csv")
 
 # Trettin et al. 2017
-Trettin_2017_coredata <- read.csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_cores.csv")
-Trettin_2017_sitedata <- read.csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_sites.csv")
-Trettin_2017_depthseriesdata <- read.csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_depthseries.csv")
-Trettin_2017_citationdata <- read.csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
+Trettin_2017_coredata <- read_csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_cores.csv")
+Trettin_2017_sitedata <- read_csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_sites.csv")
+Trettin_2017_depthseriesdata <- read_csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_depthseries.csv")
+Trettin_2017_citationdata <- read_csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
 
 ## Join datasets ######################
 
