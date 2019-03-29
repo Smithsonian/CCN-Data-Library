@@ -108,6 +108,8 @@ cores_biomass <- dt2 %>%
          aboveground_mass = Aboveground.mass)
 
 cores <- merge(cores,cores_biomass)
+cores <- cores %>%
+  select(study_data_primary, site_id, core_id)
 
 ## ... 3C. Prep site-level data ##########
 site_data <- cores %>%

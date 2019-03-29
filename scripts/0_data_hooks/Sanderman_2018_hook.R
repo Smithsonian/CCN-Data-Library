@@ -78,6 +78,7 @@ internatl_core_data <- internatl_core_data_raw %>%
   mutate(vegetation_notes = "mangrove") %>%
   rename(landscape_position = "Landscape position") %>%
   rename(core_date = Years_collected) %>%
+  mutate(core_date = as.Date(core_date, format = "%Y")) %>%
   rename(core_length = "total_depth") %>%
   rename(core_length_flag = "full_profile")
 
@@ -91,7 +92,6 @@ for (i in 1:nrow(internatl_core_data)) {
 }
 
 internatl_core_data <- internatl_core_data %>%
-  mutate(core_date = as.factor(core_date)) %>%
   select(-`Landscape Unsure`, -`HGM Unsure`, -`Mangrove type`) %>%
   mutate(core_length = as.numeric(core_length)) %>%
   select(- `Site name`) %>%

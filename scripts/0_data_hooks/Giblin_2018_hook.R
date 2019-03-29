@@ -107,7 +107,8 @@ cores <- dt1 %>%
   mutate(study_id = "Giblin_and_Forbrich_2018", 
          core_length_flag = "core depth limited by length of corer", 
          site_id = "Nelson_Island_Creek", 
-         core_elevation_datum = "NAVD88") 
+         core_elevation_datum = "NAVD88") %>%
+  select(study_id, site_id, core_id, everything())
 
 ## ... 2C. Vegetation data #####################
 veggies <- dt1 %>%
