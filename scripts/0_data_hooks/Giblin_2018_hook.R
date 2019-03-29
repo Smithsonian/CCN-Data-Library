@@ -67,6 +67,7 @@ depthseries_data <- dt1 %>%
   # create unique core IDs
   mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
          study_id = "Giblin_and_Forbrich_2018") %>%
+  mutate(fraction_carbon = gsub("NaN", "NA", fraction_carbon)) %>%
   select(core_id, sample_id, study_id, dry_bulk_density, fraction_carbon, section_depth,
          cs137_activity, total_pb210_activity)
 

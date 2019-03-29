@@ -184,7 +184,9 @@ internatl_depthseries_data <- internatl_depthseries_data %>%
   rename(fraction_carbon = OC_final) %>%
   mutate(fraction_carbon = as.numeric(fraction_carbon) / 100) %>%
   rename(fraction_carbon_type = "TC instead of TOC?") %>%
+  mutate(fraction_carbon_type = gsub("N/A", "NA", fraction_carbon_type)) %>%
   mutate(carbon_profile_notes = "uses OC data if reported, otherwise used 0.5*LOI data")
+
 
 # Recode fraction carbon type from yes/no to more descriptive
 internatl_depthseries_data$fraction_carbon_type <- recode(internatl_depthseries_data$fraction_carbon_type,
