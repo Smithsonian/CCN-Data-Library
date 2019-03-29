@@ -83,10 +83,6 @@ Trettin_2017_citationdata <- read_csv("./data/Trettin_2017/derivative/Trettin_et
 
 # Core data
 
-# Sanderman 2018 core dates are giving me trouble even though I already converted
-#   to factor in hook script...so just doing so again here
-Sanderman_2018_coredata$core_date <- as.factor(Sanderman_2018_coredata$core_date)
-
 # Bind
 CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Gonneea_2018_coredata) %>%
