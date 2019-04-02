@@ -9,14 +9,17 @@ library(tidyverse)
 # For conversion of depth interval values: if a dataframe
 #   has a mean depth attribute, this will create a min depth
 #   and max depth attributes
-convert_mean_depth_to_min_max <- function(dataframe, mean.depth) {
+
+# NOTE: this function assumes constant sampling interval (as in, each slice of
+#   core is of equal length)
+convert_mean_depth_to_min_max <- function(dataframe, df_mean.depth) {
   # Set l as th length of the dataframe
-  l <- length(mean.depth)
-  mean.depth <- as.numeric(mean.depth)
+  l <- length(df_mean.depth)
+  df_mean.depth <- as.numeric(df_mean.depth)
   # For each row....
   for (i in 1:l) {
-    min <- (mean.depth[i - 1] + mean.depth[i])/2 # Take mean of previous cell and current cell
-    max <- (mean.depth[i + 1] + mean.depth[i])/2 # Take mean of current cell and next cell
+    min <- (df_mean.depth[i - 1] + df_mean.depth[i])/2 # Take mean of previous cell and current cell
+    max <- (df_mean.depth[i + 1] + df_mean.depth[i])/2 # Take mean of current cell and next cell
       # If initial iteration...
       if (i == 1) {
         depth_min = as.vector(min) # create depth_min vector
@@ -29,14 +32,14 @@ convert_mean_depth_to_min_max <- function(dataframe, mean.depth) {
         }
   }
 
-  if (mean.depth[1] == 0) {
+  if (df_mean.depth[1] == 0) {
     depth_min[1] <- 0
     depth_max[1] <- 0
     depth_min[2] <- 0
-    depth_max[l] <- depth_min[l] + 2 * (mean.depth[l] - depth_min[l])
+    depth_max[l] <- depth_min[l] + 2 * (df_mean.depth[l] - depth_min[l])
   } else {
     depth_min[1] <- 0
-    depth_max[l] <- depth_min[l] + 2 * (mean.depth[l] - depth_min[l])
+    depth_max[l] <- depth_min[l] + 2 * (df_mean.depth[l] - depth_min[l])
     }
 
   dataframe <- dataframe %>%
