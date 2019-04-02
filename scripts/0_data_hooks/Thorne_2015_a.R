@@ -6,6 +6,7 @@
 # Data Citation
 # Thorne, K. 2015. Field and model data for studying the effects of sea-level rise on eight tidal marshes in coastal Washington and Oregon. 
 # US Geological Survey Data Release. 10.5066/F7SJ1HNC.
+# https://www.sciencebase.gov/catalog/item/55ae7d09e4b066a24924239f
 
 
 # Publication Citation
@@ -14,25 +15,21 @@
 # U.S. Pacific coastal wetland resilience and vulnerability to sea-level rise: Science Advances, v. 4, iss. 2.
 
 ## 2. Prep workspace #######################
-# Load RCurl, a package used to download files from a URL
 library(tidyverse)
 library(lubridate)
 library(readxl)
+# the following packages are needed to convert UTM to lat/long
+library(sp)
+library(rgdal)
+library(DataCombine)
 
-## 3. Data Location ########
-
-# I'm unable to scrape files from USGS. Until I figure it out, I'll download and place in original folder. 
-
-URL <- "https://www.sciencebase.gov/catalog/item/55ae7d09e4b066a24924239f"
-
-## 4. Import data ####################
-
+## 3 Read in data #########################
 # The soil core and depthseries data is spread across multiple sheets in an excel file. 
 # Each core's depth series has it's own page but there is no core ID in the table. 
 # Instead, the sheet name is the associated core name. 
 # Each sheet will need to be read in as part of a loop
 
-## ... 4A. Assemble vector of core names and import ##################
+## ... 3A Assemble vector of core names and import ##################
 core_ids <- c("BM01", "BM03", "BM05", "CB00", "CB03", 'CB06', "GH01", "GH03", "GH06", 
               "NQ01", "NQ04", "NQ06", "PS02", "PS04", 'PS05', "SZ02", "SZ03", "SZ05",
               "SK02", "SK04", "SK06", "WB01", "WB04", "WB06")
@@ -51,12 +48,12 @@ for(i in 1:num_cores) {
   assign(core_ids[i],d)
 }
 
-## ... 4B Import core-level data 
+## ... 3B Import core-level data 
 raw_core_data <- read_excel("./data/Thorne_2015_a/original/NWCSC Sediment Core Data.xlsx", sheet="CoreSurveys_CS137")
 
-## 5. Curate Data ##################
+## 4 Curate Data ##################
 
-## ... 5A. Append depthseries data, add appropriate core ID, and curate ############
+## ... 4A Append depthseries data, add appropriate core ID, and curate ############
 depthseries_data <- data.frame(matrix(nrow=0, ncol=4))
 colnames(depthseries_data) <- colnames(BM01)
 
@@ -68,24 +65,75 @@ depthseries_data <- depthseries_data %>%
   bind_rows(core_ids) %>%
   mutate(depth_max = depth_min + 1, 
          fraction_organic_matter = fraction_organic_matter / 100,
-         study_id = "Thorne et al. 2018") %>%
-  select(core_id, study_id, depth_max, depth_min, fraction_organic_matter, dry_bulk_density)
+         study_id = "Thorne_et_al_2015") %>%
+  select(core_id, study_id, depth_min, depth_max, fraction_organic_matter, dry_bulk_density)
 
-## ... 5B. Curate core-level data #############
+## ... 4B Curate core-level data #############
 core_data <- raw_core_data %>%
   rename(core_elevation = `Elevation (m, NAVD88)`,
          cs137_peak_cm = `CS137 Peak (cm)`) %>%
-  mutate(core_id = paste(Site, Core, sep="_"),
-         study_id = "Thorne et al. 2018", 
+  mutate(core_id = paste(SiteCode, Core, sep="0"),
+         study_id = "Thorne_et_al_2015", 
          core_position_method = "RTK", 
+         core_elevation_datum = "NAVD88",
          zone = 10) 
 
+# convert UTM to lat long
+source("./scripts/1_data_formatting/curation_functions.R") 
 output <- convert_UTM_to_latlong(core_data$Easting, core_data$Northing, core_data$zone, core_data$core_id)
-easting <- core_data$Easting
-northing <- core_data$Northing
-zone <- core_data$zone
-core_id <- core_data$core_id
+
+# merge coordinates to core table and clean up table
+core_data <- core_data %>%
+  merge(output, by="core_id") %>%
+  rename(site_id = Site) %>%
+  select(study_id, site_id, core_id, core_latitude, core_longitude, core_position_method, core_elevation, core_elevation_datum, cs137_peak_cm)
 
 
+## ... 4C Add cs137 TRUE/FALSE value to depthseries #####
+# If a given interval contains the cs137 peak, give it a TRUE value. 
 
+peaks <- core_data %>%
+  filter(cs137_peak_cm >= 0) %>%
+  select(core_id, cs137_peak_cm)
+
+depthseries_data <- depthseries_data %>%
+  merge(peaks, by="core_id", all.x=TRUE, all.y=TRUE) %>%
+  mutate(cs137_peak_present = ifelse(is.na(cs137_peak_cm)==TRUE, FALSE, ifelse(cs137_peak_cm == depth_min, TRUE, FALSE))) %>%
+  select(-cs137_peak_cm)
+
+core_data <- select(core_data, -cs137_peak_cm)
+
+## ... 4D Generate study-citation link ############
+# import the CCRCN bibliography 
+library(bib2df)
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+
+# link each study to primary citation and join with synthesis table
+studies <- unique(core_data$study_id)
+
+study_data_primary <- CCRCN_bib %>%
+  select(BIBTEXKEY, CATEGORY, DOI) %>%
+  rename(bibliography_id = BIBTEXKEY,
+         study_type = CATEGORY,
+         doi = DOI) %>%
+  filter(bibliography_id %in% studies) %>%
+  mutate(study_id = bibliography_id, 
+         study_type = tolower(study_type)) %>%
+  select(study_id, study_type, bibliography_id, doi) 
+
+## 5. QA/QC of data ################
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Make sure column names are formatted correctly: 
+test_colnames("cores", core_data)
+test_colnames("depthseries", depthseries_data)
+
+# Test relationships between core_ids at core- and depthseries-levels
+# the test returns all core-level rows that did not have a match in the depth series data
+results <- test_core_relationships(core_data, depthseries_data)
+
+## 6. Export data
+write_csv(core_data, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_core_data.csv")
+write_csv(depthseries_data, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_depthseries_data.csv")
+write_csv(study_data_primary, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
 
