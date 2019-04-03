@@ -33,12 +33,10 @@ depthseries <- raw_depthseries %>%
   # One sample interval has double _ _ 
   # Rename variables
   rename(dry_bulk_density = 'Bulk Density (g cm-3)') %>%
-  rename(percent_carbon = '%C',
-         percent_nitrogen = '%N') %>%
-  mutate(fraction_carbon = percent_carbon / 100,
-         fraction_nitrogen = percent_nitrogen / 100) %>%
+  rename(percent_carbon = '%C') %>%
+  mutate(fraction_carbon = percent_carbon / 100) %>%
   separate(col='Actual Sample Interval', into=c("depth_min", "depth_max"), sep="_") %>%
-  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon, fraction_nitrogen) %>%
+  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon) %>%
   mutate(depth_min = ifelse(is.na(depth_max==TRUE),100,depth_min)) %>%
   mutate(depth_min = as.numeric(depth_min), 
          depth_max = as.numeric(depth_max)) %>%
@@ -119,9 +117,9 @@ test_colnames("species", species)
 results <- test_core_relationships(cores, depthseries)
 
 ## 6. Write data ##############
-write.csv(sites, "./data/Trettin_2017/derivative/Trettin_et_al_2017_sites.csv")
-write.csv(cores, "./data/Trettin_2017/derivative/Trettin_et_al_2017_cores.csv")
-write.csv(depthseries, "./data/Trettin_2017/derivative/Trettin_et_al_2017_depthseries.csv")
-write.csv(study_data_primary, "./data/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
-write.csv(species, "./data/Trettin_2017/derivative/Trettin_et_al_2017_species.csv")
+write_csv(sites, "./data/Trettin_2017/derivative/Trettin_et_al_2017_sites.csv")
+write_csv(cores, "./data/Trettin_2017/derivative/Trettin_et_al_2017_cores.csv")
+write_csv(depthseries, "./data/Trettin_2017/derivative/Trettin_et_al_2017_depthseries.csv")
+write_csv(study_data_primary, "./data/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
+write_csv(species, "./data/Trettin_2017/derivative/Trettin_et_al_2017_species.csv")
 

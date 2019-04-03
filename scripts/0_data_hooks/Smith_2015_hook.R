@@ -68,7 +68,7 @@ depthseries_data <- raw_depthseries %>%
   mutate(depth_interval = as.numeric(gsub("_", "", depth_interval))) %>%
   mutate(depth_min = depth_interval - 1, depth_max = depth_interval + 1,
          study_id = "Smith_et_al_2015", site_id = "09WCC01") %>%
-  select(study_id, site_id, core_id, depth_min, depth_max,
+  select(study_id, core_id, depth_min, depth_max,
          dry_bulk_density,
          fraction_organic_matter,
          total_pb210_activity, total_pb210_activity_sd,

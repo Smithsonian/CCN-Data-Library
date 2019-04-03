@@ -72,7 +72,7 @@ internatl_core_data <- internatl_core_data_raw %>%
   rename(country = Country) %>%
   rename(core_latitude = Latitude) %>%
   rename(core_longitude = Longitude) %>%
-  rename(core_position_accuracy_flag = "accuracy_flag") %>%
+  rename(core_position_notes = "accuracy_flag") %>%
   rename(core_position_accuracy = "approx_acc") %>%
   mutate(vegetation_class = "forested") %>%
   mutate(vegetation_notes = "mangrove") %>%
@@ -201,7 +201,32 @@ internatl_depthseries_data$fraction_carbon_type <- recode(internatl_depthseries_
 # Remove unwanted attributes
 internatl_depthseries_data <- internatl_depthseries_data %>%
   select(-mid_point, -`TOC (%)`)
-  
+
+## QA/QC Functions ##########################
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Test for variables that are not in CCRCN guidance
+# Make sure column names are formatted correctly: 
+test_colnames("cores", internatl_core_data)
+test_colnames("depthseries", internatl_depthseries_data)
+
+# Results for cores: 
+#  "Non-matching variable names/column headers: country Data_owner landscape_position 
+# hydrogeomorphology Dominant species core_length"
+core_invalid_set <- c("country", "Data_owner", "landscape_position", 
+                      "hydrogeomorphology", "Dominant species", "core_length")
+
+internatl_core_data <- select(internatl_core_data, -core_invalid_set)
+
+# Results for depthseries: 
+# "Non-matching variable names/column headers: CD_reported Ocstock_reported carbon_density fraction_carbon_type 
+# DBD_measured_or_modeled OC_measured_or_modeled CD_measured_or_modeled carbon_profile_notes"
+
+depthseries_invalid_set <- c("CD_reported", "Ocstock_reported", "carbon_density", "fraction_carbon_type" ,
+                             "DBD_measured_or_modeled", "OC_measured_or_modeled", "CD_measured_or_modeled", "carbon_profile_notes")
+
+internatl_depthseries_data <- select(internatl_depthseries_data, -depthseries_invalid_set)
+
 ## Curate Sanderman USA data SEE NOTE BELOW: US DATA NOT UNIQUE WITH INTERNATIONAL ############
 
 # It looks like apparently all of the US cores are represented in the international

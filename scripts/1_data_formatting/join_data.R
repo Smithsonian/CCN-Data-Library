@@ -114,19 +114,20 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Trettin_2017_depthseriesdata) %>%
   bind_rows(Thorne_2015_depthseriesdata)
 
-# Add a column for aggregated fraction carbon and carbon density per core
-aggregate_carbon <- CCRCN_depthseriesdata %>%
-  select(core_id, fraction_carbon, dry_bulk_density) %>%
-  group_by(core_id) %>%
-  summarize_all(mean)
-
-# Add aggregated data to core level data
-CCRCN_coredata <- CCRCN_coredata %>%
-  left_join(aggregate_carbon)
-
-CCRCN_coredata <- CCRCN_coredata %>%
-  rename(mean_fraction_carbon = fraction_carbon,
-         mean_dry_bulk_density = dry_bulk_density)
+# Commenting out aggregated data for now
+# # Add a column for aggregated fraction carbon and carbon density per core
+# aggregate_carbon <- CCRCN_depthseriesdata %>%
+#   select(core_id, fraction_carbon, dry_bulk_density) %>%
+#   group_by(core_id) %>%
+#   summarize_all(mean)
+# 
+# # Add aggregated data to core level data
+# CCRCN_coredata <- CCRCN_coredata %>%
+#   left_join(aggregate_carbon)
+# 
+# CCRCN_coredata <- CCRCN_coredata %>%
+#   rename(mean_fraction_carbon = fraction_carbon,
+#          mean_dry_bulk_density = dry_bulk_density)
 
 # Impact data
 CCRCN_impactdata <- Holmquist_2018_impactdata

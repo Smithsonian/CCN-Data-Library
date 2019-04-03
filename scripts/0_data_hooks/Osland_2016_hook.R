@@ -208,8 +208,7 @@ Osland_2016_depth_series_data <- depth_series_data %>%
   
   mutate(study_id = "Osland_et_al_2016") %>%
   # Re-order columns
-  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter,
-         fraction_moisture_content)
+  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter)
 
 
 ## Species data ##################

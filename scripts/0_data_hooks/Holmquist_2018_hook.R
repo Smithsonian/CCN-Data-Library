@@ -63,7 +63,7 @@ cores <- cores %>%
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
   rename(vegetation_class = "vegetation_code",
          salinity_class = "salinity_code",
-         core_position_method = "position_code") %>%
+         core_position_notes= "position_code") %>%
   filter(study_id != "Gonneea_et_al_2018") %>%
   # Add underscores to site IDs
   mutate(site_id = gsub(" ", "_", site_id)) %>%
@@ -83,6 +83,12 @@ depthseries <- depthseries %>%
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
   filter(study_id != "Gonneea_et_al_2018")
+
+# Fraction carbon type should be in the methods metadata, not depthseries level 
+fraction_carbon_type_metadata <- depthseries %>%
+  group_by(study_id) %>%
+  summarize(fraction_carbon_type = first(fraction_carbon_type)) 
+depthseries <- select(depthseries, -fraction_carbon_type)
 
 impacts <- impacts %>%
   rename(impact_class = "impact_code") %>%
@@ -105,7 +111,8 @@ methods <- methods %>%
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))%>%
-  filter(study_id != "Gonneea_et_al_2018")
+  filter(study_id != "Gonneea_et_al_2018") %>%
+  bind_cols(fraction_carbon_type_metadata)
 
 ## 4. Create study-level data ######
 # import the CCRCN bibliography 
@@ -146,7 +153,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 test_colnames("cores", cores) 
 test_colnames("depthseries", depthseries)
 test_colnames("species", species) 
-test_colnames("impacts", impacts) # impact_code should be impact_class as per CCRCN guidance
+test_colnames("impacts", impacts) 
 
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
