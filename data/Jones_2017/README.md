@@ -11,3 +11,5 @@
 - in the LOI datasets, which also have radiocarbon dates, I'm assuming that they are carbon 14
 
 - also for the radioncarbon dates in the LOI datasets, dates are expressed as lower value/middle value/higher value. You'd think this is age- 1 SD/age/age + 1 SD...but the middle value is not exactly between the left and right values. So, I took the average of the differences between the middle value and the left/right values, and designated that as the standard deviation.
+
+- depths for geochronology data are only one number, but thickness is given...assumed that "depth" was the average depth of the sample, rather than the top or bottom of the sample.
