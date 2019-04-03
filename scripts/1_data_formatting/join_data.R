@@ -79,6 +79,11 @@ Trettin_2017_sitedata <- read_csv("./data/Trettin_2017/derivative/Trettin_et_al_
 Trettin_2017_depthseriesdata <- read_csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_depthseries.csv")
 Trettin_2017_citationdata <- read_csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
 
+# Thorne et al. 2015
+Thorne_2015_coredata <- read_csv( "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_core_data.csv")
+Thorne_2015_depthseriesdata <- read_csv("./data/Thorne_2015_a/derivative/Thorne_et_al_2015_depthseries_data.csv")
+Thorne_2015_citationdata <- read_csv("./data/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
+
 ## Join datasets ######################
 
 # Core data
@@ -92,7 +97,8 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Deegan_2012_coredata) %>%
   bind_rows(Giblin_2018_coredata) %>%
   bind_rows(Smith_2015_coredata) %>%
-  bind_rows(Trettin_2017_coredata)
+  bind_rows(Trettin_2017_coredata) %>%
+  bind_rows(Thorne_2015_coredata)
 
 # Depth series data
 # The Osland core IDs are initiatlized as numeric, as they're just numbers.
@@ -105,7 +111,8 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Schile_2017_depthseriesdata) %>%
   bind_rows(Giblin_2018_depthseriesdata) %>%
   bind_rows(Smith_2015_depthseriesdata) %>%
-  bind_rows(Trettin_2017_depthseriesdata)
+  bind_rows(Trettin_2017_depthseriesdata) %>%
+  bind_rows(Thorne_2015_depthseriesdata)
 
 # Add a column for aggregated fraction carbon and carbon density per core
 aggregate_carbon <- CCRCN_depthseriesdata %>%
@@ -144,7 +151,8 @@ CCRCN_study_citations <- Holmquist_2018_citationdata %>%
   bind_rows(Deegan_2012_citationdata) %>%
   bind_rows(Giblin_2018_citationdata) %>%
   bind_rows(Smith_2015_citationdata) %>%
-  bind_rows(Trettin_2017_citationdata)
+  bind_rows(Trettin_2017_citationdata) %>%
+  bind_rows(Thorne_2015_citationdata)
 
 ## QA #################
 source("./scripts/1_data_formatting/qa_functions.R")
