@@ -72,6 +72,10 @@ depthseries_data <- depthseries_data %>%
 core_data <- raw_core_data %>%
   rename(core_elevation = `Elevation (m, NAVD88)`,
          cs137_peak_cm = `CS137 Peak (cm)`) %>%
+  
+  # Whomever uploaded this dataset to its public repository forgot a digit from
+  #   a coordinate....
+  mutate(Northing = ifelse(SiteCode == "CB" & Core == 5, (Northing * 10), Northing)) %>%
   mutate(core_id = paste(SiteCode, Core, sep="0"),
          study_id = "Thorne_et_al_2015", 
          core_position_method = "RTK", 
