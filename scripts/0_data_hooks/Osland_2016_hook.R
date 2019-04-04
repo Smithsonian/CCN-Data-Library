@@ -227,6 +227,10 @@ Osland_2016_species_data <- Osland_2016_species_data %>%
   select(-plot) %>%
   mutate(study_id = "Osland_et_al_2016")
 
+# NOTE 
+# fraction coverage has been removed as it is not part of the CCRCN guidance
+# currently there may be multiple species present at a given site 
+
 # The species presence data is currently  wide-form, with each column
 #   corresponding to the fraction area occupied by each plant species.
 # Let's write a function that can be applied to each row to change the data to
@@ -290,7 +294,9 @@ Osland_2016_species_data <- Osland_2016_species_data %>%
                                       "SABI"  = "SaBi", "SADE" = "SaDe",  "SAV" = "SaV", "SCAM" = "ScAm",  "SCRO"  = "ScRo", "SCSC" ="ScSc",  "SEHE"  = "SeHe",
                                       "SEPO"  = "SePo", "SPAL" = "SpAl",  "SPBA"  = "SpBa", "SPCY" = "SpCy",  "SPPA"  = "SpPa", "SPSP" = "SpSp",  "SULI"="SuLi",
                                       "SYTE"  = "SyTe", "THTE" = "ThTe")) %>%
-  recode_species(species_code = species_code)
+  recode_species(species_code = species_code) %>%
+  select(study_id, site_id, core_id, species_code)
+
 
 ## Create study-level data ######
 # import the CCRCN bibliography 

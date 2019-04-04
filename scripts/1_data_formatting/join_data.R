@@ -31,7 +31,6 @@ Osland_2016_citationdata <- read_csv("./data/Osland_2016/derivative/Osland_et_al
 # Sanderman 2018
 Sanderman_2018_coredata <- read_csv("./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
 Sanderman_2018_speciesdata <- read_csv("./data/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
-Sanderman_2018_methodsdata <- read_csv("./data/Sanderman_2018/derivative/Sanderman_2018_methods_data.csv")
 Sanderman_2018_depthseriesdata <- read_csv("./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
 Sanderman_2018_citationdata <- read_csv("./data/Sanderman_2018/derivative/Sanderman_2018_study_citations.csv")
 
@@ -134,8 +133,7 @@ CCRCN_impactdata <- Holmquist_2018_impactdata
 
 
 # Methods data
-CCRCN_methodsdata <- Holmquist_2018_methodsdata %>%
-  bind_rows(Sanderman_2018_methodsdata)
+CCRCN_methodsdata <- Holmquist_2018_methodsdata 
 
 # Species data
 CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%

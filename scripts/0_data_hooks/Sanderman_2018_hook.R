@@ -111,9 +111,10 @@ internatl_species_data <- internatl_core_data %>%
 
 ## * International methods data ############
 
-internatl_methods_data <- internatl_core_data %>%
-  group_by(study_id) %>%
-  summarize(country = first(country), n=n())
+# Commenting out methods table as there is currently no variables present related to the CCRCN guidance
+# internatl_methods_data <- internatl_core_data %>%
+#   group_by(study_id) %>%
+#   summarize(country = first(country), n=n())
 
 ## * international depthseries data ####################
 internatl_depthseries_data <- internatl_depthseries_data_raw %>%
@@ -420,7 +421,7 @@ write_csv(internatl_core_data, "./data/Sanderman_2018/derivative/Sanderman_2018_
 
 write_csv(internatl_species_data, "./data/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
 
-write_csv(internatl_methods_data, "./data/Sanderman_2018/derivative/Sanderman_2018_methods_data.csv")
+# write_csv(internatl_methods_data, "./data/Sanderman_2018/derivative/Sanderman_2018_methods_data.csv")
 
 write_csv(internatl_depthseries_data, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
 

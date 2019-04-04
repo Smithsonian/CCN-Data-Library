@@ -1,188 +1,33 @@
-study_id,publication_type,n,coring_method,roots_flag,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,loss_on_ignition_flag,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_flag,study_id1,fraction_carbon_type,country
-Boyd_2012,thesis,32,pvc and hammer,NA,NA,100,24,NA,550,4,NA,NA,NA,NA,NA,Crooks_et_al_2014,fraction_organic_carbon,NA
-Boyd_and_Sommerfield_2016,peer reviewed publication,12,pvc and hammer,NA,NA,100,24,NA,550,4,NA,NA,NA,NA,NA,Nuttle_1996,NA,NA
-Breithaupt_et_al_2014,peer reviewed publication,6,russian corer,NA,NA,105,24,NA,550,1,NA,measured,TRUE,none specified,replicate samples,Radabaugh_et_al_2018,NA,NA
-Breithaupt_et_al_2017,peer reviewed publication,20,piston corer,NA,corer limits compaction,NA,NA,no details,550,3,NA,NA,NA,NA,no details,Hill_and_Anisfeld_2015,fraction_organic_carbon,NA
-Callaway_et_al_2012,peer reviewed publication,59,hargas corer,NA,NA,85,72,NA,450,8,NA,modeled,NA,NA,extrapolated from subset of samples,Boyd_2012,NA,NA
-Cochran_et_al_1998,peer reviewed publication,6,mccaffrey peat cutter,NA,NA,60,48,duplicate measurements,450,12,duplicate measurements,NA,NA,NA,NA,Boyd_and_Sommerfield_2016,NA,NA
-Craft_2007,peer reviewed publication,18,none specified,NA,NA,NA,NA,air dried to constant mass,NA,NA,NA,measured,TRUE,direct acid treatment,NA,Breithaupt_et_al_2014,fraction_organic_carbon,NA
-CRMS_Database,publically available dataset,873,push core,NA,< 10-20%,NA,NA,no details,NA,NA,no details,NA,NA,NA,NA,Breithaupt_et_al_2017,NA,NA
-Crooks_et_al_2014,private sector report,16,push core,NA,NA,60,96,time approximate,NA,NA,no details,measured,NA,none specified,NA,Callaway_et_al_2012,fraction_organic_carbon,NA
-Drake_et_al_2015,peer reviewed publication,80,none specified,NA,NA,105,NA,time not specified,NA,NA,NA,measured,NA,none specified,NA,Cochran_et_al_1998,NA,NA
-Drexler_et_al_2009,peer reviewed publication,3,piston corer,NA,NA,105,12,time approximate,550,4,NA,modeled,FALSE,low carbonate soil,extrapolated from subset of samples,Craft_2007,fraction_total_carbon,NA
-Elsey_Quirk_et_al_2011,peer reviewed publication,2,push core,NA,NA,60,12,time approximate,460,8,NA,measured,TRUE,HCl fumigation,NA,CRMS_Database,NA,NA
-Ensign_et_al_2015,peer reviewed publication,6,piston corer,NA,NA,60,NA,to constant mass,NA,NA,NA,measured,FALSE,NA,NA,Drake_et_al_2015,fraction_organic_carbon,NA
-Gerlach_et_al_2017,peer reviewed publication,2,none specified,NA,NA,NA,NA,no details,NA,NA,no details,NA,NA,NA,NA,Drexler_et_al_2009,NA,NA
-Hill_and_Anisfeld_2015,peer reviewed publication,16,push core,NA,NA,60,NA,time not specified,550,NA,time not specified,measured,TRUE,HCl fumigation,NA,Elsey_Quirk_et_al_2011,fraction_organic_carbon,NA
-Johnson_et_al_2007,peer reviewed publication,1,vibracore,NA,NA,100,NA,to constant mass,NA,NA,NA,measured,TRUE,1N H3PO4,NA,Ensign_et_al_2015,fraction_total_carbon,NA
-Kemp_et_al_2012,peer reviewed publication,1,russian corer,NA,NA,NA,NA,no details,NA,NA,no details,NA,NA,NA,NA,Gerlach_et_al_2017,NA,NA
-Kulawardhana_et_al_2015,peer reviewed publication,53,other shallow corer,roots seperated using floation,no obvious compaction,105,48,NA,440,8,NA,NA,NA,NA,NA,Johnson_et_al_2007,fraction_organic_carbon,NA
-Merrill_1999,dissertation,43,mcauley corer,NA,corer limits compaction,NA,NA,no details,550,NA,NA,NA,NA,NA,NA,Kemp_et_al_2012,NA,NA
-Neubauer_2002,dissertation,60,push core,NA,NA,50,NA,time not specified,500,5,NA,NA,NA,NA,NA,Kulawardhana_et_al_2015,NA,NA
-Noe_et_al_2013,peer reviewed publication,30,push core,NA,NA,NA,NA,no details,550,4,ground and sieved,measured,FALSE,NA,fumigated to remove microbeal biomass,Merrill_1999,NA,NA
-Noe_et_al_2016,peer reviewed publication,4,none specified,NA,NA,NA,NA,no details,NA,NA,NA,NA,FALSE,NA,no details,Neubauer_2002,NA,NA
-Nuttle_1996,publically available dataset,13,none specified,NA,NA,NA,NA,no details,NA,NA,no details,NA,NA,NA,NA,Noe_et_al_2013,fraction_total_carbon,NA
-Nyman_et_al_1993,peer reviewed publication,30,other shallow corer,NA,NA,80,NA,removed non structural water,400,16,NA,NA,NA,NA,NA,Noe_et_al_2016,fraction_organic_carbon,NA
-Orson_1990,peer reviewed publication,4,russian corer,NA,corer limits compaction,NA,NA,no details,475,4,NA,NA,NA,NA,NA,Nyman_et_al_1993,NA,NA
-Pastore_et_al_2017,peer reviewed publication,20,gouge auger,NA,NA,60,336,time approximate,NA,NA,NA,measured,FALSE,low carbonate soil,NA,Orson_1990,NA,NA
-Piazza_et_al_2011,government report,45,none specified,NA,NA,60,NA,time not specified,550,2,NA,NA,NA,NA,no details,Pastore_et_al_2017,fraction_total_carbon,NA
-Radabaugh_et_al_2018,peer reviewed publication,5,russian corer,roots and rhizomes included,NA,105,24,NA,550,3,NA,modeled,NA,NA,extrapolated from subset of samples,Piazza_et_al_2011,fraction_total_carbon,NA
-Unger_et_al_2016,peer reviewed publication,17,piston corer,roots and rhizomes included,NA,NA,NA,estimated from loss on ignition and particle densities of mineral and organic solids,550,4,NA,measured,TRUE,HCl fumigation,NA,Unger_et_al_2016,fraction_organic_carbon,NA
-Watson_and_Byrne_2013,peer reviewed publication,24,russian corer,NA,NA,104,24,NA,550,2,NA,NA,NA,NA,NA,Watson_and_Byrne_2013,NA,NA
-Weis_et_al_2001,peer reviewed publication,6,hargas corer,NA,NA,95,24,NA,550,2,NA,NA,NA,NA,NA,Weis_et_al_2001,NA,NA
-Windham_Meyers_et_al_2010,government report,16,piston corer,NA,NA,105,12,time approximate,450,4,NA,NA,NA,NA,NA,Windham_Meyers_et_al_2010,NA,NA
-Abino_et_al_2014,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Philippines
-Adame_et_al_2013,NA,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Mexico
-Adame_et_al_2015,NA,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Mexico
-AfSIS_Sentinel_Sites,NA,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Mozambique
-AfSPDB,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Angola
-Ajonina_et_al_2014,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Benin
-Allen_et_al_2007,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Along_et_al_2000_MEPS,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Vietnam
-Alongi_1996,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Alongi_et_al_1999,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Alongi_et_al_2000,NA,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Alongi_et_al_2001,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Thailand
-Alongi_et_al_2004,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Malaysia
-Alongi_et_al_2005,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-Alongi_et_al_2008,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Indonesia
-Andreetta_et_al_2014,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Kenya
-Andreetta_et_al_2016,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Guinnea-Bissau
-Ashton_and_Macintosh_2002,NA,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Malaysia
-AU_NatSoil,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Banerjee_et_al_2012,NA,14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,India
-Bhomia_et_al_2016_Honduras,NA,18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Honduras
-Bhomia_et_al_2016_India,NA,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,India
-Bianchi_et_al_2012,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,USA
-Blue_Ventures_Unpublished,NA,50,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Madagascar
-Bouillon_et_al_2003,NA,55,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,India
-Bouillon_et_al_2004_FEMS,NA,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Sri Lanka
-Breithaupt_et_al_2014,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,USA
-Brunskill_et_al_2002,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Brunskill_et_al_2004,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Indonesia
-Bukoski_et_al_2017,NA,58,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Thailand
-Bulmer_et_al_2016,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,New Zealand
-C._Sanders_Submitted_to_ECSS,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,New Zealand
-C._Sanders_Unpublished,NA,24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Cahoon_and_Lynch_1997,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,USA
-Callaway_et_al_1997,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,USA
-Cardona_and_Botero_1998,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Colombia
-Ceron-Breton_et_al_2011,NA,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Mexico
-Chanda_et_al_2013,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,India
-Chen_and_Twilley_1999,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,USA
-Chen_et_al_2010,NA,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Hong Kong
-Chen_et_al_2012,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Hong Kong
-Chen_et_al_2014,NA,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Indonesia
-Chen_et_al_2016,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-Chmura_et_al_2003,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,USA
-Cifuentes_Unpublished,NA,82,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Costa Rica
-DelVecchia_et_al_2014,NA,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Ecuador
-Dissanayake_and_Chandrasekara_2014,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Sri Lanka
-Donato_et_al_2011,NA,134,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Federated States of Micronesia
-Donato_et_al_2012,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Republic of Palau
-Duncan_et_al_2016,NA,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Philippines
-Dung_et_al_2016,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Vietnam
-Dutta_et_al_2013,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,India
-Eid_and_Shaltout_2016_Egypt,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Egypt
-Eid_et_al_2016_Saudi_Arabia,NA,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Saudi Arabia
-Ezcurra_et_al_2016,NA,30,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Mexico
-Ferreira_et_al_2007,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Frith_et_al_1976,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Thailand
-Frusher_et_al_1994,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Fujimoto_et_al_1999,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Micronesia
-Gevana_and_Pampolina_2009,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Philippines
-Giani_et_al_1996,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Mexico
-Gillis_et_al_2017,NA,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Thailand
-Gleason_and_Ewel_2002,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Micronesia
-Gomes_et_al_2016,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Gonneea_et_al_2004,NA,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Mexico
-He_et_al_2002,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-Howe_et_al_2009,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Hu_et_al_2010,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-Jennerjahn_and_Ittekkot_1997,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Jennerjahn_and_Ittekkot_2002,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Jones_et_al_2016,NA,47,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Madagascar
-Kao_et_al_2002,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Taiwan
-Kauffman_et_al_2016,NA,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Mexico
-Kauffmann_et_al_2011,NA,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Republic of Palau
-Kauffmann_et_al_2014,NA,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Dominican Republic
-Kazungu_1996,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Kenya
-Kelleway_et_al_2016,NA,24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Keuskamp_et_al_2013,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Saudi Arabia
-Khan_et_al_2007,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Japan
-Kristensen_et_al_1992,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Pakistan
-Kristensen_et_al_2000,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Thailand
-Lacerda_et_al_1995,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Lallier-Verges_et_al_1998,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,French West Indies
-Lang'at_et_al_2014,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Kenya
-Lee_and_Baker_1972,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Hawaii
-Leopold_et_al_2013,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,New Caledonia
-Liu_2005,NA,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-Liu_et_al_2008,NA,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-Liu_et_al_2014,NA,27,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-Livesley_and_Andrusiak_2012,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Loi_and_Ni_2015,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Vietnam
-Lovelock_et_al_2010,NA,36,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,New Zealand
-Lunstrem_and_Chen_2014,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Hong Kong
-MacKenzie_et_al_2016,NA,19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Vietnam
-Mao_et_al_2011,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-Mao_et_al_2012,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-Marchand_et_al_2003,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,French Guiana
-Marchand_et_al_2004,NA,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,French Guiana
-"Marchand_et_al_2004,_Marchand_et_al_2003",NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,French Guiana
-Marchio_et_al_2016,NA,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,USA
-Matsui_1998,NA,37,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-McFadden_et_al_2016,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Honduras
-Mckee_et_al_2002,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Belize
-Mfilinge_et_al_2002,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Japan
-Middelburg_et_al_1996,NA,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Kenya
-Moreno_and_Calderon_2011,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Colombia
-Murdiyarso_et_al_2015,NA,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Indonesia
-MX_edaf_puntos,NA,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Mexico
-MX_perfilv12,NA,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Mexico
-Naidoo_1980,NA,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,South Africa
-Naidoo_and_Raiman_1982,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,South Africa
-Nam_et_al_2016,NA,90,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Vietnam
-NCSS,NA,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,USA
-Nsombo_et_al_2016,NA,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Cameroon
-Osland_et_al_2012,NA,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,USA
-Otero_et_al_2009,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Owers_et_al_2016,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Pazi_et_al_2016,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Malaysia
-Penha-Lopes_et_al_2009,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Mozambique
-Phang_et_al_2016,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Singapore
-RadamBrasil,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Ranjan_2010,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,India
-Ren_et_al_2008,NA,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-"S._Gress_Unpublished,_Gress_et_al_2016",NA,68,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Kenya
-Sahu_et_al_2016,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,India
-Saintilan_et_al_2013,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Sanders_et_al_2008,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Sanders_et_al_2010_ECSS,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Sanders_et_al_2010_EES,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Sanders_et_al_2012_MER,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Sanders_et_al_2014,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Sanders_et_al_2015,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Sanders_et_al_2016_JGR_Biogeoscience,NA,28,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Australia
-Sitoe_et_al_2014,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Mozambique
-Smoak_et_al_2013,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,USA
-Stringer_et_al_2015,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Mozambique
-Szczygielski_et_al_2015,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Tam_and_Wong_1998,NA,32,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Hong Kong
-Thimdee_et_al_2003,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Thailand
-Thompson_et_al_2014,NA,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Philippines
-Tue_et_al_2014,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Vietnam
-Twilley_et_al_1997,NA,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Ecuador
-Upkong_1997,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Nigeria
-Vasconcelos_et_al_2014,NA,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Brazil
-Wang_et_al_2013,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-WISE,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,DRC
-Woodroffe_1985,NA,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,New Zealand
-Wooller_et_al_2003,NA,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Belize
-Xia_et_al_2015,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-Xu_et_al_2012,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-Yando_et_al_2016,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,USA
-Yang_et_al_2013,NA,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,New Zealand
-Yuan_et_al_2014,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-Zhang_and_Lin_1998,NA,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
-Zhang_et_al_2012,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,China
+study_id,publication_type,coring_method,roots_flag,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,loss_on_ignition_flag,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_flag,fraction_carbon_type
+Boyd_2012,thesis,pvc and hammer,NA,NA,100,24,NA,550,4,NA,NA,NA,NA,NA,NA
+Boyd_and_Sommerfield_2016,peer reviewed publication,pvc and hammer,NA,NA,100,24,NA,550,4,NA,NA,NA,NA,NA,NA
+Breithaupt_et_al_2014,peer reviewed publication,russian corer,NA,NA,105,24,NA,550,1,NA,measured,TRUE,none specified,replicate samples,fraction_organic_carbon
+Breithaupt_et_al_2017,peer reviewed publication,piston corer,NA,corer limits compaction,NA,NA,no details,550,3,NA,NA,NA,NA,no details,NA
+Callaway_et_al_2012,peer reviewed publication,hargas corer,NA,NA,85,72,NA,450,8,NA,modeled,NA,NA,extrapolated from subset of samples,fraction_organic_carbon
+Cochran_et_al_1998,peer reviewed publication,mccaffrey peat cutter,NA,NA,60,48,duplicate measurements,450,12,duplicate measurements,NA,NA,NA,NA,NA
+Craft_2007,peer reviewed publication,none specified,NA,NA,NA,NA,air dried to constant mass,NA,NA,NA,measured,TRUE,direct acid treatment,NA,fraction_total_carbon
+CRMS_Database,publically available dataset,push core,NA,< 10-20%,NA,NA,no details,NA,NA,no details,NA,NA,NA,NA,NA
+Crooks_et_al_2014,private sector report,push core,NA,NA,60,96,time approximate,NA,NA,no details,measured,NA,none specified,NA,fraction_organic_carbon
+Drake_et_al_2015,peer reviewed publication,none specified,NA,NA,105,NA,time not specified,NA,NA,NA,measured,NA,none specified,NA,fraction_organic_carbon
+Drexler_et_al_2009,peer reviewed publication,piston corer,NA,NA,105,12,time approximate,550,4,NA,modeled,FALSE,low carbonate soil,extrapolated from subset of samples,NA
+Elsey_Quirk_et_al_2011,peer reviewed publication,push core,NA,NA,60,12,time approximate,460,8,NA,measured,TRUE,HCl fumigation,NA,fraction_organic_carbon
+Ensign_et_al_2015,peer reviewed publication,piston corer,NA,NA,60,NA,to constant mass,NA,NA,NA,measured,FALSE,NA,NA,fraction_total_carbon
+Gerlach_et_al_2017,peer reviewed publication,none specified,NA,NA,NA,NA,no details,NA,NA,no details,NA,NA,NA,NA,NA
+Hill_and_Anisfeld_2015,peer reviewed publication,push core,NA,NA,60,NA,time not specified,550,NA,time not specified,measured,TRUE,HCl fumigation,NA,fraction_organic_carbon
+Johnson_et_al_2007,peer reviewed publication,vibracore,NA,NA,100,NA,to constant mass,NA,NA,NA,measured,TRUE,1N H3PO4,NA,fraction_organic_carbon
+Kemp_et_al_2012,peer reviewed publication,russian corer,NA,NA,NA,NA,no details,NA,NA,no details,NA,NA,NA,NA,NA
+Kulawardhana_et_al_2015,peer reviewed publication,other shallow corer,roots seperated using floation,no obvious compaction,105,48,NA,440,8,NA,NA,NA,NA,NA,NA
+Merrill_1999,dissertation,mcauley corer,NA,corer limits compaction,NA,NA,no details,550,NA,NA,NA,NA,NA,NA,NA
+Neubauer_2002,dissertation,push core,NA,NA,50,NA,time not specified,500,5,NA,NA,NA,NA,NA,NA
+Noe_et_al_2013,peer reviewed publication,push core,NA,NA,NA,NA,no details,550,4,ground and sieved,measured,FALSE,NA,fumigated to remove microbeal biomass,fraction_total_carbon
+Noe_et_al_2016,peer reviewed publication,none specified,NA,NA,NA,NA,no details,NA,NA,NA,NA,FALSE,NA,no details,fraction_organic_carbon
+Nuttle_1996,publically available dataset,none specified,NA,NA,NA,NA,no details,NA,NA,no details,NA,NA,NA,NA,NA
+Nyman_et_al_1993,peer reviewed publication,other shallow corer,NA,NA,80,NA,removed non structural water,400,16,NA,NA,NA,NA,NA,NA
+Orson_1990,peer reviewed publication,russian corer,NA,corer limits compaction,NA,NA,no details,475,4,NA,NA,NA,NA,NA,NA
+Pastore_et_al_2017,peer reviewed publication,gouge auger,NA,NA,60,336,time approximate,NA,NA,NA,measured,FALSE,low carbonate soil,NA,fraction_total_carbon
+Piazza_et_al_2011,government report,none specified,NA,NA,60,NA,time not specified,550,2,NA,NA,NA,NA,no details,fraction_total_carbon
+Radabaugh_et_al_2018,peer reviewed publication,russian corer,roots and rhizomes included,NA,105,24,NA,550,3,NA,modeled,NA,NA,extrapolated from subset of samples,NA
+Unger_et_al_2016,peer reviewed publication,piston corer,roots and rhizomes included,NA,NA,NA,estimated from loss on ignition and particle densities of mineral and organic solids,550,4,NA,measured,TRUE,HCl fumigation,NA,fraction_organic_carbon
+Watson_and_Byrne_2013,peer reviewed publication,russian corer,NA,NA,104,24,NA,550,2,NA,NA,NA,NA,NA,NA
+Weis_et_al_2001,peer reviewed publication,hargas corer,NA,NA,95,24,NA,550,2,NA,NA,NA,NA,NA,NA
+Windham_Meyers_et_al_2010,government report,piston corer,NA,NA,105,12,time approximate,450,4,NA,NA,NA,NA,NA,NA

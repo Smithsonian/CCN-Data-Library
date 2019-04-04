@@ -112,7 +112,8 @@ methods <- methods %>%
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))%>%
   filter(study_id != "Gonneea_et_al_2018") %>%
-  bind_cols(fraction_carbon_type_metadata)
+  select(-n) %>%
+  merge(fraction_carbon_type_metadata, by="study_id")
 
 ## 4. Create study-level data ######
 # import the CCRCN bibliography 

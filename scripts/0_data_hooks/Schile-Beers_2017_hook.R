@@ -186,8 +186,7 @@ site_data <- site_data %>%
   group_by(site_id) %>%
   summarize(study_id = first(study_id),  
             site_longitude_max = first(site_longitude_max), site_longitude_min = first(site_longitude_min),
-            site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min),
-            country = "United Arab Emirates") %>%
+            site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min)) %>%
   filter(is.na(site_longitude_max) == FALSE)
 
 ## 4. Create study-citation table ######
@@ -224,7 +223,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
 test_colnames("cores", core_data)
-test_colnames("sites", site_data) # country is not in the CCRCN guidelines
+test_colnames("sites", site_data) 
 test_colnames("depthseries", depthseries_data)
 
 # Test relationships between core_ids at core- and depthseries-levels
@@ -236,4 +235,4 @@ results <- test_core_relationships(core_data, depthseries_data)
 write_csv(site_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
 write_csv(core_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
 write_csv(depthseries_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")
-write.csv(study_data_synthesis, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")
+write_csv(study_data_synthesis, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")
