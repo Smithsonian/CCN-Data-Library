@@ -8,17 +8,17 @@
 library(tidyverse)
 
 # Site data
-sites <- read_csv("data/Jones_2017/derivative/intermediate/Jones_2017_HandEnteredSiteCoreDataFromNeotoma.csv")
+sites <- read_csv("./data/Jones_2017/derivative/intermediate/Jones_2017_HandEnteredSiteCoreDataFromNeotoma.csv")
 
 # Downloaded geochrono datasets
-geochron_oligo <- read_csv("data/Jones_2017/derivative/intermediate/dataset25338.csv")
-geochron_heavy_salt <- read_csv("data/Jones_2017/derivative/intermediate/dataset25345.csv")
-geochron_mod_salt <- read_csv("data/Jones_2017/derivative/intermediate/dataset25364.csv")
+geochron_oligo <- read_csv("./data/Jones_2017/derivative/intermediate/dataset25338.csv")
+geochron_heavy_salt <- read_csv("./data/Jones_2017/derivative/intermediate/dataset25345.csv")
+geochron_mod_salt <- read_csv("./data/Jones_2017/derivative/intermediate/dataset25364.csv")
 
 # Downloaded LOI datasets
-LOI_oligo_raw <- read_csv("data/Jones_2017/original/dataset25339.csv")
-LOI_heavy_salt_raw  <- read_csv("data/Jones_2017/original/dataset25346.csv")
-LOI_mod_salt_raw  <- read_csv("data/Jones_2017/original/dataset25365.csv")
+LOI_oligo_raw <- read_csv("./data/Jones_2017/original/dataset25339.csv")
+LOI_heavy_salt_raw  <- read_csv("./data/Jones_2017/original/dataset25346.csv")
+LOI_mod_salt_raw  <- read_csv("./data/Jones_2017/original/dataset25365.csv")
 
 # Depthseries data digitized from figure
 depthseries_figure <- read_csv("./data/Jones_2017/original/Jones_2017_depthseries.csv",
@@ -56,12 +56,12 @@ geochron <- geochron_oligo %>%
   mutate(age_depth_model_reference = "YBP") %>%
   mutate(depth_min = Depth - (Thickness/2)) %>%
   mutate(depth_max = Depth + (Thickness/2)) %>%
-  rename(sample_id = SampleID, c14_age = Age, material_dated = MaterialDated, age_depth_model_notes = Notes,
+  rename(sample_id = SampleID, c14_age = Age, material_dated = MaterialDated,
          c14_age_sd = ErrorOlder) %>%
-  mutate(age_depth_model_notes = ifelse(!is.na(age_depth_model_notes), 
-      "c14 age yielded greater than modern day", age_depth_model_notes)) %>%
+  mutate(c14_age = ifelse(c14_age == 0, NA, c14_age)) %>%
+  mutate(c14_notes = ifelse(is.na(c14_age), "c14 age yielded greater than modern day", NA)) %>%
   select(study_id, core_id, sample_id, depth_min, depth_max, c14_age, c14_age_sd, 
-         material_dated, age_depth_model_reference, age_depth_model_notes)
+         c14_notes, material_dated, age_depth_model_reference)
 
 ## ....4b. LOI data ############
 
@@ -94,18 +94,18 @@ LOI <- LOI_oligo %>%
   bind_rows(LOI_mod_salt) %>%
   separate(`V1`, into = c("depth_min", "depth_max"), sep = "-") %>%
   mutate(depth_max = as.double(gsub(" cm", "", depth_max))) %>%
-  separate("V6", into = c("error_max", "c14_age_modeled", "error_min"), sep = "/") %>%
-  mutate(error_max = as.double(error_max), c14_age_modeled = as.double(c14_age_modeled),
-         error_min = as.double(error_min)) %>%
-  mutate(c14_age_sd_modeled = ((error_max - c14_age_modeled) + (c14_age_modeled - error_min)) / 2) %>%
-  rename(sample_id = "V5", dry_bulk_density = "V7", loss_on_ignition = "V8") %>%
+  separate("V6", into = c("age_max", "age", "age_min"), sep = "/") %>%
+  mutate(age_max = as.double(age_max), age = as.double(age),
+         age_min = as.double(age_min)) %>%
+  rename(sample_id = "V5", dry_bulk_density = "V7", fraction_organic_matter = "V8") %>%
+  mutate(fraction_organic_matter = as.double(fraction_organic_matter) / 100) %>%
   # Change from numeric to character because it's a tag
   mutate(sample_id = as.double(sample_id)) %>%
   mutate(depth_min = as.double(depth_min)) %>%
   mutate(depth_max = as.double(depth_max)) %>%
   mutate(study_id = "Jones_et_al_2017") %>%
-  select(study_id, core_id, sample_id, depth_min, depth_max, dry_bulk_density, loss_on_ignition, 
-         c14_age_modeled, c14_age_sd_modeled)
+  select(study_id, core_id, sample_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter, 
+         age, age_min, age_max)
 
 ## ....4c. Combine depthseries datasets ##############
 
@@ -118,6 +118,9 @@ depthseries <- geochron %>%
 depthseries_figure <- depthseries_figure %>%
   rename(depth = X1, age = X2)
 
+## QA/QC ##############
+
+fraction_not_percent(depthseries)
 
 ## Write data ###########
 
