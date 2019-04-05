@@ -60,15 +60,15 @@ depthseries_data <- dt1 %>%
          cs137_activity = v_137Cs..paren.mBq.per.g.paren., 
          total_pb210_activity = v_210Pb..paren.Bq.per.g.paren.) %>%
   mutate(fraction_carbon = C.percent. / 100,
-         cs137_activity_unit = "millibecquerelPerGram",
-         total_pb210_activity_unit = "becquerelPerGram") %>%
+         cs137_unit = "millibecquerel_per_gram",
+         pb210_unit = "becquerel_per_gram") %>%
   # create unique core IDs
   mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
          study_id = "Giblin_and_Forbrich_2018",
          site_id = "Nelson_Island_Creek") %>%
   mutate(fraction_carbon = gsub("NaN", "NA", fraction_carbon)) %>%
   select(study_id, site_id, core_id, sample_id, dry_bulk_density, fraction_carbon, section_depth,
-         cs137_activity, total_pb210_activity)
+         cs137_activity, cs137_unit, total_pb210_activity, pb210_unit)
 
 ## ... ... 2Ai. calculate min and max depth variables ###############
 # I am sure there is a way to do this in dplyr but I can't figure it out right now: 
@@ -92,7 +92,7 @@ for (i in 1:nrow(depthseries_data)) {
 depthseries_data <- cbind(depthseries_data, depth_max, depth_min)
 depthseries_data <- depthseries_data %>%
   select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon,
-         cs137_activity, total_pb210_activity)
+         cs137_activity, cs137_unit, total_pb210_activity, pb210_unit)
 
 ## ... 2B. core level data ###################
 cores <- dt1 %>%
