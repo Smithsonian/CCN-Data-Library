@@ -40,15 +40,6 @@ Schile_2017_coredata <- read_csv("./data/Schile-Beers_2017/derivative/Schile-Bee
 Schile_2017_sitedata <- read_csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
 Schile_2017_citationdata <- read_csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")
 
-# Deegan et al. 2012
-Deegan_2012_coredata <- read_csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
-Deegan_2012_sitedata <- read_csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
-Deegan_2012_citationdata <- read_csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
-# because there is no guidance for biomass yet, I will remove the above ground core-level biomass data 
-# Deegan_2012_depthseriesdata <- read_csv("./data/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")
-Deegan_2012_coredata <- Deegan_2012_coredata %>%
-  select(-aboveground_stem_length, -aboveground_mass)
-
 # Giblin and Forbrich 2018
 Giblin_2018_coredata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_cores.csv")
 Giblin_2018_depthseriesdata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_depthseries.csv")
@@ -61,16 +52,6 @@ Smith_2015_coredata <- read_csv("./data/Smith_2015/derivative/Smith_et_al_2015_c
 Smith_2015_sitedata <- read_csv("./data/Smith_2015/derivative/Smith_et_al_2015_sites.csv")
 Smith_2015_depthseriesdata <- read_csv("./data/Smith_2015/derivative/Smith_et_al_2015_depthseries.csv")
 Smith_2015_citationdata <- read_csv("./data/Smith_2015/derivative/Smith_et_al_2015_study_citations.csv")
-
-# Doughty et al 2016
-# Doughty_2016_cores <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_core_level.csv")
-# Doughty_2016_depthseries <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_soil_depth_series.csv")
-# Doughty_2016_species <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_dominant_species.csv")
-# Doughty_2016_pubs <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_associated_publications.csv")
-# Doughty_2016_study_info <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_study_information.csv")
-# Doughty_2016_keyword <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_keywords.csv")
-# Doughty_2016_funding <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_funding_sources.csv")
-# Doughty_2016_authors <- read_csv("./data/Doughty_2016/original/Doughty2016_CCRCN_authors.csv")
 
 # Trettin et al. 2017
 Trettin_2017_coredata <- read_csv("./data/Trettin_2017/derivative/Trettin_et_al_2017_cores.csv")
