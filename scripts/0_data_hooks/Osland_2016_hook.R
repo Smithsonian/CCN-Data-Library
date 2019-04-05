@@ -328,6 +328,11 @@ test_colnames("depthseries", Osland_2016_depth_series_data) # fraction_moisture_
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(Osland_2016_core_data, Osland_2016_depth_series_data)
 
+# Re-order columns
+Osland_2016_species_data <- reorder_columns(Osland_2016_species_data, "species_definitions")
+Osland_2016_depth_series_data <- reorder_columns(Osland_2016_depth_series_data, "depthseries")
+Osland_2016_site_data <- reorder_columns(Osland_2016_site_data, "site-level")
+Osland_2016_core_data <- reorder_columns(Osland_2016_core_data, "core_level")
 
 ## Write data #################
 write_csv(Osland_2016_species_data, "./data/Osland_2016/derivative/Osland_et_al_2016_species.csv")
