@@ -151,3 +151,83 @@ test_core_relationships <- function(core_data, depth_data) {
   append(results,results2)
   return(results)
 }
+
+
+## Ensure fractions not percetanges #################
+
+# This function reviews all attributes that ought to be a fraction and determines
+#   whether they are in their proper format (e.g. less than 1)
+
+fraction_not_percent <- function(dataset) {
+  
+  relevant_cols <- dataset %>%
+    select(contains("fraction")) %>%
+    filter_all(any_vars(. > 1))
+  
+  
+  if(nrow(relevant_cols) > 1) {
+    
+    stop(paste0("At least one of the attributes intended to be expressed as a
+                fraction is expressed as a percent (values > 1). Please review all
+                fraction columns: ", paste(colnames(relevant_cols), collapse = ', ')))
+  } else {
+    print("All fractions are expressed as fractions, safe to continue.")
+  }
+}
+
+## Re-order data according to database structure #####################
+
+reorder_columns <- function(data, table) {
+# Read in database structure
+database_structure <- read_csv("./docs/ccrcn_database_structure.csv")
+
+# Subset database structure according to designated table
+database_structure <- database_structure %>%
+  filter(table == "depthseries")
+
+# Create list of database attributes
+db_attributes <- as.list(database_structure$attribute)
+
+# Create list of chosen dataset attributes
+data_attributes <- colnames(data)
+
+# Subset the database attributes to just those in the dataset...the output
+#   will be in the order of the database attributes
+data_attributes_reorder <- subset(db_attributes, db_attributes %in% data_attributes)
+
+# Now, use select_ to reorder the dataset to the right order
+# I tried a lot of methods to do this with various ways to parse the list of 
+#   character strings from data_attributes_reorder, and this is what worked.
+# Not completely certain why cycling through the list worked and parsing didn't...
+#   but not a concern for now
+extract_columns <- function(data) {
+  extracted_data <- data %>%
+    select_(.dots = data_attributes_reorder)
+  return(extracted_data)
+}
+
+# Create an output dataset with the correct order
+data_out <- extract_columns(data)
+
+# ...if there are more attributes in your dataset than in the subsetted
+#   database attributes, and therefore there are attributes in your dataset
+#   for which there is no guidance in the database...
+if (length(data_attributes_reorder) < length(data_attributes)) {
+  # Notify the user
+  print("Some columns in your data are not present in the current database guidelines. Appending these to the end of the dataset.")
+}
+
+# Then, bind the attributes without guidance to the end of the dataset
+# Figure out what attributes are missing guidance by removing all of the common
+#   attributes between 'data' and 'data_out', leaving just the ones missing from
+#   data_out
+missing_guidance <- data %>%
+  select(-one_of(colnames(data_out)))
+
+# Now bind those, which will put them at the end
+data_out <- data_out %>%
+  bind_cols(missing_guidance)
+
+return(data_out)
+}
+
