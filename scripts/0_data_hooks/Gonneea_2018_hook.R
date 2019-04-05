@@ -106,12 +106,12 @@ source("./scripts/1_data_formatting/curation_functions.R") # Call functions from
 # curation_functions script
 Gonneea_2018 <- convert_mean_depth_to_min_max(Gonneea_2018, Gonneea_2018$Depth)
 
-# Convert dpm/g to becquerel/kg
+# Provide units for dating techniques 
 Gonneea_2018 <- Gonneea_2018 %>%
-  mutate(total_pb210_activity = convert_dpm_g_to_bec_kg(total_pb210_activity)) %>%
-  mutate(ra226_activity = convert_dpm_g_to_bec_kg(ra226_activity)) %>%
-  mutate(excess_pb210_activity = convert_dpm_g_to_bec_kg(excess_pb210_activity)) %>%
-  mutate(cs137_activity = convert_dpm_g_to_bec_kg(cs137_activity))
+  mutate(total_pb210_activity_unit = "disintegrationsPerMinutePerGram") %>%
+  mutate(ra226_activity_unit = "disintegrationsPerMinutePerGram") %>%
+  mutate(excess_pb210_activity_unit = "disintegrationsPerMinutePerGram") %>%
+  mutate(cs137_activity_unit = "disintegrationsPerMinutePerGram")
     
 # Convert percent weights to fractions
 Gonneea_2018 <- Gonneea_2018 %>%
@@ -138,7 +138,7 @@ Gonneea_2018_depth_series_data <- Gonneea_2018 %>%
   select(study_id, core_id, depth_min, depth_max, dry_bulk_density, 
          fraction_carbon, cs137_activity, total_pb210_activity, ra226_activity,
          excess_pb210_activity, be7_activity, age) %>%
-  filter(depth_min != depth_max)
+  filter(depth_min != depth_max & depth_min < depth_max)
 
 
 ## Add site data ################
