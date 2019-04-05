@@ -60,15 +60,14 @@ depthseries_data <- dt1 %>%
          cs137_activity = v_137Cs..paren.mBq.per.g.paren., 
          total_pb210_activity = v_210Pb..paren.Bq.per.g.paren.) %>%
   mutate(fraction_carbon = C.percent. / 100,
-         # cs137 is in mBq. per gram, need to be in becquerel per kilogram
-         # no conversion of cs137 is necc because the conversion factors cancel out (1000/1000)         
-         # pb210 is in Bq. per gram, needs to be bq. per kg
-         total_pb210_activity = total_pb210_activity * 1000) %>%
+         cs137_activity_unit = "millibecquerelPerGram",
+         total_pb210_activity_unit = "becquerelPerGram") %>%
   # create unique core IDs
   mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
-         study_id = "Giblin_and_Forbrich_2018") %>%
+         study_id = "Giblin_and_Forbrich_2018",
+         site_id = "Nelson_Island_Creek") %>%
   mutate(fraction_carbon = gsub("NaN", "NA", fraction_carbon)) %>%
-  select(core_id, sample_id, study_id, dry_bulk_density, fraction_carbon, section_depth,
+  select(study_id, site_id, core_id, sample_id, dry_bulk_density, fraction_carbon, section_depth,
          cs137_activity, total_pb210_activity)
 
 ## ... ... 2Ai. calculate min and max depth variables ###############
@@ -91,7 +90,9 @@ for (i in 1:nrow(depthseries_data)) {
 }
 
 depthseries_data <- cbind(depthseries_data, depth_max, depth_min)
-depthseries_data <- select(depthseries_data, -sample_id, -section_depth)
+depthseries_data <- depthseries_data %>%
+  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon,
+         cs137_activity, total_pb210_activity)
 
 ## ... 2B. core level data ###################
 cores <- dt1 %>%
@@ -105,11 +106,11 @@ cores <- dt1 %>%
   group_by(core_id) %>%
   summarize(core_date = first(core_date), core_latitude = first(core_latitude), 
             core_longitude = first(core_longitude), core_elevation = first(core_elevation)) %>%
-  mutate(study_id = "Giblin_and_Forbrich_2018", 
-         core_length_flag = "core depth limited by length of corer", 
+  mutate(core_length_flag = "core depth limited by length of corer", 
+         core_elevation_datum = "NAVD88", 
          site_id = "Nelson_Island_Creek", 
-         core_elevation_datum = "NAVD88") %>%
-  select(study_id, site_id, core_id, everything())
+         study_id = "Giblin_and_Forbrich_2018") %>%
+  select(study_id, site_id, core_id, core_latitude, core_longitude, core_elevation, core_elevation_datum, core_length_flag)
 
 ## ... 2C. Vegetation data #####################
 veggies <- dt1 %>%
@@ -142,7 +143,7 @@ site_data <- site_data %>%
             site_longitude_max = first(site_longitude_max), site_longitude_min = first(site_longitude_min),
             site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min)) %>%
   mutate(site_description = "Plum Island Sound Estuary, Massachusetts, USA", 
-         vegetation_class = "seagrass")
+         vegetation_class = "emergent")
 
 ## 3. Create study-level data ######
 # import the CCRCN bibliography 
