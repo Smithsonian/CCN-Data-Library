@@ -66,10 +66,11 @@ Gonneea_2018 <- Gonneea_2018 %>%
 Gonneea_2018 <- Gonneea_2018 %>%
   na_if(-99999) # Changes all "-99999" values to "NA"
 
-# Rename attributes that are already properly formatted
+# Curate data: 
 Gonneea_2018 <- Gonneea_2018 %>%
   rename(core_id = "ID") %>%
-  rename(core_date = "Date") %>%
+  rename(core_date = "Date", 
+         depth = "Depth") %>%
   rename(core_latitude = "Lat") %>%
   rename(core_longitude = "Lon") %>%
   rename(dry_bulk_density = "DBD") %>%
@@ -78,13 +79,8 @@ Gonneea_2018 <- Gonneea_2018 %>%
   rename(ra226_activity = "226Ra") %>%
   rename(excess_pb210_activity = "210Pbex") %>%
   rename(cs137_activity = "137Cs") %>%
-  rename(be7_activity = "7Be")
-  
-# Add study_id
-Gonneea_2018$study_id <- "Gonneea_et_al_2018"
-
-# Some columns are characters when they should be numeric
-Gonneea_2018 <- Gonneea_2018 %>%
+  rename(be7_activity = "7Be") %>%
+  mutate(study_id = "Gonneea_et_al_2018") %>%
   mutate(core_latitude = as.numeric(core_latitude)) %>%
   mutate(core_longitude = as.numeric(core_longitude)) %>%
   mutate(dry_bulk_density = as.numeric(dry_bulk_density)) %>%
@@ -93,33 +89,34 @@ Gonneea_2018 <- Gonneea_2018 %>%
   mutate(ra226_activity = as.numeric(ra226_activity)) %>%
   mutate(excess_pb210_activity = as.numeric(excess_pb210_activity)) %>%
   mutate(cs137_activity = as.numeric(cs137_activity)) %>%
-  mutate(be7_activity = as.numeric(be7_activity))
-  
-## Curate attributes that need some a'fixin'
+  mutate(be7_activity = as.numeric(be7_activity)) %>%
+  # Change core_date column to date objects
+  mutate(core_date = as.Date(as.numeric(core_date), origin = "1899-12-30"), 
+         depth = as.numeric(depth))
 
-# Change core_date column to date objects
-Gonneea_2018$core_date <- as.Date(as.numeric(Gonneea_2018$core_date), 
-                                  origin = "1899-12-30")
-
+# according to the publication, the first 30 cm are 1 cm intervals, 
+# the proceeding interals are at 2 cm 
 # Convert mean interval depth to min and max interval depth
-source("./scripts/1_data_formatting/curation_functions.R") # Call functions from
-# curation_functions script
-Gonneea_2018 <- convert_mean_depth_to_min_max(Gonneea_2018, Gonneea_2018$Depth)
-
-# Provide units for dating techniques 
 Gonneea_2018 <- Gonneea_2018 %>%
-  mutate(total_pb210_activity_unit = "disintegrationsPerMinutePerGram") %>%
-  mutate(ra226_activity_unit = "disintegrationsPerMinutePerGram") %>%
-  mutate(excess_pb210_activity_unit = "disintegrationsPerMinutePerGram") %>%
-  mutate(cs137_activity_unit = "disintegrationsPerMinutePerGram")
+  mutate(depth_min = ifelse(depth < 30, depth - .5, 
+                            ifelse(depth < 100, depth - 1, depth - 5)), 
+         depth_max = ifelse(depth < 30, depth + .5, 
+                            ifelse(depth < 100, depth + 1, depth + 5)))
+
+# Provide units and notes for dating techniques 
+Gonneea_2018 <- Gonneea_2018 %>%
+  mutate(pb210_unit = "disintegrations_per_minute_per_gram",
+         cs137_unit = "disintegrations_per_minute_per_gram",
+         be7_unit = "disintegrations_per_minute_per_gram") %>%
+  # if 0, below detection limits
+  mutate(cs137_activity_notes = ifelse(cs137_activity == 0, "below detection limits", NA), 
+         be7_activity_notes = ifelse(be7_activity == 0, "below detection limits", NA))
     
 # Convert percent weights to fractions
 Gonneea_2018 <- Gonneea_2018 %>%
-  mutate(fraction_carbon = convert_percent_to_fraction(wtC)) %>%
-  mutate(fraction_nitrogen = convert_percent_to_fraction(wtN))
+  mutate(fraction_carbon = as.numeric(wtC) / 100)
   
 ## Parcel data into separate files according to data level #################
-  
 # Core data
 
 # Gonneea elevation is calculated for each depth interval. We only want elevation
@@ -130,15 +127,17 @@ core_elevation <- Gonneea_2018 %>%
   
 Gonneea_2018_core_Data <- Gonneea_2018 %>%
   group_by(study_id, core_id, core_date) %>%
-  summarize_at(c("core_latitude","core_longitude"), mean) %>%
-  left_join(core_elevation)
+  summarize(core_latitude = first(core_latitude), core_longitude = first(core_longitude)) %>%
+  left_join(core_elevation) %>%
+  # convert elevation from cm to meters
+  mutate(core_elevation = core_elevation * .01)
 
 # Depth Series data
 Gonneea_2018_depth_series_data <- Gonneea_2018 %>%
   select(study_id, core_id, depth_min, depth_max, dry_bulk_density, 
-         fraction_carbon, cs137_activity, total_pb210_activity, ra226_activity,
-         excess_pb210_activity, be7_activity, age) %>%
-  filter(depth_min != depth_max & depth_min < depth_max)
+         fraction_carbon, cs137_activity, cs137_unit, cs137_activity_notes, total_pb210_activity, ra226_activity,
+         excess_pb210_activity, pb210_unit, be7_activity, be7_activity_notes, age) %>%
+  filter(depth_min >= 0)
 
 
 ## Add site data ################
@@ -173,7 +172,8 @@ Gonneea_2018_depth_series_data <- Gonneea_2018_depth_series_data %>%
                                  "SLPA" = "Sage_Log_Pond", 
                                  "SLPB" = "Sage_Log_Pond",
                                  "SLPC" = "Sage_Log_Pond"
-  ))
+  )) %>%
+  select(study_id, site_id, core_id, everything())
 
 ## Create study-level data ######
 # import the CCRCN bibliography 
@@ -181,7 +181,7 @@ library(bib2df)
 CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
 
 # link each study to primary citation and join with synthesis table
-studies <- unique(cores$study_id)
+studies <- unique(Gonneea_2018_core_Data$study_id)
 
 study_data_primary <- CCRCN_bib %>%
   select(BIBTEXKEY, CATEGORY, DOI) %>%
@@ -199,7 +199,6 @@ source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
 test_colnames("cores", Gonneea_2018_core_Data)
-test_colnames("sites", site_data) # there is no derived site data
 test_colnames("depthseries", Gonneea_2018_depth_series_data)
 
 # Test relationships between core_ids at core- and depthseries-levels
