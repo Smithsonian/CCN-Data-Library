@@ -120,7 +120,12 @@ depthseries_figure <- depthseries_figure %>%
 
 ## QA/QC ##############
 
+source("./scripts/1_data_formatting/qa_functions.R")
 fraction_not_percent(depthseries)
+
+# Re-order according to database
+core_data <- reorder_columns(core_data)
+depthseries <- reorder_columns(depthseries)
 
 ## Write data ###########
 
