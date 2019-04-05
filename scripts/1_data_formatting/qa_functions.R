@@ -178,12 +178,24 @@ fraction_not_percent <- function(dataset) {
 ## Re-order data according to database structure #####################
 
 reorder_columns <- function(data, table) {
+  
 # Read in database structure
-database_structure <- read_csv("./docs/ccrcn_database_structure.csv")
+col_types <- cols(
+  attribute = col_character(),
+  table = col_character(),
+  definition = col_character(),
+  data_type = col_character(),
+  format_unit_codes = col_character(),
+  data_category = col_character(),
+  dependency_class = col_character(),
+  parent_data_category = col_character()
+)
+database_structure <- read_csv("./docs/ccrcn_database_structure.csv",
+                               col_types = col_types)
 
 # Subset database structure according to designated table
 database_structure <- database_structure %>%
-  filter(table == "depthseries")
+  filter(table == table)
 
 # Create list of database attributes
 db_attributes <- as.list(database_structure$attribute)
