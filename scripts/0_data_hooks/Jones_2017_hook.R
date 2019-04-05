@@ -29,8 +29,12 @@ depthseries_figure <- read_csv("./data/Jones_2017/original/Jones_2017_depthserie
 ## 2. Curate Site data ############
 
 # Imported file is already curated to CCRCN standards
-
+sites <- sites %>%
+  mutate(salinity_class)
 ## 3. Core data ############
+
+# A lot of this information was just scattered throughout the Neotoma portal.
+#   Easiest to just input manually from there
 
 core_data <- sites %>%
   mutate(study_id = "Jones_et_al_2017") %>%
@@ -118,14 +122,29 @@ depthseries <- geochron %>%
 depthseries_figure <- depthseries_figure %>%
   rename(depth = X1, age = X2)
 
+## 5. Species data ###########
+
+species <- sites %>%
+  mutate(study_id = "Jones_et_al_2017") %>%
+  select(study_id, site_id, core_id, species_code)
+
 ## QA/QC ##############
 
 source("./scripts/1_data_formatting/qa_functions.R")
 fraction_not_percent(depthseries)
 
 # Re-order according to database
-core_data <- reorder_columns(core_data)
-depthseries <- reorder_columns(depthseries)
+core_data <- reorder_columns(core_data, "core_level")
+depthseries <- reorder_columns(depthseries, "depthseries") # material_dated has no guidance
+# Designate attributes with missing guidance
+missing_guidance <- depthseries %>%
+  select(sample_id, material_dated)
+# Remove from depthseries
+depthseries <- depthseries %>%
+  select(-material_dated)
+
+species <- reorder_columns(species, "species_definitions")
+
 
 ## Write data ###########
 
@@ -136,3 +155,6 @@ write_csv(core_data, "./data/Jones_2017/derivative/final/Jones_2017_cores.csv")
 write_csv(depthseries, "./data/Jones_2017/derivative/final/Jones_2017_depthseries.csv")
 
 write_csv(depthseries_figure, "./data/Jones_2017/derivative/final/Jones_2017_depthseries_from_figure.csv")
+
+write_csv(missing_guidance, "./data/Jones_2017/derivative/final/missing_guidance.csv")
+
