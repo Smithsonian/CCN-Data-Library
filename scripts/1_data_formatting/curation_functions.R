@@ -265,15 +265,15 @@ recode_vegetation <- function(df, vegetation_class) {
 recode_impact <- function(df, impact_class) {
   output_df <- df %>%
     mutate(impact_class = recode_factor(impact_class,
-                                       "Can" = "Canalled",
-                                       "Dik" = "Diked",
-                                       "Dit" = "Ditched",
-                                       "Eut" = "Eutrophic",
-                                       "Imp" = "Impounded",
-                                       "Man" = "Managed", 
-                                       "Nat" = "Natural", 
-                                       "Res" = "Restoring",
-                                       "SalImp" = "Salt Impacted"
+                                       "Can" = "canalled",
+                                       "Dik" = "diked",
+                                       "Dit" = "ditched",
+                                       "Eut" = "eutrophic",
+                                       "Imp" = "impounded",
+                                       "Man" = "managed", 
+                                       "Nat" = "natural", 
+                                       "Res" = "restoring",
+                                       "SalImp" = "salt impacted"
     ))
   output_df
 }

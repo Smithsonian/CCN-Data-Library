@@ -279,7 +279,9 @@ Chen_et_al_2014,North Sulawesi,M0214,NA
 Dutta_et_al_2013,Indian Sundarbans,M0215,NA
 Dutta_et_al_2013,Indian Sundarbans,M0216,NA
 Dutta_et_al_2013,Indian Sundarbans,M0217,NA
-Gleason_and_Ewel_2002,Kosrae,M0218,"Sonneratia alba, Bruguiera gymnorrhiza, Rhizophora apiculata"
+Gleason_and_Ewel_2002,Kosrae,M0218,Sonneratia alba
+Gleason_and_Ewel_2002,Kosrae,M0218, Bruguiera gymnorrhiza
+Gleason_and_Ewel_2002,Kosrae,M0218, Rhizophora apiculata
 Yuan_et_al_2014,Zhanjiang,M0219,NA
 Yuan_et_al_2014,Zhanjiang,M0220,NA
 Chanda_et_al_2013,Indian Sundarbans,M0221,NA
@@ -298,8 +300,8 @@ Chen_et_al_2016,Jiulong River Estuary,M0233,Kandelia obvata
 Chen_et_al_2016,Jiulong River Estuary,M0234,Kandelia obvata
 Chen_et_al_2016,Jiulong River Estuary,M0235,NA
 Allen_et_al_2007,South East Queensland,M0236,NA
-Leopold_et_al_2013,La Foa,M0237,Rhizophora spp.
-Leopold_et_al_2013,La Foa,M0238,Avicennia sp.
+Leopold_et_al_2013,La Foa,M0237,Rhizophora spp
+Leopold_et_al_2013,La Foa,M0238,Avicennia spp
 Liu_et_al_2014,Guangxi,M0239,NA
 Liu_et_al_2014,Guangxi,M0240,NA
 Liu_et_al_2014,Guangxi,M0241,NA
@@ -408,12 +410,14 @@ Marchio_et_al_2016,Naples Bay,M0343,NA
 Marchio_et_al_2016,Naples Bay,M0344,NA
 Marchio_et_al_2016,Naples Bay,M0345,NA
 Marchio_et_al_2016,Naples Bay,M0346,NA
-Murdiyarso_et_al_2015,South Sumatra,M0347,Rhizophora apiculata/Bruguiera gymnorrhiza
+Murdiyarso_et_al_2015,South Sumatra,M0347,Rhizophora apiculata
+Murdiyarso_et_al_2015,South Sumatra,M0347,Bruguiera gymnorrhiza
 Murdiyarso_et_al_2015,Central Java,M0348,Sonneratia alba
 Murdiyarso_et_al_2015,West Kalimantan,M0349,Rhizophora apiculata
 Murdiyarso_et_al_2015,Central Kalimantan,M0350,Rhizophora apiculata
 Murdiyarso_et_al_2015,North Sulawesi,M0351,Rhizophora mucronata
-Murdiyarso_et_al_2015,West Papua,M0352,Bruguierra gymnorhiza/Avicennia spp.
+Murdiyarso_et_al_2015,West Papua,M0352,Bruguierra gymnorhiza
+Murdiyarso_et_al_2015,West Papua,M0352,Avicennia spp
 Murdiyarso_et_al_2015,West Papua,M0353,Bruguierra gymnorhiza
 Murdiyarso_et_al_2015,West Papua,M0354,Rhizophora apiculata
 Adame_et_al_2015,Chiapas,M0355,NA
@@ -451,7 +455,8 @@ Sanders_et_al_2010_EES,Cananeia,M0386,NA
 Sahu_et_al_2016,Hukitola Bay,M0387,NA
 Sahu_et_al_2016,Hukitola Bay,M0388,NA
 Wang_et_al_2013,Yingluo Bay,M0389,Bruguierra gymnorhiza
-Wang_et_al_2013,Yingluo Bay,M0390,"Avicennia corniculatum, Kandelia obovata"
+Wang_et_al_2013,Yingluo Bay,M0390,Avicennia corniculatum
+Wang_et_al_2013,Yingluo Bay,M0390, Kandelia obovata
 Wang_et_al_2013,Yingluo Bay,M0391,Sonneratia apelata
 Wang_et_al_2013,Yingluo Bay,M0392,Rhizophora stylosa
 Wang_et_al_2013,Yingluo Bay,M0393,Avicennia marina
@@ -519,8 +524,10 @@ He_et_al_2002,Yingluo Bay,M0454,Kandelia candel
 He_et_al_2002,Yingluo Bay,M0455,Aegiceras corniculatum
 He_et_al_2002,Yingluo Bay,M0456,Avicennia marina
 Liu_2005,"Techeng Island, Guandong",M0457,Avicennia marina
-Liu_2005,"Techeng Island, Guandong",M0458,"Avicennia marina, Rhizophora stylosa"
-Liu_2005,"Huguangzhen, Guangdong",M0459,"Avicennia marina,Aegiceras corniculatum"
+Liu_2005,"Techeng Island, Guandong",M0458,Avicennia marina
+Liu_2005,"Techeng Island, Guandong",M0458, Rhizophora stylosa
+Liu_2005,"Huguangzhen, Guangdong",M0459,Avicennia marina
+Liu_2005,"Huguangzhen, Guangdong",M0459,Aegiceras corniculatum
 Liu_2005,"Huguangzhen, Guangdong",M0460,Sonneratia apetala
 Liu_2005,Leizhou Peninsula,M0461,Sonneratia apetala
 Liu_2005,Leizhou Peninsula,M0462,Kandela candel
@@ -530,7 +537,8 @@ Liu_et_al_2008,"Donghai Harbor Mangrove Reserve, Hainan Province",M0465,Lumnitze
 Liu_et_al_2008,"Donghai Harbor Mangrove Reserve, Hainan Province",M0466,Aegiceras corniculatum
 Liu_et_al_2008,"Donghai Harbor Mangrove Reserve, Hainan Province",M0467,Aegiceras corniculatum
 Liu_et_al_2008,"Donghai Harbor Mangrove Reserve, Hainan Province",M0468,Aegiceras corniculatum
-Liu_et_al_2008,"Donghai Harbor Mangrove Reserve, Hainan Province",M0469,"Bruguiera sexangula,Ceriops tagal"
+Liu_et_al_2008,"Donghai Harbor Mangrove Reserve, Hainan Province",M0469,Bruguiera sexangula
+Liu_et_al_2008,"Donghai Harbor Mangrove Reserve, Hainan Province",M0469,Ceriops tagal
 Liu_et_al_2008,"Donghai Harbor Mangrove Reserve, Hainan Province",M0470,Rhizophora stylosa
 Liu_et_al_2008,"Donghai Harbor Mangrove Reserve, Hainan Province",M0471,Kandelia candel
 Liu_et_al_2008,"Donghai Harbor Mangrove Reserve, Hainan Province",M0472,Bruguiera sexangula
@@ -547,19 +555,26 @@ Mao_et_al_2012,"Futian Mangrove Reserve, Shenzhen City, Guangdong Province",M048
 Mao_et_al_2012,"Futian Mangrove Reserve, Shenzhen City, Guangdong Province",M0483,Kandelia candel
 Mao_et_al_2012,"Futian Mangrove Reserve, Shenzhen City, Guangdong Province",M0484,Kandelia candel
 Xu_et_al_2012,"Zhanjiang National Nature Reserve, Gaoqiao Town, Zhanjiang, Guangdong Province (next to Shankou in Guangxi, Yingluo Bay)",M0485,Aegiceras corniculatum
-Xu_et_al_2012,"Zhanjiang National Nature Reserve, Gaoqiao Town, Zhanjiang, Guangdong Province (next to Shankou in Guangxi, Yingluo Bay)",M0486,"Bruguiera gymnorrhizal, Kandelia candel"
+Xu_et_al_2012,"Zhanjiang National Nature Reserve, Gaoqiao Town, Zhanjiang, Guangdong Province (next to Shankou in Guangxi, Yingluo Bay)",M0486,Bruguiera gymnorrhizal
+Xu_et_al_2012,"Zhanjiang National Nature Reserve, Gaoqiao Town, Zhanjiang, Guangdong Province (next to Shankou in Guangxi, Yingluo Bay)",M0486, Kandelia candel
 Xu_et_al_2012,"Zhanjiang National Nature Reserve, Gaoqiao Town, Zhanjiang, Guangdong Province (next to Shankou in Guangxi, Yingluo Bay)",M0487,Avicennia marina
 Donato_et_al_2012,Airai,M0488,NA
 Donato_et_al_2012,Ngkeklau,M0489,NA
 Bhomia_et_al_2016_Honduras,Gulf of Fonseca,M0490,Rhizophora mangle
-Bhomia_et_al_2016_Honduras,Gulf of Fonseca,M0491,"Rhizophora mangle, Laguncularia racemosa"
+Bhomia_et_al_2016_Honduras,Gulf of Fonseca,M0491,Rhizophora mangle
+Bhomia_et_al_2016_Honduras,Gulf of Fonseca,M0491, Laguncularia racemosa
 Bhomia_et_al_2016_Honduras,Gulf of Fonseca,M0492,Avicennia germinans
 Bhomia_et_al_2016_Honduras,Gulf of Fonseca,M0493,Rhizophora mangle
-Bhomia_et_al_2016_Honduras,Tela,M0494,"Rhizophora mangle, Laguncularia racemosa"
+Bhomia_et_al_2016_Honduras,Tela,M0494,Rhizophora mangle
+Bhomia_et_al_2016_Honduras,Tela,M0494, Laguncularia racemosa
 Bhomia_et_al_2016_Honduras,Tela,M0495,Laguncularia racemosa
-Bhomia_et_al_2016_Honduras,Tela,M0496,"Rhizophora mangle, Laguncularia racemosa, Avicennia germinans"
-Bhomia_et_al_2016_Honduras,Tela,M0497,"Rhizophora mangle, Laguncularia racemosa"
-Bhomia_et_al_2016_Honduras,Tela,M0498,"Rhizophora mangle, Laguncularia racemosa"
+Bhomia_et_al_2016_Honduras,Tela,M0496,Rhizophora mangle
+Bhomia_et_al_2016_Honduras,Tela,M0496, Laguncularia racemosa
+Bhomia_et_al_2016_Honduras,Tela,M0496, Avicennia germinans
+Bhomia_et_al_2016_Honduras,Tela,M0497,Rhizophora mangle
+Bhomia_et_al_2016_Honduras,Tela,M0497, Laguncularia racemosa
+Bhomia_et_al_2016_Honduras,Tela,M0498,Rhizophora mangle
+Bhomia_et_al_2016_Honduras,Tela,M0498, Laguncularia racemosa
 Bhomia_et_al_2016_Honduras,Roatan,M0499,Rhizophora mangle
 Bhomia_et_al_2016_Honduras,Roatan,M0500,Rhizophora mangle
 Bhomia_et_al_2016_Honduras,Guanaja,M0501,Rhizophora mangle
@@ -569,35 +584,59 @@ Bhomia_et_al_2016_Honduras,Utila,M0504,Avicennia germinans
 Bhomia_et_al_2016_Honduras,Utila,M0505,Avicennia germinans
 Bhomia_et_al_2016_Honduras,Utila,M0506,Rhizophora mangle
 Bhomia_et_al_2016_Honduras,Utila,M0507,Rhizophora mangle
-Ren_et_al_2008,Leizhou Bay,M0508,"Rhizophora stylosa, Kandelia candel"
-Ren_et_al_2008,Leizhou Bay,M0509,"Avicennia marina, Kandelia candel"
-Ren_et_al_2008,Leizhou Bay,M0510,"Rhizophora stylosa, Sonneratia apetala"
-Ren_et_al_2008,Leizhou Bay,M0511,"Avicennia marina, Kandelia candel, Sonneratia apetala"
-Ren_et_al_2008,Leizhou Bay,M0512,"Kandelia candel, Sonneratia apetala"
+Ren_et_al_2008,Leizhou Bay,M0508,Rhizophora stylosa
+Ren_et_al_2008,Leizhou Bay,M0508, Kandelia candel
+Ren_et_al_2008,Leizhou Bay,M0509,Avicennia marina
+Ren_et_al_2008,Leizhou Bay,M0509, Kandelia candel
+Ren_et_al_2008,Leizhou Bay,M0510,Rhizophora stylosa
+Ren_et_al_2008,Leizhou Bay,M0510, Sonneratia apetala
+Ren_et_al_2008,Leizhou Bay,M0511,Avicennia marina
+Ren_et_al_2008,Leizhou Bay,M0511, Kandelia candel
+Ren_et_al_2008,Leizhou Bay,M0511, Sonneratia apetala
+Ren_et_al_2008,Leizhou Bay,M0512,Kandelia candel
+Ren_et_al_2008,Leizhou Bay,M0512, Sonneratia apetala
 Ren_et_al_2008,Leizhou Bay,M0513,Sonneratia apetala
 Bulmer_et_al_2016,Whangateau,M0514,Avicennia marina
 Bulmer_et_al_2016,Bayswater,M0515,Avicennia marina
 Bulmer_et_al_2016,Mangere,M0516,Avicennia marina
 Bulmer_et_al_2016,Whangamata,M0517,Avicennia marina
-Upkong_1997,Creek Town,M0518,"Rhizophora racemosa, Rhizophora mangle, Avicennia africana"
-Upkong_1997,Creek Town,M0519,"Rhizophora racemosa, Rhizophora mangle, Avicennia africana"
-Upkong_1997,Creek Town,M0520,"Rhizophora racemosa, Rhizophora mangle, Avicennia africana"
-Upkong_1997,Creek Town,M0521,"Rhizophora racemosa, Rhizophora mangle, Avicennia africana"
-Ranjan_2010,Pichavaram,M0522,"Avicennia marina, Asparagus officinalis, Rhizophora mucronata"
-Ranjan_2010,Pichavaram,M0523,"Rhizophora mucronata, Bruguiera cylindrica"
+Upkong_1997,Creek Town,M0518,Rhizophora racemosa
+Upkong_1997,Creek Town,M0518, Rhizophora mangle
+Upkong_1997,Creek Town,M0518, Avicennia africana
+Upkong_1997,Creek Town,M0519,Rhizophora racemosa
+Upkong_1997,Creek Town,M0519, Rhizophora mangle
+Upkong_1997,Creek Town,M0519, Avicennia africana
+Upkong_1997,Creek Town,M0520,Rhizophora racemosa
+Upkong_1997,Creek Town,M0520, Rhizophora mangle
+Upkong_1997,Creek Town,M0520, Avicennia africana
+Upkong_1997,Creek Town,M0521,Rhizophora racemosa
+Upkong_1997,Creek Town,M0521, Rhizophora mangle
+Upkong_1997,Creek Town,M0521, Avicennia africana
+Ranjan_2010,Pichavaram,M0522,Avicennia marina
+Ranjan_2010,Pichavaram,M0522, Asppagus officinalis
+Ranjan_2010,Pichavaram,M0522, Rhizophora mucronata
+Ranjan_2010,Pichavaram,M0523,Rhizophora mucronata
+Ranjan_2010,Pichavaram,M0523, Bruguiera cylindrica
 Ranjan_2010,Pichavaram,M0524,Avicennia marina
 Gomes_et_al_2016,"Almada River, Ilhus-BA",M0525,Avicennia spp
 Gomes_et_al_2016,"Almada River, Ilhus-BA",M0526,NA
 Gomes_et_al_2016,"Almada River, Ilhus-BA",M0527,NA
-Gomes_et_al_2016,"Almada River, Ilhus-BA",M0528,"Rhizophora mangle, Avicennia spp"
+Gomes_et_al_2016,"Almada River, Ilhus-BA",M0528,Rhizophora mangle
+Gomes_et_al_2016,"Almada River, Ilhus-BA",M0528, Avicennia spp
 Gomes_et_al_2016,"Almada River, Ilhus-BA",M0529,Rhizophora mangle
-Fujimoto_et_al_1999,Pohnpei Island,M0530,"Rhizophora apiculata, Bruguiera gymnorrhiza"
-Fujimoto_et_al_1999,Pohnpei Island,M0531,"Rhizophora apiculata, Bruguiera gymnorrhiza"
+Fujimoto_et_al_1999,Pohnpei Island,M0530,Rhizophora apiculata
+Fujimoto_et_al_1999,Pohnpei Island,M0530, Bruguiera gymnorrhiza
+Fujimoto_et_al_1999,Pohnpei Island,M0531,Rhizophora apiculata
+Fujimoto_et_al_1999,Pohnpei Island,M0531, Bruguiera gymnorrhiza
 Fujimoto_et_al_1999,Pohnpei Island,M0532,Rhizophora apiculata
-Ajonina_et_al_2014,Kpetou Village,M0533,"Rhizophora racemosa, Avicennia germinans"
-Ajonina_et_al_2014,Djegbadji Village,M0534,"Rhizophora racemosa, Avicennia germinans"
-Ajonina_et_al_2014,Adounko Vilage,M0535,"Rhizophora racemosa, Avicennia germinans"
-Ajonina_et_al_2014,Adounko Vilage,M0536,"Rhizophora racemosa, Avicennia germinans"
+Ajonina_et_al_2014,Kpetou Village,M0533,Rhizophora racemosa
+Ajonina_et_al_2014,Kpetou Village,M0533, Avicennia germinans
+Ajonina_et_al_2014,Djegbadji Village,M0534,Rhizophora racemosa
+Ajonina_et_al_2014,Djegbadji Village,M0534, Avicennia germinans
+Ajonina_et_al_2014,Adounko Vilage,M0535,Rhizophora racemosa
+Ajonina_et_al_2014,Adounko Vilage,M0535, Avicennia germinans
+Ajonina_et_al_2014,Adounko Vilage,M0536,Rhizophora racemosa
+Ajonina_et_al_2014,Adounko Vilage,M0536, Avicennia germinans
 Kelleway_et_al_2016,Towra Point Nature Reserve,M0543,Avicennia marina
 Kelleway_et_al_2016,Towra Point Nature Reserve,M0544,Avicennia marina
 Kelleway_et_al_2016,Towra Point Nature Reserve,M0545,Avicennia marina
@@ -625,28 +664,45 @@ Kelleway_et_al_2016,Georges River National Park,M0566,Avicennia marina
 Alongi_et_al_2008,"Hurun Bay, Gulf of Lampung, Sumatra",M0627,Avicennia marina
 Alongi_et_al_2008,"Hurun Bay, Gulf of Lampung, Sumatra",M0628,Rhizophora stylosa
 Alongi_et_al_2008,"Hurun Bay, Gulf of Lampung, Sumatra",M0629,Rhizophora stylosa
-Alongi_et_al_2008,"Awerange Bay, Sulawesi",M0630,"Sonneratia caseolaris, Sonneratia lanceolata"
+Alongi_et_al_2008,"Awerange Bay, Sulawesi",M0630,Sonneratia caseolaris
+Alongi_et_al_2008,"Awerange Bay, Sulawesi",M0630, Sonneratia lanceolata
 Dung_et_al_2016,"Khe Vinh Creek, Can Gio",M0631,Avicennia alba
 Dung_et_al_2016,"Khe Vinh Creek, Can Gio",M0632,Rhizophora apiculata
 Dung_et_al_2016,"Khe Vinh Creek, Can Gio",M0633,Rhizophora apiculata
 Dung_et_al_2016,"Khe Vinh Creek, Can Gio",M0634,Rhizophora apiculata
-Phang_et_al_2016,Chek Jawa,M0635,"Avicennia officinalis, Rhizophora apiculata"
-Andreetta_et_al_2016,"Tande, Cacheu",M0636,"Avicennia germinans, Rhizophora mangle"
-Andreetta_et_al_2016,"Blaftchur, Oio",M0637,"Avicennia germinans, Rhizophora mangle"
-Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0647,"Rhizophora mangle, Avicennia germinans, Laguncularia racemosa"
-Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0648,"Rhizophora mangle, Avicennia germinans, Laguncularia racemosa"
-Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0649,"Rhizophora mangle, Avicennia germinans, Laguncularia racemosa"
-Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0650,"Rhizophora mangle, Avicennia germinans, Laguncularia racemosa"
-Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0651,"Rhizophora mangle, Avicennia germinans, Laguncularia racemosa"
+Phang_et_al_2016,Chek Jawa,M0635,Avicennia officinalis
+Phang_et_al_2016,Chek Jawa,M0635, Rhizophora apiculata
+Andreetta_et_al_2016,"Tande, Cacheu",M0636,Avicennia germinans
+Andreetta_et_al_2016,"Tande, Cacheu",M0636, Rhizophora mangle
+Andreetta_et_al_2016,"Blaftchur, Oio",M0637,Avicennia germinans
+Andreetta_et_al_2016,"Blaftchur, Oio",M0637, Rhizophora mangle
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0647,Rhizophora mangle
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0647, Avicennia germinans
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0647, Laguncularia racemosa
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0648,Rhizophora mangle
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0648, Avicennia germinans
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0648, Laguncularia racemosa
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0649,Rhizophora mangle
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0649, Avicennia germinans
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0649, Laguncularia racemosa
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0650,Rhizophora mangle
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0650, Avicennia germinans
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0650, Laguncularia racemosa
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0651,Rhizophora mangle
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0651, Avicennia germinans
+Breithaupt_et_al_2014,"Shark River, Everglades National Park, Florida",M0651, Laguncularia racemosa
 Sanders_et_al_2008,Ilha Grande,M0652,NA
 Sanders_et_al_2010_ECSS,Tamandare,M0653,NA
 Sanders_et_al_2010_ECSS,Tamandare,M0654,NA
 Sanders_et_al_2014,Cubatao,M0655,Rhizophora mangle
 Sanders_et_al_2014,Cubatao,M0656,Rhizophora mangle
 Lang'at_et_al_2014,Gazi Bay,M0657,Rhizophora mucronata
-Pazi_et_al_2016,"Awat-Awat Mangrove Forest Reserve, Lawas, Sarawak",M0658,"Sonneratia alba, Sonneratia caseolaris"
-Pazi_et_al_2016,"Awat-Awat Mangrove Forest Reserve, Lawas, Sarawak",M0659,"Rhizophora apiculata, Rhisophora mucronata"
-Pazi_et_al_2016,"Awat-Awat Mangrove Forest Reserve, Lawas, Sarawak",M0660,"Lumnitzera littorea, Xylocarpus granatum"
+Pazi_et_al_2016,"Awat-Awat Mangrove Forest Reserve, Lawas, Sarawak",M0658,Sonneratia alba
+Pazi_et_al_2016,"Awat-Awat Mangrove Forest Reserve, Lawas, Sarawak",M0658, Sonneratia caseolaris
+Pazi_et_al_2016,"Awat-Awat Mangrove Forest Reserve, Lawas, Sarawak",M0659,Rhizophora apiculata
+Pazi_et_al_2016,"Awat-Awat Mangrove Forest Reserve, Lawas, Sarawak",M0659, Rhisophora mucronata
+Pazi_et_al_2016,"Awat-Awat Mangrove Forest Reserve, Lawas, Sarawak",M0660,Lumnitzera littorea
+Pazi_et_al_2016,"Awat-Awat Mangrove Forest Reserve, Lawas, Sarawak",M0660, Xylocarpus granatum
 Szczygielski_et_al_2015,Parnaiba Delta,M0661,NA
 Yang_et_al_2013,Waitemata Harbour,M0662,Avicennia marina
 Yang_et_al_2013,Waitemata Harbour,M0663,Avicennia marina
@@ -659,9 +715,14 @@ Bouillon_et_al_2004_FEMS,Pambala-Chilaw Lagoon,M0669,Excoecaria agallocha
 Bouillon_et_al_2004_FEMS,Pambala-Chilaw Lagoon,M0670,Lumnitzera racemosa
 Bouillon_et_al_2004_FEMS,Pichavaram,M0671,Avicennia officinalis
 Bouillon_et_al_2004_FEMS,Pichavaram,M0672,NA
-Bouillon_et_al_2004_FEMS,Chunnambar River,M0673,"Avicennia officinalis, Rhizophora mucronata"
-Mfilinge_et_al_2002,"Oura Bay, Okinawa",M0674,"Bruguiera gymnorrhiza, Kandelia candel, Rhizophora stylosa"
-Mfilinge_et_al_2002,"Oura Bay, Okinawa",M0675,"Bruguiera gymnorrhiza, Kandelia candel, Rhizophora stylosa"
+Bouillon_et_al_2004_FEMS,Chunnambar River,M0673,Avicennia officinalis
+Bouillon_et_al_2004_FEMS,Chunnambar River,M0673, Rhizophora mucronata
+Mfilinge_et_al_2002,"Oura Bay, Okinawa",M0674,Bruguiera gymnorrhiza
+Mfilinge_et_al_2002,"Oura Bay, Okinawa",M0674, Kandelia candel
+Mfilinge_et_al_2002,"Oura Bay, Okinawa",M0674, Rhizophora stylosa
+Mfilinge_et_al_2002,"Oura Bay, Okinawa",M0675,Bruguiera gymnorrhiza
+Mfilinge_et_al_2002,"Oura Bay, Okinawa",M0675, Kandelia candel
+Mfilinge_et_al_2002,"Oura Bay, Okinawa",M0675, Rhizophora stylosa
 Kazungu_1996,Gazi Bay,M0676,Rhizophora mucronata
 Kazungu_1996,Gazi Bay,M0677,Ceriops tagal
 Middelburg_et_al_1996,Gazi Bay,M0678,Rhizophora mucronata
@@ -676,11 +737,17 @@ Middelburg_et_al_1996,Gazi Bay,M0686,Avicennia marina
 Middelburg_et_al_1996,Gazi Bay,M0687,Bruguiera gymnorrhiza
 Middelburg_et_al_1996,Gazi Bay,M0688,Sonneratia alba
 Middelburg_et_al_1996,Gazi Bay,M0689,Sonneratia alba
-Smoak_et_al_2013,"Harney River, Everglades National Park, Florida",M0690,"Rhizophora mangle, Avicennia germinans, Laguncularia racemosa"
-Ferreira_et_al_2007,"Guarujá, Sao Paulo",M0691,"Rhizophora mangle, Avicennia schaueriana"
-Ferreira_et_al_2007,"Guarujá, Sao Paulo",M0692,"Rhizophora mangle, Avicennia schaueriana"
-Ferreira_et_al_2007,"Guarujá, Sao Paulo",M0693,"Rhizophora mangle, Avicennia schaueriana"
-Ferreira_et_al_2007,"Guarujá, Sao Paulo",M0694,"Rhizophora mangle, Avicennia schaueriana"
+Smoak_et_al_2013,"Harney River, Everglades National Park, Florida",M0690,Rhizophora mangle
+Smoak_et_al_2013,"Harney River, Everglades National Park, Florida",M0690, Avicennia germinans
+Smoak_et_al_2013,"Harney River, Everglades National Park, Florida",M0690, Laguncularia racemosa
+Ferreira_et_al_2007,"Guarujá, Sao Paulo",M0691,Rhizophora mangle
+Ferreira_et_al_2007,"Guarujá, Sao Paulo",M0691, Avicennia schaueriana
+Ferreira_et_al_2007,"Guarujá, Sao Paulo",M0692,Rhizophora mangle
+Ferreira_et_al_2007,"Guarujá, Sao Paulo",M0692, Avicennia schaueriana
+Ferreira_et_al_2007,"Guarujá, Sao Paulo",M0693,Rhizophora mangle
+Ferreira_et_al_2007,"Guarujá, Sao Paulo",M0693, Avicennia schaueriana
+Ferreira_et_al_2007,"Guarujá, Sao Paulo",M0694,Rhizophora mangle
+Ferreira_et_al_2007,"Guarujá, Sao Paulo",M0694, Avicennia schaueriana
 Sanders_et_al_2015,Moreton Bay,M0695,NA
 Sanders_et_al_2015,Moreton Bay,M0696,NA
 Ashton_and_Macintosh_2002,"Sematan Mangrove Forest, Sarawak",M0697,NA
@@ -807,10 +874,11 @@ Cifuentes_Unpublished,Estero de Jaltepeque,M0817,Laguncularia racemosa
 Loi_and_Ni_2015,"Ong Trang sand bar, Ngoc Hien district, Ca Mau province",M0958,Avicennia alba
 Loi_and_Ni_2015,"Ong Trang sand bar, Ngoc Hien district, Ca Mau province",M0959,Rhizophora apiculata
 Loi_and_Ni_2015,"Ong Trang sand bar, Ngoc Hien district, Ca Mau province",M0960,Bruguiera parviflora
-Brunskill_et_al_2004,"Iriana Jaya, West Papua",M0961,Bruguiera
-Brunskill_et_al_2004,"Iriana Jaya, West Papua",M0962,Rhizophora
-Brunskill_et_al_2004,"Iriana Jaya, West Papua",M0963,Bruguiera
-Brunskill_et_al_2004,"Iriana Jaya, West Papua",M0964,"Bruguiera, Avicennia"
+Brunskill_et_al_2004,"Iriana Jaya, West Papua",M0961,NA
+Brunskill_et_al_2004,"Iriana Jaya, West Papua",M0962,NA
+Brunskill_et_al_2004,"Iriana Jaya, West Papua",M0963,NA
+Brunskill_et_al_2004,"Iriana Jaya, West Papua",M0964,NA
+Brunskill_et_al_2004,"Iriana Jaya, West Papua",M0964,NA
 Kao_et_al_2002,Tamsui River,M0965,Kandelia candel
 Kao_et_al_2002,Tamsui River,M0966,Kandelia candel
 Yando_et_al_2016,"Port Aransas, Texas",M0967,Avicennia germinans
@@ -830,7 +898,7 @@ Jones_et_al_2016,Ambaro-Ambanja,M0980,Ceriops tagal
 Jones_et_al_2016,Ambaro-Ambanja,M0981,Ceriops tagal
 Jones_et_al_2016,Ambaro-Ambanja,M0982,Ceriops tagal
 Jones_et_al_2016,Ambaro-Ambanja,M0983,Ceriops tagal
-Jones_et_al_2016,Ambaro-Ambanja,M0984,Mixed
+Jones_et_al_2016,Ambaro-Ambanja,M0984,NA
 Jones_et_al_2016,Ambaro-Ambanja,M0985,Rhizophora mucronata
 Jones_et_al_2016,Ambaro-Ambanja,M0986,Rhizophora mucronata
 Jones_et_al_2016,Ambaro-Ambanja,M0987,Rhizophora mucronata
@@ -843,11 +911,11 @@ Jones_et_al_2016,Ambaro-Ambanja,M0993,Ceriops tagal
 Jones_et_al_2016,Ambaro-Ambanja,M0994,Sonneratia alba
 Jones_et_al_2016,Ambaro-Ambanja,M0995,Rhizophora mucronata
 Jones_et_al_2016,Ambaro-Ambanja,M0996,Ceriops tagal
-Jones_et_al_2016,Ambaro-Ambanja,M0997,Mixed
+Jones_et_al_2016,Ambaro-Ambanja,M0997,NA
 Jones_et_al_2016,Ambaro-Ambanja,M0998,Rhizophora mucronata
 Jones_et_al_2016,Ambaro-Ambanja,M0999,Rhizophora mucronata
 Jones_et_al_2016,Ambaro-Ambanja,M1000,Ceriops tagal
-Jones_et_al_2016,Ambaro-Ambanja,M1001,Mixed
+Jones_et_al_2016,Ambaro-Ambanja,M1001,NA
 Jones_et_al_2016,Ambaro-Ambanja,M1002,Rhizophora mucronata
 Jones_et_al_2016,Ambaro-Ambanja,M1003,Rhizophora mucronata
 Jones_et_al_2016,Ambaro-Ambanja,M1004,Ceriops tagal
@@ -856,7 +924,7 @@ Jones_et_al_2016,Ambaro-Ambanja,M1006,Ceriops tagal
 Jones_et_al_2016,Ambaro-Ambanja,M1007,Rhizophora mucronata
 Jones_et_al_2016,Ambaro-Ambanja,M1008,Rhizophora mucronata
 Jones_et_al_2016,Ambaro-Ambanja,M1009,Ceriops tagal
-Jones_et_al_2016,Ambaro-Ambanja,M1010,Mixed
+Jones_et_al_2016,Ambaro-Ambanja,M1010,NA
 Jones_et_al_2016,Ambaro-Ambanja,M1011,Ceriops tagal
 Jones_et_al_2016,Ambaro-Ambanja,M1012,Ceriops tagal
 Jones_et_al_2016,Ambaro-Ambanja,M1013,Rhizophora mucronata
@@ -866,7 +934,7 @@ Jones_et_al_2016,Ambaro-Ambanja,M1016,Ceriops tagal
 Jones_et_al_2016,Ambaro-Ambanja,M1017,Rhizophora mucronata
 Jones_et_al_2016,Ambaro-Ambanja,M1018,Rhizophora mucronata
 Jones_et_al_2016,Ambaro-Ambanja,M1019,Rhizophora mucronata
-Jones_et_al_2016,Ambaro-Ambanja,M1020,Mixed
+Jones_et_al_2016,Ambaro-Ambanja,M1020,NA
 Jones_et_al_2016,Ambaro-Ambanja,M1021,Avicennia marina
 Jones_et_al_2016,Ambaro-Ambanja,M1022,Avicennia marina
 Jones_et_al_2016,Ambaro-Ambanja,M1023,Avicennia marina
@@ -880,8 +948,8 @@ Blue_Ventures_Unpublished,Mahajamba,M1030,Avicennia marina
 Blue_Ventures_Unpublished,Mahajamba,M1031,Avicennia marina
 Blue_Ventures_Unpublished,Mahajamba,M1032,Avicennia marina
 Blue_Ventures_Unpublished,Mahajamba,M1033,Avicennia marina
-Blue_Ventures_Unpublished,Mahajamba,M1034,Mixed
-Blue_Ventures_Unpublished,Mahajamba,M1035,Mixed
+Blue_Ventures_Unpublished,Mahajamba,M1034,NA
+Blue_Ventures_Unpublished,Mahajamba,M1035,NA
 Blue_Ventures_Unpublished,Mahajamba,M1036,Avicennia marina
 Blue_Ventures_Unpublished,Mahajamba,M1037,Avicennia marina
 Blue_Ventures_Unpublished,Mahajamba,M1038,Avicennia marina
@@ -900,22 +968,22 @@ Blue_Ventures_Unpublished,Mahajamba,M1050,Avicennia marina
 Blue_Ventures_Unpublished,Mahajamba,M1051,Ceriops tagal
 Blue_Ventures_Unpublished,Mahajamba,M1052,Rhizophora mucronata
 Blue_Ventures_Unpublished,Mahajamba,M1053,Rhizophora mucronata
-Blue_Ventures_Unpublished,Mahajamba,M1054,Mixed
-Blue_Ventures_Unpublished,Mahajamba,M1055,Mixed
-Blue_Ventures_Unpublished,Mahajamba,M1056,Mixed
+Blue_Ventures_Unpublished,Mahajamba,M1054,NA
+Blue_Ventures_Unpublished,Mahajamba,M1055,NA
+Blue_Ventures_Unpublished,Mahajamba,M1056,NA
 Blue_Ventures_Unpublished,Mahajamba,M1057,Xylocarpus granatum
-Blue_Ventures_Unpublished,Mahajamba,M1058,Mixed
+Blue_Ventures_Unpublished,Mahajamba,M1058,NA
 Blue_Ventures_Unpublished,Mahajamba,M1059,Rhizophora mucronata
-Blue_Ventures_Unpublished,Mahajamba,M1060,Mixed
+Blue_Ventures_Unpublished,Mahajamba,M1060,NA
 Blue_Ventures_Unpublished,Mahajamba,M1061,Avicennia marina
 Blue_Ventures_Unpublished,Mahajamba,M1062,Avicennia marina
 Blue_Ventures_Unpublished,Mahajamba,M1063,Avicennia marina
 Blue_Ventures_Unpublished,Mahajamba,M1064,Avicennia marina
 Blue_Ventures_Unpublished,Mahajamba,M1065,Avicennia marina
 Blue_Ventures_Unpublished,Mahajamba,M1066,Avicennia marina
-Blue_Ventures_Unpublished,Mahajamba,M1067,Mixed
+Blue_Ventures_Unpublished,Mahajamba,M1067,NA
 Blue_Ventures_Unpublished,Mahajamba,M1068,Avicennia marina
-Blue_Ventures_Unpublished,Mahajamba,M1069,Mixed
+Blue_Ventures_Unpublished,Mahajamba,M1069,NA
 Blue_Ventures_Unpublished,Mahajamba,M1070,Rhizophora mucronata
 Blue_Ventures_Unpublished,Mahajamba,M1071,Rhizophora mucronata
 Blue_Ventures_Unpublished,Mahajamba,M1072,Rhizophora mucronata
@@ -927,12 +995,30 @@ C._Sanders_Unpublished,"Wallis Lake, NSW",M1077,Avicennia marina
 C._Sanders_Unpublished,"Botany Bay, NSW",M1078,Avicennia marina
 C._Sanders_Unpublished,"Botany Bay, NSW",M1079,Avicennia marina
 C._Sanders_Unpublished,"Botany Bay, NSW",M1080,Avicennia marina
-Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1081,"Avicennia marina, Aegiceras corniculatum, Rhizophora stylosa, Ceriops australis"
-Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1082,"Avicennia marina, Aegiceras corniculatum, Rhizophora stylosa, Ceriops australis"
-Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1083,"Avicennia marina, Aegiceras corniculatum, Rhizophora stylosa, Ceriops australis"
-Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1084,"Avicennia marina, Aegiceras corniculatum, Rhizophora stylosa, Ceriops australis"
-Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1085,"Avicennia marina, Aegiceras corniculatum, Rhizophora stylosa, Ceriops australis"
-Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1086,"Avicennia marina, Aegiceras corniculatum, Rhizophora stylosa, Ceriops australis"
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1081,Avicennia marina
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1081, Aegiceras corniculatum
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1081, Rhizophora stylosa
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1081, Ceriops australis
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1082,Avicennia marina
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1082, Aegiceras corniculatum
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1082, Rhizophora stylosa
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1082, Ceriops australis
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1083,Avicennia marina
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1083, Aegiceras corniculatum
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1083, Rhizophora stylosa
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1083, Ceriops australis
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1084,Avicennia marina
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1084, Aegiceras corniculatum
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1084, Rhizophora stylosa
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1084, Ceriops australis
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1085,Avicennia marina
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1085, Aegiceras corniculatum
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1085, Rhizophora stylosa
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1085, Ceriops australis
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1086,Avicennia marina
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1086, Aegiceras corniculatum
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1086, Rhizophora stylosa
+Sanders_et_al_2016_JGR_Biogeoscience,Darwin,M1086, Ceriops australis
 Sanders_et_al_2016_JGR_Biogeoscience,"Hinchinbrook Island, QLD",M1087,Rhizophora stylosa
 Sanders_et_al_2016_JGR_Biogeoscience,"Hinchinbrook Island, QLD",M1088,Rhizophora stylosa
 Sanders_et_al_2016_JGR_Biogeoscience,"Hinchinbrook Island, QLD",M1089,Rhizophora stylosa
@@ -955,18 +1041,54 @@ Sanders_et_al_2016_JGR_Biogeoscience,"New Castle, NSW",M1105,Avicennia marina
 Sanders_et_al_2016_JGR_Biogeoscience,"New Castle, NSW",M1106,Avicennia marina
 Sanders_et_al_2016_JGR_Biogeoscience,"New Castle, NSW",M1107,Avicennia marina
 Sanders_et_al_2016_JGR_Biogeoscience,"New Castle, NSW",M1108,Avicennia marina
-C._Sanders_Unpublished,"Moreton Bay, QLD",M1109,"Avicennia marina, Aegiceras corniculatum, Bruguiera gymnorrhiza, Rhizophora stylosa"
-C._Sanders_Unpublished,"Moreton Bay, QLD",M1110,"Avicennia marina, Aegiceras corniculatum, Bruguiera gymnorrhiza, Rhizophora stylosa"
-C._Sanders_Unpublished,"Moreton Bay, QLD",M1111,"Avicennia marina, Aegiceras corniculatum, Bruguiera gymnorrhiza, Rhizophora stylosa"
-C._Sanders_Unpublished,"Moreton Bay, QLD",M1112,"Avicennia marina, Aegiceras corniculatum, Bruguiera gymnorrhiza, Rhizophora stylosa"
-C._Sanders_Unpublished,"Moreton Bay, QLD",M1113,"Avicennia marina, Aegiceras corniculatum, Bruguiera gymnorrhiza, Rhizophora stylosa"
-C._Sanders_Unpublished,"Moreton Bay, QLD",M1114,"Avicennia marina, Aegiceras corniculatum, Bruguiera gymnorrhiza, Rhizophora stylosa"
-C._Sanders_Unpublished,"Moreton Bay, QLD",M1115,"Avicennia marina, Aegiceras corniculatum, Bruguiera gymnorrhiza, Rhizophora stylosa"
-C._Sanders_Unpublished,"Moreton Bay, QLD",M1116,"Avicennia marina, Aegiceras corniculatum, Bruguiera gymnorrhiza, Rhizophora stylosa"
-C._Sanders_Unpublished,"Moreton Bay, QLD",M1117,"Avicennia marina, Aegiceras corniculatum, Bruguiera gymnorrhiza, Rhizophora stylosa"
-C._Sanders_Unpublished,"Moreton Bay, QLD",M1118,"Avicennia marina, Aegiceras corniculatum, Bruguiera gymnorrhiza, Rhizophora stylosa"
-C._Sanders_Unpublished,"Moreton Bay, QLD",M1119,"Avicennia marina, Aegiceras corniculatum, Bruguiera gymnorrhiza, Rhizophora stylosa"
-C._Sanders_Unpublished,"Moreton Bay, QLD",M1120,"Avicennia marina, Aegiceras corniculatum, Bruguiera gymnorrhiza, Rhizophora stylosa"
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1109,Avicennia marina
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1109, Aegiceras corniculatum
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1109, Bruguiera gymnorrhiza
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1109, Rhizophora stylosa
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1110,Avicennia marina
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1110, Aegiceras corniculatum
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1110, Bruguiera gymnorrhiza
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1110, Rhizophora stylosa
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1111,Avicennia marina
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1111, Aegiceras corniculatum
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1111, Bruguiera gymnorrhiza
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1111, Rhizophora stylosa
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1112,Avicennia marina
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1112, Aegiceras corniculatum
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1112, Bruguiera gymnorrhiza
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1112, Rhizophora stylosa
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1113,Avicennia marina
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1113, Aegiceras corniculatum
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1113, Bruguiera gymnorrhiza
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1113, Rhizophora stylosa
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1114,Avicennia marina
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1114, Aegiceras corniculatum
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1114, Bruguiera gymnorrhiza
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1114, Rhizophora stylosa
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1115,Avicennia marina
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1115, Aegiceras corniculatum
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1115, Bruguiera gymnorrhiza
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1115, Rhizophora stylosa
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1116,Avicennia marina
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1116, Aegiceras corniculatum
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1116, Bruguiera gymnorrhiza
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1116, Rhizophora stylosa
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1117,Avicennia marina
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1117, Aegiceras corniculatum
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1117, Bruguiera gymnorrhiza
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1117, Rhizophora stylosa
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1118,Avicennia marina
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1118, Aegiceras corniculatum
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1118, Bruguiera gymnorrhiza
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1118, Rhizophora stylosa
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1119,Avicennia marina
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1119, Aegiceras corniculatum
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1119, Bruguiera gymnorrhiza
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1119, Rhizophora stylosa
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1120,Avicennia marina
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1120, Aegiceras corniculatum
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1120, Bruguiera gymnorrhiza
+C._Sanders_Unpublished,"Moreton Bay, QLD",M1120, Rhizophora stylosa
 C._Sanders_Unpublished,"Coffs Harbour, NSW",M1121,Avicennia marina
 C._Sanders_Unpublished,"Coffs Harbour, NSW",M1122,Avicennia marina
 C._Sanders_Unpublished,"Coffs Harbour, NSW",M1123,Avicennia marina
@@ -977,65 +1099,65 @@ C._Sanders_Submitted_to_ECSS,Whangamata Harbor,M1127,Avicennia marina
 C._Sanders_Submitted_to_ECSS,Whangamata Harbor,M1128,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1129,Rhizophora mucronata
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1130,Avicennia marina
-"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1131,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1131,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1132,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1133,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1134,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1135,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1136,Rhizophora mucronata
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1137,Ceriops tagal
-"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1138,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1138,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1139,Rhizophora mucronata
-"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1140,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1140,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1141,Ceriops tagal
-"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1142,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1142,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1143,Ceriops tagal
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1144,Rhizophora mucronata
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1145,Rhizophora mucronata
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1146,Ceriops tagal
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1147,Avicennia marina
-"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1148,Avicennia marina mix
-"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1149,Avicennia marina mix
-"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1150,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1148,Avicennia marina
+"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1149,Avicennia marina
+"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1150,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1151,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1152,Rhizophora mucronata
-"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1153,Avicennia marina mix
-"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1154,Avicennia marina mix
-"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1155,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1153,Avicennia marina
+"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1154,Avicennia marina
+"S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1155,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Vanga,M1156,Avicennia marina
-"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1157,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1157,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1158,Ceriops tagal
-"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1159,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1159,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1160,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1161,Avicennia marina
-"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1162,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1162,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1163,Ceriops tagal
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1164,Ceriops tagal
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1165,Ceriops tagal
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1166,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1167,Ceriops tagal
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1168,Ceriops tagal
-"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1169,Avicennia marina mix
-"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1170,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1169,Avicennia marina
+"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1170,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1171,Rhizophora mucronata
-"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1172,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1172,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1173,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1174,Ceriops tagal
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1175,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1176,Avicennia marina
-"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1177,Avicennia marina mix
-"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1178,Avicennia marina mix
-"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1179,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1177,Avicennia marina
+"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1178,Avicennia marina
+"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1179,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1180,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1181,Avicennia marina
-"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1182,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1182,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1183,Rhizophora mucronata
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1184,Rhizophora mucronata
-"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1185,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1185,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1186,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1187,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1188,Ceriops tagal
-"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1189,Avicennia marina mix
+"S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1189,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1190,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1191,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1192,Avicennia marina
@@ -1043,8 +1165,8 @@ C._Sanders_Submitted_to_ECSS,Whangamata Harbor,M1128,Avicennia marina
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1194,Rhizophora mucronata
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1195,Rhizophora mucronata
 "S._Gress_Unpublished,_Gress_et_al_2016",Gazi,M1196,Rhizophora mucronata
-Sanders_et_al_2012_MER,Guaratuba Bay,M1197,Rhizophora
-Sanders_et_al_2012_MER,Laranjeiras Bay,M1198,Rhizophora
+Sanders_et_al_2012_MER,Guaratuba Bay,M1197,NA
+Sanders_et_al_2012_MER,Laranjeiras Bay,M1198,NA
 Frith_et_al_1976,Phuket,M1287,NA
 Frith_et_al_1976,Phuket,M1288,NA
 Frith_et_al_1976,Phuket,M1289,Rhizophora apiculata
@@ -1059,9 +1181,13 @@ Naidoo_1980,Durban,M1297,Bruguiera gymnorrhiza
 Naidoo_and_Raiman_1982,Sipingo River,M1298,NA
 Naidoo_and_Raiman_1982,Sipingo River,M1299,NA
 Naidoo_and_Raiman_1982,Mdloti River,M1300,NA
-Cardona_and_Botero_1998,Cienaga Grande de Santa Marta,M1301,"Rhizophora mangle, Avicennia germinans, Laguncularia racemosa"
+Cardona_and_Botero_1998,Cienaga Grande de Santa Marta,M1301,Rhizophora mangle
+Cardona_and_Botero_1998,Cienaga Grande de Santa Marta,M1301, Avicennia germinans
+Cardona_and_Botero_1998,Cienaga Grande de Santa Marta,M1301, Laguncularia racemosa
 Cahoon_and_Lynch_1997,"Rookery Bay, Florida",M1302,Rhizophora mangle
-Cahoon_and_Lynch_1997,"Rookery Bay, Florida",M1303,"Rhizophora mangle, Avicennia germinans, Laguncularia racemosa"
+Cahoon_and_Lynch_1997,"Rookery Bay, Florida",M1303,Rhizophora mangle
+Cahoon_and_Lynch_1997,"Rookery Bay, Florida",M1303, Avicennia germinans
+Cahoon_and_Lynch_1997,"Rookery Bay, Florida",M1303, Laguncularia racemosa
 Cahoon_and_Lynch_1997,"Rookery Bay, Florida",M1304,Rhizophora mangle
 Cahoon_and_Lynch_1997,"Rookery Bay, Florida",M1305,Rhizophora mangle
 Brunskill_et_al_2002,"Hinchinbrook Island, QLD",M1306,NA
@@ -1083,14 +1209,16 @@ Thimdee_et_al_2003,Khung Krabaen Bay,M1321,NA
 Kristensen_et_al_1992,Indus Delta,M1322,Avicennia marina
 Kristensen_et_al_2000,Phuket Island,M1323,Rhizophora mucronata
 Dissanayake_and_Chandrasekara_2014,Negombo Estuary,M1324,Avicennia marina
-Dissanayake_and_Chandrasekara_2014,Negombo Estuary,M1325,"Rhizophora apiculata, Rhizophora mucronata"
+Dissanayake_and_Chandrasekara_2014,Negombo Estuary,M1325,Rhizophora apiculata
+Dissanayake_and_Chandrasekara_2014,Negombo Estuary,M1325, Rhizophora mucronata
 Dissanayake_and_Chandrasekara_2014,Negombo Estuary,M1326,Lumnitzera racemosa
 Frusher_et_al_1994,"Murray River, QLD",M1327,NA
 Frusher_et_al_1994,"Murray River, QLD",M1328,NA
 Frusher_et_al_1994,"Murray River, QLD",M1329,NA
 Frusher_et_al_1994,"Murray River, QLD",M1330,NA
 Frusher_et_al_1994,"Murray River, QLD",M1331,NA
-Lee_and_Baker_1972,Heeia,M1332,"Rhizophora mangle, Bruguiera sexangula"
+Lee_and_Baker_1972,Heeia,M1332,Rhizophora mangle
+Lee_and_Baker_1972,Heeia,M1332, Bruguiera sexangula
 Otero_et_al_2009,"Pai Matos Island,Cananéia, State of São Paulo",M1333,Laguncularia racemosa
 Otero_et_al_2009,"Pai Matos Island,Cananéia, State of São Paulo",M1334,Rhizophora mangle
 Otero_et_al_2009,"Pai Matos Island,Cananéia, State of São Paulo",M1335,Avicennia schauerianna
@@ -1132,18 +1260,31 @@ Vasconcelos_et_al_2014,Paraiba Estuary,M1370,NA
 Vasconcelos_et_al_2014,Paraiba Estuary,M1371,NA
 Vasconcelos_et_al_2014,Paraiba Estuary,M1372,NA
 Gonneea_et_al_2004,Celestún,M1507,Rhizophora mangle
-Gonneea_et_al_2004,Celestún,M1508,"Rhizophora mangle, Laguncularia racemosa"
-Gonneea_et_al_2004,Celestún,M1509,"Rhizophora mangle, Laguncularia racemosa"
-Gonneea_et_al_2004,Progreso,M1510,"Rhizophora mangle, Avicennia germinans"
-Gonneea_et_al_2004,Celestún,M1511,"Rhizophora mangle, Laguncularia racemosa"
-Gonneea_et_al_2004,Celestún,M1512,"Rhizophora mangle, Laguncularia racemosa"
-Gonneea_et_al_2004,Celestún,M1513,"Rhizophora mangle, Avicennia germinans, Laguncularia racemosa"
-Gonneea_et_al_2004,Celestún,M1514,"Rhizophora mangle, Avicennia germinans, Laguncularia racemosa"
-Gonneea_et_al_2004,Progreso,M1515,"Rhizophora mangle, Avicennia germinans"
-Gonneea_et_al_2004,Progreso,M1516,"Rhizophora mangle, Avicennia germinans"
-Gonneea_et_al_2004,Terminos Lagoon,M1517,"Rhizophora mangle, Avicennia germinans"
+Gonneea_et_al_2004,Celestún,M1508,Rhizophora mangle
+Gonneea_et_al_2004,Celestún,M1508, Laguncularia racemosa
+Gonneea_et_al_2004,Celestún,M1509,Rhizophora mangle
+Gonneea_et_al_2004,Celestún,M1509, Laguncularia racemosa
+Gonneea_et_al_2004,Progreso,M1510,Rhizophora mangle
+Gonneea_et_al_2004,Progreso,M1510, Avicennia germinans
+Gonneea_et_al_2004,Celestún,M1511,Rhizophora mangle
+Gonneea_et_al_2004,Celestún,M1511, Laguncularia racemosa
+Gonneea_et_al_2004,Celestún,M1512,Rhizophora mangle
+Gonneea_et_al_2004,Celestún,M1512, Laguncularia racemosa
+Gonneea_et_al_2004,Celestún,M1513,Rhizophora mangle
+Gonneea_et_al_2004,Celestún,M1513, Avicennia germinans
+Gonneea_et_al_2004,Celestún,M1513, Laguncularia racemosa
+Gonneea_et_al_2004,Celestún,M1514,Rhizophora mangle
+Gonneea_et_al_2004,Celestún,M1514, Avicennia germinans
+Gonneea_et_al_2004,Celestún,M1514, Laguncularia racemosa
+Gonneea_et_al_2004,Progreso,M1515,Rhizophora mangle
+Gonneea_et_al_2004,Progreso,M1515, Avicennia germinans
+Gonneea_et_al_2004,Progreso,M1516,Rhizophora mangle
+Gonneea_et_al_2004,Progreso,M1516, Avicennia germinans
+Gonneea_et_al_2004,Terminos Lagoon,M1517,Rhizophora mangle
+Gonneea_et_al_2004,Terminos Lagoon,M1517, Avicennia germinans
 Gonneea_et_al_2004,Terminos Lagoon,M1518,Laguncularia racemosa
-Gevana_and_Pampolina_2009,"San Juan, Batangas",M1519,"Rhizophora mucronata, Xylocarpus granatum"
+Gevana_and_Pampolina_2009,"San Juan, Batangas",M1519,Rhizophora mucronata
+Gevana_and_Pampolina_2009,"San Juan, Batangas",M1519, Xylocarpus granatum
 Gillis_et_al_2017,Phang Nga Bay,M1520,NA
 Gillis_et_al_2017,Phang Nga Bay,M1521,NA
 Gillis_et_al_2017,Phang Nga Bay,M1522,NA

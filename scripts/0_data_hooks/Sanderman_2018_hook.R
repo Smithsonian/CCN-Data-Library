@@ -61,7 +61,7 @@ internatl_study_metadata <- internatl_core_data_raw %>%
   mutate(study_id = gsub(" ", "_",  study_id)) %>%
   select(study_id, email)
 
-## * International core data ###############
+## * International core and species data ###############
 
 # Rename attributes
 internatl_core_data <- internatl_core_data_raw %>%
@@ -91,24 +91,40 @@ for (i in 1:nrow(internatl_core_data)) {
   }
 }
 
+## * International species data ##############
+internatl_species_data <- internatl_core_data %>%
+  select(study_id, site_id, core_id, `Dominant species`) %>%
+  rename(species_code = "Dominant species") %>%
+  # there are multiple species listed for some cores
+  # they need to be separated into separate rows
+  separate_rows(species_code, sep=",") %>%
+  separate_rows(species_code, sep="/") %>%
+  # Avicennia marina mix should just be Avicennia marina
+  mutate(species_code = str_replace(species_code, " mix", "")) %>%
+  # Mixed to NA - no way to determine the species present
+  mutate(species_code = str_replace(species_code, "Mixed", replacement = NA_character_)) %>%
+  # Several species do not have complete names (for instance, only the genus is listed)
+  # Those will be changed to NA
+  mutate(species_code = ifelse(species_code == " Avicennia", NA, 
+                               ifelse(species_code == "Bruguiera", NA, 
+                                      ifelse(species_code == "Rhizophora", NA, species_code)))) %>%
+  mutate(species_code = str_replace(species_code, "sp.", "spp")) %>%
+  mutate(species_code = str_replace(species_code, "spp.", "spp"))
+
+# finish core data 
 internatl_core_data <- internatl_core_data %>%
   select(-`Landscape Unsure`, -`HGM Unsure`, -`Mangrove type`) %>%
   mutate(core_length = as.numeric(core_length)) %>%
   select(- `Site name`) %>%
-  select(study_id, country, site_id, core_id, core_latitude, core_longitude, core_date, everything())
-
-internatl_core_data$core_length_flag <- recode(internatl_core_data$core_length_flag, 
-                                                        "Y" = "core depth represents deposit depth",
-                                                        "N" = "core depth limited by length of corer",
-                                                        "unsure" = "not specified",
-                                                        "unknown" = "not specified",
-                                                        "Not sure" = "not specified")
-
-## * International species data ##############
-internatl_species_data <- internatl_core_data %>%
-  select(study_id, site_id, core_id, `Dominant species`) %>%
-  rename(species_code = "Dominant species")
-
+  select(study_id, site_id, core_id, core_latitude, core_longitude, core_date, 
+         core_position_notes, core_length_flag, vegetation_class, vegetation_notes) %>%
+  mutate(core_length_flag = recode(core_length_flag, 
+                                   "Y" = "core depth represents deposit depth",
+                                   "N" = "core depth limited by length of corer",
+                                   "unsure" = "not specified",
+                                   "unknown" = "not specified",
+                                   "Not sure" = "not specified"))
+  
 ## * International methods data ############
 
 # Commenting out methods table as there is currently no variables present related to the CCRCN guidance
@@ -210,14 +226,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 # Make sure column names are formatted correctly: 
 test_colnames("cores", internatl_core_data)
 test_colnames("depthseries", internatl_depthseries_data)
-
-# Results for cores: 
-#  "Non-matching variable names/column headers: country Data_owner landscape_position 
-# hydrogeomorphology Dominant species core_length"
-core_invalid_set <- c("country", "Data_owner", "landscape_position", 
-                      "hydrogeomorphology", "Dominant species", "core_length")
-
-internatl_core_data <- select(internatl_core_data, -core_invalid_set)
+test_colnames("species", internatl_species_data)
 
 # Results for depthseries: 
 # "Non-matching variable names/column headers: CD_reported Ocstock_reported carbon_density fraction_carbon_type 
@@ -420,8 +429,6 @@ write_csv(internatl_study_metadata, "./data/Sanderman_2018/derivative/Sanderman_
 write_csv(internatl_core_data, "./data/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
 
 write_csv(internatl_species_data, "./data/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
-
-# write_csv(internatl_methods_data, "./data/Sanderman_2018/derivative/Sanderman_2018_methods_data.csv")
 
 write_csv(internatl_depthseries_data, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
 

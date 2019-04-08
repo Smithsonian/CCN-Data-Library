@@ -64,16 +64,23 @@ cores <- cores %>%
   rename(vegetation_class = "vegetation_code",
          salinity_class = "salinity_code",
          core_position_notes= "position_code") %>%
+  # recode core position notes 
+  mutate(core_position_notes = recode(core_position_notes, 
+                                      "a" = "latitude and longitude were likely from a high quality source",
+                                      "a1" = "latitude and longitude from handheld GPS or better", 
+                                      "a2" = "latitude and longitude were likely high quality but may refer to a general area rather than individual core location",
+                                      "b" = "latitude and longitude represented coarse and general site coordinates", 
+                                      "c" = "latitude and longitude were extracted from a map figure", 
+                                      "c1" = "latitude and longitude were extracted from a relatively high quality map figure", 
+                                      "c2" = "latitude and longitude were extracted from a relatively low quality map figure"), 
+         inundation_class = tolower(inundation_class)) %>%
   filter(study_id != "Gonneea_et_al_2018") %>%
   # Add underscores to site IDs
   mutate(site_id = gsub(" ", "_", site_id)) %>%
   recode_salinity(salinity_class = salinity_class) %>%
-  recode_vegetation(vegetation_class = vegetation_class)
-
-
-# There's a typo with Galveston Bay sites. For some reason mutate + ifelse 
-# was giving me issues.
-cores$site_id <- recode(cores$site_id, "Gavelston_Bay" = "Galveston_Bay")
+  recode_vegetation(vegetation_class = vegetation_class) %>%
+  # There's a typo with Galveston Bay sites
+  mutate(site_id = recode(site_id, "Gavelston_Bay" = "Galveston_Bay"))
 
 depthseries <- depthseries %>%
   # The Crooks study ID should be 2014, not 2013. 

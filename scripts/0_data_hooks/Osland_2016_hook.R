@@ -126,9 +126,7 @@ options(digits=6)
 #   aggregate the data to the site level) and simultaneously rename
 Osland_2016_site_core_data <- Osland_2016_land_climate %>%
   mutate(core_id = as.numeric(plot), core_longitude = as.numeric(lon),
-         core_latitude = as.numeric(lat), core_elevation = as.numeric(elev),
-         mean_annual_precip = as.numeric(MAP), aridity_index = as.numeric(AI),
-         potential_evapotrans = as.numeric(PET), min_daily_temp = as.numeric(Tmin)) %>%
+         core_latitude = as.numeric(lat), core_elevation = as.numeric(elev)) %>%
   rename(site_id = estuary) %>% # rename to site ID
   select(-ID, -tran, -plot, -lon, -lat, -elev, -dist, -MAP, -AI, -PET, -Tmin, -TIdist,
          -GMdist)
@@ -254,6 +252,8 @@ find_max <- function(df, first_col, last_col) {
   df
 }
 
+
+
 for (i in 1:nrow(Osland_2016_species_data)) {
   
   df <- slice(Osland_2016_species_data, i)
@@ -340,4 +340,5 @@ write_csv(Osland_2016_depth_series_data, "./data/Osland_2016/derivative/Osland_e
 write_csv(Osland_2016_site_data, "./data/Osland_2016/derivative/Osland_et_al_2016_sites.csv")
 write_csv(Osland_2016_core_data, "./data/Osland_2016/derivative/Osland_et_al_2016_cores.csv")
 write_csv(study_data_primary, "./data/Osland_2016/derivative/Osland_et_al_2016_study_citations.csv")
+
 
