@@ -29,8 +29,11 @@ depthseries_figure <- read_csv("./data/Jones_2017/original/Jones_2017_depthserie
 ## 2. Curate Site data ############
 
 # Imported file is already curated to CCRCN standards
-sites <- sites %>%
-  mutate(salinity_class)
+sitesOutput <- sites %>%
+  mutate(study_id = "Jones_et_al_2017") %>%
+  group_by(study_id, site_id) %>%
+  summarise()
+
 ## 3. Core data ############
 
 # A lot of this information was just scattered throughout the Neotoma portal.
@@ -131,7 +134,7 @@ depthseries_figure <- depthseries_figure %>%
 species <- sites %>%
   mutate(study_id = "Jones_et_al_2017") %>%
   select(study_id, site_id, core_id, species_code) %>%
-  separate_rows(species_code, sep=";")
+  separate_rows(species_code, sep="; ")
 
 
 ## 6. Impact data ############
@@ -160,7 +163,7 @@ fraction_not_percent(depthseries)
 
 ## Write data ###########
 
-write_csv(sites, "./data/Jones_2017/derivative/final/Jones_2017_sites.csv")
+write_csv(sitesOutput, "./data/Jones_2017/derivative/final/Jones_2017_sites.csv")
 
 write_csv(core_data, "./data/Jones_2017/derivative/final/Jones_2017_cores.csv")
 
