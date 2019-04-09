@@ -150,17 +150,18 @@ core_data <- plot_data %>%
   rename(vegetation_notes = "Ecosystem") %>%
   rename(XYZ = "XYZ source") %>%
   mutate(core_position_method = ifelse(XYZ == "RTK GPS", "RTK", 
-                                ifelse(XYZ == "Garmin GPS", "handheld", NA))) %>%
+                                ifelse(XYZ == "Garmin GPS", "handheld", NA)),
+         core_elevation_datum = ifelse(is.na(elevation), NA, "WGS84")) %>%
   mutate(core_elevation_method = ifelse(XYZ == "RTK GPS", "RTK", NA)) %>%
-  rename(core_latitude = "Latitude", core_longitude = "Longitude") %>%
-  rename(core_elevation = "elevation") %>%
-  rename(core_depth = "core depth (cm)") %>%
+  rename(core_latitude = "Latitude", core_longitude = "Longitude",
+         core_elevation = "elevation",
+         core_depth = "core depth (cm)") %>%
   mutate(core_depth_flag = ifelse(core_depth<300, "core depth represents deposit depth", 
                                   ifelse(core_depth==300, "core depth limited by length of corer", NA))) %>%
   mutate(salinity_class = ifelse(salinity > 50, "brine", 
                                  ifelse(salinity < 51 & salinity > 29, "saline", "brackish"))) %>%
   select(study_id, site_id, core_id, core_date, core_latitude, core_longitude, 
-        core_position_method, core_elevation, core_elevation_method, vegetation_notes)
+        core_position_method, core_elevation, core_elevation_datum, core_elevation_method, vegetation_notes)
 
 ## ... 3D. Site level data #############
 
