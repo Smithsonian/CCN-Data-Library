@@ -1,4 +1,4 @@
-site_id,core_id,core_longitude,core_latitude,salinity_class,vegetation_class,impact_class,species_code
-Waccamaw_River_Turkey_Creek,Oligohaline_Marsh,-79.3447,33.35003,oligohaline,marsh,natural,Typha latifolia; Spartina cynosuroides; Scirpus robustus; Schoenoplectus montevidensis
-Waccamaw_River_Turkey_Creek,Heavily_Salt_Impacted_Swamp,-79.34166,33.34001,fresh,tidal freshwater forest,salt impacted,Taxodium distichum; Nyssa biflora; Nyssa aquatica
-Waccamaw_River_Butler_Island,Moderately_Salt_Impacted,-79.207996,33.422823,fresh,tidal freshwater forest,salt impacted,Taxodium distichum; Nyssa biflora; Nyssa aquatica
+study_id,site_id
+Jones_et_al_2017,Waccamaw_River_Turkey_Creek
+Jones_et_al_2017,Waccamaw_River_Turkey_Creek
+Jones_et_al_2017,Waccamaw_River_Butler_Island

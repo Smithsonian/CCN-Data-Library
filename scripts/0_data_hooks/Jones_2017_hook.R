@@ -38,7 +38,8 @@ sites <- sites %>%
 
 core_data <- sites %>%
   mutate(study_id = "Jones_et_al_2017") %>%
-  select(study_id, site_id, core_id)
+  select(study_id, site_id, core_id, core_longitude, core_latitude, salinity_class, vegetation_class) %>%
+  mutate(vegetation_class = ifelse(vegetation_class == "tidal freshwater forest", "forested", vegetation_class))
 
 ## 4. Depthseries data ############
 
@@ -57,15 +58,14 @@ geochron <- geochron_oligo %>%
   bind_rows(geochron_heavy_salt) %>%
   bind_rows(geochron_mod_salt) %>%
   mutate(study_id = "Jones_et_al_2017") %>%
-  mutate(age_depth_model_reference = "YBP") %>%
   mutate(depth_min = Depth - (Thickness/2)) %>%
   mutate(depth_max = Depth + (Thickness/2)) %>%
-  rename(sample_id = SampleID, c14_age = Age, material_dated = MaterialDated,
+  rename(sample_id = SampleID, c14_age = Age, c14_material = MaterialDated,
          c14_age_sd = ErrorOlder) %>%
   mutate(c14_age = ifelse(c14_age == 0, NA, c14_age)) %>%
   mutate(c14_notes = ifelse(is.na(c14_age), "c14 age yielded greater than modern day", NA)) %>%
   select(study_id, core_id, sample_id, depth_min, depth_max, c14_age, c14_age_sd, 
-         c14_notes, material_dated, age_depth_model_reference)
+         c14_notes, c14_material)
 
 ## ....4b. LOI data ############
 
@@ -100,7 +100,8 @@ LOI <- LOI_oligo %>%
   mutate(depth_max = as.double(gsub(" cm", "", depth_max))) %>%
   separate("V6", into = c("age_max", "age", "age_min"), sep = "/") %>%
   mutate(age_max = as.double(age_max), age = as.double(age),
-         age_min = as.double(age_min)) %>%
+         age_min = as.double(age_min), 
+         age_depth_model_reference = "YBP") %>%
   rename(sample_id = "V5", dry_bulk_density = "V7", fraction_organic_matter = "V8") %>%
   mutate(fraction_organic_matter = as.double(fraction_organic_matter) / 100) %>%
   # Change from numeric to character because it's a tag
@@ -109,13 +110,16 @@ LOI <- LOI_oligo %>%
   mutate(depth_max = as.double(depth_max)) %>%
   mutate(study_id = "Jones_et_al_2017") %>%
   select(study_id, core_id, sample_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter, 
-         age, age_min, age_max)
+         age, age_min, age_max, age_depth_model_reference)
 
 ## ....4c. Combine depthseries datasets ##############
 
 depthseries <- geochron %>%
   full_join(LOI, by = c("study_id", "core_id", "sample_id", "depth_min", "depth_max")) %>%
-  arrange(core_id, depth_min)
+  arrange(core_id, depth_min) %>%
+  select(study_id, core_id, sample_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter, 
+         c14_age, c14_age_sd, c14_material, c14_notes,
+         age, age_min, age_max, age_depth_model_reference)
 
 # Data digitized from depthseries figure...still not sure what core(s) this 
 #   corresponds to
@@ -126,7 +130,22 @@ depthseries_figure <- depthseries_figure %>%
 
 species <- sites %>%
   mutate(study_id = "Jones_et_al_2017") %>%
-  select(study_id, site_id, core_id, species_code)
+  select(study_id, site_id, core_id, species_code) %>%
+  separate_rows(species_code, sep=";")
+
+
+## 6. Impact data ############
+
+impacts <- sites %>%
+  mutate(study_id = "Jones_et_al_2017") %>%
+  select(study_id, site_id, core_id, impact_class)
+
+
+## 7. Site data ################
+
+sites <- sites %>%
+  mutate(study_id = "Jones_et_al_2017") %>%
+  select(study_id, site_id)
 
 ## QA/QC ##############
 
@@ -134,16 +153,9 @@ source("./scripts/1_data_formatting/qa_functions.R")
 fraction_not_percent(depthseries)
 
 # Re-order according to database
-core_data <- reorder_columns(core_data, "core_level")
-depthseries <- reorder_columns(depthseries, "depthseries") # material_dated has no guidance
-# Designate attributes with missing guidance
-missing_guidance <- depthseries %>%
-  select(sample_id, material_dated)
-# Remove from depthseries
-depthseries <- depthseries %>%
-  select(-material_dated)
-
-species <- reorder_columns(species, "species_definitions")
+#core_data <- reorder_columns(core_data, "core_level")
+#depthseries <- reorder_columns(depthseries, "depthseries") 
+#species <- reorder_columns(species, "species_definitions")
 
 
 ## Write data ###########
@@ -154,7 +166,8 @@ write_csv(core_data, "./data/Jones_2017/derivative/final/Jones_2017_cores.csv")
 
 write_csv(depthseries, "./data/Jones_2017/derivative/final/Jones_2017_depthseries.csv")
 
-write_csv(depthseries_figure, "./data/Jones_2017/derivative/final/Jones_2017_depthseries_from_figure.csv")
+write_csv(species, "./data/Jones_2017/derivative/final/Jones_2017_species.csv")
 
-write_csv(missing_guidance, "./data/Jones_2017/derivative/final/missing_guidance.csv")
+write_csv(impacts, "./data/Jones_2017/derivative/final/Jones_2017_impact.csv")
 
+# write_csv(depthseries_figure, "./data/Jones_2017/derivative/final/Jones_2017_depthseries_from_figure.csv")

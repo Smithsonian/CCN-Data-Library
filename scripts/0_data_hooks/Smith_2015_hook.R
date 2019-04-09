@@ -121,6 +121,10 @@ test_colnames("cores", core_data)
 test_colnames("sites", site_data) 
 test_colnames("depthseries", depthseries_data) 
 
+core_data <- reorder_columns(core_data, "core_level")
+site_data <- reorder_columns(site_data, "site_level")
+depthseries_data <- reorder_columns(depthseries_data, "depthseries_level")
+
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(core_data, depthseries_data)
