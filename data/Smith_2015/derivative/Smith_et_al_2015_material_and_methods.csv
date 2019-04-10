@@ -1,2 +1,2 @@
-coring_method,roots_flag,sediment_sieved_flag,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_sample_volume,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,loss_on_ignition_flag,loss_on_ignition_sample_volume,carbon_profile_notes,cs137_counting_method,pb210_counting_method,ra226_assumption
-other shallow corer,,roots and rhizomes included,compaction quantified,60,,30,air dried to constant mass,650,4,FALSE,30,,gamma,alpha,at asymptote
+coring_method,roots_flag,sediment_sieved_flag,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_sample_volume,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,loss_on_ignition_flag,loss_on_ignition_sample_volume,cs137_counting_method,pb210_counting_method,ra226_assumption
+other shallow corer,,roots and rhizomes included,compaction quantified,60,NA,30,air dried to constant mass,650,4,FALSE,30,gamma,alpha,at asymptote

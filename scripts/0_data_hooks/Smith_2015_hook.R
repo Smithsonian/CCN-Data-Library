@@ -58,8 +58,8 @@ depthseries_data <- raw_depthseries %>%
          ra226_activity = Ra226, ra226_activity_sd = Ra_error,
          cs137_activity = Cs137, cs137_activity_sd = Cs_error) %>%
   # create unit code for dating methods
-  mutate(pb210_unit = "disintegrations_per_minute_per_gram", 
-         cs137_unit = "disintegrations_per_minute_per_gram") %>%
+  mutate(pb210_unit = ifelse(is.na(total_pb210_activity) == FALSE, "disintegrations_per_minute_per_gram", NA),
+         cs137_unit = ifelse(is.na(cs137_activity) == FALSE, "disintegrations_per_minute_per_gram", NA)) %>%
   # convert LOI to a fraction
   mutate(fraction_organic_matter = fraction_organic_matter / 100) %>%
   separate(core_id, into=c("core_id", "depth_interval"), sep=10) %>%
@@ -70,9 +70,9 @@ depthseries_data <- raw_depthseries %>%
   select(study_id, core_id, depth_min, depth_max,
          dry_bulk_density,
          fraction_organic_matter,
+         cs137_activity, cs137_activity_sd, cs137_unit,
          total_pb210_activity, total_pb210_activity_sd,
-         ra226_activity, ra226_activity_sd, pb210_unit,
-         cs137_activity, cs137_activity_sd, cs137_unit)
+         ra226_activity, ra226_activity_sd, pb210_unit)
 
 ## ... 4C. Site-level data ##########
 site_data <- core_data %>%
