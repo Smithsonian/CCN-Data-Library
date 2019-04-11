@@ -224,7 +224,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 
 # Test for variables that are not in CCRCN guidance
 # Make sure column names are formatted correctly: 
-test_colnames("cores", internatl_core_data)
+test_colnames("core_level", internatl_core_data)
 test_colnames("depthseries", internatl_depthseries_data)
 test_colnames("species", internatl_species_data)
 

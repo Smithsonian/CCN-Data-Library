@@ -198,7 +198,7 @@ study_data_primary <- CCRCN_bib %>%
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-test_colnames("cores", Gonneea_2018_core_Data)
+test_colnames("core_level", Gonneea_2018_core_Data)
 test_colnames("depthseries", Gonneea_2018_depth_series_data)
 
 # Test relationships between core_ids at core- and depthseries-levels

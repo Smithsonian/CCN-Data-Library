@@ -106,8 +106,8 @@ study_data_primary <- CCRCN_bib %>%
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-test_colnames("cores", cores)
-test_colnames("sites", sites) 
+test_colnames("core_level", cores)
+test_colnames("site_level", sites) 
 test_colnames("depthseries", depthseries)
 test_colnames("species", species)
 

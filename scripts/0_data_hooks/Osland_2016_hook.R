@@ -320,10 +320,11 @@ study_data_primary <- CCRCN_bib %>%
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-test_colnames("cores", Osland_2016_core_data) # plot and core_time are not in the CCRCN guidance
-test_colnames("sites", Osland_2016_site_data) # elev mean_annual_precip aridity_index potential_evapotrans min_temp TIdist GMdist
-test_colnames("depthseries", Osland_2016_depth_series_data) # fraction_moisture_content
-
+test_colnames("core_level", Osland_2016_core_data) 
+test_colnames("site_level", Osland_2016_site_data) 
+test_colnames("depthseries", Osland_2016_depth_series_data) 
+test_colnames("species", Osland_2016_species_data)
+              
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(Osland_2016_core_data, Osland_2016_depth_series_data)

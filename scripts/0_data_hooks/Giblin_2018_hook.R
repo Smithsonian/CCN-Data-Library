@@ -167,8 +167,8 @@ study_data_primary <- CCRCN_bib %>%
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-test_colnames("cores", cores)
-test_colnames("sites", site_data) 
+test_colnames("core_level", cores)
+test_colnames("site_level", site_data) 
 test_colnames("depthseries", depthseries_data)
 
 # Test relationships between core_ids at core- and depthseries-levels

@@ -1,85 +1,27 @@
-## CCRCN Data Library
+## CCRCN Data Library QA/QC scripts
 # contact: Michael Lonneman, lonnemanM@si.edu 
-
-# This script contains QA/QC scripts to test validity of curated data
-
-## Test header names to ensure they meet CCRCN specifications ##########
-# Possible variable names according to the CCRCN: 
-
-site_var <- c(
-              "study_id", "site_id", 
-              "site_description", "site_latitude_max", "site_latitude_min", "site_longitude_max", "site_longitude_min", "site_description",
-              "salinity_class", "salinity_method", "salinity_notes", 
-              "vegetation_class", "vegetation_method", "vegetation_notes", 
-              "inundation_class", "inundation_method", "inundation_notes"
-              )
-
-core_var <- c(
-              "study_id", "site_id", "core_id", 
-              'core_date', "core_notes",
-              "core_latitude", "core_longitude", "core_position_accuracy", "core_position_method", "core_position_notes", 
-              "core_elevation", "core_elevation_datum", "core_elevation_accuracy", "core_elevation_method", "core_elevation_notes",
-              "salinity_class", "salinity_method", "salinity_notes", 
-              "vegetation_class", "vegetation_method", "vegetation_notes", 
-              "inundation_class", "inundation_method", "inundation_notes", 
-              "core_length_flag"
-              )
-
-soil_depth_var <- c(
-              "study_id", "site_id", "core_id", "sample_id",
-              "depth_min", "depth_max", 
-              "dry_bulk_density", "fraction_organic_matter", "fraction_carbon", "compaction_fraction", "compaction_notes", 
-              "cs137_activity", "cs137_activity_sd", 
-              "total_pb210_activity", "total_pb210_activity_sd", 
-              "ra226_activity", "ra226_activity_sd", 
-              "excess_pb210_activity", "excess_pb210_activity_sd",
-              "c14_age", "c14_age_sd", "c14_material", "c14_notes", 
-              "delta_c13", 
-              "be7_activity", "be7_activity_sd",
-              "am241_activity", "am241_activity_sd", 
-              "marker_date", "marker_type", "marker_notes", 
-              "age", "age_min", "age_max", "age_sd", 
-              "depth_interval_notes"
-)
-
-species_var <- c(
-              "study_id", "site_id", "core_id", 
-              "species_code"
-              )
-
-impact_var <- c(
-              "study_id", "site_id", "core_id", 
-              "impact_class"
-              )
+#          David Klinges, klingesD@si.edu
 
 ## Test column names function ###########
 # Make sure column names match CCRCN guidelines
 test_colnames <- function(category, dataset) {
-  categories <- c("sites", "cores", "depthseries", "species", "impacts")
-  if(category %in% categories == FALSE) {
+  
+  database_structure <- read_csv("./docs/ccrcn_database_structure.csv", col_types = cols())
+  
+  # Create a vector of all the table names
+  tables <- unique(database_structure$table)
+  
+  if(category %in% database_structure$table == FALSE) {
     # Warn user they have not supplied a valid table category and provide the list 
-    print(paste(category,paste(c("is not a valid category. Please use one of these options:", categories), collapse=" ")))
+    print(paste(category,"is not a valid category. Please use one of these options:"))
+    print(tables)
     return()
   }
   
+  # Gather column names from dataset and pull out columns with variables that are defined in our database structure
   column_names <- colnames(dataset)
-  
-  if(category == "sites"){
-    non_matching_columns <- subset(column_names, !(column_names %in% site_var))
-    
-  } else if (category == "cores") {
-    non_matching_columns <- subset(column_names, !(column_names %in% core_var))
-    
-  } else if (category == "depthseries") {
-    non_matching_columns <- subset(column_names, !(column_names %in% soil_depth_var))
-    
-  } else if (category == "species") {
-    non_matching_columns <- subset(column_names, !(column_names %in% species_var))
-    
-  } else { # category must be impacts
-    non_matching_columns <- subset(column_names, !(column_names %in% impact_var))
-    
-  }
+  valid_columns <- filter(database_structure, table == category)$attribute
+  non_matching_columns <- subset(column_names, !(column_names %in% valid_columns))
   
   if(length(non_matching_columns)==0) {
     print("Looks good! All column names match CCRCN standards")
@@ -194,10 +136,13 @@ database_structure <- read_csv("./docs/ccrcn_database_structure.csv",
                                col_types = col_types)
 
 # Subset database structure according to designated table
+# ML COMMENT: I'm not sure the filter call is working properly. I think the value (the particular table type) label cannot match the variable label. 
 database_structure <- database_structure %>%
   filter(table == table)
 
 # Create list of database attributes
+# ML COMMENT: making it a vector rather than a list might be a better idea 
+# That way select() will work effectively 
 db_attributes <- as.list(database_structure$attribute)
 
 # Create list of chosen dataset attributes

@@ -158,10 +158,10 @@ study_data_primary <- CCRCN_bib %>%
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-test_colnames("cores", cores) 
+test_colnames("core_level", cores) 
 test_colnames("depthseries", depthseries)
 test_colnames("species", species) 
-test_colnames("impacts", impacts) 
+test_colnames("impact", impacts) 
 
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
