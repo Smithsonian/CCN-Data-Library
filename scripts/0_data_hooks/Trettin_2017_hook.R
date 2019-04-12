@@ -111,7 +111,6 @@ test_colnames("site_level", sites)
 test_colnames("depthseries", depthseries)
 test_colnames("species", species)
 
-
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(cores, depthseries)
