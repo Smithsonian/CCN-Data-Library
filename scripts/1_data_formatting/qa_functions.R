@@ -119,7 +119,7 @@ fraction_not_percent <- function(dataset) {
 
 ## Re-order data according to database structure #####################
 
-reorder_columns <- function(data, table) {
+reorder_columns <- function(data, datalevel_table) {
   
 # Read in database structure
 col_types <- cols(
@@ -138,7 +138,7 @@ database_structure <- read_csv("./docs/ccrcn_database_structure.csv",
 # Subset database structure according to designated table
 # ML COMMENT: I'm not sure the filter call is working properly. I think the value (the particular table type) label cannot match the variable label. 
 database_structure <- database_structure %>%
-  filter(table == table)
+  filter(table == datalevel_table)
 
 # Create list of database attributes
 # ML COMMENT: making it a vector rather than a list might be a better idea 
