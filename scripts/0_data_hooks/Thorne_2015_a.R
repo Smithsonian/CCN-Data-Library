@@ -1,6 +1,5 @@
 ## CCRCN Data Library
-# contact: klingesd@si.edu
-#          lonnemanm@si.edu
+# contact: lonnemanm@si.edu
 
 ## 1. Citations  ###############
 # Data Citation
@@ -23,7 +22,7 @@ library(sp)
 library(rgdal)
 library(DataCombine)
 
-## 3 Read in data #########################
+## 3. Read in data #########################
 # The soil core and depthseries data is spread across multiple sheets in an excel file. 
 # Each core's depth series has it's own page but there is no core ID in the table. 
 # Instead, the sheet name is the associated core name. 
