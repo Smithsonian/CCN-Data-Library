@@ -192,54 +192,49 @@ create_multiple_geographic_coverages <- function(core_table) {
                   site_latitude_max, site_latitude_min)
 }
 
-## Create IDs from other ID ############
-create_new_IDs <- function(df, old_ID, new_ID) {
+## Create IDs from study IDs ############
 
-  if (is.character(old_ID) & is.character(new_ID)) {
+create_IDs_from_study_IDs <- function(df, # dataframe
+                                      new_ID # string for the name of the new ID column
+                                      ) {
+  
+  # create list of unique study IDs
+  old_IDs <- unique(df$study_id)
+  
+  # Iterate through old IDs
+  for (i in 1:length(old_IDs)) {
     
-    # create list of unique study IDs
-    old_ID_list <- unique(df[, old_ID])
+    # subset to a particular study
+    study <- subset(df, df[, "study_id"] == old_IDs[[i]])
     
-    # Iterate through study ID list
-    for (i in 1:length(old_ID_list)) {
-      
-      # subset to a particular study
-      study <- subset(df, df[, old_ID] == old_ID_list[[i]])
-      
-      # Create a unique ID from the row number
-      study <- study %>%
-        rowid_to_column("ID")
-      
-      # Combine the old ID with the row number separated by underscore
-      study$new <- paste0(study[, old_ID], "_", study[, "ID"])
-      
-      # Replace spaces with underscores in ID
-      study$new <- gsub(" ", "_", study$new)
-      
-      # Rename the 'new' column with the new_ID string given by the user
-      colName <- new_ID
-      study <- study %>%
-        mutate(!!quo_name(colName) := new)
-      
-      # Now remove temporary columns
-      study <- study %>%
-        select(-ID, -new)
-      
-      # Combine back together
-      if (i == 1) {
-        df_out <- study
-      } else {
-        df_out <- bind_rows(df_out, study)
-      }
+    # Create a unique ID from the row number
+    study <- study %>%
+      rowid_to_column("ID")
+    
+    # Combine the old ID with the row number separated by underscore
+    study <- study %>%
+      mutate(new = paste0(study_id, "_", ID))
+    
+    # Replace spaces with underscores in ID
+    study$new <- gsub(" ", "_", study$new)
+    
+    # Rename the 'new' column with the new_ID string given by the user
+    colName <- new_ID
+    study <- study %>%
+      mutate(!!quo_name(colName) := new)
+    
+    # Now remove temporary columns
+    study <- study %>%
+      select(-ID, -new)
+    
+    # Combine back together
+    if (i == 1) {
+      df_out <- study
+    } else {
+      df_out <- bind_rows(df_out, study)
     }
-    
-    # Return final data frame
-    df_out
-    
-  } else {
-    stop("'old_ID' and 'new_ID' must both be character strings")
   }
-
+  
   # Return final data frame
   df_out
 }

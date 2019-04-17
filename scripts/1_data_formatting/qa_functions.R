@@ -117,74 +117,75 @@ fraction_not_percent <- function(dataset) {
   }
 }
 
-## Re-order data according to database structure #####################
 
-reorder_columns <- function(data, datalevel_table) {
+## Select only controlled attributes, re-order according to database structure #####################
+
+select_and_reorder_columns <- function(data, # The dataset you seek to re-order 
+                                       datalevel_table, # A string corresponding
+                                       # to the name of the data level table
+                                       uncontrolled_file_path # File path to where
+                                       # the uncontrolled attributes should be saved
+) {
   
-# Read in database structure
-col_types <- cols(
-  attribute = col_character(),
-  table = col_character(),
-  definition = col_character(),
-  data_type = col_character(),
-  format_unit_codes = col_character(),
-  data_category = col_character(),
-  dependency_class = col_character(),
-  parent_data_category = col_character()
-)
-database_structure <- read_csv("./docs/ccrcn_database_structure.csv",
-                               col_types = col_types)
+  # Read in database structure
+  col_types <- cols(
+    attribute = col_character(),
+    table = col_character(),
+    definition = col_character(),
+    data_type = col_character(),
+    format_unit_codes = col_character(),
+    data_category = col_character(),
+    dependency_class = col_character(),
+    parent_data_category = col_character()
+  )
+  database_structure <- read_csv("./docs/ccrcn_database_structure.csv",
+                                 col_types = col_types)
+  
+  # Subset database structure according to designated table
+  database_structure <- database_structure %>%
+    filter(table == datalevel_table)
+  
+  # Create list of database attributes
+  # ML COMMENT: making it a vector rather than a list might be a better idea 
+  # That way select() will work effectively 
+  db_attributes <- c(database_structure$attribute)
+  
+  # Create list of chosen dataset attributes
+  data_attributes <- colnames(data)
+  
+  # Subset the database attributes to just those in the dataset...the output
+  #   will be in the order of the database attributes
+  data_attributes_reorder <- subset(db_attributes, db_attributes %in% data_attributes)
+  
+  # Now, use select to reorder the dataset to the right order
+  data_out <- data %>%
+    select(data_attributes_reorder)
+  
+  # ...If there are more attributes in your dataset than in the subsetted
+  #   database attributes, and therefore there are attributes in your dataset
+  #   for which there is no guidance in the database...
+  if (length(data_attributes_reorder) < length(data_attributes)) {
+    # ...Notify the user
+    print(paste0("Some columns in your data are not present in the current database guidelines.
+                 Removing these from dataset and saving to `", datalevel_table, "_uncontrolled_attributes.csv`."))
+  }
+  
+  # Figure out what attributes are missing guidance by removing all of the common
+  #   attributes between 'data' and 'data_out', leaving just the ones missing from
+  #   data_out
+  uncontrolled_attributes <- data %>%
+    select(-one_of(colnames(data_out)))
+  
+  # Save uncontrolled attributes to a .csv if they exist
+  if (ncol(uncontrolled_attributes) > 0) {
+    write_csv(uncontrolled_attributes, paste0(getwd(), uncontrolled_file_path, 
+                                              datalevel_table, "_",
+                                              "uncontrolled_attributes.csv"))
+  }
+  
+  # Return re-ordered dataset
+  return(data_out)
+  }
 
-# Subset database structure according to designated table
-# ML COMMENT: I'm not sure the filter call is working properly. I think the value (the particular table type) label cannot match the variable label. 
-database_structure <- database_structure %>%
-  filter(table == datalevel_table)
 
-# Create list of database attributes
-# ML COMMENT: making it a vector rather than a list might be a better idea 
-# That way select() will work effectively 
-db_attributes <- as.list(database_structure$attribute)
-
-# Create list of chosen dataset attributes
-data_attributes <- colnames(data)
-
-# Subset the database attributes to just those in the dataset...the output
-#   will be in the order of the database attributes
-data_attributes_reorder <- subset(db_attributes, db_attributes %in% data_attributes)
-
-# Now, use select_ to reorder the dataset to the right order
-# I tried a lot of methods to do this with various ways to parse the list of 
-#   character strings from data_attributes_reorder, and this is what worked.
-# Not completely certain why cycling through the list worked and parsing didn't...
-#   but not a concern for now
-extract_columns <- function(data) {
-  extracted_data <- data %>%
-    select_(.dots = data_attributes_reorder)
-  return(extracted_data)
-}
-
-# Create an output dataset with the correct order
-data_out <- extract_columns(data)
-
-# ...if there are more attributes in your dataset than in the subsetted
-#   database attributes, and therefore there are attributes in your dataset
-#   for which there is no guidance in the database...
-if (length(data_attributes_reorder) < length(data_attributes)) {
-  # Notify the user
-  print("Some columns in your data are not present in the current database guidelines. Appending these to the end of the dataset.")
-}
-
-# Then, bind the attributes without guidance to the end of the dataset
-# Figure out what attributes are missing guidance by removing all of the common
-#   attributes between 'data' and 'data_out', leaving just the ones missing from
-#   data_out
-missing_guidance <- data %>%
-  select(-one_of(colnames(data_out)))
-
-# Now bind those, which will put them at the end
-data_out <- data_out %>%
-  bind_cols(missing_guidance)
-
-return(data_out)
-}
 
