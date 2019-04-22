@@ -2,12 +2,11 @@
 # This script joins all CCRCN datasets into one synthesis
 # Contact: klingesd@si.edu
 
-## Prep Workspace ##############
+## 1. Prep Workspace ##############
 
 library(tidyverse)
-library(fuzzyjoin)
 
-## Read in all data sources #################
+## ....1a. Read in all data sources #################
 
 # Deegan 2012
 Deegan_2012_coredata <- read_csv( "./data/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
@@ -77,12 +76,13 @@ Thorne_2015_coredata <- read_csv( "./data/Thorne_2015_a/derivative/Thorne_et_al_
 Thorne_2015_depthseriesdata <- read_csv("./data/Thorne_2015_a/derivative/Thorne_et_al_2015_depthseries_data.csv")
 Thorne_2015_citationdata <- read_csv("./data/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
 
-## Join datasets ######################
+## 2. Join datasets ######################
 
-# Core data
+## ....2a. Core data ################
 
 # Bind
 CCRCN_coredata <- Holmquist_2018_coredata %>%
+  bind_rows(Fourqurean_2012_coredata) %>%
   bind_rows(Gonneea_2018_coredata) %>%
   bind_rows(Osland_2016_coredata) %>%
   bind_rows(Sanderman_2018_coredata) %>%
@@ -93,11 +93,13 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Trettin_2017_coredata) %>%
   bind_rows(Thorne_2015_coredata)
 
-# Depth series data
+## ....2b. Depth series data ###############
 # The Osland core IDs are initiatlized as numeric, as they're just numbers.
 #   Switch the core IDs to factor to match all other datasets
 Osland_2016_depthseriesdata$core_id <- as.factor(Osland_2016_depthseriesdata$core_id)
+
 CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
+  bind_rows(Fourqurean_2012_depthseriesdata) %>%
   bind_rows(Gonneea_2018_depthseriesdata) %>%
   bind_rows(Osland_2016_depthseriesdata) %>%
   bind_rows(Sanderman_2018_depthseriesdata) %>%
@@ -122,21 +124,22 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
 #   rename(mean_fraction_carbon = fraction_carbon,
 #          mean_dry_bulk_density = dry_bulk_density)
 
-# Impact data
+## ....2c. Impact data ##################
 CCRCN_impactdata <- Holmquist_2018_impactdata
 
-
-# Methods data
+## ....2d. Methods data #################
 CCRCN_methodsdata <- Holmquist_2018_methodsdata 
 
-# Species data
+## ....2e. Species data #################
 CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
+  bind_rows(Fourqurean_2012_speciesdata) %>%
   bind_rows(Osland_2016_speciesdata) %>%
   bind_rows(Giblin_2018_speciesdata) %>%
   bind_rows(Sanderman_2018_speciesdata)
 
-# Bind citation tables
+## ....2f. Bind citation tables ###############
 CCRCN_study_citations <- Holmquist_2018_citationdata %>%
+  # bind_rows(Fourqurean_2012_citationdata) %>%
   bind_rows(Gonneea_2018_citationdata) %>%
   bind_rows(Osland_2016_citationdata) %>%
   bind_rows(Sanderman_2018_citationdata) %>%
@@ -147,20 +150,7 @@ CCRCN_study_citations <- Holmquist_2018_citationdata %>%
   bind_rows(Trettin_2017_citationdata) %>%
   bind_rows(Thorne_2015_citationdata)
 
-# import the CCRCN bibliography 
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
-
-## Curate Bibliography ###############
-study_ids <- CCRCN_coredata %>%
-  distinct(study_id) %>%
-  select(study_id) %>%
-  arrange(study_id)
-
-CCRCN_bib <- CCRCN_bib %>%
-  fuzzy_full_join(study_ids, by = c(BIBTEXKEY = "study_id"), match_fun = str_detect)
-
-
-## QA #################
+## 3. QA #################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Ensure all core_ids are unique
@@ -169,7 +159,7 @@ results_unique_core <- test_unique_cores(CCRCN_coredata)
 # There almost 100 sets of coordinates that have two or more cores associated with them: 
 write_csv(test_unique_coords(CCRCN_coredata), "./data/QA/duplicate_cores.csv")
 
-## Write datasets #############
+## 4. Write datasets #############
 
 write_csv(CCRCN_coredata, "./data/CCRCN_synthesis/CCRCN_core_data.csv")
 write_csv(CCRCN_depthseriesdata, "./data/CCRCN_synthesis/CCRCN_depthseries_data.csv")
