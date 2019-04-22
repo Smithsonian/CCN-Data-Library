@@ -14,6 +14,12 @@ Deegan_2012_depthseriesdata <- read_csv( "./data/Deegan_2012/derivative/Deegan_e
 Deegan_2012_sitedata <- read_csv( "./data/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
 Deegan_2012_citationdata <- read_csv( "./data/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
 
+# Drexler 2009
+Drexler_2009_coredata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
+Drexler_2009_depthseriesdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
+Drexler_2009_speciesdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_species_data.csv")
+Drexler_2009_methodsdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_methods_data.csv")
+
 # Fourqurean 2012
 Fourqurean_2012_coredata <- read_csv( "./data/Fourqurean_2012/derivative/Fourqurean_2012_core_data.csv")
 Fourqurean_2012_depthseriesdata <- read_csv( "./data/Fourqurean_2012/derivative/Fourqurean_2012_depthseries_data.csv")
@@ -83,6 +89,7 @@ Thorne_2015_citationdata <- read_csv("./data/Thorne_2015_a/derivative/Thorne_et_
 
 # Bind
 CCRCN_coredata <- Holmquist_2018_coredata %>%
+  bind_rows(Drexler_2009_coredata) %>%
   bind_rows(Fourqurean_2012_coredata) %>%
   bind_rows(Gonneea_2018_coredata) %>%
   bind_rows(Osland_2016_coredata) %>%
@@ -100,6 +107,7 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
 Osland_2016_depthseriesdata$core_id <- as.factor(Osland_2016_depthseriesdata$core_id)
 
 CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
+  bind_rows(Drexler_2009_depthseriesdata) %>%
   bind_rows(Fourqurean_2012_depthseriesdata) %>%
   bind_rows(Gonneea_2018_depthseriesdata) %>%
   bind_rows(Osland_2016_depthseriesdata) %>%
@@ -129,10 +137,12 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
 CCRCN_impactdata <- Holmquist_2018_impactdata
 
 ## ....2d. Methods data #################
-CCRCN_methodsdata <- Holmquist_2018_methodsdata 
+CCRCN_methodsdata <- Holmquist_2018_methodsdata %>%
+  bind_rows(Drexler_2009_methodsdata)
 
 ## ....2e. Species data #################
 CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
+  bind_rows(Drexler_2009_methodsdata) %>%
   bind_rows(Fourqurean_2012_speciesdata) %>%
   bind_rows(Osland_2016_speciesdata) %>%
   bind_rows(Giblin_2018_speciesdata) %>%
