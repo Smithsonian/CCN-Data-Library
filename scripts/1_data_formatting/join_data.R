@@ -19,6 +19,7 @@ Fourqurean_2012_coredata <- read_csv( "./data/Fourqurean_2012/derivative/Fourqur
 Fourqurean_2012_depthseriesdata <- read_csv( "./data/Fourqurean_2012/derivative/Fourqurean_2012_depthseries_data.csv")
 Fourqurean_2012_sitedata <- read_csv( "./data/Fourqurean_2012/derivative/Fourqurean_2012_site_data.csv")
 Fourqurean_2012_speciesdata <- read_csv( "./data/Fourqurean_2012/derivative/Fourqurean_2012_species_data.csv")
+Fourqurean_2012_citationdata <- read_csv("./data/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")
 
 # Giblin and Forbrich 2018
 Giblin_2018_coredata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_cores.csv")
@@ -139,7 +140,7 @@ CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
 
 ## ....2f. Bind citation tables ###############
 CCRCN_study_citations <- Holmquist_2018_citationdata %>%
-  # bind_rows(Fourqurean_2012_citationdata) %>%
+  bind_rows(Fourqurean_2012_citationdata) %>%
   bind_rows(Gonneea_2018_citationdata) %>%
   bind_rows(Osland_2016_citationdata) %>%
   bind_rows(Sanderman_2018_citationdata) %>%
