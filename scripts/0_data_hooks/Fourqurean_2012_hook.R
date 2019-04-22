@@ -22,6 +22,7 @@ Fourqurean_raw <- read_excel("./data/Fourqurean_2012/original/JFourqurean_Global
 
 ## 3. Curate data ######################
 
+## ....3a. Prelim curation to raw dataset ###############
 # Rename and remove attributes that will not make it into any dataset
 Fourqurean <- Fourqurean_raw %>%
   separate(Location, into = c("site_id", "other"), sep = ",") %>%
@@ -86,7 +87,7 @@ source("./scripts/1_data_formatting/curation_functions.R")
 Fourqurean <- create_IDs_from_study_IDs(Fourqurean, "core_id")
 
 
-## 3a. Site-level data #############
+## ....3b. Site-level data #############
 
 site_data <- Fourqurean %>%
     filter(!is.na(site_id)) %>%
@@ -94,7 +95,7 @@ site_data <- Fourqurean %>%
     summarize_all(first) %>%
     select(study_id, site_id, vegetation_class)
     
-## 3b. Core-level data ##############
+## ....3c. Core-level data ##############
 
 core_data <- Fourqurean %>%
   rename(core_latitude = "latitude (DD.DDDD, >0 for N, <0 for S)",
@@ -109,7 +110,7 @@ core_data <- core_data %>%
   group_by(core_id) %>%
   summarise_all(first)
 
-## 3c. Depthseries data ################
+## ....3d. Depthseries data ################
 
 depthseries <- Fourqurean %>%
   # Only choose cores that have a profile
@@ -130,9 +131,9 @@ depthseries <- Fourqurean %>%
   select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon, 
          fraction_organic_matter, age)
 
-## 3d. Materials and Methods data ##############
+## ....3e. Materials and Methods data ##############
 
-## 3e. Biomass data #################
+## ....3f. Biomass data #################
 
 biomass <- Fourqurean %>%
   rename(total_biomass = "Above + Below ground seagrass biomass (g dw m-2)", 
@@ -144,7 +145,7 @@ BG_carbon = "Below ground seagrass biomass Carbon (gC m-2)") %>%
   select(study_id, site_id, core_id, total_AGB, total_BGB, total_biomass, 
          AG_carbon, BG_carbon)
 
-## 3d. Species data ################
+## ....3g. Species data ################
 
 species <- Fourqurean %>%
   select(study_id, site_id, core_id, "seagrass species") %>%
@@ -162,22 +163,26 @@ species <- Fourqurean %>%
   # Remove duplicate rows
   distinct(site_id, core_id, species_code)
 
-## 3e. Create study-level data ######
+## ....3h. Create study-level data ######
 
 # import the CCRCN bibliography 
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+CCRCN_bib <- bib2df("./docs/bibliography/CCRCN_bibliography.bib")
+CCRCN_bib_link <- read_csv("./docs/bibliography/CCRCN_bibliography_link.Csv")
+
+# Link in study IDs
+CCRCN_bib <- CCRCN_bib %>%
+  left_join(CCRCN_bib_link)
 
 # link each study to primary citation and join with synthesis table
 studies <- unique(core_data$study_id)
 
 study_data_primary <- CCRCN_bib %>%
-  select(BIBTEXKEY, CATEGORY, DOI) %>%
+  select(BIBTEXKEY, study_id, CATEGORY, DOI) %>%
   rename(bibliography_id = BIBTEXKEY,
          study_type = CATEGORY,
          doi = DOI) %>%
-  filter(bibliography_id %in% studies) %>%
-  mutate(study_id = bibliography_id, 
-         study_type = tolower(study_type)) %>%
+  filter(study_id %in% studies) %>%
+  mutate(study_type = tolower(study_type)) %>%
   select(study_id, study_type, bibliography_id, doi) 
 
 
