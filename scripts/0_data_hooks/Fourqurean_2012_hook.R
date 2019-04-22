@@ -181,7 +181,6 @@ study_data_primary <- CCRCN_bib %>%
   mutate(study_type = tolower(study_type)) %>%
   select(study_id, study_type, bibliography_id, doi) 
 
-
 ## 4. QA/QC of data ################
 
 # Re-order columns
