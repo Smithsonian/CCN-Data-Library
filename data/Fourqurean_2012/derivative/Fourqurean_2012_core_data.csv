@@ -97,8 +97,8 @@ Borg_et_al_2010,Ramla_Bay,Borg_et_al_2010_6,36.03,14.17,NA
 Borg_et_al_2010,Mellieha_Bay,Borg_et_al_2010_7,35.58,14.21,NA
 Borg_et_al_2010,Mellieha_Bay,Borg_et_al_2010_8,35.58,14.21,NA
 Borg_et_al_2010,Mellieha_Bay,Borg_et_al_2010_9,35.58,14.21,NA
-Boschker_unpublished,Europe,Boschker_unpublished_1,55.171973,10.493102,NA
-Boschker_unpublished,Europe,Boschker_unpublished_2,55.171973,10.493102,NA
+Boschker_et_al_2000,Europe,Boschker_et_al_2000_1,55.171973,10.493102,NA
+Boschker_et_al_2000,Europe,Boschker_et_al_2000_2,55.171973,10.493102,NA
 Bouillon_et_al_2004,Gazi_bay,Bouillon_et_al_2004_1,-4.22,39.3,NA
 Burns_and_Swart_1992,Jimmy_Key,Burns_and_Swart_1992_1,25.0462,-80.6446,core depth represents deposit depth
 Buzzelli_1998,Goodwin_islands,Buzzelli_1998_1,37.21261111111111,-75.60394444444445,NA
@@ -111,9 +111,9 @@ Calleja_et_al_2007,Magalluf,Calleja_et_al_2007_4,39.50416667,2.543166667,NA
 Calleja_et_al_2007,Pollença,Calleja_et_al_2007_5,39.8965,2.09205,NA
 Calleja_et_al_2007,Cala_Millor,Calleja_et_al_2007_6,39.60063333,2.390166667,NA
 Calleja_et_al_2007,Porto_Colom,Calleja_et_al_2007_7,39.41753333,2.269716667,NA
-coastally_et_al_2005,Bahia_Almirante,coastally_et_al_2005_1,9.331773,-82.319068,NA
-coastally_et_al_2005,Laguna_de_Chiriqui_Panama,coastally_et_al_2005_2,9.007419,-82.023899,NA
-coastally_et_al_2005,Outer_Lagoon,coastally_et_al_2005_3,9.221818,-82.023482,NA
+Carruthers_et_al_2005,Bahia_Almirante,Carruthers_et_al_2005_1,9.331773,-82.319068,NA
+Carruthers_et_al_2005,Laguna_de_Chiriqui_Panama,Carruthers_et_al_2005_2,9.007419,-82.023899,NA
+Carruthers_et_al_2005,Outer_Lagoon,Carruthers_et_al_2005_3,9.221818,-82.023482,NA
 Copertino_unpublished,Patos_Lagoon_Estuary,Copertino_unpublished_1,-32.072511,-52.110452,core depth represents deposit depth
 Copertino_unpublished,Patos_Lagoon_Estuary,Copertino_unpublished_10,NA,NA,core depth represents deposit depth
 Copertino_unpublished,Patos_Lagoon_Estuary,Copertino_unpublished_11,-32.071389,-52.21875,core depth represents deposit depth
@@ -149,6 +149,7 @@ Cotner_et_al_2004,Baffin_Bay,Cotner_et_al_2004_7,27.2738,-97.607,NA
 Cotner_et_al_2004,Baffin_Bay,Cotner_et_al_2004_8,27.25,-97.615,NA
 Cotner_et_al_2004,Baffin_Bay,Cotner_et_al_2004_9,27.281,-97.42,NA
 Danovaro_1996,NW_Marconi,Danovaro_1996_1,44.2,9.12,NA
+Danovaro_and_Fabiano_1995,Marconi_Gulf,Danovaro_and_Fabiano_1995_1,44.3321,9.2353,NA
 Danovaro_and_Gambi_2002,NW_Marconi,Danovaro_and_Gambi_2002_1,44.2,9.12,NA
 Danovaro_et_al_1994,Gulf_of_Marconi,Danovaro_et_al_1994_1,44.333,9.233,NA
 Danovaro_et_al_1994,Gulf_of_Marconi,Danovaro_et_al_1994_10,44.333,9.233,NA
@@ -168,7 +169,6 @@ Danovaro_et_al_1994,Gulf_of_Marconi,Danovaro_et_al_1994_6,44.333,9.233,NA
 Danovaro_et_al_1994,Gulf_of_Marconi,Danovaro_et_al_1994_7,44.333,9.233,NA
 Danovaro_et_al_1994,Gulf_of_Marconi,Danovaro_et_al_1994_8,44.333,9.233,NA
 Danovaro_et_al_1994,Gulf_of_Marconi,Danovaro_et_al_1994_9,44.333,9.233,NA
-Danovaro_et_al_1995,Marconi_Gulf,Danovaro_et_al_1995_1,44.3321,9.2353,NA
 De_Falco_2006,Gulf_of_Oristano,De_Falco_2006_1,39.845,8.519,NA
 De_Falco_2006,Gulf_of_Oristano,De_Falco_2006_2,39.845,8.519,NA
 De_Falco_2006,Gulf_of_Oristano,De_Falco_2006_3,39.845,8.519,NA
@@ -1792,8 +1792,8 @@ Povidisa_and_Delefosse_unpublished,Thailand,Povidisa_and_Delefosse_unpublished_6
 Povidisa_and_Delefosse_unpublished,Thailand,Povidisa_and_Delefosse_unpublished_7,7.50765,99.3033,core depth represents deposit depth
 Povidisa_and_Delefosse_unpublished,Thailand,Povidisa_and_Delefosse_unpublished_8,7.50765,99.3033,core depth represents deposit depth
 Povidisa_and_Delefosse_unpublished,Thailand,Povidisa_and_Delefosse_unpublished_9,7.50765,99.3033,core depth represents deposit depth
-Pulich_1987,Redfish_Bay,Pulich_1987_1,27.75,-97.23,core depth represents deposit depth
-Pulich_1987,Laguna_Madre,Pulich_1987_2,27.52,-97.3,core depth represents deposit depth
+Pulich_1985,Redfish_Bay,Pulich_1985_1,27.75,-97.23,core depth represents deposit depth
+Pulich_1985,Laguna_Madre,Pulich_1985_2,27.52,-97.3,core depth represents deposit depth
 Qu_et_al_2006,Lake_Illawara,Qu_et_al_2006_1,-34.32,150.5,NA
 Rigollet_et_al_2004,Venice_lagoon,Rigollet_et_al_2004_1,45.233,12.26,NA
 Rosenfeld_1979,Florida_Bay,Rosenfeld_1979_1,25.0293,-80.5403,core depth represents deposit depth

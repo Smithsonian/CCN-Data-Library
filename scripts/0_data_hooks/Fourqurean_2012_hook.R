@@ -42,11 +42,11 @@ references <- c(na.omit(unique(Fourqurean$Reference)))
   
 # Manually add each study ID
 study_id_list <- c("Fourqurean_unpublished", "Orem_et_al_1999", "Figueiredo_da_Silva_et_al_2009", 
-             "Fourqurean_et_al_2010", "coastally_et_al_2005", "Rosenfeld_1979", 
-             "Mellors_et_al_2002", "Danovaro_et_al_1995", "Gonneea_et_al_2004", 
-             "Marba_unpublished", "Grady_1981", "Pulich_1987", "De_Falco_2006", 
+             "Fourqurean_et_al_2010", "Carruthers_et_al_2005", "Rosenfeld_1979", 
+             "Mellors_et_al_2002", "Danovaro_and_Fabiano_1995", "Gonneea_et_al_2004", 
+             "Marba_unpublished", "Grady_1981", "Pulich_1985", "De_Falco_2006", 
              "Furuta_2002", "De_Troch_et_al_2006", "Holmer_et_al_2003",
-             "Boschker_unpublished", "Vichkovitten_and_Holmer_2005", "Holmer_et_al_2006", 
+             "Boschker_et_al_2000", "Vichkovitten_and_Holmer_2005", "Holmer_et_al_2006", 
              "Holmer_et_al_2009", "Leduc_and_Probert_2011", "Yamamuro_et_al_1993", 
              "Pedersen_et_al_1997", "Barrón_et_al_2004",
              "Calleja_et_al_2007", "Holmer_and_Frederiksen_2007", "Mateo_and_Romero_1997", 
@@ -166,22 +166,18 @@ species <- Fourqurean %>%
 ## ....3h. Create study-level data ######
 
 # import the CCRCN bibliography 
-CCRCN_bib <- bib2df("./docs/bibliography/CCRCN_bibliography.bib")
-CCRCN_bib_link <- read_csv("./docs/bibliography/CCRCN_bibliography_link.Csv")
-
-# Link in study IDs
-CCRCN_bib <- CCRCN_bib %>%
-  left_join(CCRCN_bib_link)
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
 
 # link each study to primary citation and join with synthesis table
 studies <- unique(core_data$study_id)
 
 study_data_primary <- CCRCN_bib %>%
-  select(BIBTEXKEY, study_id, CATEGORY, DOI) %>%
+  select(BIBTEXKEY, CATEGORY, DOI) %>%
   rename(bibliography_id = BIBTEXKEY,
          study_type = CATEGORY,
          doi = DOI) %>%
-  filter(study_id %in% studies) %>%
+  filter(bibliography_id %in% studies) %>%
+  mutate(study_id = bibliography_id) %>%
   mutate(study_type = tolower(study_type)) %>%
   select(study_id, study_type, bibliography_id, doi) 
 
@@ -203,4 +199,4 @@ write_csv(site_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_site_dat
 write_csv(core_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_core_data.csv")
 write_csv(species, "./data/Fourqurean_2012/derivative/Fourqurean_2012_species_data.csv")
 write_csv(biomass, "./data/Fourqurean_2012/derivative/Fourqurean_2012_biomass_data.csv")
-write_csv(study_data_primary, "./data/Fourqurean_2012/derivatve/Fourqurean_2012_study_citations.csv")
+write_csv(study_data_primary, "./data/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")

@@ -52,9 +52,9 @@ Florida_Keys,Fourqurean_et_al_2010_27,Thalassia testudinum
 Florida_Keys,Fourqurean_et_al_2010_28,Thalassia testudinum
 Florida_Keys,Fourqurean_et_al_2010_29,Thalassia testudinum
 Florida_Keys,Fourqurean_et_al_2010_30,Thalassia testudinum
-Bahia_Almirante,coastally_et_al_2005_1,Thalassia testudinum
-Laguna_de_Chiriqui_Panama,coastally_et_al_2005_2,Thalassia testudinum
-Outer_Lagoon,coastally_et_al_2005_3,Thalassia testudinum
+Bahia_Almirante,Carruthers_et_al_2005_1,Thalassia testudinum
+Laguna_de_Chiriqui_Panama,Carruthers_et_al_2005_2,Thalassia testudinum
+Outer_Lagoon,Carruthers_et_al_2005_3,Thalassia testudinum
 Florida_Bay,Rosenfeld_1979_1,Thalassia testudinum
 Ellie_Pt,Mellors_et_al_2002_1,Zostera capricorni
 Lugger_Bay,Mellors_et_al_2002_2,Halodule uninervis
@@ -64,7 +64,7 @@ Geoffrey_Bay,Mellors_et_al_2002_5,Halodule uninervis
 Bolger_Bay,Mellors_et_al_2002_6,Halophila minor
 Windy_Point,Mellors_et_al_2002_7,Zostera capricorni
 Port_Dennison,Mellors_et_al_2002_8,Halodule uninervis
-Marconi_Gulf,Danovaro_et_al_1995_1,Posidonia oceanica
+Marconi_Gulf,Danovaro_and_Fabiano_1995_1,Posidonia oceanica
 Chelem_Lagoon,Gonneea_et_al_2004_1,Halodule wrightii
 Celestun_Lagoon,Gonneea_et_al_2004_2,Halodule wrightii
 Laguna_de_Terminos,Gonneea_et_al_2004_3,Thalassia testudinum
@@ -81,8 +81,8 @@ St._Andrews_Bay_Florida_USA,Grady_1981_7,Thalassia
 St._Andrews_Bay_Florida_USA,Grady_1981_8,Thalassia
 St._Andrews_Bay_Florida_USA,Grady_1981_9,Thalassia
 St._Andrews_Bay_Florida_USA,Grady_1981_10,Thalassia
-Redfish_Bay,Pulich_1987_1,Halodule wrightii
-Laguna_Madre,Pulich_1987_2,Halodule wrightii
+Redfish_Bay,Pulich_1985_1,Halodule wrightii
+Laguna_Madre,Pulich_1985_2,Halodule wrightii
 Gulf_of_Oristano,De_Falco_2006_1,Posidonia oceanica
 Punta_Allen,De_Troch_et_al_2006_1,Thalassia
 Pujada_Bay,De_Troch_et_al_2006_2,Thalassia
@@ -101,8 +101,8 @@ Mallorca,Holmer_et_al_2003_9,Posidonia oceanica
 Mallorca,Holmer_et_al_2003_10,Posidonia oceanica
 Mallorca,Holmer_et_al_2003_11,Posidonia oceanica
 Mallorca,Holmer_et_al_2003_12,Posidonia oceanica
-Europe,Boschker_unpublished_1,Zostera marina
-Europe,Boschker_unpublished_2,Zostera marina
+Europe,Boschker_et_al_2000_1,Zostera marina
+Europe,Boschker_et_al_2000_2,Zostera marina
 Denmark,Vichkovitten_and_Holmer_2005_1,Zostera marina
 Denmark,Vichkovitten_and_Holmer_2005_6,Zostera marina
 Denmark,Holmer_et_al_2006_1,Zostera marina
@@ -666,9 +666,9 @@ Florida_Keys,Fourqurean_et_al_2010_27,Syringodium filiforme
 Florida_Keys,Fourqurean_et_al_2010_28,NA
 Florida_Keys,Fourqurean_et_al_2010_29,Syringodium filiforme
 Florida_Keys,Fourqurean_et_al_2010_30,Syringodium filiforme
-Bahia_Almirante,coastally_et_al_2005_1,NA
-Laguna_de_Chiriqui_Panama,coastally_et_al_2005_2,NA
-Outer_Lagoon,coastally_et_al_2005_3,NA
+Bahia_Almirante,Carruthers_et_al_2005_1,NA
+Laguna_de_Chiriqui_Panama,Carruthers_et_al_2005_2,NA
+Outer_Lagoon,Carruthers_et_al_2005_3,NA
 Florida_Bay,Rosenfeld_1979_1,NA
 Ellie_Pt,Mellors_et_al_2002_1,NA
 Lugger_Bay,Mellors_et_al_2002_2,NA
@@ -678,7 +678,7 @@ Geoffrey_Bay,Mellors_et_al_2002_5,NA
 Bolger_Bay,Mellors_et_al_2002_6,NA
 Windy_Point,Mellors_et_al_2002_7,NA
 Port_Dennison,Mellors_et_al_2002_8,NA
-Marconi_Gulf,Danovaro_et_al_1995_1,NA
+Marconi_Gulf,Danovaro_and_Fabiano_1995_1,NA
 Chelem_Lagoon,Gonneea_et_al_2004_1,NA
 Celestun_Lagoon,Gonneea_et_al_2004_2,Ruppia maritima
 Laguna_de_Terminos,Gonneea_et_al_2004_3,NA
@@ -695,8 +695,8 @@ St._Andrews_Bay_Florida_USA,Grady_1981_7,Halodule
 St._Andrews_Bay_Florida_USA,Grady_1981_8,Halodule
 St._Andrews_Bay_Florida_USA,Grady_1981_9,Halodule
 St._Andrews_Bay_Florida_USA,Grady_1981_10,Halodule
-Redfish_Bay,Pulich_1987_1,Halophila engelmanni
-Laguna_Madre,Pulich_1987_2,Halophila engelmanni
+Redfish_Bay,Pulich_1985_1,Halophila engelmanni
+Laguna_Madre,Pulich_1985_2,Halophila engelmanni
 Gulf_of_Oristano,De_Falco_2006_1,NA
 Punta_Allen,De_Troch_et_al_2006_1,Halodule
 Pujada_Bay,De_Troch_et_al_2006_2,Halodule
@@ -715,8 +715,8 @@ Mallorca,Holmer_et_al_2003_9,NA
 Mallorca,Holmer_et_al_2003_10,NA
 Mallorca,Holmer_et_al_2003_11,NA
 Mallorca,Holmer_et_al_2003_12,NA
-Europe,Boschker_unpublished_1,NA
-Europe,Boschker_unpublished_2,NA
+Europe,Boschker_et_al_2000_1,NA
+Europe,Boschker_et_al_2000_2,NA
 Denmark,Vichkovitten_and_Holmer_2005_1,NA
 Denmark,Vichkovitten_and_Holmer_2005_6,NA
 Denmark,Holmer_et_al_2006_1,NA
@@ -1256,8 +1256,8 @@ St._Andrews_Bay_Florida_USA,Grady_1981_7,NA
 St._Andrews_Bay_Florida_USA,Grady_1981_8,NA
 St._Andrews_Bay_Florida_USA,Grady_1981_9,NA
 St._Andrews_Bay_Florida_USA,Grady_1981_10,NA
-Redfish_Bay,Pulich_1987_1,Ruppia maritima
-Laguna_Madre,Pulich_1987_2,Ruppia maritima
+Redfish_Bay,Pulich_1985_1,Ruppia maritima
+Laguna_Madre,Pulich_1985_2,Ruppia maritima
 Punta_Allen,De_Troch_et_al_2006_1,Syringodium
 Pujada_Bay,De_Troch_et_al_2006_2,Syringodium
 S_Sulawesi,Alongi_et_al_2008_1,Cymodocea rotundata
