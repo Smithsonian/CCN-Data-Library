@@ -96,6 +96,24 @@ cores_updated <- age_depthseries %>%
   select(study_id, site_id, core_id, core_latitude, core_longitude, core_elevation, core_position_notes, core_elevation_datum, 
          salinity_class, vegetation_class, core_length_flag)
 
+## ....3h. Create study-level data ######
+
+# import the CCRCN bibliography 
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+
+# link each study to primary citation and join with synthesis table
+studies <- unique(cores_updated$study_id)
+
+study_data_primary <- CCRCN_bib %>%
+  select(BIBTEXKEY, CATEGORY, DOI) %>%
+  rename(bibliography_id = BIBTEXKEY,
+         study_type = CATEGORY,
+         doi = DOI) %>%
+  filter(bibliography_id %in% studies) %>%
+  mutate(study_id = bibliography_id) %>%
+  mutate(study_type = tolower(study_type)) %>%
+  select(study_id, study_type, bibliography_id, doi) 
+
 ## impact data ######################
 impacts <- impacts %>%
   mutate(impact_class = tolower(impact_class))
@@ -115,3 +133,4 @@ results <- test_core_relationships(cores_updated, depthseries_joined)
 write_csv(depthseries_joined, "./data/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
 write_csv(cores_updated, "./data/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
 write_csv(impacts, "./data/Drexler_2009/derivative/Drexler_et_al_2009_impacts.csv")
+write_csv(study_data_primary, "./data/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")

@@ -19,6 +19,7 @@ Drexler_2009_coredata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al
 Drexler_2009_depthseriesdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
 Drexler_2009_speciesdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_species_data.csv")
 Drexler_2009_methodsdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_methods_data.csv")
+Drexler_2009_citationdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")
 
 # Fourqurean 2012
 Fourqurean_2012_coredata <- read_csv( "./data/Fourqurean_2012/derivative/Fourqurean_2012_core_data.csv")
@@ -149,7 +150,12 @@ CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
   bind_rows(Sanderman_2018_speciesdata)
 
 ## ....2f. Bind citation tables ###############
+# Remove a few studies from syntheses
+Holmquist_2018_citationdata <- Holmquist_2018_citationdata %>%
+  filter(study_id != "Drexler_et_al_2009")
+
 CCRCN_study_citations <- Holmquist_2018_citationdata %>%
+  bind_rows(Drexler_2009_citationdata) %>%
   bind_rows(Fourqurean_2012_citationdata) %>%
   bind_rows(Gonneea_2018_citationdata) %>%
   bind_rows(Osland_2016_citationdata) %>%
