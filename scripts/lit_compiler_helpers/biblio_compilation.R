@@ -18,15 +18,18 @@ CCRCN_bib <- bib2df("./docs/bibliography/CCRCN_bibliography.bib")
 study_ids <- CCRCN_coredata %>%
   distinct(study_id) %>%
   select(study_id) %>%
-  arrange(study_id)
+  mutate(temp_id = study_id) %>%
+  mutate(author_year = substr("_", "_")) %>%
+  separate(temp_id, into = c("author", "rest"),  sep = "_") %>%
+  mutate(author = gsub(pattern = '([[:upper:]])', perl = TRUE, replacement = '\\L\\1', author))
 
 # fuzzyjoin
-CCRCN_bib_df <- fuzzy_join(study_ids, CCRCN_bib, by = c("study_id" = "BIBTEXKEY"), 
-                        match_fun = str_detect, mode = "full")
+CCRCN_bib_df <- fuzzy_join(CCRCN_bib, study_ids, by = c("BIBTEXKEY" = "author"), 
+                        match_fun = str_match, mode = "full")
 
 # Create a df of just study_id and BIBTEXKEY to link bib entries
 CCRCN_bib_link <- CCRCN_bib_df %>%
-  select(study_id, BIBTEXKEY)
+  select(study_id, BIBTEXKEY, author)
 
 
 ## Write bibliography ################
