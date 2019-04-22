@@ -5,8 +5,33 @@
 ## Prep Workspace ##############
 
 library(tidyverse)
+library(fuzzyjoin)
 
 ## Read in all data sources #################
+
+# Deegan 2012
+Deegan_2012_coredata <- read_csv( "./data/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
+Deegan_2012_depthseriesdata <- read_csv( "./data/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")
+Deegan_2012_sitedata <- read_csv( "./data/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
+Deegan_2012_citationdata <- read_csv( "./data/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
+
+# Fourqurean 2012
+Fourqurean_2012_coredata <- read_csv( "./data/Fourqurean_2012/derivative/Fourqurean_2012_core_data.csv")
+Fourqurean_2012_depthseriesdata <- read_csv( "./data/Fourqurean_2012/derivative/Fourqurean_2012_depthseries_data.csv")
+Fourqurean_2012_sitedata <- read_csv( "./data/Fourqurean_2012/derivative/Fourqurean_2012_site_data.csv")
+Fourqurean_2012_speciesdata <- read_csv( "./data/Fourqurean_2012/derivative/Fourqurean_2012_species_data.csv")
+
+# Giblin and Forbrich 2018
+Giblin_2018_coredata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_cores.csv")
+Giblin_2018_depthseriesdata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_depthseries.csv")
+Giblin_2018_sitedata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_sites.csv")
+Giblin_2018_speciesdata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species.csv")
+Giblin_2018_citationdata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")
+
+# Gonneaa 2018
+Gonneea_2018_coredata <- read_csv("./data/Gonneea_2018/derivative/Gonneea_et_al_2018_cores.csv")
+Gonneea_2018_depthseriesdata <- read_csv("./data/Gonneea_2018/derivative/Gonneea_et_al_2018_depthseries.csv")
+Gonneea_2018_citationdata <- read_csv("./data/Gonneea_2018/derivative/Gonneea_et_al_2018_study_citations.csv")
 
 # Holmquist 2018
 Holmquist_2018_coredata <- read_csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_core_data.csv")
@@ -15,11 +40,6 @@ Holmquist_2018_impactdata <- read_csv("./data/Holmquist_2018/derivative/V1_Holmq
 Holmquist_2018_methodsdata <- read_csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_methods_data.csv")
 Holmquist_2018_speciesdata <- read_csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_species_data.csv")
 Holmquist_2018_citationdata <- read_csv("./data/Holmquist_2018/derivative/V1_Holmquist_2018_study_citations.csv")
-
-# Gonneaa 2018
-Gonneea_2018_coredata <- read_csv("./data/Gonneea_2018/derivative/Gonneea_et_al_2018_cores.csv")
-Gonneea_2018_depthseriesdata <- read_csv("./data/Gonneea_2018/derivative/Gonneea_et_al_2018_depthseries.csv")
-Gonneea_2018_citationdata <- read_csv("./data/Gonneea_2018/derivative/Gonneea_et_al_2018_study_citations.csv")
 
 # Osland 2016
 Osland_2016_coredata <- read_csv("./data/Osland_2016/derivative/Osland_et_al_2016_cores.csv")
@@ -39,13 +59,6 @@ Schile_2017_depthseriesdata <- read_csv("./data/Schile-Beers_2017/derivative/Sch
 Schile_2017_coredata <- read_csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
 Schile_2017_sitedata <- read_csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
 Schile_2017_citationdata <- read_csv("./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")
-
-# Giblin and Forbrich 2018
-Giblin_2018_coredata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_cores.csv")
-Giblin_2018_depthseriesdata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_depthseries.csv")
-Giblin_2018_sitedata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_sites.csv")
-Giblin_2018_speciesdata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species.csv")
-Giblin_2018_citationdata <- read_csv("./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")
 
 # Smith et al. 2015
 Smith_2015_coredata <- read_csv("./data/Smith_2015/derivative/Smith_et_al_2015_cores.csv")
@@ -133,6 +146,19 @@ CCRCN_study_citations <- Holmquist_2018_citationdata %>%
   bind_rows(Smith_2015_citationdata) %>%
   bind_rows(Trettin_2017_citationdata) %>%
   bind_rows(Thorne_2015_citationdata)
+
+# import the CCRCN bibliography 
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+
+## Curate Bibliography ###############
+study_ids <- CCRCN_coredata %>%
+  distinct(study_id) %>%
+  select(study_id) %>%
+  arrange(study_id)
+
+CCRCN_bib <- CCRCN_bib %>%
+  fuzzy_full_join(study_ids, by = c(BIBTEXKEY = "study_id"), match_fun = str_detect)
+
 
 ## QA #################
 source("./scripts/1_data_formatting/qa_functions.R")
