@@ -13,6 +13,8 @@
 ## 2. Prep workspace #######################
 library(tidyverse)
 library(readxl)
+library(bib2df)
+library(RefManageR)
 
 # Read in data
 Fourqurean_raw <- read_excel("./data/Fourqurean_2012/original/JFourqurean_Global_SeagrassSoil_Corg.xls",
@@ -160,6 +162,25 @@ species <- Fourqurean %>%
   # Remove duplicate rows
   distinct(site_id, core_id, species_code)
 
+## 3e. Create study-level data ######
+
+# import the CCRCN bibliography 
+CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+
+# link each study to primary citation and join with synthesis table
+studies <- unique(core_data$study_id)
+
+study_data_primary <- CCRCN_bib %>%
+  select(BIBTEXKEY, CATEGORY, DOI) %>%
+  rename(bibliography_id = BIBTEXKEY,
+         study_type = CATEGORY,
+         doi = DOI) %>%
+  filter(bibliography_id %in% studies) %>%
+  mutate(study_id = bibliography_id, 
+         study_type = tolower(study_type)) %>%
+  select(study_id, study_type, bibliography_id, doi) 
+
+
 ## 4. QA/QC of data ################
 
 # Re-order columns
@@ -176,4 +197,5 @@ write_csv(depthseries, "./data/Fourqurean_2012/derivative/Fourqurean_2012_depths
 write_csv(site_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_site_data.csv")
 write_csv(core_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_core_data.csv")
 write_csv(species, "./data/Fourqurean_2012/derivative/Fourqurean_2012_species_data.csv")
-
+write_csv(biomass, "./data/Fourqurean_2012/derivative/Fourqurean_2012_biomass_data.csv")
+write_csv(study_data_primary, "./data/Fourqurean_2012/derivatve/Fourqurean_2012_study_citations.csv")
