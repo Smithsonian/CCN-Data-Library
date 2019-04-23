@@ -28,9 +28,9 @@ Fourqurean <- Fourqurean_raw %>%
   separate(Location, into = c("site_id", "other"), sep = ",") %>%
   mutate(site_id = gsub(" ", "_", site_id)) %>%
   rename(core_id = "Core or site#", vegetation_class = "Seagrass or unvegetated") %>%
-  select(-linenumber, -"Depth of accumulated sediment (cm)", -"Porosity (%)", 
+  select(-linenumber, -"Porosity (%)", 
          -"Soil organic carbon density (mg/mL)", -"Soil organic matter density (mg/mL)",
-         -"loss on ignition (%)", -"coreserial") %>%
+         -"loss on ignition (%)") %>%
   mutate(vegetation_class = tolower(vegetation_class)) %>%
   # Standardize ontology for vegetation_class
   mutate(vegetation_class = ifelse(vegetation_class != "seagrass", 
@@ -78,14 +78,43 @@ study_id_list <- c("Fourqurean_unpublished", "Orem_et_al_1999", "Figueiredo_da_S
 # Create a tibble as a linking key between references and study IDs
 studies <- tibble("Reference" = c(references), "study_id" = c(study_id_list))
 
+# Create another linking df for references and coreserial, which is the only
+#   unique identifier for cores
+core_identifier <- Fourqurean %>%
+  select(coreserial, Reference) %>%
+  filter(!is.na(Reference))
+
+# Join df's together
+studies <- studies %>%
+  left_join(core_identifier) %>%
+  group_by(coreserial) %>%
+  summarize_all(first)
+
 Fourqurean <- Fourqurean %>%
-  left_join(studies)
+  left_join(studies, by = "coreserial")
 
-# Create core IDs from study IDs
+## Create core IDs from study IDs 
+Fourqurean_core <- Fourqurean %>%
+  select(coreserial, study_id) %>%
+  group_by(coreserial) %>%
+  summarize(study_id = first(study_id))
 
+# Note that you have to pass core-level data to this function
 source("./scripts/1_data_formatting/curation_functions.R")
-Fourqurean <- create_IDs_from_study_IDs(Fourqurean, "core_id")
+Fourqurean_core <- create_IDs_from_study_IDs_corelevel(Fourqurean_core, "core_id")
+Fourqurean_core <- Fourqurean_core %>%
+  select(-study_id)
 
+# Now join back to master dataset
+Fourqurean <- Fourqurean %>%
+  select(-core_id) %>%
+  full_join(Fourqurean_core, by = "coreserial")
+
+# There's a few cores that don't have a study ID, a mistake traced back to 
+#   original data. Luckily all are in same study
+# Fourqurean <- Fourqurean %>%
+#   mutate(study_id)
+# N. Marba, unpublished data
 
 ## ....3b. Site-level data #############
 
@@ -114,22 +143,43 @@ core_data <- core_data %>%
 
 depthseries <- Fourqurean %>%
   # Only choose cores that have a profile
-  filter(`Surficial or profile?` == "P") %>%
-  mutate(study_id = "Fourqurean_2012") %>%
+  dplyr::filter(`Surficial or profile?` == "P") %>%
   # The depth increment attribute is messy and needs some typos fixed/substitutions
   mutate(`Depth increment of slice` = gsub("--", "-", `Depth increment of slice`)) %>%
   mutate(`Depth increment of slice` = gsub("core bottom", "165-167", `Depth increment of slice`)) %>%
   separate(`Depth increment of slice`, into = c("depth_min", "depth_max"), sep = "-") %>%
+  
+  # Depth intervals are also split between multiple columns, depending on the core/study...
+  #   annoying indeed. I have some fixes.
+  separate("Depth of accumulated sediment (cm)", into = c("depth_min_1", "depth_max_1"), sep = "-") %>%
+  mutate(depth_min = gsub("\\D", "", depth_min)) %>%
+  mutate(depth_min = ifelse(is.na(depth_min), depth_min_1, depth_min)) %>%
+  mutate(depth_max = gsub("\\D", "", depth_max)) %>%
+  mutate(depth_max = ifelse(is.na(depth_max), depth_max_1, depth_max)) %>%
+  
   rename(# dry bulk density was measured in g/mL, which is the same as g/c3
          dry_bulk_density = "Dry Bulk density (g/ml)",
          fraction_carbon = "Soil total Carbon contet (%dw)",
          fraction_organic_matter = "Soil organic Carbon content (%dw)",
          age = "age#") %>%
+  
+  # Fix some issues with age: parsed as character, some entries are approx and not #s
+  mutate(age = gsub("B.P.", "", age)) %>%
+  mutate(age = gsub(" yBP", "", age)) %>%
+  separate(age, into = c("age", "age_2"), sep = "-") %>%
+  mutate(age = as.double(age), age_2 = as.double(age_2)) %>%
+  mutate(age = ifelse(!is.na(age_2), ((age + age_2)/2), age)) %>%
+  
   # Change percent to fraction
   mutate(fraction_carbon = fraction_carbon/100, 
          fraction_organic_matter = fraction_organic_matter/100) %>%
-  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon, 
+  select(study_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon, 
          fraction_organic_matter, age)
+
+# Join site_ids from core_data
+depthseries <- core_data %>%
+  select(core_id, site_id) %>%
+  right_join(depthseries, by = "core_id")
 
 ## ....3e. Materials and Methods data ##############
 
