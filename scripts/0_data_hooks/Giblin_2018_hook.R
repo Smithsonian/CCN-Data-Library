@@ -46,53 +46,35 @@ dt1 <-read.csv(infile1,header=F
 write_csv(dt1, "./data/Giblin_2018/original/MAR-NE-MarshSedChemActivity.csv")
 
 # if you read in the original data from the CCRCN library: 
-#dt1 <- read.csv("./data/Giblin_2018/original/MAR-NE-MarshSedChemActivity.csv")
-#dt1 <- select(dt1, -X)
+dt1 <- read.csv("./data/Giblin_2018/original/MAR-NE-MarshSedChemActivity.csv")
 
 ## 3. Process data to meet CCRCN standards ############
 
 ## ... 3A. Prep depthseries data ############
 depthseries_data <- dt1 %>%
   rename(core_id = Core.ID, 
-         sample_id = section,
          dry_bulk_density = bulk.density..paren.g.per.cm3.paren., 
          section_depth = section.depth..paren.cm.paren., 
          cs137_activity = v_137Cs..paren.mBq.per.g.paren., 
-         total_pb210_activity = v_210Pb..paren.Bq.per.g.paren.) %>%
+         total_pb210_activity = v_210Pb..paren.Bq.per.g.paren.,
+         bi214_activity = v_214.Bi..paren.Bq.per.g.paren.,
+         pb214_activity = v_214Pb..paren.Bq.per.g.paren.) %>%
   mutate(fraction_carbon = C.percent. / 100,
          cs137_unit = "millibecquerel_per_gram",
-         pb210_unit = "becquerel_per_gram") %>%
+         pb210_unit = "becquerel_per_gram", 
+         pb214_unit = "becquerel_per_gram", 
+         bi214_unit = "becquerel_per_gram") %>%
   # create unique core IDs
   mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
          study_id = "Giblin_and_Forbrich_2018",
          site_id = "Nelson_Island_Creek") %>%
-  mutate(fraction_carbon = gsub("NaN", "NA", fraction_carbon)) %>%
-  select(study_id, site_id, core_id, sample_id, dry_bulk_density, fraction_carbon, section_depth,
-         cs137_activity, cs137_unit, total_pb210_activity, pb210_unit)
-
-## ... ... 2Ai. calculate min and max depth variables ###############
-# I am sure there is a way to do this in dplyr but I can't figure it out right now: 
-min <- 0
-max <- 0
-depth_min <- vector(length = nrow(depthseries_data))
-depth_max <- vector(length = nrow(depthseries_data))
-
-# for each core, iterate on the section_depth to calculate min and max depth for each section
-for (i in 1:nrow(depthseries_data)) {
-  if(depthseries_data[i,"sample_id"] == 1) {
-    min <- 0
-    max <- 0
-  }
-  max <- max + depthseries_data[i,"section_depth"]
-  depth_max[i] <- max
-  depth_min[i] <- min
-  min <- max
-}
-
-depthseries_data <- cbind(depthseries_data, depth_max, depth_min)
-depthseries_data <- depthseries_data %>%
-  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon,
-         cs137_activity, cs137_unit, total_pb210_activity, pb210_unit)
+  mutate(fraction_carbon = gsub("NaN", "NA", fraction_carbon), 
+         depth_min = section - 1, 
+         depth_max = section + 1) %>%
+  select(study_id, site_id, core_id, depth_min, depth_max, 
+         dry_bulk_density, fraction_carbon, 
+         cs137_activity, cs137_unit, total_pb210_activity, pb210_unit,
+         pb214_activity, pb214_unit, bi214_activity, bi214_unit)
 
 ## ... 2B. core level data ###################
 cores <- dt1 %>%
