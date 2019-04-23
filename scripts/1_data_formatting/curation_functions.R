@@ -192,20 +192,20 @@ create_multiple_geographic_coverages <- function(core_table) {
                   site_latitude_max, site_latitude_min)
 }
 
-## Create IDs from study IDs ############
+## Create IDs from study IDs FOR CORE-LEVEL DATA ############
 
-create_IDs_from_study_IDs <- function(df, # dataframe
+create_IDs_from_study_IDs_corelevel <- function(df, # dataframe
                                       new_ID # string for the name of the new ID column
                                       ) {
-  
-  # create list of unique study IDs
-  old_IDs <- unique(df$study_id)
+  # Extract all study IDs
+  studies <- unique(df$study_id)
   
   # Iterate through old IDs
-  for (i in 1:length(old_IDs)) {
+  for (i in 1:length(studies)) {
     
-    # subset to a particular study
-    study <- subset(df, df[, "study_id"] == old_IDs[[i]])
+    # Subset to a particular study
+    study <- df %>%
+      filter(study_id == studies[[i]])
     
     # Create a unique ID from the row number
     study <- study %>%
