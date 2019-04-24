@@ -144,7 +144,7 @@ CCRCN_methodsdata <- Holmquist_2018_methodsdata %>%
 
 ## ....2e. Species data #################
 CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
-  bind_rows(Drexler_2009_methodsdata) %>%
+  bind_rows(Drexler_2009_speciesdata) %>%
   bind_rows(Fourqurean_2012_speciesdata) %>%
   bind_rows(Osland_2016_speciesdata) %>%
   bind_rows(Giblin_2018_speciesdata) %>%
