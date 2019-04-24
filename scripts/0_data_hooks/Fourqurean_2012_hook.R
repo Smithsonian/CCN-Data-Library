@@ -211,7 +211,7 @@ species <- Fourqurean %>%
   # From the previous gsubbing, certain cells are empty but not NA, fix this
   mutate_all(na_if, "") %>%
   # Remove duplicate rows
-  distinct(site_id, core_id, species_code)
+  distinct(study_id, site_id, core_id, species_code)
 
 ## ....3h. Create study-level data ######
 
@@ -230,6 +230,14 @@ study_data_primary <- CCRCN_bib %>%
   mutate(study_id = bibliography_id) %>%
   mutate(study_type = tolower(study_type)) %>%
   select(study_id, study_type, bibliography_id, doi) 
+
+# study_data <- cores %>%
+#   group_by(study_id) %>%
+#   summarize(study_type = "synthesis",
+#             bibliography_id = "Fourqurean_et_al_2012", 
+#             doi = "10.1038/ngeo1477") %>%
+#   bind_rows(study_data_primary)
+
 
 ## 4. QA/QC of data ################
 
