@@ -65,7 +65,21 @@ depthseries_data <- depthseries_data %>%
   mutate(depth_max = depth_min + 1, 
          fraction_organic_matter = fraction_organic_matter / 100,
          study_id = "Thorne_et_al_2015") %>%
-  select(core_id, study_id, depth_min, depth_max, fraction_organic_matter, dry_bulk_density)
+  # turn negative fraction_organic_matter values to 0
+  mutate(fraction_organic_matter = ifelse(fraction_organic_matter < 0, 0, fraction_organic_matter)) %>%
+  select(study_id, core_id, depth_min, depth_max, fraction_organic_matter, dry_bulk_density)
+
+# add site IDs to depthseries 
+sites <- raw_core_data %>%
+  mutate(core_id = paste(SiteCode, Core, sep="0")) %>%
+  rename(site_id = Site) %>%
+  select(core_id, site_id) 
+
+depthseries_data <- depthseries_data %>% 
+  merge(sites, 
+        by="core_id", 
+        all.x=TRUE, all.y=FALSE) %>%
+  select(study_id, site_id, core_id, depth_min, depth_max, fraction_organic_matter, dry_bulk_density)
 
 ## ... 4B Curate core-level data #############
 core_data <- raw_core_data %>%

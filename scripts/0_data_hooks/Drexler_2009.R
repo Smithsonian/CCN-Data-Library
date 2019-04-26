@@ -96,7 +96,12 @@ cores_updated <- age_depthseries %>%
   select(study_id, site_id, core_id, core_latitude, core_longitude, core_elevation, core_position_notes, core_elevation_datum, 
          salinity_class, vegetation_class, core_length_flag)
 
-## ....3h. Create study-level data ######
+## ... impact ###################
+impacts <- impacts %>%
+  # There were no diked sites in the study
+  mutate(impact_class = recode(impact_class, "Diked" = "Natural"))
+
+## Create study-level data ######
 
 # import the CCRCN bibliography 
 CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
