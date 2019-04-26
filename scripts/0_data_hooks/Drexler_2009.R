@@ -63,6 +63,8 @@ age_depthseries <- age_depth_data %>%
 depthseries_joined <- age_depthseries %>%
   filter(core_id %in% carbon_stock_data$core_id) %>%
   bind_rows(carbon_stock_data) %>%
+  mutate(fraction_carbon_type = recode(fraction_carbon_type, 
+                                       "fraction_total_carbon" = "total carbon")) %>%
   select(study_id, core_id, sample_id, depth_min, depth_max, 
          dry_bulk_density:fraction_carbon_type, 
          c14_age:age_depth_model_reference) %>%
@@ -127,8 +129,12 @@ impacts <- impacts %>%
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-test_colnames("cores", cores_updated)
+test_colnames("core_level", cores_updated)
 test_colnames("depthseries", depthseries_joined)
+
+test_variable_names(cores_updated)
+test_variable_names(depthseries_joined)
+test_variable_names(impacts)
 
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data

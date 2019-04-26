@@ -145,6 +145,9 @@ source("./scripts/1_data_formatting/qa_functions.R")
 test_colnames("core_level", core_data)
 test_colnames("depthseries", depthseries_data)
 
+test_variable_names(core_data)
+test_variable_names(depthseries_data)
+
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(core_data, depthseries_data)
