@@ -148,6 +148,8 @@ test_colnames("depthseries", depthseries_data)
 test_variable_names(core_data)
 test_variable_names(depthseries_data)
 
+numeric_test_results <- test_numeric_vars(depthseries_data)
+
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(core_data, depthseries_data)

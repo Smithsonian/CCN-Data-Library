@@ -121,10 +121,6 @@ study_data_primary <- CCRCN_bib %>%
   mutate(study_type = tolower(study_type)) %>%
   select(study_id, study_type, bibliography_id, doi) 
 
-## impact data ######################
-impacts <- impacts %>%
-  mutate(impact_class = tolower(impact_class))
-
 ## QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
@@ -135,6 +131,8 @@ test_colnames("depthseries", depthseries_joined)
 test_variable_names(cores_updated)
 test_variable_names(depthseries_joined)
 test_variable_names(impacts)
+
+numeric_test_results <- test_numeric_vars(depthseries_joined)
 
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data

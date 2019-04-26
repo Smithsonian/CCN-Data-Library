@@ -233,4 +233,47 @@ test_variable_names <- function(input_data) {
   }
 }
 
+## Test numeric columns #############
 
+test_numeric_vars <- function(input_data) {
+  
+  numeric_attributes <- read_csv("./docs/controlled_attributes.csv", col_types = cols()) %>%
+    filter(data_type == "numeric")
+  
+  # select only numeric columns 
+  to_check <- subset(colnames(input_data), colnames(input_data) %in% numeric_attributes$attribute_name)
+  testing_data <- input_data %>%
+    ungroup() %>%
+    select(to_check) 
+  
+  library(skimr)
+  
+  skim_with_defaults()
+  
+  # list of functions to run on numeric attributes
+  funs <- list(
+    min = function(x) min(x, na.rm=TRUE), 
+    max = function(x) max(x, na.rm=TRUE), 
+    median = function(x) median(x, na.rm=TRUE),
+    na_count = function(x) sum(is.na(x)),
+    NaN_count = function(x) sum(is.nan(x)),
+    p0 = NULL, 
+    p25 = NULL, 
+    p50 = NULL, 
+    p75 = NULL, 
+    p100 = NULL,
+    hist = NULL
+  )
+  
+  # Set skimr to run with our custom list of functions
+  skim_with(numeric = funs, append = TRUE)
+  
+  # Organize into a wide form table 
+  results <- testing_data %>%
+    skim() %>%
+    select(variable, type, stat, formatted) %>%
+    spread(stat, formatted) %>%
+    select(variable, type, n, min, max, median, mean, sd, missing, na_count, NaN_count)
+  
+  return(results)
+}
