@@ -17,8 +17,13 @@ library(bib2df)
 library(RefManageR)
 
 # Read in data
-Fourqurean_raw <- read_excel("./data/Fourqurean_2012/original/JFourqurean_Global_SeagrassSoil_Corg.xls",
-                          sheet = 2)
+# 177 cores were missing a reference 
+# and a subset of of these cores also included two cores under the same core serial number
+# Due to the complexity of the issue, references were assigned to these cores manually in excel 
+# Additionally, 12 cores were assigned new "coreserial" IDs. 
+# The original data is in the "original" folder and the revised file is in the "intermediate" folder. 
+
+Fourqurean_raw <- read_excel("./data/Fourqurean_2012/intermediate/JFourqurean_edited.xls")
 
 ## 3. Curate data ######################
 
@@ -28,9 +33,9 @@ Fourqurean <- Fourqurean_raw %>%
   separate(Location, into = c("site_id", "other"), sep = ",") %>%
   mutate(site_id = gsub(" ", "_", site_id)) %>%
   rename(core_id = "Core or site#", vegetation_class = "Seagrass or unvegetated") %>%
-  select(-linenumber, -"Depth of accumulated sediment (cm)", -"Porosity (%)", 
+  select(-linenumber, -"Porosity (%)", 
          -"Soil organic carbon density (mg/mL)", -"Soil organic matter density (mg/mL)",
-         -"loss on ignition (%)", -"coreserial") %>%
+         -"loss on ignition (%)") %>%
   mutate(vegetation_class = tolower(vegetation_class)) %>%
   # Standardize ontology for vegetation_class
   mutate(vegetation_class = ifelse(vegetation_class != "seagrass", 
@@ -78,14 +83,55 @@ study_id_list <- c("Fourqurean_unpublished", "Orem_et_al_1999", "Figueiredo_da_S
 # Create a tibble as a linking key between references and study IDs
 studies <- tibble("Reference" = c(references), "study_id" = c(study_id_list))
 
+# Create another linking df for references and coreserial, which is the only
+#   unique identifier for cores
+core_identifier <- Fourqurean %>%
+  select(coreserial, Reference) %>%
+  filter(!is.na(Reference))
+
+# Join df's together
+studies <- studies %>%
+  left_join(core_identifier) %>%
+  group_by(coreserial) %>%
+  summarize_all(first)
+
 Fourqurean <- Fourqurean %>%
-  left_join(studies)
+  left_join(studies, by = "coreserial")
 
-# Create core IDs from study IDs
+## Create core IDs from study IDs 
+Fourqurean_core <- Fourqurean %>%
+  select(coreserial, study_id) %>%
+  group_by(coreserial) %>%
+  summarize(study_id = first(study_id))
 
+# Note that you have to pass core-level data to this function
 source("./scripts/1_data_formatting/curation_functions.R")
-Fourqurean <- create_IDs_from_study_IDs(Fourqurean, "core_id")
+Fourqurean_core <- create_IDs_from_study_IDs_corelevel(Fourqurean_core, "core_id")
+Fourqurean_core <- Fourqurean_core %>%
+  select(-study_id)
 
+# Now join back to master dataset
+Fourqurean <- Fourqurean %>%
+  select(-core_id) %>%
+  full_join(Fourqurean_core, by = "coreserial")
+
+# Studies without IDs
+# The following code was used to determine which cores were missing study IDs in the original dataset
+# All studies have been correctly assigned IDs in the "intermediate" folders
+# no_study_ids <- Fourqurean %>%
+#   filter(is.na(study_id)==TRUE) %>%
+#   group_by(coreserial) %>%
+#   summarize(n=n())
+
+# 7 cores are missing lat/long values
+# They're filtered out of the dataset for now
+
+# the offending core IDs: 
+missing_lat_long <- c("Duarte_unpublished_12", "Duarte_unpublished_15", "Duarte_unpublished_5", "Duarte_unpublished_9",
+                      "Kamp-Nielsen_et_al_2002_1", "Kamp-Nielsen_et_al_2002_2", "Kamp-Nielsen_et_al_2002_3")
+
+Fourqurean <- Fourqurean %>%
+  filter(!(core_id %in% missing_lat_long))
 
 ## ....3b. Site-level data #############
 
@@ -102,34 +148,55 @@ core_data <- Fourqurean %>%
        core_longitude = "longitude (DD.DDDD, >0 for E,<0 for W))") %>%
   mutate(core_length_flag = ifelse(`Surficial or profile?` == "P", "core depth represents deposit depth",
                                    NA)) %>%
-  # We only want one row per core, so filter out all rows that don't have a core_latitude
-  # filter(!is.na(core_latitude)) %>%
-  select(study_id, site_id, core_id, core_latitude, core_longitude, core_length_flag)
-
-core_data <- core_data %>%
+  select(study_id, site_id, core_id, core_latitude, core_longitude, core_length_flag) %>%
   group_by(core_id) %>%
-  summarise_all(first)
+  summarise_all(first) 
+
 
 ## ....3d. Depthseries data ################
 
 depthseries <- Fourqurean %>%
   # Only choose cores that have a profile
-  filter(`Surficial or profile?` == "P") %>%
-  mutate(study_id = "Fourqurean_2012") %>%
+  dplyr::filter(`Surficial or profile?` == "P") %>%
   # The depth increment attribute is messy and needs some typos fixed/substitutions
   mutate(`Depth increment of slice` = gsub("--", "-", `Depth increment of slice`)) %>%
   mutate(`Depth increment of slice` = gsub("core bottom", "165-167", `Depth increment of slice`)) %>%
   separate(`Depth increment of slice`, into = c("depth_min", "depth_max"), sep = "-") %>%
+  
+  # Depth intervals are also split between multiple columns, depending on the core/study...
+  #   annoying indeed. I have some fixes.
+  separate("Depth of accumulated sediment (cm)", into = c("depth_min_1", "depth_max_1"), sep = "-") %>%
+  mutate(depth_min = gsub("\\D", "", depth_min)) %>%
+  mutate(depth_min = ifelse(is.na(depth_min), depth_min_1, depth_min)) %>%
+  mutate(depth_max = gsub("\\D", "", depth_max)) %>%
+  mutate(depth_max = ifelse(is.na(depth_max), depth_max_1, depth_max)) %>%
+  
   rename(# dry bulk density was measured in g/mL, which is the same as g/c3
          dry_bulk_density = "Dry Bulk density (g/ml)",
          fraction_carbon = "Soil total Carbon contet (%dw)",
          fraction_organic_matter = "Soil organic Carbon content (%dw)",
          age = "age#") %>%
+  
+  # Turn negative fraction organic matter values to 0
+  mutate(fraction_organic_matter = ifelse(fraction_organic_matter < 0, 0, fraction_organic_matter)) %>%
+  
+  # Fix some issues with age: parsed as character, some entries are approx and not #s
+  mutate(age = gsub("B.P.", "", age)) %>%
+  mutate(age = gsub(" yBP", "", age)) %>%
+  separate(age, into = c("age", "age_2"), sep = "-") %>%
+  mutate(age = as.double(age), age_2 = as.double(age_2)) %>%
+  mutate(age = ifelse(!is.na(age_2), ((age + age_2)/2), age)) %>%
+  
   # Change percent to fraction
   mutate(fraction_carbon = fraction_carbon/100, 
          fraction_organic_matter = fraction_organic_matter/100) %>%
-  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon, 
-         fraction_organic_matter, age)
+  select(study_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon, 
+         fraction_organic_matter, age) 
+
+# Join site_ids from core_data
+depthseries <- core_data %>%
+  select(core_id, site_id) %>%
+  right_join(depthseries, by = "core_id")
 
 ## ....3e. Materials and Methods data ##############
 
@@ -150,18 +217,19 @@ BG_carbon = "Below ground seagrass biomass Carbon (gC m-2)") %>%
 species <- Fourqurean %>%
   select(study_id, site_id, core_id, "seagrass species") %>%
   rename(species_code = "seagrass species") %>%
+  # Prepare the species to be separated by commas 
+  # Turn all non comma separators to commas 
+  # and remove instances of duplicate commas 
   mutate(species_code = gsub("m. ", "m, ", species_code)) %>%
-  mutate(species_code = gsub("  &", ",", species_code)) %>%
-  mutate(species_code = gsub(" and ", ",", species_code)) %>%
-  separate(species_code, into = c("species1", "species2", "species3"), 
-           sep = ", |,") %>%
-  filter(!is.na(species1)) %>%
-  gather(key = "count", value = "species_code", -study_id, -site_id, -core_id) %>%
-  select(-count) %>%
-  # From the previous gsubbing, certain cells are empty but not NA, fix this
-  mutate_all(na_if, "") %>%
-  # Remove duplicate rows
-  distinct(site_id, core_id, species_code)
+  mutate(species_code = gsub("&", ",", species_code)) %>%
+  mutate(species_code = gsub("and", ",", species_code)) %>%
+  mutate(species_code = gsub(", ,", ",", species_code)) %>%
+  # Separate the rows by comma 
+  separate_rows(species_code, sep=",") %>%
+  # remove leading and trailing empty spaces from strings 
+  mutate(species_code = str_trim(species_code, "both")) %>%
+  # remove all entries without a species code 
+  filter(is.na(species_code) == FALSE) 
 
 ## ....3h. Create study-level data ######
 
@@ -181,6 +249,13 @@ study_data_primary <- CCRCN_bib %>%
   mutate(study_type = tolower(study_type)) %>%
   select(study_id, study_type, bibliography_id, doi) 
 
+study_data <- core_data %>%
+  group_by(study_id) %>%
+  summarize(study_type = "synthesis",
+            bibliography_id = "Fourqurean_et_al_2012",
+            doi = "10.1038/ngeo1477") %>%
+  bind_rows(study_data_primary)
+
 ## 4. QA/QC of data ################
 
 # Re-order columns
@@ -198,4 +273,4 @@ write_csv(site_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_site_dat
 write_csv(core_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_core_data.csv")
 write_csv(species, "./data/Fourqurean_2012/derivative/Fourqurean_2012_species_data.csv")
 write_csv(biomass, "./data/Fourqurean_2012/derivative/Fourqurean_2012_biomass_data.csv")
-write_csv(study_data_primary, "./data/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")
+write_csv(study_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")

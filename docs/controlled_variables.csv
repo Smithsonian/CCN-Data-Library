@@ -1,0 +1,140 @@
+attribute_name,variable_name,variable_definition
+corresponding_author,TRUE,The author should be contacted with any further questions
+corresponding_author,FALSE,The author should not be contacted with any further questions.
+publication_type,article,Journal article
+publication_type,book,Book
+publication_type,mastersthesis,Master's Thesis
+publication_type,misc,Miscellaneous publications such as online datasets
+publication_type,phdthesis,PhD thesis or dissertation
+publication_type,techreport,Technical report
+publication_type,unpublished,Unpublished source.
+coring_method,cryo core,A technique involving collecting a core by freezing soil using liquid nitrogen to a copper tube
+coring_method,gouge auger,"A half cylinder coring device in which the coring section is open, not sealed off by a fin"
+coring_method,hargas corer,"A large diameter (>10 cm) coring device consisting of a tube, piston, and a cutting head"
+coring_method,mcauley corer,A half cylinder coring device with the coring section sealed off by a fin attached to a rotating pivot point
+coring_method,mccaffrey peat cutter,U-shaped blade that extracts a core by cutting down through peat
+coring_method,none specified,No coring device was specified
+coring_method,other shallow corer,Any other type of coring device typically taking cores shallower than 30 centimeters
+coring_method,piston corer,A device that extrudes core into tube upward with a plunger
+coring_method,push core,Any number of coring types involving driving a tube into the sediment to recover a core
+coring_method,pvc and hammer,PVC pipe was driven into the sediment with a hammer to recover a core
+coring_method,russian corer,A half cylinder coring device with the coring section sealed off by a fin attached to a rotating pivot point
+coring_method,vibracore,"A technique involving collecting a core by sinking a continuous pipe into sediment attaching a source of vibration, then recovering using a winch and pulley"
+coring_method,surface sample,A technique involving collecting a core shallower than ~5 cm using a circular metal cutter.
+roots_flag,roots and rhizomes included,Roots and rhizomes were included in dry bulk density and or organic matter and carbon measurements
+roots_flag,roots and rhizomes separated,Roots and rhizomes were separated from soil before dry bulk density and or organic matter and carbon measurements.
+sediment_sieved_flag,sediment sieved,Sediment was sieved prior to analysis for organics
+sediment_sieved_flag,sediment not sieved,Sediment was not sieved prior to analysis for organics.
+compaction_flag,compaction qualified,Compaction was at least qualified and noted by the authors
+compaction_flag,compaction quantified,Compaction was quantified and corrected for in core based measurements
+compaction_flag,corer limits compaction,Authors specified that the coring device's design minimized compaction
+compaction_flag,no obvious compaction,Authors observed no obvious compaction
+compaction_flag,not specified,Compaction was not specified.
+dry_bulk_density_flag,air dried to constant mass,Methodology specified that samples were air dried to a constant mass
+dry_bulk_density_flag,modeled,"Bulk density was not measured, but was modeled from loss on ignition and assumptions about the particle densities of organic and inorganic matter"
+dry_bulk_density_flag,freeze dried,Bulk density was measured on freeze dried samples
+dry_bulk_density_flag,not specified,No additional details regarding bulk density methodology were provided
+dry_bulk_density_flag,removed non structural water,"Bulk density methodology did not specify drying temperature or length, only that non-strucural water was removed"
+dry_bulk_density_flag,time approximate,Bulk density time recorded herin is an approximate estimate
+dry_bulk_density_flag,to constant mass,"Bulk density methodology did not specify drying temperature or length, only that samples were dried to a constant mass"
+loss_on_ignition_flag,time approximate,Loss on ignition time recorded herein is an approximate estimate
+loss_on_ignition_flag,not specified,No additional details regarding loss on ignition methodology or time were provided
+carbon_measured_or_modeled,measured,Fraction carbon was measured as opposed to modeled
+carbon_measured_or_modeled,modeled,Fraction carbon was modeled as opposed to measured.
+carbonates_removed,FALSE,Carbonates were not removed before measuring organic carbon
+carbonates_removed,TRUE,Carbonates were removed before measuring organic carbon.
+carbonate_removal_method,direct acid treatment,Carbonates were removed using direct application of dilute acid
+carbonate_removal_method,acid fumigation,Carbonates were removed by fumigating with concentrated acid
+carbonate_removal_method,low carbonate soil,Organic carbon fraction was measured without removing carbonates assuming carbonate content of the soil type was minimal
+carbonate_removal_method,carbonates not removed,Carbonates were not removed and low carbonate soil was not specified
+carbonate_removal_method,none specified,Carbonate removal methodology was not specified.
+fraction_carbon_method,Craft regression,"Used regression model from Craft et al., 1991, Estuaries, to predict fraction carbon as a function of fraction organic matter"
+fraction_carbon_method,EA,Each sample presented was measured using Elemental Analysis
+fraction_carbon_method,Fourqurean regression,"Used regression model from Fourqurean et al., 2012, Nature Geoscience, to predict fraction carbon as a function of fraction organic matter"
+fraction_carbon_method,Holmquist regression,"Used regression model from Holmquist et al., 2018, Scientific Reports, to predict fraction carbon as a function of fraction organic matter"
+fraction_carbon_method,kjeldahl digestion,Each sample was measured kjeldahl digestion method
+fraction_carbon_method,local regression,A regression model fit using a subset of measurements was used to predict fraction carbon as a function of fraction organic matter
+fraction_carbon_method,not specified,No additional details were provided regarding fraction carbon methodologies
+fraction_carbon_method,wet oxidation,Each sample was measured using a wet oxidation method.
+fraction_carbon_type,organic carbon,Author specified that fraction carbon measurements were of organic carbon
+fraction_carbon_type,total carbon,Author specified that fraction carbon measurements were of total carbon.
+cs137_counting_method,alpha,Alpha counting method used
+cs137_counting_method,gamma,Gamma counting method used.
+pb210_counting_method,alpha,Alpha counting method used
+pb210_counting_method,gamma,Gamma counting method used.
+excess_pb210_rate,mass accumulation,Excess 210Pb modeled using mass accumulation rate
+excess_pb210_rate,accretion,Excess 210Pb modeled using vertical accretion rate.
+excess_pb210_model,CRS,Constant rate of supply model used
+excess_pb210_model,CIC,Constant initial concentration model used
+excess_pb210_model,CFCS,Constant flux constant sedimentation model used.
+ra226_assumption,each sample,226Ra was measured for each sample
+ra226_assumption,total core,226Ra was measured for the total core
+ra226_assumption,at asymptote,asy
+c14_counting_method,AMS,Accelerator mass spectroscopy used
+c14_counting_method,beta,Beta counting used.
+age_depth_model_reference,YBP,"Year zero is defined as years before present, 1960 CE"
+age_depth_model_reference,CE,Year zero is set according to Common Era and Before Common Era standards
+age_depth_model_reference,core collection date,Year zero is set as the core's collection year.
+salinity_class,brine,>50 ppt
+salinity_class,saline,30-50 ppt
+salinity_class,brackish,0.5-30 ppt
+salinity_class,fresh,<0.5 ppt
+salinity_class,mixoeuhaline,30-40 ppt
+salinity_class,polyhaline,18-30 ppt
+salinity_class,mesohaline,5-18 ppt
+salinity_class,oligohaline,0.5-5 ppt.
+salinity_method,field observation,Salinity inferred by field observation such as vegetation
+salinity_method,measurement,Salinity observed from local instrument.
+vegetation_class,emergent,Describes wetlands dominated by persistent emergent vascular plants
+vegetation_class,scrub shrub,Describes wetlands dominated by woody vegetation < or equal to 5 meters in height
+vegetation_class,forested,Describes wetlands dominated by woody vegetation > 5 meters in height
+vegetation_class,forested to shrub,Dominated by forested to scrub/shrub biomass
+vegetation_class,seagrass,Describes tidal or subtidal communities dominated by rooted vascular plants.
+vegetation_method,field observation,Vegetation inferred by field observation
+vegetation_method,measurement,Vegetation measured by counts or plots.
+inundation_class,high,"Study-specific definition of an elevation relatively high in the tidal frame, typically defined by vegetation type"
+inundation_class,mid,"Study-specific definition of an elevation in the relative middle of the tidal frame, typically defined by vegetation type"
+inundation_class,low,"Study-specific definition of an elevation in relatively low in the tidal frame, typically defined by vegetation type"
+inundation_class,levee,"Study-specific definition of a relatively high elevation zone built up on the edge of a river, creek, or channel"
+inundation_class,back,Study-specific definition of a relatively low elevation zone behind a levee.
+inundation_method,field observation,Inundation inferred by field observation such as vegetation
+inundation_method,measurement,Inundation class assessed from elevation and nearby tide gauge or other similar method.
+core_position_method,RTK,Real-time kinematic global position system (GPS)
+core_position_method,handheld,Conventional Commercially available hand-held GPS
+core_position_method,other high resolution,Any other technique resulting in positional error < 1 meter
+core_position_method,other moderate resolution,Any other technique resulting in positional error < 30 meters
+core_position_method,other low resolution,Any other technique resulting in positional error > 30 meters.
+core_elevation_datum,NAVD88,"A gravity-based geodetic datum, North American Vertical Datum of 1988"
+core_elevation_datum,MSL,"A tidal datum, Mean Sea Level as measured against a local tide gauge"
+core_elevation_datum,MTL,"A tidal datum, Mean Tidal Level as measured against a local tide gauge"
+core_elevation_datum,MHW,"A tidal datum, Mean High Water as measured against a local tide gauge"
+core_elevation_datum,MHHW,"A tidal datum, Mean Higher High Water as measured against a local tide gauge"
+core_elevation_datum,MHHWS,"A tidal datum, Mean Higher High Water for Spring Tides as measured against a local tide gauge"
+core_elevation_datum,MLW,"A tidal datum, Mean Low Water as measured against a local tide gauge"
+core_elevation_datum,MLLW,"A tidal datum, Mean Lower Low Water as measured against a local tide gauge."
+core_elevation_method,RTK,Real-time kinematic GPS
+core_elevation_method,other high resolution,Any other technique resulting in positional error < 5 cm of random error
+core_elevation_method,LiDAR,Handheld GPS matched to lidar-based digital elevation model
+core_elevation_method,DEM,Handheld GPS matched to another digital elevation model
+core_elevation_method,other low resolution,Any other technique resulting in positional error > 5 cm of random error.
+salinity_class,estuarine C-CAP,5-35 parts per thousand salinity (ppt) according to the coastal change analysis program
+salinity_class,palustrine C-CAP,< 5 ppt according to the coastal change analysis program
+core_length_flag,core depth limited by length of corer,The total depth of the core was limited by the length of the coring device
+core_length_flag,core depth represents deposit depth,Authors report that the depth of the core represents the depth of the wetland soil deposit
+core_length_flag,not specified,Authors did not specify whether or not the depth of the core represents the depth of the wetland soil deposit.
+marker_type,artificial horizon,"Horizon was added to the surface artificially by using materials such as feldspar, glitter, or rare earth elements"
+marker_type,pollen,"Pollen analysis was used to tie horizon to the timing of vegetation change such as the arrival of invasives, or the beginning of local agriculture"
+marker_type,pollution,Chemical analysis was used to tie the horizon to the timing of a pollution event
+marker_type,tsunami,Sediment analysis was used to tie the horizon to the timing of a tsunami event.
+impact_class,tidally restricted,Tidal flow is muted or blocked by built structures
+impact_class,impounded,"Water level is raised artificially by a tidal restriction, resulting in ponding of water on the wetland and or upland surface"
+impact_class,managed impounded,"Wetland is impounded seasonally, and other times natural or semi natural hydrology occurs"
+impact_class,ditched,Tidal hydrology is altered because artificial ditches have been cut to promote tidal flooding and drainage
+impact_class,diked and drained,"The wetland has been diked and drained, with or without flapper gates, pumping, or other means"
+impact_class,farmed,Managed impoundment or drainage in which wetland has been converted to agricultural land
+impact_class,tidally restored,Tidal flow has been restored by removing an artificial obstruction
+impact_class,revegetated,Wetland vegetation has been reintroduced by replanting on unvegetated surfaces
+impact_class,invasive plants removed,Natural plant communities have been restored by the active removal of invasive plant species
+impact_class,invasive herbivores removed,Tidal wetland vegetation has been managed by the removal of invasive herbivores
+impact_class,sediment added,Elevation has been managed by artificially adding sediment to the site using techniques such as thin layering or sediment diversion
+impact_class,wetlands built,Constructed wetland using sediments such as dredge spoils or other sediment source.

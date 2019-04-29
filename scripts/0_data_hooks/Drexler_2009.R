@@ -65,6 +65,8 @@ age_depthseries <- age_depth_data %>%
 depthseries_joined <- age_depthseries %>%
   filter(core_id %in% carbon_stock_data$core_id) %>%
   bind_rows(carbon_stock_data) %>%
+  mutate(fraction_carbon_type = recode(fraction_carbon_type, 
+                                       "fraction_total_carbon" = "total carbon")) %>%
   select(study_id, core_id, sample_id, depth_min, depth_max, 
          dry_bulk_density:fraction_carbon_type, 
          c14_age:age_depth_model_reference) %>%
@@ -102,7 +104,12 @@ cores_updated <- cores %>%
          core_elevation_accuracy, core_elevation_method,
          salinity_class, vegetation_class, core_length_flag)
 
-## ....3h. Create study-level data ######
+## ... impact ###################
+impacts <- impacts %>%
+  # There were no diked sites in the study
+  mutate(impact_class = recode(impact_class, "Diked" = "Natural"))
+
+## Create study-level data ######
 
 # import the CCRCN bibliography 
 CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
@@ -131,6 +138,12 @@ source("./scripts/1_data_formatting/qa_functions.R")
 # Make sure column names are formatted correctly: 
 test_colnames("core_level", cores_updated)
 test_colnames("depthseries", depthseries_joined)
+
+test_varnames(cores_updated)
+test_varnames(depthseries_joined)
+test_varnames(impacts)
+
+numeric_test_results <- test_numeric_vars(depthseries_joined)
 
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data

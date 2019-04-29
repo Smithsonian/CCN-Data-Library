@@ -16,7 +16,8 @@ Deegan_2012_citationdata <- read_csv( "./data/Deegan_2012/derivative/Deegan_et_a
 
 # Drexler 2009
 Drexler_2009_coredata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
-Drexler_2009_depthseriesdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
+Drexler_2009_depthseriesdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv",
+                                          col_types = )
 Drexler_2009_speciesdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_species_data.csv")
 Drexler_2009_methodsdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_methods_data.csv")
 Drexler_2009_citationdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")
@@ -143,7 +144,7 @@ CCRCN_methodsdata <- Holmquist_2018_methodsdata %>%
 
 ## ....2e. Species data #################
 CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
-  bind_rows(Drexler_2009_methodsdata) %>%
+  bind_rows(Drexler_2009_speciesdata) %>%
   bind_rows(Fourqurean_2012_speciesdata) %>%
   bind_rows(Osland_2016_speciesdata) %>%
   bind_rows(Giblin_2018_speciesdata) %>%
