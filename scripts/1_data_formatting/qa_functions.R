@@ -2,34 +2,6 @@
 # contact: Michael Lonneman, lonnemanM@si.edu 
 #          David Klinges, klingesD@si.edu
 
-## Test column names function ###########
-# Make sure column names match CCRCN guidelines
-test_colnames <- function(category, dataset) {
-  
-  database_structure <- read_csv("./docs/ccrcn_database_structure.csv", col_types = cols())
-  
-  # Create a vector of all the table names
-  tables <- unique(database_structure$table)
-  
-  if(category %in% database_structure$table == FALSE) {
-    # Warn user they have not supplied a valid table category and provide the list 
-    print(paste(category,"is not a valid category. Please use one of these options:"))
-    print(tables)
-    return()
-  }
-  
-  # Gather column names from dataset and pull out columns with variables that are defined in our database structure
-  column_names <- colnames(dataset)
-  valid_columns <- filter(database_structure, table == category)$attribute
-  non_matching_columns <- subset(column_names, !(column_names %in% valid_columns))
-  
-  if(length(non_matching_columns)==0) {
-    print("Looks good! All column names match CCRCN standards")
-  } else {
-    print(paste(c("Non-matching variable names/column headers:", non_matching_columns), collapse=" "))
-  }
-}
-
 ## Check core_id uniqueness ########
 # All cores in synthesis should have unique id
 
@@ -117,6 +89,79 @@ fraction_not_percent <- function(dataset) {
   }
 }
 
+## Test column names function ###########
+# Make sure column names match CCRCN guidelines
+test_colnames <- function(category, dataset) {
+  
+  database_structure <- read_csv("./docs/ccrcn_database_structure.csv", col_types = cols())
+  
+  # Create a vector of all the table names
+  tables <- unique(database_structure$table)
+  
+  if(category %in% database_structure$table == FALSE) {
+    # Warn user they have not supplied a valid table category and provide the list 
+    print(paste(category,"is not a valid category. Please use one of these options:"))
+    print(tables)
+    return()
+  }
+  
+  # Gather column names from dataset and pull out columns with variables that are defined in our database structure
+  column_names <- colnames(dataset)
+  valid_columns <- filter(database_structure, table == category)$attribute
+  non_matching_columns <- subset(column_names, !(column_names %in% valid_columns))
+  
+  if(length(non_matching_columns)==0) {
+    print("Looks good! All column names match CCRCN standards")
+  } else {
+    print(paste(c("Non-matching variable names/column headers:", non_matching_columns), collapse=" "))
+  }
+}
+
+## Test variable names #############
+
+test_varnames <- function(input_data) {
+  
+  controlled_variables_list <- read_csv("./docs/controlled_variables.csv",
+                                        col_types = cols())
+  
+  # Subset controlled variables by the attributes that are in the tested data frame
+  var_names <- unique(controlled_variables_list$attribute_name)
+  to_check <- subset(colnames(input_data), colnames(input_data) %in% var_names)
+  core_subset <- select(input_data, to_check)
+  
+  # Create an empty data frame 
+  # Invalid variables and their attribute will be stored
+  df <- data.frame(matrix(nrow=0, ncol=2))
+  colnames(df) <- c("attribute_name", "variable_name")
+  
+  # Check each column at a time
+  # Append any invalid variables to the empty data frame
+  if(is_empty(to_check)==FALSE){
+    for(i in 1:length(to_check)){
+      attribute <- to_check[i]
+      variable_list <- filter(controlled_variables_list, attribute_name == attribute)
+      
+      x <- core_subset %>%
+        filter(!(get(attribute) %in% variable_list$variable_name))
+      
+      invalid_variables <- na.omit(unique(get(attribute, x)))
+      
+      if(is_empty(invalid_variables) == FALSE) {
+        df <- bind_rows(df, data.frame("attribute_name" = rep(attribute, length(invalid_variables)), "variable_name" = invalid_variables))
+      }
+    }
+  }
+  
+  # If there are no invalid variables don't pass along the df 
+  # Otherwise indicate to the user there are problems and to check the table 
+  if(nrow(df)==0) {
+    print("Looks good! All variable names match CCRCN standards")
+    
+  } else {
+    print("View resulting table for invalid variable names")
+    return(df)  
+  }
+}
 
 ## Select only controlled attributes, re-order according to database structure #####################
 
@@ -186,52 +231,6 @@ select_and_reorder_columns <- function(data, # The dataset you seek to re-order
   # Return re-ordered dataset
   return(data_out)
   }
-
-## Test variable names #############
-
-test_variable_names <- function(input_data) {
-  
-  controlled_variables_list <- read_csv("./docs/controlled_variables.csv",
-                                        col_types = cols())
-  
-  # Subset controlled variables by the attributes that are in the tested data frame
-  var_names <- unique(controlled_variables_list$attribute_name)
-  to_check <- subset(colnames(input_data), colnames(input_data) %in% var_names)
-  core_subset <- select(input_data, to_check)
-  
-  # Create an empty data frame 
-  # Invalid variables and their attribute will be stored
-  df <- data.frame(matrix(nrow=0, ncol=2))
-  colnames(df) <- c("attribute_name", "variable_name")
-  
-  # Check each column at a time
-  # Append any invalid variables to the empty data frame
-  if(is_empty(to_check)==FALSE){
-    for(i in 1:length(to_check)){
-      attribute <- to_check[i]
-      variable_list <- filter(controlled_variables_list, attribute_name == attribute)
-      
-      x <- core_subset %>%
-        filter(!(get(attribute) %in% variable_list$variable_name))
-      
-      invalid_variables <- na.omit(unique(get(attribute, x)))
-      
-      if(is_empty(invalid_variables) == FALSE) {
-        df <- bind_rows(df, data.frame("attribute_name" = rep(attribute, length(invalid_variables)), "variable_name" = invalid_variables))
-      }
-    }
-  }
-  
-  # If there are no invalid variables don't pass along the df 
-  # Otherwise indicate to the user there are problems and to check the table 
-  if(nrow(df)==0) {
-    print("Looks good! All variable names match CCRCN standards")
-    
-  } else {
-    print("View resulting table for invalid variable names")
-    return(df)  
-  }
-}
 
 ## Test numeric columns #############
 

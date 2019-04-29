@@ -128,9 +128,9 @@ source("./scripts/1_data_formatting/qa_functions.R")
 test_colnames("core_level", cores_updated)
 test_colnames("depthseries", depthseries_joined)
 
-test_variable_names(cores_updated)
-test_variable_names(depthseries_joined)
-test_variable_names(impacts)
+test_varnames(cores_updated)
+test_varnames(depthseries_joined)
+test_varnames(impacts)
 
 numeric_test_results <- test_numeric_vars(depthseries_joined)
 
