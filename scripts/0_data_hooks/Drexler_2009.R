@@ -11,6 +11,7 @@
 
 library(tidyverse)
 library(readxl)
+library(bib2df)
 
 ## Read in data #####################
 
@@ -54,8 +55,9 @@ age_depthseries <- age_depth_data %>%
          # The c14 error variable is 2*sd
          c14_age_sd = c14_age_sd / 2, 
          age_depth_model_reference = "YBP") %>%
-  select(study_id, core_id, sample_id, depth_min, depth_max, c14_age, c14_age_sd, c14_material, age,
-         age_depth_model_reference, min_elevation_meters)
+  select(study_id, site_id, core_id, sample_id, depth_min, depth_max, c14_age, c14_age_sd, c14_material, age,
+         age_depth_model_reference, min_elevation_meters) %>%
+  arrange(site_id, core_id, depth_min, sample_id)
 
 # Joining carbon stock and age depthseries 
 # Because there are 13 cores with age depth data but only 3 of those are in the clearinghouse
@@ -69,23 +71,19 @@ depthseries_joined <- age_depthseries %>%
          dry_bulk_density:fraction_carbon_type, 
          c14_age:age_depth_model_reference) %>%
   group_by(core_id) %>%
-  arrange(depth_min, .by_group = TRUE)
+  arrange(core_id, depth_min, sample_id, .by_group = TRUE)
 
 ## ... core-level ##################
 
 source("./scripts/1_data_formatting/curation_functions.R")
 
-cores_updated <- age_depthseries %>%
-  filter(core_id %in% cores$core_id) %>%
-  group_by(core_id) %>%
-  summarize(core_elevation = first(min_elevation_meters),
-            core_elevation_datum = "MSL") %>%
-  merge(cores, by="core_id", all.x=TRUE, all.y=TRUE) %>%
-  rename(core_elevation = core_elevation.x, 
-         salinity_class = salinity_code, 
-         vegetation_class = vegetation_code, 
-         core_position_notes = position_code) %>%
-  mutate(core_position_notes = recode(core_position_notes, 
+core_elevations_navd88 <- data.frame(core_id = c("BACHI", "FW", "TT"),
+                                     core_elevation = c(1.48, 1.54, 1.47),
+                                     core_elevation_datum = rep("NAVD88", 3))
+
+cores_updated <- cores %>%
+  # JH - I want to do all this renaming and recoding in the holmquist et al 2018 data hook
+  mutate(core_position_notes = recode(position_code, 
                                       "a" = "latitude and longitude were likely from a high quality source",
                                       "a1" = "latitude and longitude from handheld GPS or better", 
                                       "a2" = "latitude and longitude were likely high quality but may refer to a general area rather than individual core location",
@@ -93,9 +91,17 @@ cores_updated <- age_depthseries %>%
                                       "c" = "latitude and longitude were extracted from a map figure", 
                                       "c1" = "latitude and longitude were extracted from a relatively high quality map figure", 
                                       "c2" = "latitude and longitude were extracted from a relatively low quality map figure")) %>% 
+  rename(vegetation_class = vegetation_code,
+         salinity_class = salinity_code) %>% 
   recode_salinity(salinity_class = salinity_class) %>%
   recode_vegetation(vegetation_class = vegetation_class) %>%
-  select(study_id, site_id, core_id, core_latitude, core_longitude, core_elevation, core_position_notes, core_elevation_datum, 
+  select(-core_elevation) %>% 
+  left_join(core_elevations_navd88) %>%
+  mutate(core_elevation_accuracy = 0.075,
+         core_elevation_method = "RTK-GPS",
+         core_position_method = "RTK-GPS") %>% 
+  select(study_id, site_id, core_id, core_latitude, core_longitude, core_position_method, core_position_notes, core_elevation, core_elevation_datum, 
+         core_elevation_accuracy, core_elevation_method,
          salinity_class, vegetation_class, core_length_flag)
 
 ## ... impact ###################
@@ -121,6 +127,11 @@ study_data_primary <- CCRCN_bib %>%
   mutate(study_type = tolower(study_type)) %>%
   select(study_id, study_type, bibliography_id, doi) 
 
+## impact data ######################
+impactsOutput <- impacts %>%
+  mutate(impact_class = tolower(impact_class),
+         impact_class = ifelse(core_id == "BACHI", "natural", impact_class)) # fixing an error from Holmquist 2018 data.
+
 ## QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
@@ -141,5 +152,5 @@ results <- test_core_relationships(cores_updated, depthseries_joined)
 ## Write data ######################
 write_csv(depthseries_joined, "./data/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
 write_csv(cores_updated, "./data/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
-write_csv(impacts, "./data/Drexler_2009/derivative/Drexler_et_al_2009_impacts.csv")
+write_csv(impactsOutput, "./data/Drexler_2009/derivative/Drexler_et_al_2009_impacts.csv")
 write_csv(study_data_primary, "./data/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")
