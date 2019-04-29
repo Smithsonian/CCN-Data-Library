@@ -45,6 +45,13 @@ total_biomass | g / m2 |
 AG_carbon | g / m2 | 
 BG_carbon | g / m2 | 
 
+#### Study & Core IDs
+1. 177 coreserial values in the raw dataset did not get a study ID. One row of each unique core was given a reference in the raw data. Occasionally, a new core started within the same study and the reference was not moved to the new core. For those cases, manual entry of the reference was done. 
+2. 11 coreserial numbers actually represented 22 cores. New coreserial values were manually assigned to these cases. The original coreserial numbers were: 340, 670:676, 678:681. 
+3. 5 cores were associated with 20 coreserial numbers. That is, each depthseries entry in the core was assigned a unique coreserial number. They are represented by coreserial numbers 922:946 in the original dataset. These values have been collapsed into five coreserial numbers. 
+
+All of these changes were made manually and saved to the "intermediate" folder. The raw data can still be viewed in the "original" folder. The edited intermediate file is used in the hook script. 
+
 #### Methods and Materials
 
 Assumption | Justification | Notes
