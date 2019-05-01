@@ -48,7 +48,7 @@ study_id_list <- c("Fourqurean_unpublished", "Orem_et_al_1999", "Figueiredo_da_S
              "Furuta_2002", "De_Troch_et_al_2006", "Holmer_et_al_2003",
              "Boschker_et_al_2000", "Vichkovitten_and_Holmer_2005", "Holmer_et_al_2006", 
              "Holmer_et_al_2009", "Leduc_and_Probert_2011", "Yamamuro_et_al_1993", 
-             "Pedersen_et_al_1997", "Barrón_et_al_2004",
+             "Pedersen_et_al_1997", "Barron_et_al_2004",
              "Calleja_et_al_2007", "Holmer_and_Frederiksen_2007", "Mateo_and_Romero_1997", 
              "Lo_Iacono_et_al_2008", "Kairis_and_Rybczyk_2010", "Apostolaki_unpublished", 
              "Maher_and_Eyre_2010", "Borg_et_al_2010",
