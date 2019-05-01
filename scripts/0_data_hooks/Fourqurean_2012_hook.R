@@ -9,7 +9,6 @@
 # carbon stock." Nature geoscience 5.7 (2012): 505. https://doi.org/10.1038/ngeo1477.
 # Dataset provided by communication with authors.
 
-
 ## 2. Prep workspace #######################
 library(tidyverse)
 library(readxl)
@@ -17,8 +16,13 @@ library(bib2df)
 library(RefManageR)
 
 # Read in data
-Fourqurean_raw <- read_excel("./data/Fourqurean_2012/original/JFourqurean_Global_SeagrassSoil_Corg.xls",
-                          sheet = 2)
+# 177 cores were missing a reference 
+# and a subset of of these cores also included two cores under the same core serial number
+# Due to the complexity of the issue, references were assigned to these cores manually in excel 
+# Additionally, 12 cores were assigned new "coreserial" IDs. 
+# The original data is in the "original" folder and the revised file is in the "intermediate" folder. 
+
+Fourqurean_raw <- read_excel("./data/Fourqurean_2012/intermediate/JFourqurean_edited.xls")
 
 ## 3. Curate data ######################
 
@@ -28,7 +32,7 @@ Fourqurean <- Fourqurean_raw %>%
   separate(Location, into = c("site_id", "other"), sep = ",") %>%
   mutate(site_id = gsub(" ", "_", site_id)) %>%
   rename(core_id = "Core or site#", vegetation_class = "Seagrass or unvegetated") %>%
-  select(-linenumber, -"Porosity (%)", 
+  select(-"Porosity (%)", 
          -"Soil organic carbon density (mg/mL)", -"Soil organic matter density (mg/mL)",
          -"loss on ignition (%)") %>%
   mutate(vegetation_class = tolower(vegetation_class)) %>%
@@ -44,8 +48,8 @@ references <- c(na.omit(unique(Fourqurean$Reference)))
 study_id_list <- c("Fourqurean_unpublished", "Orem_et_al_1999", "Figueiredo_da_Silva_et_al_2009", 
              "Fourqurean_et_al_2010", "Carruthers_et_al_2005", "Rosenfeld_1979", 
              "Mellors_et_al_2002", "Danovaro_and_Fabiano_1995", "Gonneea_et_al_2004", 
-             "Marba_unpublished", "Grady_1981", "Pulich_1985", "De_Falco_2006", 
-             "Furuta_2002", "De_Troch_et_al_2006", "Holmer_et_al_2003",
+             "Marba_unpublished", "Grady_1981", "Pulich_1987", "De_Falco_et_al_2006", 
+             "Furuta_et_al_2002", "De_Troch_et_al_2006", "Holmer_et_al_2003",
              "Boschker_et_al_2000", "Vichkovitten_and_Holmer_2005", "Holmer_et_al_2006", 
              "Holmer_et_al_2009", "Leduc_and_Probert_2011", "Yamamuro_et_al_1993", 
              "Pedersen_et_al_1997", "Barron_et_al_2004",
@@ -110,11 +114,34 @@ Fourqurean <- Fourqurean %>%
   select(-core_id) %>%
   full_join(Fourqurean_core, by = "coreserial")
 
-# There's a few cores that don't have a study ID, a mistake traced back to 
-#   original data. Luckily all are in same study
-# Fourqurean <- Fourqurean %>%
-#   mutate(study_id)
-# N. Marba, unpublished data
+## ... Filtering out invalid cores/studies ############
+# Studies without IDs
+# The following code was used to determine which cores were missing study IDs in the original dataset
+# All studies have been correctly assigned IDs in the "intermediate" folders
+# no_study_ids <- Fourqurean %>%
+#   filter(is.na(study_id)==TRUE) %>%
+#   group_by(coreserial) %>%
+#   summarize(n=n())
+
+# 7 cores are missing lat/long values
+# They're filtered out of the dataset for now
+
+# the offending core IDs: 
+missing_lat_long <- c("Duarte_unpublished_12", "Duarte_unpublished_15", "Duarte_unpublished_5", "Duarte_unpublished_9",
+                      "Kamp-Nielsen_et_al_2002_1", "Kamp-Nielsen_et_al_2002_2", "Kamp-Nielsen_et_al_2002_3")
+
+
+# The following studies are missing reconstructable depth series intervals and do not have biomass data
+remove_studies <- c("Gonneea_et_al_2004", "Furuta_et_al_2002", "Kenig_et_al_1990", 
+                    "Holmer_unpublished", "Holmer_et_al_2001", "van_Engeland_thesis", "Volkman_et_al_2008",
+                    "Abed-Navandi_and_Dworschak_2005", "Duarte_unpublished", "Kennedy_unpublished",
+                    "Deiongh_et_al_1995", "Stoner_et_al_1998", 
+                    # The following studies have incorrect lat/long values: 
+                    "Holmer_et_al_2006", "Vichkovitten_and_Holmer_2005")
+
+Fourqurean <- Fourqurean %>%
+  filter(!(core_id %in% missing_lat_long)) %>%
+  filter(!(study_id %in% remove_studies))
 
 ## ....3b. Site-level data #############
 
@@ -131,37 +158,37 @@ core_data <- Fourqurean %>%
        core_longitude = "longitude (DD.DDDD, >0 for E,<0 for W))") %>%
   mutate(core_length_flag = ifelse(`Surficial or profile?` == "P", "core depth represents deposit depth",
                                    NA)) %>%
-  # We only want one row per core, so filter out all rows that don't have a core_latitude
-  # filter(!is.na(core_latitude)) %>%
-  select(study_id, site_id, core_id, core_latitude, core_longitude, core_length_flag)
-
-core_data <- core_data %>%
+  select(study_id, site_id, core_id, core_latitude, core_longitude, core_length_flag) %>%
   group_by(core_id) %>%
-  summarise_all(first)
+  summarise_all(first) 
 
 ## ....3d. Depthseries data ################
 
 depthseries <- Fourqurean %>%
-  # Only choose cores that have a profile
-  dplyr::filter(`Surficial or profile?` == "P") %>%
   # The depth increment attribute is messy and needs some typos fixed/substitutions
-  mutate(`Depth increment of slice` = gsub("--", "-", `Depth increment of slice`)) %>%
-  mutate(`Depth increment of slice` = gsub("core bottom", "165-167", `Depth increment of slice`)) %>%
-  separate(`Depth increment of slice`, into = c("depth_min", "depth_max"), sep = "-") %>%
-  
-  # Depth intervals are also split between multiple columns, depending on the core/study...
-  #   annoying indeed. I have some fixes.
-  separate("Depth of accumulated sediment (cm)", into = c("depth_min_1", "depth_max_1"), sep = "-") %>%
-  mutate(depth_min = gsub("\\D", "", depth_min)) %>%
-  mutate(depth_min = ifelse(is.na(depth_min), depth_min_1, depth_min)) %>%
-  mutate(depth_max = gsub("\\D", "", depth_max)) %>%
-  mutate(depth_max = ifelse(is.na(depth_max), depth_max_1, depth_max)) %>%
+  rename(depth = `Depth increment of slice`) %>%
+  mutate(depth = gsub("--", "-", depth)) %>%
+  mutate(depth = gsub("core bottom", "165-167", depth)) %>%
+  mutate(depth = gsub("cm", "", depth)) %>%
+  mutate(depth = gsub("'", "", depth)) %>%
+
+  separate(depth, into = c("depth_min", "depth_max"), sep = "-") %>%
+  mutate(depth_min = as.numeric(depth_min), 
+         depth_max = as.numeric(depth_max)) %>%
   
   rename(# dry bulk density was measured in g/mL, which is the same as g/c3
          dry_bulk_density = "Dry Bulk density (g/ml)",
          fraction_carbon = "Soil total Carbon contet (%dw)",
          fraction_organic_matter = "Soil organic Carbon content (%dw)",
          age = "age#") %>%
+  
+  # Turn negative fraction organic matter values to 0
+  mutate(fraction_organic_matter = ifelse(fraction_organic_matter < 0, 0, fraction_organic_matter)) %>%
+  
+  # Filter out rows that do not have any relevant carbon or dating data 
+  filter(!(is.na(fraction_organic_matter) & is.na(age) & is.na(fraction_carbon) & is.na(dry_bulk_density))) %>%
+  # Filter out two studies with biomass data but no depthseries interval
+  filter(!(study_id %in% c("Agawin_et_al_1996", "Townsend_and_Fonseca_1998"))) %>%
   
   # Fix some issues with age: parsed as character, some entries are approx and not #s
   mutate(age = gsub("B.P.", "", age)) %>%
@@ -174,7 +201,17 @@ depthseries <- Fourqurean %>%
   mutate(fraction_carbon = fraction_carbon/100, 
          fraction_organic_matter = fraction_organic_matter/100) %>%
   select(study_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon, 
-         fraction_organic_matter, age)
+         fraction_organic_matter, age) 
+
+# Check quality of depth interval
+# Import the raw data file in the "original" folder and run the following code 
+# to view issues with original intervals 
+# intervals <- depthseries %>%
+#   mutate(min_greater = ifelse(depth_min > depth_max, TRUE, FALSE), 
+#          no_min = ifelse(is.na(depth_min), TRUE, FALSE), 
+#          no_max = ifelse(is.na(depth_max), TRUE, FALSE)) %>%
+#   select(core_id, depth_min, depth_max, min_greater, no_min, no_max) %>%
+#   filter(min_greater == TRUE | no_min == TRUE | no_max == TRUE)
 
 # Join site_ids from core_data
 depthseries <- core_data %>%
@@ -200,18 +237,26 @@ BG_carbon = "Below ground seagrass biomass Carbon (gC m-2)") %>%
 species <- Fourqurean %>%
   select(study_id, site_id, core_id, "seagrass species") %>%
   rename(species_code = "seagrass species") %>%
+  # Prepare the species to be separated by commas 
+  # Turn all non comma separators to commas 
+  # and remove instances of duplicate commas 
   mutate(species_code = gsub("m. ", "m, ", species_code)) %>%
-  mutate(species_code = gsub("  &", ",", species_code)) %>%
-  mutate(species_code = gsub(" and ", ",", species_code)) %>%
-  separate(species_code, into = c("species1", "species2", "species3"), 
-           sep = ", |,") %>%
-  filter(!is.na(species1)) %>%
-  gather(key = "count", value = "species_code", -study_id, -site_id, -core_id) %>%
-  select(-count) %>%
-  # From the previous gsubbing, certain cells are empty but not NA, fix this
-  mutate_all(na_if, "") %>%
-  # Remove duplicate rows
-  distinct(study_id, site_id, core_id, species_code)
+  mutate(species_code = gsub("&", ",", species_code)) %>%
+  mutate(species_code = gsub("and", ",", species_code)) %>%
+  mutate(species_code = gsub(", ,", ",", species_code)) %>%
+  # Separate the rows by comma 
+  separate_rows(species_code, sep=",") %>%
+  # remove leading and trailing empty spaces from strings 
+  mutate(species_code = str_trim(species_code, "both")) %>%
+  # recode some species codes
+  mutate(species_code = recode(species_code, 
+                               "Syringodium filiform" = "Syringodium filiforme", 
+                               "amphibolis antartica" = "Amphibolis antarctica", 
+                               "Halopohila ovalis" = "Halophila ovalis", 
+                               "Halodule wirghtii" = "Halodule wrightii",
+                               "Halodule wrigthii" = "Halodule wrightii")) %>%
+  # remove all entries without a species code 
+  filter(is.na(species_code) == FALSE) 
 
 ## ....3h. Create study-level data ######
 
@@ -231,29 +276,50 @@ study_data_primary <- CCRCN_bib %>%
   mutate(study_type = tolower(study_type)) %>%
   select(study_id, study_type, bibliography_id, doi) 
 
-# study_data <- cores %>%
-#   group_by(study_id) %>%
-#   summarize(study_type = "synthesis",
-#             bibliography_id = "Fourqurean_et_al_2012", 
-#             doi = "10.1038/ngeo1477") %>%
-#   bind_rows(study_data_primary)
-
+study_data <- core_data %>%
+  group_by(study_id) %>%
+  summarize(study_type = "synthesis",
+            bibliography_id = "Fourqurean_et_al_2012",
+            doi = "10.1038/ngeo1477") %>%
+  bind_rows(study_data_primary)
 
 ## 4. QA/QC of data ################
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Test column names 
+test_colnames("core_level", core_data)
+test_colnames("depthseries", depthseries)
+test_colnames("site_level", site_data)
+test_colnames("species", species)
 
 # Re-order columns
-source("./scripts/1_data_formatting/qa_functions.R")
 depthseries <- select_and_reorder_columns(depthseries, "depthseries", "./data/Fourqurean_2012/derivative/")
 site_data <- select_and_reorder_columns(site_data, "site_level", "./data/Fourqurean_2012/derivative/")
 core_data <- select_and_reorder_columns(core_data, "core_level", "./data/Fourqurean_2012/derivative/")
 # No guidance for biomass yet
 species <- select_and_reorder_columns(species, "species", "./data/Fourqurean_2012/derivative/")
 
-## 5. write out data ##############
+# test variable names
+test_varnames(core_data)
+test_varnames(depthseries)
+test_varnames(site_data)
+test_varnames(species)
 
+## ....4B. Quality control on cell values ###################
+# Make sure that all core IDs are unique
+test_unique_cores(core_data)
+
+# Provide summary stats on each numeric column, to check for oddities
+numeric_test_results <- test_numeric_vars(depthseries)
+
+# Test relationships between core_ids at core- and depthseries-levels
+# the test returns all core-level rows that did not have a match in the depth series data
+results <- test_core_relationships(core_data, depthseries)
+
+## 5. write out data ##############
 write_csv(depthseries, "./data/Fourqurean_2012/derivative/Fourqurean_2012_depthseries_data.csv")
 write_csv(site_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_site_data.csv")
 write_csv(core_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_core_data.csv")
 write_csv(species, "./data/Fourqurean_2012/derivative/Fourqurean_2012_species_data.csv")
 write_csv(biomass, "./data/Fourqurean_2012/derivative/Fourqurean_2012_biomass_data.csv")
-write_csv(study_data_primary, "./data/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")
+write_csv(study_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")
