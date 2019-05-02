@@ -271,7 +271,7 @@ Institution = {Environmental Science Associates, Western Washington University, 
             )
 
 # Write this content out to a .bib file
-fileConn <- file("data/Holmquist_2018/derivative/bibliography.bib")
+fileConn <- file("data/Holmquist_2018/derivative/V1_Holmquist_2018_citation.bib")
 writeLines(as.character(bibliography), fileConn)
 close(fileConn)
 
