@@ -48,7 +48,7 @@ references <- c(na.omit(unique(Fourqurean$Reference)))
 study_id_list <- c("Fourqurean_unpublished", "Orem_et_al_1999", "Figueiredo_da_Silva_et_al_2009", 
              "Fourqurean_et_al_2010", "Carruthers_et_al_2005", "Rosenfeld_1979", 
              "Mellors_et_al_2002", "Danovaro_and_Fabiano_1995", "Gonneea_et_al_2004", 
-             "Marba_unpublished", "Grady_1981", "Pulich_1987", "De_Falco_et_al_2006", 
+             "Marba_unpublished", "Grady_1981", "Pulich_1985", "De_Falco_et_al_2006", 
              "Furuta_et_al_2002", "De_Troch_et_al_2006", "Holmer_et_al_2003",
              "Boschker_et_al_2000", "Vichkovitten_and_Holmer_2005", "Holmer_et_al_2006", 
              "Holmer_et_al_2009", "Leduc_and_Probert_2011", "Yamamuro_et_al_1993", 
