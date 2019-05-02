@@ -19,3 +19,10 @@ Four derived .csv files:
 Datasets follow the structure and definitions given at CCRCN-Soils-Working-Group/data/data-syntheses/data_templates/ in the group’s GitHub, and at https://serc.si.edu/coastalcarbon/database-structure
 
 ## Issues or notes: 
+2019-02-05 JH notes: Hook script still has a few issues. Depth series has inconsistent formatting of NA's. We need a housekeeping script that will detect 'NA' and convert to consistent accross all tables and all attributes.
+
+``` file[is.na(file)] <- NA```
+
+Species table needs columns ordered correctly.
+
+DOI in study citations still has a rogue `};` at the end.
