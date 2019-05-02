@@ -111,21 +111,15 @@ impacts <- impacts %>%
 
 ## Create study-level data ######
 
-# import the CCRCN bibliography 
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+study_citation <- tibble(
+  study_id = "Drexler_et_al_2009",
+  type = "article",
+  bibliography_id = "Drexler_et_al_2009",
+  doi =  "10.1007/s12237-009-9202-8"
+)
 
-# link each study to primary citation and join with synthesis table
-studies <- unique(cores_updated$study_id)
-
-study_data_primary <- CCRCN_bib %>%
-  select(BIBTEXKEY, CATEGORY, DOI) %>%
-  rename(bibliography_id = BIBTEXKEY,
-         study_type = CATEGORY,
-         doi = DOI) %>%
-  filter(bibliography_id %in% studies) %>%
-  mutate(study_id = bibliography_id) %>%
-  mutate(study_type = tolower(study_type)) %>%
-  select(study_id, study_type, bibliography_id, doi) 
+## Generate BibTex citation
+bibliography <- cr_ccrcn(dois = study_citation$doi)
 
 ## impact data ######################
 impactsOutput <- impacts %>%
@@ -153,4 +147,8 @@ results <- test_core_relationships(cores_updated, depthseries_joined)
 write_csv(depthseries_joined, "./data/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
 write_csv(cores_updated, "./data/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
 write_csv(impactsOutput, "./data/Drexler_2009/derivative/Drexler_et_al_2009_impacts.csv")
-write_csv(study_data_primary, "./data/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")
+write_csv(study_citation, "./data/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")
+# Write bib citation to a .bib file
+fileConn <- file("data/Drexler_2009/derivative/Drexler_et_al_2009_citation.bib")
+writeLines(as.character(bibliography), fileConn)
+close(fileConn)
