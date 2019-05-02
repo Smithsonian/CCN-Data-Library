@@ -11,6 +11,7 @@
 
 library(tidyverse)
 library(readxl)
+library(rcrossref)
 library(bib2df)
 
 ## Read in data #####################
