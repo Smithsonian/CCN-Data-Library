@@ -18,6 +18,7 @@
 library(RCurl)
 library(tidyverse)
 library(rcrossref)
+library(bib2df)
 
 ## NOTE: this section commented out, but kept, because the data for the Holmquist
 # 2018 Sci Reports data release does not include site IDs. If and when this data
@@ -269,6 +270,23 @@ Institution = {Environmental Science Associates, Western Washington University, 
       }"
             )
 
+# Write this content out to a .bib file
+fileConn <- file("data/Holmquist_2018/derivative/bibliography.bib")
+writeLines(as.character(bibliography), fileConn)
+close(fileConn)
+
+# # Now import back in as a df
+# bib <- bib2df("data/Holmquist_2018/derivative/bibliography.bib")
+# 
+# # Quick curation to enable us to join by DOI
+# bib <- bib %>%
+#   rename(doi = DOI) %>%
+#   mutate(doi = ifelse(is.na(doi), URL, doi)) # If the DOI field is blank, pull
+# # in the URL...which should match the supposed "DOI" in study_data_primary
+# 
+# study_data_primary <- study_data_primary %>%
+#   left_join(bib, by = "doi")
+
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
@@ -289,6 +307,3 @@ write_csv(impacts, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_impact_da
 write_csv(species, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_species_data.csv")
 write_csv(methods, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_methods_data.csv")
 write_csv(study_data_primary, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_study_citations.csv")
-fileConn<-file("data/Holmquist_2018/derivative/bibliography.bib")
-writeLines(as.character(bibliography), fileConn)
-close(fileConn)
