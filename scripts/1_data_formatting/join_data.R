@@ -16,8 +16,7 @@ Deegan_2012_citationdata <- read_csv( "./data/Deegan_2012/derivative/Deegan_et_a
 
 # Drexler 2009
 Drexler_2009_coredata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
-Drexler_2009_depthseriesdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv",
-                                          col_types = )
+Drexler_2009_depthseriesdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
 Drexler_2009_speciesdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_species_data.csv")
 Drexler_2009_methodsdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_methods_data.csv")
 Drexler_2009_citationdata <- read_csv( "./data/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")
@@ -143,13 +142,13 @@ CCRCN_methodsdata <- Holmquist_2018_methodsdata %>%
   bind_rows(Drexler_2009_methodsdata)
 
 ## ....2e. Species data #################
-CCRCN_speciesdata <- Holmquist_2018_speciesdata %>%
-  bind_rows(Drexler_2009_speciesdata) %>%
+CCRCN_speciesdata <- Osland_2016_speciesdata %>%
+  bind_rows(Sanderman_2018_speciesdata) %>%
   bind_rows(Fourqurean_2012_speciesdata) %>%
-  bind_rows(Osland_2016_speciesdata) %>%
   bind_rows(Giblin_2018_speciesdata) %>%
-  bind_rows(Sanderman_2018_speciesdata)
-
+  bind_rows(Holmquist_2018_speciesdata) %>%
+  bind_rows(Drexler_2009_speciesdata) 
+  
 ## ....2f. Bind citation tables ###############
 # Remove a few studies from syntheses
 Holmquist_2018_citationdata <- Holmquist_2018_citationdata %>%
@@ -176,6 +175,18 @@ results_unique_core <- test_unique_cores(CCRCN_coredata)
 
 # There almost 100 sets of coordinates that have two or more cores associated with them: 
 write_csv(test_unique_coords(CCRCN_coredata), "./data/QA/duplicate_cores.csv")
+
+# Test column names
+test_colnames("core_level", CCRCN_coredata) 
+test_colnames("depthseries", CCRCN_depthseriesdata)
+test_colnames("species", CCRCN_speciesdata) 
+test_colnames("impact", CCRCN_impactdata) 
+
+# Test relationships between core_ids at core- and depthseries-levels
+# the test returns all core-level rows that did not have a match in the depth series data
+results <- test_core_relationships(CCRCN_coredata, CCRCN_depthseriesdata)
+
+test_numeric_vars(CCRCN_depthseriesdata)
 
 ## 4. Write datasets #############
 
