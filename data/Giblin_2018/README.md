@@ -26,3 +26,6 @@ Datasets follow the structure and definitions given at CCRCN-Soils-Working-Group
 Species table needs columns ordered correctly.
 
 DOI in study citations still has a rogue `};` at the end.
+
+2019-03-05 ML: Fixed NA format, species table ordering. The DOI issue will be fixed for all scripts once the new bibliography workflow is established. 
+

@@ -236,8 +236,12 @@ select_and_reorder_columns <- function(data, # The dataset you seek to re-order
 
 test_numeric_vars <- function(input_data) {
   
-  numeric_attributes <- read_csv("./docs/controlled_attributes.csv", col_types = cols()) %>%
+  controlled_numeric_attributes <- read_csv("./docs/controlled_attributes.csv", col_types = cols()) %>%
     filter(data_type == "numeric")
+  
+  numeric_attributes <- read_csv("./docs/uncontrolled_attributes.csv", col_types = cols()) %>%
+    filter(data_type == "numeric") %>%
+    bind_rows(controlled_numeric_attributes)
   
   # select only numeric columns 
   to_check <- subset(colnames(input_data), colnames(input_data) %in% numeric_attributes$attribute_name)

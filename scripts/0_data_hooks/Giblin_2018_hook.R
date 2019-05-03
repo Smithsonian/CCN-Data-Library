@@ -58,18 +58,21 @@ depthseries_data <- dt1 %>%
          cs137_activity = v_137Cs..paren.mBq.per.g.paren., 
          total_pb210_activity = v_210Pb..paren.Bq.per.g.paren.,
          bi214_activity = v_214.Bi..paren.Bq.per.g.paren.,
-         pb214_activity = v_214Pb..paren.Bq.per.g.paren.) %>%
-  mutate(fraction_carbon = C.percent. / 100,
+         pb214_activity = v_214Pb..paren.Bq.per.g.paren., 
+         fraction_carbon = C.percent.) %>%
+  mutate(fraction_carbon = as.numeric(fraction_carbon)) %>%
+  mutate(fraction_carbon = ifelse(is.nan(fraction_carbon)==TRUE, NA, fraction_carbon), 
+         pb214_activity = ifelse(is.nan(pb214_activity)==TRUE, NA, fraction_carbon)) %>%
+  mutate(fraction_carbon = fraction_carbon / 100,
          cs137_unit = "millibecquerel_per_gram",
          pb210_unit = "becquerel_per_gram", 
-         pb214_unit = "becquerel_per_gram", 
+         pb214_unit = ifelse(is.na(pb214_activity) == FALSE, "becquerel_per_gram", NA),  
          bi214_unit = "becquerel_per_gram") %>%
   # create unique core IDs
   mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
          study_id = "Giblin_and_Forbrich_2018",
          site_id = "Nelson_Island_Creek") %>%
-  mutate(fraction_carbon = gsub("NaN", "NA", fraction_carbon), 
-         depth_min = section - 1, 
+  mutate(depth_min = section - 1, 
          depth_max = section + 1) %>%
   select(study_id, site_id, core_id, depth_min, depth_max, 
          dry_bulk_density, fraction_carbon, 
@@ -103,7 +106,8 @@ veggies <- dt1 %>%
   group_by(core_id) %>%
   summarize(study_id = "Giblin_and_Forbrich_2018", 
          site_id = "Nelson_Island_Creek",
-         species_code = first(ifelse(species_code == "S. alterniflora", "Spartina alterniflora", "Spartina patens")))
+         species_code = first(ifelse(species_code == "S. alterniflora", "Spartina alterniflora", "Spartina patens"))) %>%
+  select(study_id, site_id, core_id, species_code)
   
 ## ... 2D. Site data ########################
 site_data <- cores %>%
@@ -156,6 +160,8 @@ test_colnames("depthseries", depthseries_data)
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(cores, depthseries_data)
+
+numeric_test_results <- test_numeric_vars(depthseries_data)
 
 ## 5. Write data ################
 write_csv(site_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_sites.csv")
