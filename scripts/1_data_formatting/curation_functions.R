@@ -347,6 +347,23 @@ recode_salinity <- function(df, salinity_class) {
 # https://github.com/ropensci/rcrossref
 
 # Required functions from rcrossref for cr_cn (and therefore cr_ccrcn)
+`cr_agency` <- function(dois = NULL, .progress="none", ...) {
+  foo <- function(x, y, ...){
+    cr_GET(
+      endpoint = sprintf("works/%s/agency", x),
+      args = list(),
+      parse = TRUE, ...)
+  }
+  if (length(dois) > 1) {
+    res <- llply(dois, foo, y = .progress, ...)
+    res <- lapply(res, "[[", "message")
+    names(res) <- dois
+    res
+  } else {
+    foo(dois, ...)$message
+  }
+}
+
 GET_agency_id <- function(x, ...) {
   if (is.null(x)) {
     stop("no doi for doi agency check provided", call. = FALSE)
