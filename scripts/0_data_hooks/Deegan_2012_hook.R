@@ -25,6 +25,8 @@ library(rvest)
 library(stringr)
 library(tidyverse)
 library(lubridate)
+library(rcrossref)
+library(bib2df)
 
 ## ... 2A. download and save below ground biomass #########
 infile1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-pie/216/2/e2c8e7c0b2338c593f00ab988d0e9774" 
@@ -132,22 +134,43 @@ site_data <- site_data %>%
          vegetation_class = "salt marsh")
 
 ## 4. Create study-level data ######
-# import the CCRCN bibliography 
-library(bib2df)
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
 
-# link each study to primary citation and join with synthesis table
-studies <- unique(cores$study_id)
+# Add DOIs for both datasets
+study_citation <- tibble(
+  study_id = c("Deegan_et_al_2012", "Deegan_et_al_2012"),
+  type = c("article", "article"),
+  bibliography_id = c("Deegan_et_al_2012", "Deegan_et_al_2012"),
+  doi =  c("10.6073/pasta/bc041b3546ba4a3730fd391852741620",
+           "10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee")
+)
 
-study_data_primary <- CCRCN_bib %>%
-  select(BIBTEXKEY, CATEGORY, DOI) %>%
-  rename(bibliography_id = BIBTEXKEY,
-         study_type = CATEGORY,
-         doi = DOI) %>%
-  filter(bibliography_id %in% studies) %>%
-  mutate(study_id = bibliography_id, 
-         study_type = tolower(study_type)) %>%
-  select(study_id, study_type, bibliography_id, doi) 
+
+## Generate BibTex citation
+bibliography <-  c(
+  "@Dataset{Deegan_2009a,
+	title = {2009 LENS aboveground biomass core results},
+  doi = {10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee},    
+  url = {https://doi.org/10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee},
+  author = {Linda Deegan and Duncan FitzGerald and Sergio Fagherazz},
+  publisher = {Environmental Data Initiative},
+  year = {2012},
+  abstract = {2009 LENS Geotechnical and Biomass Results from 72 hand auger cores (50 cm depth) retrieved from LENS and TIDE project creeks (Sweeney, West, Clubhead, Nelson) in Rowley, MA. Thirty-six of these cores were processed for aboveground biomass and belowground biomass. Results presented here are aboveground biomass. Results for belowground biomass are presented in file STP-LENS-2009-below-biomass. The remainder 36 auger cores were processed for bulk density and bulk organic content (from loss on ignition, LOI) and results are presented in STP-LENS-2009-geotechnical.}
+                   }",
+
+"@Dataset{Deegan_2009b,
+	title = {2009 LENS belowground biomass core results},
+  doi = {10.6073/pasta/bc041b3546ba4a3730fd391852741620},    
+  url = {https://doi.org/10.6073/pasta/bc041b3546ba4a3730fd391852741620},
+  author = {Linda Deegan and Duncan FitzGerald and Sergio Fagherazz},
+  publisher = {Environmental Data Initiative},
+      year = {2012},
+  abstract = {2009 LENS Geotechnical and Biomass Results from 72 hand auger cores (50 cm depth) retrieved from LENS and TIDE project creeks (Sweeney, West, Clubhead, Nelson) in Rowley, MA. Thirty-six of these cores were processed for aboveground and belowground biomass (roots, rhizomes, detritus) . Results for belowground biomass presented here. Above ground biomass results are presented in file STP-LENS-2009-above-biomass. The remainder 36 of these cores were processed for bulk density and bulk organic content (from loss on Iinition, LOI) and results are presented in file STP-LENS-2009-geotechnical.}
+      }"
+
+)
+
+
+
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -165,5 +188,8 @@ results <- test_core_relationships(cores, biomass_depthseries)
 write_csv(cores, "./data/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
 write_csv(site_data, "./data/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
 write_csv(biomass_depthseries, "./data/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")
-write_csv(study_data_primary, "./data/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
+write_csv(study_citation, "./data/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
 write_csv(biomass_agg, "./data/Deegan_2012/derivative/Deegan_et_al_2012_biomass.csv")
+fileConn <- file("data/Deegan_2012/derivative/Deegan_et_al_2012_citation.bib")
+writeLines(as.character(bibliography), fileConn)
+close(fileConn)

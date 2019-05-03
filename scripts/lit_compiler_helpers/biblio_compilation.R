@@ -7,18 +7,28 @@
 
 ## Workspace prep ########
 library(RefManageR)
+library(rcrossref)
 library(fuzzyjoin)
 library(tidyverse)
 library(bib2df)
 
-# Import CCRCN core data
-CCRCN_coredata <- read_csv("./data/CCRCN_synthesis/CCRCN_core_data.csv")
+# Import CCRCN citations
+CCRCN_citations <- read_csv("./data/CCRCN_synthesis/CCRCN_study_citations.csv")
 
 # Import the CCRCN bibliography 
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+CCRCN_bibtest <- bib2df("./docs/CCRCN_bibliography.bib")
+bib_old <- bib2df("docs/bib_old.bib")
+bib_old <- bib_old %>%
+  mutate(BIBTEXKEY = gsub("_", "", BIBTEXKEY))
+df2bib(bib_old, file = "./docs/CCRCN_bibliography_ld.bib")
+
+## Generate Citations ############
+
+bibmaster <- cr_cn(dois = CCRCN_citations$doi)
+
+cr_cn(dois = "10.1007/s11273-015-9479-2")
 
 ## Curate Bibliography ###############
-
 
 study_ids <- CCRCN_coredata %>%
   distinct(study_id) %>%
@@ -47,7 +57,10 @@ CCRCN_bib_link <- CCRCN_bib_df %>%
 write_csv(CCRCN_bib_link, "./docs/bibliography/CCRCN_bibliography_link.csv")
 
 # Convert back to BibEntry and write BibTeX file
-df2bib(CCRCN_bib, file = "./docs/bibliography/CCRCN_bibliography_out.bib")
+df2bib(CCRCN_bib, file = "./docs/CCRCN_bibliography.bib")
+
+
+
 
 
 
