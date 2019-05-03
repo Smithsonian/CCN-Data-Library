@@ -83,7 +83,11 @@ cores <- cores %>%
   recode_salinity(salinity_class = salinity_class) %>%
   recode_vegetation(vegetation_class = vegetation_class) %>%
   # There's a typo with Galveston Bay sites
-  mutate(site_id = recode(site_id, "Gavelston_Bay" = "Galveston_Bay"))
+  mutate(site_id = recode(site_id, "Gavelston_Bay" = "Galveston_Bay")) %>%
+  # CRMS site IDs are going to be changed to their CRMS code in order to break up very large bounding boxes on the map. 
+  # Ex: The site ID associated with CRMS core CRMS0003_2 will be CRMS0003
+  mutate(site_id = ifelse(grepl("CRMS", core_id) == TRUE, 
+                          gsub("_.*", "", core_id), site_id))
 
 depthseries <- depthseries %>%
   # The Crooks study ID should be 2014, not 2013. 
@@ -92,7 +96,7 @@ depthseries <- depthseries %>%
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
-  filter(study_id != "Gonneea_et_al_2018")
+  filter(study_id != "Gonneea_et_al_2018") 
 
 # Fraction carbon type should be in the methods metadata, not depthseries level 
 fraction_carbon_type_metadata <- depthseries %>%
@@ -113,7 +117,7 @@ species <- species %>%
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
   filter(study_id != "Gonneea_et_al_2018") %>%
-  recode_species(species_code = species_code)
+  recode_species(species_code = species_code) 
 
 methods <- methods %>%
   # The Crooks study ID should be 2014, not 2013. 
@@ -299,6 +303,8 @@ test_colnames("impact", impacts)
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(cores, depthseries)
+
+test_numeric_vars(depthseries)
 
 ## 6. Write to folder ########
 write_csv(cores, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_core_data.csv")
