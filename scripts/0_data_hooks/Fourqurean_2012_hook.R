@@ -24,6 +24,19 @@ library(RefManageR)
 
 Fourqurean_raw <- read_excel("./data/Fourqurean_2012/intermediate/JFourqurean_edited.xls")
 
+## Recode References to study_ids
+# Create vector of references
+references <- tibble(reference = na.omit(unique(Fourqurean_raw$Reference)))
+references <- references %>%
+  arrange(reference)
+
+# Write this out to an intermediate file
+write_csv(references, "data/Fourqurean_2012/intermediate/references.csv")
+
+# Now that 'references' was manually joined and inspected to a manually-compiled
+#   set of study IDs and DOIs, read that in
+study_doi_manual <- read_csv("data/Fourqurean_2012/intermediate/study_doi_manual.csv")
+
 ## 3. Curate data ######################
 
 ## ....3a. Prelim curation to raw dataset ###############
@@ -31,71 +44,67 @@ Fourqurean_raw <- read_excel("./data/Fourqurean_2012/intermediate/JFourqurean_ed
 Fourqurean <- Fourqurean_raw %>%
   separate(Location, into = c("site_id", "other"), sep = ",") %>%
   mutate(site_id = gsub(" ", "_", site_id)) %>%
-  rename(core_id = "Core or site#", vegetation_class = "Seagrass or unvegetated") %>%
-  select(-"Porosity (%)", 
-         -"Soil organic carbon density (mg/mL)", -"Soil organic matter density (mg/mL)",
-         -"loss on ignition (%)") %>%
+  rename(core_id = "Core or site#", vegetation_class = "Seagrass or unvegetated",
+         reference = Reference) %>%
   mutate(vegetation_class = tolower(vegetation_class)) %>%
   # Standardize ontology for vegetation_class
   mutate(vegetation_class = ifelse(vegetation_class != "seagrass", 
-                                   "unvegetated marine", vegetation_class))
+                                   "unvegetated marine", vegetation_class)) %>%
+  # Join to the manual-compiled study list
+  full_join(study_doi_manual) %>%
+  select(-doi, -url, -reference, -"Porosity (%)", 
+         -"Soil organic carbon density (mg/mL)", -"Soil organic matter density (mg/mL)",
+         -"loss on ignition (%)")
 
-## Recode References to study_ids
-# Create vector of references
-references <- c(na.omit(unique(Fourqurean$Reference)))
+# # Manually add each study ID
+# study_id_list <- c("Fourqurean_unpublished", "Orem_et_al_1999", "Figueiredo_da_Silva_et_al_2009", 
+#              "Fourqurean_et_al_2010", "Carruthers_et_al_2005", "Rosenfeld_1979", 
+#              "Mellors_et_al_2002", "Danovaro_and_Fabiano_1995", "Gonneea_et_al_2004", 
+#              "Marba_unpublished", "Grady_1981", "Pulich_1985", "De_Falco_et_al_2006", 
+#              "Furuta_et_al_2002", "De_Troch_et_al_2006", "Holmer_et_al_2003",
+#              "Boschker_et_al_2000", "Vichkovitten_and_Holmer_2005", "Holmer_et_al_2006", 
+#              "Holmer_et_al_2009", "Leduc_and_Probert_2011", "Yamamuro_et_al_1993", 
+#              "Pedersen_et_al_1997", "Barron_et_al_2004",
+#              "Calleja_et_al_2007", "Holmer_and_Frederiksen_2007", "Mateo_and_Romero_1997", 
+#              "Lo_Iacono_et_al_2008", "Kairis_and_Rybczyk_2010", "Apostolaki_unpublished", 
+#              "Maher_and_Eyre_2010", "Borg_et_al_2010",
+#              "Spivak_et_al_2009", "Alongi_et_al_2008", "Spruzen_et_al_2008", 
+#              "Yarbro_and_carlson_2008", "Lewis_et_al_2007", "Qu_et_al_2006",
+#              "Bouillon_et_al_2004", "Rigollet_et_al_2004", "Grenz_et_al_2003",
+#              "Larned_2003", "Danovaro_and_Gambi_2002", "Eyre_and_Ferguson_2002", 
+#              "Gacia_et_al_2002", "Koch_and_Madden_2001", "Sfriso_and_Marcomini_1999", 
+#              "Miyajima_et_al_1998", "Danovaro_1996", "Koepfler_et_al_1993",
+#              "Amon_and_Herndl_1991", "Fourqurean_and_Kendrick_unpublished", 
+#              "Fonseca_et_al_2011", "Erftemeijer_and_Middelburg_1993", 
+#              "Burns_and_Swart_1992", "Hemminga_et_al_1994", "Deiongh_et_al_1995", 
+#              "Danovaro_et_al_1994", "Agawin_et_al_1996", "Isaksen_and_Finster_1996", 
+#              "Townsend_and_Fonseca_1998", "Stoner_et_al_1998", "Buzzelli_1998", 
+#              "Kristensen_et_al_2000", "Paula_et_al_2001", "McGlathery_unpublished", 
+#              "Cotner_et_al_2004", "Hebert_et_al_2007", "Oakes_and_Connolly_2004", 
+#              "Thimdee_et_al_2003", "Lillebo_et_al_2006", "Lee_et_al_2005", 
+#              "Al-Rousan_et_al_2005", "Kenig_et_al_1990", "Krause-Jensen_et_al_2011", 
+#              "Devereux_et_al_2011", "Ooi_et_al_2011", "Povidisa_and_Delefosse_unpublished", 
+#              "Gacia_unpublished", "Kamp-Nielsen_et_al_2002", "Mateo_unpublished", 
+#              "Mateo_et_al_1997", "Serrano_unpublished", "Mateo_and_Serrano_unpublished", 
+#              "Mateo_and_Serrano_unpublished", "Krause-Jensen_et_al_2011", "Holmer_et_al_2001", 
+#              "Holmer_unpublished", "van_Engeland_thesis", "Volkman_et_al_2008", 
+#              "Abed-Navandi_and_Dworschak_2005", "Duarte_unpublished", "Kennedy_unpublished", 
+#              "Copertino_unpublished")
   
-# Manually add each study ID
-study_id_list <- c("Fourqurean_unpublished", "Orem_et_al_1999", "Figueiredo_da_Silva_et_al_2009", 
-             "Fourqurean_et_al_2010", "Carruthers_et_al_2005", "Rosenfeld_1979", 
-             "Mellors_et_al_2002", "Danovaro_and_Fabiano_1995", "Gonneea_et_al_2004", 
-             "Marba_unpublished", "Grady_1981", "Pulich_1985", "De_Falco_et_al_2006", 
-             "Furuta_et_al_2002", "De_Troch_et_al_2006", "Holmer_et_al_2003",
-             "Boschker_et_al_2000", "Vichkovitten_and_Holmer_2005", "Holmer_et_al_2006", 
-             "Holmer_et_al_2009", "Leduc_and_Probert_2011", "Yamamuro_et_al_1993", 
-             "Pedersen_et_al_1997", "Barron_et_al_2004",
-             "Calleja_et_al_2007", "Holmer_and_Frederiksen_2007", "Mateo_and_Romero_1997", 
-             "Lo_Iacono_et_al_2008", "Kairis_and_Rybczyk_2010", "Apostolaki_unpublished", 
-             "Maher_and_Eyre_2010", "Borg_et_al_2010",
-             "Spivak_et_al_2009", "Alongi_et_al_2008", "Spruzen_et_al_2008", 
-             "Yarbro_and_carlson_2008", "Lewis_et_al_2007", "Qu_et_al_2006",
-             "Bouillon_et_al_2004", "Rigollet_et_al_2004", "Grenz_et_al_2003",
-             "Larned_2003", "Danovaro_and_Gambi_2002", "Eyre_and_Ferguson_2002", 
-             "Gacia_et_al_2002", "Koch_and_Madden_2001", "Sfriso_and_Marcomini_1999", 
-             "Miyajima_et_al_1998", "Danovaro_1996", "Koepfler_et_al_1993",
-             "Amon_and_Herndl_1991", "Fourqurean_and_Kendrick_unpublished", 
-             "Fonseca_et_al_2011", "Erftemeijer_and_Middelburg_1993", 
-             "Burns_and_Swart_1992", "Hemminga_et_al_1994", "Deiongh_et_al_1995", 
-             "Danovaro_et_al_1994", "Agawin_et_al_1996", "Isaksen_and_Finster_1996", 
-             "Townsend_and_Fonseca_1998", "Stoner_et_al_1998", "Buzzelli_1998", 
-             "Kristensen_et_al_2000", "Paula_et_al_2001", "McGlathery_unpublished", 
-             "Cotner_et_al_2004", "Hebert_et_al_2007", "Oakes_and_Connolly_2004", 
-             "Thimdee_et_al_2003", "Lillebo_et_al_2006", "Lee_et_al_2005", 
-             "Al-Rousan_et_al_2005", "Kenig_et_al_1990", "Krause-Jensen_et_al_2011", 
-             "Devereux_et_al_2011", "Ooi_et_al_2011", "Povidisa_and_Delefosse_unpublished", 
-             "Gacia_unpublished", "Kamp-Nielsen_et_al_2002", "Mateo_unpublished", 
-             "Mateo_et_al_1997", "Serrano_unpublished", "Mateo_and_Serrano_unpublished", 
-             "Mateo_and_Serrano_unpublished", "Krause-Jensen_et_al_2011", "Holmer_et_al_2001", 
-             "Holmer_unpublished", "van_Engeland_thesis", "Volkman_et_al_2008", 
-             "Abed-Navandi_and_Dworschak_2005", "Duarte_unpublished", "Kennedy_unpublished", 
-             "Copertino_unpublished")
-  
-# Create a tibble as a linking key between references and study IDs
-studies <- tibble("Reference" = c(references), "study_id" = c(study_id_list))
-
 # Create another linking df for references and coreserial, which is the only
 #   unique identifier for cores
-core_identifier <- Fourqurean %>%
-  select(coreserial, Reference) %>%
-  filter(!is.na(Reference))
+# core_identifier <- Fourqurean %>%
+#   select(coreserial, study_id) %>%
+#   filter(!is.na(study_id))
 
-# Join df's together
-studies <- studies %>%
-  left_join(core_identifier) %>%
-  group_by(coreserial) %>%
-  summarize_all(first)
-
-Fourqurean <- Fourqurean %>%
-  left_join(studies, by = "coreserial")
+# # Join df's together
+# studies <- studies %>%
+#   left_join(core_identifier) %>%
+#   group_by(coreserial) %>%
+#   summarize_all(first)
+# 
+# Fourqurean <- Fourqurean %>%
+#   left_join(studies, by = "coreserial")
 
 ## Create core IDs from study IDs 
 Fourqurean_core <- Fourqurean %>%
@@ -258,30 +267,81 @@ species <- Fourqurean %>%
   # remove all entries without a species code 
   filter(is.na(species_code) == FALSE) 
 
-## ....3h. Create study-level data ######
+## ....3h. Create study-level data ##########################
 
-# import the CCRCN bibliography 
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+# We have a data table that was manually generating, which includes study IDs,
+#   DOIs, and a URL if there is no DOI. No row has a value in both DOI and URL
 
-# link each study to primary citation and join with synthesis table
-studies <- unique(core_data$study_id)
+# Select down to just the rows that have DOIs, which will reduce # of warnings
+#   thrown by GetBibEntryWithDOI()
+doi <- study_doi_manual %>%
+  select(doi) %>%
+  na.omit()
 
-study_data_primary <- CCRCN_bib %>%
-  select(BIBTEXKEY, CATEGORY, DOI) %>%
-  rename(bibliography_id = BIBTEXKEY,
-         study_type = CATEGORY,
-         doi = DOI) %>%
-  filter(bibliography_id %in% studies) %>%
+# Get BibTex entries from DOI
+biblio_raw <- GetBibEntryWithDOI(doi$doi)
+# Convert this to a dataframe
+biblio <- as.data.frame(biblio_raw) %>%
+  # GetBibEntryWithDOI() defaults study name as a row name, convert to column
+  rownames_to_column("bibliography_id")
+
+# Curate biblio so ready to read out as a BibTex-style .bib file
+biblio <- study_doi_manual %>%
+  # Convert uppercase to lowercase for DOIs
+  mutate(doi = gsub(pattern = '([[:upper:]])', perl = TRUE, replacement = '\\L\\1', doi)) %>%
+  full_join(biblio, by = c("doi")) %>% # join
+  mutate(url = ifelse(is.na(url.x), url.y, url.x)) %>% # join the two URL columns
+  select(-url.x, -url.y) %>% # Remove now-unnecessary URL columns
+  # Some renaming is necessary in order for df2bib to pick up on a few attributes
+  #   when writing this out to a .bib file
+  rename(BIBTEXKEY = bibliography_id, CATEGORY = bibtype, AUTHOR = author)
+
+# Manually add information for the citation that failed to resolve from DOI search
+#   by GetBibEntryWithDOI
+Thimdee_et_al_2003 <- biblio %>%
+  filter(study_id == "Thimdee_et_al_2003") %>%
+  mutate(BIBTEXKEY = "Thimdee_2003",
+  CATEGORY = "Article",
+  AUTHOR = "Thimdee, W., Deein, G., Sangrungruang, C., Nishioka, J., and Matsunaga, K.",
+  year = "2003",
+  journal = "Wetlands",
+  volume = "23",
+  pages = "729--738"
+)
+
+# Also create an entry for the synthesis itself
+Fourqurean_citation <- GetBibEntryWithDOI("10.1038/ngeo1477")
+Fourqurean_citation <- as.data.frame(Fourqurean_citation) %>%
+  rownames_to_column("bibliography_id") %>%
   mutate(study_id = bibliography_id) %>%
-  mutate(study_type = tolower(study_type)) %>%
-  select(study_id, study_type, bibliography_id, doi) 
+  rename(AUTHOR = author)
+  
 
-study_data <- core_data %>%
-  group_by(study_id) %>%
-  summarize(study_type = "synthesis",
-            bibliography_id = "Fourqurean_et_al_2012",
-            doi = "10.1038/ngeo1477") %>%
-  bind_rows(study_data_primary)
+# Join these to biblio
+biblio <- biblio %>%
+  filter(study_id != "Thimdee_et_al_2003") %>%
+  bind_rows(Thimdee_et_al_2003) %>%
+  bind_rows(Fourqurean_citation)
+
+## MAKE SURE THIS DATAFRAME INCLUDES A CITATION FOR THE SYNTHESIS ITSELF
+
+# Now curate biblio to create the study citations data table
+#   For a synthesis dataset, this table will have two rows for each primary study:
+#   One corresponding to a citation of the primary study itself, another for a
+#   citation of the synthesis
+study_citations <- biblio %>%
+  rename(publication_type = CATEGORY, author = AUTHOR) %>%
+  mutate(bibliography_id = study_id) %>%
+  select(-BIBTEXKEY)
+
+study_citations <- Fourqurean_citation %>%
+  select(-study_id) %>%
+  rename(author = AUTHOR) %>%
+  slice(rep(1:n(), each = length(study_citations$study_id))) %>%
+  mutate(publication_type = "synthesis") %>%
+  bind_cols(select(study_citations, study_id)) %>%
+  bind_rows(study_citations) %>%
+  select(-bibtype)
 
 ## 4. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -291,6 +351,7 @@ test_colnames("core_level", core_data)
 test_colnames("depthseries", depthseries)
 test_colnames("site_level", site_data)
 test_colnames("species", species)
+test_colnames("associated_publications", study_citations)
 
 # Re-order columns
 depthseries <- select_and_reorder_columns(depthseries, "depthseries", "./data/Fourqurean_2012/derivative/")
@@ -298,12 +359,15 @@ site_data <- select_and_reorder_columns(site_data, "site_level", "./data/Fourqur
 core_data <- select_and_reorder_columns(core_data, "core_level", "./data/Fourqurean_2012/derivative/")
 # No guidance for biomass yet
 species <- select_and_reorder_columns(species, "species", "./data/Fourqurean_2012/derivative/")
+study_citations <- select_and_reorder_columns(study_citations, "associated_publications", "./data/Fourqurean_2012/derivative/")
+
 
 # test variable names
 test_varnames(core_data)
 test_varnames(depthseries)
 test_varnames(site_data)
 test_varnames(species)
+test_varnames(study_citations)
 
 ## ....4B. Quality control on cell values ###################
 # Make sure that all core IDs are unique
@@ -323,3 +387,6 @@ write_csv(core_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_core_dat
 write_csv(species, "./data/Fourqurean_2012/derivative/Fourqurean_2012_species_data.csv")
 write_csv(biomass, "./data/Fourqurean_2012/derivative/Fourqurean_2012_biomass_data.csv")
 write_csv(study_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")
+
+# Write biblio
+df2bib(biblio, "data/Fourqurean_2012/derivative/Fourqurean_2012_bibliography.bib")

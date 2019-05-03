@@ -8,7 +8,7 @@ Fourqurean, James W., et al. "Seagrass ecosystems as a globally significant carb
 Object | Status | Notes
 ------------- | ------------- | -------------
 Material and Methods Metadata | in progress | 
-Study Information table | not started | 
+Study Information table | in progress | 
 Keywords table | not started | 
 Author table | not started |
 funding sources table | not started |
@@ -24,6 +24,12 @@ user defined attributes | not started |
 user define variables | not started | 
 
 ## Notes and Assumptions
+
+#### Applicable to all tables
+
+Assumption | Justification | Notes
+------------- | ------------- | -------------
+Changed Fourqurean_unpublished and Fourqurean_and_Kendrick_unpublished to Fourqurean_2012. | Kendrick is a co-author on this synthesis study, and better than citing nothing. |
 
 
 #### Biomass data 
@@ -78,3 +84,8 @@ Soil organic matter density (mg/mL) | none given| mg/mL | self-explanatory  |
 Porosity (%) | none given | dimensionless | Porosity of soil |
 Soil organic matter density | mg/mL | excluded from derivative dataset, but may want to include in RCN guidance
 
+#### Study Citations
+
+Assumption | Justification | Notes
+------------- | ------------- | -------------
+data with a citation that had Fourqurean as first author but was unpublished (Fourqurean_and_Kendrick_unpublished and Fourqurean_unpublished) was attributed to this synthesis (as in, the citation included the DOI of Fourqurean_et_al_2012. Kendrick also an author on this synthesis). | Better than citing nothing |
