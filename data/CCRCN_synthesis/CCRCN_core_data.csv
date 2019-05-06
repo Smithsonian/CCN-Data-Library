@@ -1522,6 +1522,7 @@ Windham_Meyers_et_al_2010,Crissy_Field,HL,37.804967,-122.457367,latitude and lon
 Drexler_et_al_2009,Bacon Channel Island,BACHI,38.010006,-121.5569,latitude and longitude from handheld GPS or better,1.48,freshwater,forested to shrub,NA,core depth represents deposit depth,RTK-GPS,NAVD88,0.075,RTK-GPS,NA,NA,NA,NA,NA,NA
 Drexler_et_al_2009,Franks Wetland,FW,38.060906,-121.609758,latitude and longitude from handheld GPS or better,1.54,freshwater,forested to shrub,NA,core depth represents deposit depth,RTK-GPS,NAVD88,0.075,RTK-GPS,NA,NA,NA,NA,NA,NA
 Drexler_et_al_2009,Time of Mandeval Tip,TT,38.064606,-121.537556,latitude and longitude from handheld GPS or better,1.47,freshwater,forested to shrub,NA,core depth represents deposit depth,RTK-GPS,NAVD88,0.075,RTK-GPS,NA,NA,NA,NA,NA,NA
+NA,Phuket,NA,8.04,98.42,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Agawin_et_al_1996,Cape_Bolinao,Agawin_et_al_1996_1,16.4505,119.9225,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Agawin_et_al_1996,Cape_Bolinao,Agawin_et_al_1996_2,16.412,119.907,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Al-Rousan_et_al_2005,Gulf_of_Aqaba,Al-Rousan_et_al_2005_1,29.53,34.98,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -1584,18 +1585,18 @@ Borg_et_al_2010,Ramla_Bay,Borg_et_al_2010_6,36.03,14.17,NA,NA,NA,NA,NA,NA,NA,NA,
 Borg_et_al_2010,Mellieha_Bay,Borg_et_al_2010_7,35.58,14.21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Borg_et_al_2010,Mellieha_Bay,Borg_et_al_2010_8,35.58,14.21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Borg_et_al_2010,Mellieha_Bay,Borg_et_al_2010_9,35.58,14.21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Boschker_et_al_2000,Europe,Boschker_et_al_2000_1,55.171973,10.493102,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Boschker_et_al_2000,Europe,Boschker_et_al_2000_10,44.39,-1.09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Boschker_et_al_2000,Europe,Boschker_et_al_2000_11,44.39,-1.09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Boschker_et_al_2000,Europe,Boschker_et_al_2000_12,44.39,-1.09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Boschker_et_al_2000,Europe,Boschker_et_al_2000_2,55.171973,10.493102,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Boschker_et_al_2000,Europe,Boschker_et_al_2000_3,51.36,4.06,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Boschker_et_al_2000,Europe,Boschker_et_al_2000_4,44.39,-1.09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Boschker_et_al_2000,Europe,Boschker_et_al_2000_5,44.39,-1.09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Boschker_et_al_2000,Europe,Boschker_et_al_2000_6,44.39,-1.09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Boschker_et_al_2000,Europe,Boschker_et_al_2000_7,55.171973,10.493102,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Boschker_et_al_2000,Europe,Boschker_et_al_2000_8,55.171973,10.493102,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Boschker_et_al_2000,Europe,Boschker_et_al_2000_9,51.36,4.06,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Boschker_et_al_2000,Europe_1,Boschker_et_al_2000_1,55.171973,10.493102,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Boschker_et_al_2000,Europe_2,Boschker_et_al_2000_10,44.39,-1.09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Boschker_et_al_2000,Europe_2,Boschker_et_al_2000_11,44.39,-1.09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Boschker_et_al_2000,Europe_2,Boschker_et_al_2000_12,44.39,-1.09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Boschker_et_al_2000,Europe_1,Boschker_et_al_2000_2,55.171973,10.493102,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Boschker_et_al_2000,Europe_3,Boschker_et_al_2000_3,51.36,4.06,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Boschker_et_al_2000,Europe_2,Boschker_et_al_2000_4,44.39,-1.09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Boschker_et_al_2000,Europe_2,Boschker_et_al_2000_5,44.39,-1.09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Boschker_et_al_2000,Europe_2,Boschker_et_al_2000_6,44.39,-1.09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Boschker_et_al_2000,Europe_1,Boschker_et_al_2000_7,55.171973,10.493102,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Boschker_et_al_2000,Europe_1,Boschker_et_al_2000_8,55.171973,10.493102,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Boschker_et_al_2000,Europe_3,Boschker_et_al_2000_9,51.36,4.06,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Bouillon_et_al_2004,Gazi_bay,Bouillon_et_al_2004_1,-4.22,39.3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Bouillon_et_al_2004,Gazi_bay,Bouillon_et_al_2004_10,-4.22,39.3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Bouillon_et_al_2004,Gazi_bay,Bouillon_et_al_2004_11,-4.22,39.3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
