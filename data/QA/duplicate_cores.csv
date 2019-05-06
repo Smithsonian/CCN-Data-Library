@@ -1,4 +1,5 @@
 lat_long,n,core_ids,study_ids,num_studies
+"-16.45,145.58",2,"Miyajima_et_al_1998_1, Miyajima_et_al_1998_2",Miyajima_et_al_1998,1
 "-18.358643,146.14801",2,"M0055, M0056",Matsui_1998,1
 "-18.358774,146.145808",2,"M0053, M0054",Matsui_1998,1
 "-18.40913,146.21997",3,"M0066, M0067, M0068",Matsui_1998,1
@@ -63,24 +64,39 @@ lat_long,n,core_ids,study_ids,num_studies
 "-2.7,111.7",12,"M1435, M1436, M1437, M1438, M1439, M1440, M1501, M1502, M1503, M1504, M1505, M1506",Donato_et_al_2011,1
 "-2.8,111.7",12,"M1483, M1484, M1485, M1486, M1487, M1488, M1489, M1490, M1491, M1492, M1493, M1494",Donato_et_al_2011,1
 "-2.9,111.7",6,"M1495, M1496, M1497, M1498, M1499, M1500",Donato_et_al_2011,1
+"-22,165",2,"Grenz_et_al_2003_1, Grenz_et_al_2003_2",Grenz_et_al_2003,1
 "-22.933926,-43.889642",3,"M0080, M0081, M0082","Lacerda_et_al_1995, Jennerjahn_and_Ittekkot_2002",2
+"-25.74388,114.07272",2,"Fourqurean_and_Kendrick_unpublished_59, Fourqurean_and_Kendrick_unpublished_62",Fourqurean_and_Kendrick_unpublished,1
+"-25.7451,114.08416",2,"Fourqurean_and_Kendrick_unpublished_56, Fourqurean_and_Kendrick_unpublished_63",Fourqurean_and_Kendrick_unpublished,1
+"-25.85123,113.93782",2,"Fourqurean_and_Kendrick_unpublished_68, Fourqurean_and_Kendrick_unpublished_70",Fourqurean_and_Kendrick_unpublished,1
+"-25.87061,114.00569",2,"Fourqurean_and_Kendrick_unpublished_21, Fourqurean_and_Kendrick_unpublished_66",Fourqurean_and_Kendrick_unpublished,1
+"-25.89397,114.114",2,"Fourqurean_and_Kendrick_unpublished_51, Fourqurean_and_Kendrick_unpublished_67",Fourqurean_and_Kendrick_unpublished,1
+"-25.92981,114.09576",2,"Fourqurean_and_Kendrick_unpublished_64, Fourqurean_and_Kendrick_unpublished_7",Fourqurean_and_Kendrick_unpublished,1
+"-25.93783,113.93635",2,"Fourqurean_and_Kendrick_unpublished_16, Fourqurean_and_Kendrick_unpublished_61",Fourqurean_and_Kendrick_unpublished,1
+"-25.95637,114.17398",2,"Fourqurean_and_Kendrick_unpublished_6, Fourqurean_and_Kendrick_unpublished_65",Fourqurean_and_Kendrick_unpublished,1
+"-25.96872,114.15514",2,"Fourqurean_and_Kendrick_unpublished_36, Fourqurean_and_Kendrick_unpublished_60",Fourqurean_and_Kendrick_unpublished,1
 "-26.0286,32.879",4,"Paula_et_al_2001_1, Paula_et_al_2001_2, Paula_et_al_2001_6, Paula_et_al_2001_7",Paula_et_al_2001,1
 "-26.0566,32.0566",3,"Paula_et_al_2001_3, Paula_et_al_2001_8, Paula_et_al_2001_9",Paula_et_al_2001,1
 "-26.0662,32.9192",4,"Paula_et_al_2001_10, Paula_et_al_2001_11, Paula_et_al_2001_4, Paula_et_al_2001_5",Paula_et_al_2001,1
 "-29.988266,30.947644",2,"M1298, M1299",Naidoo_and_Raiman_1982,1
-"-3.91667,128.8333",3,"Deiongh_et_al_1995_1, Deiongh_et_al_1995_2, Deiongh_et_al_1995_3",Deiongh_et_al_1995,1
+"-3.91667,128.8333",3,"De_Iongh_et_al_1995_1, De_Iongh_et_al_1995_2, De_Iongh_et_al_1995_3",De_Iongh_et_al_1995,1
 "-31.25,152.5",6,"Maher_and_Eyre_2010_1, Maher_and_Eyre_2010_2, Maher_and_Eyre_2010_3, Maher_and_Eyre_2010_4, Maher_and_Eyre_2010_5, Maher_and_Eyre_2010_6",Maher_and_Eyre_2010,1
 "-31.39,152.47",11,"Maher_and_Eyre_2010_10, Maher_and_Eyre_2010_11, Maher_and_Eyre_2010_12, Maher_and_Eyre_2010_13, Maher_and_Eyre_2010_14, Maher_and_Eyre_2010_15, Maher_and_Eyre_2010_16, Maher_and_Eyre_2010_17, Maher_and_Eyre_2010_7, Maher_and_Eyre_2010_8, Maher_and_Eyre_2010_9",Maher_and_Eyre_2010,1
-"-32.00975,115.4928333",3,"Holmer_unpublished_4, Holmer_unpublished_5, Holmer_unpublished_6",Holmer_unpublished,1
-"-32.13566667,115.7405",3,"Holmer_unpublished_1, Holmer_unpublished_2, Holmer_unpublished_3",Holmer_unpublished,1
+"-32.00975,115.4928333",3,"Holmer_et_al_2007_14, Holmer_et_al_2007_15, Holmer_et_al_2007_16",Holmer_et_al_2007,1
+"-32.13566667,115.7405",3,"Holmer_et_al_2007_11, Holmer_et_al_2007_12, Holmer_et_al_2007_13",Holmer_et_al_2007,1
 "-32.15,152.28",7,"Maher_and_Eyre_2010_18, Maher_and_Eyre_2010_19, Maher_and_Eyre_2010_20, Maher_and_Eyre_2010_21, Maher_and_Eyre_2010_22, Maher_and_Eyre_2010_23, Maher_and_Eyre_2010_24",Maher_and_Eyre_2010,1
+"-33.4,151.35",2,"Eyre_and_Ferguson_2002_1, Eyre_and_Ferguson_2002_2",Eyre_and_Ferguson_2002,1
 "-33.5833333333333,151.266666666667",2,"Fonseca_et_al_2011_5, Fonseca_et_al_2011_6",Fonseca_et_al_2011,1
 "-34.05,151.133333333333",2,"Fonseca_et_al_2011_3, Fonseca_et_al_2011_4",Fonseca_et_al_2011,1
+"-34.32,150.5",5,"Qu_et_al_2006_1, Qu_et_al_2006_2, Qu_et_al_2006_3, Qu_et_al_2006_4, Qu_et_al_2006_5",Qu_et_al_2006,1
 "-35.25,150.483333333333",2,"Fonseca_et_al_2011_1, Fonseca_et_al_2011_2",Fonseca_et_al_2011,1
 "-4.14,119.36",3,"Alongi_et_al_2008_1, Alongi_et_al_2008_2, Alongi_et_al_2008_3",Alongi_et_al_2008,1
+"-4.22,39.3",18,"Bouillon_et_al_2004_1, Bouillon_et_al_2004_10, Bouillon_et_al_2004_11, Bouillon_et_al_2004_12, Bouillon_et_al_2004_13, Bouillon_et_al_2004_14, Bouillon_et_al_2004_15, Bouillon_et_al_2004_16, Bouillon_et_al_2004_17, Bouillon_et_al_2004_18, Bouillon_et_al_2004_2, Bouillon_et_al_2004_3, Bouillon_et_al_2004_4, Bouillon_et_al_2004_5, Bouillon_et_al_2004_6, Bouillon_et_al_2004_7, Bouillon_et_al_2004_8, Bouillon_et_al_2004_9",Bouillon_et_al_2004,1
 "-4.41667,39.5",7,"Hemminga_et_al_1994_1, Hemminga_et_al_1994_2, Hemminga_et_al_1994_3, Hemminga_et_al_1994_4, Hemminga_et_al_1994_5, Hemminga_et_al_1994_6, Hemminga_et_al_1994_7",Hemminga_et_al_1994,1
 "-4.639,39.277",3,"De_Troch_et_al_2006_3, De_Troch_et_al_2006_4, De_Troch_et_al_2006_5",De_Troch_et_al_2006,1
-"-45.84744491,170.7118319",2,"Leduc_and_Probert_2011_3, Leduc_and_Probert_2011_4",Leduc_and_Probert_2011,1
+"-40.4,144.5",12,"Spruzen_et_al_2008_1, Spruzen_et_al_2008_10, Spruzen_et_al_2008_11, Spruzen_et_al_2008_12, Spruzen_et_al_2008_2, Spruzen_et_al_2008_3, Spruzen_et_al_2008_4, Spruzen_et_al_2008_5, Spruzen_et_al_2008_6, Spruzen_et_al_2008_7, Spruzen_et_al_2008_8, Spruzen_et_al_2008_9",Spruzen_et_al_2008,1
+"-45.84744491,170.7118319",2,"Leduc_and_Probert_2011_4, Leduc_and_Probert_2011_5",Leduc_and_Probert_2011,1
+"-45.84746806,170.711856",2,"Leduc_and_Probert_2011_1, Leduc_and_Probert_2011_2",Leduc_and_Probert_2011,1
 "-7.7,109",12,"M1380, M1381, M1382, M1383, M1384, M1385, M1386, M1387, M1388, M1389, M1390, M1391",Donato_et_al_2011,1
 "1.3,124.5",6,"M1422, M1423, M1424, M1425, M1426, M1427",Donato_et_al_2011,1
 "1.4,124.6",6,"M1428, M1429, M1430, M1431, M1432, M1433",Donato_et_al_2011,1
@@ -98,7 +114,6 @@ lat_long,n,core_ids,study_ids,num_studies
 "16.4505,119.9225",2,"Agawin_et_al_1996_1, Kamp-Nielsen_et_al_2002_43","Agawin_et_al_1996, Kamp-Nielsen_et_al_2002",2
 "16.825207,82.293886",23,"M0117, M0118, M0119, M0120, M0121, M0122, M0123, M0124, M0125, M0126, M0127, M0128, M0129, M0130, M0131, M0132, M0133, M0134, M0135, M0136, M0137, M0138, M0139",Bouillon_et_al_2003,1
 "16.829848,-88.103264",3,"M0069, M0070, M0071",Mckee_et_al_2002,1
-"16.84,-88.08",2,"Abed-Navandi_and_Dworschak_2005_1, Abed-Navandi_and_Dworschak_2005_2",Abed-Navandi_and_Dworschak_2005,1
 "19.552029,110.837921",3,"M0263, M0264, M0265",Liu_et_al_2014,1
 "19.956571,110.582643",4,"M0256, M0257, M0258, M0259",Liu_et_al_2014,1
 "19.981578,110.592345",16,"M0463, M0464, M0465, M0466, M0467, M0468, M0469, M0470, M0471, M0472, M0473, M0474, M0475, M0476, M0477, M0478",Liu_et_al_2008,1
@@ -111,13 +126,9 @@ lat_long,n,core_ids,study_ids,num_studies
 "21.4666667,109.7166667",5,"M0452, M0453, M0454, M0455, M0456",He_et_al_2002,1
 "21.529747,109.783918",17,"M0239, M0240, M0241, M0242, M0243, M0244, M0245, M0246, M0247, M0248, M0249, M0250, M0251, M0252, M0253, M0254, M0255",Liu_et_al_2014,1
 "21.666868,88.331259",3,"M0215, M0216, M0217",Dutta_et_al_2013,1
-"21.9345556,-82.7106389",2,"Duarte_unpublished_10, Duarte_unpublished_7",Duarte_unpublished,1
 "22.3,89.6",2,"M1379, M1434",Donato_et_al_2011,1
-"22.3989722,-82.7658889",2,"Duarte_unpublished_13, Duarte_unpublished_17",Duarte_unpublished,1
 "22.493027,114.029298",3,"M0260, M0261, M0262",Liu_et_al_2014,1
 "22.5317972,113.9850889",2,"M0480, M0481",Mao_et_al_2011,1
-"23.7525,-76.1244",4,"Stoner_et_al_1998_10, Stoner_et_al_1998_11, Stoner_et_al_1998_4, Stoner_et_al_1998_9",Stoner_et_al_1998,1
-"23.7554,-76.1196",3,"Stoner_et_al_1998_3, Stoner_et_al_1998_7, Stoner_et_al_1998_8",Stoner_et_al_1998,1
 "24.15131667,52.0476",3,"Jazirat_seagrass_1, Jazirat_seagrass_2, Jazirat_seagrass_3",Campbell_et_al_2015,1
 "24.19905,52.45295",3,"Halat_Idai_seagrass_1, Halat_Idai_seagrass_2, Halat_Idai_seagrass_3",Campbell_et_al_2015,1
 "24.20513,53.61585",2,"Abu_al_Abyad_seagrass_1, Abu_al_Abyad_seagrass_2",Campbell_et_al_2015,1
@@ -129,7 +140,6 @@ lat_long,n,core_ids,study_ids,num_studies
 "24.25276667,51.66758333",2,"Ras_Muhayjij_seagrass_1, Ras_Muhayjij_seagrass_2",Campbell_et_al_2015,1
 "24.27702,53.34829",3,"Marawah_seagrass_1, Marawah_seagrass_2, Marawah_seagrass_3",Campbell_et_al_2015,1
 "24.3011111111111,-110.326666666667",2,"M0418, M0419",Ezcurra_et_al_2016,1
-"24.3015,54.3661",5,"Kenig_et_al_1990_1, Kenig_et_al_1990_2, Kenig_et_al_1990_3, Kenig_et_al_1990_4, Kenig_et_al_1990_5",Kenig_et_al_1990,1
 "24.30582,54.00273",2,"Al_Dabiya_2_seagrass_1, Al_Dabiya_2_seagrass_2",Campbell_et_al_2015,1
 "24.31826,54.05725",2,"Al_Dabiya_3_seagrass_1, Al_Dabiya_3_seagrass_2",Campbell_et_al_2015,1
 "24.4327777777778,-110.346944444444",2,"M0427, M0428",Ezcurra_et_al_2016,1
@@ -138,6 +148,8 @@ lat_long,n,core_ids,study_ids,num_studies
 "24.57855,53.079",2,"Bu_Tinah_2_seagrass_1, Bu_Tinah_2_seagrass_2",Campbell_et_al_2015,1
 "24.64498,54.50703",2,"Ghurab_NN_seagrass_1, Ghurab_NN_seagrass_2",Campbell_et_al_2015,1
 "24.65578,54.53673",2,"Ghurab_NE_seagrass_1, Ghurab_NE_seagrass_2",Campbell_et_al_2015,1
+"24.674,-81.242",2,"Lewis_et_al_2007_12, Lewis_et_al_2007_25",Lewis_et_al_2007,1
+"24.679,-81.236",2,"Lewis_et_al_2007_13, Lewis_et_al_2007_26",Lewis_et_al_2007,1
 "24.9412,-80.8642",2,"Fourqurean_unpublished_5, Fourqurean_unpublished_6",Fourqurean_unpublished,1
 "25.00956,56.35998",6,"Khalba_West_mangrove_1, Khalba_West_mangrove_2, Khalba_West_mangrove_3, Khalba_West_mangrove_4, Khalba_West_mangrove_5, Khalba_West_mangrove_6",Schile-Beers_and_Megonigal_2017,1
 "25.01736,56.35649",6,"Khalba_North_mangrove_1, Khalba_North_mangrove_2, Khalba_North_mangrove_3, Khalba_North_mangrove_4, Khalba_North_mangrove_5, Khalba_North_mangrove_6",Schile-Beers_and_Megonigal_2017,1
@@ -158,6 +170,8 @@ lat_long,n,core_ids,study_ids,num_studies
 "25.77278,55.94654",6,"Ras_al_Kaimah_mangrove_1, Ras_al_Kaimah_mangrove_2, Ras_al_Kaimah_mangrove_3, Ras_al_Kaimah_mangrove_4, Ras_al_Kaimah_mangrove_5, Ras_al_Kaimah_mangrove_6",Schile-Beers_and_Megonigal_2017,1
 "25.8981,56.03976",6,"Al_Rams_mangrove_1, Al_Rams_mangrove_2, Al_Rams_mangrove_3, Al_Rams_mangrove_4, Al_Rams_mangrove_5, Al_Rams_mangrove_6",Schile-Beers_and_Megonigal_2017,1
 "26,-81.7",2,"M0973, M0974",Chmura_et_al_2003,1
+"26.621,-77.828",2,"Koch_and_Madden_2001_1, Koch_and_Madden_2001_2",Koch_and_Madden_2001,1
+"27.301,-97.409",12,"Koepfler_et_al_1993_1, Koepfler_et_al_1993_10, Koepfler_et_al_1993_11, Koepfler_et_al_1993_12, Koepfler_et_al_1993_2, Koepfler_et_al_1993_3, Koepfler_et_al_1993_4, Koepfler_et_al_1993_5, Koepfler_et_al_1993_6, Koepfler_et_al_1993_7, Koepfler_et_al_1993_8, Koepfler_et_al_1993_9",Koepfler_et_al_1993,1
 "29.040559,-89.197959",3,"CRMS0159_1, CRMS0159_2, CRMS0159_3",CRMS_Database,1
 "29.113146,-89.197959",3,"CRMS0154_1, CRMS0154_2, CRMS0154_3",CRMS_Database,1
 "29.127657,-89.229211",3,"CRMS0157_1, CRMS0157_2, CRMS0157_3",CRMS_Database,1
@@ -429,6 +443,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.853486,-93.541822",3,"CRMS0677_1, CRMS0677_2, CRMS0677_3",CRMS_Database,1
 "29.860735,-89.666718",3,"CRMS4548_1, CRMS4548_2, CRMS4548_3",CRMS_Database,1
 "29.867997,-93.010565",3,"CRMS1409_1, CRMS1409_2, CRMS1409_3",CRMS_Database,1
+"29.868,-85.366",4,"Lewis_et_al_2007_10, Lewis_et_al_2007_11, Lewis_et_al_2007_23, Lewis_et_al_2007_24",Lewis_et_al_2007,1
 "29.868002,-93.479321",3,"CRMS0642_1, CRMS0642_2, CRMS0642_3",CRMS_Database,1
 "29.868002,-93.510571",3,"CRMS0638_1, CRMS0638_2, CRMS0638_3",CRMS_Database,1
 "29.874734,-89.378759",3,"CRMS1024_1, CRMS1024_2, CRMS1024_3",CRMS_Database,1
@@ -471,6 +486,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "30.056702,-89.822973",3,"CRMS3650_1, CRMS3650_2, CRMS3650_3",CRMS_Database,1
 "30.056711,-93.604326",3,"CRMS0658_1, CRMS0658_2, CRMS0658_3",CRMS_Database,1
 "30.06418,-93.666988",3,"CRMS0697_1, CRMS0697_2, CRMS0697_3",CRMS_Database,1
+"30.081,-85.494",2,"Lewis_et_al_2007_22, Lewis_et_al_2007_9",Lewis_et_al_2007,1
 "30.094,-85.664",2,"Grady_1981_4, Grady_1981_9",Grady_1981,1
 "30.099365,-89.252743",3,"CRMS0003_1, CRMS0003_2, CRMS0003_3",CRMS_Database,1
 "30.100249,-89.791722",3,"CRMS0002_1, CRMS0002_2, CRMS0002_3",CRMS_Database,1
@@ -490,9 +506,12 @@ lat_long,n,core_ids,study_ids,num_studies
 "30.303475,-89.979232",3,"CRMS2854_1, CRMS2854_2, CRMS2854_3",CRMS_Database,1
 "30.303477,-90.385494",3,"CRMS0034_1, CRMS0034_2, CRMS0034_3",CRMS_Database,1
 "30.304822,-90.329421",3,"CRMS0030_1, CRMS0030_2, CRMS0030_3",CRMS_Database,1
+"30.335,-87.239",2,"Lewis_et_al_2007_20, Lewis_et_al_2007_7",Lewis_et_al_2007,1
+"30.376,-87.012",12,"Lewis_et_al_2007_1, Lewis_et_al_2007_14, Lewis_et_al_2007_15, Lewis_et_al_2007_16, Lewis_et_al_2007_17, Lewis_et_al_2007_18, Lewis_et_al_2007_19, Lewis_et_al_2007_2, Lewis_et_al_2007_3, Lewis_et_al_2007_4, Lewis_et_al_2007_5, Lewis_et_al_2007_6",Lewis_et_al_2007,1
 "30.376046,-90.259891",3,"CRMS6209_1, CRMS6209_2, CRMS6209_3",CRMS_Database,1
 "30.385717,-90.146788",3,"CRMS4094_1, CRMS4094_2, CRMS4094_3",CRMS_Database,1
 "30.397805,-90.259283",3,"CRMS0103_1, CRMS0103_2, CRMS0103_3",CRMS_Database,1
+"30.416,-86.573",2,"Lewis_et_al_2007_21, Lewis_et_al_2007_8",Lewis_et_al_2007,1
 "31.322,-81.417",2,"Altamaha_River_Site_8_Levee, Altamaha_River_Site_8_Plain",Craft_2007,1
 "31.332,-81.309",2,"Altamaha_River_Site_9_Levee, Altamaha_River_Site_9_Plain",Craft_2007,1
 "31.341,-81.48",2,"Altamaha_River_Site_7_Levee, Altamaha_River_Site_7_Plain",Craft_2007,1
@@ -508,26 +527,24 @@ lat_long,n,core_ids,study_ids,num_studies
 "33.5547,-79.08993",2,"W1BU, W1CL",Noe_et_al_2013,1
 "33.55509,-79.08983",2,"W1AL, W1CU",Noe_et_al_2013,1
 "33.55547,-79.08958",2,"W1AU, W1BL",Noe_et_al_2013,1
-"34.4015,33.0358",2,"Holmer_and_Frederiksen_2007_10, Holmer_and_Frederiksen_2007_9",Holmer_and_Frederiksen_2007,1
+"34.4015,33.0358",2,"Holmer_et_al_2007_10, Holmer_et_al_2007_9",Holmer_et_al_2007,1
 "34.6925,-76.6188",2,"Townsend_and_Fonseca_1998_17, Townsend_and_Fonseca_1998_18",Townsend_and_Fonseca_1998,1
-"35.157,139.612",6,"Furuta_2002_1, Furuta_2002_2, Furuta_2002_3, Furuta_2002_4, Furuta_2002_5, Furuta_2002_6",Furuta_2002,1
 "35.51,14.33",6,"Borg_et_al_2010_19, Borg_et_al_2010_20, Borg_et_al_2010_21, Borg_et_al_2010_22, Borg_et_al_2010_23, Borg_et_al_2010_24",Borg_et_al_2010,1
 "35.56,14.28",6,"Borg_et_al_2010_13, Borg_et_al_2010_14, Borg_et_al_2010_15, Borg_et_al_2010_16, Borg_et_al_2010_17, Borg_et_al_2010_18",Borg_et_al_2010,1
 "35.5788,-5.9897",12,"Mateo_and_Serrano_unpublished_28, Mateo_and_Serrano_unpublished_29, Mateo_and_Serrano_unpublished_30, Mateo_and_Serrano_unpublished_31, Mateo_and_Serrano_unpublished_32, Mateo_and_Serrano_unpublished_33, Mateo_and_Serrano_unpublished_34, Mateo_and_Serrano_unpublished_35, Mateo_and_Serrano_unpublished_36, Mateo_and_Serrano_unpublished_37, Mateo_and_Serrano_unpublished_38, Mateo_and_Serrano_unpublished_39",Mateo_and_Serrano_unpublished,1
 "35.58,14.21",6,"Borg_et_al_2010_10, Borg_et_al_2010_11, Borg_et_al_2010_12, Borg_et_al_2010_7, Borg_et_al_2010_8, Borg_et_al_2010_9",Borg_et_al_2010,1
 "35.96,14.43",3,"Mateo_unpublished_4, Mateo_unpublished_5, Mateo_unpublished_6",Mateo_unpublished,1
 "36.03,14.17",6,"Borg_et_al_2010_1, Borg_et_al_2010_2, Borg_et_al_2010_3, Borg_et_al_2010_4, Borg_et_al_2010_5, Borg_et_al_2010_6",Borg_et_al_2010,1
-"36.47021944,-6.251963889",2,"van_Engeland_thesis_1, van_Engeland_thesis_2",van_Engeland_thesis,1
+"36.47021944,-6.251963889",2,"Van_Engeland_2010_1, Van_Engeland_2010_2",Van_Engeland_2010,1
 "36.5431,-6.2444",6,"Mateo_and_Serrano_unpublished_10, Mateo_and_Serrano_unpublished_11, Mateo_and_Serrano_unpublished_12, Mateo_and_Serrano_unpublished_13, Mateo_and_Serrano_unpublished_14, Mateo_and_Serrano_unpublished_15",Mateo_and_Serrano_unpublished,1
-"37.0166666666667,-7.96666",8,"Kennedy_unpublished_1, Kennedy_unpublished_2, Kennedy_unpublished_3, Kennedy_unpublished_4, Kennedy_unpublished_5, Kennedy_unpublished_6, Kennedy_unpublished_7, Kennedy_unpublished_8",Kennedy_unpublished,1
 "37.15,126.2833",3,"Lee_et_al_2005_1, Lee_et_al_2005_2, Lee_et_al_2005_3",Lee_et_al_2005,1
 "37.2126111111111,-75.6039444444445",3,"Buzzelli_1998_1, Buzzelli_1998_2, Buzzelli_1998_3",Buzzelli_1998,1
 "37.39,23.58",7,"Apostolaki_unpublished_1, Apostolaki_unpublished_2, Apostolaki_unpublished_3, Apostolaki_unpublished_4, Apostolaki_unpublished_5, Apostolaki_unpublished_6, Apostolaki_unpublished_7",Apostolaki_unpublished,1
-"37.3945,23.58",2,"Holmer_and_Frederiksen_2007_7, Holmer_and_Frederiksen_2007_8",Holmer_and_Frederiksen_2007,1
+"37.3945,23.58",2,"Holmer_et_al_2007_7, Holmer_et_al_2007_8",Holmer_et_al_2007,1
 "37.454314,-75.828382",2,"bee, lsp",Nuttle_1996,1
 "37.458646,-75.831483",3,"jun, juna, junb",Nuttle_1996,1
 "37.550599,-76.889072",60,"Sweet_Hall_marsh_dissertation_01, Sweet_Hall_marsh_dissertation_02, Sweet_Hall_marsh_dissertation_03, Sweet_Hall_marsh_dissertation_04, Sweet_Hall_marsh_dissertation_05, Sweet_Hall_marsh_dissertation_06, Sweet_Hall_marsh_dissertation_07, Sweet_Hall_marsh_dissertation_08, Sweet_Hall_marsh_dissertation_09, Sweet_Hall_marsh_dissertation_10, Sweet_Hall_marsh_dissertation_11, Sweet_Hall_marsh_dissertation_12, Sweet_Hall_marsh_dissertation_13, Sweet_Hall_marsh_dissertation_14, Sweet_Hall_marsh_dissertation_15, Sweet_Hall_marsh_dissertation_16, Sweet_Hall_marsh_dissertation_17, Sweet_Hall_marsh_dissertation_18, Sweet_Hall_marsh_dissertation_19, Sweet_Hall_marsh_dissertation_20, Sweet_Hall_marsh_dissertation_21, Sweet_Hall_marsh_dissertation_22, Sweet_Hall_marsh_dissertation_23, Sweet_Hall_marsh_dissertation_24, Sweet_Hall_marsh_dissertation_25, Sweet_Hall_marsh_dissertation_26, Sweet_Hall_marsh_dissertation_27, Sweet_Hall_marsh_dissertation_28, Sweet_Hall_marsh_dissertation_29, Sweet_Hall_marsh_dissertation_30, Sweet_Hall_marsh_dissertation_31, Sweet_Hall_marsh_dissertation_32, Sweet_Hall_marsh_dissertation_33, Sweet_Hall_marsh_dissertation_34, Sweet_Hall_marsh_dissertation_35, Sweet_Hall_marsh_dissertation_36, Sweet_Hall_marsh_dissertation_37, Sweet_Hall_marsh_dissertation_38, Sweet_Hall_marsh_dissertation_39, Sweet_Hall_marsh_dissertation_40, Sweet_Hall_marsh_dissertation_41, Sweet_Hall_marsh_dissertation_42, Sweet_Hall_marsh_dissertation_43, Sweet_Hall_marsh_dissertation_44, Sweet_Hall_marsh_dissertation_45, Sweet_Hall_marsh_dissertation_46, Sweet_Hall_marsh_dissertation_47, Sweet_Hall_marsh_dissertation_48, Sweet_Hall_marsh_dissertation_49, Sweet_Hall_marsh_dissertation_50, Sweet_Hall_marsh_dissertation_51, Sweet_Hall_marsh_dissertation_52, Sweet_Hall_marsh_dissertation_53, Sweet_Hall_marsh_dissertation_54, Sweet_Hall_marsh_dissertation_55, Sweet_Hall_marsh_dissertation_56, Sweet_Hall_marsh_dissertation_57, Sweet_Hall_marsh_dissertation_58, Sweet_Hall_marsh_dissertation_59, Sweet_Hall_marsh_dissertation_60",Neubauer_2002,1
-"37.65976667,23.95483333",2,"Holmer_and_Frederiksen_2007_2, Holmer_and_Frederiksen_2007_3",Holmer_and_Frederiksen_2007,1
+"37.65976667,23.95483333",2,"Holmer_et_al_2007_2, Holmer_et_al_2007_3",Holmer_et_al_2007,1
 "37.8036,-122.45995",2,"EH, EL",Windham_Meyers_et_al_2010,1
 "37.8039,-122.458817",2,"DH, DL",Windham_Meyers_et_al_2010,1
 "37.80435,-122.4598",2,"FH, FL",Windham_Meyers_et_al_2010,1
@@ -536,11 +553,8 @@ lat_long,n,core_ids,study_ids,num_studies
 "37.804567,-122.453317",2,"AH, AL",Windham_Meyers_et_al_2010,1
 "37.804817,-122.458567",2,"GH, GL",Windham_Meyers_et_al_2010,1
 "37.804967,-122.457367",2,"HH, HL",Windham_Meyers_et_al_2010,1
-"38.010006,-121.5569",2,BACHI,Drexler_et_al_2009,1
-"38.060906,-121.609758",2,FW,Drexler_et_al_2009,1
-"38.064606,-121.537556",2,TT,Drexler_et_al_2009,1
 "38.162,-0.473",3,"Mateo_et_al_1997_1, Mateo_et_al_1997_2, Mateo_et_al_1997_3",Mateo_et_al_1997,1
-"38.4208,-0.3477",2,"Holmer_and_Frederiksen_2007_5, Holmer_and_Frederiksen_2007_6",Holmer_and_Frederiksen_2007,1
+"38.4208,-0.3477",2,"Holmer_et_al_2007_5, Holmer_et_al_2007_6",Holmer_et_al_2007,1
 "38.423,-0.384",3,"Mateo_et_al_1997_5, Mateo_et_al_1997_6, Mateo_et_al_1997_7",Mateo_et_al_1997,1
 "38.504,-0.226",3,"Mateo_unpublished_1, Mateo_unpublished_2, Mateo_unpublished_3",Mateo_unpublished,1
 "38.6168,-76.6747",4,"Transect_C_0m, Transect_C_30m, Transect_C_60m, Transect_C_90m",Merrill_1999,1
@@ -553,17 +567,19 @@ lat_long,n,core_ids,study_ids,num_studies
 "39.22164,3.13887",2,"Holmer_et_al_2009_3, Holmer_et_al_2009_4",Holmer_et_al_2009,1
 "39.3217,2.4257",2,"Holmer_et_al_2009_5, Holmer_et_al_2009_6",Holmer_et_al_2009,1
 "39.4385,-76.2828",3,"Otter_Point_Creek_1, Otter_Point_Creek_2, Otter_Point_Creek_3",Merrill_1999,1
-"39.845,8.519",3,"De_Falco_2006_1, De_Falco_2006_2, De_Falco_2006_3",De_Falco_2006,1
+"39.845,8.519",3,"De_Falco_et_al_2006_1, De_Falco_et_al_2006_2, De_Falco_et_al_2006_3",De_Falco_et_al_2006,1
 "39.8612,-75.1707",4,"WC1A_15, WC1A_30, WC1A_45, WC2A_15",Orson_1990,1
 "39.9,2.56",12,"Holmer_et_al_2003_1, Holmer_et_al_2003_10, Holmer_et_al_2003_11, Holmer_et_al_2003_12, Holmer_et_al_2003_2, Holmer_et_al_2003_3, Holmer_et_al_2003_4, Holmer_et_al_2003_5, Holmer_et_al_2003_6, Holmer_et_al_2003_7, Holmer_et_al_2003_8, Holmer_et_al_2003_9",Holmer_et_al_2003,1
 "40.1333,8.8333",3,"Lillebo_et_al_2006_1, Lillebo_et_al_2006_2, Lillebo_et_al_2006_3",Lillebo_et_al_2006,1
-"40.6,0.716666667",14,"Barrón_et_al_2004_1, Barrón_et_al_2004_10, Barrón_et_al_2004_11, Barrón_et_al_2004_12, Barrón_et_al_2004_2, Barrón_et_al_2004_3, Barrón_et_al_2004_4, Barrón_et_al_2004_5, Barrón_et_al_2004_6, Barrón_et_al_2004_7, Barrón_et_al_2004_8, Barrón_et_al_2004_9, Pedersen_et_al_1997_1, Pedersen_et_al_1997_2","Barrón_et_al_2004, Pedersen_et_al_1997",2
+"40.41,2.52",6,"Gacia_et_al_2002_1, Gacia_et_al_2002_2, Gacia_et_al_2002_3, Gacia_et_al_2002_4, Gacia_et_al_2002_5, Gacia_et_al_2002_6",Gacia_et_al_2002,1
+"40.6,0.716666667",14,"Barron_et_al_2004_1, Barron_et_al_2004_10, Barron_et_al_2004_11, Barron_et_al_2004_12, Barron_et_al_2004_2, Barron_et_al_2004_3, Barron_et_al_2004_4, Barron_et_al_2004_5, Barron_et_al_2004_6, Barron_et_al_2004_7, Barron_et_al_2004_8, Barron_et_al_2004_9, Pedersen_et_al_1997_1, Pedersen_et_al_1997_2","Barron_et_al_2004, Pedersen_et_al_1997",2
 "40.60794,-8.74647",2,"Figueiredo_da_Silva_et_al_2009_1, Figueiredo_da_Silva_et_al_2009_2",Figueiredo_da_Silva_et_al_2009,1
 "40.6381,-8.73714",2,"Figueiredo_da_Silva_et_al_2009_3, Figueiredo_da_Silva_et_al_2009_4",Figueiredo_da_Silva_et_al_2009,1
 "40.65486,-8.6986",2,"Figueiredo_da_Silva_et_al_2009_5, Figueiredo_da_Silva_et_al_2009_6",Figueiredo_da_Silva_et_al_2009,1
 "40.696148,-8.67679",2,"Figueiredo_da_Silva_et_al_2009_7, Figueiredo_da_Silva_et_al_2009_8",Figueiredo_da_Silva_et_al_2009,1
 "40.712687,-8.682124",2,"Figueiredo_da_Silva_et_al_2009_10, Figueiredo_da_Silva_et_al_2009_9",Figueiredo_da_Silva_et_al_2009,1
 "40.722864,-8.690784",2,"Figueiredo_da_Silva_et_al_2009_11, Figueiredo_da_Silva_et_al_2009_12",Figueiredo_da_Silva_et_al_2009,1
+"40.7543,13.8913",4,"Amon_and_Herndl_1991_1, Amon_and_Herndl_1991_2, Amon_and_Herndl_1991_3, Amon_and_Herndl_1991_4",Amon_and_Herndl_1991,1
 "40.75454,-8.699355",2,"Figueiredo_da_Silva_et_al_2009_16, Figueiredo_da_Silva_et_al_2009_17",Figueiredo_da_Silva_et_al_2009,1
 "40.790744,-8.661918",2,"Figueiredo_da_Silva_et_al_2009_19, Figueiredo_da_Silva_et_al_2009_20",Figueiredo_da_Silva_et_al_2009,1
 "42.0289,-73.9221",2,"Tivoli_South_1_subtidal, Tivoli_South_2_fringe_marsh",Merrill_1999,1
@@ -573,11 +589,15 @@ lat_long,n,core_ids,study_ids,num_studies
 "42.29305556,3.289166667",2,"Lo_Iacono_et_al_2008_1, Mateo_and_Romero_1997_3","Lo_Iacono_et_al_2008, Mateo_and_Romero_1997",2
 "42.294,3.289",3,"Mateo_et_al_1997_10, Mateo_et_al_1997_8, Mateo_et_al_1997_9",Mateo_et_al_1997,1
 "42.74125,-70.83334",2,"NE-L38, NE-L50",Deegan_et_al_2012,1
+"43.423,3.643",12,"Rigollet_et_al_2004_13, Rigollet_et_al_2004_14, Rigollet_et_al_2004_15, Rigollet_et_al_2004_16, Rigollet_et_al_2004_17, Rigollet_et_al_2004_18, Rigollet_et_al_2004_19, Rigollet_et_al_2004_20, Rigollet_et_al_2004_21, Rigollet_et_al_2004_22, Rigollet_et_al_2004_23, Rigollet_et_al_2004_24",Rigollet_et_al_2004,1
 "43.4392,-3.7749",12,"Mateo_and_Serrano_unpublished_16, Mateo_and_Serrano_unpublished_17, Mateo_and_Serrano_unpublished_18, Mateo_and_Serrano_unpublished_19, Mateo_and_Serrano_unpublished_20, Mateo_and_Serrano_unpublished_21, Mateo_and_Serrano_unpublished_22, Mateo_and_Serrano_unpublished_23, Mateo_and_Serrano_unpublished_24, Mateo_and_Serrano_unpublished_25, Mateo_and_Serrano_unpublished_26, Mateo_and_Serrano_unpublished_27",Mateo_and_Serrano_unpublished,1
-"44.2,9.12",4,"Danovaro_1996_1, Danovaro_and_Gambi_2002_1, Fourqurean_and_Kendrick_unpublished_35, Fourqurean_and_Kendrick_unpublished_36","Danovaro_1996, Danovaro_and_Gambi_2002, Fourqurean_and_Kendrick_unpublished",3
+"44.2,9.12",28,"Danovaro_1996_1, Danovaro_1996_10, Danovaro_1996_11, Danovaro_1996_12, Danovaro_1996_13, Danovaro_1996_14, Danovaro_1996_15, Danovaro_1996_2, Danovaro_1996_3, Danovaro_1996_4, Danovaro_1996_5, Danovaro_1996_6, Danovaro_1996_7, Danovaro_1996_8, Danovaro_1996_9, Danovaro_and_Gambi_2002_1, Danovaro_and_Gambi_2002_10, Danovaro_and_Gambi_2002_11, Danovaro_and_Gambi_2002_12, Danovaro_and_Gambi_2002_13, Danovaro_and_Gambi_2002_2, Danovaro_and_Gambi_2002_3, Danovaro_and_Gambi_2002_4, Danovaro_and_Gambi_2002_5, Danovaro_and_Gambi_2002_6, Danovaro_and_Gambi_2002_7, Danovaro_and_Gambi_2002_8, Danovaro_and_Gambi_2002_9","Danovaro_1996, Danovaro_and_Gambi_2002",2
 "44.333,9.233",18,"Danovaro_et_al_1994_1, Danovaro_et_al_1994_10, Danovaro_et_al_1994_11, Danovaro_et_al_1994_12, Danovaro_et_al_1994_13, Danovaro_et_al_1994_14, Danovaro_et_al_1994_15, Danovaro_et_al_1994_16, Danovaro_et_al_1994_17, Danovaro_et_al_1994_18, Danovaro_et_al_1994_2, Danovaro_et_al_1994_3, Danovaro_et_al_1994_4, Danovaro_et_al_1994_5, Danovaro_et_al_1994_6, Danovaro_et_al_1994_7, Danovaro_et_al_1994_8, Danovaro_et_al_1994_9",Danovaro_et_al_1994,1
+"44.39,-1.09",6,"Boschker_et_al_2000_10, Boschker_et_al_2000_11, Boschker_et_al_2000_12, Boschker_et_al_2000_4, Boschker_et_al_2000_5, Boschker_et_al_2000_6",Boschker_et_al_2000,1
+"44.6,-124",6,"Larned_2003_1, Larned_2003_2, Larned_2003_3, Larned_2003_4, Larned_2003_5, Larned_2003_6",Larned_2003,1
 "44.61875,-124.030783333333",4,"Hebert_et_al_2007_1, Hebert_et_al_2007_2, Hebert_et_al_2007_3, Hebert_et_al_2007_4",Hebert_et_al_2007,1
 "44.6777,-1.66667",2,"Isaksen_and_Finster_1996_1, Isaksen_and_Finster_1996_2",Isaksen_and_Finster_1996,1
+"45.233,12.26",12,"Rigollet_et_al_2004_1, Rigollet_et_al_2004_10, Rigollet_et_al_2004_11, Rigollet_et_al_2004_12, Rigollet_et_al_2004_2, Rigollet_et_al_2004_3, Rigollet_et_al_2004_4, Rigollet_et_al_2004_5, Rigollet_et_al_2004_6, Rigollet_et_al_2004_7, Rigollet_et_al_2004_8, Rigollet_et_al_2004_9",Rigollet_et_al_2004,1
 "48.0036,-122.1616",2,"SS_A, SS_B",Crooks_et_al_2014,1
 "48.0307,-122.1784",2,"US_A, US_B",Crooks_et_al_2014,1
 "48.0314,-122.1548",2,"HP_A, HP_B",Crooks_et_al_2014,1
@@ -585,10 +605,11 @@ lat_long,n,core_ids,study_ids,num_studies
 "48.0382,-122.1634",2,"MA_A, MA_B",Crooks_et_al_2014,1
 "5.3,162.9",12,"M1453, M1454, M1455, M1456, M1457, M1458, M1459, M1460, M1461, M1462, M1463, M1464",Donato_et_al_2011,1
 "5.3,163",15,"M0975, M0976, M0977, M1441, M1442, M1443, M1444, M1445, M1446, M1447, M1448, M1449, M1450, M1451, M1452","Chmura_et_al_2003, Donato_et_al_2011",2
+"51.36,4.06",2,"Boschker_et_al_2000_3, Boschker_et_al_2000_9",Boschker_et_al_2000,1
+"53.27,-4.58",3,"Marba_unpublished_5, Marba_unpublished_6, Marba_unpublished_7",Marba_unpublished,1
 "55.02,10",16,"Krause-Jensen_et_al_2011_35, Krause-Jensen_et_al_2011_36, Krause-Jensen_et_al_2011_37, Krause-Jensen_et_al_2011_38, Krause-Jensen_et_al_2011_39, Krause-Jensen_et_al_2011_40, Krause-Jensen_et_al_2011_41, Krause-Jensen_et_al_2011_42, Krause-Jensen_et_al_2011_77, Krause-Jensen_et_al_2011_78, Krause-Jensen_et_al_2011_79, Krause-Jensen_et_al_2011_80, Krause-Jensen_et_al_2011_81, Krause-Jensen_et_al_2011_82, Krause-Jensen_et_al_2011_83, Krause-Jensen_et_al_2011_84",Krause-Jensen_et_al_2011,1
-"55.171973,10.493102",2,"Boschker_et_al_2000_1, Boschker_et_al_2000_2",Boschker_et_al_2000,1
-"55.28,11.05",4,"Vichkovitten_and_Holmer_2005_1, Vichkovitten_and_Holmer_2005_2, Vichkovitten_and_Holmer_2005_3, Vichkovitten_and_Holmer_2005_4",Vichkovitten_and_Holmer_2005,1
-"55.28955,9.43956",16,"Holmer_et_al_2006_1, Holmer_et_al_2006_10, Holmer_et_al_2006_11, Holmer_et_al_2006_12, Holmer_et_al_2006_13, Holmer_et_al_2006_14, Holmer_et_al_2006_15, Holmer_et_al_2006_16, Holmer_et_al_2006_2, Holmer_et_al_2006_3, Holmer_et_al_2006_4, Holmer_et_al_2006_5, Holmer_et_al_2006_6, Holmer_et_al_2006_7, Holmer_et_al_2006_8, Holmer_et_al_2006_9",Holmer_et_al_2006,1
+"55.171973,10.493102",4,"Boschker_et_al_2000_1, Boschker_et_al_2000_2, Boschker_et_al_2000_7, Boschker_et_al_2000_8",Boschker_et_al_2000,1
+"55.28,11.05",4,"Vichkovitten_et_al_2005_1, Vichkovitten_et_al_2005_2, Vichkovitten_et_al_2005_3, Vichkovitten_et_al_2005_4",Vichkovitten_et_al_2005,1
 "55.58,10.53",8,"Krause-Jensen_et_al_2011_31, Krause-Jensen_et_al_2011_32, Krause-Jensen_et_al_2011_33, Krause-Jensen_et_al_2011_34, Krause-Jensen_et_al_2011_65, Krause-Jensen_et_al_2011_66, Krause-Jensen_et_al_2011_67, Krause-Jensen_et_al_2011_68",Krause-Jensen_et_al_2011,1
 "55.64,9.87",10,"Krause-Jensen_et_al_2011_26, Krause-Jensen_et_al_2011_27, Krause-Jensen_et_al_2011_28, Krause-Jensen_et_al_2011_29, Krause-Jensen_et_al_2011_30, Krause-Jensen_et_al_2011_72, Krause-Jensen_et_al_2011_73, Krause-Jensen_et_al_2011_74, Krause-Jensen_et_al_2011_75, Krause-Jensen_et_al_2011_76",Krause-Jensen_et_al_2011,1
 "55.82,10.14",6,"Krause-Jensen_et_al_2011_23, Krause-Jensen_et_al_2011_24, Krause-Jensen_et_al_2011_25, Krause-Jensen_et_al_2011_69, Krause-Jensen_et_al_2011_70, Krause-Jensen_et_al_2011_71",Krause-Jensen_et_al_2011,1
@@ -599,7 +620,6 @@ lat_long,n,core_ids,study_ids,num_studies
 "7.515981,79.812103",22,"M0156, M0157, M0158, M0159, M0160, M0161, M0162, M0163, M0164, M0165, M0166, M0167, M0168, M0169, M0170, M0171, M0665, M0666, M0667, M0668, M0669, M0670","Bouillon_et_al_2003, Bouillon_et_al_2004_FEMS",2
 "8,98.9",2,"M1538, M1539",Bukoski_et_al_2017,1
 "8,99",6,"M1532, M1533, M1540, M1541, M1544, M1545",Bukoski_et_al_2017,1
-"8.04,98.42",2,"Holmer_et_al_2001_1, Holmer_et_al_2001_2",Holmer_et_al_2001,1
 "8.05,98.4167",2,"Kristensen_et_al_2000_1, Kristensen_et_al_2000_2",Kristensen_et_al_2000,1
 "8.1,98.9",6,"M1534, M1535, M1536, M1537, M1542, M1543",Bukoski_et_al_2017,1
 "8.4,100.2",12,"M1546, M1547, M1552, M1553, M1554, M1555, M1556, M1557, M1558, M1559, M1562, M1563",Bukoski_et_al_2017,1
@@ -607,4 +627,4 @@ lat_long,n,core_ids,study_ids,num_studies
 "9.5,138.1",12,"M1416, M1417, M1418, M1419, M1420, M1421, M1471, M1472, M1473, M1474, M1475, M1476",Donato_et_al_2011,1
 "9.6,138.1",12,"M1465, M1466, M1467, M1468, M1469, M1470, M1477, M1478, M1479, M1480, M1481, M1482",Donato_et_al_2011,1
 "9.6,138.2",6,"M1373, M1374, M1375, M1376, M1377, M1378",Donato_et_al_2011,1
-"NA,NA",55,"Copertino_unpublished_10, Copertino_unpublished_12, Copertino_unpublished_13, Copertino_unpublished_14, Copertino_unpublished_15, Copertino_unpublished_17, Copertino_unpublished_18, Copertino_unpublished_19, Copertino_unpublished_2, Copertino_unpublished_20, Copertino_unpublished_22, Copertino_unpublished_23, Copertino_unpublished_24, Copertino_unpublished_25, Copertino_unpublished_3, Copertino_unpublished_4, Copertino_unpublished_5, Copertino_unpublished_7, Copertino_unpublished_8, Copertino_unpublished_9, Duarte_unpublished_12, Duarte_unpublished_15, Duarte_unpublished_5, Duarte_unpublished_9, Kamp-Nielsen_et_al_2002_1, Kamp-Nielsen_et_al_2002_2, Kamp-Nielsen_et_al_2002_3, mission_aransas_bay_87, M0537, M0538, M0539, M0541, M0542, M0638, M0639, M0640, M0641, M0642, M0643, M0644, M0645, M0646, Bu_Tinah_Shamal_mangrove_2, Khalba_East_mangrove_1, Khalba_East_mangrove_2, Khalba_East_mangrove_3, Khalba_East_mangrove_4, Khalba_East_mangrove_5, Khalba_East_mangrove_6, Khalba_South_mangrove_1, Khalba_South_mangrove_2, Khalba_South_mangrove_3, Khalba_South_mangrove_4, Khalba_South_mangrove_5, Khalba_South_mangrove_6","Copertino_unpublished, Duarte_unpublished, Kamp-Nielsen_et_al_2002, Osland_et_al_2016, Nsombo_et_al_2016, Eid_and_Shaltout_2016_Egypt, Eid_et_al_2016_Saudi_Arabia, Schile-Beers_and_Megonigal_2017",8
+"NA,NA",37,"Furuta_et_al_2002_1, Furuta_et_al_2002_2, Furuta_et_al_2002_3, Furuta_et_al_2002_4, Furuta_et_al_2002_5, Furuta_et_al_2002_6, Gonneea_et_al_2004_1, Gonneea_et_al_2004_2, Gonneea_et_al_2004_3, mission_aransas_bay_87, M0537, M0538, M0539, M0541, M0542, M0638, M0639, M0640, M0641, M0642, M0643, M0644, M0645, M0646, Bu_Tinah_Shamal_mangrove_2, Khalba_East_mangrove_1, Khalba_East_mangrove_2, Khalba_East_mangrove_3, Khalba_East_mangrove_4, Khalba_East_mangrove_5, Khalba_East_mangrove_6, Khalba_South_mangrove_1, Khalba_South_mangrove_2, Khalba_South_mangrove_3, Khalba_South_mangrove_4, Khalba_South_mangrove_5, Khalba_South_mangrove_6","NA, Osland_et_al_2016, Nsombo_et_al_2016, Eid_and_Shaltout_2016_Egypt, Eid_et_al_2016_Saudi_Arabia, Schile-Beers_and_Megonigal_2017",6

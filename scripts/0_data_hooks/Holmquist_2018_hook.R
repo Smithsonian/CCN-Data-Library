@@ -77,7 +77,7 @@ cores <- cores %>%
                                       "c1" = "latitude and longitude were extracted from a relatively high quality map figure", 
                                       "c2" = "latitude and longitude were extracted from a relatively low quality map figure"), 
          inundation_class = tolower(inundation_class)) %>%
-  filter(study_id != "Gonneea_et_al_2018" | study_id != "Drexler_et_al_2009") %>%
+  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) %>%
   # Add underscores to site IDs
   mutate(site_id = gsub(" ", "_", site_id)) %>%
   recode_salinity(salinity_class = salinity_class) %>%
@@ -96,7 +96,7 @@ depthseries <- depthseries %>%
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
-  filter(study_id != "Gonneea_et_al_2018" | study_id != "Drexler_et_al_2009") 
+  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) 
   
 # Fraction carbon type should be in the methods metadata, not depthseries level 
 fraction_carbon_type_metadata <- depthseries %>%
@@ -108,7 +108,7 @@ impacts <- impacts %>%
   rename(impact_class = "impact_code") %>%
   # The Crooks study ID should be 2014, not 2013. 
   recode_impact(impact_class = impact_class)%>%
-  filter(study_id != "Gonneea_et_al_2018" | study_id != "Drexler_et_al_2009") 
+  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009")))
   
 species <- species %>%
   # The Crooks study ID should be 2014, not 2013. 
@@ -116,7 +116,7 @@ species <- species %>%
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
-  filter(study_id != "Gonneea_et_al_2018" | study_id != "Drexler_et_al_2009") %>%
+  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) %>%
   recode_species(species_code = species_code) 
 
 methods <- methods %>%
@@ -125,7 +125,7 @@ methods <- methods %>%
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))%>%
-  filter(study_id != "Gonneea_et_al_2018" | study_id != "Drexler_et_al_2009") %>%
+  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) %>%
   select(-n) %>%
   merge(fraction_carbon_type_metadata, by="study_id")
 

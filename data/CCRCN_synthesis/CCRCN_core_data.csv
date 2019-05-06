@@ -1151,9 +1151,6 @@ Drake_et_al_2015,Wertheim,WU07,40.769683,-72.88655,latitude and longitude from h
 Drake_et_al_2015,Wertheim,WU08,40.769717,-72.886433,latitude and longitude from handheld GPS or better,6.7056,brackish,emergent,NA,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Drake_et_al_2015,Wertheim,WU09,40.76975,-72.886867,latitude and longitude from handheld GPS or better,5.1816,brackish,emergent,NA,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Drake_et_al_2015,Wertheim,WU10,40.769767,-72.887167,latitude and longitude from handheld GPS or better,3.6576,brackish,emergent,NA,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2009,Bacon_Channel_Island,BACHI,38.010006,-121.5569,latitude and longitude from handheld GPS or better,NA,freshwater,forested to shrub,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2009,Franks_Wetland,FW,38.060906,-121.609758,latitude and longitude from handheld GPS or better,NA,freshwater,forested to shrub,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2009,Time_of_Mandeval_Tip,TT,38.064606,-121.537556,latitude and longitude from handheld GPS or better,NA,freshwater,forested to shrub,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Elsey_Quirk_et_al_2011,Little_Assawoman,Juncus_roemerianus_core,38.510181,-75.065441,latitude and longitude were extracted from a relatively high quality map figure,NA,saline,emergent,high,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Elsey_Quirk_et_al_2011,Little_Assawoman,Spartina_alterniflora_core,38.51016,-75.066547,latitude and longitude were extracted from a relatively high quality map figure,NA,saline,emergent,low,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Ensign_et_al_2015,Choptank_River,Choptank_River_head_of_tide,38.938276,-75.828747,latitude and longitude from handheld GPS or better,NA,freshwater,forested,hollow,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -1690,6 +1687,9 @@ Danovaro_et_al_1994,Gulf_of_Marconi,Danovaro_et_al_1994_9,44.333,9.233,NA,NA,NA,
 De_Falco_et_al_2006,Gulf_of_Oristano,De_Falco_et_al_2006_1,39.845,8.519,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 De_Falco_et_al_2006,Gulf_of_Oristano,De_Falco_et_al_2006_2,39.845,8.519,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 De_Falco_et_al_2006,Gulf_of_Oristano,De_Falco_et_al_2006_3,39.845,8.519,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+De_Iongh_et_al_1995,Nang_Bay,De_Iongh_et_al_1995_1,-3.91667,128.8333,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+De_Iongh_et_al_1995,Nang_Bay,De_Iongh_et_al_1995_2,-3.91667,128.8333,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+De_Iongh_et_al_1995,Nang_Bay,De_Iongh_et_al_1995_3,-3.91667,128.8333,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 De_Troch_et_al_2006,Punta_Allen,De_Troch_et_al_2006_1,19.77,-87.48,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 De_Troch_et_al_2006,Pujada_Bay,De_Troch_et_al_2006_2,6.885,126.23,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 De_Troch_et_al_2006,Gazi_Bay,De_Troch_et_al_2006_3,-4.639,39.277,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -1835,6 +1835,12 @@ Fourqurean_unpublished,Florida_Bay,Fourqurean_unpublished_5,24.9412,-80.8642,NA,
 Fourqurean_unpublished,Florida_Bay,Fourqurean_unpublished_6,24.9412,-80.8642,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Fourqurean_unpublished,Florida_Bay,Fourqurean_unpublished_7,25.2148,-80.5404,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Fourqurean_unpublished,Florida_Bay,Fourqurean_unpublished_8,25.2148,-80.5404,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Furuta_et_al_2002_1,NA,NA,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Furuta_et_al_2002_2,NA,NA,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Furuta_et_al_2002_3,NA,NA,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Furuta_et_al_2002_4,NA,NA,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Furuta_et_al_2002_5,NA,NA,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Furuta_et_al_2002_6,NA,NA,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Gacia_et_al_2002,Fanals_point,Gacia_et_al_2002_1,40.41,2.52,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Gacia_et_al_2002,Fanals_point,Gacia_et_al_2002_2,40.41,2.52,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Gacia_et_al_2002,Fanals_point,Gacia_et_al_2002_3,40.41,2.52,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -1842,6 +1848,9 @@ Gacia_et_al_2002,Fanals_point,Gacia_et_al_2002_4,40.41,2.52,NA,NA,NA,NA,NA,NA,NA
 Gacia_et_al_2002,Fanals_point,Gacia_et_al_2002_5,40.41,2.52,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Gacia_et_al_2002,Fanals_point,Gacia_et_al_2002_6,40.41,2.52,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Gacia_unpublished,Es_Cargol,Gacia_unpublished_1,39.27323333333333,3.0412666666666666,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Gonneea_et_al_2004_1,NA,NA,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Gonneea_et_al_2004_2,NA,NA,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,Gonneea_et_al_2004_3,NA,NA,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Grady_1981,St._Andrews_Bay_Florida_USA,Grady_1981_1,30.128,-85.621,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Grady_1981,St._Andrews_Bay_Florida_USA,Grady_1981_10,30.14,-85.64,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Grady_1981,St._Andrews_Bay_Florida_USA,Grady_1981_2,30.167,-85.726,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -1865,16 +1874,6 @@ Hemminga_et_al_1994,Gazi_Bay,Hemminga_et_al_1994_4,-4.41667,39.5,NA,NA,NA,NA,NA,
 Hemminga_et_al_1994,Gazi_Bay,Hemminga_et_al_1994_5,-4.41667,39.5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Hemminga_et_al_1994,Gazi_Bay,Hemminga_et_al_1994_6,-4.41667,39.5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Hemminga_et_al_1994,Gazi_Bay,Hemminga_et_al_1994_7,-4.41667,39.5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Holmer_and_Frederiksen_2007,Sicily,Holmer_and_Frederiksen_2007_1,36.71183333,15.14066667,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Holmer_and_Frederiksen_2007,Cyprus,Holmer_and_Frederiksen_2007_10,34.4015,33.0358,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Holmer_and_Frederiksen_2007,Sounion,Holmer_and_Frederiksen_2007_2,37.65976667,23.95483333,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Holmer_and_Frederiksen_2007,Sounion,Holmer_and_Frederiksen_2007_3,37.65976667,23.95483333,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Holmer_and_Frederiksen_2007,Campello,Holmer_and_Frederiksen_2007_4,38.42083333,-0.347666667,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Holmer_and_Frederiksen_2007,Spain,Holmer_and_Frederiksen_2007_5,38.4208,-0.3477,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Holmer_and_Frederiksen_2007,Spain,Holmer_and_Frederiksen_2007_6,38.4208,-0.3477,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Holmer_and_Frederiksen_2007,Greece,Holmer_and_Frederiksen_2007_7,37.3945,23.58,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Holmer_and_Frederiksen_2007,Greece,Holmer_and_Frederiksen_2007_8,37.3945,23.58,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Holmer_and_Frederiksen_2007,Cyprus,Holmer_and_Frederiksen_2007_9,34.4015,33.0358,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Holmer_et_al_2003,Mallorca,Holmer_et_al_2003_1,39.9,2.56,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Holmer_et_al_2003,Mallorca,Holmer_et_al_2003_10,39.9,2.56,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Holmer_et_al_2003,Mallorca,Holmer_et_al_2003_11,39.9,2.56,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -1887,6 +1886,22 @@ Holmer_et_al_2003,Mallorca,Holmer_et_al_2003_6,39.9,2.56,NA,NA,NA,NA,NA,NA,NA,NA
 Holmer_et_al_2003,Mallorca,Holmer_et_al_2003_7,39.9,2.56,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Holmer_et_al_2003,Mallorca,Holmer_et_al_2003_8,39.9,2.56,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Holmer_et_al_2003,Mallorca,Holmer_et_al_2003_9,39.9,2.56,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Sicily,Holmer_et_al_2007_1,36.71183333,15.14066667,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Cyprus,Holmer_et_al_2007_10,34.4015,33.0358,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Woodman_Point,Holmer_et_al_2007_11,-32.13566667,115.7405,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Woodman_Point,Holmer_et_al_2007_12,-32.13566667,115.7405,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Woodman_Point,Holmer_et_al_2007_13,-32.13566667,115.7405,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Rottnest,Holmer_et_al_2007_14,-32.00975,115.4928333,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Rottnest,Holmer_et_al_2007_15,-32.00975,115.4928333,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Rottnest,Holmer_et_al_2007_16,-32.00975,115.4928333,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Sounion,Holmer_et_al_2007_2,37.65976667,23.95483333,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Sounion,Holmer_et_al_2007_3,37.65976667,23.95483333,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Campello,Holmer_et_al_2007_4,38.42083333,-0.347666667,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Spain,Holmer_et_al_2007_5,38.4208,-0.3477,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Spain,Holmer_et_al_2007_6,38.4208,-0.3477,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Greece,Holmer_et_al_2007_7,37.3945,23.58,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Greece,Holmer_et_al_2007_8,37.3945,23.58,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Holmer_et_al_2007,Cyprus,Holmer_et_al_2007_9,34.4015,33.0358,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Holmer_et_al_2009,Mallorca,Holmer_et_al_2009_1,39.2203,3.13738,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Holmer_et_al_2009,Mallorca,Holmer_et_al_2009_2,39.2203,3.13738,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Holmer_et_al_2009,Mallorca,Holmer_et_al_2009_3,39.22164,3.13887,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -2217,14 +2232,14 @@ Mateo_unpublished,Saline_Bay,Mateo_unpublished_4,35.96,14.43,NA,NA,NA,NA,NA,core
 Mateo_unpublished,Saline_Bay,Mateo_unpublished_5,35.96,14.43,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Mateo_unpublished,Saline_Bay,Mateo_unpublished_6,35.96,14.43,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Mateo_unpublished,Melieha_Bay,Mateo_unpublished_7,35.972,14.3624,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-McGlathery_unpublished,Virginia_Coastal_Bays,McGlathery_unpublished_1,37.239195,-75.861174,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-McGlathery_unpublished,Virginia_Coastal_Bays,McGlathery_unpublished_2,37.240004,-75.857644,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-McGlathery_unpublished,Virginia_Coastal_Bays,McGlathery_unpublished_3,37.271823,-75.822058,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-McGlathery_unpublished,Virginia_Coastal_Bays,McGlathery_unpublished_4,37.269897,-75.824192,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-McGlathery_unpublished,Virginia_Coastal_Bays,McGlathery_unpublished_5,37.26682227,-75.81253194,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-McGlathery_unpublished,Virginia_Coastal_Bays,McGlathery_unpublished_6,37.26574872,-75.81266697,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-McGlathery_unpublished,Virginia_Coastal_Bays,McGlathery_unpublished_7,37.2641834,-75.81352989,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-McGlathery_unpublished,Virginia_Coastal_Bays,McGlathery_unpublished_8,37.26252797,-75.81307224,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+McGlathery_et_al_2012,Virginia_Coastal_Bays,McGlathery_et_al_2012_1,37.239195,-75.861174,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+McGlathery_et_al_2012,Virginia_Coastal_Bays,McGlathery_et_al_2012_2,37.240004,-75.857644,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+McGlathery_et_al_2012,Virginia_Coastal_Bays,McGlathery_et_al_2012_3,37.271823,-75.822058,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+McGlathery_et_al_2012,Virginia_Coastal_Bays,McGlathery_et_al_2012_4,37.269897,-75.824192,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+McGlathery_et_al_2012,Virginia_Coastal_Bays,McGlathery_et_al_2012_5,37.26682227,-75.81253194,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+McGlathery_et_al_2012,Virginia_Coastal_Bays,McGlathery_et_al_2012_6,37.26574872,-75.81266697,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+McGlathery_et_al_2012,Virginia_Coastal_Bays,McGlathery_et_al_2012_7,37.2641834,-75.81352989,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+McGlathery_et_al_2012,Virginia_Coastal_Bays,McGlathery_et_al_2012_8,37.26252797,-75.81307224,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Mellors_et_al_2002,Ellie_Pt,Mellors_et_al_2002_1,-16.8773,145.7853,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Mellors_et_al_2002,Lugger_Bay,Mellors_et_al_2002_2,-17.9486,146.1056,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Mellors_et_al_2002,Meunga_Creek,Mellors_et_al_2002_3,-18.2634,146.0358,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -2362,13 +2377,19 @@ Townsend_and_Fonseca_1998,Beaufort_North_Carolina_USA,Townsend_and_Fonseca_1998_
 Townsend_and_Fonseca_1998,Beaufort_North_Carolina_USA,Townsend_and_Fonseca_1998_7,34.6947,-76.5962,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Townsend_and_Fonseca_1998,Beaufort_North_Carolina_USA,Townsend_and_Fonseca_1998_8,34.6725,-76.5263,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Townsend_and_Fonseca_1998,Beaufort_North_Carolina_USA,Townsend_and_Fonseca_1998_9,34.733,-76.4482,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Van_Engeland_2010,Bay_of_Cadiz,Van_Engeland_2010_1,36.47021944,-6.251963889,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Van_Engeland_2010,Bay_of_Cadiz,Van_Engeland_2010_2,36.47021944,-6.251963889,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vichkovitten_et_al_2005,Denmark,Vichkovitten_et_al_2005_1,55.28,11.05,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vichkovitten_et_al_2005,Denmark,Vichkovitten_et_al_2005_2,55.28,11.05,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vichkovitten_et_al_2005,Denmark,Vichkovitten_et_al_2005_3,55.28,11.05,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vichkovitten_et_al_2005,Denmark,Vichkovitten_et_al_2005_4,55.28,11.05,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Yamamuro_et_al_1993,Dravuni_Is._Fiji,Yamamuro_et_al_1993_1,-18.75,178.5,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Yamamuro_et_al_1993,Dravuni_Is,Yamamuro_et_al_1993_2,-18.75,178.5,NA,NA,NA,NA,NA,core depth represents deposit depth,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Yarbro_and_carlson_2008,Florida_Bay,Yarbro_and_carlson_2008_1,25.083166666666667,-80.48901666666667,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Yarbro_and_carlson_2008,Florida_Bay,Yarbro_and_carlson_2008_2,25.05625,-80.71355,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Yarbro_and_carlson_2008,Florida_Bay,Yarbro_and_carlson_2008_3,25.12175,-80.80155,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Yarbro_and_carlson_2008,Florida_Bay,Yarbro_and_carlson_2008_4,24.98905,-80.84038333333334,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Yarbro_and_carlson_2008,Florida_Bay,Yarbro_and_carlson_2008_5,25.0534,-80.9101,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Yarbro_and_Carlson_2008,Florida_Bay,Yarbro_and_Carlson_2008_1,25.083166666666667,-80.48901666666667,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Yarbro_and_Carlson_2008,Florida_Bay,Yarbro_and_Carlson_2008_2,25.05625,-80.71355,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Yarbro_and_Carlson_2008,Florida_Bay,Yarbro_and_Carlson_2008_3,25.12175,-80.80155,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Yarbro_and_Carlson_2008,Florida_Bay,Yarbro_and_Carlson_2008_4,24.98905,-80.84038333333334,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Yarbro_and_Carlson_2008,Florida_Bay,Yarbro_and_Carlson_2008_5,25.0534,-80.9101,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Gonneea_et_al_2018,Eel_Pond,EPA,41.55923,-70.54365,NA,0.14,NA,NA,NA,NA,NA,NA,NA,NA,2014-08-05,NA,NA,NA,NA,NA
 Gonneea_et_al_2018,Eel_Pond,EPB,41.55892,-70.54378,NA,0.14,NA,NA,NA,NA,NA,NA,NA,NA,2014-08-05,NA,NA,NA,NA,NA
 Gonneea_et_al_2018,Great_Pond,GPA,41.55665,-70.58044,NA,0.12,NA,NA,NA,NA,NA,NA,NA,NA,2014-06-16,NA,NA,NA,NA,NA
