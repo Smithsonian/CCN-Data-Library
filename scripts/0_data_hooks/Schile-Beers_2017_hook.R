@@ -6,12 +6,14 @@
 # Data citation: 
 # Schile, Lisa M. and Megonigal, J. Patrick. 2017. [Dataset] 
 # "Abu Dhabi Blue Carbon Demonstration Project." Distributed by Smithsonian Environmental Research Center. https://doi.org/10.5479/data_serc/10088/31949
-
+study_schile <- "Schile-Beers_and_Megonigal_2017"
+doi_schile <- "10.5479/data_serc/10088/31949"
 
 # Citation for segrass cores: 
 # Campbell, J. E., Lacey, E. A., Decker, R. A., Crooks, S., & Fourqurean, J. W. (2015). 
 # Carbon storage in seagrass beds of Abu Dhabi, United Arab Emirates. Estuaries and Coasts, 38(1), 242-251. 
-
+study_campbell <- "Campbell_et_al_2015"
+doi_campbell <- "10.1007/s12237-014-9802-9"
 
 ## 2. Prep workspace and scrape data from web ####################
 
@@ -23,8 +25,7 @@ library(RCurl)
 library(tidyverse)
 library(lubridate)
 library(readxl)
-library(bibtex)
-library(rcrossref)
+library(RefManageR)
 
 ## ... 3B. Download data ###############
 
@@ -192,6 +193,54 @@ site_data <- site_data %>%
 
 ## 4. Create study-citation table ######
 # import the CCRCN bibliography 
+# Get bibtex citation from DOI for Campbell
+biblio_campbell <- GetBibEntryWithDOI(doi_campbell)
+biblio_df <- as.data.frame(biblio_campbell)
+study_citations_campbell <- biblio_df %>%
+  rownames_to_column("key") %>%
+  mutate(bibliography_id = study_campbell, 
+         study_id = study_campbell,
+         key = study_campbell,
+         publication_type = "Article") %>%
+  select(study_id, bibliography_id, publication_type, everything())
+
+# The DOI for Schile-Beers and Megonigal does not return the necessary information
+biblio_schile <- BibEntry(bibtype = "Misc", 
+                          key = study_schile, 
+                          title = "Abu Dhabi Blue Carbon Demonstration Project",
+                          author = "Schile, Lisa M. and Megonigal, J. Patrick", 
+                          doi = doi_schile,
+                          publisher = "Smithsonian Environmental Research Center",
+                          year = "2017", 
+                          url = "https://repository.si.edu/handle/10088/31949")
+biblio_df <- as.data.frame(biblio_schile)
+study_citations_schile <- biblio_df %>%
+  rownames_to_column("key") %>%
+  mutate(bibliography_id = study_schile, 
+         study_id = study_schile,
+         key = study_schile,
+         publication_type = "data release") %>%
+  select(study_id, bibliography_id, publication_type, everything())
+
+study_citations_synthesis <- biblio_df %>%
+  rownames_to_column("key") %>%
+  mutate(bibliography_id = study_schile, 
+         study_id = study_campbell,
+         key = study_schile,
+         publication_type = "synthesis") %>%
+  select(study_id, bibliography_id, publication_type, everything()) %>%
+  bind_rows(study_citations_campbell, study_citations_schile)
+
+
+# Write .bib file
+bib_file <- study_citations_synthesis %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("key")
+
+WriteBib(as.BibEntry(bib_file), "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017.bib")
+
+
 library(bib2df)
 CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
 
@@ -236,4 +285,4 @@ results <- test_core_relationships(core_data, depthseries_data)
 write_csv(site_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
 write_csv(core_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
 write_csv(depthseries_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")
-write_csv(study_data_synthesis, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")
+write_csv(study_citations_synthesis, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")

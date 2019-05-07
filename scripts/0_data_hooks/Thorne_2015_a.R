@@ -6,7 +6,8 @@
 # Thorne, K. 2015. Field and model data for studying the effects of sea-level rise on eight tidal marshes in coastal Washington and Oregon. 
 # US Geological Survey Data Release. 10.5066/F7SJ1HNC.
 # https://www.sciencebase.gov/catalog/item/55ae7d09e4b066a24924239f
-
+study <- "Thorne_et_al_2015"
+doi <- "10.5066/F7SJ1HNC"
 
 # Publication Citation
 # Karen Thorne, Glen MacDonald, Glenn Guntenspergen, Richard Ambrose, Kevin Buffington, Bruce Dugger, Chase Freeman, 
@@ -17,6 +18,7 @@
 library(tidyverse)
 library(lubridate)
 library(readxl)
+library(RefManageR)
 # the following packages are needed to convert UTM to lat/long
 library(sp)
 library(rgdal)
@@ -121,22 +123,23 @@ depthseries_data <- depthseries_data %>%
 core_data <- select(core_data, -cs137_peak_cm)
 
 ## ... 4D Generate study-citation link ############
-# import the CCRCN bibliography 
-library(bib2df)
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+# Get bibtex citation from DOI
+biblio_raw <- GetBibEntryWithDOI(doi)
+biblio_df <- as.data.frame(biblio_raw)
+study_citations <- biblio_df %>%
+  rownames_to_column("key") %>%
+  mutate(bibliography_id = study, 
+         study_id = study,
+         key = study,
+         publication_type = "data release") %>%
+  select(study_id, bibliography_id, publication_type, everything())
 
-# link each study to primary citation and join with synthesis table
-studies <- unique(core_data$study_id)
+# Write .bib file
+bib_file <- study_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  column_to_rownames("key")
 
-study_data_primary <- CCRCN_bib %>%
-  select(BIBTEXKEY, CATEGORY, DOI) %>%
-  rename(bibliography_id = BIBTEXKEY,
-         study_type = CATEGORY,
-         doi = DOI) %>%
-  filter(bibliography_id %in% studies) %>%
-  mutate(study_id = bibliography_id, 
-         study_type = tolower(study_type)) %>%
-  select(study_id, study_type, bibliography_id, doi) 
+WriteBib(as.BibEntry(bib_file), "./data/Thorne_2015_a/derivative/Thorne_et_al_2015.bib")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -157,5 +160,5 @@ results <- test_core_relationships(core_data, depthseries_data)
 ## 6. Export data
 write_csv(core_data, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_core_data.csv")
 write_csv(depthseries_data, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_depthseries_data.csv")
-write_csv(study_data_primary, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
+write_csv(study_citations, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
 
