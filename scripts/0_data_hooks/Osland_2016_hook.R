@@ -6,6 +6,9 @@
 # 2016, U.S. Gulf of Mexico coast (TX, MS, AL, and FL) Vegetation, soil, and landscape data (2013-2014): 
 # U.S. Geological Survey data release, http://dx.doi.org/10.5066/F7J1017G.
 
+doi <- "10.5066/F7J1017G"
+study <- "Osland_et_al_2016"
+
 # Publication citation: 
 # Osland, M.J., Feher, L.C., Griffith, K.T., Cavanaugh, K.C., Enwright, N.M., Day, R.H., Stagg, C.L., 
 # Krauss, K.W., Howard, R.J., Grace, J.B., and Rogers, K., 2016, 
@@ -299,22 +302,23 @@ Osland_2016_species_data <- Osland_2016_species_data %>%
 
 
 ## Create study-level data ######
-# import the CCRCN bibliography 
-library(bib2df)
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+# Get bibtex citation from DOI
+biblio_raw <- GetBibEntryWithDOI(doi)
+biblio_df <- as.data.frame(biblio_raw)
+study_citations <- biblio_df %>%
+  rownames_to_column("key") %>%
+  mutate(bibliography_id = study, 
+         study_id = study,
+         key = study,
+         publication_type = "data release") %>%
+  select(study_id, bibliography_id, publication_type, everything())
 
-# link each study to primary citation and join with synthesis table
-studies <- unique(Osland_2016_core_data$study_id)
+# Write .bib file
+bib_file <- study_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  column_to_rownames("key")
 
-study_data_primary <- CCRCN_bib %>%
-  select(BIBTEXKEY, CATEGORY, DOI) %>%
-  rename(bibliography_id = BIBTEXKEY,
-         study_type = CATEGORY,
-         doi = DOI) %>%
-  filter(bibliography_id %in% studies) %>%
-  mutate(study_id = bibliography_id, 
-         study_type = tolower(study_type)) %>%
-  select(study_id, study_type, bibliography_id, doi) 
+WriteBib(as.BibEntry(bib_file), "./data/Osland_2016/derivative/Osland_et_al_2016.bib")
 
 ## QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -340,6 +344,6 @@ write_csv(Osland_2016_species_data, "./data/Osland_2016/derivative/Osland_et_al_
 write_csv(Osland_2016_depth_series_data, "./data/Osland_2016/derivative/Osland_et_al_2016_depthseries.csv")
 write_csv(Osland_2016_site_data, "./data/Osland_2016/derivative/Osland_et_al_2016_sites.csv")
 write_csv(Osland_2016_core_data, "./data/Osland_2016/derivative/Osland_et_al_2016_cores.csv")
-write_csv(study_data_primary, "./data/Osland_2016/derivative/Osland_et_al_2016_study_citations.csv")
+write_csv(study_citations, "./data/Osland_2016/derivative/Osland_et_al_2016_study_citations.csv")
 
 
