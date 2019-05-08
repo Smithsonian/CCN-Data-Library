@@ -119,7 +119,10 @@ study_citations <- biblio_df %>%
   mutate(bibliography_id = "Drexler_et_al_2009", 
          study_id = "Drexler_et_al_2009",
          key = "Drexler_et_al_2009",
-         publication_type = "Article") %>%
+         publication_type = "Article", 
+         year = as.numeric(year), 
+         volume = as.numeric(volume), 
+         number = as.numeric(number)) %>%
   select(study_id, bibliography_id, publication_type, everything())
 
 # Write .bib file

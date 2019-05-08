@@ -9,9 +9,6 @@
 # Nelson Island Creek marsh, Rowley, MA. Environmental Data Initiative. 
 # https://doi.org/10.6073/pasta/d1d5cbf87602ccf51de30b87b8e46d01. Dataset accessed 1/29/2019.
 
-doi <- "10.6073/pasta/d1d5cbf87602ccf51de30b87b8e46d01"
-study <- "Giblin_and_Forbrich_2018"
-
 # Publication: 
 # Forbrich, I., A. E. Giblin, and C. S. Hopkinson. 2018. 
 # “Constraining Marsh Carbon Budgets Using Long‐Term C Burial and Contemporary Atmospheric CO2 Fluxes.” 
@@ -136,6 +133,9 @@ site_data <- site_data %>%
          vegetation_class = "emergent")
 
 ## 3. Create study-level data ######
+doi <- "10.6073/pasta/d1d5cbf87602ccf51de30b87b8e46d01"
+study <- "Giblin_and_Forbrich_2018"
+
 # Get bibtex citation from DOI
 biblio_raw <- GetBibEntryWithDOI(doi)
 biblio_df <- as.data.frame(biblio_raw)
@@ -144,7 +144,8 @@ study_citations <- biblio_df %>%
   mutate(bibliography_id = study, 
          study_id = study,
          key = study,
-         publication_type = "data release") %>%
+         publication_type = "data release", 
+         year = as.numeric(year)) %>%
   select(study_id, bibliography_id, publication_type, everything())
 
 # Write .bib file

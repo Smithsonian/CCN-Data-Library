@@ -6,8 +6,6 @@
 # Thorne, K. 2015. Field and model data for studying the effects of sea-level rise on eight tidal marshes in coastal Washington and Oregon. 
 # US Geological Survey Data Release. 10.5066/F7SJ1HNC.
 # https://www.sciencebase.gov/catalog/item/55ae7d09e4b066a24924239f
-study <- "Thorne_et_al_2015"
-doi <- "10.5066/F7SJ1HNC"
 
 # Publication Citation
 # Karen Thorne, Glen MacDonald, Glenn Guntenspergen, Richard Ambrose, Kevin Buffington, Bruce Dugger, Chase Freeman, 
@@ -123,15 +121,26 @@ depthseries_data <- depthseries_data %>%
 core_data <- select(core_data, -cs137_peak_cm)
 
 ## ... 4D Generate study-citation link ############
-# Get bibtex citation from DOI
-biblio_raw <- GetBibEntryWithDOI(doi)
+study <- "Thorne_et_al_2015"
+doi <- "10.5066/F7SJ1HNC"
+
+biblio_raw <- BibEntry(bibtype = "Misc", 
+                             key = "Thorne_et_al_2015", 
+                             title = "Marshes to Mudflats: Climate Change Effects Along a Latitudinal Gradient in the Pacific Northwest",
+                             author = "U.S. Geological Survey {Karen Thorne}", 
+                             doi = "10.5066/f7sj1hnc",
+                             publisher = "U.S. Geological Survey",
+                             year = "2015", 
+                             url = "https://www.sciencebase.gov/catalog/item/5006e99ee4b0abf7ce733f58"
+)
 biblio_df <- as.data.frame(biblio_raw)
+
 study_citations <- biblio_df %>%
   rownames_to_column("key") %>%
   mutate(bibliography_id = study, 
          study_id = study,
-         key = study,
-         publication_type = "data release") %>%
+         publication_type = "data release", 
+         year = as.numeric(year)) %>%
   select(study_id, bibliography_id, publication_type, everything())
 
 # Write .bib file

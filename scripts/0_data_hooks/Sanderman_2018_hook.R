@@ -527,7 +527,10 @@ study_citations_synthesis <- citations %>%
   mutate(key = "Sanderman_2017",
          publication_type = "synthesis") %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything()) %>%
-  bind_rows(study_citations_primary, primary_no_dois)
+  bind_rows(study_citations_primary, primary_no_dois) %>%
+  mutate(year = as.numeric(year),
+         volume = as.numeric(volume), 
+         number = as.numeric(number)) 
 
 # Write .bib file
 bib_file <- study_citations_synthesis %>%

@@ -314,7 +314,9 @@ synthesis_citations <- study_citations %>%
   merge(synthesis_data, by="bibliography_id") %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
   bind_rows(study_citations) %>%
-  distinct()
+  mutate(number = as.numeric(number),
+         key = recode(key, "Alongi_2008" = "Alongi_2008_seagrass")) %>%
+  distinct() 
 
 # Write .bib file
 bib_file <- synthesis_citations %>%

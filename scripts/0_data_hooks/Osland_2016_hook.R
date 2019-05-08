@@ -6,9 +6,6 @@
 # 2016, U.S. Gulf of Mexico coast (TX, MS, AL, and FL) Vegetation, soil, and landscape data (2013-2014): 
 # U.S. Geological Survey data release, http://dx.doi.org/10.5066/F7J1017G.
 
-doi <- "10.5066/F7J1017G"
-study <- "Osland_et_al_2016"
-
 # Publication citation: 
 # Osland, M.J., Feher, L.C., Griffith, K.T., Cavanaugh, K.C., Enwright, N.M., Day, R.H., Stagg, C.L., 
 # Krauss, K.W., Howard, R.J., Grace, J.B., and Rogers, K., 2016, 
@@ -302,6 +299,9 @@ Osland_2016_species_data <- Osland_2016_species_data %>%
 
 
 ## Create study-level data ######
+doi <- "10.5066/F7J1017G"
+study <- "Osland_et_al_2016"
+
 # Get bibtex citation from DOI
 biblio_raw <- GetBibEntryWithDOI(doi)
 biblio_df <- as.data.frame(biblio_raw)
@@ -310,7 +310,8 @@ study_citations <- biblio_df %>%
   mutate(bibliography_id = study, 
          study_id = study,
          key = study,
-         publication_type = "data release") %>%
+         publication_type = "data release", 
+         year = as.numeric(year)) %>%
   select(study_id, bibliography_id, publication_type, everything())
 
 # Write .bib file

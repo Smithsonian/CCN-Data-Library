@@ -6,8 +6,6 @@
 # Collection, analysis, and age-dating of sediment cores from salt marshes on the south shore of Cape Cod, Massachusetts, from 2013 through 2014: 
 # U.S. Geological Survey data release, https://doi.org/10.5066/F7H41QPP.
 
-doi <- "10.5066/F7H41QPP"
-study <- "Gonneea_et_al_2018"
 
 # This script hooks in data from the Gonneea et al 2018 data release
 
@@ -180,6 +178,9 @@ Gonneea_2018_depth_series_data <- Gonneea_2018_depth_series_data %>%
   select(study_id, site_id, core_id, everything())
 
 ## Create study-level data ######
+doi <- "10.5066/F7H41QPP"
+study <- "Gonneea_et_al_2018"
+
 # Get bibtex citation from DOI
 biblio_raw <- GetBibEntryWithDOI(doi)
 biblio_df <- as.data.frame(biblio_raw)
@@ -188,7 +189,8 @@ study_citations <- biblio_df %>%
   mutate(bibliography_id = study, 
          study_id = study,
          key = study,
-         publication_type = "data release") %>%
+         publication_type = "data release", 
+         year = as.numeric(year)) %>%
   select(study_id, bibliography_id, publication_type, everything())
 
 # Write .bib file

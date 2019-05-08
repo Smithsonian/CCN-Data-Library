@@ -8,9 +8,6 @@
 # Mangrove carbon stocks in Zambezi River Delta, Mozambique. Fort Collins, CO: Forest Service Research Data Archive. 
 # https://doi.org/10.2737/RDS-2017-0053
 
-study <- "Trettin_et_al_2017"
-doi <- "10.2737/RDS-2017-0053"
-
 ## 2. Prep workspace and read in data ####################
 # Load RCurl, a package used to download files from a URL
 
@@ -91,6 +88,9 @@ sites <- cores %>%
 
 ## 4. Create study-citation table ######
 # Get bibtex citation from DOI
+study <- "Trettin_et_al_2017"
+doi <- "10.2737/RDS-2017-0053"
+
 biblio_raw <- GetBibEntryWithDOI(doi)
 biblio_df <- as.data.frame(biblio_raw)
 
@@ -99,7 +99,8 @@ study_citations <- biblio_df %>%
   mutate(bibliography_id = study, 
          study_id = study,
          key = study,
-         publication_type = "data release") %>%
+         publication_type = "data release", 
+         year = 2017) %>%
   select(study_id, bibliography_id, publication_type, everything())
 
 # Write .bib file

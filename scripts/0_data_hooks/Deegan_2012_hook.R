@@ -162,7 +162,8 @@ study_citations <- biblio_df %>%
   rownames_to_column("key") %>%
   mutate(bibliography_id = "Deegan_et_al_2012", 
          study_id = "Deegan_et_al_2012",
-         publication_type = "data release") %>%
+         publication_type = "data release", 
+         year = as.numeric(year)) %>%
   select(study_id, bibliography_id, publication_type, everything())
 
 # Write .bib file

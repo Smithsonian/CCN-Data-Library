@@ -229,8 +229,10 @@ study_citations_synthesis <- biblio_df %>%
          key = study_schile,
          publication_type = "synthesis") %>%
   select(study_id, bibliography_id, publication_type, everything()) %>%
-  bind_rows(study_citations_campbell, study_citations_schile)
-
+  bind_rows(study_citations_campbell, study_citations_schile) %>%
+  mutate(year = as.numeric(year),
+         volume = as.numeric(volume),
+         number = as.numeric(number))
 
 # Write .bib file
 bib_file <- study_citations_synthesis %>%

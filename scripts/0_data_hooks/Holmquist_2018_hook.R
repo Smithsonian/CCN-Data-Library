@@ -230,7 +230,11 @@ study_citations_synthesis <- citations %>%
   mutate(key = "Holmquist_et_al_2018",
          publication_type = "synthesis") %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything()) %>%
-  bind_rows(study_citations_primary, primary_no_dois)
+  bind_rows(study_citations_primary, primary_no_dois) %>%
+  mutate(year = as.numeric(year), 
+         volume = as.numeric(volume), 
+         number = as.numeric(number)) %>%
+  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) 
 
 # Write .bib file
 bib_file <- study_citations_synthesis %>%
