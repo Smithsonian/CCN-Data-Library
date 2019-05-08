@@ -12,7 +12,6 @@
 ## 2. Prep workspace #######################
 library(tidyverse)
 library(readxl)
-library(bib2df)
 library(RefManageR)
 
 # Read in data
@@ -32,10 +31,6 @@ references <- references %>%
 
 # Write this out to an intermediate file
 write_csv(references, "data/Fourqurean_2012/intermediate/references.csv")
-
-# Now that 'references' was manually joined and inspected to a manually-compiled
-#   set of study IDs and DOIs, read that in
-study_doi_manual <- read_csv("data/Fourqurean_2012/intermediate/study_doi_manual.csv")
 
 ## 3. Curate data ######################
 
@@ -268,7 +263,12 @@ species <- Fourqurean %>%
   filter(is.na(species_code) == FALSE) 
 
 ## ....3h. Create study-level data ##########################
-
+# Now that 'references' was manually joined and inspected to a manually-compiled
+#   set of study IDs and DOIs, read that in
+study_doi_manual <- read_csv("data/Fourqurean_2012/intermediate/study_doi_manual.csv")
+# Additionally, read in the full set of citations for studies with no DOI: 
+citations_without_dois <- read_csv("data/Fourqurean_2012/intermediate/citations_without_dois.csv")
+  
 # We have a data table that was manually generating, which includes study IDs,
 #   DOIs, and a URL if there is no DOI. No row has a value in both DOI and URL
 
@@ -276,72 +276,53 @@ species <- Fourqurean %>%
 #   thrown by GetBibEntryWithDOI()
 doi <- study_doi_manual %>%
   select(doi) %>%
-  na.omit()
+  na.omit() %>%
+  group_by(doi) %>%
+  summarize(doi_ = first(doi))
 
 # Get BibTex entries from DOI
-biblio_raw <- GetBibEntryWithDOI(doi$doi)
+biblio_raw <- GetBibEntryWithDOI(doi$doi_)
 # Convert this to a dataframe
 biblio <- as.data.frame(biblio_raw) %>%
   # GetBibEntryWithDOI() defaults study name as a row name, convert to column
-  rownames_to_column("bibliography_id")
+  rownames_to_column("key") %>%
+  mutate(doi = tolower(doi))
 
 # Curate biblio so ready to read out as a BibTex-style .bib file
-biblio <- study_doi_manual %>%
+study_citations <- study_doi_manual %>%
+  select(-url, -reference) %>%
   # Convert uppercase to lowercase for DOIs
-  mutate(doi = gsub(pattern = '([[:upper:]])', perl = TRUE, replacement = '\\L\\1', doi)) %>%
-  full_join(biblio, by = c("doi")) %>% # join
-  mutate(url = ifelse(is.na(url.x), url.y, url.x)) %>% # join the two URL columns
-  select(-url.x, -url.y) %>% # Remove now-unnecessary URL columns
-  # Some renaming is necessary in order for df2bib to pick up on a few attributes
-  #   when writing this out to a .bib file
-  rename(BIBTEXKEY = bibliography_id, CATEGORY = bibtype, AUTHOR = author)
+  mutate(doi = tolower(doi)) %>%
+  merge(biblio, by="doi", all.x = FALSE, all.y = TRUE) %>%
+  mutate(publication_type = bibtype) %>%
+  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
+  mutate(year = as.numeric(year),
+         volume = as.numeric(volume)) %>%
+  # Join entires without a DOI
+  bind_rows(citations_without_dois)
 
-# Manually add information for the citation that failed to resolve from DOI search
-#   by GetBibEntryWithDOI
-Thimdee_et_al_2003 <- biblio %>%
-  filter(study_id == "Thimdee_et_al_2003") %>%
-  mutate(BIBTEXKEY = "Thimdee_2003",
-  CATEGORY = "Article",
-  AUTHOR = "Thimdee, W., Deein, G., Sangrungruang, C., Nishioka, J., and Matsunaga, K.",
-  year = "2003",
-  journal = "Wetlands",
-  volume = "23",
-  pages = "729--738"
-)
+# Create a separate row for each primary study_id - synthesis_id link
+synthesis_data <- study_citations %>%
+  filter(doi == "10.1038/ngeo1477") %>%
+  select(-study_id, -publication_type) %>%
+  distinct()
 
-# Also create an entry for the synthesis itself
-Fourqurean_citation <- GetBibEntryWithDOI("10.1038/ngeo1477")
-Fourqurean_citation <- as.data.frame(Fourqurean_citation) %>%
-  rownames_to_column("bibliography_id") %>%
-  mutate(study_id = bibliography_id) %>%
-  rename(AUTHOR = author)
-  
-
-# Join these to biblio
-biblio <- biblio %>%
-  filter(study_id != "Thimdee_et_al_2003") %>%
-  bind_rows(Thimdee_et_al_2003) %>%
-  bind_rows(Fourqurean_citation)
-
-## MAKE SURE THIS DATAFRAME INCLUDES A CITATION FOR THE SYNTHESIS ITSELF
-
-# Now curate biblio to create the study citations data table
-#   For a synthesis dataset, this table will have two rows for each primary study:
-#   One corresponding to a citation of the primary study itself, another for a
-#   citation of the synthesis
-study_citations <- biblio %>%
-  rename(publication_type = CATEGORY, author = AUTHOR) %>%
-  mutate(bibliography_id = study_id) %>%
-  select(-BIBTEXKEY)
-
-study_citations <- Fourqurean_citation %>%
-  select(-study_id) %>%
-  rename(author = AUTHOR) %>%
-  slice(rep(1:n(), each = length(study_citations$study_id))) %>%
-  mutate(publication_type = "synthesis") %>%
-  bind_cols(select(study_citations, study_id)) %>%
+synthesis_citations <- study_citations %>%
+  select(study_id) %>%
+  mutate(bibliography_id = "Fourqurean_et_al_2012", 
+         publication_type = "synthesis") %>%
+  merge(synthesis_data, by="bibliography_id") %>%
+  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
   bind_rows(study_citations) %>%
-  select(-bibtype)
+  distinct()
+
+# Write .bib file
+bib_file <- synthesis_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("key")
+
+WriteBib(as.BibEntry(bib_file), "data/Fourqurean_2012/derivative/Fourqurean_2012.bib")
 
 ## 4. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -386,7 +367,4 @@ write_csv(site_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_site_dat
 write_csv(core_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_core_data.csv")
 write_csv(species, "./data/Fourqurean_2012/derivative/Fourqurean_2012_species_data.csv")
 write_csv(biomass, "./data/Fourqurean_2012/derivative/Fourqurean_2012_biomass_data.csv")
-write_csv(study_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")
-
-# Write biblio
-df2bib(biblio, "data/Fourqurean_2012/derivative/Fourqurean_2012_bibliography.bib")
+write_csv(synthesis_citations, "./data/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")

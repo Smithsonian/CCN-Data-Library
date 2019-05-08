@@ -93,6 +93,7 @@ sites <- cores %>%
 # Get bibtex citation from DOI
 biblio_raw <- GetBibEntryWithDOI(doi)
 biblio_df <- as.data.frame(biblio_raw)
+
 study_citations <- biblio_df %>%
   rownames_to_column("key") %>%
   mutate(bibliography_id = study, 
@@ -104,6 +105,7 @@ study_citations <- biblio_df %>%
 # Write .bib file
 bib_file <- study_citations %>%
   select(-study_id, -bibliography_id, -publication_type) %>%
+  distinct() %>%
   column_to_rownames("key")
 
 WriteBib(as.BibEntry(bib_file), "./data/Trettin_2017/derivative/Trettin_2017.bib")
