@@ -32,6 +32,12 @@ references <- references %>%
 # Write this out to an intermediate file
 write_csv(references, "data/Fourqurean_2012/intermediate/references.csv")
 
+# Now that 'references' was manually joined and inspected to a manually-compiled
+#   set of study IDs and DOIs, read that in
+study_doi_manual <- read_csv("data/Fourqurean_2012/intermediate/study_doi_manual.csv")
+# Additionally, read in the full set of citations for studies with no DOI: 
+citations_without_dois <- read_csv("data/Fourqurean_2012/intermediate/citations_without_dois.csv")
+
 ## 3. Curate data ######################
 
 ## ....3a. Prelim curation to raw dataset ###############
@@ -47,8 +53,8 @@ Fourqurean <- Fourqurean_raw %>%
                                    "unvegetated marine", vegetation_class)) %>%
   # Join to the manual-compiled study list
   full_join(study_doi_manual) %>%
-  select(-doi, -url, -reference, -"Porosity (%)", 
-         -"Soil organic carbon density (mg/mL)", -"Soil organic matter density (mg/mL)",
+  select(-doi, -url, -reference, -bibliography_id, 
+         -"Porosity (%)", -"Soil organic carbon density (mg/mL)", -"Soil organic matter density (mg/mL)",
          -"loss on ignition (%)")
 
 # # Manually add each study ID
@@ -110,12 +116,12 @@ Fourqurean_core <- Fourqurean %>%
 # Note that you have to pass core-level data to this function
 source("./scripts/1_data_formatting/curation_functions.R")
 Fourqurean_core <- create_IDs_from_study_IDs_corelevel(Fourqurean_core, "core_id")
-Fourqurean_core <- Fourqurean_core %>%
-  select(-study_id)
+# Fourqurean_core <- Fourqurean_core %>%
+#   select(-study_id)
 
 # Now join back to master dataset
 Fourqurean <- Fourqurean %>%
-  select(-core_id) %>%
+  select(-core_id, -study_id) %>%
   full_join(Fourqurean_core, by = "coreserial")
 
 ## ... Filtering out invalid cores/studies ############
@@ -263,11 +269,6 @@ species <- Fourqurean %>%
   filter(is.na(species_code) == FALSE) 
 
 ## ....3h. Create study-level data ##########################
-# Now that 'references' was manually joined and inspected to a manually-compiled
-#   set of study IDs and DOIs, read that in
-study_doi_manual <- read_csv("data/Fourqurean_2012/intermediate/study_doi_manual.csv")
-# Additionally, read in the full set of citations for studies with no DOI: 
-citations_without_dois <- read_csv("data/Fourqurean_2012/intermediate/citations_without_dois.csv")
   
 # We have a data table that was manually generating, which includes study IDs,
 #   DOIs, and a URL if there is no DOI. No row has a value in both DOI and URL
