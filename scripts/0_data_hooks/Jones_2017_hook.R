@@ -41,8 +41,11 @@ sitesOutput <- sites %>%
 
 core_data <- sites %>%
   mutate(study_id = "Jones_et_al_2017") %>%
-  select(study_id, site_id, core_id, core_longitude, core_latitude, salinity_class, vegetation_class) %>%
-  mutate(vegetation_class = ifelse(vegetation_class == "tidal freshwater forest", "forested", vegetation_class))
+  select(study_id, site_id, core_id, core_longitude, core_latitude, 
+         salinity_class, vegetation_class) %>%
+  mutate(vegetation_class = ifelse(vegetation_class == "tidal freshwater forest", 
+                                   "forested", vegetation_class))
+
 
 ## 4. Depthseries data ############
 
