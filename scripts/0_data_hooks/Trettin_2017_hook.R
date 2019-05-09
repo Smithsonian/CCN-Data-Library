@@ -8,13 +8,12 @@
 # Mangrove carbon stocks in Zambezi River Delta, Mozambique. Fort Collins, CO: Forest Service Research Data Archive. 
 # https://doi.org/10.2737/RDS-2017-0053
 
-study <- "Trettin_et_al_2017"
-
 ## 2. Prep workspace and read in data ####################
 # Load RCurl, a package used to download files from a URL
 
 library(tidyverse)
 library(readxl)
+library(RefManageR)
 
 raw_depthseries <- read_csv("./data/Trettin_2017/original/Zambezi_Soils.csv")
 
@@ -88,19 +87,29 @@ sites <- cores %>%
 # South_Bounding_Coordinate: -18.80846
 
 ## 4. Create study-citation table ######
-# import the CCRCN bibliography 
-library(bib2df)
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+# Get bibtex citation from DOI
+study <- "Trettin_et_al_2017"
+doi <- "10.2737/RDS-2017-0053"
 
-study_data_primary <- CCRCN_bib %>%
-  select(BIBTEXKEY, CATEGORY, DOI) %>%
-  rename(bibliography_id = BIBTEXKEY,
-         study_type = CATEGORY,
-         doi = DOI) %>%
-  filter(bibliography_id %in% study) %>%
-  mutate(study_id = bibliography_id, 
-         study_type = tolower(study_type)) %>%
-  select(study_id, study_type, bibliography_id, doi) 
+biblio_raw <- GetBibEntryWithDOI(doi)
+biblio_df <- as.data.frame(biblio_raw)
+
+study_citations <- biblio_df %>%
+  rownames_to_column("key") %>%
+  mutate(bibliography_id = study, 
+         study_id = study,
+         key = study,
+         publication_type = "data release", 
+         year = 2017) %>%
+  select(study_id, bibliography_id, publication_type, everything())
+
+# Write .bib file
+bib_file <- study_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("key")
+
+WriteBib(as.BibEntry(bib_file), "./data/Trettin_2017/derivative/Trettin_2017.bib")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -119,6 +128,6 @@ results <- test_core_relationships(cores, depthseries)
 write_csv(sites, "./data/Trettin_2017/derivative/Trettin_et_al_2017_sites.csv")
 write_csv(cores, "./data/Trettin_2017/derivative/Trettin_et_al_2017_cores.csv")
 write_csv(depthseries, "./data/Trettin_2017/derivative/Trettin_et_al_2017_depthseries.csv")
-write_csv(study_data_primary, "./data/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
+write_csv(study_citations, "./data/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
 write_csv(species, "./data/Trettin_2017/derivative/Trettin_et_al_2017_species.csv")
 

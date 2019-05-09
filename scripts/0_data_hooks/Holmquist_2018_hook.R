@@ -18,7 +18,7 @@
 library(RCurl)
 library(tidyverse)
 library(rcrossref)
-library(bib2df)
+library(RefManageR)
 
 ## NOTE: this section commented out, but kept, because the data for the Holmquist
 # 2018 Sci Reports data release does not include site IDs. If and when this data
@@ -52,6 +52,9 @@ species <- read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_species_da
 methods <- read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_methods_data.csv")
 citations <- read_csv("data/Holmquist_2018/original/V1_Holmquist_2018_study_citations.csv")
 
+# remove the following studies that are now in their own separate data hooks: 
+removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001")
+
 ## 3. Recode and rename factors #################
 
 # Pull from curation functions script
@@ -77,7 +80,7 @@ cores <- cores %>%
                                       "c1" = "latitude and longitude were extracted from a relatively high quality map figure", 
                                       "c2" = "latitude and longitude were extracted from a relatively low quality map figure"), 
          inundation_class = tolower(inundation_class)) %>%
-  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) %>%
+  filter(!(study_id %in% removed_studies)) %>%
   # Add underscores to site IDs
   mutate(site_id = gsub(" ", "_", site_id)) %>%
   recode_salinity(salinity_class = salinity_class) %>%
@@ -96,7 +99,7 @@ depthseries <- depthseries %>%
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
-  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) 
+  filter(!(study_id %in% removed_studies)) 
   
 # Fraction carbon type should be in the methods metadata, not depthseries level 
 fraction_carbon_type_metadata <- depthseries %>%
@@ -108,7 +111,7 @@ impacts <- impacts %>%
   rename(impact_class = "impact_code") %>%
   # The Crooks study ID should be 2014, not 2013. 
   recode_impact(impact_class = impact_class)%>%
-  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009")))
+  filter(!(study_id %in% removed_studies))
   
 species <- species %>%
   # The Crooks study ID should be 2014, not 2013. 
@@ -116,7 +119,7 @@ species <- species %>%
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
-  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) %>%
+  filter(!(study_id %in% removed_studies)) %>%
   recode_species(species_code = species_code) 
 
 methods <- methods %>%
@@ -125,7 +128,7 @@ methods <- methods %>%
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))%>%
-  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) %>%
+  filter(!(study_id %in% removed_studies)) %>%
   select(-n) %>%
   merge(fraction_carbon_type_metadata, by="study_id")
 
@@ -140,156 +143,109 @@ methods <- methods %>%
 synthesis_doi <- "10.25572/ccrcn/10088/35684"
 synthesis_study_id <- "Holmquist_et_al_2018"
 
-# link each study to the synthesis 
-study_data <- cores %>%
-  group_by(study_id) %>%
-  summarize(study_type = "synthesis",
-            bibliography_id = synthesis_study_id, 
-            doi = synthesis_doi)
+# The follow file represents the initial study citations file that has since been deprecated
+citations <- read.csv("./data/Holmquist_2018/intermediate/initial_citations.csv")
 
-# Manually enter each primary study DOI
-citations <- tibble(
-  study_id = sort(as.character(unique(cores$study_id))),
-  study_type = c("mastersthesis",
-                  "article",
-                  "article",
-                  "article",
-                  "article",
-                  "article",
-                  "article",
-                  "dataset",
-                  "techreport",
-                  "article",
-                  "article",
-                  "article",
-                  "article",
-                  "article",
-                  "article",
-                  "article",
-                  "article",
-                  "article",
-                  "phdthesis",
-                  "article",
-                  "article",
-                  "article",
-                  "book",
-                  "article",
-                  "article",
-                  "article",
-                  "techreport",
-                  "article",
-                  "article",
-                  "article",
-                  "article",
-                  "techreport"),
-  bibliography_id = sort(as.character(unique(cores$study_id))),
-  doi = c("http://udspace.udel.edu/handle/19716/12831",
-          "10.1016/j.ecoleng.2016.03.045",
-          "10.1002/2014JG002715",
-          "10.1016/j.margeo.2017.07.002",
-          "10.1007/s12237-012-9508-9",
-          "10.1006/ecss.1997.0299",
-          "10.4319/lo.2007.52.3.1220",
-          "https://cims.coastal.louisiana.gov/DataDownload/DataDownload.aspx?type=soil_properties",
-          "10.13140/RG.2.1.1371.6568",
-          "10.1007/s00267-015-0568-z",
-          "10.1007/s12237-009-9202-8",
-          "10.1007/s13157-010-0139-2",
-          "10.1002/2015GL066830",
-          "10.1016/j.margeo.2017.07.001",
-          "10.1016/j.ecss.2015.06.004",
-          "10.1016/j.orggeochem.2006.06.006",
-          "10.1016/j.quageo.2012.05.004",
-          "10.1016/j.ecss.2014.12.032",
-          "https://elibrary.ru/item.asp?id=5305392",
-          "10.1006/ecss.2001.0854",
-          "10.1007/s10533-012-9805-1",
-          "10.1007/s12237-016-0066-4",
-          "10.6073/pasta/f20bcd9b51fb51b5e26df8fa03996baf",
-          "10.3354/meps096269",
-          "10.1306/D4267631-2B26-11D7-8648000102C1865D",
-          "10.1007/s10533-017-0312-2",
-          "10.3133/ofr20111094",
-          "10.1007/s12237-017-0362-7",
-          "10.1016/j.ecss.2016.10.001",
-          "10.1007/s12237-013-9598-z",
-          "10.2307/1353175",
-          "10.3133/ofr20101299"
-          )
-)
+# Build citations for primary studies that have DOIs
+primary_dois <- citations %>%
+  filter(is.na(doi)==FALSE) %>%
+  filter(study_type != "synthesis") %>%
+  select(study_id, bibliography_id, doi)
 
-study_data_primary <- citations %>%
-  bind_rows(study_data)
+primary <- GetBibEntryWithDOI(primary_dois$doi)
+primary_df <- as.data.frame(primary)
 
-## Generate BibTex citations
-# Extract only one row for each bibliography entry
-bib_studies <- study_data_primary %>%
-  select(bibliography_id, doi) %>%
-  distinct()
-
-bibliography <- cr_ccrcn(dois = bib_studies$doi)
-
-# Remove NULL elements using purrr:compact()
-bibliography <- compact(bibliography)
+study_citations_primary <- primary_df %>%
+  rownames_to_column("key") %>%
+  merge(primary_dois, by="doi", all.x=TRUE, all.y=TRUE) %>%
+  mutate(publication_type = bibtype) %>%
+  select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything()) %>%
+  filter(!(study_id %in% c("Crooks_et_al_2014", "Nuttle_1996")))
 
 # Manully add entries that failed (mostly because they don't have DOIS)
-bibliography <- c(bibliography, 
-      "@Mastersthesis{boydcomparison2012,
-  Author = {Boyd, Brandon},
-            School = {University of Delaware},
-            Title = {Comparison of sediment accumulation and accretion in impounded and unimpounded marshes of the {Delaware} {Estuary},
-            Year = {2012},
-            url = {http://udspace.udel.edu/handle/19716/12831}
-            }",
-            "@Dataset{CRMS_Database,
-            Author = {Coastal Protection and Restoration Authority},},
-            Title = {CRMS Soil Properties},
-            Year = {2015},
-            url = {https://cims.coastal.louisiana.gov/}
-            }",
-      "@TECHREPORT{crookscoastal2014,
-  Author = {Crooks, S and Rybczyk, J and O`Connell, K and Devier, D L and Poppe, K and Emmett-Mattox, S},
-Institution = {Environmental Science Associates, Western Washington University, EarthCorps, and Restore America`s Estuaries},
- Title = {Coastal Blue Carbon Opportunity Assessment for the Snohomish Estuary: The Climate Benefits of Estuary Restoration},
-  Year = {2014},     
-  doi = {10.13140/RG.2.1.1371.6568},
-  url = {http://rgdoi.net/10.13140/RG.2.1.1371.6568}
-      }",
-            "@Phdthesis{Merrill_1999,
-            Author = {Merrill, J Z},
-            School = {University of Maryland, College Park},
-            Title = {Tidal Freshwater Marshes as Nutrient Sinks: Particulate Nutrient Burial and Denitrification},
-            Type = {PhD} {Thesis},
-            Year = {1999},
-            url = {https://elibrary.ru/item.asp?id=5305392}
-            }",
-      "@book{Nuttle_1996,
-	title = {Marsh sediment dynamics and organic matter survey {VCR}/{LTER} 1987-1988},
-  doi = {10.6073/pasta/f20bcd9b51fb51b5e26df8fa03996baf},    
-  url = {http://dx.doi.org/10.6073/pasta/f20bcd9b51fb51b5e26df8fa03996baf},
-  urldate = {2017-06-28},
-  author = {Nuttle, William},
-  publisher = {Environmental Data Initiative},
-      year = {1996}
-      }"
-            )
+boyd <-  BibEntry(bibtype = "Mastersthesis", 
+                  key = "Boyd_2012", 
+                  title = "Comparison of sediment accumulation and accretion in impounded and unimpounded marshes of the Delaware Estuary",
+                  author = "Boyd, Brandon", 
+                  school = "University of Delaware",
+                  year = "2012", 
+                  url = "http://udspace.udel.edu/handle/19716/12831"
+                  )
 
-# Write this content out to a .bib file
-fileConn <- file("data/Holmquist_2018/derivative/V1_Holmquist_2018_citation.bib")
-writeLines(as.character(bibliography), fileConn)
-close(fileConn)
+crms <-  BibEntry(bibtype = "Misc", 
+                  key = "CRMS_2015", 
+                  title = "CRMS Soil Properties",
+                  author = "Coastal Protection and Restoration Authority", 
+                  year = "2015", 
+                  url = "https://cims.coastal.louisiana.gov")
 
-# # Now import back in as a df
-# bib <- bib2df("data/Holmquist_2018/derivative/bibliography.bib")
-# 
-# # Quick curation to enable us to join by DOI
-# bib <- bib %>%
-#   rename(doi = DOI) %>%
-#   mutate(doi = ifelse(is.na(doi), URL, doi)) # If the DOI field is blank, pull
-# # in the URL...which should match the supposed "DOI" in study_data_primary
-# 
-# study_data_primary <- study_data_primary %>%
-#   left_join(bib, by = "doi")
+crooks <- BibEntry(bibtype = "Techreport", 
+                   key = "Crooks_et_al_2014", 
+                   title = "Coastal Blue Carbon Opportunity Assessment for the Snohomish Estuary: The Climate Benefits of Estuary Restoration",
+                   author = "Crooks, S and Rybczyk, J and O`Connell, K and Devier, D L and Poppe, K and Emmett-Mattox, S", 
+                   institution = "Environmental Science Associates, Western Washington University, EarthCorps, and Restore America`s Estuaries",
+                   year = "2015", 
+                   url = "http://rgdoi.net/10.13140/RG.2.1.1371.6568"
+                   )
+
+merrill <- BibEntry(bibtype = "Phdthesis", 
+                   key = "Merrill_1999", 
+                   title = "Tidal Freshwater Marshes as Nutrient Sinks: Particulate Nutrient Burial and Denitrification",
+                   author = "Merrill, J Z", 
+                   school = "University of Maryland, College Park",
+                   year = "1999", 
+                   url = "https://elibrary.ru/item.asp?id=5305392"
+                   )
+
+nuttle <- BibEntry(bibtype = "Book", 
+                   key = "Nuttle_1996", 
+                   title = "Tidal Freshwater Marshes as Nutrient Sinks: Particulate Nutrient Burial and Denitrification",
+                   author = "Nuttle, William", 
+                   publisher = "Environmental Data Initiative",
+                   year = "1996"
+                   )
+
+primary_no_dois <- as.data.frame(list(c(boyd, crms, crooks, merrill, nuttle)))
+
+primary_no_dois <- primary_no_dois %>%
+  rownames_to_column("key") %>%
+  mutate(study_id = key, 
+         bibliography_id = key, 
+         publication_type = bibtype) %>%
+  select(study_id, bibliography_id, publication_type, key, bibtype, everything())
+
+biblio_synthesis <- BibEntry(bibtype = "Misc", 
+                             key = "Holmquist_et_al_2018", 
+                             title = "Accuracy and Precision of Tidal Wetland Soil Carbon Mapping in the Conterminous United States: Public Soil Carbon Data Release",
+                             author = "Holmquist, James R. and Windham-Myers, Lisamarie and Bliss, Norman and Crooks, Stephen and Morris, James T. and Megonigal, J. Patrick and Troxler, Tiffany and Weller, Donald and Callaway, John and Drexler, Judith and Ferner, Matthew C. and Gonneea, Meagan E. and Kroeger, Kevin D. and Schile-Beers, Lisa and Woo, Isa and Buffington, Kevin and Boyd, Brandon M. and Breithaupt, Joshua and Brown, Lauren N. and Dix, Nicole and Hice, Lyndie and Horton, Benjamin P. and MacDonald, Glen M. and Moyer, Ryan P. and Reay, William and Shaw, Timothy and Smith, Erik and Smoak, Joseph M. and Sommerfield, Christopher and Thorne, Karen and Velinsky, David and Watson, Elizabeth and Wilson Grimes, Kristen and Woodrey, Mark", 
+                             doi = "10.25572/ccrcn/10088/35684",
+                             publisher = "Smithsonian Research Online",
+                             year = "2018", 
+                             url = "https://repository.si.edu/handle/10088/35684"
+                             )
+
+biblio_synthesis <- as.data.frame(biblio_synthesis)
+
+study_citations_synthesis <- citations %>%
+  filter(study_type == "synthesis") %>%
+  select(study_id, bibliography_id, doi) %>%
+  merge(biblio_synthesis, by="doi", all.x=TRUE, all.y=TRUE) %>%
+  mutate(key = "Holmquist_et_al_2018",
+         publication_type = "synthesis") %>%
+  select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything()) %>%
+  bind_rows(study_citations_primary, primary_no_dois) %>%
+  mutate(year = as.numeric(year), 
+         volume = as.numeric(volume), 
+         number = as.numeric(number)) %>%
+  filter(!(study_id %in% removed_studies)) 
+
+# Write .bib file
+bib_file <- study_citations_synthesis %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("key")
+
+WriteBib(as.BibEntry(bib_file), "./data/Holmquist_2018/derivative/V1_Holmquist_2018.bib")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -312,4 +268,4 @@ write_csv(depthseries, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_depth
 write_csv(impacts, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_impact_data.csv")
 write_csv(species, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_species_data.csv")
 write_csv(methods, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_methods_data.csv")
-write_csv(study_data_primary, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_study_citations.csv")
+write_csv(study_citations_synthesis, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_study_citations.csv")

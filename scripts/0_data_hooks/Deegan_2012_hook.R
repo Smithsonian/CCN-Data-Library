@@ -134,43 +134,44 @@ site_data <- site_data %>%
          vegetation_class = "salt marsh")
 
 ## 4. Create study-level data ######
+# Get bibtex citation from DOI
+# The following function works haphazardly: sometimes it acquires the information and sometimes it doesn't.
+# biblio_raw <- GetBibEntryWithDOI(c("10.6073/pasta/bc041b3546ba4a3730fd391852741620", 
+#                                    "10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee"))
 
-# Add DOIs for both datasets
-study_citation <- tibble(
-  study_id = c("Deegan_et_al_2012", "Deegan_et_al_2012"),
-  type = c("article", "article"),
-  bibliography_id = c("Deegan_et_al_2012", "Deegan_et_al_2012"),
-  doi =  c("10.6073/pasta/bc041b3546ba4a3730fd391852741620",
-           "10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee")
-)
+biblio_raw <- list(c(BibEntry(bibtype = "Misc", 
+                            key = "Deegan_et_al_2009_a", 
+                            title = "2009 LENS aboveground biomass core results",
+                            author = "Linda Deegan and Duncan FitzGerald and Sergio Fagherazz", 
+                            year = "2012", 
+                            doi = "10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee",
+                            url = "https://doi.org/10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee", 
+                            publisher = "Environmental Data Initiative"),
+                   BibEntry(bibtype = "Misc", 
+                            key = "Deegan_et_al_2009_b", 
+                            title = "2009 LENS belowground biomass core results",
+                            author = "Linda Deegan and Duncan FitzGerald and Sergio Fagherazz", 
+                            year = "2012", 
+                            doi = "10.6073/pasta/bc041b3546ba4a3730fd391852741620",
+                            url = "https://doi.org/10.6073/pasta/bc041b3546ba4a3730fd391852741620", 
+                            publisher = "Environmental Data Initiative")
+                   ))
 
+biblio_df <- as.data.frame(biblio_raw)
+study_citations <- biblio_df %>%
+  rownames_to_column("key") %>%
+  mutate(bibliography_id = "Deegan_et_al_2012", 
+         study_id = "Deegan_et_al_2012",
+         publication_type = "data release", 
+         year = as.numeric(year)) %>%
+  select(study_id, bibliography_id, publication_type, everything())
 
-## Generate BibTex citation
-bibliography <-  c(
-  "@Dataset{Deegan_2009a,
-	title = {2009 LENS aboveground biomass core results},
-  doi = {10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee},    
-  url = {https://doi.org/10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee},
-  author = {Linda Deegan and Duncan FitzGerald and Sergio Fagherazz},
-  publisher = {Environmental Data Initiative},
-  year = {2012},
-  abstract = {2009 LENS Geotechnical and Biomass Results from 72 hand auger cores (50 cm depth) retrieved from LENS and TIDE project creeks (Sweeney, West, Clubhead, Nelson) in Rowley, MA. Thirty-six of these cores were processed for aboveground biomass and belowground biomass. Results presented here are aboveground biomass. Results for belowground biomass are presented in file STP-LENS-2009-below-biomass. The remainder 36 auger cores were processed for bulk density and bulk organic content (from loss on ignition, LOI) and results are presented in STP-LENS-2009-geotechnical.}
-                   }",
+# Write .bib file
+bib_file <- study_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  column_to_rownames("key")
 
-"@Dataset{Deegan_2009b,
-	title = {2009 LENS belowground biomass core results},
-  doi = {10.6073/pasta/bc041b3546ba4a3730fd391852741620},    
-  url = {https://doi.org/10.6073/pasta/bc041b3546ba4a3730fd391852741620},
-  author = {Linda Deegan and Duncan FitzGerald and Sergio Fagherazz},
-  publisher = {Environmental Data Initiative},
-      year = {2012},
-  abstract = {2009 LENS Geotechnical and Biomass Results from 72 hand auger cores (50 cm depth) retrieved from LENS and TIDE project creeks (Sweeney, West, Clubhead, Nelson) in Rowley, MA. Thirty-six of these cores were processed for aboveground and belowground biomass (roots, rhizomes, detritus) . Results for belowground biomass presented here. Above ground biomass results are presented in file STP-LENS-2009-above-biomass. The remainder 36 of these cores were processed for bulk density and bulk organic content (from loss on Iinition, LOI) and results are presented in file STP-LENS-2009-geotechnical.}
-      }"
-
-)
-
-
-
+WriteBib(as.BibEntry(bib_file), "./data/Deegan_2012/derivative/Deegan_et_al_2012.bib")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -188,8 +189,5 @@ results <- test_core_relationships(cores, biomass_depthseries)
 write_csv(cores, "./data/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
 write_csv(site_data, "./data/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
 write_csv(biomass_depthseries, "./data/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")
-write_csv(study_citation, "./data/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
+write_csv(study_citations, "./data/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
 write_csv(biomass_agg, "./data/Deegan_2012/derivative/Deegan_et_al_2012_biomass.csv")
-fileConn <- file("data/Deegan_2012/derivative/Deegan_et_al_2012_citation.bib")
-writeLines(as.character(bibliography), fileConn)
-close(fileConn)

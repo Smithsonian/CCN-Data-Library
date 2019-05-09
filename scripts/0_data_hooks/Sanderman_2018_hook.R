@@ -9,9 +9,9 @@ library(tidyverse)
 library(RCurl)
 library(readxl)
 library(lubridate)
+library(RefManageR)
 
 ## Curate Sanderman international data ############
-
 
 # This excel document was handed off in a personal communication. It corresponds
 #   to some of the data held here: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OCYUIT
@@ -440,35 +440,35 @@ species <- read.csv("./data/Sanderman_2018/derivative/Sanderman_2018_species_dat
 
 ## ... Determine which studies are cited in biblio ###########
 
-# Import CCRCN bibliography and create a list of all study IDs within Sanderman synthesis 
-# that are cited within the bibliography 
-
-library(bib2df)
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
-
-studies_cited <- cores %>%
-  group_by(study_id) %>%
-  summarize(n=n()) %>%
-  filter(study_id %in% CCRCN_bib$BIBTEXKEY)
-
-# Exactly 100 studies are cited in the bibliography
-
-studies_not_cited <- cores %>%
-  group_by(study_id) %>%
-  summarize(n=n()) %>%
-  filter(!(study_id %in% CCRCN_bib$BIBTEXKEY))
-
-# 55 studies are not cited in the bibliography 
-
-## ... Filter out un-cited studies from depthseries ########## 
-
-cleaned_depthseries <- depthseries %>%
-  filter(study_id %in% studies_cited$study_id)
-
-write_csv(cleaned_depthseries, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
-
-## ... Create vector of un-cited studies ###########
-studies_Sanderman_unavailable <- as.character(studies_not_cited$study_id)
+# # Import CCRCN bibliography and create a list of all study IDs within Sanderman synthesis 
+# # that are cited within the bibliography 
+# 
+# library(bib2df)
+# CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+# 
+# studies_cited <- cores %>%
+#   group_by(study_id) %>%
+#   summarize(n=n()) %>%
+#   filter(study_id %in% CCRCN_bib$BIBTEXKEY)
+# 
+# # Exactly 100 studies are cited in the bibliography
+# 
+# studies_not_cited <- cores %>%
+#   group_by(study_id) %>%
+#   summarize(n=n()) %>%
+#   filter(!(study_id %in% CCRCN_bib$BIBTEXKEY))
+# 
+# # 55 studies are not cited in the bibliography 
+# 
+# ## ... Filter out un-cited studies from depthseries ########## 
+# 
+# cleaned_depthseries <- depthseries %>%
+#   filter(study_id %in% studies_cited$study_id)
+# 
+# write_csv(cleaned_depthseries, "./data/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
+# 
+# ## ... Create vector of un-cited studies ###########
+# studies_Sanderman_unavailable <- as.character(studies_not_cited$study_id)
 
 # This list of studies is listed as unavailable in "carbon stocks" within the map interface
 # Modify them within the "2_datatype_processing.R" script in the map repository scripts folder
@@ -477,32 +477,68 @@ studies_Sanderman_unavailable <- as.character(studies_not_cited$study_id)
 # there should be two entries per study: 
 # one for the primary study associated with the Study ID
 # and another for the synthesis study (Sanderman 2018)
-synthesis_doi <- "10.7910/dvn/ocyuit"
-synthesis_study_id <- "Sanderman_2018"
 
-# link each study to the synthesis 
-study_data <- cores %>%
-  group_by(study_id) %>%
-  summarize(study_type = "synthesis",
-            bibliography_id = synthesis_study_id, 
-            doi = synthesis_doi)
+# The follow file represents the initial study citations file that has since been deprecated
+# The citations listed as "unpublished" in the map repo are still uncited below
+citations <- read.csv("./data/Sanderman_2018/intermediate/initial_citations.csv")
 
-# link each study to primary citation and join with synthesis table
-studies <- unique(cores$study_id)
+# Build citations for primary studies that have DOIs
+primary_dois <- citations %>%
+  filter(is.na(doi)==FALSE) %>%
+  filter(study_type != "synthesis") %>%
+  select(study_id, bibliography_id, doi)
 
-study_data_primary <- CCRCN_bib %>%
-  select(BIBTEXKEY, CATEGORY, DOI) %>%
-  rename(bibliography_id = BIBTEXKEY,
-         study_type = CATEGORY,
-         doi = DOI) %>%
-  filter(bibliography_id %in% studies) %>%
-  mutate(study_id = bibliography_id, 
-         study_type = tolower(study_type)) %>%
-  select(study_id, study_type, bibliography_id, doi) 
+primary <- GetBibEntryWithDOI(primary_dois$doi)
+primary_df <- as.data.frame(primary)
 
-study_data <- study_data %>%
-  filter(study_id %in% study_data_primary$study_id) %>%
-  bind_rows(study_data_primary)
+study_citations_primary <- primary_df %>%
+  rownames_to_column("key") %>%
+  merge(primary_dois, by="doi", all.x=TRUE, all.y=FALSE) %>%
+  mutate(publication_type = bibtype) %>%
+  select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything())
+
+# Import citations for primary studies that do not have DOIs
+primary_no_dois <- citations %>%
+  filter(is.na(year)==FALSE) %>%
+  mutate(year = as.character(year),
+         volume = as.character(volume), 
+         number = as.character(number)) %>%
+  mutate(publication_type = "Article",
+         bibtype = "Article",
+         key = study_id) %>%
+  select(study_id, bibliography_id, publication_type, key, bibtype, year, volume, number, author, title, journal)
+
+# Build the synthesis citation table and join all 
+biblio_synthesis <- BibEntry(bibtype = "Misc", 
+                             key = "Sanderman_2018", 
+                             title = "Global mangrove soil carbon: dataset and spatial maps",
+                             author = "Jonathan Sanderman", 
+                             doi = "10.7910/dvn/ocyuit",
+                             publisher = "Harvard Dataverse",
+                             year = "2017", 
+                             url = "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OCYUIT")
+
+biblio_synthesis <- as.data.frame(biblio_synthesis)
+
+study_citations_synthesis <- citations %>%
+  filter(study_type == "synthesis") %>%
+  select(study_id, bibliography_id, doi) %>%
+  merge(biblio_synthesis, by="doi", all.x=TRUE, all.y=TRUE) %>%
+  mutate(key = "Sanderman_2017",
+         publication_type = "synthesis") %>%
+  select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything()) %>%
+  bind_rows(study_citations_primary, primary_no_dois) %>%
+  mutate(year = as.numeric(year),
+         volume = as.numeric(volume), 
+         number = as.numeric(number)) 
+
+# Write .bib file
+bib_file <- study_citations_synthesis %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("key")
+
+WriteBib(as.BibEntry(bib_file), "./data/Sanderman_2018/derivative/Sanderman_2018.bib")
 
 # write 
-write_csv(study_data, "./data/Sanderman_2018/derivative/Sanderman_2018_study_citations.csv")
+write_csv(study_citations_synthesis, "./data/Sanderman_2018/derivative/Sanderman_2018_study_citations.csv")

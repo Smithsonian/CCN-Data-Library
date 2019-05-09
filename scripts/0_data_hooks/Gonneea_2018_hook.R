@@ -6,6 +6,7 @@
 # Collection, analysis, and age-dating of sediment cores from salt marshes on the south shore of Cape Cod, Massachusetts, from 2013 through 2014: 
 # U.S. Geological Survey data release, https://doi.org/10.5066/F7H41QPP.
 
+
 # This script hooks in data from the Gonneea et al 2018 data release
 
 ## Assumptions made about data ###############
@@ -18,6 +19,7 @@
 library(RCurl)
 library(tidyverse)
 library(lubridate)
+library(RefManageR)
 
 ## Download data ########################
 
@@ -176,22 +178,27 @@ Gonneea_2018_depth_series_data <- Gonneea_2018_depth_series_data %>%
   select(study_id, site_id, core_id, everything())
 
 ## Create study-level data ######
-# import the CCRCN bibliography 
-library(bib2df)
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+doi <- "10.5066/F7H41QPP"
+study <- "Gonneea_et_al_2018"
 
-# link each study to primary citation and join with synthesis table
-studies <- unique(Gonneea_2018_core_Data$study_id)
+# Get bibtex citation from DOI
+biblio_raw <- GetBibEntryWithDOI(doi)
+biblio_df <- as.data.frame(biblio_raw)
+study_citations <- biblio_df %>%
+  rownames_to_column("key") %>%
+  mutate(bibliography_id = study, 
+         study_id = study,
+         key = study,
+         publication_type = "data release", 
+         year = as.numeric(year)) %>%
+  select(study_id, bibliography_id, publication_type, everything())
 
-study_data_primary <- CCRCN_bib %>%
-  select(BIBTEXKEY, CATEGORY, DOI) %>%
-  rename(bibliography_id = BIBTEXKEY,
-         study_type = CATEGORY,
-         doi = DOI) %>%
-  filter(bibliography_id %in% studies) %>%
-  mutate(study_id = bibliography_id, 
-         study_type = tolower(study_type)) %>%
-  select(study_id, study_type, bibliography_id, doi) 
+# Write .bib file
+bib_file <- study_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  column_to_rownames("key")
+
+WriteBib(as.BibEntry(bib_file), "./data/Gonneea_2018/derivative/Gonneea_et_al_2018.bib")
 
 
 ## QA/QC of data ################
@@ -218,5 +225,5 @@ write_csv(Gonneea_2018_depth_series_data, "./data/Gonneea_2018/derivative/Gonnee
 # write_csv(Gonneea_2018, "./data/Gonneea_2018/derivative/Gonneea_2018.csv")
 
 # Export study-citation table
-write_csv(study_data_primary, "./data/Gonneea_2018/derivative/Gonneea_et_al_2018_study_citations.csv")
+write_csv(study_citations, "./data/Gonneea_2018/derivative/Gonneea_et_al_2018_study_citations.csv")
 

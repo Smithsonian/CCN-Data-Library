@@ -20,6 +20,7 @@ library(rvest)
 library(stringr)
 library(tidyverse)
 library(lubridate)
+library(RefManageR)
 
 infile1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-pie/427/1/9264db472a63733e8489e8db67846a31" 
 infile1 <- sub("^https","http",infile1) 
@@ -132,22 +133,27 @@ site_data <- site_data %>%
          vegetation_class = "emergent")
 
 ## 3. Create study-level data ######
-# import the CCRCN bibliography 
-library(bib2df)
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+doi <- "10.6073/pasta/d1d5cbf87602ccf51de30b87b8e46d01"
+study <- "Giblin_and_Forbrich_2018"
 
-# link each study to primary citation and join with synthesis table
-studies <- unique(cores$study_id)
+# Get bibtex citation from DOI
+biblio_raw <- GetBibEntryWithDOI(doi)
+biblio_df <- as.data.frame(biblio_raw)
+study_citations <- biblio_df %>%
+  rownames_to_column("key") %>%
+  mutate(bibliography_id = study, 
+         study_id = study,
+         key = study,
+         publication_type = "data release", 
+         year = as.numeric(year)) %>%
+  select(study_id, bibliography_id, publication_type, everything())
 
-study_data_primary <- CCRCN_bib %>%
-  select(BIBTEXKEY, CATEGORY, DOI) %>%
-  rename(bibliography_id = BIBTEXKEY,
-         study_type = CATEGORY,
-         doi = DOI) %>%
-  filter(bibliography_id %in% studies) %>%
-  mutate(study_id = bibliography_id, 
-         study_type = tolower(study_type)) %>%
-  select(study_id, study_type, bibliography_id, doi) 
+# Write .bib file
+bib_file <- study_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  column_to_rownames("key")
+
+WriteBib(as.BibEntry(bib_file), "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018.bib")
 
 ## 4. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -168,4 +174,4 @@ write_csv(site_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_sit
 write_csv(veggies, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species.csv")
 write_csv(cores, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_cores.csv")
 write_csv(depthseries_data, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_depthseries.csv")
-write_csv(study_data_primary, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")
+write_csv(study_citations, "./data/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")

@@ -150,12 +150,7 @@ CCRCN_speciesdata <- Osland_2016_speciesdata %>%
   bind_rows(Drexler_2009_speciesdata) 
   
 ## ....2f. Bind citation tables ###############
-# Remove a few studies from syntheses
-Holmquist_2018_citationdata <- Holmquist_2018_citationdata %>%
-  filter(study_id != "Drexler_et_al_2009")
-
 CCRCN_study_citations <- Holmquist_2018_citationdata %>%
-  bind_rows(Drexler_2009_citationdata) %>%
   bind_rows(Fourqurean_2012_citationdata) %>%
   bind_rows(Gonneea_2018_citationdata) %>%
   bind_rows(Osland_2016_citationdata) %>%
@@ -165,7 +160,13 @@ CCRCN_study_citations <- Holmquist_2018_citationdata %>%
   bind_rows(Giblin_2018_citationdata) %>%
   bind_rows(Smith_2015_citationdata) %>%
   bind_rows(Trettin_2017_citationdata) %>%
-  bind_rows(Thorne_2015_citationdata)
+  bind_rows(Thorne_2015_citationdata) %>%
+  bind_rows(Drexler_2009_citationdata) 
+
+bib_file <- CCRCN_study_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("key")
 
 ## 3. QA #################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -196,4 +197,5 @@ write_csv(CCRCN_impactdata, "./data/CCRCN_synthesis/CCRCN_impact_data.csv")
 write_csv(CCRCN_methodsdata, "./data/CCRCN_synthesis/CCRCN_methods_data.csv")
 write_csv(CCRCN_speciesdata, "./data/CCRCN_synthesis/CCRCN_species_data.csv")
 write_csv(CCRCN_study_citations, "./data/CCRCN_synthesis/CCRCN_study_citations.csv")
+WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/CCRCN_bibliography.bib")
 

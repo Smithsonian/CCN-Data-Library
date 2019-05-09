@@ -7,7 +7,6 @@
 # US Geological Survey Data Release. 10.5066/F7SJ1HNC.
 # https://www.sciencebase.gov/catalog/item/55ae7d09e4b066a24924239f
 
-
 # Publication Citation
 # Karen Thorne, Glen MacDonald, Glenn Guntenspergen, Richard Ambrose, Kevin Buffington, Bruce Dugger, Chase Freeman, 
 # Christopher Janousek, Lauren Brown, Jordan Rosencranz, James Holmquist, John Smol, Kathryn Hargan, and John Takekawa, 2018, 
@@ -17,6 +16,7 @@
 library(tidyverse)
 library(lubridate)
 library(readxl)
+library(RefManageR)
 # the following packages are needed to convert UTM to lat/long
 library(sp)
 library(rgdal)
@@ -121,22 +121,34 @@ depthseries_data <- depthseries_data %>%
 core_data <- select(core_data, -cs137_peak_cm)
 
 ## ... 4D Generate study-citation link ############
-# import the CCRCN bibliography 
-library(bib2df)
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+study <- "Thorne_et_al_2015"
+doi <- "10.5066/F7SJ1HNC"
 
-# link each study to primary citation and join with synthesis table
-studies <- unique(core_data$study_id)
+biblio_raw <- BibEntry(bibtype = "Misc", 
+                             key = "Thorne_et_al_2015", 
+                             title = "Marshes to Mudflats: Climate Change Effects Along a Latitudinal Gradient in the Pacific Northwest",
+                             author = "U.S. Geological Survey {Karen Thorne}", 
+                             doi = "10.5066/f7sj1hnc",
+                             publisher = "U.S. Geological Survey",
+                             year = "2015", 
+                             url = "https://www.sciencebase.gov/catalog/item/5006e99ee4b0abf7ce733f58"
+)
+biblio_df <- as.data.frame(biblio_raw)
 
-study_data_primary <- CCRCN_bib %>%
-  select(BIBTEXKEY, CATEGORY, DOI) %>%
-  rename(bibliography_id = BIBTEXKEY,
-         study_type = CATEGORY,
-         doi = DOI) %>%
-  filter(bibliography_id %in% studies) %>%
-  mutate(study_id = bibliography_id, 
-         study_type = tolower(study_type)) %>%
-  select(study_id, study_type, bibliography_id, doi) 
+study_citations <- biblio_df %>%
+  rownames_to_column("key") %>%
+  mutate(bibliography_id = study, 
+         study_id = study,
+         publication_type = "data release", 
+         year = as.numeric(year)) %>%
+  select(study_id, bibliography_id, publication_type, everything())
+
+# Write .bib file
+bib_file <- study_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  column_to_rownames("key")
+
+WriteBib(as.BibEntry(bib_file), "./data/Thorne_2015_a/derivative/Thorne_et_al_2015.bib")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -157,5 +169,5 @@ results <- test_core_relationships(core_data, depthseries_data)
 ## 6. Export data
 write_csv(core_data, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_core_data.csv")
 write_csv(depthseries_data, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_depthseries_data.csv")
-write_csv(study_data_primary, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
+write_csv(study_citations, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
 

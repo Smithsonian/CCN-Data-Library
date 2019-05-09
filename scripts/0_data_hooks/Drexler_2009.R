@@ -111,16 +111,26 @@ impacts <- impacts %>%
   mutate(impact_class = recode(impact_class, "Diked" = "Natural"))
 
 ## Create study-level data ######
+# Get bibtex citation from DOI
+biblio_raw <- GetBibEntryWithDOI("10.1007/s12237-009-9202-8")
+biblio_df <- as.data.frame(biblio_raw)
+study_citations <- biblio_df %>%
+  rownames_to_column("key") %>%
+  mutate(bibliography_id = "Drexler_et_al_2009", 
+         study_id = "Drexler_et_al_2009",
+         key = "Drexler_et_al_2009",
+         publication_type = "Article", 
+         year = as.numeric(year), 
+         volume = as.numeric(volume), 
+         number = as.numeric(number)) %>%
+  select(study_id, bibliography_id, publication_type, everything())
 
-study_citation <- tibble(
-  study_id = "Drexler_et_al_2009",
-  type = "article",
-  bibliography_id = "Drexler_et_al_2009",
-  doi =  "10.1007/s12237-009-9202-8"
-)
+# Write .bib file
+bib_file <- study_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  column_to_rownames("key")
 
-## Generate BibTex citation
-bibliography <- cr_ccrcn(dois = study_citation$doi)
+WriteBib(as.BibEntry(bib_file), "./data/Drexler_2009/derivative/Drexler_et_al_2009.bib")
 
 ## impact data ######################
 impactsOutput <- impacts %>%
@@ -148,8 +158,4 @@ results <- test_core_relationships(cores_updated, depthseries_joined)
 write_csv(depthseries_joined, "./data/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
 write_csv(cores_updated, "./data/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
 write_csv(impactsOutput, "./data/Drexler_2009/derivative/Drexler_et_al_2009_impacts.csv")
-write_csv(study_citation, "./data/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")
-# Write bib citation to a .bib file
-fileConn <- file("data/Drexler_2009/derivative/Drexler_et_al_2009_citation.bib")
-writeLines(as.character(bibliography), fileConn)
-close(fileConn)
+write_csv(study_citations, "./data/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")
