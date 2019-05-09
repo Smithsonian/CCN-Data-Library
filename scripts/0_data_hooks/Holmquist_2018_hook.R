@@ -18,7 +18,7 @@
 library(RCurl)
 library(tidyverse)
 library(rcrossref)
-library(bib2df)
+library(RefManageR)
 
 ## NOTE: this section commented out, but kept, because the data for the Holmquist
 # 2018 Sci Reports data release does not include site IDs. If and when this data
@@ -52,6 +52,9 @@ species <- read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_species_da
 methods <- read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_methods_data.csv")
 citations <- read_csv("data/Holmquist_2018/original/V1_Holmquist_2018_study_citations.csv")
 
+# remove the following studies that are now in their own separate data hooks: 
+removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001")
+
 ## 3. Recode and rename factors #################
 
 # Pull from curation functions script
@@ -77,7 +80,7 @@ cores <- cores %>%
                                       "c1" = "latitude and longitude were extracted from a relatively high quality map figure", 
                                       "c2" = "latitude and longitude were extracted from a relatively low quality map figure"), 
          inundation_class = tolower(inundation_class)) %>%
-  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) %>%
+  filter(!(study_id %in% removed_studies)) %>%
   # Add underscores to site IDs
   mutate(site_id = gsub(" ", "_", site_id)) %>%
   recode_salinity(salinity_class = salinity_class) %>%
@@ -96,7 +99,7 @@ depthseries <- depthseries %>%
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
-  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) 
+  filter(!(study_id %in% removed_studies)) 
   
 # Fraction carbon type should be in the methods metadata, not depthseries level 
 fraction_carbon_type_metadata <- depthseries %>%
@@ -108,7 +111,7 @@ impacts <- impacts %>%
   rename(impact_class = "impact_code") %>%
   # The Crooks study ID should be 2014, not 2013. 
   recode_impact(impact_class = impact_class)%>%
-  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009")))
+  filter(!(study_id %in% removed_studies))
   
 species <- species %>%
   # The Crooks study ID should be 2014, not 2013. 
@@ -116,7 +119,7 @@ species <- species %>%
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
-  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) %>%
+  filter(!(study_id %in% removed_studies)) %>%
   recode_species(species_code = species_code) 
 
 methods <- methods %>%
@@ -125,7 +128,7 @@ methods <- methods %>%
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))%>%
-  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) %>%
+  filter(!(study_id %in% removed_studies)) %>%
   select(-n) %>%
   merge(fraction_carbon_type_metadata, by="study_id")
 
@@ -234,7 +237,7 @@ study_citations_synthesis <- citations %>%
   mutate(year = as.numeric(year), 
          volume = as.numeric(volume), 
          number = as.numeric(number)) %>%
-  filter(!(study_id %in% c("Gonneea_et_al_2018", "Drexler_et_al_2009"))) 
+  filter(!(study_id %in% removed_studies)) 
 
 # Write .bib file
 bib_file <- study_citations_synthesis %>%
