@@ -1,0 +1,17 @@
+attribute,description
+mid_depth,
+dry_bulk_density,g/cm3
+precent_carbon,unitless
+percent_nitrogen,unitless
+conc_phosphorous,mg/g
+total_pb210_activity,dpm/g
+total_pb210_activity_sd,dpm/g
+unsupported_pb210,dpm/g
+age,years
+age_sd,years
+vertical_accretion,mm/year
+sediment_accumultation,g/m2/yr
+carbon_accumulation,g/m2/yr
+nitrogen_accumulation,g/m2/yr
+phosphorous_accumulation,g/m2/yr
+habitat,
