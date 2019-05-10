@@ -13,16 +13,16 @@ Krauss 2018 data release:
 Object | Status | Notes
 ------------- | ------------- | -------------
 depthseries table | done, but could compare more against Jones 2017 |
-Material and Methods Metadata | in progress | 
+core-level table | needs review | 
+site-level table | needs review| 
+Material and Methods Metadata | needs review | 
+species table | not sure if we want? | 
+impact table | in progress | 
+biomass table | not sure if we want? |
 Study Information table | not started | 
 Keywords table | not started | 
 Author table | not started |
 funding sources table | not started |
-site-level table | in progress | 
-core-level table | in progress | 
-species table | NA | 
-impact table | in progress | 
-biomass table | not sure if we want? |
 define study-specific attributes | not started |
 define study-specific values or codes | not started |
 user defined attributes | not started | 
@@ -39,7 +39,20 @@ Soil core samples are 1 cm long | For radiocarbon work, samples were 1 cm long |
 "Depth (cm) in TFFW_soil_core_data.csv is bottom of core sample | Metadata states "Soil depth of core sample in centimeters" |
 Renamed "Compression (%) to compaction_fraction | DK is not too certain of difference between compaction and compression, if any...metadata described this attribute as "measure of soil compression resulting from collecting soil core". Converted % to fraction |
 Using Krauss c14 dates and not Jones c14 dates | c14 ages from Krauss and Jones appear to be different for the Jones cores reported | ...this is determined from about 10 minutes of inspection but possibly could use more comparison of raw data (which is difficult because raw Jones data corruped). Because of the sets of concerns we have with the Neotoma Jones data release, I would trust the Krauss dates more; plus, the Jones data only includes some of the cores. However, the Jones data release has modeled ages with min and max, so information is lost by using Krauss dataset. Comparable resolution across the depthseries from what I've checked, however.
- 
+
+#### Core data
+
+Assumption | Justification | Notes
+------------- | ------------- | -------------
+NA | NA | | Don't have coordinates for core W2
+
+#### Site Data
+
+Assumption | Justification | Notes
+------------- | ------------- | -------------
+core "W2" is from the Waccamaw river site | Because of the "W"...that's the best I've got | 
+NA | NA | The sites classified as "FO/SS" should be designated as a new vegetation class, "FO/EM" for forest/emergent marsh
+
 #### Methods and Materials
 
 Assumption | Justification | Notes
@@ -47,11 +60,6 @@ Assumption | Justification | Notes
 
 
 ## Uncontrolled Attributes/Variables and Potential Guidance Updates
-
-#### Site Data
-
-Attribute | Status | Notes
-------------- | ------------- | -------------
 
 
 

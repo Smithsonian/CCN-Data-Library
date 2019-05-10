@@ -29,6 +29,7 @@ library(readxl)
 library(rvest)
 library(RCurl)
 library(lubridate)
+library(RefManageR)
 
 ## 1. Download data #####################
 
@@ -93,6 +94,8 @@ for (i in 1:length(url_list)) {
 
 ## 2. Read in data #####################
 
+
+## ....2a. Read in Krauss data ############
 # The original data from the table is stored in the Drexler_et_al_2009_peat_accretion_age_depth.csv file. 
 # Because the site-core-sample ID field could not easily be separated using tidy logic, I did it manually in excel
 # Additionally, the negative sign character used in the elevation field was causing problems in both excel and R and was replaced with (-)
@@ -123,8 +126,21 @@ radiocarbon_raw <- read_csv("./data/Krauss_2018/original/TFFW_Radiocarbon.csv")
 # Few datasets will include biomass, at the time of writing at least
 root_productivity <- read_csv("data/Krauss_2018/original/TFFW_Carbon_Budget_Root_Ingrowth.csv")
 
+
+## ....2b. Read in Jones data ###############
+
+# Downloaded geochrono datasets
+geochron_oligo <- read_csv("./data/Jones_2017/derivative/intermediate/dataset25338.csv")
+geochron_heavy_salt <- read_csv("./data/Jones_2017/derivative/intermediate/dataset25345.csv")
+geochron_mod_salt <- read_csv("./data/Jones_2017/derivative/intermediate/dataset25364.csv")
+
+# Downloaded LOI datasets
+LOI_oligo_raw <- read_csv("./data/Jones_2017/original/dataset25339.csv")
+LOI_heavy_salt_raw  <- read_csv("./data/Jones_2017/original/dataset25346.csv")
+LOI_mod_salt_raw  <- read_csv("./data/Jones_2017/original/dataset25365.csv")
+
+
 ## 3. Curate data ######################
-# If there is any preliminary prep needed to do, write such code here
 ## ....3A. Depthseries data ##################
 
 ## ......3Aa. Prep depthseries from Krauss #####################
@@ -144,182 +160,322 @@ Krauss_depthseries <- depthseries_DBD_raw %>%
   rename(core_id = "Core ID", dry_bulk_density = "Dry bulk density (g/cc)",
          "fraction_organic_matter" = "LOI (%)", site_id = River, 
          c14_material = "Material Dated", compaction_fraction = "Compression (%)",
-         sample_id = "Lab ID", c14_age = "14C Age", c14_age_sd = "SE") %>% 
+        c14_age = "14C Age", c14_age_sd = "SE") %>% 
+  
+  # Add study id
+  mutate(study_id = "Krauss_et_al_2018") %>%
   
   # Recode cores
-  mutate(core_id = recode(core_id, "11-11-2-1" = "turkey_creek_oligohaline",
-                          "11-11-2-3" = "turkey_creek_salty_impacted",
-                          "11-11-3-1" = "butler_island_fresh_tidal",
-                          "11-11-1-2" = "richmond_island_upper_fresh",
-                          "12-12-10-3" = "savannah_oligohaline",
-                          "12-12-10-2" = "savannah_salty_impacted",
-                          "12-12-9-3" = "savannah_fresh_tidal",
-                          "12-12-11-1" = "savannah_upper_fresh"
+  mutate(core_id = recode(core_id, "11-11-2-1" = "turkey_creek_1",
+                          "11-11-2-3" = "turkey_creek_2",
+                          "11-11-3-1" = "butler_island_1",
+                          "11-11-1-2" = "richmond_island_1",
+                          "12-12-10-3" = "savannah_mid_1",
+                          "12-12-10-2" = "savannah_low_1",
+                          "12-12-9-3" = "savannah_mid_2",
+                          "12-12-11-1" = "savannah_high_1"
   )) %>%
+  
+  # Each core represents differente veg/salinity/etc. spectra, so each core will
+  #   be a distinct site
+  mutate(site_id = recode(core_id, "turkey_creek_1" = "Waccamaw_River_Turkey_creek_high",
+                          "turkey_creek_2" = "Waccamaw_River_Turkey_creek_low",
+                          "butler_island_1" = "Waccamaw_River_Butler_island",
+                          "richmond_island_1" = "Waccamaw_River_Richmond_island",
+                          "savannah_mid_1" = "Savannah_River_mid",
+                          "savannah_low_1" = "Savannah_River_low",
+                          "savannah_mid_2" = "Savannah_River_mid",
+                          "savannah_high_1" = "Savannah_River_high"
+  )) %>%
+  
+  # Some c14 ages yielded post-modern dates. set to NA and add a note
+  mutate(c14_notes = ifelse(c14_age == ">Modern", "c14 age yielded greater than modern day", NA)) %>%
+  mutate(c14_age = ifelse(c14_age == ">Modern", NA, c14_age)) %>%
+  # Now coerce ages to numeric
+  mutate(c14_age = as.double(c14_age)) %>%
+  
+  # Convert percent to fraction
+  mutate(fraction_organic_matter = fraction_organic_matter / 100) %>%
+  
   # Add 'River' to site names
   mutate(site_id = paste(site_id, "River", sep = "_")) %>%
-  # manually add core coordinates sent to JH, ML, and DK on 2019-04-19
-  # email subject: FW: [EXTERNAL] Positional Information for Krauss and Jones Data Release
-  mutate(core_latitude = ifelse(core_id == "turkey_creek_oligohaline", 33.35003,
-                          ifelse(core_id == "turkey_creek_salty_impacted", 33.34001,
-                          ifelse(core_id == "butler_island_fresh_tidal", 33.422823,
-                            ifelse(core_id == "richmond_island_upper_fresh", 33.55564,
-                              ifelse(core_id == "savannah_oligohaline", 32.17,
-                                ifelse(core_id == "savannah_salty_impacted", 32.18, 
-                                 ifelse(core_id == "savannah_fresh_tidal", 32.24, 
-                                  ifelse(core_id == "savannah_fresh_tidal", 32.238, 
-                                   NA))))))))) %>%
-  mutate(core_longitude = ifelse(core_id == "turkey_creek_oligohaline", -79.3447,
-                           ifelse(core_id == "turkey_creek_salty_impacted", -79.34166,
-                            ifelse(core_id == "butler_island_fresh_tidal", -79.207996,
-                             ifelse(core_id == "richmond_island_upper_fresh", -79.08943,
-                               ifelse(core_id == "savannah_oligohaline", -81.14,
-                                 ifelse(core_id == "savannah_salty_impacted", -81.14, 
-                                  ifelse(core_id == "savannah_fresh_tidal", -81.15, 
-                                    ifelse(core_id == "savannah_fresh_tidal", -81.155, 
-                                       NA)))))))))
+  select(-"Lab ID")
   
 
-## ......3Ab. COMMENTED OUT Prep depthseries from Jones  #####################
+## ......3Ab. COMMENTED OUT Prep pb210-dated core ##################
 
-# # only including if resolved to join in c14 ages from Jones 2017
-# geochron_oligo <- geochron_oligo %>%
-#   mutate(core_id = "Oligohaline_Marsh")
-# 
-# geochron_heavy_salt <- geochron_heavy_salt %>%
-#   mutate(core_id = "Heavily_Salt_Impacted_Swamp")
-# 
-# geochron_mod_salt <- geochron_mod_salt %>%
-#   mutate(core_id = "Moderately_Salt_Impacted")
-# 
-# source("./scripts/1_data_formatting/curation_functions.R")  
-# geochron <- geochron_oligo %>%
-#   bind_rows(geochron_heavy_salt) %>%
-#   bind_rows(geochron_mod_salt) %>%
-#   mutate(study_id = "Jones_et_al_2017") %>%
-#   mutate(depth_min = Depth - (Thickness/2)) %>%
-#   mutate(depth_max = Depth + (Thickness/2)) %>%
-#   rename(sample_id = SampleID, c14_age = Age, c14_material = MaterialDated,
-#          c14_age_sd = ErrorOlder) %>%
-#   mutate(c14_age = ifelse(c14_age == 0, NA, c14_age)) %>%
-#   mutate(c14_notes = ifelse(is.na(c14_age), "c14 age yielded greater than modern day", NA)) %>%
-#   mutate(sample_id = as.character(sample_id)) %>%
-#   mutate(c14_age = ifelse(c14_age == 0, NA, c14_age)) %>%
-#   mutate(c14_notes = ifelse(is.na(c14_age), "c14 age yielded greater than modern day", NA)) %>%
-#   select(study_id, core_id, sample_id, depth_min, depth_max, c14_age, c14_age_sd, 
-#          c14_notes, c14_material)
-# 
-# # Coerce into matrix and transpose
-# LOI_oligo <- t(as.matrix(LOI_oligo_raw))
-# LOI_oligo <- as.data.frame(LOI_oligo)
-# LOI_oligo <- as_tibble(LOI_oligo, rownames = NULL) %>%
-#   slice(-1:-5) %>%
-#   mutate(core_id = "Oligohaline_Marsh")
-# 
-# # Coerce into matrix and transpose
-# LOI_heavy_salt <- t(as.matrix(LOI_heavy_salt_raw))
-# LOI_heavy_salt <- as.data.frame(LOI_heavy_salt)
-# LOI_heavy_salt <- as_tibble(LOI_heavy_salt, rownames = NULL) %>%
-#   slice(-1:-5) %>%
-#   mutate(core_id = "Heavily_Salt_Impacted_Swamp")
-# 
-# 
-# # Coerce into matrix and transpose
-# LOI_mod_salt <- t(as.matrix(LOI_mod_salt_raw))
-# LOI_mod_salt <- as.data.frame(LOI_mod_salt)
-# LOI_mod_salt <- as_tibble(LOI_mod_salt, rownames = NULL) %>%
-#   slice(-1:-5) %>%
-#   mutate(core_id = "Moderately_Salt_Impacted")
-# 
-# # Join LOI datasets
-# LOI <- LOI_oligo %>%
-#   bind_rows(LOI_heavy_salt) %>%
-#   bind_rows(LOI_mod_salt) %>%
-#   separate(`V1`, into = c("depth_min", "depth_max"), sep = "-") %>%
+# The Krauss data comes with a Pb-210 dated core, which is one of the cores already
+#   representd in Noe et al 2016. Although the Noe et al 2016 is not currently
+#   public (in the working group repo), we'll leave this core out here operating
+#   under the assumption that the Noe cores will make their way into the library
+#   soon.
+# pb_210_core <- depthseries_carbon_raw %>%
+#   # Quick rename
+#   rename(core_id = Core) %>%
+#   # Assuming site is Waccamaw because core id is "W2"
+#   mutate(site_id = "Waccamaw_River") %>%
+#   # create new cols as converted versions of old cols
+#   mutate(total_pb210_activity = convert_dpm_g_to_bec_kg(`Total Pb-210 activity (dpm/g)`)) %>%
+#   mutate(fraction_carbon = `%C` / 100) %>%
+#   mutate(fraction_organic_matter = `%LOI` / 100) %>%
+#   
+#   # Parse out depth to min and max and coerce to numeric
+#   separate(Depth_cm, into = c("depth_min", "depth_max"), sep= "-") %>%
 #   mutate(depth_min = as.double(depth_min)) %>%
-#   mutate(depth_max = as.double(gsub(" cm", "", depth_max))) %>%
-#   separate("V6", into = c("age_max", "age", "age_min"), sep = "/") %>%
-#   mutate(age_max = as.double(age_max), age = as.double(age),
-#          age_min = as.double(age_min), 
-#          age_depth_model_reference = "YBP") %>%
-#   rename(sample_id = "V5")
-# 
-# Jones_depthseries <- geochron %>%
-#   full_join(LOI, by = c("core_id", "sample_id", "depth_min", "depth_max")) %>%
-#   arrange(core_id, depth_min) %>%
-#   select(core_id, sample_id, depth_min, depth_max, c14_notes,
-#          age, age_min, age_max, age_depth_model_reference)
-  
+#   mutate(depth_max = as.double(depth_max)) %>%  
+#   
+#   select(site_id, core_id, depth_min, depth_max, fraction_organic_matter, fraction_carbon,
+#          total_pb210_activity)
+#  
+# Join pb210 core to other cores
+# Krauss_depthseries <- Krauss_depthseries %>%
+#   bind_rows(pb_210_core)
 
-## ......3Ac. COMMENTED OUT Join Krauss and Jones depthseries data  #####################
+## ......3Ab. Prep depthseries from Jones to join age models  #####################
 
 # only including if resolved to join in c14 ages from Jones 2017
-# depthseries <- Krauss_depthseries %>%
-#   full_join(Jones_depthseries)
+geochron_oligo <- geochron_oligo %>%
+  mutate(core_id = "turkey_creek_1")
+
+geochron_heavy_salt <- geochron_heavy_salt %>%
+  mutate(core_id = "turkey_creek_2")
+
+geochron_mod_salt <- geochron_mod_salt %>%
+  mutate(core_id = "butler_island_1")
+
+source("./scripts/1_data_formatting/curation_functions.R")
+geochron <- geochron_oligo %>%
+  bind_rows(geochron_heavy_salt) %>%
+  bind_rows(geochron_mod_salt) %>%
+  mutate(study_id = "Jones_et_al_2017") %>%
+  
+  # Checking against Krauss depths, which are more informative, here's how to convert
+  rename(depth_min = Depth) %>%
+  mutate(depth_max = depth_min + Thickness) %>%
+  rename(sample_id = SampleID, c14_age = Age, c14_material = MaterialDated,
+         c14_age_sd = ErrorOlder) %>%
+  mutate(c14_age = ifelse(c14_age == 0, NA, c14_age)) %>%
+  mutate(sample_id = as.character(sample_id)) %>%
+  mutate(c14_age = ifelse(c14_age == 0, NA, c14_age)) %>%
+  select(study_id, core_id, sample_id, depth_min, depth_max, c14_age, c14_age_sd,
+        c14_material)
+
+# Coerce into matrix and transpose
+LOI_oligo <- t(as.matrix(LOI_oligo_raw))
+LOI_oligo <- as.data.frame(LOI_oligo)
+LOI_oligo <- as_tibble(LOI_oligo, rownames = NULL) %>%
+  slice(-1:-5) %>%
+  mutate(core_id = "turkey_creek_1")
+
+# Coerce into matrix and transpose
+LOI_heavy_salt <- t(as.matrix(LOI_heavy_salt_raw))
+LOI_heavy_salt <- as.data.frame(LOI_heavy_salt)
+LOI_heavy_salt <- as_tibble(LOI_heavy_salt, rownames = NULL) %>%
+  slice(-1:-5) %>%
+  mutate(core_id = "turkey_creek_2")
+
+# Coerce into matrix and transpose
+LOI_mod_salt <- t(as.matrix(LOI_mod_salt_raw))
+LOI_mod_salt <- as.data.frame(LOI_mod_salt)
+LOI_mod_salt <- as_tibble(LOI_mod_salt, rownames = NULL) %>%
+  slice(-1:-5) %>%
+  mutate(core_id = "butler_island_1")
+
+# Join LOI datasets
+LOI <- LOI_oligo %>%
+  bind_rows(LOI_heavy_salt) %>%
+  bind_rows(LOI_mod_salt) %>%
+  separate(`V1`, into = c("depth_min", "depth_max"), sep = "-") %>%
+  mutate(depth_min = as.double(depth_min)) %>%
+  mutate(depth_max = as.double(gsub(" cm", "", depth_max))) %>%
+  separate("V6", into = c("age_max", "age", "age_min"), sep = "/") %>%
+  mutate(age_max = as.double(age_max), age = as.double(age),
+         age_min = as.double(age_min),
+         age_depth_model_reference = "YBP") %>%
+  rename(sample_id = "V5")
+
+Jones_depthseries <- geochron %>%
+  full_join(LOI, by = c("core_id", "sample_id", "depth_min", "depth_max")) %>%
+  arrange(core_id, depth_min) %>%
+  select(core_id, sample_id, depth_min, depth_max,
+         age, age_min, age_max) %>%
+  
+  # Some depth intervals are duplicated, because there are 2 samples take from
+  #   these intervals it seems...however only 1/2 of the samples for these intervals
+  #   have modeled ages, and because that's all we need from Jones data we'll 
+  #   only include those
+  filter(!is.na(age))
+  
+## ......3Ac. Join Krauss and Jones depthseries data  #####################
+
+# only including if resolved to join in c14 ages from Jones 2017
+depthseries <- Krauss_depthseries %>%
+  full_join(Jones_depthseries)
 
 ## ....3B. Core-level data ##################
 
 # Use curation functions if you need
 source("./scripts/1_data_formatting/curation_functions.R")
 
-cores <- depthseries_DBD_raw %>%
-  # Pull core IDs given to Jones 2017
-  rename(core_id = "Core ID", site_id = River) %>%
+cores <- depthseries %>%
+  select(study_id, site_id, core_id) %>%
+  distinct(study_id, site_id, core_id) %>%
+
+  # manually add core coordinates sent to JH, ML, and DK on 2019-04-19
+  # email subject: FW: [EXTERNAL] Positional Information for Krauss and Jones Data Release
+  mutate(core_latitude = ifelse(core_id == "turkey_creek_1", 33.35003,
+                           ifelse(core_id == "turkey_creek_2", 33.34001,
+                             ifelse(core_id == "butler_island_1", 33.422823,
+                               ifelse(core_id == "richmond_island_1", 33.55564,
+                                  ifelse(core_id == "savannah_mid_1", 32.17,
+                                      ifelse(core_id == "savannah_low_1", 32.18, 
+                                          ifelse(core_id == "savannah_mid_2", 32.24, 
+                                              ifelse(core_id == "savannah_high_1", 32.238, 
+                                                   NA))))))))) %>%
+  
+  mutate(core_longitude = ifelse(core_id == "turkey_creek_1", -79.3447,
+                            ifelse(core_id == "turkey_creek_2", -79.34166,
+                              ifelse(core_id == "butler_island_1", -79.207996,
+                                 ifelse(core_id == "richmond_island_1", -79.08943,
+                                   ifelse(core_id == "savannah_mid_1", -81.14,
+                                     ifelse(core_id == "savannah_low_1", -81.14, 
+                                        ifelse(core_id == "savannah_mid_2", -81.15, 
+                                            ifelse(core_id == "savannah_high_1", -81.155, 
+                                             NA))))))))) %>%
+  
+  # Designate salinity class. Note that both the "oligohaline", "salty", and 
+  #   "fresh tidal" sites are all classified as oligohaline according to CCRCN standards.
+  #   Salinity measurements pulled from metadata.
+  mutate(salinity_class = ifelse(core_id == "savannah_mid_1" | core_id == "turkey_creek_1"
+                                | core_id == "savannah_low_1" | core_id == "turkey_creek_2"
+                                | core_id == "savannah_mid_2" | core_id == "butler_island_1",
+                                "oligohaline",
+                                ifelse(core_id == "savannah_high_1" | core_id == "richmond_island_1",
+                                       "fresh", NA
+                                ))) %>%
+  mutate(vegetation_class = ifelse(core_id == "savannah_low_1" 
+                                   | core_id == "savannah_mid_1"
+                                   | core_id == "turkey_creek_1",
+                                   "emergent",
+                                   ifelse(core_id == "butler_island_1" 
+                                          | core_id == "turkey_creek_2",
+                                          "FO/SS",
+                                          ifelse(core_id == "savannah_mid_2" 
+                                                 | core_id == "richmond_island_1"
+                                                 | core_id == "savannah_high_1",
+                                                 "forested", NA
+                                          )))) %>%
+  mutate(vegetation_method = "measurement") %>%
+  mutate(inundation_class = ifelse(core_id == "savannah_low_1" 
+                                   | core_id == "savannah_mid_1"
+                                   | core_id == "turkey_creek_1"
+                                   | core_id == "turkey_creek_2",
+                                   "low",
+                                   ifelse(core_id == "butler_island_1" | 
+                                          core_id == "savannah_mid_2",
+                                          "mid ",
+                                          ifelse(core_id == "richmond_island_1"
+                                                 | core_id == "savannah_high_1",
+                                                 "high", NA
+                                          )))) %>%
+                                   
+  select(study_id, site_id, core_id, core_latitude, core_longitude, salinity_class,
+         vegetation_class, vegetation_method, inundation_class)
 
 
 
 ## ....3C. Site-level data #############
 
+sites <- cores %>%
+  distinct(study_id, site_id, salinity_class, vegetation_class, vegetation_method,
+         inundation_class)
+                                
+                              
 ## ....3D. Impact data #################
-impacts <- impact_raw
+# impacts <- impact_raw
 
 ## ....3E. Species data #############
 
-species <- species_raw
+# species <- species_raw
 
 ## ....3F. Materials and Methods #############
 
 methods <- cores %>%
-  select(core_id) %>%
-  distinct(core_id) %>%
+  select(study_id, site_id, core_id) %>%
+  distinct(study_id, site_id, core_id) %>%
   mutate(loss_on_ignition_temperature = c(550)) %>%
   # see personal communication, different coring methods for each site
-  mutate(coring_method = ifelse(site_id = "Waccamaw_River", "vibracore",
+  mutate(coring_method = ifelse(site_id == "Waccamaw_River", "vibracore",
                                 "russian corer"))  %>%
-  mutate(compaction_flag = ifelse(site_id = "Waccamaw_River", "compaction quantified",
-                                  "corer limits compaction"))
-  
+  mutate(compaction_flag = ifelse(site_id == "Waccamaw_River", "compaction quantified",
+                                  "corer limits compaction")) %>%
+  mutate(age_depth_model_reference = "YBP")
 
 ## ....3G. Study-level data #########
+
+# Not needed because metadata is already prepped
+
+
+## ....3h. Study citations ################
+
+
+# Get BibTex entries from DOI
+paper_bib_raw <- GetBibEntryWithDOI("10.1029/2018GB005897")
+data_bib_raw <- GetBibEntryWithDOI("10.5066/F7TM7930")
+
+# Convert this to a dataframe
+biblio <- as.data.frame(paper_bib_raw) %>%
+  # GetBibEntryWithDOI() defaults study name as a row name, convert to column
+  rownames_to_column("key") %>%
+  mutate(doi = tolower(doi)) %>%
+  # Make some edits
+  mutate(author = "Kevin Krauss and Greg Noe and Jamie Duberstein and William Conner and Mirian Jones and Chrstopher Bernhardt and Nicole Cormier and Andrew From")
+
+# Curate biblio so ready to read out as a BibTex-style .bib file
+study_citations <- biblio %>%
+  mutate(study_id = "Krauss_et_al_2018", bibliography_id = "Krauss_et_al_2018") %>%
+  mutate(publication_type = bibtype) %>%
+  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
+  mutate(year = as.numeric(year),
+         volume = as.numeric(volume))
+
+# Write .bib file
+bib_file <- study_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("key")
+
+WriteBib(as.BibEntry(bib_file), "data/Krauss_2018/derivative/Krauss_2018.bib")
 
 
 ## 4. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
+
 
 ## ....4A. Column and Variable names ###############
 # Make sure column names are formatted correctly
 test_colnames("core_level", cores)
 test_colnames("depthseries", depthseries)
 test_colnames("site_level", sites)
-test_colnames("impact", impacts)
-test_colnames("species", species)
-test_colnames("study_information", studies)
+# test_colnames("impact", impacts)
+# test_colnames("species", species)
+# test_colnames("study_information", studies)
 
 # Make sure variable names are fomatted correctly
 test_varnames(cores)
 test_varnames(depthseries)
 test_varnames(sites)
-test_varnames(impacts)
-test_varnames(species)
-test_varnames(studies)
+# test_varnames(impacts)
+# test_varnames(species)
+# test_varnames(studies)
 
 # Select only controlled attributes, and re-order them according to CCRCN guidance
-select_and_reorder_columns(cores)
-select_and_reorder_columns(depthseries)
-select_and_reorder_columns(sites)
-select_and_reorder_columns(impacts)
-select_and_reorder_columns(species)
-select_and_reorder_columns(studies)
+cores <- select_and_reorder_columns("core_level", cores, "data/Krauss_2018/derivative/")
+depthseries <- select_and_reorder_columns("depthseries", depthseries, "data/Krauss_2018/derivative/")
+sites <- select_and_reorder_columns("site_level", sites, "/data/Krauss_2018/derivative/")
+# impacts <- select_and_reorder_columns("impact", impacts, "data/Krauss_2018/derivative/")
+# species <- select_and_reorder_columns("species", species, "data/Krauss_2018/derivative/")
+# studies <- select_and_reorder_columns("study_information", studies, "data/Krauss_2018/derivative/")
 
 ## ....4B. Quality control on cell values ###################
 # Make sure that all core IDs are unique
@@ -330,13 +486,14 @@ numeric_test_results <- test_numeric_vars(depthseries)
 
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(cores_updated, depthseries_joined)
+results <- test_core_relationships(cores, depthseries)
 
 ## 5. Write data ######################
-write_csv(depthseries, "./data/authorName_year/derivative/authorName_et_al_year_depthseries.csv")
-write_csv(cores, "./data/authorName_year/derivative/authorName_et_al_year_cores.csv")
-write_csv(sites, "./data/authorName_year/derivative/authorName_et_al_year_sites.csv")
-write_csv(impacts, "./data/authorName_year/derivative/authorName_et_al_year_impacts.csv")
-write_csv(species, "./data/authorName_year/derivative/authorName_et_al_year_species.csv")
-write_csv(studies, "./data/authorName_year/derivative/authorName_et_al_year_study_citations.csv")
+write_csv(depthseries, "./data/Krauss_2018/derivative/Krauss_et_al_2018_depthseries.csv")
+write_csv(cores, "./data/Krauss_2018/derivative/Krauss_et_al_2018_cores.csv")
+write_csv(sites, "./data/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
+# write_csv(impacts, "./data/Krauss_2018/derivative/Krauss_et_al_2018_impacts.csv")
+# write_csv(species, "./data/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
+# write_csv(species, "./data/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
+write_csv(study_citations, "data/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
 
