@@ -165,9 +165,9 @@ test_varnames <- function(input_data) {
 
 ## Select only controlled attributes, re-order according to database structure #####################
 
-select_and_reorder_columns <- function(data, # The dataset you seek to re-order 
-                                       datalevel_table, # A string corresponding
-                                       # to the name of the data level table
+select_and_reorder_columns <- function(datalevel_table, # A string corresponding
+                                        # to the name of the data level table
+                                        data, # The dataset you seek to re-order 
                                        uncontrolled_file_path # File path to where
                                        # the uncontrolled attributes should be saved
 ) {
