@@ -57,56 +57,6 @@ Fourqurean <- Fourqurean_raw %>%
          -"Porosity (%)", -"Soil organic carbon density (mg/mL)", -"Soil organic matter density (mg/mL)",
          -"loss on ignition (%)")
 
-# # Manually add each study ID
-# study_id_list <- c("Fourqurean_unpublished", "Orem_et_al_1999", "Figueiredo_da_Silva_et_al_2009", 
-#              "Fourqurean_et_al_2010", "Carruthers_et_al_2005", "Rosenfeld_1979", 
-#              "Mellors_et_al_2002", "Danovaro_and_Fabiano_1995", "Gonneea_et_al_2004", 
-#              "Marba_unpublished", "Grady_1981", "Pulich_1985", "De_Falco_et_al_2006", 
-#              "Furuta_et_al_2002", "De_Troch_et_al_2006", "Holmer_et_al_2003",
-#              "Boschker_et_al_2000", "Vichkovitten_and_Holmer_2005", "Holmer_et_al_2006", 
-#              "Holmer_et_al_2009", "Leduc_and_Probert_2011", "Yamamuro_et_al_1993", 
-#              "Pedersen_et_al_1997", "Barron_et_al_2004",
-#              "Calleja_et_al_2007", "Holmer_and_Frederiksen_2007", "Mateo_and_Romero_1997", 
-#              "Lo_Iacono_et_al_2008", "Kairis_and_Rybczyk_2010", "Apostolaki_unpublished", 
-#              "Maher_and_Eyre_2010", "Borg_et_al_2010",
-#              "Spivak_et_al_2009", "Alongi_et_al_2008", "Spruzen_et_al_2008", 
-#              "Yarbro_and_carlson_2008", "Lewis_et_al_2007", "Qu_et_al_2006",
-#              "Bouillon_et_al_2004", "Rigollet_et_al_2004", "Grenz_et_al_2003",
-#              "Larned_2003", "Danovaro_and_Gambi_2002", "Eyre_and_Ferguson_2002", 
-#              "Gacia_et_al_2002", "Koch_and_Madden_2001", "Sfriso_and_Marcomini_1999", 
-#              "Miyajima_et_al_1998", "Danovaro_1996", "Koepfler_et_al_1993",
-#              "Amon_and_Herndl_1991", "Fourqurean_and_Kendrick_unpublished", 
-#              "Fonseca_et_al_2011", "Erftemeijer_and_Middelburg_1993", 
-#              "Burns_and_Swart_1992", "Hemminga_et_al_1994", "Deiongh_et_al_1995", 
-#              "Danovaro_et_al_1994", "Agawin_et_al_1996", "Isaksen_and_Finster_1996", 
-#              "Townsend_and_Fonseca_1998", "Stoner_et_al_1998", "Buzzelli_1998", 
-#              "Kristensen_et_al_2000", "Paula_et_al_2001", "McGlathery_unpublished", 
-#              "Cotner_et_al_2004", "Hebert_et_al_2007", "Oakes_and_Connolly_2004", 
-#              "Thimdee_et_al_2003", "Lillebo_et_al_2006", "Lee_et_al_2005", 
-#              "Al-Rousan_et_al_2005", "Kenig_et_al_1990", "Krause-Jensen_et_al_2011", 
-#              "Devereux_et_al_2011", "Ooi_et_al_2011", "Povidisa_and_Delefosse_unpublished", 
-#              "Gacia_unpublished", "Kamp-Nielsen_et_al_2002", "Mateo_unpublished", 
-#              "Mateo_et_al_1997", "Serrano_unpublished", "Mateo_and_Serrano_unpublished", 
-#              "Mateo_and_Serrano_unpublished", "Krause-Jensen_et_al_2011", "Holmer_et_al_2001", 
-#              "Holmer_unpublished", "van_Engeland_thesis", "Volkman_et_al_2008", 
-#              "Abed-Navandi_and_Dworschak_2005", "Duarte_unpublished", "Kennedy_unpublished", 
-#              "Copertino_unpublished")
-  
-# Create another linking df for references and coreserial, which is the only
-#   unique identifier for cores
-# core_identifier <- Fourqurean %>%
-#   select(coreserial, study_id) %>%
-#   filter(!is.na(study_id))
-
-# # Join df's together
-# studies <- studies %>%
-#   left_join(core_identifier) %>%
-#   group_by(coreserial) %>%
-#   summarize_all(first)
-# 
-# Fourqurean <- Fourqurean %>%
-#   left_join(studies, by = "coreserial")
-
 ## Create core IDs from study IDs 
 Fourqurean_core <- Fourqurean %>%
   select(coreserial, study_id) %>%
@@ -137,17 +87,24 @@ Fourqurean <- Fourqurean %>%
 # They're filtered out of the dataset for now
 
 # the offending core IDs: 
-missing_lat_long <- c("Duarte_unpublished_12", "Duarte_unpublished_15", "Duarte_unpublished_5", "Duarte_unpublished_9",
-                      "Kamp-Nielsen_et_al_2002_1", "Kamp-Nielsen_et_al_2002_2", "Kamp-Nielsen_et_al_2002_3")
+missing_lat_long <- c("Duarte_unpublished_12", "Duarte_unpublished_15", 
+                      "Duarte_unpublished_5", "Duarte_unpublished_9",
+                      "Kamp-Nielsen_et_al_2002_1", "Kamp-Nielsen_et_al_2002_2", 
+                      "Kamp-Nielsen_et_al_2002_3")
 
 
-# The following studies are missing reconstructable depth series intervals and do not have biomass data
-remove_studies <- c("Gonneea_et_al_2004", "Furuta_et_al_2002", "Kenig_et_al_1990", 
-                    "Holmer_unpublished", "Holmer_et_al_2001", "van_Engeland_thesis", "Volkman_et_al_2008",
-                    "Abed-Navandi_and_Dworschak_2005", "Duarte_unpublished", "Kennedy_unpublished",
-                    "Deiongh_et_al_1995", "Stoner_et_al_1998", 
-                    # The following studies have incorrect lat/long values: 
-                    "Holmer_et_al_2006", "Vichkovitten_and_Holmer_2005")
+# The following studies are missing reconstructable depth series intervals 
+#   and do not have biomass data
+remove_studies <- c("Furuta_et_al_2002", "Kenig_et_al_1990",
+                    "Holmer_unpublished", "Holmer_et_al_2001", 
+                    "van_Engeland_thesis", "Volkman_et_al_2008",
+                    "Abed-Navandi_and_Dworschak_2005", "Duarte_unpublished", 
+                    "Kennedy_unpublished", "Deiongh_et_al_1995", "Stoner_et_al_1998",
+                    "Lo_Iacono_et_al_2008",
+                    # The following studies have incorrect lat/long values:
+                    "Holmer_et_al_2006", "Vichkovitten_and_Holmer_2005",
+                    # Remove some studies that don't have depthseries data that fit into current guidance
+                    "Isaksen_and_Finster_1996", "Koepfler_et_al_1993", "Mateo_and_Romero_1997")
 
 Fourqurean <- Fourqurean %>%
   filter(!(core_id %in% missing_lat_long)) %>%
@@ -166,9 +123,11 @@ site_data <- Fourqurean %>%
 core_data <- Fourqurean %>%
   rename(core_latitude = "latitude (DD.DDDD, >0 for N, <0 for S)",
        core_longitude = "longitude (DD.DDDD, >0 for E,<0 for W))") %>%
-  mutate(core_length_flag = ifelse(`Surficial or profile?` == "P", "core depth represents deposit depth",
-                                   NA)) %>%
-  select(study_id, site_id, core_id, core_latitude, core_longitude, core_length_flag) %>%
+  
+  # Remove some studies that have biomass data, but not core data
+  filter(study_id != "Mateo_and_Romero_1997" & study_id != "Pedersen_et_al_1997") %>%
+
+  select(study_id, site_id, core_id, core_latitude, core_longitude) %>%
   group_by(core_id) %>%
   summarise_all(first) 
 
@@ -176,15 +135,24 @@ core_data <- Fourqurean %>%
 
 depthseries <- Fourqurean %>%
   # The depth increment attribute is messy and needs some typos fixed/substitutions
-  rename(depth = `Depth increment of slice`) %>%
+  rename(depth = `Depth increment of slice`, depth_center = `depth at center of slice (cm)`,
+         thickness = `slice thickness (cm)`) %>%
   mutate(depth = gsub("--", "-", depth)) %>%
   mutate(depth = gsub("core bottom", "165-167", depth)) %>%
   mutate(depth = gsub("cm", "", depth)) %>%
   mutate(depth = gsub("'", "", depth)) %>%
-
+    
   separate(depth, into = c("depth_min", "depth_max"), sep = "-") %>%
   mutate(depth_min = as.numeric(depth_min), 
          depth_max = as.numeric(depth_max)) %>%
+  
+  # Manually convert depth interval information for a few cores 
+  mutate(depth_min = ifelse(study_id == "Gonneea_et_al_2004", 
+                            (depth_center - thickness / 2),
+                            depth_min)) %>%
+  mutate(depth_max = ifelse(study_id == "Gonneea_et_al_2004", 
+                            depth_center + thickness / 2,
+                            depth_max)) %>%
   
   rename(# dry bulk density was measured in g/mL, which is the same as g/c3
          dry_bulk_density = "Dry Bulk density (g/ml)",
@@ -197,9 +165,7 @@ depthseries <- Fourqurean %>%
   
   # Filter out rows that do not have any relevant carbon or dating data 
   filter(!(is.na(fraction_organic_matter) & is.na(age) & is.na(fraction_carbon) & is.na(dry_bulk_density))) %>%
-  # Filter out two studies with biomass data but no depthseries interval
-  filter(!(study_id %in% c("Agawin_et_al_1996", "Townsend_and_Fonseca_1998"))) %>%
-  
+
   # Fix some issues with age: parsed as character, some entries are approx and not #s
   mutate(age = gsub("B.P.", "", age)) %>%
   mutate(age = gsub(" yBP", "", age)) %>%
@@ -338,12 +304,12 @@ test_colnames("species", species)
 test_colnames("associated_publications", study_citations)
 
 # Re-order columns
-depthseries <- select_and_reorder_columns(depthseries, "depthseries", "./data/Fourqurean_2012/derivative/")
-site_data <- select_and_reorder_columns(site_data, "site_level", "./data/Fourqurean_2012/derivative/")
-core_data <- select_and_reorder_columns(core_data, "core_level", "./data/Fourqurean_2012/derivative/")
+depthseries <- select_and_reorder_columns("depthseries", depthseries, "./data/Fourqurean_2012/derivative/")
+site_data <- select_and_reorder_columns("site_level", site_data, "./data/Fourqurean_2012/derivative/")
+core_data <- select_and_reorder_columns("core_level", core_data, "./data/Fourqurean_2012/derivative/")
 # No guidance for biomass yet
-species <- select_and_reorder_columns(species, "species", "./data/Fourqurean_2012/derivative/")
-study_citations <- select_and_reorder_columns(study_citations, "associated_publications", "./data/Fourqurean_2012/derivative/")
+species <- select_and_reorder_columns("species", species, "./data/Fourqurean_2012/derivative/")
+study_citations <- select_and_reorder_columns("associated_publications", study_citations, "./data/Fourqurean_2012/derivative/")
 
 
 # test variable names
@@ -362,6 +328,22 @@ numeric_test_results <- test_numeric_vars(depthseries)
 
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
+
+# Running this test reveals that there's a few Kamp-Nielsen cores that don't have
+#   depth interval info. We'll remove these from the core_data
+
+# NOTE NOTE: I am INTENTIONALLY manually inputting these cores. Please do not perform
+#   an anti_join or %in% depthseries$core_id. This is intentionally supposed to 
+#   remove just this set of cores.
+
+kamp_missing_cores <- c("Kamp-Nielsen_et_al_2002_14", "Kamp-Nielsen_et_al_2002_15", "Kamp-Nielsen_et_al_2002_16", "Kamp-Nielsen_et_al_2002_17",
+                        "Kamp-Nielsen_et_al_2002_18", "Kamp-Nielsen_et_al_2002_19", "Kamp-Nielsen_et_al_2002_55", "Kamp-Nielsen_et_al_2002_56",
+                        "Kamp-Nielsen_et_al_2002_57", "Kamp-Nielsen_et_al_2002_58", "Kamp-Nielsen_et_al_2002_59", "Kamp-Nielsen_et_al_2002_60")
+
+core_data <- core_data %>%
+  filter(!core_id %in% kamp_missing_cores)
+
+# Now test
 results <- test_core_relationships(core_data, depthseries)
 
 ## 5. write out data ##############

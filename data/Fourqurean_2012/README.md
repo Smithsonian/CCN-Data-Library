@@ -30,7 +30,7 @@ user define variables | not started |
 Assumption | Justification | Notes
 ------------- | ------------- | -------------
 Changed Fourqurean_unpublished and Fourqurean_and_Kendrick_unpublished to Fourqurean_2012. | Kendrick is a co-author on this synthesis study, and better than citing nothing. |
-
+Tossed the two Isaksen cores | The only information recorded across the depthseries was density (original moles per volume, converted to mg per volume) which can't be converted into out formats | perhaps adding carbon density to guidelines is appropriate....noted this in DK running notes  
 
 #### Biomass data 
 
