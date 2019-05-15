@@ -105,6 +105,11 @@ core_data <- core_data %>%
   rename(site_id = Site) %>%
   select(study_id, site_id, core_id, core_latitude, core_longitude, core_position_method, core_elevation, core_elevation_datum, cs137_peak_cm)
 
+# There are some cores that have no information other than coordinates. ML and DK
+#   agreed that there isn't much value in including these, and they inappropriately
+#   inflate our total number of cores stats, so we'll remove
+core_data <- core_data %>%
+  filter(core_id %in% depthseries_data$core_id)
 
 ## ... 4C Add cs137 TRUE/FALSE value to depthseries #####
 # If a given interval contains the cs137 peak, give it a TRUE value. 
@@ -157,8 +162,8 @@ source("./scripts/1_data_formatting/qa_functions.R")
 test_colnames("core_level", core_data)
 test_colnames("depthseries", depthseries_data)
 
-test_variable_names(core_data)
-test_variable_names(depthseries_data)
+test_varnames(core_data)
+test_varnames(depthseries_data)
 
 numeric_test_results <- test_numeric_vars(depthseries_data)
 
