@@ -53,13 +53,17 @@ test_core_relationships <- function(core_data, depth_data) {
   results <- (anti_join(core_data, depth_data, by="core_id"))$core_id
   results2 <- (anti_join(depth_data, core_data, by="core_id"))$core_id
   
-  if(length(results)>0 & length(results2)>0){
+  if(length(results) > 0){
     print("WARNING: check the following core_ids in the core-level data:")
     print(results)
-    
+  } 
+  
+  if(length(results2) > 0) {
     print("WARNING: check the following core_ids in the depthseries data:")
     print(results2)
-  } else {
+  }
+  
+  if(length(results)== 0 & length(results2) == 0) {
     print("Core IDs match.")
   }
   append(results,results2)
