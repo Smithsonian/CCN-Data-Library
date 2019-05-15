@@ -82,14 +82,9 @@ internatl_core_data <- internatl_core_data_raw %>%
   rename(core_length = "total_depth") %>%
   rename(core_length_flag = "full_profile")
 
-# Work up year data
-# For some reason the 'N/A' coding is breaking recode(), so looks like I'll need
-#   to loop through instead
-for (i in 1:nrow(internatl_core_data)) {
-  if (internatl_core_data$core_date[[i]] == "N/A") {
-    internatl_core_data$core_date[[i]] <- NA
-  }
-}
+# Recode N/A to NA
+internatl_core_data <- internatl_core_data %>%
+  mutate(landscape_position = ifelse(landscape_position == "N/A", NA, landscape_position))
 
 ## * International species data ##############
 internatl_species_data <- internatl_core_data %>%
@@ -158,13 +153,19 @@ depthseries_data_modeled <- internatl_depthseries_data %>%
   filter(BD_final == BD_est) %>%
   mutate(DBD_measured_or_modeled = "modeled")
 
+depthseries_data_na <- internatl_depthseries_data %>%
+  filter(is.na(BD_final)) %>%
+  mutate(DBD_measured_or_modeled = NA)
+
 internatl_depthseries_data <- depthseries_data_measured %>%
-  bind_rows(depthseries_data_modeled)
+  bind_rows(depthseries_data_modeled) %>%
+  bind_rows(depthseries_data_na)
 
 # Back to renaming and recalculating attributes
 internatl_depthseries_data <- internatl_depthseries_data %>%
-  # assumption: bulk density stands for dry bulk density
+  # assumption: BD stands for dry bulk density
   rename(dry_bulk_density = "BD_final") %>%
+  mutate(dry_bulk_density = ifelse(is.na(dry_bulk_density), BD_est, dry_bulk_density)) %>%
   # convert from [Mg m-3] to [g cm-3]...which ends up being just x 1
   mutate(dry_bulk_density = as.numeric(dry_bulk_density) * 10^6 / 10^6) %>%
   select(-BD_reported, -BD_est) %>%
@@ -237,6 +238,24 @@ depthseries_invalid_set <- c("CD_reported", "Ocstock_reported", "carbon_density"
 
 internatl_depthseries_data <- select(internatl_depthseries_data, -depthseries_invalid_set)
 
+
+results <- test_core_relationships(internatl_core_data, internatl_depthseries_data)
+
+
+# Re-order columns
+depthseries <- select_and_reorder_columns("depthseries", internatl_depthseries_data, "./data/Sanderman_2018/derivative/")
+core_data <- select_and_reorder_columns("core_level", internatl_core_data, "./data/Sanderman_2018/derivative/")
+# No guidance for biomass yet
+species <- select_and_reorder_columns("species", internatl_species_data, "./data/Sanderman_2018/derivative/")
+study_citations <- select_and_reorder_columns("associated_publications", study_citations, "./data/Sanderman_2018/derivative/")
+
+
+# test variable names
+test_varnames(core_data)
+test_varnames(depthseries)
+test_varnames(site_data)
+test_varnames(species)
+test_varnames(study_citations)
 ## Curate Sanderman USA data SEE NOTE BELOW: US DATA NOT UNIQUE WITH INTERNATIONAL ############
 
 # It looks like apparently all of the US cores are represented in the international
