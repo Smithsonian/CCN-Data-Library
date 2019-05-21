@@ -84,6 +84,14 @@ Thorne_2015_coredata <- read_csv( "./data/Thorne_2015_a/derivative/Thorne_et_al_
 Thorne_2015_depthseriesdata <- read_csv("./data/Thorne_2015_a/derivative/Thorne_et_al_2015_depthseries_data.csv")
 Thorne_2015_citationdata <- read_csv("./data/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
 
+# Krauss et al. 2018
+Krauss_2018_coredata <- read_csv("data/Krauss_2018/derivative/Krauss_et_al_2018_cores.csv")
+Krauss_2018_depthseriesdata <- read_csv("data/Krauss_2018/derivative/Krauss_et_al_2018_depthseries.csv",
+                                        col_types = cols(
+                                          sample_id = col_character()
+                                        ))
+Krauss_2018_sites<- read_csv("data/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
+
 ## 2. Join datasets ######################
 
 ## ....2a. Core data ################
@@ -100,12 +108,10 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Giblin_2018_coredata) %>%
   bind_rows(Smith_2015_coredata) %>%
   bind_rows(Trettin_2017_coredata) %>%
-  bind_rows(Thorne_2015_coredata)
+  bind_rows(Thorne_2015_coredata) %>% 
+  bind_rows(Krauss_2018_coredata)
 
 ## ....2b. Depth series data ###############
-# The Osland core IDs are initiatlized as numeric, as they're just numbers.
-#   Switch the core IDs to factor to match all other datasets
-Osland_2016_depthseriesdata$core_id <- as.factor(Osland_2016_depthseriesdata$core_id)
 
 CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Drexler_2009_depthseriesdata) %>%
@@ -117,7 +123,8 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Giblin_2018_depthseriesdata) %>%
   bind_rows(Smith_2015_depthseriesdata) %>%
   bind_rows(Trettin_2017_depthseriesdata) %>%
-  bind_rows(Thorne_2015_depthseriesdata)
+  bind_rows(Thorne_2015_depthseriesdata) %>% 
+  bind_rows(Krauss_2018_depthseriesdata)
 
 # Commenting out aggregated data for now
 # # Add a column for aggregated fraction carbon and carbon density per core
