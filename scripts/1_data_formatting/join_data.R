@@ -90,7 +90,8 @@ Krauss_2018_depthseriesdata <- read_csv("data/Krauss_2018/derivative/Krauss_et_a
                                         col_types = cols(
                                           sample_id = col_character()
                                         ))
-Krauss_2018_sites<- read_csv("data/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
+Krauss_2018_sites <- read_csv("data/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
+Krauss_2018_citationdata <- read_csv("data/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
 
 ## 2. Join datasets ######################
 
@@ -168,7 +169,8 @@ CCRCN_study_citations <- Holmquist_2018_citationdata %>%
   bind_rows(Smith_2015_citationdata) %>%
   bind_rows(Trettin_2017_citationdata) %>%
   bind_rows(Thorne_2015_citationdata) %>%
-  bind_rows(Drexler_2009_citationdata) 
+  bind_rows(Drexler_2009_citationdata) %>% 
+  bind_rows(Krauss_2018_citationdata)
 
 bib_file <- CCRCN_study_citations %>%
   select(-study_id, -bibliography_id, -publication_type) %>%
