@@ -85,6 +85,16 @@ biomass_agg <- biomass_depthseries %>%
   summarize(live_rhizomes = sum(live_rhizomes), live_roots = sum(live_roots),
             detritus= sum(detritus))
 
+agb_biomass <- dt2 %>%
+  rename(site_id = Location) %>%
+  mutate(core_id = paste0(site_id,Site.Number)) %>%
+  select(core_id, Aboveground.Stem.Length, Aboveground.mass) %>%
+  rename(aboveground_stem_length = Aboveground.Stem.Length, 
+         aboveground_mass = Aboveground.mass)
+
+biomass_agg <- biomass_agg %>% 
+  full_join(agb_biomass)
+
 ## ... 3B. Prep core-level data #########
 cores <- dt1 %>%
   rename(site_id = Location, 
@@ -101,17 +111,8 @@ cores <- dt1 %>%
          vegetation_class = "salt marsh", 
          study_id = "Deegan_et_al_2012")
 
-## ... ... 3Bi. merge in above ground biomass data  ########
-cores_biomass <- dt2 %>%
-  rename(site_id = Location) %>%
-  mutate(core_id = paste0(site_id,Site.Number)) %>%
-  select(core_id, Aboveground.Stem.Length, Aboveground.mass) %>%
-  rename(aboveground_stem_length = Aboveground.Stem.Length, 
-         aboveground_mass = Aboveground.mass)
 
-cores <- merge(cores,cores_biomass)
-
-## ... 3C. Prep site-level data ##########
+## ... 3D. Prep site-level data ##########
 site_data <- cores %>%
   select(site_id, core_id, study_id, core_latitude, core_longitude)
 
