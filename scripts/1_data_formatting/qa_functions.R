@@ -13,7 +13,7 @@ test_unique_cores <- function(data) {
     filter(n > 1)
   
   if(length(core_list$core_id)>0){
-    print("WARNING: check the following core_ids in the core-level data:")
+    warning("Check the following core_ids in the core-level data:")
     print(core_list$core_id)
   } else {
     print("All core IDs are unique.")
@@ -37,7 +37,7 @@ test_unique_coords <- function(data) {
     filter(n > 1)
 
   if(length(core_list$core_ids)>0){
-    print("WARNING: some cores in the core-level data have duplicate coordinates. Check 'data/QA/duplicate_cores.csv' for the list.")
+    warning("Some cores in the core-level data have duplicate coordinates. Check 'data/QA/duplicate_cores.csv' for the list.")
   } else {
     print("All core coordinates are unique.")
   }
@@ -54,12 +54,12 @@ test_core_relationships <- function(core_data, depth_data) {
   results2 <- (anti_join(depth_data, core_data, by="core_id"))$core_id
   
   if(length(results) > 0){
-    print("WARNING: check the following core_ids in the core-level data:")
+    warning("Check the following core_ids in the core-level data:")
     print(results)
   } 
   
   if(length(results2) > 0) {
-    print("WARNING: check the following core_ids in the depthseries data:")
+    warning("Check the following core_ids in the depthseries data:")
     print(results2)
   }
   
@@ -104,7 +104,7 @@ test_colnames <- function(category, dataset) {
   
   if(category %in% database_structure$table == FALSE) {
     # Warn user they have not supplied a valid table category and provide the list 
-    print(paste(category,"is not a valid category. Please use one of these options:"))
+    warning(paste(category,"is not a valid category. Please use one of these options:"))
     print(tables)
     return()
   }
@@ -117,7 +117,7 @@ test_colnames <- function(category, dataset) {
   if(length(non_matching_columns)==0) {
     print("Looks good! All column names match CCRCN standards")
   } else {
-    print(paste(c("Non-matching variable names/column headers:", non_matching_columns), collapse=" "))
+    warning(paste(c("Non-matching variable names/column headers:", non_matching_columns), collapse=" "))
   }
 }
 
@@ -215,7 +215,7 @@ select_and_reorder_columns <- function(datalevel_table, # A string corresponding
   #   for which there is no guidance in the database...
   if (length(data_attributes_reorder) < length(data_attributes)) {
     # ...Notify the user
-    print(paste0("Some columns in your data are not present in the current database guidelines.
+    warning(paste0("Some columns in your data are not present in the current database guidelines.
                  Removing these from dataset and saving to `", datalevel_table, "_uncontrolled_attributes.csv`."))
   }
   

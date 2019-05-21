@@ -88,7 +88,7 @@ for(i in 1:length(colnames(data))){
         # Add the new synonym - controlled variable pair to the master list, include the study ID
         headerTable <- bind_rows(headerTable, data.frame(controlled_ontology=variable_name, synonym=col_name, first_seen_by=study_id))
       } else { # warn the user that their input does not match the controlled ontology
-        print(sprintf("WARNING '%s' does not match existing controlled vocabulary", variable_name), quote=FALSE)
+        warning(sprintf("WARNING '%s' does not match existing controlled vocabulary", variable_name))
       }
       
       # If it is not a synonym, ask if the variable is defined in the study's metadata
@@ -98,7 +98,7 @@ for(i in 1:length(colnames(data))){
       
       # If it is, move on to the next column, if not warn the user that the column will be dropped
       if(input_metadata == "n") {
-        print(sprintf("WARNING '%s' will be dropped from the dataframe", col_name), quote=FALSE)
+        warning(sprintf("WARNING '%s' will be dropped from the dataframe", col_name))
         invalid_set <- append(invalid_set, col_name)
       }
       
