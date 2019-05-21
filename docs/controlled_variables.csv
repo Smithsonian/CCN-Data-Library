@@ -89,6 +89,7 @@ vegetation_class,emergent,Describes wetlands dominated by persistent emergent va
 vegetation_class,scrub shrub,Describes wetlands dominated by woody vegetation < or equal to 5 meters in height
 vegetation_class,forested,Describes wetlands dominated by woody vegetation > 5 meters in height
 vegetation_class,forested to shrub,Dominated by forested to scrub/shrub biomass
+vegetation_class,forested to emergent,Dominated by forest and underlying marsh
 vegetation_class,seagrass,Describes tidal or subtidal communities dominated by rooted vascular plants.
 vegetation_method,field observation,Vegetation inferred by field observation
 vegetation_method,measurement,Vegetation measured by counts or plots.
