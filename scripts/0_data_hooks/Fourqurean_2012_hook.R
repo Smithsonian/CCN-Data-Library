@@ -74,6 +74,16 @@ Fourqurean <- Fourqurean %>%
   select(-core_id, -study_id) %>%
   full_join(Fourqurean_core, by = "coreserial")
 
+
+# One of the studies (Buzzelli 1998) must have had a typo in the core coordinates,
+#   noticed from visual inspection of the Atlas by Jim. 75 -> 76
+Fourqurean <- Fourqurean %>% 
+  mutate(`longitude (DD.DDDD, >0 for E,<0 for W))` = 
+           ifelse(study_id == "Buzzelli_1998", 
+                  -76.60394, 
+                  `longitude (DD.DDDD, >0 for E,<0 for W))`))
+  
+
 ## ... Filtering out invalid cores/studies ############
 # Studies without IDs
 # The following code was used to determine which cores were missing study IDs in the original dataset
