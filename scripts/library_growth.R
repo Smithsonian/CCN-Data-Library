@@ -12,10 +12,10 @@ library(tidyverse)
 library(taskscheduleR)
 library(scales)
 library(ggnewscale)
-library(extrafont)
-font_import()
-loadfonts(device = "win")
+library(magick)
 
+marsh <- image_read("docs/images/sercwetland_grace_schwartz.jpg") %>%
+  image_colorize(opacity = 40, color = 'white')
 
 ## Compile RCN library size metrics ################
 
@@ -37,73 +37,77 @@ growth_metrics <- tibble(
 )
 
 # Read in first year of data 
-growth_metrics <- read_csv("data/library_metrics/original/growth_metrics.csv")
+growth_metrics <- read_csv("data/library_metrics/growth_metrics.csv",
+                           col_types = cols(date = col_date()))
 
-# NOTE: 
+CCRCN_cores <- read_csv("data/CCRCN_synthesis/CCRCN_core_data.csv")
 CCRCN_depthseries <- read_csv("./data/CCRCN_synthesis/CCRCN_depthseries_data.csv",
                               col_types = cols(.default = col_number(),
                                                study_id = col_character(),
                                                site_id = col_character(),
-                                               core_id = col_character(),
-                                               fraction_carbon_type = col_factor(),
-                                               DBD_measured_or_modeled = col_factor(),
-                                               OC_measured_or_modeled = col_factor(),
-                                               CD_measured_or_modeled = col_factor(),
-                                               CD_reported = col_logical()
+                                               core_id = col_character()
                                                ))
-
-CCRCN_depthseries <- read_csv("./data/CCRCN_synthesis/CCRCN_depthseries_data.csv")
-stop_for_problems(CCRCN_depthseries)
-
 
 CCRCN_depthseries_dated <- CCRCN_depthseries %>%
   filter(!is.na(total_pb210_activity) | !is.na(cs137_activity) | !is.na(ra226_activity)
          | !is.na(be7_activity)  | !is.na(age))
 
-length(unique(CCRCN_depthseries_dated$core_id))
+# Create tibble for this month's date
+growth_metrics_newMonth <- tibble(
+  date = as.Date(Sys.Date()),
+  total_cores = length(unique(CCRCN_cores$core_id)),
+  study_ids = length(unique(CCRCN_cores$study_id)),
+  dated_cores = length(unique(CCRCN_depthseries_dated$core_id))
+)
 
-length(unique(CCRCN_depthseries$study_id))
 
+# Add this month's data to past growth metrics
+growth_metrics <- growth_metrics %>%
+  bind_rows(growth_metrics_newMonth)
+
+
+## Save updated growth metrics ###########
+
+write_csv(growth_metrics, "data/library_metrics/growth_metrics.csv")
 
 ## Visualize growth #####################
 
-ggplot(growth_metrics, aes(date, total_cores)) +
-  # geom_step() +
-  geom_col() +
-  scale_fill_gradient2(low = '#003300', high = '#990000', mid = '#eae43f',
-                       midpoint = 3000, limits = c(0, 6000), oob = squish) +
-  theme_classic() + 
-  xlab("Date") +
-  ylab("Size of Library (# Cores")
+growth_plot <- ggplot() +
+  annotation_raster(marsh, ymin = -Inf, ymax= Inf, xmin = -Inf, xmax = Inf) +
+  geom_col(data = growth_metrics, aes(x = date, y = total_cores,
+                                      fill = total_cores), width = 15) +
 
-
-
-
-ggplot(growth_metrics, aes(x = date, y = total_cores,
-             fill = total_cores)) +
-  geom_col() +
   # Set range of color scale for bars
   # scale_color_gradient(low = "#56B1F7", high = "#132B43") +
   
   coord_cartesian(ylim = c(0, 6000)) + 
   
   # new_scale("fill") +
-  geom_col(data = growth_metrics, aes(x = date, y = dated_cores, fill = dated_cores)) +
+  # geom_col(data = growth_metrics, aes(x = date, y = dated_cores, fill = dated_cores),
+  #          width = 15) +
   # scale_fill_gradient2(low = "#1B7837", high = "#762A83") +
+  
   theme_classic() +
   scale_x_date(labels = date_format("%Y-%m"), date_breaks = "2 months") +
+  xlab("Date") +
+  ylab("# Cores in CCRCN Library") +
   theme(
+    # Format axis titles
+    axis.title.x = element_text(size = 16, face = "bold", vjust = .6),
+    axis.title.y = element_text(size = 12, face = "bold", angle = 60, vjust = .5,
+                                margin = margin(t = 0, r = 30, b = 0, l = 0)),
+    
     # Remove undesired elements
-    axis.title.x = element_blank(),
-    axis.title.y = element_blank(),
-    axis.line.y = element_blank(),
-    axis.ticks.x = element_blank(),
-    axis.ticks.y = element_blank(),
+    # axis.line.x = element_blank(),
+    # axis.ticks.x = element_blank(),
     legend.position = "none",
 
-    # NOTE: this plot will fail if the Tunga font family is not installed
-    # axis.text.x = element_text(family = "Tunga", face = "bold", size = 12),
-    # axis.text.y = element_text(family = "Tunga", face = "bold", size = 14),
-    aspect.ratio = .35)
+    axis.text.x = element_text(face = "bold", size = 12),
+    axis.text.y = element_text(face = "bold", size = 14),
+    aspect.ratio = .35) 
 
 
+# Write plot
+ggsave("docs/images/CCRCN_library_growth.png", plot = growth_plot, device = "png", 
+       scale = 1.2, width = 160, height = 50,
+       units = "mm", limitsize = FALSE)
