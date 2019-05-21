@@ -76,11 +76,16 @@ Fourqurean <- Fourqurean %>%
 
 
 # One of the studies (Buzzelli 1998) must have had a typo in the core coordinates,
-#   noticed from visual inspection of the Atlas by Jim. 75 -> 76
+#   noticed from visual inspection of the Atlas by Jim. Dk then pulled the correct
+#   coordinates from the Buzzelli 1998 paper: https://link.springer.com/content/pdf/10.2307%2F1353271.pdf
 Fourqurean <- Fourqurean %>% 
   mutate(`longitude (DD.DDDD, >0 for E,<0 for W))` = 
            ifelse(study_id == "Buzzelli_1998", 
-                  -76.60394, 
+                  -76.39611111, 
+                  `longitude (DD.DDDD, >0 for E,<0 for W))`)) %>% 
+  mutate(`latitude (DD.DDDD, >0 for N, <0 for S))` = 
+           ifelse(study_id == "Buzzelli_1998", 
+                  37.21277778, 
                   `longitude (DD.DDDD, >0 for E,<0 for W))`))
   
 
