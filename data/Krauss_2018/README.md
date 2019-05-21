@@ -1,7 +1,7 @@
 # Krauss et al. 2018 Hook Notes and Progress
 
 Citation: 
-Krauss, K.W., Noe, G.B., Duberstein, J.A., Conner, W.H., Stagg, C.L., Cormier, N., Jones, M.C., Bernhardt, C.J., Lockaby, B.G., From, A.S., Doyle, T.W., Day, R.H., Ensign, S.H., Pierfelice, K.N., Hupp, C.R., Chow, A.T., and Whitbeck, J.L., 2018, The role of the upper tidal estuary in wetland blue carbon storage and flux: Global Biogeochemical Cycles, v. 32, no. 5, p. 817-839, https://doi.org/10.1029/2018GB005897.
+Krauss, K.W., Noe, G.B., Duberstein, J.A., Conner, W.H., Stagg, C.L., Cormier, N., Jones, M.C., Bernhardt, C.J., Lockaby, B.G., From, A.S., Doyle, T.W., Day, R.H., Ensign, S.H., Pierfelice, K.N., Hupp, C.R., Chow, A.T., and Whitbeck, J.L., 2018. The role of the upper tidal estuary in wetland blue carbon storage and flux: Global Biogeochemical Cycles, v. 32, no. 5, p. 817-839. https://doi.org/10.1029/2018GB005897.
 
 Krauss 2018 data release:
 10.5066/F7TM7930
@@ -51,7 +51,7 @@ NA | NA | | Don't have coordinates for core W2
 Assumption | Justification | Notes
 ------------- | ------------- | -------------
 core "W2" is from the Waccamaw river site | Because of the "W"...that's the best I've got | 
-NA | NA | The sites classified as "FO/SS" should be designated as a new vegetation class, "FO/EM" for forest/emergent marsh
+NA | NA | Added new vegetation_class variable "forested to emergent", which has also been added to docs/controlled_variables.csv and the Database Structure page on the website
 
 #### Methods and Materials
 

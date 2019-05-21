@@ -85,12 +85,12 @@ url_list <- page %>%
   html_attr(HTML_ATTR)
 
 # For each data file path on the webpage....
-for (i in 1:length(url_list)) {
-
-  # ...extract and download file
-  download.file(paste0(BASE_URL, url_list[[i]]), paste0(FILE_PATH, FILE_NAMES[[i]]),
-                mode = "wb")
-}
+# for (i in 1:length(url_list)) {
+# 
+#   # ...extract and download file
+#   download.file(paste0(BASE_URL, url_list[[i]]), paste0(FILE_PATH, FILE_NAMES[[i]]),
+#                 mode = "wb")
+# }
 
 ## 2. Read in data #####################
 
@@ -359,7 +359,7 @@ cores <- depthseries %>%
                                    "emergent",
                                    ifelse(core_id == "butler_island_1" 
                                           | core_id == "turkey_creek_2",
-                                          "FO/SS",
+                                          "forested to emergent",
                                           ifelse(core_id == "savannah_mid_2" 
                                                  | core_id == "richmond_island_1"
                                                  | core_id == "savannah_high_1",
@@ -373,7 +373,7 @@ cores <- depthseries %>%
                                    "low",
                                    ifelse(core_id == "butler_island_1" | 
                                           core_id == "savannah_mid_2",
-                                          "mid ",
+                                          "mid",
                                           ifelse(core_id == "richmond_island_1"
                                                  | core_id == "savannah_high_1",
                                                  "high", NA
