@@ -104,7 +104,7 @@ test_colnames <- function(category, dataset) {
   
   if(category %in% database_structure$table == FALSE) {
     # Warn user they have not supplied a valid table category and provide the list 
-    warning(paste(category,"is not a valid category. Please use one of these options:"))
+    warning(paste(category,"is not a valid category. Please use one of the above listed options."))
     print(tables)
     return()
   }
@@ -117,7 +117,7 @@ test_colnames <- function(category, dataset) {
   if(length(non_matching_columns)==0) {
     print("Looks good! All column names match CCRCN standards")
   } else {
-    warning(paste(c("Non-matching variable names/column headers:", non_matching_columns), collapse=" "))
+    warning(paste(c("The following column headers do not match CCRCN guidance:", non_matching_columns), collapse=" "))
   }
 }
 
