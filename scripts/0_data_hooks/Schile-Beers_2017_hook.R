@@ -49,7 +49,7 @@ FILE_NAME <- "Megonigal_J_Patrick-20170103-Abu_Dhabi_Blue_Carbon_Project_Ecologi
 #   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
 #   with whatever you include within the quotation marks.
 
-FILE_PATH <- paste0(getwd(), "/data/Schile-Beers_2017/original/" )
+FILE_PATH <- paste0(getwd(), "/data/primary_input_studies/Schile-Beers_2017/original/" )
 
 # The stem of the url should always be the same
 BASE_URL <- "https://repository.si.edu"
@@ -140,7 +140,7 @@ core_data <- plot_data %>%
   # I need to make them consistent to create core_ids that match 
   mutate(site_id = gsub("Jaoub", "Janoub", site_id)) %>%
   mutate(site_id = gsub("Bazam", "Basm", site_id)) %>%
-  mutate(site_id = gsub("Kalba", "Khalba", site_id)) %>%
+  mutate(site_id = gsub("Khalba", "Kalba", site_id)) %>%
   mutate(site_id = gsub(" Al ", " al ", site_id)) %>%
   mutate(study_id = ifelse(Ecosystem == "seagrass", "Campbell_et_al_2015", "Schile-Beers_and_Megonigal_2017")) %>%
   
@@ -163,6 +163,24 @@ core_data <- plot_data %>%
                                  ifelse(salinity < 51 & salinity > 29, "saline", "brackish"))) %>%
   select(study_id, site_id, core_id, core_date, core_latitude, core_longitude, 
         core_position_method, core_elevation, core_elevation_datum, core_elevation_method, vegetation_notes)
+
+
+# Some plot are missing coordinates. From the site description we can estimate
+#   the locations and add coordinates in
+core_data <- core_data %>% 
+  mutate(core_latitude = ifelse(site_id == "Kalba East", 25.007509, 
+                          ifelse(site_id == "Kalba South", 24.999839,
+                            core_latitude))) %>% 
+  mutate(core_longitude = ifelse(site_id == "Kalba East", 56.365198, 
+                            ifelse(site_id == "Kalba South", 56.365198,
+                              core_longitude))) %>%
+  mutate(core_position_method = ifelse(site_id == "Kalba East" | 
+                                 site_id == "Kalba South", "other low resolution",
+                                  core_position_method)) %>% 
+  mutate(core_position_notes = ifelse(core_position_method == "other low resolution",
+                                      "location coarsely estimated from Google Maps",
+                                       NA))
+  
 
 ## ... 3D. Site level data #############
 
@@ -284,7 +302,7 @@ results <- test_core_relationships(core_data, depthseries_data)
 
 ## 6. Write data ##############
 
-write_csv(site_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
-write_csv(core_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
-write_csv(depthseries_data, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")
-write_csv(study_citations_synthesis, "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")
+write_csv(site_data, "./data/primary_input_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
+write_csv(core_data, "./data/primary_input_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
+write_csv(depthseries_data, "./data/primary_input_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")
+write_csv(study_citations_synthesis, "./data/primary_input_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")
