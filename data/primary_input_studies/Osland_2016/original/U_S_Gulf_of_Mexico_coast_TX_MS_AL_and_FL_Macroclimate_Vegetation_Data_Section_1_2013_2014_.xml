@@ -1,0 +1,3159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Michael J. Osland</origin>
+        <origin>Christopher A. Gabler</origin>
+        <origin>James B. Grace</origin>
+        <origin>Camille L. Stagg</origin>
+        <origin>Richard H. Day</origin>
+        <origin>Stephen B. Hartley</origin>
+        <origin>Nicholas M. Enwright</origin>
+        <origin>Andrew S. From</origin>
+        <origin>Meagan L. McLemore</origin>
+        <origin>Jennie L. McLeod</origin>
+        <pubdate>2016</pubdate>
+        <title>U.S. Gulf of Mexico coast (TX, MS, AL, and FL) Macroclimate Vegetation Data Section 1 (2013-2014)</title>
+        <geoform>tabular</geoform>
+        <pubinfo>
+          <pubplace>Denver, CO</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>http://dx.doi.org/doi:10.5066/F7J1017G</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>The northern Gulf of Mexico coast spans two major climate gradients and represents an excellent natural laboratory for developing climate-influenced ecological models. In this project, we used these zones of remarkable transition to develop macroclimate-based models for quantifying the regional responses of coastal wetland ecosystems to climate variation. In addition to providing important fish and wildlife habitat and supporting coastal food webs, these coastal wetlands provide many ecosystem goods and services including clean water, stable coastlines, food, recreational opportunities, and stored carbon. Our objective was to examine and forecast the effects of macroclimatic drivers on wetland ecosystem structure and function in the northern Gulf of Mexico.</abstract>
+      <purpose>The northern Gulf of Mexico coast spans two major climate gradients and represents an excellent natural laboratory for developing climate-influenced ecological models. In this project, we used these zones of remarkable transition to develop macroclimate-based models for quantifying the regional responses of coastal wetland ecosystems to climate variation. In addition to providing important fish and wildlife habitat and supporting coastal food webs, these coastal wetlands provide many ecosystem goods and services including clean water, stable coastlines, food, recreational opportunities, and stored carbon. Our objective was to examine and forecast the effects of macroclimatic drivers on wetland ecosystem structure and function in the northern Gulf of Mexico.</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>20130924</begdate>
+          <enddate>20141208</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>Not planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-97.365203</westbc>
+        <eastbc>-81.499719</eastbc>
+        <northbc>30.497478</northbc>
+        <southbc>25.856967</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>environment</themekey>
+        <themekey>vegetation</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Biocomplexity Thesaurus</themekt>
+        <themekey>vegetation</themekey>
+      </theme>
+      <place>
+        <placekt>Geographic Names Information System</placekt>
+        <placekey>Gulf of Mexico</placekey>
+        <placekey>San Antonio</placekey>
+        <placekey>Port Aransas</placekey>
+        <placekey>Laguna Madre</placekey>
+        <placekey>Corpus Christi</placekey>
+        <placekey>Galveston</placekey>
+        <placekey>State of Texas</placekey>
+        <placekey>Slidell</placekey>
+        <placekey>State of Louisiana</placekey>
+        <placekey>Grand Bay</placekey>
+        <placekey>State of Mississippi</placekey>
+        <placekey>Weeks Bay</placekey>
+        <placekey>State of Alabama</placekey>
+        <placekey>Tampa Bay</placekey>
+        <placekey>Ten Thousand Islands</placekey>
+        <placekey>State of Florida</placekey>
+      </place>
+    </keywords>
+    <accconst>none</accconst>
+    <useconst>none</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Michael Osland</cntper>
+          <cntorg>U.S. Geological Survey, Wetland and Aquatic Research Center</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>700 Cajundome Blvd</address>
+          <city>Lafayette</city>
+          <state>Louisiana</state>
+          <postal>70506</postal>
+          <country>U.S.A</country>
+        </cntaddr>
+        <cntvoice>337-266-8664</cntvoice>
+        <cntemail>mosland@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <native>Environment as of Metadata Creation: Microsoft Windows 7 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.3.1 (Build 4959) Service Pack N/A (Build N/A)</native>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>No formal attribute accuracy tests were conducted</attraccr>
+    </attracc>
+    <logic>No formal logical accuracy tests were conducted</logic>
+    <complete>Data set is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>No formal positional accuracy tests were conducted</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>No formal positional accuracy tests were conducted</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>In each 1 m^2 plot, we estimated percent cover for all plant species below 1.4 m, percent cover for all species above 1.4 m, and measured mean canopy and maximum vegetation heights. If any plant within a visualized 100 m^2 plot (5 x 20 m; long edge parallel to the shoreline) centered on the 1 m^2 plot was &gt; 1.4 m tall, we also estimated percent cover for all plant species and maximum plant height within that 100 m^2 plot. 
+We quantified light interception in each 1 m^2 plot as a proxy for standing plant biomass by measuring light intensity at various heights using a linear ceptometer (sensu Whitbeck and Grace 2006). For short-statured plots, we measured light intensity at ground level and above the vegetation canopy. For tall-statured plots (e.g., in woodlands), we measured light at ground level, at 1.4 m outside the canopy (in direct sunlight), and, if there was a low-statured understory, at 1.4 m within the plot under the canopy.</procdesc>
+        <procdate>20160324</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <indspref>GNIS placenames: Corpus Christi, Texas, Port Aransas, Texas, San Antonio, Texas, Galveston, Texas, Slidell, Louisiana, Grand Bay, Mississippi, Weeks Bay, Alabama, Tampa Bay, Florida, and Ten Thousand Islands, Florida.</indspref>
+    <direct>Vector</direct>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <planar>
+        <gridsys>
+          <gridsysn>Universal Transverse Mercator</gridsysn>
+          <utm>
+            <utmzone>14</utmzone>
+            <transmer>
+              <sfctrmer>0.9996</sfctrmer>
+              <longcm>-99.0</longcm>
+              <latprjo>0.0</latprjo>
+              <feast>500000.0</feast>
+              <fnorth>0.0</fnorth>
+            </transmer>
+          </utm>
+        </gridsys>
+        <planci>
+          <plance>coordinate pair</plance>
+          <coordrep>
+            <absres>0.6096</absres>
+            <ordres>0.6096</ordres>
+          </coordrep>
+          <plandu>Meter</plandu>
+        </planci>
+      </planar>
+      <planar>
+        <gridsys>
+          <gridsysn>Universal Transverse Mercator</gridsysn>
+          <utm>
+            <utmzone>15</utmzone>
+            <transmer>
+              <sfctrmer>0.9996</sfctrmer>
+              <longcm>-93.0</longcm>
+              <latprjo>0.0</latprjo>
+              <feast>500000.0</feast>
+              <fnorth>0.0</fnorth>
+            </transmer>
+          </utm>
+        </gridsys>
+        <planci>
+          <plance>coordinate pair</plance>
+          <coordrep>
+            <absres>0.6096</absres>
+            <ordres>0.6096</ordres>
+          </coordrep>
+          <plandu>Meter</plandu>
+        </planci>
+      </planar>
+      <planar>
+        <gridsys>
+          <gridsysn>Universal Transverse Mercator</gridsysn>
+          <utm>
+            <utmzone>16</utmzone>
+            <transmer>
+              <sfctrmer>0.9996</sfctrmer>
+              <longcm>-87.0</longcm>
+              <latprjo>0.0</latprjo>
+              <feast>500000.0</feast>
+              <fnorth>0.0</fnorth>
+            </transmer>
+          </utm>
+        </gridsys>
+        <planci>
+          <plance>coordinate pair</plance>
+          <coordrep>
+            <absres>0.6096</absres>
+            <ordres>0.6096</ordres>
+          </coordrep>
+          <plandu>Meter</plandu>
+        </planci>
+      </planar>
+      <planar>
+        <gridsys>
+          <gridsysn>Universal Transverse Mercator</gridsysn>
+          <utm>
+            <utmzone>17</utmzone>
+            <transmer>
+              <sfctrmer>0.9996</sfctrmer>
+              <longcm>-81.0</longcm>
+              <latprjo>0.0</latprjo>
+              <feast>500000.0</feast>
+              <fnorth>0.0</fnorth>
+            </transmer>
+          </utm>
+        </gridsys>
+        <planci>
+          <plance>coordinate pair</plance>
+          <coordrep>
+            <absres>0.6096</absres>
+            <ordres>0.6096</ordres>
+          </coordrep>
+          <plandu>Meter</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>D_North_American_1983</horizdn>
+        <ellips>GRS_1980</ellips>
+        <semiaxis>6378137.0</semiaxis>
+        <denflat>298.257222101</denflat>
+      </geodetic>
+    </horizsys>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>Macroclimate Raw Data</enttypl>
+        <enttypd>A spreadsheet containing each plot's vegetation and light coverage</enttypd>
+        <enttypds>Producer defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>ID</attrlabl>
+        <attrdef>a unique plot identifier numbered chronologically</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>1020</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>estuary</attrlabl>
+        <attrdef>name of estuary</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>Grand Bay, Lower Laguna Madre, Mission Aransas Bay, San Antonio Bay, Upper Laguna Madre, Galveston Bay, Weeks Bay, Lake Pontchartrain, Tampa Bay, and Ten Thousand Islands</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>tran</attrlabl>
+        <attrdef>transect number within estuary</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>8</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>plot</attrlabl>
+        <attrdef>plot number within estuary</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>122</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>year</attrlabl>
+        <attrdef>Common Era</attrdef>
+        <attrdefs>Gregorian Calendar</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>2013 2014</edomv>
+            <edomvd>year</edomvd>
+            <edomvds>none</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>month</attrlabl>
+        <attrdef>month of sampling</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2</rdommin>
+            <rdommax>12</rdommax>
+            <attrunit>mm</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>day</attrlabl>
+        <attrdef>day of sampling</attrdef>
+        <attrdefs>the calendar</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2</rdommin>
+            <rdommax>27</rdommax>
+            <attrunit>dd</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>time</attrlabl>
+        <attrdef>time of sampling</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>07:40</rdommin>
+            <rdommax>17:48</rdommax>
+            <attrunit>hh:mm</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>elevation</attrlabl>
+        <attrdef>elevation of plot (NAVD88)</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-0.8705</rdommin>
+            <rdommax>1.181</rdommax>
+            <attrunit>meters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>zone</attrlabl>
+        <attrdef>UTM coordinate zone</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>14N, 16N, or 17R</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>northing</attrlabl>
+        <attrdef>northing of plot in the UTM zone specified</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2859923.11</rdommin>
+            <rdommax>3367560.00</rdommax>
+            <attrunit>meters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>easting</attrlabl>
+        <attrdef>easting of plot in the UTM zone specified</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>337591.00</rdommin>
+            <rdommax>891924.82</rdommax>
+            <attrunit>meters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>criteria</attrlabl>
+        <attrdef>rationale for sampling the plot in the specified location</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>(1) a visible change in plant species dominance (i.e., a zone transition or ecotone), (2) a 15 cm change in elevation from the previous plot, or (3) horizontal movement of 20 m from the previous plot within the same vegetation zone.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1hMean</attrlabl>
+        <attrdef>average canopy height within 1m^2 plots (zero by definition if &lt;10% plant cover)</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1500</rdommax>
+            <attrunit>cm</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1hMax</attrlabl>
+        <attrdef>maximum plant height  within 1 m^2 plots (individual must be rooted in the plot)</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1150</rdommax>
+            <attrunit>cm</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1hSp</attrlabl>
+        <attrdef>species exhibiting the maximum height within 1m^2 plots</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>species exhibiting the maximum height within 1m^2 plots</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>100hMax</attrlabl>
+        <attrdef>maximum plant height within 100 m^2 plots (individual must be rooted in the plot)</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>142</rdommin>
+            <rdommax>3000</rdommax>
+            <attrunit>cm</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>100hSp</attrlabl>
+        <attrdef>species exhibiting the maximum height within 100 m^2 plots</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>species exhibiting the maximum height within 100 m^2 plots</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cACAU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Acrostichium aureum L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.00</rdommin>
+            <rdommax>40.00</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cACSP</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Acacia sp.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>12</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cAGMA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Agalinis maritima (Raf.) Raf.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cALGMAT</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by algal mat</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>100</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cALGSRF</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by loose, often floating surface algae</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>85</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cALGWEB</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by algal "webbing"</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cALPH</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Alternanthera philoxeroides (Mart.) Griseb.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>25</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cAMAU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Amaranthus australis (A. Gray) Sauer</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cAMBART</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Ambrosia artemisiifolia L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cAMPARB</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Ampelopsis arborea (L.) Koehne</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>15</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cAMPS</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Ambrosia psilostachya DC.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>10</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cANGL</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Andropogon glomeratus (Walter) Britton, Sterns &amp; Poggenb.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cARES</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Ardisia escallonioides Schiede &amp; Deppe ex Schltdl. &amp; Cham.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>6</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cASVI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Asemeia violacea (Aubl.) J.F.B. Pastore &amp; J.R. Abbott</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cAVGE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Avicennia germinans (L.) L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>95</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cBAHA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Baccharis halimifolia L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>80</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cBAMA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Batis maritima L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>89</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cBARN</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Balanus sp. (acorn barnacles)</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cBBF1</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by unidentified forb 1 observed in Baffin Bay, TX</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cBBF2</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by unidentified forb 2 observed in Baffin Bay, TX</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cBBF3</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by unidentified forb 3 observed in Baffin Bay, TX</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>6.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cBBF4</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by unidentified forb 4 observed in Baffin Bay, TX</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>4</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cBBG1</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by unidentified grass 1 observed in Baffin Bay, TX</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cBBG2</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by unidentified grass 2 observed in Baffin Bay, TX</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>35</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cBOFR</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Borrichia frutescens (L.) DC.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>95</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCABO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Caesalpinia bonduc (L.) Roxb.</attrdef>
+        <attrdefs>percent</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>25</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCARA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Campsis radicans (L.) Seem. ex Bureau</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCERI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Ceratopteris richardii Brongn.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>4</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCESP</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Cenchrus spinifex Cav.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCHOD</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Chromolaena odorata (L.) King &amp; H. Rob.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCHPI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Chrysopsis pilosa Nutt.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>8</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCHSP</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Chloracantha spinosa (Benth.) G.L. Nesom</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>15</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCLCR</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Clematis crispa L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCLMA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Cladium mariscus (L.) Pohl ssp. jamaicense (Crantz) Kuk.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>99</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCOER</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Conocarpus erectus L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>40</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCOUV</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Coccoloba uvifera (L.) L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>15</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCRAM</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Crinum americanum L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCRSP</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Crinum sp.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>6</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCRVI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Crassostrea virginica (eastern oyster)</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>60</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCUSP</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Cuscuta sp.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>15</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCYAN</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Cynanchum angustifolium Pers.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCYEN</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Cyperus entrerianus Boeckeler</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>.2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCYFI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Cyperus filicinus Vahl</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cCYOD</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Cyperus odoratus L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3.755868545</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cDAEC</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Dalbergia ecastaphyllum (L.) Taubert</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>30</rdommax>
+            <attrunit>producer defined</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cDIAN</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Dichanthium annulatum (Forssk.) Stapf</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cDISP</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Distichlis spicata (L.) Greene</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>92</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cELCE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Eleocharis cellulosa Torr.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>55</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cELPA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Eleocharis parvula (Roem. &amp; Schult.) Link ex Bluff, Nees &amp; Schauer</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cELRO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Eliocharis rostellata (Torr.) Torr.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cEUAX</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Eugenia axillaris (Sw.) Willd.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cEUCA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Eupatorium capillifolium (Lam.) Small</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cEUEX</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Eustoma exaltatum (L.) Salisb. ex G. Don</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cEUPE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Eustachys petrea (Sw.) Desv.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>25</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cFAB1</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by armored tree/shrub in Fabaceae (legume family) observed in Mission-Aransas, TX</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cFIMCAS</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Fimbristylis castanea (Michx.) Vahl</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>44.6</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cGBF1</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by unidentified forb observed in Grand Bay, MS</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1.75</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cHAWR</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Halodule wrightii Asch.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>80</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cHECU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Heliotropium curassavicum L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>12</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cHIMO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Hibiscus moscheutos L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cHIVO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Hippocrotea volubilis L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>10</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cHYHY</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Hypericum hypericoides (L.) Crantz</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>12</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cHYMU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Hypericum mutilum L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>7</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cHYTE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Hypericum tetrapetalum Lam.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>4</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cHYVE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Hydrocotyle verticillata Thunb.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>4</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cILDE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Ilex decidua Walter</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>10</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cILVO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Ilex vomitoria Aiton</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>65</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cIPSA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Ipomoea sagittata Poir.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>39</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cIVAANG</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Iva angustifolia Nutt. Ex DC.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>7</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cIVAANN</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Iva annua L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cIVFR</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Iva frutescens L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>35</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cJURO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Juncus roemerianus Scheele</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>97.4</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cKOVI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Kosteletzkya virginica (L.) C. Presl ex A. Gray</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>6</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cLARA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Laguncularia racemosa (L.) C.F. Gaertn.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>55</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cLICA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Limonium carolinianum (Walter) Britton</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cLICH</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Lilaeopsis chinensis (L.) Kuntze</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>25</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cLUAL</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Ludwigia alternifolia L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cLUPE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Ludwigia peploides (Kunth) P.H. Raven</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cLYCA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Lycium carolinianum Walt.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>15</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cMAF1</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by unidentified Croton-like forb with rough leaf margins observed in Mission-Aransas, TX</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cMAF2</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by unidentified forb with round, alternate leaves observed in Mission-Aransas, TX</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cMAF3</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by unidentified succulent forb observed in Mission-Aransas, TX</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cMAV1</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by unidentified climbing vine with ovate leaves observed in Mission-Aransas, TX</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cMISC</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Mikania scandens (L.) Willd.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>30</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cMISCF</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by miscellaneous forbs; typically newly sprouted individuals without defining characteristics</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>.938967136</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cMOCE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Morella cerifera (L.) Small</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>50</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cMOLI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Monanthochloe littoralis Engelm.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>92.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cMYAQ</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Myriophyllum aquaticum (Velle.) Verdc.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cMYCU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Myrsine cubana A. DC.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>25</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cNYOD</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Nymphaea odorata Aiton ssp.odorata</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>20</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cOPEN</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Opuntia engelmannii Salm-Dyck ex Engelm.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cOPHU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Opuntia humifusa (Raf.) Raf.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cOPSP</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Opuntia sp.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>50</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cOSRE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Osmunda regalis L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>40</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPACA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Panicum capillare L.</attrdef>
+        <attrdefs>produced defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>6</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPAHA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Panicum hallii Vasey</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>91.2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPANSP</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Panicum sp.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPARE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Panicum repens L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>99</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPASSP</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Paspalum sp.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>15</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPAVA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Panicum vaginatum Sw.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>69</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPAVI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Panicum virgatum L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>74</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPECI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Pennisetum ciliare (L.) Link</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPHAU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Phragmites australis (Cav.) Trin. ex Steud.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>75</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPHNO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Phyla nodiflora (L.) Greene</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>10</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPIEL</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Pinus elliotii Engelm.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>5</rdommax>
+            <attrunit>0</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPLOD</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Pluchea odorata (L.) Cass.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPOCO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Pontederia cordata L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>25</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPOHY</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Polygonum hydropiperoides Michx.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>19.23076923</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cPOPU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Polygonun punctatum Elliott</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cQUVI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Quercus virginiana Mill.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>25</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cRAAC</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Randia aculeata L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>20</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cRAPH</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Rayjacksonia phyllocephala (DC.) R.L. Hartm. &amp; M.A. Lane</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cRHMA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Rhizophora mangle L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>70</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cRUTE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Rudbeckia texana (Perdue) P. Cox &amp; Urbatsch</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cRUTR</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Rubus trivialis Michx.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cRUVE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Rumex verticillatus L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>6</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSAAR</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Sabatia arenicola Greenm.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>8</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSABI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Salicornia bigelovii Torr.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>10</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSACE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Saururus cernuus L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSADE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Salicornia depressa Standl.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>70</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSAF1</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by unidentified forb observed in San Antonio Bay, TX</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSAGLAN</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Sagittaria lancifolia L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>32</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSAGLAT</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Sagittaria latifolia Willd.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>19.23076923</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSAMI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Sabal minor (Jacq.) Pers.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>12</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSAPA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Sabal palmetto (Walter) Lodd. ex Schult. &amp; Schult. f.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>15</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSAV</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by submerged aquatic vegetation</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>50</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSCAM</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Schoenoplectus americanus (Pers.) Volkart ex Schinz &amp; R. Keller</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>82</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSCCU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Schaefferia cuneifolia A. Gray</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSCPU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Schoenoplectus pungens (Vahl) Palla</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSCRO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Schoenoplectus robustus (Pursh) M.T. Strong</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>70</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSCSC</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Schizachyrium scoparium (Michx.) Nash</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>59</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSCTA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Schoenoplectus tabernaemontani (C.C. Gmel.) Palla</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>30</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSCTE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Schinus terebinthifolius Raddi</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>22</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSEHE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Sesbania herbacea (Mill.) McVaugh</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>50</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSEMA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Sesuvium maritimum (Walter) Britton, Sterns &amp; Poggenb.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSEPO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Sesuvium portulacastrum (L.) L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>75</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSERE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Serenoa repens (W. Bartram) Small</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>15</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSICE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Sideroxylon celastrinum (Kunth) T.D. Penn.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSMTA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Smilax tamnoides L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSOEL</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Solanum elaeagnifolium Cav.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSOSE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Solidago sempervirens L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>20</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSOST</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Solidago stricta Aiton</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>10</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSPAL</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Spartina alterniflora Loisel.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>90</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSPBA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Spartina bakeri Merr.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>25</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSPCY</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Spartina cynosuroides (L.) Roth</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>100</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSPPA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Spartina patens (Aiton) Muhl.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>94</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSPPU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Sporobolus purpurascens (Sw.) Ham.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>35</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSPSP</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Spartina spartinae (Trin.) Merr. ex Hitchc.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>94.9</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSPVI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Sporobolus virginicus (L.) Kunth</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>12</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSULI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Suaeda linearis (Elliott) Moq.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>63.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSYDI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Symphyotrichum divaricatum (Nutt.) G.L. Nesom</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSYSU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Symphyotrichum subulatum (Michx.) G.L. Nesom</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>25</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cSYTE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Symphyotrichum tenuifolium (L.) G.L. Nesom .</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>45</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cTBV1</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by unidentified vine 1 observed in Tampa Bay, FL</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cTHTE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Thalassia testudinum Banks &amp; Sol. ex Koenig</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>85</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cTIUS</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Tillandsia usneoides (L.) L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cTORA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Toxicodendron radicans (L.) Kuntze</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>8</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cVAAM</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Vallisneria americana Michx.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>45.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cVEVI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Verbesina virginica L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>25</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cVILU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Vigna luteola (Jacq.) Benth.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cVIRO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by Vitis rotundifolia Michx.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cWrack</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by wrack</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>100</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cLitter</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by dead plant material, typically leaves</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>100</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1cBare</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots below 1.4 m by exposed ground or open water</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>100</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cACAU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Acrostichium aureum L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>15</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cACRU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Acer rubrum L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>25</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cAMAU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Amaranthus australis (A. Gray) Sauer</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cAMPARB</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Ampelopsis arborea (L.) Koehne</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cAVGE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Avicennia germinans (L.) L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>85</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cBAHA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Baccharis halimifolia L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>80</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cCABO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Caesalpinia bonduc (L.) Roxb.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>55</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cCLMA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Cladium mariscus (L.) Pohl ssp. jamaicense (Crantz) Kuk.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>30</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cCOER</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Conocarpus erectus L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>50</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cCOUV</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Coccoloba uvifera (L.) L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>90</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cDAEC</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Dalbergia ecastaphyllum (L.) Taubert</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>75</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cEUAX</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Eugenia axillaris (Sw.) Willd.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>60</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cHIVO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Hippocrotea volubilis L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cILDE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Ilex decidua Walter</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>80</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cILVO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Ilex vomitoria Aiton</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>70</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cIPAL</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Ipomoea alba L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cIPSA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Ipomoea sagittata Poir.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>15</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cJURO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Juncus roemerianus Scheele</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>12</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cJUVI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Juniperus virginiana L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>80</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cLARA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Laguncularia racemosa (L.) C.F. Gaertn.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>90</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cMATR</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Mahonia trifoliolata (Moric.) Fedde</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cMAVI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Magnolia virginiana L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>100</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cMEQU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Melaleuca quinquenervia (Cav.) S.F. Blake</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>15</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cMISC</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Mikania scandens (L.) Willd.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>10</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cMOCE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Morella cerifera (L.) Small</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>75</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cMYCU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Myrsine cubana A. DC.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>40</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cPAHA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Panicum hallii Vasey</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cPAQU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Parthenocissus quinquefolia (L.) Planch.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cPARE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Panicum repens L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cPAVI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Panicum virgatum L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>25</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cPHAU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Phragmites australis (Cav.) Trin. ex Steud.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>90</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cPIEL</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Pinus elliotii Engelm.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>35</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cQUVI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Quercus virginiana Mill.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>60</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cRAAC</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Randia aculeata L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cRHMA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Rhizophora mangle L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>95</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cRUTR</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Rubus trivialis Michx.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>3</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cSAPA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Sabal palmetto (Walter) Lodd. ex Schult. &amp; Schult. f.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>80</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cSCCU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Schaefferia cuneifolia A. Gray</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>10</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cSCRO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Schoenoplectus robustus (Pursh) M.T. Strong</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cSCTE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Schinus terebinthifolius Raddi</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>65</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cSEHE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Sesbania herbacea (Mill.) McVaugh</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>70</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cSMTA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Smilax tamnoides L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>15</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cSOST</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Solidago stricta Aiton</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cSPAL</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Spartina alterniflora Loisel.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cSPBA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Spartina bakeri Merr.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cSPCY</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Spartina cynosuroides (L.) Roth</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>95</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cSPSP</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Spartina spartinae (Trin.) Merr. ex Hitchc.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cSYSU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Symphyotrichum subulatum (Michx.) G.L. Nesom</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cSYTE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Symphyotrichum tenuifolium (L.) G.L. Nesom</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.1</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cTAAS</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Taxodium ascendens Brongn.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>100</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cTADI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Taxodium distichum (L.) Rich.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>90</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cTIRE</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Tillandsia recurvata (L.) L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>4</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cTIUS</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Tillandsia usneoides (L.) L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cTORA</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Toxicodendron radicans (L.) Kuntze</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>10</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cVEVI</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Verbesina virginica L.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cVILU</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Vigna luteola (Jacq.) Benth.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1.5</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cVIRO</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by Vitis rotundifolia Michx.</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>30</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>14cBare</attrlabl>
+        <attrdef>ground coverage within 1 m^2 plots above 1.4 m by open space (no cover)</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>100</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>Michael J Osland</cntper>
+          <cntorg>U.S. Geological Survey - ScienceBase</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>U.S.A.</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Although these data have been processed successfully on a computer system at the U.S. Geological Survey, no warranty expressed or implied is made regarding the accuracy or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty. This disclaimer applies both to individual use of the data and aggregate use with other data. It is strongly recommended that these data are directly acquired from the U.S. Geological Survey server, and not indirectly through other sources which may have changed the data in some way. It is also strongly recommended that careful attention be paid to the contents of the metadata associated with this data. The U.S. Geological Survey shall not be held liable for improper or incorrect use of the data described and/or contained herein.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>JSON</formname>
+          <formvern>none</formvern>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>http://dx.doi.org/doi:10.5066/F7J1017G</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20160628</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Michael Osland</cntper>
+          <cntorg>U.S. Geological Survey, Wetland and Aquatic Research Center</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>700 Cajundome Boulevard</address>
+          <city>Lafayette</city>
+          <state>LA</state>
+          <postal>70506</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>337-266-8664</cntvoice>
+        <cntemail>mosland@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>

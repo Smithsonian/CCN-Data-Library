@@ -1,0 +1,391 @@
+﻿<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Office of the Assistant Secretary for Research and Technology/Bureau of Transportation Statistics (BTS), National Transportation Atlas Databases (NTAD) 2015</origin>
+        <origin>U.S. Bureau of the Census (BOC)</origin>
+        <pubdate>20120101</pubdate>
+        <title>state_pol v. 3</title>
+        <geoform>vector digital data</geoform>
+        <othercit>Compiled by the University of Tennessee Center for Transportation Research GIS GROUP from TIGER/Line machine readable files.</othercit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>State boundaries with political limit - boundaries extending into the ocean. The TIGER/Line Files are shapefiles and related database files (.dbf) that are an extract of selected geographic and cartographic information from the U.S. Census Bureau's Master Address File / Topologically Integrated Geographic Encoding and Referencing (MAF/TIGER) Database (MTDB). The MTDB represents a seamless national file with no overlaps or gaps between parts, however, each TIGER/Line File is designed to stand alone as an independent data set, or they can be combined to cover the entire nation. States and equivalent entities are the primary governmental divisions of the United States. In addition to the fifty States, the Census Bureau treats the District of Columbia, Puerto Rico, and each of the Island Areas (American Samoa, the Commonwealth of the Northern Mariana Islands, Guam, and the U.S. Virgin Islands) as the statistical equivalents of States for the purpose of data presentation.</abstract>
+      <purpose>The United States State Boundaries database is a geographic database of state political boundaries. The database includes boundaries for all 50 states plus Puerto Rico, Washington D.C., American Samoa, the Commonwealth of the Northern Mariana Islands, Guam, and the U.S. Virgin Islands.
+
+In order for others to use the information in the Census MAF/TIGER database in a geographic information system (GIS) or for other geographic applications, the Census Bureau releases to the public extracts of the database in the form of TIGER/Line Shapefiles.</purpose>
+      <supplinf>The BTS State Boundary Database contains TIGER 2011 geometry and attributes. To find out more about TIGER/Line files and other Census TIGER data base derived data sets visit http://www.census.gov/geo/www/tiger.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <sngdate>
+          <caldate>20100101</caldate>
+        </sngdate>
+      </timeinfo>
+      <current>publication date</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-179.231101</westbc>
+        <eastbc>179.859666</eastbc>
+        <northbc>71.441059</northbc>
+        <southbc>-14.601806</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>line</themekey>
+        <themekey>state</themekey>
+        <themekey>polygon</themekey>
+        <themekey>boundary</themekey>
+      </theme>
+      <theme>
+        <themekt>ISO 19115 Topic Categories</themekt>
+        <themekey>boundaries</themekey>
+        <themekey>economy</themekey>
+        <themekey>planningCadastre</themekey>
+        <themekey>society</themekey>
+      </theme>
+      <place>
+        <placekt>None</placekt>
+        <placekey>United States</placekey>
+        <placekey>USA</placekey>
+        <placekey>United States of America</placekey>
+        <placekey>US</placekey>
+      </place>
+      <stratum>
+        <stratkt>None</stratkt>
+        <stratkey>ground</stratkey>
+      </stratum>
+      <temporal>
+        <tempkt>None</tempkt>
+        <tempkey>2011</tempkey>
+        <tempkey>2000</tempkey>
+        <tempkey>2010</tempkey>
+        <tempkey>2008</tempkey>
+        <tempkey>2006</tempkey>
+        <tempkey>2009</tempkey>
+        <tempkey>2012</tempkey>
+        <tempkey>2013</tempkey>
+        <tempkey>2014</tempkey>
+        <tempkey>2015</tempkey>
+      </temporal>
+    </keywords>
+    <accconst>None</accconst>
+    <useconst>Acknowledgement of the Office of the Assistant Secretary for Research and Technology/Bureau of Transportation Statistics (BTS) National Transportation Atlas Databases (NTAD) 2015 would be appreciated in products derived from these data. The TIGER/Line Shapefile products are not copyrighted however TIGER/Line and Census TIGER are registered trademarks of the U.S. Census Bureau. These products are free to use in a product or publication, however acknowledgement must be given to the U.S. Census Bureau as the source. The boundary information in the TIGER/Line Shapefiles are for statistical data collection and tabulation purposes only; their depiction and designation for statistical purposes does not constitute a determination of jurisdictional authority or rights of ownership or entitlement and they are not legal land descriptions.Coordinates in the TIGER/Line shapefiles have six implied decimal places, but the positional accuracy of these coordinates is not as great as the six decimal places suggest.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Office of the Assistant Secretary for Research and Technology/Bureau of Transportation Statistics</cntorg>
+          <cntper>National Transportation Atlas Databases (NTAD) 2015</cntper>
+        </cntorgp>
+        <cntpos>Geospatial Information Systems</cntpos>
+        <cntaddr>
+          <addrtype>unknown</addrtype>
+          <address>1200 New Jersey Ave. SE</address>
+          <city>Washington</city>
+          <state>DC</state>
+          <postal>20590</postal>
+        </cntaddr>
+        <cntvoice>202-366-DATA</cntvoice>
+        <cntemail>answers@BTS.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Census Bureau (BOC)</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>unknown</addrtype>
+          <address>Suitland, MD</address>
+        </cntaddr>
+      </cntinfo>
+    </ptcontac>
+    <secinfo>
+      <secsys>none</secsys>
+      <secclass>Unclassified</secclass>
+    </secinfo>
+    <native>Microsoft Windows Server 2008 R2 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.2.2.3552</native>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>Attributes for the State Boundary data set were created using ARC/INFO, a Geographic Information System. All area and distance values were calculated to the nearest 50m.</attraccr>
+    </attracc>
+    <logic>All node-link and polygon topological relationships are created and verified using computer algorithms. Unique entity identifiers were similarly verified by computer algorithm.</logic>
+    <complete>Completeness report not provided.</complete>
+    <lineage>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <pubdate>20010101</pubdate>
+            <title>Nationwide State Boundary Database with Detailed Shorelines</title>
+            <onlink>http://www.bts.gov/programs/geographic_information_services/</onlink>
+          </citeinfo>
+        </srccite>
+        <srcscale>100</srcscale>
+        <typesrc>CD-ROM</typesrc>
+        <srccitea>state</srccitea>
+        <srccontr>The selected geographic and cartographic information (line segments) are derived from the U.S. Census Bureau's Master Address File Topologically Integrated Geographic Encoding and Referencing (MAF/TIGER) database.</srccontr>
+      </srcinfo>
+      <procstep>
+        <procdesc>TIGER/Line Shapefiles are extracted from the Census MAF/TIGER database by nation, state, county, and entity. Census MAF/TIGER data for all of the aforementioned geographic entities are then distributed among the shapefiles each containing attributes for line, polygon, or landmark geographic data.</procdesc>
+        <srcused>Census MAF/TIGER</srcused>
+      </procstep>
+      <procstep>
+        <procdesc>When UTN processed the TIGER dataset for State, County and Hydrographic (line and polygons) it created a 3-mile buffer around Texas shorelines. This buffer removed the island off the coast of Texas. To correct this error, BTS used ARC/INFO to remove the 3-mile buffer to capture the islands along Texas. To capture the islands the state dataset needed to be reselected, by selecting the code = 1. This process created a few inaccurate polygons and they were removed. To create the final datasets, the datasets were dissolved and regions created on STFIPS and County FIPS.</procdesc>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Vector</direct>
+    <ptvctinf>
+      <sdtsterm>
+        <sdtstype>GT-polygon composed of chains</sdtstype>
+        <ptvctcnt>56</ptvctcnt>
+      </sdtsterm>
+    </ptvctinf>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <geograph>
+        <latres>8.983152841195215e-009</latres>
+        <longres>8.983152841195215e-009</longres>
+        <geogunit>Decimal Degrees</geogunit>
+      </geograph>
+      <geodetic>
+        <horizdn>D WGS 1984</horizdn>
+        <ellips>WGS 1984</ellips>
+        <semiaxis>6378137.0</semiaxis>
+        <denflat>298.257223563</denflat>
+      </geodetic>
+    </horizsys>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>state_pol</enttypl>
+        <enttypd>ESRI Shapefile of U.S. State Boundaries</enttypd>
+        <enttypds>ESRI and BTS</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>FID</attrlabl>
+        <attrdef>Internal feature number.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>51</rdommax>
+          </rdom>
+        </attrdomv>
+        <attrdomv>
+          <udom>Sequential unique whole numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shape</attrlabl>
+        <attrdef>Feature geometry.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>Polygon</edomv>
+            <edomvd>A "polygon" is an area feature comprised of points and line segments.</edomvd>
+            <edomvds>ESRI and BTS</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>STFIPS</attrlabl>
+        <attrdef>State FIPS code</attrdef>
+        <attrdefs>NIST</attrdefs>
+        <attrdomv>
+          <codesetd>
+            <codesetn>Federal Information Processing Standard (FIPS), Publication 6-4</codesetn>
+            <codesets>National Institute for Standards and Technology (NIST)</codesets>
+          </codesetd>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>STATE</attrlabl>
+        <attrdef>State name</attrdef>
+        <attrdefs>NIST</attrdefs>
+        <attrdomv>
+          <udom>string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>STPOSTAL</attrlabl>
+        <attrdef>U.S. Postal Service two letter state abbreviation.</attrdef>
+        <attrdefs>USPS</attrdefs>
+        <attrdomv>
+          <codesetd>
+            <codesetn>Official List of State Postal Abbreviations</codesetn>
+            <codesets>U.S. Postal Service</codesets>
+          </codesetd>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>DotRegion</attrlabl>
+        <attrdef>Geographic Regions of the USDOT</attrdef>
+        <attrdefs>USDOT</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>ME, NH, VT, MA, RI, CT</edomvd>
+            <edomvds>USDOT</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>NY, NJ</edomvd>
+            <edomvds>USDOT</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>PA, WV, MD, DC, DE, VA</edomvd>
+            <edomvds>USDOT</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>KY, TN, MS, AL, GA, SC, NC, FL</edomvd>
+            <edomvds>USDOT</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>5</edomv>
+            <edomvd>MN, WI, IL, IN, OH, MI</edomvd>
+            <edomvds>USDOT</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>6</edomv>
+            <edomvd>NM, TX, OK, AR, LA</edomvd>
+            <edomvds>USDOT</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>7</edomv>
+            <edomvd>KS, NE, IA, MO</edomvd>
+            <edomvds>USDOT</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>8</edomv>
+            <edomvd>MT, SD, ND, WY, UT, CO</edomvd>
+            <edomvds>USDOT</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>9</edomv>
+            <edomvd>CA, HI, NV, AZ</edomvd>
+            <edomvds>USDOT</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>10</edomv>
+            <edomvd>WA, OR, ID, AK</edomvd>
+            <edomvds>USDOT</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Office of the Assistant Secretary for Research and Technology/Bureau of Transportation Statistics</cntorg>
+          <cntper>National Transportation Atlas Databases (NTAD) 2015</cntper>
+        </cntorgp>
+        <cntpos>Geospatial Information Systems</cntpos>
+        <cntaddr>
+          <addrtype>unknown</addrtype>
+          <address>1200 New Jersey Ave. SE</address>
+          <city>Washington</city>
+          <state>DC</state>
+          <postal>20590</postal>
+        </cntaddr>
+        <cntvoice>202-366-DATA</cntvoice>
+        <cntemail>answers@BTS.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>National Transportation Atlas Databases (NTAD) 2015</resdesc>
+    <distliab>None</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>ESRI Shapefile</formname>
+          <formvern>2015</formvern>
+          <filedec>No compression applied. However, if using digital transfer online option, note access instructions.</filedec>
+          <transize>43.235</transize>
+        </digtinfo>
+        <digtopt>
+          <offoptn>
+            <offmedia>dvd</offmedia>
+            <reccap>
+              <recden>650</recden>
+              <recdenu>megabytes</recdenu>
+            </reccap>
+            <recfmt>ISO 9660</recfmt>
+          </offoptn>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+      <ordering>Call 202-366-DATA, or E-mail (answers@bts.gov) BTS to request the National Transportation Atlas Databases (NTAD) 2015 DVD. This and other BTS products may be ordered from the OST-R/BTS Internet website http://www.bts.gov/programs/geographic_information_services/.</ordering>
+    </stdorder>
+    <availabl>
+      <timeinfo>
+        <sngdate>
+          <caldate>20110101</caldate>
+        </sngdate>
+      </timeinfo>
+    </availabl>
+  </distinfo>
+  <metainfo>
+    <metd>20150610</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Office of the Assistant Secretary for Research and Technology/Bureau of Transportation Statistics</cntorg>
+          <cntper>National Transportation Atlas Databases (NTAD) 2015</cntper>
+        </cntorgp>
+        <cntpos>Geospatial Information Systems</cntpos>
+        <cntaddr>
+          <addrtype>unknown</addrtype>
+          <address>1200 New Jersey Ave. SE</address>
+          <city>Washington</city>
+          <state>DC</state>
+          <postal>20590</postal>
+        </cntaddr>
+        <cntvoice>202-366-DATA</cntvoice>
+        <cntemail>answers@BTS.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+    <mettc>local time</mettc>
+    <metsi>
+      <metsc>Unclassified</metsc>
+    </metsi>
+  </metainfo>
+</metadata>
