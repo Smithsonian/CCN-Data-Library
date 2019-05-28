@@ -49,7 +49,7 @@ FILE_NAMES_3 <- list("U_S_Gulf_of_Mexico_coast_TX_MS_AL_and_FL_Macroclimate_Vege
 #   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
 #   with whatever you include within the quotation marks.
   
-FILE_PATH <- paste0(getwd(), "/data/Osland_2016/original/" )
+FILE_PATH <- paste0(getwd(), "/data/primary_studies/Osland_2016/original/" )
   
 ## Assumptions made about data ###############
 
@@ -181,7 +181,23 @@ Osland_2016_core_data <- Osland_2016_site_core_data %>%
   select(study_id, site_id, core_id, core_longitude, core_latitude, core_elevation, 
          core_date, core_notes, core_elevation_datum)
 
-
+# There's one core without coordinates. We can estimate its location by the ID
+#   and description.
+Osland_2016_core_data <- Osland_2016_core_data %>% 
+  mutate(core_latitude = ifelse(core_id == "mission_aransas_bay_87", 28.060055, 
+                                core_latitude)) %>% 
+  mutate(core_longitude = ifelse(core_id == "mission_aransas_bay_87", -97.237439, 
+                                 core_longitude)) %>% 
+  mutate(core_position_method = ifelse(core_id == "mission_aransas_bay_87", 
+                                       "other low resolution", NA)) %>% 
+  mutate(core_position_notes = ifelse(core_id == "mission_aransas_bay_87", 
+                                       "location estimated from core description using Google Maps", NA)) 
+  
+# There's another core that is missing from the depthseries table, 
+#   ("Dataset_02_macroclimate_soil_data_2_22_2016). Remove it from core level
+Osland_2016_core_data <- Osland_2016_core_data %>% 
+  filter(core_id != "tampa_bay_97")
+  
 
 ## Depth series data ###################
 
@@ -319,7 +335,7 @@ bib_file <- study_citations %>%
   select(-study_id, -bibliography_id, -publication_type) %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "./data/Osland_2016/derivative/Osland_et_al_2016.bib")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016.bib")
 
 ## QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -335,16 +351,20 @@ test_colnames("species", Osland_2016_species_data)
 results <- test_core_relationships(Osland_2016_core_data, Osland_2016_depth_series_data)
 
 # Re-order columns
-Osland_2016_species_data <- reorder_columns(Osland_2016_species_data, "species_definitions")
-Osland_2016_depth_series_data <- reorder_columns(Osland_2016_depth_series_data, "depthseries")
-Osland_2016_site_data <- reorder_columns(Osland_2016_site_data, "site-level")
-Osland_2016_core_data <- reorder_columns(Osland_2016_core_data, "core_level")
+Osland_2016_species_data <- select_and_reorder_columns("species_definitions", Osland_2016_species_data, 
+                                                       "/data/primary_studies/Osland_2016/derivative/")
+Osland_2016_depth_series_data <- select_and_reorder_columns("depthseries", Osland_2016_depth_series_data,
+                                                            "/data/primary_studies/Osland_2016/derivative/")
+Osland_2016_site_data <- select_and_reorder_columns("site-level", Osland_2016_site_data,
+                                                    "/data/primary_studies/Osland_2016/derivative/")
+Osland_2016_core_data <- select_and_reorder_columns("core_level", Osland_2016_core_data, 
+                                                    "/data/primary_studies/Osland_2016/derivative/")
 
 ## Write data #################
-write_csv(Osland_2016_species_data, "./data/Osland_2016/derivative/Osland_et_al_2016_species.csv")
-write_csv(Osland_2016_depth_series_data, "./data/Osland_2016/derivative/Osland_et_al_2016_depthseries.csv")
-write_csv(Osland_2016_site_data, "./data/Osland_2016/derivative/Osland_et_al_2016_sites.csv")
-write_csv(Osland_2016_core_data, "./data/Osland_2016/derivative/Osland_et_al_2016_cores.csv")
-write_csv(study_citations, "./data/Osland_2016/derivative/Osland_et_al_2016_study_citations.csv")
+write_csv(Osland_2016_species_data, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_species.csv")
+write_csv(Osland_2016_depth_series_data, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_depthseries.csv")
+write_csv(Osland_2016_site_data, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_sites.csv")
+write_csv(Osland_2016_core_data, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_cores.csv")
+write_csv(study_citations, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_study_citations.csv")
 
 
