@@ -258,7 +258,7 @@ bib_file <- study_citations_synthesis %>%
   distinct() %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "./data/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017.bib")
+WriteBib(as.BibEntry(bib_file), "./data/primary_input_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017.bib")
 
 
 library(bib2df)
