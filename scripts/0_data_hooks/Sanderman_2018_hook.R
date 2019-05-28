@@ -19,11 +19,11 @@ library(RefManageR)
 # This sheet ("horizon data") mirrrs much of the content that can be downloaded here:
 "https://raw.githubusercontent.com/whrc/Mangrove-Soil-Carbon/master/depth_model_comparison/soil_profiles.csv"
 
-internatl_depthseries_data_raw <- read_excel("data/primary_input_studies/Sanderman_2018/original/WHRC-TNC mangrove soc database 100718.xlsx", 
+internatl_depthseries_data_raw <- read_excel("data/primary_studies/Sanderman_2018/original/WHRC-TNC mangrove soc database 100718.xlsx", 
                                              sheet = 4)
 
 # Another sheet on the same excel document
-internatl_core_data_raw <- read_excel("data/primary_input_studies/Sanderman_2018/original/WHRC-TNC mangrove soc database 100718.xlsx",
+internatl_core_data_raw <- read_excel("data/primary_studies/Sanderman_2018/original/WHRC-TNC mangrove soc database 100718.xlsx",
                                       sheet = 3)
 
 #m Other core level data found here (but not necessary):
@@ -31,7 +31,7 @@ internatl_core_data_raw <- read_excel("data/primary_input_studies/Sanderman_2018
 
 # Jon sent me some updated data as a few sites were inaccurate.
 # We'll need to insert in the new data for these sites
-internatl_depthseries_data_new <- read_excel("data/primary_input_studies/Sanderman_2018/original/RC_sites.xlsx")
+internatl_depthseries_data_new <- read_excel("data/primary_studies/Sanderman_2018/original/RC_sites.xlsx")
 
 # Delete sites with incorrect data
 internatl_depthseries_data_raw <- internatl_depthseries_data_raw %>%
@@ -43,7 +43,7 @@ internatl_depthseries_data_raw <- internatl_depthseries_data_raw %>%
 # The below code demonstrates evidence for the issue raised in 
 # https://github.com/Smithsonian/CCRCN-Data-Library/issues/4
 # Can be ignored for now
-soil_profiles <- read.csv("data/primary_input_studies/Sanderman_2018/original/soil_profiles.csv")
+soil_profiles <- read.csv("data/primary_studies/Sanderman_2018/original/soil_profiles.csv")
   
 soil_profiles <- soil_profiles %>%
   rename(site_name = Site.name)
@@ -237,25 +237,13 @@ test_colnames("depthseries", internatl_depthseries_data)
 test_colnames("species", internatl_species_data)
 test_colnames("methods_and_materials", methods)
 
-# Results for depthseries: 
-# "Non-matching variable names/column headers: CD_reported Ocstock_reported carbon_density fraction_carbon_type 
-# DBD_measured_or_modeled OC_measured_or_modeled CD_measured_or_modeled carbon_profile_notes"
-
-depthseries_invalid_set <- c("CD_reported", "Ocstock_reported", "carbon_density", "fraction_carbon_type" ,
-                             "DBD_measured_or_modeled", "OC_measured_or_modeled", "CD_measured_or_modeled", "carbon_profile_notes")
-
-internatl_depthseries_data <- select(internatl_depthseries_data, -depthseries_invalid_set)
-
-
-results <- test_core_relationships(internatl_core_data, internatl_depthseries_data)
-
-
 # Re-order columns
-depthseries <- select_and_reorder_columns("depthseries", internatl_depthseries_data, "data/primary_input_studies/Sanderman_2018/derivative/")
-core_data <- select_and_reorder_columns("core_level", internatl_core_data, "data/primary_input_studies/Sanderman_2018/derivative/")
+depthseries <- select_and_reorder_columns("depthseries", internatl_depthseries_data, "/data/primary_studies/Sanderman_2018/derivative/")
+core_data <- select_and_reorder_columns("core_level", internatl_core_data, "/data/primary_studies/Sanderman_2018/derivative/")
+methods <- select_and_reorder_columns("methods_and_materials", methods, "/data/primary_studies/Sanderman_2018/derivative/")
 # No guidance for biomass yet
-species <- select_and_reorder_columns("species", internatl_species_data, "data/primary_input_studies/Sanderman_2018/derivative/")
-study_citations <- select_and_reorder_columns("associated_publications", study_citations, "data/primary_input_studies/Sanderman_2018/derivative/")
+species <- select_and_reorder_columns("species", internatl_species_data, "/data/primary_studies/Sanderman_2018/derivative/")
+study_citations <- select_and_reorder_columns("associated_publications", study_citations, "/data/primary_studies/Sanderman_2018/derivative/")
 
 
 # test variable names
@@ -272,7 +260,7 @@ test_varnames(study_citations)
 # 
 # ## * US total data ###############
 # # This excel document was handed off in a personal communication
-# US_total_data_raw <- read_excel("data/primary_input_studies/Sanderman_2018/original/mangroves for USA.xlsx",
+# US_total_data_raw <- read_excel("data/primary_studies/Sanderman_2018/original/mangroves for USA.xlsx",
 #                               sheet = 2)
 # 
 # # Rename attributes
@@ -335,7 +323,7 @@ test_varnames(study_citations)
 # ## * US depth series data ##############
 # 
 # # Read in the "horizon" sheet of "mangroves for USA" excel book
-# US_depthseries_data_raw <- read_excel("data/primary_input_studies/Sanderman_2018/original/mangroves for USA.xlsx",
+# US_depthseries_data_raw <- read_excel("data/primary_studies/Sanderman_2018/original/mangroves for USA.xlsx",
 #                                  sheet = 3)
 # 
 # # Removed first row, which displays units
@@ -451,19 +439,19 @@ test_varnames(study_citations)
 
 ## Write data ###############
 
-write_csv(internatl_study_metadata, "data/primary_input_studies/Sanderman_2018/derivative/Sanderman_2018_study_metadata.csv")
+write_csv(internatl_study_metadata, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_study_metadata.csv")
 
-write_csv(internatl_core_data, "data/primary_input_studies/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
+write_csv(internatl_core_data, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
 
-write_csv(internatl_species_data, "data/primary_input_studies/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
+write_csv(internatl_species_data, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
 
-write_csv(internatl_depthseries_data, "data/primary_input_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
+write_csv(internatl_depthseries_data, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
 
 ## DOCUMENT AND FILTER UNPUBLISHED OR UN-CITED STUDIES ###################
 # read back in hooked and curated Sanderman data
-cores <- read.csv("data/primary_input_studies/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
-depthseries <- read.csv("data/primary_input_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
-species <- read.csv("data/primary_input_studies/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
+cores <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
+depthseries <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
+species <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
 
 ## ... Determine which studies are cited in biblio ###########
 
@@ -492,7 +480,7 @@ species <- read.csv("data/primary_input_studies/Sanderman_2018/derivative/Sander
 # cleaned_depthseries <- depthseries %>%
 #   filter(study_id %in% studies_cited$study_id)
 # 
-# write_csv(cleaned_depthseries, "data/primary_input_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
+# write_csv(cleaned_depthseries, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
 # 
 # ## ... Create vector of un-cited studies ###########
 # studies_Sanderman_unavailable <- as.character(studies_not_cited$study_id)
@@ -507,7 +495,7 @@ species <- read.csv("data/primary_input_studies/Sanderman_2018/derivative/Sander
 
 # The follow file represents the initial study citations file that has since been deprecated
 # The citations listed as "unpublished" in the map repo are still uncited below
-citations <- read.csv("data/primary_input_studies/Sanderman_2018/intermediate/initial_citations.csv")
+citations <- read.csv("data/primary_studies/Sanderman_2018/intermediate/initial_citations.csv")
 
 # Build citations for primary studies that have DOIs
 primary_dois <- citations %>%
@@ -565,7 +553,7 @@ bib_file <- study_citations_synthesis %>%
   distinct() %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "data/primary_input_studies/Sanderman_2018/derivative/Sanderman_2018.bib")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018.bib")
 
 # write 
-write_csv(study_citations_synthesis, "data/primary_input_studies/Sanderman_2018/derivative/Sanderman_2018_study_citations.csv")
+write_csv(study_citations_synthesis, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_study_citations.csv")

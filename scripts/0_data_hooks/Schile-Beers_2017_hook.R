@@ -49,7 +49,7 @@ FILE_NAME <- "Megonigal_J_Patrick-20170103-Abu_Dhabi_Blue_Carbon_Project_Ecologi
 #   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
 #   with whatever you include within the quotation marks.
 
-FILE_PATH <- paste0(getwd(), "/data/primary_input_studies/Schile-Beers_2017/original/" )
+FILE_PATH <- paste0(getwd(), "/data/primary_studies/Schile-Beers_2017/original/" )
 
 # The stem of the url should always be the same
 BASE_URL <- "https://repository.si.edu"
@@ -258,7 +258,7 @@ bib_file <- study_citations_synthesis %>%
   distinct() %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "./data/primary_input_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017.bib")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017.bib")
 
 
 library(bib2df)
@@ -302,7 +302,7 @@ results <- test_core_relationships(core_data, depthseries_data)
 
 ## 6. Write data ##############
 
-write_csv(site_data, "./data/primary_input_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
-write_csv(core_data, "./data/primary_input_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
-write_csv(depthseries_data, "./data/primary_input_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")
-write_csv(study_citations_synthesis, "./data/primary_input_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")
+write_csv(site_data, "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
+write_csv(core_data, "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
+write_csv(depthseries_data, "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")
+write_csv(study_citations_synthesis, "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")
