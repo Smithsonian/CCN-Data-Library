@@ -45,7 +45,7 @@ dt1 <-read.csv(infile1,header=F
                  "Live.Roots",     
                  "Detritus"    ), check.names=TRUE)
 
-write_csv(dt1, "./data/Deegan_2012/original/LTE-TIDE-LENS-2009-below-bio.csv")
+write_csv(dt1, "./data/primary_studies/Deegan_2012/original/LTE-TIDE-LENS-2009-below-bio.csv")
 
 ## ... 2B. download above ground biomass data ###########
 infile2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-pie/217/2/79e90861144b45ea7c229ca40cdaba40" 
@@ -62,9 +62,11 @@ dt2 <-read.csv(infile2,header=F
                  "Aboveground.Stem.Length",     
                  "Aboveground.mass"    ), check.names=TRUE)
 
-write_csv(dt2, "./data/Deegan_2012/original/LTE-TIDE-LENS-2009-above-bio.csv")
+write_csv(dt2, "./data/primary_studies/Deegan_2012/original/LTE-TIDE-LENS-2009-above-bio.csv")
 
 ## 3. Curate data #################
+dt1 <- read_csv("data/primary_studies/Deegan_2012/original/LTE-TIDE-LENS-2009-below-bio.csv")
+dt2 <- read_csv("data/primary_studies/Deegan_2012/original/LTE-TIDE-LENS-2009-above-bio.csv")
 
 ## ... 3AA. prep biomass depthseries data #########
 # Warning: There is no guidance yet on biomass data 
@@ -172,7 +174,7 @@ bib_file <- study_citations %>%
   select(-study_id, -bibliography_id, -publication_type) %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "./data/Deegan_2012/derivative/Deegan_et_al_2012.bib")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012.bib")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -187,8 +189,8 @@ test_colnames("site_level", site_data)
 results <- test_core_relationships(cores, biomass_depthseries)
 
 ## 6. Write data ##################
-write_csv(cores, "./data/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
-write_csv(site_data, "./data/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
-write_csv(biomass_depthseries, "./data/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")
-write_csv(study_citations, "./data/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
-write_csv(biomass_agg, "./data/Deegan_2012/derivative/Deegan_et_al_2012_biomass.csv")
+write_csv(cores, "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
+write_csv(site_data, "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
+write_csv(biomass_depthseries, "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")
+write_csv(study_citations, "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
+write_csv(biomass_agg, "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_biomass.csv")
