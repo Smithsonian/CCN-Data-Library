@@ -69,6 +69,11 @@ download.file(paste0(BASE_URL, page), paste0(FILE_PATH, FILE_NAME),mode = "wb")
 ## 3. Curate data to CCRCN Structure #################
 
 ## ... 3A. Read data in ##################
+
+# Paste file name and path in again
+FILE_NAME <- "Megonigal_J_Patrick-20170103-Abu_Dhabi_Blue_Carbon_Project_Ecological_Applications.xlsx"
+FILE_PATH <- paste0(getwd(), "/data/primary_studies/Schile-Beers_2017/original/" )
+
 plot_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="plot information")
 raw_depthseries_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="soil carbon data")
 
@@ -81,7 +86,7 @@ raw_depthseries_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="soil car
 # 1. Two sites have multi-year entries for cores that either do not have matching depth series data 
 # or have depth series data but no clear core-level metadata (and therefore no location data) 
 # The specific site_ids are: Eastern Mangrove 10 yr, Eastern Mangrove 7 yr, Eastern Mangrove 3 yr,
-# Jubail Is. 10 yr, Jubail Is. 7 yr, Jubail Is. 3 yr
+# Jubail Is. 10 yr, Jubail Is. 7 yr, Jubail Is. 3 yr, Abu al Abyad 15 yr
 # 2. According to the methods in the publication, core depth was to either 3 m (the corer was 1 m long) or until parent material
 # There is no clear core_depth_flag code for the former, and I have coded it as "core depth limited by length of corer"
 
@@ -97,6 +102,7 @@ depthseries_data <- raw_depthseries_data %>%
   mutate(site_id = gsub("Is.", "Island", site_id)) %>%
   mutate(site_id = gsub("Al Zorah", "Ajman Al Zorah", site_id)) %>%
   mutate(site_id = gsub(" Al ", " al ", site_id)) %>%
+  mutate(site_id = gsub("Khalba", "Kalba", site_id)) %>%
   mutate(study_id = ifelse(Ecosystem == "seagrass", "Campbell_et_al_2015", "Schile-Beers_and_Megonigal_2017")) %>%
   
   # Core IDs are expressed as factor not numeric
@@ -104,6 +110,8 @@ depthseries_data <- raw_depthseries_data %>%
   mutate(core_id = as.factor(gsub(" ", "_", paste(site_id, paste(Ecosystem, plot, sep="_"), sep="_")))) %>%
   # I will remove the following core that has no core-level entry: 
   filter(core_id != "Al_Dabiya_1_seagrass_2") %>%
+  # Fix typo
+  mutate(core_id = gsub("Khalba", "Kalba", core_id)) %>%
   
   rename(dry_bulk_density = "dry bulk density (g/cm3)") %>%
   rename(fraction_organic_matter = "% organic carbon (OC)") %>%
@@ -133,7 +141,8 @@ depthseries_data <- raw_depthseries_data %>%
 core_data <- plot_data %>%
   rename(site_id = "Site") %>%
   # I will remove the following cores that have no or conflicting depth series-level entries: 
-  filter(site_id != "Eastern Mangrove 10 yr", site_id != "Eastern Mangrove 7 yr", site_id != "Eastern Mangrove 3 yr") %>%
+  filter(site_id != "Eastern Mangrove 10 yr", site_id != "Eastern Mangrove 7 yr",
+         site_id != "Eastern Mangrove 3 yr", site_id != "Abu al Abyad 15 yr") %>%
   # There is a typo in the ecosystem column: plated mangrove should be planted mangrove
   mutate(Ecosystem = ifelse(Ecosystem=="plated mangrove", "planted mangrove", Ecosystem)) %>%
   # there are inconsistencies in the spelling and abbreviation of site names between the core- and depth-level data

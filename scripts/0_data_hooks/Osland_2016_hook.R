@@ -88,6 +88,8 @@ for (i in 1:length(url_list)) {
 }
 
 ## Curate data to CCRCN Structure #################
+FILE_PATH <- paste0(getwd(), "/data/primary_studies/Osland_2016/original/" )
+
 
 # Read data in
 Osland_2016_soil <- read_excel(paste0(FILE_PATH, "Dataset_02_macroclimate_soil_data_2_22_2016.xlsx"))
@@ -351,11 +353,11 @@ test_colnames("species", Osland_2016_species_data)
 results <- test_core_relationships(Osland_2016_core_data, Osland_2016_depth_series_data)
 
 # Re-order columns
-Osland_2016_species_data <- select_and_reorder_columns("species_definitions", Osland_2016_species_data, 
+Osland_2016_species_data <- select_and_reorder_columns("species", Osland_2016_species_data, 
                                                        "/data/primary_studies/Osland_2016/derivative/")
 Osland_2016_depth_series_data <- select_and_reorder_columns("depthseries", Osland_2016_depth_series_data,
                                                             "/data/primary_studies/Osland_2016/derivative/")
-Osland_2016_site_data <- select_and_reorder_columns("site-level", Osland_2016_site_data,
+Osland_2016_site_data <- select_and_reorder_columns("site_level", Osland_2016_site_data,
                                                     "/data/primary_studies/Osland_2016/derivative/")
 Osland_2016_core_data <- select_and_reorder_columns("core_level", Osland_2016_core_data, 
                                                     "/data/primary_studies/Osland_2016/derivative/")
