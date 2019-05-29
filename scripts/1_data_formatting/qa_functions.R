@@ -284,3 +284,45 @@ test_numeric_vars <- function(input_data) {
   
   return(results)
 }
+
+# Check the data types of all variables 
+# The function attempts to convert all attributes that should be factors but are character type
+# Other type conversions are not conducted since unexpected results could occur. Users are encouraged to 
+# conduct all other data type conversions elsewhere in the hook script and check for any underlying 
+# issues in the data that could be leading toward an incorrect data type classification (commas in numeric columns, etc.)
+testDataTypes <- function(df) {
+  library(lubridate)
+  
+  controlled_numeric_attributes <- read_csv("./docs/controlled_attributes.csv", col_types = cols()) 
+  
+  all_attributes <- read_csv("./docs/uncontrolled_attributes.csv", col_types = cols()) %>%
+    bind_rows(controlled_numeric_attributes)
+  
+  for(i in 1:length(colnames(df))){
+    attribute <- colnames(df)[i]
+    data_type <- filter(all_attributes, attribute_name == attribute)$data_type
+    if(data_type == "numeric"){
+      if(!is.numeric(df[[attribute]])) {
+        warning(paste(attribute,"is not in the numeric data type."))    
+      }
+      
+    } else if (data_type == "character") {
+      if(!is.character(df[[attribute]])) {
+        warning(paste(attribute,"is not in the character data type."))    
+      }
+      
+    } else if (data_type == "factor") {
+      if(!is.factor(df[[attribute]])) {
+        warning(paste(attribute,"is not in the factor data type. Attempting to convert..."))
+        df <- mutate(df := as.factor(!! sym(attribute)))
+      }
+      
+    } else if (data_type == "Date") {
+      if(!is.Date(df[[attribute]])) {
+        warning(paste(attribute,"is not in the Date data type."))    
+      }
+    }
+  }
+  
+  return(df)
+}
