@@ -118,12 +118,19 @@ ccrcn_methods <- setNames(data.frame(matrix(ncol = length(methods_attributes), n
 #biomass
 
 # Import and join each file for a given table 
+# All factors will need to be converted to character prior to merging as the different levels
+# between the tables will force conversions and create a multitude of warning messages. 
+# They'll be converted back to factors following the creation of the synthesis
 for(study in depthseries){
-  ccrcn_depthseries <- bind_rows(ccrcn_depthseries, read.csv(study))
+  table <- read.csv(study) %>%
+    mutate_if(is.factor, as.character)
+  ccrcn_depthseries <- bind_rows(ccrcn_depthseries, table)
 }
 
 for(study in cores){
-  ccrcn_cores <- bind_rows(ccrcn_cores, read.csv(study))
+  table <- read.csv(study) %>%
+    mutate_if(is.factor, as.character)
+  ccrcn_cores <- bind_rows(ccrcn_cores, table)
 }
 
 for(study in species){

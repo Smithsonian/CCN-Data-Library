@@ -11,9 +11,9 @@ library(tidyverse)
 sites <- read_csv("./data/Jones_2017/derivative/intermediate/Jones_2017_HandEnteredSiteCoreDataFromNeotoma.csv")
 
 # Downloaded geochrono datasets
-geochron_oligo <- read_csv("./data/Jones_2017/derivative/intermediate/dataset25338.csv")
-geochron_heavy_salt <- read_csv("./data/Jones_2017/derivative/intermediate/dataset25345.csv")
-geochron_mod_salt <- read_csv("./data/Jones_2017/derivative/intermediate/dataset25364.csv")
+geochron_oligo <- read_csv("./data/primary_studies/Jones_2017/intermediate/dataset25338.csv")
+geochron_heavy_salt <- read_csv("./data/primary_studies/Jones_2017/intermediate/dataset25345.csv")
+geochron_mod_salt <- read_csv("./data/primary_studies/Jones_2017/intermediate/dataset25364.csv")
 
 # Downloaded LOI datasets
 LOI_oligo_raw <- read_csv("./data/Jones_2017/original/dataset25339.csv")
@@ -155,8 +155,8 @@ sites <- sites %>%
 
 ## QA/QC ##############
 
-source("./scripts/1_data_formatting/qa_functions.R")
-fraction_not_percent(depthseries)
+#source("./scripts/1_data_formatting/qa_functions.R")
+#fraction_not_percent(depthseries)
 
 # Re-order according to database
 #core_data <- reorder_columns(core_data, "core_level")
@@ -165,15 +165,16 @@ fraction_not_percent(depthseries)
 
 
 ## Write data ###########
-
-write_csv(sitesOutput, "./data/Jones_2017/derivative/final/Jones_2017_sites.csv")
-
-write_csv(core_data, "./data/Jones_2017/derivative/final/Jones_2017_cores.csv")
-
-write_csv(depthseries, "./data/Jones_2017/derivative/final/Jones_2017_depthseries.csv")
-
-write_csv(species, "./data/Jones_2017/derivative/final/Jones_2017_species.csv")
-
-write_csv(impacts, "./data/Jones_2017/derivative/final/Jones_2017_impact.csv")
-
-# write_csv(depthseries_figure, "./data/Jones_2017/derivative/final/Jones_2017_depthseries_from_figure.csv")
+# The following derivative files are duplicated cores located in the Krauss 2018 data hook
+# 
+# write_csv(sitesOutput, "./data/Jones_2017/derivative/final/Jones_2017_sites.csv")
+# 
+# write_csv(core_data, "./data/Jones_2017/derivative/final/Jones_2017_cores.csv")
+# 
+# write_csv(depthseries, "./data/Jones_2017/derivative/final/Jones_2017_depthseries.csv")
+# 
+# write_csv(species, "./data/Jones_2017/derivative/final/Jones_2017_species.csv")
+# 
+# write_csv(impacts, "./data/Jones_2017/derivative/final/Jones_2017_impact.csv")
+# 
+# # write_csv(depthseries_figure, "./data/Jones_2017/derivative/final/Jones_2017_depthseries_from_figure.csv")

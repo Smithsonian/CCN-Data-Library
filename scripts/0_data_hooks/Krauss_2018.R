@@ -60,7 +60,7 @@ FILE_NAMES <- list("TFFW_Carbon_Budget_GHG.csv", "TFFW_Carbon_Budget_Root_Ingrow
 #   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
 #   with whatever you include within the quotation marks.
 
-FILE_PATH <- paste0(getwd(), "/data/Krauss_2018/original", "/" )
+FILE_PATH <- paste0(getwd(), "/data/primary_studies/Krauss_2018/original", "/" )
 
 # 4. Designate the html node and attri that the web scraper will search for. This
 #   will correspond to what classes of div's the data URL(s) are held in. You can
@@ -112,32 +112,32 @@ url_list <- page %>%
 
 # There also may be multiple data files corresponding to a single data level 
 #   (e.g. two files, both with depthseries data, which will be joined together)
-depthseries_DBD_raw <- read_csv("./data/Krauss_2018/original/TFFW_soil_core_data.csv", 
+depthseries_DBD_raw <- read_csv("./data/primary_studies/Krauss_2018/original/TFFW_soil_core_data.csv", 
                               col_names = TRUE, 
                               col_types = cols(
                                 "Compression (%)" = col_double()
                               ) 
                             )
 
-depthseries_carbon_raw <- read_csv("./data/Krauss_2018/original/TFFW_elemental_carbon.csv")
+depthseries_carbon_raw <- read_csv("./data/primary_studies/Krauss_2018/original/TFFW_elemental_carbon.csv")
 
-radiocarbon_raw <- read_csv("./data/Krauss_2018/original/TFFW_Radiocarbon.csv")
+radiocarbon_raw <- read_csv("./data/primary_studies/Krauss_2018/original/TFFW_Radiocarbon.csv")
 
 # Few datasets will include biomass, at the time of writing at least
-root_productivity <- read_csv("data/Krauss_2018/original/TFFW_Carbon_Budget_Root_Ingrowth.csv")
+root_productivity <- read_csv("data/primary_studies/Krauss_2018/original/TFFW_Carbon_Budget_Root_Ingrowth.csv")
 
 
 ## ....2b. Read in Jones data ###############
 
 # Downloaded geochrono datasets
-geochron_oligo <- read_csv("./data/Jones_2017/derivative/intermediate/dataset25338.csv")
-geochron_heavy_salt <- read_csv("./data/Jones_2017/derivative/intermediate/dataset25345.csv")
-geochron_mod_salt <- read_csv("./data/Jones_2017/derivative/intermediate/dataset25364.csv")
+geochron_oligo <- read_csv("./data/primary_studies/Jones_2017/intermediate/dataset25338.csv")
+geochron_heavy_salt <- read_csv("./data/primary_studies/Jones_2017/intermediate/dataset25345.csv")
+geochron_mod_salt <- read_csv("./data/primary_studies/Jones_2017/intermediate/dataset25364.csv")
 
 # Downloaded LOI datasets
-LOI_oligo_raw <- read_csv("./data/Jones_2017/original/dataset25339.csv")
-LOI_heavy_salt_raw  <- read_csv("./data/Jones_2017/original/dataset25346.csv")
-LOI_mod_salt_raw  <- read_csv("./data/Jones_2017/original/dataset25365.csv")
+LOI_oligo_raw <- read_csv("./data/primary_studies/Jones_2017/original/dataset25339.csv")
+LOI_heavy_salt_raw  <- read_csv("./data/primary_studies/Jones_2017/original/dataset25346.csv")
+LOI_mod_salt_raw  <- read_csv("./data/primary_studies/Jones_2017/original/dataset25365.csv")
 
 
 ## 3. Curate data ######################
@@ -256,7 +256,8 @@ geochron <- geochron_oligo %>%
          c14_age_sd = ErrorOlder) %>%
   mutate(c14_age = ifelse(c14_age == 0, NA, c14_age)) %>%
   mutate(sample_id = as.character(sample_id)) %>%
-  mutate(c14_age = ifelse(c14_age == 0, NA, c14_age)) %>%
+  mutate(c14_age = ifelse(c14_age == 0, NA, c14_age),
+         sample_id = paste0("S", sample_id)) %>%
   select(study_id, core_id, sample_id, depth_min, depth_max, c14_age, c14_age_sd,
         c14_material)
 
@@ -289,10 +290,11 @@ LOI <- LOI_oligo %>%
   mutate(depth_min = as.double(depth_min)) %>%
   mutate(depth_max = as.double(gsub(" cm", "", depth_max))) %>%
   separate("V6", into = c("age_max", "age", "age_min"), sep = "/") %>%
+  rename(sample_id = "V5") %>%
   mutate(age_max = as.double(age_max), age = as.double(age),
          age_min = as.double(age_min),
-         age_depth_model_reference = "YBP") %>%
-  rename(sample_id = "V5")
+         age_depth_model_reference = "YBP",
+         sample_id = paste0("S", sample_id)) 
 
 Jones_depthseries <- geochron %>%
   full_join(LOI, by = c("core_id", "sample_id", "depth_min", "depth_max")) %>%
@@ -445,7 +447,7 @@ bib_file <- study_citations %>%
   distinct() %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "data/Krauss_2018/derivative/Krauss_2018.bib")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Krauss_2018/derivative/Krauss_2018.bib")
 
 
 ## 4. QA/QC of data ################
@@ -470,12 +472,12 @@ test_varnames(sites)
 # test_varnames(studies)
 
 # Select only controlled attributes, and re-order them according to CCRCN guidance
-cores <- select_and_reorder_columns("core_level", cores, "data/Krauss_2018/derivative/")
-depthseries <- select_and_reorder_columns("depthseries", depthseries, "data/Krauss_2018/derivative/")
-sites <- select_and_reorder_columns("site_level", sites, "/data/Krauss_2018/derivative/")
-# impacts <- select_and_reorder_columns("impact", impacts, "data/Krauss_2018/derivative/")
-# species <- select_and_reorder_columns("species", species, "data/Krauss_2018/derivative/")
-# studies <- select_and_reorder_columns("study_information", studies, "data/Krauss_2018/derivative/")
+cores <- select_and_reorder_columns("core_level", cores, "data/primary_studies/Krauss_2018/derivative/")
+depthseries <- select_and_reorder_columns("depthseries", depthseries, "data/primary_studies/Krauss_2018/derivative/")
+sites <- select_and_reorder_columns("site_level", sites, "/data/primary_studies/Krauss_2018/derivative/")
+# impacts <- select_and_reorder_columns("impact", impacts, "data/primary_studies/Krauss_2018/derivative/")
+# species <- select_and_reorder_columns("species", species, "data/primary_studies/Krauss_2018/derivative/")
+# studies <- select_and_reorder_columns("study_information", studies, "data/primary_studies/Krauss_2018/derivative/")
 
 ## ....4B. Quality control on cell values ###################
 # Make sure that all core IDs are unique
@@ -489,11 +491,11 @@ numeric_test_results <- test_numeric_vars(depthseries)
 results <- test_core_relationships(cores, depthseries)
 
 ## 5. Write data ######################
-write_csv(depthseries, "./data/Krauss_2018/derivative/Krauss_et_al_2018_depthseries.csv")
-write_csv(cores, "./data/Krauss_2018/derivative/Krauss_et_al_2018_cores.csv")
-write_csv(sites, "./data/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
-# write_csv(impacts, "./data/Krauss_2018/derivative/Krauss_et_al_2018_impacts.csv")
-# write_csv(species, "./data/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
-# write_csv(species, "./data/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
-write_csv(study_citations, "data/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
+write_csv(depthseries, "./data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_depthseries.csv")
+write_csv(cores, "./data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_cores.csv")
+write_csv(sites, "./data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
+# write_csv(impacts, "./data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_impacts.csv")
+# write_csv(species, "./data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
+# write_csv(species, "./data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
+write_csv(study_citations, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
 
