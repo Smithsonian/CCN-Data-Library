@@ -8,3 +8,4 @@ Dated cores pulled in to soils WG by DK on 2019-03-13. Associated methods and me
 
 2019-05-09 ML: Used supplementary data to build curated depthseries data. Species table updated. Check age and age_sd variables: I infered from the paper that the age listed uses the date of core collection as year zero. 
 
+2019-06-17 JH Notes: Looks good. Approved for ingestion into data library.
