@@ -106,5 +106,7 @@ Savannah R transect:
 
 Under cores. I don't think high, low, mid in this study refer to elevations. I think they refer to relative positions on the river. Double check before removing inundation class.
 
-Under depth series. Compaction % needs to be converted to compaction fraction. 
+Under depth series. Compaction % needs to be converted to compaction fraction.
+
+Also, needs species data.
 
