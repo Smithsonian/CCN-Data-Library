@@ -102,6 +102,9 @@ Savannah R transect:
 12-12-11-1: Upper freshwater tidal
 
 
+2019-06-17 JH Review: Study citations table only has paper in it. Needs the data release. 
 
+Under cores. I don't think high, low, mid in this study refer to elevations. I think they refer to relative positions on the river. Double check before removing inundation class.
 
+Under depth series. Compaction % needs to be converted to compaction fraction. 
 
