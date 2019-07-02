@@ -126,6 +126,7 @@ radiocarbon_raw <- read_csv("./data/primary_studies/Krauss_2018/original/TFFW_Ra
 # Few datasets will include biomass, at the time of writing at least
 root_productivity <- read_csv("data/primary_studies/Krauss_2018/original/TFFW_Carbon_Budget_Root_Ingrowth.csv")
 
+species_raw <- read_csv("data/primary_studies/Krauss_2018/original/TFFW_Carbon_Budget_Stand_Structure_2005_and_2012.csv")
 
 ## ....2b. Read in Jones data ###############
 
@@ -161,6 +162,9 @@ Krauss_depthseries <- depthseries_DBD_raw %>%
          "fraction_organic_matter" = "LOI (%)", site_id = River, 
          c14_material = "Material Dated", compaction_fraction = "Compression (%)",
         c14_age = "14C Age", c14_age_sd = "SE") %>% 
+  
+  # Convert compaction percent to fraction
+  mutate(compaction_fraction = compaction_fraction / 100) %>% 
   
   # Add study id
   mutate(study_id = "Krauss_et_al_2018") %>%
@@ -198,7 +202,7 @@ Krauss_depthseries <- depthseries_DBD_raw %>%
   mutate(fraction_organic_matter = fraction_organic_matter / 100) %>%
   
   # Add 'River' to site names
-  mutate(site_id = paste(site_id, "River", sep = "_")) %>%
+  # mutate(site_id = paste(site_id, "River", sep = "_")) %>%
   select(-"Lab ID")
   
 
@@ -394,13 +398,12 @@ sites <- cores %>%
                                 
                               
 ## ....3D. Impact data #################
-# impacts <- impact_raw
 
-## ....3E. Species data #############
+impacts <- cores %>% 
+  select(study_id, site_id, core_id) %>% 
+  mutate(impact_class = "restored")
 
-# species <- species_raw
-
-## ....3F. Materials and Methods #############
+## ....3E. Materials and Methods #############
 
 methods <- cores %>%
   select(study_id, site_id, core_id) %>%
@@ -413,26 +416,66 @@ methods <- cores %>%
                                   "corer limits compaction")) %>%
   mutate(age_depth_model_reference = "YBP")
 
+## ....3F. Species data ##############
+
+species <- species_raw %>% 
+  mutate(core_id = paste(River, Site, Plot, sep = "_")) %>% 
+  mutate(core_id = tolower(core_id)) %>% 
+  mutate(core_id = gsub("lower", "low", core_id)) %>% 
+  mutate(core_id = gsub("middle", "mid", core_id)) %>% 
+  mutate(core_id = gsub("upper", "high", core_id)) %>% 
+  mutate(core_id = recode(core_id, "waccamaw_mid_1" = "butler_island_1")) %>% 
+  rename(species_code = Species) %>% 
+  right_join(cores) %>% 
+  select(study_id, site_id, core_id, species_code) %>% 
+  count(study_id, site_id, core_id, species_code) %>% 
+  rename(count = n) %>% 
+  mutate(count = as.numeric(ifelse(is.na(species_code), "0", count)))
+  
 ## ....3G. Study-level data #########
 
 # Not needed because metadata is already prepped
 
 
-## ....3h. Study citations ################
+## ....3H. Study citations ################
 
 
 # Get BibTex entries from DOI
 paper_bib_raw <- GetBibEntryWithDOI("10.1029/2018GB005897")
 data_bib_raw <- GetBibEntryWithDOI("10.5066/F7TM7930")
 
+# If the data citation worked...
+if(class(data_bib_raw)[1] == "BibEntry") {
+  data_bib <- data_bib_raw  # Save it
+
+} else {
+  # Otherwise manually write it 
+  data_bib <- tibble(
+    study_id = "Krauss_et_al_2018",
+    bibliography_id = "Krauss_et_al_2018",
+    publication_type = "misc",
+    key = "Krauss_2018_data",
+    bibtype = "misc",
+    doi = "10.5066/F7TM7930",
+    url = "https://doi.org/10.5066/f7tm7930",
+    year = "2018",
+    publisher = "USGS",
+    author= "Ken Krauss",
+    title = "Carbon budget assessment of tidal freshwater forested wetland and oligohaline marsh ecosystems along the Waccamaw and Savannah rivers, U.S.A. (2005-2016)"
+  )
+}
+
 # Convert this to a dataframe
 biblio <- as.data.frame(paper_bib_raw) %>%
   # GetBibEntryWithDOI() defaults study name as a row name, convert to column
   rownames_to_column("key") %>%
-  mutate(doi = tolower(doi)) %>%
-  # Make some edits
-  mutate(author = "Kevin Krauss and Greg Noe and Jamie Duberstein and William Conner and Mirian Jones and Chrstopher Bernhardt and Nicole Cormier and Andrew From")
-
+  # Add author
+  mutate(author = "Ken Krauss and Greg Noe and Jamie Duberstein and William Conner and Mirian Jones and Chrstopher Bernhardt and Nicole Cormier and Andrew From") %>% 
+  # Join data release citation
+  bind_rows(as.data.frame(data_bib)) %>% 
+  mutate(doi = tolower(doi)) %>% 
+  mutate(key = ifelse(is.na(key), "Krauss_2018_data", key))
+  
 # Curate biblio so ready to read out as a BibTex-style .bib file
 study_citations <- biblio %>%
   mutate(study_id = "Krauss_et_al_2018", bibliography_id = "Krauss_et_al_2018") %>%
@@ -459,24 +502,24 @@ source("./scripts/1_data_formatting/qa_functions.R")
 test_colnames("core_level", cores)
 test_colnames("depthseries", depthseries)
 test_colnames("site_level", sites)
-# test_colnames("impact", impacts)
-# test_colnames("species", species)
+test_colnames("impact", impacts)
+test_colnames("species", species)
 # test_colnames("study_information", studies)
 
 # Make sure variable names are fomatted correctly
 test_varnames(cores)
 test_varnames(depthseries)
 test_varnames(sites)
-# test_varnames(impacts)
-# test_varnames(species)
+test_varnames(impacts)
+test_varnames(species)
 # test_varnames(studies)
 
 # Select only controlled attributes, and re-order them according to CCRCN guidance
 cores <- select_and_reorder_columns("core_level", cores, "data/primary_studies/Krauss_2018/derivative/")
 depthseries <- select_and_reorder_columns("depthseries", depthseries, "data/primary_studies/Krauss_2018/derivative/")
 sites <- select_and_reorder_columns("site_level", sites, "/data/primary_studies/Krauss_2018/derivative/")
-# impacts <- select_and_reorder_columns("impact", impacts, "data/primary_studies/Krauss_2018/derivative/")
-# species <- select_and_reorder_columns("species", species, "data/primary_studies/Krauss_2018/derivative/")
+impacts <- select_and_reorder_columns("impact", impacts, "data/primary_studies/Krauss_2018/derivative/")
+species <- select_and_reorder_columns("species", species, "data/primary_studies/Krauss_2018/derivative/")
 # studies <- select_and_reorder_columns("study_information", studies, "data/primary_studies/Krauss_2018/derivative/")
 
 ## ....4B. Quality control on cell values ###################
@@ -491,11 +534,10 @@ numeric_test_results <- test_numeric_vars(depthseries)
 results <- test_core_relationships(cores, depthseries)
 
 ## 5. Write data ######################
-write_csv(depthseries, "./data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_depthseries.csv")
-write_csv(cores, "./data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_cores.csv")
-write_csv(sites, "./data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
-# write_csv(impacts, "./data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_impacts.csv")
-# write_csv(species, "./data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
-# write_csv(species, "./data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
+write_csv(depthseries, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_depthseries.csv")
+write_csv(cores, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_cores.csv")
+write_csv(sites, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
+write_csv(impacts, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_impacts.csv")
+write_csv(species, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
 write_csv(study_citations, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
 

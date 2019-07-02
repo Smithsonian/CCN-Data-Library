@@ -102,11 +102,21 @@ Savannah R transect:
 12-12-11-1: Upper freshwater tidal
 
 
-2019-06-17 JH Review: Study citations table only has paper in it. Needs the data release. 
+2019-06-17 JH Review: Study citations table only has paper in it. Needs the data release.  
 
-Under cores. I don't think high, low, mid in this study refer to elevations. I think they refer to relative positions on the river. Double check before removing inundation class.
+Under cores. I don't think high, low, mid in this study refer to elevations. I think they refer to relative positions on the river. Double check before removing inundation class.  
 
-Under depth series. Compaction % needs to be converted to compaction fraction.
+Under depth series. Compaction % needs to be converted to compaction fraction.  
 
-Also, needs species data.
+Also, needs species data.  
+
+2019-07-02 DK Edits from JH Manager review:  
+
+- changed compaction % to compaction fraction  
+
+- added species data (not all core locations had species information)  
+
+- added impact data  
+
+- looking at paper and map in figure 2, low, middle, and high corresponds to positions on the river and vegetation zones. Looking at guidance on inundation_class, definitions of low, medium and high are "Study-specific definition of an elevation relatively [low, mid, high] in the tidal frame, typically defined by vegetation type". This appears to match the current designations of inundation_class. Assuming that higher on a river is also higher in elevation (because water flows downhill), low, medium, high on a river would also be low, medium, and high elevations. No changes made, but if inappropriate use of inundation_class it can be removed.
 
