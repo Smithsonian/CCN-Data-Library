@@ -220,7 +220,7 @@ Osland_2016_depth_series_data <- depth_series_data %>%
   
   # The legend dictates that only one soil depth interval was sampled, 01-5 cm.
   # So we'll add a single set of min and max depths for each core
-  mutate(depth_max = as.double(0), depth_min = as.double(15)) %>%
+  mutate(depth_min = as.double(0), depth_max = as.double(15)) %>%
   
   mutate(study_id = "Osland_et_al_2016") %>%
   # Re-order columns
