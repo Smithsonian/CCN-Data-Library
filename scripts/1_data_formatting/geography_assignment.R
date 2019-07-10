@@ -221,11 +221,11 @@ if(num_cores != num_cores_w_geography) {
 } else {
   
   # If the lengths match, we can join to site table
-  sites_w_geography <- cores_w_geography %>% 
-    select(study_id, site_id, state, watershed) %>% 
-    full_join(sites) %>% 
-    group_by(site_id) %>% 
-    summarize(state = names(which.max(table(state))))
+  # sites_w_geography <- cores_w_geography %>% 
+  #   select(study_id, site_id, state, watershed) %>% 
+  #   full_join(sites) %>% 
+  #   group_by(site_id) %>% 
+  #   summarize(state = names(which.max(table(state))))
   
   sites_w_geography <- cores_w_geography %>% 
     select(study_id, site_id, state, watershed) %>% 
