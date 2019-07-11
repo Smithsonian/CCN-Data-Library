@@ -7,7 +7,6 @@ library(tidyverse)
 
 raw_cores <- read_csv("./data/primary_studies/drexler_2013/original/drexler_2019_initial_sites.csv")
 raw_depthseries <- read_csv("./data/primary_studies/drexler_2013/original/drexler_2019_initial_depthseries.csv")
-raw_species_table <- read_csv("./data/primary_studies/drexler_2013/original/drexler_2019_study_species_table.csv")
 
 ## Curate data #########
 study_id_value <- "Drexler_et_al_2013"
@@ -53,31 +52,21 @@ species <- species_raw %>%
   select(study_id, site_id, core_id, species_code) %>%
   filter(!is.na(species_code))
 
-## ... study level species table #####
-study_species <- raw_species_table %>%
-  mutate(study_id = study_id_value) %>%
-  select(study_id, everything())
-
 ## ... depthseries #####
 depthseries <- raw_depthseries %>%
   mutate(site_id = gsub(" ", "_", site_id)) %>%
   mutate(study_id = study_id_value,
-         core_id = paste(site_id, `Core Number`, sep = "_")) %>%
-  rename(dry_bulk_density = `Bulk Density (g/cm3)`, 
-         core_notes = Notes, 
-         total_carbon = `Total Carbon (%)`,
-         organic_carbon = `Organic Carbon (%)`, 
-         depth_max = `Section bottom depth from surface (cm)`,
-         section_thickness = `section thickness`) %>%
-  mutate(fraction_organic_carbon = organic_carbon / 100, 
-         fraction_total_carbon = total_carbon / 100, 
-         depth_max = gsub("~", "", depth_max), 
-         section_thickness = gsub("~", "", section_thickness)) %>%
-  mutate(depth_max = as.numeric(depth_max), 
-         depth_min = as.numeric(depth_max) - as.numeric(section_thickness)) %>%
+         core_id = paste(site_id, `core_number`, sep = "_")) %>%
+  mutate(fraction_carbon = organic_carbon_percent / 100) %>% 
   select(study_id, site_id, core_id, depth_max, depth_min, 
-         dry_bulk_density, fraction_organic_carbon, fraction_total_carbon) 
+         dry_bulk_density, fraction_carbon, 
+         cs137_activity, cs137_activity_sd,
+         total_pb210_activity, total_pb210_activity_sd, excess_pb210_activity, excess_pb210_activity_sd,
+         age, age_sd, cs137_peak_present, depth_interval_notes) 
 
+# Filter out cores that aren't in the depthseries
+cores <- cores %>%
+  filter(core_id %in% depthseries$core_id)
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -99,14 +88,10 @@ test_variable_names(species)
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(cores, depthseries)
 
-study_uncontrolled <- read_csv("./data_releases/drexler_2019/data/intermediate/drexler_2019_user_defined_attributes.csv")
 test_numeric_vars(depthseries)
 
 ## Export curated data ###########
-#write_csv(study_information, "./data_releases/drexler_2019/data/intermediate/drexler_2019_study_information.csv")
-#write_csv(keywords, "./data_releases/drexler_2019/data/intermediate/drexler_2019_keywords.csv")
-#write_csv(authors, "./data_releases/drexler_2019/data/intermediate/drexler_2019_authors.csv")
-#write_csv(associated_publications, "./data_releases/drexler_2019/data/intermediate/drexler_2019_associated_publications.csv")
-#write_csv(funding_sources, "./data_releases/drexler_2019/data/intermediate/drexler_2019_funding_sources.csv")
-#write_csv(materials_and_methods, "./data_releases/drexler_2019/data/intermediate/drexler_2019_materials_and_methods.csv")
-
+write_csv(depthseries, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_depthseries.csv")
+write_csv(cores, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_cores.csv")
+write_csv(species, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_species.csv")
+write_csv(impacts, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_impacts.csv")
