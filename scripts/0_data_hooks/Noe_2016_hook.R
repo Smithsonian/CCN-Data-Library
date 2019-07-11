@@ -15,10 +15,10 @@ library(tidyverse)
 library(RefManageR)
 
 # Import data
-depthseries_raw <- read_csv("./data/Noe_2016/original/Noe_2016_depthseries_supplemental.csv")
-cores_raw <- read_csv("./data/Noe_2016/original/Noe_2016_cores.csv")
-species_raw <- read_csv("./data/Noe_2016/original/Noe_2016_species.csv")
-impacts_raw <- read_csv("./data/Noe_2016/original/Noe_2016_impacts.csv")
+depthseries_raw <- read_csv("./data/primary_studies/Noe_2016/original/Noe_2016_depthseries_supplemental.csv")
+cores_raw <- read_csv("./data/primary_studies/Noe_2016/original/Noe_2016_cores.csv")
+species_raw <- read_csv("./data/primary_studies/Noe_2016/original/Noe_2016_species.csv")
+impacts_raw <- read_csv("./data/primary_studies/Noe_2016/original/Noe_2016_impacts.csv")
 
 ## Curate depthseries data ##################
 # The raw data is in a Word document where red colored text indicated a modeled value. 
