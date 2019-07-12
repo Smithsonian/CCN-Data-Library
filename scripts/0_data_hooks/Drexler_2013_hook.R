@@ -4,6 +4,7 @@
 # Contact: Michael Lonneman, lonnemanM@si.edu
 
 library(tidyverse)
+library(RefManageR)
 
 raw_cores <- read_csv("./data/primary_studies/drexler_2013/original/drexler_2019_initial_sites.csv")
 raw_depthseries <- read_csv("./data/primary_studies/drexler_2013/original/drexler_2019_initial_depthseries.csv")
@@ -58,7 +59,7 @@ depthseries <- raw_depthseries %>%
   mutate(study_id = study_id_value,
          core_id = paste(site_id, `core_number`, sep = "_")) %>%
   mutate(fraction_carbon = organic_carbon_percent / 100) %>% 
-  select(study_id, site_id, core_id, depth_max, depth_min, 
+  select(study_id, site_id, core_id, depth_min, depth_max,
          dry_bulk_density, fraction_carbon, 
          cs137_activity, cs137_activity_sd,
          total_pb210_activity, total_pb210_activity_sd, excess_pb210_activity, excess_pb210_activity_sd,
@@ -67,6 +68,28 @@ depthseries <- raw_depthseries %>%
 # Filter out cores that aren't in the depthseries
 cores <- cores %>%
   filter(core_id %in% depthseries$core_id)
+
+## Create study-level data ######
+# Get bibtex citation from DOI
+biblio_raw <- GetBibEntryWithDOI("10.1007/s13157-013-0456-3")
+biblio_df <- as.data.frame(biblio_raw)
+study_citations <- biblio_df %>%
+  rownames_to_column("key") %>%
+  mutate(bibliography_id = study_id_value, 
+         study_id = study_id_value,
+         key = study_id_value,
+         publication_type = "Article", 
+         year = as.numeric(year), 
+         volume = as.numeric(volume), 
+         number = as.numeric(number)) %>%
+  select(study_id, bibliography_id, publication_type, everything())
+
+# Write .bib file
+bib_file <- study_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  column_to_rownames("key")
+
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013.bib")
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -95,3 +118,5 @@ write_csv(depthseries, "./data/primary_studies/drexler_2013/derivative/drexler_e
 write_csv(cores, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_cores.csv")
 write_csv(species, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_species.csv")
 write_csv(impacts, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_impacts.csv")
+write_csv(study_citations, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_study_citations.csv")
+
