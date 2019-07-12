@@ -53,7 +53,7 @@ download.file(url_list[[4]], "./data/Gonneea_2018/original/Waquoit_Core_data_rel
 ## Curate data to CCRCN Structure ########################
 
 # Import data file into R
-Gonneea_2018 <- read_csv("./data/Gonneea_2018/original/Waquoit_Core_data_release.csv", 
+Gonneea_2018 <- read_csv("./data/primary_studies/Gonneea_2018/original/Waquoit_Core_data_release.csv", 
                          col_names = TRUE)
 
 # Change column names to values of first row

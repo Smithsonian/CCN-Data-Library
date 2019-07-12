@@ -21,7 +21,7 @@ library(RefManageR)
 # Additionally, 12 cores were assigned new "coreserial" IDs. 
 # The original data is in the "original" folder and the revised file is in the "intermediate" folder. 
 
-Fourqurean_raw <- read_excel("./data/Fourqurean_2012/intermediate/JFourqurean_edited.xls")
+Fourqurean_raw <- read_excel("./data/primary_studies/Fourqurean_2012/intermediate/JFourqurean_edited.xls")
 
 ## Recode References to study_ids
 # Create vector of references
@@ -30,13 +30,13 @@ references <- references %>%
   arrange(reference)
 
 # Write this out to an intermediate file
-write_csv(references, "data/Fourqurean_2012/intermediate/references.csv")
+write_csv(references, "data/primary_studies/Fourqurean_2012/intermediate/references.csv")
 
 # Now that 'references' was manually joined and inspected to a manually-compiled
 #   set of study IDs and DOIs, read that in
-study_doi_manual <- read_csv("data/Fourqurean_2012/intermediate/study_doi_manual.csv")
+study_doi_manual <- read_csv("data/primary_studies/Fourqurean_2012/intermediate/study_doi_manual.csv")
 # Additionally, read in the full set of citations for studies with no DOI: 
-citations_without_dois <- read_csv("data/Fourqurean_2012/intermediate/citations_without_dois.csv")
+citations_without_dois <- read_csv("data/primary_studies/Fourqurean_2012/intermediate/citations_without_dois.csv")
 
 ## 3. Curate data ######################
 
@@ -125,6 +125,7 @@ Fourqurean <- Fourqurean %>%
   filter(!(core_id %in% missing_lat_long)) %>%
   filter(!(study_id %in% remove_studies))
 
+
 ## ....3b. Site-level data #############
 
 site_data <- Fourqurean %>%
@@ -162,10 +163,10 @@ depthseries <- Fourqurean %>%
          depth_max = as.numeric(depth_max)) %>%
   
   # Manually convert depth interval information for a few cores 
-  mutate(depth_min = ifelse(study_id == "Gonneea_et_al_2004", 
+  mutate(depth_min = ifelse(core_id == "Gonneea_et_al_2004_1", 
                             (depth_center - thickness / 2),
                             depth_min)) %>%
-  mutate(depth_max = ifelse(study_id == "Gonneea_et_al_2004", 
+  mutate(depth_max = ifelse(core_id == "Gonneea_et_al_2004_1", 
                             depth_center + thickness / 2,
                             depth_max)) %>%
   
@@ -192,7 +193,9 @@ depthseries <- Fourqurean %>%
   mutate(fraction_carbon = fraction_carbon/100, 
          fraction_organic_matter = fraction_organic_matter/100) %>%
   select(study_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon, 
-         fraction_organic_matter, age) 
+         fraction_organic_matter, age)  %>%
+  # filter out intervals missing core IDs 
+  filter(!is.na(core_id))
 
 # Check quality of depth interval
 # Import the raw data file in the "original" folder and run the following code 
@@ -362,7 +365,7 @@ core_data <- core_data %>%
 results <- test_core_relationships(core_data, depthseries)
 
 ## 5. write out data ##############
-write_csv(depthseries, "./data/Fourqurean_2012/derivative/Fourqurean_2012_depthseries_data.csv")
+write_csv(depthseries, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_depthseries_data.csv")
 write_csv(site_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_site_data.csv")
 write_csv(core_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_core_data.csv")
 write_csv(species, "./data/Fourqurean_2012/derivative/Fourqurean_2012_species_data.csv")

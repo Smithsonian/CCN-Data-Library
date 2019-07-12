@@ -9,10 +9,12 @@ library(tidyverse)
 ## ....1a. Read in all data sources #################
 
 # Deegan 2012
-Deegan_2012_coredata <- read_csv( "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
-Deegan_2012_depthseriesdata <- read_csv( "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")
-Deegan_2012_sitedata <- read_csv( "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
-Deegan_2012_citationdata <- read_csv( "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
+# Biomass data no cuurently supported
+# Deegan_2012_coredata <- read_csv( "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
+# The following file doesn't exist - only a biomass_depthseries file
+# Deegan_2012_depthseriesdata <- read_csv( "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")
+# Deegan_2012_sitedata <- read_csv( "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
+# Deegan_2012_citationdata <- read_csv( "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
 
 # Drexler 2009
 Drexler_2009_coredata <- read_csv( "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
@@ -93,6 +95,13 @@ Krauss_2018_depthseriesdata <- read_csv("data/primary_studies/Krauss_2018/deriva
 Krauss_2018_sitedata <- read_csv("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
 Krauss_2018_citationdata <- read_csv("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
 
+# Weis et al. 2001
+Weis_2001_coredata <- read_csv("./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_cores.csv")
+Weis_2001_speciesdata <- read_csv("./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_species.csv")
+Weis_2001_depthseriesdata <- read_csv("./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_depthseries.csv")
+Weis_2001_citationdata <- read_csv("./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_study_citations.csv")
+Weis_2001_methodsdata <- read_csv("./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_methods.csv")
+
 ## 2. Join datasets ######################
 
 ## ....2a. Core data ################
@@ -105,12 +114,12 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Osland_2016_coredata) %>%
   bind_rows(Sanderman_2018_coredata) %>%
   bind_rows(Schile_2017_coredata) %>%
-  bind_rows(Deegan_2012_coredata) %>%
   bind_rows(Giblin_2018_coredata) %>%
   bind_rows(Smith_2015_coredata) %>%
   bind_rows(Trettin_2017_coredata) %>%
   bind_rows(Thorne_2015_coredata) %>% 
-  bind_rows(Krauss_2018_coredata)
+  bind_rows(Krauss_2018_coredata) %>%
+  bind_rows(Weis_2001_coredata)
 
 ## ....2b. Depth series data ###############
 
@@ -125,7 +134,8 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Smith_2015_depthseriesdata) %>%
   bind_rows(Trettin_2017_depthseriesdata) %>%
   bind_rows(Thorne_2015_depthseriesdata) %>% 
-  bind_rows(Krauss_2018_depthseriesdata)
+  bind_rows(Krauss_2018_depthseriesdata) %>%
+  bind_rows(Weis_2001_depthseriesdata)
 
 # Commenting out aggregated data for now
 # # Add a column for aggregated fraction carbon and carbon density per core
@@ -143,8 +153,7 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
 #          mean_dry_bulk_density = dry_bulk_density)
 
 ## ....2c. site data ###############
-CCRCN_sitedata <- Deegan_2012_sitedata %>% 
-  bind_rows(Fourqurean_2012_sitedata) %>% 
+CCRCN_sitedata <- Fourqurean_2012_sitedata %>% 
   bind_rows(Giblin_2018_sitedata) %>% 
   bind_rows(Osland_2016_sitedata) %>% 
   bind_rows(Schile_2017_sitedata) %>% 
@@ -165,7 +174,8 @@ CCRCN_impactdata <- Holmquist_2018_impactdata
 
 ## ....2e. Methods data #################
 CCRCN_methodsdata <- Holmquist_2018_methodsdata %>%
-  bind_rows(Drexler_2009_methodsdata)
+  bind_rows(Drexler_2009_methodsdata) %>%
+  bind_rows(Weis_2001_methodsdata)
 
 ## ....2f. Species data #################
 CCRCN_speciesdata <- Osland_2016_speciesdata %>%
@@ -173,7 +183,8 @@ CCRCN_speciesdata <- Osland_2016_speciesdata %>%
   bind_rows(Fourqurean_2012_speciesdata) %>%
   bind_rows(Giblin_2018_speciesdata) %>%
   bind_rows(Holmquist_2018_speciesdata) %>%
-  bind_rows(Drexler_2009_speciesdata) 
+  bind_rows(Drexler_2009_speciesdata) %>%
+  bind_rows(Weis_2001_speciesdata)
   
 ## ....2g. Bind citation tables ###############
 CCRCN_study_citations <- Holmquist_2018_citationdata %>%
@@ -182,13 +193,13 @@ CCRCN_study_citations <- Holmquist_2018_citationdata %>%
   bind_rows(Osland_2016_citationdata) %>%
   bind_rows(Sanderman_2018_citationdata) %>%
   bind_rows(Schile_2017_citationdata) %>%
-  bind_rows(Deegan_2012_citationdata) %>%
   bind_rows(Giblin_2018_citationdata) %>%
   bind_rows(Smith_2015_citationdata) %>%
   bind_rows(Trettin_2017_citationdata) %>%
   bind_rows(Thorne_2015_citationdata) %>%
   bind_rows(Drexler_2009_citationdata) %>% 
-  bind_rows(Krauss_2018_citationdata)
+  bind_rows(Krauss_2018_citationdata) %>%
+  bind_rows(Weis_2001_citationdata)
 
 bib_file <- CCRCN_study_citations %>%
   select(-study_id, -bibliography_id, -publication_type) %>%

@@ -98,6 +98,7 @@ study_citations <- biblio_df %>%
          year = as.numeric(year), 
          volume = as.numeric(volume), 
          number = as.numeric(number)) %>%
+  select(-pages) %>%
   select(study_id, bibliography_id, publication_type, everything())
 
 # Write .bib file
@@ -105,7 +106,7 @@ bib_file <- study_citations %>%
   select(-study_id, -bibliography_id, -publication_type) %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "./data/Weis_et_al_2001/derivative/Weis_et_al_2001.bib")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001.bib")
 
 ## QA/QC ##########################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -125,10 +126,10 @@ test_numeric_vars(depthseries)
 results <- test_core_relationships(core_data, depthseries)
 
 ## Write data #####################
-write_csv(depthseries, "./data/Weis_et_al_2001/derivative/Weis_et_al_2001_depthseries.csv")
-write_csv(core_data, "./data/Weis_et_al_2001/derivative/Weis_et_al_2001_cores.csv")
-write_csv(methods, "./data/Weis_et_al_2001/derivative/Weis_et_al_2001_methods.csv")
-write_csv(species, "./data/Weis_et_al_2001/derivative/Weis_et_al_2001_species.csv")
-write_csv(study_citations, "./data/Weis_et_al_2001/derivative/Weis_et_al_2001_study_citations.csv")
+write_csv(depthseries, "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_depthseries.csv")
+write_csv(core_data, "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_cores.csv")
+write_csv(methods, "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_methods.csv")
+write_csv(species, "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_species.csv")
+write_csv(study_citations, "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_study_citations.csv")
 
 

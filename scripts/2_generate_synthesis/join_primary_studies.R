@@ -3,6 +3,8 @@
 # Contact: lonnemanM@si.edu
 #          klingesD@si.edu
 
+#### SCRIPT IS NOT ACTIVE #########
+
 ## 1. Synthesis background and description ###############
 # The CCRCN clearinghouse synthesis combines data and metadata for each curated study
 # The synthesis is made up of the following linked tables 

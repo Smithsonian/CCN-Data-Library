@@ -94,7 +94,7 @@ Anglesey,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Babeldaob,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Bacon Channel Island,NA,NA,NA,NA,NA,NA,NA,NA,California,San Joaquin Delta
 Baffin_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,Texas,Baffin Bay
-Bahía de Jiquilisco,NA,NA,NA,NA,NA,NA,NA,NA,International,International
+BahÃ­a de Jiquilisco,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Bahia_Almirante,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Bahile,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Bair_Island,NA,NA,NA,NA,NA,NA,NA,NA,California,San Francisco Bay
@@ -129,7 +129,8 @@ Bu Tinah SE,53.11234,53.11234,24.54534,24.54534,NA,NA,NA,NA,International,Intern
 Bu Tinah Shamal,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Buttonwood_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Brandywine-Christina
 Ca Mau,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Cádiz_Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
+CÃ¡diz_Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
+Cádiz_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
 Cala_Millor,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Camden_Haven,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Campello,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
@@ -142,7 +143,7 @@ Cape_Bolinao,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Carmen City,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Caumsett_Park,NA,NA,NA,NA,NA,NA,NA,NA,New York,Northern Long Island
 "Cedar Key, Florida",NA,NA,NA,NA,NA,NA,NA,NA,Florida,Waccasassa
-Celestún,NA,NA,NA,NA,NA,NA,NA,NA,International,International
+CelestÃºn,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Celestun_Lagoon,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Central Java,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Central Kalimantan,NA,NA,NA,NA,NA,NA,NA,NA,International,International
@@ -157,7 +158,6 @@ Choctwhatchee_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,Choctawhatchee Bay
 Choptank_River,NA,NA,NA,NA,NA,NA,NA,NA,Maryland,Choptank
 Chunnambar River,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Cienaga Grande de Santa Marta,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-CL-R,-70.832475,-70.839015,42.74121,42.74013,"Plum Island Sound Estuary, Massachusetts, USA",salt marsh,NA,NA,Massachusetts,Charles
 "Coffs Harbour, NSW",NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Cogswell,NA,NA,NA,NA,NA,NA,NA,NA,California,San Francisco Bay
 Coon_Island,NA,NA,NA,NA,NA,NA,NA,NA,California,San Pablo Bay
@@ -538,9 +538,9 @@ Guanaja,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Guangdong,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Guangxi,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Guaratuba Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Guarujá, Sao Paulo",NA,NA,NA,NA,NA,NA,NA,NA,International,International
+"GuarujÃ¡, Sao Paulo",NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Guayas River,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Gulf of Chiriquí,NA,NA,NA,NA,NA,NA,NA,NA,International,International
+Gulf of ChiriquÃ­,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Gulf of Fonseca,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Gulf of Nicoya,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Gulf_of_Aqaba,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
@@ -668,7 +668,6 @@ Muzzi,NA,NA,NA,NA,NA,NA,NA,NA,California,San Pablo Bay
 Nam Dinh,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Nang_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Naples Bay,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Big Cypress Swamp
-NE-L,-70.832414,-70.839686,42.741989,42.740801000000005,"Plum Island Sound Estuary, Massachusetts, USA",salt marsh,NA,NA,Massachusetts,Charles
 Nefyn,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Negombo Estuary,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Nelson_Island_Creek,-70.8305103,-70.8308067,42.7426052,42.7422908,"Plum Island Sound Estuary, Massachusetts, USA",emergent,NA,NA,Massachusetts,Charles
@@ -702,7 +701,7 @@ Oued_Tahaddart,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 "Oura Bay, Okinawa",NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Outer_Lagoon,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Padilla_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,Washington,Strait of Georgia
-"Pai Matos Island,Cananéia, State of São Paulo",NA,NA,NA,NA,NA,NA,NA,NA,International,International
+"Pai Matos Island,CananÃ©ia, State of SÃ£o Paulo",NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Pak Panang,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Pambala-Chilaw Lagoon,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Pamunkey_River,NA,NA,NA,NA,NA,NA,NA,NA,Virginia,Pamunkey
@@ -726,7 +725,8 @@ Pittwater,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Plummer_Slough,NA,NA,NA,NA,NA,NA,NA,NA,California,Coyote
 Pocomoke_River,NA,NA,NA,NA,NA,NA,NA,NA,Maryland,Pocomoke
 Pohnpei Island,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Pollença,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
+PollenÃ§a,NA,NA,NA,NA,NA,NA,NA,NA,International,International
+Pollença,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
 "Port Aransas, Texas",NA,NA,NA,NA,NA,NA,NA,NA,Texas,Aransas Bay
 "Port Fourchon, Louisiana",NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
 Port Headland,NA,NA,NA,NA,NA,NA,NA,NA,International,International
@@ -777,9 +777,9 @@ Santa_Rosa_Sound,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,Pensacola Bay
 Santander_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Sapelo_River,NA,NA,NA,NA,NA,NA,NA,NA,Georgia,Ogeechee Coastal
 Savannah_River,NA,NA,NA,NA,NA,NA,NA,NA,Georgia,Lower Savannah
-Savannah_River_high_River,NA,NA,NA,NA,NA,forested,fresh,high,Georgia,Lower Savannah
-Savannah_River_low_River,NA,NA,NA,NA,NA,emergent,oligohaline,low,Georgia,Lower Savannah
-Savannah_River_mid_River,NA,NA,NA,NA,NA,emergent,oligohaline,low,Georgia,Lower Savannah
+Savannah_River_high,NA,NA,NA,NA,NA,forested,fresh,high,Georgia,Lower Savannah
+Savannah_River_low,NA,NA,NA,NA,NA,emergent,oligohaline,low,Georgia,Lower Savannah
+Savannah_River_mid,NA,NA,NA,NA,NA,emergent,oligohaline,low,Georgia,Lower Savannah
 Saw_Mill_Creek,NA,NA,NA,NA,NA,NA,NA,NA,New York,Sandy Hook-Staten Island
 Sawi Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 "Sematan Mangrove Forest, Sarawak",NA,NA,NA,NA,NA,NA,NA,NA,International,International
@@ -817,8 +817,7 @@ St._Andrews_Bay_Florida_USA,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,St. Andrew-St.
 St_Joseph_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,International
 Sta_Maria_,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Sulawesi,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-SW-L,-70.84646699999999,-70.84914300000001,42.721987000000006,42.720583,"Plum Island Sound Estuary, Massachusetts, USA",salt marsh,NA,NA,Massachusetts,Charles
-SW-R,-70.846983,-70.849347,42.722576000000004,42.720824,"Plum Island Sound Estuary, Massachusetts, USA",salt marsh,NA,NA,Massachusetts,Charles
+TÃ©rraba-Sierpe,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Tabarca_North,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Tabarca_South,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Talamanca,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
@@ -832,7 +831,6 @@ Ted_Harvey_Conservation_Area,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Broadkill-Smyrna
 Tela,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Ten_Thousand_Islands,-81.52314862,-81.54749817999999,25.976839471,25.845753739,NA,NA,NA,NA,Florida,Big Cypress Swamp
 Terminos Lagoon,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Térraba-Sierpe,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Terrebonne,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
 Texas,NA,NA,NA,NA,NA,NA,NA,NA,Texas,Aransas Bay
 Thailand,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
@@ -842,6 +840,7 @@ Thomas_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Three Fathoms Cove,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Thumayriyah,53.030442,53.028678,24.1338862,24.1293478,NA,NA,NA,NA,International,International
 "Thuwal, Jeddah",NA,NA,NA,NA,NA,NA,NA,NA,International,International
+Tijuana_Estuary,NA,NA,NA,NA,NA,NA,NA,NA,California,Cottonwood-Tijuana
 Time of Mandeval Tip,NA,NA,NA,NA,NA,NA,NA,NA,California,San Joaquin Delta
 Towra Point Nature Reserve,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Trang,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
@@ -867,15 +866,13 @@ Village_Creek,NA,NA,NA,NA,NA,NA,NA,NA,Connecticut,Saugatuck
 Villajoyosa,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
 Virginia_Coastal_Bays,NA,NA,NA,NA,NA,unvegetated marine,NA,NA,Virginia,Eastern Lower Delmarva
 Waccamaw_River,NA,NA,NA,NA,NA,NA,NA,NA,South Carolina,Waccamaw
-Waccamaw_River_Butler_island_River,NA,NA,NA,NA,NA,forested to emergent,oligohaline,mid,South Carolina,Waccamaw
-Waccamaw_River_Richmond_island_River,NA,NA,NA,NA,NA,forested,fresh,high,South Carolina,Waccamaw
-Waccamaw_River_Turkey_creek_high_River,NA,NA,NA,NA,NA,emergent,oligohaline,low,South Carolina,Carolina Coastal-Sampit
-Waccamaw_River_Turkey_creek_low_River,NA,NA,NA,NA,NA,forested to emergent,oligohaline,low,South Carolina,Carolina Coastal-Sampit
+Waccamaw_River_Butler_island,NA,NA,NA,NA,NA,forested to emergent,oligohaline,mid,South Carolina,Waccamaw
+Waccamaw_River_Richmond_island,NA,NA,NA,NA,NA,forested,fresh,high,South Carolina,Waccamaw
+Waccamaw_River_Turkey_creek_high,NA,NA,NA,NA,NA,emergent,oligohaline,low,South Carolina,Carolina Coastal-Sampit
+Waccamaw_River_Turkey_creek_low,NA,NA,NA,NA,NA,forested to emergent,oligohaline,low,South Carolina,Carolina Coastal-Sampit
 Waitemata Harbour,NA,NA,NA,NA,NA,NA,NA,NA,International,International
 "Wallis Lake, NSW",NA,NA,NA,NA,NA,NA,NA,NA,International,International
 Wallis_Lake,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-WE-L,-70.83653,-70.85117000000001,42.739959,42.739011,"Plum Island Sound Estuary, Massachusetts, USA",salt marsh,NA,NA,Massachusetts,Charles
-WE-R,-70.847258,-70.849202,42.737907,42.737703,"Plum Island Sound Estuary, Massachusetts, USA",salt marsh,NA,NA,Massachusetts,Charles
 Weddelsborg,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
 Weedon_Island_Salt_Barren,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Tampa Bay
 Weeks_Bay,-87.81125599699999,-87.84718823300001,30.443171271999997,30.376521448000002,NA,NA,NA,NA,Alabama,Mobile Bay
