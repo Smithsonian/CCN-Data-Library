@@ -164,6 +164,7 @@ study_id,species,"Unique identifier for the study made up of the first author’s 
 site_id,species,Site identification code unique to each study.,character,,,,
 core_id,species,Core identification code unique to each site.,character,,,,
 species_code,species,Code associated with a species or a vegetation assemblage.,character,,,,
+count,species,Frequency of each species at the given site/plot,numeric,,,,
 study_id,impact,"Unique identifier for the study made up of the first author’s family name, as well as the second author’s family name or ‘et al.’ if more than three, then publication year separated by underscores.",character,,,,
 site_id,impact,Site identification code unique to each study.,character,,,,
 core_id,impact,Core identification code unique to each site.,character,,,,

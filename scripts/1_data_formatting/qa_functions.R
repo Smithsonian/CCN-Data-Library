@@ -97,7 +97,7 @@ fraction_not_percent <- function(dataset) {
 # Make sure column names match CCRCN guidelines
 test_colnames <- function(category, dataset) {
   
-  database_structure <- read_csv("./docs/ccrcn_database_structure.csv", col_types = cols())
+  database_structure <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols())
   
   # Create a vector of all the table names
   tables <- unique(database_structure$table)
