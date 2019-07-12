@@ -6,9 +6,11 @@
 # Contact: Michael Lonneman, lonnemanM@si.edu
 
 library(tidyverse)
+library(RefManageR)
 
 raw_cores <- read_csv("./data/primary_studies/drexler_2019/original/coordinates.csv")
 raw_depthseries <- read_csv("./data/primary_studies/drexler_2019/original/nisqually_depthseries_manual_edits.csv")
+raw_species <- read_csv("./data/primary_studies/drexler_2019/original/species.csv")
 
 ## Curate data #########
 study_id_value <- "Drexler_et_al_2019"
@@ -57,16 +59,41 @@ sites <- cores %>%
   group_by(site_id) %>%
   summarize(study_id = study_id_value) %>%
   merge(site_boundaries, by="site_id") %>%
+  mutate(salinity_class = "polyhaline",
+         vegetation_class = "emergent") %>%
   select(study_id, site_id, everything())
 
-# ## ... impact data #####
-# impacts <- impacts_raw %>%
-#   select(study_id, site_id, core_id, impact_class)
-# 
+## ... impact data #####
+impacts <- cores %>%
+  select(study_id, site_id, core_id) %>%
+  filter(site_id == "Six_Gill_Slough") %>%
+  mutate(impact_class = "tidally restored")
+  
 # ## ... species data ####
-# species <- species_raw %>%
-#   select(study_id, site_id, core_id, species_code) %>%
-#   filter(!is.na(species_code))
+species <- cores %>%
+  select(study_id, site_id, core_id) %>%
+  filter(site_id == "Animal_Slough") %>%
+  merge(raw_species, by="site_id", all.x=TRUE, all.y=TRUE)
+
+## Create study-level data ######
+# Get bibtex citation from DOI
+biblio_raw <- GetBibEntryWithDOI("10.1111/rec.12941")
+biblio_df <- as.data.frame(biblio_raw)
+study_citations <- biblio_df %>%
+  rownames_to_column("key") %>%
+  mutate(bibliography_id = study_id_value, 
+         study_id = study_id_value,
+         key = study_id_value,
+         publication_type = "Article", 
+         year = as.numeric(year)) %>%
+  select(study_id, bibliography_id, publication_type, everything())
+
+# Write .bib file
+bib_file <- study_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  column_to_rownames("key")
+
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019.bib")
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -88,12 +115,12 @@ test_variable_names(species)
 # the test returns all core-level rows that did not have a match in the depth series data
 results <- test_core_relationships(cores, depthseries)
 
-study_uncontrolled <- read_csv("./data_releases/drexler_2019/data/intermediate/drexler_2019_user_defined_attributes.csv")
 test_numeric_vars(depthseries)
 
 ## Export curated data ###########
 write_csv(depthseries, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_depthseries.csv")
 write_csv(cores, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_cores.csv")
 write_csv(sites, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_sites.csv")
-#write_csv(impacts, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_impacts.csv")
-#write_csv(species, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_species.csv")
+write_csv(impacts, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_impacts.csv")
+write_csv(species, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_species.csv")
+write_csv(study_citations, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_study_citations.csv")

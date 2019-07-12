@@ -1,3 +1,3 @@
-study_id,site_id,site_longitude_max,site_longitude_min,site_latitude_max,site_latitude_min
-Drexler_et_al_2019,Animal_Slough,-122.698335,-122.701155,47.096953,47.092957000000006
-Drexler_et_al_2019,Six_Gill_Slough,-122.706336,-122.70914400000001,47.09329700000001,47.088652999999994
+study_id,site_id,site_longitude_max,site_longitude_min,site_latitude_max,site_latitude_min,salinity_class,vegetation_class
+Drexler_et_al_2019,Animal_Slough,-122.698335,-122.701155,47.096953,47.092957000000006,polyhaline,emergent
+Drexler_et_al_2019,Six_Gill_Slough,-122.706336,-122.70914400000001,47.09329700000001,47.088652999999994,polyhaline,emergent
