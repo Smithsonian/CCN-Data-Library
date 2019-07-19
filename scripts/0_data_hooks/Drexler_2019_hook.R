@@ -23,13 +23,12 @@ depthseries <- raw_depthseries %>%
          site_id = ifelse(grepl("SG", core_id), "Six_Gill_Slough", "Animal_Slough")) %>%
   # Modify carbon stock variables: 
   mutate(fraction_carbon = percent_carbon / 100,
-         # Dry bulk density was in grams per cubic meter
-         dry_bulk_density = dry_bulk_density * 100) %>%
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "distintegrations per minute per gram", NA)) %>%
   select(study_id, site_id, core_id, depth_min, depth_max,
          dry_bulk_density, fraction_carbon, 
          total_pb210_activity, total_pb210_sd,  
          ra226_activity, ra226_activity_sd, 
-         excess_pb210_activity, excess_pb210_activity_sd)
+         excess_pb210_activity, excess_pb210_activity_sd, pb210_unit)
 
 ## ... core data #######
 coordinates <- raw_cores %>%
