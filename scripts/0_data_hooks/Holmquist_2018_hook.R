@@ -45,15 +45,15 @@ library(RefManageR)
 
 ## 2. Import data to convert codes to common plain language ####
 
-cores <- read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_core_data.csv")
-depthseries <- read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_depth_series_data.csv")
-impacts <-read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_impact_data.csv")
-species <- read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_species_data.csv")
-methods <- read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_methods_data.csv")
-citations <- read_csv("data/Holmquist_2018/original/V1_Holmquist_2018_study_citations.csv")
+cores <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_core_data.csv")
+depthseries <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_depth_series_data.csv")
+impacts <-read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_impact_data.csv")
+species <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_species_data.csv")
+methods <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_methods_data.csv")
+citations <- read_csv("data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_study_citations.csv")
 
 # remove the following studies that are now in their own separate data hooks: 
-removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001", "Noe_et_al_2016")
+removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001", "Noe_et_al_2016", "Johnson_et_al_2007")
 
 ## 3. Recode and rename factors #################
 
@@ -148,8 +148,10 @@ citations <- read.csv("./data/Holmquist_2018/intermediate/initial_citations.csv"
 
 # Build citations for primary studies that have DOIs
 primary_dois <- citations %>%
+  filter(!(study_id %in% removed_studies)) %>%
   filter(is.na(doi)==FALSE) %>%
   filter(study_type != "synthesis") %>%
+  filter(study_id != "Nuttle_1996" & study_id != "Crooks_et_al_2014" & study_id != "Boyd_2012" & study_id != "CRMS_Database" & study_id != "Merrill_1999") %>%
   select(study_id, bibliography_id, doi)
 
 primary <- GetBibEntryWithDOI(primary_dois$doi)
@@ -263,9 +265,9 @@ results <- test_core_relationships(cores, depthseries)
 test_numeric_vars(depthseries)
 
 ## 6. Write to folder ########
-write_csv(cores, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_core_data.csv")
-write_csv(depthseries, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_depth_series_data.csv")
-write_csv(impacts, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_impact_data.csv")
-write_csv(species, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_species_data.csv")
-write_csv(methods, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_methods_data.csv")
-write_csv(study_citations_synthesis, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_study_citations.csv")
+write_csv(cores, "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018_core_data.csv")
+write_csv(depthseries, "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018_depth_series_data.csv")
+write_csv(impacts, "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018_impact_data.csv")
+write_csv(species, "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018_species_data.csv")
+write_csv(methods, "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018_methods_data.csv")
+write_csv(study_citations_synthesis, "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018_study_citations.csv")

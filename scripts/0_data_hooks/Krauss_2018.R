@@ -12,6 +12,8 @@
 
 # Krauss 2018 data release:
 # 10.5066/F7TM7930
+# Jones et al 2007 DOI
+# 10.1002/2017JG004015 (methods coding)
 
 ## 0. Workspace prep ###################
 
