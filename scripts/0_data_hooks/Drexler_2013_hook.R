@@ -58,11 +58,13 @@ depthseries <- raw_depthseries %>%
   mutate(site_id = gsub(" ", "_", site_id)) %>%
   mutate(study_id = study_id_value,
          core_id = paste(site_id, `core_number`, sep = "_")) %>%
-  mutate(fraction_carbon = organic_carbon_percent / 100) %>% 
+  mutate(fraction_carbon = organic_carbon_percent / 100,
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrations per minute per gram", NA), 
+         cs137_unit = ifelse(!is.na(cs137_unit), "picoCuries per gram", NA)) %>% 
   select(study_id, site_id, core_id, depth_min, depth_max,
          dry_bulk_density, fraction_carbon, 
-         cs137_activity, cs137_activity_sd,
-         total_pb210_activity, total_pb210_activity_sd, excess_pb210_activity, excess_pb210_activity_sd,
+         cs137_activity, cs137_activity_sd, cs137_unit,
+         total_pb210_activity, total_pb210_activity_sd, excess_pb210_activity, excess_pb210_activity_sd, pb210_unit,
          age, age_sd, cs137_peak_present, depth_interval_notes) 
 
 # Filter out cores that aren't in the depthseries
