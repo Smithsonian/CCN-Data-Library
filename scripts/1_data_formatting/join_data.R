@@ -102,6 +102,13 @@ Weis_2001_depthseriesdata <- read_csv("./data/primary_studies/Weis_et_al_2001/de
 Weis_2001_citationdata <- read_csv("./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_study_citations.csv")
 Weis_2001_methodsdata <- read_csv("./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_methods.csv")
 
+# Johnson et al 2007
+Johnson_2007_coredata <- read_csv("./data/primary_studies/Johnson_et_al_2007/derivative/Johnson_et_al_2007_cores.csv")
+Johnson_2007_speciesdata <- read_csv("./data/primary_studies/Johnson_et_al_2007/derivative/Johnson_et_al_2007_species.csv")
+Johnson_2007_depthseriesdata <- read_csv("./data/primary_studies/Johnson_et_al_2007/derivative/Johnson_et_al_2007_depthseries.csv")
+Johnson_2007_citationdata <- read_csv("./data/primary_studies/Johnson_et_al_2007/derivative/Johnson_et_al_2007_study_citations.csv")
+Johnson_2007_methodsdata <- read_csv("./data/primary_studies/Johnson_et_al_2007/derivative/Johnson_et_al_2007_methods.csv")
+
 ## 2. Join datasets ######################
 
 ## ....2a. Core data ################
