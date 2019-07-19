@@ -120,3 +120,6 @@ Also, needs species data.
 
 - looking at paper and map in figure 2, low, middle, and high corresponds to positions on the river and vegetation zones. Looking at guidance on inundation_class, definitions of low, medium and high are "Study-specific definition of an elevation relatively [low, mid, high] in the tidal frame, typically defined by vegetation type". This appears to match the current designations of inundation_class. Assuming that higher on a river is also higher in elevation (because water flows downhill), low, medium, high on a river would also be low, medium, and high elevations. No changes made, but if inappropriate use of inundation_class it can be removed.
 
+2019-07-19: Manager review. Krauss data needs materials and methods, especially date reference for age depth models. Also needs a nested citation for the Jones paper it's based on.
+
+
