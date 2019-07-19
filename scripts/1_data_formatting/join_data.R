@@ -129,6 +129,14 @@ Drexler_2019_methodsdata <- read_csv("./data/primary_studies/Drexler_2019/deriva
 Drexler_2019_impactdata <- read_csv("./data/primary_studies/Drexler_2019/derivative/Drexler_et_al_2019_impacts.csv")
 Drexler_2019_sitedata <- read_csv("./data/primary_studies/Drexler_2019/derivative/Drexler_et_al_2019_sites.csv")
 
+# Noe et al 2016
+Noe_2016_coredata <- read_csv("./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_cores.csv") 
+Noe_2016_speciesdata <- read_csv("./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_species.csv")
+Noe_2016_depthseriesdata <- read_csv("./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_depthseries.csv")
+Noe_2016_citationdata <- read_csv("./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_study_citations.csv")
+Noe_2016_methodsdata <- read_csv("./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_material_and_methods.csv")
+Noe_2016_impactdata <- read_csv("./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_impacts.csv")
+
 ## 2. Join datasets ######################
 
 ## ....2a. Core data ################
@@ -149,7 +157,8 @@ CCRCN_coredata <- Holmquist_2018_coredata %>%
   bind_rows(Weis_2001_coredata) %>%
   bind_rows(Johnson_2007_coredata) %>%
   bind_rows(Drexler_2013_coredata) %>%
-  bind_rows(Drexler_2019_coredata) 
+  bind_rows(Drexler_2019_coredata) %>%
+  bind_rows(Noe_2016_coredata)
 
 ## ....2b. Depth series data ###############
 
@@ -168,7 +177,8 @@ CCRCN_depthseriesdata <- Holmquist_2018_depthseriesdata %>%
   bind_rows(Weis_2001_depthseriesdata) %>%
   bind_rows(Johnson_2007_depthseriesdata) %>%
   bind_rows(Drexler_2013_depthseriesdata) %>%
-  bind_rows(Drexler_2019_depthseriesdata)
+  bind_rows(Drexler_2019_depthseriesdata) %>%
+  bind_rows(Noe_2016_depthseriesdata)
 
 # Commenting out aggregated data for now
 # # Add a column for aggregated fraction carbon and carbon density per core
@@ -206,7 +216,8 @@ if (length(select(CCRCN_sitedata, contains("vegetation_method"))) > 0) {
 ## ....2d. Impact data ##################
 CCRCN_impactdata <- Holmquist_2018_impactdata %>%
   bind_rows(Drexler_2013_impactdata) %>%
-  bind_rows(Drexler_2019_impactdata)
+  bind_rows(Drexler_2019_impactdata) %>%
+  bind_rows(Noe_2016_impactdata)
 
 ## ....2e. Methods data #################
 CCRCN_methodsdata <- Holmquist_2018_methodsdata %>%
@@ -214,7 +225,8 @@ CCRCN_methodsdata <- Holmquist_2018_methodsdata %>%
   bind_rows(Weis_2001_methodsdata) %>%
   bind_rows(Johnson_2007_methodsdata) %>%
   bind_rows(Drexler_2013_methodsdata) %>%
-  bind_rows(Drexler_2019_methodsdata)
+  bind_rows(Drexler_2019_methodsdata) %>%
+  bind_rows(Noe_2016_methodsdata)
 
 
 ## ....2f. Species data #################
@@ -227,7 +239,8 @@ CCRCN_speciesdata <- Osland_2016_speciesdata %>%
   bind_rows(Weis_2001_speciesdata) %>%
   bind_rows(Johnson_2007_speciesdata) %>%
   bind_rows(Drexler_2013_speciesdata) %>%
-  bind_rows(Drexler_2019_speciesdata)
+  bind_rows(Drexler_2019_speciesdata) %>%
+  bind_rows(Noe_2016_speciesdata)
 
 ## ....2g. Bind citation tables ###############
 CCRCN_study_citations <- Holmquist_2018_citationdata %>%
@@ -245,8 +258,8 @@ CCRCN_study_citations <- Holmquist_2018_citationdata %>%
   bind_rows(Weis_2001_citationdata) %>%
   bind_rows(Johnson_2007_citationdata) %>%
   bind_rows(Drexler_2013_citationdata) %>%
-  bind_rows(Drexler_2019_citationdata)
-
+  bind_rows(Drexler_2019_citationdata) %>%
+  bind_rows(Noe_2016_citationdata)
 
 bib_file <- CCRCN_study_citations %>%
   select(-study_id, -bibliography_id, -publication_type) %>%
