@@ -142,7 +142,6 @@ LOI_oligo_raw <- read_csv("./data/primary_studies/Jones_2017/original/dataset253
 LOI_heavy_salt_raw  <- read_csv("./data/primary_studies/Jones_2017/original/dataset25346.csv")
 LOI_mod_salt_raw  <- read_csv("./data/primary_studies/Jones_2017/original/dataset25365.csv")
 
-
 ## 3. Curate data ######################
 ## ....3A. Depthseries data ##################
 
@@ -320,6 +319,14 @@ Jones_depthseries <- geochron %>%
 depthseries <- Krauss_depthseries %>%
   full_join(Jones_depthseries)
 
+# Update study IDs based on revised methods table
+# Three different coring methods were used on these cores, each combination gets a unique study ID
+depthseries <- depthseries %>%
+  mutate(study_id = ifelse(core_id == "butler_island_1" | 
+                             core_id == "turkey_creek_2" |
+                             core_id == "richmond_island_1", "Krauss_et_al_2008a", 
+                           ifelse(core_id == "turkey_creek_1", "Krauss_et_al_2018b", "Krauss_et_al_2018c")))
+
 ## ....3B. Core-level data ##################
 
 # Use curation functions if you need
@@ -405,21 +412,21 @@ impacts <- cores %>%
   select(study_id, site_id, core_id) %>% 
   mutate(impact_class = "restored")
 
-## ....3E. Materials and Methods #############
-
-methods <- cores %>%
-  select(study_id, site_id, core_id) %>%
-  distinct(study_id, site_id, core_id) %>%
-  mutate(loss_on_ignition_temperature = c(550)) %>%
-  # see personal communication, different coring methods for each site
-  mutate(coring_method = ifelse(site_id == "Waccamaw_River", "vibracore",
-                                "russian corer"))  %>%
-  mutate(compaction_flag = ifelse(site_id == "Waccamaw_River", "compaction quantified",
-                                  "corer limits compaction")) %>%
-  mutate(age_depth_model_reference = "YBP")
+# ## ....3E. Materials and Methods #############
+# 
+# methods <- cores %>%
+#   select(study_id, site_id, core_id) %>%
+#   distinct(study_id, site_id, core_id) %>%
+#   mutate(loss_on_ignition_temperature = c(550)) %>%
+#   # see personal communication, different coring methods for each site
+#   mutate(coring_method = ifelse(site_id == "Waccamaw_River", "vibracore",
+#                                 "russian corer"))  %>%
+#   mutate(compaction_flag = ifelse(site_id == "Waccamaw_River", "compaction quantified",
+#                                   "corer limits compaction")) %>%
+#   mutate(age_depth_model_reference = "YBP")
 
 ## ....3F. Species data ##############
-
+# Species codes are common names
 species <- species_raw %>% 
   mutate(core_id = paste(River, Site, Plot, sep = "_")) %>% 
   mutate(core_id = tolower(core_id)) %>% 
@@ -430,20 +437,17 @@ species <- species_raw %>%
   rename(species_code = Species) %>% 
   right_join(cores) %>% 
   select(study_id, site_id, core_id, species_code) %>% 
-  count(study_id, site_id, core_id, species_code) %>% 
-  rename(count = n) %>% 
-  mutate(count = as.numeric(ifelse(is.na(species_code), "0", count)))
-  
-## ....3G. Study-level data #########
-
-# Not needed because metadata is already prepped
-
+  # count(study_id, site_id, core_id, species_code) %>% 
+  # rename(count = n) %>% 
+  # mutate(count = as.numeric(ifelse(is.na(species_code), "0", count)))
+  filter(!is.na(species_code)) %>%
+  distinct()
 
 ## ....3H. Study citations ################
 
 
 # Get BibTex entries from DOI
-paper_bib_raw <- GetBibEntryWithDOI("10.1029/2018GB005897")
+paper_bibs_raw <- GetBibEntryWithDOI(c("10.1029/2018GB005897","10.1002/2017JG004015"))
 data_bib_raw <- GetBibEntryWithDOI("10.5066/F7TM7930")
 
 # If the data citation worked...
@@ -467,20 +471,26 @@ if(class(data_bib_raw)[1] == "BibEntry") {
   )
 }
 
+study_ids <- cores %>%
+  select(study_id) %>%
+  distinct()
+
 # Convert this to a dataframe
-biblio <- as.data.frame(paper_bib_raw) %>%
+paper_biblio <- as.data.frame(paper_bibs_raw) %>%
   # GetBibEntryWithDOI() defaults study name as a row name, convert to column
   rownames_to_column("key") %>%
-  # Add author
-  mutate(author = "Ken Krauss and Greg Noe and Jamie Duberstein and William Conner and Mirian Jones and Chrstopher Bernhardt and Nicole Cormier and Andrew From") %>% 
-  # Join data release citation
-  bind_rows(as.data.frame(data_bib)) %>% 
-  mutate(doi = tolower(doi)) %>% 
-  mutate(key = ifelse(is.na(key), "Krauss_2018_data", key))
+  merge(study_ids) %>%
+  mutate(doi = tolower(doi),
+         bibliography_id = ifelse(key == "Krauss_2018", "Krauss_et_al_2018", "Jones_et_al_2017")) 
+
+data_biblio <- as.data.frame(data_bib) %>% 
+  merge(study_ids) %>%
+  mutate(key = "Krauss_2018_data",
+         bibliography_id = "Krauss_et_al_2018_data_release")
   
 # Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- biblio %>%
-  mutate(study_id = "Krauss_et_al_2018", bibliography_id = "Krauss_et_al_2018") %>%
+study_citations <- data_biblio %>%
+  bind_rows(paper_biblio) %>%
   mutate(publication_type = bibtype) %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
   mutate(year = as.numeric(year),
