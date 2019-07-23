@@ -95,6 +95,7 @@ Krauss_2018_depthseriesdata <- read_csv("data/primary_studies/Krauss_2018/deriva
                                         ))
 Krauss_2018_sitedata <- read_csv("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
 Krauss_2018_citationdata <- read_csv("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
+Krauss_2018_methodsdata <- read_csv("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_methods.csv")
 
 # Weis et al. 2001
 Weis_2001_coredata <- read_csv("./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_cores.csv")
@@ -111,8 +112,7 @@ Johnson_2007_citationdata <- read_csv("./data/primary_studies/Johnson_2007/deriv
 Johnson_2007_methodsdata <- read_csv("./data/primary_studies/Johnson_2007/derivative/Johnson_et_al_2007_methods.csv")
 
 # Drexler et al 2013
-Drexler_2013_coredata <- read_csv("./data/primary_studies/Drexler_2013/derivative/Drexler_et_al_2013_cores.csv") %>%
-  select(-core_date)
+Drexler_2013_coredata <- read_csv("./data/primary_studies/Drexler_2013/derivative/Drexler_et_al_2013_cores.csv") 
 Drexler_2013_speciesdata <- read_csv("./data/primary_studies/Drexler_2013/derivative/Drexler_et_al_2013_species.csv")
 Drexler_2013_depthseriesdata <- read_csv("./data/primary_studies/Drexler_2013/derivative/Drexler_et_al_2013_depthseries.csv")
 Drexler_2013_citationdata <- read_csv("./data/primary_studies/Drexler_2013/derivative/Drexler_et_al_2013_study_citations.csv")
@@ -120,8 +120,7 @@ Drexler_2013_methodsdata <- read_csv("./data/primary_studies/Drexler_2013/deriva
 Drexler_2013_impactdata <- read_csv("./data/primary_studies/Drexler_2013/derivative/Drexler_et_al_2013_impacts.csv")
 
 # Drexler et al 2019
-Drexler_2019_coredata <- read_csv("./data/primary_studies/Drexler_2019/derivative/Drexler_et_al_2019_cores.csv") %>%
-  select(-core_date)
+Drexler_2019_coredata <- read_csv("./data/primary_studies/Drexler_2019/derivative/Drexler_et_al_2019_cores.csv") 
 Drexler_2019_speciesdata <- read_csv("./data/primary_studies/Drexler_2019/derivative/Drexler_et_al_2019_species.csv")
 Drexler_2019_depthseriesdata <- read_csv("./data/primary_studies/Drexler_2019/derivative/Drexler_et_al_2019_depthseries.csv")
 Drexler_2019_citationdata <- read_csv("./data/primary_studies/Drexler_2019/derivative/Drexler_et_al_2019_study_citations.csv")
@@ -226,8 +225,8 @@ CCRCN_methodsdata <- Holmquist_2018_methodsdata %>%
   bind_rows(Johnson_2007_methodsdata) %>%
   bind_rows(Drexler_2013_methodsdata) %>%
   bind_rows(Drexler_2019_methodsdata) %>%
-  bind_rows(Noe_2016_methodsdata)
-
+  bind_rows(Noe_2016_methodsdata) %>%
+  bind_rows(Krauss_2018_methodsdata)
 
 ## ....2f. Species data #################
 CCRCN_speciesdata <- Osland_2016_speciesdata %>%

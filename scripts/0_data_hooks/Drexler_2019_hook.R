@@ -44,6 +44,7 @@ cores <- depthseries %>%
   group_by(core_id) %>%
   summarize(site_id = first(site_id)) %>%
   merge(coordinates, by="core_id", all.x=TRUE, all.y=TRUE) %>%
+  mutate(core_date = mdy(core_date)) %>%
   select(study_id, site_id, core_id, core_date, core_latitude, core_longitude, core_notes)
 
 ## ... site data #######

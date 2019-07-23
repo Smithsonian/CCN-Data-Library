@@ -16,7 +16,8 @@ study_id_value <- "Drexler_et_al_2013"
 cores <- raw_cores %>%
   mutate(site_id = gsub(" ", "_", site_id)) %>%
   mutate(study_id = study_id_value,
-         core_id = paste(site_id, core_number, sep = "_"))
+         core_id = paste(site_id, core_number, sep = "_"),
+         core_date = as.Date(core_date))
 
 sites_raw <- cores
 impacts_raw <- cores

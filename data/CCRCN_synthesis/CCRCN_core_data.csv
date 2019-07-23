@@ -5318,14 +5318,14 @@ Thorne_et_al_2015,Siletz,SZ05,44.89635654455872,-124.01287683857832,NA,2.2,NA,NA
 Thorne_et_al_2015,Willapa,WB01,46.37193669485561,-124.00573820079033,NA,2.74,NA,NA,NA,NA,RTK,NAVD88,NA,NA,NA,NA,NA,NA
 Thorne_et_al_2015,Willapa,WB04,46.37570678091653,-124.00583342423973,NA,2.32,NA,NA,NA,NA,RTK,NAVD88,NA,NA,NA,NA,NA,NA
 Thorne_et_al_2015,Willapa,WB06,46.37943784513057,-124.00422445441863,NA,2.016,NA,NA,NA,NA,RTK,NAVD88,NA,NA,NA,NA,NA,NA
-Krauss_et_al_2018,Savannah_River_low,savannah_low_1,32.18,-81.14,NA,NA,oligohaline,emergent,low,NA,NA,NA,NA,NA,NA,NA,NA,measurement
-Krauss_et_al_2018,Savannah_River_mid,savannah_mid_2,32.24,-81.15,NA,NA,oligohaline,forested,mid,NA,NA,NA,NA,NA,NA,NA,NA,measurement
-Krauss_et_al_2018,Savannah_River_mid,savannah_mid_1,32.17,-81.14,NA,NA,oligohaline,emergent,low,NA,NA,NA,NA,NA,NA,NA,NA,measurement
-Krauss_et_al_2018,Savannah_River_high,savannah_high_1,32.238,-81.155,NA,NA,fresh,forested,high,NA,NA,NA,NA,NA,NA,NA,NA,measurement
-Krauss_et_al_2018,Waccamaw_River_Butler_island,butler_island_1,33.422823,-79.207996,NA,NA,oligohaline,forested to emergent,mid,NA,NA,NA,NA,NA,NA,NA,NA,measurement
-Krauss_et_al_2018,Waccamaw_River_Turkey_creek_high,turkey_creek_1,33.35003,-79.3447,NA,NA,oligohaline,emergent,low,NA,NA,NA,NA,NA,NA,NA,NA,measurement
-Krauss_et_al_2018,Waccamaw_River_Turkey_creek_low,turkey_creek_2,33.34001,-79.34166,NA,NA,oligohaline,forested to emergent,low,NA,NA,NA,NA,NA,NA,NA,NA,measurement
-Krauss_et_al_2018,Waccamaw_River_Richmond_island,richmond_island_1,33.55564,-79.08943,NA,NA,fresh,forested,high,NA,NA,NA,NA,NA,NA,NA,NA,measurement
+Krauss_et_al_2018c,Savannah_River_low,savannah_low_1,32.18,-81.14,NA,NA,oligohaline,emergent,low,NA,NA,NA,NA,NA,NA,NA,NA,measurement
+Krauss_et_al_2018c,Savannah_River_mid,savannah_mid_2,32.24,-81.15,NA,NA,oligohaline,forested,mid,NA,NA,NA,NA,NA,NA,NA,NA,measurement
+Krauss_et_al_2018c,Savannah_River_mid,savannah_mid_1,32.17,-81.14,NA,NA,oligohaline,emergent,low,NA,NA,NA,NA,NA,NA,NA,NA,measurement
+Krauss_et_al_2018c,Savannah_River_high,savannah_high_1,32.238,-81.155,NA,NA,fresh,forested,high,NA,NA,NA,NA,NA,NA,NA,NA,measurement
+Krauss_et_al_2018a,Waccamaw_River_Butler_island,butler_island_1,33.422823,-79.207996,NA,NA,oligohaline,forested to emergent,mid,NA,NA,NA,NA,NA,NA,NA,NA,measurement
+Krauss_et_al_2018b,Waccamaw_River_Turkey_creek_high,turkey_creek_1,33.35003,-79.3447,NA,NA,oligohaline,emergent,low,NA,NA,NA,NA,NA,NA,NA,NA,measurement
+Krauss_et_al_2018a,Waccamaw_River_Turkey_creek_low,turkey_creek_2,33.34001,-79.34166,NA,NA,oligohaline,forested to emergent,low,NA,NA,NA,NA,NA,NA,NA,NA,measurement
+Krauss_et_al_2018a,Waccamaw_River_Richmond_island,richmond_island_1,33.55564,-79.08943,NA,NA,fresh,forested,high,NA,NA,NA,NA,NA,NA,NA,NA,measurement
 Weis_et_al_2001,Tijuana_Estuary,Tijuana_Estuary_East_low,32.567032,-117.130867,latitude and longitude were extracted from a relatively high quality map figure,NA,saline,emergent,low,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA
 Weis_et_al_2001,Tijuana_Estuary,Tijuana_Estuary_East_mid_1,32.566902,-117.130284,latitude and longitude were extracted from a relatively high quality map figure,NA,saline,emergent,mid,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA
 Weis_et_al_2001,Tijuana_Estuary,Tijuana_Estuary_East_mid_2,32.566728,-117.129669,latitude and longitude were extracted from a relatively high quality map figure,NA,saline,emergent,mid,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA
@@ -5333,30 +5333,30 @@ Weis_et_al_2001,Tijuana_Estuary,Tijuana_Estuary_West_low,32.571838,-117.129704,l
 Weis_et_al_2001,Tijuana_Estuary,Tijuana_Estuary_West_mid_1,32.572039,-117.130432,latitude and longitude were extracted from a relatively high quality map figure,NA,saline,emergent,mid,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA
 Weis_et_al_2001,Tijuana_Estuary,Tijuana_Estuary_West_mid_2,32.572335,-117.131078,latitude and longitude were extracted from a relatively high quality map figure,NA,saline,emergent,mid,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA
 Johnson_et_al_2007,Sprague_Marsh,SM02_VC1,43.743531,-69.831958,latitude and longitude were likely from a high quality source,NA,saline,emergent,high,not specified,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2013,Hasty_Point_Managed_Shallow,Hasty_Point_Managed_Shallow_1,33.543317,-79.17055,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2013,Hasty_Point_Managed_Shallow,Hasty_Point_Managed_Shallow_2,33.543417,-79.1705,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2013,Coastal_EDU_Field,Coastal_EDU_Field_1,33.517233,-79.15905,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2013,Coastal_EDU_Field,Coastal_EDU_Field_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2013,Bird_Field,Bird_Field_1,33.494217,-79.1744,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2013,Bird_Field,Bird_Field_2,33.493517,-79.17255,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2013,Sandy_Island_Natural,Sandy_Island_Natural_2,33.5178,-79.148283,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2013,Sandy_Island_Natural,Sandy_Island_Natural_3,33.51795,-79.148233,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2013,Sandy_Island_Deeply_Flooded,Sandy_Island_Deeply_Flooded_1,33.52085,-79.1477,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2013,Sandy_Island_Deeply_Flooded,Sandy_Island_Deeply_Flooded_2,33.52075,-79.147667,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2013,Wardlaw_Shallow_Managed,Wardlaw_Shallow_Managed_1,33.524567,-79.15725,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2013,Wardlaw_Shallow_Managed,Wardlaw_Shallow_Managed_2,33.523567,-79.15645,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Drexler_et_al_2019,Animal_Slough,AS14,47.09662,-122.69857,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Animal Slough North Core 14,NA,NA
-Drexler_et_al_2019,Animal_Slough,AS15,47.09661,-122.69878,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Animal Slough North Core 15,NA,NA
-Drexler_et_al_2019,Animal_Slough,AS16,47.09662,-122.699,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Animal Slough North Core 16,NA,NA
-Drexler_et_al_2019,Animal_Slough,AS7,47.09329,-122.70051,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Animal Slough South Core 7E,NA,NA
-Drexler_et_al_2019,Animal_Slough,AS8,47.09333,-122.70072,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Animal Slough South Core 8M,NA,NA
-Drexler_et_al_2019,Animal_Slough,AS9,47.09337,-122.70092,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Animal Slough South Core 9W,NA,NA
-Drexler_et_al_2019,Six_Gill_Slough,SG10,47.08907,-122.70853,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Six Gill Slough South 10E,NA,NA
-Drexler_et_al_2019,Six_Gill_Slough,SG11,47.08911,-122.70872,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Six Gill Slough South 11M,NA,NA
-Drexler_et_al_2019,Six_Gill_Slough,SG12,47.08904,-122.70891,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Six Gill Slough South 12W,NA,NA
-Drexler_et_al_2019,Six_Gill_Slough,SG4,47.09291,-122.70657,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Six Gill Slough North 4E,NA,NA
-Drexler_et_al_2019,Six_Gill_Slough,SG5,47.0929,-122.70676,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Six Gill Slough North 5M,NA,NA
-Drexler_et_al_2019,Six_Gill_Slough,SG6,47.09288,-122.70704,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Six Gill Slough North 6W,NA,NA
+Drexler_et_al_2013,Hasty_Point_Managed_Shallow,Hasty_Point_Managed_Shallow_1,33.543317,-79.17055,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2010-05-03,NA,NA,NA
+Drexler_et_al_2013,Hasty_Point_Managed_Shallow,Hasty_Point_Managed_Shallow_2,33.543417,-79.1705,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2010-05-03,NA,NA,NA
+Drexler_et_al_2013,Coastal_EDU_Field,Coastal_EDU_Field_1,33.517233,-79.15905,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2010-05-03,NA,NA,NA
+Drexler_et_al_2013,Coastal_EDU_Field,Coastal_EDU_Field_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2010-05-03,NA,NA,NA
+Drexler_et_al_2013,Bird_Field,Bird_Field_1,33.494217,-79.1744,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2010-05-04,NA,NA,NA
+Drexler_et_al_2013,Bird_Field,Bird_Field_2,33.493517,-79.17255,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2010-05-04,NA,NA,NA
+Drexler_et_al_2013,Sandy_Island_Natural,Sandy_Island_Natural_2,33.5178,-79.148283,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2010-05-04,NA,NA,NA
+Drexler_et_al_2013,Sandy_Island_Natural,Sandy_Island_Natural_3,33.51795,-79.148233,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2010-05-05,NA,NA,NA
+Drexler_et_al_2013,Sandy_Island_Deeply_Flooded,Sandy_Island_Deeply_Flooded_1,33.52085,-79.1477,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2010-05-05,NA,NA,NA
+Drexler_et_al_2013,Sandy_Island_Deeply_Flooded,Sandy_Island_Deeply_Flooded_2,33.52075,-79.147667,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2010-05-05,NA,NA,NA
+Drexler_et_al_2013,Wardlaw_Shallow_Managed,Wardlaw_Shallow_Managed_1,33.524567,-79.15725,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2010-05-05,NA,NA,NA
+Drexler_et_al_2013,Wardlaw_Shallow_Managed,Wardlaw_Shallow_Managed_2,33.523567,-79.15645,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2010-05-05,NA,NA,NA
+Drexler_et_al_2019,Animal_Slough,AS14,47.09662,-122.69857,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2017-04-10,Animal Slough North Core 14,NA,NA
+Drexler_et_al_2019,Animal_Slough,AS15,47.09661,-122.69878,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2017-04-10,Animal Slough North Core 15,NA,NA
+Drexler_et_al_2019,Animal_Slough,AS16,47.09662,-122.699,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2017-04-10,Animal Slough North Core 16,NA,NA
+Drexler_et_al_2019,Animal_Slough,AS7,47.09329,-122.70051,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2015-07-22,Animal Slough South Core 7E,NA,NA
+Drexler_et_al_2019,Animal_Slough,AS8,47.09333,-122.70072,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2015-07-22,Animal Slough South Core 8M,NA,NA
+Drexler_et_al_2019,Animal_Slough,AS9,47.09337,-122.70092,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2015-07-22,Animal Slough South Core 9W,NA,NA
+Drexler_et_al_2019,Six_Gill_Slough,SG10,47.08907,-122.70853,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2015-07-23,Six Gill Slough South 10E,NA,NA
+Drexler_et_al_2019,Six_Gill_Slough,SG11,47.08911,-122.70872,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2015-07-23,Six Gill Slough South 11M,NA,NA
+Drexler_et_al_2019,Six_Gill_Slough,SG12,47.08904,-122.70891,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2015-07-23,Six Gill Slough South 12W,NA,NA
+Drexler_et_al_2019,Six_Gill_Slough,SG4,47.09291,-122.70657,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2015-07-22,Six Gill Slough North 4E,NA,NA
+Drexler_et_al_2019,Six_Gill_Slough,SG5,47.0929,-122.70676,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2015-07-22,Six Gill Slough North 5M,NA,NA
+Drexler_et_al_2019,Six_Gill_Slough,SG6,47.09288,-122.70704,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2015-07-22,Six Gill Slough North 6W,NA,NA
 Noe_et_al_2016,Bulter_Island,W2,33.42268,-79.20802,NA,NA,freshwater,forested,NA,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA
 Noe_et_al_2016,Richmond_Island,W1,33.55564,-79.08943,NA,NA,freshwater,forested,NA,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA
 Noe_et_al_2016,Turkey_Creek,W3,33.34001,-79.34166,NA,NA,freshwater,forested,NA,core depth limited by length of corer,NA,NA,NA,NA,NA,NA,NA,NA
