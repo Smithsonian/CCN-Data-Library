@@ -214,6 +214,8 @@ primary_no_dois <- primary_no_dois %>%
          publication_type = bibtype) %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, everything())
 
+study_citations_primary <- bind_rows(study_citations_primary, primary_no_dois)
+
 biblio_synthesis <- BibEntry(bibtype = "Misc", 
                              key = "Holmquist_et_al_2018", 
                              title = "Accuracy and Precision of Tidal Wetland Soil Carbon Mapping in the Conterminous United States: Public Soil Carbon Data Release",
@@ -233,11 +235,10 @@ study_citations_synthesis <- citations %>%
   mutate(key = "Holmquist_et_al_2018",
          publication_type = "synthesis") %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything()) %>%
-  bind_rows(study_citations_primary, primary_no_dois) %>%
+  bind_rows(study_citations_primary) %>%
   mutate(year = as.numeric(year), 
          volume = as.numeric(volume), 
-         number = as.numeric(number)) %>%
-  filter(!(study_id %in% removed_studies)) 
+         number = as.numeric(number))
 
 # Write .bib file
 bib_file <- study_citations_synthesis %>%
@@ -245,7 +246,7 @@ bib_file <- study_citations_synthesis %>%
   distinct() %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "./data/Holmquist_2018/derivative/V1_Holmquist_2018.bib")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018.bib")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
