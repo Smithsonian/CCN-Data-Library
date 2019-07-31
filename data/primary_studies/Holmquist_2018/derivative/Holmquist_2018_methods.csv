@@ -1,0 +1,29 @@
+study_id,publication_type,coring_method,roots_flag,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,loss_on_ignition_flag,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_flag,fraction_carbon_type
+Boyd_2012,thesis,pvc and hammer,NA,NA,100,24,NA,550,4,NA,NA,NA,NA,NA,NA
+Boyd_and_Sommerfield_2016,peer reviewed publication,pvc and hammer,NA,NA,100,24,NA,550,4,NA,NA,NA,NA,NA,NA
+Breithaupt_et_al_2014,peer reviewed publication,russian corer,NA,NA,105,24,NA,550,1,NA,measured,TRUE,none specified,replicate samples,fraction_organic_carbon
+Breithaupt_et_al_2017,peer reviewed publication,piston corer,NA,corer limits compaction,NA,NA,no details,550,3,NA,NA,NA,NA,no details,NA
+Callaway_et_al_2012,peer reviewed publication,hargas corer,NA,NA,85,72,NA,450,8,NA,modeled,NA,NA,extrapolated from subset of samples,fraction_organic_carbon
+Cochran_et_al_1998,peer reviewed publication,mccaffrey peat cutter,NA,NA,60,48,duplicate measurements,450,12,duplicate measurements,NA,NA,NA,NA,NA
+Craft_2007,peer reviewed publication,none specified,NA,NA,NA,NA,air dried to constant mass,NA,NA,NA,measured,TRUE,direct acid treatment,NA,fraction_total_carbon
+CRMS_Database,publically available dataset,push core,NA,< 10-20%,NA,NA,no details,NA,NA,no details,NA,NA,NA,NA,NA
+Crooks_et_al_2014,private sector report,push core,NA,NA,60,96,time approximate,NA,NA,no details,measured,NA,none specified,NA,fraction_organic_carbon
+Drake_et_al_2015,peer reviewed publication,none specified,NA,NA,105,NA,time not specified,NA,NA,NA,measured,NA,none specified,NA,fraction_organic_carbon
+Elsey_Quirk_et_al_2011,peer reviewed publication,push core,NA,NA,60,12,time approximate,460,8,NA,measured,TRUE,HCl fumigation,NA,fraction_organic_carbon
+Ensign_et_al_2015,peer reviewed publication,piston corer,NA,NA,60,NA,to constant mass,NA,NA,NA,measured,FALSE,NA,NA,fraction_total_carbon
+Gerlach_et_al_2017,peer reviewed publication,none specified,NA,NA,NA,NA,no details,NA,NA,no details,NA,NA,NA,NA,NA
+Hill_and_Anisfeld_2015,peer reviewed publication,push core,NA,NA,60,NA,time not specified,550,NA,time not specified,measured,TRUE,HCl fumigation,NA,fraction_organic_carbon
+Kemp_et_al_2012,peer reviewed publication,russian corer,NA,NA,NA,NA,no details,NA,NA,no details,NA,NA,NA,NA,NA
+Kulawardhana_et_al_2015,peer reviewed publication,other shallow corer,roots seperated using floation,no obvious compaction,105,48,NA,440,8,NA,NA,NA,NA,NA,NA
+Merrill_1999,dissertation,mcauley corer,NA,corer limits compaction,NA,NA,no details,550,NA,NA,NA,NA,NA,NA,NA
+Neubauer_2002,dissertation,push core,NA,NA,50,NA,time not specified,500,5,NA,NA,NA,NA,NA,NA
+Noe_et_al_2013,peer reviewed publication,push core,NA,NA,NA,NA,no details,550,4,ground and sieved,measured,FALSE,NA,fumigated to remove microbeal biomass,fraction_total_carbon
+Nuttle_1996,publically available dataset,none specified,NA,NA,NA,NA,no details,NA,NA,no details,NA,NA,NA,NA,NA
+Nyman_et_al_1993,peer reviewed publication,other shallow corer,NA,NA,80,NA,removed non structural water,400,16,NA,NA,NA,NA,NA,NA
+Orson_1990,peer reviewed publication,russian corer,NA,corer limits compaction,NA,NA,no details,475,4,NA,NA,NA,NA,NA,NA
+Pastore_et_al_2017,peer reviewed publication,gouge auger,NA,NA,60,336,time approximate,NA,NA,NA,measured,FALSE,low carbonate soil,NA,fraction_total_carbon
+Piazza_et_al_2011,government report,none specified,NA,NA,60,NA,time not specified,550,2,NA,NA,NA,NA,no details,fraction_total_carbon
+Radabaugh_et_al_2018,peer reviewed publication,russian corer,roots and rhizomes included,NA,105,24,NA,550,3,NA,modeled,NA,NA,extrapolated from subset of samples,NA
+Unger_et_al_2016,peer reviewed publication,piston corer,roots and rhizomes included,NA,NA,NA,estimated from loss on ignition and particle densities of mineral and organic solids,550,4,NA,measured,TRUE,HCl fumigation,NA,fraction_organic_carbon
+Watson_and_Byrne_2013,peer reviewed publication,russian corer,NA,NA,104,24,NA,550,2,NA,NA,NA,NA,NA,NA
+Windham_Meyers_et_al_2010,government report,piston corer,NA,NA,105,12,time approximate,450,4,NA,NA,NA,NA,NA,NA

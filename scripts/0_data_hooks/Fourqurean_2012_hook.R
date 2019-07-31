@@ -365,9 +365,9 @@ core_data <- core_data %>%
 results <- test_core_relationships(core_data, depthseries)
 
 ## 5. write out data ##############
-write_csv(depthseries, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_depthseries_data.csv")
-write_csv(site_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_site_data.csv")
-write_csv(core_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_core_data.csv")
-write_csv(species, "./data/Fourqurean_2012/derivative/Fourqurean_2012_species_data.csv")
-write_csv(biomass, "./data/Fourqurean_2012/derivative/Fourqurean_2012_biomass_data.csv")
+write_csv(depthseries, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_depthseries.csv")
+write_csv(site_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_sites.csv")
+write_csv(core_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_cores.csv")
+write_csv(species, "./data/Fourqurean_2012/derivative/Fourqurean_2012_species.csv")
+write_csv(biomass, "./data/Fourqurean_2012/derivative/Fourqurean_2012_biomass.csv")
 write_csv(synthesis_citations, "./data/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")

@@ -17,7 +17,6 @@
 # Load RCurl, a package used to download files from a URL
 library(RCurl)
 library(tidyverse)
-library(rcrossref)
 library(RefManageR)
 
 ## NOTE: this section commented out, but kept, because the data for the Holmquist
@@ -247,7 +246,7 @@ bib_file <- study_citations_synthesis %>%
   distinct() %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "./data/Holmquist_2018/derivative/V1_Holmquist_2018.bib")
+WriteBib(as.BibEntry(bib_file), "./data/Holmquist_2018/derivative/Holmquist_2018.bib")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -265,9 +264,9 @@ results <- test_core_relationships(cores, depthseries)
 test_numeric_vars(depthseries)
 
 ## 6. Write to folder ########
-write_csv(cores, "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018_core_data.csv")
-write_csv(depthseries, "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018_depth_series_data.csv")
-write_csv(impacts, "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018_impact_data.csv")
-write_csv(species, "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018_species_data.csv")
-write_csv(methods, "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018_methods_data.csv")
-write_csv(study_citations_synthesis, "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018_study_citations.csv")
+write_csv(cores, "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018_cores.csv")
+write_csv(depthseries, "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018_depthseries.csv")
+write_csv(impacts, "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018_impacts.csv")
+write_csv(species, "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018_species.csv")
+write_csv(methods, "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018_methods.csv")
+write_csv(study_citations_synthesis, "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018_study_citations.csv")
