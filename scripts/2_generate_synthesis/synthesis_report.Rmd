@@ -1,0 +1,105 @@
+---
+title: "CCRCN Synthesis Report"
+output: html_document
+---
+  
+### Introduction 
+The CCRCN clearinghouse provides a synthesized and curated set of coastal carbon data that promotes the sharing of open data, novel analyses, and collaboration opportunities. 
+The synthesis is created by curating and merging publically available data through an automated script. 
+This report documents the success or failure of the automated synthesis process, documents changes, 
+conducts QA/QC tests, and provides visualizations and summaries of data within the clearinghouse. 
+
+***
+
+#### Report date: `r formated_date`
+#### Synthesis status: `r if(join_status) {"Successful"} else "Failed"`
+#### Contact: Michael Lonneman (lonnemanM@si.edu)  
+
+***
+
+### Change log  
+
+If any study IDs are added or removed to the synthesis, they will be listed below. 
+
+```{r, echo=FALSE}
+
+# Display any errors if they occured 
+if(nrow(synthesis_errors) > 0) {datatable(qa_numeric_results)}
+```
+
+#### New studies
+
+```{r, echo=FALSE}
+
+# Display any errors if they occured 
+if(nrow(synthesis_errors) > 0) {datatable(qa_numeric_results)}
+
+forward_studies <- filter(change_log_df$cores, change_type == "forward") %>%
+  select(-change_type)
+
+if(nrow(forward_studies) > 0){
+  datatable(forward_studies)
+} else {
+  "No studies were added to the synthesis"
+}
+
+```
+
+#### Studies removed from the synthesis
+
+```{r, echo=FALSE}
+
+backward_studies <- filter(change_log_df$cores, change_type == "backward") %>%
+  select(-change_type)
+
+if(nrow(backward_studies) > 0){
+  datatable(backward_studies)
+} else {
+  "No studies were removed from the synthesis"
+}
+
+```
+***
+
+### QA/QC Test Results
+
+
+```{r, echo=FALSE}
+
+table_length <- nrow(qa_results)
+
+# data table of results 
+datatable(qa_results, options = list(pageLength = table_length,
+                                     autoWidth = TRUE,
+                                     columnDefs = list(list(width = "47%", targets = c(1,2))),
+                                     searching = FALSE,
+                                     paging = FALSE))
+
+```
+
+***
+
+### Numeric Attribute Summary Statistics
+
+```{r, echo=FALSE}
+
+# data table of results 
+datatable(qa_numeric_results)
+
+```
+
+***
+
+### Depthseries Visualization
+
+```{r, echo=FALSE, fig.width = 10, warning = FALSE}
+
+ccrcn_synthesis$depthseries %>%
+  keep(is.numeric) %>% 
+  gather() %>% 
+  ggplot(aes(value)) +
+    facet_wrap(~ key, scales = "free") +
+    geom_histogram()
+
+```
+

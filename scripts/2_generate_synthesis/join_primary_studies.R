@@ -22,7 +22,12 @@ join_status <- TRUE
 # If a filename meets the necessary format (study_id_XXXX_table_type.csv), 
 # it will be appended to the table-specific list
 library(tidyverse)
+library(RefManageR)
 library(skimr)
+library(knitr)
+library(markdown)
+library(rmarkdown)
+library(DT)
 
 directory <- "./data/primary_studies/"
 # Index of table names
@@ -65,6 +70,7 @@ for(folderName in dir(directory)){
         } else {
           file_paths$unknown_csv[length(file_paths$unknown_csv) + 1] <- file_path
         }
+        
         # .bib files will the other main file type in derivative files 
       } else if(grepl(".bib", file_type)){
         file_paths$bibs[length(file_paths$bibs) + 1] <- file_path
@@ -112,6 +118,12 @@ for(i in seq_along(tables)){
 if(nrow(synthesis_errors) > 0) {
   join_status <- FALSE
 }
+
+# Prepare .bib file
+bib_file <- ccrcn_synthesis$studycitations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("key")
 
 ## 4.Read in previous synthesis & compare #################
 
@@ -170,16 +182,65 @@ for(table in tables){
 }
 
 ## QA/QC #############
+source("./scripts/2_generate_synthesis/qa_synthesis_functions.R")
 
+# Reorder columns 
+ccrcn_synthesis <- reorderColumns(tables, ccrcn_synthesis)
+
+qa_results <- 
+  # Ensure each core ID is unique
+  # Currently the map atlas requires this 
+  # Eventually we'll just need a unique study ID - core ID combination
+  testUniqueCores(ccrcn_synthesis$cores) %>%
+  # Test relationships between core_ids at core- and depthseries-levels
+  # the test returns all core-level rows that did not have a match in the depth series data
+  bind_rows(testCoreRelationships(ccrcn_synthesis)) %>%
+  # Test latitude and longitude uniqueness
+  bind_rows(testUniqueCoordinates(ccrcn_synthesis$cores)) %>%
+  # Test column names to make sure they are in database structure
+  # Or are approved uncontrolled attributes 
+  bind_rows(testAttributeNames(tables, ccrcn_synthesis)) %>%
+  # Test variable names to make sure they are in database structure
+  bind_rows(testVariableNames(tables, ccrcn_synthesis)) 
+
+# Provide summary statistics of numeric variables 
+qa_numeric_results <- testNumericVariables(ccrcn_synthesis$depthseries)
 
 ## Write new synthesis ###########
 if(join_status == TRUE){
-  # Write new synthesis data
   
-  # Backup previous synthesis data
+  # Archive previous synthesis
+  write_csv(archived_synthesis$cores, "./data/CCRCN_synthesis_test/archive/archived_synthesis_cores.csv")
+  write_csv(archived_synthesis$depthseries, "./data/CCRCN_synthesis_test/archive/archived_synthesis_depthseries_data.csv")
+  write_csv(archived_synthesis$sites, "./data/CCRCN_synthesis_test/archive/archived_synthesis_sites.csv")
+  write_csv(archived_synthesis$impacts, "./data/CCRCN_synthesis_test/archive/archived_synthesis_impacts.csv")
+  write_csv(archived_synthesis$methods, "./data/CCRCN_synthesis_test/archive/archived_synthesis_methods.csv")
+  write_csv(archived_synthesis$species, "./data/CCRCN_synthesis_test/archive/archived_synthesis_species.csv")
+  write_csv(archived_synthesis$studycitations, "./data/CCRCN_synthesis_test/archive/archived_synthesis_study_citations.csv")
+  # Copy the previous .bib file
+  file.copy("data/CCRCN_synthesis_test/CCRCN_bibliography.bib", "data/CCRCN_synthesis_test/archive")
+  
+  # Write new synthesis data
+  write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis_test/CCRCN_cores.csv")
+  write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis_test/CCRCN_depthseries.csv")
+  write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis_test/CCRCN_sites.csv")
+  write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis_test/CCRCN_impacts.csv")
+  write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis_test/CCRCN_methods.csv")
+  write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis_test/CCRCN_species.csv")
+  write_csv(ccrcn_synthesis$studycitations, "./data/CCRCN_synthesis_test/CCRCN_study_citations.csv")
+  
+  WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis_test/CCRCN_bibliography.bib")
 }
 
-## Write RMarkdown report #########
+# Record summary of warnings 
+warning_summary <- summary(warnings())
 
-# Get summary file of warning messages
-#summary(warnings())
+## Write RMarkdown report #########
+# get date to paste to file name
+url_date <- format(Sys.time(), "%Y%m%d %H%M")
+formated_date <- format(Sys.time(), "%Y/%m/%d-%H:%M")
+  
+rmarkdown::render(input = "./scripts/2_generate_synthesis/synthesis_report.Rmd",
+                  output_format = "html_document",
+                  output_file = paste0("synthesis_report_", url_date, ".html"),
+                  output_dir = "./docs/synthesis_reports")

@@ -1,908 +1,295 @@
-site_id,site_longitude_max,site_longitude_min,site_latitude_max,site_latitude_min,site_description,vegetation_class,salinity_class,inundation_class,state,watershed
-09WCC01,-92.57195999999999,-92.65164,29.641306999999998,29.583503,Rockefeller Wildlife Refuge,NA,NA,NA,Louisiana,Mermentau
-1001,36.240201,36.240201,-18.831799,-18.831799,NA,NA,NA,NA,International,International
-1079,36.264355,36.264355,-18.840148,-18.840148,NA,NA,NA,NA,International,International
-1113,36.213549,36.213549,-18.845148,-18.845148,NA,NA,NA,NA,International,International
-1130,36.306805,36.306805,-18.845914,-18.845914,NA,NA,NA,NA,International,International
-1216,36.123515,36.123515,-18.854252,-18.854252,NA,NA,NA,NA,International,International
-1219,36.237751,36.237751,-18.854268,-18.854268,NA,NA,NA,NA,International,International
-1254,36.269428,36.269428,-18.860066,-18.860066,NA,NA,NA,NA,International,International
-1285,36.141464,36.141464,-18.86529,-18.86529,NA,NA,NA,NA,International,International
-13,36.112,36.112,-18.744,-18.744,NA,NA,NA,NA,International,International
-1305,36.282128,36.282128,-18.868526,-18.868526,NA,NA,NA,NA,International,International
-1314,36.20356,36.20356,-18.870943,-18.870943,NA,NA,NA,NA,International,International
-1317,36.280204,36.280204,-18.871772,-18.871772,NA,NA,NA,NA,International,International
-1359,36.152707,36.152707,-18.87926,-18.87926,NA,NA,NA,NA,International,International
-1361,36.168942,36.168942,-18.881442,-18.881442,NA,NA,NA,NA,International,International
-1382,36.174246,36.174246,-18.88302,-18.88302,NA,NA,NA,NA,International,International
-15,36.119,36.119,-18.743,-18.743,NA,NA,NA,NA,International,International
-16,36.128,36.128,-18.743,-18.743,NA,NA,NA,NA,International,International
-17,36.115,36.115,-18.75,-18.75,NA,NA,NA,NA,International,International
-25,36.144,36.144,-18.76,-18.76,NA,NA,NA,NA,International,International
-26,36.139,36.139,-18.762,-18.762,NA,NA,NA,NA,International,International
-27,36.15,36.15,-18.766,-18.766,NA,NA,NA,NA,International,International
-29,36.151,36.151,-18.767,-18.767,NA,NA,NA,NA,International,International
-32B,36.21,36.21,-18.746,-18.746,NA,NA,NA,NA,International,International
-35,36.216,36.216,-18.747,-18.747,NA,NA,NA,NA,International,International
-36,36.223,36.223,-18.746,-18.746,NA,NA,NA,NA,International,International
-37,36.214,36.214,-18.752,-18.752,NA,NA,NA,NA,International,International
-806,36.3035,36.3035,-18.808457,-18.808457,NA,NA,NA,NA,International,International
-864,36.24601,36.24601,-18.818504,-18.818504,NA,NA,NA,NA,International,International
-9001,36.264041,36.264041,-18.831602,-18.831602,NA,NA,NA,NA,International,International
-9002,36.26043,36.26043,-18.850342,-18.850342,NA,NA,NA,NA,International,International
-9003,36.275058,36.275058,-18.875474,-18.875474,NA,NA,NA,NA,International,International
-9004,36.18594,36.18594,-18.833962,-18.833962,NA,NA,NA,NA,International,International
-9005,36.218115,36.218115,-18.824439,-18.824439,NA,NA,NA,NA,International,International
-9006,36.270942,36.270942,-18.870643,-18.870643,NA,NA,NA,NA,International,International
-9007,36.132373,36.132373,-18.822449,-18.822449,NA,NA,NA,NA,International,International
-9008,36.128404,36.128404,-18.812733,-18.812733,NA,NA,NA,NA,International,International
-9009,36.118808,36.118808,-18.845133,-18.845133,NA,NA,NA,NA,International,International
-9010,36.177483,36.177483,-18.891503,-18.891503,NA,NA,NA,NA,International,International
-9011,36.170079,36.170079,-18.884576,-18.884576,NA,NA,NA,NA,International,International
-9012,36.16247,36.16247,-18.895905,-18.895905,NA,NA,NA,NA,International,International
-9013,36.21079,36.21079,-18.873529,-18.873529,NA,NA,NA,NA,International,International
-9014,36.205854,36.205854,-18.881318,-18.881318,NA,NA,NA,NA,International,International
-9017,36.186352,36.186352,-18.869369,-18.869369,NA,NA,NA,NA,International,International
-9018,36.182005,36.182005,-18.865541,-18.865541,NA,NA,NA,NA,International,International
-9019,36.185503,36.185503,-18.881049,-18.881049,NA,NA,NA,NA,International,International
-9020,36.221288,36.221288,-18.864463,-18.864463,NA,NA,NA,NA,International,International
-9021,36.141405,36.141405,-18.868706,-18.868706,NA,NA,NA,NA,International,International
-9022,36.132076,36.132076,-18.84346,-18.84346,NA,NA,NA,NA,International,International
-9023,36.152977,36.152977,-18.88562,-18.88562,NA,NA,NA,NA,International,International
-9024,36.211684,36.211684,-18.823362,-18.823362,NA,NA,NA,NA,International,International
-9025,36.278995,36.278995,-18.851282,-18.851282,NA,NA,NA,NA,International,International
-9027,36.166532,36.166532,-18.860388,-18.860388,NA,NA,NA,NA,International,International
-Aarhus_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Abu al Abyad,53.61585,53.61585,24.20513,24.20513,NA,NA,NA,NA,International,International
-Abu al Abyad 10 yr,53.8002018,53.8000602,24.204041800000002,24.2036722,NA,NA,NA,NA,International,International
-Abu al Abyad 3 yr,53.8027065,53.801848500000006,24.201522,24.201198,NA,NA,NA,NA,International,International
-Abu al Abyad 5 yr,53.80079860000001,53.8005754,24.2034324,24.2030316,NA,NA,NA,NA,International,International
-Adounko Vilage,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Agerø-st._2,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Agerø-st._5,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Agerø-st._8,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Agerø-st.11,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Airai,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Airai State,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Ajman al Zorah,55.47844,55.47844,25.4354,25.4354,NA,NA,NA,NA,International,International
-Al Aryam,54.2421301,54.2247289,24.269955200000002,24.2526848,NA,NA,NA,NA,International,International
-Al Dabiya 1,53.97083,53.97083,24.30876,24.30876,NA,NA,NA,NA,International,International
-Al Dabiya 2,54.00273,54.00273,24.30582,24.30582,NA,NA,NA,NA,International,International
-Al Dabiya 3,54.05725,54.05725,24.31826,24.31826,NA,NA,NA,NA,International,International
-Al Khor,55.32697,55.32697,25.19062,25.19062,NA,NA,NA,NA,International,International
-Al Rams,56.03976,56.03976,25.8981,25.8981,NA,NA,NA,NA,International,International
-Al Shalila,54.672743600000004,54.6726044,24.6563792,24.6553328,NA,NA,NA,NA,International,International
-Algal Moon,54.04058989999999,54.040243100000005,24.129154,24.128326,NA,NA,NA,NA,International,International
-Alley_Pond,NA,NA,NA,NA,NA,NA,NA,NA,New York,Northern Long Island
-"Almada River, Ilhus-BA",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Als_Fjord-st._13,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Als_Fjord-st._14,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Altamaha_River,NA,NA,NA,NA,NA,NA,NA,NA,Georgia,Altamaha
-Ambaro-Ambanja,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-An Bien,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-An Minh,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Anglesey,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Animal_Slough,-122.698335,-122.701155,47.096953,47.092957000000006,NA,emergent,polyhaline,NA,Washington,Puget Sound
-Århus_Bugt-st._10,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Århus_Bugt-st._15,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Århus_Bugt-st._17,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Århus_Bugt-st._3,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Århus_Bugt-st._5,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Århus_Bugt-st._7,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Århus_Bugt-st._9,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-"Awat-Awat Mangrove Forest Reserve, Lawas, Sarawak",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Awerange Bay, Sulawesi",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Babeldaob,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Bacon Channel Island,NA,NA,NA,NA,NA,NA,NA,NA,California,San Joaquin Delta
-Baffin_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,Texas,Baffin Bay
-BahÃ­a de Jiquilisco,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Bahia_Almirante,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Bahile,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Bair_Island,NA,NA,NA,NA,NA,NA,NA,NA,California,San Francisco Bay
-Baja California Sur,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Bakhawan Ecopark, Buswang, Kalibo, Aklan",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Balandra,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Balandra Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Ballina, NSW",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Banca_marsh,NA,NA,NA,NA,NA,NA,NA,NA,Connecticut,Quinnipiac
-Bandon,NA,NA,NA,NA,NA,NA,NA,NA,Oregon,Coquille
-Barnaget_Bay,NA,NA,NA,NA,NA,NA,NA,NA,New Jersey,Mullica-Toms
-Barrang_Lompo,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Barsø-st._8,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-"Barwon Heads, Victoria",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Bay_of_Cadiz,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Bayswater,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Beaufort_North_Carolina_USA,NA,NA,NA,NA,NA,seagrass,NA,NA,North Carolina,Bogue-Core Sounds
-Bird_Field,NA,NA,NA,NA,NA,NA,NA,NA,South Carolina,Lower Pee Dee
-Bishop_Harbor_Mangroves,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Tampa Bay
-Blackbird_Creek_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Brandywine-Christina
-"Blaftchur, Oio",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Bolger_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Bolinao,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Bonito_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,St. Andrew-St. Joseph Bays
-"Botany Bay, NSW",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Broad_Dyke_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Brandywine-Christina
-Broad_River,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Everglades
-Brown_Island,NA,NA,NA,NA,NA,NA,NA,NA,California,Suisun Bay
-Bu Tinah 2,53.079,53.079,24.57855,24.57855,NA,NA,NA,NA,International,International
-Bu Tinah 3,53.03997,53.03997,24.54852,24.54852,NA,NA,NA,NA,International,International
-Bu Tinah Janoub,53.053904,53.053808,24.628255600000003,24.6272764,NA,NA,NA,NA,International,International
-Bu Tinah SE,53.11234,53.11234,24.54534,24.54534,NA,NA,NA,NA,International,International
-Bu Tinah Shamal,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Bulter_Island,NA,NA,NA,NA,NA,NA,NA,NA,South Carolina,Waccamaw
-Buttonwood_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Brandywine-Christina
-Ca Mau,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-CÃ¡diz_Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Cádiz_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Cala_Millor,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Camden_Haven,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Campello,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Can Gio,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Can Gio Mangrove Biosphere Reserve, Ho Chi Minh City",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Cananeia,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Canfield_Island_Cove,NA,NA,NA,NA,NA,NA,NA,NA,Connecticut,Saugatuck
-Cape Range National Park,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Cape_Bolinao,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Carmen City,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Caumsett_Park,NA,NA,NA,NA,NA,NA,NA,NA,New York,Northern Long Island
-"Cedar Key, Florida",NA,NA,NA,NA,NA,NA,NA,NA,Florida,Waccasassa
-CelestÃºn,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Celestun_Lagoon,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Central Java,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Central Kalimantan,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-CERF_Donor_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Tampa Bay
-Channel_Creek,NA,NA,NA,NA,NA,NA,NA,NA,New Jersey,Mullica-Toms
-Chek Jawa,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Chelem_Lagoon,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Chiapas,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Chilaw Lagoon,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-China_Camp,NA,NA,NA,NA,NA,NA,NA,NA,California,San Pablo Bay
-Choctwhatchee_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,Choctawhatchee Bay
-Choptank_River,NA,NA,NA,NA,NA,NA,NA,NA,Maryland,Choptank
-Chunnambar River,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Cienaga Grande de Santa Marta,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Coastal_EDU_Field,NA,NA,NA,NA,NA,NA,NA,NA,South Carolina,Lower Pee Dee
-"Coffs Harbour, NSW",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Cogswell,NA,NA,NA,NA,NA,NA,NA,NA,California,San Francisco Bay
-Coon_Island,NA,NA,NA,NA,NA,NA,NA,NA,California,San Pablo Bay
-Coos Bay,NA,NA,NA,NA,NA,NA,NA,NA,Oregon,Coos
-Coringa Wildlife Sanctuary,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Corkscrew_Slough,NA,NA,NA,NA,NA,NA,NA,NA,California,San Francisco Bay
-Coyote_Creek,NA,NA,NA,NA,NA,NA,NA,NA,California,Coyote
-Creek Town,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Crissy_Field,NA,NA,NA,NA,NA,NA,NA,NA,California,San Pablo Bay
-CRMS0002,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0003,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0006,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Liberty Bayou-Tchefuncta
-CRMS0030,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lake Maurepas
-CRMS0033,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lake Maurepas
-CRMS0034,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lake Maurepas
-CRMS0035,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Pearl. Mississippi
-CRMS0103,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Tangipahoa
-CRMS0108,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0114,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0115,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0117,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0118,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Mississippi-New Orleans
-CRMS0119,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0120,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0121,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0125,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0128,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0129,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0131,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0132,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0135,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0136,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0139,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0146,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0147,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0148,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS0154,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Mississippi-New Orleans
-CRMS0156,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Mississippi-New Orleans
-CRMS0157,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Mississippi-New Orleans
-CRMS0159,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Mississippi-New Orleans
-CRMS0161,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Mississippi-New Orleans
-CRMS0162,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Mississippi-New Orleans
-CRMS0163,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0164,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0171,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0172,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0173,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0174,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0175,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0176,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0178,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0179,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0181,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0190,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0209,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0220,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0224,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0225,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0226,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0232,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0237,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0248,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0251,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0253,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0258,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0260,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0261,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0263,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0272,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0276,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0282,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0287,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS0290,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0292,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0293,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0294,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0296,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0301,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0302,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0303,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0305,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0307,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0309,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0310,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0311,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0312,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0315,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0318,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0319,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0322,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0326,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0327,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0329,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0332,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0335,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0336,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0337,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0338,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0341,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0345,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0347,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0354,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0355,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0369,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0371,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0374,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0376,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0377,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0381,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0382,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0383,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0385,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0386,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0387,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0390,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0392,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0394,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0395,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0396,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0397,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0398,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0399,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0400,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0409,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0411,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0416,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0421,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0434,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS0461,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS0463,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS0464,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS0465,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS0479,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS0482,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS0488,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Bayou Teche
-CRMS0489,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Bayou Teche
-CRMS0490,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Bayou Teche
-CRMS0493,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0494,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0496,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Bayou Teche
-CRMS0498,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0499,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0501,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0504,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0507,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0508,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0511,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0514,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0517,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Bayou Teche
-CRMS0520,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0522,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0523,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0524,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0527,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0529,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0530,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0531,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0532,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0535,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0536,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0541,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0543,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0544,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Bayou Teche
-CRMS0545,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Bayou Teche
-CRMS0549,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0550,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0551,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Bayou Teche
-CRMS0552,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS0571,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0576,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0580,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0581,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0584,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0587,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0588,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0589,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0599,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0600,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0608,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0609,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0610,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0614,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0615,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0616,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0618,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0619,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0622,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0623,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0632,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0633,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS0635,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0638,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0639,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0641,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0642,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0644,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0645,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0647,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0648,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0650,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0651,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0655,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0656,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0658,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Sabine
-CRMS0660,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Sabine
-CRMS0661,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0662,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Sabine
-CRMS0663,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Sabine
-CRMS0665,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Sabine
-CRMS0669,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Sabine Lake
-CRMS0672,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0677,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0680,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0682,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0683,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Sabine Lake
-CRMS0684,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Sabine Lake
-CRMS0685,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0687,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS0697,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Sabine
-CRMS0978,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS1024,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS1069,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS1205,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS1409,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS1650,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS1738,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS1743,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS1838,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS1858,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS1965,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Mermentau
-CRMS2041,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Vermilion
-CRMS2154,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Sabine Lake
-CRMS2156,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Sabine Lake
-CRMS2166,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Sabine
-CRMS2189,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Sabine Lake
-CRMS2219,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS2334,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS2418,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS2568,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS2608,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Mississippi-New Orleans
-CRMS2614,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS2627,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Mississippi-New Orleans
-CRMS2634,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Mississippi-New Orleans
-CRMS2785,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS2825,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS2830,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS2854,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Liberty Bayou-Tchefuncta
-CRMS2862,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS2881,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS2887,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS3296,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS3565,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS3601,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS3617,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS3626,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS3639,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS3641,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS3650,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS3667,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Liberty Bayou-Tchefuncta
-CRMS3680,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS3784,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS3800,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS3985,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS4014,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS4016,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS4045,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS4094,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Liberty Bayou-Tchefuncta
-CRMS4103,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS4107,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS4110,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Pearl. Mississippi
-CRMS4218,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS4245,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS4355,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS4406,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Liberty Bayou-Tchefuncta
-CRMS4407,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Liberty Bayou-Tchefuncta
-CRMS4448,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Mississippi-New Orleans
-CRMS4455,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS4529,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS4548,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS4551,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS4557,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS4572,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS4596,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS4626,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Mississippi-New Orleans
-CRMS4690,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-CRMS4779,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS4782,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS4808,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS4809,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS4900,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS4938,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS5003,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS5035,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-CRMS6008,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS6038,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS6042,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Atchafalaya
-CRMS6209,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Tangipahoa
-CRMS6299,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Eastern Louisiana Coastal
-CRMS6301,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,Lower Calcasieu
-CRMS6303,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-Cubatao,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Culip,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-"Currambene Creek, NSW",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Cyprus,NA,NA,NA,NA,NA,unvegetated marine,NA,NA,International,International
-Dahwat an Nahklah,51.69347,51.69347,24.24782,24.24782,NA,NA,NA,NA,International,International
-Damon_Slough,NA,NA,NA,NA,NA,NA,NA,NA,California,San Francisco Bay
-Dampier,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Darwin,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Deep Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Delaware_River,NA,NA,NA,NA,NA,NA,NA,NA,New Jersey,Lower Delaware
-Denmark,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Dennis_Creek,NA,NA,NA,NA,NA,NA,NA,NA,New Jersey,Cohansey-Maurice
-Dividing_Creek,NA,NA,NA,NA,NA,NA,NA,NA,New Jersey,Cohansey-Maurice
-Djegbadji Village,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Doboy_Sound,NA,NA,NA,NA,NA,NA,NA,NA,Georgia,Ogeechee Coastal
-"Donghai Harbor Mangrove Reserve, Hainan Province",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Dragstrup_Vig-st._7,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Dravuni_Is,NA,NA,NA,NA,NA,unvegetated marine,NA,NA,International,International
-Dravuni_Is._Fiji,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Durban,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Eastern Mangrove,54.44209644569774,54.43231109732476,24.45626187701817,24.451982374816527,NA,NA,NA,NA,International,International
-Eastern_Grand_Bahama,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Ebro_Delta,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Eel_Pond,NA,NA,NA,NA,NA,NA,NA,NA,Massachusetts,Cape Cod
-EG_Simmons_Park_Mangroves,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Tampa Bay
-El_Campello,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-El_Nido,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Ellie_Pt,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Ensenada La Paz,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Ermita, Dumangas, Iloilo",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Es_Cargol,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Es_Castell,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Es_Pujols,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Esmeraldas,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Estero de Jaltepeque,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Europe_1,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Europe_2,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Europe_3,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-"Evans Head, NSW",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Everglades,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Everglades
-Fanals_point,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Farazan Islands,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Fasht al Basm,53.47422,53.47422,24.24085,24.24085,NA,NA,NA,NA,International,International
-Firth of Thames,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Flax_Pond,NA,NA,NA,NA,NA,NA,NA,NA,New York,Northern Long Island
-Florida_Bay,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Florida Bay-Florida Keys
-Florida_Keys,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,International
-Forsythe,NA,NA,NA,NA,NA,NA,NA,NA,New Jersey,Mullica-Toms
-Franks Wetland,NA,NA,NA,NA,NA,NA,NA,NA,California,San Joaquin Delta
-Fujian,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Fujian Province,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Futian Mangrove Reserve, Shenzhen City, Guangdong Province",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-G-CREW,NA,NA,NA,NA,NA,NA,NA,NA,Maryland,Severn
-Galle,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Galveston_Bay,-94.94326064799999,-95.266709872,29.209952862,29.064102558,NA,NA,NA,NA,Texas,Austin-Oyster
-Gambacorta_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Brandywine-Christina
-Ganges-Brahmaputra Delta,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Gazi,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Gazi Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Gazi_bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Gazi_Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Geoffrey_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Georges River National Park,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Ghurab N,54.495,54.495,24.64473,24.64473,NA,NA,NA,NA,International,International
-Ghurab NE,54.53673,54.53673,24.65578,24.65578,NA,NA,NA,NA,International,International
-Ghurab NN,54.50703,54.50703,24.64498,24.64498,NA,NA,NA,NA,International,International
-Goodwin_islands,NA,NA,NA,NA,NA,NA,NA,NA,Virginia,York
-Goose_Creek,NA,NA,NA,NA,NA,NA,NA,NA,New York,Bronx
-Grand_Bay,-88.395872932,-88.446796468,30.409232979000002,30.356935311,NA,NA,NA,NA,Mississippi,Mississippi Coastal
-Grays Harbor,NA,NA,NA,NA,NA,NA,NA,NA,Washington,Grays Harbor
-Great_Pond,NA,NA,NA,NA,NA,NA,NA,NA,Massachusetts,Cape Cod
-Greco_Island,NA,NA,NA,NA,NA,NA,NA,NA,California,San Francisco Bay
-Greece,NA,NA,NA,NA,NA,unvegetated marine,NA,NA,International,International
-Green_Island_Great_Barrier_Reef,NA,NA,NA,NA,NA,unvegetated marine,NA,NA,International,International
-Greens_Farms,NA,NA,NA,NA,NA,NA,NA,NA,Connecticut,Saugatuck
-Guadeloupe,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Guanaja,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Guangdong,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Guangxi,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Guaratuba Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"GuarujÃ¡, Sao Paulo",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Guayas River,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Gulf of ChiriquÃ­,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Gulf of Fonseca,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Gulf of Nicoya,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Gulf_of_Aqaba,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Gulf_of_Marconi,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Gulf_of_Oristano,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Gulf_Pond_East,NA,NA,NA,NA,NA,NA,NA,NA,Connecticut,Quinnipiac
-Gulf_Pond_West,NA,NA,NA,NA,NA,NA,NA,NA,Connecticut,Quinnipiac
-Gusung_Tallang,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Haderslev-st._3,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Hai Phong,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Hainan,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Halat Idai,52.45295,52.45295,24.19905,24.19905,NA,NA,NA,NA,International,International
-Hamblin_Pond,NA,NA,NA,NA,NA,NA,NA,NA,Massachusetts,Cape Cod
-Harborview,NA,NA,NA,NA,NA,NA,NA,NA,Connecticut,Saugatuck
-"Harney River, Everglades National Park, Florida",NA,NA,NA,NA,NA,NA,NA,NA,Florida,Everglades
-Harney_River,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Everglades
-Hastings_River,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Hasty_Point_Managed_Shallow,NA,NA,NA,NA,NA,NA,NA,NA,South Carolina,Lower Pee Dee
-Heeia,NA,NA,NA,NA,NA,NA,NA,NA,Hawaii,International
-Heron_Point,NA,NA,NA,NA,NA,NA,NA,NA,Washington,Snohomish
-Hinchinbrook,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Hinchinbrook Island, QLD",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Hog_Island,NA,NA,NA,NA,NA,NA,NA,NA,Virginia,Eastern Lower Delmarva
-"Hooker Bay, San Andres Island",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Horsens_Fjord,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Horsens_Fjord-st._1,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Horsens_Fjord-st._2,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Horsens_Fjord-st._3,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Horseshoe_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Hudson_River,NA,NA,NA,NA,NA,NA,NA,NA,New York,Middle Hudson
-"Huguangzhen, Guangdong",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Hukitola Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Hunter_Island,NA,NA,NA,NA,NA,NA,NA,NA,New York,Bronx
-"Hurun Bay, Gulf of Lampung, Sumatra",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Ilha Grande,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Indian Sundarbans,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Indus Delta,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Inhaca Island,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Inhaca_Island,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-"Iriana Jaya, West Papua",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Ischia,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Ischia_Italy,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Island_Beach_State_Park,NA,NA,NA,NA,NA,NA,NA,NA,New Jersey,Mullica-Toms
-Java,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Jazirat,52.0476,52.0476,24.15131667,24.15131667,NA,NA,NA,NA,International,International
-Jimmy_Key,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,Florida Bay-Florida Keys
-Jiulong River Estuary,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Jubail Island,54.4713824,54.4692296,24.5200358,24.5188622,NA,NA,NA,NA,International,International
-Jubail Island East,54.5332951,54.5318899,24.5045904,24.4972416,NA,NA,NA,NA,International,International
-Kalba East,56.365198,56.365198,25.007509,25.007509,NA,NA,NA,NA,International,International
-Kalba North,56.35649,56.35649,25.01736,25.01736,NA,NA,NA,NA,International,International
-Kalba South,56.365198,56.365198,24.999839,24.999839,NA,NA,NA,NA,International,International
-Kalba West,56.35998,56.35998,25.00956,25.00956,NA,NA,NA,NA,International,International
-Kaw River,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Khe Vinh Creek, Can Gio",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Khung Krabaen Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Khung_Krabaen_bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Kien Luong,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Kien Vang Protection Forest, Cau Mau Province",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Kosrae,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Kowloon,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Kpetou Village,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Krabi,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Kwale County,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-La Encrucijada,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-La Foa,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Laguna_de_Chiriqui_Panama,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Laguna_de_Terminos,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Laguna_Madre,NA,NA,NA,NA,NA,seagrass,NA,NA,Texas,North Laguna Madre
-Lake_Conjola,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Lake_Illawara,NA,NA,NA,NA,NA,unvegetated marine,NA,NA,International,International
-Lake_Macquarie,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Lake_Pontchartrain,-89.833513739,-89.999191271,30.284774709,30.239866521,NA,NA,NA,NA,Louisiana,Liberty Bayou-Tchefuncta
-Laranjeiras Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Leizhou Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Leizhou Peninsula,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Lillebælt_syd-st._16,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Lillebælt_syd-st._4,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Lillebælt_syd-st._5,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Limfjorden,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Little_Assawoman,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Chincoteague
-Little_Belt_area,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Little_Creek_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Broadkill-Smyrna
-Little_Duck_Key,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,Florida Bay-Florida Keys
-Little_Sabine_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,Pensacola Bay
-Løgstør_Bredning-st._43,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Long_Island,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Peace
-Lovns_Bredning-st._26,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Lower_Laguna_Madre,-97.16240541100001,-97.381783399,26.388685132,26.014722388,NA,NA,NA,NA,Texas,South Laguna Madre
-Lugger_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Lukens_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Brandywine-Christina
-Magalluf,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Magdalena Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Mahajamba,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Mai Po Nature Reserve,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Mallorca,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Man of War Cay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Mangere,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Mantehage Island,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Marawah,53.34829,53.34829,24.27702,24.27702,NA,NA,NA,NA,International,International
-Marawah Island,53.3140163,53.3131607,24.282847800000003,24.280858199999997,NA,NA,NA,NA,International,International
-Marconi_Gulf,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Marismas,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Marshlands_Conservancy,NA,NA,NA,NA,NA,NA,NA,NA,New York,Bronx
-Marysville_Mitigation,NA,NA,NA,NA,NA,NA,NA,NA,Washington,Snohomish
-Matang Mangrove Forest Reserve,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Maurice_River,NA,NA,NA,NA,NA,NA,NA,NA,New Jersey,Cohansey-Maurice
-Mdloti River,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Medes_Islands,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Melieha_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Mellieha_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Meunga_Creek,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Mill_Bayou,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Little Manatee
-Mission_Aransas_Bay,NA,NA,NA,NA,NA,NA,NA,NA,Texas,Aransas
-Mondego_Estuary._Portugal,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Monie_Bay,NA,NA,NA,NA,NA,NA,NA,NA,Maryland,Blackwater-Wicomico
-Montecristi Province,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Moreton Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Moreton Bay, QLD",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Mornington Peninsula,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Mouth of Paraiba do Sul,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Mowry,NA,NA,NA,NA,NA,NA,NA,NA,California,Coyote
-Mud_Slough,NA,NA,NA,NA,NA,NA,NA,NA,California,Coyote
-"Murray River, QLD",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Muzzi,NA,NA,NA,NA,NA,NA,NA,NA,California,San Pablo Bay
-Nam Dinh,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Nang_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Naples Bay,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Big Cypress Swamp
-Nefyn,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Negombo Estuary,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Nelson_Island_Creek,-70.8305103,-70.8308067,42.7426052,42.7422908,"Plum Island Sound Estuary, Massachusetts, USA",emergent,NA,NA,Massachusetts,Charles
-"New Castle, NSW",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-New South Wales,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Newcastle,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Ngkeklau,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Nibe_Bredning-st._33,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Nibe_Bredning-st._34,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Nibe_Bredning-st._45,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Nisqually,NA,NA,NA,NA,NA,NA,NA,NA,Washington,Nisqually
-Nissum_Bredning-st._31,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-"North Key Largo, Florida",NA,NA,NA,NA,NA,NA,NA,NA,Florida,Florida Bay-Florida Keys
-North Sulawesi,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-North_Ebey,NA,NA,NA,NA,NA,NA,NA,NA,Washington,Snohomish
-Noumea_New_Caledonia,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-NW_Marconi,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Odense_Fjord,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Odense_Fjord-st._1,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Odense_Fjord-st._2,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Odense_Fjord-st._3,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Odense_Fjord-st._4,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Odisha,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Ohio_Key,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,Florida Bay-Florida Keys
-Okinawa Island,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Ong Trang sand bar, Ngoc Hien district, Ca Mau province",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Otter_Creek,NA,NA,NA,NA,NA,NA,NA,NA,New York,Bronx
-Otter_Island,NA,NA,NA,NA,NA,NA,NA,NA,Washington,Snohomish
-Otter_Point_Creek,NA,NA,NA,NA,NA,NA,NA,NA,Maryland,Gunpowder-Patapsco
-Oued_Tahaddart,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-"Oura Bay, Okinawa",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Outer_Lagoon,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Padilla_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,Washington,Strait of Georgia
-"Pai Matos Island,CananÃ©ia, State of SÃ£o Paulo",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Pak Panang,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Pambala-Chilaw Lagoon,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Pamunkey_River,NA,NA,NA,NA,NA,NA,NA,NA,Virginia,Pamunkey
-Panay Island,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Pantanos de Centla,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Papanui_Inlet,NA,NA,NA,NA,NA,unvegetated marine,NA,NA,International,International
-Paraiba Estuary,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Parker_River,NA,NA,NA,NA,NA,NA,NA,NA,Massachusetts,Charles
-Parnaiba Delta,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Patos_Lagoon_Estuary,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Patuxent_River,NA,NA,NA,NA,NA,NA,NA,NA,Maryland,Patuxent
-Pelham_Bay_Park,NA,NA,NA,NA,NA,NA,NA,NA,New York,Bronx
-Petaluma_River,NA,NA,NA,NA,NA,NA,NA,NA,California,San Pablo Bay
-Petta_di_Po_-_Venice,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Phang Nga Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Phuket,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Phuket Island,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Pichavaram,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Pickering_Beach_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Broadkill-Smyrna
-Pittwater,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Plummer_Slough,NA,NA,NA,NA,NA,NA,NA,NA,California,Coyote
-Pocomoke_River,NA,NA,NA,NA,NA,NA,NA,NA,Maryland,Pocomoke
-Pohnpei Island,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-PollenÃ§a,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Pollença,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-"Port Aransas, Texas",NA,NA,NA,NA,NA,NA,NA,NA,Texas,Aransas Bay
-"Port Fourchon, Louisiana",NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,East Central Louisiana Coastal
-Port Headland,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Port_Dennison,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Port_Hacking,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Port_Mahon_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Broadkill-Smyrna
-Portlligat_I,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Portlligat_II,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Portlligat_III,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Porto_Colom,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-PortSusan,NA,NA,NA,NA,NA,NA,NA,NA,Washington,Puget Sound
-Prime_Hook_National_Wildlife_Refuge,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Broadkill-Smyrna
-Progreso,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Psaromoura_Crete,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Puerto_Galera,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Pujada_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Pulau_Tinggi_Malasia,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Punta_Allen,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Quang Ninh,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Quilceda_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,Washington,Snohomish
-Quintana Roo,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Rachel_Carson,NA,NA,NA,NA,NA,NA,NA,NA,Maine,Piscataqua-Salmon Falls
-Rafiq Island,54.0775456,54.0766864,24.1514929,24.1511701,NA,NA,NA,NA,International,International
-Ramla_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Ras al Kaimah,55.94654,55.94654,25.77278,25.77278,NA,NA,NA,NA,International,International
-Ras Muhayjij,51.66758333,51.66758333,24.25276667,24.25276667,NA,NA,NA,NA,International,International
-Ravenswood_Slough,NA,NA,NA,NA,NA,NA,NA,NA,California,Coyote
-Redfish_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,Texas,South Corpus Christi Bay
-Redland_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Reedy_Creek,NA,NA,NA,NA,NA,NA,NA,NA,New Jersey,Mullica-Toms
-Ria_de_Aveiro,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Richmond_Island,NA,NA,NA,NA,NA,NA,NA,NA,South Carolina,Waccamaw
-"Rio del Rey Estuary, Bamusso",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Rivers_Edge_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Brandywine-Christina
-Roatan,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Robbins_Passage,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-"Rookery Bay, Florida",NA,NA,NA,NA,NA,NA,NA,NA,Florida,Big Cypress Swamp
-Rottnest,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Rush_Ranch,NA,NA,NA,NA,NA,NA,NA,NA,California,Suisun Bay
-S_Sulawesi,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Sa_Paret,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Sabkha Moon,54.04969287238734,54.04938240373926,24.12422406532245,24.12329344860705,NA,NA,NA,NA,International,International
-Sage_Log_Pond,NA,NA,NA,NA,NA,NA,NA,NA,Massachusetts,Cape Cod
-Salaam,54.4104337,54.4093813,24.450547,24.450307000000002,NA,NA,NA,NA,International,International
-Saline_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-"San Juan, Batangas",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-San_Antonio_Bay,-96.35867509100001,-96.89654123899999,28.456784607000003,28.173734523,NA,NA,NA,NA,Texas,West San Antonio Bay
-Sandy_Island_Deeply_Flooded,NA,NA,NA,NA,NA,NA,NA,NA,South Carolina,Lower Pee Dee
-Sandy_Island_Natural,NA,NA,NA,NA,NA,NA,NA,NA,South Carolina,Lower Pee Dee
-Santa_Rosa_Sound,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,Pensacola Bay
-Santander_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Sapelo_River,NA,NA,NA,NA,NA,NA,NA,NA,Georgia,Ogeechee Coastal
-Savannah_River,NA,NA,NA,NA,NA,NA,NA,NA,Georgia,Lower Savannah
-Savannah_River_high,NA,NA,NA,NA,NA,forested,fresh,high,Georgia,Lower Savannah
-Savannah_River_low,NA,NA,NA,NA,NA,emergent,oligohaline,low,Georgia,Lower Savannah
-Savannah_River_mid,NA,NA,NA,NA,NA,emergent,oligohaline,low,Georgia,Lower Savannah
-Saw_Mill_Creek,NA,NA,NA,NA,NA,NA,NA,NA,New York,Sandy Hook-Staten Island
-Sawi Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Sematan Mangrove Forest, Sarawak",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Sepetiba Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Seungbong_Island,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Seventeen Seventy, QLD",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Shanyutan Wetland, Minjiang River estuary, Fujian Province",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Shark River, Everglades National Park, Florida",NA,NA,NA,NA,NA,NA,NA,NA,Florida,Everglades
-Shark_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Shark_River,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Everglades
-Shelter_Island,NA,NA,NA,NA,NA,NA,NA,NA,New York,Southern Long Island
-"Shenzhen Bay, Shenzhen City, Guangdong Province",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Sherwood_Millpond,NA,NA,NA,NA,NA,NA,NA,NA,Connecticut,Saugatuck
-Sicily,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Sila peninsula,51.79963,51.79963,24.23258,24.23258,NA,NA,NA,NA,International,International
-Siletz,NA,NA,NA,NA,NA,NA,NA,NA,Oregon,Siletz-Yaquina
-Sinnamary,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Sinnia,55.60479,55.60479,25.56217,25.56217,NA,NA,NA,NA,International,International
-Sipingo River,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Six_Gill_Slough,-122.706336,-122.70914400000001,47.09329700000001,47.088652999999994,NA,emergent,polyhaline,NA,Washington,Puget Sound
-Skive_Fjord-st._13,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Skive_Fjord-st._28,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Skive_Fjord-st._29,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Skokomish,NA,NA,NA,NA,NA,NA,NA,NA,Washington,Hood Canal
-Smith_Island_City,NA,NA,NA,NA,NA,NA,NA,NA,Washington,Snohomish
-Sofala Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Sounion,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-South East Queensland,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-South Sumatra,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-South_Belmont,NA,NA,NA,NA,NA,NA,NA,NA,California,San Francisco Bay
-Spain,NA,NA,NA,NA,NA,unvegetated marine,NA,NA,International,International
-Spencer_Island,NA,NA,NA,NA,NA,NA,NA,NA,Washington,Snohomish
-Sprague_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,Maine,St. George-Sheepscot
-Spring_Creek,NA,NA,NA,NA,NA,NA,NA,NA,New York,Southern Long Island
-St._Andrews_Bay_Florida_USA,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,St. Andrew-St. Joseph Bays
-St_Joseph_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,Florida,International
-Sta_Maria_,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Sulawesi,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-TÃ©rraba-Sierpe,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Tabarca_North,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Tabarca_South,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Talamanca,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Tamandare,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Tampa Bay,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Tampa Bay
-Tampa_Bay,-82.44032639400001,-82.663222026,27.726532607,27.515973803,NA,NA,NA,NA,Florida,Tampa Bay
-Tamsui River,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Tande, Cacheu",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Techeng Island, Guandong",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Ted_Harvey_Conservation_Area,NA,NA,NA,NA,NA,NA,NA,NA,Delaware,Broadkill-Smyrna
-Tela,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Ten_Thousand_Islands,-81.52314862,-81.54749817999999,25.976839471,25.845753739,NA,NA,NA,NA,Florida,Big Cypress Swamp
-Terminos Lagoon,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Terrebonne,NA,NA,NA,NA,NA,NA,NA,NA,Louisiana,West Central Louisiana Coastal
-Texas,NA,NA,NA,NA,NA,NA,NA,NA,Texas,Aransas Bay
-Thailand,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Thau_lagoon,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Thisted_Bredning-st._9,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Thomas_Bay,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Three Fathoms Cove,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Thumayriyah,53.030442,53.028678,24.1338862,24.1293478,NA,NA,NA,NA,International,International
-"Thuwal, Jeddah",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Tijuana_Estuary,NA,NA,NA,NA,NA,NA,NA,NA,California,Cottonwood-Tijuana
-Time of Mandeval Tip,NA,NA,NA,NA,NA,NA,NA,NA,California,San Joaquin Delta
-Towra Point Nature Reserve,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Trang,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Triangle_Marsh,NA,NA,NA,NA,NA,NA,NA,NA,California,Coyote
-Tuff Crater,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Turkey_Creek,NA,NA,NA,NA,NA,NA,NA,NA,South Carolina,Carolina Coastal-Sampit
-Twin Cays,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Umm al Hatam,51.87123,51.87123,24.21152,24.21152,NA,NA,NA,NA,International,International
-Umm al Quwain,55.647539,55.587791,25.543642000000002,25.532217999999997,NA,NA,NA,NA,International,International
-Union_Slough,NA,NA,NA,NA,NA,NA,NA,NA,Washington,Snohomish
-Upper_Laguna_Madre,-97.12855965099999,-97.741774519,27.724848259999998,27.27555542,NA,NA,NA,NA,Texas,North Laguna Madre
-Upper_Tampa_Bay,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Tampa Bay
-Utila,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Vam Rang,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Vanga,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Vejle_Fjord,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Vejle_Fjord-st._1,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Vejle_Fjord-st._2,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Vejle_Fjord-st._3,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Vejle_Fjord-st._4,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Vejle_Fjord-st._5,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Venice_lagoon,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Village_Creek,NA,NA,NA,NA,NA,NA,NA,NA,Connecticut,Saugatuck
-Villajoyosa,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Virginia_Coastal_Bays,NA,NA,NA,NA,NA,unvegetated marine,NA,NA,Virginia,Eastern Lower Delmarva
-Waccamaw_River,NA,NA,NA,NA,NA,NA,NA,NA,South Carolina,Waccamaw
-Waccamaw_River_Butler_island,NA,NA,NA,NA,NA,forested to emergent,oligohaline,mid,South Carolina,Waccamaw
-Waccamaw_River_Richmond_island,NA,NA,NA,NA,NA,forested,fresh,high,South Carolina,Waccamaw
-Waccamaw_River_Turkey_creek_high,NA,NA,NA,NA,NA,emergent,oligohaline,low,South Carolina,Carolina Coastal-Sampit
-Waccamaw_River_Turkey_creek_low,NA,NA,NA,NA,NA,forested to emergent,oligohaline,low,South Carolina,Carolina Coastal-Sampit
-Waitemata Harbour,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Wallis Lake, NSW",NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Wallis_Lake,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Wardlaw_Shallow_Managed,NA,NA,NA,NA,NA,NA,NA,NA,South Carolina,Lower Pee Dee
-Weddelsborg,NA,NA,NA,NA,NA,seagrass,NA,NA,NA,NA
-Weedon_Island_Salt_Barren,NA,NA,NA,NA,NA,NA,NA,NA,Florida,Tampa Bay
-Weeks_Bay,-87.81125599699999,-87.84718823300001,30.443171271999997,30.376521448000002,NA,NA,NA,NA,Alabama,Mobile Bay
-Wertheim,NA,NA,NA,NA,NA,NA,NA,NA,New York,Southern Long Island
-West Kalimantan,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-West Papua,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Western_Australia,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Whale's_Tail,NA,NA,NA,NA,NA,NA,NA,NA,California,San Francisco Bay
-Whangamata,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Whangamata Harbor,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Whangateau,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-White_Rocks,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Willapa,NA,NA,NA,NA,NA,NA,NA,NA,Washington,Willapa Bay
-Windy_Point,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Woodman_Point,NA,NA,NA,NA,NA,seagrass,NA,NA,International,International
-Yap,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Yaquina_Bay_Oregon,NA,NA,NA,NA,NA,seagrass,NA,NA,Oregon,Siletz-Yaquina
-Yingluo Bay,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Yingluo Harbor,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Zambezi River Delta,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-Zhanjiang,NA,NA,NA,NA,NA,NA,NA,NA,International,International
-"Zhanjiang National Nature Reserve, Gaoqiao Town, Zhanjiang, Guangdong Province (next to Shankou in Guangxi, Yingluo Bay)",NA,NA,NA,NA,NA,NA,NA,NA,International,International
+study_id,site_id,site_description,site_latitude_max,site_latitude_min,site_longitude_max,site_longitude_min,salinity_class,vegetation_class,vegetation_method,inundation_class
+Trettin_et_al_2017,1001,NA,-18.831799,-18.831799,36.240201,36.240201,NA,NA,NA,NA
+Trettin_et_al_2017,1079,NA,-18.840148,-18.840148,36.264355,36.264355,NA,NA,NA,NA
+Trettin_et_al_2017,1113,NA,-18.845148,-18.845148,36.213549,36.213549,NA,NA,NA,NA
+Trettin_et_al_2017,1130,NA,-18.845914,-18.845914,36.306805,36.306805,NA,NA,NA,NA
+Trettin_et_al_2017,1216,NA,-18.854252,-18.854252,36.123515,36.123515,NA,NA,NA,NA
+Trettin_et_al_2017,1219,NA,-18.854268,-18.854268,36.237751,36.237751,NA,NA,NA,NA
+Trettin_et_al_2017,1254,NA,-18.860066,-18.860066,36.269428,36.269428,NA,NA,NA,NA
+Trettin_et_al_2017,1285,NA,-18.86529,-18.86529,36.141464,36.141464,NA,NA,NA,NA
+Trettin_et_al_2017,13,NA,-18.744,-18.744,36.112,36.112,NA,NA,NA,NA
+Trettin_et_al_2017,1305,NA,-18.868526,-18.868526,36.282128,36.282128,NA,NA,NA,NA
+Trettin_et_al_2017,1314,NA,-18.870943,-18.870943,36.20356,36.20356,NA,NA,NA,NA
+Trettin_et_al_2017,1317,NA,-18.871772,-18.871772,36.280204,36.280204,NA,NA,NA,NA
+Trettin_et_al_2017,1359,NA,-18.87926,-18.87926,36.152707,36.152707,NA,NA,NA,NA
+Trettin_et_al_2017,1361,NA,-18.881442,-18.881442,36.168942,36.168942,NA,NA,NA,NA
+Trettin_et_al_2017,1382,NA,-18.88302,-18.88302,36.174246,36.174246,NA,NA,NA,NA
+Trettin_et_al_2017,15,NA,-18.743,-18.743,36.119,36.119,NA,NA,NA,NA
+Trettin_et_al_2017,16,NA,-18.743,-18.743,36.128,36.128,NA,NA,NA,NA
+Trettin_et_al_2017,17,NA,-18.75,-18.75,36.115,36.115,NA,NA,NA,NA
+Trettin_et_al_2017,25,NA,-18.76,-18.76,36.144,36.144,NA,NA,NA,NA
+Trettin_et_al_2017,26,NA,-18.762,-18.762,36.139,36.139,NA,NA,NA,NA
+Trettin_et_al_2017,27,NA,-18.766,-18.766,36.15,36.15,NA,NA,NA,NA
+Trettin_et_al_2017,29,NA,-18.767,-18.767,36.151,36.151,NA,NA,NA,NA
+Trettin_et_al_2017,32B,NA,-18.746,-18.746,36.21,36.21,NA,NA,NA,NA
+Trettin_et_al_2017,35,NA,-18.747,-18.747,36.216,36.216,NA,NA,NA,NA
+Trettin_et_al_2017,36,NA,-18.746,-18.746,36.223,36.223,NA,NA,NA,NA
+Trettin_et_al_2017,37,NA,-18.752,-18.752,36.214,36.214,NA,NA,NA,NA
+Trettin_et_al_2017,806,NA,-18.808457,-18.808457,36.3035,36.3035,NA,NA,NA,NA
+Trettin_et_al_2017,864,NA,-18.818504,-18.818504,36.24601,36.24601,NA,NA,NA,NA
+Trettin_et_al_2017,9001,NA,-18.831602,-18.831602,36.264041,36.264041,NA,NA,NA,NA
+Trettin_et_al_2017,9002,NA,-18.850342,-18.850342,36.26043,36.26043,NA,NA,NA,NA
+Trettin_et_al_2017,9003,NA,-18.875474,-18.875474,36.275058,36.275058,NA,NA,NA,NA
+Trettin_et_al_2017,9004,NA,-18.833962,-18.833962,36.18594,36.18594,NA,NA,NA,NA
+Trettin_et_al_2017,9005,NA,-18.824439,-18.824439,36.218115,36.218115,NA,NA,NA,NA
+Trettin_et_al_2017,9006,NA,-18.870643,-18.870643,36.270942,36.270942,NA,NA,NA,NA
+Trettin_et_al_2017,9007,NA,-18.822449,-18.822449,36.132373,36.132373,NA,NA,NA,NA
+Trettin_et_al_2017,9008,NA,-18.812733,-18.812733,36.128404,36.128404,NA,NA,NA,NA
+Trettin_et_al_2017,9009,NA,-18.845133,-18.845133,36.118808,36.118808,NA,NA,NA,NA
+Trettin_et_al_2017,9010,NA,-18.891503,-18.891503,36.177483,36.177483,NA,NA,NA,NA
+Trettin_et_al_2017,9011,NA,-18.884576,-18.884576,36.170079,36.170079,NA,NA,NA,NA
+Trettin_et_al_2017,9012,NA,-18.895905,-18.895905,36.16247,36.16247,NA,NA,NA,NA
+Trettin_et_al_2017,9013,NA,-18.873529,-18.873529,36.21079,36.21079,NA,NA,NA,NA
+Trettin_et_al_2017,9014,NA,-18.881318,-18.881318,36.205854,36.205854,NA,NA,NA,NA
+Trettin_et_al_2017,9017,NA,-18.869369,-18.869369,36.186352,36.186352,NA,NA,NA,NA
+Trettin_et_al_2017,9018,NA,-18.865541,-18.865541,36.182005,36.182005,NA,NA,NA,NA
+Trettin_et_al_2017,9019,NA,-18.881049,-18.881049,36.185503,36.185503,NA,NA,NA,NA
+Trettin_et_al_2017,9020,NA,-18.864463,-18.864463,36.221288,36.221288,NA,NA,NA,NA
+Trettin_et_al_2017,9021,NA,-18.868706,-18.868706,36.141405,36.141405,NA,NA,NA,NA
+Trettin_et_al_2017,9022,NA,-18.84346,-18.84346,36.132076,36.132076,NA,NA,NA,NA
+Trettin_et_al_2017,9023,NA,-18.88562,-18.88562,36.152977,36.152977,NA,NA,NA,NA
+Trettin_et_al_2017,9024,NA,-18.823362,-18.823362,36.211684,36.211684,NA,NA,NA,NA
+Trettin_et_al_2017,9025,NA,-18.851282,-18.851282,36.278995,36.278995,NA,NA,NA,NA
+Trettin_et_al_2017,9027,NA,-18.860388,-18.860388,36.166532,36.166532,NA,NA,NA,NA
+Smith_et_al_2015,09WCC01,Rockefeller Wildlife Refuge,29.641306999999998,29.583503,-92.57195999999999,-92.65164,NA,NA,NA,NA
+Campbell_et_al_2015,Abu al Abyad,NA,24.20513,24.20513,53.61585,53.61585,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Abu al Abyad 10 yr,NA,24.204041800000002,24.2036722,53.8002018,53.8000602,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Abu al Abyad 3 yr,NA,24.201522,24.201198,53.8027065,53.801848500000006,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Abu al Abyad 5 yr,NA,24.2034324,24.2030316,53.80079860000001,53.8005754,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Ajman al Zorah,NA,25.4354,25.4354,55.47844,55.47844,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Al Aryam,NA,24.269955200000002,24.2526848,54.2421301,54.2247289,NA,NA,NA,NA
+Campbell_et_al_2015,Al Dabiya 1,NA,24.30876,24.30876,53.97083,53.97083,NA,NA,NA,NA
+Campbell_et_al_2015,Al Dabiya 2,NA,24.30582,24.30582,54.00273,54.00273,NA,NA,NA,NA
+Campbell_et_al_2015,Al Dabiya 3,NA,24.31826,24.31826,54.05725,54.05725,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Al Khor,NA,25.19062,25.19062,55.32697,55.32697,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Al Rams,NA,25.8981,25.8981,56.03976,56.03976,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Al Shalila,NA,24.6563792,24.6553328,54.672743600000004,54.6726044,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Algal Moon,NA,24.129154,24.128326,54.04058989999999,54.040243100000005,NA,NA,NA,NA
+Campbell_et_al_2015,Bu Tinah 2,NA,24.57855,24.57855,53.079,53.079,NA,NA,NA,NA
+Campbell_et_al_2015,Bu Tinah 3,NA,24.54852,24.54852,53.03997,53.03997,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Bu Tinah Janoub,NA,24.628255600000003,24.6272764,53.053904,53.053808,NA,NA,NA,NA
+Campbell_et_al_2015,Bu Tinah SE,NA,24.54534,24.54534,53.11234,53.11234,NA,NA,NA,NA
+Campbell_et_al_2015,Dahwat an Nahklah,NA,24.24782,24.24782,51.69347,51.69347,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Eastern Mangrove,NA,24.45626187701817,24.451982374816527,54.44209644569774,54.43231109732476,NA,NA,NA,NA
+Campbell_et_al_2015,Fasht al Basm,NA,24.24085,24.24085,53.47422,53.47422,NA,NA,NA,NA
+Campbell_et_al_2015,Ghurab N,NA,24.64473,24.64473,54.495,54.495,NA,NA,NA,NA
+Campbell_et_al_2015,Ghurab NE,NA,24.65578,24.65578,54.53673,54.53673,NA,NA,NA,NA
+Campbell_et_al_2015,Ghurab NN,NA,24.64498,24.64498,54.50703,54.50703,NA,NA,NA,NA
+Campbell_et_al_2015,Halat Idai,NA,24.19905,24.19905,52.45295,52.45295,NA,NA,NA,NA
+Campbell_et_al_2015,Jazirat,NA,24.15131667,24.15131667,52.0476,52.0476,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Jubail Island,NA,24.5200358,24.5188622,54.4713824,54.4692296,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Jubail Island East,NA,24.5045904,24.4972416,54.5332951,54.5318899,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Kalba East,NA,25.007509,25.007509,56.365198,56.365198,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Kalba North,NA,25.01736,25.01736,56.35649,56.35649,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Kalba South,NA,24.999839,24.999839,56.365198,56.365198,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Kalba West,NA,25.00956,25.00956,56.35998,56.35998,NA,NA,NA,NA
+Campbell_et_al_2015,Marawah,NA,24.27702,24.27702,53.34829,53.34829,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Marawah Island,NA,24.282847800000003,24.280858199999997,53.3140163,53.3131607,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Rafiq Island,NA,24.1514929,24.1511701,54.0775456,54.0766864,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Ras al Kaimah,NA,25.77278,25.77278,55.94654,55.94654,NA,NA,NA,NA
+Campbell_et_al_2015,Ras Muhayjij,NA,24.25276667,24.25276667,51.66758333,51.66758333,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Sabkha Moon,NA,24.12422406532245,24.12329344860705,54.04969287238734,54.04938240373926,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Salaam,NA,24.450547,24.450307000000002,54.4104337,54.4093813,NA,NA,NA,NA
+Campbell_et_al_2015,Sila peninsula,NA,24.23258,24.23258,51.79963,51.79963,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Sinnia,NA,25.56217,25.56217,55.60479,55.60479,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Thumayriyah,NA,24.1338862,24.1293478,53.030442,53.028678,NA,NA,NA,NA
+Campbell_et_al_2015,Umm al Hatam,NA,24.21152,24.21152,51.87123,51.87123,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Umm al Quwain,NA,25.543642000000002,25.532217999999997,55.647539,55.587791,NA,NA,NA,NA
+Osland_et_al_2016,Galveston_Bay,NA,29.209952862,29.064102558,-94.94326064799999,-95.266709872,NA,NA,NA,NA
+Osland_et_al_2016,Grand_Bay,NA,30.409232979000002,30.356935311,-88.395872932,-88.446796468,NA,NA,NA,NA
+Osland_et_al_2016,Lake_Pontchartrain,NA,30.284774709,30.239866521,-89.833513739,-89.999191271,NA,NA,NA,NA
+Osland_et_al_2016,Lower_Laguna_Madre,NA,26.388685132,26.014722388,-97.16240541100001,-97.381783399,NA,NA,NA,NA
+Osland_et_al_2016,San_Antonio_Bay,NA,28.456784607000003,28.173734523,-96.35867509100001,-96.89654123899999,NA,NA,NA,NA
+Osland_et_al_2016,Tampa_Bay,NA,27.726532607,27.515973803,-82.44032639400001,-82.663222026,NA,NA,NA,NA
+Osland_et_al_2016,Ten_Thousand_Islands,NA,25.976839471,25.845753739,-81.52314862,-81.54749817999999,NA,NA,NA,NA
+Osland_et_al_2016,Upper_Laguna_Madre,NA,27.724848259999998,27.27555542,-97.12855965099999,-97.741774519,NA,NA,NA,NA
+Osland_et_al_2016,Weeks_Bay,NA,30.443171271999997,30.376521448000002,-87.81125599699999,-87.84718823300001,NA,NA,NA,NA
+Krauss_et_al_2018c,Savannah_River_low,NA,NA,NA,NA,NA,oligohaline,emergent,measurement,low
+Krauss_et_al_2018c,Savannah_River_mid,NA,NA,NA,NA,NA,oligohaline,forested,measurement,mid
+Krauss_et_al_2018c,Savannah_River_mid,NA,NA,NA,NA,NA,oligohaline,emergent,measurement,low
+Krauss_et_al_2018c,Savannah_River_high,NA,NA,NA,NA,NA,fresh,forested,measurement,high
+Krauss_et_al_2018a,Waccamaw_River_Butler_island,NA,NA,NA,NA,NA,oligohaline,forested to emergent,measurement,mid
+Krauss_et_al_2018b,Waccamaw_River_Turkey_creek_high,NA,NA,NA,NA,NA,oligohaline,emergent,measurement,low
+Krauss_et_al_2018a,Waccamaw_River_Turkey_creek_low,NA,NA,NA,NA,NA,oligohaline,forested to emergent,measurement,low
+Krauss_et_al_2018a,Waccamaw_River_Richmond_island,NA,NA,NA,NA,NA,fresh,forested,measurement,high
+Giblin_and_Forbrich_2018,Nelson_Island_Creek,"Plum Island Sound Estuary, Massachusetts, USA",42.7426052,42.7422908,-70.8305103,-70.8308067,NA,emergent,NA,NA
+Krause-Jensen_et_al_2011,Aarhus_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Agerø-st._2,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Agerø-st._5,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Agerø-st._8,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Agerø-st.11,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Als_Fjord-st._13,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Als_Fjord-st._14,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Marba_unpublished,Anglesey,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Århus_Bugt-st._10,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Århus_Bugt-st._15,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Århus_Bugt-st._17,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Århus_Bugt-st._3,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Århus_Bugt-st._5,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Århus_Bugt-st._7,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Århus_Bugt-st._9,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Cotner_et_al_2004,Baffin_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Carruthers_et_al_2005,Bahia_Almirante,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Erftemeijer_and_Middelburg_1993,Barrang_Lompo,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Barsø-st._8,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Van_Engeland_2010,Bay_of_Cadiz,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Townsend_and_Fonseca_1998,Beaufort_North_Carolina_USA,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mellors_et_al_2002,Bolger_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Marba_unpublished,Bolinao,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Lewis_et_al_2007,Bonito_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Cádiz_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Calleja_et_al_2007,Cala_Millor,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Maher_and_Eyre_2010,Camden_Haven,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Holmer_et_al_2007,Campello,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Agawin_et_al_1996,Cape_Bolinao,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Gonneea_et_al_2004,Celestun_Lagoon,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Gonneea_et_al_2004,Chelem_Lagoon,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Lewis_et_al_2007,Choctwhatchee_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_et_al_1997,Culip,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Holmer_et_al_2007,Cyprus,NA,NA,NA,NA,NA,NA,unvegetated marine,NA,NA
+Vichkovitten_et_al_2005,Denmark,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Dragstrup_Vig-st._7,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Yamamuro_et_al_1993,Dravuni_Is,NA,NA,NA,NA,NA,NA,unvegetated marine,NA,NA
+Yamamuro_et_al_1993,Dravuni_Is._Fiji,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Koch_and_Madden_2001,Eastern_Grand_Bahama,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Pedersen_et_al_1997,Ebro_Delta,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_et_al_1997,El_Campello,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Kamp-Nielsen_et_al_2002,El_Nido,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mellors_et_al_2002,Ellie_Pt,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Gacia_unpublished,Es_Cargol,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Calleja_et_al_2007,Es_Castell,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_and_Serrano_unpublished,Es_Pujols,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Boschker_et_al_2000,Europe_1,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Boschker_et_al_2000,Europe_2,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Boschker_et_al_2000,Europe_3,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Gacia_et_al_2002,Fanals_point,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Fourqurean_unpublished,Florida_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Fourqurean_et_al_2010,Florida_Keys,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Bouillon_et_al_2004,Gazi_bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+De_Troch_et_al_2006,Gazi_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mellors_et_al_2002,Geoffrey_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Spivak_et_al_2009,Goodwin_islands,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Holmer_et_al_2007,Greece,NA,NA,NA,NA,NA,NA,unvegetated marine,NA,NA
+Miyajima_et_al_1998,Green_Island_Great_Barrier_Reef,NA,NA,NA,NA,NA,NA,unvegetated marine,NA,NA
+Al-Rousan_et_al_2005,Gulf_of_Aqaba,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Danovaro_et_al_1994,Gulf_of_Marconi,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+De_Falco_et_al_2006,Gulf_of_Oristano,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Erftemeijer_and_Middelburg_1993,Gusung_Tallang,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Haderslev-st._3,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Maher_and_Eyre_2010,Hastings_River,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Krause-Jensen_et_al_2011,Horsens_Fjord,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Horsens_Fjord-st._1,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Horsens_Fjord-st._2,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Horsens_Fjord-st._3,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mellors_et_al_2002,Horseshoe_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Paula_et_al_2001,Inhaca_Island,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_et_al_1997,Ischia,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Amon_and_Herndl_1991,Ischia_Italy,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Burns_and_Swart_1992,Jimmy_Key,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Thimdee_et_al_2003,Khung_Krabaen_bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Carruthers_et_al_2005,Laguna_de_Chiriqui_Panama,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Gonneea_et_al_2004,Laguna_de_Terminos,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Pulich_1985,Laguna_Madre,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Fonseca_et_al_2011,Lake_Conjola,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Qu_et_al_2006,Lake_Illawara,NA,NA,NA,NA,NA,NA,unvegetated marine,NA,NA
+Eyre_and_Ferguson_2002,Lake_Macquarie,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Lillebælt_syd-st._16,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Lillebælt_syd-st._4,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Lillebælt_syd-st._5,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Krause-Jensen_et_al_2011,Limfjorden,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Krause-Jensen_et_al_2011,Little_Belt_area,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Lewis_et_al_2007,Little_Duck_Key,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Lewis_et_al_2007,Little_Sabine_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Løgstør_Bredning-st._43,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Lovns_Bredning-st._26,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mellors_et_al_2002,Lugger_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Calleja_et_al_2007,Magalluf,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Holmer_et_al_2003,Mallorca,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Danovaro_and_Fabiano_1995,Marconi_Gulf,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_et_al_1997,Medes_Islands,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_unpublished,Melieha_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Borg_et_al_2010,Mellieha_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mellors_et_al_2002,Meunga_Creek,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Lillebo_et_al_2006,Mondego_Estuary._Portugal,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+De_Iongh_et_al_1995,Nang_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Marba_unpublished,Nefyn,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Nibe_Bredning-st._33,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Nibe_Bredning-st._34,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Nibe_Bredning-st._45,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Nissum_Bredning-st._31,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Grenz_et_al_2003,Noumea_New_Caledonia,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Danovaro_and_Gambi_2002,NW_Marconi,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Krause-Jensen_et_al_2011,Odense_Fjord,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Odense_Fjord-st._1,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Odense_Fjord-st._2,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Odense_Fjord-st._3,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Odense_Fjord-st._4,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Lewis_et_al_2007,Ohio_Key,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_and_Serrano_unpublished,Oued_Tahaddart,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Carruthers_et_al_2005,Outer_Lagoon,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Kairis_and_Rybczyk_2010,Padilla_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Leduc_and_Probert_2011,Papanui_Inlet,NA,NA,NA,NA,NA,NA,unvegetated marine,NA,NA
+NA,Patos_Lagoon_Estuary,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Sfriso_and_Marcomini_1999,Petta_di_Po_-_Venice,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Kristensen_et_al_2000,Phuket,NA,NA,NA,NA,NA,NA,unvegetated marine,NA,NA
+Fonseca_et_al_2011,Pittwater,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Calleja_et_al_2007,Pollença,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mellors_et_al_2002,Port_Dennison,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Fonseca_et_al_2011,Port_Hacking,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_et_al_1997,Portlligat_I,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Serrano_unpublished,Portlligat_II,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_and_Serrano_unpublished,Portlligat_III,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Calleja_et_al_2007,Porto_Colom,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Apostolaki_unpublished,Psaromoura_Crete,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Kamp-Nielsen_et_al_2002,Puerto_Galera,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+De_Troch_et_al_2006,Pujada_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Ooi_et_al_2011,Pulau_Tinggi_Malasia,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+De_Troch_et_al_2006,Punta_Allen,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Borg_et_al_2010,Ramla_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Pulich_1985,Redfish_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Oakes_and_Connolly_2004,Redland_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Figueiredo_da_Silva_et_al_2009,Ria_de_Aveiro,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Spruzen_et_al_2008,Robbins_Passage,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Holmer_et_al_2007,Rottnest,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Alongi_et_al_2008,S_Sulawesi,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Calleja_et_al_2007,Sa_Paret,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_unpublished,Saline_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Lewis_et_al_2007,Santa_Rosa_Sound,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_and_Serrano_unpublished,Santander_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Lee_et_al_2005,Seungbong_Island,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fourqurean_and_Kendrick_unpublished,Shark_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Holmer_et_al_2007,Sicily,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Skive_Fjord-st._13,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Skive_Fjord-st._28,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Skive_Fjord-st._29,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Holmer_et_al_2007,Sounion,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Holmer_et_al_2007,Spain,NA,NA,NA,NA,NA,NA,unvegetated marine,NA,NA
+Grady_1981,St._Andrews_Bay_Florida_USA,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Lewis_et_al_2007,St_Joseph_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Calleja_et_al_2007,Sta_Maria_,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_et_al_1997,Tabarca_North,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_et_al_1997,Tabarca_South,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_and_Serrano_unpublished,Talamanca,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Povidisa_and_Delefosse_unpublished,Thailand,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Rigollet_et_al_2004,Thau_lagoon,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Thisted_Bredning-st._9,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Borg_et_al_2010,Thomas_Bay,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Kamp-Nielsen_et_al_2002,Trang,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Krause-Jensen_et_al_2011,Vejle_Fjord,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Vejle_Fjord-st._1,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Vejle_Fjord-st._2,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Vejle_Fjord-st._3,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Vejle_Fjord-st._4,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Vejle_Fjord-st._5,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Rigollet_et_al_2004,Venice_lagoon,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mateo_unpublished,Villajoyosa,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+McGlathery_et_al_2012,Virginia_Coastal_Bays,NA,NA,NA,NA,NA,NA,unvegetated marine,NA,NA
+Maher_and_Eyre_2010,Wallis_Lake,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+NA,Weddelsborg,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Fourqurean_and_Kendrick_unpublished,Western_Australia,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Borg_et_al_2010,White_Rocks,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Mellors_et_al_2002,Windy_Point,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Holmer_et_al_2007,Woodman_Point,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Larned_2003,Yaquina_Bay_Oregon,NA,NA,NA,NA,NA,NA,seagrass,NA,NA
+Drexler_et_al_2019,Animal_Slough,NA,47.096953,47.092957000000006,-122.698335,-122.701155,polyhaline,emergent,NA,NA
+Drexler_et_al_2019,Six_Gill_Slough,NA,47.09329700000001,47.088652999999994,-122.706336,-122.70914400000001,polyhaline,emergent,NA,NA
