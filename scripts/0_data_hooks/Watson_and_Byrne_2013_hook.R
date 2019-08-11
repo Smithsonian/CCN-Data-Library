@@ -77,11 +77,11 @@ site_boundaries <- create_multiple_geographic_coverages(site_boundaries)
 # Not including sites as there is no site-level info available from the publication - this table will be automatically generated 
 
 ## Bibliography #######
-doi <- "10.1007/s12237-013-9598"
+doi <- "10.1007/s12237-013-9598-z"
 study_id_value <- "Watson_and_Byrne_2013"
 
 # Get bibtex citation from DOI
-biblio_raw <- GetBibEntryWithDOI("10.1111/rec.12941")
+biblio_raw <- GetBibEntryWithDOI(doi)
 biblio_df <- as.data.frame(biblio_raw)
 study_citations <- biblio_df %>%
   rownames_to_column("key") %>%
