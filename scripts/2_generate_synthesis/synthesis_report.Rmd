@@ -17,50 +17,6 @@ conducts QA/QC tests, and provides visualizations and summaries of data within t
 
 ***
 
-### Change log  
-
-If any study IDs are added or removed to the synthesis, they will be listed below. 
-
-```{r, echo=FALSE}
-
-# Display any errors if they occured 
-if(nrow(synthesis_errors) > 0) {datatable(qa_numeric_results)}
-```
-
-#### New studies
-
-```{r, echo=FALSE}
-
-# Display any errors if they occured 
-if(nrow(synthesis_errors) > 0) {datatable(qa_numeric_results)}
-
-forward_studies <- filter(change_log_df$cores, change_type == "forward") %>%
-  select(-change_type)
-
-if(nrow(forward_studies) > 0){
-  datatable(forward_studies)
-} else {
-  "No studies were added to the synthesis"
-}
-
-```
-
-#### Studies removed from the synthesis
-
-```{r, echo=FALSE}
-
-backward_studies <- filter(change_log_df$cores, change_type == "backward") %>%
-  select(-change_type)
-
-if(nrow(backward_studies) > 0){
-  datatable(backward_studies)
-} else {
-  "No studies were removed from the synthesis"
-}
-
-```
-***
-
 ### QA/QC Test Results
 
 
@@ -103,3 +59,15 @@ ccrcn_synthesis$depthseries %>%
 
 ```
 
+***
+
+### Change log results
+The following table summarizes which entries across the range of synthesis tables changed compared to the previous synthesis. Study IDs associated with the "forward" change type represent data that was not present in the previous synthesis, while "backward" indicates that study ID is no longer in the given table. If a study ID in a table is associated with both backward and forward change types, it is likely that one or more values were altered for that row in the new synthesis. 
+
+
+```{r, echo=FALSE}
+
+# data table of change log results 
+datatable(change_log_results)
+
+```

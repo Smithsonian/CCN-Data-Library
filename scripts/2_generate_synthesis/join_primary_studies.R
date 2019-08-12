@@ -148,40 +148,73 @@ for(file in archived_filepaths){
       gsub("CCRCN", "", .) %>%
       gsub(".csv", "", .)
     
-    archived_synthesis[[table_type]] <- read.csv(paste0(synthesis_directory, file)) 
+    archived_synthesis[[table_type]] <- read_csv(paste0(synthesis_directory, file),
+                                                 col_types = cols(.default = col_character())) %>%
+      type_convert(na = "NA")
   }
 }
+
 
 # The forward change log list tracks which values are new to the synthesis
 change_log_df <- vector("list", length(tables))
 names(change_log_df) <- tables
 
-# These are the keys that make each row in a given table unique
-table_keys <- list(
-  list("core_id", "depth_min"),
-  list("study_id", "core_id"),
-  list("study_id", "site_id"),
-  list("study_id", "site_id", "core_id"),
-  list("study_id", "site_id", "core_id"),
-  list("study_id"),
-  list("study_id", "bibliography_id")
-)
-names(table_keys) <- tables
+# Create object to save errors to 
+change_log_errors <- setNames(data.frame(matrix(ncol = 3, nrow = 0)), c("error_message", "change_type", "table"))
 
 for(table in tables){
   # Skip sites for now - geography assignment script needs to be modified
   if(table == "sites"){next()}
-  # Get "forward" changes - New data to the synthesis
-  forward <- anti_join(ccrcn_synthesis[[table]], archived_synthesis[[table]], by=unlist(table_keys[[table]])) %>%
-    mutate(change_type = "forward") 
-  # Get "backward" changes - Data that's been removed from the synthesis
-  backward <- anti_join(archived_synthesis[[table]], ccrcn_synthesis[[table]], by=unlist(table_keys[[table]])) %>%
-    mutate(change_type = "backward") 
   
-  change_log_df[[table]] <- bind_rows(forward, backward)
+  foward <- NULL
+  backward <- NULL
+  
+  # Use tryCatch to keep loop running if there's an error and record
+  tryCatch(
+    # Get "forward" changes - New data to the synthesis
+    forward <- setdiff(ccrcn_synthesis[[table]], archived_synthesis[[table]]) %>%
+      mutate(change_type = "forward"), 
+    # Record any errors
+    error = function(e){
+      change_log_errors[nrow(change_log_errors) + 1,] <<- c(unlist(e[1]), "forward", table)
+    }
+  )
+  tryCatch(
+    # Get "backward" changes - Data that's been removed from the synthesis
+    backward <- setdiff(archived_synthesis[[table]], ccrcn_synthesis[[table]]) %>%
+      mutate(change_type = "backward"),
+    # Record any errors
+    error = function(e){
+      change_log_errors[nrow(change_log_errors) + 1,] <<- c(unlist(e[1]), "backward", table)
+    }
+  )
+  
+  # If there's an error, no table will exist for that table
+  if(!is.null(forward)){
+    if(is.null(backward)){
+      change_log_df[[table]] <- forward 
+    } else change_log_df[[table]] <- bind_rows(forward, backward)
+  } else if(is.null(forward) & !is.null(backward)){
+    change_log_df[[table]] <- backward
+  }
+  
 }
 
-## QA/QC #############
+## Format change log results 
+change_log_results <- setNames(data.frame(matrix(ncol = 3, nrow = 0)), c("table", "change_types", "study_id"))
+
+for(table_type in names(change_log_df)){
+  if(!is.null(change_log_df[[table_type]])){
+    change_summary <- change_log_df[[table_type]] %>%
+      group_by(study_id) %>%
+      summarize(change_types = paste(unique(change_type), collapse = ", "), table = table_type) %>%
+      select(table, study_id, change_types)
+    
+    change_log_results <- bind_rows(change_log_results, change_summary)
+  }
+}
+
+## 5. QA/QC #############
 source("./scripts/2_generate_synthesis/qa_synthesis_functions.R")
 
 # Reorder columns 
@@ -206,12 +239,12 @@ qa_results <-
 # Provide summary statistics of numeric variables 
 qa_numeric_results <- testNumericVariables(ccrcn_synthesis$depthseries)
 
-## Write new synthesis ###########
+## 6. Write new synthesis ###########
 if(join_status == TRUE){
   
   # Archive previous synthesis
   write_csv(archived_synthesis$cores, "./data/CCRCN_synthesis_test/archive/archived_synthesis_cores.csv")
-  write_csv(archived_synthesis$depthseries, "./data/CCRCN_synthesis_test/archive/archived_synthesis_depthseries_data.csv")
+  write_csv(archived_synthesis$depthseries, "./data/CCRCN_synthesis_test/archive/archived_synthesis_depthseries.csv")
   write_csv(archived_synthesis$sites, "./data/CCRCN_synthesis_test/archive/archived_synthesis_sites.csv")
   write_csv(archived_synthesis$impacts, "./data/CCRCN_synthesis_test/archive/archived_synthesis_impacts.csv")
   write_csv(archived_synthesis$methods, "./data/CCRCN_synthesis_test/archive/archived_synthesis_methods.csv")
@@ -235,7 +268,7 @@ if(join_status == TRUE){
 # Record summary of warnings 
 warning_summary <- summary(warnings())
 
-## Write RMarkdown report #########
+## 7. Write RMarkdown report #########
 # get date to paste to file name
 url_date <- format(Sys.time(), "%Y%m%d %H%M")
 formated_date <- format(Sys.time(), "%Y/%m/%d-%H:%M")
