@@ -119,22 +119,13 @@ remove_studies <- c("Furuta_et_al_2002", "Kenig_et_al_1990",
                     # The following studies have incorrect lat/long values:
                     "Holmer_et_al_2006", "Vichkovitten_and_Holmer_2005",
                     # Remove some studies that don't have depthseries data that fit into current guidance
-                    "Isaksen_and_Finster_1996", "Koepfler_et_al_1993", "Mateo_and_Romero_1997")
+                    "Isaksen_and_Finster_1996", "Koepfler_et_al_1993", "Mateo_and_Romero_1997", NA)
 
 Fourqurean <- Fourqurean %>%
   filter(!(core_id %in% missing_lat_long)) %>%
   filter(!(study_id %in% remove_studies))
 
-
-## ....3b. Site-level data #############
-
-site_data <- Fourqurean %>%
-    filter(!is.na(site_id)) %>%
-    group_by(site_id) %>%
-    summarize_all(first) %>%
-    select(study_id, site_id, vegetation_class)
-    
-## ....3c. Core-level data ##############
+## ....3b. Core-level data ##############
 
 core_data <- Fourqurean %>%
   rename(core_latitude = "latitude (DD.DDDD, >0 for N, <0 for S)",
@@ -146,6 +137,31 @@ core_data <- Fourqurean %>%
   select(study_id, site_id, core_id, core_latitude, core_longitude) %>%
   group_by(core_id) %>%
   summarise_all(first) 
+
+
+kamp_missing_cores <- c("Kamp-Nielsen_et_al_2002_14", "Kamp-Nielsen_et_al_2002_15", "Kamp-Nielsen_et_al_2002_16", "Kamp-Nielsen_et_al_2002_17",
+                        "Kamp-Nielsen_et_al_2002_18", "Kamp-Nielsen_et_al_2002_19", "Kamp-Nielsen_et_al_2002_55", "Kamp-Nielsen_et_al_2002_56",
+                        "Kamp-Nielsen_et_al_2002_57", "Kamp-Nielsen_et_al_2002_58", "Kamp-Nielsen_et_al_2002_59", "Kamp-Nielsen_et_al_2002_60")
+
+core_data <- core_data %>%
+  filter(!core_id %in% kamp_missing_cores)
+
+## ....3c. Site-level data #############
+# Create site boundaries
+site_boundaries <- core_data %>%
+  select(study_id, site_id, core_id, core_latitude, core_longitude) 
+
+site_boundaries <- create_multiple_geographic_coverages(site_boundaries)
+
+site_data <- Fourqurean %>%
+  filter(!is.na(site_id)) %>%
+  group_by(site_id) %>%
+  summarize_all(first) %>%
+  merge(site_boundaries, by="site_id") %>%
+  select(study_id, site_id, 
+         site_longitude_max, site_longitude_min, site_latitude_max, site_latitude_min,
+         vegetation_class) %>%
+  mutate(vegetation_class = ifelse(vegetation_class == "unvegetated marine", NA, vegetation_class))
 
 ## ....3d. Depthseries data ################
 
@@ -347,27 +363,12 @@ numeric_test_results <- test_numeric_vars(depthseries)
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
 
-# Running this test reveals that there's a few Kamp-Nielsen cores that don't have
-#   depth interval info. We'll remove these from the core_data
-
-# NOTE NOTE: I am INTENTIONALLY manually inputting these cores. Please do not perform
-#   an anti_join or %in% depthseries$core_id. This is intentionally supposed to 
-#   remove just this set of cores.
-
-kamp_missing_cores <- c("Kamp-Nielsen_et_al_2002_14", "Kamp-Nielsen_et_al_2002_15", "Kamp-Nielsen_et_al_2002_16", "Kamp-Nielsen_et_al_2002_17",
-                        "Kamp-Nielsen_et_al_2002_18", "Kamp-Nielsen_et_al_2002_19", "Kamp-Nielsen_et_al_2002_55", "Kamp-Nielsen_et_al_2002_56",
-                        "Kamp-Nielsen_et_al_2002_57", "Kamp-Nielsen_et_al_2002_58", "Kamp-Nielsen_et_al_2002_59", "Kamp-Nielsen_et_al_2002_60")
-
-core_data <- core_data %>%
-  filter(!core_id %in% kamp_missing_cores)
-
-# Now test
 results <- test_core_relationships(core_data, depthseries)
 
 ## 5. write out data ##############
 write_csv(depthseries, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_depthseries.csv")
-write_csv(site_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_sites.csv")
-write_csv(core_data, "./data/Fourqurean_2012/derivative/Fourqurean_2012_cores.csv")
-write_csv(species, "./data/Fourqurean_2012/derivative/Fourqurean_2012_species.csv")
-write_csv(biomass, "./data/Fourqurean_2012/derivative/Fourqurean_2012_biomass.csv")
-write_csv(synthesis_citations, "./data/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")
+write_csv(site_data, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_sites.csv")
+write_csv(core_data, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_cores.csv")
+write_csv(species, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_species.csv")
+write_csv(biomass, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_biomass.csv")
+write_csv(synthesis_citations, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")

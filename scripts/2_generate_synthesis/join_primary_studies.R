@@ -166,7 +166,7 @@ for(table in tables){
   # Skip sites for now - geography assignment script needs to be modified
   if(table == "sites"){next()}
   
-  foward <- NULL
+  forward <- NULL
   backward <- NULL
   
   # Use tryCatch to keep loop running if there's an error and record
@@ -189,7 +189,7 @@ for(table in tables){
     }
   )
   
-  # If there's an error, no table will exist for that table
+  # If there's an error, no results will exist for that table
   if(!is.null(forward)){
     if(is.null(backward)){
       change_log_df[[table]] <- forward 
@@ -199,6 +199,10 @@ for(table in tables){
   }
   
 }
+# 
+# forward <- setdiff(ccrcn_synthesis[["depthseries"]], archived_synthesis[["depthseries"]]) %>%
+#   mutate(change_type = "forward")
+
 
 ## Format change log results 
 change_log_results <- setNames(data.frame(matrix(ncol = 3, nrow = 0)), c("table", "change_types", "study_id"))
