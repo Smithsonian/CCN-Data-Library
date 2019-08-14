@@ -17,6 +17,7 @@ study_id_value <- "Drexler_et_al_2019"
 
 ## ... depthseries #####
 depthseries <- raw_depthseries %>%
+  rename(total_pb210_activity_sd = total_pb210_sd) %>%
   mutate(core_id = gsub("Core ", "", core_id)) %>%
   mutate(study_id = study_id_value,
          depth_min = depth_max - 2,
@@ -26,7 +27,7 @@ depthseries <- raw_depthseries %>%
          pb210_unit = ifelse(!is.na(total_pb210_activity), "distintegrations per minute per gram", NA)) %>%
   select(study_id, site_id, core_id, depth_min, depth_max,
          dry_bulk_density, fraction_carbon, 
-         total_pb210_activity, total_pb210_sd,  
+         total_pb210_activity, total_pb210_activity_sd,  
          ra226_activity, ra226_activity_sd, 
          excess_pb210_activity, excess_pb210_activity_sd, pb210_unit)
 
@@ -108,7 +109,7 @@ test_colnames("impact", impacts)
 test_variable_names(cores)
 test_variable_names(sites)
 test_variable_names(impacts)
-test_variable_names(depthseries)
+test_varnames(depthseries)
 test_variable_names(species)
 
 # Test relationships between core_ids at core- and depthseries-levels

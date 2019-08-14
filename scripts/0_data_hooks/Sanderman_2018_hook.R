@@ -439,19 +439,19 @@ test_varnames(study_citations)
 
 ## Write data ###############
 
-write_csv(internatl_study_metadata, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_study_metadata.csv")
+#write_csv(internatl_study_metadata, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_methods.csv")
 
-write_csv(internatl_core_data, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
+write_csv(internatl_core_data, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_cores.csv")
 
-write_csv(internatl_species_data, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
+write_csv(internatl_species_data, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species.csv")
 
-write_csv(internatl_depthseries_data, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
+write_csv(internatl_depthseries_data, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries.csv")
 
 ## DOCUMENT AND FILTER UNPUBLISHED OR UN-CITED STUDIES ###################
 # read back in hooked and curated Sanderman data
-cores <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_core_data.csv")
-depthseries <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries_data.csv")
-species <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species_data.csv")
+cores <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_cores.csv")
+depthseries <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries.csv")
+species <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species.csv")
 
 ## ... Determine which studies are cited in biblio ###########
 

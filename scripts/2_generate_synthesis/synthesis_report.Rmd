@@ -1,0 +1,106 @@
+---
+title: "CCRCN Synthesis Report"
+output: html_document
+---
+  
+### Introduction 
+The CCRCN clearinghouse provides a synthesized and curated set of coastal carbon data that promotes the sharing of open data, novel analyses, and collaboration opportunities. 
+The synthesis is created by curating and merging publically available data through an automated script. 
+This report documents the success or failure of the automated synthesis process, documents changes, 
+conducts QA/QC tests, and provides visualizations and summaries of data within the clearinghouse. 
+
+***
+
+#### Report date: `r formated_date`
+#### Synthesis status: `r if(join_status) {"Successful"} else "Failed"`
+#### Contact: Michael Lonneman (lonnemanM@si.edu)  
+
+***
+
+### QA/QC Test Results
+
+
+```{r, echo=FALSE}
+
+table_length <- nrow(qa_results)
+
+# data table of results 
+datatable(qa_results, options = list(pageLength = table_length,
+                                     autoWidth = TRUE,
+                                     columnDefs = list(list(width = "47%", targets = c(1,2))),
+                                     searching = FALSE,
+                                     paging = FALSE))
+
+```
+
+***
+
+### Numeric Attribute Summary Statistics
+
+```{r, echo=FALSE}
+
+# data table of results 
+datatable(qa_numeric_results)
+
+```
+
+***
+
+### Depthseries Visualization
+
+```{r, echo=FALSE, fig.width = 10, warning = FALSE}
+
+ccrcn_synthesis$depthseries %>%
+  keep(is.numeric) %>% 
+  gather() %>% 
+  ggplot(aes(value)) +
+    facet_wrap(~ key, scales = "free") +
+    geom_histogram()
+
+```
+
+***
+
+### Change log results
+The following table summarizes which entries across the range of synthesis tables changed compared to the previous synthesis. Study IDs associated with the "forward" change type represent data that was not present in the previous synthesis, while "backward" indicates that study ID is no longer in the given table. If a study ID in a table is associated with both backward and forward change types, it is likely that one or more values were altered for that row in the new synthesis. 
+
+
+```{r, echo=FALSE}
+
+# data table of change log results 
+datatable(change_log_results)
+
+if(nrow(change_log_errors) > 0){
+  datatable(change_log_errors)
+}
+
+```
+
+***
+
+### Miscellaneous filepaths
+The following files were found in the derivative folders. They either do not match the approved filename structure for csvs or are another filetype
+
+#### Unknown CSVs
+
+```{r, echo=FALSE}
+
+if(!is.null(file_paths$unknown_csv)){
+  paste(file_paths$unknown_csv, collapse = ", ")
+}else {
+  "No unknown csv files found in derivative folders"
+}
+
+```
+
+#### Non .csv or .bib filetypes
+
+```{r, echo=FALSE}
+
+if(!is.null(file_paths$unknown_filetypes)){
+  paste(file_paths$unknown_filetypes, collapse = ", ")
+} else {
+  "No non-csv or -bib files found in derivative folders"
+}
+
+```
