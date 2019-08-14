@@ -49,10 +49,9 @@ depthseries <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmq
 impacts <-read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_impact_data.csv")
 species <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_species_data.csv")
 methods <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_methods_data.csv")
-citations <- read_csv("data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_study_citations.csv")
 
 # remove the following studies that are now in their own separate data hooks: 
-removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001", "Noe_et_al_2016", "Johnson_et_al_2007")
+removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001", "Noe_et_al_2016", "Johnson_et_al_2007", "Watson_and_Byrne_2013")
 
 ## 3. Recode and rename factors #################
 
@@ -143,12 +142,12 @@ synthesis_doi <- "10.25572/ccrcn/10088/35684"
 synthesis_study_id <- "Holmquist_et_al_2018"
 
 # The follow file represents the initial study citations file that has since been deprecated
-citations <- read.csv("./data/Holmquist_2018/intermediate/initial_citations.csv")
+citations <- read.csv("./data/primary_studies/Holmquist_2018/intermediate/initial_citations.csv")
 
 # Build citations for primary studies that have DOIs
 primary_dois <- citations %>%
   filter(!(study_id %in% removed_studies)) %>%
-  filter(is.na(doi)==FALSE) %>%
+  filter(!is.na(doi)) %>%
   filter(study_type != "synthesis") %>%
   filter(study_id != "Nuttle_1996" & study_id != "Crooks_et_al_2014" & study_id != "Boyd_2012" & study_id != "CRMS_Database" & study_id != "Merrill_1999") %>%
   select(study_id, bibliography_id, doi)
@@ -160,8 +159,7 @@ study_citations_primary <- primary_df %>%
   rownames_to_column("key") %>%
   merge(primary_dois, by="doi", all.x=TRUE, all.y=TRUE) %>%
   mutate(publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything()) %>%
-  filter(!(study_id %in% c("Crooks_et_al_2014", "Nuttle_1996")))
+  select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything())
 
 # Manully add entries that failed (mostly because they don't have DOIS)
 boyd <-  BibEntry(bibtype = "Mastersthesis", 
@@ -215,6 +213,8 @@ primary_no_dois <- primary_no_dois %>%
          publication_type = bibtype) %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, everything())
 
+study_citations_primary <- bind_rows(study_citations_primary, primary_no_dois)
+
 biblio_synthesis <- BibEntry(bibtype = "Misc", 
                              key = "Holmquist_et_al_2018", 
                              title = "Accuracy and Precision of Tidal Wetland Soil Carbon Mapping in the Conterminous United States: Public Soil Carbon Data Release",
@@ -234,11 +234,10 @@ study_citations_synthesis <- citations %>%
   mutate(key = "Holmquist_et_al_2018",
          publication_type = "synthesis") %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything()) %>%
-  bind_rows(study_citations_primary, primary_no_dois) %>%
+  bind_rows(study_citations_primary) %>%
   mutate(year = as.numeric(year), 
          volume = as.numeric(volume), 
-         number = as.numeric(number)) %>%
-  filter(!(study_id %in% removed_studies)) 
+         number = as.numeric(number))
 
 # Write .bib file
 bib_file <- study_citations_synthesis %>%
@@ -246,7 +245,7 @@ bib_file <- study_citations_synthesis %>%
   distinct() %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "./data/Holmquist_2018/derivative/Holmquist_2018.bib")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018.bib")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
