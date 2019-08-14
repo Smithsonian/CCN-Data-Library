@@ -324,7 +324,7 @@ depthseries <- Krauss_depthseries %>%
 depthseries <- depthseries %>%
   mutate(study_id = ifelse(core_id == "butler_island_1" | 
                              core_id == "turkey_creek_2" |
-                             core_id == "richmond_island_1", "Krauss_et_al_2008a", 
+                             core_id == "richmond_island_1", "Krauss_et_al_2018a", 
                            ifelse(core_id == "turkey_creek_1", "Krauss_et_al_2018b", "Krauss_et_al_2018c")))
 
 ## ....3B. Core-level data ##################
@@ -410,7 +410,7 @@ sites <- cores %>%
 
 impacts <- cores %>% 
   select(study_id, site_id, core_id) %>% 
-  mutate(impact_class = "restored")
+  mutate(impact_class = "tidally restored")
 
 # ## ....3E. Materials and Methods #############
 # 
@@ -437,9 +437,6 @@ species <- species_raw %>%
   rename(species_code = Species) %>% 
   right_join(cores) %>% 
   select(study_id, site_id, core_id, species_code) %>% 
-  # count(study_id, site_id, core_id, species_code) %>% 
-  # rename(count = n) %>% 
-  # mutate(count = as.numeric(ifelse(is.na(species_code), "0", count)))
   filter(!is.na(species_code)) %>%
   distinct()
 
@@ -550,6 +547,7 @@ write_csv(depthseries, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al
 write_csv(cores, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_cores.csv")
 write_csv(sites, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
 write_csv(impacts, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_impacts.csv")
-write_csv(species, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
+# Until scientific names are obtained, remove species dataset from synthesis
+# write_csv(species, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
 write_csv(study_citations, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
 
