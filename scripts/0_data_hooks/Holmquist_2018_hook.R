@@ -237,7 +237,8 @@ study_citations_synthesis <- citations %>%
   bind_rows(study_citations_primary) %>%
   mutate(year = as.numeric(year), 
          volume = as.numeric(volume), 
-         number = as.numeric(number))
+         number = as.numeric(number)) %>%
+  filter(!(study_id %in% removed_studies))
 
 # Write .bib file
 bib_file <- study_citations_synthesis %>%

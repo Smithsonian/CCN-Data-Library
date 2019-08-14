@@ -103,7 +103,7 @@ for(i in seq_along(tables)){
   for(j in seq_along(file_paths[[tables[i]]])){
     # Use tryCatch to keep loop running if there's an error and record
     tryCatch(
-      ccrcn_synthesis[[i]] <- read_csv(file_paths[[tables[i]]][j]) %>%
+      ccrcn_synthesis[[i]] <- as.data.frame(read_csv(file_paths[[tables[i]]][j])) %>%
         mutate_if(is.factor, as.character) %>%
         bind_rows(ccrcn_synthesis[[i]]),
       # Record any errors
@@ -153,7 +153,6 @@ for(file in archived_filepaths){
       type_convert(na = "NA")
   }
 }
-
 
 # The forward change log list tracks which values are new to the synthesis
 change_log_df <- vector("list", length(tables))
