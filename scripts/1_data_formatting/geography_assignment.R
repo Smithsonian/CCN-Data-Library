@@ -226,9 +226,8 @@ if(num_cores != num_cores_w_geography) {
   #   group_by(site_id) %>% 
   #   summarize(state = names(which.max(table(state))))
   
-  sites_w_geography <- cores_w_geography %>% 
-    select(study_id, site_id, state, watershed) %>% 
-    merge(sites, by=c("study_id", "site_id"), all.x=TRUE, all.y=TRUE) %>% 
+  geography_assignment <- cores_w_geography %>% 
+    select(study_id, site_id, core_id, state, watershed)
     # group_by(site_id) %>% 
     # To summarize to the most frequent variable for each attribute, count each
     #   desired attribute...
@@ -240,12 +239,13 @@ if(num_cores != num_cores_w_geography) {
     # # Remove the count colum
     # select(-n) %>% 
     # # Filter out the "site" corresponding to NA
-    filter(!is.na(site_id))
-}
-
-## 5. Combine and write data #################
-
-# If the lengths match, we can write the data out
-write_csv(sites_w_geography, "./data/CCRCN_synthesis/CCRCN_sites.csv")
+    # filter(!is.na(site_id))
   
-rm(list = ls())
+  ## 5. Combine and write data #################
+  
+  # If the lengths match, we can write the data out
+  write_csv(geography_assignment, "./data/CCRCN_synthesis/CCRCN_geography_lookup.csv")
+  
+  print("New geography assignment table written to synthesis folder")
+  
+}
