@@ -128,7 +128,7 @@ radiocarbon_raw <- read_csv("./data/primary_studies/Krauss_2018/original/TFFW_Ra
 # Few datasets will include biomass, at the time of writing at least
 root_productivity <- read_csv("data/primary_studies/Krauss_2018/original/TFFW_Carbon_Budget_Root_Ingrowth.csv")
 
-species_raw <- read_csv("data/primary_studies/Krauss_2018/original/TFFW_Carbon_Budget_Stand_Structure_2005_and_2012.csv")
+species_edited <- read_csv("data/primary_studies/Krauss_2018/intermediate/Krauss_et_al_2018_species.csv")
 
 ## ....2b. Read in Jones data ###############
 
@@ -426,19 +426,8 @@ impacts <- cores %>%
 #   mutate(age_depth_model_reference = "YBP")
 
 ## ....3F. Species data ##############
-# Species codes are common names
-species <- species_raw %>% 
-  mutate(core_id = paste(River, Site, Plot, sep = "_")) %>% 
-  mutate(core_id = tolower(core_id)) %>% 
-  mutate(core_id = gsub("lower", "low", core_id)) %>% 
-  mutate(core_id = gsub("middle", "mid", core_id)) %>% 
-  mutate(core_id = gsub("upper", "high", core_id)) %>% 
-  mutate(core_id = recode(core_id, "waccamaw_mid_1" = "butler_island_1")) %>% 
-  rename(species_code = Species) %>% 
-  right_join(cores) %>% 
-  select(study_id, site_id, core_id, species_code) %>% 
-  filter(!is.na(species_code)) %>%
-  distinct()
+species <- species_edited %>%
+  select(-common_name)
 
 ## ....3H. Study citations ################
 
@@ -508,10 +497,10 @@ source("./scripts/1_data_formatting/qa_functions.R")
 
 ## ....4A. Column and Variable names ###############
 # Make sure column names are formatted correctly
-test_colnames("core_level", cores)
+test_colnames("cores", cores)
 test_colnames("depthseries", depthseries)
-test_colnames("site_level", sites)
-test_colnames("impact", impacts)
+test_colnames("sites", sites)
+test_colnames("impacts", impacts)
 test_colnames("species", species)
 # test_colnames("study_information", studies)
 
@@ -524,12 +513,11 @@ test_varnames(species)
 # test_varnames(studies)
 
 # Select only controlled attributes, and re-order them according to CCRCN guidance
-cores <- select_and_reorder_columns("core_level", cores, "data/primary_studies/Krauss_2018/derivative/")
-depthseries <- select_and_reorder_columns("depthseries", depthseries, "data/primary_studies/Krauss_2018/derivative/")
-sites <- select_and_reorder_columns("site_level", sites, "/data/primary_studies/Krauss_2018/derivative/")
-impacts <- select_and_reorder_columns("impact", impacts, "data/primary_studies/Krauss_2018/derivative/")
-species <- select_and_reorder_columns("species", species, "data/primary_studies/Krauss_2018/derivative/")
-# studies <- select_and_reorder_columns("study_information", studies, "data/primary_studies/Krauss_2018/derivative/")
+cores <- reorderColumns("cores", cores)
+depthseries <- reorderColumns("depthseries", depthseries)
+sites <- reorderColumns("sites", sites)
+impacts <- reorderColumns("impacts", impacts)
+species <- reorderColumns("species", species)
 
 ## ....4B. Quality control on cell values ###################
 # Make sure that all core IDs are unique
@@ -547,7 +535,5 @@ write_csv(depthseries, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al
 write_csv(cores, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_cores.csv")
 write_csv(sites, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
 write_csv(impacts, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_impacts.csv")
-# Until scientific names are obtained, remove species dataset from synthesis
-# write_csv(species, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
+write_csv(species, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
 write_csv(study_citations, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
-

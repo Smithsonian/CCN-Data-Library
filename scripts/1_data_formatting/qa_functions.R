@@ -111,7 +111,7 @@ test_colnames <- function(category, dataset) {
   
   # Gather column names from dataset and pull out columns with variables that are defined in our database structure
   column_names <- colnames(dataset)
-  valid_columns <- filter(database_structure, table == category)$attribute
+  valid_columns <- filter(database_structure, table == category)$attribute_name
   non_matching_columns <- subset(column_names, !(column_names %in% valid_columns))
   
   if(length(non_matching_columns)==0) {
@@ -197,7 +197,7 @@ select_and_reorder_columns <- function(datalevel_table, # A string corresponding
   # Create list of database attributes
   # ML COMMENT: making it a vector rather than a list might be a better idea 
   # That way select() will work effectively 
-  db_attributes <- c(database_structure$attribute)
+  db_attributes <- c(database_structure$attribute_name)
   
   # Create list of chosen dataset attributes
   data_attributes <- colnames(data)
@@ -325,4 +325,30 @@ testDataTypes <- function(df) {
   }
   
   return(df)
+}
+
+## Reorder columns to reflect guidance ####
+reorderColumns <- function(category, df) {
+  
+  database_structure <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols())
+  
+  # Create a vector of all the table names
+  tables <- unique(database_structure$table)
+  
+  if(category %in% database_structure$table == FALSE) {
+    # Warn user they have not supplied a valid table category and provide the list 
+    warning(paste(category,"is not a valid category. Please use one of the above listed options."))
+    print(tables)
+    return()
+  }
+  
+  # Get controlled attributes for the current table
+  table_structure <- database_structure %>%
+    filter(table == category) %>%
+    filter(attribute_name %in% colnames(df))
+  
+  # Controlled attributes selected first, then all approved uncontrolled attributes
+  df %>%
+    select(table_structure$attribute_name, everything())
+  
 }
