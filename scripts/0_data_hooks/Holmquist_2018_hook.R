@@ -51,7 +51,8 @@ species <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist
 methods <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_methods_data.csv")
 
 # remove the following studies that are now in their own separate data hooks: 
-removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001", "Noe_et_al_2016", "Johnson_et_al_2007", "Watson_and_Byrne_2013")
+removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001", "Noe_et_al_2016", "Johnson_et_al_2007", "Watson_and_Byrne_2013",
+                     "Boyd_and_Sommerfield_2016", "Unger_et_al_2016", "Boyd_2012", "Boyd_et_al_2017", "Callaway_et_al_2012")
 
 ## 3. Recode and rename factors #################
 
@@ -162,15 +163,6 @@ study_citations_primary <- primary_df %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything())
 
 # Manully add entries that failed (mostly because they don't have DOIS)
-boyd <-  BibEntry(bibtype = "Mastersthesis", 
-                  key = "Boyd_2012", 
-                  title = "Comparison of sediment accumulation and accretion in impounded and unimpounded marshes of the Delaware Estuary",
-                  author = "Boyd, Brandon", 
-                  school = "University of Delaware",
-                  year = "2012", 
-                  url = "http://udspace.udel.edu/handle/19716/12831"
-                  )
-
 crms <-  BibEntry(bibtype = "Misc", 
                   key = "CRMS_2015", 
                   title = "CRMS Soil Properties",
@@ -204,7 +196,7 @@ nuttle <- BibEntry(bibtype = "Book",
                    year = "1996"
                    )
 
-primary_no_dois <- as.data.frame(list(c(boyd, crms, crooks, merrill, nuttle)))
+primary_no_dois <- as.data.frame(list(c(crms, crooks, merrill, nuttle)))
 
 primary_no_dois <- primary_no_dois %>%
   rownames_to_column("key") %>%
@@ -246,7 +238,7 @@ bib_file <- study_citations_synthesis %>%
   distinct() %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Holmquist_2018/derivative/V1_Holmquist_2018.bib")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018.bib")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")

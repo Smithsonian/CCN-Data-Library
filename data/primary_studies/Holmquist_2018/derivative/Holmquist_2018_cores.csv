@@ -1,48 +1,4 @@
 study_id,site_id,core_id,core_latitude,core_longitude,core_position_notes,core_elevation,salinity_class,vegetation_class,inundation_class,core_length_flag
-Boyd_2012,Blackbird_Creek_Marsh,BBRC_1,39.375811,-75.651786,latitude and longitude from handheld GPS or better,NA,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Blackbird_Creek_Marsh,BBRC_2,39.378697,-75.643872,latitude and longitude from handheld GPS or better,NA,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Broad_Dyke_Marsh,NCBD_1,39.666314,-75.567868,latitude and longitude from handheld GPS or better,-0.361,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Broad_Dyke_Marsh,NCBD_2,39.66571,-75.559982,latitude and longitude from handheld GPS or better,-0.372,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Broad_Dyke_Marsh,NCBD_3,39.667368,-75.564615,latitude and longitude from handheld GPS or better,-0.483,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Buttonwood_Marsh,NCBW_1,39.676677,-75.554368,latitude and longitude from handheld GPS or better,-0.093,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Buttonwood_Marsh,NCBW_2,39.672176,-75.552823,latitude and longitude from handheld GPS or better,0.064,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Buttonwood_Marsh,NCBW_3,39.674905,-75.552347,latitude and longitude from handheld GPS or better,-0.089,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Gambacorta_Marsh,NCGB_1,39.655706,-75.574378,latitude and longitude from handheld GPS or better,0.319,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Gambacorta_Marsh,NCGB_2,39.656914,-75.570169,latitude and longitude from handheld GPS or better,0.225,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Gambacorta_Marsh,NCGB_3,39.657391,-75.575393,latitude and longitude from handheld GPS or better,0.142,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Little_Creek_Marsh,LC_1,39.145008,-75.423547,latitude and longitude from handheld GPS or better,0.703,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Little_Creek_Marsh,LC_2,39.151014,-75.414794,latitude and longitude from handheld GPS or better,0.668,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Little_Creek_Marsh,LC_3,39.157496,-75.426916,latitude and longitude from handheld GPS or better,0.491,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Lukens_Marsh,NCLM_1,39.687158,-75.544244,latitude and longitude from handheld GPS or better,0.963,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Lukens_Marsh,NCLM_2,39.686761,-75.542156,latitude and longitude from handheld GPS or better,0.989,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Lukens_Marsh,NCLM_3,39.686297,-75.540714,latitude and longitude from handheld GPS or better,0.921,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Pickering_Beach_Marsh,PK_1,39.136889,-75.416706,latitude and longitude from handheld GPS or better,0.871,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Pickering_Beach_Marsh,PK_2,39.137907,-75.412275,latitude and longitude from handheld GPS or better,NA,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Pickering_Beach_Marsh,PK_3,39.133195,-75.41131,latitude and longitude from handheld GPS or better,0.902,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Port_Mahon_Marsh,MH_1,39.172129,-75.415222,latitude and longitude from handheld GPS or better,0.437,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Port_Mahon_Marsh,MH_2,39.162247,-75.420234,latitude and longitude from handheld GPS or better,0.491,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Port_Mahon_Marsh,MH_3,39.162596,-75.427651,latitude and longitude from handheld GPS or better,0.703,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Rivers_Edge_Marsh,NCRE_1,39.639179,-75.604275,latitude and longitude from handheld GPS or better,0.877,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Rivers_Edge_Marsh,NCRE_2,39.638171,-75.601251,latitude and longitude from handheld GPS or better,0.898,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Rivers_Edge_Marsh,NCRE_3,39.638604,-75.599228,latitude and longitude from handheld GPS or better,0.946,brackish,emergent,NA,core depth limited by length of corer
-Boyd_2012,Ted_Harvey_Conservation_Area,TH_1,39.074915,-75.416785,latitude and longitude from handheld GPS or better,NA,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Ted_Harvey_Conservation_Area,TH_2,39.075758,-75.407264,latitude and longitude from handheld GPS or better,NA,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Ted_Harvey_Conservation_Area,TH_3,39.082936,-75.407043,latitude and longitude from handheld GPS or better,NA,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Ted_Harvey_Conservation_Area,TH_4,39.085238,-75.403832,latitude and longitude from handheld GPS or better,NA,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Ted_Harvey_Conservation_Area,TH_5,39.090229,-75.403721,latitude and longitude from handheld GPS or better,NA,saline,emergent,NA,core depth limited by length of corer
-Boyd_2012,Ted_Harvey_Conservation_Area,TH_6,39.096435,-75.401939,latitude and longitude from handheld GPS or better,NA,saline,emergent,NA,core depth limited by length of corer
-Boyd_and_Sommerfield_2016,Prime_Hook_National_Wildlife_Refuge,PM_01,38.879926,-75.280343,latitude and longitude from handheld GPS or better,0.374,saline,emergent,NA,core depth limited by length of corer
-Boyd_and_Sommerfield_2016,Prime_Hook_National_Wildlife_Refuge,PM_02,38.904362,-75.296947,latitude and longitude from handheld GPS or better,0.437,saline,emergent,NA,core depth limited by length of corer
-Boyd_and_Sommerfield_2016,Prime_Hook_National_Wildlife_Refuge,PM_03,38.874741,-75.270113,latitude and longitude from handheld GPS or better,0.38,saline,emergent,NA,core depth limited by length of corer
-Boyd_and_Sommerfield_2016,Prime_Hook_National_Wildlife_Refuge,PM_04,38.856592,-75.256524,latitude and longitude from handheld GPS or better,0.583,saline,emergent,NA,core depth limited by length of corer
-Boyd_and_Sommerfield_2016,Prime_Hook_National_Wildlife_Refuge,PM_05,38.828706,-75.226192,latitude and longitude from handheld GPS or better,0.268,saline,emergent,NA,core depth limited by length of corer
-Boyd_and_Sommerfield_2016,Prime_Hook_National_Wildlife_Refuge,PM_06,38.833549,-75.259967,latitude and longitude from handheld GPS or better,0.337,saline,emergent,NA,core depth limited by length of corer
-Boyd_and_Sommerfield_2016,Prime_Hook_National_Wildlife_Refuge,PM_07,38.890996,-75.296416,latitude and longitude from handheld GPS or better,0.424,saline,emergent,NA,core depth limited by length of corer
-Boyd_and_Sommerfield_2016,Prime_Hook_National_Wildlife_Refuge,PM_08,38.872083,-75.26415,latitude and longitude from handheld GPS or better,0.334,saline,emergent,NA,core depth limited by length of corer
-Boyd_and_Sommerfield_2016,Prime_Hook_National_Wildlife_Refuge,PM_09,38.847229,-75.25312,latitude and longitude from handheld GPS or better,0.252,saline,emergent,NA,core depth limited by length of corer
-Boyd_and_Sommerfield_2016,Prime_Hook_National_Wildlife_Refuge,PM_10,38.81105,-75.205328,latitude and longitude from handheld GPS or better,NA,saline,emergent,NA,core depth limited by length of corer
-Boyd_and_Sommerfield_2016,Prime_Hook_National_Wildlife_Refuge,PM_11,38.811936,-75.209589,latitude and longitude from handheld GPS or better,NA,saline,emergent,NA,core depth limited by length of corer
-Boyd_and_Sommerfield_2016,Prime_Hook_National_Wildlife_Refuge,PM_12,38.806644,-75.202097,latitude and longitude from handheld GPS or better,NA,saline,emergent,NA,core depth limited by length of corer
 Breithaupt_et_al_2014,Shark_River,SH3_1,25.364094,-81.078481,latitude and longitude from handheld GPS or better,NA,saline,forested,NA,core depth limited by length of corer
 Breithaupt_et_al_2014,Shark_River,SH3_3,25.363925,-81.078494,latitude and longitude from handheld GPS or better,NA,saline,forested,NA,core depth limited by length of corer
 Breithaupt_et_al_2014,Shark_River,SH3_5,25.363956,-81.076614,latitude and longitude from handheld GPS or better,NA,saline,forested,NA,core depth limited by length of corer
@@ -69,65 +25,6 @@ Breithaupt_et_al_2017,Shark_River,WSC03,25.392025,-80.997472,latitude and longit
 Breithaupt_et_al_2017,Shark_River,WSC04_1,25.371689,-81.041956,latitude and longitude from handheld GPS or better,NA,saline,forested,NA,core depth represents deposit depth
 Breithaupt_et_al_2017,Shark_River,WSC05,25.364094,-81.078481,latitude and longitude from handheld GPS or better,NA,saline,forested,NA,core depth represents deposit depth
 Breithaupt_et_al_2017,Shark_River,WSC06_2,25.354158,-81.096778,latitude and longitude from handheld GPS or better,NA,saline,forested,NA,core depth represents deposit depth
-Callaway_et_al_2012,Brown_Island,Browns_Island_A_High,38.036383,-121.858572,latitude and longitude from handheld GPS or better,1.74354,brackish,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Brown_Island,Browns_Island_A_Low,38.038669,-121.859364,latitude and longitude from handheld GPS or better,1.35137,brackish,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Brown_Island,Browns_Island_A_Mid,38.037589,-121.859037,latitude and longitude from handheld GPS or better,1.45867,brackish,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Brown_Island,Browns_Island_B_High,38.036008,-121.867879,latitude and longitude from handheld GPS or better,1.81605,brackish,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Brown_Island,Browns_Island_B_Low,38.038047,-121.868452,latitude and longitude from handheld GPS or better,1.69537,brackish,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Brown_Island,Browns_Island_B_Mid,38.037087,-121.868109,latitude and longitude from handheld GPS or better,1.80964,brackish,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,China_Camp,China_Camp_A_High,38.008607,-122.48717,latitude and longitude from handheld GPS or better,1.82156,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,China_Camp,China_Camp_A_Low,38.010989,-122.485167,latitude and longitude from handheld GPS or better,1.64961,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,China_Camp,China_Camp_A_Mid,38.009774,-122.485707,latitude and longitude from handheld GPS or better,1.87336,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,China_Camp,China_Camp_B_High,38.012053,-122.500265,latitude and longitude from handheld GPS or better,1.8652,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,China_Camp,China_Camp_B_Low,38.015378,-122.498522,latitude and longitude from handheld GPS or better,1.80399,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,China_Camp,China_Camp_B_Mid,38.013872,-122.499442,latitude and longitude from handheld GPS or better,1.82896,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Cogswell,COG_A_high,37.640982,-122.148279,latitude and longitude from handheld GPS or better,1.97932,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Cogswell,COG_A_low,37.638647,-122.149693,latitude and longitude from handheld GPS or better,2.03322,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Cogswell,COG_A_mid,37.639781,-122.148788,latitude and longitude from handheld GPS or better,1.96031,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Cogswell,COG_B_high,37.635616,-122.150167,latitude and longitude from handheld GPS or better,1.9172,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Cogswell,COG_B_low,37.632828,-122.151611,latitude and longitude from handheld GPS or better,2.04634,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Cogswell,COG_B_mid,37.63431,-122.15068,latitude and longitude from handheld GPS or better,1.96369,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Coon_Island,Coon_Island_A_High,38.193959,-122.323214,latitude and longitude from handheld GPS or better,1.97683,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Coon_Island,Coon_Island_A_Low,38.196112,-122.321028,latitude and longitude from handheld GPS or better,1.91731,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Coon_Island,Coon_Island_A_Mid,38.194802,-122.322285,latitude and longitude from handheld GPS or better,1.9415,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Coon_Island,Coon_Island_B_High,38.192405,-122.323331,latitude and longitude from handheld GPS or better,1.94319,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Coon_Island,Coon_Island_B_Mid,38.18979,-122.322913,latitude and longitude from handheld GPS or better,2.07285,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Coon_Island,Coon_Island_C_High,38.19595,-122.32569,latitude and longitude from handheld GPS or better,1.97421,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Coon_Island,Coon_Island_C_Low,38.1986,-122.323662,latitude and longitude from handheld GPS or better,1.95146,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Coon_Island,Coon_Island_C_Mid,38.197805,-122.325346,latitude and longitude from handheld GPS or better,1.97935,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Coon_Island,Coon_Island_D_High,38.189456,-122.320668,latitude and longitude from handheld GPS or better,2.03731,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Coon_Island,Coon_Island_D_Low,38.186543,-122.319232,latitude and longitude from handheld GPS or better,1.91729,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Coon_Island,Coon_Island_D_Mid,38.187623,-122.319822,latitude and longitude from handheld GPS or better,1.91114,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Muzzi,Muzzi_A_high,37.928145,-122.508436,latitude and longitude from handheld GPS or better,1.85719,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Muzzi,Muzzi_A_low,37.929569,-122.503666,latitude and longitude from handheld GPS or better,1.66401,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Muzzi,Muzzi_A_mid,37.928829,-122.505893,latitude and longitude from handheld GPS or better,1.67901,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Muzzi,Muzzi_B_high,37.926451,-122.509081,latitude and longitude from handheld GPS or better,1.84023,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Muzzi,Muzzi_B_low,37.927304,-122.503612,latitude and longitude from handheld GPS or better,1.5723,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Muzzi,Muzzi_B_mid,37.926955,-122.50623,latitude and longitude from handheld GPS or better,1.73542,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Petaluma_River,Petaluma_River_Marsh_A_High,38.17819,-122.553551,latitude and longitude from handheld GPS or better,1.86839,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Petaluma_River,Petaluma_River_Marsh_A_Low,38.179712,-122.543043,latitude and longitude from handheld GPS or better,1.95513,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Petaluma_River,Petaluma_River_Marsh_A_Mid,38.178553,-122.549684,latitude and longitude from handheld GPS or better,1.815,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Petaluma_River,Petaluma_River_Marsh_B_High,38.16315,-122.554428,latitude and longitude from handheld GPS or better,NA,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Petaluma_River,Petaluma_River_Marsh_B_Low,38.158771,-122.553676,latitude and longitude from handheld GPS or better,1.92452,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Petaluma_River,Petaluma_River_Marsh_B_Mid,38.16128,-122.554058,latitude and longitude from handheld GPS or better,NA,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Rush_Ranch,Rush_Ranch_A_High,38.191488,-122.013634,latitude and longitude from handheld GPS or better,2.00406,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Rush_Ranch,Rush_Ranch_A_Low,38.18954,-122.011907,latitude and longitude from handheld GPS or better,1.99336,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Rush_Ranch,Rush_Ranch_A_Mid,38.190525,-122.012788,latitude and longitude from handheld GPS or better,1.96279,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Rush_Ranch,Rush_Ranch_B_High,38.202337,-122.036942,latitude and longitude from handheld GPS or better,1.93257,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Rush_Ranch,Rush_Ranch_B_Low,38.202419,-122.039424,latitude and longitude from handheld GPS or better,1.98368,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Rush_Ranch,Rush_Ranch_B_Mid,38.202247,-122.038437,latitude and longitude from handheld GPS or better,1.97047,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Whale's_Tail,Whales_Tail_A_High,37.600374,-122.142273,latitude and longitude from handheld GPS or better,2.01727,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Whale's_Tail,Whales_Tail_A_Low,37.600394,-122.143951,latitude and longitude from handheld GPS or better,2.11721,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Whale's_Tail,Whales_Tail_A_Mid,37.600351,-122.14556,latitude and longitude from handheld GPS or better,2.18632,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Whale's_Tail,Whales_Tail_B_High,37.587746,-122.141849,latitude and longitude from handheld GPS or better,1.99464,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Whale's_Tail,Whales_Tail_B_Low,37.589494,-122.145483,latitude and longitude from handheld GPS or better,2.09849,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Whale's_Tail,Whales_Tail_B_Mid,37.588646,-122.143571,latitude and longitude from handheld GPS or better,2.0321,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Mowry,Mowry_A_high,37.502146,-122.100111,latitude and longitude from handheld GPS or better,2.10304,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Mowry,Mowry_A_low,37.499815,-122.097958,latitude and longitude from handheld GPS or better,2.16342,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Mowry,Mowry_A_mid,37.500819,-122.098952,latitude and longitude from handheld GPS or better,2.11767,saline,emergent,mid,core depth limited by length of corer
-Callaway_et_al_2012,Mowry,Mowry_B_high,37.506825,-122.093166,latitude and longitude from handheld GPS or better,2.03334,saline,emergent,high,core depth limited by length of corer
-Callaway_et_al_2012,Mowry,Mowry_B_low,37.502883,-122.088897,latitude and longitude from handheld GPS or better,2.1698,saline,emergent,low,core depth limited by length of corer
-Callaway_et_al_2012,Mowry,Mowry_B_mid,37.504326,-122.09128,latitude and longitude from handheld GPS or better,2.0646,saline,emergent,mid,core depth limited by length of corer
 Cochran_et_al_1998,Alley_Pond,Alley_Pond,40.761667,-73.751111,latitude and longitude represented coarse and general site coordinates,NA,saline,emergent,high,core depth limited by length of corer
 Cochran_et_al_1998,Caumsett_Park,Caumsett_Park,40.939167,-73.483889,latitude and longitude represented coarse and general site coordinates,NA,saline,emergent,high,core depth limited by length of corer
 Cochran_et_al_1998,Flax_Pond,Flax_Pond,40.963056,-73.144167,latitude and longitude represented coarse and general site coordinates,NA,saline,emergent,high,core depth limited by length of corer
@@ -1451,23 +1348,6 @@ Radabaugh_et_al_2018,CERF_Donor_Marsh,CERF_Marsh,27.645191,-82.548454,latitude a
 Radabaugh_et_al_2018,EG_Simmons_Park_Mangroves,EGS,27.74288,-82.46903,latitude and longitude from handheld GPS or better,NA,brackish,forested,NA,core depth represents deposit depth
 Radabaugh_et_al_2018,Upper_Tampa_Bay,UTB_Marsh,28.016485,-82.626214,latitude and longitude from handheld GPS or better,NA,brackish,emergent,high,core depth represents deposit depth
 Radabaugh_et_al_2018,Weedon_Island_Salt_Barren,WISB,27.845272,-82.611541,latitude and longitude from handheld GPS or better,NA,saline,emergent,NA,core depth limited by length of corer
-Unger_et_al_2016,Channel_Creek,CC1,39.626412,-74.257139,latitude and longitude from handheld GPS or better,0.2786,saline,emergent,low,not specified
-Unger_et_al_2016,Channel_Creek,CC2,39.629015,-74.257836,latitude and longitude from handheld GPS or better,0.2836,saline,emergent,low,not specified
-Unger_et_al_2016,Channel_Creek,CC3,39.632963,-74.259188,latitude and longitude from handheld GPS or better,0.3115,saline,emergent,low,not specified
-Unger_et_al_2016,Dennis_Creek,DN1,39.171719,-74.875761,latitude and longitude from handheld GPS or better,0.7328,saline,emergent,low,not specified
-Unger_et_al_2016,Dennis_Creek,DN2,39.176258,-74.862284,latitude and longitude from handheld GPS or better,0.757,saline,emergent,low,not specified
-Unger_et_al_2016,Dennis_Creek,DN3,39.180457,-74.838281,latitude and longitude from handheld GPS or better,0.514,saline,emergent,low,not specified
-Unger_et_al_2016,Dividing_Creek,DV1,39.225195,-75.107766,latitude and longitude from handheld GPS or better,0.871,saline,emergent,low,not specified
-Unger_et_al_2016,Dividing_Creek,DV2,39.235697,-75.112711,latitude and longitude from handheld GPS or better,0.6568,saline,emergent,low,not specified
-Unger_et_al_2016,Dividing_Creek,DV3,39.240992,-75.103073,latitude and longitude from handheld GPS or better,0.6289,saline,emergent,low,not specified
-Unger_et_al_2016,Island_Beach_State_Park,IB1,39.79875,-74.102498,latitude and longitude from handheld GPS or better,0.0826,saline,emergent,low,not specified
-Unger_et_al_2016,Island_Beach_State_Park,IB2,39.799347,-74.101724,latitude and longitude from handheld GPS or better,0.1464,saline,emergent,low,not specified
-Unger_et_al_2016,Island_Beach_State_Park,IB3,39.799634,-74.099346,latitude and longitude from handheld GPS or better,0.1255,saline,emergent,low,not specified
-Unger_et_al_2016,Maurice_River,MR1,39.242347,-75.011272,latitude and longitude from handheld GPS or better,0.6786,brackish,emergent,low,not specified
-Unger_et_al_2016,Maurice_River,MR2,39.26585,-74.995256,latitude and longitude from handheld GPS or better,0.3521,brackish,emergent,low,not specified
-Unger_et_al_2016,Reedy_Creek,RC1,40.030725,-74.077599,latitude and longitude from handheld GPS or better,0.1043,saline,emergent,low,not specified
-Unger_et_al_2016,Reedy_Creek,RC2,40.029045000000004,-74.084554,latitude and longitude from handheld GPS or better,-0.1034,saline,emergent,low,not specified
-Unger_et_al_2016,Reedy_Creek,RC3,40.031056,-74.085961,latitude and longitude from handheld GPS or better,-0.07,saline,emergent,low,not specified
 Windham_Meyers_et_al_2010,Crissy_Field,AH,37.804567,-122.453317,latitude and longitude were likely high quality but may refer to a general area rather than individual core location,NA,saline,emergent,high,core depth limited by length of corer
 Windham_Meyers_et_al_2010,Crissy_Field,AL,37.804567,-122.453317,latitude and longitude were likely high quality but may refer to a general area rather than individual core location,NA,saline,emergent,low,core depth limited by length of corer
 Windham_Meyers_et_al_2010,Crissy_Field,BH,37.804417,-122.453917,latitude and longitude were likely high quality but may refer to a general area rather than individual core location,NA,saline,emergent,high,core depth limited by length of corer
