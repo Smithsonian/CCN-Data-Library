@@ -38,4 +38,4 @@ depthseries <- reorderColumns("depthseries", depthseries)
 results <- test_core_relationships(cores, depthseries)
 results <- test_numeric_vars(depthseries)
 
-write_csv(depthseries, "./data/primary_studies/Gerlach_2017/final/gerlach_et_al_2017_depthseries.csv")
+write_csv(depthseries, "./data/primary_studies/Gerlach_2017/derivative/gerlach_et_al_2017_depthseries.csv")
