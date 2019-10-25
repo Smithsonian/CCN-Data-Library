@@ -27,24 +27,48 @@ library(tidyverse)
 library(RefManageR)
 
 cores_raw <- read_csv("./data/primary_studies/Poppe_2019/original/poppe_and_rybczyk_2019_cores.csv")
-depthseries_raw <- read.csv("./data/primary_studies/Poppe_2019/original/poppe_and_rybczyk_2019_depthseries.csv")
+depthseries_raw <- read_csv("./data/primary_studies/Poppe_2019/original/poppe_and_rybczyk_2019_depthseries.csv")
 species_raw <- read_csv("./data/primary_studies/Poppe_2019/original/poppe_and_rybczyk_2019_species.csv")
+impacts_raw <- read_csv("./data/primary_studies/Poppe_2019/original/poppe_and_rybczyk_2019_impacts.csv")
+methods_raw <- read_csv("./data/primary_studies/Poppe_2019/original/poppe_and_rybczyk_2019_material_and_methods.csv")
 
 # Rename core year variable since date requires a full date string
 cores <- cores_raw %>%
-  rename(core_year = core_date) 
+  mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
+  select(-estuary_id)
 
 # Provide unit columns
 depthseries <- depthseries_raw %>%
   mutate(pb210_unit = ifelse(!is.na(total_pb210_activity), "becquerelsPerKilogram", NA), 
-         pb214_unit = ifelse(!is.na(pb214_activity), "becquerelsPerKilogram", NA))
+         pb214_unit = ifelse(!is.na(pb214_activity), "becquerelsPerKilogram", NA))%>%
+  mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
+  select(-estuary_id)
 
 # Format species correctly
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
   select(study_id, site_id, core_id, species_code) %>%
-  mutate(species_code = gsub("sp.", "spp", species_code))
+  mutate(species_code = gsub("sp.", "spp", species_code))%>% 
+  mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) 
 
+impacts <- impacts_raw %>%
+  mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
+  select(-estuary_id)
+
+methods <- methods_raw %>%
+  mutate(sediment_sieve_size = as.numeric(gsub(" mm", "", sediment_sieve_size)))
+
+## QA #########
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Test relationships between core_ids at core- and depthseries-levels
+# the test returns all core-level rows that did not have a match in the depth series data
+results <- test_core_relationships(cores, depthseries)
+
+
+## Write files #########
 write_csv(cores, "./data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_cores.csv")
 write_csv(depthseries, "./data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_depthseries.csv")
 write_csv(species, "./data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_species.csv")
+write_csv(impacts, "./data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_impacts.csv")
+write_csv(methods, "./data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_methods.csv")

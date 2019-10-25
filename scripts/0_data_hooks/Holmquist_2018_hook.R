@@ -53,7 +53,7 @@ methods <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist
 # remove the following studies that are now in their own separate data hooks: 
 removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001", "Noe_et_al_2016", "Johnson_et_al_2007", "Watson_and_Byrne_2013",
                      "Boyd_and_Sommerfield_2016", "Unger_et_al_2016", "Boyd_2012", "Boyd_et_al_2017", "Callaway_et_al_2012", 
-                     "Gerlach_et_al_2017", "Craft_2007")
+                     "Gerlach_et_al_2017", "Craft_2007", "Crooks_et_al_2014", "Crooks_et_al_2013")
 
 ## 3. Recode and rename factors #################
 
@@ -171,15 +171,6 @@ crms <-  BibEntry(bibtype = "Misc",
                   year = "2015", 
                   url = "https://cims.coastal.louisiana.gov")
 
-crooks <- BibEntry(bibtype = "Techreport", 
-                   key = "Crooks_et_al_2014", 
-                   title = "Coastal Blue Carbon Opportunity Assessment for the Snohomish Estuary: The Climate Benefits of Estuary Restoration",
-                   author = "Crooks, S and Rybczyk, J and O`Connell, K and Devier, D L and Poppe, K and Emmett-Mattox, S", 
-                   institution = "Environmental Science Associates, Western Washington University, EarthCorps, and Restore America`s Estuaries",
-                   year = "2015", 
-                   url = "http://rgdoi.net/10.13140/RG.2.1.1371.6568"
-                   )
-
 merrill <- BibEntry(bibtype = "Phdthesis", 
                    key = "Merrill_1999", 
                    title = "Tidal Freshwater Marshes as Nutrient Sinks: Particulate Nutrient Burial and Denitrification",
@@ -197,7 +188,7 @@ nuttle <- BibEntry(bibtype = "Book",
                    year = "1996"
                    )
 
-primary_no_dois <- as.data.frame(list(c(crms, crooks, merrill, nuttle)))
+primary_no_dois <- as.data.frame(list(c(crms, merrill, nuttle)))
 
 primary_no_dois <- primary_no_dois %>%
   rownames_to_column("key") %>%
