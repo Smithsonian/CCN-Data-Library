@@ -17,6 +17,9 @@ extra_elevations <- read_csv("data/primary_studies/Gerlach_2017/original/gerlach
 core_id_value <- "LMR_14_9B"
 study_id_value <- "Gerlach_et_al_2017"
 
+site_relationships <- cores %>%
+  select(core_id, site_id)
+  
 age_depth <- age_depth_raw %>%
   mutate(core_id = core_id_value,
          study_id = study_id_value,
@@ -34,15 +37,19 @@ depthseries <- depthseries_raw %>%
   bind_rows(age_depth) %>%
   full_join(horizons_raw) %>%
   arrange(core_id, depth_min) %>%
-  select(-site_id)
+  rename(marker_date_sd = marker_sd) %>%
+  select(-site_id) %>%
+  full_join(site_relationships)
+
+cores <- cores %>%
+  full_join(extra_elevations) %>%
+  rename(core_year = core_date)
 
 # QA ###########
 source("./scripts/1_data_formatting/qa_functions.R")
 
 depthseries <- reorderColumns("depthseries", depthseries)
 
-cores <- cores %>%
-  full_join(extra_elevations)
 cores <- reorderColumns("cores", cores)
 
 

@@ -2,7 +2,7 @@ library(tidyverse)
 library(readxl)
 
 # Appending cs137 data to carbon stocks data that was already prepared in the Holmquist synthesis
-cores <- read_csv("./data/primary_studies/Craft_2007/intermediate/craft_CCRCN_cores.csv")
+cores_raw <- read_csv("./data/primary_studies/Craft_2007/intermediate/craft_CCRCN_cores.csv")
 depthseries_raw <- read_csv("./data/primary_studies/Craft_2007/intermediate/craft_CCRCN_depthseries.csv")
 
 # Digitized table from Craft 2007
@@ -17,6 +17,9 @@ depthseries <- depthseries_raw %>%
   merge(age_depth, by=c("core_id", "depth_min", "depth_max"), all.x=TRUE, all.y=TRUE) %>%
   mutate(dating_notes = ifelse(cs137_activity == 0, "cs137 activity below detection limits", NA))
 
+cores <- cores_raw %>%
+  mutate(core_year = 2001)
+
 # QA ###########
 source("./scripts/1_data_formatting/qa_functions.R")
 
@@ -28,3 +31,4 @@ results <- test_core_relationships(cores, depthseries)
 results <- test_numeric_vars(depthseries)
 
 write_csv(depthseries, "./data/primary_studies/Craft_2007/derivative/craft_2007_depthseries.csv")
+write_csv(cores, "./data/primary_studies/Craft_2007/derivative/craft_2007_cores.csv")
