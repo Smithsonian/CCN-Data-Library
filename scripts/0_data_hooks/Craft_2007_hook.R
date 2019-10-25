@@ -15,7 +15,8 @@ age_depth <- age_depth_raw %>%
 
 depthseries <- depthseries_raw %>%
   merge(age_depth, by=c("core_id", "depth_min", "depth_max"), all.x=TRUE, all.y=TRUE) %>%
-  mutate(dating_notes = ifelse(cs137_activity == 0, "cs137 activity below detection limits", NA))
+  mutate(dating_notes = ifelse(cs137_activity == 0, "cs137 activity below detection limits", NA),
+         cs137_unit = "becquerelsPerKilogram")
 
 cores <- cores_raw %>%
   mutate(core_year = 2001)

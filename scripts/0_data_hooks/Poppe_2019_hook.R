@@ -42,7 +42,8 @@ depthseries <- depthseries_raw %>%
   mutate(pb210_unit = ifelse(!is.na(total_pb210_activity), "becquerelsPerKilogram", NA), 
          pb214_unit = ifelse(!is.na(pb214_activity), "becquerelsPerKilogram", NA))%>%
   mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
-  select(-estuary_id)
+  select(-estuary_id, -fraction_carbon_modeled) %>%
+  rename(fraction_carbon = fraction_carbon_measured)
 
 # Format species correctly
 species <- species_raw %>%
@@ -56,7 +57,8 @@ impacts <- impacts_raw %>%
   select(-estuary_id)
 
 methods <- methods_raw %>%
-  mutate(sediment_sieve_size = as.numeric(gsub(" mm", "", sediment_sieve_size)))
+  mutate(sediment_sieve_size = as.numeric(gsub(" mm", "", sediment_sieve_size)),
+         carbon_profile_notes = "Modeled fraction carbon values available in https://doi.org/10.25573/data.10005248")
 
 ## QA #########
 source("./scripts/1_data_formatting/qa_functions.R")
