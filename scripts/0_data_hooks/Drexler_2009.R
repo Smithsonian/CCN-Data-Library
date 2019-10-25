@@ -71,7 +71,9 @@ depthseries_joined <- age_depthseries %>%
          dry_bulk_density:fraction_carbon_type, 
          c14_age:age_depth_model_reference) %>%
   group_by(core_id) %>%
-  arrange(core_id, depth_min, sample_id, .by_group = TRUE)
+  arrange(core_id, depth_min, sample_id, .by_group = TRUE) %>%
+  # Following attribute should only be in methods table
+  select(-age_depth_model_reference)
 
 ## ... core-level ##################
 
@@ -152,7 +154,7 @@ numeric_test_results <- test_numeric_vars(depthseries_joined)
 results <- test_core_relationships(cores_updated, depthseries_joined)
 
 ## Write data ######################
-write_csv(depthseries_joined, "./data/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
-write_csv(cores_updated, "./data/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
-write_csv(impactsOutput, "./data/Drexler_2009/derivative/Drexler_et_al_2009_impacts.csv")
-write_csv(study_citations, "./data/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")
+write_csv(depthseries_joined, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
+write_csv(cores_updated, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
+write_csv(impactsOutput, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_impacts.csv")
+write_csv(study_citations, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")

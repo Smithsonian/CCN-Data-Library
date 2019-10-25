@@ -1,4 +1,4 @@
-study_id,site_id,core_id,core_date_year,core_latitude,core_longitude,core_position_method,core_position_notes,core_elevation,core_elevation_datum,core_elevation_method,salinity_class,vegetation_class,inundation_class,core_length_flag
+study_id,site_id,core_id,core_year,core_latitude,core_longitude,core_position_method,core_position_notes,core_elevation,core_elevation_datum,core_elevation_method,salinity_class,vegetation_class,inundation_class,core_length_flag
 Boyd_2012,Blackbird_Creek_Marsh,BBRC1,2009,39.375811,-75.651786,NA,latitude and longitude from handheld GPS or better,NA,NA,NA,brackish,emergent,NA,core depth limited by length of corer
 Boyd_2012,Blackbird_Creek_Marsh,BBRC2,2009,39.378697,-75.643872,NA,latitude and longitude from handheld GPS or better,NA,NA,NA,brackish,emergent,NA,core depth limited by length of corer
 Boyd_2012,Little_Creek_Marsh,LC1,2011,39.145008,-75.423547,NA,latitude and longitude from handheld GPS or better,0.703,NAVD88,RTK-GPS,saline,emergent,NA,core depth limited by length of corer

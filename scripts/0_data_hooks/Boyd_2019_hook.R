@@ -35,7 +35,7 @@ species_raw <- read_csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_20
 
 cores <- cores_raw %>%
   mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id)) %>%
-  rename(core_date_year = core_date)
+  rename(core_year = core_date)
 
 impacts <- impacts_raw %>%
   mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id))
