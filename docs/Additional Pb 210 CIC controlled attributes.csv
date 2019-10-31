@@ -1,0 +1,6 @@
+﻿attribute_name,attribute_definition,data_type,units,format_string,number,domain,definition,values
+pb210_cic_accretion_rate,Accretion rate according to a lead-210 based Constant Initial Concentration model.,numeric,millimetersPerYear,,real,numericDomain,,
+pb210_cic_accretion_rate_sd,Accretion rate parameter error according to a lead-210 based Constant Initial Concentration model.,numeric,millimetersPerYear,,real,numericDomain,,
+pb210_cic_max_depth,"Maximum depth to which a lead-210 based Constant Initial Concentration model was applied, in centimeters depth relevant to surface.",numeric,centimeters,,real,numericDomain,,
+pb210_cic_r2,"The coefficient of determination, or R-squared value, for the lead-210 based Constatn Initial Concentration model.",numeric,dimensionless,,real,numericDomain,,
+pb210_cic_notes,Any notes associated with a lead-210 based Constant Initial Concentration model.,character,,,,textDomain,freeText,
