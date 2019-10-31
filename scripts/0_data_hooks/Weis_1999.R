@@ -84,8 +84,23 @@ species <- species %>%
   select(study_id, site_id, core_id, species_code) 
 
 ## Generate citation ##############
-doi <- "10.2307/1353175"
 study <- "Weis_et_al_2001"
+
+# Secondary thesis citation 
+weis <- as.data.frame(BibEntry(bibtype = "Mastersthesis", 
+                 key = "Weis 2001", 
+                 title = "Vertical accretion rates and heavy metal chronologies in wetland sediments of Tijuana Estuary",
+                 author = "Weis, Daniel Anthony", 
+                 school = "San Diego State University",
+                 year = "1999")) %>%
+  rownames_to_column("key") %>%
+  mutate(study_id = study, 
+         bibliography_id = study, 
+         publication_type = bibtype) %>%
+  select(study_id, bibliography_id, publication_type, key, bibtype, everything())
+
+# Primary citation
+doi <- "10.2307/1353175"
 
 biblio_raw <- GetBibEntryWithDOI(doi)
 biblio_df <- as.data.frame(biblio_raw)
@@ -94,8 +109,9 @@ study_citations <- biblio_df %>%
   mutate(bibliography_id = study, 
          study_id = study,
          key = study,
-         publication_type = "Article", 
-         year = as.numeric(year), 
+         publication_type = "Article") %>%
+  bind_rows(weis) %>%
+  mutate(year = as.numeric(year), 
          volume = as.numeric(volume), 
          number = as.numeric(number)) %>%
   select(-pages) %>%
@@ -104,7 +120,8 @@ study_citations <- biblio_df %>%
 # Write .bib file
 bib_file <- study_citations %>%
   select(-study_id, -bibliography_id, -publication_type) %>%
-  column_to_rownames("key")
+  distinct() %>%
+  column_to_rownames("key") 
 
 WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001.bib")
 

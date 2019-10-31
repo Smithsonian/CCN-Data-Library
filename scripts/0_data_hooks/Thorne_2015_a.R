@@ -172,7 +172,7 @@ numeric_test_results <- test_numeric_vars(depthseries_data)
 results <- test_core_relationships(core_data, depthseries_data)
 
 ## 6. Export data
-write_csv(core_data, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_core_data.csv")
-write_csv(depthseries_data, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_depthseries_data.csv")
+write_csv(core_data, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_cores.csv")
+write_csv(depthseries_data, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_depthseries.csv")
 write_csv(study_citations, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
 

@@ -12,6 +12,8 @@
 
 # Krauss 2018 data release:
 # 10.5066/F7TM7930
+# Jones et al 2007 DOI
+# 10.1002/2017JG004015 (methods coding)
 
 ## 0. Workspace prep ###################
 
@@ -126,7 +128,7 @@ radiocarbon_raw <- read_csv("./data/primary_studies/Krauss_2018/original/TFFW_Ra
 # Few datasets will include biomass, at the time of writing at least
 root_productivity <- read_csv("data/primary_studies/Krauss_2018/original/TFFW_Carbon_Budget_Root_Ingrowth.csv")
 
-species_raw <- read_csv("data/primary_studies/Krauss_2018/original/TFFW_Carbon_Budget_Stand_Structure_2005_and_2012.csv")
+species_edited <- read_csv("data/primary_studies/Krauss_2018/intermediate/Krauss_et_al_2018_species.csv")
 
 ## ....2b. Read in Jones data ###############
 
@@ -139,7 +141,6 @@ geochron_mod_salt <- read_csv("./data/primary_studies/Jones_2017/intermediate/da
 LOI_oligo_raw <- read_csv("./data/primary_studies/Jones_2017/original/dataset25339.csv")
 LOI_heavy_salt_raw  <- read_csv("./data/primary_studies/Jones_2017/original/dataset25346.csv")
 LOI_mod_salt_raw  <- read_csv("./data/primary_studies/Jones_2017/original/dataset25365.csv")
-
 
 ## 3. Curate data ######################
 ## ....3A. Depthseries data ##################
@@ -318,6 +319,14 @@ Jones_depthseries <- geochron %>%
 depthseries <- Krauss_depthseries %>%
   full_join(Jones_depthseries)
 
+# Update study IDs based on revised methods table
+# Three different coring methods were used on these cores, each combination gets a unique study ID
+depthseries <- depthseries %>%
+  mutate(study_id = ifelse(core_id == "butler_island_1" | 
+                             core_id == "turkey_creek_2" |
+                             core_id == "richmond_island_1", "Krauss_et_al_2018a", 
+                           ifelse(core_id == "turkey_creek_1", "Krauss_et_al_2018b", "Krauss_et_al_2018c")))
+
 ## ....3B. Core-level data ##################
 
 # Use curation functions if you need
@@ -401,47 +410,30 @@ sites <- cores %>%
 
 impacts <- cores %>% 
   select(study_id, site_id, core_id) %>% 
-  mutate(impact_class = "restored")
+  mutate(impact_class = "tidally restored")
 
-## ....3E. Materials and Methods #############
-
-methods <- cores %>%
-  select(study_id, site_id, core_id) %>%
-  distinct(study_id, site_id, core_id) %>%
-  mutate(loss_on_ignition_temperature = c(550)) %>%
-  # see personal communication, different coring methods for each site
-  mutate(coring_method = ifelse(site_id == "Waccamaw_River", "vibracore",
-                                "russian corer"))  %>%
-  mutate(compaction_flag = ifelse(site_id == "Waccamaw_River", "compaction quantified",
-                                  "corer limits compaction")) %>%
-  mutate(age_depth_model_reference = "YBP")
+# ## ....3E. Materials and Methods #############
+# 
+# methods <- cores %>%
+#   select(study_id, site_id, core_id) %>%
+#   distinct(study_id, site_id, core_id) %>%
+#   mutate(loss_on_ignition_temperature = c(550)) %>%
+#   # see personal communication, different coring methods for each site
+#   mutate(coring_method = ifelse(site_id == "Waccamaw_River", "vibracore",
+#                                 "russian corer"))  %>%
+#   mutate(compaction_flag = ifelse(site_id == "Waccamaw_River", "compaction quantified",
+#                                   "corer limits compaction")) %>%
+#   mutate(age_depth_model_reference = "YBP")
 
 ## ....3F. Species data ##############
-
-species <- species_raw %>% 
-  mutate(core_id = paste(River, Site, Plot, sep = "_")) %>% 
-  mutate(core_id = tolower(core_id)) %>% 
-  mutate(core_id = gsub("lower", "low", core_id)) %>% 
-  mutate(core_id = gsub("middle", "mid", core_id)) %>% 
-  mutate(core_id = gsub("upper", "high", core_id)) %>% 
-  mutate(core_id = recode(core_id, "waccamaw_mid_1" = "butler_island_1")) %>% 
-  rename(species_code = Species) %>% 
-  right_join(cores) %>% 
-  select(study_id, site_id, core_id, species_code) %>% 
-  count(study_id, site_id, core_id, species_code) %>% 
-  rename(count = n) %>% 
-  mutate(count = as.numeric(ifelse(is.na(species_code), "0", count)))
-  
-## ....3G. Study-level data #########
-
-# Not needed because metadata is already prepped
-
+species <- species_edited %>%
+  select(-common_name)
 
 ## ....3H. Study citations ################
 
 
 # Get BibTex entries from DOI
-paper_bib_raw <- GetBibEntryWithDOI("10.1029/2018GB005897")
+paper_bibs_raw <- GetBibEntryWithDOI(c("10.1029/2018GB005897","10.1002/2017JG004015"))
 data_bib_raw <- GetBibEntryWithDOI("10.5066/F7TM7930")
 
 # If the data citation worked...
@@ -465,20 +457,26 @@ if(class(data_bib_raw)[1] == "BibEntry") {
   )
 }
 
+study_ids <- cores %>%
+  select(study_id) %>%
+  distinct()
+
 # Convert this to a dataframe
-biblio <- as.data.frame(paper_bib_raw) %>%
+paper_biblio <- as.data.frame(paper_bibs_raw) %>%
   # GetBibEntryWithDOI() defaults study name as a row name, convert to column
   rownames_to_column("key") %>%
-  # Add author
-  mutate(author = "Ken Krauss and Greg Noe and Jamie Duberstein and William Conner and Mirian Jones and Chrstopher Bernhardt and Nicole Cormier and Andrew From") %>% 
-  # Join data release citation
-  bind_rows(as.data.frame(data_bib)) %>% 
-  mutate(doi = tolower(doi)) %>% 
-  mutate(key = ifelse(is.na(key), "Krauss_2018_data", key))
+  merge(study_ids) %>%
+  mutate(doi = tolower(doi),
+         bibliography_id = ifelse(key == "Krauss_2018", "Krauss_et_al_2018", "Jones_et_al_2017")) 
+
+data_biblio <- as.data.frame(data_bib) %>% 
+  merge(study_ids) %>%
+  mutate(key = "Krauss_2018_data",
+         bibliography_id = "Krauss_et_al_2018_data_release")
   
 # Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- biblio %>%
-  mutate(study_id = "Krauss_et_al_2018", bibliography_id = "Krauss_et_al_2018") %>%
+study_citations <- data_biblio %>%
+  bind_rows(paper_biblio) %>%
   mutate(publication_type = bibtype) %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
   mutate(year = as.numeric(year),
@@ -499,10 +497,10 @@ source("./scripts/1_data_formatting/qa_functions.R")
 
 ## ....4A. Column and Variable names ###############
 # Make sure column names are formatted correctly
-test_colnames("core_level", cores)
+test_colnames("cores", cores)
 test_colnames("depthseries", depthseries)
-test_colnames("site_level", sites)
-test_colnames("impact", impacts)
+test_colnames("sites", sites)
+test_colnames("impacts", impacts)
 test_colnames("species", species)
 # test_colnames("study_information", studies)
 
@@ -515,12 +513,11 @@ test_varnames(species)
 # test_varnames(studies)
 
 # Select only controlled attributes, and re-order them according to CCRCN guidance
-cores <- select_and_reorder_columns("core_level", cores, "data/primary_studies/Krauss_2018/derivative/")
-depthseries <- select_and_reorder_columns("depthseries", depthseries, "data/primary_studies/Krauss_2018/derivative/")
-sites <- select_and_reorder_columns("site_level", sites, "/data/primary_studies/Krauss_2018/derivative/")
-impacts <- select_and_reorder_columns("impact", impacts, "data/primary_studies/Krauss_2018/derivative/")
-species <- select_and_reorder_columns("species", species, "data/primary_studies/Krauss_2018/derivative/")
-# studies <- select_and_reorder_columns("study_information", studies, "data/primary_studies/Krauss_2018/derivative/")
+cores <- reorderColumns("cores", cores)
+depthseries <- reorderColumns("depthseries", depthseries)
+sites <- reorderColumns("sites", sites)
+impacts <- reorderColumns("impacts", impacts)
+species <- reorderColumns("species", species)
 
 ## ....4B. Quality control on cell values ###################
 # Make sure that all core IDs are unique
@@ -540,4 +537,3 @@ write_csv(sites, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_
 write_csv(impacts, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_impacts.csv")
 write_csv(species, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
 write_csv(study_citations, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
-

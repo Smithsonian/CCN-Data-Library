@@ -17,7 +17,6 @@
 # Load RCurl, a package used to download files from a URL
 library(RCurl)
 library(tidyverse)
-library(rcrossref)
 library(RefManageR)
 
 ## NOTE: this section commented out, but kept, because the data for the Holmquist
@@ -45,15 +44,16 @@ library(RefManageR)
 
 ## 2. Import data to convert codes to common plain language ####
 
-cores <- read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_core_data.csv")
-depthseries <- read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_depth_series_data.csv")
-impacts <-read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_impact_data.csv")
-species <- read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_species_data.csv")
-methods <- read_csv("./data/Holmquist_2018/original/V1_Holmquist_2018_methods_data.csv")
-citations <- read_csv("data/Holmquist_2018/original/V1_Holmquist_2018_study_citations.csv")
+cores <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_core_data.csv")
+depthseries <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_depth_series_data.csv")
+impacts <-read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_impact_data.csv")
+species <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_species_data.csv")
+methods <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist_2018_methods_data.csv")
 
 # remove the following studies that are now in their own separate data hooks: 
-removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001", "Noe_et_al_2016")
+removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001", "Noe_et_al_2016", "Johnson_et_al_2007", "Watson_and_Byrne_2013",
+                     "Boyd_and_Sommerfield_2016", "Unger_et_al_2016", "Boyd_2012", "Boyd_et_al_2017", "Callaway_et_al_2012", 
+                     "Gerlach_et_al_2017", "Craft_2007", "Crooks_et_al_2014", "Crooks_et_al_2013")
 
 ## 3. Recode and rename factors #################
 
@@ -144,12 +144,14 @@ synthesis_doi <- "10.25572/ccrcn/10088/35684"
 synthesis_study_id <- "Holmquist_et_al_2018"
 
 # The follow file represents the initial study citations file that has since been deprecated
-citations <- read.csv("./data/Holmquist_2018/intermediate/initial_citations.csv")
+citations <- read.csv("./data/primary_studies/Holmquist_2018/intermediate/initial_citations.csv")
 
 # Build citations for primary studies that have DOIs
 primary_dois <- citations %>%
-  filter(is.na(doi)==FALSE) %>%
+  filter(!(study_id %in% removed_studies)) %>%
+  filter(!is.na(doi)) %>%
   filter(study_type != "synthesis") %>%
+  filter(study_id != "Nuttle_1996" & study_id != "Crooks_et_al_2014" & study_id != "Boyd_2012" & study_id != "CRMS_Database" & study_id != "Merrill_1999") %>%
   select(study_id, bibliography_id, doi)
 
 primary <- GetBibEntryWithDOI(primary_dois$doi)
@@ -159,34 +161,15 @@ study_citations_primary <- primary_df %>%
   rownames_to_column("key") %>%
   merge(primary_dois, by="doi", all.x=TRUE, all.y=TRUE) %>%
   mutate(publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything()) %>%
-  filter(!(study_id %in% c("Crooks_et_al_2014", "Nuttle_1996")))
+  select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything())
 
 # Manully add entries that failed (mostly because they don't have DOIS)
-boyd <-  BibEntry(bibtype = "Mastersthesis", 
-                  key = "Boyd_2012", 
-                  title = "Comparison of sediment accumulation and accretion in impounded and unimpounded marshes of the Delaware Estuary",
-                  author = "Boyd, Brandon", 
-                  school = "University of Delaware",
-                  year = "2012", 
-                  url = "http://udspace.udel.edu/handle/19716/12831"
-                  )
-
 crms <-  BibEntry(bibtype = "Misc", 
                   key = "CRMS_2015", 
                   title = "CRMS Soil Properties",
                   author = "Coastal Protection and Restoration Authority", 
                   year = "2015", 
                   url = "https://cims.coastal.louisiana.gov")
-
-crooks <- BibEntry(bibtype = "Techreport", 
-                   key = "Crooks_et_al_2014", 
-                   title = "Coastal Blue Carbon Opportunity Assessment for the Snohomish Estuary: The Climate Benefits of Estuary Restoration",
-                   author = "Crooks, S and Rybczyk, J and O`Connell, K and Devier, D L and Poppe, K and Emmett-Mattox, S", 
-                   institution = "Environmental Science Associates, Western Washington University, EarthCorps, and Restore America`s Estuaries",
-                   year = "2015", 
-                   url = "http://rgdoi.net/10.13140/RG.2.1.1371.6568"
-                   )
 
 merrill <- BibEntry(bibtype = "Phdthesis", 
                    key = "Merrill_1999", 
@@ -205,7 +188,7 @@ nuttle <- BibEntry(bibtype = "Book",
                    year = "1996"
                    )
 
-primary_no_dois <- as.data.frame(list(c(boyd, crms, crooks, merrill, nuttle)))
+primary_no_dois <- as.data.frame(list(c(crms, merrill, nuttle)))
 
 primary_no_dois <- primary_no_dois %>%
   rownames_to_column("key") %>%
@@ -213,6 +196,8 @@ primary_no_dois <- primary_no_dois %>%
          bibliography_id = key, 
          publication_type = bibtype) %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, everything())
+
+study_citations_primary <- bind_rows(study_citations_primary, primary_no_dois)
 
 biblio_synthesis <- BibEntry(bibtype = "Misc", 
                              key = "Holmquist_et_al_2018", 
@@ -233,11 +218,11 @@ study_citations_synthesis <- citations %>%
   mutate(key = "Holmquist_et_al_2018",
          publication_type = "synthesis") %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything()) %>%
-  bind_rows(study_citations_primary, primary_no_dois) %>%
+  bind_rows(study_citations_primary) %>%
   mutate(year = as.numeric(year), 
          volume = as.numeric(volume), 
          number = as.numeric(number)) %>%
-  filter(!(study_id %in% removed_studies)) 
+  filter(!(study_id %in% removed_studies))
 
 # Write .bib file
 bib_file <- study_citations_synthesis %>%
@@ -245,7 +230,7 @@ bib_file <- study_citations_synthesis %>%
   distinct() %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "./data/Holmquist_2018/derivative/V1_Holmquist_2018.bib")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018.bib")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -263,9 +248,9 @@ results <- test_core_relationships(cores, depthseries)
 test_numeric_vars(depthseries)
 
 ## 6. Write to folder ########
-write_csv(cores, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_core_data.csv")
-write_csv(depthseries, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_depth_series_data.csv")
-write_csv(impacts, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_impact_data.csv")
-write_csv(species, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_species_data.csv")
-write_csv(methods, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_methods_data.csv")
-write_csv(study_citations_synthesis, "./data/Holmquist_2018/derivative/V1_Holmquist_2018_study_citations.csv")
+write_csv(cores, "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018_cores.csv")
+write_csv(depthseries, "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018_depthseries.csv")
+write_csv(impacts, "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018_impacts.csv")
+write_csv(species, "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018_species.csv")
+write_csv(methods, "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018_methods.csv")
+write_csv(study_citations_synthesis, "./data/primary_studies/Holmquist_2018/derivative/Holmquist_2018_study_citations.csv")

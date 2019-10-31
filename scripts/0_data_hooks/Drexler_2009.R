@@ -11,8 +11,7 @@
 
 library(tidyverse)
 library(readxl)
-library(rcrossref)
-library(bib2df)
+library(RefManageR)
 
 ## Read in data #####################
 
@@ -22,15 +21,15 @@ library(bib2df)
 # That edited file is read in 
 # Different computers are having trouble parsing the column names with spaces, leading to errors during cutation. 
 # Renaming columns in the read_excel call and skipping the first line which represents the old column names
-age_depth_data <- read_excel("./data/Drexler_2009/original/Drexler_et_al_2009_peat_accretion_age_depth_edited.xlsx", 
+age_depth_data <- read_excel("./data/primary_studies/Drexler_2009/original/Drexler_et_al_2009_peat_accretion_age_depth_edited.xlsx", 
                              col_names = c("CAMS_lab_code", 
                                            "site_id", "core_id", "sample_id", 
                                            "sample_thickness_cm", "min_elevation_meters", 
                                            "c14_age", "c14_age_sd", "age", "c14_material"), 
                              skip = 1)
-carbon_stock_data <- read_csv("./data/Drexler_2009/original/Drexler_et_al_2009_carbon_depthseries.csv")
-cores <- read_csv("./data/Drexler_2009/original/Drexler_et_al_2009_cores.csv")
-impacts <- read_csv("./data/Drexler_2009/original/Drexler_et_al_2009_impact_data.csv")
+carbon_stock_data <- read_csv("./data/primary_studies/Drexler_2009/original/Drexler_et_al_2009_carbon_depthseries.csv")
+cores <- read_csv("./data/primary_studies/Drexler_2009/original/Drexler_et_al_2009_cores.csv")
+impacts <- read_csv("./data/primary_studies/Drexler_2009/original/Drexler_et_al_2009_impact_data.csv")
 
 ## Curate data ######################
 ## ... depthseries ##################
@@ -72,7 +71,9 @@ depthseries_joined <- age_depthseries %>%
          dry_bulk_density:fraction_carbon_type, 
          c14_age:age_depth_model_reference) %>%
   group_by(core_id) %>%
-  arrange(core_id, depth_min, sample_id, .by_group = TRUE)
+  arrange(core_id, depth_min, sample_id, .by_group = TRUE) %>%
+  # Following attribute should only be in methods table
+  select(-age_depth_model_reference)
 
 ## ... core-level ##################
 
@@ -83,7 +84,6 @@ core_elevations_navd88 <- data.frame(core_id = c("BACHI", "FW", "TT"),
                                      core_elevation_datum = rep("NAVD88", 3))
 
 cores_updated <- cores %>%
-  # JH - I want to do all this renaming and recoding in the holmquist et al 2018 data hook
   mutate(core_position_notes = recode(position_code, 
                                       "a" = "latitude and longitude were likely from a high quality source",
                                       "a1" = "latitude and longitude from handheld GPS or better", 
@@ -110,6 +110,10 @@ impacts <- impacts %>%
   # There were no diked sites in the study
   mutate(impact_class = recode(impact_class, "Diked" = "Natural"))
 
+impactsOutput <- impacts %>%
+  mutate(impact_class = tolower(impact_class),
+         impact_class = ifelse(core_id == "BACHI", "natural", impact_class)) # fixing an error from Holmquist 2018 data.
+
 ## Create study-level data ######
 # Get bibtex citation from DOI
 biblio_raw <- GetBibEntryWithDOI("10.1007/s12237-009-9202-8")
@@ -130,12 +134,7 @@ bib_file <- study_citations %>%
   select(-study_id, -bibliography_id, -publication_type) %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "./data/Drexler_2009/derivative/Drexler_et_al_2009.bib")
-
-## impact data ######################
-impactsOutput <- impacts %>%
-  mutate(impact_class = tolower(impact_class),
-         impact_class = ifelse(core_id == "BACHI", "natural", impact_class)) # fixing an error from Holmquist 2018 data.
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009.bib")
 
 ## QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -155,7 +154,7 @@ numeric_test_results <- test_numeric_vars(depthseries_joined)
 results <- test_core_relationships(cores_updated, depthseries_joined)
 
 ## Write data ######################
-write_csv(depthseries_joined, "./data/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
-write_csv(cores_updated, "./data/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
-write_csv(impactsOutput, "./data/Drexler_2009/derivative/Drexler_et_al_2009_impacts.csv")
-write_csv(study_citations, "./data/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")
+write_csv(depthseries_joined, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
+write_csv(cores_updated, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
+write_csv(impactsOutput, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_impacts.csv")
+write_csv(study_citations, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")

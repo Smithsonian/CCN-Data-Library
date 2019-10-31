@@ -9,7 +9,6 @@ library(rgdal)
 library(rgeos)
 library(sp)
 
-
 ## ... 1A. Import state shapefile and reproject ########
 states <- readOGR(dsn = "./data/input_shapefiles/us_states/states_political_boundaries",
                   layer = "state_pol")
@@ -24,14 +23,14 @@ watersheds <- spTransform(watersheds, CRS("+proj=longlat +datum=WGS84 +no_defs")
 ## ... 1C. Import core data and exclude data already assigned states and watersheds ##########
 
 # Import core data
-cores_pre_geography <- read.csv("./data/CCRCN_synthesis/CCRCN_core_data.csv")
+cores_pre_geography <- read.csv("./data/CCRCN_synthesis/CCRCN_cores.csv")
 
 # A few cores do not have coordinates. Remove them for now
 cores_pre_geography <- cores_pre_geography %>% 
   filter(!is.na(core_longitude))
 
 # Import site data. We'll be joining to this once we add geography attributes
-sites <- read_csv("data/CCRCN_synthesis/CCRCN_site_data.csv")
+sites <- read_csv("data/CCRCN_synthesis/CCRCN_sites.csv")
 
 ## 2. Assign state attributes ###########
 
@@ -203,7 +202,7 @@ watersheds_and_cores <- watersheds_and_cores %>%
 
 ## 4. Join state and watershed column to site data #########
 
-# First need to join to core data to get site IDs
+# First need to join to core data to get site and study IDs
 cores_post_states <- cores_pre_geography %>%
   left_join(states_and_cores, by = "core_id") %>%
   mutate(state = ifelse(is.na(state), "International", state))
@@ -227,26 +226,26 @@ if(num_cores != num_cores_w_geography) {
   #   group_by(site_id) %>% 
   #   summarize(state = names(which.max(table(state))))
   
-  sites_w_geography <- cores_w_geography %>% 
-    select(study_id, site_id, state, watershed) %>% 
-    full_join(sites) %>% 
-    group_by(site_id) %>% 
+  geography_assignment <- cores_w_geography %>% 
+    select(study_id, site_id, core_id, state, watershed)
+    # group_by(site_id) %>% 
     # To summarize to the most frequent variable for each attribute, count each
     #   desired attribute...
-    count(site_id, site_longitude_max, site_longitude_min, site_latitude_max, 
-          site_latitude_min, site_description, vegetation_class, salinity_class, 
-          inundation_class, state, watershed) %>%
-    # ...and then slice to whichever is the highest
-    slice(which.max(n)) %>% 
-    # Remove the count colum
-    select(-n) %>% 
-    # Filter out the "site" corresponding to NA
-    filter(!is.na(site_id))
-}
-
-## 5. Combine and write data #################
-
-# If the lengths match, we can write the data out
-write_csv(sites_w_geography, "./data/CCRCN_synthesis/CCRCN_site_data.csv")
+    # count(site_id, site_longitude_max, site_longitude_min, site_latitude_max, 
+    #       site_latitude_min, site_description, vegetation_class, salinity_class, 
+    #       inundation_class, state, watershed) %>%
+    # # ...and then slice to whichever is the highest
+    # slice(which.max(n)) %>% 
+    # # Remove the count colum
+    # select(-n) %>% 
+    # # Filter out the "site" corresponding to NA
+    # filter(!is.na(site_id))
   
-rm(list = ls())
+  ## 5. Combine and write data #################
+  
+  # If the lengths match, we can write the data out
+  write_csv(geography_assignment, "./data/CCRCN_synthesis/CCRCN_geography_lookup.csv")
+  
+  print("New geography assignment table written to synthesis folder")
+  
+}

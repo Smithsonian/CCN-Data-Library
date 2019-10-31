@@ -1,9 +1,6 @@
 # Script automates the creation of the CCRCN synthesis
 # Scans data/primary_studies directory and reads in curated data
 # Contact: lonnemanM@si.edu
-#          klingesD@si.edu
-
-#### SCRIPT IS NOT ACTIVE #########
 
 ## 1. Synthesis background and description ###############
 # The CCRCN clearinghouse synthesis combines data and metadata for each curated study
@@ -16,142 +13,270 @@
 # 6. Materials and methods metadata
 # 7. Study citation links - Each study is associated with one or more citations 
 
+# join_status is changed to F if there is an error. 
+# the synthesis continues but is deposited in another folder and the error is recorded
+join_status <- TRUE
+
 ## 2. Scan directory and assemble study lists #########
 # The data/primary_studies folder will be scanned 
 # If a filename meets the necessary format (study_id_XXXX_table_type.csv), 
 # it will be appended to the table-specific list
 library(tidyverse)
+library(RefManageR)
+library(skimr)
+library(knitr)
+library(markdown)
+library(rmarkdown)
+library(DT)
 
 directory <- "./data/primary_studies/"
+# Index of table names
+tables <- c("depthseries", "cores", "sites", "species", "impacts", "methods", "studycitations")
+# Other objects that we will need to track
+trackers <- c(
+            # .bib file paths stored in a list 
+            "bibs",
+            # CSV files that do not follow established naming conventions go here 
+            "unknown_csv",
+            # Non .bib or .csv files go here
+            "unknown_filetypes")
 
-# Create empty vectors for each table
-depthseries <- c()
-cores <- c()
-sites <- c()
-species <- c()
-impacts <- c()
-methods <- c()
-study_citations <- c()
-biomass <- c()
+# Empty lists to fill with file paths
+file_paths <- vector("list", length(c(tables, trackers)))
+names(file_paths) <- c(tables, trackers)
 
-# Search through each study folder in the directory
 for(folderName in dir(directory)){
   derivative_directory <- paste0(directory,folderName,"/derivative")
   # If the derivative folder exists and has one or more files, the following will not return 0
   if(length(derivative_directory) != 0) {
     for(fileName in dir(derivative_directory)) {
-      # Extract the table type and file extension from each file 
-      table_type <- strsplit(fileName, split = "\\d\\d\\d\\d")[[1]][2]
+      # Extract the table type and file extension from each file
+      file_type <- strsplit(fileName, split = "\\d\\d\\d\\d")[[1]][2]
       
+      # Create the full file path 
+      file_path <- paste0(derivative_directory,"/",fileName)
+
       # First check if the file extension is csv
-      if(grepl(".csv", table_type)){
-        # Create the full file path 
-        file_path <- paste0(derivative_directory,"/",fileName)
+      if(grepl(".csv", file_type)){
+        
+        # Remove csv and underscore from file type to get table type
+        table_type <- gsub("_", "", gsub(".csv", "", file_type))
         
         # Second check the table type and add to the corresponding list of studies 
-        if(grepl("depthseries", table_type) & !grepl("biomass", table_type)){
-          depthseries <- append(depthseries, file_path)
+        if(table_type %in% tables){
+          file_paths[[table_type]][length(file_paths[[table_type]]) + 1] <- file_path
           
-        } else if (grepl("cores", table_type)) {
-          cores <- append(cores, file_path)
-          
-        } else if (grepl("sites", table_type)) {
-          sites <- append(sites, file_path)
-          
-        } else if (grepl("species", table_type)) {
-          species <- append(species, file_path)
-          
-        } else if (grepl("impacts", table_type)) {
-          impacts <- append(impacts, file_path)
-          
-        } else if (grepl("materials_and_methods", table_type)) {
-          methods <- append(methods, file_path)
-          
-        } else if (grepl("study_citations", table_type)) {
-          study_citations <- append(study_citations, file_path)
-          
-        } else if (grepl("biomass", table_type)) {
-          biomass <- append(biomass, file_path)
-        
-        # Need to add a method to track csv files that do not get added to table-list  
+          # Need to add a method to track csv files that do not get added to table-list  
         } else {
-          
+          file_paths$unknown_csv[length(file_paths$unknown_csv) + 1] <- file_path
         }
-      # .bib files will the other main file type in derivative files 
-      } else if(grepl(".bib", table_type)){
-      
-      # Need to track what non-.bib or -.csv files are in the derivative folder 
+        
+        # .bib files will the other main file type in derivative files 
+      } else if(grepl(".bib", file_type)){
+        file_paths$bibs[length(file_paths$bibs) + 1] <- file_path
+        
+        # Record what non-.bib or -.csv files are in the derivative folder 
       } else {
+        file_paths$unknown_filetypes[length(file_paths$unknown_filetypes) + 1] <- file_path
         
       }
     }
   }
 }
 
-## 3. Import the CCRCN database structure and initative empty data frames #######
+## 3. Import data and place into proper synthesis ###############
+# Create list that will contain all synthesis data frames
+ccrcn_synthesis <- vector("list", length(tables))
+names(ccrcn_synthesis) <- tables
 
-database_structure <- read_csv("./docs/ccrcn_database_structure.csv", col_types = cols())
+# Create object to save errors to 
+synthesis_errors <- setNames(data.frame(matrix(ncol = 2, nrow = 0)), c("error_message", "file_path"))
 
-depthseries_attributes <- filter(database_structure, table == "depthseries")$attribute
-ccrcn_depthseries <- setNames(data.frame(matrix(ncol = length(depthseries_attributes), nrow = 0)), 
-                              depthseries_attributes)
-
-cores_attributes <- filter(database_structure, table == "core_level")$attribute
-ccrcn_cores <- setNames(data.frame(matrix(ncol = length(cores_attributes), nrow = 0)), 
-                        cores_attributes)
-
-sites_attributes <- filter(database_structure, table == "site_level")$attribute
-ccrcn_sites <- setNames(data.frame(matrix(ncol = length(sites_attributes), nrow = 0)), 
-                        sites_attributes)
-
-species_attributes <- filter(database_structure, table == "species")$attribute
-ccrcn_species <- setNames(data.frame(matrix(ncol = length(species_attributes), nrow = 0)), 
-                          species_attributes)
-
-impacts_attributes <- filter(database_structure, table == "impact")$attribute
-ccrcn_impacts <- setNames(data.frame(matrix(ncol = length(impacts_attributes), nrow = 0)), 
-                          impacts_attributes)
-
-methods_attributes <- filter(database_structure, table == "methods_and_materials")$attribute
-ccrcn_methods <- setNames(data.frame(matrix(ncol = length(methods_attributes), nrow = 0)), 
-                          methods_attributes)
-
-#study_citations
-#biomass
-
-# Import and join each file for a given table 
-# All factors will need to be converted to character prior to merging as the different levels
-# between the tables will force conversions and create a multitude of warning messages. 
-# They'll be converted back to factors following the creation of the synthesis
-for(study in depthseries){
-  table <- read.csv(study) %>%
-    mutate_if(is.factor, as.character)
-  ccrcn_depthseries <- bind_rows(ccrcn_depthseries, table)
+# Initiate empty data frames
+for(i in seq_along(ccrcn_synthesis)){
+  ccrcn_synthesis[[i]] <- data.frame()
 }
 
-for(study in cores){
-  table <- read.csv(study) %>%
-    mutate_if(is.factor, as.character)
-  ccrcn_cores <- bind_rows(ccrcn_cores, table)
-}
-
-for(study in species){
-  ccrcn_species <- bind_rows(ccrcn_species, read.csv(study))
-}
-
-for(study in impacts){
-  ccrcn_impacts <- bind_rows(ccrcn_impacts, read.csv(study))
-}
-
-for(study in methods){
-  ccrcn_methods <- bind_rows(ccrcn_methods, read.csv(study))
-}
-
-for(i in 1:length(study_citations)){
-  if(i==1){
-    ccrcn_study_citations <- read.csv(study_citations[i])
-  } else {
-    ccrcn_study_citations <- bind_rows(ccrcn_study_citations, read.csv(study_citations[i]))
+# Create synthesis
+# Convert all factors to characters to avoid multitude of warnings
+for(i in seq_along(tables)){
+  for(j in seq_along(file_paths[[tables[i]]])){
+    # Use tryCatch to keep loop running if there's an error and record
+    tryCatch(
+      ccrcn_synthesis[[i]] <- as.data.frame(read.csv(file_paths[[tables[i]]][j])) %>%
+        mutate_if(is.factor, as.character) %>%
+        bind_rows(ccrcn_synthesis[[i]]),
+      # Record any errors
+      error = function(e){
+        synthesis_errors[nrow(synthesis_errors) + 1,] <<- c(unlist(e[1]), file_paths[[tables[i]]][j])
+      }
+    )
   }
 }
 
+# If an error was thrown, the synthesis failed
+if(nrow(synthesis_errors) > 0) {
+  join_status <- FALSE
+}
+
+# Prepare .bib file
+bib_file <- ccrcn_synthesis$studycitations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("key")
+
+## 4.Read in previous synthesis & compare #################
+
+# List will hold the previous synthesis
+archived_synthesis <- vector("list", length(tables))
+names(archived_synthesis) <- tables
+
+synthesis_directory <- "./data/CCRCN_synthesis/"
+
+# Get file names of previous synthesis
+archived_filepaths <- dir(synthesis_directory)
+
+# Read in data 
+for(file in archived_filepaths){
+  
+  # If it's a .csv file: 
+  if(grepl(".csv", file)){
+    
+    # Extract table type from file name
+    table_type <- file %>%
+      gsub("_", "", .) %>%
+      gsub("CCRCN", "", .) %>%
+      gsub(".csv", "", .)
+    
+    archived_synthesis[[table_type]] <- read_csv(paste0(synthesis_directory, file),
+                                                 col_types = cols(.default = col_character())) %>%
+      type_convert(na = "NA")
+  }
+}
+
+# The forward change log list tracks which values are new to the synthesis
+change_log_df <- vector("list", length(tables))
+names(change_log_df) <- tables
+
+# Create object to save errors to 
+change_log_errors <- setNames(data.frame(matrix(ncol = 3, nrow = 0)), c("error_message", "change_type", "table"))
+
+for(table in tables){
+  # Skip sites for now - geography assignment script needs to be modified
+  if(table == "sites"){next()}
+  
+  forward <- NULL
+  backward <- NULL
+  
+  # Use tryCatch to keep loop running if there's an error and record
+  tryCatch(
+    # Get "forward" changes - New data to the synthesis
+    forward <- setdiff(ccrcn_synthesis[[table]], archived_synthesis[[table]]) %>%
+      mutate(change_type = "forward"), 
+    # Record any errors
+    error = function(e){
+      change_log_errors[nrow(change_log_errors) + 1,] <<- c(unlist(e[1]), "forward", table)
+    }
+  )
+  tryCatch(
+    # Get "backward" changes - Data that's been removed from the synthesis
+    backward <- setdiff(archived_synthesis[[table]], ccrcn_synthesis[[table]]) %>%
+      mutate(change_type = "backward"),
+    # Record any errors
+    error = function(e){
+      change_log_errors[nrow(change_log_errors) + 1,] <<- c(unlist(e[1]), "backward", table)
+    }
+  )
+  
+  # If there's an error, no results will exist for that table
+  if(!is.null(forward)){
+    if(is.null(backward)){
+      change_log_df[[table]] <- forward 
+    } else change_log_df[[table]] <- bind_rows(forward, backward)
+  } else if(is.null(forward) & !is.null(backward)){
+    change_log_df[[table]] <- backward
+  }
+  
+}
+# 
+# forward <- setdiff(ccrcn_synthesis[["depthseries"]], archived_synthesis[["depthseries"]]) %>%
+#   mutate(change_type = "forward")
+
+
+## Format change log results 
+change_log_results <- setNames(data.frame(matrix(ncol = 3, nrow = 0)), c("table", "change_types", "study_id"))
+
+for(table_type in names(change_log_df)){
+  if(!is.null(change_log_df[[table_type]])){
+    change_summary <- change_log_df[[table_type]] %>%
+      group_by(study_id) %>%
+      summarize(change_types = paste(unique(change_type), collapse = ", "), table = table_type) %>%
+      select(table, study_id, change_types)
+    
+    change_log_results <- bind_rows(change_log_results, change_summary)
+  }
+}
+
+## 5. QA/QC #############
+source("./scripts/2_generate_synthesis/qa_synthesis_functions.R")
+
+# Reorder columns 
+ccrcn_synthesis <- reorderColumns(tables, ccrcn_synthesis)
+
+qa_results <- 
+  # Ensure each core ID is unique
+  # Currently the map atlas requires this 
+  # Eventually we'll just need a unique study ID - core ID combination
+  testUniqueCores(ccrcn_synthesis$cores) %>%
+  # Test relationships between core_ids at core- and depthseries-levels
+  # the test returns all core-level rows that did not have a match in the depth series data
+  bind_rows(testCoreRelationships(ccrcn_synthesis)) %>%
+  # Test latitude and longitude uniqueness
+  bind_rows(testUniqueCoordinates(ccrcn_synthesis$cores)) %>%
+  # Test column names to make sure they are in database structure
+  # Or are approved uncontrolled attributes 
+  bind_rows(testAttributeNames(tables, ccrcn_synthesis)) %>%
+  # Test variable names to make sure they are in database structure
+  bind_rows(testVariableNames(tables, ccrcn_synthesis)) 
+
+# Provide summary statistics of numeric variables 
+qa_numeric_results <- testNumericVariables(ccrcn_synthesis$depthseries)
+
+## 6. Write new synthesis ###########
+if(join_status == TRUE){
+  
+  # Archive previous synthesis
+  write_csv(archived_synthesis$cores, "./data/CCRCN_synthesis/archive/archived_synthesis_cores.csv")
+  write_csv(archived_synthesis$depthseries, "./data/CCRCN_synthesis/archive/archived_synthesis_depthseries.csv")
+  write_csv(archived_synthesis$sites, "./data/CCRCN_synthesis/archive/archived_synthesis_sites.csv")
+  write_csv(archived_synthesis$impacts, "./data/CCRCN_synthesis/archive/archived_synthesis_impacts.csv")
+  write_csv(archived_synthesis$methods, "./data/CCRCN_synthesis/archive/archived_synthesis_methods.csv")
+  write_csv(archived_synthesis$species, "./data/CCRCN_synthesis/archive/archived_synthesis_species.csv")
+  write_csv(archived_synthesis$studycitations, "./data/CCRCN_synthesis/archive/archived_synthesis_study_citations.csv")
+  # Copy the previous .bib file
+  file.copy("data/CCRCN_synthesis/CCRCN_bibliography.bib", "data/CCRCN_synthesis/archive")
+  
+  # Write new synthesis data
+  write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis/CCRCN_cores.csv")
+  write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis/CCRCN_depthseries.csv")
+  write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis/CCRCN_sites.csv")
+  write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis/CCRCN_impacts.csv")
+  write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis/CCRCN_methods.csv")
+  write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/CCRCN_species.csv")
+  write_csv(ccrcn_synthesis$studycitations, "./data/CCRCN_synthesis/CCRCN_study_citations.csv")
+  
+  WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/CCRCN_bibliography.bib")
+}
+
+# Record summary of warnings 
+warning_summary <- summary(warnings())
+
+## 7. Write RMarkdown report #########
+# get date to paste to file name
+url_date <- format(Sys.time(), "%Y%m%d %H%M")
+formated_date <- format(Sys.time(), "%Y/%m/%d-%H:%M")
+  
+rmarkdown::render(input = "./scripts/2_generate_synthesis/synthesis_report.Rmd",
+                  output_format = "html_document",
+                  output_file = paste0("synthesis_report_", url_date, ".html"),
+                  output_dir = "./docs/synthesis_reports")

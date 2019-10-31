@@ -22,8 +22,6 @@ library(lubridate)
 library(RefManageR)
 
 ## Download data ########################
-
-
 # The Gonneea et al (2018) data release features a diverse suite of file types:
 #   a .jpg, a .xlsx, a .csv, and a .xml
 # So we'll need to have a custom hook for each file
@@ -70,18 +68,24 @@ Gonneea_2018 <- Gonneea_2018 %>%
 
 # Curate data: 
 Gonneea_2018 <- Gonneea_2018 %>%
-  rename(core_id = "ID") %>%
-  rename(core_date = "Date", 
-         depth = "Depth") %>%
-  rename(core_latitude = "Lat") %>%
-  rename(core_longitude = "Lon") %>%
-  rename(dry_bulk_density = "DBD") %>%
-  rename(age = "Age") %>%
-  rename(total_pb210_activity = "210Pb") %>%
-  rename(ra226_activity = "226Ra") %>%
-  rename(excess_pb210_activity = "210Pbex") %>%
-  rename(cs137_activity = "137Cs") %>%
-  rename(be7_activity = "7Be") %>%
+  rename(core_id = "ID",
+         core_date = "Date", 
+         depth = "Depth",
+         core_latitude = "Lat",
+         core_longitude = "Lon",
+         dry_bulk_density = "DBD",
+         age = "Age",
+         total_pb210_activity = "210Pb",
+         ra226_activity = "226Ra",
+         excess_pb210_activity = "210Pbex",
+         cs137_activity = "137Cs",
+         be7_activity = "7Be", 
+         total_pb210_activity_sd = `210Pb_e`, 
+         ra226_activity_sd = `226Ra_e`,
+         excess_pb210_activity_sd = `210Pbex_e`,
+         cs137_activity_sd = `137Cs_e`, 
+         be7_activity_sd = `7Be_e`,
+         age_sd = Age_e) %>%
   mutate(study_id = "Gonneea_et_al_2018") %>%
   mutate(core_latitude = as.numeric(core_latitude)) %>%
   mutate(core_longitude = as.numeric(core_longitude)) %>%
@@ -109,11 +113,13 @@ Gonneea_2018 <- Gonneea_2018 %>%
 Gonneea_2018 <- Gonneea_2018 %>%
   mutate(pb210_unit = "disintegrations_per_minute_per_gram",
          cs137_unit = "disintegrations_per_minute_per_gram",
-         be7_unit = "disintegrations_per_minute_per_gram") %>%
+         be7_unit = "disintegrations_per_minute_per_gram",
+         ra226_unit = "disintegrations_per_minute_per_gram") %>%
   # if 0, below detection limits
-  mutate(cs137_activity_notes = ifelse(cs137_activity == 0, "below detection limits", NA), 
-         be7_activity_notes = ifelse(be7_activity == 0, "below detection limits", NA))
-    
+  mutate(dating_interval_notes = ifelse(cs137_activity == 0 & be7_activity == 0, "cs137 and be7 activity below detection limits",
+                                        ifelse(cs137_activity == 0, "cs137 activity below detection limits", 
+                                               ifelse(be7_activity == 0, "be7 activity below detection limits", NA)))) 
+
 # Convert percent weights to fractions
 Gonneea_2018 <- Gonneea_2018 %>%
   mutate(fraction_carbon = as.numeric(wtC) / 100)
@@ -136,9 +142,14 @@ Gonneea_2018_core_Data <- Gonneea_2018 %>%
 
 # Depth Series data
 Gonneea_2018_depth_series_data <- Gonneea_2018 %>%
-  select(study_id, core_id, depth_min, depth_max, dry_bulk_density, 
-         fraction_carbon, cs137_activity, cs137_unit, cs137_activity_notes, total_pb210_activity, ra226_activity,
-         excess_pb210_activity, pb210_unit, be7_activity, be7_activity_notes, age) %>%
+  select(study_id, core_id, depth_min, depth_max, 
+         dry_bulk_density, fraction_carbon, 
+         cs137_activity, cs137_activity_sd, cs137_unit, 
+         total_pb210_activity, total_pb210_activity_sd, pb210_unit, 
+         ra226_activity, ra226_activity_sd, ra226_unit,
+         excess_pb210_activity, excess_pb210_activity_sd,  
+         be7_activity, be7_activity_sd, be7_unit, 
+         age, age_sd, dating_interval_notes) %>%
   filter(depth_min >= 0)
 
 
@@ -219,7 +230,7 @@ results <- test_core_relationships(Gonneea_2018_core_Data, Gonneea_2018_depth_se
 write_csv(Gonneea_2018_core_Data, "./data/Gonneea_2018/derivative/Gonneea_et_al_2018_cores.csv")
 
 # Export depth series data
-write_csv(Gonneea_2018_depth_series_data, "./data/Gonneea_2018/derivative/Gonneea_et_al_2018_depthseries.csv")
+write_csv(Gonneea_2018_depth_series_data, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_depthseries.csv")
   
 # Export master data
 # write_csv(Gonneea_2018, "./data/Gonneea_2018/derivative/Gonneea_2018.csv")
