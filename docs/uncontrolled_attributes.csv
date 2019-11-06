@@ -1,10 +1,15 @@
-attribute_name,table,data_type,units,format_string,number,values
-pb210_unit,depthseries,character,,,,
-pb214_unit,depthseries,character,,,,
-cs137_unit,depthseries,character,,,,
-be7_unit,depthseries,character,,,,
-am241_unit,depthseries,character,,,,
-ra226_unit,depthseries,character,,,,
-bi224_unit,depthseries,character,,,,
-bi224_activity,depthseries,numeric,,,,
-pb214_activity,depthseries,numeric,,,,
+attribute_name,attribution_definition,table,data_type,units,format_string,number,data_category,parent_data_category,quality_class
+pb210_unit,,depthseries,character,,,,,,
+pb214_unit,,depthseries,character,,,,,,
+cs137_unit,,depthseries,character,,,,,,
+be7_unit,,depthseries,character,,,,,,
+am241_unit,,depthseries,character,,,,,,
+ra226_unit,,depthseries,character,,,,,,
+bi224_unit,,depthseries,character,,,,,,
+bi224_activity,,depthseries,numeric,,,,,,
+pb214_activity,,depthseries,numeric,,,,,,
+pb210_cic_accretion_rate,Accretion rate according to a lead-210 based Constant Initial Concentration model.,depthseries,numeric,millimetersPerYear,,real,pb210,age depth,3
+pb210_cic_accretion_rate_sd,Accretion rate parameter error according to a lead-210 based Constant Initial Concentration model.,depthseries,numeric,millimetersPerYear,,real,pb210,age depth,3
+pb210_cic_max_depth,"Maximum depth to which a lead-210 based Constant Initial Concentration model was applied, in centimeters depth relevant to surface.",cores,numeric,centimeters,,real,pb210,age depth,4
+pb210_cic_r2,"The coefficient of determination, or R-squared value, for the lead-210 based Constatn Initial Concentration model.",cores,numeric,dimensionless,,real,pb210,age depth,4
+pb210_cic_notes,Any notes associated with a lead-210 based Constant Initial Concentration model.,depthseries,character,,,,,,
