@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1" packageId="d49d053c-d635-11e9-96e1-e1168e9691c4" system="uuid" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1/ eml.xsd">
+  <dataset>
+    <title>Dataset: Modeling organic carbon accumulation rates and residence times in coastal vegetated ecosystems</title>
+    <creator>
+      <individualName>
+        <givenName>E. Fay</givenName>
+        <surName>Belshe</surName>
+      </individualName>
+      <electronicMailAddress>fbelshe@gmail.com</electronicMailAddress>
+    </creator>
+    <associatedParty>
+      <individualName>
+        <givenName>E. Fay</givenName>
+        <surName>Belshe</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Jose</givenName>
+        <surName>Sanjuan</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Carmen</givenName>
+        <surName>Leiva-Dueñas</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Nerea</givenName>
+        <surName>Piñeiro-Juncal</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Oscar</givenName>
+        <surName>Serrano</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Paul S.</givenName>
+        <surName>Lavery</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Miguel Angel</givenName>
+        <surName>Mateo</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <pubDate>2019</pubDate>
+    <abstract>Coastal vegetated 'blue carbon' ecosystems can store large quantities of organic carbon (OC) within their soils; however, the importance of these sinks for climate change mitigation depends on the OC accumulation rate (CAR) and residence time. Here we evaluate how two modeling approaches, a Bayesian age-depth model alone or in combination with a two-pool OC model, aid in our understanding of the timelines of OC within seagrass soils. Fitting these models to data from Posidonia oceanica soil cores, we show that age-depth models provided reasonable CAR estimates but resulted in a 22% higher estimation of OC burial rates when ephemeral rhizosphere OC was not subtracted. This illustrates the need to standardize CAR estimation to match the research target and time frames under consideration. Using a two-pool model in tandem with an age-depth model also yielded reasonable, albeit lower, CAR estimates with lower estimate uncertainty, which increased our ability to detect among-site differences and seascape-level trends. Moreover, the two-pool model provided several other useful soil OC diagnostics, including OC inputs, decay rates, and transit times. At our sites, soil OC decayed quite slowly both within fast-cycling (0.028 +/-  0.014 yr^{-1}) and slow-cycling (0.0007 +/- 0.0003 yr^{-1}) soil pools, resulting in OC taking between 146 and 825 yrs to transit the soil system. Further, an estimated 85 % to 93 % of OC inputs enter slow-cycling soil pools, with transit times ranging from 891 to 3115 yrs, substantiating the importance of P. oceanica soils as natural, long-term OC sinks.</abstract>
+    <keywordSet>
+      <keyword>organic carbon accumulation rates</keyword>
+      <keyword>transit times</keyword>
+      <keyword>seagrass</keyword>
+    </keywordSet>
+    <intellectualRights>This dataset is listed under a Creative Commons BY 4.0 and can be used with attribution. https://creativecommons.org/licenses/by/4.0/</intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Es Port Bay is located on the island of Cabrera, which is the largest island in the Cabrera Archipelage, located a few kilometers south of Mallorca (Balearic Islands, western Mediterranean). A soil core was collected at 5 m water depth within a Posidonia oceanica meadow</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>2.93326</westBoundingCoordinate>
+          <eastBoundingCoordinate>2.93326</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.14496</northBoundingCoordinate>
+          <southBoundingCoordinate>39.14496</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Santa Maria Bay is located on the island of Cabrera, which is the largest island in the Cabrera Archipelage, located a few kilometers south of Mallorca (Balearic Islands, western Mediterranean). Soil cores were collected at 5, 10, 15 and 25 m water depth within a Posidonia oceanica meadow</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>2.945329</westBoundingCoordinate>
+          <eastBoundingCoordinate>2.949541</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.15364</northBoundingCoordinate>
+          <southBoundingCoordinate>39.1498</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>EP05</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>2.93326</westBoundingCoordinate>
+          <eastBoundingCoordinate>2.93326</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.14496</northBoundingCoordinate>
+          <southBoundingCoordinate>39.14496</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>SM05</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>2.94919</westBoundingCoordinate>
+          <eastBoundingCoordinate>2.94919</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.15012</northBoundingCoordinate>
+          <southBoundingCoordinate>39.15012</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>SM15</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>2.94798</westBoundingCoordinate>
+          <eastBoundingCoordinate>2.94798</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.15177</northBoundingCoordinate>
+          <southBoundingCoordinate>39.15177</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>SM25</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>2.94568</westBoundingCoordinate>
+          <eastBoundingCoordinate>2.94568</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.15332</northBoundingCoordinate>
+          <southBoundingCoordinate>39.15332</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2015-04-15</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2019-06-01</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <contact>
+      <individualName>
+        <givenName>E. Fay</givenName>
+        <surName>Belshe</surName>
+      </individualName>
+      <electronicMailAddress>fbelshe@gmail.com</electronicMailAddress>
+    </contact>
+    <dataTable>
+      <entityName>belshe_et_al_2019_methods_data</entityName>
+      <entityDescription>Methods information for study</entityDescription>
+      <physical>
+        <objectName>belshe_et_al_2019_material_and_methods.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>coring_method</attributeName>
+          <attributeDefinition>Code indicating what type of device was used to collect soil depth profiles.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>pvc and hammer</code>
+                    <definition>PVC pipe was driven into the sediment with a hammer to recover a core</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>roots_flag</attributeName>
+          <attributeDefinition>Code indicating whether live roots were included or excluded from carbon assessments.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>roots and rhizomes included</code>
+                    <definition>Roots and rhizomes were included in dry bulk density and or organic matter and carbon measurements</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sediment_sieved_flag</attributeName>
+          <attributeDefinition>Code indicating whether or not sediment was sieved prior to carbon measurements.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>sediment not sieved</code>
+                    <definition>Sediment was not sieved prior to analysis for organics.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>compaction_flag</attributeName>
+          <attributeDefinition>Code indicating how the authors qualified or quantified compaction of the core.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>compaction quantified</code>
+                    <definition>Compaction was quantified and corrected for in core based measurements</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_temperature</attributeName>
+          <attributeDefinition>Temperature at which samples were dried to measure dry bulk density. This can include either samples that were freeze dried or oven dried.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_time</attributeName>
+          <attributeDefinition>Time over which samples were dried to measure dry bulk density.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>hour</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_sample_volume</attributeName>
+          <attributeDefinition>Sample volume used for bulk density measurements, if held constant.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>cubicCentimeter</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_flag</attributeName>
+          <attributeDefinition>Any notable codes regarding how the authors quantified dry bulk density.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>to constant mass</code>
+                    <definition>Bulk density methodology did not specify drying temperature or length, only that samples were dried to a constant mass</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>carbonates_removed</attributeName>
+          <attributeDefinition>Whether or not carbonates were removed prior to calculating fraction organic carbon.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>TRUE</code>
+                    <definition>Carbonates were removed before measuring organic carbon.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>carbonate_removal_method</attributeName>
+          <attributeDefinition>The method used to remove carbonates prior to measuring fraction carbon.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>direct acid treatment</code>
+                    <definition>Carbonates were removed using direct application of dilute acid</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon_method</attributeName>
+          <attributeDefinition>Code indicating the method for which fraction carbon was measured or modeled (Note: regression based models are permitted, but the use of the Bemmelen factor [0.58 gOC gOM-1] is discouraged).</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>EA</code>
+                    <definition>Each sample presented was measured using Elemental Analysis</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon_type</attributeName>
+          <attributeDefinition>Code indicating whether fraction_carbon refers to organic or total carbon.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>organic carbon</code>
+                    <definition>Author specified that fraction carbon measurements were of organic carbon</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pb210_counting_method</attributeName>
+          <attributeDefinition>Code indicating the method used for determining lead 210 activity.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>alpha</code>
+                    <definition>Alpha counting method used</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>excess_pb210_rate</attributeName>
+          <attributeDefinition>Code indicating the mass or accretion rate used in the excess_pb_210_model</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>mass accumulation</code>
+                    <definition>Excess 210Pb modeled using mass accumulation rate</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>excess_pb210_model</attributeName>
+          <attributeDefinition>Code indicating the model used to estimate excess lead 210.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>CRS</code>
+                    <definition>Constant rate of supply model used</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>c14_counting_method</attributeName>
+          <attributeDefinition>Code indicating the method used for determining radiocarbon activity.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>AMS</code>
+                    <definition>Accelerator mass spectroscopy used</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dating_notes</attributeName>
+          <attributeDefinition>Any submitter defined notes elaborating on the process of dating the core not yet made clear by the coding.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>age_depth_model_reference</attributeName>
+          <attributeDefinition>Code indicating the reference or 0 year of the age depth model.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>YBP</code>
+                    <definition>Year zero is defined as years before present, 1960 CE</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>belshe_2019_core_data</entityName>
+      <entityDescription>Soil core information</entityDescription>
+      <physical>
+        <objectName>belshe_2019_core.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_date</attributeName>
+          <attributeDefinition>Date of core collection.</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_notes</attributeName>
+          <attributeDefinition>Any other relevant submitter generated notes on how cores were collected.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_latitude</attributeName>
+          <attributeDefinition>Positional latitude of the core in decimal degree WGS84.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_longitude</attributeName>
+          <attributeDefinition>Positional longitude of the core in decimal degree WGS84.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_position_accuracy</attributeName>
+          <attributeDefinition>Accuracy of latitude and longitude measurement, if determined and recorded.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_position_method</attributeName>
+          <attributeDefinition>Code indicating how latitude and longitude were determined.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>handheld</code>
+                    <definition>Conventional Commercially available hand-held GPS</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_elevation_notes</attributeName>
+          <attributeDefinition>Any relevant submitter generated notes on how elevation was determined</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>salinity_class</attributeName>
+          <attributeDefinition>Code based on submitter field observation or measurement indicating average annual salinity (Note: Palustrine and freshwater should only include tidal wetlands, or wetlands that are potentially/formerly tidal but artificially freshened due to artificial tidal restrictions).</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>saline</code>
+                    <definition>30-50 ppt</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>salinity_method</attributeName>
+          <attributeDefinition>Indicate whether salinity_class was determined using a field observation or a measurement</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>field observation</code>
+                    <definition>Salinity inferred by field observation such as vegetation</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vegetation_class</attributeName>
+          <attributeDefinition>Code based on submitter field observations or measurement indicating dominant wetland vegetation type.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>seagrass</code>
+                    <definition>Describes tidal or subtidal communities dominated by rooted vascular plants.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vegetation_method</attributeName>
+          <attributeDefinition>Indicate whether vegetation_class was determined using a field observation or a measurement</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>field observation</code>
+                    <definition>Vegetation inferred by field observation</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vegetation_notes</attributeName>
+          <attributeDefinition>Any relevant submitter generated notes on how vegetation_class and dominant_species were determined.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>inundation_class</attributeName>
+          <attributeDefinition>Code based on submitter field observation or measurement indicating how often the coring location is inundated.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>submerged</code>
+                    <definition>Core location is continuously submerged</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>inundation_notes</attributeName>
+          <attributeDefinition>Any relevant submitter generated notes on how inundation was determined</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_length_flag</attributeName>
+          <attributeDefinition>Indicated whether or not the coring team believes they recovered a full sediment profile, down to bedrock, or other non-marsh interface.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>core depth limited by length of corer</code>
+                    <definition>The total depth of the core was limited by the length of the coring device</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>core depth represents deposit depth</code>
+                    <definition>Authors report that the depth of the core represents the depth of the wetland soil deposit</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>belshe_2019_depthseries_data</entityName>
+      <entityDescription>Soil core depthseries information</entityDescription>
+      <physical>
+        <objectName>belshe_2019_depthseries.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_min</attributeName>
+          <attributeDefinition>Minimum depth of a sampling increment.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_max</attributeName>
+          <attributeDefinition>Maximum depth of a sampling increment.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_max_decompressed</attributeName>
+          <attributeDefinition>Estimated decompression of core interval using an exponential model</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density</attributeName>
+          <attributeDefinition>Dry mass per unit volume of a soil sample. This does not include ash free bulk density.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gramsPerCubicCentimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon_measured</attributeName>
+          <attributeDefinition>Measured mass of carbon relative to sample dry mass.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon_modeled</attributeName>
+          <attributeDefinition>Modeled mass of carbon relative to sample dry mass.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon_density_measured</attributeName>
+          <attributeDefinition>Measured mass of carbon per unit volume of a soil sample</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gramsPerCubicCentimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon_density_modeled</attributeName>
+          <attributeDefinition>Modeled  mass of carbon per unit volume of a soil sample</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gramsPerCubicCentimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pb210_age</attributeName>
+          <attributeDefinition>Most likely, median, or mean age of the depth interval from submitter generated age depth model using Pb210 radioactivity counts.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pb210_age_sd</attributeName>
+          <attributeDefinition>Standard deviation of age estimate from submitter generated age depth model using Pb210 radioactivity counts.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>c14_age</attributeName>
+          <attributeDefinition>Radiocarbon age as estimated from AMS measurements.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>radiocarbonYear</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>c14_age_sd</attributeName>
+          <attributeDefinition>Estimated uncertainty in c14_age.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>radiocarbonYear</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>c14_material</attributeName>
+          <attributeDefinition>Description of the material selected for radiocarbon (14C) dating.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_interval_notes</attributeName>
+          <attributeDefinition>Any other submitter generated notes specific to the depth interval.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="cubicCentimeter" multiplierToSI="1e-06" name="cubicCentimeter" parentSI="cubicMeter" unitType="volume">
+          <description>cubic centimeter</description>
+        </unit>
+        <unit id="radiocarbonYear" name="radiocarbonYear" unitType="time">
+          <description>radiocarbon years</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>

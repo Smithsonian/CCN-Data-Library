@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1" packageId="f010d9e0-f68f-11e9-bd30-31bdfcda03fd" system="uuid" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1/ eml.xsd">
+  <dataset>
+    <title>Dataset: Accretion rates of low intertidal salt marshes in the Pacific Northwest</title>
+    <creator>
+      <individualName>
+        <givenName>Ronald M.</givenName>
+        <surName>Thom</surName>
+      </individualName>
+      <electronicMailAddress>thom.ronald@gmail.com</electronicMailAddress>
+    </creator>
+    <pubDate>2019</pubDate>
+    <abstract>Salt-marsh accretion rate was investigated at sites that spanned a gradient in relative rate of sea-level rise in Washington and Oregon. Mean accretion rate over all sites was 3.6 mm yr-1 (95% CI = 2.4 to 4.8 mm yr-1), which exceeded present mean sea-level-rise rate (1.3 mm yr-1; sd = 0.6). However, a mean rise rate of 5.5 mm yr-1 (sd = 1.9) predicted by a moderate sea-level-change scenario to occur by the year 2050 exceeds mean accretion rate. Marshes with adequate sediment input seemed to have the capacity to keep pace with an increased sea-level-rise rate. Lowest accretion rates were recorded at sites with the least sediment supply. Accretion rate showed a weak negative correlation with sediment organic matter (measured as volatile solids) and marsh standing stock. The data suggest that moderate and high rise-rate scenarios would threaten the existence of salt marshes in the region in the absence of increased sediment supply. A better understanding is required of marsh accretion and predicted rate of sea-level rise to refine predictions of the effects of sea-level rise on Pacific Northwest salt marshes.</abstract>
+    <keywordSet>
+      <keyword>sea-level rise</keyword>
+      <keyword>salt-marsh accretion</keyword>
+      <keyword>Pacific Northwest</keyword>
+      <keyword>global climate change</keyword>
+    </keywordSet>
+    <intellectualRights>This dataset is listed under a Creative Commons BY 4.0 and can be used with attribution. https://creativecommons.org/licenses/by/4.0/</intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Elk River Prev Diked</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-124.090835</westBoundingCoordinate>
+          <eastBoundingCoordinate>-124.090835</eastBoundingCoordinate>
+          <northBoundingCoordinate>46.861573</northBoundingCoordinate>
+          <southBoundingCoordinate>46.861573</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Elk River Not Diked</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-124.089703</westBoundingCoordinate>
+          <eastBoundingCoordinate>-124.089703</eastBoundingCoordinate>
+          <northBoundingCoordinate>46.862043</northBoundingCoordinate>
+          <southBoundingCoordinate>46.862043</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Nisqually River Delta</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-122.7024003</westBoundingCoordinate>
+          <eastBoundingCoordinate>-122.7004887</eastBoundingCoordinate>
+          <northBoundingCoordinate>47.0970227</northBoundingCoordinate>
+          <southBoundingCoordinate>47.0936183</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Padilla Bay</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-122.482939</westBoundingCoordinate>
+          <eastBoundingCoordinate>-122.482939</eastBoundingCoordinate>
+          <northBoundingCoordinate>48.505608</northBoundingCoordinate>
+          <southBoundingCoordinate>48.505608</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Salmon River</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-123.9858749</westBoundingCoordinate>
+          <eastBoundingCoordinate>-123.9851921</eastBoundingCoordinate>
+          <northBoundingCoordinate>45.0378299</northBoundingCoordinate>
+          <southBoundingCoordinate>45.0372551</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Washington Harbor</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-123.046256</westBoundingCoordinate>
+          <eastBoundingCoordinate>-123.046256</eastBoundingCoordinate>
+          <northBoundingCoordinate>48.081737</northBoundingCoordinate>
+          <southBoundingCoordinate>48.081737</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>ED1</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-124.090835</westBoundingCoordinate>
+          <eastBoundingCoordinate>-124.090835</eastBoundingCoordinate>
+          <northBoundingCoordinate>46.861573</northBoundingCoordinate>
+          <southBoundingCoordinate>46.861573</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>ER1</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-124.089703</westBoundingCoordinate>
+          <eastBoundingCoordinate>-124.089703</eastBoundingCoordinate>
+          <northBoundingCoordinate>46.862043</northBoundingCoordinate>
+          <southBoundingCoordinate>46.862043</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>ND1</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-122.700648</westBoundingCoordinate>
+          <eastBoundingCoordinate>-122.700648</eastBoundingCoordinate>
+          <northBoundingCoordinate>47.096739</northBoundingCoordinate>
+          <southBoundingCoordinate>47.096739</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>ND2</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-122.701526</westBoundingCoordinate>
+          <eastBoundingCoordinate>-122.701526</eastBoundingCoordinate>
+          <northBoundingCoordinate>47.09647</northBoundingCoordinate>
+          <southBoundingCoordinate>47.09647</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>ND3</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-122.702241</westBoundingCoordinate>
+          <eastBoundingCoordinate>-122.702241</eastBoundingCoordinate>
+          <northBoundingCoordinate>47.093902</northBoundingCoordinate>
+          <southBoundingCoordinate>47.093902</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>ND4</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-122.701792</westBoundingCoordinate>
+          <eastBoundingCoordinate>-122.701792</eastBoundingCoordinate>
+          <northBoundingCoordinate>47.095121</northBoundingCoordinate>
+          <southBoundingCoordinate>47.095121</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PB3</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-122.482939</westBoundingCoordinate>
+          <eastBoundingCoordinate>-122.482939</eastBoundingCoordinate>
+          <northBoundingCoordinate>48.505608</northBoundingCoordinate>
+          <southBoundingCoordinate>48.505608</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>SR1</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-123.985818</westBoundingCoordinate>
+          <eastBoundingCoordinate>-123.985818</eastBoundingCoordinate>
+          <northBoundingCoordinate>45.037782</northBoundingCoordinate>
+          <southBoundingCoordinate>45.037782</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>SR2</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-123.985249</westBoundingCoordinate>
+          <eastBoundingCoordinate>-123.985249</eastBoundingCoordinate>
+          <northBoundingCoordinate>45.037303</northBoundingCoordinate>
+          <southBoundingCoordinate>45.037303</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>WH1</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-123.046256</westBoundingCoordinate>
+          <eastBoundingCoordinate>-123.046256</eastBoundingCoordinate>
+          <northBoundingCoordinate>48.081737</northBoundingCoordinate>
+          <southBoundingCoordinate>48.081737</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>1991-03-01</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>1991-09-01</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Carex lyngbyei</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Distichlis spicata</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Potentilla sp</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Salicornia virginica</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Triglochin maritimum</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <contact>
+      <individualName>
+        <givenName>Ronald M.</givenName>
+        <surName>Thom</surName>
+      </individualName>
+      <electronicMailAddress>thom.ronald@gmail.com</electronicMailAddress>
+    </contact>
+    <dataTable>
+      <entityName>thom_2019_methods_data</entityName>
+      <entityDescription>Methods information for study</entityDescription>
+      <physical>
+        <objectName>thom_2019_material_and_methods.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>coring_method</attributeName>
+          <attributeDefinition>Code indicating what type of device was used to collect soil depth profiles.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>PVC tube or thin-walled metal tube</code>
+                    <definition>Two corers were used, and it is unknown which corer extracted each core</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>compaction_flag</attributeName>
+          <attributeDefinition>Code indicating how the authors qualified or quantified compaction of the core.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>corer limits compaction</code>
+                    <definition>Authors specified that the coring device's design minimized compaction</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_temperature</attributeName>
+          <attributeDefinition>Temperature at which samples were dried to measure dry bulk density. This can include either samples that were freeze dried or oven dried.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>loss_on_ignition_temperature</attributeName>
+          <attributeDefinition>Temperature at which samples were combusted to estimate fraction organic matter.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>loss_on_ignition_time</attributeName>
+          <attributeDefinition>Time over which samples were combusted to estimate fraction organic matter.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>hour</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>cs137_counting_method</attributeName>
+          <attributeDefinition>Code indicating the method used for determining radiocesium activity.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>gamma</code>
+                    <definition>Gamma counting method used.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>thom_2019_core_data</entityName>
+      <entityDescription>Soil core information</entityDescription>
+      <physical>
+        <objectName>thom_2019_cores.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_notes</attributeName>
+          <attributeDefinition>Any other relevant submitter generated notes on how cores were collected.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_latitude</attributeName>
+          <attributeDefinition>Positional latitude of the core in decimal degree WGS84.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_longitude</attributeName>
+          <attributeDefinition>Positional longitude of the core in decimal degree WGS84.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_position_method</attributeName>
+          <attributeDefinition>Code indicating how latitude and longitude were determined.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>other low resolution</code>
+                    <definition>Any other technique resulting in positional error &gt; 30 meters.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_position_notes</attributeName>
+          <attributeDefinition>Any relevant submitter generated notes on how latitude and longitude were determined.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vegetation_class</attributeName>
+          <attributeDefinition>Code based on submitter field observations or measurement indicating dominant wetland vegetation type.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>emergent</code>
+                    <definition>Describes wetlands dominated by persistent emergent vascular plants</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vegetation_method</attributeName>
+          <attributeDefinition>Indicate whether vegetation_class was determined using a field observation or a measurement</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>measurement</code>
+                    <definition>Vegetation measured by counts or plots.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_year</attributeName>
+          <attributeDefinition>Year of core collection</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>thom_2019_depthseries_data</entityName>
+      <entityDescription>Soil core depthseries information</entityDescription>
+      <physical>
+        <objectName>thom_2019_depthseries.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_min</attributeName>
+          <attributeDefinition>Minimum depth of a sampling increment.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_max</attributeName>
+          <attributeDefinition>Maximum depth of a sampling increment.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density</attributeName>
+          <attributeDefinition>Dry mass per unit volume of a soil sample. This does not include ash free bulk density.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gramsPerCubicCentimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_organic_matter</attributeName>
+          <attributeDefinition>Mass of organic matter relative to sample dry mass. Ash free bulk density should not be used here but should be expressed as a loss on ignition fraction.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>cs137_activity</attributeName>
+          <attributeDefinition>Radioactivity counts per unit dry weight for radiocesium (137Cs).</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>countsPerGramDryWeightPerHour</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_interval_notes</attributeName>
+          <attributeDefinition>Any other submitter generated notes specific to the depth interval.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>thom_2019_impacts_data</entityName>
+      <entityDescription>Anthropogenic impact information</entityDescription>
+      <physical>
+        <objectName>thom_2019_impacts.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>impact_class</attributeName>
+          <attributeDefinition>Code indicating any major anthropogenic impacts historically and currently affecting the coring location.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>tidally restored</code>
+                    <definition>Tidal flow has been restored by removing an artificial obstruction</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="countsPerGramDryWeightPerHour" multiplierToSI="1" name="countsPerGramDryWeightPerHour" unitType="radionucleotideActivityPerVolume">
+          <description>Counts per gram dry weight per hour</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>
