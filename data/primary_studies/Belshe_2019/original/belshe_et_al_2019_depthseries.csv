@@ -1,0 +1,453 @@
+study_id,site_id,core_id,depth_min,depth_max,depth_max_decompressed,dry_bulk_density,fraction_carbon_measured,fraction_carbon_modeled,fraction_carbon_density_measured,fraction_carbon_density_modeled,pb210_age,pb210_age_sd,c14_age,c14_age_sd,c14_material,depth_interval_notes
+Belshe_et_al_2019,EP,EP05,0,1,2,0.184,0.10371000000000001,NA,0.019,NA,-65,1,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,1,2,4,0.314,0.07301,NA,0.023,NA,-64,1,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,2,3,6,0.252,0.06458,NA,0.016,NA,-61,1,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,3,4,7,0.4,0.0558,NA,0.022,NA,-59,1,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,4,5,9,0.469,0.05749,NA,0.027,NA,-56,1,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,5,6,11,0.44,0.05854,NA,0.026,NA,-53,1,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,6,7,12,0.368,0.0588,NA,0.022,NA,-50,1,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,7,8,14,0.336,0.065309999999999993,NA,0.022,NA,-47,1,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,8,9,15,0.321,0.07533000000000001,NA,0.024,NA,-44,1,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,9,10,17,0.427,0.05527,NA,0.024,NA,-41,1,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,10,11,18,0.514,0.06103,NA,0.031,NA,-37,1,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,11,12,19,0.543,0.061950000000000005,NA,0.034,NA,-33,1,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,12,13,20,0.66,0.05623,NA,0.037,NA,-29,1,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,13,14,22,0.465,0.06672,NA,0.031,NA,-22,2,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,14,15,23,0.493,0.06839,NA,0.034,NA,-16,2,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,15,16,24,0.492,0.07719999999999999,NA,0.038,NA,-8,2,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,16,17,25,0.511,0.04827,NA,0.025,NA,0,2,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,17,18,26,0.692,0.06164,NA,0.043,NA,7,2,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,18,19,28,0.605,0.043390000000000005,NA,0.026,NA,16,3,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,19,20,29,0.767,0.04686,NA,0.036,NA,26,3,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,20,21,30,0.767,NA,0.04628,NA,0.036,42,4,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,21,22,31,0.683,0.045700000000000005,NA,0.031,NA,52,5,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,22,23,32,0.522,NA,0.04967,NA,0.026,76,6,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,23,24,33,0.556,0.05364,NA,0.03,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,24,25,34,0.538,NA,0.048470000000000006,NA,0.026,NA,NA,398,23,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,25,26,35,0.586,0.04331,NA,0.025,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,26,27,36,0.567,NA,0.04734,NA,0.027,NA,NA,379,24,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,27,28,37,0.675,0.05137,NA,0.035,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,28,29,39,0.811,NA,0.051449999999999996,NA,0.042,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,29,30,40,0.749,0.05152999999999999,NA,0.039,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,30,31,41,0.589,NA,0.05337,NA,0.031,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,31,32,42,0.655,0.05521,NA,0.036,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,32,33,43,0.665,NA,0.054000000000000006,NA,0.036,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,33,34,44,0.699,0.0528,NA,0.037,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,34,35,45,0.694,NA,0.05212,NA,0.036,NA,NA,467,27,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,35,36,46,0.723,0.051449999999999996,NA,0.037,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,36,37,47,0.838,NA,0.046349999999999995,NA,0.039,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,37,38,48,0.824,0.04125,NA,0.034,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,38,39,49,0.767,NA,0.045279999999999994,NA,0.035,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,39,40,50,0.911,0.04931,NA,0.045,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,40,41,51,0.82,NA,0.04579,NA,0.038,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,41,42,52,0.748,0.04227,NA,0.032,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,42,43,53,0.818,NA,0.04167,NA,0.034,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,43,44,54,0.845,0.04106,NA,0.035,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,44,45,55,0.888,NA,0.042359999999999995,NA,0.038,NA,NA,502,27,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,45,46,56,0.87,0.04365,NA,0.038,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,46,47,57,0.829,NA,0.043120000000000006,NA,0.036,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,47,48,58,0.874,0.04259,NA,0.037,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,48,49,59,0.904,NA,0.04382,NA,0.04,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,49,50,60,0.929,0.04506,NA,0.042,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,50,51,61,0.942,NA,0.04196,NA,0.04,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,51,52,62,0.955,0.03886,NA,0.037,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,52,53,63,0.873,NA,0.03782,NA,0.033,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,53,54,64,0.931,0.036789999999999996,NA,0.034,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,54,55,65,0.746,NA,0.03688,NA,0.028,NA,NA,1741,28,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,55,56,66,1.202,0.03697,NA,0.044,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,56,57,67,0.872,NA,0.03593,NA,0.031,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,57,58,68,0.966,0.0349,NA,0.034,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,58,59,69,0.92,NA,0.0394,NA,0.036,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,59,60,70,0.996,0.043899999999999995,NA,0.044,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,60,61,71,0.941,NA,0.039420000000000004,NA,0.037,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,61,62,72,0.91,0.034929999999999996,NA,0.032,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,62,63,73,0.824,NA,0.03831,NA,0.032,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,63,64,74,0.89,0.04169,NA,0.037,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,64,65,75,0.888,NA,0.04322,NA,0.038,NA,NA,1940,26,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,65,66,76,0.965,0.04475,NA,0.043,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,66,67,77,0.891,NA,0.04356,NA,0.039,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,67,68,78,0.878,0.04238,NA,0.037,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,68,69,79,1.017,NA,0.044539999999999996,NA,0.045,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,69,70,80,1.001,0.0467,NA,0.047,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,70,71,81,0.924,NA,0.04042,NA,0.037,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,71,72,82,0.988,0.03415,NA,0.034,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,72,73,83,0.977,NA,0.03421,NA,0.033,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,73,74,84,0.846,0.03427,NA,0.029,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,74,75,85,1.049,NA,0.03615,NA,0.038,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,75,76,86,0.861,0.03804,NA,0.033,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,76,77,87,1.141,NA,0.03628,NA,0.041,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,77,78,88,0.933,0.03453,NA,0.032,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,78,79,89,0.968,NA,0.037040000000000003,NA,0.036,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,79,80,90,1.245,0.03955,NA,0.049,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,80,81,91,0.782,NA,0.03755,NA,0.029,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,81,82,92,1.016,0.03555,NA,0.036,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,82,83,93,0.774,NA,0.035590000000000004,NA,0.028,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,83,84,94,0.817,0.03562,NA,0.029,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,84,85,95,0.622,NA,0.03345,NA,0.021,NA,NA,1788,29,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,85,86,96,0.769,0.03127,NA,0.024,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,EP,EP05,86,87,97,0.708,NA,0.02984,NA,0.021,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,EP,EP05,87,88,98,1.355,0.028399999999999998,NA,0.038,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,0,1,8,0.1003,0.039032,NA,0.0039,NA,-65,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,1,2,14,0.098,0.024358,NA,0.0024,NA,-62,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,2,3,19,0.1373,0.028347999999999998,NA,0.0039,NA,-60,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,3,4,24,0.1333,0.032379,NA,0.0043,NA,-57,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,4,5,27,0.1866,0.060801999999999995,NA,0.0113,NA,-55,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,5,6,31,0.225,0.040328,NA,0.0091,NA,-52,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,6,7,33,0.2534,0.034128,NA,0.0086,NA,-49,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,7,8,36,0.3329,0.026993,NA,0.009,NA,-46,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,8,9,38,0.3835,0.039116,NA,0.015,NA,-43,2,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,9,10,40,0.4563,0.027068,NA,0.0124,NA,-39,2,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,10,11,42,0.5374,0.026476000000000003,NA,0.0142,NA,-34,2,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,11,12,43,0.5752,0.023237999999999998,NA,0.0134,NA,-30,2,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,12,13,45,0.6131,0.046634,NA,0.0286,NA,-26,2,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,13,14,46,0.6422,0.027275999999999998,NA,0.0175,NA,-21,2,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,14,15,48,0.8128,0.028838,NA,0.0234,NA,-16,2,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,15,16,49,0.8207,0.043272000000000005,NA,0.0355,NA,-10,3,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,16,17,50,0.7281,0.027389,NA,0.0199,NA,-1,3,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,17,18,51,0.9641,0.022723,NA,0.0219,NA,10,4,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,18,19,52,1.1408,0.020125999999999998,NA,0.023,NA,39,6,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,19,20,54,1.0204,0.021474000000000004,NA,0.0219,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,20,21,55,1.0648,NA,0.021785000000000002,NA,0.0232,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,21,22,56,0.7143,0.022096,NA,0.0158,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,22,23,57,1.0759,NA,0.017073,NA,0.0184,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,23,24,58,1.5365,0.01205,NA,0.0185,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,24,25,59,1.4431,NA,0.012884,NA,0.0186,NA,NA,75,26,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,25,26,60,1.2569,0.013718,NA,0.0172,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,26,27,61,1.2795,NA,0.015497,NA,0.0198,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,27,28,62,1.5139,0.017277,NA,0.0262,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,28,29,63,1.1866,NA,0.017369000000000002,NA,0.0206,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,29,30,64,1.5045,0.017462,NA,0.0263,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,30,31,65,1.3574,NA,0.01686,NA,0.0229,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,31,32,66,1.1748,0.016257,NA,0.0191,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,32,33,67,1.3184,NA,0.017433,NA,0.023,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,33,34,68,1.3852,0.018608,NA,0.0258,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,34,35,69,1.3414,NA,0.021166,NA,0.0284,NA,NA,105,28,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,35,36,70,1.1518,0.023724,NA,0.0273,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,36,37,71,1.2478,NA,0.025018,NA,0.0312,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,37,38,72,1.1852,0.026313,NA,0.0312,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,38,39,73,1.0851,NA,0.032881,NA,0.0357,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,39,40,74,1.0409,0.03945,NA,0.0411,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,40,41,75,1.2956,NA,0.039474,NA,0.0511,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,41,42,76,0.8286,0.039497,NA,0.0327,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,42,43,77,0.5222,NA,0.038481,NA,0.0201,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,43,44,78,0.6613,0.037464,NA,0.0248,NA,NA,NA,366,25,seagrass_sheath,NA
+Belshe_et_al_2019,SM,SM05,44,45,79,1.0713,NA,0.036599,NA,0.0392,NA,NA,439,25,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,45,46,80,1.107,0.035734,NA,0.0396,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM05,46,47,81,1.7021,NA,0.036167,NA,0.0616,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM05,47,48,82,0.7635,NA,0.022757999999999997,NA,0.0174,NA,NA,NA,NA,NA,Organic carbon modeled by gapfilled exponential decay
+Belshe_et_al_2019,SM,SM05,48,49,83,1.1432,NA,0.022649,NA,0.0259,NA,NA,NA,NA,NA,Organic carbon modeled by gapfilled exponential decay
+Belshe_et_al_2019,SM,SM05,49,50,84,0.7954,NA,0.02254,NA,0.0179,NA,NA,NA,NA,NA,Organic carbon modeled by gapfilled exponential decay
+Belshe_et_al_2019,SM,SM05,50,51,85,1.0363,NA,0.022433,NA,0.0232,NA,NA,NA,NA,NA,Organic carbon modeled by gapfilled exponential decay
+Belshe_et_al_2019,SM,SM10,0,1,3,0.3414,0.026543,NA,0.0091,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,1,2,6,0.2934,0.025266999999999998,NA,0.0074,NA,-62.8,1.2,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,2,3,8,0.3353,0.024557000000000002,NA,0.0082,NA,-60.8,1.23,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,3,4,11,0.36870000000000003,0.022997,NA,0.0085,NA,-58.9,1.25,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,4,5,14,0.323,0.027322000000000003,NA,0.0088,NA,-56.4,1.29,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,5,6,16,0.4186,0.016555,NA,0.0069,NA,-54.2,1.33,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,6,7,18,0.4443,0.015333000000000001,NA,0.0068,NA,-51.9,1.37,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,7,8,20,0.513,0.015436,NA,0.0079,NA,-49.3,1.41,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,8,9,23,0.5048,0.012364,NA,0.0062,NA,-46.6,1.45,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,9,10,25,0.4947,0.01298,NA,0.0064,NA,-43.3,1.5,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,10,11,26,0.6039,0.014962,NA,0.009,NA,-39.8,1.58,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,11,12,28,0.5549,0.028461,NA,0.0158,NA,-34.7,1.69,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,12,13,30,0.5227,0.022902999999999996,NA,0.012,NA,-30.6,1.78,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,13,14,32,0.5822,0.011271,NA,0.0066,NA,-25.5,1.97,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,14,15,34,0.7235,0.012657,NA,0.0092,NA,-19.6,2.18,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,15,16,35,0.8947,0.011263,NA,0.0101,NA,-13.2,2.49,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,16,17,37,0.8084,0.008486,NA,0.0069,NA,-7.97,2.6,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,17,18,38,0.931,0.009868,NA,0.0092,NA,-2.4,2.84,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,18,19,40,0.8678,0.010509999999999999,NA,0.0091,NA,3.89,3.17,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,19,20,41,0.8796,0.014028,NA,0.0123,NA,8.97,3.38,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,20,21,43,0.7511,NA,0.012268,NA,0.0092,15,3.66,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,21,22,44,0.92490000000000006,0.010508,NA,0.0097,NA,22.8,4.19,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,22,23,46,1.1148,NA,0.010683,NA,0.0119,39.3,5.69,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,23,24,47,0.9607,0.010859,NA,0.0104,NA,74,10.2,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,24,25,48,0.8141,NA,0.0102,NA,0.0083,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,25,26,50,0.9187,0.009541,NA,0.0088,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,26,27,51,1.0665,NA,0.012842,NA,0.0137,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,27,28,52,1.0216,0.016143,NA,0.0165,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,28,29,53,0.9016,NA,0.014664,NA,0.0132,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,29,30,55,1.0595,0.013185,NA,0.014,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,30,31,56,1.0241,NA,0.013432999999999999,NA,0.0138,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,31,32,57,1.2123,0.013682000000000001,NA,0.0166,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,32,33,58,1.2482,NA,0.014774,NA,0.0184,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,33,34,59,1.2143,0.015866,NA,0.0193,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,34,35,61,1.0788,NA,0.013743,NA,0.0148,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,35,36,62,1.4232,0.011619999999999998,NA,0.0165,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,36,37,63,1.2563,NA,0.01006,NA,0.0126,NA,NA,449,28,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,37,38,64,1.2768,0.008499,NA,0.0109,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,38,39,65,1.2544,NA,0.008938,NA,0.0112,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,39,40,66,1.375,0.009377,NA,0.0129,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,40,41,67,1.4529,NA,0.010383999999999999,NA,0.0151,NA,NA,384,29,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,41,42,68,1.1956,0.011391,NA,0.0136,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,42,43,69,1.3442,NA,0.009111000000000001,NA,0.0122,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,43,44,71,1.5046,0.006832,NA,0.0103,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,44,45,72,1.2858,NA,0.006843,NA,0.0088,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,45,46,73,1.4788,0.006854,NA,0.0101,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,46,47,74,1.3038,NA,0.006493,NA,0.0085,NA,NA,479,26,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,47,48,75,1.306,0.006131999999999999,NA,0.008,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,48,49,76,1.29,NA,0.006136,NA,0.0079,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,49,50,77,1.2474,0.00614,NA,0.0077,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,50,51,78,1.5529,NA,0.006219,NA,0.0097,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,51,52,79,1.3875,0.006299,NA,0.0087,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,52,53,80,1.386,NA,0.00688,NA,0.0095,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,53,54,81,1.4684,0.007462,NA,0.011,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,54,55,82,1.3184,NA,0.006523,NA,0.0086,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,55,56,83,1.4058,0.005585,NA,0.0079,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,56,57,84,1.4334,NA,0.005719999999999999,NA,0.0082,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,57,58,85,1.4442,0.005855,NA,0.0085,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,58,59,86,1.5887,NA,0.005531,NA,0.0088,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,59,60,87,1.567,0.005207000000000001,NA,0.0082,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,60,61,88,1.7253,NA,0.0054069999999999995,NA,0.0093,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,61,62,89,1.3388,0.005607,NA,0.0075,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,62,63,90,1.3518,NA,0.0062,NA,0.0084,NA,NA,593,61,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,63,64,91,1.4459,0.006792,NA,0.0098,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,64,65,92,1.5843,NA,0.0065439999999999995,NA,0.0104,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,65,66,93,1.3214,0.006294999999999999,NA,0.0083,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,66,67,94,1.1981,NA,0.0054210000000000005,NA,0.0065,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,67,68,95,1.5273,0.004547,NA,0.0069,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,68,69,96,1.1521,NA,0.005055,NA,0.0058,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,69,70,97,1.1779,0.005564,NA,0.0066,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,70,71,98,1.4781,NA,0.0057940000000000005,NA,0.0086,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,71,72,99,1.4758,0.006024000000000001,NA,0.0089,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,72,73,100,1.5683,NA,0.005999,NA,0.0094,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,73,74,101,1.424,0.005974,NA,0.0085,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,74,75,102,1.3841,NA,0.005575,NA,0.0077,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,75,76,103,1.253,0.005177,NA,0.0065,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,76,77,104,1.239,NA,0.005376,NA,0.0067,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,77,78,105,1.4811,0.005576,NA,0.0083,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,78,79,106,1.365,NA,0.006039,NA,0.0082,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,79,80,107,1.2626,0.006503,NA,0.0082,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,80,81,108,1.2817,NA,0.006192,NA,0.0079,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,81,82,109,1.4804,0.005881999999999999,NA,0.0087,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,82,83,110,1.6375,NA,0.005960999999999999,NA,0.0098,NA,NA,740,34,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,83,84,111,1.3452,0.006039,NA,0.0081,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,84,85,112,1.38,NA,0.005993000000000001,NA,0.0083,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,85,86,113,1.4339,0.005947,NA,0.0085,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,86,87,114,1.3637,NA,0.006239,NA,0.0085,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,87,88,115,1.0194,0.006531,NA,0.0067,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,88,89,116,1.5202,NA,0.00649,NA,0.0099,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,89,90,117,1.2861,0.006448000000000001,NA,0.0083,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,90,91,118,1.6261,NA,0.006319,NA,0.0103,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,91,92,119,1.8211,0.0061909999999999995,NA,0.0113,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,92,93,120,1.3415,NA,0.006109,NA,0.0082,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,93,94,121,1.6178,0.006028,NA,0.0098,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,94,95,122,1.468,NA,0.005568999999999999,NA,0.0082,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,95,96,123,1.4909,0.005111,NA,0.0076,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,96,97,124,1.4393,NA,0.005952,NA,0.0086,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,97,98,125,1.6226,0.006793,NA,0.011,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,98,99,126,1.2119,NA,0.006234,NA,0.0076,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,99,100,127,1.3856,0.005675,NA,0.0079,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,100,101,128,1.5548,NA,0.005588999999999999,NA,0.0087,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,101,102,129,1.5617,0.005503,NA,0.0086,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,102,103,130,1.6944,NA,0.005736,NA,0.0097,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,103,104,131,1.3885,0.0059689999999999995,NA,0.0083,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,104,105,132,1.6759,NA,0.006265,NA,0.0105,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,105,106,133,1.5382,0.006561,NA,0.0101,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,106,107,134,1.356,NA,0.005776,NA,0.0078,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,107,108,135,1.4888,0.004991,NA,0.0074,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,108,109,136,1.4899,NA,0.005681,NA,0.0085,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,109,110,137,1.583,0.006371,NA,0.0101,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,110,111,138,1.3791,NA,0.006178,NA,0.0085,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,111,112,139,1.6673,0.005985000000000001,NA,0.01,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,112,113,140,1.5526,NA,0.0057540000000000004,NA,0.0089,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,113,114,141,1.3323,0.005523,NA,0.0074,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,114,115,142,1.565,NA,0.005551,NA,0.0087,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,115,116,143,1.3028,0.005579,NA,0.0073,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,116,117,144,1.2046,NA,0.005202,NA,0.0063,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,117,118,145,1.6418,0.004824999999999999,NA,0.0079,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,118,119,146,1.3349,NA,0.004358,NA,0.0058,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,119,120,147,1.2996,0.0038900000000000002,NA,0.0051,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,120,121,148,1.312,NA,0.004579,NA,0.006,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,121,122,149,1.6531,0.005268,NA,0.0087,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,122,123,150,1.5365,NA,0.003792,NA,0.0058,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,123,124,151,1.6373,0.004715,NA,0.0077,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,124,125,152,1.3074,NA,0.004562,NA,0.006,NA,NA,1063,43,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,125,126,153,1.3922,0.00441,NA,0.0061,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,126,127,154,1.1193,NA,0.004484,NA,0.005,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,127,128,155,1.1186,0.004557,NA,0.0051,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,128,129,156,1.0516,NA,0.004579,NA,0.0048,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,129,130,157,1.732,0.004602,NA,0.008,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,130,131,158,1.2753,NA,0.004739,NA,0.006,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,131,132,159,1.3077,0.004876,NA,0.0064,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM10,132,133,160,0.7467,NA,0.004986,NA,0.0037,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM10,133,134,161,1.2247,0.005096000000000001,NA,0.0062,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,0,1,3,0.125,0.039958999999999995,NA,0.005,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,1,2,6,0.1157,0.021461,NA,0.0025,NA,-63,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,2,3,9,0.2479,0.022414999999999997,NA,0.0056,NA,-61,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,3,4,12,0.2165,0.014897,NA,0.0032,NA,-59,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,4,5,14,0.1264,0.014607000000000002,NA,0.0018,NA,-58,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,5,6,17,0.2427,0.014515,NA,0.0035,NA,-57,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,6,7,19,0.3341,0.012031,NA,0.004,NA,-55,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,7,8,21,0.4021,0.011049,NA,0.0044,NA,-53,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,8,9,23,0.3848,0.009899,NA,0.0038,NA,-51,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,9,10,25,0.4353,0.014849000000000001,NA,0.0065,NA,-48,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,10,11,27,0.4821,0.018493,NA,0.0089,NA,-46,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,11,12,29,0.3613,0.028293,NA,0.0102,NA,-41,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,12,13,30,0.6718,0.010441,NA,0.007,NA,38,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,13,14,32,0.5466,0.013758999999999999,NA,0.0075,NA,33,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,14,15,34,0.6576,0.013833,NA,0.0091,NA,-29,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,15,16,35,0.6589,0.018704000000000002,NA,0.0123,NA,-24,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,16,17,37,0.7001,0.020092,NA,0.0141,NA,-18,1,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,17,18,38,0.6962,0.014967999999999999,NA,0.0104,NA,-13,2,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,18,19,40,0.6799,0.017297,NA,0.0118,NA,-7,2,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,19,20,41,0.6791,0.013876999999999999,NA,0.0094,NA,1,2,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,20,21,42,0.7519,NA,0.013651,NA,0.0103,8,2,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,21,22,44,0.7291,0.013424,NA,0.0098,NA,18,3,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,22,23,45,0.8834,NA,0.013453999999999999,NA,0.0119,31,4,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,23,24,46,0.8546,0.013484000000000001,NA,0.0115,NA,46,4,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,24,25,47,1.0093,NA,0.013637,NA,0.0138,75,7,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,25,26,49,0.9328,0.013789000000000001,NA,0.0129,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,26,27,50,0.7219,NA,0.013413,NA,0.0097,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,27,28,51,1.1446,0.013037,NA,0.0149,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,28,29,52,0.9658,NA,0.012701,NA,0.0123,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,29,30,53,0.9092,0.012364,NA,0.0112,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,30,31,54,1.0429,NA,0.012652000000000002,NA,0.0132,NA,NA,610,24,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,31,32,56,0.8862,0.01294,NA,0.0115,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,32,33,57,0.9713,NA,0.012081999999999999,NA,0.0117,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,33,34,58,1.1421,0.011225,NA,0.0128,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,34,35,59,0.9273,NA,0.011668000000000001,NA,0.0108,NA,NA,573,23,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,35,36,60,1.4588,0.012111,NA,0.0177,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,36,37,61,1.0077,NA,0.012405999999999999,NA,0.0125,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,37,38,62,0.9493,0.0127,NA,0.0121,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,38,39,63,1.0694,NA,0.012988,NA,0.0139,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,39,40,64,0.9027,0.013276,NA,0.012,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,40,41,65,0.7672,NA,0.013487,NA,0.0103,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,41,42,66,0.9087,0.013697999999999998,NA,0.0124,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,42,43,67,1.0978,NA,0.015029999999999998,NA,0.0165,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,43,44,69,1.0301,0.016361,NA,0.0169,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,44,45,70,0.668,NA,0.014913000000000001,NA,0.01,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,45,46,71,0.8331,0.013465,NA,0.0112,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,46,47,72,1.0581,NA,0.01287,NA,0.0136,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,47,48,73,1.0932,0.012275000000000001,NA,0.0134,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,48,49,74,1.1157,NA,0.0129,NA,0.0144,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,49,50,75,1.0624,0.013525,NA,0.0144,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,50,51,76,1.2821,NA,0.013119,NA,0.0168,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,51,52,77,1.0289,0.012714000000000001,NA,0.0131,NA,NA,NA,1732,32,seagrass_sheath,NA
+Belshe_et_al_2019,SM,SM15,52,53,78,1.0157,NA,0.012542,NA,0.0127,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,53,54,79,0.8925,0.01237,NA,0.011,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,54,55,80,1.0979,NA,0.011522,NA,0.0127,NA,NA,1508,29,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,55,56,81,0.8938,0.010674,NA,0.0095,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,56,57,82,1.1037,NA,0.009785,NA,0.0108,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,57,58,83,1.1965,0.008896,NA,0.0106,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,58,59,84,0.9276,NA,0.009704,NA,0.009,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,59,60,85,1.0742,0.010511999999999999,NA,0.0113,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,60,61,86,0.9421,NA,0.010479,NA,0.0099,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,61,62,87,0.5399,0.010446,NA,0.0056,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,62,63,88,0.7922,NA,0.010223,NA,0.0081,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,63,64,89,1.0733,0.01,NA,0.0107,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,64,65,90,1.1979,NA,0.010570999999999999,NA,0.0127,NA,NA,1583,23,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,65,66,91,0.8307,0.011143,NA,0.0093,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,66,67,92,1.0346,NA,0.010014,NA,0.0104,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,67,68,93,1.1078,0.008884,NA,0.0098,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,68,69,94,1.0102,NA,0.010119,NA,0.0102,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,69,70,95,1.0043,0.011354,NA,0.0114,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,70,71,96,1.0599,NA,0.011466,NA,0.0122,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,71,72,97,0.9803,0.011578999999999999,NA,0.0114,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,72,73,98,1.1982,NA,0.012805,NA,0.0153,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,73,74,99,1.1933,0.014032,NA,0.0167,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,74,75,100,1.0185,NA,0.013831,NA,0.0141,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,75,76,101,0.7433,0.013629,NA,0.0101,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,76,77,102,0.9768,NA,0.01373,NA,0.0134,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,77,78,103,0.9461,0.014597,NA,0.0138,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,78,79,104,1.0041,NA,0.015464,NA,0.0155,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,79,80,105,0.826,0.013646,NA,0.0113,NA,NA,NA,2447,32,seagrass_sheath,NA
+Belshe_et_al_2019,SM,SM15,80,81,106,0.6047,NA,0.012357,NA,0.0075,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,81,82,107,0.7834,0.011069,NA,0.0087,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM15,82,83,108,0.8345,NA,0.010568,NA,0.0088,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM15,83,84,109,1.1108,0.010067,NA,0.0112,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,0,1,1,1.067,0.018089,NA,0.0193,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,1,2,3,1.164,0.016019000000000002,NA,0.0186,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,2,3,4,1.1893,0.012174,NA,0.0145,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,3,4,6,1.1377,0.010992,NA,0.0125,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,4,5,7,1.158,0.011625000000000002,NA,0.0135,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,5,6,8,1.3017,0.010144,NA,0.0132,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,6,7,10,1.3373,0.010445,NA,0.014,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,7,8,11,0.9574,0.010598000000000002,NA,0.0101,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,8,9,12,1.0611,0.010737000000000002,NA,0.0114,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,9,10,13,1.0809,0.012654,NA,0.0137,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,10,11,14,1.2971,0.015238,NA,0.0198,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,11,12,15,1.1313,0.014582,NA,0.0165,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,12,13,17,1.1577,0.015451,NA,0.0179,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,13,14,18,1.3209,0.015774999999999997,NA,0.0208,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,14,15,19,1.0762,0.015996999999999997,NA,0.0172,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,15,16,20,1.321,0.016285,NA,0.0215,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,16,17,21,1.0449,0.023008999999999998,NA,0.024,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,17,18,22,1.1028,0.018693,NA,0.0206,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,18,19,23,1.236,0.018473,NA,0.0228,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,19,20,24,1.2864,0.016528,NA,0.0213,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,20,21,25,1.3833,NA,0.014591,NA,0.0202,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,21,22,26,1.3688,0.012654,NA,0.0173,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,22,23,27,1.4949,NA,0.011847000000000002,NA,0.0177,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,23,24,29,1.5851,0.011040000000000001,NA,0.0175,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,24,25,30,1.512,NA,0.011383,NA,0.0172,NA,NA,508,20,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,25,26,31,1.3863,0.011727000000000001,NA,0.0163,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,26,27,32,1.3967,NA,0.012616,NA,0.0176,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,27,28,33,1.1873,0.013505,NA,0.016,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,28,29,34,1.1283,NA,0.013992,NA,0.0158,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,29,30,35,1.3105,0.014478999999999999,NA,0.019,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,30,31,36,1.8408,NA,0.014093,NA,0.0259,NA,NA,608,27,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,31,32,37,1.7524,0.013707,NA,0.024,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,32,33,38,1.3274,NA,0.014173999999999999,NA,0.0188,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,33,34,39,1.5148,0.014641,NA,0.0222,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,34,35,40,1.5861,NA,0.013379,NA,0.0212,NA,NA,604,29,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,35,36,41,1.3601,0.012116,NA,0.0165,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,36,37,42,1.5856,NA,0.013552,NA,0.0215,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,37,38,43,1.2702,0.014986999999999999,NA,0.019,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,38,39,44,1.1011,NA,0.013284,NA,0.0146,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,39,40,45,1.1545,0.011581999999999999,NA,0.0134,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,40,41,46,1.9344,NA,0.01254,NA,0.0243,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,41,42,47,1.5408,0.013498000000000001,NA,0.0208,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,42,43,48,1.5402,NA,0.013696,NA,0.0211,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,43,44,49,1.7207,0.013894,NA,0.0239,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,44,45,50,1.5819,NA,0.015664,NA,0.0248,NA,NA,1000,27,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,45,46,51,1.5721,0.017433,NA,0.0274,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,46,47,52,1.3506,NA,0.014595,NA,0.0197,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,47,48,53,1.5287,0.011757,NA,0.018,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,48,49,54,1.25,NA,0.012118,NA,0.0151,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,49,50,55,1.343,0.01248,NA,0.0168,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,50,51,56,1.7087,NA,0.012827,NA,0.0219,NA,NA,1234,27,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,51,52,57,1.6237,0.013172999999999999,NA,0.0214,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,52,53,58,1.532,NA,0.014527000000000002,NA,0.0223,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,53,54,59,1.391,0.015880000000000002,NA,0.0221,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,54,55,60,1.6985,NA,0.015884,NA,0.027,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,55,56,61,1.7415,0.015887,NA,0.0277,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,56,57,62,1.8389,NA,0.015035,NA,0.0276,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,57,58,63,1.664,0.014181999999999998,NA,0.0236,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,58,59,64,1.3807,NA,0.012785,NA,0.0177,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,59,60,65,1.725,0.011387000000000001,NA,0.0196,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,60,61,66,1.6516,NA,0.01266,NA,0.0209,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,61,62,67,1.8534,0.013933,NA,0.0258,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,62,63,68,1.9222,NA,0.014145000000000001,NA,0.0272,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,63,64,69,1.7582,0.014357,NA,0.0252,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,64,65,70,1.5343,NA,0.015258,NA,0.0234,NA,NA,1957,24,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,65,66,71,1.5188,0.016159,NA,0.0245,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,66,67,72,1.5271,NA,0.014119999999999999,NA,0.0216,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,67,68,73,1.8281,0.012081,NA,0.0221,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,68,69,74,1.5616,NA,0.014008,NA,0.0219,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,69,70,75,1.4461,0.015934999999999998,NA,0.023,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,70,71,76,1.3856,NA,0.018993,NA,0.0263,NA,NA,1985,25,seagrass_sheath,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,71,72,77,1.6772,0.022052000000000002,NA,0.037,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,72,73,78,1.5337,NA,0.017681,NA,0.0271,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,73,74,79,1.6402,0.013309999999999999,NA,0.0218,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,74,75,80,1.5563,NA,0.012284,NA,0.0191,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,75,76,81,1.532,0.011258999999999998,NA,0.0172,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,76,77,82,1.7075,NA,0.01134,NA,0.0194,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,77,78,83,1.4018,0.01142,NA,0.016,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,78,79,84,1.3746,NA,0.011228,NA,0.0154,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,79,80,85,1.4488,0.011035,NA,0.016,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,80,81,86,1.1794,NA,0.011578,NA,0.0137,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,81,82,87,1.3337,0.012121,NA,0.0162,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,82,83,88,1.4492,NA,0.013182000000000001,NA,0.0191,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,83,84,89,1.5857,0.010185999999999999,NA,0.0162,NA,NA,NA,2178,28,seagrass_sheath,NA
+Belshe_et_al_2019,SM,SM25,84,85,90,1.5878,NA,0.014256999999999999,NA,0.0226,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,85,86,91,1.5897,0.014256,NA,0.0227,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,86,87,92,1.5915,NA,0.014254,NA,0.0227,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,87,88,93,1.5934,0.014253,NA,0.0227,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,88,89,94,1.5952,NA,0.014251,NA,0.0227,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,89,90,95,1.597,0.01425,NA,0.0228,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,90,91,96,1.5987,NA,0.014248,NA,0.0228,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,91,92,97,1.6005,0.014247000000000001,NA,0.0228,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,92,93,98,1.6022,NA,0.014246000000000002,NA,0.0228,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation
+Belshe_et_al_2019,SM,SM25,93,94,99,1.6039,0.014244000000000001,NA,0.0228,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,SM,SM25,94,95,100,1.6056,NA,0.014242999999999999,NA,0.0229,NA,NA,NA,NA,NA,Organic carbon modeled by linear interpolation

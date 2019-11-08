@@ -1,0 +1,148 @@
+study_id,site_id,core_id,depth_min,depth_max,dry_bulk_density,fraction_organic_matter,cs137_activity,depth_interval_notes,cs137_unit
+Thom_1992,Washington_Harbor,WH1,0,1,0.56,0.299,1.24,NA,countsPerGramDryWeightPerHour
+Thom_1992,Washington_Harbor,WH1,1,2,0.5,0.26,0.2,NA,countsPerGramDryWeightPerHour
+Thom_1992,Washington_Harbor,WH1,4,5,0.4,0.215,1.34,NA,countsPerGramDryWeightPerHour
+Thom_1992,Washington_Harbor,WH1,7,8,0.28,0.298,5.04,NA,countsPerGramDryWeightPerHour
+Thom_1992,Washington_Harbor,WH1,8,9,0.29,0.402,4.9,NA,countsPerGramDryWeightPerHour
+Thom_1992,Washington_Harbor,WH1,9,10,0.29,0.295,2.68,NA,countsPerGramDryWeightPerHour
+Thom_1992,Washington_Harbor,WH1,20,21,0.82,0.095,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Washington_Harbor,WH1,22,23,0.85,0.08199999999999999,0.16,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND1,0,1,0.038,0.795,1.71,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND1,2,3,0.22,0.47600000000000003,1.04,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND1,4,5,0.049,0.418,1.12,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND1,6,7,0.039,0.5760000000000001,7.07,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND1,8,9,0.014,0.419,3.49,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND1,10,11,0.048,0.604,4.95,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND1,15,16,0.097,0.789,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND1,20,21,0.04,0.755,1.28,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND1,25,26,0.041,0.787,0.2,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND2,0,1,NA,NA,1.2,destroyed while ashing,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND2,2,3,0.52,0.114,1.24,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND2,4,5,0.45,0.10400000000000001,0.42,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND2,6,7,NA,NA,1.76,destroyed while ashing,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND2,8,9,0.6,0.095,3.55,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND2,10,11,0.69,0.08900000000000001,1.91,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND2,15,16,0.57,0.071,1.62,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND2,18,19,0.61,0.08,0.44,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND2,20,21,0.64,0.059000000000000004,2.25,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND2,22,23,0.63,0.092,0.15,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND2,25,26,0.69,0.06,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND2,34,35,1.18,0.033,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND3,0,1,0.31,0.17600000000000002,2.09,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND3,2,3,0.41,0.253,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND3,4,5,0.43,0.682,0.47,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND3,6,7,0.32,0.16699999999999998,1.87,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND3,8,9,0.18,0.19,3.22,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND3,10,11,0.26,0.20600000000000002,2.15,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND3,13,14,0.28,0.20600000000000002,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND3,19,20,0.5,0.121,1.16,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND3,21,22,0.89,0.11699999999999999,1.46,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND3,23,24,0.58,0.1441,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND3,27,28,0.36,0.10400000000000001,0.54,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND4,0,1,0.32,0.171,0.44,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND4,2,3,0.22,0.23600000000000002,1.27,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND4,4,5,0.38,0.21600000000000003,1.16,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND4,6,7,0.53,0.166,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND4,8,9,0.35,0.171,3.78,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND4,10,11,0.46,0.17300000000000001,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND4,12,13,0.41,0.161,0.18,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND4,15,16,0.57,0.109,0.16,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND4,17,18,0.43,0.139,2.04,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND4,25,26,0.43,0.14,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND4,28,29,0.43,0.106,0.66,NA,countsPerGramDryWeightPerHour
+Thom_1992,Nisqually_River_Delta,ND4,41,42,0.5,0.095,0.11,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB1,0,1,1.78,0.017,0.59,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB1,2,3,NA,NA,0.38,destroyed while ashing,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB1,4,5,1.9,0.019,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB1,6,7,NA,NA,0.38,destroyed while ashing,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB1,8,9,2.11,0.02,0.27,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB1,10,11,2.12,0.017,0.24,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB1,12,13,1.38,0.022000000000000002,0.52,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB1,14,15,1.64,0.019,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB1,16,17,1.75,0.019,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB1,18,19,1.53,0.024,0.26,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB1,20,12,1.56,0.028999999999999998,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Prev_Diked,ED1,0,1,0.26,0.32,2.34,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Prev_Diked,ED1,1,2,0.18,0.35,4.02,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Prev_Diked,ED1,2,3,0.16,0.42,3.99,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Prev_Diked,ED1,3,4,0.2,0.45,13.38,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Prev_Diked,ED1,4,5,0.43,0.285,10.39,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Prev_Diked,ED1,5,6,0.57,0.155,6.6,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Prev_Diked,ED1,6,7,0.52,0.129,4.37,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Prev_Diked,ED1,7,8,0.62,0.10099999999999999,1.33,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Prev_Diked,ED1,8,9,0.52,0.10099999999999999,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,0,1,0.28,0.214,0.4,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,2,3,0.16,0.256,0.6,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,4,5,0.24,0.225,1.17,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,6,7,0.22,0.235,1.17,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,8,9,0.057,0.21,4.48,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,10,11,0.073,0.172,1.98,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,12,13,0.072,0.17,1.46,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,14,15,0.074,0.179,2.96,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,16,17,0.097,0.13,3.24,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,18,19,0.081,0.168,6.29,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,21,22,0.1,0.10099999999999999,1.19,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,24,25,0.12,0.10400000000000001,0.76,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,27,28,0.15,0.099,0.32,NA,countsPerGramDryWeightPerHour
+Thom_1992,Elk_River_Not_Diked,ER1,30,31,0.17,0.069,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,0,1,0.066,0.215,1.49,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,2,3,0.11,0.222,2.4,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,4,5,0.07,0.222,0.32,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,6,7,0.08,0.225,1.33,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,8,9,0.072,0.221,2.5,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,10,11,0.084,0.149,2.64,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,12,13,0.08,0.185,1.72,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,14,15,0.076,0.159,1.11,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,16,17,0.068,0.162,2.26,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,18,19,0.18,0.043,0.69,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,21,22,0.1,0.085,1.02,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,24,25,0.14,0.078,0.63,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,27,28,0.22,0.045,1,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,30,31,0.23,0.039,0.72,NA,countsPerGramDryWeightPerHour
+Thom_1992,South_Slough,SS1,33,34,0.63,0.03,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR2,0,1,0.32,0.29,2.7,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR2,2,3,0.28,0.25,1.86,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR2,4,5,0.28,0.21,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR2,6,7,0.4,0.15,2.41,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR2,8,9,0.25,0.3,14.02,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR2,10,11,0.52,0.21,6.02,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR2,12,13,0.51,0.18,0.54,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR2,14,15,0.51,0.17,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR2,16,17,0.48,0.16,2.02,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR2,18,19,0.48,0.12,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR2,21,22,0.52,0.16,0.82,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR2,24,25,1.82,0.02,0.07,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,0,1,0.22,0.39,0.72,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,2,3,0.25,0.28,1.63,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,4,5,0.35,0.24,6.52,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,6,7,0.21,0.25,5.88,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,8,9,0.52,0.19,5.31,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,10,11,0.57,0.14,2.11,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,12,13,0.63,0.11,2.54,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,14,15,0.37,0.21,2.24,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,16,17,0.24,0.25,0.78,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,18,19,0.66,0.17,1.88,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,21,22,0.41,0.17,0.11,NA,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,24,25,0.44,0.14,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,27,28,0.59,0.12,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Salmon_River,SR1,30,31,0.62,0.13,1.14,NA,countsPerGramDryWeightPerHour
+Thom_1992,NA,SB1,0,1,2.28,0.02,0.87,NA,countsPerGramDryWeightPerHour
+Thom_1992,NA,SB1,2,3,1.4,0.02,1.35,NA,countsPerGramDryWeightPerHour
+Thom_1992,NA,SB1,4,5,1.49,0.03,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,NA,SB1,6,7,1.77,0.01,0.15,NA,countsPerGramDryWeightPerHour
+Thom_1992,NA,SB1,8,9,1.74,0.01,0.24,NA,countsPerGramDryWeightPerHour
+Thom_1992,NA,SB1,10,11,2.17,0.011000000000000001,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,NA,SB1,12,13,1.62,0.013000000000000001,0.53,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB3,0,1,0.24,0.226,0.75,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB3,2,3,0.25,0.27899999999999997,2.03,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB3,4,5,0.32,0.19,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB3,6,7,0.23,0.231,2.89,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB3,8,9,0.32,0.214,0.79,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB3,10,11,0.35,0.171,0.61,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB3,12,13,0.31,0.139,3.07,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB3,14,15,0.45,0.134,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB3,16,17,0.49,0.138,0.12,NA,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB3,18,19,0.54,0.168,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB3,21,22,0.76,0.12,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB3,24,25,0.71,0.106,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
+Thom_1992,Padilla_Bay,PB3,27,28,0.61,0.095,0,cs137 activity below detection limits,countsPerGramDryWeightPerHour
