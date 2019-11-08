@@ -26,7 +26,7 @@ library(tidyverse)
 library(RefManageR)
 
 depthseries_raw <- read.csv("./data/primary_studies/Thom_2019/original/thom_2019_depthseries.csv")
-methods <-read_csv("./data/primary_studies/Thom_2019/original/thom_2019_material_and_methods.csv")
+methods_raw <-read_csv("./data/primary_studies/Thom_2019/original/thom_2019_material_and_methods.csv")
 species_raw <- read_csv("./data/primary_studies/Thom_2019/original/thom_2019_species.csv")
 cores_raw <- read_csv("./data/primary_studies/Thom_2019/original/thom_2019_cores.csv")
   
@@ -37,10 +37,13 @@ species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
   select(-c(genus, species))
 
+methods <- methods_raw %>%
+  mutate(study_id = "Thom_1992")
+
 # Create bibtex file
 data_release_doi <- "10.25573/data.10046189"
 associated_pub_doi <- "10.1007/BF03160603"
-study_id <- "Thom_2019"
+study_id <- "Thom_1992"
 
 data_bib_raw <- GetBibEntryWithDOI(c(data_release_doi, associated_pub_doi))
 
@@ -49,7 +52,7 @@ bib <- as.data.frame(data_bib_raw) %>%
   mutate(study_id = study_id) %>%
   mutate(doi = tolower(doi),
          bibliography_id = study_id,
-         key = ifelse(bibtype == "Misc", study_id, key),
+         key = ifelse(bibtype == "Misc", "Thom_2019", key),
          publication_type = bibtype) 
 
 # Curate biblio so ready to read out as a BibTex-style .bib file

@@ -2,7 +2,7 @@ study_id,coring_method,roots_flag,sediment_sieved_flag,sediment_sieve_size,compa
 Weis_et_al_2001,hargas corer,NA,NA,NA,NA,95,24,NA,NA,NA,550,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,peer reviewed publication,NA,NA
 Watson_and_Byrne_2013,russian corer,NA,NA,NA,NA,104,24,NA,NA,NA,550,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,AMS,NA,NA,NA,peer reviewed publication,NA,NA
 Thorne_et_al_2015,none specified,NA,NA,NA,not specified,550,8,NA,NA,to constant mass,550,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,gamma,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Thom_2019,PVC tube or thin-walled metal tube,NA,NA,NA,corer limits compaction,90,NA,NA,NA,NA,500,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,gamma,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Thom_1992,PVC tube or thin-walled metal tube,NA,NA,NA,corer limits compaction,90,NA,NA,NA,NA,500,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,gamma,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 smith_2015,other shallow corer,roots and rhizomes included,sediment_sieved,NA,compaction quantified,60,NA,30,NA,NA,650,4,30,NA,NA,NA,NA,NA,NA,NA,NA,gamma,alpha,NA,CRS,at asymptote,NA,NA,NA,NA,NA,NA,NA
 Poppe_Rybczyk_2018,pvc and hammer,roots and rhizomes included,sediment sieved,0.5,no obvious compaction,NA,72,NA,NA,to constant mass,500,24,NA,NA,NA,NA,FALSE,NA,not specified,not specified,Modeled fraction carbon values available in https://doi.org/10.25573/data.10005248,gamma,gamma,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Poppe_Rybczyk_2019,pvc and hammer,roots and rhizomes included,sediment sieved,0.5,no obvious compaction,60,96,NA,NA,to constant mass,500,8,NA,NA,NA,NA,FALSE,NA,local regression,organic carbon,Modeled fraction carbon values available in https://doi.org/10.25573/data.10005248,gamma,gamma,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
