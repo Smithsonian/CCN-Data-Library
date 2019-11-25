@@ -14,3 +14,14 @@ pb210_cic_max_depth,"Maximum depth to which a lead-210 based Constant Initial Co
 pb210_cic_r2,"The coefficient of determination, or R-squared value, for the lead-210 based Constatn Initial Concentration model.",cores,numeric,dimensionless,,real,pb210,age_depth,4
 pb210_cic_notes,Any notes associated with a lead-210 based Constant Initial Concentration model.,depthseries,character,,,,,,
 cs137_peak_present,,depthseries,logical,,,,cs137,age_depth,3
+core_year,Year of core collection,cores,numeric,,YYYY,real,,,
+marker_date_sd,,depthseries,,,,,,,
+pb214_activity,,depthseries,,,,,,,
+pb214_activity_sd,,depthseries,,,,,,,
+pb214_unit,,depthseries,,,,,,,
+th234_activity,,depthseries,,,,,,,
+th234_activity_sd,,depthseries,,,,,,,
+th234_unit,,depthseries,,,,,,,
+pb212_activity,,depthseries,,,,,,,
+pb212_activity_sd,,depthseries,,,,,,,
+pb212_unit,,depthseries,,,,,,,
