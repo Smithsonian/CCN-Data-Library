@@ -90,47 +90,60 @@ compaction_fraction,depthseries,Fraction of the sample depth interval reduced du
 compaction_notes,depthseries,Any submitter generated notes on compaction.,character,,,,,
 cs137_activity,depthseries,Radioactivity counts per unit dry weight for radiocesium (137Cs).,numeric,becquerelPerKilogram,cs137,age_depth,2,
 cs137_activity_sd,depthseries,1 standard deviation of uncertainty associated with cs137_activity.,numeric,becquerelPerKilogram,cs137,age_depth,1,
+cs137_activity_se,depthseries,1 standard error of uncertainty associated with cs137_activity.,numeric,becquerelPerKilogram,cs137,age_depth,1,
 cs137_unit,depthseries,Reported unit for sample interval's Cs 137 activity measurements,,,,,,1
 cs137_peak_present,depthseries,Documents whether sample interval represents peak of 137Cs activity,,,,,,
 total_pb210_activity,depthseries,Total radioactivity counts per unit dry weight for excess lead 210 (210Pb).,numeric,becquerelPerKilogram,pb210,age_depth,2,
 total_pb210_activity_sd,depthseries,1 standard deviation of uncertainty associated with total_pb210_activity.,numeric,becquerelPerKilogram,pb210,age_depth,1,
+total_pb210_activity_se,depthseries,1 standard error of uncertainty associated with total_pb210_activity.,numeric,becquerelPerKilogram,pb210,age_depth,1,
 pb210_unit,depthseries,Reported unit for sample interval's Pb-210 activity measurements,character,,,,,1
 ra226_activity,depthseries,Total radioactivity counts per unit dry weight for Radium 226 (226Ra) if measured as part of the 210Pb dating process.,numeric,becquerelPerKilogram,pb210,age_depth,2,
 ra226_activity_sd,depthseries,1 standard deviation of uncertainty associated with ra226_activity.,numeric,becquerelPerKilogram,pb210,age_depth,2,
+ra226_activity_se,depthseries,1 standard error of uncertainty associated with ra226_activity.,numeric,becquerelPerKilogram,pb210,age_depth,2,
 ra226_unit,depthseries,Reported unit for sample interval's Ra 226 activity measurements,,,,,,1
 excess_pb210_activity,depthseries,Excess radioactivity counts per unit dry weight for excess lead 210 (210Pb).,numeric,becquerelPerKilogram,pb210,age_depth,2,
 excess_pb210_activity_sd,depthseries,1 standard deviation of uncertainty associated with excess_pb210_activity.,numeric,becquerelPerKilogram,pb210,age_depth,1,
+excess_pb210_activity_se,depthseries,1 standard error of uncertainty associated with excess_pb210_activity.,numeric,becquerelPerKilogram,pb210,age_depth,1,
 c14_age,depthseries,Radiocarbon age as estimated from AMS measurements.,numeric,radiocarbonYear,c14,age_depth,2,
 c14_age_sd,depthseries,Estimated uncertainty in c14_age.,numeric,radiocarbonYear,c14,age_depth,1,
+c14_age_se,depthseries,Estimated uncertainty in c14_age.,numeric,radiocarbonYear,c14,age_depth,1,
 c14_material,depthseries,Description of the material selected for radiocarbon (14C) dating.,character,,c14,age_depth,2,
 c14_notes,depthseries,Any relevant submitter generated notes on 14C dating process.,character,,c14,age_depth,,
 delta_c13,depthseries,The isotopic signature of 13C. This is oftentimes measured along with c14_age and can be useful for analyzing carbon lability and provenance.,numeric,partsPerMillion,c14,age_depth,2,
 be7_activity,depthseries,Radioactivity counts per unit dry weight for 7Be.,numeric,becquerelPerKilogram,be7,age_depth,2,
 be7_activity_sd,depthseries,Estimated uncertainty in be_7_activity.,numeric,becquerelPerKilogram,be7,age_depth,1,
+be7_activity_se,depthseries,Estimated uncertainty in be_7_activity.,numeric,becquerelPerKilogram,be7,age_depth,1,
 be7_unit,depthseries,Reported unit for sample interval's Be 7 activity measurements,,,,,,1
 am241_activity,depthseries,Radioactivity counts per unit dry weight for 241Am.,numeric,becquerelPerKilogram,am241,age_depth,2,
 am241_activity_sd,depthseries,Estimated uncertainty in am_241_activity.,numeric,becquerelPerKilogram,am241,age_depth,1,
+am241_activity_se,depthseries,Estimated uncertainty in am_241_activity.,numeric,becquerelPerKilogram,am241,age_depth,1,
 am241_unit,depthseries,Reported unit for sample interval's Am 241 activity measurements,,,,,,1
 bi224_activity,depthseries,Radioactivity counts per unit dry weight for 214Bi,,,,age_depth,,1
 bi224_activity_sd,depthseries,Reported standard deviation for radioactivity counts per unit dry weight for 214Bi,,,,age_depth,,1
+bi224_activity_se,depthseries,Reported standard error for radioactivity counts per unit dry weight for 214Bi,,,,age_depth,,1
 bi224_unit,depthseries,Reported unit for sample interval's Bi 214 activity measurements,,,,,,1
 pb214_activity,depthseries,Radioactivity counts per unit dry weight for 214 Pb,,,,,,1
 pb214_activity_sd,depthseries,Estimated uncertainty in pb214_activity.,,,,,,1
+pb214_activity_se,depthseries,Estimated uncertainty in pb214_activity.,,,,,,1
 pb214_unit,depthseries,Reported unit for sample interval's 214 Pb activity measurements,,,,,,1
 th234_activity,depthseries,Radioactivity counts per unit dry weight for 234 Th,,,,,,1
 th234_activity_sd,depthseries,Estimated uncertainty in th234_activity.,,,,,,1
+th234_activity_se,depthseries,Estimated uncertainty in th234_activity.,,,,,,1
 th234_unit,depthseries,Reported unit for sample interval's 234 Th activity measurements,,,,,,1
 pb212_activity,depthseries,Radioactivity counts per unit dry weight for 212 Pb,,,,,,1
 pb212_activity_sd,depthseries,Estimated uncertainty in pb212_activity.,,,,,,1
+pb212_activity_se,depthseries,Estimated uncertainty in pb212_activity.,,,,,,1
 pb212_unit,depthseries,Reported unit for sample interval's 212 Pb activity measurements,,,,,,1
 marker_date,depthseries,"The age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.",Date,YYYY,other_dated_horizon,age_depth,2,
 marker_date_sd,depthseries,"The standard deviation of the age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.",Date,,,,,
+marker_date_se,depthseries,"The standard error of the age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.",Date,,,,,
 marker_type,depthseries,Code indicating the type of marker.,factor,"artificial horizon = Horizon was added to the surface artificially by using materials such as feldspar, glitter, or rare earth elements. pollen = Pollen analysis was used to tie horizon to the timing of vegetation change such as the arrival of invasives, or the beginning of local agriculture. pollution = Chemical analysis was used to tie the horizon to the timing of a pollution event. tsunami = Sediment analysis was used to tie the horizon to the timing of a tsunami event.",other_dated_horizon,age_depth,,
 marker_notes,depthseries,Any other submitter generated notes about the origin of the marker.,character,,other_dated_horizon,age_depth,,
 age,depthseries,"Most likely, median, or mean age of the depth interval from submitter generated age depth model.",numeric,year,age_depth_model,age_depth,2,
 age_min,depthseries,Minimum age of the depth interval from submitter generated age depth model.,numeric,year,age_depth_model,age_depth,2,
 age_max,depthseries,Maximum age of the depth interval from submitter generated age depth model.,numeric,year,age_depth_model,age_depth,2,
 age_sd,depthseries,Standard deviation of age estimate from submitter generated age depth model.,numeric,year,age_depth_model,age_depth,1,
+age_se,depthseries,Standard error of age estimate from submitter generated age depth model.,numeric,year,age_depth_model,age_depth,1,
 pb210_cic_accretion_rate,depthseries,Accretion rate according to a lead-210 based Constant Initial Concentration model.,,,,,,1
 pb210_cic_accretion_rate_sd,depthseries,Accretion rate parameter error according to a lead-210 based Constant Initial Concentration model.,,,,,,1
 pb210_cic_notes,depthseries,Any notes associated with a lead-210 based Constant Initial Concentration model.,,,,,,1
