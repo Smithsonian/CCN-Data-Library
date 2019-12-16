@@ -8,6 +8,8 @@ library(tidyverse)
 library(rgdal)
 library(rgeos)
 library(sp)
+library(sf)
+library(rnaturalearth)
 
 ## ... 1A. Import state shapefile and reproject ########
 states <- readOGR(dsn = "./data/input_shapefiles/us_states/states_political_boundaries",
@@ -219,33 +221,34 @@ if(num_cores != num_cores_w_geography) {
   print("WARNING: the number of cores in the Core dataset and state dataset do not match!")
 } else {
   
-  # If the lengths match, we can join to site table
-  # sites_w_geography <- cores_w_geography %>% 
-  #   select(study_id, site_id, state, watershed) %>% 
-  #   full_join(sites) %>% 
-  #   group_by(site_id) %>% 
-  #   summarize(state = names(which.max(table(state))))
-  
   geography_assignment <- cores_w_geography %>% 
     select(study_id, site_id, core_id, state, watershed)
-    # group_by(site_id) %>% 
-    # To summarize to the most frequent variable for each attribute, count each
-    #   desired attribute...
-    # count(site_id, site_longitude_max, site_longitude_min, site_latitude_max, 
-    #       site_latitude_min, site_description, vegetation_class, salinity_class, 
-    #       inundation_class, state, watershed) %>%
-    # # ...and then slice to whichever is the highest
-    # slice(which.max(n)) %>% 
-    # # Remove the count colum
-    # select(-n) %>% 
-    # # Filter out the "site" corresponding to NA
-    # filter(!is.na(site_id))
-  
-  ## 5. Combine and write data #################
-  
-  # If the lengths match, we can write the data out
-  write_csv(geography_assignment, "./data/CCRCN_synthesis/CCRCN_geography_lookup.csv")
-  
-  print("New geography assignment table written to synthesis folder")
-  
 }
+
+# Assign country tags
+dfr <- cores_pre_geography %>% 
+  select(core_longitude, core_latitude, core_id) %>%
+  filter(!is.na(core_longitude) & !is.na(core_latitude)) %>%
+  filter(!is.na(core_id))
+
+sfRegion <- st_as_sf(dfr, coords=c('core_longitude', 'core_latitude'))
+sfCountry <- ne_countries(returnclass='sf')
+st_crs(sfRegion) <- 4326
+
+core_country_merge <- st_join(sfCountry, sfRegion) %>%
+  select(core_id, name) %>%
+  filter(!is.na(core_id)) %>%
+  st_set_geometry(NULL) %>%
+  rename(country = name)
+
+geography_assignment <- merge(geography_assignment, core_country_merge, by="core_id", all.x=TRUE, all.y=TRUE)
+
+write_csv(geography_assignment, "./data/CCRCN_synthesis/CCRCN_geography_lookup.csv")
+
+country_summary <- st_join(sfCountry, sfRegion) %>%
+  select(core_id, name) %>%
+  filter(!is.na(core_id)) %>%
+  group_by(name) %>%
+  summarize(n = n())
+
+write_csv(country_summary, "./docs/country_summary.csv")
