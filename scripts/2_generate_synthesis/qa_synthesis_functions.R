@@ -164,10 +164,10 @@ testNumericVariables <- function(depthseries) {
     ungroup() %>%
     select(to_check) 
   
-  skim_with_defaults()
-  
+  ## Skimr package updated with substantial code changes
+
   # list of functions to run on numeric attributes
-  funs <- list(
+  funs <- sfl(
     min = function(x) min(x, na.rm=TRUE), 
     max = function(x) max(x, na.rm=TRUE), 
     median = function(x) median(x, na.rm=TRUE),
@@ -183,14 +183,18 @@ testNumericVariables <- function(depthseries) {
   )
   
   # Set skimr to run with our custom list of functions
-  skim_with(numeric = funs, append = TRUE)
+  # V2 skimr requires assigning skim_with to object
+  my_skim <- skim_with(numeric = funs, append = TRUE)
   
   # Organize into a wide form table and return
+  # testing_data %>%
+  #   skim() %>%
+  #   select(variable, type, stat, formatted) %>%
+  #   spread(stat, formatted) %>%
+  #   select(variable, type, n, min, max, median, mean, sd, missing, na_count, NaN_count)
+  
   testing_data %>%
-    skim() %>%
-    select(variable, type, stat, formatted) %>%
-    spread(stat, formatted) %>%
-    select(variable, type, n, min, max, median, mean, sd, missing, na_count, NaN_count)
+    my_skim()
   
 }
 
