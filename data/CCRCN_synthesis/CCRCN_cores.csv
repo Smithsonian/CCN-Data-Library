@@ -3126,12 +3126,6 @@ Krauss_et_al_2018b,Waccamaw_River_Turkey_creek_high,turkey_creek_1,NA,NA,NA,33.3
 Krauss_et_al_2018a,Waccamaw_River_Turkey_creek_low,turkey_creek_2,NA,NA,NA,33.34001,-79.34166,NA,NA,NA,NA,NA,NA,NA,NA,oligohaline,NA,NA,forested to emergent,measurement,NA,low,NA,NA,NA
 Krauss_et_al_2018a,Waccamaw_River_Richmond_island,richmond_island_1,NA,NA,NA,33.55564,-79.08943,NA,NA,NA,NA,NA,NA,NA,NA,fresh,NA,NA,forested,measurement,NA,high,NA,NA,NA
 Johnson_et_al_2007,Sprague_Marsh,SM02_VC1,NA,NA,NA,43.743531,-69.831958,NA,NA,latitude and longitude were likely from a high quality source,NA,NA,NA,NA,NA,saline,NA,NA,emergent,NA,NA,high,NA,NA,not specified
-Breithaupt_et_al_2014,Shark_River,SH3_1,NA,NA,NA,25.364094,-81.078481,NA,NA,latitude and longitude from handheld GPS or better,NA,NA,NA,NA,NA,saline,NA,NA,forested,NA,NA,NA,NA,NA,core depth limited by length of corer
-Breithaupt_et_al_2014,Shark_River,SH3_3,NA,NA,NA,25.363925,-81.078494,NA,NA,latitude and longitude from handheld GPS or better,NA,NA,NA,NA,NA,saline,NA,NA,forested,NA,NA,NA,NA,NA,core depth limited by length of corer
-Breithaupt_et_al_2014,Shark_River,SH3_5,NA,NA,NA,25.363956,-81.076614,NA,NA,latitude and longitude from handheld GPS or better,NA,NA,NA,NA,NA,saline,NA,NA,forested,NA,NA,NA,NA,NA,core depth limited by length of corer
-Breithaupt_et_al_2014,Shark_River,SH3_7,NA,NA,NA,25.363061,-81.077972,NA,NA,latitude and longitude from handheld GPS or better,NA,NA,NA,NA,NA,saline,NA,NA,forested,NA,NA,NA,NA,NA,core depth limited by length of corer
-Breithaupt_et_al_2014,Shark_River,SH3_8,NA,NA,NA,25.362861,-81.077778,NA,NA,latitude and longitude from handheld GPS or better,NA,NA,NA,NA,NA,saline,NA,NA,forested,NA,NA,NA,NA,NA,core depth limited by length of corer
-Breithaupt_et_al_2014,Shark_River,SH3_9,NA,NA,NA,25.362858,-81.077769,NA,NA,latitude and longitude from handheld GPS or better,NA,NA,NA,NA,NA,saline,NA,NA,forested,NA,NA,NA,NA,NA,core depth limited by length of corer
 Breithaupt_et_al_2017,Ten_Thousand_Islands,TTI1,NA,NA,NA,25.90711667,-81.50913333,NA,NA,latitude and longitude from handheld GPS or better,NA,NA,NA,NA,NA,saline,NA,NA,forested,NA,NA,NA,NA,NA,core depth limited by length of corer
 Breithaupt_et_al_2017,Ten_Thousand_Islands,TTI2,NA,NA,NA,25.88415,-81.5195,NA,NA,latitude and longitude from handheld GPS or better,NA,NA,NA,NA,NA,saline,NA,NA,forested,NA,NA,NA,NA,NA,core depth limited by length of corer
 Breithaupt_et_al_2017,Ten_Thousand_Islands,TTI3,NA,NA,NA,25.87431667,-81.51943333,NA,NA,latitude and longitude from handheld GPS or better,NA,NA,NA,NA,NA,saline,NA,NA,forested,NA,NA,NA,NA,NA,core depth limited by length of corer
@@ -5416,6 +5410,12 @@ Callaway_et_al_2019,Whale's_Tail,Whales_Tail_A_Mid,NA,2009-06-19,NA,37.600351,-1
 Callaway_et_al_2019,Whale's_Tail,Whales_Tail_B_High,NA,2009-06-30,NA,37.587746,-122.141849,NA,RTK-GPS,NA,1.99464,NAVD88,NA,RTK-GPS,NA,saline,NA,NA,emergent,NA,NA,low,NA,NA,NA
 Callaway_et_al_2019,Whale's_Tail,Whales_Tail_B_Low,NA,2009-06-30,NA,37.589494,-122.145483,NA,RTK-GPS,NA,2.09849,NAVD88,NA,RTK-GPS,NA,saline,NA,NA,emergent,NA,NA,low,NA,NA,NA
 Callaway_et_al_2019,Whale's_Tail,Whales_Tail_B_Mid,NA,2009-06-30,NA,37.588646,-122.143571,NA,RTK-GPS,NA,2.0321,NAVD88,NA,RTK-GPS,NA,saline,NA,NA,emergent,NA,NA,mid,NA,NA,NA
+Breithaupt_et_al_2014b,WSC-5,SH3-1,2009,2009-02-02,NA,25.363925000000002,-81.07849444444444,NA,handheld,NA,NA,NA,NA,NA,NA,mesohaline,measurement,NA,forested,measurement,NA,NA,NA,NA,not specified
+Breithaupt_et_al_2014b,WSC-5,SH3-3,2010,2010-11-16,NA,25.363925000000002,-81.07849444444444,NA,handheld,NA,NA,NA,NA,NA,NA,mesohaline,measurement,NA,forested,measurement,NA,NA,NA,NA,not specified
+Breithaupt_et_al_2014b,WSC-5,SH3-5,2010,2010-11-16,NA,25.363955555555556,-81.07661388888889,NA,handheld,NA,NA,NA,NA,NA,NA,mesohaline,measurement,NA,forested,measurement,NA,NA,NA,NA,not specified
+Breithaupt_et_al_2014b,WSC-5,SH3-7,2010,2010-11-16,NA,25.36306111111111,-81.07797222222221,NA,handheld,NA,NA,NA,NA,NA,NA,mesohaline,measurement,NA,forested,measurement,NA,NA,NA,NA,not specified
+Breithaupt_et_al_2014b,WSC-5,SH3-8,2010,2010-11-16,NA,25.362861111111112,-81.07777777777777,NA,handheld,NA,NA,NA,NA,NA,NA,mesohaline,measurement,NA,forested,measurement,NA,NA,NA,NA,not specified
+Breithaupt_et_al_2014b,WSC-5,SH3-9,2010,2010-11-16,NA,25.362858333333335,-81.07776944444444,NA,handheld,NA,NA,NA,NA,NA,NA,mesohaline,measurement,NA,forested,measurement,NA,NA,NA,NA,not specified
 Boyd_2012,Blackbird_Creek_Marsh,BBRC1,2009,NA,NA,39.375811,-75.651786,NA,NA,latitude and longitude from handheld GPS or better,NA,NA,NA,NA,NA,brackish,NA,NA,emergent,NA,NA,NA,NA,NA,core depth limited by length of corer
 Boyd_2012,Blackbird_Creek_Marsh,BBRC2,2009,NA,NA,39.378697,-75.643872,NA,NA,latitude and longitude from handheld GPS or better,NA,NA,NA,NA,NA,brackish,NA,NA,emergent,NA,NA,NA,NA,NA,core depth limited by length of corer
 Boyd_2012,Little_Creek_Marsh,LC1,2011,NA,NA,39.145008,-75.423547,NA,NA,latitude and longitude from handheld GPS or better,0.703,NAVD88,NA,RTK-GPS,NA,saline,NA,NA,emergent,NA,NA,NA,NA,NA,core depth limited by length of corer

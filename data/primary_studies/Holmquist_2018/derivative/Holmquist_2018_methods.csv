@@ -1,5 +1,4 @@
 study_id,publication_type,coring_method,roots_flag,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,loss_on_ignition_flag,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_flag,fraction_carbon_type
-Breithaupt_et_al_2014,peer reviewed publication,russian corer,NA,NA,105,24,NA,550,1,NA,measured,TRUE,none specified,replicate samples,fraction_organic_carbon
 Breithaupt_et_al_2017,peer reviewed publication,piston corer,NA,corer limits compaction,NA,NA,no details,550,3,NA,NA,NA,NA,no details,NA
 Cochran_et_al_1998,peer reviewed publication,mccaffrey peat cutter,NA,NA,60,48,duplicate measurements,450,12,duplicate measurements,NA,NA,NA,NA,NA
 CRMS_Database,publically available dataset,push core,NA,< 10-20%,NA,NA,no details,NA,NA,no details,NA,NA,NA,NA,NA
