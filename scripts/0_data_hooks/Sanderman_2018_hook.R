@@ -330,7 +330,7 @@ biblio_synthesis <- BibEntry(bibtype = "Misc",
 biblio_synthesis <- as.data.frame(biblio_synthesis)
 
 study_citations_synthesis <- citations %>%
-  filter(study_type == "synthesis") %>%
+  filter(study_type == "synthesis" & study_id != "Breithaupt_et_al_2014") %>%
   select(study_id, bibliography_id, doi) %>%
   merge(biblio_synthesis, by="doi", all.x=TRUE, all.y=TRUE) %>%
   mutate(key = "Sanderman_2017",
