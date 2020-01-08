@@ -2,6 +2,9 @@
 # Scans data/primary_studies directory and reads in curated data
 # Contact: lonnemanM@si.edu
 
+# RUN SCRIPT WITH A CLEAN R SESSION #
+# if you experience an error, restart Rstudio and try again # 
+
 ## 1. Synthesis background and description ###############
 # The CCRCN clearinghouse synthesis combines data and metadata for each curated study
 # The synthesis is made up of the following linked tables 
