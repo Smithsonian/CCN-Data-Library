@@ -21,6 +21,7 @@
 # 
 # citations.bib - Citation for associated journal article and this data release in .BIB format. 
 
+# Core TB_2LPb is being incorporated into TB_2L as sample ID rows
 library(tidyverse)
 library(RefManageR)
 library(lubridate)
@@ -31,32 +32,52 @@ species_raw <- read_csv("./data/primary_studies/mctigue_2020/original/mctigue_et
 methods_raw <- read_csv("./data/primary_studies/mctigue_2020/original/mctigue_et_al_2020_materials_and_methods.csv")
 bib <- ReadBib("./data/primary_studies/mctigue_2020/original/citations.bib")
 
+study_id_value <- "McTigue_et_al_2020"
+
+depthseries_PB <- depthseries_raw %>%
+  filter(study_id == "McTigue_et_al_2020b") %>%
+  mutate(sample_id = paste(core_id, depth_min, sep="_"),
+         core_id = "TB_2L",
+         study_id = "McTigue_et_al_2020")
+
 depthseries <- depthseries_raw %>%
+  filter(study_id != "McTigue_et_al_2020b") %>%
+  mutate(study_id = study_id_value) %>%
+  bind_rows(depthseries_PB) %>%
   rename(fraction_carbon = fraction_carbon_measured) %>%
-  select(-fraction_carbon_modeled, -mass_depth)
-
+  select(-fraction_carbon_modeled, -mass_depth) %>%
+  group_by(core_id, depth_min) %>%
+  arrange(depth_min, .by_group=T) %>%
+  select(study_id, site_id, core_id, depth_min, depth_max, sample_id, everything())
+  
 cores <- cores_raw %>%
-  mutate(core_year = year(core_date))
-
+  mutate(core_year = year(core_date)) %>%
+  filter(study_id != "McTigue_et_al_2020b") %>%
+  mutate(study_id = study_id_value)
+  
 species <- species_raw  %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
-  select(study_id, site_id, core_id, species_code)
+  select(study_id, site_id, core_id, species_code) %>%
+  filter(core_id != "TB_2LPb") %>%
+  mutate(study_id = study_id_value)
 
-study_citationsA <- as.data.frame(bib) %>%
+methods <- methods_raw %>%
+  filter(study_id != "McTigue_et_al_2020b") %>%
+  mutate(pb210_counting_method = "alpha",
+         excess_pb210_rate = "mass accumulation",
+         excess_pb210_model = "CFCS",
+         study_id = study_id_value)
+
+study_citations <- as.data.frame(bib) %>%
   rownames_to_column("key") %>%
-  mutate(bibliography_id = key,
-         study_id = "McTigue_et_al_2020a",
+  mutate(bibliography_id = recode(key,
+                                  "mctigue2019sea" = "McTigue_et_al_2019",
+                                  "mctigue2020DataRelease" = "McTigue_et_al_2020"),
+         study_id = study_id_value,
          publication_type = bibtype) %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
   mutate(year = as.numeric(year))
 
-study_citations <- study_citationsA %>%
-  mutate(study_id = "McTigue_et_al_2020b") %>%
-  bind_rows(study_citationsA) %>%
-  mutate(bibliography_id = recode(bibliography_id,
-                                  "mctigue2019sea" = "McTigue_et_al_2019",
-                                  "mctigue2020DataRelease" = "McTigue_et_al_2020"))
-    
 bib_file <- study_citations %>%
   select(-study_id, -bibliography_id, -publication_type) %>%
   distinct() %>%
@@ -68,5 +89,5 @@ write_csv(cores, "data/primary_studies/mctigue_2020/derivative/mctigue_et_al_202
 write_csv(depthseries, "data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020_depthseries.csv")
 write_csv(study_citations, "data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020_study_citations.csv")
 write_csv(species, "data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020_species.csv")
-write_csv(methods_raw, "./data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020_methods.csv")
+write_csv(methods, "./data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020_methods.csv")
 
