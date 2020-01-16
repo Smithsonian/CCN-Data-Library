@@ -33,7 +33,7 @@ bib <- ReadBib("./data/primary_studies/mctigue_2020/original/citations.bib")
 
 depthseries <- depthseries_raw %>%
   rename(fraction_carbon = fraction_carbon_measured) %>%
-  select(-fraction_carbon_modeled, mass_depth)
+  select(-fraction_carbon_modeled, -mass_depth)
 
 cores <- cores_raw %>%
   mutate(core_year = year(core_date))
