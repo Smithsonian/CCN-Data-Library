@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1" packageId="12bdbaf6-da4f-11e9-ae4b-4b2ef745d7b9" system="uuid" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1/ eml.xsd">
+  <dataset>
+    <title>Dateset: Use of lead isotopes for developing chronologies in recent salt-marsh sediments</title>
+    <creator>
+      <individualName>
+        <givenName>Andrew C.</givenName>
+        <surName>Kemp</surName>
+      </individualName>
+      <electronicMailAddress>Andrew.Kemp@tufts.edu</electronicMailAddress>
+    </creator>
+    <associatedParty>
+      <individualName>
+        <givenName>Andrew C.</givenName>
+        <surName>Kemp</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Christopher K.</givenName>
+        <surName>Sommerfield</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Christopher H.</givenName>
+        <surName>Vane</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Benjamin P.</givenName>
+        <surName>Horton</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Simon</givenName>
+        <surName>Chenery</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Shimon</givenName>
+        <surName>Anisfeld</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Daria</givenName>
+        <surName>Nikitina</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <pubDate>2020</pubDate>
+    <abstract>Dating of recent salt-marsh sediments is hindered by the radiocarbon plateau and the moving ∼100 year window of 210Pb accumulation histories. Introduction of anthropogenic Pb to the environment is a means to date salt-marsh sediment deposited over the last 200 years by correlating downcore changes in concentration and isotopic ratios to historical production and consumption. We investigated use of Pb as a chronometer in a core of salt-marsh sediment from New Jersey, USA. Changes in Pb concentration identified horizons at AD 1875, 1925, 1935 and 1974 that correspond to features of historic U.S Pb production and consumption. Stable lead isotopes (206Pb:207Pb) constrained ages at AD 1827, 1857 and 1880, reflecting Pb production in the Upper Mississippi Valley with its unusual isotopic signature and at AD 1965 and 1980 from leaded gasoline. Confirmatory evidence for the gasoline horizons came from increased Sb concentrations caused by vehicle emissions and industrial activity. These nine chronostratigraphic markers of fixed dates provide precise constraints on sediment age in the northeastern USA and enable salt-marsh records of coastal evolution and wetland development to extend beyond the period of instrumental measurements.</abstract>
+    <keywordSet>
+      <keyword>salt-marsh</keyword>
+      <keyword>lead isotopes</keyword>
+      <keyword>210Pb</keyword>
+      <keyword>137Cs</keyword>
+      <keyword>Sea level</keyword>
+    </keywordSet>
+    <intellectualRights>This dataset is listed under a Creative Commons BY 4.0 and can be used with attribution. https://creativecommons.org/licenses/by/4.0/</intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>BB1B</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-74.07995</westBoundingCoordinate>
+          <eastBoundingCoordinate>-74.07995</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.02988</northBoundingCoordinate>
+          <southBoundingCoordinate>40.02988</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Spartina patens</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Distichlis spicata</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <contact>
+      <individualName>
+        <givenName>Andrew C.</givenName>
+        <surName>Kemp</surName>
+      </individualName>
+      <electronicMailAddress>Andrew.Kemp@tufts.edu</electronicMailAddress>
+    </contact>
+    <dataTable>
+      <entityName>kemp_et_al_2020_methods_data</entityName>
+      <entityDescription>Methods information for study</entityDescription>
+      <physical>
+        <objectName>kemp_et_al_2020_material_and_methods.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>coring_method</attributeName>
+          <attributeDefinition>Code indicating what type of device was used to collect soil depth profiles.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>piston corer</code>
+                    <definition>A device that extrudes core into tube upward with a plunger</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>compaction_flag</attributeName>
+          <attributeDefinition>Code indicating how the authors qualified or quantified compaction of the core.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>corer limits compaction</code>
+                    <definition>Authors specified that the coring device's design minimized compaction</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_temperature</attributeName>
+          <attributeDefinition>Temperature at which samples were dried to measure dry bulk density. This can include either samples that were freeze dried or oven dried.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_time</attributeName>
+          <attributeDefinition>Time over which samples were dried to measure dry bulk density.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>hour</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>loss_on_ignition_temperature</attributeName>
+          <attributeDefinition>Temperature at which samples were combusted to estimate fraction organic matter.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>loss_on_ignition_time</attributeName>
+          <attributeDefinition>Time over which samples were combusted to estimate fraction organic matter.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>hour</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>loss_on_ignition_sample_mass</attributeName>
+          <attributeDefinition>Sample mass used for loss on ignition, if held constant.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gram</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>cs137_counting_method</attributeName>
+          <attributeDefinition>Code indicating the method used for determining radiocesium activity.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>gamma</code>
+                    <definition>Gamma counting method used.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pb210_counting_method</attributeName>
+          <attributeDefinition>Code indicating the method used for determining lead 210 activity.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>gamma</code>
+                    <definition>Gamma counting method used.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>age_depth_model_reference</attributeName>
+          <attributeDefinition>Code indicating the reference or 0 year of the age depth model.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>CE</code>
+                    <definition>Year zero is set according to Common Era and Before Common Era standards</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>kemp_et_al_2020_core_data</entityName>
+      <entityDescription>Soil core information</entityDescription>
+      <physical>
+        <objectName>kemp_et_al_2020_core.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_date</attributeName>
+          <attributeDefinition>Date of core collection.</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_latitude</attributeName>
+          <attributeDefinition>Positional latitude of the core in decimal degree WGS84.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_longitude</attributeName>
+          <attributeDefinition>Positional longitude of the core in decimal degree WGS84.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_position_method</attributeName>
+          <attributeDefinition>Code indicating how latitude and longitude were determined.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>other high resolution</code>
+                    <definition>Any other technique resulting in positional error &lt; 1 meter</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_elevation</attributeName>
+          <attributeDefinition>Surface elevation of the core relative to defined datum.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_elevation_datum</attributeName>
+          <attributeDefinition>The datum relative to which the core elevation was measured against (For a complete list of datum names and aliases please refer to the ISO Geodedic Registry https://iso.registry.bespire.eu/register/geodetic/VerticalDatum).</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>NAVD88</code>
+                    <definition>A gravity-based geodetic datum, North American Vertical Datum of 1988</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_elevation_method</attributeName>
+          <attributeDefinition>Code indicating how elevation was determined</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>other high resolution</code>
+                    <definition>Any other technique resulting in positional error &lt; 5 cm of random error</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>salinity_class</attributeName>
+          <attributeDefinition>Code based on submitter field observation or measurement indicating average annual salinity (Note: Palustrine and freshwater should only include tidal wetlands, or wetlands that are potentially/formerly tidal but artificially freshened due to artificial tidal restrictions).</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>saline</code>
+                    <definition>30-50 ppt</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vegetation_class</attributeName>
+          <attributeDefinition>Code based on submitter field observations or measurement indicating dominant wetland vegetation type.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>emergent</code>
+                    <definition>Describes wetlands dominated by persistent emergent vascular plants</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>kemp_et_al_2020_depthseries_data</entityName>
+      <entityDescription>Soil core depthseries information</entityDescription>
+      <physical>
+        <objectName>kemp_et_al_2020_depthseries.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_min</attributeName>
+          <attributeDefinition>Minimum depth of a sampling increment.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_max</attributeName>
+          <attributeDefinition>Maximum depth of a sampling increment.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sample_id</attributeName>
+          <attributeDefinition>Sample identification unique to the core. This should be used in the case that there are relevant lab specific sample codes, or in the case that there are multiple replicate samples.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density</attributeName>
+          <attributeDefinition>Dry mass per unit volume of a soil sample. This does not include ash free bulk density.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gramsPerCubicCentimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_organic_matter</attributeName>
+          <attributeDefinition>Mass of organic matter relative to sample dry mass. Ash free bulk density should not be used here but should be expressed as a loss on ignition fraction.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>cs137_activity</attributeName>
+          <attributeDefinition>Radioactivity counts per unit dry weight for radiocesium (137Cs).</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>becquerelsPerKilogram</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>cs137_activity_sd</attributeName>
+          <attributeDefinition>1 standard deviation of uncertainty associated with cs137_activity.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>becquerelsPerKilogram</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>excess_pb210_activity</attributeName>
+          <attributeDefinition>Excess radioactivity counts per unit dry weight for excess lead 210 (210Pb).</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>becquerelsPerKilogram</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>excess_pb210_activity_sd</attributeName>
+          <attributeDefinition>1 standard deviation of uncertainty associated with excess_pb210_activity.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>becquerelsPerKilogram</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>marker_age</attributeName>
+          <attributeDefinition>The age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>marker_age_sd</attributeName>
+          <attributeDefinition>The standard deviation of the age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>marker_type</attributeName>
+          <attributeDefinition>Code indicating the type of marker.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>pollution</code>
+                    <definition>Chemical analysis was used to tie the horizon to the timing of a pollution event</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>marker_notes</attributeName>
+          <attributeDefinition>Any other submitter generated notes about the origin of the marker.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>cs137_age</attributeName>
+          <attributeDefinition>Most likely, median, or mean age of the depth interval from submitter generated age depth model using Cs137 radioactivity counts.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pb210_cic_age</attributeName>
+          <attributeDefinition>Most likely, median, or mean age of the depth interval from submitter generated age depth model using a constant initial concentration model.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pb210_crs_age</attributeName>
+          <attributeDefinition>Most likely, median, or mean age of the depth interval from submitter generated age depth model using a constant rate of Pb210 supply model.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>kemp_et_al_2020_impacts_data</entityName>
+      <entityDescription>impacts information for study</entityDescription>
+      <physical>
+        <objectName>kemp_et_al_2020_material_and_impacts.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>impact_class</attributeName>
+          <attributeDefinition>Code indicating any major anthropogenic impacts historically and currently affecting the coring location.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>ditched</code>
+                    <definition>Tidal hydrology is altered because artificial ditches have been cut to promote tidal flooding and drainage</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>eutrophic</code>
+                    <definition>Location experiences dense growth of plant life or loss of animal life due to excessive richness of nutrients</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="becquerelsPerKilogram" multiplierToSI="1" name="becquerelsPerKilogram" unitType="radionucleotideActivityPerMass">
+          <description>becquerels per kilogram</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>
