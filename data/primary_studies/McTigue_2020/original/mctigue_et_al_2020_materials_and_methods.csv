@@ -1,0 +1,3 @@
+study_id,coring_method,roots_flag,sediment_sieved_flag,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,loss_on_ignition_flag,carbonates_removed,carbonate_removal_method,fraction_carbon_method,fraction_carbon_type,pb210_counting_method,excess_pb210_rate,excess_pb210_model,c14_counting_method,age_depth_model_reference
+McTigue_et_al_2020a,russian corer,roots and rhizomes included,sediment not sieved,corer limits compaction,60,to constant mass,450,6,time approximate,TRUE,direct acid treatment,EA,organic carbon,NA,NA,NA,AMS,core collection date
+McTigue_et_al_2020b,aluminum corer,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,alpha,mass accumulation,CFCS,NA,NA
