@@ -53,7 +53,7 @@ methods <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist
 # remove the following studies that are now in their own separate data hooks: 
 removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001", "Noe_et_al_2016", "Johnson_et_al_2007", "Watson_and_Byrne_2013",
                      "Boyd_and_Sommerfield_2016", "Unger_et_al_2016", "Boyd_2012", "Boyd_et_al_2017", "Callaway_et_al_2012", 
-                     "Gerlach_et_al_2017", "Craft_2007", "Crooks_et_al_2014", "Crooks_et_al_2013", "Breithaupt_et_al_2014")
+                     "Gerlach_et_al_2017", "Craft_2007", "Crooks_et_al_2014", "Crooks_et_al_2013", "Breithaupt_et_al_2014", "Kemp_et_al_2012")
 
 ## 3. Recode and rename factors #################
 
