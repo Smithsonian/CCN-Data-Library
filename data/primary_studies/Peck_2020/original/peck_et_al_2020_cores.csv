@@ -1,0 +1,102 @@
+study_id,site_id,core_id,core_date,core_notes,core_latitude,core_longitude,core_position_method,core_elevation,core_elevation_datum,core_elevation_method,vegetation_class,inundation_class,abbreviated_core_id
+Peck_et_al_2020,Netarts,NTOR1009_01PU,9/21/10,NA,45.3738,-123.9648,handheld,2.77,NAVD88,RTK-GPS,emergent,high,NT-1
+Peck_et_al_2020,Netarts,NTOR1009_02PU,9/21/10,NA,45.3737,-123.9634,handheld,2.74,NAVD88,RTK-GPS,emergent,high,NT-2
+Peck_et_al_2020,Netarts,NTOR1009_03PU,9/21/10,NA,45.3724,-123.9644,handheld,2.77,NAVD88,RTK-GPS,emergent,high,NT-3
+Peck_et_al_2020,Netarts,NTOR1009_04PU,9/21/10,NA,45.3727,-123.9658,handheld,2.83,NAVD88,RTK-GPS,emergent,high,NT-4
+Peck_et_al_2020,Willapa,WBWA1109_01PU,9/21/11,"There is no depthseries data available for this core. It was not sectioned and only CT scans were taken. 
+The cores are available upon request at the Oregon State University Marine Geology Repository.",46.3726,-123.9951,handheld,NA,NA,NA,emergent,high,WB1
+Peck_et_al_2020,Willapa,WBWA1109_02PU,9/21/11,"There is no depthseries data available for this core. It was not sectioned and only CT scans were taken. 
+The cores are available upon request at the Oregon State University Marine Geology Repository.",46.3725,-123.9965,handheld,NA,NA,NA,emergent,high,WB2
+Peck_et_al_2020,Willapa,WBWA1109_03PU,9/21/11,"There is no depthseries data available for this core. It was not sectioned and only CT scans were taken. 
+The cores are available upon request at the Oregon State University Marine Geology Repository.",46.3727,-123.9978,handheld,NA,NA,NA,emergent,high,WB3
+Peck_et_al_2020,Willapa,WBWA1109_04PU,9/21/11,"There is no depthseries data available for this core. It was not sectioned and only CT scans were taken. 
+The cores are available upon request at the Oregon State University Marine Geology Repository.",46.374,-123.9969,handheld,NA,NA,NA,emergent,high,WB4
+Peck_et_al_2020,Nestucca,NSOR1209_01PU,9/17/12,"There is no depthseries data available for this core. It was not sectioned and only CT scans were taken. 
+The cores are available upon request at the Oregon State University Marine Geology Repository.",45.188,-123.9492,handheld,NA,NA,NA,emergent,high,NC-1
+Peck_et_al_2020,Nestucca,NSOR1209_02PU,9/17/12,"There is no depthseries data available for this core. It was not sectioned and only CT scans were taken. 
+The cores are available upon request at the Oregon State University Marine Geology Repository.",45.1878,-123.9496,handheld,NA,NA,NA,emergent,high,NC-2
+Peck_et_al_2020,Nestucca,NSOR1209_03PU,9/17/12,"There is no depthseries data available for this core. It was not sectioned and only CT scans were taken. 
+The cores are available upon request at the Oregon State University Marine Geology Repository.",45.1882,-123.9496,handheld,NA,NA,NA,emergent,high,NC-3
+Peck_et_al_2020,Nestucca,NSOR1209_04PU,9/17/12,"There is no depthseries data available for this core. It was not sectioned and only CT scans were taken. 
+The cores are available upon request at the Oregon State University Marine Geology Repository.",45.1876,-123.9494,handheld,NA,NA,NA,emergent,high,NC-4
+Peck_et_al_2020,Alsea,ABOR1309_01PU,9/25/13,NA,44.4303,-124.0293,handheld,2.29,NAVD88,RTK-GPS,emergent,high,AL-01
+Peck_et_al_2020,Alsea,ABOR1309_02PU,9/25/13,NA,44.4311,-124.0286,handheld,2.47,NAVD88,RTK-GPS,emergent,high,AL-02
+Peck_et_al_2020,Alsea,ABOR1309_03PU,9/25/13,NA,44.431,-124.0278,handheld,2.48,NAVD88,RTK-GPS,emergent,high,AL-03
+Peck_et_al_2020,Alsea,ABOR1309_04PU,9/25/13,NA,44.4321,-124.0278,handheld,2.56,NAVD88,RTK-GPS,emergent,high,AL-04
+Peck_et_al_2020,Nehalem,NBOR1409_01PU,9/22/14,"There is no depthseries data available for this core. It was not sectioned and only CT scans were taken. 
+The cores are available upon request at the Oregon State University Marine Geology Repository.",45.71,-123.9303,handheld,NA,NA,NA,emergent,high,NH-1
+Peck_et_al_2020,Nehalem,NBOR1409_02PU,9/22/14,"There is no depthseries data available for this core. It was not sectioned and only CT scans were taken. 
+The cores are available upon request at the Oregon State University Marine Geology Repository.",45.7011,-123.9303,handheld,NA,NA,NA,emergent,high,NH-2
+Peck_et_al_2020,Nehalem,NBOR1409_03PU,9/22/14,"There is no depthseries data available for this core. It was not sectioned and only CT scans were taken. 
+The cores are available upon request at the Oregon State University Marine Geology Repository.",45.7075,-123.8983,handheld,NA,NA,NA,emergent,high,NH-3
+Peck_et_al_2020,Youngs Bay,YBOR1502_01PU,2/21/15,NA,46.10026,-123.78333,RTK-GPS,2.58,NAVD88,RTK-GPS,emergent,high,YB01
+Peck_et_al_2020,Youngs Bay,YBOR1502_02PU,2/21/15,NA,46.10576,-123.78404,RTK-GPS,2.69,NAVD88,RTK-GPS,scrub shrub,NA,YB02
+Peck_et_al_2020,Youngs Bay,YBOR1502_03PU,2/21/15,NA,46.16869,-123.82468,RTK-GPS,1.81,NAVD88,RTK-GPS,emergent,low,YB03
+Peck_et_al_2020,Youngs Bay,YBOR1502_04PU,2/21/15,NA,46.1676,-123.82514,RTK-GPS,2.89,NAVD88,RTK-GPS,emergent,high,YB04
+Peck_et_al_2020,Youngs Bay,YBOR1502_05PU,2/21/15,NA,46.1676,-123.8262,RTK-GPS,2.78,NAVD88,RTK-GPS,scrub shrub,NA,YB05
+Peck_et_al_2020,Youngs Bay,WY01S,2/22/15,NA,46.15382,-123.81057,RTK-GPS,1.68,NAVD88,RTK-GPS,emergent,back,WY01S
+Peck_et_al_2020,Youngs Bay,WY03S,2/22/15,NA,46.15115,-123.8074,RTK-GPS,1.99,NAVD88,RTK-GPS,emergent,back,WY03S
+Peck_et_al_2020,Youngs Bay,WY04S,2/22/15,NA,46.1498,-123.80641,RTK-GPS,1.68,NAVD88,RTK-GPS,emergent,back,WY04S
+Peck_et_al_2020,Tillamook,MID.A009,4/24/15,NA,45.47314,-123.87423,RTK-GPS,1.83,NAVD88,RTK-GPS,emergent,back,MID.A009
+Peck_et_al_2020,Tillamook,NOR.A004,4/24/15,NA,45.47806,-123.87669,RTK-GPS,2.17,NAVD88,RTK-GPS,emergent,back,NOR.A004
+Peck_et_al_2020,Tillamook,NS-CR.A073,4/24/15,NA,45.46899,-123.87067,RTK-GPS,2.34,NAVD88,RTK-GPS,emergent,back,NS-CR.A073
+Peck_et_al_2020,Tillamook,SO.CR.A028,4/24/15,NA,45.47151,-123.87789,RTK-GPS,1.9,NAVD88,RTK-GPS,emergent,back,SO.CR.A028
+Peck_et_al_2020,Tillamook,TBOR1504_05PU,4/24/15,NA,45.50962,-123.88386,RTK-GPS,2.62,NAVD88,RTK-GPS,emergent,high,TB05
+Peck_et_al_2020,Tillamook,TBOR1504_06PU,4/24/15,NA,45.51025,-123.88378,RTK-GPS,2.74,NAVD88,RTK-GPS,scrub shrub,NA,TB06
+Peck_et_al_2020,Tillamook,TBOR1504_01PU,4/25/15,NA,45.48274,-123.89545,RTK-GPS,2.15,NAVD88,RTK-GPS,emergent,low,TB01
+Peck_et_al_2020,Tillamook,TBOR1504_02PU,4/25/15,NA,45.48137,-123.89361,RTK-GPS,2.29,NAVD88,RTK-GPS,emergent,high,TB02
+Peck_et_al_2020,Tillamook,TBOR1504_03PU,4/25/15,NA,45.46867,-123.8805,RTK-GPS,2.61,NAVD88,RTK-GPS,emergent,high,TB03
+Peck_et_al_2020,Tillamook,TBOR1504_04PU,4/25/15,NA,45.469,-123.88519,RTK-GPS,1.96,NAVD88,RTK-GPS,emergent,low,TB04
+Peck_et_al_2020,Salmon River,SROR1509_01PU,9/9/15,NA,45.025,-123.97,handheld,2.37,NAVD88,RTK-GPS,emergent,high,SR01
+Peck_et_al_2020,Salmon River,SROR1509_02PU,9/9/15,NA,45.026,-123.9719,handheld,2.43,NAVD88,RTK-GPS,emergent,high,SR02
+Peck_et_al_2020,Salmon River,SROR1509_03PU,9/9/15,NA,45.0264,-123.9758,handheld,2.46,NAVD88,RTK-GPS,emergent,high,SR03
+Peck_et_al_2020,Salmon River,SROR1509_04PU,9/9/15,NA,45.0239,-123.9731,handheld,2.62,NAVD88,RTK-GPS,emergent,high,SR04
+Peck_et_al_2020,Nehalem,NBOR1606_01PU,6/21/16,NA,45.69017,-123.89616,RTK-GPS,1.09,NAVD88,RTK-GPS,mudflat,NA,NB01
+Peck_et_al_2020,Nehalem,NBOR1606_02PU,6/21/16,NA,45.6904,-123.89472,RTK-GPS,1.55,NAVD88,RTK-GPS,emergent,low,NB02
+Peck_et_al_2020,Nehalem,NBOR1606_03PU,6/21/16,NA,45.68991,-123.88976,RTK-GPS,2.75,NAVD88,RTK-GPS,emergent,high,NB03
+Peck_et_al_2020,Nehalem,NBOR1606_04PU,6/21/16,NA,45.69814,-123.88978,RTK-GPS,2.63,NAVD88,RTK-GPS,emergent,high,NB04
+Peck_et_al_2020,Nehalem,NBOR1606_05PU,6/21/16,NA,45.69754,-123.89879,RTK-GPS,1.96,NAVD88,RTK-GPS,emergent,low,NB05
+Peck_et_al_2020,Nehalem,NBOR1606_06PU,6/22/16,NA,45.70291,-123.90456,RTK-GPS,1.27,NAVD88,RTK-GPS,mudflat,NA,NB06
+Peck_et_al_2020,Nehalem,NBOR1606_07PU,6/22/16,NA,45.70421,-123.90199,RTK-GPS,1.92,NAVD88,RTK-GPS,emergent,low,NB07
+Peck_et_al_2020,Nehalem,NBOR1606_08PU,6/22/16,NA,45.70323,-123.89372,RTK-GPS,2.38,NAVD88,RTK-GPS,emergent,high,NB08
+Peck_et_al_2020,Nehalem,NBOR1609_01PU,9/14/16,NA,45.7033,-123.8956,handheld,2.41,NAVD88,RTK-GPS,emergent,high,NB09
+Peck_et_al_2020,Nehalem,NBOR1609_02PU,9/14/16,NA,45.7022,-123.8983,handheld,2.33,NAVD88,RTK-GPS,emergent,high,NB10
+Peck_et_al_2020,Nehalem,NBOR1609_03PU,9/14/16,NA,45.7011,-123.8936,handheld,2.44,NAVD88,RTK-GPS,emergent,high,NB11
+Peck_et_al_2020,Nehalem,NBOR1609_04PU,9/14/16,NA,45.7036,-123.9,handheld,2.16,NAVD88,RTK-GPS,emergent,high,NB12
+Peck_et_al_2020,Alsea,ABOR1702_01PU,2/17/17,NA,44.42655,-124.03931,RTK-GPS,2.47,NAVD88,RTK-GPS,emergent,high,AB01
+Peck_et_al_2020,Alsea,ABOR1702_02PU,2/17/17,NA,44.42834,-124.04073,RTK-GPS,2.15,NAVD88,RTK-GPS,emergent,low,AB02
+Peck_et_al_2020,Alsea,ABOR1702_03PU,2/17/17,NA,44.4292,-124.04055,RTK-GPS,1.42,NAVD88,RTK-GPS,mudflat,NA,AB03
+Peck_et_al_2020,Alsea,ABOR1702_04PU,2/17/17,NA,44.42488,-124.03357,RTK-GPS,1.38,NAVD88,RTK-GPS,mudflat,NA,AB04
+Peck_et_al_2020,Alsea,ABOR1702_05PU,2/17/17,NA,44.4238,-124.03346,RTK-GPS,2.32,NAVD88,RTK-GPS,emergent,low,AB05
+Peck_et_al_2020,Alsea,ABOR1702_06PU,2/17/17,NA,44.42208,-124.03351,RTK-GPS,2.54,NAVD88,RTK-GPS,emergent,high,AB06
+Peck_et_al_2020,Alsea,ABOR1702_07PU,2/18/17,NA,44.42008,-124.01397,RTK-GPS,2.49,NAVD88,RTK-GPS,emergent,high,AB07
+Peck_et_al_2020,Alsea,ABOR1702_08PU,2/18/17,NA,44.42109,-124.01403,RTK-GPS,2.03,NAVD88,RTK-GPS,emergent,low,AB08
+Peck_et_al_2020,Alsea,ABOR1702_09PU,2/18/17,NA,44.42109,-124.0142,RTK-GPS,1.66,NAVD88,RTK-GPS,mudflat,NA,AB09
+Peck_et_al_2020,Coquille,CMOR1706_01PU,6/2/17,NA,43.1454,-124.39635,RTK-GPS,2.22,NAVD88,RTK-GPS,emergent,mid,CM01
+Peck_et_al_2020,Coquille,CMOR1706_02PU,6/2/17,NA,43.14415,-124.39651,RTK-GPS,2.44,NAVD88,RTK-GPS,emergent,high,CM02
+Peck_et_al_2020,Coquille,CMOR1706_03PU,6/2/17,NA,43.14116,-124.40072,RTK-GPS,2.35,NAVD88,RTK-GPS,emergent,high,CM03
+Peck_et_al_2020,Coquille,CMOR1706_04PU,6/2/17,NA,43.14249,-124.40153,RTK-GPS,2.28,NAVD88,RTK-GPS,emergent,high,CM04
+Peck_et_al_2020,Coquille,CMOR1706_05PU,6/2/17,NA,43.1394,-124.40437,RTK-GPS,1.64,NAVD88,RTK-GPS,emergent,low,CM05
+Peck_et_al_2020,Coquille,CMOR1706_06PU,6/2/17,NA,43.13893,-124.40505,RTK-GPS,1.48,NAVD88,RTK-GPS,mudflat,NA,CM06
+Peck_et_al_2020,Coquille,CMOR1706_07PU,6/2/17,NA,43.13502,-124.40286,RTK-GPS,1.47,NAVD88,RTK-GPS,mudflat,NA,CM07
+Peck_et_al_2020,Coquille,CMOR1706_08PU,6/3/17,NA,43.13018,-124.40729,RTK-GPS,2.11,NAVD88,RTK-GPS,emergent,mid,CM08
+Peck_et_al_2020,Coquille,CMOR1706_09PU,6/3/17,NA,43.13409,-124.40674,RTK-GPS,1.66,NAVD88,RTK-GPS,emergent,low,CM09
+Peck_et_al_2020,Coquille,CMOR1706_10PU,6/3/17,NA,43.13622,-124.40226,RTK-GPS,1.82,NAVD88,RTK-GPS,emergent,low,CM10
+Peck_et_al_2020,Netarts,NTOR1709_01PU,9/13/17,NA,45.3722,-123.9643,handheld,2.77,NAVD88,RTK-GPS,emergent,high,NT05
+Peck_et_al_2020,Netarts,NTOR1709_02PU,9/13/17,NA,45.3713,-123.9652,handheld,2.78,NAVD88,RTK-GPS,emergent,high,NT06
+Peck_et_al_2020,Netarts,NTOR1709_03PU,9/13/17,NA,45.37,-123.9661,handheld,2.68,NAVD88,RTK-GPS,emergent,high,NT07
+Peck_et_al_2020,Netarts,NTOR1709_04PU,9/13/17,NA,45.3691,-123.9667,handheld,2.74,NAVD88,RTK-GPS,emergent,high,NT08
+Peck_et_al_2020,Netarts,NTOR1802_01PU,2/23/18,NA,45.36942,-123.96323,RTK-GPS,2.81,NAVD88,RTK-GPS,emergent,high,NT09
+Peck_et_al_2020,Netarts,NTOR1802_02PU,2/23/18,NA,45.37128,-123.96183,RTK-GPS,2.65,NAVD88,RTK-GPS,emergent,high,NT10
+Peck_et_al_2020,Netarts,NTOR1802_03PU,2/23/18,NA,45.37168,-123.96127,RTK-GPS,1.71,NAVD88,RTK-GPS,mudflat,NA,NT11
+Peck_et_al_2020,Netarts,NTOR1802_04PU,2/23/18,NA,45.37317,-123.96287,RTK-GPS,1.6,NAVD88,RTK-GPS,mudflat,NA,NT12
+Peck_et_al_2020,Netarts,NTOR1802_05PU,2/23/18,NA,45.37262,-123.96335,RTK-GPS,2.77,NAVD88,RTK-GPS,emergent,high,NT13
+Peck_et_al_2020,Netarts,NTOR1802_06PU,2/23/18,NA,45.36804,-123.96238,RTK-GPS,2.84,NAVD88,RTK-GPS,emergent,high,NT14
+Peck_et_al_2020,Netarts,NTOR1802_07PU,2/23/18,NA,45.3673,-123.96271,RTK-GPS,2.99,NAVD88,RTK-GPS,scrub shrub,NA,NT15
+Peck_et_al_2020,Netarts,NTOR1802_08PU,2/23/18,NA,45.3661,-123.96595,RTK-GPS,3.1,NAVD88,RTK-GPS,scrub shrub,NA,NT16
+Peck_et_al_2020,Netarts,NTOR1802_09PU,2/23/18,NA,45.37075,-123.95888,RTK-GPS,2.8,NAVD88,RTK-GPS,emergent,high,NT17
+Peck_et_al_2020,Netarts,NTOR1802_10PU,2/23/18,NA,45.37054,-123.95982,RTK-GPS,1.46,NAVD88,RTK-GPS,mudflat,NA,NT18
+Peck_et_al_2020,Salmon River,SROR1809_01PU,9/13/18,NA,45.029,-123.9788,handheld,2.49,NAVD88,RTK-GPS,emergent,high,SR05
+Peck_et_al_2020,Salmon River,SROR1809_02PU,9/13/18,NA,45.0286,-123.9786,handheld,2.5,NAVD88,RTK-GPS,emergent,high,SR06
+Peck_et_al_2020,Salmon River,SROR1809_03PU,9/13/18,NA,45.0268,-123.9782,handheld,2.5,NAVD88,RTK-GPS,emergent,high,SR07
+Peck_et_al_2020,Salmon River,SROR1809_04PU,9/13/18,NA,45.025,-123.9752,handheld,2.51,NAVD88,RTK-GPS,emergent,high,SR08
