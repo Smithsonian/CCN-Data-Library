@@ -72,7 +72,6 @@ WriteBib(as.BibEntry(bib_file), "data/primary_studies/peck_2020/derivative/peck_
 
 write_csv(cores, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_cores.csv")
 write_csv(species, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_species.csv")
-write_csv(impacts_raw, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_impacts.csv")
 write_csv(methods_raw, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_methods.csv")
 write_csv(depthseries, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_depthseries.csv")
 write_csv(study_citations, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_study_citations.csv")
