@@ -53,6 +53,9 @@ cores <- cores_raw %>%
 depthseries <- depthseries_raw %>%
   rename(fraction_carbon = fraction_organic_carbon,
          delta_c13 = delta_13C) %>%
+  mutate(pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
+         ra226_unit = ifelse(!is.na(ra226_activity), "disintegrationsPerMinutePerGram", NA), 
+         cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA)) %>%
   select(-c(ra226_mda, excess_pb210_mda, date, fraction_CaCO3, fraction_total_nitrogen, fraction_total_phosphorus, fraction_total_lignin,
             delta_15N, ratio_ad_al_vanillyls, ratio_ad_al_syringyls, ratio_syringyls_vanillyls, ratio_p.hydroxyls_vanillyls_plus_syringyls,
             ratio_PON_totalP_phenols, gamma_counting_sedmass, cumulative_sedmass_atdepth, excess_pb210_inventory, excess_pb210_inventory_se))
@@ -60,6 +63,10 @@ depthseries <- depthseries_raw %>%
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
   select(study_id, site_id, core_id, species_code) 
+
+methods <- methods_raw %>%
+  select(-c(dry_bulk_density_1_cm_section_sample_volume, dry_bulk_density_2_cm_section_sample_volume, 
+            loss_on_ignition_1_cm_section_sample_volume, loss_on_ignition_2_cm_section_sample_volume))
 
 ## Citations ####
 doi <- "https://doi.org/10.25573/data.9894266"
@@ -83,10 +90,11 @@ source("./scripts/1_data_formatting/qa_functions.R")
 test_colnames("cores", cores)
 test_colnames("depthseries", depthseries)
 test_colnames("species", species)
+test_colnames("methods", methods)
 
 write_csv(cores, "./data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020_cores.csv")
 write_csv(species, "./data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020_species.csv")
-write_csv(methods_raw, "./data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020_methods.csv")
+write_csv(methods, "./data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020_methods.csv")
 write_csv(depthseries, "./data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020_depthseries.csv")
 write_csv(study_citations, "./data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020_study_citations.csv")
 

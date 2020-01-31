@@ -44,7 +44,10 @@ cores <- cores_raw %>%
 depthseries <- depthseries_raw %>%
   select(-fraction_carbon_modeled, -dry_bulk_density_modeled) %>%
   rename(fraction_carbon = fraction_carbon_measured,
-         dry_bulk_density = dry_bulk_density_measured)
+         dry_bulk_density = dry_bulk_density_measured) %>%
+  mutate(pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
+         pb214_unit = ifelse(!is.na(pb214_activity), "disintegrationsPerMinutePerGram", NA), 
+         cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA))
 
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
