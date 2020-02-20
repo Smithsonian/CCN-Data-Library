@@ -107,18 +107,6 @@ test_varnames(methods)
 test_varnames(cores)
 test_varnames(depthseries)
 
-## Map points ####
-world <- ne_countries(scale = "medium", returnclass = "sf")
-
-ggplot(data = world) +
-  geom_sf() +
-  geom_point(data = cores, aes(x = core_longitude, y = core_latitude), size = 1, 
-             shape = 23, fill = "darkred") +
-  # coord_sf(xlim = c(min(cores$core_longitude), max(cores$core_longitude)), 
-  #          ylim = c(min(cores$core_latitude), max(cores$core_latitude)), expand = T)
-  #coord_sf(xlim=c(-84.4, -84.36), ylim=c(30.060, 30.084))
-  coord_sf(xlim=c(-84.5, -84.3), ylim=c(30, 30.15))
-
 ## Write files ####
 write_csv(cores, "./data/primary_studies/arriola_2017/derivative/arriola_and_cable_2017_cores.csv")
 write_csv(methods, "./data/primary_studies/arriola_2017/derivative/arriola_and_cable_2017_methods.csv")
