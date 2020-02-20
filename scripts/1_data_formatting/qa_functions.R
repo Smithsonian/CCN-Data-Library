@@ -240,12 +240,8 @@ select_and_reorder_columns <- function(datalevel_table, # A string corresponding
 
 test_numeric_vars <- function(input_data) {
   
-  controlled_numeric_attributes <- read_csv("./docs/controlled_attributes.csv", col_types = cols()) %>%
+  numeric_attributes <- read_csv("./docs/ccrcn_database_structure.csv", col_types = cols()) %>%
     filter(data_type == "numeric")
-  
-  numeric_attributes <- read_csv("./docs/uncontrolled_attributes.csv", col_types = cols()) %>%
-    filter(data_type == "numeric") %>%
-    bind_rows(controlled_numeric_attributes)
   
   # select only numeric columns 
   to_check <- subset(colnames(input_data), colnames(input_data) %in% numeric_attributes$attribute_name)
@@ -255,10 +251,7 @@ test_numeric_vars <- function(input_data) {
   
   library(skimr)
   
-  skim_with_defaults()
-  
-  # list of functions to run on numeric attributes
-  funs <- list(
+  funs <- sfl(
     min = function(x) min(x, na.rm=TRUE), 
     max = function(x) max(x, na.rm=TRUE), 
     median = function(x) median(x, na.rm=TRUE),
@@ -273,14 +266,10 @@ test_numeric_vars <- function(input_data) {
   )
   
   # Set skimr to run with our custom list of functions
-  skim_with(numeric = funs, append = TRUE)
+  my_skim <- skim_with(numeric = funs, append = TRUE)
   
-  # Organize into a wide form table 
   results <- testing_data %>%
-    skim() %>%
-    select(variable, type, stat, formatted) %>%
-    spread(stat, formatted) %>%
-    select(variable, type, n, min, max, median, mean, sd, missing, na_count, NaN_count)
+    my_skim()
   
   return(results)
 }

@@ -53,6 +53,8 @@ study_id,cores,"Unique identifier for the study made up of the first author’s fa
 site_id,cores,Site identification code unique to each study.,factor,NA,,,,
 core_id,cores,Core identification code unique to each site.,factor,NA,,,,
 core_year,cores,Year of core collection,numeric,YYYY,,,,1
+core_month,cores,Month of core collection,numeric,MM,,,,
+core_day,cores,Day of core collection,numeric,DD,,,,
 core_date,cores,Date of core collection.,Date,YYYY-MM-DD,,,,
 core_notes,cores,Any other relevant submitter generated notes on how cores were collected.,character,,,,,
 core_latitude,cores,Positional latitude of the core in decimal degree WGS84.,numeric,degree,,position,,
