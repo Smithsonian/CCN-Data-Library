@@ -41,8 +41,11 @@ cores <- cores_raw %>%
                           "F" = "snipe_creek_high_marsh"),
          core_position_method = "handheld",
          core_id = paste("snipe_creek", core_id, sep="_")) %>%
+  mutate(vegetation_class = "emergent",
+         vegetation_notes = ifelse(grepl("snipe_creek_HI", core_id) | grepl("snipe_creek_F", core_id) | grepl("snipe_creek_S", core_id),
+                                   "Core collected in emergent vegetation but located near tree hammocks", NA)) %>%
   select(study_id, site_id, core_id, core_year, core_month, core_day, 
-         core_latitude, core_longitude, core_position_method)
+         core_latitude, core_longitude, core_position_method, vegetation_class, vegetation_notes)
 
 ## Curate depthseries ####
 depthseries_curated <- depthseries_raw %>%
@@ -63,13 +66,15 @@ depthseries_curated <- depthseries_raw %>%
          study_id = study_id_value,
          core_id = paste("snipe_creek", core_id, sep="_"),
          depth_min = as.numeric(depth_min),
-         depth_max = as.numeric(depth_max))
+         depth_max = as.numeric(depth_max),
+         cs137_activity = ifelse(cs137_activity == 0, NA, cs137_activity))
 
 depthseries <- reorderColumns("depthseries", depthseries_curated) %>%
   select(1:14) # Remove all uncontrolled variables
   
 methods <- methods_raw %>%
-  mutate(study_id = study_id_value)
+  mutate(study_id = study_id_value) %>%
+  select(-age_depth_model_notes)
 
 ## Citation ####
 doi <- "https://doi.org/10.1002/lno.10652"
