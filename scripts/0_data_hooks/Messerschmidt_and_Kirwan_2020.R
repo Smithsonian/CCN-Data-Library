@@ -32,10 +32,10 @@ methods_raw <- read_csv("./data/primary_studies/messerschmidt_2020/original/mess
 cores <- cores_raw
 
 depthseries <- depthseries_raw %>%
-  mutate(cs137_unit = "disintegrationsPerMinutePerGram",
-         pb210_unit = "disintegrationsPerMinutePerGram",
-         bi214_unit = "disintegrationsPerMinutePerGram",
-         pb214_unit = "disintegrationsPerMinutePerGram") %>%
+  mutate(cs137_unit = ifelse(is.na(cs137_activity), NA, "disintegrationsPerMinutePerGram"),
+         pb210_unit = ifelse(is.na(total_pb210_activity) & is.na(excess_pb210_activity), NA, "disintegrationsPerMinutePerGram"),
+         bi214_unit = ifelse(is.na(bi214_activity), NA, "disintegrationsPerMinutePerGram"),
+         pb214_unit = ifelse(is.na(pb214_activity_295keV) & is.na(pb214_activity_352keV), NA, "disintegrationsPerMinutePerGram")) %>%
   select(-sedimentation_rate, -sedimentation_rate_se)
 
 methods <- methods_raw
@@ -54,7 +54,8 @@ study_citations <- as.data.frame(bib) %>%
   mutate(year = as.numeric(year),
          study_id = study_id_value,
          bibliography_id = study_id_value,
-         publication_type = bibtype)
+         publication_type = bibtype,
+         key = doi)
 
 ## Format bibliography
 bib_file <- study_citations %>%
@@ -62,4 +63,22 @@ bib_file <- study_citations %>%
   distinct() %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020.bib")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020.bib")
+
+## QA/QC ###############
+source("./scripts/1_data_formatting/qa_functions.R")
+
+depthseries <- reorderColumns("depthseries", depthseries)
+methods <- reorderColumns("methods", methods)
+
+# Make sure column names are formatted correctly: 
+test_colnames("cores", cores)
+test_colnames("depthseries", depthseries)
+test_colnames("species", species)
+test_colnames("methods", methods)
+
+write_csv(cores, "./data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020_cores.csv")
+write_csv(species, "./data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020_species.csv")
+write_csv(methods, "./data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020_methods.csv")
+write_csv(depthseries, "./data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020_depthseries.csv")
+write_csv(study_citations, "./data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020_study_citations.csv")
