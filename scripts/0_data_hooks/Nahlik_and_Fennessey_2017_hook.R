@@ -1,6 +1,6 @@
 # Author: Jaxine Wolfe
 
-# Hook script for blah blah
+# Hook script for carbon stock dataset referenced in Nahlik and Fennessey (2017)
 
 library(tidyverse)
 library(here)
@@ -8,17 +8,23 @@ library(here)
 # Download data ####
 
 # scrape data from web
-data <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_cond_stress.csv")
+# condition <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_cond_stress.csv")
+# condition_meta <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_cond_stress-meta.txt")
 
-metadata <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_cond_stress-meta.txt")
+soilchem <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_soilchem.csv")
+soilchem_meta <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_soilchem-meta.txt")
 
-write_csv(data, "./data/primary_studies/Nahlik_Fennessey_2017/original/NWCA_2011_cond_stress.csv")
+siteinfo <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_siteinfo.csv")
+siteinfo_meta <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_siteinfo-meta.txt")
+
+write_csv(soilchem, "./data/primary_studies/Nahlik_Fennessey_2017/original/nwca2011_soilchem.csv")
+write_csv(siteinfo, "./data/primary_studies/Nahlik_Fennessey_2017/original/nwca2011_siteinfo-meta.csv")
 
 # Data Curation #### 
 
-data_marine <- data %>%
+site_marine <- siteinfo %>%
   filter(SANDT_RSTUDY == "Coastal Watersheds" &
-           !is.na(XCOORD))
+           !is.na(AA_CENTER_LAT))
   
 # Trim and recode column headers
 
@@ -27,15 +33,15 @@ data_marine <- data %>%
 library(maps)
 
 # I suspect NA's are mostly inland
-data_na <- data %>% 
-  filter(is.na(SANDT_RSTUDY) &
-           !is.na(XCOORD))
+# site_na <- siteinfo %>%
+#   filter(is.na(SANDT_RSTUDY) &
+#            !is.na(AA_CENTER_LAT))
 
 map <- ggplot() +
   geom_polygon(aes(long, lat, group = group), data = map_data("usa"), fill = "grey50") +
   coord_quickmap()
 
-# problem...dataset xy coords are in Alber's
-map + geom_point(data = data_na, aes(x = XCOORD, y = YCOORD)) +
+# Points should all be coastal
+map + geom_point(data = site_marine, aes(x = AA_CENTER_LON, y = AA_CENTER_LAT, col = CLASS_FIELD_HGM)) +
   theme_classic()
 
