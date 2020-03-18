@@ -14,7 +14,6 @@ metadata <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca201
 
 write_csv(data, "./data/primary_studies/Nahlik_Fennessey_2017/original/NWCA_2011_cond_stress.csv")
 
-
 # Data Curation #### 
 
 data_marine <- data %>%
