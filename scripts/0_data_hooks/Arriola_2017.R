@@ -49,7 +49,7 @@ cores <- cores_raw %>%
 
 ## Curate depthseries ####
 depthseries_curated <- depthseries_raw %>%
-  rename(delta_c13 = d13C, fraction_carbon = `OC %`, dry_bulk_density = `dbd_gsed/cc`,
+  rename(delta_c13 = `δ13C`, fraction_carbon = `OC %`, dry_bulk_density = `dbd_gsed/cc`,
          cs137_activity = `137Cs`, ra226_activity =  `226Ra`, excess_pb210_activity = `210Pbex`, excess_pb210_activity_se = error,
          age = `Year of`, fraction_organic_matter = `OM%`) %>%
   separate(core_id, into=c("core_id", "depth"), sep=" ") %>%
@@ -67,10 +67,14 @@ depthseries_curated <- depthseries_raw %>%
          core_id = paste("snipe_creek", core_id, sep="_"),
          depth_min = as.numeric(depth_min),
          depth_max = as.numeric(depth_max),
-         cs137_activity = ifelse(cs137_activity == 0, NA, cs137_activity))
+         cs137_activity = ifelse(cs137_activity == 0, NA, cs137_activity)
+         ) %>% 
+  mutate(cs137_unit = "becquerelsPerKilogram",
+         pb210_unit = "becquerelsPerKilogram",
+         ra226_unit = "becquerelsPerKilogram")
 
 depthseries <- reorderColumns("depthseries", depthseries_curated) %>%
-  select(1:14) # Remove all uncontrolled variables
+  select(1:16) # Remove all uncontrolled variables
   
 methods <- methods_raw %>%
   mutate(study_id = study_id_value) %>%
