@@ -69,12 +69,12 @@ depthseries_curated <- depthseries_raw %>%
          depth_max = as.numeric(depth_max),
          cs137_activity = ifelse(cs137_activity == 0, NA, cs137_activity)
          ) %>% 
-  mutate(cs137_unit = "becquerelsPerKilogram",
-         pb210_unit = "becquerelsPerKilogram",
-         ra226_unit = "becquerelsPerKilogram")
+  mutate(cs137_unit = ifelse(is.na(cs137_activity), NA, "becquerelsPerKilogram"),
+         pb210_unit = ifelse(is.na(excess_pb210_activity), NA, "becquerelsPerKilogram"),
+         ra226_unit = ifelse(is.na(ra226_activity), NA, "becquerelsPerKilogram"))
 
 depthseries <- reorderColumns("depthseries", depthseries_curated) %>%
-  select(1:16) # Remove all uncontrolled variables
+  select(1:17) # Remove all uncontrolled variables
   
 methods <- methods_raw %>%
   mutate(study_id = study_id_value) %>%
