@@ -1,0 +1,113 @@
+---
+title: 'Arriola Data Vis Report'
+author: "James R Holmquist"
+date: "3/18/2020"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+library(tidyverse)
+core_data <- read_csv("../data/primary_studies/Arriola_2017/derivative/arriola_and_cable_2017_depthseries.csv")
+```
+
+# Bulk Density and Organic Matter
+``` {r bd and om}
+ggplot(data = core_data, aes(x=fraction_organic_matter, dry_bulk_density)) +
+  geom_point() +
+  xlab("Organic Matter (fraction)") +
+  ylab(expression(paste("Dry Bulk Density (g cm"^"-3",")", sep="")))
+```
+
+## Organic Matter vs Carbon
+
+``` {r om and oc}
+
+ggplot(data = core_data, aes(x=fraction_organic_matter, fraction_carbon)) +
+  geom_point(aes(color=site_id)) + 
+  xlab("Organic Matter (fraction)") +
+  ylab("Organic Carbon (fraction)")
+```
+
+## OM Depth Profiles
+
+``` {r om depth profile}
+
+ggplot(data = core_data, aes(x=depth_min, y=fraction_organic_matter)) +
+  geom_point() +
+  geom_line() +
+  facet_wrap(.~core_id) +
+  scale_x_reverse() +
+  ylab("Organic Matter (fraction)") +
+  xlab("Max Depth (cm)") +
+  coord_flip()
+
+```
+
+## Modeled Bulk Density Profiles
+
+``` {r bd depth profiles}
+
+ggplot(data = core_data, aes(x=depth_min, y=dry_bulk_density)) +
+  geom_point() +
+  geom_line() +
+  facet_wrap(.~core_id) +
+  ylab(expression(paste("Dry Bulk Density (g cm"^"-3",")", sep=""))) +
+  xlab("Max Depth (cm)") +
+  scale_x_reverse() +
+  coord_flip()
+
+```
+
+
+## Pb-210 Profiles
+
+``` {r 210Pb depth profiles}
+
+pbsubset <- core_data %>% 
+  filter(
+                     !is.na(excess_pb210_activity) |
+                     !is.na(ra226_activity)
+                   ) %>% 
+  mutate(total_210Pb_activity = excess_pb210_activity + ra226_activity)
+
+pbdata_se <- pbsubset %>%
+  mutate(ra226_activity_se = NA,
+         total_210Pb_activity_se = NA) %>% 
+  select(core_id, depth_min,
+         ra226_activity_se, total_210Pb_activity_se, excess_pb210_activity_se) %>%
+  rename(ra226_activity=ra226_activity_se, total_210Pb_activity = total_210Pb_activity_se,
+         excess_pb210_activity=excess_pb210_activity_se) %>%
+  gather(key="element", value="radiactivity_se", -core_id, -depth_min)
+
+pbdata <- pbsubset %>%
+  select(core_id, depth_min, total_210Pb_activity,
+         ra226_activity, excess_pb210_activity) %>%
+  gather(key="element", value="radiactivity", -core_id, -depth_min) %>%
+  left_join(pbdata_se)
+
+ggplot(data = pbdata, aes(x=depth_min, y=radiactivity, color=element)) +
+  geom_line() +
+  geom_point(pch=21, fill="white") +
+  geom_segment(aes(x=depth_min, y=radiactivity-radiactivity_se,
+                   xend=depth_min, yend=radiactivity+radiactivity_se)) +
+  facet_wrap(.~core_id) +
+  scale_x_reverse() +
+  coord_flip() +
+  theme(legend.position="top")
+
+```
+
+### Age Depth Models
+
+``` {r age depth models}
+
+ggplot(data = core_data, aes(x=depth_min, y=age)) +
+  geom_line() +
+  facet_wrap(.~core_id) +
+  scale_x_reverse() +
+  ylab("Age") +
+  xlab("Max Depth (cm)") +
+  coord_flip()
+
+```
