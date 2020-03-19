@@ -122,9 +122,13 @@ bi224_activity,depthseries,Radioactivity counts per unit dry weight for 214Bi,,,
 bi224_activity_sd,depthseries,Reported standard deviation for radioactivity counts per unit dry weight for 214Bi,,,,age_depth,,1
 bi224_activity_se,depthseries,Reported standard error for radioactivity counts per unit dry weight for 214Bi,,,,age_depth,,1
 bi224_unit,depthseries,Reported unit for sample interval's Bi 214 activity measurements,,,,,,1
-pb214_activity,depthseries,Radioactivity counts per unit dry weight for 214 Pb,,,,,,1
-pb214_activity_sd,depthseries,Estimated uncertainty in pb214_activity.,,,,,,1
-pb214_activity_se,depthseries,Estimated uncertainty in pb214_activity.,,,,,,1
+pb214_activity,depthseries,Radioactivity counts per unit dry weight for 214 Pb,numeric,,,,,1
+pb214_activity_sd,depthseries,Estimated uncertainty in pb214_activity.,numeric,,,,,1
+pb214_activity_se,depthseries,Estimated uncertainty in pb214_activity.,numeric,,,,,1
+pb214_activity_352keV,depthseries,Radioactivity counts per unit dry weight for lead 214 (214Pb) at 352 keV,numeric,,,,,
+pb214_activity_se_352keV,depthseries,1 standard error of uncertainty associated with pb214_activity at 352 keV.,numeric,,,,,
+pb214_activity_295keV,depthseries,Radioactivity counts per unit dry weight for lead 214 (214Pb) at 295 keV,numeric,,,,,
+pb214_activity_se_295keV,depthseries,1 standard error of uncertainty associated with pb214_activity at 295 keV.,numeric,,,,,
 pb214_unit,depthseries,Reported unit for sample interval's 214 Pb activity measurements,,,,,,1
 th234_activity,depthseries,Radioactivity counts per unit dry weight for 234 Th,,,,,,1
 th234_activity_sd,depthseries,Estimated uncertainty in th234_activity.,,,,,,1
