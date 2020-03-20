@@ -38,7 +38,9 @@ depthseries <- depthseries_raw %>%
          pb214_unit = ifelse(is.na(pb214_activity_295keV) & is.na(pb214_activity_352keV), NA, "disintegrationsPerMinutePerGram")) %>%
   select(-sedimentation_rate, -sedimentation_rate_se)
 
-methods <- methods_raw
+methods <- methods_raw %>%
+  mutate(dry_bulk_density_flag = dry_bulk_density_sample_volume) %>%
+  select(-dry_bulk_density_sample_volume)
 
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
