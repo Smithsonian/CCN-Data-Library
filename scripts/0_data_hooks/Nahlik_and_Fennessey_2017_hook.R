@@ -33,11 +33,13 @@ write_csv(plants, "./data/primary_studies/Nahlik_Fennessey_2017/original/nwca201
 
 # Data Curation #### 
 
+data_release <- "Nahlik_and_Fennessey_2017"
+
 # Site ####
 site_marine <- siteinfo %>%
   filter(SANDT_RSTUDY == "Coastal Watersheds" &
            !is.na(AA_CENTER_LAT)) %>%
-  select(SITE_ID, DATE_COL, AA_CENTER_LAT, AA_CENTER_LON, ANALYSIS_LAT, ANALYSIS_LON,
+  select(SITE_ID, UID, DATE_COL, ANALYSIS_LAT, ANALYSIS_LON,
          COE_REGION, CLASS_FIELD_FWSST, CLASS_FIELD_HGM, HUC10_NAME, MAJ_RIVER_BASIN, 
          SANDT_RSTUDY, SANDT_COAST_REG) %>%
   mutate(salinity_class = recode(CLASS_FIELD_FWSST,
@@ -63,10 +65,13 @@ site_marine$DATE_COL <- dmy(site_marine$DATE_COL)
 # Cores/Depthseries? ####
 soil_marine <- soilchem %>%
   filter(SITE_ID %in% unique(site_marine$site_id)) %>%
-  select(SITE_ID, DATE_COL, SAMPLE_ID, DEPTH, DEPTH_FLAG, TOT_CARBON, EC) %>%
+  select(SITE_ID, UID, DATE_COL, SAMPLE_ID, DEPTH, DEPTH_FLAG, TOT_CARBON, EC,
+         BULK_DEN_DBF, BULK_DEN_DBF_FLAG) %>%
   rename(site_id = SITE_ID, 
          core_date = DATE_COL,
-         sample_id = SAMPLE_ID)
+         sample_id = SAMPLE_ID, 
+         fraction_carbon = TOT_CARBON,
+         dry_bulk_density = BULK_DEN_DBF)
 
 soil_marine$core_date <- as.Date(soil_marine$core_date, format = "%m/%d/%Y")
 
@@ -86,7 +91,21 @@ species_marine$DATE_COL <- dmy(species_marine$DATE_COL)
 
 # Impact ####
 
-
+impact_marine <- condition %>%
+  filter(SITE_ID %in% unique(site_marine$site_id)) %>%
+  mutate(study_id = data_release) %>%
+  rename(site_id = SITE_ID) %>%
+  select(study_id, site_id, contains("STRESS")) %>%
+  gather(impact_class, stressor_class, contains("STRESS")) %>%
+  filter(stressor_class == "High" |
+           stressor_class == "Very High") %>%
+  mutate(impact_class = recode(impact_class,
+                               "STRESS_DAM" = "impounded",
+                               "STRESS_DITCH" = "ditched",
+                               "STRESS_VEGREMOVAL" = "invasive plants removed",
+                               "STRESS_VEGREPLACE" = "revegitated",
+                               "STRESS_FILL" = "sediment added")) %>%
+  distinct()
 
 # Methods ####
 methods <- data.frame(study_id = "Nahlik_and_Fennessey_2017",
