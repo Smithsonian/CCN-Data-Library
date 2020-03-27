@@ -10,26 +10,29 @@ library(lubridate)
 
 # scrape data from web
 condition <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_cond_stress.csv")
-condition_meta <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_cond_stress-meta.txt")
+condition_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_cond_stress-meta.txt")
 
 # site information
 siteinfo <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_siteinfo.csv")
-siteinfo_meta <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_siteinfo-meta.txt")
+siteinfo_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_siteinfo-meta.txt")
 
 # soil chemistry
 soilchem <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_soilchem.csv")
-soilchem_meta <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_soilchem-meta.txt")
+soilchem_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_soilchem-meta.txt")
 
 # vegetation
-plants <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_plant_pres_cvr.csv")
-plants_meta <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_plant_pres_cvr-meta.txt")
+veg <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_plant_pres_cvr.csv")
+veg_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_plant_pres_cvr-meta.txt")
 
-usaram <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_usaram_attributes.csv")
+# hydrology
+hydro <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_hydro.csv")
+hydro_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_hydro-meta.txt")
 
 # write original data
+write_csv(condition, "./data/primary_studies/Nahlik_Fennessey_2017/original/nwca2011_cond_stress.csv")
 write_csv(soilchem, "./data/primary_studies/Nahlik_Fennessey_2017/original/nwca2011_soilchem.csv")
 write_csv(siteinfo, "./data/primary_studies/Nahlik_Fennessey_2017/original/nwca2011_siteinfo-meta.csv")
-write_csv(plants, "./data/primary_studies/Nahlik_Fennessey_2017/original/nwca2011_plant_pres_cvr.csv")
+write_csv(veg, "./data/primary_studies/Nahlik_Fennessey_2017/original/nwca2011_plant_pres_cvr.csv")
 
 # Data Curation #### 
 
@@ -38,11 +41,10 @@ data_release <- "Nahlik_and_Fennessey_2017"
 # Site ####
 site_marine <- siteinfo %>%
   filter(SANDT_RSTUDY == "Coastal Watersheds" &
-           !is.na(AA_CENTER_LAT)) %>%
-  select(SITE_ID, UID, DATE_COL, ANALYSIS_LAT, ANALYSIS_LON,
-         COE_REGION, CLASS_FIELD_FWSST, CLASS_FIELD_HGM, HUC10_NAME, MAJ_RIVER_BASIN, 
-         SANDT_RSTUDY, SANDT_COAST_REG) %>%
-  mutate(salinity_class = recode(CLASS_FIELD_FWSST,
+           !is.na(ANALYSIS_LAT)) %>%
+  mutate(study_id = data_release, 
+         core_id = paste0(SITE_ID, "-", UID),
+         salinity_class = recode(CLASS_FIELD_FWSST,
                                  "E2EM" = "estuarine",
                                  "E2SS" = "estuarine",
                                  "PEM" = "palustrine",
@@ -58,28 +60,59 @@ site_marine <- siteinfo %>%
                                    "PSS" = "scrub shrub",
                                    "PF" = NA_character_,
                                    "PUBPAB" = NA_character_)) %>%
-  rename(site_id = SITE_ID)
+  rename(site_id = SITE_ID, 
+         core_latitude = ANALYSIS_LAT,
+         core_longitude = ANALYSIS_LON,
+         core_date = DATE_COL) %>%
+  select(study_id, site_id, core_id, core_date, core_latitude, core_longitude, salinity_class, vegetation_class,
+         COE_REGION, CLASS_FIELD_FWSST, CLASS_FIELD_HGM, HUC10_NAME, MAJ_RIVER_BASIN, 
+         SANDT_RSTUDY, SANDT_COAST_REG)
 
-site_marine$DATE_COL <- dmy(site_marine$DATE_COL)  
+site_marine$core_date <- dmy(site_marine$core_date)  
 
-# Cores/Depthseries? ####
+# site <- site_marine %>%
+#   select(study_id, site_id, core_id, core_date, core_latitude, core_longitude, salinity_class, vegetation_class,
+#          COE_REGION, CLASS_FIELD_FWSST, CLASS_FIELD_HGM, HUC10_NAME, MAJ_RIVER_BASIN, 
+#          SANDT_RSTUDY, SANDT_COAST_REG)
+
+# Soil chemistry ####
 soil_marine <- soilchem %>%
-  filter(SITE_ID %in% unique(site_marine$site_id)) %>%
-  select(SITE_ID, UID, DATE_COL, SAMPLE_ID, DEPTH, DEPTH_FLAG, TOT_CARBON, EC,
-         BULK_DEN_DBF, BULK_DEN_DBF_FLAG) %>%
+  mutate(core_id = paste0(SITE_ID, "-", UID),
+         study_id = data_release) %>%
+  filter(core_id %in% unique(site_marine$core_id)) %>%
   rename(site_id = SITE_ID, 
          core_date = DATE_COL,
          sample_id = SAMPLE_ID, 
          fraction_carbon = TOT_CARBON,
-         dry_bulk_density = BULK_DEN_DBF)
+         dry_bulk_density = BULK_DEN_DBF) %>%
+  select(study_id, site_id, core_id, sample_id, core_date, fraction_carbon,
+         dry_bulk_density, BULK_DEN_DBF_FLAG, DEPTH, DEPTH_FLAG, EC)
 
 soil_marine$core_date <- as.Date(soil_marine$core_date, format = "%m/%d/%Y")
 
+# Cores ####
+
+cores <- soil_marine %>%
+  left_join(., site_marine %>% 
+              select(site_id, core_latitude, core_longitude, salinity_class, vegetation_class), 
+            by = "site_id") %>%
+  select(study_id, site_id, core_id, core_date, core_latitude, core_longitude,
+         salinity_class, vegetation_class) %>%
+  distinct()
+
+# Depthseries ####
+
+depthseries <- soil_marine %>%
+  select(study_id, site_id, core_id, sample_id, DEPTH, DEPTH_FLAG, 
+         dry_bulk_density, BULK_DEN_DBF_FLAG, fraction_carbon)
+
 # Species ####
 species_marine <- plants %>%
-  filter(SITE_ID %in% unique(site_marine$site_id) &
+  mutate(core_id = paste0(SITE_ID, "-", UID),
+         study_id = data_release) %>%
+  filter(core_id %in% unique(site_marine$core_id) &
            COVER > 20.0) %>%
-  select(SITE_ID, UID, DATE_COL, SPECIES, SPECIES_NAME_ID, SPECIES_COMMENT) %>%
+  select(study_id, SITE_ID, core_id, SPECIES, SPECIES_NAME_ID, SPECIES_COMMENT) %>%
   separate(col = SPECIES, into = c("genus", "species"), sep = " ") %>%
   mutate(species = replace_na(species, "spp.")) %>%
   rename(site_id = SITE_ID,
@@ -87,7 +120,7 @@ species_marine <- plants %>%
          species_notes = SPECIES_COMMENT) %>%
   distinct()
 
-species_marine$DATE_COL <- dmy(species_marine$DATE_COL)
+# species_marine$DATE_COL <- dmy(species_marine$DATE_COL)
 
 # Impact ####
 
@@ -138,3 +171,20 @@ map + geom_point(data = site_marine, aes(x = ANALYSIS_LON, y = ANALYSIS_LAT, col
 
 map + geom_point(data = site_marine, aes(x = ANALYSIS_LON, y = ANALYSIS_LAT, col = salinity_class)) +
   theme_classic()
+
+
+## Output Curated Data ####
+
+# write to /final in data dir
+write.csv(cores, "./data/primary_studies/Nahlik_Fennessey_2017/intermediate/Nahlik_Fennessey_2017_cores.csv",
+          row.names = FALSE)
+write.csv(depthseries, "./data/primary_studies/Nahlik_Fennessey_2017/intermediate/Nahlik_Fennessey_2017_depthseries.csv",
+          row.names = FALSE)
+write.csv(species_marine, "./data/primary_studies/Nahlik_Fennessey_2017/intermediate/Nahlik_Fennessey_2017_species.csv",
+          row.names = FALSE)
+write.csv(impact_marine, "./data/primary_studies/Nahlik_Fennessey_2017/intermediate/Nahlik_Fennessey_2017_impact.csv",
+          row.names = FALSE)
+# write.csv(site, "./data/primary_studies/Nahlik_Fennessey_2017/intermediate/Nahlik_Fennessey_2017_site.csv",
+          # row.names = FALSE)
+# write.csv(methods, "./data/primary_studies/Nahlik_Fennessey_2017/intermediate/Nahlik_Fennessey_2017_methods.csv",
+#           row.names = FALSE)
