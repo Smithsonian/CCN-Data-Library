@@ -1,9 +1,12 @@
-# Author: Jaxine Wolfe
+# Authors:
+# Amanda M. Nahlik <nahlik.amanda@epa.gov>
+# Siobhan Fennessy
 
-# Hook script for carbon stock dataset referenced in Nahlik and Fennessey (2017)
+# Hook script for carbon stock dataset referenced in Nahlik and Fennessey (2016)
 
 library(tidyverse)
 library(lubridate)
+library(RefManageR)
 # library(here)
 
 # Download data ####
@@ -30,15 +33,18 @@ veg_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_
 hydro <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_hydro.csv")
 hydro_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_hydro-meta.txt")
 
+# citations
+study_citations <- read_csv("./data/primary_studies/Nahlik_Fennessey_2016/original/Nahlik_Fennessey_2016_citations.csv")
+
 # write original data
-write_csv(condition, "./data/primary_studies/Nahlik_Fennessey_2017/original/nwca2011_cond_stress.csv")
-write_csv(soilchem, "./data/primary_studies/Nahlik_Fennessey_2017/original/nwca2011_soilchem.csv")
-write_csv(siteinfo, "./data/primary_studies/Nahlik_Fennessey_2017/original/nwca2011_siteinfo-meta.csv")
-write_csv(veg, "./data/primary_studies/Nahlik_Fennessey_2017/original/nwca2011_plant_pres_cvr.csv")
+write_csv(condition, "./data/primary_studies/Nahlik_Fennessey_2016/original/nwca2011_cond_stress.csv")
+write_csv(soilchem, "./data/primary_studies/Nahlik_Fennessey_2016/original/nwca2011_soilchem.csv")
+write_csv(siteinfo, "./data/primary_studies/Nahlik_Fennessey_2016/original/nwca2011_siteinfo-meta.csv")
+write_csv(veg, "./data/primary_studies/Nahlik_Fennessey_2016/original/nwca2011_plant_pres_cvr.csv")
 
 # Data Curation #### 
 
-data_release <- "Nahlik_and_Fennessey_2017"
+data_release <- "Nahlik_and_Fennessey_2016"
 
 ## Site ----
 site_marine <- siteinfo %>%
@@ -181,7 +187,7 @@ impacts <- condition %>%
   distinct()
 
 # Methods ----
-methods <- data.frame(study_id = "Nahlik_and_Fennessey_2017",
+methods <- data.frame(study_id = "Nahlik_and_Fennessey_2016",
                       coring_method = "push core",
                       sediment_sieved_flag = "sediment sieved",
                       sediment_sieve_size = 2, 
@@ -192,7 +198,20 @@ methods <- data.frame(study_id = "Nahlik_and_Fennessey_2017",
                       fraction_carbon_method = "EA", 
                       fraction_carbon_type = "organic carbon")
 
-# Investigate Data ####
+## Citations ####
+
+# Format bibliography
+bib_file <- study_citations %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("key")
+
+WriteBib(as.BibEntry(bib_file), 
+         "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_and_Fennessey_2016.bib")
+
+
+## QA/QC #####
+
 # map the data
 library(maps)
 
@@ -219,18 +238,26 @@ map + geom_point(data = site_marine,
   theme_classic()
 # ggsave("locations_class_field_salinity.jpg")
 
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Make sure column names are formatted correctly: 
+test_colnames("cores", cores)
+test_colnames("depthseries", depthseries)
+test_colnames("species", species)
+test_colnames("methods", methods)
+
 ## Output Curated Data ####
 
 # write to intermediate/final in data dir
-write.csv(cores, "./data/primary_studies/Nahlik_Fennessey_2017/intermediate/Nahlik_Fennessey_2017_cores.csv",
+write.csv(cores, "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_Fennessey_2016_cores.csv",
           row.names = FALSE)
-write.csv(depthseries, "./data/primary_studies/Nahlik_Fennessey_2017/intermediate/Nahlik_Fennessey_2017_depthseries.csv",
+write.csv(depthseries, "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_Fennessey_2016_depthseries.csv",
           row.names = FALSE)
-write.csv(species, "./data/primary_studies/Nahlik_Fennessey_2017/intermediate/Nahlik_Fennessey_2017_species.csv",
+write.csv(species, "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_Fennessey_2016_species.csv",
           row.names = FALSE)
-write.csv(impacts, "./data/primary_studies/Nahlik_Fennessey_2017/intermediate/Nahlik_Fennessey_2017_impacts.csv",
+write.csv(impacts, "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_Fennessey_2016_impacts.csv",
           row.names = FALSE)
-write.csv(site, "./data/primary_studies/Nahlik_Fennessey_2017/intermediate/Nahlik_Fennessey_2017_site.csv",
+write.csv(site, "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_Fennessey_2016_site.csv",
           row.names = FALSE)
-write.csv(methods, "./data/primary_studies/Nahlik_Fennessey_2017/intermediate/Nahlik_Fennessey_2017_methods.csv",
+write.csv(methods, "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_Fennessey_2016_methods.csv",
           row.names = FALSE)
