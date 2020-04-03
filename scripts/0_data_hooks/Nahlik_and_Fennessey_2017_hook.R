@@ -162,7 +162,7 @@ species <- species_raw %>%
   select(study_id, site_id, core_id, genus, species, species_code, count, species_notes) %>%
   distinct()
 
-# Impact ####
+# Impact ----
 
 impacts <- condition %>%
   filter(SITE_ID %in% unique(site_marine$site_id)) %>%
@@ -180,11 +180,12 @@ impacts <- condition %>%
                                "STRESS_FILL" = "sediment added")) %>%
   distinct()
 
-# Methods ####
+# Methods ----
 methods <- data.frame(study_id = "Nahlik_and_Fennessey_2017",
                       coring_method = "push core",
                       sediment_sieved_flag = "sediment sieved",
                       sediment_sieve_size = 2, 
+                      dry_bulk_density_flag = "modeled",
                       carbon_measured_or_modeled = "measured",
                       carbonates_removed = TRUE,
                       carbonate_removal_method = "direct acid treatment",
@@ -200,15 +201,21 @@ map <- ggplot() +
   coord_quickmap()
 
 # Points should all be coastal
-map + geom_point(data = site_marine, aes(x = core_longitude, y = core_latitude, col = CLASS_FIELD_FWSST)) +
+map + geom_point(data = site_marine, 
+                 aes(x = core_longitude, y = core_latitude, col = CLASS_FIELD_FWSST),
+                 size = 0.5) +
   theme_classic()
 # ggsave("locations_class_field_fwsst.jpg")
 
-map + geom_point(data = site_marine, aes(x = core_longitude, y = core_latitude, col = CLASS_FIELD_HGM)) +
+map + geom_point(data = site_marine, 
+                 aes(x = core_longitude, y = core_latitude, col = CLASS_FIELD_HGM),
+                 size = 0.5) +
   theme_classic()
 # ggsave("locations_class_field_hgm.jpg")
 
-map + geom_point(data = site_marine, aes(x = core_longitude, y = core_latitude, col = salinity_class)) +
+map + geom_point(data = site_marine, 
+                 aes(x = core_longitude, y = core_latitude, col = salinity_class),
+                 size = 0.5) +
   theme_classic()
 # ggsave("locations_class_field_salinity.jpg")
 
