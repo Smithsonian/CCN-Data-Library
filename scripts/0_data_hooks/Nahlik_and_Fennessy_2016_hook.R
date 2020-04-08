@@ -2,11 +2,12 @@
 # Amanda M. Nahlik <nahlik.amanda@epa.gov>
 # Siobhan Fennessy
 
-# Hook script for carbon stock dataset referenced in Nahlik and Fennessey (2016)
+# Hook script for carbon stock dataset referenced in Nahlik and Fennessy (2016)
 
 library(tidyverse)
 library(lubridate)
 library(RefManageR)
+library(stringr)
 # library(here)
 
 # Download data ####
@@ -34,22 +35,24 @@ hydro <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_h
 hydro_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_hydro-meta.txt")
 
 # citations
-study_citations <- read_csv("./data/primary_studies/Nahlik_Fennessey_2016/original/Nahlik_Fennessey_2016_citations.csv")
+study_citations <- read_csv("./data/primary_studies/Nahlik_Fennessy_2016/original/Nahlik_Fennessy_2016_citations.csv")
 
 # write original data
-write_csv(condition, "./data/primary_studies/Nahlik_Fennessey_2016/original/nwca2011_cond_stress.csv")
-write_csv(soilchem, "./data/primary_studies/Nahlik_Fennessey_2016/original/nwca2011_soilchem.csv")
-write_csv(siteinfo, "./data/primary_studies/Nahlik_Fennessey_2016/original/nwca2011_siteinfo-meta.csv")
-write_csv(veg, "./data/primary_studies/Nahlik_Fennessey_2016/original/nwca2011_plant_pres_cvr.csv")
+# write_csv(condition, "./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_cond_stress.csv")
+# write_csv(soilchem, "./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_soilchem.csv")
+# write_csv(siteinfo, "./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_siteinfo-meta.csv")
+# write_csv(veg, "./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_plant_pres_cvr.csv")
 
 # Data Curation #### 
 
-data_release <- "Nahlik_and_Fennessey_2016"
+data_release <- "Nahlik_and_Fennessy_2016"
 
 ## Site ----
 site_marine <- siteinfo %>%
   filter(SANDT_RSTUDY == "Coastal Watersheds" &
            !is.na(ANALYSIS_LAT)) %>%
+  filter(MAJ_RIVER_BASIN != "Great Lakes" &
+           SANDT_COAST_REG != "Great Lakes Region") %>%
   mutate(study_id = data_release, 
          core_date = dmy(DATE_COL),
          core_id = paste0(SITE_ID, "-", UID),
@@ -83,18 +86,20 @@ site_marine <- siteinfo %>%
 # mutate(site_description = paste(site_name, site_raw$site_description, sep="; "))
 
 # extract inundation class and merge with site data
-site <- hydro %>%
-  mutate(core_id = paste0(SITE_ID, "-", UID),
-         inundation_notes = "field observation") %>%
-  filter(core_id %in% unique(site_marine$core_id)) %>%
+site <- site_marine %>%
+  select(-c(core_id, core_date, core_longitude, core_latitude, SANDT_RSTUDY)) %>%
+  distinct()
+  # mutate(core_id = paste0(SITE_ID, "-", UID),
+  #        inundation_notes = "field observation") %>%
+  # filter(core_id %in% unique(site_marine$core_id)) %>%
   # rename and recode indundation class and notes 
   # use high_table, estuary channel, or estuary surge presence?
-  select(core_id, HIGH_TABLE, HIGH_TABLE_COMMENT, 
-         ESTCHANNEL_PRESENT, ESTCHANNEL_PRESENT_COMMENT, 
-         ESTSURGE_PRESENT, ESTSURGE_PRESENT_COMMENT,
-         TIDAL_STAGE, inundation_notes) %>%
-  left_join(site_marine, ., by = "core_id") %>%
-  select(-core_longitude, -core_latitude)
+  # select(core_id, HIGH_TABLE, HIGH_TABLE_COMMENT, 
+  #        ESTCHANNEL_PRESENT, ESTCHANNEL_PRESENT_COMMENT, 
+  #        ESTSURGE_PRESENT, ESTSURGE_PRESENT_COMMENT,
+  #        TIDAL_STAGE, inundation_notes) %>%
+  # left_join(site_marine, ., by = "core_id") %>%
+  # select(-core_longitude, -core_latitude)
 
 ## Soil chemistry ----
 
@@ -130,6 +135,7 @@ cores <- soil_marine %>%
 depthseries <- soil_marine %>%
   rename("depth_interval_notes" = "DEPTH_FLAG", 
          "dry_bulk_density_notes" = "BULK_DEN_DBF_FLAG") %>%
+  mutate(depth_interval_notes = str_to_sentence(depth_interval_notes)) %>%
   select(study_id, site_id, core_id, sample_id, DEPTH, 
          dry_bulk_density, dry_bulk_density_notes, fraction_carbon, depth_interval_notes)
 
@@ -148,7 +154,9 @@ species_raw <- veg %>%
   filter(core_id %in% unique(site_marine$core_id)) %>%
   left_join(., species_lookup, by = "SPECIES") %>%
   separate(col = SPECIES, into = c("genus", "species"), sep = " ") %>%
-  mutate(species = replace_na(species, "spp.")) %>%
+  mutate(species = replace_na(species, "spp."),
+         species = recode(species,
+                          "S.L." = "spp.")) %>%
   rename(site_id = SITE_ID,
          species_comment = SPECIES_COMMENT) %>%
   select(study_id, site_id, core_id, genus, species, species_code, species_comment) %>%
@@ -166,7 +174,11 @@ species <- species_raw %>%
   left_join(., sp_notes_lookup, 
             by = c("core_id", "genus", "species")) %>%
   select(study_id, site_id, core_id, genus, species, species_code, count, species_notes) %>%
-  distinct()
+  filter(species != "(>.5M)" & species != "(GRASS") %>%
+  mutate(genus = str_to_title(genus),
+         species = tolower(species), 
+         species_notes = str_to_sentence(species_notes)) %>%
+  distinct() 
 
 # Impact ----
 
@@ -187,7 +199,7 @@ impacts <- condition %>%
   distinct()
 
 # Methods ----
-methods <- data.frame(study_id = "Nahlik_and_Fennessey_2016",
+methods <- data.frame(study_id = "Nahlik_and_Fennessy_2016",
                       coring_method = "push core",
                       sediment_sieved_flag = "sediment sieved",
                       sediment_sieve_size = 2, 
@@ -207,7 +219,7 @@ bib_file <- study_citations %>%
   column_to_rownames("key")
 
 WriteBib(as.BibEntry(bib_file), 
-         "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_and_Fennessey_2016.bib")
+         "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_and_Fennessy_2016.bib")
 
 
 ## QA/QC #####
@@ -249,15 +261,15 @@ test_colnames("methods", methods)
 ## Output Curated Data ####
 
 # write to intermediate/final in data dir
-write.csv(cores, "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_Fennessey_2016_cores.csv",
+write.csv(cores, "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_Fennessy_2016_cores.csv",
           row.names = FALSE)
-write.csv(depthseries, "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_Fennessey_2016_depthseries.csv",
+write.csv(depthseries, "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_Fennessy_2016_depthseries.csv",
           row.names = FALSE)
-write.csv(species, "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_Fennessey_2016_species.csv",
+write.csv(species, "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_Fennessy_2016_species.csv",
           row.names = FALSE)
-write.csv(impacts, "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_Fennessey_2016_impacts.csv",
+write.csv(impacts, "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_Fennessy_2016_impacts.csv",
           row.names = FALSE)
-write.csv(site, "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_Fennessey_2016_site.csv",
+write.csv(site, "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_Fennessy_2016_site.csv",
           row.names = FALSE)
-write.csv(methods, "./data/primary_studies/Nahlik_Fennessey_2016/intermediate/Nahlik_Fennessey_2016_methods.csv",
+write.csv(methods, "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_Fennessy_2016_methods.csv",
           row.names = FALSE)
