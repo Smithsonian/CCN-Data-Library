@@ -31,8 +31,8 @@ veg <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_pla
 veg_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_plant_pres_cvr-meta.txt")
 
 # hydrology
-hydro <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_hydro.csv")
-hydro_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_hydro-meta.txt")
+# hydro <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_hydro.csv")
+# hydro_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_hydro-meta.txt")
 
 # citations
 study_citations <- read_csv("./data/primary_studies/Nahlik_Fennessy_2016/original/Nahlik_Fennessy_2016_citations.csv")
@@ -87,7 +87,9 @@ site_marine <- siteinfo %>%
 
 # extract inundation class and merge with site data
 site <- site_marine %>%
-  select(-c(core_id, core_date, core_longitude, core_latitude, SANDT_RSTUDY)) %>%
+  mutate(site_description = paste0(HUC10_NAME, "; ", MAJ_RIVER_BASIN)) %>%
+  select(study_id, site_id, site_description, salinity_class, salinity_method, 
+         vegetation_class, vegetation_method) %>%
   distinct()
   # mutate(core_id = paste0(SITE_ID, "-", UID),
   #        inundation_notes = "field observation") %>%
@@ -116,7 +118,6 @@ soil_marine <- soilchem %>%
          dry_bulk_density, BULK_DEN_DBF_FLAG, DEPTH, DEPTH_FLAG, EC)
 
 ## Cores 
-# include inundation when that gets resolved for the siteinfo
 # core_position, core_elevation, core_length_flag?
 
 cores <- soil_marine %>%
@@ -125,60 +126,77 @@ cores <- soil_marine %>%
                      salinity_class, salinity_method, 
                      vegetation_class, vegetation_method), 
             by = "site_id") %>%
-  select(study_id, site_id, core_id, core_date, core_latitude, core_longitude,
+  mutate(core_year = year(core_date),
+         core_month = month(core_date),
+         core_day = day(core_date)) %>%
+  select(study_id, site_id, core_id, core_year, core_month, core_day, core_latitude, core_longitude,
          salinity_class, salinity_method, vegetation_class, vegetation_method) %>%
   distinct()
 
 ## Depthseries
-# should the fraction_carbon be fraction_organic_matter?
 
 depthseries <- soil_marine %>%
-  rename("depth_interval_notes" = "DEPTH_FLAG", 
-         "dry_bulk_density_notes" = "BULK_DEN_DBF_FLAG") %>%
-  mutate(depth_interval_notes = str_to_sentence(depth_interval_notes)) %>%
-  select(study_id, site_id, core_id, sample_id, DEPTH, 
-         dry_bulk_density, dry_bulk_density_notes, fraction_carbon, depth_interval_notes)
+  rename("dry_bulk_density_notes" = "BULK_DEN_DBF_FLAG",
+         "depth_max" = "DEPTH") %>%
+  mutate(depth_min = c(0, depth_max[1:(nrow(.)-1)]),
+         dry_bulk_density_notes = gsub("Db", "Dry bulk density", dry_bulk_density_notes),
+         dry_bulk_density_notes = gsub(", g/cc", "", dry_bulk_density_notes),
+         dry_bulk_density_notes = recode(dry_bulk_density_notes,
+                                         "g/cc" = NA_character_),
+         depth_interval_notes = paste0(str_to_sentence(DEPTH_FLAG), " ", dry_bulk_density_notes),
+         depth_interval_notes = gsub("NA", "",depth_interval_notes), 
+         depth_interval_notes = trimws(depth_interval_notes)) %>%
+  select(study_id, site_id, core_id, sample_id, depth_min, depth_max, 
+         dry_bulk_density, fraction_carbon, depth_interval_notes)
+
+# test <- depthseries %>%
+#   add_count(dry_bulk_density_notes, name = "count") %>%
+#   select(dry_bulk_density_notes, count) %>%
+#   distinct() %>%
+#   mutate(percent = (count/sum(count))*100)
 
 ## Species ----
 
 # use this lookup to fill NA species codes in data
-species_lookup <- veg %>% 
-  select(SPECIES, SPECIES_NAME_ID) %>%
-  rename("species_code" = "SPECIES_NAME_ID") %>%
-  distinct() %>%
-  drop_na()
+# species_lookup <- veg %>% 
+#   select(SPECIES, SPECIES_NAME_ID) %>%
+#   rename("species_code" = "SPECIES_NAME_ID") %>%
+#   distinct() %>%
+#   drop_na()
 
-species_raw <- veg %>%
+species <- veg %>%
   mutate(core_id = paste0(SITE_ID, "-", UID),
          study_id = data_release) %>%
   filter(core_id %in% unique(site_marine$core_id)) %>%
-  left_join(., species_lookup, by = "SPECIES") %>%
+  # left_join(., species_lookup, by = "SPECIES") %>%
   separate(col = SPECIES, into = c("genus", "species"), sep = " ") %>%
-  mutate(species = replace_na(species, "spp."),
+  mutate(species = replace_na(species, "spp"),
          species = recode(species,
-                          "S.L." = "spp.")) %>%
+                          "S.L." = "spp")) %>%
+  filter(species != "(>.5M)" & species != "(GRASS") %>%
   rename(site_id = SITE_ID,
          species_comment = SPECIES_COMMENT) %>%
-  select(study_id, site_id, core_id, genus, species, species_code, species_comment) %>%
   add_count(core_id, genus, species, name = "count") %>%
-  distinct() %>%
-  filter(count > 5)
+  filter(count > 5) %>%
+  mutate(species_code = str_to_sentence(paste0(genus, " ", species))) %>%
+  select(study_id, site_id, core_id, species_code) %>%
+  distinct()
 
 # lookup to fill NA species notes in data
-sp_notes_lookup <- species_raw %>%
-  select(core_id, genus, species, species_comment) %>%
-  rename("species_notes" = "species_comment") %>%
-  drop_na()
-
-species <- species_raw %>%
-  left_join(., sp_notes_lookup, 
-            by = c("core_id", "genus", "species")) %>%
-  select(study_id, site_id, core_id, genus, species, species_code, count, species_notes) %>%
-  filter(species != "(>.5M)" & species != "(GRASS") %>%
-  mutate(genus = str_to_title(genus),
-         species = tolower(species), 
-         species_notes = str_to_sentence(species_notes)) %>%
-  distinct() 
+# sp_notes_lookup <- species_raw %>%
+#   select(core_id, genus, species, species_comment) %>%
+#   rename("species_notes" = "species_comment") %>%
+#   drop_na()
+# 
+# species <- species_raw %>%
+#   left_join(., sp_notes_lookup, 
+#             by = c("core_id", "genus", "species")) %>%
+#   select(study_id, site_id, core_id, genus, species, species_code, count, species_notes) %>%
+#   filter(species != "(>.5M)" & species != "(GRASS") %>%
+#   mutate(genus = str_to_title(genus),
+#          species = tolower(species), 
+#          species_notes = str_to_sentence(species_notes)) %>%
+#   distinct() 
 
 # Impact ----
 
@@ -195,7 +213,13 @@ impacts <- condition %>%
                                "STRESS_DITCH" = "ditched",
                                "STRESS_VEGREMOVAL" = "invasive plants removed",
                                "STRESS_VEGREPLACE" = "revegitated",
-                               "STRESS_FILL" = "sediment added")) %>%
+                               "STRESS_FILL" = "sediment added", 
+                               "STRESS_HARD" = "hardening", 
+                               "STRESS_NONNATIVE" = "nonnative vegetation",
+                               "STRESS_HEAVYMETAL" = "heavy metal", 
+                               "STRESS_SOILP" = "trace phosphorus", 
+                               "STRESS_ALGT" = "algal toxin")) %>%
+  select(-stressor_class) %>%
   distinct()
 
 # Methods ----
@@ -219,7 +243,7 @@ bib_file <- study_citations %>%
   column_to_rownames("key")
 
 WriteBib(as.BibEntry(bib_file), 
-         "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_and_Fennessy_2016.bib")
+         "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_and_Fennessy_2016.bib")
 
 
 ## QA/QC #####
@@ -260,16 +284,16 @@ test_colnames("methods", methods)
 
 ## Output Curated Data ####
 
-# write to intermediate/final in data dir
-write.csv(cores, "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_Fennessy_2016_cores.csv",
+# write to derivative folder in data dir
+write.csv(cores, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_cores.csv",
           row.names = FALSE)
-write.csv(depthseries, "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_Fennessy_2016_depthseries.csv",
+write.csv(depthseries, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_depthseries.csv",
           row.names = FALSE)
-write.csv(species, "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_Fennessy_2016_species.csv",
+write.csv(species, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_species.csv",
           row.names = FALSE)
-write.csv(impacts, "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_Fennessy_2016_impacts.csv",
+write.csv(impacts, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_impacts.csv",
           row.names = FALSE)
-write.csv(site, "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_Fennessy_2016_site.csv",
+write.csv(site, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_site.csv",
           row.names = FALSE)
-write.csv(methods, "./data/primary_studies/Nahlik_Fennessy_2016/intermediate/Nahlik_Fennessy_2016_methods.csv",
+write.csv(methods, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_methods.csv",
           row.names = FALSE)
