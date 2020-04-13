@@ -71,7 +71,9 @@ site_marine <- siteinfo %>%
                                    "PEM" = "emergent",
                                    "PFO" = "forested",
                                    "PSS" = "scrub shrub",
+                                   # PF = palustrine farmed
                                    "PF" = NA_character_,
+                                   # PUBPAB = palustrine unconsolidated bottom/aquatic bed
                                    "PUBPAB" = NA_character_),
          vegetation_method = "field observation") %>%
   rename(site_id = SITE_ID, 
@@ -82,26 +84,12 @@ site_marine <- siteinfo %>%
          COE_REGION, CLASS_FIELD_FWSST, CLASS_FIELD_HGM, HUC10_NAME, MAJ_RIVER_BASIN, 
          SANDT_RSTUDY, SANDT_COAST_REG, STATE_NAME)
 
-# create site_description from relevant columns
-# mutate(site_description = paste(site_name, site_raw$site_description, sep="; "))
-
-# extract inundation class and merge with site data
 site <- site_marine %>%
+  # create site_description from relevant columns
   mutate(site_description = paste0(HUC10_NAME, "; ", MAJ_RIVER_BASIN)) %>%
   select(study_id, site_id, site_description, salinity_class, salinity_method, 
          vegetation_class, vegetation_method) %>%
   distinct()
-  # mutate(core_id = paste0(SITE_ID, "-", UID),
-  #        inundation_notes = "field observation") %>%
-  # filter(core_id %in% unique(site_marine$core_id)) %>%
-  # rename and recode indundation class and notes 
-  # use high_table, estuary channel, or estuary surge presence?
-  # select(core_id, HIGH_TABLE, HIGH_TABLE_COMMENT, 
-  #        ESTCHANNEL_PRESENT, ESTCHANNEL_PRESENT_COMMENT, 
-  #        ESTSURGE_PRESENT, ESTSURGE_PRESENT_COMMENT,
-  #        TIDAL_STAGE, inundation_notes) %>%
-  # left_join(site_marine, ., by = "core_id") %>%
-  # select(-core_longitude, -core_latitude)
 
 ## Soil chemistry ----
 
@@ -149,6 +137,8 @@ depthseries <- soil_marine %>%
   select(study_id, site_id, core_id, sample_id, depth_min, depth_max, 
          dry_bulk_density, fraction_carbon, depth_interval_notes)
 
+depthseries$depth_interval_notes[which(depthseries$depth_interval_notes == "")] <- NA
+
 # test <- depthseries %>%
 #   add_count(dry_bulk_density_notes, name = "count") %>%
 #   select(dry_bulk_density_notes, count) %>%
@@ -157,18 +147,10 @@ depthseries <- soil_marine %>%
 
 ## Species ----
 
-# use this lookup to fill NA species codes in data
-# species_lookup <- veg %>% 
-#   select(SPECIES, SPECIES_NAME_ID) %>%
-#   rename("species_code" = "SPECIES_NAME_ID") %>%
-#   distinct() %>%
-#   drop_na()
-
 species <- veg %>%
   mutate(core_id = paste0(SITE_ID, "-", UID),
          study_id = data_release) %>%
   filter(core_id %in% unique(site_marine$core_id)) %>%
-  # left_join(., species_lookup, by = "SPECIES") %>%
   separate(col = SPECIES, into = c("genus", "species"), sep = " ") %>%
   mutate(species = replace_na(species, "spp"),
          species = recode(species,
@@ -181,22 +163,6 @@ species <- veg %>%
   mutate(species_code = str_to_sentence(paste0(genus, " ", species))) %>%
   select(study_id, site_id, core_id, species_code) %>%
   distinct()
-
-# lookup to fill NA species notes in data
-# sp_notes_lookup <- species_raw %>%
-#   select(core_id, genus, species, species_comment) %>%
-#   rename("species_notes" = "species_comment") %>%
-#   drop_na()
-# 
-# species <- species_raw %>%
-#   left_join(., sp_notes_lookup, 
-#             by = c("core_id", "genus", "species")) %>%
-#   select(study_id, site_id, core_id, genus, species, species_code, count, species_notes) %>%
-#   filter(species != "(>.5M)" & species != "(GRASS") %>%
-#   mutate(genus = str_to_title(genus),
-#          species = tolower(species), 
-#          species_notes = str_to_sentence(species_notes)) %>%
-#   distinct() 
 
 # Impact ----
 
@@ -213,12 +179,9 @@ impacts <- condition %>%
                                "STRESS_DITCH" = "ditched",
                                "STRESS_VEGREMOVAL" = "invasive plants removed",
                                "STRESS_VEGREPLACE" = "revegitated",
-                               "STRESS_FILL" = "sediment added", 
-                               "STRESS_HARD" = "hardening", 
-                               "STRESS_NONNATIVE" = "nonnative vegetation",
-                               "STRESS_HEAVYMETAL" = "heavy metal", 
-                               "STRESS_SOILP" = "trace phosphorus", 
-                               "STRESS_ALGT" = "algal toxin")) %>%
+                               "STRESS_FILL" = "sediment added")) %>%
+  filter(!(impact_class %in% c("STRESS_HARD", "STRESS_NONNATIVE", "STRESS_HEAVYMETAL",
+                           "STRESS_SOILP", "STRESS_ALGT"))) %>%
   select(-stressor_class) %>%
   distinct()
 
@@ -277,7 +240,7 @@ map + geom_point(data = site_marine,
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-test_colnames("cores", cores)
+test_colnames("cores", cores) # core_month and core_day are uncontrolled..
 test_colnames("depthseries", depthseries)
 test_colnames("species", species)
 test_colnames("methods", methods)
