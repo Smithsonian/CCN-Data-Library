@@ -126,8 +126,12 @@ cores <- soil_marine %>%
 depthseries <- soil_marine %>%
   rename("dry_bulk_density_notes" = "BULK_DEN_DBF_FLAG",
          "depth_max" = "DEPTH") %>%
-  mutate(depth_min = c(0, depth_max[1:(nrow(.)-1)]),
-         dry_bulk_density_notes = gsub("Db", "Dry bulk density", dry_bulk_density_notes),
+  group_by(study_id, site_id, core_id) %>% 
+  mutate(depth_min = ifelse(row_number() == 1, 
+                            0, 
+                            lag(depth_max))) %>%
+  ungroup() %>% 
+  mutate(dry_bulk_density_notes = gsub("Db", "Dry bulk density", dry_bulk_density_notes),
          dry_bulk_density_notes = gsub(", g/cc", "", dry_bulk_density_notes),
          dry_bulk_density_notes = recode(dry_bulk_density_notes,
                                          "g/cc" = NA_character_),
@@ -189,8 +193,7 @@ impacts <- condition %>%
 methods <- data.frame(study_id = "Nahlik_and_Fennessy_2016",
                       coring_method = "soil pit",
                       sediment_sieved_flag = "sediment sieved",
-                      sediment_sieve_size = 2, 
-                      dry_bulk_density_flag = "modeled",
+                      sediment_sieve_size = 2,
                       carbon_measured_or_modeled = "measured",
                       carbonates_removed = TRUE,
                       carbonate_removal_method = "direct acid treatment",
@@ -210,32 +213,6 @@ WriteBib(as.BibEntry(bib_file),
 
 
 ## QA/QC #####
-
-# map the data
-library(maps)
-
-map <- ggplot() +
-  geom_polygon(aes(long, lat, group = group), data = map_data("usa"), fill = "grey50") +
-  coord_quickmap()
-
-# Points should all be coastal
-map + geom_point(data = site_marine, 
-                 aes(x = core_longitude, y = core_latitude, col = CLASS_FIELD_FWSST),
-                 size = 0.5) +
-  theme_classic()
-# ggsave("locations_class_field_fwsst.jpg")
-
-map + geom_point(data = site_marine, 
-                 aes(x = core_longitude, y = core_latitude, col = CLASS_FIELD_HGM),
-                 size = 0.5) +
-  theme_classic()
-# ggsave("locations_class_field_hgm.jpg")
-
-map + geom_point(data = site_marine, 
-                 aes(x = core_longitude, y = core_latitude, col = salinity_class),
-                 size = 0.5) +
-  theme_classic()
-# ggsave("locations_class_field_salinity.jpg")
 
 source("./scripts/1_data_formatting/qa_functions.R")
 

@@ -1,0 +1,67 @@
+---
+title: "Nhalik and Fennesey Data Vis"
+author: "James R Holmquist"
+date: "4/15/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(maps)
+getwd()
+cores <- read_csv("derivative/Nahlik_Fennessy_2016_cores.csv")
+depthseries <- read_csv("derivative/Nahlik_Fennessy_2016_depthseries.csv")
+
+```
+
+``` {r maps, echo = F, warning=F}
+
+map <- ggplot() +
+  geom_polygon(aes(long, lat, group = group), data = map_data("usa"), fill = "grey50") +
+  coord_quickmap() +
+  geom_point(data = cores, 
+                 aes(x = core_longitude, y = core_latitude, 
+                     shape = vegetation_class, color = salinity_class)) +
+  theme_classic()
+(map)
+# ggsave("locations_class_field_salinity.jpg")
+
+```
+
+```{r bd vs frac C, echo = F, warning=F}
+
+ggplot(data = depthseries, aes(x=fraction_carbon, y = dry_bulk_density)) +
+  geom_point() +
+  theme_classic() +
+  ylab(expression(paste("Dry Bulk Density (g cm"^"-3",")", sep=""))) +
+  xlab("Fraction Carbon")
+
+```
+
+```{r bd depth series, echo = F, fig.height=24, fig.width=12, warning = F}
+
+depthseries_graph <- depthseries %>% mutate(depth_med = median(c(depth_min, depth_max)))
+
+ggplot(data = depthseries_graph, aes(x=depth_med, y=dry_bulk_density)) +
+  geom_segment(aes(x=depth_min, xend=depth_max, yend=dry_bulk_density)) +
+  geom_point() +
+  scale_x_reverse() +
+  xlab("Depth (cm)") +
+  ylab(expression(paste("Dry Bulk Density (g cm"^"-3",")", sep=""))) +
+  coord_flip() +
+  facet_wrap(.~core_id)
+
+```
+
+```{r fc depth series, echo = F, fig.height=24, fig.width=12, warning=F}
+
+ggplot(data = depthseries_graph, aes(x=depth_med, y=fraction_carbon)) +
+  geom_segment(aes(x=depth_min, xend=depth_max, yend=fraction_carbon)) +
+  geom_point() +
+  scale_x_reverse() +
+  xlab("Depth (cm)") +
+  ylab("Fraction Carbon") +
+  coord_flip() +
+  facet_wrap(.~core_id)
+
+```
