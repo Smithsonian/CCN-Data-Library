@@ -187,7 +187,7 @@ impacts <- condition %>%
 
 # Methods ----
 methods <- data.frame(study_id = "Nahlik_and_Fennessy_2016",
-                      coring_method = "push core",
+                      coring_method = "soil pit",
                       sediment_sieved_flag = "sediment sieved",
                       sediment_sieve_size = 2, 
                       dry_bulk_density_flag = "modeled",
