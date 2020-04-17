@@ -110,10 +110,10 @@ soil_marine <- soilchem %>%
 
 cores <- soil_marine %>%
   left_join(., site_marine %>% 
-              select(site_id, core_latitude, core_longitude, 
+              select(site_id, core_id, core_latitude, core_longitude, 
                      salinity_class, salinity_method, 
                      vegetation_class, vegetation_method), 
-            by = "site_id") %>%
+            by = c("site_id", "core_id")) %>%
   mutate(core_year = year(core_date),
          core_month = month(core_date),
          core_day = day(core_date)) %>%
@@ -182,7 +182,7 @@ impacts <- condition %>%
                                "STRESS_DAM" = "impounded",
                                "STRESS_DITCH" = "ditched",
                                "STRESS_VEGREMOVAL" = "invasive plants removed",
-                               "STRESS_VEGREPLACE" = "revegitated",
+                               "STRESS_VEGREPLACE" = "revegetated",
                                "STRESS_FILL" = "sediment added")) %>%
   filter(!(impact_class %in% c("STRESS_HARD", "STRESS_NONNATIVE", "STRESS_HEAVYMETAL",
                            "STRESS_SOILP", "STRESS_ALGT"))) %>%
