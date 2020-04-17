@@ -237,3 +237,5 @@ write.csv(site, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_F
           row.names = FALSE)
 write.csv(methods, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_methods.csv",
           row.names = FALSE)
+write.csv(study_citations, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_study_citations.csv",
+          row.names = FALSE)
