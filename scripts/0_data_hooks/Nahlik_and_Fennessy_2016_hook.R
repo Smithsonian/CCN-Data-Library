@@ -84,7 +84,7 @@ site_marine <- siteinfo %>%
          COE_REGION, CLASS_FIELD_FWSST, CLASS_FIELD_HGM, HUC10_NAME, MAJ_RIVER_BASIN, 
          SANDT_RSTUDY, SANDT_COAST_REG, STATE_NAME)
 
-site <- site_marine %>%
+sites <- site_marine %>%
   # create site_description from relevant columns
   mutate(site_description = paste0(HUC10_NAME, "; ", MAJ_RIVER_BASIN)) %>%
   select(study_id, site_id, site_description, salinity_class, salinity_method, 
@@ -233,7 +233,7 @@ write.csv(species, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahli
           row.names = FALSE)
 write.csv(impacts, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_impacts.csv",
           row.names = FALSE)
-write.csv(site, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_site.csv",
+write.csv(sites, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_sites.csv",
           row.names = FALSE)
 write.csv(methods, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_methods.csv",
           row.names = FALSE)
