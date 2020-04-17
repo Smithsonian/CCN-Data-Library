@@ -146,6 +146,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "24.54534, 53.11234",2,"Bu_Tinah_SE_seagrass_1, Bu_Tinah_SE_seagrass_2",Campbell_et_al_2015,1
 "24.54852, 53.03997",2,"Bu_Tinah_3_seagrass_1, Bu_Tinah_3_seagrass_2",Campbell_et_al_2015,1
 "24.57855, 53.079",2,"Bu_Tinah_2_seagrass_1, Bu_Tinah_2_seagrass_2",Campbell_et_al_2015,1
+"24.59310717, -81.66270992",2,"NWCA11-1233-3921, NWCA11-1233-5378",Nahlik_and_Fennessy_2016,1
 "24.64498, 54.50703",2,"Ghurab_NN_seagrass_1, Ghurab_NN_seagrass_2",Campbell_et_al_2015,1
 "24.65578, 54.53673",2,"Ghurab_NE_seagrass_1, Ghurab_NE_seagrass_2",Campbell_et_al_2015,1
 "24.674, -81.242",2,"Lewis_et_al_2007_12, Lewis_et_al_2007_25",Lewis_et_al_2007,1
@@ -172,7 +173,10 @@ lat_long,n,core_ids,study_ids,num_studies
 "25.77278, 55.94654",6,"Ras_al_Kaimah_mangrove_1, Ras_al_Kaimah_mangrove_2, Ras_al_Kaimah_mangrove_3, Ras_al_Kaimah_mangrove_4, Ras_al_Kaimah_mangrove_5, Ras_al_Kaimah_mangrove_6",Schile-Beers_and_Megonigal_2017,1
 "25.8981, 56.03976",6,"Al_Rams_mangrove_1, Al_Rams_mangrove_2, Al_Rams_mangrove_3, Al_Rams_mangrove_4, Al_Rams_mangrove_5, Al_Rams_mangrove_6",Schile-Beers_and_Megonigal_2017,1
 "26, -81.7",2,"M0973, M0974",Chmura_et_al_2003,1
+"26.19522377, -97.32745012",2,"NWCA11-2527-5714, NWCA11-2527-5715",Nahlik_and_Fennessy_2016,1
 "26.621, -77.828",2,"Koch_and_Madden_2001_1, Koch_and_Madden_2001_2",Koch_and_Madden_2001,1
+"27.14481498, -80.42200379",2,"NWCA11-1235-5350, NWCA11-1235-5379",Nahlik_and_Fennessy_2016,1
+"28.84890976, -95.47948705",2,"NWCA11-2529-4444, NWCA11-2529-4445",Nahlik_and_Fennessy_2016,1
 "29.040559, -89.197959",3,"CRMS0159_1, CRMS0159_2, CRMS0159_3",CRMS_Database,1
 "29.113146, -89.197959",3,"CRMS0154_1, CRMS0154_2, CRMS0154_3",CRMS_Database,1
 "29.127657, -89.229211",3,"CRMS0157_1, CRMS0157_2, CRMS0157_3",CRMS_Database,1
@@ -442,6 +446,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.853475, -89.604217",3,"CRMS4551_1, CRMS4551_2, CRMS4551_3",CRMS_Database,1
 "29.853485, -93.229316",3,"CRMS1738_1, CRMS1738_2, CRMS1738_3",CRMS_Database,1
 "29.853486, -93.541822",3,"CRMS0677_1, CRMS0677_2, CRMS0677_3",CRMS_Database,1
+"29.85467208, -92.49117013",2,"NWCA11-1608-4950, NWCA11-1608-4951",Nahlik_and_Fennessy_2016,1
 "29.860735, -89.666718",3,"CRMS4548_1, CRMS4548_2, CRMS4548_3",CRMS_Database,1
 "29.867997, -93.010565",3,"CRMS1409_1, CRMS1409_2, CRMS1409_3",CRMS_Database,1
 "29.868, -85.366",4,"Lewis_et_al_2007_10, Lewis_et_al_2007_11, Lewis_et_al_2007_23, Lewis_et_al_2007_24",Lewis_et_al_2007,1
@@ -502,6 +507,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "30.223636, -89.729221",3,"CRMS4407_1, CRMS4407_2, CRMS4407_3",CRMS_Database,1
 "30.259925, -89.885477",3,"CRMS3667_1, CRMS3667_2, CRMS3667_3",CRMS_Database,1
 "30.259927, -89.979232",3,"CRMS0006_1, CRMS0006_2, CRMS0006_3",CRMS_Database,1
+"30.26178475, -87.7289122",2,"NWCA11-1002-2812, NWCA11-1002-3473",Nahlik_and_Fennessy_2016,1
 "30.26712, -89.664758",3,"CRMS0035_1, CRMS0035_2, CRMS0035_3",CRMS_Database,1
 "30.274448, -90.385494",3,"CRMS0033_1, CRMS0033_2, CRMS0033_3",CRMS_Database,1
 "30.303475, -89.979232",3,"CRMS2854_1, CRMS2854_2, CRMS2854_3",CRMS_Database,1
@@ -510,6 +516,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "30.335, -87.239",2,"Lewis_et_al_2007_20, Lewis_et_al_2007_7",Lewis_et_al_2007,1
 "30.376, -87.012",12,"Lewis_et_al_2007_1, Lewis_et_al_2007_14, Lewis_et_al_2007_15, Lewis_et_al_2007_16, Lewis_et_al_2007_17, Lewis_et_al_2007_18, Lewis_et_al_2007_19, Lewis_et_al_2007_2, Lewis_et_al_2007_3, Lewis_et_al_2007_4, Lewis_et_al_2007_5, Lewis_et_al_2007_6",Lewis_et_al_2007,1
 "30.376046, -90.259891",3,"CRMS6209_1, CRMS6209_2, CRMS6209_3",CRMS_Database,1
+"30.38434018, -88.11413662",2,"NWCA11-1003-3796, NWCA11-1003-3955",Nahlik_and_Fennessy_2016,1
 "30.385717, -90.146788",3,"CRMS4094_1, CRMS4094_2, CRMS4094_3",CRMS_Database,1
 "30.397805, -90.259283",3,"CRMS0103_1, CRMS0103_2, CRMS0103_3",CRMS_Database,1
 "30.416, -86.573",2,"Lewis_et_al_2007_21, Lewis_et_al_2007_8",Lewis_et_al_2007,1
@@ -522,9 +529,13 @@ lat_long,n,core_ids,study_ids,num_studies
 "31.516, -81.232",2,"Sapelo_River_Site_3_Levee, Sapelo_River_Site_3_Plain",Craft_2007,1
 "31.539, -81.42",2,"Sapelo_River_Site_1_Levee, Sapelo_River_Site_1_Plain",Craft_2007,1
 "31.55, -81.306",2,"Sapelo_River_Site_2_Levee, Sapelo_River_Site_2_Plain",Craft_2007,1
+"31.65831876, -81.38700135",2,"NWCA11-1368-4970, NWCA11-1368-4971",Nahlik_and_Fennessy_2016,1
+"31.94268068, -81.08486736",2,"NWCA11-1369-4309, NWCA11-1369-4972",Nahlik_and_Fennessy_2016,1
 "32.23818, -81.15608",2,"S1AU, S1BL",Noe_et_al_2013,1
 "32.23879, -81.15609",2,"S1AL, S1CU",Noe_et_al_2013,1
 "32.23916, -81.15631",2,"S1BU, S1CL",Noe_et_al_2013,1
+"32.26787523, -81.12259198",2,"NWCA11-2402-3315, NWCA11-2402-3366",Nahlik_and_Fennessy_2016,1
+"33.00118879, -116.5535043",2,"NWCA11-1106-5267, NWCA11-1106-5352",Nahlik_and_Fennessy_2016,1
 "33.34001, -79.34166",2,"W3, turkey_creek_2","Noe_et_al_2016, Krauss_et_al_2018a",2
 "33.35003, -79.3447",2,"W4, turkey_creek_1","Noe_et_al_2016, Krauss_et_al_2018b",2
 "33.5547, -79.08993",2,"W1BU, W1CL",Noe_et_al_2013,1
@@ -533,6 +544,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "33.55564, -79.08943",2,"W1, richmond_island_1","Noe_et_al_2016, Krauss_et_al_2018a",2
 "34.4015, 33.0358",2,"Holmer_et_al_2007_10, Holmer_et_al_2007_9",Holmer_et_al_2007,1
 "34.6925, -76.6188",2,"Townsend_and_Fonseca_1998_17, Townsend_and_Fonseca_1998_18",Townsend_and_Fonseca_1998,1
+"34.88362396, -76.51596497",2,"NWCA11-2025-3403, NWCA11-2025-5400",Nahlik_and_Fennessy_2016,1
 "35.51, 14.33",6,"Borg_et_al_2010_19, Borg_et_al_2010_20, Borg_et_al_2010_21, Borg_et_al_2010_22, Borg_et_al_2010_23, Borg_et_al_2010_24",Borg_et_al_2010,1
 "35.56, 14.28",6,"Borg_et_al_2010_13, Borg_et_al_2010_14, Borg_et_al_2010_15, Borg_et_al_2010_16, Borg_et_al_2010_17, Borg_et_al_2010_18",Borg_et_al_2010,1
 "35.5788, -5.9897",12,"Mateo_and_Serrano_unpublished_27, Mateo_and_Serrano_unpublished_28, Mateo_and_Serrano_unpublished_29, Mateo_and_Serrano_unpublished_30, Mateo_and_Serrano_unpublished_31, Mateo_and_Serrano_unpublished_32, Mateo_and_Serrano_unpublished_33, Mateo_and_Serrano_unpublished_34, Mateo_and_Serrano_unpublished_35, Mateo_and_Serrano_unpublished_36, Mateo_and_Serrano_unpublished_37, Mateo_and_Serrano_unpublished_38",Mateo_and_Serrano_unpublished,1
@@ -544,9 +556,11 @@ lat_long,n,core_ids,study_ids,num_studies
 "37.15, 126.2833",3,"Lee_et_al_2005_1, Lee_et_al_2005_2, Lee_et_al_2005_3",Lee_et_al_2005,1
 "37.2126111111111, -76.39611111",3,"Buzzelli_1998_1, Buzzelli_1998_2, Buzzelli_1998_3",Buzzelli_1998,1
 "37.39, 23.58",7,"Apostolaki_unpublished_1, Apostolaki_unpublished_2, Apostolaki_unpublished_3, Apostolaki_unpublished_4, Apostolaki_unpublished_5, Apostolaki_unpublished_6, Apostolaki_unpublished_7",Apostolaki_unpublished,1
+"37.39197294, -76.6205714",2,"NWCA11-2633-3853, NWCA11-2633-5802",Nahlik_and_Fennessy_2016,1
 "37.3945, 23.58",2,"Holmer_et_al_2007_7, Holmer_et_al_2007_8",Holmer_et_al_2007,1
 "37.454314, -75.828382",2,"bee, lsp",Nuttle_1996,1
 "37.458646, -75.831483",3,"jun, juna, junb",Nuttle_1996,1
+"37.5193534, -122.2169791",2,"NWCA11-1105-3314, NWCA11-1105-5268",Nahlik_and_Fennessy_2016,1
 "37.550599, -76.889072",60,"Sweet_Hall_marsh_dissertation_01, Sweet_Hall_marsh_dissertation_02, Sweet_Hall_marsh_dissertation_03, Sweet_Hall_marsh_dissertation_04, Sweet_Hall_marsh_dissertation_05, Sweet_Hall_marsh_dissertation_06, Sweet_Hall_marsh_dissertation_07, Sweet_Hall_marsh_dissertation_08, Sweet_Hall_marsh_dissertation_09, Sweet_Hall_marsh_dissertation_10, Sweet_Hall_marsh_dissertation_11, Sweet_Hall_marsh_dissertation_12, Sweet_Hall_marsh_dissertation_13, Sweet_Hall_marsh_dissertation_14, Sweet_Hall_marsh_dissertation_15, Sweet_Hall_marsh_dissertation_16, Sweet_Hall_marsh_dissertation_17, Sweet_Hall_marsh_dissertation_18, Sweet_Hall_marsh_dissertation_19, Sweet_Hall_marsh_dissertation_20, Sweet_Hall_marsh_dissertation_21, Sweet_Hall_marsh_dissertation_22, Sweet_Hall_marsh_dissertation_23, Sweet_Hall_marsh_dissertation_24, Sweet_Hall_marsh_dissertation_25, Sweet_Hall_marsh_dissertation_26, Sweet_Hall_marsh_dissertation_27, Sweet_Hall_marsh_dissertation_28, Sweet_Hall_marsh_dissertation_29, Sweet_Hall_marsh_dissertation_30, Sweet_Hall_marsh_dissertation_31, Sweet_Hall_marsh_dissertation_32, Sweet_Hall_marsh_dissertation_33, Sweet_Hall_marsh_dissertation_34, Sweet_Hall_marsh_dissertation_35, Sweet_Hall_marsh_dissertation_36, Sweet_Hall_marsh_dissertation_37, Sweet_Hall_marsh_dissertation_38, Sweet_Hall_marsh_dissertation_39, Sweet_Hall_marsh_dissertation_40, Sweet_Hall_marsh_dissertation_41, Sweet_Hall_marsh_dissertation_42, Sweet_Hall_marsh_dissertation_43, Sweet_Hall_marsh_dissertation_44, Sweet_Hall_marsh_dissertation_45, Sweet_Hall_marsh_dissertation_46, Sweet_Hall_marsh_dissertation_47, Sweet_Hall_marsh_dissertation_48, Sweet_Hall_marsh_dissertation_49, Sweet_Hall_marsh_dissertation_50, Sweet_Hall_marsh_dissertation_51, Sweet_Hall_marsh_dissertation_52, Sweet_Hall_marsh_dissertation_53, Sweet_Hall_marsh_dissertation_54, Sweet_Hall_marsh_dissertation_55, Sweet_Hall_marsh_dissertation_56, Sweet_Hall_marsh_dissertation_57, Sweet_Hall_marsh_dissertation_58, Sweet_Hall_marsh_dissertation_59, Sweet_Hall_marsh_dissertation_60",Neubauer_2002,1
 "37.65976667, 23.95483333",2,"Holmer_et_al_2007_2, Holmer_et_al_2007_3",Holmer_et_al_2007,1
 "37.8036, -122.45995",2,"EH, EL",Windham_Meyers_et_al_2010,1
@@ -557,7 +571,9 @@ lat_long,n,core_ids,study_ids,num_studies
 "37.804567, -122.453317",2,"AH, AL",Windham_Meyers_et_al_2010,1
 "37.804817, -122.458567",2,"GH, GL",Windham_Meyers_et_al_2010,1
 "37.804967, -122.457367",2,"HH, HL",Windham_Meyers_et_al_2010,1
+"37.91254023, -75.68068678",2,"NWCA11-2632-3854, NWCA11-2632-5746",Nahlik_and_Fennessy_2016,1
 "38.162, -0.473",3,"Mateo_et_al_1997_1, Mateo_et_al_1997_2, Mateo_et_al_1997_3",Mateo_et_al_1997,1
+"38.24219291, -75.80924667",2,"NWCA11-1777-5395, NWCA11-1777-5493",Nahlik_and_Fennessy_2016,1
 "38.4208, -0.3477",2,"Holmer_et_al_2007_5, Holmer_et_al_2007_6",Holmer_et_al_2007,1
 "38.423, -0.384",3,"Mateo_et_al_1997_5, Mateo_et_al_1997_6, Mateo_et_al_1997_7",Mateo_et_al_1997,1
 "38.504, -0.226",3,"Mateo_unpublished_1, Mateo_unpublished_2, Mateo_unpublished_3",Mateo_unpublished,1
@@ -579,6 +595,10 @@ lat_long,n,core_ids,study_ids,num_studies
 "39.26585, -74.995256",2,"MR2, MR2U","Boyd_et_al_2017, Unger_et_al_2016",2
 "39.2834639, -74.9861528",2,"MR3, MR3U","Boyd_et_al_2017, Unger_et_al_2016",2
 "39.3217, 2.4257",2,"Holmer_et_al_2009_5, Holmer_et_al_2009_6",Holmer_et_al_2009,1
+"39.36215216, -75.30492099",2,"NWCA11-2188-5174, NWCA11-2188-5175",Nahlik_and_Fennessy_2016,1
+"39.38175356, -75.54017703",2,"NWCA11-1197-3666, NWCA11-1197-5372",Nahlik_and_Fennessy_2016,1
+"39.3863373, -74.47658677",2,"NWCA11-2186-5176, NWCA11-2186-5215",Nahlik_and_Fennessy_2016,1
+"39.4284527, -75.57379203",2,"NWCA11-1198-3914, NWCA11-1198-5373",Nahlik_and_Fennessy_2016,1
 "39.4385, -76.2828",3,"Otter_Point_Creek_1, Otter_Point_Creek_2, Otter_Point_Creek_3",Merrill_1999,1
 "39.626412, -74.257139",2,"CC1, CC1U","Boyd_et_al_2017, Unger_et_al_2016",2
 "39.629015, -74.257836",2,"CC2, CC2U","Boyd_et_al_2017, Unger_et_al_2016",2
@@ -603,12 +623,20 @@ lat_long,n,core_ids,study_ids,num_studies
 "40.722864, -8.690784",2,"Figueiredo_da_Silva_et_al_2009_11, Figueiredo_da_Silva_et_al_2009_12",Figueiredo_da_Silva_et_al_2009,1
 "40.7543, 13.8913",4,"Amon_and_Herndl_1991_1, Amon_and_Herndl_1991_2, Amon_and_Herndl_1991_3, Amon_and_Herndl_1991_4",Amon_and_Herndl_1991,1
 "40.75454, -8.699355",2,"Figueiredo_da_Silva_et_al_2009_16, Figueiredo_da_Silva_et_al_2009_17",Figueiredo_da_Silva_et_al_2009,1
+"40.76595871, -72.88414359",2,"NWCA11-2265-4370, NWCA11-2265-4371",Nahlik_and_Fennessy_2016,1
 "40.790744, -8.661918",2,"Figueiredo_da_Silva_et_al_2009_19, Figueiredo_da_Silva_et_al_2009_20",Figueiredo_da_Silva_et_al_2009,1
+"40.80414415, -72.70037024",2,"NWCA11-2269-4374, NWCA11-2269-4475",Nahlik_and_Fennessy_2016,1
+"41.26666966, -72.50269329",2,"NWCA11-1180-4353, NWCA11-1180-4691",Nahlik_and_Fennessy_2016,1
+"41.62203357, -71.77755563",2,"NWCA11-2381-4405, NWCA11-2381-4550",Nahlik_and_Fennessy_2016,1
+"41.63713648, -73.03024",2,"NWCA11-1179-4692, NWCA11-1179-4693",Nahlik_and_Fennessy_2016,1
+"41.70993455, -71.30472843",2,"NWCA11-2382-4404, NWCA11-2382-4551",Nahlik_and_Fennessy_2016,1
+"41.7988138, -71.1873914",2,"NWCA11-1744-4357, NWCA11-1744-4358",Nahlik_and_Fennessy_2016,1
 "42.0289, -73.9221",2,"Tivoli_South_1_subtidal, Tivoli_South_2_fringe_marsh",Merrill_1999,1
 "42.0362, -73.9236",4,"Tivoli_North_1, Tivoli_North_2, Tivoli_North_3, Tivoli_North_4_subtidal",Merrill_1999,1
 "42.046, 3.217",2,"Mateo_et_al_1997_12, Mateo_et_al_1997_13",Mateo_et_al_1997,1
 "42.293, 3.293",2,"Mateo_and_Serrano_unpublished_1, Serrano_unpublished_1","Mateo_and_Serrano_unpublished, Serrano_unpublished",2
 "42.294, 3.289",3,"Mateo_et_al_1997_10, Mateo_et_al_1997_8, Mateo_et_al_1997_9",Mateo_et_al_1997,1
+"42.67507644, -71.05507509",2,"NWCA11-1743-4355, NWCA11-1743-4356",Nahlik_and_Fennessy_2016,1
 "43.423, 3.643",12,"Rigollet_et_al_2004_13, Rigollet_et_al_2004_14, Rigollet_et_al_2004_15, Rigollet_et_al_2004_16, Rigollet_et_al_2004_17, Rigollet_et_al_2004_18, Rigollet_et_al_2004_19, Rigollet_et_al_2004_20, Rigollet_et_al_2004_21, Rigollet_et_al_2004_22, Rigollet_et_al_2004_23, Rigollet_et_al_2004_24",Rigollet_et_al_2004,1
 "43.4392, -3.7749",12,"Mateo_and_Serrano_unpublished_15, Mateo_and_Serrano_unpublished_16, Mateo_and_Serrano_unpublished_17, Mateo_and_Serrano_unpublished_18, Mateo_and_Serrano_unpublished_19, Mateo_and_Serrano_unpublished_20, Mateo_and_Serrano_unpublished_21, Mateo_and_Serrano_unpublished_22, Mateo_and_Serrano_unpublished_23, Mateo_and_Serrano_unpublished_24, Mateo_and_Serrano_unpublished_25, Mateo_and_Serrano_unpublished_26",Mateo_and_Serrano_unpublished,1
 "44.2, 9.12",28,"Danovaro_1996_1, Danovaro_1996_10, Danovaro_1996_11, Danovaro_1996_12, Danovaro_1996_13, Danovaro_1996_14, Danovaro_1996_15, Danovaro_1996_2, Danovaro_1996_3, Danovaro_1996_4, Danovaro_1996_5, Danovaro_1996_6, Danovaro_1996_7, Danovaro_1996_8, Danovaro_1996_9, Danovaro_and_Gambi_2002_1, Danovaro_and_Gambi_2002_10, Danovaro_and_Gambi_2002_11, Danovaro_and_Gambi_2002_12, Danovaro_and_Gambi_2002_13, Danovaro_and_Gambi_2002_2, Danovaro_and_Gambi_2002_3, Danovaro_and_Gambi_2002_4, Danovaro_and_Gambi_2002_5, Danovaro_and_Gambi_2002_6, Danovaro_and_Gambi_2002_7, Danovaro_and_Gambi_2002_8, Danovaro_and_Gambi_2002_9","Danovaro_1996, Danovaro_and_Gambi_2002",2
@@ -616,7 +644,10 @@ lat_long,n,core_ids,study_ids,num_studies
 "44.39, -1.09",6,"Boschker_et_al_2000_10, Boschker_et_al_2000_11, Boschker_et_al_2000_12, Boschker_et_al_2000_4, Boschker_et_al_2000_5, Boschker_et_al_2000_6",Boschker_et_al_2000,1
 "44.6, -124",6,"Larned_2003_1, Larned_2003_2, Larned_2003_3, Larned_2003_4, Larned_2003_5, Larned_2003_6",Larned_2003,1
 "44.61875, -124.030783333333",4,"Hebert_et_al_2007_1, Hebert_et_al_2007_2, Hebert_et_al_2007_3, Hebert_et_al_2007_4",Hebert_et_al_2007,1
+"44.91899488, -124.0122569",4,"NWCA11-4151-3797, NWCA11-4151-3798",Nahlik_and_Fennessy_2016,1
+"44.93210011, -124.0089002",2,"NWCA11-2355-3808, NWCA11-2355-3809",Nahlik_and_Fennessy_2016,1
 "45.233, 12.26",12,"Rigollet_et_al_2004_1, Rigollet_et_al_2004_10, Rigollet_et_al_2004_11, Rigollet_et_al_2004_12, Rigollet_et_al_2004_2, Rigollet_et_al_2004_3, Rigollet_et_al_2004_4, Rigollet_et_al_2004_5, Rigollet_et_al_2004_6, Rigollet_et_al_2004_7, Rigollet_et_al_2004_8, Rigollet_et_al_2004_9",Rigollet_et_al_2004,1
+"46.42459022, -123.8834607",2,"NWCA11-4499-4034, NWCA11-4499-4076",Nahlik_and_Fennessy_2016,1
 "47.975, -122.1799",2,"WW_A, WW_B",Poppe_et_al_2019,1
 "48.0035999999999, -122.1616",2,"SS_A, SS_B",Poppe_et_al_2019,1
 "48.0307, -122.1784",2,"US_A, US_B",Poppe_et_al_2019,1
@@ -631,6 +662,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "48.204, -122.37",2,"25A, 25B",Poppe_and_Rybczyk_2019,1
 "48.216, -122.37",2,"LM4_23, LM4_24",Poppe_and_Rybczyk_2019,1
 "48.217, -122.37",2,"HM4_21, HM4_22",Poppe_and_Rybczyk_2019,1
+"48.39329677, -122.4841722",2,"NWCA11-2706-4051, NWCA11-2706-4079",Nahlik_and_Fennessy_2016,1
 "5.3, 162.9",12,"M1453, M1454, M1455, M1456, M1457, M1458, M1459, M1460, M1461, M1462, M1463, M1464",Donato_et_al_2011,1
 "5.3, 163",15,"M0975, M0976, M0977, M1441, M1442, M1443, M1444, M1445, M1446, M1447, M1448, M1449, M1450, M1451, M1452","Chmura_et_al_2003, Donato_et_al_2011",2
 "51.36, 4.06",2,"Boschker_et_al_2000_3, Boschker_et_al_2000_9",Boschker_et_al_2000,1
