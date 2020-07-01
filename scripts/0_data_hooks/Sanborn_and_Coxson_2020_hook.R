@@ -33,18 +33,38 @@ study_citations_raw <- read_csv("./data/primary_studies/Sanborn_Coxson_2020/orig
 
 ## Trim Data to Library ####
 
+study_id_value <- "Sanborn_and_Coxson_2020"
+
 # cores uncontrolled: 
 # pH pH_notes carbon_stock carbon_stock_method carbon_stock_0.5m carbon_stock_0.1m
+cores <- cores_raw %>%
+  mutate(study_id = study_id_value) %>%
+  select(-c(pH, pH_notes, carbon_stock, carbon_stock_method, 
+            carbon_stock_0.5m, carbon_stock_0.1m))
 
 # depthseries uncontrolled: 
 # fraction_carbon_measured fraction_carbon_modeled fraction_nitrogen C_to_N_ratio carbon_stock carbon_density
+depthseries <- depthseries_raw %>%
+  mutate(study_id = study_id_value) %>%
+  rename(fraction_carbon = fraction_carbon_measured) %>%
+  drop_na(fraction_carbon) %>%
+  select(-c(fraction_carbon_modeled, fraction_nitrogen,
+            C_to_N_ratio, carbon_stock, carbon_density))
+
+# methods
+methods <- methods_raw %>% 
+  mutate(study_id = study_id_value,
+         carbon_measured_or_modeled = "measured")
 
 # species uncontrolled:
 # family genus species
+species <- species_raw %>%
+  mutate(study_id = study_id_value,
+         species_code = paste(genus, species, sep=" ")) %>%
+  select(study_id, site_id, core_id, species_code)
 
 ## Citations ####
 doi <- "https://doi.org/10.25573/serc.12252005"
-study_id_value <- "sanborn_and_coxson_2020"
 
 study_citations <- study_citations_raw %>%
   mutate(year = as.numeric(year))
@@ -61,11 +81,12 @@ WriteBib(as.BibEntry(bib_file), "data/primary_studies/Sanborn_Coxson_2020/deriva
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-test_colnames("cores", cores_raw)
-test_colnames("depthseries", depthseries_raw)
-test_colnames("species", species_raw)
-test_colnames("methods", methods_raw)
+test_colnames("cores", cores)
+test_colnames("depthseries", depthseries)
+test_colnames("species", species)
+test_colnames("methods", methods)
 
+## Write derivative data ####
 write_csv(cores, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_cores.csv")
 write_csv(species, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_species.csv")
 write_csv(methods, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_methods.csv")
