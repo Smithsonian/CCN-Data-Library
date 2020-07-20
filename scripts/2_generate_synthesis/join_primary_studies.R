@@ -106,7 +106,8 @@ for(i in seq_along(tables)){
   for(j in seq_along(file_paths[[tables[i]]])){
     # Use tryCatch to keep loop running if there's an error and record
     tryCatch(
-      ccrcn_synthesis[[i]] <- as.data.frame(read.csv(file_paths[[tables[i]]][j])) %>%
+      #ccrcn_synthesis[[i]] <- as.data.frame(read.csv(file_paths[[tables[i]]][j])) %>%
+      ccrcn_synthesis[[i]] <- as.data.frame(read_csv(file_paths[[tables[i]]][j], col_types = cols(.default = "c"))) %>%
         mutate_if(is.factor, as.character) %>%
         bind_rows(ccrcn_synthesis[[i]]),
       # Record any errors
@@ -152,8 +153,8 @@ for(file in archived_filepaths){
       gsub(".csv", "", .)
     
     archived_synthesis[[table_type]] <- read_csv(paste0(synthesis_directory, file),
-                                                 col_types = cols(.default = col_character())) %>%
-      type_convert(na = "NA")
+                                                 col_types = cols(.default = "c")) # %>%
+      # type_convert(na = "NA")
   }
 }
 
@@ -201,13 +202,18 @@ for(table in tables){
   }
   
 }
+
 # 
 # forward <- setdiff(ccrcn_synthesis[["depthseries"]], archived_synthesis[["depthseries"]]) %>%
 #   mutate(change_type = "forward")
 
 
 ## Format change log results 
-change_log_results <- setNames(data.frame(matrix(ncol = 3, nrow = 0)), c("table", "change_types", "study_id"))
+#change_log_results <- setNames(data.frame(matrix(ncol = 3, nrow = 0)), c("table", "change_types", "study_id"))
+change_log_results <- tibble(table = NA_character_,
+                             change_types = NA_character_,
+                             study_id = NA_character_,
+                             .rows=0)
 
 for(table_type in names(change_log_df)){
   if(!is.null(change_log_df[[table_type]])){
@@ -215,32 +221,43 @@ for(table_type in names(change_log_df)){
       group_by(study_id) %>%
       summarize(change_types = paste(unique(change_type), collapse = ", "), table = table_type) %>%
       select(table, study_id, change_types)
-    
-    change_log_results <- bind_rows(change_log_results, change_summary)
+
+    change_log_results <- change_log_results %>%
+      bind_rows(change_log_results, change_summary)
   }
 }
 
 ## 5. QA/QC #############
-source("./scripts/2_generate_synthesis/qa_synthesis_functions.R")
+source("./scripts/2_generate_synthesis/qa_synthesis_functions.R", local = T)
 
 # Reorder columns 
 ccrcn_synthesis <- reorderColumns(tables, ccrcn_synthesis)
 
-qa_results <- 
-  # Ensure each core ID is unique
-  # Currently the map atlas requires this 
-  # Eventually we'll just need a unique study ID - core ID combination
-  testUniqueCores(ccrcn_synthesis$cores) %>%
-  # Test relationships between core_ids at core- and depthseries-levels
-  # the test returns all core-level rows that did not have a match in the depth series data
-  bind_rows(testCoreRelationships(ccrcn_synthesis)) %>%
-  # Test latitude and longitude uniqueness
-  bind_rows(testUniqueCoordinates(ccrcn_synthesis$cores)) %>%
-  # Test column names to make sure they are in database structure
-  # Or are approved uncontrolled attributes 
-  bind_rows(testAttributeNames(tables, ccrcn_synthesis)) %>%
-  # Test variable names to make sure they are in database structure
-  bind_rows(testVariableNames(tables, ccrcn_synthesis)) 
+qa_results <- tibble(test = NA_character_,
+                     result = NA_character_,
+                     .rows=0)
+
+testUniqueCores(ccrcn_synthesis$cores)
+testCoreRelationships(ccrcn_synthesis)
+testUniqueCoordinates(ccrcn_synthesis$cores)
+testAttributeNames(tables, ccrcn_synthesis)
+testVariableNames(tables, ccrcn_synthesis)
+
+# qa_results <- 
+#   # Ensure each core ID is unique
+#   # Currently the map atlas requires this 
+#   # Eventually we'll just need a unique study ID - core ID combination
+#   testUniqueCores(ccrcn_synthesis$cores) %>%
+#   # Test relationships between core_ids at core- and depthseries-levels
+#   # the test returns all core-level rows that did not have a match in the depth series data
+#   bind_rows(testCoreRelationships(ccrcn_synthesis)) %>%
+#   # Test latitude and longitude uniqueness
+#   bind_rows(testUniqueCoordinates(ccrcn_synthesis$cores)) %>%
+#   # Test column names to make sure they are in database structure
+#   # Or are approved uncontrolled attributes 
+#   bind_rows(testAttributeNames(tables, ccrcn_synthesis)) %>%
+#   # Test variable names to make sure they are in database structure
+#   bind_rows(testVariableNames(tables, ccrcn_synthesis)) 
 
 # Provide summary statistics of numeric variables 
 qa_numeric_results <- testNumericVariables(ccrcn_synthesis$depthseries)

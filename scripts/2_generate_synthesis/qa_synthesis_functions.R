@@ -15,9 +15,13 @@ testUniqueCores <- function(data) {
     result <- ("Passed")
   }
   
-  setNames(data.frame(matrix(c("Core ID uniqueness", result),nrow=1,ncol=2)), c("Test", "Result")) %>%
-    mutate(Test = as.character(Test),
-           Result = as.character(Result))
+  # setNames(data.frame(matrix(c("Core ID uniqueness", result),nrow=1,ncol=2)), c("Test", "Result")) %>%
+  #   mutate(Test = as.character(Test),
+  #          Result = as.character(Result))
+
+  qa_results <<- qa_results %>%
+    add_row(test = as.character("Core ID uniqueness"),
+            result = as.character(result))
   
 }
 
@@ -32,8 +36,9 @@ testAttributeNames <- function(tables, ccrcn_synthesis) {
     filter(table %in% tables)
    
   # Create empty dataframe for test results
-  results <- setNames(data.frame(matrix(ncol=2, nrow=0)), c("Test", "Result"))
+  # results <- setNames(data.frame(matrix(ncol=2, nrow=0)), c("Test", "Result"))
 
+  
   # Find invalid attribute names in each table
   for(i in seq_along(tables)){
     table_type <- tables[i]
@@ -46,16 +51,20 @@ testAttributeNames <- function(tables, ccrcn_synthesis) {
       table_result <- paste("Undefined columns:", paste(non_matching_columns, collapse=", "))
     } else table_result <- "Passed"
     
-    results <- setNames(data.frame(matrix(c(table_type, table_result), 
-                                                    nrow=1, ncol=2)), c("Test", "Result")) %>%
-      mutate(Test = as.character(Test),
-             Result = as.character(Result)) %>%
-      bind_rows(results)
+    # results <- setNames(data.frame(matrix(c(table_type, table_result), 
+    #                                                 nrow=1, ncol=2)), c("Test", "Result")) %>%
+    #   mutate(Test = as.character(Test),
+    #          Result = as.character(Result)) %>%
+    #   bind_rows(results)
       
+    qa_results <<- qa_results %>%
+      add_row(test = as.character(paste0("Validity of column names in ", table_type, " table")),
+              result = as.character(table_result))
+    
   }
   
   # Format Test column and return results
-  mutate(results, Test = paste0("Validity of column names in ", Test, " table"))
+  # mutate(results, Test = paste0("Validity of column names in ", Test, " table"))
   
 }
 
@@ -71,7 +80,7 @@ testVariableNames <- function(tables, ccrcn_synthesis) {
   # Gather all attributes to that can be tested
   attributes_names <- unique(controlled_variables_list$attribute_name)
   # Create empty dataframe for test results
-  results <- setNames(data.frame(matrix(ncol=2, nrow=0)), c("Test", "Result"))
+  # results <- setNames(data.frame(matrix(ncol=2, nrow=0)), c("Test", "Result"))
   
   # Check each table
   for(i in seq_along(tables)){
@@ -101,17 +110,22 @@ testVariableNames <- function(tables, ccrcn_synthesis) {
         table_result <- paste("Undefined variables:", paste(invalid_variables, collapse=", "))
       } else table_result <- "Passed"
       
-      results <- setNames(data.frame(matrix(c(table_type, table_result), 
-                                            nrow=1, ncol=2)), c("Test", "Result")) %>%
-        mutate(Test = as.character(Test),
-               Result = as.character(Result)) %>%
-        bind_rows(results)
+      # results <- setNames(data.frame(matrix(c(table_type, table_result), 
+      #                                       nrow=1, ncol=2)), c("Test", "Result")) %>%
+      #   mutate(Test = as.character(Test),
+      #          Result = as.character(Result)) %>%
+      #   bind_rows(results)
+      
+      qa_results <<- qa_results %>%
+        add_row(test = as.character(paste0("Validity of variable names in ", table_type, " table")),
+                result = as.character(table_result))
+      
       
     }
   }
   
   # Format Test column and return results
-  mutate(results, Test = paste0("Validity of variable names in ", Test, " table"))
+  # mutate(results, Test = paste0("Validity of variable names in ", Test, " table"))
   
 }
 
@@ -128,22 +142,31 @@ testCoreRelationships <- function(ccrcn_synthesis) {
                           paste(core_results, collapse = ", "))
   } else core_results <- "Passed"
   
-  results <- setNames(data.frame(matrix(c(table_type, core_results), 
-                                        nrow=1, ncol=2)), c("Test", "Result")) %>%
-    mutate(Test = as.character("Valid core ID links in core table"),
-           Result = as.character(Result)) %>%
-    bind_rows(results)
+  # results <- setNames(data.frame(matrix(c(table_type, core_results), 
+  #                                       nrow=1, ncol=2)), c("Test", "Result")) %>%
+  #   mutate(Test = as.character("Valid core ID links in core table"),
+  #          Result = as.character(Result)) %>%
+  #   bind_rows(results)
   
+  qa_results <<- qa_results %>%
+    add_row(test = as.character("Valid core ID links in core table"),
+            result = as.character(core_results))
+  
+
   if(length(depthseries_results) > 0) {
     depthseries_results <- paste0("No core ID in core table: ", 
                            paste(depthseries_results, collapse = ", "))
   } else depthseries_results <- "Passed"
   
-  setNames(data.frame(matrix(c(table_type, depthseries_results), 
-                                        nrow=1, ncol=2)), c("Test", "Result")) %>%
-    mutate(Test = as.character("Valid core ID links in depthseries table"),
-           Result = as.character(Result)) %>%
-    bind_rows(results)
+  # setNames(data.frame(matrix(c(table_type, depthseries_results), 
+  #                                       nrow=1, ncol=2)), c("Test", "Result")) %>%
+  #   mutate(Test = as.character("Valid core ID links in depthseries table"),
+  #          Result = as.character(Result)) %>%
+  #   bind_rows(results)
+  
+  qa_results <<- qa_results %>%
+    add_row(test = as.character("Valid core ID links in depthseries table"),
+            result = as.character(depthseries_results))
   
 }
 
@@ -162,7 +185,8 @@ testNumericVariables <- function(depthseries) {
                      colnames(depthseries) %in% numeric_attributes$attribute_name)
   testing_data <- depthseries %>%
     ungroup() %>%
-    select(to_check) 
+    select(to_check) %>%
+    mutate_all(as.numeric)
   
   ## Skimr package updated with substantial code changes
 
@@ -217,19 +241,32 @@ testUniqueCoordinates <- function(cores) {
     # Write results to a csv 
     write_csv(core_list, "./data/QA/duplicate_coordinates.csv")
     # Create results dataframe
-    results <- setNames(data.frame(x="Test coordinate uniqueness", 
-                                   y=paste0(nrow(core_list), 
-                                            " sets of coordinates are associated with more than one core. ",
-                                            "Check 'data/QA/duplicate_coordinates.csv'")),
-                        c("Test", "Result"))
+    # results <- setNames(data.frame(x="Test coordinate uniqueness", 
+    #                                y=paste0(nrow(core_list), 
+    #                                         " sets of coordinates are associated with more than one core. ",
+    #                                         "Check 'data/QA/duplicate_coordinates.csv'")),
+    #                     c("Test", "Result"))
+    
+    qa_results <<- qa_results %>%
+      add_row(test = as.character("Test coordinate uniqueness"),
+              result = paste0(nrow(core_list), 
+                              " sets of coordinates are associated with more than one core. ",
+                              "Check 'data/QA/duplicate_coordinates.csv'"))
+    
+    
   } else {
-    results <- setNames(data.frame(x="Test coordinate uniqueness", y="Passed"), c("Test", "Result"))
+    # results <- setNames(data.frame(x="Test coordinate uniqueness", y="Passed"), c("Test", "Result"))
+    qa_results <<- qa_results %>%
+      add_row(test = as.character("Test coordinate uniqueness"),
+              result = as.character("Passed"))
+    
   }
   
   # Format and return results
-  results %>%
-    mutate(Test = as.character(Test),
-           Result = as.character(Result)) 
+  # results %>%
+  #   mutate(Test = as.character(Test),
+  #          Result = as.character(Result)) 
+  
 }
 
 # Reorder columns to reflect guidance 
