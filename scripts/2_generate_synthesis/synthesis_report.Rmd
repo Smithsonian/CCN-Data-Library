@@ -50,12 +50,12 @@ datatable(qa_numeric_results)
 
 ```{r, echo=FALSE, fig.width = 10, warning = FALSE}
 
-ccrcn_synthesis$depthseries %>%
-  keep(is.numeric) %>% 
-  gather() %>% 
-  ggplot(aes(value)) +
-    facet_wrap(~ key, scales = "free") +
-    geom_histogram()
+# ccrcn_synthesis$depthseries %>%
+#   keep(is.numeric) %>% 
+#   gather() %>% 
+#   ggplot(aes(value)) +
+#     facet_wrap(~ key, scales = "free") +
+#     geom_histogram()
 
 ```
 
