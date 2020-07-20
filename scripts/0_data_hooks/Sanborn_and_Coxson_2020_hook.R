@@ -25,6 +25,7 @@ library(RefManageR)
 library(lubridate)
 # library(anytime)
 
+sites_raw <- read_csv("./data/primary_studies/Sanborn_Coxson_2020/original/sanborn_and_coxson_2020_site.csv")
 cores_raw <- read.csv("./data/primary_studies/Sanborn_Coxson_2020/original/sanborn_and_coxson_2020_cores.csv")
 depthseries_raw <- read.csv("./data/primary_studies/Sanborn_Coxson_2020/original/sanborn_and_coxson_2020_depthseries.csv")
 species_raw <- read_csv("./data/primary_studies/Sanborn_Coxson_2020/original/sanborn_and_coxson_2020_species.csv")
@@ -34,6 +35,10 @@ study_citations_raw <- read_csv("./data/primary_studies/Sanborn_Coxson_2020/orig
 ## Trim Data to Library ####
 
 study_id_value <- "Sanborn_and_Coxson_2020"
+
+# site uncontrolled:
+sites <- sites_raw %>%
+  mutate(study_id = study_id_value)
 
 # cores uncontrolled: 
 # pH pH_notes carbon_stock carbon_stock_method carbon_stock_0.5m carbon_stock_0.1m
@@ -81,12 +86,14 @@ WriteBib(as.BibEntry(bib_file), "data/primary_studies/Sanborn_Coxson_2020/deriva
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
+test_colnames("sites", sites)
 test_colnames("cores", cores)
 test_colnames("depthseries", depthseries)
 test_colnames("species", species)
 test_colnames("methods", methods)
 
 ## Write derivative data ####
+write_csv(sites, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_sites.csv")
 write_csv(cores, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_cores.csv")
 write_csv(species, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_species.csv")
 write_csv(methods, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_methods.csv")
