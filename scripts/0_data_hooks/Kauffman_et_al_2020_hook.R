@@ -66,18 +66,47 @@ species <- species_raw %>%
          species_code = paste(genus, species, sep=" ")) %>%
   select(study_id, site_id, core_id, species_code)
 
-## Citations ####
-doi <- "https://doi.org/10.25573/serc.12640172"
 
-study_citations <- study_citations_raw
+################
+## Create citation info  
+associated_bib_doi <- "10.1111/gcb.15248"
+data_release_doi <- "10.25573/serc.12640172"
 
-## Format bibliography
+paper_bib_raw <- GetBibEntryWithDOI(associated_bib_doi)
+data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
+
+# Convert this to a dataframe
+paper_biblio <- as.data.frame(paper_bib_raw) %>%
+  rownames_to_column("key") %>%
+  mutate(study_id = study_id_value) %>%
+  mutate(doi = tolower(doi),
+         bibliography_id = study_id_value,
+         key = study_id_value) 
+
+data_biblio <- as.data.frame(data_bib_raw) %>%
+  rownames_to_column("key") %>%
+  mutate(study_id = study_id_value) %>%
+  mutate(doi = tolower(doi),
+         bibliography_id = study_id_value,
+         key = study_id_value) 
+
+# Curate biblio so ready to read out as a BibTex-style .bib file
+study_citations <- data_biblio %>%
+  bind_rows(paper_biblio) %>%
+  mutate(publication_type = bibtype) %>%
+  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
+  mutate(year = as.numeric(year),
+         month = "aug")
+
+# Write .bib file
 bib_file <- study_citations %>%
+  slice(1) %>%
   select(-study_id, -bibliography_id, -publication_type) %>%
   distinct() %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Kauffman_et_al_2020/derivative/kauffman_et_al_2020.bib")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Kauffman_et_al_2020/derivative/Kauffman_et_al_2020.bib")
+
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
