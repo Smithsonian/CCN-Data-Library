@@ -30,7 +30,7 @@ cores_raw <- read.csv("./data/primary_studies/Kauffman_et_al_2020/original/kauff
 depthseries_raw <- read.csv("./data/primary_studies/Kauffman_et_al_2020/original/kauffman_et_al_2020_depthseries.csv")
 species_raw <- read_csv("./data/primary_studies/Kauffman_et_al_2020/original/kauffman_et_al_2020_species.csv")
 methods_raw <- read_csv("./data/primary_studies/Kauffman_et_al_2020/original/kauffman_et_al_2020_material_and_methods.csv")
-study_citations_raw <- read_csv("./data/primary_studies/Kauffman_et_al_2020/original/kauffman_et_al_2020_citations.csv")
+study_citations_raw <- read_csv("./data/primary_studies/Kauffman_et_al_2020/original/kauffman_et_al_2020_study_citations.csv")
 
 ## Trim Data to Library ####
 
@@ -50,12 +50,8 @@ depthseries <- depthseries_raw %>%
   mutate(depth_interval_notes = paste0(depth_interval_notes, "; Representative depth range ", 
                                        representative_depth_min, "-", representative_depth_max)) %>%
   select(-c(representative_depth_min, representative_depth_max))
-  # rename(depth_min = representative_depth_min, 
-  #        depth_max = representative_depth_max) %>%
-  # select(study_id, site_id, core_id, depth_min, depth_max, 
-  #        dry_bulk_density, fraction_carbon, depth_interval_notes)
 
-# methods
+# methods (no change)
 methods <- methods_raw
 
 # species uncontrolled:
@@ -69,34 +65,36 @@ species <- species_raw %>%
 
 ################
 ## Create citation info  
-associated_bib_doi <- "10.1111/gcb.15248"
-data_release_doi <- "10.25573/serc.12640172"
+# associated_bib_doi <- "10.1111/gcb.15248"
+# data_release_doi <- "10.25573/serc.12640172"
+# 
+# paper_bib_raw <- GetBibEntryWithDOI(associated_bib_doi)
+# data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
+# 
+# # Convert this to a dataframe
+# paper_biblio <- as.data.frame(paper_bib_raw) %>%
+#   rownames_to_column("key") %>%
+#   mutate(study_id = study_id_value) %>%
+#   mutate(doi = tolower(doi),
+#          bibliography_id = study_id_value,
+#          key = study_id_value) 
+# 
+# data_biblio <- as.data.frame(data_bib_raw) %>%
+#   rownames_to_column("key") %>%
+#   mutate(study_id = study_id_value) %>%
+#   mutate(doi = tolower(doi),
+#          bibliography_id = study_id_value,
+#          key = study_id_value) 
+# 
+# # Curate biblio so ready to read out as a BibTex-style .bib file
+# study_citations <- data_biblio %>%
+#   bind_rows(paper_biblio) %>%
+#   mutate(publication_type = bibtype) %>%
+#   select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
+#   mutate(year = as.numeric(year),
+#          month = "aug")
 
-paper_bib_raw <- GetBibEntryWithDOI(associated_bib_doi)
-data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
-
-# Convert this to a dataframe
-paper_biblio <- as.data.frame(paper_bib_raw) %>%
-  rownames_to_column("key") %>%
-  mutate(study_id = study_id_value) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = study_id_value,
-         key = study_id_value) 
-
-data_biblio <- as.data.frame(data_bib_raw) %>%
-  rownames_to_column("key") %>%
-  mutate(study_id = study_id_value) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = study_id_value,
-         key = study_id_value) 
-
-# Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- data_biblio %>%
-  bind_rows(paper_biblio) %>%
-  mutate(publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year),
-         month = "aug")
+study_citations <- study_citations_raw
 
 # Write .bib file
 bib_file <- study_citations %>%
