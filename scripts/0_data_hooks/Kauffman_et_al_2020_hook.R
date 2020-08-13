@@ -94,11 +94,12 @@ species <- species_raw %>%
 #   mutate(year = as.numeric(year),
 #          month = "aug")
 
-study_citations <- study_citations_raw
+study_citations <- study_citations_raw %>%
+  mutate(key = c("Kauffman_et_al_2020_data", "Kauffman_et_al_2020"))
 
 # Write .bib file
 bib_file <- study_citations %>%
-  slice(1) %>%
+  # slice(1) %>%
   select(-study_id, -bibliography_id, -publication_type) %>%
   distinct() %>%
   column_to_rownames("key")
