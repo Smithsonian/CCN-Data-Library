@@ -1,0 +1,37 @@
+Database issues
+
+For the data releases we've been prepping, we haven't been collecting info on whether or not the core represents the full profile.
+year, month, day, date redundant
+probably should scrap core_ prefix on year, month, day
+Activity data are all junked up.
+
+total_pb210_activity_sd and total_pb210_activity_se
+cs137_activity_sd and cs137_activity_se
+bi214_activity_se and bi214_activity_sd redundant
+pb214_activity_sd and pb214_activity_se
+age_sd and age_se
+
+be7_activity_sd, am241_activity_sd, th234_activity_sd, pb212_activity_sd, marker_date_sd, bi214_activity_sd, pb210_crs_age_sd
+
+pb214_activity_se_295keV should be pb214_activity_295keV_se
+
+pb214_activity_295keV should not necessarily be something we carry through to the synthesis. In the hook script, if more than one pb214 activity are present, we should 
+
+Depth interval table columns sort wrong. site_id at the end for some reason.
+
+Vegetation class and vegetation notes are redundant for a lot of mangroves and seagrass cores.
+
+De_Iongh_et_al_1995 - incorrectly coded as mangrove in species table
+Trettin_et_al_2017 - core_ids missing from species table
+Alongi_et_al_2008 - Some mangroves misclassified as seagrass
+De_Troch_et_al_2006 - No species name or spp.
+Gonneea_et_al_2004 - Mangroves misclassified as seagrass in species table
+Grady_1981 -  No species name or spp.
+Kristensen_et_al_2000 - Rhizophora mucronata classified as seagrass
+Marba_unpublished -  No species name or spp. "Mixed" make it in there.
+Thimdee_et_al_2003 - NA called seagrass, should be mangrove
+
+A lot of cores from Sanderman's synthesis are not labelled as mangroves.
+
+
+
