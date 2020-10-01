@@ -76,6 +76,9 @@ site_marine <- siteinfo %>%
                                    # PUBPAB = palustrine unconsolidated bottom/aquatic bed
                                    "PUBPAB" = NA_character_),
          vegetation_method = "field observation") %>%
+  # Filter so that all Estuarine salinities and all
+  # CLASS_FIELD_HGM == TIDAL
+  filter(salinity_class == "estuarine" | CLASS_FIELD_HGM == "TIDAL") %>% 
   rename(site_id = SITE_ID, 
          core_latitude = ANALYSIS_LAT,
          core_longitude = ANALYSIS_LON) %>%
@@ -221,6 +224,11 @@ test_colnames("cores", cores) # core_month and core_day are uncontrolled..
 test_colnames("depthseries", depthseries)
 test_colnames("species", species)
 test_colnames("methods", methods)
+
+#library(leaflet)
+#leaflet(cores) %>% 
+#  addTiles() %>%
+#  addCircles(lng = ~core_longitude, lat = ~core_latitude)
 
 ## Output Curated Data ####
 

@@ -47,6 +47,9 @@
 
 # Else it is C2
 
+# Add C1, C2, or NA to a C column
+
+
 # See if it is a dated core
 
 # If it has one of these data types, then it is at least B
@@ -86,6 +89,9 @@
 # if none of these landmines get tripped it's a B1
 # Else, it's a B2
 
+# Add B1, B2, or NA to a B column
+
+
 # For top shelf stuff. 
 
 # If B1 or B2, 
@@ -94,3 +100,4 @@
 # If it's B2 AND DEM source is RTK or better then it's an A2
 # If it's B1 AND DEM source is RTK or better, then it's an A1. 
 
+# Add A1, A2, A3, or NA to an A column
