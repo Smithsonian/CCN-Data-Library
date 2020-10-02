@@ -13,7 +13,7 @@ create_object_list <- function(table_names){
 
 ## Test column names function ###########
 # Make sure column names match CCRCN guidelines
-test_colnames <- function(datasets, database_structure_doc = "converting_v1p2_to_v2.csv") {
+test_colnames <- function(datasets, database_structure_doc = "scripts/3_post_processing/tables/input_files/converting_v1p2_to_v2.csv") {
   
   database_structure <- readr::read_csv(database_structure_doc, col_types = cols())
   
@@ -59,7 +59,7 @@ test_colnames <- function(datasets, database_structure_doc = "converting_v1p2_to
 
 ## Need a new QA function that iterates through the guidence, makes sure that every required attribute,
 # and any conditional are there.
-test_requirements <- function(datasets, database_structure_doc = "converting_v1p2_to_v2.csv") {
+test_requirements <- function(datasets, database_structure_doc = "scripts/3_post_processing/tables/input_files/converting_v1p2_to_v2.csv") {
   database_structure <- readr::read_csv(database_structure_doc, col_types = cols())
   
   requirement_warnings <- c()
@@ -132,7 +132,7 @@ test_requirements <- function(datasets, database_structure_doc = "converting_v1p
 
 ## Test variable names function ########
 # input: a list object of the compiled datasets using create_object_list()
-test_variables <- function(datasets, database_structure_doc = "converting_v1p2_to_v2.csv") {
+test_variables <- function(datasets, database_structure_doc = "scripts/3_post_processing/tables/input_files/converting_v1p2_to_v2.csv") {
   
   missing_variables <- c()
   

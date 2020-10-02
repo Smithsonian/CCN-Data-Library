@@ -1,14 +1,14 @@
-methods2 <- read_csv("CCRCN_v2/methods.csv") # methods
-cores2 <- read_csv("CCRCN_v2/cores.csv", guess_max=5603)
-depthseries2 <- read_csv("CCRCN_v2/depthseries.csv", guess_max = 38878)
-species2 <- read_csv("CCRCN_v2/species.csv")
+methods2 <- read_csv("data/CCRCN_V2/methods.csv") # methods
+cores2 <- read_csv("data/CCRCN_V2/cores.csv", guess_max=6206)
+depthseries2 <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 42698)
+species2 <- read_csv("data/CCRCN_V2/species.csv")
 
 # First classify habitat according to the big habitat-specific syntheses
-sanderman <- read_csv("supportingFiles/Sanderman_2018_cores.csv") %>% 
+sanderman <- read_csv("scripts/3_post_processing/tables/input_files/synthesis_studies/Sanderman_2018_cores.csv") %>% 
   select(study_id, site_id, core_id) %>% 
   mutate(habitat1 = "mangrove")
 
-forquean <- read_csv("supportingFiles/Fourqurean_2012_cores.csv") %>% 
+forquean <- read_csv("scripts/3_post_processing/tables/input_files/synthesis_studies/Fourqurean_2012_cores.csv") %>% 
   select(study_id, site_id, core_id) %>% 
   mutate(habitat1 = "seagrass")
 
@@ -46,7 +46,7 @@ habitat_comparison <- full_join(two_big_syntheses, cores_sal_veg_habitat) %>%
 # Any habitat still NA
 habitat_comparison_NA <- filter(habitat_comparison, is.na(habitat1) & is.na(habitat2) & is.na(habitat3))
 
-study_habitat_ids_manual <- read_csv("missing_habitat_manual_cleanup.csv")
+study_habitat_ids_manual <- read_csv("scripts/3_post_processing/tables/input_files/v1p2_to_v2/missing_habitat_manual_cleanup.csv")
 
 habitat_comparison <- habitat_comparison %>% 
   left_join(study_habitat_ids_manual)

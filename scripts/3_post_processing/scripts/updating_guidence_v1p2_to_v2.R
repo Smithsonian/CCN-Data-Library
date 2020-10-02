@@ -2,30 +2,30 @@
 
 library(tidyverse)
 library(lubridate)
-source("qa_functions.R")
+source("scripts/3_post_processing/scripts/qa_functions.R")
 
 # Load up data
 # methods
-methods <- read_csv("CCRCN/CCRCN_methods.csv")
+methods <- read_csv("data/CCRCN_synthesis/CCRCN_methods.csv")
 
 # sites
 # cores
-cores <- read_csv("CCRCN/CCRCN_cores.csv", guess_max=5603)
+cores <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", guess_max=6206)
 
 # depthseries
-depthseries <- read_csv("CCRCN/CCRCN_depthseries.csv", guess_max = 38878)
+depthseries <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max = 42698)
 
 # species
-species <- read_csv("CCRCN/CCRCN_species.csv")
+species <- read_csv("data/CCRCN_synthesis/CCRCN_species.csv")
 
 # guidence 
-guidence <- read_csv("converting_v1p2_to_v2.csv")
+guidence <- read_csv("scripts/3_post_processing/tables/input_files/v1p2_to_v2/converting_v1p2_to_v2.csv")
 
 # Species table fixes 
-species_fixes <- read_csv("species-habitat-classification-JH-20200824.csv")
+species_fixes <- read_csv("scripts/3_post_processing/tables/input_files/v1p2_to_v2/species-habitat-classification-JH-20200824.csv")
 
 # Depth code fixes
-core_depth_fixes <- read_csv("studies_revisited.csv") %>% 
+core_depth_fixes <- read_csv("scripts/3_post_processing/tables/input_files/v1p2_to_v2/studies_revisited.csv") %>% 
   select(study_id, core_length_flag) %>% 
   rename(core_length_flag_correct=core_length_flag)
 
@@ -39,27 +39,32 @@ depthseries_fixed <- depthseries %>%
                                  (pb214_activity_se_352keV+pb214_activity_se_295keV)/2,
                                  pb214_activity_se))
 
+# Fix habitat classification
+habitat2 <- read_csv("scripts/3_post_processing/tables/input_files/v1p2_to_v2/cleaned_up_habitat_classifications.csv")
+
+
 # Fix dates
 cores_fixed <- cores %>% 
-  mutate(year = year(core_date),
-         month = month(core_date),
-         day = day(core_date)) %>% 
+  mutate(year = year(ymd(core_date)),
+         month = month(ymd(core_date)),
+         day = day(ymd(core_date))) %>% 
   select(-core_date) %>%
   # Fix depths
   left_join(core_depth_fixes) %>% 
   mutate(core_length_flag = ifelse(is.na(core_length_flag),
                                    core_length_flag_correct,
                                    core_length_flag)) %>% 
-  select(-core_length_flag_correct)
+  select(-core_length_flag_correct) %>% 
+  left_join(habitat2)
   
 # Fix species
 species_fixed <- species %>%
-  select(-habitat) %>% 
   left_join(species_fixes) %>% 
   mutate(species_code = ifelse(!is.na(recode_as), 
                                recode_as, 
                                species_code)) %>% 
   select(-c(recode_as, notes))
+
 
 # Rename attributes from guidence v1.2 to 2
 list_of_tables <- list(methods = methods,
@@ -103,8 +108,9 @@ for (i in 1:length(list_of_tables)) {
 } 
 
 for (i in 1:length(list_of_tables)) {
-  write_csv(list_of_tables[[i]], paste("CCRCN_v2/", names(list_of_tables)[i], ".csv", sep=""))
+  write_csv(list_of_tables[[i]], paste("data/CCRCN_V2/", names(list_of_tables)[i], ".csv", sep=""))
 }
 
-
-
+ggplot(data = list_of_tables$cores, aes(x=longitude, y=latitude)) +
+  geom_point(aes(color=habitat, shape=habitat), alpha=0.4) +
+  theme_dark()
