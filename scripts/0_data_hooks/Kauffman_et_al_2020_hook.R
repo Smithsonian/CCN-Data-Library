@@ -45,11 +45,7 @@ cores <- cores_raw %>%
   select(-c(peat_depth, peat_depth_notes, core_length, pH, porewater_salinity))
 
 # depthseries uncontrolled: 
-# representative_depth_min representative_depth_max
-depthseries <- depthseries_raw %>%
-  mutate(depth_interval_notes = paste0(depth_interval_notes, "; Representative depth range ", 
-                                       representative_depth_min, "-", representative_depth_max)) %>%
-  select(-c(representative_depth_min, representative_depth_max))
+depthseries <- depthseries_raw
 
 # methods (no change)
 methods <- methods_raw

@@ -128,11 +128,11 @@ cores <- soil_marine %>%
 
 depthseries <- soil_marine %>%
   rename("dry_bulk_density_notes" = "BULK_DEN_DBF_FLAG",
-         "depth_max" = "DEPTH") %>%
+         "representative_depth_max" = "DEPTH") %>%
   group_by(study_id, site_id, core_id) %>% 
-  mutate(depth_min = ifelse(row_number() == 1, 
+  mutate(representative_depth_min = ifelse(row_number() == 1, 
                             0, 
-                            lag(depth_max))) %>%
+                            lag(representative_depth_max))) %>%
   ungroup() %>% 
   mutate(dry_bulk_density_notes = gsub("Db", "Dry bulk density", dry_bulk_density_notes),
          dry_bulk_density_notes = gsub(", g/cc", "", dry_bulk_density_notes),
@@ -141,7 +141,7 @@ depthseries <- soil_marine %>%
          depth_interval_notes = paste0(str_to_sentence(DEPTH_FLAG), " ", dry_bulk_density_notes),
          depth_interval_notes = gsub("NA", "",depth_interval_notes), 
          depth_interval_notes = trimws(depth_interval_notes)) %>%
-  select(study_id, site_id, core_id, sample_id, depth_min, depth_max, 
+  select(study_id, site_id, core_id, sample_id, representative_depth_min, representative_depth_max, 
          dry_bulk_density, fraction_carbon, depth_interval_notes)
 
 depthseries$depth_interval_notes[which(depthseries$depth_interval_notes == "")] <- NA
@@ -225,10 +225,10 @@ test_colnames("depthseries", depthseries)
 test_colnames("species", species)
 test_colnames("methods", methods)
 
-#library(leaflet)
-#leaflet(cores) %>% 
-#  addTiles() %>%
-#  addCircles(lng = ~core_longitude, lat = ~core_latitude)
+library(leaflet)
+leaflet(cores) %>%
+ addTiles() %>%
+ addCircles(lng = ~core_longitude, lat = ~core_latitude)
 
 ## Output Curated Data ####
 

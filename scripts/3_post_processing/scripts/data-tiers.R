@@ -28,9 +28,9 @@ depthseries <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 42698)
 # Get Unique Core ID's
 study_site_core <- cores %>% 
   select(study_id, site_id, core_id) %>% 
-  mutate(stocks_qual_code = NA,
-         dates_qual_code = NA,
-         elevation_qual_code = NA)
+  mutate(stocks_qual_code = NA_character_,
+         dates_qual_code = NA_character_,
+         elevation_qual_code = NA_character_)
 
 # Iterate through study/site/core ID's
 for (i in 1:nrow(study_site_core)) {
