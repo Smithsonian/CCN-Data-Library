@@ -10,3 +10,5 @@ max_depths <- depthseries %>%
 
 cores_w_max_depth <- cores %>% 
   left_join(max_depths, by=c("study_id", "core_id"))
+
+write_csv(cores_w_max_depth, "data/CCRCN_V2/cores.csv")
