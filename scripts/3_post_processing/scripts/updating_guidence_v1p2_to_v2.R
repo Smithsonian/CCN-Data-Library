@@ -40,23 +40,22 @@ depthseries_fixed <- depthseries %>%
                                  pb214_activity_se))
 
 # Fix habitat classification
-habitat2 <- read_csv("scripts/3_post_processing/tables/input_files/v1p2_to_v2/cleaned_up_habitat_classifications.csv")
-
+# separate these out
 
 # Fix dates
 cores_fixed <- cores %>% 
-  mutate(year = year(ymd(core_date)),
+  mutate(year = year(ymd(core_date)), # separate out year month day
          month = month(ymd(core_date)),
          day = day(ymd(core_date))) %>% 
-  select(-core_date) %>%
+  select(-core_date) %>% # get rid of date
   # Fix depths
-  left_join(core_depth_fixes) %>% 
+  left_join(core_depth_fixes) %>% # join with fixed core depths
   mutate(core_length_flag = ifelse(is.na(core_length_flag),
                                    core_length_flag_correct,
                                    core_length_flag)) %>% 
-  select(-core_length_flag_correct) %>% 
-  left_join(habitat2)
-  
+  select(-core_length_flag_correct) 
+  # left_join(habitat2)
+
 # Fix species
 species_fixed <- species %>%
   left_join(species_fixes) %>% 
@@ -111,6 +110,3 @@ for (i in 1:length(list_of_tables)) {
   write_csv(list_of_tables[[i]], paste("data/CCRCN_V2/", names(list_of_tables)[i], ".csv", sep=""))
 }
 
-ggplot(data = list_of_tables$cores, aes(x=longitude, y=latitude)) +
-  geom_point(aes(color=habitat, shape=habitat), alpha=0.4) +
-  theme_dark()

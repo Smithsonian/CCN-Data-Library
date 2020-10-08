@@ -192,7 +192,7 @@ for (i in 1:nrow(study_site_core)) {
       if (any(c("marker_type", "marker_notes") %in% names(temp_depthseries))) {
         date_codes <- c(date_codes, "B1")
       } else {
-        ate_codes <- c(date_codes, "B2")
+        date_codes <- c(date_codes, "B2")
       }
     }
     
@@ -250,3 +250,8 @@ for (i in 1:nrow(study_site_core)) {
   study_site_core$elevation_qual_code[i] <- elv_code
 
 }
+
+# !!! write to a directory
+# Join to core table, then write over input 
+# write_csv(study_site_core, "data/CCRCN_V2/")
+
