@@ -27,7 +27,7 @@ depthseries <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 42698)
 # Get Unique Site ID's
 # Get Unique Core ID's
 study_site_core <- cores %>% 
-  select(study_id, site_id, core_id) %>% 
+  select(study_id, core_id) %>% 
   mutate(stocks_qual_code = NA_character_,
          dates_qual_code = NA_character_,
          elevation_qual_code = NA_character_)
@@ -252,6 +252,9 @@ for (i in 1:nrow(study_site_core)) {
 }
 
 # !!! write to a directory
+cores <- cores %>% 
+  left_join(study_site_core, by=c("study_id", "core_id"))
+
 # Join to core table, then write over input 
-# write_csv(study_site_core, "data/CCRCN_V2/")
+write_csv(cores, "data/CCRCN_V2/cores.csv")
 

@@ -7,7 +7,7 @@ species2 <- read_csv("data/CCRCN_V2/species.csv")
 if ("habitat" %in% names(cores2)) {
   cores2 <- cores2 %>% rename(habitat1 = habitat)
 } else {
-  cores2 <- cores2 %>% rename(habitat1 = NA_character_)
+  cores2 <- cores2 %>% mutate(habitat1 = NA_character_)
 }
 
 # First classify habitat according to the big habitat-specific syntheses
@@ -37,7 +37,7 @@ cores_sal_veg_habitat <- cores2 %>%
                                
          , NA), ifelse(latitude >= -40 & latitude <= 35, "mangrove", "swamp"), "swamp")  # from Giri et al. Fig 3
         , NA)) %>%
-  select(study_id:core_id, vegetation_class, salinity_class, habitat2, habitat6)
+  select(study_id:core_id, vegetation_class, salinity_class, habitat1, habitat3, habitat7)
 
 cores_species_habitat <- species2 %>% 
   mutate(habiat = factor(habitat, levels = rev(c("unvegetated", "algal mat", "seagrass", "marsh", "scrub/shrub", "swamp", "mangrove")))) %>% 
@@ -48,7 +48,7 @@ cores_species_habitat <- species2 %>%
 
 habitat_comparison <- cores_sal_veg_habitat %>% full_join(two_big_syntheses, by = c("study_id", "core_id")) %>%
   left_join(cores_species_habitat, by = c("study_id", "core_id")) %>% 
-  select(study_id, site_id, core_id, vegetation_class, salinity_class, habitat1, habitat2, habitat3, habitat6)
+  select(study_id, site_id, core_id, vegetation_class, salinity_class, habitat1, habitat2, habitat3, habitat4, habitat7)
 
 study_habitat_ids_manual <- read_csv("scripts/3_post_processing/tables/input_files/v1p2_to_v2/missing_habitat_manual_cleanup.csv")
 
@@ -83,10 +83,6 @@ habitat_final <- habitat_comparison %>%
                                             "habitat6" = "partial text matching used to detect habitat descriptions in site_id or core_id",
                                             "habitat7" = "habitat determined from vegetation_class, salinity_class, and latitude for forested wetlands"))
 
-write_csv(habitat_final, "cleaned_up_habitat_classifications.csv")
-
-# join with core file and write over input
-habitat2 <- read_csv("scripts/3_post_processing/tables/input_files/v1p2_to_v2/cleaned_up_habitat_classifications.csv")
 
 cores_with_habitat <- cores2 %>% 
   left_join(habitat_final, by=c("study_id", "core_id"))
