@@ -258,3 +258,26 @@ cores <- cores %>%
 # Join to core table, then write over input 
 write_csv(cores, "data/CCRCN_V2/cores.csv")
 
+# Stocks
+
+# map_stocks <- cores %>%
+#   filter(!is.na(stocks_qual_code))
+# 
+# ggplot(map_stocks, aes(x=longitude, y=latitude, color=stocks_qual_code,
+#                        shape=stocks_qual_code)) +
+#   geom_point(alpha=0.75)
+# 
+# map_car <- cores %>%
+#   filter(!is.na(dates_qual_code))
+# 
+# ggplot(map_car, aes(x=longitude, y=latitude, color=dates_qual_code,
+#                        shape=dates_qual_code)) +
+#   geom_point(alpha=0.75)
+# 
+# map_elv <- cores %>%
+#   filter(!is.na(elevation_qual_code))
+# 
+# ggplot(map_elv, aes(x=longitude, y=latitude, color=elevation_qual_code,
+#                     shape=elevation_qual_code)) +
+#   geom_point(alpha=0.75)
+
