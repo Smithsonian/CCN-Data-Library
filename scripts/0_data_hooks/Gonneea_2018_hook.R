@@ -138,7 +138,8 @@ Gonneea_2018_core_Data <- Gonneea_2018 %>%
   summarize(core_latitude = first(core_latitude), core_longitude = first(core_longitude)) %>%
   left_join(core_elevation) %>%
   # convert elevation from cm to meters
-  mutate(core_elevation = core_elevation * .01)
+  mutate(core_elevation = core_elevation * .01,
+         core_elevation_method = "RTK")
 
 # Depth Series data
 Gonneea_2018_depth_series_data <- Gonneea_2018 %>%
@@ -216,7 +217,7 @@ WriteBib(as.BibEntry(bib_file), "./data/Gonneea_2018/derivative/Gonneea_et_al_20
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-test_colnames("core_level", Gonneea_2018_core_Data)
+test_colnames("cores", Gonneea_2018_core_Data)
 test_colnames("depthseries", Gonneea_2018_depth_series_data)
 
 # Test relationships between core_ids at core- and depthseries-levels
@@ -227,7 +228,7 @@ results <- test_core_relationships(Gonneea_2018_core_Data, Gonneea_2018_depth_se
 ## Export files ##############################
   
 # Export core data
-write_csv(Gonneea_2018_core_Data, "./data/Gonneea_2018/derivative/Gonneea_et_al_2018_cores.csv")
+write_csv(Gonneea_2018_core_Data, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_cores.csv")
 
 # Export depth series data
 write_csv(Gonneea_2018_depth_series_data, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_depthseries.csv")
