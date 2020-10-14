@@ -1,4 +1,5 @@
-## CCRCN Database Update 
+# Coastal Carbon Research Coordination Network
+# Database Guidance V2
 
 ## Jaxine Wolfe, wolfejax@si.edu
 ## 2020-10-08
