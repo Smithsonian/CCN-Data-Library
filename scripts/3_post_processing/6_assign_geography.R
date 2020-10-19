@@ -20,10 +20,17 @@ library(rnaturalearth)
 # Load  shapefiles
 # countries
 # problem: this does not include EEZs so offshore cores are NA 
-countries <- readOGR(dsn = "./data/input_shapefiles/world/country_gen/",
-                  layer = "country_gen")
+
+# generalized
+# countries <- readOGR(dsn = "./data/input_shapefiles/world/country_gen/",
+#                   layer = "country_gen")
+# countries_sp <- spTransform(countries, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+
+# non-generalized
+
+countries <- readOGR(dsn = "./data/input_shapefiles/world/country/",
+                     layer = "country")
 countries_sp <- spTransform(countries, CRS("+proj=longlat +datum=WGS84 +no_defs"))
-# country_buff <- gBuffer(countries_sp, byid = TRUE, width = 0.2) 
 
 # US States
 states <- readOGR(dsn = "./data/input_shapefiles/us_states/states_political_boundaries",
@@ -78,14 +85,18 @@ country_cores <- as.data.frame(country_cores)
 
 # Identify columns as countries
 colnames(country_cores) <- countries_sp$Country
+# colnames(country_cores) <- countries_sp$COUNTRY
 # colnames(admin_cores) <- divisions$NAME
+
+# the non-generalized country shp has 3 NA elements
+# country_cores <- country_cores[, which(!is.na(names(country_cores)))]
 
 # clean up the dataframe to isolate cores and countries
 country_cores_trim <- country_cores %>%
   # Identify rows as cores
-  mutate(core_id = cores_no_na$core_id) %>% 
+  mutate(core_id = cores_no_na$core_id) %>%
   # Replace FALSE with NA
-  mutate_if(is.logical, funs(ifelse(. == FALSE, NA, .))) %>%
+  mutate_if(is.logical, list(~na_if(., FALSE))) %>% 
   # Remove countries that don't have any data (ones that have NA in every row)
   select_if(function(x) {!all(is.na(x))}) %>%
   # replace the value of the cell with the core_id if the value of a cell == TRUE
@@ -98,6 +109,7 @@ country_cores_trim <- country_cores %>%
 # Now gather the data so that all countries are in one column
 country_cores_gather <- country_cores_trim %>%
   gather(key = "country", value = "core_id") %>%
+  mutate(country = gsub("[.]1|[.]2|[.]3", "", country)) %>%
   drop_na(core_id)
 
 # Merge the country assignments to the core table
@@ -142,11 +154,52 @@ state_cores_gather <- state_cores_trim %>%
 core_geography_final <- left_join(core_geography, state_cores_gather) %>%
   # the state shapefile is more inclusive of coastal waters
   # some US cores were overlooked by the state shp too
-  # need to find an EEZ shapefile
-  mutate(country = ifelse(!is.na(state), "United States", country))
+  mutate(country = ifelse(!is.na(state), "United States", country)) %>%
+  # anything that is not defined inside the shapefiles will international waters
+  # find an EEZ shapefile at some point to place these coastal cores
+  mutate(country = ifelse(is.na(country), "International Waters", country))
+
+# number of NA country assignments
+# non-generalized country shp: 764
+# generalized country shp: 1206
+length(which((is.na(core_geography_final$country)))) 
 
 ## ... 3c. Assign administrative divisions attribute to core ID ####
-# still looking for a good shapefile
+
+# # isolate states, provinces, territories from admin shp
+# admin_types <- c("State", "Province", "Territory")
+# # must be transformed to filter but it takes sooo long
+# # admin_states <- st_as_sf(divisions)
+# admin_states <- divisions %>% filter(ADMINTYPE %in% admin_types)
+# 
+# admin_cores <- gContains(admins_sp, spatial_cores, byid = TRUE)
+# # admin_cores <- gContains(divisions, spatial_cores, byid = TRUE)
+# 
+# # Convert from matrix to dataframe so we can use pipelines
+# admin_cores <- as.data.frame(admin_cores)
+# 
+# # Identify columns as admins
+# colnames(admin_cores) <- admins_sp$admin
+# 
+# # clean up the dataframe to isolate cores and admins
+# admin_cores_trim <- admin_cores %>%
+#   # Identify rows as cores
+#   mutate(core_id = cores_no_na$core_id) %>% 
+#   # Replace FALSE with NA
+#   mutate_if(is.logical, funs(ifelse(. == FALSE, NA, .))) %>%
+#   # Remove admins that don't have any data (ones that have NA in every row)
+#   select_if(function(x) {!all(is.na(x))}) %>%
+#   # replace the value of the cell with the core_id if the value of a cell == TRUE
+#   mutate_all(~ as.character(.x)) %>%
+#   mutate_at(vars(-core_id), funs(
+#     ifelse(. == TRUE, core_id, NA)
+#   )) %>%
+#   select(-core_id)
+# 
+# # Now gather the data so that all admins are in one column
+# admin_cores_gather <- admin_cores_trim %>%
+#   gather(key = "admin", value = "core_id") %>%
+#   drop_na(core_id)
 
 ## 4. Visual QA: Plot coordinates ####
 # not a great graph yet, maybe use leaflet
