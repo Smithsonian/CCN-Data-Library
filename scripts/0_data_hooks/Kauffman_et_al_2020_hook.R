@@ -1,6 +1,6 @@
 # Dataset: Carbon stocks in seagrass meadows, emergent marshes, and forested tidal swamps of the Pacific Northwest
 # 
-# Authors: J Boone Kauffman, Leila Giovanonni, Kelly J, Dunstan N, Amy Borde, Heida Diefenderfer, Craig Cornu, Christopher Janousek <janousec@oregonstate.edu>, Jude Apple, and Laura Brophy.
+# Authors: J Boone Kauffman, Leila Giovannoni, Kelly J, Dunstan N, Amy Borde, Heida Diefenderfer, Craig Cornu, Christopher Janousek <janousec@oregonstate.edu>, Jude Apple, and Laura Brophy.
 # 
 # Any use of this dataset must include a citation. The DOI: 10.25573/serc.12640172
 # 
