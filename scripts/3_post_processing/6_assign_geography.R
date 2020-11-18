@@ -28,7 +28,7 @@ library(rnaturalearth)
 
 # non-generalized
 
-countries <- readOGR(dsn = "./data/input_shapefiles/world/country/",
+countries <- readOGR(dsn = "./data/input_shapefiles/world/world_countries/",
                      layer = "country")
 countries_sp <- spTransform(countries, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
@@ -47,12 +47,12 @@ watersheds_sp <- spTransform(watersheds, CRS("+proj=longlat +datum=WGS84 +no_def
 # regions_sp <- spTransform(watersheds, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
 # admin divisions
-# divisions <- readOGR(dsn = "./data/input_shapefiles/world/admin/",
-#                      layer = "admin")
-# divisions <- spTransform(divisions, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+divisions <- readOGR(dsn = "./data/input_shapefiles/world/admin_divisions/",
+                     layer = "admin")
+divisions <- spTransform(divisions, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
 # Core data updated to V2 guidance
-cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max=6206)
+cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max=6500)
 cores_no_na <- cores %>% drop_na(longitude) # remove cores with NA coords
 
 # site table not in V2 folder yet..
@@ -81,15 +81,12 @@ country_cores <- gContains(countries_sp, spatial_cores, byid = TRUE)
 
 # Convert from matrix to dataframe so we can use pipelines
 country_cores <- as.data.frame(country_cores)
-# admin_cores <- as.data.frame(admin_cores)
 
 # Identify columns as countries
-colnames(country_cores) <- countries_sp$Country
-# colnames(country_cores) <- countries_sp$COUNTRY
-# colnames(admin_cores) <- divisions$NAME
+colnames(country_cores) <- countries_sp$COUNTRY
 
 # the non-generalized country shp has 3 NA elements
-# country_cores <- country_cores[, which(!is.na(names(country_cores)))]
+country_cores <- country_cores[, which(!is.na(names(country_cores)))]
 
 # clean up the dataframe to isolate cores and countries
 country_cores_trim <- country_cores %>%
@@ -109,11 +106,11 @@ country_cores_trim <- country_cores %>%
 # Now gather the data so that all countries are in one column
 country_cores_gather <- country_cores_trim %>%
   gather(key = "country", value = "core_id") %>%
-  mutate(country = gsub("[.]1|[.]2|[.]3", "", country)) %>%
+  mutate(country = gsub("[.]1|[.]2|[.]3|[.]4|[.]5", "", country)) %>%
   drop_na(core_id)
 
 # Merge the country assignments to the core table
-core_geography <- left_join(cores, country_cores_gather)
+# core_geography <- left_join(cores, country_cores_gather)
 
 ## ... 3b. Assign us states to core ID ####
 
@@ -122,7 +119,6 @@ core_geography <- left_join(cores, country_cores_gather)
 #   to one state and each row corresponds to one state. A TRUE value in a
 #   cell indicates that the given core (row) is in the given state (column)
 state_cores <- gContains(states_sp, spatial_cores, byid = TRUE)
-# admin_cores <- gContains(divisions, spatial_cores, byid = TRUE)
 
 # Convert from matrix to dataframe so we can use pipelines
 state_cores <- as.data.frame(state_cores)
@@ -147,63 +143,86 @@ state_cores_trim <- state_cores %>%
 
 # Now gather the data so that all states are in one column
 state_cores_gather <- state_cores_trim %>%
-  gather(key = "state", value = "core_id") %>%
+  gather(key = "us_state", value = "core_id") %>%
   drop_na(core_id)
 
-# Merge the state assignments to the core table
-core_geography_final <- left_join(core_geography, state_cores_gather) %>%
+## ... 3c. Assign administrative divisions attribute to core ID ####
+
+# isolate states, provinces, territories from admin shp
+admin_types <- c("State", "Province", "Territory")
+
+# must be transformed to filter but it takes sooo long
+# admin_states <- st_as_sf(divisions)
+admin_subset <- divisions[divisions@data$ADMINTYPE %in% admin_types, ]
+# NAME = name of admin division
+# COUNTRY = country of the corresponding admin division
+
+admin_cores <- gContains(admin_subset, spatial_cores, byid = TRUE)
+
+# Convert from matrix to dataframe so we can use pipelines
+admin_cores <- as.data.frame(admin_cores)
+
+# Identify columns as admins
+colnames(admin_cores) <- str_c(admin_subset$NAME, admin_subset$COUNTRY, sep = "_")
+# store the corresponding countries
+# admin_countries <- admin_subset$COUNTRY
+
+# eliminate NA elements (this also makes the colnames unique)
+admin_cores <- admin_cores[, which(!is.na(names(admin_cores)))]
+
+# clean up the dataframe to isolate cores and admins
+admin_cores_trim <- admin_cores %>%
+  # Identify rows as cores
+  mutate(core_id = cores_no_na$core_id) %>%
+  # Replace FALSE with NA
+  mutate_if(is.logical, funs(ifelse(. == FALSE, NA, .))) %>%
+  # Remove admins that don't have any data (ones that have NA in every row)
+  select_if(function(x) {!all(is.na(x))}) %>%
+  # replace the value of the cell with the core_id if the value of a cell == TRUE
+  mutate_all(~ as.character(.x)) %>%
+  mutate_at(vars(-core_id), funs(
+    ifelse(. == TRUE, core_id, NA)
+  )) %>%
+  select(-core_id)
+
+# Now gather the data so that all admins are in one column
+admin_cores_gather <- admin_cores_trim %>%
+  gather(key = "admin_division", value = "core_id") %>%
+  mutate(admin_division = gsub("[.]1|[.]2|[.]3|[.]4|[.]5", "", admin_division)) %>%
+  drop_na(core_id) %>%
+  separate(admin_division, into = c("admin_division", "admin_country"), sep = "_")
+
+## 4. Table Merge ####
+
+# Merge the geography assignments to the core table
+core_geography <- left_join(cores, country_cores_gather) %>%
+  left_join(state_cores_gather) %>%
+  left_join(admin_cores_gather) %>%
   # the state shapefile is more inclusive of coastal waters
   # some US cores were overlooked by the state shp too
-  mutate(country = ifelse(!is.na(state), "United States", country)) %>%
+  mutate(country = ifelse(!is.na(us_state), "United States", country),
+         admin_division = ifelse(!is.na(us_state) & is.na(admin_division), us_state, admin_division)) %>%
   # anything that is not defined inside the shapefiles will international waters
   # find an EEZ shapefile at some point to place these coastal cores
-  mutate(country = ifelse(is.na(country), "International Waters", country))
+  mutate(country = ifelse(is.na(country), "International Waters", country)) %>%
+  select(-c(us_state, admin_country))
 
 # number of NA country assignments
 # non-generalized country shp: 764
 # generalized country shp: 1206
-length(which((is.na(core_geography_final$country)))) 
+length(which(core_geography$country == "International Waters"))
+# number of NA admin division assignments: 1178
+length(which(is.na(core_geography$admin_division)))
 
-## ... 3c. Assign administrative divisions attribute to core ID ####
+# all the countries without assigned administrative divisions
+na_admin_division <- core_geography %>% 
+  select(country, admin_division) %>% filter(is.na(admin_division)) %>%
+  distinct() %>% arrange(country) %>% pull(country)
+na_admin_division
 
-# # isolate states, provinces, territories from admin shp
-# admin_types <- c("State", "Province", "Territory")
-# # must be transformed to filter but it takes sooo long
-# # admin_states <- st_as_sf(divisions)
-# admin_states <- divisions %>% filter(ADMINTYPE %in% admin_types)
-# 
-# admin_cores <- gContains(admins_sp, spatial_cores, byid = TRUE)
-# # admin_cores <- gContains(divisions, spatial_cores, byid = TRUE)
-# 
-# # Convert from matrix to dataframe so we can use pipelines
-# admin_cores <- as.data.frame(admin_cores)
-# 
-# # Identify columns as admins
-# colnames(admin_cores) <- admins_sp$admin
-# 
-# # clean up the dataframe to isolate cores and admins
-# admin_cores_trim <- admin_cores %>%
-#   # Identify rows as cores
-#   mutate(core_id = cores_no_na$core_id) %>% 
-#   # Replace FALSE with NA
-#   mutate_if(is.logical, funs(ifelse(. == FALSE, NA, .))) %>%
-#   # Remove admins that don't have any data (ones that have NA in every row)
-#   select_if(function(x) {!all(is.na(x))}) %>%
-#   # replace the value of the cell with the core_id if the value of a cell == TRUE
-#   mutate_all(~ as.character(.x)) %>%
-#   mutate_at(vars(-core_id), funs(
-#     ifelse(. == TRUE, core_id, NA)
-#   )) %>%
-#   select(-core_id)
-# 
-# # Now gather the data so that all admins are in one column
-# admin_cores_gather <- admin_cores_trim %>%
-#   gather(key = "admin", value = "core_id") %>%
-#   drop_na(core_id)
+## 5. Visual QA: Plot coordinates ####
 
-## 4. Visual QA: Plot coordinates ####
-# not a great graph yet, maybe use leaflet
-# there are still NAs where there should be associated countries
+## Static 
 
 world <- ne_countries(scale=110)
 
@@ -214,7 +233,7 @@ ggplot() +
   geom_polygon(data=world, aes(x=long, y=lat, group=group),  
                color="white", lwd = .25) +
   # plot core locations
-  geom_point(data = core_geography_final %>% filter(!is.na(country)), 
+  geom_point(data = core_geography %>% filter(country != "International Waters"), 
              mapping = aes(x = longitude, y = latitude, col = country))
 
 # plot the cores that do not have an associated country
@@ -222,10 +241,35 @@ ggplot() +
   geom_polygon(data=world, aes(x=long, y=lat, group=group),  
                color="white", lwd = .25) +
   # plot core locations
-  geom_point(data = core_geography_final %>% filter(is.na(country)), 
+  geom_point(data = core_geography %>% filter(country == "International Waters"), 
              mapping = aes(x = longitude, y = latitude),
              color = "salmon")
 
+## Interactive
+library(leaflet)
+library(htmlwidgets)
+library(htmltools)
 
-# 5. Write updated core table to CCRCN V2 folder ####
-write_csv(core_geography_final, "data/CCRCN_V2/core_geography.csv")
+# map all the cores and indicate their geography assignment
+# and whether a core is geo-located or in international waters
+core_geography_leaflet <- core_geography %>%
+  mutate(geography_flag = ifelse(country != "International Waters", "Geography Located", country))
+
+# define palette 
+pal <- colorFactor(palette = "PRGn", 
+                   # reverse = T,
+                   core_geography_leaflet$geography_flag)
+
+m2 <- leaflet(core_geography_leaflet) %>% 
+  addProviderTiles(providers$CartoDB) %>%
+  # addTiles() %>%
+  addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
+                   radius = 5, color = ~pal(geography_flag), label = ~country) %>%
+  # addPopups(lng, lat, content, layerId = core_id) %>%
+  addLegend(pal = pal, values = ~geography_flag)
+m2
+
+withr::with_dir("data/QA", saveWidget(m2, file="assigned_geography.html"))
+
+# 6. Write updated core table to CCRCN V2 folder ####
+write_csv(core_geography, "data/CCRCN_V2/core_geography.csv")
