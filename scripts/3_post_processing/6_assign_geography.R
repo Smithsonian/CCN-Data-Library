@@ -38,9 +38,9 @@ states <- readOGR(dsn = "./data/input_shapefiles/us_states/states_political_boun
 states_sp <- spTransform(states, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
 # watersheds 
-watersheds <- readOGR("./data/input_shapefiles/coastal_HUC8s",
-                      layer = "HUC8_AllTidalNwiAndNonTidalPlusFarmedBelowMHHWS_ObviousOutliersRemoved")
-watersheds_sp <- spTransform(watersheds, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+# watersheds <- readOGR("./data/input_shapefiles/coastal_HUC8s",
+#                       layer = "HUC8_AllTidalNwiAndNonTidalPlusFarmedBelowMHHWS_ObviousOutliersRemoved")
+# watersheds_sp <- spTransform(watersheds, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
 # regions
 # regions <- readOGR("./data/input_shapefiles/region", layer = "region")
