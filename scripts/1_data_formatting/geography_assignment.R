@@ -236,9 +236,9 @@ sfCountry <- ne_countries(returnclass='sf')
 st_crs(sfRegion) <- 4326
 
 core_country_merge <- st_join(sfCountry, sfRegion) %>%
+  st_set_geometry(NULL) %>%
   select(core_id, name) %>%
   filter(!is.na(core_id)) %>%
-  st_set_geometry(NULL) %>%
   rename(country = name)
 
 geography_assignment <- merge(geography_assignment, core_country_merge, by="core_id", all.x=TRUE, all.y=TRUE)
@@ -246,9 +246,11 @@ geography_assignment <- merge(geography_assignment, core_country_merge, by="core
 write_csv(geography_assignment, "./data/CCRCN_synthesis/CCRCN_geography_lookup.csv")
 
 country_summary <- st_join(sfCountry, sfRegion) %>%
+  st_set_geometry(NULL) %>%
   select(core_id, name) %>%
   filter(!is.na(core_id)) %>%
   group_by(name) %>%
   summarize(n = n())
 
 write_csv(country_summary, "./docs/country_summary.csv")
+

@@ -33,7 +33,8 @@ depthseries <- depthseries_raw %>%
             fraction_nitrogen, fraction_hydrogen, fraction_sulfur, porewater_salinity))
 
 # methods (no change)
-methods <- methods_raw
+methods <- methods_raw %>%
+  mutate(fraction_carbon_method = "EA")
 
 # species uncontrolled:
 # fraction_cover
