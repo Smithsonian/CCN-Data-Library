@@ -19,7 +19,7 @@ study_citations_raw <- read_csv("./data/primary_studies/Keshta_et_al_2020/origin
 
 ## Trim Data to Library ####
 
-id <- "Keshta_et_al_2020"
+# id <- "Keshta_et_al_2020"
 
 # cores uncontrolled: 
 # core_length, habitat (keep habitat, it will be included in V2 guidance)
