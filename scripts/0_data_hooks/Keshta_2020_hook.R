@@ -8,7 +8,7 @@
 # load libs
 library(tidyverse)
 library(RefManageR)
-library(lubridate)
+# library(lubridate)
 
 # load data
 cores_raw <- read.csv("./data/primary_studies/Keshta_et_al_2020/original/Keshta_et_al_2020_cores.csv")
@@ -47,7 +47,7 @@ study_citations <- study_citations_raw
 # Write .bib file
 bib_file <- study_citations %>%
   # slice(1) %>%
-  select(-study_id, -bibliography_id) %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
   distinct() %>%
   column_to_rownames("key")
 
