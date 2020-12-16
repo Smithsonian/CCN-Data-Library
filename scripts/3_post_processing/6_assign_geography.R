@@ -14,6 +14,12 @@ library(sp)
 library(sf)
 library(rnaturalearth)
 
+# A few notes:
+# This script takes a long time to run because its loading large shapefiles
+# perhaps these shapefiles could be merged/reduced in some way to help things run faster
+# also, a generalized function should eventually be written to perform the geography assignment
+# the function will locate each cores table within any desired spatial polygon object 
+# ex. locate cores within...country polgons, state polygons, EEZs, etc
 
 ## 2. Read in data ####
 
@@ -21,14 +27,20 @@ library(rnaturalearth)
 # countries
 # problem: this does not include EEZs so offshore cores are NA 
 
-# generalized
-# countries <- readOGR(dsn = "./data/input_shapefiles/world/country_gen/",
-#                   layer = "country_gen")
-# countries_sp <- spTransform(countries, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+# EEZ
+eez <- readOGR(dsn = "./data/input_shapefiles/World_EEZ_v11_20191118/",
+                  layer = "eez_v11")
+eez_sp <- spTransform(eez, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
-# non-generalized
+# EEZ 24 nautical mile zone
+# havent investigated this shapefiles coverage yet
+# the 200mi EEZ located all the nearshore cores (although its much larger to load into R)
+# eez24 <- readOGR(dsn = "./data/input_shapefiles/World_24NM_v3_20191118/",
+#                layer = "eez_24nm_v3")
+# eez24_sp <- spTransform(eez24, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
-countries <- readOGR(dsn = "./data/input_shapefiles/world/world_countries/",
+# world countries
+countries <- readOGR(dsn = "./data/input_shapefiles/world_countries/",
                      layer = "country")
 countries_sp <- spTransform(countries, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
@@ -37,22 +49,13 @@ states <- readOGR(dsn = "./data/input_shapefiles/us_states/states_political_boun
                      layer = "state_pol")
 states_sp <- spTransform(states, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
-# watersheds 
-# watersheds <- readOGR("./data/input_shapefiles/coastal_HUC8s",
-#                       layer = "HUC8_AllTidalNwiAndNonTidalPlusFarmedBelowMHHWS_ObviousOutliersRemoved")
-# watersheds_sp <- spTransform(watersheds, CRS("+proj=longlat +datum=WGS84 +no_defs"))
-
-# regions
-# regions <- readOGR("./data/input_shapefiles/region", layer = "region")
-# regions_sp <- spTransform(watersheds, CRS("+proj=longlat +datum=WGS84 +no_defs"))
-
 # admin divisions
-divisions <- readOGR(dsn = "./data/input_shapefiles/world/admin_divisions/",
+divisions <- readOGR(dsn = "./data/input_shapefiles/admin_divisions/",
                      layer = "admin")
-divisions <- spTransform(divisions, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+divisions_sp <- spTransform(divisions, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
 # Core data updated to V2 guidance
-cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max=6500)
+cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max=7000)
 cores_no_na <- cores %>% drop_na(longitude) # remove cores with NA coords
 
 # site table not in V2 folder yet..
@@ -153,7 +156,7 @@ admin_types <- c("State", "Province", "Territory")
 
 # must be transformed to filter but it takes sooo long
 # admin_states <- st_as_sf(divisions)
-admin_subset <- divisions[divisions@data$ADMINTYPE %in% admin_types, ]
+admin_subset <- divisions_sp[divisions_sp@data$ADMINTYPE %in% admin_types, ]
 # NAME = name of admin division
 # COUNTRY = country of the corresponding admin division
 
@@ -164,7 +167,7 @@ admin_cores <- as.data.frame(admin_cores)
 
 # Identify columns as admins
 colnames(admin_cores) <- str_c(admin_subset$NAME, admin_subset$COUNTRY, sep = "_")
-# store the corresponding countries
+# store the corresponding countries => might not be necessary
 # admin_countries <- admin_subset$COUNTRY
 
 # eliminate NA elements (this also makes the colnames unique)
@@ -192,27 +195,60 @@ admin_cores_gather <- admin_cores_trim %>%
   drop_na(core_id) %>%
   separate(admin_division, into = c("admin_division", "admin_country"), sep = "_")
 
+## ... 3d. Assign EEZs to core ID ####
+
+# Check to see what cores are in which countries
+# This returns a matrix of logical outputs (TRUE or FALSE). Each column corresponds
+#   to one state and each row corresponds to one state. A TRUE value in a
+#   cell indicates that the given core (row) is in the given state (column)
+eez_cores <- gContains(eez_sp, spatial_cores, byid = TRUE)
+
+# Convert from matrix to dataframe so we can use pipelines
+eez_cores <- as.data.frame(eez_cores)
+
+# Identify columns as states
+colnames(eez_cores) <- eez_sp$TERRITORY1
+
+# this names the columns uniquely (workaround)
+eez_cores <- eez_cores[, which(!is.na(names(eez_cores)))]
+
+# clean up the dataframe to isolate cores and countries
+eez_cores_trim <- eez_cores %>%
+  # Identify rows as cores
+  mutate(core_id = cores_no_na$core_id) %>%
+  # Replace FALSE with NA
+  mutate_if(is.logical, list(~na_if(., FALSE))) %>% 
+  # Remove countries that don't have any data (ones that have NA in every row)
+  select_if(function(x) {!all(is.na(x))}) %>%
+  # replace the value of the cell with the core_id if the value of a cell == TRUE
+  mutate_all(~ as.character(.x)) %>%
+  mutate_at(vars(-core_id), funs(
+    ifelse(. == TRUE, core_id, NA)
+  )) %>%
+  select(-core_id)
+
+# Now gather the data so that all countries are in one column
+eez_cores_gather <- eez_cores_trim %>%
+  gather(key = "country_eez", value = "core_id") %>%
+  mutate(country_eez = gsub("[.]1|[.]2|[.]3|[.]4|[.]5", "", country_eez)) %>%
+  drop_na(core_id)
+
 ## 4. Table Merge ####
 
 # Merge the geography assignments to the core table
 core_geography <- left_join(cores, country_cores_gather) %>%
   left_join(state_cores_gather) %>%
   left_join(admin_cores_gather) %>%
-  # the state shapefile is more inclusive of coastal waters
-  # some US cores were overlooked by the state shp too
-  mutate(country = ifelse(!is.na(us_state), "United States", country),
-         admin_division = ifelse(!is.na(us_state) & is.na(admin_division), us_state, admin_division)) %>%
-  # anything that is not defined inside the shapefiles will international waters
-  # find an EEZ shapefile at some point to place these coastal cores
-  mutate(country = ifelse(is.na(country), "International Waters", country)) %>%
-  select(-c(us_state, admin_country))
+  left_join(eez_cores_gather) %>%
+  # the state shapefile is more inclusive of coastal waters than the admin divisions
+  # merge the us state and internation admin divisions fields
+  mutate(admin_division = ifelse(!is.na(us_state) & is.na(admin_division), us_state, admin_division),
+         country = ifelse(is.na(country), country_eez, country)) %>%
+  select(-c(us_state, admin_country, country_eez))
 
-# number of NA country assignments
-# non-generalized country shp: 764
-# generalized country shp: 1206
-length(which(core_geography$country == "International Waters"))
-# number of NA admin division assignments: 1178
-length(which(is.na(core_geography$admin_division)))
+# Investigate NA cases in geography assignment
+length(which(is.na(core_geography$country))) # country has 23 NA b/c lat/lon is NA
+length(which(is.na(core_geography$admin_division))) # number of NA admin division assignments: 1178
 
 # all the countries without assigned administrative divisions
 na_admin_division <- core_geography %>% 
@@ -224,52 +260,49 @@ na_admin_division
 
 ## Static 
 
-world <- ne_countries(scale=110)
+# world <- ne_countries(scale=110)
 
 # plot the cores with associated countries
 # too many countries to tell if there are incorrect assignments
 # use leaflet with popup instead
-ggplot() +  
-  geom_polygon(data=world, aes(x=long, y=lat, group=group),  
-               color="white", lwd = .25) +
-  # plot core locations
-  geom_point(data = core_geography %>% filter(country != "International Waters"), 
-             mapping = aes(x = longitude, y = latitude, col = country))
-
-# plot the cores that do not have an associated country
-ggplot() +  
-  geom_polygon(data=world, aes(x=long, y=lat, group=group),  
-               color="white", lwd = .25) +
-  # plot core locations
-  geom_point(data = core_geography %>% filter(country == "International Waters"), 
-             mapping = aes(x = longitude, y = latitude),
-             color = "salmon")
+# ggplot() +  
+#   geom_polygon(data=world, aes(x=long, y=lat, group=group),  
+#                color="white", lwd = .25) +
+#   # plot core locations
+#   geom_point(data = core_geography, mapping = aes(x = longitude, y = latitude, col = country))
 
 ## Interactive
 library(leaflet)
-library(htmlwidgets)
-library(htmltools)
+# library(htmlwidgets)
+# library(htmltools)
 
-# map all the cores and indicate their geography assignment
-# and whether a core is geo-located or in international waters
-core_geography_leaflet <- core_geography %>%
-  mutate(geography_flag = ifelse(country != "International Waters", "Geography Located", country))
-
-# define palette 
-pal <- colorFactor(palette = "PRGn", 
-                   # reverse = T,
-                   core_geography_leaflet$geography_flag)
-
-m2 <- leaflet(core_geography_leaflet) %>% 
+m1 <- leaflet(core_geography %>% filter(!is.na(latitude))) %>% 
   addProviderTiles(providers$CartoDB) %>%
-  # addTiles() %>%
   addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
-                   radius = 5, color = ~pal(geography_flag), label = ~country) %>%
-  # addPopups(lng, lat, content, layerId = core_id) %>%
-  addLegend(pal = pal, values = ~geography_flag)
-m2
+                   radius = 5, label = ~country)
+m1
 
-withr::with_dir("data/QA", saveWidget(m2, file="assigned_geography.html"))
+# THIS MAP IS UNECESSARY (the EEZ shapefile fills in the previous NAs)
+# # map all the cores and indicate their geography assignment
+# # and whether a core is geo-located or in international waters
+# core_geography_leaflet <- core_geography %>%
+#   mutate(geography_flag = ifelse(!is.na(country), "Geography Located", country))
+# 
+# # define palette 
+# pal <- colorFactor(palette = "PRGn", 
+#                    # reverse = T,
+#                    core_geography_leaflet$geography_flag)
+# 
+# m2 <- leaflet(core_geography_leaflet) %>% 
+#   addProviderTiles(providers$CartoDB) %>%
+#   # addTiles() %>%
+#   addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
+#                    radius = 5, color = ~pal(geography_flag), label = ~country) %>%
+#   # addPopups(lng, lat, content, layerId = core_id) %>%
+#   addLegend(pal = pal, values = ~geography_flag)
+# m2
+# 
+# withr::with_dir("data/QA", saveWidget(m2, file="assigned_geography.html"))
 
 # 6. Write updated core table to CCRCN V2 folder ####
 write_csv(core_geography, "data/CCRCN_V2/core_geography.csv")
