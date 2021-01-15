@@ -18,7 +18,7 @@
 
 # load libraries
 library(tidyverse)
-library(lubridate)
+# library(lubridate)
 library(RefManageR)
 # library(anytime)
 
@@ -38,11 +38,25 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 id <- "Piazza_et_al_2020"
 
 # sites
+sites <- raw_sites
+
 # cores
+cores <- raw_cores
+
 # depthseries
+# uncontrolled: fraction_nitrogen
+depthseries <- raw_depthseries %>% select(-fraction_nitrogen)
+
 # species
+species <- raw_species %>%
+  mutate(species_code = paste(genus, species, sep=" ")) %>%
+  select(study_id, site_id, core_id, species_code)
+
 # methods
+methods <- raw_methods
+
 # impacts
+impacts <- raw_impacts
 
 #### Study Citation ####
 
@@ -79,7 +93,7 @@ bib_file <- study_citations %>%
   # distinct() %>%
   column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Piazza_et_al_2020/derivative/Piazza_et_al_2020.bib")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020.bib")
 
 
 ## QA/QC ###############
@@ -91,13 +105,14 @@ test_colnames("cores", cores)
 test_colnames("depthseries", depthseries)
 test_colnames("species", species)
 test_colnames("methods", methods)
+test_colnames("impacts", impacts)
 
 ## Write derivative data ####
-write_csv(sites, "./data/primary_studies/Piazza_et_al_2020/derivative/Piazza_et_al_2020_sites.csv")
-write_csv(cores, "./data/primary_studies/Piazza_et_al_2020/derivative/Piazza_et_al_2020_cores.csv")
-write_csv(species, "./data/primary_studies/Piazza_et_al_2020/derivative/Piazza_et_al_2020_species.csv")
-write_csv(methods, "./data/primary_studies/Piazza_et_al_2020/derivative/Piazza_et_al_2020_methods.csv")
-write_csv(depthseries, "./data/primary_studies/Piazza_et_al_2020/derivative/Piazza_et_al_2020_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Piazza_et_al_2020/derivative/Piazza_et_al_2020_study_citations.csv")
+write_csv(sites, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_sites.csv")
+write_csv(cores, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_cores.csv")
+write_csv(species, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_species.csv")
+write_csv(methods, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_methods.csv")
+write_csv(depthseries, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_depthseries.csv")
+write_csv(study_citations, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_study_citations.csv")
 
 
