@@ -20,8 +20,10 @@ library(lubridate)
 library(RefManageR)
 # library(anytime)
 
+source("./scripts/1_data_formatting/qa_functions.R")
+
 # read in data
-raw_data <- read_csv("./data/primary_studies/Luk_2020/original/data_PIE_marsh_radioisotope.csv")
+raw_data <- read_csv("./data/primary_studies/Luk_2020/original/data_PIE_marsh_radioisotope.csv", na = "NaN")
 
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
@@ -29,17 +31,65 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 id <- "Luk_et_al_2020"
 
-# sites
+names(raw_data) <- tolower(names(raw_data))
+
+data <- raw_data %>%
+  rename(habitat = status, 
+         core_latitude = lat, 
+         core_longitude = lon,
+         # core_elevation = elevation, # is this elevation for the depth increment?
+         dry_bulk_density = dbd,
+         total_pb210_activity = `210pb`,
+         total_pb210_activity_se = `210pb_e`,
+         excess_pb210_activity = `210pbex`,
+         excess_pb210_activity_se = `210pbex_e`,
+         ra226_activity = `226ra`,
+         ra226_activity_se = `226ra_e`,
+         cs137_activity = `137cs`,
+         cs137_activity_se = `137cs_e`) %>%
+  mutate(study_id = id,
+         core_id = ifelse(habitat == "POND", str_c(habitat, site_id, sep = "_"),
+                          str_c(habitat, site_id, core_id, sep = "_")),
+         core_elevation_notes = "Calculated by subtracting the minimum depth of soil horizon from the NAVD88 elevation of the core location (given at min_depth = 0)",
+         pb210_unit = "decaysPerMinutePerGram",
+         ra226_unit = "decaysPerMinutePerGram",
+         core_year = year(as.Date(date, format = "%m/%d/%Y")),
+         core_month = month(as.Date(date, format = "%m/%d/%Y")),
+         core_day = day(as.Date(date, format = "%m/%d/%Y"))) %>%
+  mutate(site_id = str_c("SITE", site_id, sep = "_")) %>%
+  select(-date)
+
 # cores
+cores <- data %>%
+  select(study_id, site_id, contains("core"), habitat) %>%
+  distinct() %>%
+  mutate(core_position_method = "RTK",
+         core_elevation_method = "RTK",
+         core_elevation_datum = "NAVD88",
+         inundation_class = ifelse(habitat == "MARSH", "high", "low"))
+
+final_cores <- reorderColumns("cores", cores)
+
 # depthseries
-# species
+depthseries <- data %>%
+  select(-c(core_longitude, core_latitude, habitat, contains("core_elevation"),
+            core_year, core_month, core_day))
+
+final_depthseries <- reorderColumns("depthseries", depthseries)
+
 # methods
-# impacts
+methods <- data.frame(study_id = id,
+                      compaction_flag = "No obvious compaction",
+                      coring_method = "piston core",
+                      pb210_counting_method = "gamma",
+                      cs137_counting_method = "gamma")
+final_methods <- reorderColumns("methods", methods)
+
 
 #### Study Citation ####
 
 data_release_doi <- "10.5066/P9HIOWKT"
-pub_doi <- "10.1029/2020GL090287" 
+pub_doi <- "10.1029/2020GL090287"
 
 data_bib <- GetBibEntryWithDOI(data_release_doi)
 pub_bib <- GetBibEntryWithDOI(pub_doi)
@@ -77,21 +127,22 @@ WriteBib(as.BibEntry(bib_file), "data/primary_studies/Luk_2020/derivative/Luk_et
 
 
 ## QA/QC ###############
-source("./scripts/1_data_formatting/qa_functions.R")
+
+leaflet::leaflet(cores) %>%
+  addProviderTiles(providers$CartoDB) %>%
+  addCircleMarkers(lng = ~as.numeric(core_longitude), lat = ~as.numeric(core_latitude), radius = 5, label = ~site_id)
 
 # Make sure column names are formatted correctly: 
-test_colnames("sites", sites)
-test_colnames("cores", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
+test_colnames("cores", cores) # habitat
+test_colnames("depthseries", depthseries) # elevation 7be 7be_e
 test_colnames("methods", methods)
 
 ## Write derivative data ####
-write_csv(sites, "./data/primary_studies/Luk_et_al_2020/derivative/Luk_et_al_2020_sites.csv")
-write_csv(cores, "./data/primary_studies/Luk_et_al_2020/derivative/Luk_et_al_2020_cores.csv")
-write_csv(species, "./data/primary_studies/Luk_et_al_2020/derivative/Luk_et_al_2020_species.csv")
-write_csv(methods, "./data/primary_studies/Luk_et_al_2020/derivative/Luk_et_al_2020_methods.csv")
-write_csv(depthseries, "./data/primary_studies/Luk_et_al_2020/derivative/Luk_et_al_2020_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Luk_et_al_2020/derivative/Luk_et_al_2020_study_citations.csv")
+# write_csv(sites, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_sites.csv")
+write_csv(final_cores, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_cores.csv")
+# write_csv(species, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_species.csv")
+write_csv(final_methods, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_methods.csv")
+write_csv(final_depthseries, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_depthseries.csv")
+write_csv(study_citations, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_study_citations.csv")
 
 
