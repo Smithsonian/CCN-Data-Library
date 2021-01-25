@@ -1,0 +1,213 @@
+## CCRCN Data Library Hook Script ####
+
+# Data Release: Long-term soil carbon data and accretion from four marsh types in Mississippi River Delta in 2015
+# Data published by Science Base: https://www.sciencebase.gov/catalog/item/5b3299d4e4b040769c159bb0
+# Contact: Melissa Baustian
+
+# Data Citation:
+# Baustian, M.M., Stagg, C.L., Perry, C.L., Moss, L.C., Carruthers, T.J.B., Allison, M.A., and Hall, C.T., 2021, 
+# Long-term soil carbon data and accretion from four marsh types in Mississippi River Delta in 2015: U.S. Geological Survey data release,
+# https://doi.org/10.5066/P93U3B3E.
+
+
+## Prep Workspace ####
+
+# load libraries
+library(tidyverse)
+library(lubridate)
+library(RefManageR)
+# library(anytime)
+
+source("./scripts/1_data_formatting/qa_functions.R")
+
+
+# read in data
+# raw_sites <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_et_al_2021_site.csv")
+# raw_cores <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_et_al_2021_cores.csv")
+# raw_species <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_et_al_2021_species.csv")
+# raw_impacts <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_et_al_2021_impacts.csv")
+# raw_methods <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_et_al_2021_material_and_methods.csv")
+# study_citations <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_et_al_2021_study_citations.csv")
+
+raw_depthseries <- read_csv("./data/primary_studies/Baustian_et_al_2021/intermediate/Baustian_Long_Term_Carbon_Soil.csv", na = ".")
+raw_radio <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_Long_Term_Radionuclide.csv", na = ".")
+crms_sites <- read_csv("./data/primary_studies/Baustian_et_al_2021/intermediate/CRMS_Long_Lat.csv")
+raw_coreinfo <- read_csv("./data/primary_studies/Baustian_et_al_2021/intermediate/Baustian_Short Term Carbon_Soil Core Data.csv")
+
+guidance <- read_csv("docs/ccrcn_database_structure.csv")
+
+## Trim Data to Library ####
+
+id <- "Baustian_et_al_2021"
+
+# Reference Tables ----
+
+cores_ref <- data.frame(Marsh_Type = c(1:4), 
+                        salinity_notes = c("fresh", "intermediate", "brackish", "saline"),
+                        core_elevation = c(0.34, 0.13, 0.14, 0.14))
+
+# depth_ref <- data.frame(Core_Increment = c(1,2,3,5),
+#                         depth_min = c(0,2,4,8),
+#                         depth_max = c(2,4,6,10))
+
+locations <- crms_sites %>%
+  mutate(core_id = gsub("CRMS0", "", `CRMS Site`)) %>%
+  mutate(core_id = gsub("CRMS", "", core_id))
+
+coreinfo <- raw_coreinfo %>%
+  select(Site, Basin, Marsh_Type) %>%
+  distinct() %>%
+  rename(core_id = Site) %>%
+  mutate(study_id = id,
+         site_id = recode(Basin,
+                          "BA" = "Barataria basin",
+                          "TE" = "Terrebonne basin"),
+         core_position_method = "RTK",
+         core_elevation_datum = "NAVD88") %>%
+  left_join(locations, by = "core_id") %>%
+  full_join(cores_ref) %>%
+  rename(core_latitude = Latitude,
+         core_longitude = Longitude) %>%
+  select(-c(Basin, Marsh_Type, "CRMS Site"))
+# core dates will have to be merged from depthseries
+
+# create core site lookup
+site_core <- coreinfo %>% select(site_id, core_id)
+
+
+# Depthseries ----
+
+stock <- raw_depthseries %>%
+  rename(core_id = Site,
+         dry_bulk_density = `Bulk Density (g/cm^3)`) %>%
+  mutate(study_id = id,
+         fraction_organic_matter = `Organic matter (percent)`/100,
+         increments = recode(`Core Increment (cm)`, "14-Dec" = "12-14")) %>%
+  separate(col = increments, into = c("depth_min", "depth_max"), sep = "-") %>% 
+  select(-c(`Core Increment (cm)`, `Moisture (percent)`, `Organic matter (percent)`))
+
+# curate radionuclide data
+radionuclides <- raw_radio %>%
+  drop_na(`CRMS Site`) %>%
+  rename("core_id" = "CRMS Site",
+         "core_date" = "Field Collection Date",
+         "cs137_activity" = "Cs-137 (dpm/g)",
+         "cs137_activity_se" = "Cs-137 - error (dpm/g)",
+         "total_pb210_activity" = "Total Pb-210 (dpm/g)",
+         "total_pb210_activity_se" = "Total Pb-210 - error (dpm/g)",
+         "excess_pb210_activity" = "Excess Pb-210 (dpm/g)",
+         "excess_pb210_activity_se" = "Excess Pb-210 - error (dpm/g)") %>%
+  separate(col = `Core Increment (cm)`, into = c("depth_min", "depth_max"), sep = "-") %>%
+  mutate(study_id = id, 
+         core_id = as.character(core_id),
+         # depth_max = gsub(" cm", "", depth_max),
+         # depth_max = as.numeric(depth_max),
+         # depth_min = as.numeric(depth_min),
+         pb210_unit = "disintegrationsPerMinutePerGram",
+         cs137_unit = "disintegrationsPerMinutePerGram") %>%
+  select(-`Mid-Depth (cm)`, -`Radionuclide Counted Date`)
+
+# there are 7 sites missing from the radionuclide table
+unique(stock$core_id)[which(!(unique(stock$core_id) %in% unique(radionuclides$core_id)))]
+
+# join depthseries info
+depthseries <- full_join(stock, radionuclides) %>%
+  # Batch 1 collected on 2/2015
+  # Batch 2 collected on 7/2015
+  # but these do not align with the dates that were merged
+  # mutate(core_date = recode(Batch,
+  #                           "1" = "2/1/2015",
+  #                           "2" = "7/1/2015")) %>%
+  full_join(site_core) # merge site info
+
+# create date ref for core table
+date_ref <- depthseries %>% select(site_id, core_id, core_date) %>% distinct() %>% 
+  drop_na(core_date) # drop NA dates
+
+final_depthseries <- reorderColumns("depthseries", depthseries) %>%
+  select(-c(Batch, core_date, "2014_Habitat Type", Most_Freq_Occ_Habitat_1949to1988))
+
+# Cores ----
+
+cores <- left_join(coreinfo, date_ref) %>%
+    mutate(core_year = year(as.Date(core_date, format = "%m/%d/%Y")),
+           core_month = month(as.Date(core_date, format = "%m/%d/%Y")),
+           core_day = day(as.Date(core_date, format = "%m/%d/%Y"))) %>%
+  mutate(core_year = 2015) %>% # assuming all cores were collected in 2015
+  select(-core_date)
+
+final_cores <- reorderColumns("cores", cores)
+
+# Methods ----
+
+methods <- data.frame(study_id = data_release,
+                      coring_method = "push core",
+                      dry_bulk_density_flag = "freeze dried",
+                      loss_on_ignition_temperature = 550, 
+                      loss_on_ignition_time = 14, 
+                      fraction_carbon_type = "organic carbon",
+                      cs137_counting_method = "gamma",
+                      pb210_counting_method = "gamma")
+
+final_methods <- reorderColumns("methods", methods)
+
+#### Study Citation ####
+
+data_release_doi <- "10.5066/P93U3B3E"
+# report_doi <- "" # what about the report citation
+
+data_bib <- GetBibEntryWithDOI(data_release_doi)
+
+# Convert citations to dataframe
+data_citation <- as.data.frame(data_bib) %>%
+  rownames_to_column("key") %>%
+  mutate(study_id = id) %>%
+  mutate(doi = tolower(doi),
+         bibliography_id = id,
+         key = id)
+
+# report_citation <- as.data.frame(report_bib) %>%
+#   rownames_to_column("key") %>%
+#   mutate(study_id = "White_et_al_2020") %>%
+#   mutate(doi = tolower(doi),
+#          bibliography_id = "White_et_al_2020",
+#          key = "White_et_al_2020")
+# 
+# # Curate biblio so ready to read out as a BibTex-style .bib file
+study_citations <- data_citation %>%
+  # bind_rows(report_citation) %>%
+  mutate(publication_type = bibtype) %>%
+  select(study_id, bibliography_id, publication_type, key, bibtype, everything())
+
+# Write .bib file
+bib_file <- study_citations %>%
+  # slice(1) %>%
+  # select(-study_id, -bibliography_id, -publication_type) %>%
+  # distinct() %>%
+  column_to_rownames("key")
+
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021.bib")
+
+
+## QA/QC ###############
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Make sure column names are formatted correctly: 
+# test_colnames("sites", sites)
+test_colnames("cores", final_cores)
+test_colnames("depthseries", final_depthseries)
+# test_colnames("species", species)
+test_colnames("methods", methods)
+# test_colnames("impacts", impacts)
+
+# what to do about intermediate salinity assignment?
+
+## Write derivative data ####
+# write_csv(sites, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_sites.csv")
+write_csv(final_cores, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_cores.csv")
+# write_csv(species, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_species.csv")
+write_csv(final_methods, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_methods.csv")
+write_csv(final_depthseries, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_depthseries.csv")
+write_csv(study_citations, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_study_citations.csv")
+
+

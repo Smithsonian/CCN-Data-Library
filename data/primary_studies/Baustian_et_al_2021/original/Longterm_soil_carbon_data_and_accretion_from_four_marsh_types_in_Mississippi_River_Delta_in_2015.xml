@@ -1,0 +1,817 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Melissa M. Baustian</origin>
+        <origin>Camille L. Stagg</origin>
+        <origin>Carey L. Perry</origin>
+        <origin>Leland C. Moss</origin>
+        <origin>Tim J. B. Carruthers</origin>
+        <origin>Mead A. Allison</origin>
+        <origin>Courtney T. Hall</origin>
+        <pubdate>20210119</pubdate>
+        <title>Long-term soil carbon data and accretion from four marsh types in Mississippi River Delta in 2015</title>
+        <geoform>tabular digital data</geoform>
+        <onlink>https://doi.org/10.5066/P93U3B3E</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>The Mississippi River Deltaic Plain has extensive marsh habitats (fresh, intermediate, brackish, and saline) where soil cores were collected to a depth of 100 cm at 24 sites to assess long-term carbon accumulation rates and coast-wide burial rates. Each core was sectioned into 2-cm depth intervals, and select intervals were analyzed for percent moisture, bulk density, total carbon, and radionuclide (137Cs and 210Pb).</abstract>
+      <purpose>These data help to estimate the pools of buried carbon in the soil.</purpose>
+      <supplinf>To access free CRMS data use https://www.lacoast.gov/crms/Home.aspx
+Author ORCIDs: Baustian, M.M.(0000-0003-2467-2533);Stagg, C.L.(0000-0002-1125-7253)Moss, L.C.(0000-0002-0754-9771);Allison, M.A.(0000-0001-9090-1811);Hall, C.T.(0000-0003-0990-5212)</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>20150201</begdate>
+          <enddate>20150706</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>observed</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-91.3733</westbc>
+        <eastbc>-88.9838</eastbc>
+        <northbc>30.0311</northbc>
+        <southbc>28.8976</southbc>
+      </bounding>
+      <descgeog>Mississippi River Delta</descgeog>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>carbon sequestration</themekey>
+        <themekey>salinity</themekey>
+        <themekey>wetland ecosystems</themekey>
+      </theme>
+      <theme>
+        <themekt>Coastal and Marine Ecological Classification Standard</themekt>
+        <themekey>Organic Detritus</themekey>
+      </theme>
+      <theme>
+        <themekt>Marine Realms Information Bank (MRIB) keywords</themekt>
+        <themekey>soil</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:5b3299d4e4b040769c159bb0</themekey>
+      </theme>
+      <place>
+        <placekt>Common geographic areas</placekt>
+        <placekey>Louisiana</placekey>
+      </place>
+    </keywords>
+    <accconst>None.  Please see 'Distribution Info' for details.</accconst>
+    <useconst>None.  Users are advised to read the data set's metadata thoroughly to understand appropriate use and data limitations.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Melissa M. Baustian</cntper>
+          <cntorg>The Water Institute of the Gulf</cntorg>
+        </cntperp>
+        <cntpos>Coastal Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>1110 River Road S, Suite 200</address>
+          <city>Baton Rouge</city>
+          <state>LA</state>
+          <postal>70802</postal>
+        </cntaddr>
+        <cntvoice>225-228-2106</cntvoice>
+        <cntemail>mbaustian@thewaterinstitute.org</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>This project was supported by the Science and Engineering Program of The Water Institute of the Gulf with funds from the Louisiana Coastal Protection and Restoration Authority (CPRA) and the Baton Rouge Area Foundation (BRAF) as well as U.S. Geological Survey Ecosystems Program and Restore the Mississippi River Delta Campaign via Coalition to Restore Coastal Louisiana (CRCL). Many helping hands assisted in retrieving and processing the soil samples, such as researchers at the USGS Wetland and Aquatic Research Center: Ada Diz, Alyssa Mitchell, Brett Patton, Courtney Hall, Evan Bergeron, Jacy Reynolds, Lindsey Hebert, Sarai Piazza and Rachel Villani. In addition, Caitlin Pinsonat from The Water Institute of the Gulf assisted in field and laboratory work. Jackson Rollings helped CRCL through AmeriCorps’ Louisiana Delta Service Corps Program in field data collection. Special thanks to Diana Di Leonardo and Amanda Cuesta at Tulane University for assisting in soil organic matter laboratory analyses and to Ioannis Georgiou at University of New Orleans for letting us borrow the corer.</datacred>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>To the best of our knowledge, the dataset is accurate to the true values. Methods to ensure quality/accuracy in the data include confirming well calibrated instruments (e.g., balances, gamma detectors). Photographs were taken of the soil cores and observations were recorded about them. Field data were entered into spreadsheets and checked for quality/accuracy.</attraccr>
+    </attracc>
+    <logic>Data match the details provided and all values fall within the expected range. Data were checked for duplication/omission.</logic>
+    <complete>The data represent occurrences only within a fixed geographic area, which is the Barataria and Terrebonne basins of the Mississippi River Deltaic Plain.</complete>
+    <lineage>
+      <procstep>
+        <procdesc>Soil cores (100 cm long) were collected at each site with a McCauley corer (inner diameter equals 5.1 cm, one-half volume) approximately 25 m inland from the shoreline in February (batch #1) and/or June/July 2015 (batch #2). Each core was sectioned into 2-cm depth intervals in the field, placed in plastic bags, and kept on ice until transported to the laboratory and frozen. Soil samples from select intervals were prioritized for analysis by depth (0-2, 2-4, 4-6, 8-10, 12-14, 16-18, 22-24, 38-40, 58-60, 78-80, 98-100 cm).</procdesc>
+        <procdate>20150701</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Soil samples from each depth interval and collected from batch #1 were used to determine percent moisture, bulk density, and organic matter at each site. Batch #2 samples were used to determine organic matter for sites 3166 and 4245. Soil samples were freeze-dried to a constant weight to determine bulk density. Organic matter content was determined by loss on ignition by combusting material at 550°C for 14 hours. To convert percent organic matter to percent total carbon, a conversion rate of 0.47 was applied based on an earlier study (Baustian et al., 2017). Total carbon density per depth interval was calculated by multiplying the bulk density by total carbon.</procdesc>
+        <procdate>20150707</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Decadal-scale soil accretion (cm yr-1) was estimated using Pb-210 and Cs-137 dating (Wilson &amp; Allison, 2008).</procdesc>
+        <procdate>20150707</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>The 24 site habitats were classified as fresh (1), intermediate (2), brackish (3) and saline (4) based on ArcGIS (version number) analysis of existing Historical maps from the years 1949, 1968,1978,1988,1997,2001,2007 and 2013 obtained from the CRMS website.</procdesc>
+        <procdate>20150707</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>Baustian_Long_Term_Site_History.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Site</attrlabl>
+        <attrdef>Number or name associated with CRMS station</attrdef>
+        <attrdefs>Defined by CRMS https://www.lacoast.gov/crms/Home.aspx</attrdefs>
+        <attrdomv>
+          <udom>Number or name associated with site</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1949</attrlabl>
+        <attrdef>Type of marsh habitat according to 1949 map</attrdef>
+        <attrdefs>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Fresh</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Intermediate</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>Brackish</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Saline</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>.</edomv>
+            <edomvd>Marsh type not classified to any of these four categories (e.g., "Water" or "Other").</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1968</attrlabl>
+        <attrdef>Type of marsh habitat according to 1968 map</attrdef>
+        <attrdefs>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Fresh</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Intermediate</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>Brackish</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Saline</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1978</attrlabl>
+        <attrdef>Type of marsh habitat according to 1978 map</attrdef>
+        <attrdefs>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Fresh</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Intermediate</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>Brackish</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Saline</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>.</edomv>
+            <edomvd>Marsh type not classified to any of these four categories (e.g., "Water" or "Other").</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1988</attrlabl>
+        <attrdef>Type of marsh habitat according to 1988 map</attrdef>
+        <attrdefs>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Fresh</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Intermediate</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>Brackish</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Saline</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>1997</attrlabl>
+        <attrdef>Type of marsh habitat according to 1997 map</attrdef>
+        <attrdefs>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Fresh</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Intermediate</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>Brackish</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Saline</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>.</edomv>
+            <edomvd>Marsh type not classified to any of these four categories (e.g., "Water" or "Other").</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>2001</attrlabl>
+        <attrdef>Type of marsh habitat according to 2001 map</attrdef>
+        <attrdefs>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Fresh</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Intermediate</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>Brackish</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Saline</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>.</edomv>
+            <edomvd>Marsh type not classified to any of these four categories (e.g., "Water" or "Other").</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>2007</attrlabl>
+        <attrdef>Type of marsh habitat according to 2007 map</attrdef>
+        <attrdefs>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Fresh</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Intermediate</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>Brackish</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Saline</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>.</edomv>
+            <edomvd>Marsh type not classified to any of these four categories (e.g., "Water" or "Other").</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>2013</attrlabl>
+        <attrdef>Type of marsh habitat according to 2013 map</attrdef>
+        <attrdefs>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Fresh</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Intermediate</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>Brackish</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Saline</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>.</edomv>
+            <edomvd>Marsh type not classified to any of these four categories (e.g., "Water" or "Other").</edomvd>
+            <edomvds>https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>2014</attrlabl>
+        <attrdef>Type of marsh habitat classification according to 2014 survey</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Fresh</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Intermediate</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>Brackish</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Saline</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Baustian_Long_Term_Carbon_Soil.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Batch</attrlabl>
+        <attrdef>Batch number of soil core collection</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Collected February 2015</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Collected June/July 2015</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Site</attrlabl>
+        <attrdef>Number or name associated with CRMS station</attrdef>
+        <attrdefs>Defined by CRMS https://www.lacoast.gov/crms/Home.aspx</attrdefs>
+        <attrdomv>
+          <udom>Number or name associated with site</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>2014_Habitat Type</attrlabl>
+        <attrdef>Type of marsh habitat classification according to 2014 survey</attrdef>
+        <attrdefs>Defined by CRMS http://lacoast.gov/crms_viewer2/Default.aspx</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Fresh</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Intermediate</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>Brackish</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Saline</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Most_Freq_Occ_Habitat_1949to1988</attrlabl>
+        <attrdef>Historical maps (1949, 1968, 1978, 1988, 1997, 2001, 2007 and 2013, n = 8) were used from vegetation surveys to estimate the spatial extent of the four marsh habitats (fresh-1, intermediate-2, brackish-3, and saline-4) across coastal Louisiana based on the frequency of change in marsh habitats through time for each of the 24 CRMS sites.  The vegetation surveys were available from vegetation map layers that were downloaded on 10 April 2015 from the CRMS website (https://www.lacoast.gov/crms_viewer/Content/Html/blurb/ref_vegetation.htm). Most frequent historical occurrence of marsh habitat per CRMS site was calculated based on the mode statistic.</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Fresh</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Intermediate</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>Brackish</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Saline</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Core Increment (cm)</attrlabl>
+        <attrdef>Soil core increment in cm in vertical soil profile</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>10-12</rdommin>
+            <rdommax>98-100</rdommax>
+            <attrunit>Centimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Moisture (percent)</attrlabl>
+        <attrdef>Percentage of moisture in soil core section</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>24.84</rdommin>
+            <rdommax>88.02</rdommax>
+            <attrunit>Percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Bulk Density (g/cm^3)</attrlabl>
+        <attrdef>Density of soil core section in grams per cubic centimeter</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.12</rdommin>
+            <rdommax>1.78</rdommax>
+            <attrunit>Grams per cubic centimeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Organic matter (percent)</attrlabl>
+        <attrdef>Percentage of soil organic matter content of core section</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>3.72</rdommin>
+            <rdommax>94.23</rdommax>
+            <attrunit>Percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Baustian_Long_Term_Radionuclide.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>CRMS Site</attrlabl>
+        <attrdef>Number or name associated with CRMS station</attrdef>
+        <attrdefs>Defined by CRMS https://www.lacoast.gov/crms/Home.aspx</attrdefs>
+        <attrdomv>
+          <udom>Number or name associated with CRMS station</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Field Collection Date</attrlabl>
+        <attrdef>Date data were collected in the field</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2015-02-01</rdommin>
+            <rdommax>2015-07-01</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Radionuclide Counted Date</attrlabl>
+        <attrdef>Date radionuclide count data were collected</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2015-06-30</rdommin>
+            <rdommax>2016-03-16</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Core Increment (cm)</attrlabl>
+        <attrdef>Soil core increment in centimeters in vertical soil profile</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0-2</rdommin>
+            <rdommax>98-100</rdommax>
+            <attrunit>Centimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Mid-Depth (cm)</attrlabl>
+        <attrdef>Median depth per soil core increment in centimeters in vertical soil profile</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>99</rdommax>
+            <attrunit>Centimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Total Pb-210 (dpm/g)</attrlabl>
+        <attrdef>Total lead-210 in disintegrations per minute per gram</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>48.53</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Total Pb-210 - error (dpm/g)</attrlabl>
+        <attrdef>Total lead-210 error in disintegrations per minute per gram</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>54.79</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Excess Pb-210 (dpm/g)</attrlabl>
+        <attrdef>Excess lead-210 in disintegrations per minute per gram</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-1.87</rdommin>
+            <rdommax>48.13</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Excess Pb-210 - error (dpm/g)</attrlabl>
+        <attrdef>Excess lead-210 error in disintegrations per minute per gram</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.31</rdommin>
+            <rdommax>54.79</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Cs-137 (dpm/g)</attrlabl>
+        <attrdef>Cesium-137 in disintegrations per minute per gram</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>17.2</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Cs-137 - error (dpm/g)</attrlabl>
+        <attrdef>Cesium-137 error in disintegrations per minute per gram</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1.23</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey - ScienceBase</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Digital Data</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/P93U3B3E</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20210119</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Camille L Stagg</cntper>
+          <cntorg>U.S. Geological Survey, Southeast Region</cntorg>
+        </cntperp>
+        <cntpos>Research Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>700 Cajundome Blvd</address>
+          <city>Lafayette</city>
+          <state>LA</state>
+          <postal>70506</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>337-266-8537</cntvoice>
+        <cntfax>337-266-8586</cntfax>
+        <cntemail>staggc@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001.1-1999</metstdv>
+  </metainfo>
+</metadata>
