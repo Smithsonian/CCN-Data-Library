@@ -37,7 +37,7 @@ data <- raw_data %>%
   rename(habitat = status, 
          core_latitude = lat, 
          core_longitude = lon,
-         # core_elevation = elevation, # is this elevation for the depth increment?
+         core_elevation = elevation, # is this elevation for the depth increment?
          dry_bulk_density = dbd,
          total_pb210_activity = `210pb`,
          total_pb210_activity_se = `210pb_e`,
@@ -53,6 +53,7 @@ data <- raw_data %>%
          core_elevation_notes = "Calculated by subtracting the minimum depth of soil horizon from the NAVD88 elevation of the core location (given at min_depth = 0)",
          pb210_unit = "decaysPerMinutePerGram",
          ra226_unit = "decaysPerMinutePerGram",
+         sample_volume = pi*(depth_max-depth_min)*(5.5^2),
          core_year = year(as.Date(date, format = "%m/%d/%Y")),
          core_month = month(as.Date(date, format = "%m/%d/%Y")),
          core_day = day(as.Date(date, format = "%m/%d/%Y"))) %>%
@@ -61,12 +62,18 @@ data <- raw_data %>%
 
 # cores
 cores <- data %>%
-  select(study_id, site_id, contains("core"), habitat) %>%
-  distinct() %>%
+  filter(depth_min == 0) %>%
+  select(study_id, site_id, contains("core"), habitat, core_elevation) %>%
+  # distinct() %>%
   mutate(core_position_method = "RTK",
          core_elevation_method = "RTK",
          core_elevation_datum = "NAVD88",
-         inundation_class = ifelse(habitat == "MARSH", "high", "low"))
+         # core_elevation = 1.46,
+         vegetation_class = "emergent",
+         vegetation_method = "field observation",
+         vegetation_notes = "marsh sites dominated by Spartina patens, Spartina alterniflora, and Distichlis spicata",
+         inundation_class = ifelse(habitat == "MARSH", "high", "low"),
+         inundation_method = "field observation")
 
 final_cores <- reorderColumns("cores", cores)
 
@@ -79,8 +86,10 @@ final_depthseries <- reorderColumns("depthseries", depthseries)
 
 # methods
 methods <- data.frame(study_id = id,
-                      compaction_flag = "No obvious compaction",
-                      coring_method = "piston core",
+                      compaction_flag = "No obvious compaction", 
+                      # core_position_accuracy = 0.001,
+                      dry_bulk_density_flag = "freeze dried",
+                      coring_method = "piston corer",
                       pb210_counting_method = "gamma",
                       cs137_counting_method = "gamma")
 final_methods <- reorderColumns("methods", methods)

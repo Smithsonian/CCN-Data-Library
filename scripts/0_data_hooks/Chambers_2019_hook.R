@@ -4,24 +4,31 @@
 # Data published by BCO-DMO: https://www.bco-dmo.org/project/670520
 
 # Datasets:
+
 # Carbon mineralization. Contains 9, 1-meter long cores from Barataria Bay, LA coastal wetlands. 
 # https://www.bco-dmo.org/dataset/775547
 # Chambers, L., Steinmuller, H., Dittmer, K., White, J., Cook, R., Xue, Z. (2019) Barataria Bay carbon mineralization and biogeochemical properties from nine soil cores. 
 # Biological and Chemical Oceanography Data Management Office (BCO-DMO). (Version 1) Version Date 2019-09-05 [if applicable, indicate subset used]. doi:10.1575/1912/bco-dmo.775547.1 [access date]
+# metadata: http://dmoserv3.bco-dmo.org/jg/info/BCO-DMO/Submerged_Wetland_Carbon/carbon_min%7Bdir=dmoserv3.whoi.edu/jg/dir/BCO-DMO/Submerged_Wetland_Carbon/,data=dmoserv3.bco-dmo.org:80/jg/serv/BCO-DMO/Submerged_Wetland_Carbon/carbon_min.html0%7D?
 
 # Core biogeochemical properties, 2018-2019. Contains 11, 2-m long cores in the Barataria Bay, LA coastal wetlands and 3 submerged, 0.5 m cores taken in the adjacent estuary.
 # https://www.bco-dmo.org/dataset/833824
 # White, J. R., Sapkota, Y., Chambers, L. G., Cook, R. L., Xue, Z. (2020) Biogeochemical properties of sediment cores from Barataria Basin, Louisiana, 2018 and 2019. 
 # Biological and Chemical Oceanography Data Management Office (BCO-DMO). (Version 1) Version Date 2020-12-16 [if applicable, indicate subset used]. doi:10.26008/1912/bco-dmo.833824.1 [access date]
+# metadata: http://dmoserv3.bco-dmo.org/jg/info/BCO-DMO/Submerged_Wetland_Carbon/cores_2018_19%7Bdir=dmoserv3.whoi.edu/jg/dir/BCO-DMO/Submerged_Wetland_Carbon/,data=dmoserv3.bco-dmo.org:80/jg/serv/BCO-DMO/Submerged_Wetland_Carbon/cores_2018_19.html0%7D?
 
 
 ## Prep Workspace ####
 
 # load libraries
 library(tidyverse)
+library(readxl)
 library(lubridate)
 library(RefManageR)
+library(leaflet)
 # library(anytime)
+
+source("./scripts/1_data_formatting/qa_functions.R")
 
 # read in data
 
@@ -31,23 +38,67 @@ library(RefManageR)
 # names(biogeochem) <- trimws(names(biogeochem))
 # write_csv(biogeochem, "./data/primary_studies/Chambers_et_al_2019/original/bcodmo_dataset_833824.csv")
 
-raw_mineralization <- read_csv("./data/primary_studies/Chambers_et_al_2019/original/bcodmo_dataset_775547_712b_5843_9069.csv")
-raw_biogeochem <- read_csv("./data/primary_studies/Chambers_et_al_2019/original/bcodmo_dataset_833824.csv", na = "nd")
+raw_Chambers <- read_csv("./data/primary_studies/Chambers_et_al_2019/original/bcodmo_dataset_775547_712b_5843_9069.csv")
+raw_White <- read_csv("./data/primary_studies/Chambers_et_al_2019/original/bcodmo_dataset_833824.csv", na = "nd")
+raw_methods <- read_xlsx("./data/primary_studies/Chambers_et_al_2019/intermediate/Chambers_White_2020_material_and_methods.xlsx")
 
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 ## Trim Data to Library ####
 
-id <- "Chambers_et_al_2019"
+# id <- "Chambers_et_al_2019"
 
-
-
-# sites
-# cores
-# depthseries
-# species
 # methods
-# impacts
+methods <- raw_methods %>%
+  slice(-c(1:2)) %>%
+  select_if(function(x) {!all(is.na(x))})
+
+# depthseries
+sample_vol <- 384.85 # cubic cm
+
+names(raw_Chambers) <- gsub("_field", "", names(raw_Chambers))
+
+chambers_data <- raw_Chambers %>%
+  slice(-1) %>%
+  rename(core_longitude = longitude,
+         core_latitude = latitude,
+         depth = depth2) %>%
+  mutate_at(vars(-depth, -site_id), as.numeric) %>%
+  mutate(study_id = "Chambers_et_al_2019")
+
+white_data <- raw_White %>%
+  rename(core_longitude = lon,
+         core_latitude = lat,
+         site_id = Site_id) %>%
+  mutate(study_id = "White_et_al_2020")
+
+# join tables together and curate depthseries
+depthseries <- bind_rows(chambers_data, white_data) %>%
+  rename(dry_bulk_density = bulk_density_g_cm_3) %>%
+  mutate(core_id = str_c(site_id, replicate, sep = "_"),
+         fraction_carbon = total_c_g_kg/sample_vol,
+         fraction_organic_matter = as.numeric(pcnt_organic_matter)/100) %>%
+  separate(col = depth, into = c("depth_min", "depth_max"), sep = "-") %>%
+  select(-c(contains("aerob"), replicate, ph, pcnt_organic_matter, moisture_content_pcnt,
+            ap, bg, xy, nag, cb, contains("extractable"), contains("mineralizable"), labile_c_g_kg,
+            refractory_c_g_kg, total_ip_mg_kg, total_p_mg_kg, total_n_g_kg, microbial_biomass_c,
+            total_n_g_cm_3, total_op_mg_kg))
+
+# keep extractable dissolved organic carbon?
+
+final_depthseries <- reorderColumns("depthseries", depthseries) %>%
+  select(-c(core_latitude, core_longitude, sampling_date))
+
+# cores
+cores <- depthseries %>%
+  select(contains("_id"), core_latitude, core_longitude, sampling_date) %>%
+  distinct() %>%
+  mutate(core_year = year(as.Date(sampling_date)),
+         core_month = month(as.Date(sampling_date)),
+         core_day = day(as.Date(sampling_date))) %>%
+  select(-sampling_date)
+
+final_cores <- reorderColumns("cores", cores)
 
 #### Study Citation ####
 
@@ -62,10 +113,10 @@ data_bib_raw_2020 <- GetBibEntryWithDOI(data_release_doi_2020)
 # Convert citations to dataframe
 study_citations_2019 <- as.data.frame(data_bib_raw_2019) %>%
   rownames_to_column("key") %>%
-  mutate(study_id = id) %>%
+  mutate(study_id = "Chambers_et_al_2019") %>%
   mutate(doi = tolower(doi),
-         bibliography_id = id,
-         key = id)
+         bibliography_id = "Chambers_et_al_2019",
+         key = "Chambers_et_al_2019")
 
 study_citations_2020 <- as.data.frame(data_bib_raw_2020) %>%
   rownames_to_column("key") %>%
@@ -90,21 +141,24 @@ WriteBib(as.BibEntry(bib_file), "data/primary_studies/Chambers_et_al_2019/deriva
 
 
 ## QA/QC ###############
-source("./scripts/1_data_formatting/qa_functions.R")
+
+leaflet(cores) %>%
+  addProviderTiles(providers$CartoDB) %>%
+  addCircleMarkers(lng = ~as.numeric(core_longitude), lat = ~as.numeric(core_latitude), 
+                   radius = 5, label = ~study_id)
+
 
 # Make sure column names are formatted correctly: 
-test_colnames("sites", sites)
-test_colnames("cores", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
+test_colnames("cores", final_cores)
+test_colnames("depthseries", final_depthseries) # total_c_g_kg total_c_g_cm_3 carbon_density_g_cm_3
 test_colnames("methods", methods)
 
 ## Write derivative data ####
-write_csv(sites, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_sites.csv")
+# write_csv(sites, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_sites.csv")
 write_csv(cores, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_cores.csv")
-write_csv(species, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_species.csv")
+# write_csv(species, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_species.csv")
 write_csv(methods, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_methods.csv")
-write_csv(depthseries, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_depthseries.csv")
+write_csv(final_depthseries, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_depthseries.csv")
 write_csv(study_citations, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_study_citations.csv")
 
 
