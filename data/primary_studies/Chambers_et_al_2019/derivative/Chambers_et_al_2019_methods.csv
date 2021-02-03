@@ -1,0 +1,4 @@
+study_id,coring_method,dry_bulk_density_temperature,dry_bulk_density_sample_volume,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,carbon_measured_or_modeled,carbonates_removed,fraction_carbon_method,fraction_carbon_type
+White_et_al_2020_a,push core,NA,384.85,NA,550,4,measured,FALSE,EA,total carbon
+White_et_al_2020_b,piston corer,NA,384.85,NA,550,4,measured,FALSE,EA,total carbon
+Chambers_et_al_2019,NA,70,NA,air dried to constant mass,550,3,measured,FALSE,EA,total carbon

@@ -54,7 +54,7 @@ methods <- raw_methods %>%
   select_if(function(x) {!all(is.na(x))})
 
 # depthseries
-sample_vol <- 384.85 # cubic cm
+# sample_vol <- 384.85 # cubic cm
 
 names(raw_Chambers) <- gsub("_field", "", names(raw_Chambers))
 
@@ -70,13 +70,15 @@ white_data <- raw_White %>%
   rename(core_longitude = lon,
          core_latitude = lat,
          site_id = Site_id) %>%
-  mutate(study_id = "White_et_al_2020")
+  mutate(study_id = ifelse(site_id == "Estuary", "White_et_al_2020_b", "White_et_al_2020_a"))
 
 # join tables together and curate depthseries
 depthseries <- bind_rows(chambers_data, white_data) %>%
   rename(dry_bulk_density = bulk_density_g_cm_3) %>%
   mutate(core_id = str_c(site_id, replicate, sep = "_"),
-         fraction_carbon = total_c_g_kg/sample_vol,
+         # calculate fraction total carbon (make sure all the values are included in the computation)
+         # make sure these values arent modeled
+         fraction_carbon = carbon_density_g_cm_3/dry_bulk_density, 
          fraction_organic_matter = as.numeric(pcnt_organic_matter)/100) %>%
   separate(col = depth, into = c("depth_min", "depth_max"), sep = "-") %>%
   select(-c(contains("aerob"), replicate, ph, pcnt_organic_matter, moisture_content_pcnt,
@@ -87,7 +89,8 @@ depthseries <- bind_rows(chambers_data, white_data) %>%
 # keep extractable dissolved organic carbon?
 
 final_depthseries <- reorderColumns("depthseries", depthseries) %>%
-  select(-c(core_latitude, core_longitude, sampling_date))
+  select(-c(core_latitude, core_longitude, sampling_date, 
+            total_c_g_kg, total_c_g_cm_3, carbon_density_g_cm_3))
 
 # cores
 cores <- depthseries %>%
@@ -96,6 +99,7 @@ cores <- depthseries %>%
   mutate(core_year = year(as.Date(sampling_date)),
          core_month = month(as.Date(sampling_date)),
          core_day = day(as.Date(sampling_date))) %>%
+  mutate(core_year = ifelse(is.na(core_year), 2017, core_year)) %>%
   select(-sampling_date)
 
 final_cores <- reorderColumns("cores", cores)
@@ -145,7 +149,7 @@ WriteBib(as.BibEntry(bib_file), "data/primary_studies/Chambers_et_al_2019/deriva
 leaflet(cores) %>%
   addProviderTiles(providers$CartoDB) %>%
   addCircleMarkers(lng = ~as.numeric(core_longitude), lat = ~as.numeric(core_latitude), 
-                   radius = 5, label = ~study_id)
+                   radius = 5, label = ~core_id)
 
 
 # Make sure column names are formatted correctly: 
@@ -155,7 +159,7 @@ test_colnames("methods", methods)
 
 ## Write derivative data ####
 # write_csv(sites, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_sites.csv")
-write_csv(cores, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_cores.csv")
+write_csv(final_cores, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_cores.csv")
 # write_csv(species, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_species.csv")
 write_csv(methods, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_methods.csv")
 write_csv(final_depthseries, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_depthseries.csv")

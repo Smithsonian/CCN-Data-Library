@@ -8,6 +8,8 @@
 # Luk, S.Y., Spivak, A.C., Eagle, M.J., and O'Keefe-Suttles, J.A., 2020, Collection, analysis, and age-dating of sediment cores from a salt marsh platform and ponds, Rowley, Massachusetts, 2014-15: 
 # U.S. Geological Survey data release, https://doi.org/10.5066/P9HIOWKT.
 
+
+
 # Associated Pub Citation:
 # Luk, S.Y., Todd-Brown, K. Gonneea, M.E., McNichol, A.P., Sanderman, J., Gosselin, K., Spivak, A.C., 2020, Soil organic carbon development and turnover in natural and disturbed salt marsh environments: 
 # Geophysical Research Letters, https://doi.org/10.1029/2020GL090287.
@@ -23,7 +25,10 @@ library(RefManageR)
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # read in data
-raw_data <- read_csv("./data/primary_studies/Luk_2020/original/data_PIE_marsh_radioisotope.csv", na = "NaN")
+# raw_depthseries <- read_delim("http://dmoserv3.bco-dmo.org/jg/serv/BCO-DMO/Benthic_PP_at_TIDE/bulk_soil_properties.flat0?", 
+#                               delim = " ")
+raw_soil <- read_csv("data/primary_studies/Luk_2020/original/Spivak_Luk_bulk_soil_properties.csv", na = "nd")
+raw_iso <- read_csv("./data/primary_studies/Luk_2020/original/data_PIE_marsh_radioisotope.csv", na = "NaN")
 
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
@@ -31,9 +36,29 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 id <- "Luk_et_al_2020"
 
-names(raw_data) <- tolower(names(raw_data))
+names(raw_iso) <- tolower(names(raw_iso))
+names(raw_soil) <- tolower(names(raw_soil))
 
-data <- raw_data %>%
+soil <- raw_soil %>% 
+  separate(date, c("core_year", "core_month"), sep = "-") %>%
+  mutate(core_month = as.numeric(core_month),
+         core_year = as.numeric(core_year)) %>%
+  mutate(core_day = case_when(core_month == 12 ~ 8,
+                              core_month == 7 ~ 16))
+
+isotopes <- raw_iso %>% rename(dry_bulk_density = dbd,
+                               location = status) %>%
+  mutate(core_year = year(as.Date(date, format = "%m/%d/%Y")),
+         core_month = month(as.Date(date, format = "%m/%d/%Y")),
+         core_day = day(as.Date(date, format = "%m/%d/%Y"))) %>%
+  select(-elevation, -dry_bulk_density, -lat, -lon)
+
+# these data arent merging well
+depthseries <- full_join(soil, isotopes)
+
+
+# FIX THIS
+data <- raw_iso %>%
   rename(habitat = status, 
          core_latitude = lat, 
          core_longitude = lon,
@@ -60,8 +85,12 @@ data <- raw_data %>%
   mutate(site_id = str_c("SITE", site_id, sep = "_")) %>%
   select(-date)
 
+# soil properties
+
+
+
 # cores
-cores <- data %>%
+cores <- depthseries %>%
   filter(depth_min == 0) %>%
   select(study_id, site_id, contains("core"), habitat, core_elevation) %>%
   # distinct() %>%
@@ -78,7 +107,7 @@ cores <- data %>%
 final_cores <- reorderColumns("cores", cores)
 
 # depthseries
-depthseries <- data %>%
+depthseries <- isotopes %>%
   select(-c(core_longitude, core_latitude, habitat, contains("core_elevation"),
             core_year, core_month, core_day))
 
