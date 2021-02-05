@@ -43,7 +43,7 @@ id <- "Baustian_et_al_2021"
 # Reference Tables ----
 
 cores_ref <- data.frame(Marsh_Type = c(1:4), 
-                        salinity_notes = c("fresh", "intermediate", "brackish", "saline"),
+                        salinity_class = c("fresh", "intermediate", "brackish", "saline"),
                         core_elevation = c(0.34, 0.13, 0.14, 0.14))
 
 # depth_ref <- data.frame(Core_Increment = c(1,2,3,5),
@@ -140,7 +140,7 @@ final_cores <- reorderColumns("cores", cores)
 
 # Methods ----
 
-methods <- data.frame(study_id = data_release,
+methods <- data.frame(study_id = id,
                       coring_method = "push core",
                       dry_bulk_density_flag = "freeze dried",
                       loss_on_ignition_temperature = 550, 
@@ -153,10 +153,10 @@ final_methods <- reorderColumns("methods", methods)
 
 #### Study Citation ####
 
-data_release_doi <- "10.5066/P93U3B3E"
+id_doi <- "10.5066/P93U3B3E"
 # report_doi <- "" # what about the report citation
 
-data_bib <- GetBibEntryWithDOI(data_release_doi)
+data_bib <- GetBibEntryWithDOI(id_doi)
 
 # Convert citations to dataframe
 data_citation <- as.data.frame(data_bib) %>%
@@ -166,13 +166,6 @@ data_citation <- as.data.frame(data_bib) %>%
          bibliography_id = id,
          key = id)
 
-# report_citation <- as.data.frame(report_bib) %>%
-#   rownames_to_column("key") %>%
-#   mutate(study_id = "White_et_al_2020") %>%
-#   mutate(doi = tolower(doi),
-#          bibliography_id = "White_et_al_2020",
-#          key = "White_et_al_2020")
-# 
 # # Curate biblio so ready to read out as a BibTex-style .bib file
 study_citations <- data_citation %>%
   # bind_rows(report_citation) %>%
@@ -182,7 +175,7 @@ study_citations <- data_citation %>%
 # Write .bib file
 bib_file <- study_citations %>%
   # slice(1) %>%
-  # select(-study_id, -bibliography_id, -publication_type) %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
   # distinct() %>%
   column_to_rownames("key")
 
@@ -193,14 +186,13 @@ WriteBib(as.BibEntry(bib_file), "data/primary_studies/Baustian_et_al_2021/deriva
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-# test_colnames("sites", sites)
+
 test_colnames("cores", final_cores)
 test_colnames("depthseries", final_depthseries)
-# test_colnames("species", species)
 test_colnames("methods", methods)
-# test_colnames("impacts", impacts)
 
-# what to do about intermediate salinity assignment?
+test_core_relationships(final_cores, final_depthseries)
+
 
 ## Write derivative data ####
 # write_csv(sites, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_sites.csv")

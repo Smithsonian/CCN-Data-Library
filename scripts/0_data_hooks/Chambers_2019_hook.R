@@ -46,8 +46,6 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 ## Trim Data to Library ####
 
-# id <- "Chambers_et_al_2019"
-
 # methods
 methods <- raw_methods %>%
   slice(-c(1:2)) %>%
@@ -116,18 +114,16 @@ data_bib_raw_2020 <- GetBibEntryWithDOI(data_release_doi_2020)
 
 # Convert citations to dataframe
 study_citations_2019 <- as.data.frame(data_bib_raw_2019) %>%
-  rownames_to_column("key") %>%
   mutate(study_id = "Chambers_et_al_2019") %>%
   mutate(doi = tolower(doi),
-         bibliography_id = "Chambers_et_al_2019",
-         key = "Chambers_et_al_2019")
+         bibliography_id = str_c("Chambers_et_al", year, sep = "_"),
+         key = str_c("Chambers_et_al", year, sep = "_"))
 
-study_citations_2020 <- as.data.frame(data_bib_raw_2020) %>%
-  rownames_to_column("key") %>%
-  mutate(study_id = "White_et_al_2020") %>%
+study_citations_2020 <- bind_rows(as.data.frame(data_bib_raw_2020), as.data.frame(data_bib_raw_2020)) %>%
   mutate(doi = tolower(doi),
-         bibliography_id = "White_et_al_2020",
-         key = "White_et_al_2020")
+         study_id = c("White_et_al_2020_a", "White_et_al_2020_b"),
+         bibliography_id = str_c("White_et_al", year, sep = "_"),
+         key = c("White_et_al_2020_a", "White_et_al_2020_b"))
 
 # Curate biblio so ready to read out as a BibTex-style .bib file
 study_citations <-  bind_rows(study_citations_2019, study_citations_2020) %>%
@@ -136,9 +132,7 @@ study_citations <-  bind_rows(study_citations_2019, study_citations_2020) %>%
 
 # Write .bib file
 bib_file <- study_citations %>%
-  # slice(1) %>%
-  # select(-study_id, -bibliography_id, -publication_type) %>%
-  # distinct() %>%
+  select(-study_id, -bibliography_id, -publication_type) %>%
   column_to_rownames("key")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019.bib")
@@ -154,8 +148,10 @@ leaflet(cores) %>%
 
 # Make sure column names are formatted correctly: 
 test_colnames("cores", final_cores)
-test_colnames("depthseries", final_depthseries) # total_c_g_kg total_c_g_cm_3 carbon_density_g_cm_3
+test_colnames("depthseries", final_depthseries) 
 test_colnames("methods", methods)
+
+test_unique_coords(final_cores)
 
 ## Write derivative data ####
 # write_csv(sites, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_sites.csv")

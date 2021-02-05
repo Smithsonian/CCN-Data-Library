@@ -81,6 +81,11 @@ test_colnames("cores", cores)
 test_colnames("depthseries", depthseries)
 test_colnames("methods", methods)
 
+test_varnames(cores)
+test_varnames(methods)
+
+test_core_relationships(cores, depthseries)
+
 ## Write derivative data ####
 write_csv(cores, "./data/primary_studies/Ensign_et_al_2020/derivative/Ensign_et_al_2020_cores.csv")
 write_csv(methods, "./data/primary_studies/Ensign_et_al_2020/derivative/Ensign_et_al_2020_methods.csv")

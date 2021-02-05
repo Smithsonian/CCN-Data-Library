@@ -29,7 +29,6 @@ raw_depthseries <- read_csv("./data/primary_studies/Piazza_2020/original/piazza_
 raw_species <- read_csv("./data/primary_studies/Piazza_2020/original/piazza_et_al_2020_species.csv")
 raw_impacts <- read_csv("./data/primary_studies/Piazza_2020/original/piazza_et_al_2020_impacts.csv")
 raw_methods <- read_csv("./data/primary_studies/Piazza_2020/original/piazza_et_al_2020_material_and_methods.csv")
-# study_citations <- read_csv("./data/primary_studies/Piazza_2020/original/piazza_et_al_2020_study_citations.csv")
 
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
@@ -38,10 +37,15 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 id <- "Piazza_et_al_2020"
 
 # sites
-sites <- raw_sites
+sites <- raw_sites %>%
+  mutate(salinity_class = recode(salinity_class, "intermediate" = "brackish"))
+# sites <- reorderColumns("sites", sites)
 
 # cores
-cores <- raw_cores
+cores <- raw_cores %>%
+  mutate(salinity_class = recode(salinity_class, "intermediate" = "brackish"))
+# cores <- reorderColumns("cores", cores)
+
 
 # depthseries
 # uncontrolled: fraction_nitrogen
@@ -61,9 +65,10 @@ impacts <- raw_impacts
 #### Study Citation ####
 
 data_release_doi <- "10.5066/P9D8WTQW"
-# report_doi <- "" # what about the report citation
+report_doi <- "10.3133/ofr20111094"
 
 data_bib <- GetBibEntryWithDOI(data_release_doi)
+report_bib <- GetBibEntryWithDOI(report_doi)
 
 # Convert citations to dataframe
 data_citation <- as.data.frame(data_bib) %>%
@@ -73,16 +78,16 @@ data_citation <- as.data.frame(data_bib) %>%
          bibliography_id = id,
          key = id)
 
-# report_citation <- as.data.frame(report_bib) %>%
-#   rownames_to_column("key") %>%
-#   mutate(study_id = "White_et_al_2020") %>%
-#   mutate(doi = tolower(doi),
-#          bibliography_id = "White_et_al_2020",
-#          key = "White_et_al_2020")
-# 
+report_citation <- as.data.frame(report_bib) %>%
+  rownames_to_column("key") %>%
+  mutate(study_id = id) %>%
+  mutate(doi = tolower(doi),
+         bibliography_id = "Piazza_et_al_2011",
+         key = "Piazza_et_al_2011")
+
 # # Curate biblio so ready to read out as a BibTex-style .bib file
 study_citations <- data_citation %>%
-  # bind_rows(report_citation) %>%
+  bind_rows(report_citation) %>%
   mutate(publication_type = bibtype) %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, everything())
 
@@ -106,6 +111,12 @@ test_colnames("depthseries", depthseries)
 test_colnames("species", species)
 test_colnames("methods", methods)
 test_colnames("impacts", impacts)
+
+test_varnames(sites) 
+test_varnames(cores)
+# test_varnames(methods)
+# test_varnames(depthseries)
+# test_varnames(species)
 
 ## Write derivative data ####
 write_csv(sites, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_sites.csv")
