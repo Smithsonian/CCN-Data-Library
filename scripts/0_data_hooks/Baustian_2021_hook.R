@@ -43,8 +43,10 @@ id <- "Baustian_et_al_2021"
 # Reference Tables ----
 
 cores_ref <- data.frame(Marsh_Type = c(1:4), 
-                        salinity_class = c("fresh", "intermediate", "brackish", "saline"),
+                        # Marsh type is defined as intermediate salinity (based on vegetation) but I'm reclassifying it to brackish
+                        salinity_class = c("fresh", "intermediate", "brackish", "saline"), 
                         core_elevation = c(0.34, 0.13, 0.14, 0.14))
+# map referenced for marsh type assignment: https://pubs.usgs.gov/sim/3290/pdf/sim3290.pdf
 
 # depth_ref <- data.frame(Core_Increment = c(1,2,3,5),
 #                         depth_min = c(0,2,4,8),
@@ -63,11 +65,18 @@ coreinfo <- raw_coreinfo %>%
                           "BA" = "Barataria basin",
                           "TE" = "Terrebonne basin"),
          core_position_method = "RTK",
-         core_elevation_datum = "NAVD88") %>%
+         core_elevation_datum = "NAVD88",
+         vegetation_class = "emergent",
+         vegetation_method = "measurement",
+         salinity_method = "field observation") %>%
   left_join(locations, by = "core_id") %>%
   full_join(cores_ref) %>%
   rename(core_latitude = Latitude,
          core_longitude = Longitude) %>%
+  mutate(vegetation_notes = case_when(salinity_class == "fresh" ~ "dominated by Panicum hemitomon, Sagittaria lancifolia, Eleocharis baldwinii, or Cladium jamaicense",
+                                      salinity_class == "intermediate" ~ "dominated by Leptochloa fusca, Panicum virgatum, Paspalum vaginatum, Phragmites australis, or Schoenoplectus americanus",
+                                      salinity_class == "brackish" ~ "dominated by Spartina patens but occasionally by Spartina cynosuroides, Spartina spartinae, or Bolboschoenus robustus",
+                                      salinity_class == "saline" ~ " dominated by Spartina alterniflora, Distichlis spicata, or Avicennia germinans.")) %>%
   select(-c(Basin, Marsh_Type, "CRMS Site"))
 # core dates will have to be merged from depthseries
 
@@ -133,7 +142,8 @@ cores <- left_join(coreinfo, date_ref) %>%
     mutate(core_year = year(as.Date(core_date, format = "%m/%d/%Y")),
            core_month = month(as.Date(core_date, format = "%m/%d/%Y")),
            core_day = day(as.Date(core_date, format = "%m/%d/%Y"))) %>%
-  mutate(core_year = 2015) %>% # assuming all cores were collected in 2015
+  mutate(core_year = 2015, # all cores were collected in 2015
+         core_length_flag = "core depth limited by length of corer") %>% 
   select(-core_date)
 
 final_cores <- reorderColumns("cores", cores)
@@ -141,11 +151,11 @@ final_cores <- reorderColumns("cores", cores)
 # Methods ----
 
 methods <- data.frame(study_id = id,
-                      coring_method = "push core",
+                      coring_method = "mcauley corer",
                       dry_bulk_density_flag = "freeze dried",
                       loss_on_ignition_temperature = 550, 
                       loss_on_ignition_time = 14, 
-                      fraction_carbon_type = "organic carbon",
+                      # fraction_carbon_type = "total carbon", # no fraction carbon in the tables but metadata says it was calculated
                       cs137_counting_method = "gamma",
                       pb210_counting_method = "gamma")
 
@@ -154,7 +164,6 @@ final_methods <- reorderColumns("methods", methods)
 #### Study Citation ####
 
 id_doi <- "10.5066/P93U3B3E"
-# report_doi <- "" # what about the report citation
 
 data_bib <- GetBibEntryWithDOI(id_doi)
 
