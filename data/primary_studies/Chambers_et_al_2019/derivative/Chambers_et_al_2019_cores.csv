@@ -1,24 +1,24 @@
-study_id,site_id,core_id,core_year,core_month,core_day,core_latitude,core_longitude
-Chambers_et_al_2019,1,1_1,2017,NA,NA,29.4436,-89.8998
-Chambers_et_al_2019,1,1_2,2017,NA,NA,29.4436,-89.8998
-Chambers_et_al_2019,1,1_3,2017,NA,NA,29.4436,-89.8998
-Chambers_et_al_2019,2,2_1,2017,NA,NA,29.4417,-89.9013
-Chambers_et_al_2019,2,2_2,2017,NA,NA,29.4417,-89.9013
-Chambers_et_al_2019,2,2_3,2017,NA,NA,29.4417,-89.9013
-Chambers_et_al_2019,3,3_1,2017,NA,NA,29.4414,-89.9026
-Chambers_et_al_2019,3,3_2,2017,NA,NA,29.4414,-89.9026
-Chambers_et_al_2019,3,3_3,2017,NA,NA,29.4414,-89.9026
-White_et_al_2020_a,Marsh_1,Marsh_1_1,2018,9,17,29.446837,-89.905628
-White_et_al_2020_a,Marsh_1,Marsh_1_2,2018,9,17,29.446837,-89.905628
-White_et_al_2020_a,Marsh_1,Marsh_1_3,2019,8,7,29.446837,-89.905628
-White_et_al_2020_a,Marsh_2,Marsh_2_1,2018,9,17,29.44679,-89.905927
-White_et_al_2020_a,Marsh_2,Marsh_2_2,2018,9,17,29.44679,-89.905927
-White_et_al_2020_a,Marsh_2,Marsh_2_3,2019,8,7,29.44679,-89.905927
-White_et_al_2020_a,Marsh_3,Marsh_3_1,2018,9,17,29.446688,-89.905857
-White_et_al_2020_a,Marsh_3,Marsh_3_2,2018,9,17,29.446688,-89.905857
-White_et_al_2020_a,Marsh_3,Marsh_3_3,2019,8,7,29.446688,-89.905857
-White_et_al_2020_a,Marsh_4,Marsh_4_1,2018,9,17,29.443585,-89.899836
-White_et_al_2020_a,Marsh_4,Marsh_4_2,2018,9,17,29.443585,-89.899836
-White_et_al_2020_b,Estuary,Estuary_1,2019,8,7,29.44657,-89.90633
-White_et_al_2020_b,Estuary,Estuary_2,2019,8,7,29.44657,-89.90633
-White_et_al_2020_b,Estuary,Estuary_3,2019,8,7,29.44657,-89.90633
+study_id,site_id,core_id,core_year,core_month,core_day,core_latitude,core_longitude,core_length_flag
+Chambers_et_al_2019,1,1_1,2017,NA,NA,29.4436,-89.8998,core depth limited by length of corer
+Chambers_et_al_2019,1,1_2,2017,NA,NA,29.4436,-89.8998,core depth limited by length of corer
+Chambers_et_al_2019,1,1_3,2017,NA,NA,29.4436,-89.8998,core depth limited by length of corer
+Chambers_et_al_2019,2,2_1,2017,NA,NA,29.4417,-89.9013,core depth limited by length of corer
+Chambers_et_al_2019,2,2_2,2017,NA,NA,29.4417,-89.9013,core depth limited by length of corer
+Chambers_et_al_2019,2,2_3,2017,NA,NA,29.4417,-89.9013,core depth limited by length of corer
+Chambers_et_al_2019,3,3_1,2017,NA,NA,29.4414,-89.9026,core depth limited by length of corer
+Chambers_et_al_2019,3,3_2,2017,NA,NA,29.4414,-89.9026,core depth limited by length of corer
+Chambers_et_al_2019,3,3_3,2017,NA,NA,29.4414,-89.9026,core depth limited by length of corer
+White_et_al_2020_a,Marsh_1,Marsh_1_1,2018,9,17,29.446837,-89.905628,core depth limited by length of corer
+White_et_al_2020_a,Marsh_1,Marsh_1_2,2018,9,17,29.446837,-89.905628,core depth limited by length of corer
+White_et_al_2020_a,Marsh_1,Marsh_1_3,2019,8,7,29.446837,-89.905628,core depth limited by length of corer
+White_et_al_2020_a,Marsh_2,Marsh_2_1,2018,9,17,29.44679,-89.905927,core depth limited by length of corer
+White_et_al_2020_a,Marsh_2,Marsh_2_2,2018,9,17,29.44679,-89.905927,core depth limited by length of corer
+White_et_al_2020_a,Marsh_2,Marsh_2_3,2019,8,7,29.44679,-89.905927,core depth limited by length of corer
+White_et_al_2020_a,Marsh_3,Marsh_3_1,2018,9,17,29.446688,-89.905857,core depth limited by length of corer
+White_et_al_2020_a,Marsh_3,Marsh_3_2,2018,9,17,29.446688,-89.905857,core depth limited by length of corer
+White_et_al_2020_a,Marsh_3,Marsh_3_3,2019,8,7,29.446688,-89.905857,core depth limited by length of corer
+White_et_al_2020_a,Marsh_4,Marsh_4_1,2018,9,17,29.443585,-89.899836,core depth limited by length of corer
+White_et_al_2020_a,Marsh_4,Marsh_4_2,2018,9,17,29.443585,-89.899836,core depth limited by length of corer
+White_et_al_2020_b,Estuary,Estuary_1,2019,8,7,29.44657,-89.90633,core depth limited by length of corer
+White_et_al_2020_b,Estuary,Estuary_2,2019,8,7,29.44657,-89.90633,core depth limited by length of corer
+White_et_al_2020_b,Estuary,Estuary_3,2019,8,7,29.44657,-89.90633,core depth limited by length of corer

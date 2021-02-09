@@ -4,9 +4,12 @@
 # Data published by Science Base: https://www.sciencebase.gov/catalog/item/5fb41153d34eb413d5e0af37
 # Contact: Sheron Luk
 
-# Data Citation:
-# Luk, S.Y., Spivak, A.C., Eagle, M.J., and O'Keefe-Suttles, J.A., 2020, Collection, analysis, and age-dating of sediment cores from a salt marsh platform and ponds, Rowley, Massachusetts, 2014-15: 
-# U.S. Geological Survey data release, https://doi.org/10.5066/P9HIOWKT.
+# Data:
+# Radioisotope data: https://doi.org/10.5066/P9HIOWKT
+# metadata: https://www.sciencebase.gov/catalog/file/get/5fb41153d34eb413d5e0af37?f=__disk__45%2Feb%2F89%2F45eb89acb7adc9ab9a9a3076ff1e2c8db42204fc&transform=1&allowOpen=true
+
+# Bulk Soil Properties: https://www.bco-dmo.org/dataset/827298
+# metadata: http://dmoserv3.bco-dmo.org/jg/info/BCO-DMO/Benthic_PP_at_TIDE/Bulk_soil_properties%7Bdir=dmoserv3.whoi.edu/jg/dir/BCO-DMO/Benthic_PP_at_TIDE/,data=dmoserv3.bco-dmo.org:80/jg/serv/BCO-DMO/Benthic_PP_at_TIDE/bulk_soil_properties.html0%7D?
 
 # Associated Pub Citation:
 # Luk, S.Y., Todd-Brown, K. Gonneea, M.E., McNichol, A.P., Sanderman, J., Gosselin, K., Spivak, A.C., 2020, Soil organic carbon development and turnover in natural and disturbed salt marsh environments: 
@@ -18,6 +21,7 @@
 library(tidyverse)
 library(lubridate)
 library(RefManageR)
+library(readxl)
 # library(anytime)
 
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -27,6 +31,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 #                               delim = " ")
 raw_soil <- read_csv("data/primary_studies/Luk_2020/original/Spivak_Luk_bulk_soil_properties.csv", na = "nd")
 raw_iso <- read_csv("./data/primary_studies/Luk_2020/original/data_PIE_marsh_radioisotope.csv", na = "NaN")
+raw_methods <- read_xlsx("data/primary_studies/Luk_2020/intermediate/Luk_et_al_2020_material_and_methods.xlsx")
 
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
@@ -78,6 +83,8 @@ depthseries <- full_join(soil, isotopes) %>%
          pb210_unit = "decaysPerMinutePerGram",
          ra226_unit = "decaysPerMinutePerGram") %>%
   mutate(site_id = str_c("SITE", site_id, sep = "_"))
+# Pond surface elevations were calculated as the difference between elevation of the marsh surface on the edge of the pond and pond depth
+# pond depths: POND 1 was 0.030 m; POND 2 was 0.026 m; POND 3 was 0.026 m.
 
 # finalize depthseries
 final_depthseries <- reorderColumns("depthseries", depthseries) %>%
@@ -118,6 +125,7 @@ cores <- depthseries %>%
   select(study_id, site_id, contains("core"), habitat, core_elevation) %>%
   # distinct() %>%
   mutate(core_position_method = "RTK",
+         core_position_accuracy = 0.001,
          core_elevation_method = "RTK",
          core_elevation_datum = "NAVD88",
          vegetation_class = "emergent",
@@ -131,15 +139,11 @@ final_cores <- reorderColumns("cores", cores)
 
 
 # methods
-# NEED WORK
-methods <- data.frame(study_id = id,
-                      compaction_flag = "No obvious compaction", 
-                      # core_position_accuracy = 0.001,
-                      dry_bulk_density_flag = "freeze dried",
-                      coring_method = "piston corer",
-                      pb210_counting_method = "gamma",
-                      cs137_counting_method = "gamma")
-final_methods <- reorderColumns("methods", methods)
+methods <- raw_methods %>%
+  slice(-c(1:2)) %>%
+  select_if(function(x) {!all(is.na(x))})
+
+methods <- reorderColumns("methods", methods)
 
 #### Study Citation ####
 

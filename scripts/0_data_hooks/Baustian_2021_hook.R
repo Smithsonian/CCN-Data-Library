@@ -17,6 +17,7 @@ library(tidyverse)
 library(lubridate)
 library(RefManageR)
 library(readxl)
+library(leaflet)
 # library(anytime)
 
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -218,7 +219,11 @@ WriteBib(as.BibEntry(bib_file), "data/primary_studies/Baustian_et_al_2021/deriva
 
 
 ## QA/QC ###############
-source("./scripts/1_data_formatting/qa_functions.R")
+
+leaflet(cores) %>%
+  addProviderTiles(providers$CartoDB) %>%
+  addCircleMarkers(lng = ~as.numeric(core_longitude), lat = ~as.numeric(core_latitude), 
+                   radius = 5, label = ~core_id)
 
 # Make sure column names are formatted correctly: 
 
