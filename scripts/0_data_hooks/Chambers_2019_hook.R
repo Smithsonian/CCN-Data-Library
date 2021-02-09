@@ -51,7 +51,10 @@ methods <- raw_methods %>%
   slice(-c(1:2)) %>%
   select_if(function(x) {!all(is.na(x))})
 
+methods <- reorderColumns("methods", methods)
+
 # depthseries
+# sample_vol <- pi*(3.8^2)*10 # for the 2m cores (White_et_al_2020_a)
 # sample_vol <- 384.85 # cubic cm
 
 names(raw_Chambers) <- gsub("_field", "", names(raw_Chambers))
