@@ -16,23 +16,17 @@
 library(tidyverse)
 library(lubridate)
 library(RefManageR)
+library(readxl)
 # library(anytime)
 
 source("./scripts/1_data_formatting/qa_functions.R")
 
-
 # read in data
-# raw_sites <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_et_al_2021_site.csv")
-# raw_cores <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_et_al_2021_cores.csv")
-# raw_species <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_et_al_2021_species.csv")
-# raw_impacts <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_et_al_2021_impacts.csv")
-# raw_methods <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_et_al_2021_material_and_methods.csv")
-# study_citations <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_et_al_2021_study_citations.csv")
-
 raw_depthseries <- read_csv("./data/primary_studies/Baustian_et_al_2021/intermediate/Baustian_Long_Term_Carbon_Soil.csv", na = ".")
 raw_radio <- read_csv("./data/primary_studies/Baustian_et_al_2021/original/Baustian_Long_Term_Radionuclide.csv", na = ".")
 crms_sites <- read_csv("./data/primary_studies/Baustian_et_al_2021/intermediate/CRMS_Long_Lat.csv")
-raw_coreinfo <- read_csv("./data/primary_studies/Baustian_et_al_2021/intermediate/Baustian_Short Term Carbon_Soil Core Data.csv")
+raw_siteinfo <- read_xlsx("data/primary_studies/Baustian_et_al_2021/original/Baustian_WI_LongTerm_Soil_Core_Site Info.xlsx")
+# raw_coreinfo <- read_csv("./data/primary_studies/Baustian_et_al_2021/intermediate/Baustian_Short Term Carbon_Soil Core Data.csv")
 
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
@@ -42,9 +36,9 @@ id <- "Baustian_et_al_2021"
 
 # Reference Tables ----
 
-cores_ref <- data.frame(Marsh_Type = c(1:4), 
-                        # Marsh type is defined as intermediate salinity (based on vegetation) but I'm reclassifying it to brackish
-                        salinity_class = c("fresh", "intermediate", "brackish", "saline"), 
+cores_ref <- data.frame(salinity_class = c("fresh", "intermediate", "brackish", "saline"), 
+                        
+                        # Marsh_Type = c(1:4),
                         core_elevation = c(0.34, 0.13, 0.14, 0.14))
 # map referenced for marsh type assignment: https://pubs.usgs.gov/sim/3290/pdf/sim3290.pdf
 
@@ -52,33 +46,55 @@ cores_ref <- data.frame(Marsh_Type = c(1:4),
 #                         depth_min = c(0,2,4,8),
 #                         depth_max = c(2,4,6,10))
 
-locations <- crms_sites %>%
-  mutate(core_id = gsub("CRMS0", "", `CRMS Site`)) %>%
-  mutate(core_id = gsub("CRMS", "", core_id))
+# locations <- crms_sites %>%
+#   mutate(core_id = gsub("CRMS0", "", `CRMS Site`)) %>%
+#   mutate(core_id = gsub("CRMS", "", core_id))
 
-coreinfo <- raw_coreinfo %>%
-  select(Site, Basin, Marsh_Type) %>%
-  distinct() %>%
-  rename(core_id = Site) %>%
+
+coreinfo <- raw_siteinfo %>%
+  rename(species = `Target Species`,
+         core_latitude = Lat, 
+         core_longitude = Long,
+         core_id = `CRMS Site ID`) %>%
   mutate(study_id = id,
          site_id = recode(Basin,
                           "BA" = "Barataria basin",
                           "TE" = "Terrebonne basin"),
+         salinity_class = tolower(`2014 Habitat Type`),
          core_position_method = "RTK",
          core_elevation_datum = "NAVD88",
          vegetation_class = "emergent",
          vegetation_method = "measurement",
          salinity_method = "field observation") %>%
-  left_join(locations, by = "core_id") %>%
   full_join(cores_ref) %>%
-  rename(core_latitude = Latitude,
-         core_longitude = Longitude) %>%
-  mutate(vegetation_notes = case_when(salinity_class == "fresh" ~ "dominated by Panicum hemitomon, Sagittaria lancifolia, Eleocharis baldwinii, or Cladium jamaicense",
-                                      salinity_class == "intermediate" ~ "dominated by Leptochloa fusca, Panicum virgatum, Paspalum vaginatum, Phragmites australis, or Schoenoplectus americanus",
-                                      salinity_class == "brackish" ~ "dominated by Spartina patens but occasionally by Spartina cynosuroides, Spartina spartinae, or Bolboschoenus robustus",
-                                      salinity_class == "saline" ~ " dominated by Spartina alterniflora, Distichlis spicata, or Avicennia germinans.")) %>%
-  select(-c(Basin, Marsh_Type, "CRMS Site"))
+  # Marsh type is defined as intermediate salinity (based on vegetation) but I'm reclassifying it to brackish
+  mutate(salinity_class = recode(salinity_class, "intermediate" = "brackish")) %>%
+  select(-c(Basin, `2014 Habitat Type`))
 # core dates will have to be merged from depthseries
+
+
+# coreinfo <- raw_coreinfo %>%
+#   select(Site, Basin, Marsh_Type) %>%
+#   distinct() %>%
+#   rename(core_id = Site) %>%
+#   mutate(study_id = id,
+#          site_id = recode(Basin,
+#                           "BA" = "Barataria basin",
+#                           "TE" = "Terrebonne basin"),
+#          core_position_method = "RTK",
+#          core_elevation_datum = "NAVD88",
+#          vegetation_class = "emergent",
+#          vegetation_method = "measurement",
+#          salinity_method = "field observation") %>%
+#   left_join(locations, by = "core_id") %>%
+#   full_join(cores_ref) %>%
+#   rename(core_latitude = Latitude,
+#          core_longitude = Longitude) %>%
+#   mutate(vegetation_notes = case_when(salinity_class == "fresh" ~ "dominated by Panicum hemitomon, Sagittaria lancifolia, Eleocharis baldwinii, or Cladium jamaicense",
+#                                       salinity_class == "intermediate" ~ "dominated by Leptochloa fusca, Panicum virgatum, Paspalum vaginatum, Phragmites australis, or Schoenoplectus americanus",
+#                                       salinity_class == "brackish" ~ "dominated by Spartina patens but occasionally by Spartina cynosuroides, Spartina spartinae, or Bolboschoenus robustus",
+#                                       salinity_class == "saline" ~ " dominated by Spartina alterniflora, Distichlis spicata, or Avicennia germinans.")) %>%
+#   select(-c(Basin, Marsh_Type, "CRMS Site"))
 
 # create core site lookup
 site_core <- coreinfo %>% select(site_id, core_id)
@@ -91,7 +107,9 @@ stock <- raw_depthseries %>%
          dry_bulk_density = `Bulk Density (g/cm^3)`) %>%
   mutate(study_id = id,
          fraction_organic_matter = `Organic matter (percent)`/100,
-         increments = recode(`Core Increment (cm)`, "14-Dec" = "12-14")) %>%
+         increments = recode(`Core Increment (cm)`, 
+                             "14-Dec" = "12-14",
+                             "12-Oct" = "10-12")) %>%
   separate(col = increments, into = c("depth_min", "depth_max"), sep = "-") %>% 
   select(-c(`Core Increment (cm)`, `Moisture (percent)`, `Organic matter (percent)`))
 
@@ -114,39 +132,46 @@ radionuclides <- raw_radio %>%
          # depth_min = as.numeric(depth_min),
          pb210_unit = "disintegrationsPerMinutePerGram",
          cs137_unit = "disintegrationsPerMinutePerGram") %>%
-  select(-`Mid-Depth (cm)`, -`Radionuclide Counted Date`)
+  left_join(core_batch) %>%
+  select(-`Mid-Depth (cm)`, -`Radionuclide Counted Date`, -core_date)
 
 # there are 7 sites missing from the radionuclide table
 unique(stock$core_id)[which(!(unique(stock$core_id) %in% unique(radionuclides$core_id)))]
 
 # join depthseries info
 depthseries <- full_join(stock, radionuclides) %>%
-  # Batch 1 collected on 2/2015
-  # Batch 2 collected on 7/2015
-  # but these do not align with the dates that were merged
-  # mutate(core_date = recode(Batch,
-  #                           "1" = "2/1/2015",
-  #                           "2" = "7/1/2015")) %>%
   full_join(site_core) # merge site info
 
 # create date ref for core table
-date_ref <- depthseries %>% select(site_id, core_id, core_date) %>% distinct() %>% 
-  drop_na(core_date) # drop NA dates
+# date_ref <- depthseries %>% select(site_id, core_id, core_date) %>% distinct() %>%
+#   drop_na(core_date) # drop NA dates
 
 final_depthseries <- reorderColumns("depthseries", depthseries) %>%
   select(-c(Batch, core_date, "2014_Habitat Type", Most_Freq_Occ_Habitat_1949to1988))
 
 # Cores ----
 
+# use this to supply core dates to the core table
+date_ref <- stock %>% select(Batch, core_id) %>% distinct() %>%
+  mutate(core_date = case_when(Batch == "1" ~ "2/1/2015",
+                               Batch == "2" ~ "7/1/2015"))
+
 cores <- left_join(coreinfo, date_ref) %>%
     mutate(core_year = year(as.Date(core_date, format = "%m/%d/%Y")),
            core_month = month(as.Date(core_date, format = "%m/%d/%Y")),
            core_day = day(as.Date(core_date, format = "%m/%d/%Y"))) %>%
-  mutate(core_year = 2015, # all cores were collected in 2015
-         core_length_flag = "core depth limited by length of corer") %>% 
-  select(-core_date)
+  mutate(core_length_flag = "core depth limited by length of corer") %>% 
+  select(-core_date, -species, -Batch)
 
 final_cores <- reorderColumns("cores", cores)
+
+# Species
+species <- coreinfo %>%
+  select(study_id, site_id, core_id, species) %>%
+  mutate(species = str_split(species, "/")) %>% 
+  unnest(species) %>% mutate(species = trimws(species)) %>%
+  separate(species, into = c("genus", "species"), sep = " ")
+  
 
 # Methods ----
 
@@ -157,7 +182,8 @@ methods <- data.frame(study_id = id,
                       loss_on_ignition_time = 14, 
                       # fraction_carbon_type = "total carbon", # no fraction carbon in the tables but metadata says it was calculated
                       cs137_counting_method = "gamma",
-                      pb210_counting_method = "gamma")
+                      pb210_counting_method = "gamma",
+                      dry_bulk_density_sample_volume = pi*((5.1/2)^2)*2)
 
 final_methods <- reorderColumns("methods", methods)
 
@@ -200,6 +226,7 @@ test_colnames("cores", final_cores)
 test_colnames("depthseries", final_depthseries)
 test_colnames("methods", methods)
 
+test_unique_cores(final_cores)
 test_core_relationships(final_cores, final_depthseries)
 
 

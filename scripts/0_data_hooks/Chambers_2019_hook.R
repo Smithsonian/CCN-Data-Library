@@ -99,7 +99,8 @@ cores <- depthseries %>%
   distinct() %>%
   mutate(core_year = year(as.Date(sampling_date)),
          core_month = month(as.Date(sampling_date)),
-         core_day = day(as.Date(sampling_date))) %>%
+         core_day = day(as.Date(sampling_date)),
+         core_length_flag = "core depth limited by length of corer") %>%
   mutate(core_year = ifelse(is.na(core_year), 2017, core_year)) %>%
   select(-sampling_date)
 
