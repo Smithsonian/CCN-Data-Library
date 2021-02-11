@@ -1,2 +1,2 @@
-study_id,coring_method,compaction_flag,dry_bulk_density_flag,cs137_counting_method,pb210_counting_method
-Luk_et_al_2020,piston corer,No obvious compaction,freeze dried,gamma,gamma
+study_id,coring_method,roots_flag,sediment_sieved_flag,sediment_sieve_size,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_flag,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_method,fraction_carbon_type,cs137_counting_method,pb210_counting_method
+Luk_et_al_2019,piston corer,roots and rhizomes separated,sediment sieved,1,no obvious compaction,60,air dried to constant mass,measured,TRUE,acid fumigation,EA,total carbon,gamma,gamma

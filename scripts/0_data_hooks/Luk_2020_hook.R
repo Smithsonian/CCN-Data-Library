@@ -57,8 +57,13 @@ isotopes <- raw_iso %>% rename(dry_bulk_density = dbd,
          core_month = month(as.Date(date, format = "%m/%d/%Y")),
          core_day = day(as.Date(date, format = "%m/%d/%Y"))) %>%
   select(-c(date, 
-            # dry_bulk_density, lat, lon
+            # dry_bulk_density,
+            elevation,
+            # lat, lon,
             `7be`, `7be_e`))
+
+# elevation_soil <- soil %>% filter(depth_min == 0) 
+# elevation_isotope <- isotopes %>% filter(depth_min == 0) # use these elevations because the increment is smaller
 
 # these data arent merging well
 depthseries <- full_join(soil, isotopes) %>%
@@ -123,7 +128,7 @@ final_depthseries <- reorderColumns("depthseries", depthseries) %>%
 cores <- depthseries %>%
   filter(depth_min == 0) %>%
   select(study_id, site_id, contains("core"), habitat, core_elevation) %>%
-  # distinct() %>%
+  drop_na(core_elevation) %>%
   mutate(core_position_method = "RTK",
          core_position_accuracy = 0.001,
          core_elevation_method = "RTK",
@@ -141,7 +146,8 @@ final_cores <- reorderColumns("cores", cores)
 # methods
 methods <- raw_methods %>%
   slice(-c(1:2)) %>%
-  select_if(function(x) {!all(is.na(x))})
+  select_if(function(x) {!all(is.na(x))}) %>%
+  mutate(compaction_flag = "no obvious compaction")
 
 methods <- reorderColumns("methods", methods)
 
@@ -197,15 +203,20 @@ leaflet(cores) %>%
   addCircleMarkers(lng = ~as.numeric(core_longitude), lat = ~as.numeric(core_latitude), radius = 5, label = ~site_id)
 
 # Make sure column names are formatted correctly: 
-test_colnames("cores", final_cores) # habitat
+test_colnames("cores", final_cores) 
 test_colnames("depthseries", final_depthseries)
 test_colnames("methods", methods)
+
+test_varnames(methods)
+
+test_core_relationships(final_cores, final_depthseries)
+test_unique_cores(final_depthseries)
 
 ## Write derivative data ####
 # write_csv(sites, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_sites.csv")
 write_csv(final_cores, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_cores.csv")
 # write_csv(species, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_species.csv")
-write_csv(final_methods, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_methods.csv")
+write_csv(methods, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_methods.csv")
 write_csv(final_depthseries, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_depthseries.csv")
 write_csv(study_citations, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_study_citations.csv")
 
