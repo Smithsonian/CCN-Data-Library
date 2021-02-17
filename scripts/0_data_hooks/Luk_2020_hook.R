@@ -37,14 +37,15 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 ## Trim Data to Library ####
 
-id <- "Luk_et_al_2020"
+# id <- "Luk_et_al_2020"
 
 names(raw_iso) <- tolower(names(raw_iso))
 names(raw_soil) <- tolower(names(raw_soil))
 
 soil <- raw_soil %>% 
   separate(date, c("core_year", "core_month"), sep = "-") %>%
-  mutate(fraction_carbon = toc/100, # total organic
+  mutate(study_id = "Luk_et_al_2020_a",
+         fraction_carbon = toc/100, # total organic
          core_month = as.numeric(core_month),
          core_year = as.numeric(core_year)) %>%
   mutate(core_day = case_when(core_month == 12 ~ 8,
@@ -53,11 +54,12 @@ soil <- raw_soil %>%
 
 isotopes <- raw_iso %>% rename(dry_bulk_density = dbd,
                                location = status) %>%
-  mutate(core_year = year(as.Date(date, format = "%m/%d/%Y")),
+  mutate(study_id = "Luk_et_al_2020_b",
+         core_year = year(as.Date(date, format = "%m/%d/%Y")),
          core_month = month(as.Date(date, format = "%m/%d/%Y")),
          core_day = day(as.Date(date, format = "%m/%d/%Y"))) %>%
   select(-c(date, 
-            # dry_bulk_density,
+            dry_bulk_density,
             elevation,
             # lat, lon,
             `7be`, `7be_e`))
@@ -80,8 +82,7 @@ depthseries <- full_join(soil, isotopes) %>%
          ra226_activity_se = `226ra_e`,
          cs137_activity = `137cs`,
          cs137_activity_se = `137cs_e`) %>%
-  mutate(study_id = id,
-         core_id = ifelse(habitat == "POND", str_c(habitat, site_id, sep = "_"),
+  mutate(core_id = ifelse(habitat == "POND", str_c(habitat, site_id, sep = "_"),
                           str_c(habitat, site_id, core_id, sep = "_")),
          # sample_volume = pi*(depth_max-depth_min)*(5.5^2),
          core_elevation_notes = "Calculated by subtracting the minimum depth of soil horizon from the NAVD88 elevation of the core location (given at min_depth = 0)",
@@ -128,7 +129,7 @@ final_depthseries <- reorderColumns("depthseries", depthseries) %>%
 cores <- depthseries %>%
   filter(depth_min == 0) %>%
   select(study_id, site_id, contains("core"), habitat, core_elevation) %>%
-  drop_na(core_elevation) %>%
+  # drop_na(core_elevation) %>%
   mutate(core_position_method = "RTK",
          core_position_accuracy = 0.001,
          core_elevation_method = "RTK",
@@ -137,7 +138,8 @@ cores <- depthseries %>%
          vegetation_method = "field observation",
          vegetation_notes = "marsh sites dominated by Spartina patens, Spartina alterniflora, and Distichlis spicata",
          inundation_class = ifelse(habitat == "MARSH", "high", "low"),
-         inundation_method = "field observation") %>%
+         inundation_method = "field observation",
+         core_notes = "Nine cores were split in half and increments were processed independently") %>%
   select(-habitat)
 
 final_cores <- reorderColumns("cores", cores)
@@ -146,8 +148,7 @@ final_cores <- reorderColumns("cores", cores)
 # methods
 methods <- raw_methods %>%
   slice(-c(1:2)) %>%
-  select_if(function(x) {!all(is.na(x))}) %>%
-  mutate(compaction_flag = "no obvious compaction")
+  select_if(function(x) {!all(is.na(x))})
 
 methods <- reorderColumns("methods", methods)
 
@@ -162,35 +163,34 @@ spivak_bib <- GetBibEntryWithDOI(spivak_doi)
 pub_bib <- GetBibEntryWithDOI(pub_doi)
 
 # Convert citations to dataframe
-pub_citation <- as.data.frame(pub_bib) %>%
-  mutate(study_id = id) %>%
+pub_citation <- bind_rows(as.data.frame(pub_bib), as.data.frame(pub_bib)) %>%
   mutate(doi = tolower(doi),
          bibliography_id = str_c("Luk_et_al", year, sep = "_"),
-         key = str_c("Luk_et_al", year, sep = "_"))
+         key = str_c("Luk_et_al", year, sep = "_")) %>%
+  mutate(study_id = c("Luk_et_al_2020_a", "Luk_et_al_2020_b"))
 
 luk_data_citation <- as.data.frame(luk_bib) %>%
-  mutate(study_id = id) %>%
+  mutate(study_id = "Luk_et_al_2020_b") %>%
   mutate(doi = tolower(doi),
          bibliography_id = str_c("Luk_et_al", year, sep = "_"),
          key = str_c("Luk_et_al", year, sep = "_"))
 
 spivak_data_citation <- as.data.frame(spivak_bib) %>%
-  mutate(study_id = id) %>%
+  mutate(study_id = "Luk_et_al_2020_a") %>%
   mutate(doi = tolower(doi),
-         bibliography_id = str_c("Spivak_et_al", year, sep = "_"),
-         key = str_c("Spivak_et_al", year, sep = "_"))
+         bibliography_id = str_c("Spivak", year, sep = "_"),
+         key = str_c("Spivak", year, sep = "_"))
 
 # # Curate biblio so ready to read out as a BibTex-style .bib file
 study_citations <- pub_citation %>%
-  bind_rows(luk_data_citation, spivak_data_citation) %>%
+  bind_rows(spivak_data_citation, luk_data_citation) %>%
   mutate(publication_type = bibtype) %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, everything())
 
 # Write .bib file
 bib_file <- study_citations %>%
-  # slice(1) %>%
   select(-study_id, -bibliography_id, -publication_type) %>%
-  # distinct() %>%
+  distinct() %>%
   column_to_rownames("key")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Luk_2020/derivative/Luk_et_al_2020.bib")
