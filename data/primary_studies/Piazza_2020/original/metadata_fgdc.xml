@@ -1,0 +1,1065 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Sarai C. Piazza</origin>
+        <origin>Gregory D. Steyer</origin>
+        <origin>Kari F. Cretini</origin>
+        <origin>Charles E. Sasser</origin>
+        <origin>Jenneke M. Visser</origin>
+        <origin>Guerry O. Holm</origin>
+        <origin>Leigh Anne Sharp</origin>
+        <origin>Elaine Evers</origin>
+        <origin>John R. Meriwether</origin>
+        <pubdate>20210105</pubdate>
+        <title>Geomorphic and ecological effects of Hurricanes Katrina and Rita on coastal Louisiana marsh communities</title>
+        <geoform>spreadsheet</geoform>
+        <onlink>https://doi.org/10.5066/P9D8WTQW</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>Hurricanes Katrina and Rita made landfall in 2005, subjecting the coastal marsh communities of Louisiana to various degrees of exposure. We collected data after the storms at 30 sites within fresh (12), brackish/intermediate (12), and saline (6) marshes to document the effects of saltwater storm surge and sedimentation on marsh community dynamics. The 30 sites were comprised of 15 pairs. Most pairs contained one site where data collection occurred historically (that is, pre-storms) and one Coastwide Reference Monitoring System site. Data were collected from spring 2006 to fall 2007 on vegetative species composition, percentage of vegetation cover, aboveground and belowground biomass, along with discrete porewater salinity, hourly surface-water salinity, and water level. Where available, historical data acquired before Hurricanes Katrina and Rita were used to compare conditions and changes in ecological trajectories before and after the hurricanes. Sites experiencing direct and indirect hurricane influences (referred to in this report as levels of influence) were also identified, and the effects of hurricane influence were tested on vegetation and porewater data. Within fresh marshes, porewater salinity was greater in directly impacted areas, and this heightened salinity was reflected in decreased aboveground and belowground biomass and increased cover of disturbance species in the directly impacted sites. At the brackish/intermediate marsh sites, vegetation variables and porewater salinity were similar in directly and indirectly impacted areas, but porewater salinity was higher than expected throughout the study. Interestingly, directly impacted saline marsh sites had lower porewater salinity than indirectly impacted sites, but aboveground biomass was greater at the directly impacted sites. Because of the variable and site-specific nature of hurricane influences, we present case studies to help define post-disturbance baseline conditions in fresh, brackish/intermediate, and saline marshes. In fresh marshes, the mechanism of hurricane influence varied across the landscape. In the western region, saltwater storm surge inundated freshwater marshes and remained for weeks, effectively causing damage that reset the vegetation community. This is in contrast to the direct physical disturbance of the storm surge in the eastern region, which flipped and relocated marsh mats, thereby stressing the vegetation communities and providing an opportunity for disturbance species to colonize. In the brackish/intermediate marsh, disturbance species took advantage of the opportunity provided by shifting species composition caused by physical and saltwater-induced perturbations, although this shift is likely to be short lived. Saline marsh sites were not negatively impacted to a severe degree by the hurricanes. Species composition of vegetation in saline marshes was not affected, and sediment deposition appeared to increase vegetative productivity. The coastal landscape of Louisiana is experiencing high rates of land loss resulting from natural and anthropogenic causes and is experiencing subsidence rates greater than 10.0 millimeters per year (mm yr-1); therefore, it is important to understand how hurricanes influence sedimentation and soil properties. We document long-term vertical accretion rates and accumulation rates of organic matter, bulk density, carbon and nitrogen. Analyses using caesium-137 to calculate long-term vertical accretion rates suggest that accretion under impounded conditions is less than in nonimpounded conditions in the brackish marsh of the chenier plain. Our data also support previous studies indicating that accumulation rates of organic matter explain much of the variability associated with vertical accretion in brackish/intermediate and saline marshes. In fresh marshes, more of the variability associated with vertical accretion was explained by mineral accumulation than in the other marshes.</abstract>
+      <purpose>The purpose of this data release is to publish the quality-assured data collected to assess the geomorphic and ecological effects of Hurricanes Katrina and Rita on coastal Louisiana marsh communities.</purpose>
+      <supplinf>The data release contains tidal wetland soil carbon profiles. The data itself is housed in five separate .csv files which can by joined by the core_id and/or site_id attributes.
+Author ORCIDs: Piazza, S.C.(0000-0001-6962-9008);Steyer, G.D.(0000-0001-7231-0110);Cretini, K.F.(0000-0003-0419-0748)</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <sngdate>
+          <caldate>2011</caldate>
+        </sngdate>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-93.7293</westbc>
+        <eastbc>-89.6042</eastbc>
+        <northbc>29.9624</northbc>
+        <southbc>29.1939</southbc>
+      </bounding>
+      <descgeog>Louisiana</descgeog>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>biota</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>carbon</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:5f7e18d382ce1d74e7dda178</themekey>
+      </theme>
+    </keywords>
+    <accconst>None.  Please see 'Distribution Info' for details.</accconst>
+    <useconst>
+    </useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Sarai C. Piazza</cntper>
+          <cntorg>U.S. Geological Survey, Wetland and Aquatic Research Center</cntorg>
+        </cntperp>
+        <cntpos>Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>700 Cajundome Blvd.</address>
+          <city>Lafayette</city>
+          <state>LA</state>
+          <postal>70506</postal>
+        </cntaddr>
+        <cntvoice>337-266-8500</cntvoice>
+        <cntemail>piazzas@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <crossref>
+      <citeinfo>
+        <origin>Sarai C. Piazza</origin>
+        <origin>Gregory D. Steyer</origin>
+        <origin>Kari F. Cretini</origin>
+        <origin>Charles E. Sasser</origin>
+        <origin>Jenneke M. Visser</origin>
+        <origin>Guerry O. Holm</origin>
+        <origin>Leigh A. Sharp</origin>
+        <origin>D. Elaine Evers</origin>
+        <origin>John R. Meriwether</origin>
+        <pubdate>2011</pubdate>
+        <title>Geomorphic and ecological effects of Hurricanes Katrina and Rita on coastal Louisiana marsh communities</title>
+        <geoform>publication</geoform>
+        <serinfo>
+          <sername>Open-File Report</sername>
+          <issue>2011-1094</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>n/a</pubplace>
+          <publish>US Geological Survey</publish>
+        </pubinfo>
+        <othercit>p. i-126</othercit>
+        <onlink>https://doi.org/10.3133/ofr20111094</onlink>
+      </citeinfo>
+    </crossref>
+    <taxonomy>
+      <keywtax>
+        <taxonkt>None</taxonkt>
+        <taxonkey>Polygonum</taxonkey>
+        <taxonkey>Ludwigia</taxonkey>
+        <taxonkey>Spartina patens</taxonkey>
+        <taxonkey>Typha</taxonkey>
+        <taxonkey>Eleocharis</taxonkey>
+        <taxonkey>Distichlis spicata</taxonkey>
+        <taxonkey>Paspalum vaginatum</taxonkey>
+        <taxonkey>Iva frutescens</taxonkey>
+      </keywtax>
+      <taxoncl>
+        <taxonrn>Kingdom</taxonrn>
+        <taxonrv>Plantae</taxonrv>
+        <taxoncl>
+          <taxonrn>Subkingdom</taxonrn>
+          <taxonrv>Viridiplantae</taxonrv>
+          <taxoncl>
+            <taxonrn>Infrakingdom</taxonrn>
+            <taxonrv>Streptophyta</taxonrv>
+            <taxoncl>
+              <taxonrn>Superdivision</taxonrn>
+              <taxonrv>Embryophyta</taxonrv>
+              <taxoncl>
+                <taxonrn>Division</taxonrn>
+                <taxonrv>Tracheophyta</taxonrv>
+                <taxoncl>
+                  <taxonrn>Subdivision</taxonrn>
+                  <taxonrv>Spermatophytina</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Class</taxonrn>
+                    <taxonrv>Magnoliopsida</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Superorder</taxonrn>
+                      <taxonrv>Caryophyllanae</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Order</taxonrn>
+                        <taxonrv>Caryophyllales</taxonrv>
+                        <taxoncl>
+                          <taxonrn>Family</taxonrn>
+                          <taxonrv>Polygonaceae</taxonrv>
+                          <taxoncl>
+                            <taxonrn>Genus</taxonrn>
+                            <taxonrv>Polygonum</taxonrv>
+                            <common>TSN: 20847</common>
+                          </taxoncl>
+                        </taxoncl>
+                      </taxoncl>
+                    </taxoncl>
+                    <taxoncl>
+                      <taxonrn>Superorder</taxonrn>
+                      <taxonrv>Rosanae</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Order</taxonrn>
+                        <taxonrv>Myrtales</taxonrv>
+                        <taxoncl>
+                          <taxonrn>Family</taxonrn>
+                          <taxonrv>Onagraceae</taxonrv>
+                          <taxoncl>
+                            <taxonrn>Genus</taxonrn>
+                            <taxonrv>Ludwigia</taxonrv>
+                            <common>TSN: 27334</common>
+                          </taxoncl>
+                        </taxoncl>
+                      </taxoncl>
+                    </taxoncl>
+                    <taxoncl>
+                      <taxonrn>Superorder</taxonrn>
+                      <taxonrv>Lilianae</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Order</taxonrn>
+                        <taxonrv>Poales</taxonrv>
+                        <taxoncl>
+                          <taxonrn>Family</taxonrn>
+                          <taxonrv>Poaceae</taxonrv>
+                          <taxoncl>
+                            <taxonrn>Genus</taxonrn>
+                            <taxonrv>Spartina</taxonrv>
+                            <taxoncl>
+                              <taxonrn>Species</taxonrn>
+                              <taxonrv>Spartina patens</taxonrv>
+                              <common>TSN: 41271</common>
+                            </taxoncl>
+                          </taxoncl>
+                          <taxoncl>
+                            <taxonrn>Genus</taxonrn>
+                            <taxonrv>Distichlis</taxonrv>
+                            <taxoncl>
+                              <taxonrn>Species</taxonrn>
+                              <taxonrv>Distichlis spicata</taxonrv>
+                              <common>TSN: 40662</common>
+                            </taxoncl>
+                          </taxoncl>
+                          <taxoncl>
+                            <taxonrn>Genus</taxonrn>
+                            <taxonrv>Paspalum</taxonrv>
+                            <taxoncl>
+                              <taxonrn>Species</taxonrn>
+                              <taxonrv>Paspalum vaginatum</taxonrv>
+                              <common>TSN: 41044</common>
+                            </taxoncl>
+                          </taxoncl>
+                        </taxoncl>
+                        <taxoncl>
+                          <taxonrn>Family</taxonrn>
+                          <taxonrv>Typhaceae</taxonrv>
+                          <taxoncl>
+                            <taxonrn>Genus</taxonrn>
+                            <taxonrv>Typha</taxonrv>
+                            <common>TSN: 42324</common>
+                          </taxoncl>
+                        </taxoncl>
+                        <taxoncl>
+                          <taxonrn>Family</taxonrn>
+                          <taxonrv>Cyperaceae</taxonrv>
+                          <taxoncl>
+                            <taxonrn>Genus</taxonrn>
+                            <taxonrv>Eleocharis</taxonrv>
+                            <common>TSN: 40010</common>
+                          </taxoncl>
+                        </taxoncl>
+                      </taxoncl>
+                    </taxoncl>
+                    <taxoncl>
+                      <taxonrn>Superorder</taxonrn>
+                      <taxonrv>Asteranae</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Order</taxonrn>
+                        <taxonrv>Asterales</taxonrv>
+                        <taxoncl>
+                          <taxonrn>Family</taxonrn>
+                          <taxonrv>Asteraceae</taxonrv>
+                          <taxoncl>
+                            <taxonrn>Genus</taxonrn>
+                            <taxonrv>Iva</taxonrv>
+                            <taxoncl>
+                              <taxonrn>Species</taxonrn>
+                              <taxonrv>Iva frutescens</taxonrv>
+                              <common>TSN: 36025</common>
+                            </taxoncl>
+                          </taxoncl>
+                        </taxoncl>
+                      </taxoncl>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+              </taxoncl>
+            </taxoncl>
+          </taxoncl>
+        </taxoncl>
+      </taxoncl>
+    </taxonomy>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>Tests were performed to assure that values aligned with the CCRCN database guidance: see https://serc.si.edu/coastalcarbon/database-structure</attraccr>
+    </attracc>
+    <logic>Data visualization and quality assurance tests written in R were performed to ensure that values fell within expected ranges and check for duplication and omission of values.</logic>
+    <complete>Data set is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <lineage>
+      <procstep>
+        <procdesc>See the piazza_et_al_2020_material_and_methods.csv included in the data release or the methods and materials section of the associated publication: https://pubs.usgs.gov/of/2011/1094/OF11-1094.pdf</procdesc>
+        <procdate>2011</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>piazza_et_al_2020_material_and_methods.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing information on materials and methods broken down by study.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>study_id</attrlabl>
+        <attrdef>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year separated by underscores.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year separated by underscores.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>coring_method</attrlabl>
+        <attrdef>Code indicating what type of device was used to collect soil depth profiles.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>push core</edomv>
+            <edomvd>Any number of coring types involving driving a tube into the sediment to recover a core.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>roots_flag</attrlabl>
+        <attrdef>Code indicating whether live roots were included or excluded from carbon assessments.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>roots and rhizomes included</edomv>
+            <edomvd>Roots and rhizomes were included in dry bulk density and or organic matter and carbon measurements.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>sediment_sieved_flag</attrlabl>
+        <attrdef>Code indicating whether or not sediment was sieved prior to carbon measurements.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>sediment sieved</edomv>
+            <edomvd>Sediment was sieved prior to analysis for organics.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>sediment_sieve_size</attrlabl>
+        <attrdef>If sediment was sieved, the size of sieve used.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>millimeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>compaction_flag</attrlabl>
+        <attrdef>Code indicating how the authors qualified or quantified compaction of the core.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>corer limits compaction</edomv>
+            <edomvd>Authors specified that the coring device's design minimized compaction.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>dry_bulk_density_temperature</attrlabl>
+        <attrdef>Temperature at which samples were dried to measure dry bulk density. This can include either samples that were freeze dried or oven dried.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>60</rdommin>
+            <rdommax>60</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>dry_bulk_density_sample_volume</attrlabl>
+        <attrdef>Sample volume used for bulk density measurements, if held constant.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>157.07963267948966</rdommin>
+            <rdommax>157.07963267948966</rdommax>
+            <attrunit>cubic centimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>dry_bulk_density_flag</attrlabl>
+        <attrdef>Any notable codes regarding how the authors quantified dry bulk density.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>not specified</edomv>
+            <edomvd>No additional details regarding bulk density methodology were provided.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>loss_on_ignition_temperature</attrlabl>
+        <attrdef>Temperature at which samples were combusted to estimate fraction organic matter.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>550</rdommin>
+            <rdommax>550</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>loss_on_ignition_time</attrlabl>
+        <attrdef>Time over which samples were combusted to estimate fraction organic matter.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>hour</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>loss_on_ignition_sample_mass</attrlabl>
+        <attrdef>Sample mass used for loss on ignition, if held constant.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>1</rdommax>
+            <attrunit>grams</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>carbon_measured_or_modeled</attrlabl>
+        <attrdef>Code indicating whether fraction carbon was measured or estimated as a function of organic matter.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>measured</edomv>
+            <edomvd>Fraction carbon was measured as opposed to modeled.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>cs137_counting_method</attrlabl>
+        <attrdef>Code indicating the method used for determining radiocesium activity.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>gamma</edomv>
+            <edomvd>Gamma counting method used.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>piazza_et_al_2020_site.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing positional and descriptive information on site locations.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>study_id</attrlabl>
+        <attrdef>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year separated by underscores.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year separated by underscores.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_id</attrlabl>
+        <attrdef>Site identification code unique to each study.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Site identification code unique to each study.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>salinity_class</attrlabl>
+        <attrdef>Code based on submitter field observation or measurement indicating average annual salinity (Note: Palustrine and freshwater should only include tidal wetlands, or wetlands that are potentially/formerly tidal but artificially freshened due to artificial tidal restrictions).</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>fresh</edomv>
+            <edomvd>&lt;0.5 parts per thousand</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>intermediate</edomv>
+            <edomvd>Salinity is somewhere between fully fresh and fully saline</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>saline</edomv>
+            <edomvd>30-50 parts per thousand</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>brackish</edomv>
+            <edomvd>0.5-30 parts per thousand</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>salinity_method</attrlabl>
+        <attrdef>Indication of whether salinity_class was determined using a field observation or a measurement.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>measurement</edomv>
+            <edomvd>Salinity observed from local instrument.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vegetation_class</attrlabl>
+        <attrdef>Code based on submitter field observations or measurement indicating dominant wetland vegetation type.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>emergent</edomv>
+            <edomvd>Describes wetlands dominated by persistent emergent vascular plants.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vegetation_method</attrlabl>
+        <attrdef>Indicate whether vegetation_class was determined using a field observation or a measurement.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>measurement</edomv>
+            <edomvd>Vegetation measured by counts or plots.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_latitude_min</attrlabl>
+        <attrdef>Minimum latitude defining a bounding box for the site in decimal degree WGS84.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>29.193920000000002</rdommin>
+            <rdommax>29.96235</rdommax>
+            <attrunit>degree</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_latitude_max</attrlabl>
+        <attrdef>Maximum latitude defining a bounding box for the site in decimal degree WGS84.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>29.193920000000002</rdommin>
+            <rdommax>29.96235</rdommax>
+            <attrunit>degree</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_longitude_min</attrlabl>
+        <attrdef>Minimum longitude defining a bounding box for the site in decimal degree WGS84.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-93.729333</rdommin>
+            <rdommax>-89.60418299999999</rdommax>
+            <attrunit>degree</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_longitude_max</attrlabl>
+        <attrdef>Maximum longitude defining a bounding box for the site in decimal degree WGS84.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-93.729333</rdommin>
+            <rdommax>-89.60418299999999</rdommax>
+            <attrunit>degree</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>piazza_et_al_2020_cores.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing positional and descriptive information on core locations.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>study_id</attrlabl>
+        <attrdef>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year separated by underscores.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year separated by underscores.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_id</attrlabl>
+        <attrdef>Site identification code unique to each study.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Site identification code unique to each study.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>core_id</attrlabl>
+        <attrdef>Core identification code unique to each site.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Core identification code unique to each site.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>core_latitude</attrlabl>
+        <attrdef>Positional latitude of the core in decimal degree WGS84.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>29.193920000000002</rdommin>
+            <rdommax>29.96235</rdommax>
+            <attrunit>degree</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>core_longitude</attrlabl>
+        <attrdef>Positional longitude of the core in decimal degree WGS84.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-93.729333</rdommin>
+            <rdommax>-89.60418299999999</rdommax>
+            <attrunit>degree</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>core_position_notes</attrlabl>
+        <attrdef>Any relevant submitter generated notes on how latitude and longitude were determined.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Any relevant submitter generated notes on how latitude and longitude were determined.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>salinity_class</attrlabl>
+        <attrdef>Code based on submitter field observation or measurement indicating average annual salinity (Note: Palustrine and freshwater should only include tidal wetlands, or wetlands that are potentially/formerly tidal but artificially freshened due to artificial tidal restrictions).</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>fresh</edomv>
+            <edomvd>&lt;0.5 parts per thousand</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>intermediate</edomv>
+            <edomvd>Salinity is somewhere between fully fresh and fully saline.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>saline</edomv>
+            <edomvd>30-50 parts per thousand</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>brackish</edomv>
+            <edomvd>0.5-30 parts per thousand</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>salinity_method</attrlabl>
+        <attrdef>Indication of whether salinity_class was determined using a field observation or a measurement.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>measurement</edomv>
+            <edomvd>Salinity observed from local instrument.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vegetation_class</attrlabl>
+        <attrdef>Code based on submitter field observations or measurement indicating dominant wetland vegetation type.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>emergent</edomv>
+            <edomvd>Describes wetlands dominated by persistent emergent vascular plants.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>vegetation_method</attrlabl>
+        <attrdef>Indicates whether vegetation_class was determined using a field observation or a measurement</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>measurement</edomv>
+            <edomvd>Vegetation measured by counts or plots.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>core_length_flag</attrlabl>
+        <attrdef>Indicated whether or not the coring team believes they recovered a full sediment profile, down to bedrock, or other non-marsh interface.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>core depth limited by length of corer</edomv>
+            <edomvd>The total depth of the core was limited by the length of the coring device.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>piazza_et_al_2020_depthseries.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing raw depth-series information for all cores.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>study_id</attrlabl>
+        <attrdef>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year separated by underscores.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year separated by underscores.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_id</attrlabl>
+        <attrdef>Site identification code unique to each study.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Site identification code unique to each study.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>core_id</attrlabl>
+        <attrdef>Core identification code unique to each site.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Core identification code unique to each site.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>depth_min</attrlabl>
+        <attrdef>Minimum depth of a sampling increment.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>54</rdommax>
+            <attrunit>centimeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>depth_max</attrlabl>
+        <attrdef>Maximum depth of a sampling increment.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2</rdommin>
+            <rdommax>56</rdommax>
+            <attrunit>centimeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>dry_bulk_density</attrlabl>
+        <attrdef>Dry mass per unit volume of a soil sample. This does not include ash free bulk density.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0197</rdommin>
+            <rdommax>1.5358</rdommax>
+            <attrunit>grams per cubic centimeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>fraction_organic_matter</attrlabl>
+        <attrdef>Mass of organic matter relative to sample dry mass. Ash free bulk density should not be used here but should be expressed as a loss on ignition fraction.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.022904</rdommin>
+            <rdommax>0.927022</rdommax>
+            <attrunit>dimensionless</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>fraction_carbon</attrlabl>
+        <attrdef>Mass of carbon relative to sample dry mass.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.001255</rdommin>
+            <rdommax>0.505011</rdommax>
+            <attrunit>dimensionless</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>cs137_activity</attrlabl>
+        <attrdef>Radioactivity counts per unit dry weight for radiocesium (137Cs).</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-30.9715</rdommin>
+            <rdommax>378.2993</rdommax>
+            <attrunit>becquerels per kilogram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>cs137_activity_se</attrlabl>
+        <attrdef>1 standard error of uncertainty associated with cs137_activity.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>52.1387</rdommax>
+            <attrunit>becquerels per kilogram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>depth_interval_notes</attrlabl>
+        <attrdef>Any other submitter generated notes specific to the depth interval.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <udom>Any other submitter generated notes specific to the depth interval.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>fraction_nitrogen</attrlabl>
+        <attrdef>Reported fraction of nitrogen in sample by elemental analysis.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>0.040048</rdommax>
+            <attrunit>dimensionless</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>piazza_et_al_2020_species.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing information on the dominant plant species at coring locations.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>study_id</attrlabl>
+        <attrdef>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year separated by underscores.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year separated by underscores.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_id</attrlabl>
+        <attrdef>Site identification code unique to each study.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Site identification code unique to each study.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>core_id</attrlabl>
+        <attrdef>Core identification code unique to each site.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Core identification code unique to each site.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>genus</attrlabl>
+        <attrdef>Genus according to the most up to date classification.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Genus according to the most up to date classification.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>species</attrlabl>
+        <attrdef>Species according to the most up to date classification.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Species according to the most up to date classification.</udom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>piazza_et_al_2020_impacts.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing information on the anthropogenic or environmental impacts at coring locations.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>study_id</attrlabl>
+        <attrdef>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year separated by underscores.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year separated by underscores.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_id</attrlabl>
+        <attrdef>Site identification code unique to each study.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Site identification code unique to each study.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>core_id</attrlabl>
+        <attrdef>Core identification code unique to each site.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Core identification code unique to each site.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>impact_class</attrlabl>
+        <attrdef>Code indicating any major anthropogenic or environmental impacts historically and currently affecting the coring location.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>storm or wind</edomv>
+            <edomvd>Major storms including unusually high-precipitation and unusually high-wind events, e.g., hurricane, hail, flooding from storm, etc.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey - ScienceBase</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Digital Data</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/P9D8WTQW</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20210105</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Coastal Carbon Research Coordination Network</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>647 Contees Wharf Road</address>
+          <city>Edgewater</city>
+          <state>MD</state>
+          <postal>21037-0028</postal>
+        </cntaddr>
+        <cntvoice>443-482-2200</cntvoice>
+        <cntemail>CoastalCarbon@si.edu</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001.1-1999</metstdv>
+  </metainfo>
+</metadata>

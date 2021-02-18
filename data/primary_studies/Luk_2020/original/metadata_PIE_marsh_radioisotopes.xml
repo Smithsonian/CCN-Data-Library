@@ -1,0 +1,585 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Luk, Sheron Y.</origin>
+        <origin>Spivak, Amanda C.</origin>
+        <origin>Eagle, Meagan J.</origin>
+        <origin>O'Keefe Suttles, Jennifer A.</origin>
+        <pubdate>20201222</pubdate>
+        <title>Collection, analysis, and age-dating of sediment cores from a salt marsh platform and ponds, Rowley, Massachusetts, 2014-15</title>
+        <geoform>comma separated file</geoform>
+        <serinfo>
+          <sername>data release</sername>
+          <issue>DOI:10.5066/P9HIOWKT</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>Reston, VA</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <othercit>Suggested citation: Luk, S.Y., Spivak, A.C., Eagle, M.J., and O'Keefe-Suttles, J.A., 2020, Collection, analysis, and age-dating of sediment cores from a salt marsh platform and ponds, Rowley, Massachusetts, 2014-15: U.S. Geological Survey data release, https://doi.org/10.5066/P9HIOWKT.</othercit>
+        <onlink>https://doi.org/10.5066/P9HIOWKT</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>Sediment cores were collected from three sites within the Plum Island Ecosystems Long-Term Ecological Research (PIE-LTER) domain in Massachusetts to obtain estimates of long-term marsh decomposition and evaluate shifts in the composition and reactivity of sediment organic carbon in disturbed marsh environments. Paired sediment cores were collected from three sites on the marsh platform and from three ponds; these cores were about 100 and 50 centimeters in length, respectively. The marsh sites had similar elevations, at about 1.41 to 1.51 meters relative to the North American Vertical Datum of 1988, and similar salt marsh grass communities, dominated by Spartina patens, S. alterniflora, and Distichlis spicata. Permanently inundated ponds within each site had comparable depths (0.24–0.30 meters) but varied in size (between 643 and 7,149 square meters; Spivak et al., 2017, 2018). The U.S. Geological Survey analyzed radioisotope concentrations for lead-210, radium-226, cesium-127, and beryllium-7 from six marsh cores and three pond cores to develop an age model for each core. This data release includes calculated percent dry bulk density and raw radioisotope data for these cores.  
+
+Spivak, A.C., Gosselin, K., Howard, E., Mariotti, G., Forbrich, I., Stanley, R., and Sylva, S.P., 2017, Shallow ponds are heterogeneous habitats within a temperate salt marsh ecosystem: Journal of Geophysical Research-Biogeosciences, 122(6), 1371-1384.  
+
+Spivak, A. C., Gosselin, K. M., and Sylva, S.P., 2018, Shallow ponds are biogeochemically distinct habitats in salt marsh ecosystems: Limnology and Oceanography, 63(4), 1622-1642.</abstract>
+      <purpose>Sediment cores were collected, age-dated, and bulk soil properties measured to determine vertical sediment accretion and year of sediment deposition for soil organic carbon model calibration.</purpose>
+      <supplinf>Field collection of the data was by Woods Hole Oceanographic Institution, with lab analyses taking place at the USGS Woods Hole Coastal and Marine Science Center.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <mdattim>
+          <sngdate>
+            <caldate>20151208</caldate>
+          </sngdate>
+          <sngdate>
+            <caldate>20140716</caldate>
+          </sngdate>
+        </mdattim>
+      </timeinfo>
+      <current>Ground Condition. These are the dates when the cores were collected.</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-70.876922607422</westbc>
+        <eastbc>-70.765342712402</eastbc>
+        <northbc>42.797164102086</northbc>
+        <southbc>42.691520567613</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>biota</themekey>
+        <themekey>geoscientificInformation</themekey>
+        <themekey>location</themekey>
+        <themekey>environment</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>soil chemistry</themekey>
+        <themekey>radiometric dating</themekey>
+        <themekey>wetland ecosystems</themekey>
+        <themekey>sedimentation</themekey>
+        <themekey>piston coring</themekey>
+      </theme>
+      <theme>
+        <themekt>National Agricultural Library Thesaurus</themekt>
+        <themekey>salt marshes</themekey>
+        <themekey>cesium radioisotopes</themekey>
+        <themekey>radionuclides</themekey>
+      </theme>
+      <theme>
+        <themekt>none</themekt>
+        <themekey>lead-210</themekey>
+        <themekey>cesium-137</themekey>
+        <themekey>gamma spectroscopy</themekey>
+        <themekey>Coastal and Marine Hazards Program</themekey>
+        <themekey>CHMRP</themekey>
+        <themekey>Woods Hole Coastal and Marine Science Center</themekey>
+        <themekey>WHCMSC</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:5fb41153d34eb413d5e0af37</themekey>
+      </theme>
+      <place>
+        <placekt>Geographic Names Information System (GNIS)</placekt>
+        <placekey>United States of America (1890467)</placekey>
+        <placekey>Commonwealth of Massachusetts (606926)</placekey>
+        <placekey>Rowley River (614599)</placekey>
+        <placekey>Plum Island (613733)</placekey>
+      </place>
+    </keywords>
+    <accconst>None</accconst>
+    <useconst>none</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Sheron Y. Luk</cntper>
+          <cntorg>Woods Hole Oceanographic Institute</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>266 Woods Hole Road</address>
+          <city>Woods Hole</city>
+          <state>MA</state>
+          <postal>02543</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>+1 508 289 3532</cntvoice>
+        <cntemail>syluk@whoi.edu</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <browse>
+      <browsen>https://www.sciencebase.gov/catalog/file/get/5fb41153d34eb413d5e0af37/?name=PlumIsland_pond_creek.jpeg</browsen>
+      <browsed>Photograph of a salt marsh pond (left) and tidal creek (right) within the Plum Island Long-Term Ecological Research domain, Rowley, MA. Photo credit: Sheron Y. Luk</browsed>
+      <browset>JPEG</browset>
+    </browse>
+    <datacred>Sam Kelsey, a colleague at the Marine Biological Laboratory, provided RTK GPS latitude, longitude, and land surface elevations for this dataset. Funding for this research was provide by: National Science Foundation, National Oceanic Atmospheric Administration, USGS Coastal and Marine Geology Program</datacred>
+    <crossref>
+      <citeinfo>
+        <origin>Amanda C. Spivak</origin>
+        <origin>Sheron Y. Luk</origin>
+        <pubdate>2020</pubdate>
+        <title>Bulk soil and elemental properties of marsh and pond soils collected in 2014-2015 within Plum Island Ecosystems-LTER</title>
+        <geoform>
+        </geoform>
+        <pubinfo>
+          <pubplace>Woods Hole, MA</pubplace>
+          <publish>Biological and Chemical Oceanography Data Management Office</publish>
+        </pubinfo>
+        <onlink>https://www.bco-dmo.org/dataset/827298</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Luk, Sheron Y.</origin>
+        <origin>Todd-Brown, Katherine</origin>
+        <origin>Gonneea, Meagan E.</origin>
+        <origin>McNichol, Ann P.</origin>
+        <origin>Sanderman, Jonathan</origin>
+        <origin>Gosselin, Kelsey</origin>
+        <origin>Spivak, Amanda C.</origin>
+        <pubdate>2020</pubdate>
+        <title>Soil organic carbon development and turnover in natural and disturbed salt marsh environments</title>
+        <geoform>
+        </geoform>
+        <serinfo>
+          <sername>Geophysical Research Letters</sername>
+          <issue>doi: 10.1029/2020GL090287</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>Washington, DC</pubplace>
+          <publish>American Geophysical Union</publish>
+        </pubinfo>
+        <othercit>The journal article this data release supports.</othercit>
+        <onlink>https://doi.org/10.1029/2020GL090287</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>Radioisotope detection limits are specific to an individual sample and are a function of: 1) the detector efficiency at the energy of the peak being measured; 2) the branching ratio (number of decay events observed in each peak), 3) the background activity within the sample. Detector efficiency was determined from EPA standard pitchblende ore in the same geometry as the samples. Activities of 7Be, 137Cs, and 210Pb were decay corrected to time of collection. Suppression of low energy peaks by self-absorption was corrected for according to Cutshall and others, 1983. Peak detection, with respect to background activity, is calculated for each radioisotope in the APTEC software during sample analysis. Generally, measured radioisotope activity greater than or equal to 0.2 (210Pb), 0.1 (226Ra), 0.4 (7Be), and 0.1(137Cs) dpm/g were accepted as above detection limit for this dataset. 
+
+Cutshall, N.H., Larsen, I.L., and Olsen, C.R., 1983, Direct analysis of 210 Pb in sediment samples—Self-absorption corrections: Nuclear Instruments and Methods in Physics Research, v. 206, issues 1–2, p. 309–312, https://doi.org/10.1016/0167-5087(83)91273-5.</attraccr>
+    </attracc>
+    <logic>Data was plotted to look for possible outliers and queried for minimum and maximum values to ensure that reported data fell within expected ranges. Any measured value below detection is given the numerical value of 0. See gamma analysis process step for radioisotope detection limits. Each sample was treated in the same manner for each analysis.</logic>
+    <complete>Dataset is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details. All sample measurements are reported.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>Horizontal positions were measured by colleagues at the Marine Biological Laboratory with a Real-Time Kinematic (RTK) GPS (model Topcon Hiper V GPS). Resolution of this measurement method is 0.001 meters. Reported latitude and longitude of core collection locations are the means of at least three survey points with a standard deviation of less than 0.010 meters. No formal positional accuracy tests were conducted.</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>Land surface elevations were measured by colleagues at the Marine Biological Laboratory with a Real-Time Kinematic (RTK) GPS (model Topcon Hiper V GPS). Resolution of this measurement is 0.001 meters. Land surface elevation at the core collection location is reported in the attribute "Depth_min" at the value 0 cm. For MARSH cores, a mean of at least three survey points is reported as the land surface elevation at the core collection point (standard deviation of less than 0.005 meters). Pond surface elevations were calculated as the difference between elevation of the marsh surface on the edge of the pond and pond depth. Means, of at least three survey points (standard deviation of less than 0.005 meters), for each pond edge were used in this calculation; pond depths were measured using a meter stick: POND 1 was 0.030 m; POND 2 was 0.026 m; POND 3 was 0.026 m. No formal positional accuracy tests were conducted.</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>Sediment cores were collected in coastal salt marshes in 2014 and 2015. A piston coring system was used, where the PVC core liner (diameter 11 cm, 1-2 m in length) was fitted with a gasketed piston that was placed on the sediment surface. The clear, sharpened core liner was pushed down into the marsh subsurface, while the piston was maintained at the marsh surface via tension on the piston. We visually observed the sediment surface to ensure that the soil column did not compact during collection. Once the core reached the desired depth, the core liner and piston were removed from the marsh with a pulley system. Cores were collected from three general locations on the marsh platform (attribute "Status" = MARSH) and from three separate ponds (attribute "Status" = POND). These locations are given an enumerated "Site_ID". Each core was assigned an enumerated "Core_ID". Note that replicate cores were collected from each marsh site but only one core was collected from each of the three ponds.  The process date reflects the last occurrence of the work.</procdesc>
+        <procdate>2015</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>After each collection, the sediment cores were immediately returned to the USGS Woods Hole Coastal and Marine Science Center. They were placed in a refrigerator for 1 to 3 days, then split vertically, sectioned at 1 or 2 cm intervals, frozen, and then freeze dried for 7 days, until sediment weights did not change further. Dry bulk density was determined as the dry weight of a known volume of sample.  
+
+Approximately 5 g of dried sediment sample was blended and homogenized prior to sealing in a jar for a minimum of three weeks and then placed on a planar-type gamma counter for 24 to 48 hours to measure 7Be, 137Cs, 210Pb, and 226Ra at 477, 661.6, 46.5 and 352 kiloelectronvolts (KeV) energies respectively (Canberra Inc., USA). The detection limit is specific to an individual sample and is a function of: 1) the detector efficiency at the energy of the peak being measured; 2) the branching ratio (number of decay events observed in each peak), 3) the background activity within the sample. Detector efficiency was determined from EPA standard pitchblende ore in the same geometry as the samples. Activities of 7Be, 137Cs, and 210Pb were decay corrected to time of collection. Suppression of low energy peaks by self-absorption was corrected for according to Cutshall and others, 1983. Peak detection, with respect to background activity, is calculated for each radioisotope in the APTEC software during sample analysis. Generally, measured radioisotope activity greater than or equal to 0.2 (210Pb), 0.1 (226Ra), 0.4 (7Be), and 0.1(137Cs) dpm/g were accepted as above detection limit for this dataset.  Values reported are above these limits, while values below are reported as 0. All gamma analyses were ongoing from 2015 and completed in 2017. 
+
+Cutshall, N.H., Larsen, I.L., and Olsen, C.R., 1983, Direct analysis of 210 Pb in sediment samples—Self-absorption corrections: Nuclear Instruments and Methods in Physics Research, v. 206, issues 1–2 , p. 309–312, https://doi.org/10.1016/0167-5087(83)91273-5.</procdesc>
+        <procdate>2017</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Data from gamma analysis was entered into an EXCEL spreadsheet. The Excel spreadsheet was exported as a CSV (UTF-8) file from Excel for Mac version 15.33. The file was further proofed and saved as a .CSV from EXCEL for WINDOWS 10.</procdesc>
+        <procdate>2020</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <indspref>Geographic Names Information System (GNIS) placenames are included as keywords to give the general location of core collections. The entity contains attributes with specific latitude and longitude of each core collection; other attributes are also included to describe the core collection location. Refer to the entity and attribute definitions for "Site_ID", "Status", and "Core_ID" for details.</indspref>
+    <direct>Point</direct>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <geograph>
+        <latres>1.0E-5</latres>
+        <longres>1.0E-5</longres>
+        <geogunit>Decimal degrees</geogunit>
+      </geograph>
+      <geodetic>
+        <horizdn>North American Datum of 1983</horizdn>
+        <ellips>Geodetic Reference System 80</ellips>
+        <semiaxis>6378137.0</semiaxis>
+        <denflat>298.257222101</denflat>
+      </geodetic>
+    </horizsys>
+    <vertdef>
+      <altsys>
+        <altdatum>North American Vertical Datum of 1988 (NAVD88)</altdatum>
+        <altres>0.001</altres>
+        <altunits>meters</altunits>
+        <altenc>Attribute values</altenc>
+      </altsys>
+    </vertdef>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>data_PIE_marsh_radioisotope.csv</enttypl>
+        <enttypd>Comma separated file with sediment core data collected from vegetated and pond salt marsh sites within the Plum Island Ecosystems – Long Term Ecological Research (PIE-LTER) domain, Rowley, MA. The file includes latitude and longitude of core collection, calculated values of soil dry bulk density, and radioisotope data. The dataset includes 293 records.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Status</attrlabl>
+        <attrdef>A text identifier indicating whether the core was collected in a marsh or pond location.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>MARSH</edomv>
+            <edomvd>A data point from a core collected from the high marsh.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>POND</edomv>
+            <edomvd>A data point from a core collected from a salt marsh pond</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Site_ID</attrlabl>
+        <attrdef>An enumerated identifier indicating from which of the three study sites the core was collected.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>A core collected from Site 1; also reference the attributes "Lat" and "Lon" for specific locations.</edomvd>
+            <edomvds>Producer Defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>A core collected from Site 2; also reference the attributes "Lat" and "Lon" for specific locations.</edomvd>
+            <edomvds>Producer Defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>A core collected from Site 3; also reference the attributes "Lat" and "Lon" for specific locations.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Core_ID</attrlabl>
+        <attrdef>An enumerated identifier indicating the number assigned to replicate core collected from a given site.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NaN</edomv>
+            <edomvd>Pond core was not designated a CoreID.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>First core collected at a given marsh site.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Second core collected at a given marsh site.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Date</attrlabl>
+        <attrdef>A numeric identifier of the date the core was collected in the format of month/day/year</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>12/8/2015</edomv>
+            <edomvd>Sampling day of December 8, 2015.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>7/16/2014</edomv>
+            <edomvd>Sampling day of July 16, 2014.</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Lat</attrlabl>
+        <attrdef>Latitude decimal degrees north, NAD83</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>42.73739991</rdommin>
+            <rdommax>42.741354</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Lon</attrlabl>
+        <attrdef>Longitude decimal degrees west, NAD83. The negative value indicates a location in the western hemisphere.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-70.84720027</rdommin>
+            <rdommax>-70.83000142</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth_min</attrlabl>
+        <attrdef>A numeric identifier of the interval minimum depth below the sediment interface in centimeters.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>46</rdommax>
+            <attrunit>centimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth_max</attrlabl>
+        <attrdef>A numeric identifier of the interval maximum depth below the sediment interface in centimeters.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>48</rdommax>
+            <attrunit>centimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Elevation</attrlabl>
+        <attrdef>A numeric identifier of interval elevation relative to NAVD88 datum in centimeters. Calculated by subtracting the minimum depth of soil horizon from the NAVD88 elevation of the core location (given at min_depth = 0).</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.850</rdommin>
+            <rdommax>1.509</rdommax>
+            <attrunit>meters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>DBD</attrlabl>
+        <attrdef>Dry Bulk Density: A numeric identifier of the sediment dry bulk density in grams per cubic centimeter (g/cm3).</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.07</rdommin>
+            <rdommax>0.94</rdommax>
+            <attrunit>grams per cubic centimeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pb</attrlabl>
+        <attrdef>A numeric identifier of the sediment total lead-210 activity in decays per minute per gram (dpm/g). Measured at 46.6 kiloelectronvolt (KeV) on a well gamma counter. The value 0.00 is given to analyzed samples found to be below detection; see gamma analysis process step for detection limits of radioisotopes.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.08</rdommin>
+            <rdommax>26.19</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pb_e</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total lead-210 activity in decays per minute per gram (dpm/g). If the measured radioisotope was below detection limit, the measurement error will also be assigned the value 0.00.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.10</rdommin>
+            <rdommax>0.74</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>226Ra</attrlabl>
+        <attrdef>A numeric identifier of the sediment total radium-226 activity in decays per minute per gram (dpm/g). The value 0.00 is given to analyzed samples found to be below detection; see gamma analysis process step for detection limits of radioisotopes.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.25</rdommin>
+            <rdommax>2.35</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>226Ra_e</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total radium-226 activity in decays per minute per gram (dpm/g). If the measured radioisotope was below detection limit, the measurement error will also be assigned the value 0.00.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.04</rdommin>
+            <rdommax>0.36</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pbex</attrlabl>
+        <attrdef>A numeric identifier of the sediment excess lead-210 activity in decays per minute per gram (dpm/g). Calculated as the difference between total lead-210 and total radium-226 activities. If lead-210 and radium-226 were below detection, this calculated value is also reported as below detection.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-0.35</rdommin>
+            <rdommax>25.1</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pbex_e</attrlabl>
+        <attrdef>A numeric identifier of the propagated measurement error in sediment excess lead-210 activity in decays per minute per gram (dpm/g). If lead-210 and radium-226 were below detection, this calculated value is also reported as below detection.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.10</rdommin>
+            <rdommax>0.76</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>137Cs</attrlabl>
+        <attrdef>A numeric identifier of the sediment total cesium-137 activity in decays per minute per gram (dpm/g). Measured at 662 kiloelectronvolt (KeV) on a well gamma counter. The value 0.00 is given to analyzed samples found to be below detection; see gamma analysis process step for detection limits of radioisotopes.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.11</rdommin>
+            <rdommax>3.24</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>137Cs_e</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total cesium-137 activity in decays per minute per gram (dpm/g). If the measured radioisotope was below detection limit, the measurement error will also be assigned the value 0.00.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.02</rdommin>
+            <rdommax>0.16</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>7Be</attrlabl>
+        <attrdef>A numeric identifier of the total sediment beryllium-7 activity in decays per minute per gram (dpm/g). Measured at 447 kiloelectronvolt (KeV) on a well gamma counter. The value 0.00 is given to analyzed samples found to be below detection; see gamma analysis process step for detection limits of radioisotopes.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.29</rdommin>
+            <rdommax>13.35</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>7Be_e</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total beryllium-7 activity in decays per minute per gram (dpm/g). If the measured radioisotope was below detection limit, the measurement error will also be assigned the value 0.00.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.39</rdommin>
+            <rdommax>2.35</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey - ScienceBase</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>The dataset contains one CSV file containing the data (data_PIE_marsh_radioisotope.csv), the browse graphic, and the FGDC CSDGM metadata in XML format.</resdesc>
+    <distliab>Neither the U.S. Government, the Department of the Interior, nor the USGS, nor any of their employees, contractors, or subcontractors, make any warranty, express or implied, nor assume any legal liability or responsibility for the accuracy, completeness, or usefulness of any information, apparatus, product, or process disclosed, nor represent that its use would not infringe on privately owned rights. The act of distribution shall not constitute any such warranty, and no responsibility is assumed by the USGS in the use of these data or related materials. Any use of trade, product, or firm names is for descriptive purposes only and does not imply endorsement by the U.S. Government.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Digital Data</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/P9HIOWKT</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None.</fees>
+    </stdorder>
+    <techpreq>The data release includes 1 comma separated file. The user must have software capable of opening the file and reading the data format.</techpreq>
+  </distinfo>
+  <metainfo>
+    <metd>20201222</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Sheron Y. Luk</cntper>
+          <cntorg>Woods Hole Oceanographic Institution</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>266 Woods Hole Road</address>
+          <city>Woods Hole</city>
+          <state>MA</state>
+          <postal>02543</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>+1 508 289 3532</cntvoice>
+        <cntemail>syluk@whoi.edu</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>
