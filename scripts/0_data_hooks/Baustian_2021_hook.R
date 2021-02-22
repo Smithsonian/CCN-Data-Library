@@ -190,9 +190,11 @@ final_methods <- reorderColumns("methods", methods)
 
 #### Study Citation ####
 
-id_doi <- "10.5066/P93U3B3E"
+data_doi <- "10.5066/P93U3B3E"
+pub_doi <- "10.1029/2020JG005832" # doi not active yet (paper hasnt been officially published)
 
-data_bib <- GetBibEntryWithDOI(id_doi)
+data_bib <- GetBibEntryWithDOI(data_doi)
+# pub_bib <- GetBibEntryWithDOI(pub_doi)
 
 # Convert citations to dataframe
 data_citation <- as.data.frame(data_bib) %>%
@@ -202,9 +204,11 @@ data_citation <- as.data.frame(data_bib) %>%
          bibliography_id = id,
          key = id)
 
+# pub_citation
+
 # # Curate biblio so ready to read out as a BibTex-style .bib file
 study_citations <- data_citation %>%
-  # bind_rows(report_citation) %>%
+  # bind_rows(pub_citation) %>%
   mutate(publication_type = bibtype) %>%
   select(study_id, bibliography_id, publication_type, key, bibtype, everything())
 

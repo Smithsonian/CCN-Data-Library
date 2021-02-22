@@ -53,7 +53,8 @@ methods <- read_csv("./data/primary_studies/Holmquist_2018/original/V1_Holmquist
 # remove the following studies that are now in their own separate data hooks: 
 removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001", "Noe_et_al_2016", "Johnson_et_al_2007", "Watson_and_Byrne_2013",
                      "Boyd_and_Sommerfield_2016", "Unger_et_al_2016", "Boyd_2012", "Boyd_et_al_2017", "Callaway_et_al_2012", 
-                     "Gerlach_et_al_2017", "Craft_2007", "Crooks_et_al_2014", "Crooks_et_al_2013", "Breithaupt_et_al_2014", "Kemp_et_al_2012")
+                     "Gerlach_et_al_2017", "Craft_2007", "Crooks_et_al_2014", "Crooks_et_al_2013", "Breithaupt_et_al_2014", "Kemp_et_al_2012", 
+                     "Ensign_et_al_2015", "Piazza_et_al_2011")
 
 ## 3. Recode and rename factors #################
 
@@ -236,10 +237,10 @@ WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Holmquist_2018/derivativ
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Make sure column names are formatted correctly: 
-test_colnames("core_level", cores) 
+test_colnames("cores", cores) 
 test_colnames("depthseries", depthseries)
 test_colnames("species", species) 
-test_colnames("impact", impacts) 
+test_colnames("impacts", impacts) 
 
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
