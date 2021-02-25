@@ -1,7 +1,7 @@
 # Coastal Carbon Research Coordination Network
 # Database Guidance V2
-
 # Synthesis Post-Processing Script
+
 # The code iterates through the CCN database, which has already been converted to V2 guidance
 # and assigns country and administrative division to each core
 # Contact: Jaxine Wolfe, wolfejax@si.edu
@@ -55,13 +55,25 @@ divisions <- readOGR(dsn = "./data/input_shapefiles/admin_divisions/",
 divisions_sp <- spTransform(divisions, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
 # Core data updated to V2 guidance
-cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max=7000)
+cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max=7000) %>%
+  rename(original_core_id = core_id) %>%
+  # create a REAL unique core id
+  mutate(core_id = str_c(study_id, original_core_id, sep = "_"))
 cores_no_na <- cores %>% drop_na(longitude) # remove cores with NA coords
+
+# THIS SCRIPT ASSUMES ALL CORE IDS are unique
+# length(unique(cores$core_id)) == nrow(cores)
+# duplicates <- cores %>% add_count(study_id, site_id, core_id) %>%
+#   filter(n>1)
 
 # site table not in V2 folder yet..
 # site data will be joined once the geography attributes are added
 # sites <- read_csv("data/CCRCN_synthesis/CCRCN_sites.csv", guess_max=6206)
 
+# sp_cores  <- sp::SpatialPoints(cores_no_na[c('longitude','latitude')], proj4string = CRS(projection))
+# res <- rgeos::gContains(countries_sp, sp_cores, byid=T, prepared=T, returnDense=F)
+# cores_no_na$country <- apply(res, 1, which)
+# which(res == TRUE, arr.ind = )
 
 ## 3. Assign Geography to Cores ####
 
@@ -244,7 +256,8 @@ core_geography <- left_join(cores, country_cores_gather) %>%
   # merge the us state and internation admin divisions fields
   mutate(admin_division = ifelse(!is.na(us_state) & is.na(admin_division), us_state, admin_division),
          country = ifelse(is.na(country), country_eez, country)) %>%
-  select(-c(us_state, admin_country, country_eez))
+  select(-c(us_state, admin_country, country_eez, core_id)) %>%
+  rename(core_id = original_core_id)
 
 # Investigate NA cases in geography assignment
 length(which(is.na(core_geography$country))) # country has 23 NA b/c lat/lon is NA

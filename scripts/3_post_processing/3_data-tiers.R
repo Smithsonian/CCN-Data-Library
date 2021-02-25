@@ -1,3 +1,7 @@
+# Coastal Carbon Research Coordination Network ####
+# Database Guidance V2
+# Synthesis Post-Processing Script
+
 # James Holmquist Pseudo Coded this on 2020-09-30
 # Code written on 2020-10-01 and 02.
 

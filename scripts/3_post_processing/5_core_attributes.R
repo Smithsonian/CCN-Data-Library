@@ -1,8 +1,8 @@
 # Coastal Carbon Research Coordination Network
 # Database Guidance V2
+# Synthesis Post-Processing Script
 
-## Jaxine Wolfe, wolfejax@si.edu
-## 2020-10-08
+# Contact: Jaxine Wolfe, wolfejax@si.edu
 
 # The code iterates through the CCN database, which has already been converted to V2 guidance
 # It looks at the data available for each core and extracts the attributes names for which data is not entirely missing.

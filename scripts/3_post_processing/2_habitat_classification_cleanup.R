@@ -1,5 +1,12 @@
+# Coastal Carbon Research Coordination Network ####
+# Database Guidance V2
+
+# Synthesis Post-Processing Script
+# Assign habitat to each core in the synthesis
+# contact: James Holmquist (HolmquistJ@si.edu) or Jaxine Wolfe (wolfejax@si.edu)
+
 methods2 <- read_csv("data/CCRCN_V2/methods.csv") # methods
-cores2 <- read_csv("data/CCRCN_V2/cores.csv", guess_max=6206)
+cores2 <- read_csv("data/CCRCN_V2/cores.csv", guess_max = 6206)
 depthseries2 <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 42698)
 species2 <- read_csv("data/CCRCN_V2/species.csv")
 
@@ -64,6 +71,8 @@ habitat_comparison <- habitat_comparison %>%
 habitat_comparison_NA2 <- filter(habitat_comparison, is.na(habitat1) & is.na(habitat2) & is.na(habitat3) & is.na(habitat4) & is.na(habitat5) & is.na(habitat6) & is.na(habitat7))
 
 # Seems pretty reasonable to leave these NA's
+# StLaurent cores are probably marsh
+# there are some species described that havent been assicated with a habitat in our species-habitat table
 
 habitat_final <- habitat_comparison %>% 
   select(study_id, core_id, habitat1:habitat6) %>%
@@ -85,7 +94,8 @@ habitat_final <- habitat_comparison %>%
 
 
 cores_with_habitat <- cores2 %>% 
-  left_join(habitat_final, by=c("study_id", "core_id"))
+  left_join(habitat_final, by=c("study_id", "core_id")) %>%
+  select(-habitat1) # Keshta habitat is defined in the hook script
 
 # write to file!
 write_csv(cores_with_habitat, "data/CCRCN_V2/cores.csv")
