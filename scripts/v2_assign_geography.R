@@ -31,7 +31,7 @@ library(rnaturalearth)
 eez <- readOGR(dsn = "./data/input_shapefiles/World_EEZ_v11_20191118/",
                layer = "eez_v11")
 sf_eez <- st_as_sf(eez)
-eez_sp <- spTransform(eez, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+# eez_sp <- spTransform(eez, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
 # EEZ 24 nautical mile zone
 # havent investigated this shapefiles coverage yet
@@ -44,18 +44,19 @@ eez_sp <- spTransform(eez, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 countries <- readOGR(dsn = "./data/input_shapefiles/world_countries/",
                      layer = "country")
 sf_countries <- st_as_sf(countries)
-countries_sp <- spTransform(countries, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+# countries_sp <- spTransform(countries, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
 # US States
 states <- readOGR(dsn = "./data/input_shapefiles/us_states/states_political_boundaries",
                   layer = "state_pol")
 sf_states <- st_as_sf(states)
-states_sp <- spTransform(states, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+# states_sp <- spTransform(states, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
 # admin divisions
 divisions <- readOGR(dsn = "./data/input_shapefiles/admin_divisions/",
                      layer = "admin")
-divisions_sp <- spTransform(divisions, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+sf_divisions <- st_as_sf(divisions)
+# divisions_sp <- spTransform(divisions, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
 # Core data updated to V2 guidance
 cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max=7000)
@@ -77,10 +78,12 @@ sf_cores <- st_as_sf(cores_no_na, coords = c("longitude", "latitude"), crs = pro
 
 # Check to see what cores are in which countries
 st_crs(sf_cores) == st_crs(sf_states) # same projection
+st_crs(sf_cores) == st_crs(sf_countries) # same projection
+st_crs(sf_cores) == st_crs(sf_eez) # same projection
 
-cores_in_country <- sf_cores %>% st_join(sf_countries, join = st_within)
 cores_in_states <- sf_cores %>% st_join(sf_states, join = st_within)
-cores_in_states <- sf_cores %>% st_join(sf_eez, join = st_within)
+cores_in_countries <- sf_cores %>% st_join(sf_countries, join = st_within)
+cores_in_eezs <- sf_cores %>% st_join(sf_eez, join = st_within)
 
 # Check to see what cores are in which countries
 # This returns a matrix of logical outputs (TRUE or FALSE). Each column corresponds

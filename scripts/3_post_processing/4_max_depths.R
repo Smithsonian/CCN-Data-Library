@@ -1,7 +1,7 @@
 # Max depths
 
-cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max=6206)
-depthseries <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 42698)
+cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max = 7000)
+depthseries <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 50000)
 
 max_depths <- depthseries %>% 
   filter(complete.cases(depth_max)) %>% 

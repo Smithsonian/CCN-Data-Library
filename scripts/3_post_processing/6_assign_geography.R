@@ -27,17 +27,18 @@ library(rnaturalearth)
 # countries
 # problem: this does not include EEZs so offshore cores are NA 
 
-# EEZ
+# EEZs
+# 200 nautical mile EEZ shapefile 
+# located all the nearshore cores (although its much larger to load into R)
 eez <- readOGR(dsn = "./data/input_shapefiles/World_EEZ_v11_20191118/",
                   layer = "eez_v11")
 eez_sp <- spTransform(eez, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
 # EEZ 24 nautical mile zone
-# havent investigated this shapefiles coverage yet
-# the 200mi EEZ located all the nearshore cores (although its much larger to load into R)
-# eez24 <- readOGR(dsn = "./data/input_shapefiles/World_24NM_v3_20191118/",
+# This is NOT ENOUGH to capture all the cores outside of the country shapefile
+# eez <- readOGR(dsn = "./data/input_shapefiles/World_24NM_v3_20191118/",
 #                layer = "eez_24nm_v3")
-# eez24_sp <- spTransform(eez24, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+# eez_sp <- spTransform(eez, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
 # world countries
 countries <- readOGR(dsn = "./data/input_shapefiles/world_countries/",
