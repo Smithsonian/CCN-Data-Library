@@ -16,8 +16,9 @@
 # B1 - Dating information present and complete
 
 # A3 - Elevation data present but of low quality, dating info present.
-# A2 - Elevation data is high quality, but dating info present but incomplete.
+# A2 - Elevation data is high quality, and dating info present but incomplete.
 # A1 - Elevation data is high quality, and dating info is complete.
+require(tidyverse)
 
 # Import data files
 # materials and methods
@@ -110,10 +111,10 @@ for (i in 1:nrow(study_site_core)) {
       date_codes <- c(date_codes, NA) 
     }
     
-    # If total_pb210_activity is present, then excess_pb210_activity has to be there
+    # If excess_pb210_activity is present, then total_pb210_activity has to be there
     # as well as at least one of ra226_activity, pb214_activity, and bi214_activity
-    if ("total_pb210_activity" %in% names(temp_depthseries) | "excess_pb210_activity" %in%  names(temp_depthseries)) {
-      if (any(c("ra226_activity", "pb214_activity", "bi214_activity") %in% names(temp_depthseries))) {
+    if ("excess_pb210_activity" %in%  names(temp_depthseries)) {
+      if ("total_pb210_activity" %in% names(temp_depthseries)) {
         date_codes <- c(date_codes, "B1")
       } else {
         date_codes <- c(date_codes, "B2")
@@ -127,7 +128,6 @@ for (i in 1:nrow(study_site_core)) {
     
     # For any radioisotopes included, their respective uncertainties need to be there too.
     # if excess_pb210_activity then excess_pb210_activity_se
-    
     if ("cs137_activity" %in% names(temp_depthseries)) {
       if ("cs137_activity_se" %in% names(temp_depthseries)) {
         date_codes <- c(date_codes, "B1")
@@ -255,6 +255,14 @@ for (i in 1:nrow(study_site_core)) {
 
 }
 
+# If stocks_qual_code
+# dates_qual_code
+# elevation_qual_code 
+# in cores already, then delete 
+if ("stocks_qual_code" %in% names(cores)) { cores <- select(cores, -stocks_qual_code) }
+if ("dates_qual_code" %in% names(cores)) { cores <- select(cores, -dates_qual_code) }
+if ("elevation_qual_code" %in% names(cores)) { cores <- select(cores, -elevation_qual_code) }
+
 # !!! write to a directory
 cores <- cores %>% 
   left_join(study_site_core, by=c("study_id", "core_id"))
@@ -265,23 +273,23 @@ write_csv(cores, "data/CCRCN_V2/cores.csv")
 # Stocks
 
 # map_stocks <- cores %>%
-#   filter(!is.na(stocks_qual_code))
-# 
-# ggplot(map_stocks, aes(x=longitude, y=latitude, color=stocks_qual_code,
-#                        shape=stocks_qual_code)) +
-#   geom_point(alpha=0.75)
-# 
-# map_car <- cores %>%
-#   filter(!is.na(dates_qual_code))
-# 
-# ggplot(map_car, aes(x=longitude, y=latitude, color=dates_qual_code,
-#                        shape=dates_qual_code)) +
-#   geom_point(alpha=0.75)
-# 
-# map_elv <- cores %>%
-#   filter(!is.na(elevation_qual_code))
-# 
-# ggplot(map_elv, aes(x=longitude, y=latitude, color=elevation_qual_code,
-#                     shape=elevation_qual_code)) +
-#   geom_point(alpha=0.75)
+#    filter(!is.na(stocks_qual_code))
+#  
+#  ggplot(map_stocks, aes(x=longitude, y=latitude, color=stocks_qual_code,
+#                         shape=stocks_qual_code)) +
+#    geom_point(alpha=0.75)
+#  
+#  map_car <- cores %>%
+#    filter(!is.na(dates_qual_code))
+#  
+#  ggplot(map_car, aes(x=longitude, y=latitude, color=dates_qual_code,
+#                         shape=dates_qual_code)) +
+#    geom_point(alpha=0.75)
+#  
+#  map_elv <- cores %>%
+#    filter(!is.na(elevation_qual_code))
+#  
+#  ggplot(map_elv, aes(x=longitude, y=latitude, color=elevation_qual_code,
+#                      shape=elevation_qual_code)) +
+#    geom_point(alpha=0.75)
 
