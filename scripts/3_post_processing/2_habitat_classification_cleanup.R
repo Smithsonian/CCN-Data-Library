@@ -4,6 +4,7 @@
 # Synthesis Post-Processing Script
 # Assign habitat to each core in the synthesis
 # contact: James Holmquist (HolmquistJ@si.edu) or Jaxine Wolfe (wolfejax@si.edu)
+require(tidyverse)
 
 methods2 <- read_csv("data/CCRCN_V2/methods.csv") # methods
 cores2 <- read_csv("data/CCRCN_V2/cores.csv", guess_max = 6206)
@@ -42,7 +43,8 @@ cores_sal_veg_habitat <- cores2 %>%
                                                         "brackish to fresh", "polyhaline", "estuarine C-CAP",
                                                         "estuarine", "bracish to saline", "intermediate salinity"
                                
-         , NA), ifelse(latitude >= -40 & latitude <= 35, "mangrove", "swamp"), "swamp")  # from Giri et al. Fig 3
+         , NA), ifelse(latitude >= -25 & latitude <= 25, "mangrove", "swamp"), "swamp")  # from Giri et al. 2010 Giri, C.; Ochieng, E.; Tieszen, L.L.; Zhu, Z.; Singh, A.; Loveland, T.; Masek, J. & Duke, N. (2010). "Status and distribution of mangrove forests of the world using earth observation satellite data" (PDF). Global Ecology and Biogeography. 20 (1): 154–159. doi:10.1111/j.1466-8238.2010.00584.x. Retrieved 2012-02-08
+         
         , NA)) %>%
   select(study_id:core_id, vegetation_class, salinity_class, habitat1, habitat3, habitat7)
 
@@ -101,6 +103,6 @@ cores_with_habitat <- cores2 %>%
 write_csv(cores_with_habitat, "data/CCRCN_V2/cores.csv")
 
 # ggplot(data = cores_with_habitat, aes(x=longitude, y=latitude)) +
-#   geom_point(aes(color=habitat), alpha=0.4) +
-#   theme_dark()
+#    geom_point(aes(color=habitat), alpha=0.4) +
+#    theme_dark()
 
