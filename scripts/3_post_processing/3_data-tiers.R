@@ -25,8 +25,8 @@ require(tidyverse)
 # cores
 # depth profiles
 methods <- read_csv("data/CCRCN_V2/methods.csv")
-cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max=6206)
-depthseries <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 42698)
+cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max = 7000)
+depthseries <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 50000)
 
 # Get Unique Study ID's
 # Get Unique Site ID's

@@ -7,8 +7,8 @@
 require(tidyverse)
 
 methods2 <- read_csv("data/CCRCN_V2/methods.csv") # methods
-cores2 <- read_csv("data/CCRCN_V2/cores.csv", guess_max = 6206)
-depthseries2 <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 42698)
+cores2 <- read_csv("data/CCRCN_V2/cores.csv", guess_max = 7000)
+depthseries2 <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 50000)
 species2 <- read_csv("data/CCRCN_V2/species.csv")
 
 # If habitat is defined explicitly, then it will be used
