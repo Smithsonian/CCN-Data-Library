@@ -16,9 +16,9 @@ source("scripts/3_post_processing/scripts/qa_functions.R")
 # methods
 methods <- read_csv("data/CCRCN_synthesis/CCRCN_methods.csv")
 # cores
-cores <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", guess_max=6206)
+cores <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", guess_max = 7000)
 # depthseries
-depthseries <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max = 42698)
+depthseries <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max = 50000)
 # species
 species <- read_csv("data/CCRCN_synthesis/CCRCN_species.csv")
 # sites
