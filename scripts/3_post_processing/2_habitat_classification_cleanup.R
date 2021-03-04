@@ -37,15 +37,15 @@ cores_sal_veg_habitat <- cores2 %>%
                                   ifelse(vegetation_class %in% c("mudflat", "unvegetated"),
                                          "unvegetated",
                                          ifelse(vegetation_class == "scrub shrub", "scrub/shrub", NA)))),
-         # Kind of junk classification, but best we can do if none is better
-        habitat7 = ifelse(vegetation_class %in% c("forested", "forested to shrub", "forested to emergent"),
-                           ifelse(salinity_class %in% c("saline", "brackish", "mesohaline",
+        # Kind of junk classification, but best we can do if none is better
+        habitat7 = ifelse(vegetation_class %in% c("forested", "forested to shrub", "forested to emergent") &
+                            salinity_class %in% c("saline", "brackish", "mesohaline",
                                                         "brackish to fresh", "polyhaline", "estuarine C-CAP",
-                                                        "estuarine", "bracish to saline", "intermediate salinity"
-                               
-         , NA), ifelse(latitude >= -25 & latitude <= 25, "mangrove", "swamp"), "swamp")  # from Giri et al. 2010 Giri, C.; Ochieng, E.; Tieszen, L.L.; Zhu, Z.; Singh, A.; Loveland, T.; Masek, J. & Duke, N. (2010). "Status and distribution of mangrove forests of the world using earth observation satellite data" (PDF). Global Ecology and Biogeography. 20 (1): 154–159. doi:10.1111/j.1466-8238.2010.00584.x. Retrieved 2012-02-08
-         
-        , NA)) %>%
+                                                        "estuarine", "bracish to saline", "intermediate salinity"),
+                          ifelse(study_id == "Nahlik_and_Fennessy_2016", # If it's from Nhalick and fennesey and it's forrested then it's U.S.
+                                 ifelse(latitude <= 29.75, "mangrove", "swamp"), 
+                                 NA),  # Cavanaugh et al 2014, Use the max northern limit observed by Cavanaugh
+                          NA)) %>%
   select(study_id:core_id, vegetation_class, salinity_class, habitat1, habitat3, habitat7)
 
 cores_species_habitat <- species2 %>% 
@@ -103,6 +103,6 @@ cores_with_habitat <- cores2 %>%
 write_csv(cores_with_habitat, "data/CCRCN_V2/cores.csv")
 
 # ggplot(data = cores_with_habitat, aes(x=longitude, y=latitude)) +
-#    geom_point(aes(color=habitat), alpha=0.4) +
-#    theme_dark()
+#   geom_point(aes(color=habitat), alpha=0.4) +
+#   theme_dark()
 
