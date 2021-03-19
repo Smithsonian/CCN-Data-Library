@@ -1,9 +1,9 @@
 # Not in species table
 
-species2 <- read_csv("CCRCN_v2/species.csv") %>%
+species2 <- read_csv("data/CCRCN_V2/species.csv") %>%
   filter(complete.cases(species_code))
 
-cores2 <- read_csv("CCRCN_v2/cores.csv", guess_max=5603)
+cores2 <- read_csv("data/CCRCN_V2/cores.csv", guess_max=10000)
 
 all_core_studies <- unique(cores2$study_id)
 

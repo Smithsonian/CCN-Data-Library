@@ -27,13 +27,13 @@ sites <- read_csv("data/CCRCN_synthesis/CCRCN_sites.csv")
 impacts <- read_csv("data/CCRCN_synthesis/CCRCN_impacts.csv")
 
 # guidance 
-guidance <- read_csv("scripts/3_post_processing/tables/input_files/v1p2_to_v2/converting_v1p2_to_v2.csv")
+guidance <- read_csv("docs/post_processing/tables/input_files/v1p2_to_v2/converting_v1p2_to_v2.csv")
 
 # Species table fixes 
-species_fixes <- read_csv("scripts/3_post_processing/tables/input_files/v1p2_to_v2/species-habitat-classification-JH-20200824.csv")
+species_fixes <- read_csv("docs/post_processing/tables/input_files/v1p2_to_v2/species-habitat-classification-JH-20200824.csv")
 
 # Depth code fixes
-core_depth_fixes <- read_csv("scripts/3_post_processing/tables/input_files/v1p2_to_v2/studies_revisited.csv") %>% 
+core_depth_fixes <- read_csv("docs/post_processing/tables/input_files/v1p2_to_v2/studies_revisited.csv") %>% 
   select(study_id, core_length_flag) %>% 
   rename(core_length_flag_correct=core_length_flag)
 

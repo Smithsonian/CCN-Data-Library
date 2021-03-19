@@ -2,12 +2,12 @@
 library(data.table)
 is_overlapping<-function(x1,x2,y1,y2) { return( max(x1,y1) < min(x2,y2)) } # determine whether two depth itevals are overlapping
 
-methods2 <- read_csv("CCRCN_v2/methods.csv") # methods
-cores2 <- read_csv("CCRCN_v2/cores.csv", guess_max=5603)
-depthseries2 <- read_csv("CCRCN_v2/depthseries.csv", guess_max = 38878)
-species2 <- read_csv("CCRCN_v2/species.csv")
+methods2 <- read_csv("data/CCRCN_V2/methods.csv") # methods
+cores2 <- read_csv("data/CCRCN_V2/cores.csv", guess_max=5603)
+depthseries2 <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 38878)
+species2 <- read_csv("data/CCRCN_V2/species.csv")
 
-habitat2 <- read_csv("cleaned_up_habitat_classifications.csv")
+habitat2 <- read_csv("docs/post_processing/tables/input_files/v1p2_to_v2/cleaned_up_habitat_classifications.csv")
 core_locations <- cores2 %>% select(study_id:core_id, latitude, longitude)
 
 # Filter these out
@@ -95,20 +95,20 @@ max(depthseries2$depth_max, na.rm=T)
   ggsave("CCN Core Locations 200828.pdf", width=8.5, height=4.25)
   
   
-  write_csv(fully_joined_datasets, "soil-profiles-for-saintlan-full-20200827.csv")
+  write_csv(fully_joined_datasets, "docs/post_processing/tables/output_files/soil-profiles-for-saintlan-full-20200827.csv")
   View(fully_joined_datasets %>% 
          filter(habitat == "mangrove") %>% 
          arrange(-latitude))
   
   
   # Get the bibliography subset
-  bib <- read_csv("CCRCN/CCRCN_bibliography.csv")
+  bib <- read_csv("data/CCRCN_synthesis/CCRCN_study_citations.csv")
   bib_subset <- bib %>% 
     filter(study_id %in% fully_joined_datasets$study_id) %>%
-    select(-study_id, -X1) %>% 
+    select(-study_id) %>% 
     distinct() %>% 
     arrange(bibliography_id)
-  write_csv(bib_subset, "CCN-citations-200828.csv") 
+  write_csv(bib_subset, "docs/post_processing/tables/output_files/CCN-citations-200828.csv") 
 }
 
 # Choose 
@@ -203,7 +203,7 @@ max(depthseries2$depth_max, na.rm=T)
     coord_flip() +
     labs(color = "absv(longitude)")
   
-  write_csv(fully_joined_datasets, "soil-profiles-for-saintlan-0to5cm-20200827.csv")
+  write_csv(fully_joined_datasets, "docs/post_processing/tables/output_files/soil-profiles-for-saintlan-0to5cm-20200827.csv")
   
 }
 
@@ -278,7 +278,7 @@ max(depthseries2$depth_max, na.rm=T)
     coord_flip() +
     labs(color = "absv(longitude)")
   
-  write_csv(fully_joined_datasets, "soil-profiles-for-saintlan-0to10cm-20200827.csv")
+  write_csv(fully_joined_datasets, "docs/post_processing/tables/output_files/soil-profiles-for-saintlan-0to10cm-20200827.csv")
   
 }
 
@@ -353,7 +353,7 @@ max(depthseries2$depth_max, na.rm=T)
     coord_flip() +
     labs(color = "absv(longitude)")
   
-  write_csv(fully_joined_datasets, "soil-profiles-for-saintlan-0to30cm-20200827.csv")
+  write_csv(fully_joined_datasets, "docs/post_processing/tables/output_files/soil-profiles-for-saintlan-0to30cm-20200827.csv")
   
 }
 
@@ -428,7 +428,7 @@ max(depthseries2$depth_max, na.rm=T)
     coord_flip() +
     labs(color = "absv(longitude)")
   
-  write_csv(fully_joined_datasets, "soil-profiles-for-saintlan-0to100cm-20200827.csv")
+  write_csv(fully_joined_datasets, "docs/post_processing/tables/output_files/soil-profiles-for-saintlan-0to100cm-20200827.csv")
   
 }
 

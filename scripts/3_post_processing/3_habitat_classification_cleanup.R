@@ -19,11 +19,11 @@ if ("habitat" %in% names(cores2)) {
 }
 
 # First classify habitat according to the big habitat-specific syntheses
-sanderman <- read_csv("scripts/3_post_processing/tables/input_files/synthesis_studies/Sanderman_2018_cores.csv") %>% 
+sanderman <- read_csv("docs/post_processing/tables/input_files/synthesis_studies/Sanderman_2018_cores.csv") %>% 
   select(study_id, core_id) %>% 
   mutate(habitat2 = "mangrove")
 
-forquean <- read_csv("scripts/3_post_processing/tables/input_files/synthesis_studies/Fourqurean_2012_cores.csv") %>% 
+forquean <- read_csv("docs/post_processing/tables/input_files/synthesis_studies/Fourqurean_2012_cores.csv") %>% 
   select(study_id, core_id) %>% 
   mutate(habitat2 = "seagrass")
 
@@ -59,7 +59,7 @@ habitat_comparison <- cores_sal_veg_habitat %>% full_join(two_big_syntheses, by 
   left_join(cores_species_habitat, by = c("study_id", "core_id")) %>% 
   select(study_id, site_id, core_id, vegetation_class, salinity_class, habitat1, habitat2, habitat3, habitat4, habitat7)
 
-study_habitat_ids_manual <- read_csv("scripts/3_post_processing/tables/input_files/v1p2_to_v2/missing_habitat_manual_cleanup.csv")
+study_habitat_ids_manual <- read_csv("docs/post_processing/tables/input_files/v1p2_to_v2/missing_habitat_manual_cleanup.csv")
 
 habitat_comparison <- habitat_comparison %>% 
   left_join(study_habitat_ids_manual)
