@@ -25,3 +25,4 @@ new_guidance <- guidance_conversion %>%
          parent_data_category, quality_class, uncontrolled)
 
 write_csv(new_guidance, "docs/ccrcn_database_structure_V2.csv")  
+
