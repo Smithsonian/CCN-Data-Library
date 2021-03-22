@@ -1,0 +1,7 @@
+attribute_name,definition,required,data_type,format_unit_codes
+study_id,"Unique identifier for the study made up of the first authorês family name, as well as the second authorês family name or ¥et al.ê if more than three, then publication year separated by underscores.",optional,character,NA
+site_id,Site identification code unique to each study.,optional,character,NA
+core_id,Core identification code unique to each site.,optional,character,NA
+species_code,Code associated with a species or a vegetation assemblage.,optional,character,NA
+code_type,"Defines whether the code refers to a description, or level of plant taxonomy.",conditional,factor,NA
+habitat,"Defines whether the code refers to a description, or level of plant taxonomy.",optional,factor,NA

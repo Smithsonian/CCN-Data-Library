@@ -1,0 +1,5 @@
+attribute_name,definition,required,data_type,format_unit_codes
+study_id,"Unique identifier for the study made up of the first authorês family name, as well as the second authorês family name or ¥et al.ê if more than three, then publication year separated by underscores.",optional,character,NA
+site_id,Site identification code unique to each study.,optional,character,NA
+core_id,Core identification code unique to each site.,optional,character,NA
+impacts,Code indicating any major anthropogenic impacts historically and currently affecting the coring location.,optional,factor,NA
