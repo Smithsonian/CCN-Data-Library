@@ -15,10 +15,10 @@ cores <- read_csv("data/CCRCN_V2/core_geography.csv", guess_max = 7000) # will b
 depthseries <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 50000)
 species <- read_csv("data/CCRCN_V2/species.csv")
 impacts <- read_csv("data/CCRCN_V2/impacts.csv")
-
+citations <- read_csv("data/CCRCN_synthesis/CCRCN_study_citations.csv")
 
 # set up tables as dm objects
-dm_tables <- dm(methods, sites, cores, depthseries, species, impacts)
+dm_tables <- dm(methods, sites, cores, depthseries, species, impacts, citations)
 # I think these do the same thing
 # dm_list <- new_dm(list(sites = sites, cores = cores))
 # dm_setas <- as_dm(list(sites = sites, cores = cores))
@@ -42,6 +42,7 @@ dm_keys <- dm_tables %>%
   # define primary keys
   # all tables need a primary key first
   dm_add_pk(methods, study_id) %>%
+  dm_add_pk(citations, study_id) %>%
   dm_add_pk(sites, site_id) %>%
   dm_add_pk(cores, core_id) %>%
   dm_add_pk(depthseries, core_id) %>%
@@ -50,6 +51,7 @@ dm_keys <- dm_tables %>%
   # establish relationships (this generates the arrows)
   # relate all study ids
   dm_add_fk(sites, study_id, methods) %>%
+  dm_add_fk(citations, study_id, methods) %>%
   dm_add_fk(cores, study_id, sites) %>%
   dm_add_fk(depthseries, study_id, cores) %>%
   dm_add_fk(species, study_id, cores) %>%
@@ -66,7 +68,7 @@ dm_keys <- dm_tables %>%
 
 # visualize the data model
 dm_keys %>% 
-  dm_set_colors(green = sites, blue = cores, red = c(depthseries, impacts, species), yellow = methods) %>%
+  dm_set_colors(green = c(sites, citations), blue = cores, red = c(depthseries, impacts, species), yellow = methods) %>%
   dm_draw()
 
 # examine constraints
