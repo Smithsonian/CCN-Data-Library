@@ -341,3 +341,127 @@ reorderColumns <- function(category, df) {
     select(table_structure$attribute_name, everything())
   
 }
+
+## Test column names in table list ###########
+
+# Make sure column names match CCRCN guidelines
+testTableCols <- function(table_names, version) {
+  # create a list of datasets from the provided table names
+  datasets <- mget(table_names, envir = .GlobalEnv)
+  
+  # load guidance
+  switch(version,
+         "1" = {database_structure <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols())},
+         "2" = {database_structure <- read_csv("docs/ccrcn_database_structure_V2.csv", col_types = cols())}
+  )
+  # Create a vector of all the table names
+  tables <- unique(database_structure$table)
+  
+  # controlled_list <- list()
+  for (i in 1:length(datasets)) {
+    # define the category to filter the database by
+    category <- names(datasets[i])
+    
+    if(category %in% database_structure$table == FALSE) {
+      # Warn user they have not supplied a valid table categories and provide the list 
+      print(paste(category,"is not a valid categories. Please use one of these options:"))
+      print(tables)
+      return()
+    }
+    
+    # Gather column names from dataset and pull out columns with variables that are defined in our database structure
+    column_names <- names(datasets[[i]])
+    valid_columns <- filter(database_structure, table == category)$attribute_name
+    non_matching_columns <- subset(column_names, !(column_names %in% valid_columns))
+    
+    # workflow to store/return matching colnames..don't think this is necessary
+    # matching_columns <- subset(column_names, (column_names %in% valid_columns))
+    # subset table of controlled attributes for each group
+    # controlled <- database_structure %>%
+    #   filter(table == category & attribute_name %in% matching_columns) %>%
+    #   select(table, attribute_name, data_type, format_unit_codes)
+    # controlled_list[[i]] <- controlled # not sure why this is necessary
+    
+    if(length(non_matching_columns)==0) {
+      print("Looks good! All column names match CCRCN standards")
+    } else {
+      print(paste(c("Non-matching attributes in", category, ":", non_matching_columns), collapse=" "))
+    }
+  }
+  # concatenate list of controlled attributes 
+  # controlled_all <- do.call(rbind, controlled_list)
+  # return(controlled_all)
+}
+
+# test
+# testTableCols(table_names = table_names, version = "1")
+
+## Test variables from a table list ########
+
+# unique(controlled_variables_list$attribute_name) %in% unique(database_structure$attribute_name)
+# we need to update the controlled vars with V2 (ex. habitat, publication_type, qual codes)
+
+testTableVars <- function(table_names, version) {
+  
+  # load controlled vars from guidance
+  switch(version,
+         "1" = {controlled_variables_list <- read_csv("docs/controlled_variables.csv", col_types = cols())},
+         "2" = {print("Version 2 controlled variables are under development, please use verion 1.")}
+  )
+  
+  # Subset controlled variables by the attributes that are in the tested data frame
+  var_names <- unique(controlled_variables_list$attribute_name)
+  
+  # create a list of datasets from the provided table names
+  datasets <- mget(table_names, envir = .GlobalEnv)
+  
+  for (k in 1:length(datasets)) {
+    
+    dataset <- datasets[[k]]
+    
+    # to_check <- subset(colnames(dataset), colnames(dataset) %in% var_names)
+    # subset table
+    table_subset <- dataset[, names(dataset) %in% var_names]
+    
+    # function works but could use some optimization after this point
+    
+    # Create an empty data frame 
+    # Invalid variables and their attribute will be stored
+    df <- data.frame(matrix(nrow=0, ncol=2))
+    colnames(df) <- c("attribute_name", "variable_name")
+    
+    # Check each column at a time
+    # Append any invalid variables to the empty data frame
+    if(is_empty(table_subset)==FALSE){
+      
+      for(i in 1:length(names(table_subset))){
+        # identify attribute to find corresponding variables for
+        attribute <- names(table_subset)[i] 
+        # list controlled variables for attribute in question
+        controlled_vars <- controlled_variables_list %>% filter(attribute_name == attribute) %>% pull(variable_name)
+        # 
+        x <- table_subset %>% filter(!(get(attribute) %in% controlled_vars))
+        
+        invalid_variables <- na.omit(unique(get(attribute, x)))
+        
+        if(is_empty(invalid_variables) == FALSE) {
+          df <- bind_rows(df, data.frame("attribute_name" = rep(attribute, length(invalid_variables)), 
+                                         "variable_name" = invalid_variables))
+        }
+      }
+    }
+    
+    # If there are no invalid variables don't pass along the df 
+    # Otherwise indicate to the user there are problems and to check the table 
+    if(nrow(df)==0) {
+      print("Looks good! All variable names match CCRCN standards")
+      
+    } else {
+      print(paste0("View resulting invalid variable names for the ", names(datasets)[k], " table."))
+      return(df)  
+    }
+  }
+}
+
+# example code
+# testTableVars(table_names = table_names, version = "1")

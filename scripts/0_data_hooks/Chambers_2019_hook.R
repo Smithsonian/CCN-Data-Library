@@ -74,7 +74,7 @@ white_data <- raw_White %>%
   mutate(study_id = ifelse(site_id == "Estuary", "White_et_al_2020_b", "White_et_al_2020_a"))
 
 # join tables together and curate depthseries
-depthseries <- bind_rows(chambers_data, white_data) %>%
+join_depthseries <- bind_rows(chambers_data, white_data) %>%
   rename(dry_bulk_density = bulk_density_g_cm_3) %>%
   mutate(core_id = str_c(site_id, replicate, sep = "_"),
          # calculate fraction total carbon (make sure all the values are included in the computation)
@@ -89,22 +89,29 @@ depthseries <- bind_rows(chambers_data, white_data) %>%
 
 # keep extractable dissolved organic carbon?
 
-final_depthseries <- reorderColumns("depthseries", depthseries) %>%
+depthseries <- reorderColumns("depthseries", join_depthseries) %>%
   select(-c(core_latitude, core_longitude, sampling_date, 
             total_c_g_kg, total_c_g_cm_3, carbon_density_g_cm_3))
 
 # cores
-cores <- depthseries %>%
+cores <- join_depthseries %>%
   select(contains("_id"), core_latitude, core_longitude, sampling_date) %>%
   distinct() %>%
   mutate(core_year = year(as.Date(sampling_date)),
          core_month = month(as.Date(sampling_date)),
          core_day = day(as.Date(sampling_date)),
+         core_position_method = "handheld",
+         core_elevation_notes = ifelse(site_id == "Estuary", "During sampling, the depth of the estuary was 1 m relative to the marsh surface", NA),
+         salinity_class = "brackish",
+         salinity_notes = "salinity ranged from 14 to 20 ppt",
+         vegetation_class = "emergent",
+         vegetation_notes = "Spartina alterniflora was the dominant vegetation",
+         # inundation_notes = "no inundation of marsh while sampling",
          core_length_flag = "core depth limited by length of corer") %>%
   mutate(core_year = ifelse(is.na(core_year), 2017, core_year)) %>%
   select(-sampling_date)
 
-final_cores <- reorderColumns("cores", cores)
+cores <- reorderColumns("cores", cores)
 
 #### Study Citation ####
 
@@ -119,25 +126,23 @@ data_bib_raw_2020 <- GetBibEntryWithDOI(data_release_doi_2020)
 # Convert citations to dataframe
 study_citations_2019 <- as.data.frame(data_bib_raw_2019) %>%
   mutate(study_id = "Chambers_et_al_2019") %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = str_c("Chambers_et_al", year, sep = "_"),
-         key = str_c("Chambers_et_al", year, sep = "_"))
+  mutate(bibliography_id = str_c("Chambers_et_al", year, sep = "_"))
 
 study_citations_2020 <- bind_rows(as.data.frame(data_bib_raw_2020), as.data.frame(data_bib_raw_2020)) %>%
-  mutate(doi = tolower(doi),
-         study_id = c("White_et_al_2020_a", "White_et_al_2020_b"),
-         bibliography_id = str_c("White_et_al", year, sep = "_"),
-         key = c("White_et_al_2020_a", "White_et_al_2020_b"))
+  mutate(study_id = c("White_et_al_2020_a", "White_et_al_2020_b"),
+         bibliography_id = str_c("White_et_al", year, sep = "_"))
 
 # Curate biblio so ready to read out as a BibTex-style .bib file
 study_citations <-  bind_rows(study_citations_2019, study_citations_2020) %>%
-  mutate(publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything())
+  mutate(publication_type = "primary") %>%
+  remove_rownames() %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Write .bib file
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  column_to_rownames("key")
+  select(-study_id, -publication_type) %>%
+  distinct() %>% 
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019.bib")
 
@@ -150,19 +155,19 @@ leaflet(cores) %>%
                    radius = 5, label = ~core_id)
 
 
-# Make sure column names are formatted correctly: 
-test_colnames("cores", final_cores)
-test_colnames("depthseries", final_depthseries) 
-test_colnames("methods", methods)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries"), version = "1")
 
-test_unique_coords(final_cores)
+# unique coords
+test_unique_coords(final_cores) # not all unique
 
 ## Write derivative data ####
 # write_csv(sites, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_sites.csv")
-write_csv(final_cores, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_cores.csv")
+write_csv(cores, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_cores.csv")
 # write_csv(species, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_species.csv")
 write_csv(methods, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_methods.csv")
-write_csv(final_depthseries, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_depthseries.csv")
+write_csv(depthseries, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_depthseries.csv")
 write_csv(study_citations, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_study_citations.csv")
 
 
