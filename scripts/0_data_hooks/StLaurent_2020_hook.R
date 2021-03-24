@@ -53,34 +53,25 @@ data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
 
 # Convert this to a dataframe
 paper_biblio <- as.data.frame(paper_bib_raw) %>%
-  rownames_to_column("key") %>%
   mutate(study_id = id) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = id,
-         key = id)
+  mutate(bibliography_id = id)
 
 data_biblio <- as.data.frame(data_bib_raw) %>%
-  rownames_to_column("key") %>%
   mutate(study_id = id) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = id,
-         key = id)
+  mutate(bibliography_id = paste0(id, "_data"))
 
 # Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- data_biblio %>%
-  bind_rows(paper_biblio) %>%
-  mutate(publication_type = bibtype) %>%
-  mutate(key = c("StLaurent_et_al_2020_data", "StLaurent_et_al_2020")) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year),
-         month = ifelse(is.na(month), "dec", month))
+study_citations <- bind_rows(data_biblio, paper_biblio) %>%
+  mutate(publication_type = c("primary", "associated"),
+         year = as.numeric(year),
+         month = ifelse(is.na(month), "dec", month)) %>% 
+  remove_rownames() %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Write .bib file
 bib_file <- study_citations %>%
-  # slice(1) %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("key")
+  select(-study_id, -publication_type) %>%
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/StLaurent_et_al_2020/derivative/StLaurent_et_al_2020.bib")
 
@@ -89,11 +80,9 @@ WriteBib(as.BibEntry(bib_file), "data/primary_studies/StLaurent_et_al_2020/deriv
 
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("cores", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
-test_colnames("methods", methods)
+# test cols and vars
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
 
 ## Write derivative data ####
 write_csv(cores, "./data/primary_studies/StLaurent_et_al_2020/derivative/StLaurent_et_al_2020_cores.csv")
