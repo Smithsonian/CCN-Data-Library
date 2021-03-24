@@ -415,24 +415,18 @@ testTableVars <- function(table_names, version) {
   # create a list of datasets from the provided table names
   datasets <- mget(table_names, envir = .GlobalEnv)
   
+  # create df to store invalid vars for all tables
+  invalid_df <- data.frame() 
+  
+  # loop through each dataset
   for (k in 1:length(datasets)) {
     
-    dataset <- datasets[[k]]
-    
-    # to_check <- subset(colnames(dataset), colnames(dataset) %in% var_names)
-    # subset table
-    table_subset <- dataset[, names(dataset) %in% var_names]
-    
-    # function works but could use some optimization after this point
-    
-    # Create an empty data frame 
-    # Invalid variables and their attribute will be stored
-    df <- data.frame(matrix(nrow=0, ncol=2))
-    colnames(df) <- c("attribute_name", "variable_name")
-    
-    # Check each column at a time
+    dataset <- datasets[[k]] # store table
+    table_subset <- dataset[, names(dataset) %in% var_names] # subset table
+
+    # Check each column of current dataset
     # Append any invalid variables to the empty data frame
-    if(is_empty(table_subset)==FALSE){
+    if(!is_empty(table_subset)){
       
       for(i in 1:length(names(table_subset))){
         # identify attribute to find corresponding variables for
@@ -444,22 +438,23 @@ testTableVars <- function(table_names, version) {
         
         invalid_variables <- na.omit(unique(get(attribute, x)))
         
-        if(is_empty(invalid_variables) == FALSE) {
-          df <- bind_rows(df, data.frame("attribute_name" = rep(attribute, length(invalid_variables)), 
-                                         "variable_name" = invalid_variables))
+        if(length(invalid_variables) > 0) {
+          invalid <- data.frame("table" = names(datasets)[k],
+                                "attribute_name" = rep(attribute, length(invalid_variables)),
+                                "variable_name" = invalid_variables)
+          invalid_df <- bind_rows(invalid_df, invalid)
         }
       }
     }
+  }
+  # If there are no invalid variables don't pass along the df 
+  # Otherwise indicate to the user there are problems and to check the table 
+  if(nrow(invalid_df)==0) {
+    print("Looks good! All variable names match CCRCN standards")
     
-    # If there are no invalid variables don't pass along the df 
-    # Otherwise indicate to the user there are problems and to check the table 
-    if(nrow(df)==0) {
-      print("Looks good! All variable names match CCRCN standards")
-      
-    } else {
-      print(paste0("View resulting invalid variable names for the ", names(datasets)[k], " table."))
-      return(df)  
-    }
+  } else {
+    print(paste0("View resulting invalid variable names for the ", names(datasets)[k], " table."))
+    return(invalid_df)  
   }
 }
 

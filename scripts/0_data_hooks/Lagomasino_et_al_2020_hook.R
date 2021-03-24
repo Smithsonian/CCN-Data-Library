@@ -62,30 +62,31 @@ study_citations <- data_release_raw %>%
   mutate(year = as.numeric(year),
          volume = as.numeric(volume),
          number = as.numeric(number),
-         bibliography_id = study_id_value,
-         publication_type = study_id_value,
-         study_id = study_id_value,
-         key = doi) 
+         bibliography_id = paste0("Lagomasino_et_al_", year),
+         publication_type = c("primary", "associated"),
+         study_id = study_id_value) %>%
+  remove_rownames() %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
   
 ## Format bibliography
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("key")
+  select(-study_id, -publication_type) %>%
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/lagomasino_et_al_2020/derivative/lagomasino_et_al_2020.bib")
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
+# reorder cols
 depthseries <- reorderColumns("depthseries", depthseries)
 cores <- reorderColumns("cores", cores)
-# Make sure column names are formatted correctly: 
-test_colnames("cores", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
-test_colnames("methods", methods)
 
+# test cols and vars
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+
+# write data
 write_csv(methods, "./data/primary_studies/Lagomasino_et_al_2020/derivative/lagomasino_et_al_2020_methods.csv")
 write_csv(cores, "./data/primary_studies/Lagomasino_et_al_2020/derivative/lagomasino_et_al_2020_cores.csv")
 write_csv(depthseries, "./data/primary_studies/Lagomasino_et_al_2020/derivative/lagomasino_et_al_2020_depthseries.csv")
