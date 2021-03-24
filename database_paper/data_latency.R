@@ -6,7 +6,6 @@
 # Prepare Workspace ####
 
 cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max = 7000)
-sites <- read_csv("data/CCRCN_V2/sites.csv", guess_max = 1000)
 citations <- read_csv("data/CCRCN_synthesis/CCRCN_study_citations.csv")
 
 # Create a table of core sampling date and data publishing date
@@ -47,12 +46,25 @@ dates <- left_join(core_dates, pub_dates) %>%
   drop_na(pub_year) # a few citations aren't aligning
   
 # plot number of cores published per year
-dates %>% add_count(pub_year) %>%
-  select(pub_year, n) %>% distinct() %>%
-  ggplot(aes(as.character(pub_year), n)) +
-  geom_col(fill = "darkgreen") + theme_bw() +
-  ggtitle("Number of cores published per year")
-ggsave("database_paper/figures/cores_published_per_year.jpg")
+counts <- dates %>% 
+  select(sampled_year, pub_year) %>%
+  rename(year_sampled = sampled_year,
+         year_published = pub_year) %>%
+  pivot_longer(cols = contains("year"), 
+               names_to = "category",
+               names_prefix = "year_", 
+               values_to = "year") %>%
+  add_count(category, year) %>% distinct()
+  
+# add_count(sampled_year, name = "number_sampled")
+#   # select(pub_year, n) %>% 
+#   select(number_published, number_sampled) %>%
+#   distinct() %>%
+
+ggplot(counts, aes(year, n, col = category)) +
+  geom_line() + theme_bw() +
+  ggtitle("Number of cores sampled and published per year")
+ggsave("database_paper/figures/cores_sampled_v_published.jpg")
 
 # compute latency of data
 data_latency <- dates %>%  
