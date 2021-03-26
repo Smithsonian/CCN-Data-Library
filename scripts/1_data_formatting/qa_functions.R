@@ -79,7 +79,7 @@ test_core_relationships <- function(core_data, depth_data) {
 fraction_not_percent <- function(dataset) {
   
   relevant_cols <- dataset %>%
-    select(contains("fraction")) %>%
+    select(contains("fraction")) %>% # are there any fraction cols that don't include "fraction" in the colname?
     filter_all(any_vars(. > 1))
   
   

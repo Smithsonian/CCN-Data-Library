@@ -1,0 +1,23 @@
+Hook Script Notes/Issues
+
+In anticipation of the database paper and transition to an updated version of the database guidance, we are revisiting hook scripts to:
+- make sure they all run
+- align citations to our new standard of having unique bibliography id
+- make sure QAQC tests are in place
+
+QUESTION: Which QAQC functions should be required to run for every hook script?
+- current tests: table cols & vars, unique core_id, unique coords, fraction not percent, relational databases (core_id), numeric variables 
+
+
+HOOK SCRIPT REVIEWS:
+
+Baustian_et_al_2021 - the species table was not included in the output for some reason..if there was a reason for this I can't remember why but its there now. Otherwise looks good!
+
+Lagomasino_et_al_2020 - Corrected citations. All set.
+
+Keshta_et_al_2020 - Corrected citations. All set.
+
+StLaurent_et_al_2020 - Corrected citations. All set.
+
+Nolte_2020 - uncontrolled vars in the core elevation datum: NHN, NAP
+

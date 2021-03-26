@@ -133,22 +133,22 @@ radionuclides <- raw_radio %>%
          # depth_min = as.numeric(depth_min),
          pb210_unit = "disintegrationsPerMinutePerGram",
          cs137_unit = "disintegrationsPerMinutePerGram") %>%
-  left_join(core_batch) %>%
+  # left_join(core_batch) %>%
   select(-`Mid-Depth (cm)`, -`Radionuclide Counted Date`, -core_date)
 
 # there are 7 sites missing from the radionuclide table
 unique(stock$core_id)[which(!(unique(stock$core_id) %in% unique(radionuclides$core_id)))]
 
 # join depthseries info
-depthseries <- full_join(stock, radionuclides) %>%
+depthseries_join <- full_join(stock, radionuclides) %>%
   full_join(site_core) # merge site info
 
 # create date ref for core table
 # date_ref <- depthseries %>% select(site_id, core_id, core_date) %>% distinct() %>%
 #   drop_na(core_date) # drop NA dates
 
-final_depthseries <- reorderColumns("depthseries", depthseries) %>%
-  select(-c(Batch, core_date, "2014_Habitat Type", Most_Freq_Occ_Habitat_1949to1988))
+depthseries <- reorderColumns("depthseries", depthseries_join) %>%
+  select(-c(Batch, "2014_Habitat Type", Most_Freq_Occ_Habitat_1949to1988))
 
 # Cores ----
 
@@ -164,14 +164,15 @@ cores <- left_join(coreinfo, date_ref) %>%
   mutate(core_length_flag = "core depth limited by length of corer") %>% 
   select(-core_date, -species, -Batch)
 
-final_cores <- reorderColumns("cores", cores)
+cores <- reorderColumns("cores", cores)
 
 # Species
 species <- coreinfo %>%
   select(study_id, site_id, core_id, species) %>%
   mutate(species = str_split(species, "/")) %>% 
   unnest(species) %>% mutate(species = trimws(species)) %>%
-  separate(species, into = c("genus", "species"), sep = " ")
+  rename(species_code = species)
+  # separate(species, into = c("genus", "species"), sep = " ")
   
 
 # Methods ----
@@ -186,7 +187,7 @@ methods <- data.frame(study_id = id,
                       pb210_counting_method = "gamma",
                       dry_bulk_density_sample_volume = pi*((5.1/2)^2)*2)
 
-final_methods <- reorderColumns("methods", methods)
+methods <- reorderColumns("methods", methods)
 
 #### Study Citation ####
 
@@ -194,30 +195,28 @@ data_doi <- "10.5066/P93U3B3E"
 pub_doi <- "10.1029/2020JG005832" # doi not active yet (paper hasnt been officially published)
 
 data_bib <- GetBibEntryWithDOI(data_doi)
-# pub_bib <- GetBibEntryWithDOI(pub_doi)
+pub_bib <- GetBibEntryWithDOI(pub_doi)
 
 # Convert citations to dataframe
 data_citation <- as.data.frame(data_bib) %>%
-  rownames_to_column("key") %>%
   mutate(study_id = id) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = id,
-         key = id)
+  mutate(bibliography_id = paste0("Baustian_et_al_", year, "_data"),
+         publication_type = "primary")
 
-# pub_citation
+pub_citation <- as.data.frame(pub_bib) %>%
+  mutate(study_id = id) %>%
+  mutate(bibliography_id = paste0("Baustian_et_al_", year, "_article"),
+         publication_type = "associated")
 
 # # Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- data_citation %>%
-  # bind_rows(pub_citation) %>%
-  mutate(publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything())
+study_citations <- bind_rows(data_citation, pub_citation) %>%
+  remove_rownames() %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Write .bib file
 bib_file <- study_citations %>%
-  # slice(1) %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  # distinct() %>%
-  column_to_rownames("key")
+  select(-study_id, -publication_type) %>%
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021.bib")
 
@@ -231,20 +230,22 @@ leaflet(cores) %>%
 
 # Make sure column names are formatted correctly: 
 
-test_colnames("cores", final_cores)
-test_colnames("depthseries", final_depthseries)
-test_colnames("methods", methods)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
 
-test_unique_cores(final_cores)
-test_core_relationships(final_cores, final_depthseries)
-
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+test_numeric_vars(depthseries)
 
 ## Write derivative data ####
 # write_csv(sites, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_sites.csv")
-write_csv(final_cores, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_cores.csv")
-# write_csv(species, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_species.csv")
-write_csv(final_methods, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_methods.csv")
-write_csv(final_depthseries, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_depthseries.csv")
+write_csv(cores, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_cores.csv")
+write_csv(species, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_species.csv")
+write_csv(methods, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_methods.csv")
+write_csv(depthseries, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_depthseries.csv")
 write_csv(study_citations, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_study_citations.csv")
 
 
