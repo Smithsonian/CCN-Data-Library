@@ -3,6 +3,9 @@
 ## Analyze data latency from time of sampling to time of publishing
 ## contact: Jaxine Wolfe, wolfejax@si.edu
 
+
+library(tidyverse)
+
 # Prepare Workspace ####
 
 cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max = 7000)
@@ -45,26 +48,33 @@ ggsave("database_paper/figures/cores_sampled_per_year.jpg")
 dates <- left_join(core_dates, pub_dates) %>%
   drop_na(pub_year) # a few citations aren't aligning
   
-# plot number of cores published per year
-counts <- dates %>% 
-  select(sampled_year, pub_year) %>%
-  rename(year_sampled = sampled_year,
-         year_published = pub_year) %>%
-  pivot_longer(cols = contains("year"), 
-               names_to = "category",
-               names_prefix = "year_", 
-               values_to = "year") %>%
-  add_count(category, year) %>% distinct()
-  
-# add_count(sampled_year, name = "number_sampled")
-#   # select(pub_year, n) %>% 
-#   select(number_published, number_sampled) %>%
-#   distinct() %>%
+# Compute cumulative counts ####
+cumu_sampled <- dates %>% select(sampled_year) %>%
+  rename(year = sampled_year) %>% 
+  arrange(year) %>% add_count(year) %>% distinct() %>%
+  mutate(cumulative_sampled = cumsum(n)) %>% select(-n)
 
-ggplot(counts, aes(year, n, col = category)) +
-  geom_line() + theme_bw() +
-  ggtitle("Number of cores sampled and published per year")
+cumu_pub <- dates %>% select(pub_year) %>%
+  rename(year = pub_year) %>% 
+  arrange(year) %>% add_count(year) %>%  distinct() %>%
+  mutate(cumulative_published = cumsum(n)) %>% select(-n)
+
+counts <- full_join(cumu_sampled, cumu_pub) %>%
+  pivot_longer(cols = contains("cumulative"), 
+               names_to = "category",
+               names_prefix = "cumulative_", 
+               values_to = "cumulative_count") %>%
+  drop_na(cumulative_count)
+
+# plot cumulative counts for sampled and published cores per year
+ggplot(counts, aes(year, cumulative_count, col = category)) +
+  geom_line() + 
+  xlab("Year") + ylab("Cumulative Count") +
+  theme_bw() +
+  ggtitle("Cumulative number of cores sampled and published per year")
 ggsave("database_paper/figures/cores_sampled_v_published.jpg")
+
+## Data Latency ####
 
 # compute latency of data
 data_latency <- dates %>%  
