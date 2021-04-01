@@ -11,11 +11,11 @@ library(tidyverse)
 library(RefManageR)
 
 ## Read in data #####################
-raw_data <- read_csv("./data/Weis_et_al_2001/original/Weis_1999_age_depthseries.csv")
-core_data <- read_csv("./data/Weis_et_al_2001/original/CCRCN_core_data.csv")
-carbon_stocks_depthseries <- read_csv("./data/Weis_et_al_2001/original/CCRCN_depthseries_data.csv")
-methods <- read_csv("./data/Weis_et_al_2001/original/CCRCN_methods_data.csv")
-species <- read_csv("./data/Weis_et_al_2001/original/CCRCN_species_data.csv")
+raw_data <- read_csv("data/primary_studies/Weis_et_al_2001/original/Weis_1999_age_depthseries.csv")
+core_data <- read_csv("data/primary_studies/Weis_et_al_2001/original/CCRCN_core_data.csv")
+carbon_stocks_depthseries <- read_csv("data/primary_studies/Weis_et_al_2001/original/CCRCN_depthseries_data.csv")
+methods <- read_csv("data/primary_studies/Weis_et_al_2001/original/CCRCN_methods_data.csv")
+species <- read_csv("data/primary_studies/Weis_et_al_2001/original/CCRCN_species_data.csv")
 
 ## Curate data ######################
 
@@ -60,7 +60,7 @@ depthseries <- raw_data %>%
 # I'll keep the carbon stock derived from the thesis table
 
 ## Core data curation ##################
-core_data <- core_data %>%
+cores <- core_data %>%
   mutate(study_id = "Weis_et_al_2001") %>%
   mutate(core_position_notes = recode(core_position_notes, 
                                       "a" = "latitude and longitude were likely from a high quality source",
@@ -77,7 +77,7 @@ core_data <- core_data %>%
   
 ## Method and Species
 methods <- methods %>%
-  select(-X1) 
+  select(-X1, -publication_type) 
 
 species <- species %>%
   mutate(site_id = "Tijuana_Estuary") %>%
@@ -86,65 +86,59 @@ species <- species %>%
 ## Generate citation ##############
 study <- "Weis_et_al_2001"
 
-# Secondary thesis citation 
-weis <- as.data.frame(BibEntry(bibtype = "Mastersthesis", 
-                 key = "Weis 2001", 
-                 title = "Vertical accretion rates and heavy metal chronologies in wetland sediments of Tijuana Estuary",
-                 author = "Weis, Daniel Anthony", 
-                 school = "San Diego State University",
-                 year = "1999")) %>%
-  rownames_to_column("key") %>%
-  mutate(study_id = study, 
-         bibliography_id = study, 
-         publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything())
-
 # Primary citation
 doi <- "10.2307/1353175"
 
 biblio_raw <- GetBibEntryWithDOI(doi)
-biblio_df <- as.data.frame(biblio_raw)
-study_citations <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study, 
+
+biblio_df <- as.data.frame(biblio_raw) %>%
+  mutate(bibliography_id = "Weis_et_al_2001_article", 
          study_id = study,
-         key = study,
-         publication_type = "Article") %>%
-  bind_rows(weis) %>%
-  mutate(year = as.numeric(year), 
-         volume = as.numeric(volume), 
-         number = as.numeric(number)) %>%
-  select(-pages) %>%
-  select(study_id, bibliography_id, publication_type, everything())
+         publication_type = "associated") %>%
+  remove_rownames()
+
+# Secondary thesis citation 
+weis <- data.frame(bibtype = "Mastersthesis", 
+                   bibliography_id = "Weis_et_al_2001_thesis", 
+                   title = "Vertical accretion rates and heavy metal chronologies in wetland sediments of Tijuana Estuary",
+                   author = "Weis, Daniel Anthony", 
+                   school = "San Diego State University",
+                   year = "1999",
+                   study_id = study, 
+                   publication_type = "associated")
+
+# combine the article and thesis citations
+study_citations <- bind_rows(weis, biblio_df) %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Write .bib file
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
+  select(-study_id, -publication_type) %>%
   distinct() %>%
-  column_to_rownames("key") 
+  column_to_rownames("bibliography_id") 
 
 WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001.bib")
 
 ## QA/QC ##########################
 source("./scripts/1_data_formatting/qa_functions.R")
 
-test_colnames("core_level", core_data)
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
 
-test_varnames(core_data)
-test_varnames(depthseries)
-test_varnames(species)
-
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
 test_numeric_vars(depthseries)
 
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(core_data, depthseries)
+# results <- test_core_relationships(core_data, depthseries) # they all match
 
 ## Write data #####################
 write_csv(depthseries, "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_depthseries.csv")
-write_csv(core_data, "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_cores.csv")
+write_csv(cores, "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_cores.csv")
 write_csv(methods, "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_methods.csv")
 write_csv(species, "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_species.csv")
 write_csv(study_citations, "./data/primary_studies/Weis_et_al_2001/derivative/Weis_et_al_2001_study_citations.csv")

@@ -337,8 +337,7 @@ reorderColumns <- function(category, df) {
     filter(attribute_name %in% colnames(df))
   
   # Controlled attributes selected first, then all approved uncontrolled attributes
-  df %>%
-    select(table_structure$attribute_name, everything())
+  df %>% select(table_structure$attribute_name, everything())
   
 }
 
@@ -452,4 +451,4 @@ testTableVars <- function(table_names) {
 }
 
 # example code
-# testTableVars(table_names = table_names, version = "1")
+# testTableVars(table_names = table_names)
