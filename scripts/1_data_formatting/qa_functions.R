@@ -398,16 +398,9 @@ testTableCols <- function(table_names, version) {
 
 ## Test variables from a table list ########
 
-# unique(controlled_variables_list$attribute_name) %in% unique(database_structure$attribute_name)
-# we need to update the controlled vars with V2 (ex. habitat, publication_type, qual codes)
-
-testTableVars <- function(table_names, version) {
-  
-  # load controlled vars from guidance
-  switch(version,
-         "1" = {controlled_variables_list <- read_csv("docs/controlled_variables.csv", col_types = cols())},
-         "2" = {print("Version 2 controlled variables are under development, please use verion 1.")}
-  )
+testTableVars <- function(table_names) {
+  # load controlled vars
+  controlled_variables_list <- read_csv("docs/controlled_variables.csv", col_types = cols())
   
   # Subset controlled variables by the attributes that are in the tested data frame
   var_names <- unique(controlled_variables_list$attribute_name)
@@ -433,7 +426,7 @@ testTableVars <- function(table_names, version) {
         attribute <- names(table_subset)[i] 
         # list controlled variables for attribute in question
         controlled_vars <- controlled_variables_list %>% filter(attribute_name == attribute) %>% pull(variable_name)
-        # 
+        
         x <- table_subset %>% filter(!(get(attribute) %in% controlled_vars))
         
         invalid_variables <- na.omit(unique(get(attribute, x)))

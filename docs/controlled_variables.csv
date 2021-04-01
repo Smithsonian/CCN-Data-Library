@@ -1,5 +1,5 @@
 attribute_name,variable_name,variable_definition
-corresponding_author,TRUE,The author should be contacted with any further questions
+corresponding_author,TRUE,The author should be contacted with any further questions.
 corresponding_author,FALSE,The author should not be contacted with any further questions.
 publication_type,article,Journal article
 publication_type,book,Book
@@ -7,6 +7,9 @@ publication_type,mastersthesis,Master's Thesis
 publication_type,misc,Miscellaneous publications such as online datasets
 publication_type,phdthesis,PhD thesis or dissertation
 publication_type,techreport,Technical report
+publication_type,primary,TBD.
+publication_type,associated,TBD.
+publication_type,synthesis,TBD.
 publication_type,unpublished,Unpublished source.
 coring_method,cryo core,A technique involving collecting a core by freezing soil using liquid nitrogen to a copper tube
 coring_method,gouge auger,"A half cylinder coring device in which the coring section is open, not sealed off by a fin"
@@ -100,24 +103,26 @@ inundation_class,levee,"Study-specific definition of a relatively high elevation
 inundation_class,back,Study-specific definition of a relatively low elevation zone behind a levee.
 inundation_method,field observation,Inundation inferred by field observation such as vegetation
 inundation_method,measurement,Inundation class assessed from elevation and nearby tide gauge or other similar method.
-core_position_method,RTK,Real-time kinematic global position system (GPS)
-core_position_method,handheld,Conventional Commercially available hand-held GPS
-core_position_method,other high resolution,Any other technique resulting in positional error < 1 meter
-core_position_method,other moderate resolution,Any other technique resulting in positional error < 30 meters
-core_position_method,other low resolution,Any other technique resulting in positional error > 30 meters.
-core_elevation_datum,NAVD88,"A gravity-based geodetic datum, North American Vertical Datum of 1988"
-core_elevation_datum,MSL,"A tidal datum, Mean Sea Level as measured against a local tide gauge"
-core_elevation_datum,MTL,"A tidal datum, Mean Tidal Level as measured against a local tide gauge"
-core_elevation_datum,MHW,"A tidal datum, Mean High Water as measured against a local tide gauge"
-core_elevation_datum,MHHW,"A tidal datum, Mean Higher High Water as measured against a local tide gauge"
-core_elevation_datum,MHHWS,"A tidal datum, Mean Higher High Water for Spring Tides as measured against a local tide gauge"
-core_elevation_datum,MLW,"A tidal datum, Mean Low Water as measured against a local tide gauge"
-core_elevation_datum,MLLW,"A tidal datum, Mean Lower Low Water as measured against a local tide gauge."
-core_elevation_method,RTK,Real-time kinematic GPS
-core_elevation_method,other high resolution,Any other technique resulting in positional error < 5 cm of random error
-core_elevation_method,LiDAR,Handheld GPS matched to lidar-based digital elevation model
-core_elevation_method,DEM,Handheld GPS matched to another digital elevation model
-core_elevation_method,other low resolution,Any other technique resulting in positional error > 5 cm of random error.
+position_method,RTK,Real-time kinematic global position system (GPS)
+position_method,handheld,Conventional Commercially available hand-held GPS
+position_method,other high resolution,Any other technique resulting in positional error < 1 meter
+position_method,other moderate resolution,Any other technique resulting in positional error < 30 meters
+position_method,other low resolution,Any other technique resulting in positional error > 30 meters.
+elevation_datum,NAVD88,"A gravity-based geodetic datum, North American Vertical Datum of 1988"
+elevation_datum,MSL,"A tidal datum, Mean Sea Level as measured against a local tide gauge"
+elevation_datum,MTL,"A tidal datum, Mean Tidal Level as measured against a local tide gauge"
+elevation_datum,MHW,"A tidal datum, Mean High Water as measured against a local tide gauge"
+elevation_datum,MHHW,"A tidal datum, Mean Higher High Water as measured against a local tide gauge"
+elevation_datum,MHHWS,"A tidal datum, Mean Higher High Water for Spring Tides as measured against a local tide gauge"
+elevation_datum,MLW,"A tidal datum, Mean Low Water as measured against a local tide gauge"
+elevation_datum,MLLW,"A tidal datum, Mean Lower Low Water as measured against a local tide gauge."
+elevation_datum,NHN,TBD.
+elevation_datum,NAP,TBD.
+elevation_method,RTK,Real-time kinematic GPS
+elevation_method,other high resolution,Any other technique resulting in positional error < 5 cm of random error
+elevation_method,LiDAR,Handheld GPS matched to lidar-based digital elevation model
+elevation_method,DEM,Handheld GPS matched to another digital elevation model
+elevation_method,other low resolution,Any other technique resulting in positional error > 5 cm of random error.
 salinity_class,estuarine C-CAP,5-35 parts per thousand salinity (ppt) according to the coastal change analysis program
 salinity_class,palustrine C-CAP,< 5 ppt according to the coastal change analysis program
 core_length_flag,core depth limited by length of corer,The total depth of the core was limited by the length of the coring device
@@ -140,3 +145,21 @@ impact_class,invasive plants removed,Natural plant communities have been restore
 impact_class,invasive herbivores removed,Tidal wetland vegetation has been managed by the removal of invasive herbivores
 impact_class,sediment added,Elevation has been managed by artificially adding sediment to the site using techniques such as thin layering or sediment diversion
 impact_class,wetlands built,Constructed wetland using sediments such as dredge spoils or other sediment source.
+habitat,mangrove,Tropical and dominated by specialized shrubs or trees.
+habitat,swamp,Predominantly freshwater and dominated by trees.
+habitat,scrub/shrub,Wetland dominated by shrubs.
+habitat,marsh,"Wetland dominated by emergent vegetation, gramminoids or forbs."
+habitat,seagrass,Intertidal to subtidal and dominated by specialized predominantly submerged grasses.
+habitat,algal mat,Dominated by algae.
+habitat,unvegetated,Unvegetated.
+code_type,description,Cover description not related to plant taxonomy.
+code_type,Family,Refers to taxonomic family without indicating a genus or species.
+code_type,Genus,Refers to a taxonomic genus without indicating a species.
+code_type,Genus species,Refers to taxonomic Genus and species.
+stocks_qual_code,C2,"Carbon stock data complete, not confirmed to be a complete profile."
+stocks_qual_code,C1,"Carbon stock data complete, confirmed to be a complete profile."
+dates_qual_code,B2,"Dating information present, but not complete."
+dates_qual_code,B1,Dating information present and complete.
+elevation_qual_code,A3,"Elevation data present but of low quality, dating info present."
+elevation_qual_code,A2,"Elevation data is high quality, and dating info present but incomplete."
+elevation_qual_code,A1,"Elevation data is high quality, and dating info is complete."
