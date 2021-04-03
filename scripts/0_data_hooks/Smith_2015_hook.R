@@ -32,13 +32,21 @@ URL <- "https://pubs.usgs.gov/ds/0877/html/ds877_data.html"
 
 ## 4. Import data ####################
 
-raw_depthseries <- read.csv("./data/Smith_2015/original/sediment_core_properties.txt")
-raw_cores <- read.csv("./data/Smith_2015/original/sediment_core_sites.txt")
+raw_depthseries <- read.csv("./data/primary_studies/Smith_2015/original/sediment_core_properties.txt")
+raw_cores <- read.csv("./data/primary_studies/Smith_2015/original/sediment_core_sites.txt")
+raw_methods <- read_csv("data/primary_studies/Smith_2015/original/Smith_et_al_2015_methods.csv")
+
+## Methods ####
+
+methods <- raw_methods %>% 
+  select_if(function(x) {!all(is.na(x))}) %>% 
+  mutate(study_id = "Smith_et_al_2015",
+         sediment_sieved_flag = "sediment sieved")
 
 ## ... 4A. Core-level data ###########
 # Although the original file says sites, it is the core-level data. 
 
-core_data <- raw_cores %>%
+cores <- raw_cores %>%
   rename(core_id = Site, 
          core_latitude = Latitude, 
          core_longitude = Longitude,
@@ -51,7 +59,7 @@ core_data <- raw_cores %>%
 
 ## ... 4B. Depthseries data ##########
 
-depthseries_data <- raw_depthseries %>%
+depthseries <- raw_depthseries %>%
   rename(core_id = Sample, 
          dry_bulk_density = BD,
          fraction_organic_matter = LOI,
@@ -76,11 +84,12 @@ depthseries_data <- raw_depthseries %>%
          ra226_activity, ra226_activity_sd, pb210_unit)
 
 ## ... 4C. Site-level data ##########
-site_data <- core_data %>%
+site_data <- cores %>%
   select(site_id, core_id, study_id, core_latitude, core_longitude)
 
 # Find min and max lat/long for each site
 source("./scripts/1_data_formatting/curation_functions.R")
+
 site_boundaries <- create_multiple_geographic_coverages(site_data)
 site_data <- site_data %>%
   left_join(site_boundaries) %>% # Add site bounds in
@@ -89,7 +98,7 @@ site_data <- site_data %>%
 site_data <- na.omit(site_data)
 
 # Now aggeregate data to the site level
-site_data <- site_data %>%
+sites <- site_data %>%
   group_by(site_id) %>%
   summarize(study_id = first(study_id), 
             site_longitude_max = first(site_longitude_max), site_longitude_min = first(site_longitude_min),
@@ -102,41 +111,53 @@ doi <- "10.3133/ds877"
 
 # Get bibtex citation from DOI
 biblio_raw <- GetBibEntryWithDOI(doi)
+
 biblio_df <- as.data.frame(biblio_raw)
+
 study_citations <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study, 
+  mutate(bibliography_id = "Smith_et_al_2015_data", 
          study_id = study,
-         key = study,
-         publication_type = "data release", 
-         year = as.numeric(year)) %>%
+         publication_type = "primary") %>%
+  remove_rownames() %>%
   select(study_id, bibliography_id, publication_type, everything())
 
 # Write .bib file
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  column_to_rownames("key")
+  select(-study_id, -publication_type) %>%
+  column_to_rownames("bibliography_id")
 
-WriteBib(as.BibEntry(bib_file), "./data/Smith_2015/derivative/Smith_et_al_2015.bib")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015.bib")
 
 
 ## 6. QA/QC  ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("core_level", core_data)
-test_colnames("site_level", site_data) 
-test_colnames("depthseries", depthseries_data) 
+# # Make sure column names are formatted correctly: 
+# test_colnames("core_level", cores)
+# test_colnames("site_level", site_data) 
+# test_colnames("depthseries", depthseries_data) 
+# 
+# # cores <- reorder_columns(core_data, "core_level")
+# site_data <- reorder_columns(site_data, "site_level")
+# 
+# # Test relationships between core_ids at core- and depthseries-levels
+# # the test returns all core-level rows that did not have a match in the depth series data
+# results <- test_core_relationships(core_data, depthseries_data)
 
-# core_data <- reorder_columns(core_data, "core_level")
-site_data <- reorder_columns(site_data, "site_level")
+# Check col and varnames
+testTableCols(table_names = c("sites", "methods", "cores", "depthseries"), version = "1")
+testTableVars(table_names = c("sites", "methods", "cores", "depthseries"))
 
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(core_data, depthseries_data)
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+test_numeric_vars(depthseries)
 
 ## 7. Write data ##################
-write_csv(core_data, "./data/Smith_2015/derivative/Smith_et_al_2015_cores.csv")
-write_csv(site_data, "./data/Smith_2015/derivative/Smith_et_al_2015_sites.csv")
-write_csv(depthseries_data, "./data/Smith_2015/derivative/Smith_et_al_2015_depthseries.csv")
-write_csv(study_citations, "./data/Smith_2015/derivative/Smith_et_al_2015_study_citations.csv")
+write_csv(cores, "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_cores.csv")
+write_csv(sites, "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_sites.csv")
+write_csv(depthseries, "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_depthseries.csv")
+write_csv(study_citations, "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_study_citations.csv")
+write_csv(methods, "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_methods.csv")
+

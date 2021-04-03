@@ -36,7 +36,7 @@ core_ids <- c("BM01", "BM03", "BM05", "CB00", "CB03", 'CB06', "GH01", "GH03", "G
 num_cores <- length(core_ids)
 
 for(i in 1:num_cores) {
-  d <- read_excel("./data/Thorne_2015_a/original/NWCSC Sediment Core Data.xlsx", sheet=as.character(core_ids[i]))
+  d <- read_excel("./data/primary_studies/Thorne_2015_a/original/NWCSC Sediment Core Data.xlsx", sheet=as.character(core_ids[i]))
   d <- d %>%
     mutate(core_id = core_ids[i]) %>%
     rename(depth_min = "Depth (cm)",
@@ -48,19 +48,20 @@ for(i in 1:num_cores) {
 }
 
 ## ... 3B Import core-level data 
-raw_core_data <- read_excel("./data/Thorne_2015_a/original/NWCSC Sediment Core Data.xlsx", sheet="CoreSurveys_CS137")
+raw_core_data <- read_excel("./data/primary_studies/Thorne_2015_a/original/NWCSC Sediment Core Data.xlsx", sheet="CoreSurveys_CS137")
 
 ## 4 Curate Data ##################
 
 ## ... 4A Append depthseries data, add appropriate core ID, and curate ############
-depthseries_data <- data.frame(matrix(nrow=0, ncol=4))
-colnames(depthseries_data) <- colnames(BM01)
+
+# depthseries_data <- data.frame(matrix(nrow=0, ncol=4))
+# colnames(depthseries_data) <- colnames(BM01)
 
 core_ids <- list(BM01, BM03, BM05, CB00, CB03, CB06, GH01, GH03, GH06, 
               NQ01, NQ04, NQ06, PS02, PS04, PS05, SZ02, SZ03, SZ05,
               SK02, SK04, SK06, WB01, WB04, WB06)
 
-depthseries_data <- depthseries_data %>%
+depthseries_data <- data.frame() %>%
   bind_rows(core_ids) %>%
   mutate(depth_max = depth_min + 1, 
          fraction_organic_matter = fraction_organic_matter / 100,
@@ -118,61 +119,59 @@ peaks <- core_data %>%
   filter(cs137_peak_cm >= 0) %>%
   select(core_id, cs137_peak_cm)
 
-depthseries_data <- depthseries_data %>%
+depthseries <- depthseries_data %>%
   merge(peaks, by="core_id", all.x=TRUE, all.y=TRUE) %>%
   mutate(cs137_peak_present = ifelse(is.na(cs137_peak_cm)==TRUE, FALSE, ifelse(cs137_peak_cm == depth_min, TRUE, FALSE))) %>%
   select(-cs137_peak_cm)
 
-core_data <- select(core_data, -cs137_peak_cm)
+cores <- select(core_data, -cs137_peak_cm)
 
 ## ... 4D Generate study-citation link ############
 study <- "Thorne_et_al_2015"
 doi <- "10.5066/F7SJ1HNC"
+pub_dio <- "10.1126/sciadv.aao3270"
 
-biblio_raw <- BibEntry(bibtype = "Misc", 
-                             key = "Thorne_et_al_2015", 
-                             title = "Marshes to Mudflats: Climate Change Effects Along a Latitudinal Gradient in the Pacific Northwest",
-                             author = "U.S. Geological Survey {Karen Thorne}", 
-                             doi = "10.5066/f7sj1hnc",
-                             publisher = "U.S. Geological Survey",
-                             year = "2015", 
-                             url = "https://www.sciencebase.gov/catalog/item/5006e99ee4b0abf7ce733f58"
-)
+biblio_raw <- GetBibEntryWithDOI(c(doi, pub_dio))
+# biblio_raw <- BibEntry(bibtype = "Misc", 
+#                              key = "Thorne_et_al_2015", 
+#                              title = "Marshes to Mudflats: Climate Change Effects Along a Latitudinal Gradient in the Pacific Northwest",
+#                              author = "U.S. Geological Survey {Karen Thorne}", 
+#                              doi = "10.5066/f7sj1hnc",
+#                              publisher = "U.S. Geological Survey",
+#                              year = "2015", 
+#                              url = "https://www.sciencebase.gov/catalog/item/5006e99ee4b0abf7ce733f58"
+# )
 biblio_df <- as.data.frame(biblio_raw)
 
 study_citations <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study, 
+  mutate(bibliography_id = c("Thorne_et_al_2015_data", "Thorne_et_al_2015_article"), 
          study_id = study,
-         publication_type = "data release", 
-         year = as.numeric(year)) %>%
+         publication_type = c("primary", "associated")) %>%
+  remove_rownames() %>%
   select(study_id, bibliography_id, publication_type, everything())
 
 # Write .bib file
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  column_to_rownames("key")
+  select(-study_id, -publication_type) %>%
+  column_to_rownames("bibliography_id")
 
-WriteBib(as.BibEntry(bib_file), "./data/Thorne_2015_a/derivative/Thorne_et_al_2015.bib")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015.bib")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("core_level", core_data)
-test_colnames("depthseries", depthseries_data)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries"))
 
-test_varnames(core_data)
-test_varnames(depthseries_data)
-
-numeric_test_results <- test_numeric_vars(depthseries_data)
-
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(core_data, depthseries_data)
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+test_numeric_vars(depthseries)
 
 ## 6. Export data
-write_csv(core_data, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_cores.csv")
-write_csv(depthseries_data, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_depthseries.csv")
-write_csv(study_citations, "./data/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
+write_csv(cores, "./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015_cores.csv")
+write_csv(depthseries, "./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015_depthseries.csv")
+write_csv(study_citations, "./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
 

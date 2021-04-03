@@ -30,6 +30,9 @@ methods_raw <-read_csv("./data/primary_studies/Thom_2019/original/thom_2019_mate
 species_raw <- read_csv("./data/primary_studies/Thom_2019/original/thom_2019_species.csv")
 cores_raw <- read_csv("./data/primary_studies/Thom_2019/original/thom_2019_cores.csv")
   
+# hook data
+cores <- cores_raw
+
 depthseries <- depthseries_raw %>%
   mutate(cs137_unit = "countsPerGramDryWeightPerHour")
 
@@ -47,30 +50,44 @@ study_id <- "Thom_1992"
 
 data_bib_raw <- GetBibEntryWithDOI(c(data_release_doi, associated_pub_doi))
 
-bib <- as.data.frame(data_bib_raw) %>%
-  rownames_to_column("key") %>%
+study_citations <- as.data.frame(data_bib_raw) %>%
   mutate(study_id = study_id) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = study_id,
-         key = ifelse(bibtype == "Misc", "Thom_2019", key),
-         publication_type = bibtype) 
+  mutate(bibliography_id = c("Thom_1992_data", "Thom_1992_article"),
+         publication_type = c("primary", "associated")) %>%
+  remove_rownames() %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- bib %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year),
-         volume = as.numeric(volume),
-         number = as.numeric(number))
+# study_citations <- bib %>%
+#   select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
+#   mutate(year = as.numeric(year),
+#          volume = as.numeric(volume),
+#          number = as.numeric(number))
 
 # Write .bib file
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
+  select(-study_id, -publication_type) %>%
   distinct() %>%
-  column_to_rownames("key")
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Thom_2019/derivative/Thom_2019.bib")
 
+## QA/QC ###############
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+test_numeric_vars(depthseries)
+
+# write files
 write_csv(depthseries, "data/primary_studies/Thom_2019/derivative/thom_2019_depthseries.csv")
+write_csv(cores, "data/primary_studies/Thom_2019/derivative/thom_2019_cores.csv")
 write_csv(methods, "data/primary_studies/Thom_2019/derivative/thom_2019_methods.csv")
 write_csv(study_citations, "data/primary_studies/Thom_2019/derivative/thom_2019_study_citations.csv")
 write_csv(species, "data/primary_studies/Thom_2019/derivative/thom_2019_species.csv")

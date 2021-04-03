@@ -17,8 +17,11 @@ library(stringr)
 age_depth_data <- read_excel("./data/primary_studies/Watson_Byrne_2013/original/watson_byrne_2013_age_depth.xlsx")
 carbon_stock_data <- read_csv("./data/primary_studies/Watson_Byrne_2013/intermediate/wb_depthseries_data.csv")
 cores <- read_csv("./data/primary_studies/Watson_Byrne_2013/intermediate/wb_core_data.csv")
+raw_methods <- read_csv("./data/primary_studies/Watson_Byrne_2013/intermediate/watson_and_byrne_2013_methods.csv")
 
 ## Curate data ######################
+
+methods <- raw_methods %>% select(-publication_type)
 
 ## ... depthseries data #############
 # carbon stocks and age-depth information will be joined, 
@@ -64,7 +67,7 @@ depthseries <- age_depth_data %>%
   # order it according to core id and depth
   arrange(depth_min, .by_group = TRUE) %>%
   # Filter out the core that does not have matching carbon stock data
-  filter(core_id != "Alviso_1")
+  filter(core_id != "Alviso_1") %>% ungroup()
 
 ## ... Site data ###########
 source("./scripts/1_data_formatting/curation_functions.R") 
@@ -82,32 +85,39 @@ study_id_value <- "Watson_and_Byrne_2013"
 
 # Get bibtex citation from DOI
 biblio_raw <- GetBibEntryWithDOI(doi)
+
 biblio_df <- as.data.frame(biblio_raw)
+
 study_citations <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study_id_value, 
+  mutate(bibliography_id = "Watson_and_Byrne_2013_article", 
          study_id = study_id_value,
-         key = study_id_value,
-         publication_type = "Article", 
-         year = as.numeric(year)) %>%
+         publication_type = "associated") %>%
+  remove_rownames() %>%
   select(study_id, bibliography_id, publication_type, everything())
 
 # Write .bib file
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  column_to_rownames("key")
+  select(-study_id, -publication_type) %>%
+  column_to_rownames("bibliography_id")
 
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Watson_Byrne_2013/final/watson_and_byrne_2013.bib")
-
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013.bib")
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
-results <- test_core_relationships(cores, depthseries)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries"))
 
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
 test_numeric_vars(depthseries)
 
 
 ## Write files #########
-write_csv(depthseries, "./data/primary_studies/Watson_Byrne_2013/final/watson_and_byrne_2013_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Watson_Byrne_2013/final/watson_and_byrne_2013_study_citations.csv")
+write_csv(depthseries, "./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013_depthseries.csv")
+write_csv(study_citations, "./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013_study_citations.csv")
+write_csv(methods, "./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013_methods.csv")
+

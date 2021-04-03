@@ -15,9 +15,11 @@ library(tidyverse)
 library(readxl)
 library(RefManageR)
 
-raw_depthseries <- read_csv("./data/Trettin_2017/original/Zambezi_Soils.csv")
+raw_depthseries <- read_csv("./data/primary_studies/Trettin_2017/original/Zambezi_Soils.csv")
 
 ## 3. Curate data #############
+
+study <- "Trettin_et_al_2017"
 
 ## ... Depth series data ###################
 # Issues: 
@@ -43,7 +45,7 @@ depthseries <- raw_depthseries %>%
 
 ## ... Core-level ###########
 # We'll scale up to the core-level from the depthseries
-coreLocations <- read_csv("./data/Trettin_2017/original/Zambezi_PlotLocations.csv")
+coreLocations <- read_csv("./data/primary_studies/Trettin_2017/original/Zambezi_PlotLocations.csv")
 coreLocations <- coreLocations %>%
   mutate(site_id = as.character(Plot)) %>%
   rename(species_code = 'Dominant Species')
@@ -88,46 +90,46 @@ sites <- cores %>%
 
 ## 4. Create study-citation table ######
 # Get bibtex citation from DOI
-study <- "Trettin_et_al_2017"
+
 doi <- "10.2737/RDS-2017-0053"
 
 biblio_raw <- GetBibEntryWithDOI(doi)
 biblio_df <- as.data.frame(biblio_raw)
 
 study_citations <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study, 
+  # rownames_to_column("key") %>%
+  mutate(bibliography_id = "Trettin_et_al_2017_data", 
          study_id = study,
-         key = study,
-         publication_type = "data release", 
+         publication_type = "primary", 
          year = 2017) %>%
+  remove_rownames() %>%
   select(study_id, bibliography_id, publication_type, everything())
 
 # Write .bib file
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
+  select(-study_id, -publication_type) %>%
   distinct() %>%
-  column_to_rownames("key")
+  column_to_rownames("bibliography_id")
 
-WriteBib(as.BibEntry(bib_file), "./data/Trettin_2017/derivative/Trettin_2017.bib")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Trettin_2017/derivative/Trettin_2017.bib")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("core_level", cores)
-test_colnames("site_level", sites) 
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries"))
 
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(cores, depthseries)
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+test_numeric_vars(depthseries)
 
 ## 6. Write data ##############
-write_csv(sites, "./data/Trettin_2017/derivative/Trettin_et_al_2017_sites.csv")
-write_csv(cores, "./data/Trettin_2017/derivative/Trettin_et_al_2017_cores.csv")
-write_csv(depthseries, "./data/Trettin_2017/derivative/Trettin_et_al_2017_depthseries.csv")
-write_csv(study_citations, "./data/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
-write_csv(species, "./data/Trettin_2017/derivative/Trettin_et_al_2017_species.csv")
+write_csv(sites, "./data/primary_studies/Trettin_2017/derivative/Trettin_et_al_2017_sites.csv")
+write_csv(cores, "./data/primary_studies/Trettin_2017/derivative/Trettin_et_al_2017_cores.csv")
+write_csv(depthseries, "./data/primary_studies/Trettin_2017/derivative/Trettin_et_al_2017_depthseries.csv")
+write_csv(study_citations, "./data/primary_studies/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
+write_csv(species, "./data/primary_studies/Trettin_2017/derivative/Trettin_et_al_2017_species.csv")
 
