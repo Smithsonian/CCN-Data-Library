@@ -24,6 +24,7 @@ coring_method,pvc and hammer,PVC pipe was driven into the sediment with a hammer
 coring_method,russian corer,A half cylinder coring device with the coring section sealed off by a fin attached to a rotating pivot point
 coring_method,vibracore,"A technique involving collecting a core by sinking a continuous pipe into sediment attaching a source of vibration, then recovering using a winch and pulley"
 coring_method,surface sample,A technique involving collecting a core shallower than ~5 cm using a circular metal cutter.
+coring_method,soil pit,A pit is dug from the surface of the soil to the underlying bedrock.
 roots_flag,roots and rhizomes included,Roots and rhizomes were included in dry bulk density and or organic matter and carbon measurements
 roots_flag,roots and rhizomes separated,Roots and rhizomes were separated from soil before dry bulk density and or organic matter and carbon measurements.
 sediment_sieved_flag,sediment sieved,Sediment was sieved prior to analysis for organics
@@ -78,13 +79,14 @@ c14_counting_method,beta,Beta counting used.
 age_depth_model_reference,YBP,"Year zero is defined as years before present, 1960 CE"
 age_depth_model_reference,CE,Year zero is set according to Common Era and Before Common Era standards
 age_depth_model_reference,core collection date,Year zero is set as the core's collection year.
-salinity_class,brine,>50 ppt
-salinity_class,saline,30-50 ppt
-salinity_class,brackish,0.5-30 ppt
-salinity_class,fresh,<0.5 ppt
-salinity_class,mixoeuhaline,30-40 ppt
-salinity_class,polyhaline,18-30 ppt
-salinity_class,mesohaline,5-18 ppt
+salinity_class,estuarine,0.5-35 ppt.
+salinity_class,brine,>50 ppt.
+salinity_class,saline,30-50 ppt.
+salinity_class,brackish,0.5-30 ppt.
+salinity_class,fresh,<0.5 ppt.
+salinity_class,mixoeuhaline,30-40 ppt.
+salinity_class,polyhaline,18-30 ppt.
+salinity_class,mesohaline,5-18 ppt.
 salinity_class,oligohaline,0.5-5 ppt.
 salinity_method,field observation,Salinity inferred by field observation such as vegetation
 salinity_method,measurement,Salinity observed from local instrument.
@@ -152,6 +154,7 @@ habitat,marsh,"Wetland dominated by emergent vegetation, gramminoids or forbs."
 habitat,seagrass,Intertidal to subtidal and dominated by specialized predominantly submerged grasses.
 habitat,algal mat,Dominated by algae.
 habitat,unvegetated,Unvegetated.
+habitat,mudflat,Wetlands dominated by exposed layers of bay mud.
 code_type,description,Cover description not related to plant taxonomy.
 code_type,Family,Refers to taxonomic family without indicating a genus or species.
 code_type,Genus,Refers to a taxonomic genus without indicating a species.

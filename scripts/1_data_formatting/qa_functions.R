@@ -414,7 +414,8 @@ testTableVars <- function(table_names) {
   for (k in 1:length(datasets)) {
     
     dataset <- datasets[[k]] # store table
-    table_subset <- dataset[, names(dataset) %in% var_names] # subset table
+    table_subset <- dataset %>% select(any_of(var_names)) # subset table
+    # [, which(names(dataset) %in% var_names)] 
 
     # Check each column of current dataset
     # Append any invalid variables to the empty data frame

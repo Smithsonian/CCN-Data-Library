@@ -30,7 +30,6 @@ cores_raw <- read.csv("./data/primary_studies/mctigue_2020/original/mctigue_et_a
 depthseries_raw <- read.csv("./data/primary_studies/mctigue_2020/original/mctigue_et_al_2020_depthseries.csv")
 species_raw <- read_csv("./data/primary_studies/mctigue_2020/original/mctigue_et_al_2020_species.csv")
 methods_raw <- read_csv("./data/primary_studies/mctigue_2020/original/mctigue_et_al_2020_materials_and_methods.csv")
-bib <- ReadBib("./data/primary_studies/mctigue_2020/original/citations.bib")
 
 study_id_value <- "McTigue_et_al_2020"
 
@@ -48,7 +47,8 @@ depthseries <- depthseries_raw %>%
   select(-fraction_carbon_modeled, -mass_depth) %>%
   group_by(core_id, depth_min) %>%
   arrange(depth_min, .by_group=T) %>%
-  select(study_id, site_id, core_id, depth_min, depth_max, sample_id, everything())
+  select(study_id, site_id, core_id, depth_min, depth_max, sample_id, everything()) %>%
+  ungroup()
   
 cores <- cores_raw %>%
   mutate(core_year = year(core_date)) %>%
@@ -68,26 +68,45 @@ methods <- methods_raw %>%
          excess_pb210_model = "CFCS",
          study_id = study_id_value)
 
-study_citations <- as.data.frame(bib) %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = recode(key,
-                                  "mctigue2019sea" = "McTigue_et_al_2019",
-                                  "mctigue2020DataRelease" = "McTigue_et_al_2020"),
-         study_id = study_id_value,
-         publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year))
+# Citations ####
+if(!file.exists("data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020_study_citations.csv")){
+  
+  bib <- ReadBib("./data/primary_studies/mctigue_2020/original/citations.bib")
+  
+  study_citations <- as.data.frame(bib) %>%
+    mutate(bibliography_id = c("McTigue_et_al_2019_article", "McTigue_et_al_2020_data"),
+           study_id = study_id_value,
+           publication_type = c("associated", "primary")) %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
+    remove_rownames()
+  
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020.bib")
+  write_csv(study_citations, "data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020_study_citations.csv")
+  
+}
 
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("key")
+## QA/QC ###############
+source("./scripts/1_data_formatting/qa_functions.R")
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020.bib")
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
 
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+test_numeric_vars(depthseries)
+
+
+# write files
 write_csv(cores, "data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020_cores.csv") 
 write_csv(depthseries, "data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020_depthseries.csv")
-write_csv(study_citations, "data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020_study_citations.csv")
 write_csv(species, "data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020_species.csv")
 write_csv(methods, "./data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020_methods.csv")
 

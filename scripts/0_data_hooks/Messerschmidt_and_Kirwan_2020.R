@@ -39,7 +39,7 @@ depthseries <- depthseries_raw %>%
   select(-sedimentation_rate, -sedimentation_rate_se)
 
 methods <- methods_raw %>%
-  mutate(dry_bulk_density_flag = dry_bulk_density_sample_volume) %>%
+  mutate(dry_bulk_density_flag = "to constant mass") %>%
   select(-dry_bulk_density_sample_volume)
 
 species <- species_raw %>%
@@ -47,25 +47,29 @@ species <- species_raw %>%
   select(study_id, site_id, core_id, species_code)
 
 ## Citations ####
-doi <- "https://doi.org/10.25573/serc.11914140"
-study_id_value <- "Messerschmidt_and_Kirwan_2020"
 
-bib <- GetBibEntryWithDOI(doi)
-
-study_citations <- as.data.frame(bib) %>%
-  mutate(year = as.numeric(year),
-         study_id = study_id_value,
-         bibliography_id = study_id_value,
-         publication_type = bibtype,
-         key = doi)
-
-## Format bibliography
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("key")
-
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020.bib")
+if(!file.exists("data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020_study_citations.csv")){
+  doi <- "https://doi.org/10.25573/serc.11914140"
+  study_id_value <- "Messerschmidt_and_Kirwan_2020"
+  
+  bib <- GetBibEntryWithDOI(doi)
+  
+  study_citations <- as.data.frame(bib) %>%
+    mutate(study_id = study_id_value,
+           bibliography_id = "Messerschmidt_and_Kirwan_2020_data",
+           publication_type = "primary") %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  ## Format bibliography
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020.bib")
+  write_csv(study_citations, "./data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020_study_citations.csv")
+}
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -73,14 +77,17 @@ source("./scripts/1_data_formatting/qa_functions.R")
 depthseries <- reorderColumns("depthseries", depthseries)
 methods <- reorderColumns("methods", methods)
 
-# Make sure column names are formatted correctly: 
-test_colnames("cores", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
-test_colnames("methods", methods)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+test_numeric_vars(depthseries)
 
 write_csv(cores, "./data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020_cores.csv")
 write_csv(species, "./data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020_species.csv")
 write_csv(methods, "./data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020_methods.csv")
 write_csv(depthseries, "./data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020_study_citations.csv")
