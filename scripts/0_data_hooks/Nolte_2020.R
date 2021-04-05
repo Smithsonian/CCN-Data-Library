@@ -54,35 +54,37 @@ depthseries <- depthseries_raw %>%
 
 ## Citations ####
 
-# doi <- "https://doi.org/10.25573/serc.11958996"
-study_id_value <- "Nolte_2020"
-
-data_bib <- GetBibEntryWithDOI("https://doi.org/10.25573/serc.11958996")
-pub_bib <- GetBibEntryWithDOI("10.1016/j.ecss.2013.10.026")
-
-associated_publication <- as.data.frame(pub_bib) %>%
-  mutate(bibliography_id = paste0("Nolte_et_al_", year, "_article"),
-         study_id = study_id_value,
-         publication_type = "associated")
+if(!file.exists("data/primary_studies/nolte_2020/derivative/nolte_2020_study_citations.csv")){
+  # doi <- "https://doi.org/10.25573/serc.11958996"
+  study_id_value <- "Nolte_2020"
+  
+  data_bib <- GetBibEntryWithDOI("https://doi.org/10.25573/serc.11958996")
+  pub_bib <- GetBibEntryWithDOI("10.1016/j.ecss.2013.10.026")
+  
+  associated_publication <- as.data.frame(pub_bib) %>%
+    mutate(bibliography_id = paste0("Nolte_et_al_", year, "_article"),
+           study_id = study_id_value,
+           publication_type = "associated")
   # mutate(year = as.numeric(year),
   #        volume = as.numeric(volume))
-
-data_citation <- as.data.frame(data_bib) %>%
-  mutate(bibliography_id = paste0("Nolte_", year, "_data"),
-         study_id = study_id_value,
-         publication_type = "primary")
-
-study_citations <- bind_rows(data_citation, associated_publication) %>%
-  remove_rownames() %>%
-  select(study_id, bibliography_id, publication_type, bibtype, everything())
   
-## Format bibliography
-bib_file <- study_citations %>%
-  select(-study_id,  -publication_type) %>%
-  column_to_rownames("bibliography_id")
-
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Nolte_2020/derivative/nolte_2020.bib")
-
+  data_citation <- as.data.frame(data_bib) %>%
+    mutate(bibliography_id = paste0("Nolte_", year, "_data"),
+           study_id = study_id_value,
+           publication_type = "primary")
+  
+  study_citations <- bind_rows(data_citation, associated_publication) %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything())
+  
+  ## Format bibliography
+  bib_file <- study_citations %>%
+    select(-study_id,  -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/Nolte_2020/derivative/nolte_2020.bib")
+  write_csv(study_citations, "./data/primary_studies/nolte_2020/derivative/nolte_2020_study_citations.csv")
+}
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -106,6 +108,5 @@ write_csv(species, "./data/primary_studies/nolte_2020/derivative/nolte_2020_spec
 write_csv(impacts, "./data/primary_studies/nolte_2020/derivative/nolte_2020_impacts.csv")
 write_csv(methods, "./data/primary_studies/nolte_2020/derivative/nolte_2020_methods.csv")
 write_csv(depthseries, "./data/primary_studies/nolte_2020/derivative/nolte_2020_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/nolte_2020/derivative/nolte_2020_study_citations.csv")
 
   

@@ -14,43 +14,43 @@
 
 ## INSTRUCTIONS ####################
 
-# 1. Designate the target webpage to scrape for data
-#   Paste the url of the target webpage here, wrapped in quotation marks
-
-# Note: because Osland_2016 has multiple data release DOIs, we'll just run this
-#   script separately for each one. Easier to read than looping through each url
-
-URL_1 <- "https://www.sciencebase.gov/catalog/item/57b24094e4b00148d3982cce"
-URL_2 <- "https://www.sciencebase.gov/catalog/item/57b240fce4b00148d3982cd0"
-URL_3 <- "https://www.sciencebase.gov/catalog/item/57aa11efe4b05e859be06932"
-
-                 
-# 2. Name the files
-#   Add the names for each file into this list, wrapped in quotation marks, IN 
-#   THE SAME ORDER THAT THEY ARE LISTED ON THE WEBPAGE ITSELF. Include the file
-#   extension (.csv, .xlsx, etc.) in the name of the file as well.
-  
-FILE_NAMES_1 <- list("U_S_Gulf_of_Mexico_coast_TX_MS_AL_and_FL_Macroclimate_Landscape_and_Climate_Data_2013_2014_.xml",
-                   "Dataset_03_macroclimate_landscape_and_climate_data_2_22_2016.xlsx"
-)
-
-FILE_NAMES_2 <- list("U_S_Gulf_of_Mexico_coast_TX_MS_AL_and_FL_Macroclimate_Soil_Data_2013_2014_.xml",
-                     "Dataset_02_macroclimate_soil_data_2_22_2016.xlsx"
-)
-
-FILE_NAMES_3 <- list("U_S_Gulf_of_Mexico_coast_TX_MS_AL_and_FL_Macroclimate_Vegetation_Data_Section_1_2013_2014_.xml",
-                     "Dataset_01_macroclimate_vegetation_data_all_2_24_2016.xlsx"
-)
-
-# 3. Designate file path of where these data files will go in the CCRCN library
-#   Paste the file path here, wrapped in quotation marks. The getwd() function 
-#   will automatically detect the working directory of the R project (in the case 
-#   of the CCRCN Data library, the location of where this repository is stored on 
-#   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
-#   with whatever you include within the quotation marks.
-  
-FILE_PATH <- paste0(getwd(), "/data/primary_studies/Osland_2016/original/" )
-  
+# # 1. Designate the target webpage to scrape for data
+# #   Paste the url of the target webpage here, wrapped in quotation marks
+# 
+# # Note: because Osland_2016 has multiple data release DOIs, we'll just run this
+# #   script separately for each one. Easier to read than looping through each url
+# 
+# URL_1 <- "https://www.sciencebase.gov/catalog/item/57b24094e4b00148d3982cce"
+# URL_2 <- "https://www.sciencebase.gov/catalog/item/57b240fce4b00148d3982cd0"
+# URL_3 <- "https://www.sciencebase.gov/catalog/item/57aa11efe4b05e859be06932"
+# 
+#                  
+# # 2. Name the files
+# #   Add the names for each file into this list, wrapped in quotation marks, IN 
+# #   THE SAME ORDER THAT THEY ARE LISTED ON THE WEBPAGE ITSELF. Include the file
+# #   extension (.csv, .xlsx, etc.) in the name of the file as well.
+#   
+# FILE_NAMES_1 <- list("U_S_Gulf_of_Mexico_coast_TX_MS_AL_and_FL_Macroclimate_Landscape_and_Climate_Data_2013_2014_.xml",
+#                    "Dataset_03_macroclimate_landscape_and_climate_data_2_22_2016.xlsx"
+# )
+# 
+# FILE_NAMES_2 <- list("U_S_Gulf_of_Mexico_coast_TX_MS_AL_and_FL_Macroclimate_Soil_Data_2013_2014_.xml",
+#                      "Dataset_02_macroclimate_soil_data_2_22_2016.xlsx"
+# )
+# 
+# FILE_NAMES_3 <- list("U_S_Gulf_of_Mexico_coast_TX_MS_AL_and_FL_Macroclimate_Vegetation_Data_Section_1_2013_2014_.xml",
+#                      "Dataset_01_macroclimate_vegetation_data_all_2_24_2016.xlsx"
+# )
+# 
+# # 3. Designate file path of where these data files will go in the CCRCN library
+# #   Paste the file path here, wrapped in quotation marks. The getwd() function 
+# #   will automatically detect the working directory of the R project (in the case 
+# #   of the CCRCN Data library, the location of where this repository is stored on 
+# #   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
+# #   with whatever you include within the quotation marks.
+#   
+# FILE_PATH <- paste0(getwd(), "/data/primary_studies/Osland_2016/original/" )
+#   
 ## Assumptions made about data ###############
 
 
@@ -66,26 +66,26 @@ library(sp)
 
 ## Download data ########################
 
-# The stem of the url should always be the same
-BASE_URL <- "https://www.sciencebase.gov"
-
-# Because Osland 2016 has multiple urls, we'll need to run this loop multiple times
- 
-page <- read_html(URL_3)
-  
-# Extract the url paths for each data file embedded on the webpage, and save
-#   those paths to a list
-url_list <- page %>%
-  html_nodes('.sb-download-link') %>% 
-  html_attr("data-url")
-  
-# For each data file path on the webpage....
-for (i in 1:length(url_list)) {
-  
-  # ...extract and download file
-  download.file(paste0(BASE_URL, url_list[[i]]), paste0(FILE_PATH, FILE_NAMES_3[[i]]),
-                  mode = "wb")
-}
+# # The stem of the url should always be the same
+# BASE_URL <- "https://www.sciencebase.gov"
+# 
+# # Because Osland 2016 has multiple urls, we'll need to run this loop multiple times
+#  
+# page <- read_html(URL_3)
+#   
+# # Extract the url paths for each data file embedded on the webpage, and save
+# #   those paths to a list
+# url_list <- page %>%
+#   html_nodes('.sb-download-link') %>% 
+#   html_attr("data-url")
+#   
+# # For each data file path on the webpage....
+# for (i in 1:length(url_list)) {
+#   
+#   # ...extract and download file
+#   download.file(paste0(BASE_URL, url_list[[i]]), paste0(FILE_PATH, FILE_NAMES_3[[i]]),
+#                   mode = "wb")
+# }
 
 ## Curate data to CCRCN Structure #################
 FILE_PATH <- paste0(getwd(), "/data/primary_studies/Osland_2016/original/" )
@@ -206,7 +206,7 @@ Osland_2016_core_data <- Osland_2016_core_data %>%
 # From Osland_2016_soil
 
 # Call functions from curation_functions script
-source("./scripts/1_data_formatting/curation_functions.R") 
+# source("./scripts/1_data_formatting/curation_functions.R") 
 
 Osland_2016_depth_series_data <- depth_series_data %>%
   rename(site_id = "estuary") %>%
@@ -317,56 +317,75 @@ Osland_2016_species_data <- Osland_2016_species_data %>%
 
 
 ## Create study-level data ######
-doi <- "10.5066/F7J1017G"
-study <- "Osland_et_al_2016"
 
-# Get bibtex citation from DOI
-biblio_raw <- GetBibEntryWithDOI(doi)
-biblio_df <- as.data.frame(biblio_raw)
-study_citations <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study, 
-         study_id = study,
-         key = study,
-         publication_type = "data release", 
-         year = as.numeric(year)) %>%
-  select(study_id, bibliography_id, publication_type, everything())
-
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  column_to_rownames("key")
-
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016.bib")
+if(!file.exists("data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_study_citations.csv")){
+  doi <- "10.5066/F7J1017G"
+  study <- "Osland_et_al_2016"
+  
+  # Get bibtex citation from DOI
+  biblio_raw <- GetBibEntryWithDOI(doi)
+  biblio_df <- as.data.frame(biblio_raw)
+  
+  study_citations <- biblio_df %>%
+    mutate(bibliography_id = "Osland_et_al_2016_data", 
+           study_id = study,
+           publication_type = "primary") %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016.bib")
+  write_csv(study_citations, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_study_citations.csv")
+}
 
 ## QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("core_level", Osland_2016_core_data) 
-test_colnames("site_level", Osland_2016_site_data) 
-test_colnames("depthseries", Osland_2016_depth_series_data) 
-test_colnames("species", Osland_2016_species_data)
-              
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(Osland_2016_core_data, Osland_2016_depth_series_data)
+# reorder columns 
+sites <- reorderColumns("sites", Osland_2016_site_data)
+cores <- reorderColumns("cores", Osland_2016_core_data)
+depthseries <- reorderColumns("depthseries", Osland_2016_depth_series_data)
+species <- reorderColumns("species", Osland_2016_species_data)
 
-# Re-order columns
-Osland_2016_species_data <- select_and_reorder_columns("species", Osland_2016_species_data, 
-                                                       "/data/primary_studies/Osland_2016/derivative/")
-Osland_2016_depth_series_data <- select_and_reorder_columns("depthseries", Osland_2016_depth_series_data,
-                                                            "/data/primary_studies/Osland_2016/derivative/")
-Osland_2016_site_data <- select_and_reorder_columns("site_level", Osland_2016_site_data,
-                                                    "/data/primary_studies/Osland_2016/derivative/")
-Osland_2016_core_data <- select_and_reorder_columns("core_level", Osland_2016_core_data, 
-                                                    "/data/primary_studies/Osland_2016/derivative/")
+# Check col and varnames
+testTableCols(table_names = c("cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("cores", "depthseries", "species"))
+
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+test_numeric_vars(depthseries)
+
+
+# # Make sure column names are formatted correctly: 
+# test_colnames("core_level", Osland_2016_core_data) 
+# test_colnames("site_level", Osland_2016_site_data) 
+# test_colnames("depthseries", Osland_2016_depth_series_data) 
+# test_colnames("species", Osland_2016_species_data)
+#               
+# # Test relationships between core_ids at core- and depthseries-levels
+# # the test returns all core-level rows that did not have a match in the depth series data
+# results <- test_core_relationships(Osland_2016_core_data, Osland_2016_depth_series_data)
+# 
+# # Re-order columns
+# Osland_2016_species_data <- select_and_reorder_columns("species", Osland_2016_species_data, 
+#                                                        "/data/primary_studies/Osland_2016/derivative/")
+# Osland_2016_depth_series_data <- select_and_reorder_columns("depthseries", Osland_2016_depth_series_data,
+#                                                             "/data/primary_studies/Osland_2016/derivative/")
+# Osland_2016_site_data <- select_and_reorder_columns("site_level", Osland_2016_site_data,
+#                                                     "/data/primary_studies/Osland_2016/derivative/")
+# Osland_2016_core_data <- select_and_reorder_columns("core_level", Osland_2016_core_data, 
+#                                                     "/data/primary_studies/Osland_2016/derivative/")
 
 ## Write data #################
-write_csv(Osland_2016_species_data, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_species.csv")
-write_csv(Osland_2016_depth_series_data, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_depthseries.csv")
-write_csv(Osland_2016_site_data, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_sites.csv")
-write_csv(Osland_2016_core_data, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_cores.csv")
-write_csv(study_citations, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_study_citations.csv")
+write_csv(species, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_species.csv")
+write_csv(depthseries, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_depthseries.csv")
+write_csv(sites, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_sites.csv")
+write_csv(cores, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_cores.csv")
 
 

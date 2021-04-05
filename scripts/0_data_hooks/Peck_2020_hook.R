@@ -31,6 +31,12 @@ species_raw <- read_csv("./data/primary_studies/peck_2020/original/peck_et_al_20
 methods_raw <- read_csv("./data/primary_studies/peck_2020/original/peck_et_al_2020_materials_and_methods.csv")
 impacts_raw <- read_csv("./data/primary_studies/peck_2020/original/peck_et_al_2020_impacts.csv")
 
+# Align tables to database guidance
+
+impacts <- impacts_raw
+
+methods <- methods_raw
+
 cores <- cores_raw %>%
   separate(core_date, into=c("month", "day", "core_year"), sep="/") %>%
   mutate(core_year = paste0("20", core_year)) %>%
@@ -53,30 +59,47 @@ species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
   select(study_id, site_id, core_id, species_code) 
 
-peck_doi <- "https://doi.org/10.25573/serc.11317820.v2"
+# write citation
 
-citation_raw <- as.data.frame(GetBibEntryWithDOI(peck_doi))
+if(!file.exists("data/primary_studies/peck_2020/derivative/peck_et_al_2020_study_citations.csv")){
+  
+  peck_doi <- "https://doi.org/10.25573/serc.11317820.v2"
+  
+  citation_raw <- as.data.frame(GetBibEntryWithDOI(peck_doi))
+  
+  study_citations <- citation_raw %>%
+    mutate(bibliography_id = "Peck_et_al_2020_data",
+           study_id = "Peck_et_al_2020",
+           publication_type = "primary") %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
+    remove_rownames()
+  
+  ## Format bibliography
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/peck_2020/derivative/peck_et_al_2020.bib")
+  write_csv(study_citations, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_study_citations.csv")
+}
 
-study_citations <- citation_raw %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = "Peck_et_al_2020",
-         study_id = "Peck_et_al_2020",
-         publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year))
+## QA/QC ###############
+source("./scripts/1_data_formatting/qa_functions.R")
 
-## Format bibliography
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("key")
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/peck_2020/derivative/peck_et_al_2020.bib")
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+test_numeric_vars(depthseries)
 
+# write files
 write_csv(cores, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_cores.csv")
 write_csv(species, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_species.csv")
 write_csv(methods_raw, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_methods.csv")
 write_csv(depthseries, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_study_citations.csv")
-
 

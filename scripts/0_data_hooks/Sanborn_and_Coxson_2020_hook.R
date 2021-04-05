@@ -69,28 +69,33 @@ species <- species_raw %>%
   select(study_id, site_id, core_id, species_code)
 
 ## Citations ####
-doi <- "https://doi.org/10.25573/serc.12252005"
+data_doi <- "10.25573/serc.12252005"
 
 study_citations <- study_citations_raw %>%
-  mutate(year = as.numeric(year))
+  select(-key, -keywords, -journal) %>%
+  mutate(doi = data_doi,
+         publication_type = "primary")
 
 ## Format bibliography
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
+  select(-study_id, -publication_type) %>%
   distinct() %>%
-  column_to_rownames("key")
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020.bib")
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("sites", sites)
-test_colnames("cores", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
-test_colnames("methods", methods)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries",  "species"))
+
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+test_numeric_vars(depthseries)
 
 ## Write derivative data ####
 write_csv(sites, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_sites.csv")

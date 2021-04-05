@@ -19,8 +19,17 @@ depthseries_raw <- read_csv("./data/primary_studies/Noe_2016/original/Noe_2016_d
 cores_raw <- read_csv("./data/primary_studies/Noe_2016/original/Noe_2016_cores.csv")
 species_raw <- read_csv("./data/primary_studies/Noe_2016/original/Noe_2016_species.csv")
 impacts_raw <- read_csv("./data/primary_studies/Noe_2016/original/Noe_2016_impacts.csv")
+methods_raw <- read_csv("./data/primary_studies/Noe_2016/original/Noe_et_al_2016_methods.csv")
 
-## Curate depthseries data ##################
+guidance <- read_csv("docs/ccrcn_database_structure.csv")
+
+## Curate Data Tables ####
+
+methods <- methods_raw %>%
+  select(-publication_type) %>%
+  mutate(fraction_carbon_type = "organic carbon")
+
+## Curate depthseries data #####
 # The raw data is in a Word document where red colored text indicated a modeled value. 
 # The table was moved to an excel sheet and red colored text was moved to new columns that indicate they were modeled. 
 
@@ -56,7 +65,8 @@ depthseries <- depthseries_raw %>%
 ## Curate core data #########################
 cores <- cores_raw %>%
   select(study_id, site_id, core_id, core_latitude, core_longitude, core_elevation, 
-         salinity_class, vegetation_class, core_length_flag)
+         salinity_class, vegetation_class, core_length_flag) %>%
+  mutate(salinity_class = recode(salinity_class, "freshwater" = "fresh"))
 
 ## Curate species and impact data ###########
 species <- species_raw %>%
@@ -79,49 +89,61 @@ impacts <- impacts_raw %>%
 
 
 ## Create study-level data ######
-# Get bibtex citation from DOI
-biblio_raw <- GetBibEntryWithDOI("10.1007/s12237-016-0066-4")
-biblio_df <- as.data.frame(biblio_raw)
-study_citations <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = "Noe_et_al_2016", 
-         study_id = "Noe_et_al_2016",
-         key = "Noe_et_al_2016",
-         publication_type = "Article", 
-         year = as.numeric(year), 
-         volume = as.numeric(volume), 
-         number = as.numeric(number)) %>%
-  select(study_id, bibliography_id, publication_type, everything())
 
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  column_to_rownames("key")
+if(!file.exists("data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_study_citations.csv")){
+  # Get bibtex citation from DOI
+  biblio_raw <- GetBibEntryWithDOI("10.1007/s12237-016-0066-4")
+  biblio_df <- as.data.frame(biblio_raw)
+  
+  study_citations <- biblio_df %>%
+    mutate(bibliography_id = "Noe_et_al_2016_article", 
+           study_id = "Noe_et_al_2016",
+           publication_type = "associated") %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016.bib")
+  write_csv(study_citations, "./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_study_citations.csv")
+}
 
-WriteBib(as.BibEntry(bib_file), "./data/Noe_2016/derivative/Noe_et_al_2016.bib")
 
 ## QA/QC ##########################
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("core_level", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
-test_colnames("impact", impacts)
-test_varnames(cores)
-test_varnames(depthseries)
-test_varnames(impacts)
-test_varnames(species)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species",  "impacts"))
 
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
 test_numeric_vars(depthseries)
+
+# # Make sure column names are formatted correctly: 
+# test_colnames("core_level", cores)
+# test_colnames("depthseries", depthseries)
+# test_colnames("species", species)
+# test_colnames("impact", impacts)
+# test_varnames(cores)
+# test_varnames(depthseries)
+# test_varnames(impacts)
+# test_varnames(species)
+# 
+# test_numeric_vars(depthseries)
 
 # Test relationships between core_ids at core- and depthseries-levels
 # the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(cores, depthseries)
+# results <- test_core_relationships(cores, depthseries)
 
 ## Write data ######################
-write_csv(depthseries, "./data/Noe_2016/derivative/Noe_et_al_2016_depthseries.csv")
-write_csv(cores, "./data/Noe_2016/derivative/Noe_et_al_2016_cores.csv")
-write_csv(impacts, "./data/Noe_2016/derivative/Noe_et_al_2016_impacts.csv")
-write_csv(species, "./data/Noe_2016/derivative/Noe_et_al_2016_species.csv")
-write_csv(study_citations, "./data/Noe_2016/derivative/Noe_et_al_2016_study_citations.csv")
+write_csv(depthseries, "./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_depthseries.csv")
+write_csv(cores, "./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_cores.csv")
+write_csv(impacts, "./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_impacts.csv")
+write_csv(species, "./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_species.csv")
+write_csv(methods, "./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_methods.csv")
