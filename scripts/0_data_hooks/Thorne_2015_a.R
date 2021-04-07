@@ -126,36 +126,48 @@ depthseries <- depthseries_data %>%
 
 cores <- select(core_data, -cs137_peak_cm)
 
+## ... methods ####
+
+methods_raw <- read_csv("data/primary_studies/Thorne_2015_a/original/Thorne_et_al_2015_methods.csv")
+
+methods <- methods_raw %>%
+  select_if(function(x) {!all(is.na(x))})
+
+
 ## ... 4D Generate study-citation link ############
 study <- "Thorne_et_al_2015"
-doi <- "10.5066/F7SJ1HNC"
-pub_dio <- "10.1126/sciadv.aao3270"
 
-biblio_raw <- GetBibEntryWithDOI(c(doi, pub_dio))
-# biblio_raw <- BibEntry(bibtype = "Misc", 
-#                              key = "Thorne_et_al_2015", 
-#                              title = "Marshes to Mudflats: Climate Change Effects Along a Latitudinal Gradient in the Pacific Northwest",
-#                              author = "U.S. Geological Survey {Karen Thorne}", 
-#                              doi = "10.5066/f7sj1hnc",
-#                              publisher = "U.S. Geological Survey",
-#                              year = "2015", 
-#                              url = "https://www.sciencebase.gov/catalog/item/5006e99ee4b0abf7ce733f58"
-# )
-biblio_df <- as.data.frame(biblio_raw)
-
-study_citations <- biblio_df %>%
-  mutate(bibliography_id = c("Thorne_et_al_2015_data", "Thorne_et_al_2015_article"), 
-         study_id = study,
-         publication_type = c("primary", "associated")) %>%
-  remove_rownames() %>%
-  select(study_id, bibliography_id, publication_type, everything())
-
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -publication_type) %>%
-  column_to_rownames("bibliography_id")
-
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015.bib")
+if(!file.exists("./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")){
+  doi <- "10.5066/F7SJ1HNC"
+  pub_dio <- "10.1126/sciadv.aao3270"
+  
+  biblio_raw <- GetBibEntryWithDOI(c(doi, pub_dio))
+  # biblio_raw <- BibEntry(bibtype = "Misc", 
+  #                              key = "Thorne_et_al_2015", 
+  #                              title = "Marshes to Mudflats: Climate Change Effects Along a Latitudinal Gradient in the Pacific Northwest",
+  #                              author = "U.S. Geological Survey {Karen Thorne}", 
+  #                              doi = "10.5066/f7sj1hnc",
+  #                              publisher = "U.S. Geological Survey",
+  #                              year = "2015", 
+  #                              url = "https://www.sciencebase.gov/catalog/item/5006e99ee4b0abf7ce733f58"
+  # )
+  biblio_df <- as.data.frame(biblio_raw)
+  
+  study_citations <- biblio_df %>%
+    mutate(bibliography_id = c("Thorne_et_al_2015_data", "Thorne_et_al_2015_article"), 
+           study_id = study,
+           publication_type = c("primary", "associated")) %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015.bib")
+  write_csv(study_citations, "./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
+}
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -173,5 +185,5 @@ test_numeric_vars(depthseries)
 ## 6. Export data
 write_csv(cores, "./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015_cores.csv")
 write_csv(depthseries, "./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
+write_csv(methods, "./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015_methods.csv")
 

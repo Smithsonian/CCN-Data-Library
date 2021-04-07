@@ -8,9 +8,13 @@ library(RefManageR)
 
 raw_cores <- read_csv("./data/primary_studies/drexler_2013/original/drexler_2019_initial_sites.csv")
 raw_depthseries <- read_csv("./data/primary_studies/drexler_2013/original/drexler_2019_initial_depthseries.csv")
+raw_methods <- read_csv("./data/primary_studies/drexler_2013/original/drexler_et_al_2013_methods.csv")
 
 ## Curate data #########
 study_id_value <- "Drexler_et_al_2013"
+
+## ... methods ####
+methods <- raw_methods
 
 ## ... core data #######
 cores <- raw_cores %>%
@@ -73,53 +77,44 @@ cores <- cores %>%
   filter(core_id %in% depthseries$core_id)
 
 ## Create study-level data ######
-# Get bibtex citation from DOI
-biblio_raw <- GetBibEntryWithDOI("10.1007/s13157-013-0456-3")
-biblio_df <- as.data.frame(biblio_raw)
-study_citations <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study_id_value, 
-         study_id = study_id_value,
-         key = study_id_value,
-         publication_type = "Article", 
-         year = as.numeric(year), 
-         volume = as.numeric(volume), 
-         number = as.numeric(number)) %>%
-  select(study_id, bibliography_id, publication_type, everything())
-
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  column_to_rownames("key")
-
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013.bib")
+if(!file.exists("./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_study_citations.csv")){
+  # Get bibtex citation from DOI
+  biblio_raw <- GetBibEntryWithDOI("10.1007/s13157-013-0456-3")
+  biblio_df <- as.data.frame(biblio_raw)
+  
+  study_citations <- biblio_df %>%
+    mutate(bibliography_id = "Drexler_et_al_2013_article", 
+           study_id = study_id_value,
+           publication_type = "associated") %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013.bib")
+  write_csv(study_citations, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_study_citations.csv")
+}
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("core_level", cores)
-test_colnames("site_level", sites) 
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
-test_colnames("impact", impacts)
+# Check col and varnames
+testTableCols(table_names = c("sites", "methods", "cores"), version = "1")
+testTableVars(table_names = c("sites", "methods", "cores"))
 
-test_variable_names(cores)
-test_variable_names(sites)
-test_variable_names(impacts)
-test_variable_names(depthseries)
-test_variable_names(species)
-
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(cores, depthseries)
-
-test_numeric_vars(depthseries)
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
 ## Export curated data ###########
 write_csv(depthseries, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_depthseries.csv")
 write_csv(cores, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_cores.csv")
 write_csv(species, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_species.csv")
 write_csv(impacts, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_impacts.csv")
-write_csv(study_citations, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_study_citations.csv")
+write_csv(methods, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_methods.csv")
 

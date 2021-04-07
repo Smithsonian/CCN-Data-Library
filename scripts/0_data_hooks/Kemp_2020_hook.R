@@ -36,7 +36,7 @@ depthseries <- depthseries_raw %>%
   select(-cs137_age, -pb210_cic_age, -pb210_crs_age)
 
 cores <- cores_raw %>%
-  rename(core_year =core_date)
+  rename(core_year = core_date)
 
 species <- species_raw  %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
@@ -45,27 +45,41 @@ species <- species_raw  %>%
 impacts <- impacts_raw %>%
   filter(impact_class != "eutrophic")
 
+methods <- methods_raw
+
+# Citations ####
+
 study_citations <- as.data.frame(bib) %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = recode(key,
-                                  "Kemp_2012" = "Kemp_et_al_2012",
-                                  "kemp2020DataRelease" = "Kemp_et_al_2020_Data_Release"),
+  mutate(bibliography_id = c("Kemp_et_al_2012_article", "Kemp_et_al_2020_data"),
          study_id = "Kemp_et_al_2020",
-         publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year),
-         volume = as.numeric(volume))
+         publication_type = c("associated", "primary")) %>%
+  remove_rownames() %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
+  select(-study_id, -publication_type) %>%
   distinct() %>%
-  column_to_rownames("key")
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/kemp_2020/derivative/kemp_et_al_2020.bib")
+write_csv(study_citations, "data/primary_studies/kemp_2020/derivative/kemp_et_al_2020_study_citations.csv")
 
+## QA/QC ###############
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
+
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+test_numeric <- test_numeric_vars(depthseries)
+
+# write files
 write_csv(cores, "data/primary_studies/kemp_2020/derivative/kemp_et_al_2020_cores.csv") 
 write_csv(depthseries, "data/primary_studies/kemp_2020/derivative/kemp_et_al_2020_depthseries.csv")
-write_csv(study_citations, "data/primary_studies/kemp_2020/derivative/kemp_et_al_2020_study_citations.csv")
 write_csv(species, "data/primary_studies/kemp_2020/derivative/kemp_et_al_2020_species.csv")
 write_csv(impacts, "./data/primary_studies/kemp_2020/derivative/kemp_et_al_2020_impacts.csv")
-write_csv(methods_raw, "./data/primary_studies/kemp_2020/derivative/kemp_et_al_2020_methods.csv")
+write_csv(methods, "./data/primary_studies/kemp_2020/derivative/kemp_et_al_2020_methods.csv")

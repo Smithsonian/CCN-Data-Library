@@ -330,7 +330,7 @@ recode_salinity <- function(df, salinity_class) {
                                           "Bra Sal" = "bracish to saline",
                                           "Del" = "deltaic", 
                                           "Est" = "estuarine", 
-                                          "Fre" = "freshwater", 
+                                          "Fre" = "fresh", 
                                           "Int" = "intermediate salinity", 
                                           "Mes" = "mesohaline", 
                                           "Oli" = "oligohaline",

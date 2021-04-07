@@ -90,28 +90,31 @@ species <- species_raw %>%
 #   mutate(year = as.numeric(year),
 #          month = "aug")
 
-study_citations <- study_citations_raw %>%
-  mutate(key = c("Kauffman_et_al_2020_data", "Kauffman_et_al_2020"))
+study_citations <- study_citations_raw
 
 # Write .bib file
 bib_file <- study_citations %>%
-  # slice(1) %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
+  select(-study_id, -publication_type) %>%
   distinct() %>%
-  column_to_rownames("key")
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Kauffman_et_al_2020/derivative/Kauffman_et_al_2020.bib")
+write_csv(study_citations, "./data/primary_studies/Kauffman_et_al_2020/derivative/kauffman_et_al_2020_study_citations.csv")
 
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("sites", sites)
-test_colnames("cores", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
-test_colnames("methods", methods)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+test_depthseries <- test_numeric_vars(depthseries)
+
 
 ## Write derivative data ####
 write_csv(sites, "./data/primary_studies/Kauffman_et_al_2020/derivative/kauffman_et_al_2020_sites.csv")
@@ -119,6 +122,5 @@ write_csv(cores, "./data/primary_studies/Kauffman_et_al_2020/derivative/kauffman
 write_csv(species, "./data/primary_studies/Kauffman_et_al_2020/derivative/kauffman_et_al_2020_species.csv")
 write_csv(methods, "./data/primary_studies/Kauffman_et_al_2020/derivative/kauffman_et_al_2020_methods.csv")
 write_csv(depthseries, "./data/primary_studies/Kauffman_et_al_2020/derivative/kauffman_et_al_2020_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Kauffman_et_al_2020/derivative/kauffman_et_al_2020_study_citations.csv")
 
 

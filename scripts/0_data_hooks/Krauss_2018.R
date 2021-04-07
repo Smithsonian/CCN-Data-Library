@@ -35,64 +35,66 @@ library(RefManageR)
 
 ## 1. Download data #####################
 
-# 1. Designate the target webpage to scrape for data
-#   Paste the url of the target webpage here, wrapped in quotation marks
+## ARCHIVED DATA DOWNLOADING WORKFLOW
 
-URL <- "https://www.sciencebase.gov/catalog/item/59e9f79de4b05fe04cd690a1"
-
-# 2. Name the files
-#   Add the names for each file into this list, wrapped in quotation marks, IN 
-#   THE SAME ORDER THAT THEY ARE LISTED ON THE WEBPAGE ITSELF. Include the file
-#   extension (.csv, .xlsx, etc.) in the name of the file as well.
-
-FILE_NAMES <- list("TFFW_Carbon_Budget_GHG.csv", "TFFW_Carbon_Budget_Root_Ingrowth.csv",
-                   "TFFW_Carbon_Budget_Stand_Structure_2005_and_2012.csv", 
-                   "TFFW_Carbon_Budget_Wood_Increment_and Litterfall_2005_2015.csv",
-                   "TFFW_Carbon_Budget_WoodyDebris.csv",
-                   "TFFW_elemental_carbon.csv",
-                   "TFFW_Radiocarbon.csv",
-                   "TFFW_soil_core_data.csv",
-                   "TFFW_Carbon_metadata.xml"
-)
-
-# 3. Designate file path of where these data files will go in the CCRCN library
-#   Paste the file path here, wrapped in quotation marks. The getwd() function 
-#   will automatically detect the working directory of the R project (in the case 
-#   of the CCRCN Data library, the location of where this repository is stored on 
-#   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
-#   with whatever you include within the quotation marks.
-
-FILE_PATH <- paste0(getwd(), "/data/primary_studies/Krauss_2018/original", "/" )
-
-# 4. Designate the html node and attri that the web scraper will search for. This
-#   will correspond to what classes of div's the data URL(s) are held in. You can
-#   find out this information by inspecting the web page (right click + inspect)
-#   or using a web browser plug-in (e.g., Google Chrome Web Scraper:
-#   https://chrome.google.com/webstore/detail/web-scraper/jnhgnonknehpejjnehehllkliplmbmhn?hl=en)
-
-HTML_NODE <- ".sb-download-link"
-  
-  HTML_ATTR <- "data-url"
-  
-  # The stem of the url should always be the same
-  BASE_URL <- "https://www.sciencebase.gov"
-
-print("If you are downloading data, un-comment the following lines")
-page <- read_html(URL)
-
-# Extract the url paths for each data file embedded on the webpage, and save
-#   those paths to a list
-url_list <- page %>%
-  html_nodes(HTML_NODE) %>%
-  html_attr(HTML_ATTR)
-
-# For each data file path on the webpage....
-# for (i in 1:length(url_list)) {
+# # 1. Designate the target webpage to scrape for data
+# #   Paste the url of the target webpage here, wrapped in quotation marks
 # 
-#   # ...extract and download file
-#   download.file(paste0(BASE_URL, url_list[[i]]), paste0(FILE_PATH, FILE_NAMES[[i]]),
-#                 mode = "wb")
-# }
+# URL <- "https://www.sciencebase.gov/catalog/item/59e9f79de4b05fe04cd690a1"
+# 
+# # 2. Name the files
+# #   Add the names for each file into this list, wrapped in quotation marks, IN 
+# #   THE SAME ORDER THAT THEY ARE LISTED ON THE WEBPAGE ITSELF. Include the file
+# #   extension (.csv, .xlsx, etc.) in the name of the file as well.
+# 
+# FILE_NAMES <- list("TFFW_Carbon_Budget_GHG.csv", "TFFW_Carbon_Budget_Root_Ingrowth.csv",
+#                    "TFFW_Carbon_Budget_Stand_Structure_2005_and_2012.csv", 
+#                    "TFFW_Carbon_Budget_Wood_Increment_and Litterfall_2005_2015.csv",
+#                    "TFFW_Carbon_Budget_WoodyDebris.csv",
+#                    "TFFW_elemental_carbon.csv",
+#                    "TFFW_Radiocarbon.csv",
+#                    "TFFW_soil_core_data.csv",
+#                    "TFFW_Carbon_metadata.xml"
+# )
+# 
+# # 3. Designate file path of where these data files will go in the CCRCN library
+# #   Paste the file path here, wrapped in quotation marks. The getwd() function 
+# #   will automatically detect the working directory of the R project (in the case 
+# #   of the CCRCN Data library, the location of where this repository is stored on 
+# #   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
+# #   with whatever you include within the quotation marks.
+# 
+# FILE_PATH <- paste0(getwd(), "/data/primary_studies/Krauss_2018/original", "/" )
+# 
+# # 4. Designate the html node and attri that the web scraper will search for. This
+# #   will correspond to what classes of div's the data URL(s) are held in. You can
+# #   find out this information by inspecting the web page (right click + inspect)
+# #   or using a web browser plug-in (e.g., Google Chrome Web Scraper:
+# #   https://chrome.google.com/webstore/detail/web-scraper/jnhgnonknehpejjnehehllkliplmbmhn?hl=en)
+# 
+# HTML_NODE <- ".sb-download-link"
+#   
+#   HTML_ATTR <- "data-url"
+#   
+#   # The stem of the url should always be the same
+#   BASE_URL <- "https://www.sciencebase.gov"
+# 
+# print("If you are downloading data, un-comment the following lines")
+# page <- read_html(URL)
+# 
+# # Extract the url paths for each data file embedded on the webpage, and save
+# #   those paths to a list
+# url_list <- page %>%
+#   html_nodes(HTML_NODE) %>%
+#   html_attr(HTML_ATTR)
+# 
+# # For each data file path on the webpage....
+# # for (i in 1:length(url_list)) {
+# # 
+# #   # ...extract and download file
+# #   download.file(paste0(BASE_URL, url_list[[i]]), paste0(FILE_PATH, FILE_NAMES[[i]]),
+# #                 mode = "wb")
+# # }
 
 ## 2. Read in data #####################
 
@@ -429,88 +431,90 @@ impacts <- cores %>%
 species <- species_edited %>%
   select(-common_name)
 
+## ....Methods ####
+
+raw_methods <- read_csv("data/primary_studies/Krauss_2018/intermediate/Krauss_et_al_2018_methods.csv")
+
+methods <- raw_methods %>%
+  mutate(coring_method = recode(coring_method,
+                                "Russian peat corer" = "russian corer",
+                                "vibracorer" = "vibracore"))
+
 ## ....3H. Study citations ################
 
-
-# Get BibTex entries from DOI
-paper_bibs_raw <- GetBibEntryWithDOI(c("10.1029/2018GB005897","10.1002/2017JG004015"))
-data_bib_raw <- GetBibEntryWithDOI("10.5066/F7TM7930")
-
-# If the data citation worked...
-if(class(data_bib_raw)[1] == "BibEntry") {
-  data_bib <- data_bib_raw  # Save it
-
-} else {
-  # Otherwise manually write it 
-  data_bib <- tibble(
-    study_id = "Krauss_et_al_2018",
-    bibliography_id = "Krauss_et_al_2018",
-    publication_type = "misc",
-    key = "Krauss_2018_data",
-    bibtype = "misc",
-    doi = "10.5066/F7TM7930",
-    url = "https://doi.org/10.5066/f7tm7930",
-    year = "2018",
-    publisher = "USGS",
-    author= "Ken Krauss",
-    title = "Carbon budget assessment of tidal freshwater forested wetland and oligohaline marsh ecosystems along the Waccamaw and Savannah rivers, U.S.A. (2005-2016)"
-  )
-}
-
-study_ids <- cores %>%
-  select(study_id) %>%
-  distinct()
-
-# Convert this to a dataframe
-paper_biblio <- as.data.frame(paper_bibs_raw) %>%
-  # GetBibEntryWithDOI() defaults study name as a row name, convert to column
-  rownames_to_column("key") %>%
-  merge(study_ids) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = ifelse(key == "Krauss_2018", "Krauss_et_al_2018", "Jones_et_al_2017")) 
-
-data_biblio <- as.data.frame(data_bib) %>% 
-  merge(study_ids) %>%
-  mutate(key = "Krauss_2018_data",
-         bibliography_id = "Krauss_et_al_2018_data_release")
+if(!file.exists("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")){
+  # Get BibTex entries from DOI
+  paper_bibs_raw <- GetBibEntryWithDOI(c("10.1029/2018GB005897","10.1002/2017JG004015"))
+  data_bib_raw <- GetBibEntryWithDOI("10.5066/F7TM7930")
   
-# Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- data_biblio %>%
-  bind_rows(paper_biblio) %>%
-  mutate(publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year),
-         volume = as.numeric(volume))
-
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("key")
-
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Krauss_2018/derivative/Krauss_2018.bib")
+  # # If the data citation worked...
+  # if(class(data_bib_raw)[1] == "BibEntry") {
+  #   data_bib <- data_bib_raw  # Save it
+  # 
+  # } else {
+  #   # Otherwise manually write it 
+  #   data_bib <- tibble(
+  #     study_id = "Krauss_et_al_2018",
+  #     bibliography_id = "Krauss_et_al_2018",
+  #     publication_type = "misc",
+  #     key = "Krauss_2018_data",
+  #     bibtype = "misc",
+  #     doi = "10.5066/F7TM7930",
+  #     url = "https://doi.org/10.5066/f7tm7930",
+  #     year = "2018",
+  #     publisher = "USGS",
+  #     author= "Ken Krauss",
+  #     title = "Carbon budget assessment of tidal freshwater forested wetland and oligohaline marsh ecosystems along the Waccamaw and Savannah rivers, U.S.A. (2005-2016)"
+  #   )
+  # }
+  
+  study_ids <- cores %>%
+    select(study_id) %>%
+    distinct()
+  
+  # Convert this to a dataframe
+  paper_biblio <- as.data.frame(paper_bibs_raw) %>%
+    mutate(bibliography_id = c("Krauss_et_al_2018_article", "Jones_et_al_2017_article"),
+           publication_type = "associated") %>%
+    # GetBibEntryWithDOI() defaults study name as a row name, convert to column
+    merge(study_ids)
+  
+  data_biblio <- as.data.frame(data_bib_raw) %>% 
+    mutate(publication_type = "primary",
+           bibliography_id = "Krauss_et_al_2018_data") %>%
+    merge(study_ids)
+  
+  # Curate biblio so ready to read out as a BibTex-style .bib file
+  study_citations <- data_biblio %>%
+    bind_rows(paper_biblio) %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/Krauss_2018/derivative/Krauss_2018.bib")
+  write_csv(study_citations, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
+  
+}
 
 
 ## 4. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
-
 ## ....4A. Column and Variable names ###############
-# Make sure column names are formatted correctly
-test_colnames("cores", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("sites", sites)
-test_colnames("impacts", impacts)
-test_colnames("species", species)
-# test_colnames("study_information", studies)
+testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
 
-# Make sure variable names are fomatted correctly
-test_varnames(cores)
-test_varnames(depthseries)
-test_varnames(sites)
-test_varnames(impacts)
-test_varnames(species)
-# test_varnames(studies)
+## ....4B. Quality control on cell values ###################
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+numeric_test_results <- test_numeric_vars(depthseries)
+
 
 # Select only controlled attributes, and re-order them according to CCRCN guidance
 cores <- reorderColumns("cores", cores)
@@ -519,16 +523,6 @@ sites <- reorderColumns("sites", sites)
 impacts <- reorderColumns("impacts", impacts)
 species <- reorderColumns("species", species)
 
-## ....4B. Quality control on cell values ###################
-# Make sure that all core IDs are unique
-test_unique_cores(cores)
-
-# Provide summary stats on each numeric column, to check for oddities
-numeric_test_results <- test_numeric_vars(depthseries)
-
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(cores, depthseries)
 
 ## 5. Write data ######################
 write_csv(depthseries, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_depthseries.csv")
@@ -536,4 +530,5 @@ write_csv(cores, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_
 write_csv(sites, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
 write_csv(impacts, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_impacts.csv")
 write_csv(species, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
-write_csv(study_citations, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
+write_csv(methods, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_methods.csv")
+

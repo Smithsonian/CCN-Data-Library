@@ -11,9 +11,13 @@ library(RefManageR)
 raw_cores <- read_csv("./data/primary_studies/drexler_2019/original/coordinates.csv")
 raw_depthseries <- read_csv("./data/primary_studies/drexler_2019/original/nisqually_depthseries_manual_edits.csv")
 raw_species <- read_csv("./data/primary_studies/drexler_2019/original/species.csv")
+raw_methods <- read_csv("./data/primary_studies/drexler_2019/original/drexler_et_al_2019_methods.csv")
 
 ## Curate data #########
 study_id_value <- "Drexler_et_al_2019"
+
+## ... methods ####
+methods <- raw_methods %>% mutate(sediment_sieved_flag = "sediment sieved")
 
 ## ... depthseries #####
 depthseries <- raw_depthseries %>%
@@ -77,46 +81,41 @@ species <- cores %>%
   merge(raw_species, by="site_id", all.x=TRUE, all.y=TRUE)
 
 ## Create study-level data ######
-# Get bibtex citation from DOI
-biblio_raw <- GetBibEntryWithDOI("10.1111/rec.12941")
-biblio_df <- as.data.frame(biblio_raw)
-study_citations <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study_id_value, 
-         study_id = study_id_value,
-         key = study_id_value,
-         publication_type = "Article", 
-         year = as.numeric(year)) %>%
-  select(study_id, bibliography_id, publication_type, everything())
 
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  column_to_rownames("key")
-
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019.bib")
+if(!file.exists("./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_study_citations.csv")){
+  # Get bibtex citation from DOI
+  biblio_raw <- GetBibEntryWithDOI("10.1111/rec.12941")
+  biblio_df <- as.data.frame(biblio_raw)
+  
+  study_citations <- biblio_df %>%
+    mutate(bibliography_id = "Drexler_et_al_2019_article", 
+           study_id = study_id_value,
+           publication_type = "associated") %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019.bib")
+  write_csv(study_citations, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_study_citations.csv")
+}
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("core_level", cores)
-test_colnames("site_level", sites) 
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
-test_colnames("impact", impacts)
+# Check col and varnames
+testTableCols(table_names = c("sites", "methods", "cores", "depthseries", "species", "impacts"), version = "1")
+testTableVars(table_names = c("sites", "methods", "cores", "depthseries", "species", "impacts"))
 
-test_variable_names(cores)
-test_variable_names(sites)
-test_variable_names(impacts)
-test_varnames(depthseries)
-test_variable_names(species)
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(cores, depthseries)
-
-test_numeric_vars(depthseries)
 
 ## Export curated data ###########
 write_csv(depthseries, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_depthseries.csv")
@@ -124,4 +123,4 @@ write_csv(cores, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2
 write_csv(sites, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_sites.csv")
 write_csv(impacts, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_impacts.csv")
 write_csv(species, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_species.csv")
-write_csv(study_citations, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_study_citations.csv")
+write_csv(methods, "./data/primary_studies/drexler_2019/derivative/drexler_et_al_2019_methods.csv")

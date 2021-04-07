@@ -136,6 +136,8 @@ marker_type,pollution,Chemical analysis was used to tie the horizon to the timin
 marker_type,tsunami,Sediment analysis was used to tie the horizon to the timing of a tsunami event.
 impact_class,tidally restricted,Tidal flow is muted or blocked by built structures
 impact_class,impounded,"Water level is raised artificially by a tidal restriction, resulting in ponding of water on the wetland and or upland surface"
+impact_class,salt impounded,TBD.
+impact_class,natural,No disturbance or management has occurred.
 impact_class,managed impounded,"Wetland is impounded seasonally, and other times natural or semi natural hydrology occurs"
 impact_class,ditched,Tidal hydrology is altered because artificial ditches have been cut to promote tidal flooding and drainage
 impact_class,diked and drained,"The wetland has been diked and drained, with or without flapper gates, pumping, or other means"
@@ -154,7 +156,7 @@ habitat,marsh,"Wetland dominated by emergent vegetation, gramminoids or forbs."
 habitat,seagrass,Intertidal to subtidal and dominated by specialized predominantly submerged grasses.
 habitat,algal mat,Dominated by algae.
 habitat,unvegetated,Unvegetated.
-habitat,mudflat,Wetlands dominated by exposed layers of bay mud.
+habitat,mudflat,Describes unvegetated areas exposed and flooded by the tides.
 code_type,description,Cover description not related to plant taxonomy.
 code_type,Family,Refers to taxonomic family without indicating a genus or species.
 code_type,Genus,Refers to a taxonomic genus without indicating a species.

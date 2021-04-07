@@ -22,30 +22,33 @@ library(lubridate)
 library(RefManageR)
 
 ## Download data ########################
+
+## DATA DOWNLOAD WORKFLOW ARCHIVED
+
 # The Gonneea et al (2018) data release features a diverse suite of file types:
 #   a .jpg, a .xlsx, a .csv, and a .xml
 # So we'll need to have a custom hook for each file
 
-url_list <- list("https://www.sciencebase.gov/catalog/file/get/5a748e35e4b00f54eb19f96c?f=__disk__6f%2F73%2F4b%2F6f734b0239c27f78c7f347dcf277c491a4a47903",
-                 "https://www.sciencebase.gov/catalog/file/get/5a748e35e4b00f54eb19f96c?f=__disk__7d%2Fe4%2Fdc%2F7de4dc002db596e1d7fbe8254de9ccc3af05ae3b",
-                 "https://www.sciencebase.gov/catalog/file/get/5a748e35e4b00f54eb19f96c?f=__disk__70%2F1e%2F99%2F701e99829e5860c1a0dc512056e5d71ff292dc19",
-                 "https://www.sciencebase.gov/catalog/file/get/5a748e35e4b00f54eb19f96c?f=__disk__3e%2F2d%2Ff5%2F3e2df544c537a35007214d1fe595b45499df2f4a")
-
-# Extract Saltmarsh_AR.jpg
-download.file(url_list[[1]], "./data/Gonneea_2018/original/Saltmarsh_AR.jpg",
-              mode = "wb")
-
-# Extract Waquoit_Core_data_release.xlsx
-download.file(url_list[[2]], "./data/Gonneea_2018/original/Waquoit_Core_data_release.xlsx",
-              mode = "wb")
-
-# Extract Waquoit_Core_data_release.csv
-download.file(url_list[[3]], "./data/Gonneea_2018/original/Waquoit_Core_data_release.csv",
-              mode = "wb")
-
-# Extract Waquoit_Core_data_release_meta.xml
-download.file(url_list[[4]], "./data/Gonneea_2018/original/Waquoit_Core_data_release_meta.xml",
-              mode = "wb")
+# url_list <- list("https://www.sciencebase.gov/catalog/file/get/5a748e35e4b00f54eb19f96c?f=__disk__6f%2F73%2F4b%2F6f734b0239c27f78c7f347dcf277c491a4a47903",
+#                  "https://www.sciencebase.gov/catalog/file/get/5a748e35e4b00f54eb19f96c?f=__disk__7d%2Fe4%2Fdc%2F7de4dc002db596e1d7fbe8254de9ccc3af05ae3b",
+#                  "https://www.sciencebase.gov/catalog/file/get/5a748e35e4b00f54eb19f96c?f=__disk__70%2F1e%2F99%2F701e99829e5860c1a0dc512056e5d71ff292dc19",
+#                  "https://www.sciencebase.gov/catalog/file/get/5a748e35e4b00f54eb19f96c?f=__disk__3e%2F2d%2Ff5%2F3e2df544c537a35007214d1fe595b45499df2f4a")
+# 
+# # Extract Saltmarsh_AR.jpg
+# download.file(url_list[[1]], "./data/Gonneea_2018/original/Saltmarsh_AR.jpg",
+#               mode = "wb")
+# 
+# # Extract Waquoit_Core_data_release.xlsx
+# download.file(url_list[[2]], "./data/Gonneea_2018/original/Waquoit_Core_data_release.xlsx",
+#               mode = "wb")
+# 
+# # Extract Waquoit_Core_data_release.csv
+# download.file(url_list[[3]], "./data/Gonneea_2018/original/Waquoit_Core_data_release.csv",
+#               mode = "wb")
+# 
+# # Extract Waquoit_Core_data_release_meta.xml
+# download.file(url_list[[4]], "./data/Gonneea_2018/original/Waquoit_Core_data_release_meta.xml",
+#               mode = "wb")
 
 
 ## Curate data to CCRCN Structure ########################
@@ -190,52 +193,57 @@ Gonneea_2018_depth_series_data <- Gonneea_2018_depth_series_data %>%
   select(study_id, site_id, core_id, everything())
 
 ## Create study-level data ######
-doi <- "10.5066/F7H41QPP"
-study <- "Gonneea_et_al_2018"
 
-# Get bibtex citation from DOI
-biblio_raw <- GetBibEntryWithDOI(doi)
-biblio_df <- as.data.frame(biblio_raw)
-study_citations <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study, 
-         study_id = study,
-         key = study,
-         publication_type = "data release", 
-         year = as.numeric(year)) %>%
-  select(study_id, bibliography_id, publication_type, everything())
-
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  column_to_rownames("key")
-
-WriteBib(as.BibEntry(bib_file), "./data/Gonneea_2018/derivative/Gonneea_et_al_2018.bib")
+if(!file.exists("data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_study_citations.csv")) {
+  doi <- "10.5066/F7H41QPP"
+  study <- "Gonneea_et_al_2018"
+  
+  # Get bibtex citation from DOI
+  biblio_raw <- GetBibEntryWithDOI(doi)
+  biblio_df <- as.data.frame(biblio_raw)
+  
+  study_citations <- biblio_df %>%
+    mutate(bibliography_id = "Gonneea_et_al_2018_data", 
+           study_id = study,
+           publication_type = "primary") %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018.bib")
+  write_csv(study_citations, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_study_citations.csv")
+}
 
 
 ## QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("cores", Gonneea_2018_core_Data)
-test_colnames("depthseries", Gonneea_2018_depth_series_data)
+cores <- reorderColumns("cores", Gonneea_2018_core_Data) %>% ungroup()
+depthseries <- reorderColumns("depthseries", Gonneea_2018_depth_series_data) %>% ungroup()
 
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(Gonneea_2018_core_Data, Gonneea_2018_depth_series_data)
+# Check col and varnames
+testTableCols(table_names = c("cores", "depthseries"), version = "1")
+testTableVars(table_names = c("cores", "depthseries"))
 
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
 ## Export files ##############################
   
 # Export core data
-write_csv(Gonneea_2018_core_Data, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_cores.csv")
+write_csv(cores, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_cores.csv")
 
 # Export depth series data
-write_csv(Gonneea_2018_depth_series_data, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_depthseries.csv")
+write_csv(depthseries, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_depthseries.csv")
   
 # Export master data
 # write_csv(Gonneea_2018, "./data/Gonneea_2018/derivative/Gonneea_2018.csv")
 
-# Export study-citation table
-write_csv(study_citations, "./data/Gonneea_2018/derivative/Gonneea_et_al_2018_study_citations.csv")
 

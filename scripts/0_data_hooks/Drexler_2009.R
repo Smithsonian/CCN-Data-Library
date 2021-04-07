@@ -28,10 +28,20 @@ age_depth_data <- read_excel("./data/primary_studies/Drexler_2009/original/Drexl
                                            "c14_age", "c14_age_sd", "age", "c14_material"), 
                              skip = 1)
 carbon_stock_data <- read_csv("./data/primary_studies/Drexler_2009/original/Drexler_et_al_2009_carbon_depthseries.csv")
-cores <- read_csv("./data/primary_studies/Drexler_2009/original/Drexler_et_al_2009_cores.csv")
-impacts <- read_csv("./data/primary_studies/Drexler_2009/original/Drexler_et_al_2009_impact_data.csv")
+cores_raw <- read_csv("./data/primary_studies/Drexler_2009/original/Drexler_et_al_2009_cores.csv")
+impacts_raw <- read_csv("./data/primary_studies/Drexler_2009/original/Drexler_et_al_2009_impact_data.csv")
+methods_raw <- read_csv("./data/primary_studies/Drexler_2009/original/Drexler_et_al_2009_methods.csv")
 
 ## Curate data ######################
+
+## ... methods ####
+
+methods <- methods_raw %>%
+  select_if(function(x) {!all(is.na(x))}) %>%
+  select(-publication_type, -fraction_carbon_flag) %>%
+  mutate(fraction_carbon_type = "total carbon",
+         carbon_profile_notes = "fraction carbon extrapolated from subset of samples")
+
 ## ... depthseries ##################
 # There are multiple dated cores that do not have carbon stock data from the clearinghouse
 # Age depth intervals do not match up with intervals with carbon stock data
@@ -73,7 +83,7 @@ depthseries_joined <- age_depthseries %>%
   group_by(core_id) %>%
   arrange(core_id, depth_min, sample_id, .by_group = TRUE) %>%
   # Following attribute should only be in methods table
-  select(-age_depth_model_reference)
+  select(-age_depth_model_reference, -fraction_carbon_type)
 
 ## ... core-level ##################
 
@@ -83,7 +93,7 @@ core_elevations_navd88 <- data.frame(core_id = c("BACHI", "FW", "TT"),
                                      core_elevation = c(1.48, 1.54, 1.47),
                                      core_elevation_datum = rep("NAVD88", 3))
 
-cores_updated <- cores %>%
+cores <- cores_raw %>%
   mutate(core_position_notes = recode(position_code, 
                                       "a" = "latitude and longitude were likely from a high quality source",
                                       "a1" = "latitude and longitude from handheld GPS or better", 
@@ -106,55 +116,58 @@ cores_updated <- cores %>%
          salinity_class, vegetation_class, core_length_flag)
 
 ## ... impact ###################
-impacts <- impacts %>%
+impacts <- impacts_raw %>%
   # There were no diked sites in the study
-  mutate(impact_class = recode(impact_class, "Diked" = "Natural"))
-
-impactsOutput <- impacts %>%
+  mutate(impact_class = recode(impact_class, "Diked" = "Natural")) %>%
   mutate(impact_class = tolower(impact_class),
-         impact_class = ifelse(core_id == "BACHI", "natural", impact_class)) # fixing an error from Holmquist 2018 data.
+         # fixing an error from Holmquist 2018 data.
+         impact_class = ifelse(core_id == "BACHI", "natural", impact_class))
+
+## ... species ####
+
+species <- read_csv("data/primary_studies/Drexler_2009/original/Drexler_et_al_2009_species.csv")
 
 ## Create study-level data ######
-# Get bibtex citation from DOI
-biblio_raw <- GetBibEntryWithDOI("10.1007/s12237-009-9202-8")
-biblio_df <- as.data.frame(biblio_raw)
-study_citations <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = "Drexler_et_al_2009", 
-         study_id = "Drexler_et_al_2009",
-         key = "Drexler_et_al_2009",
-         publication_type = "Article", 
-         year = as.numeric(year), 
-         volume = as.numeric(volume), 
-         number = as.numeric(number)) %>%
-  select(study_id, bibliography_id, publication_type, everything())
 
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  column_to_rownames("key")
-
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009.bib")
+if(!file.exists("./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")){
+  # Get bibtex citation from DOI
+  biblio_raw <- GetBibEntryWithDOI("10.1007/s12237-009-9202-8")
+  biblio_df <- as.data.frame(biblio_raw)
+  
+  study_citations <- biblio_df %>%
+    mutate(bibliography_id = "Drexler_et_al_2009_article", 
+           study_id = "Drexler_et_al_2009",
+           publication_type = "associated") %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009.bib")
+  write_csv(study_citations, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")
+}
 
 ## QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("core_level", cores_updated)
-test_colnames("depthseries", depthseries_joined)
+depthseries <- reorderColumns("depthseries", depthseries_joined) %>% ungroup()
 
-test_varnames(cores_updated)
-test_varnames(depthseries_joined)
-test_varnames(impacts)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "impacts", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "impacts", "species"))
 
-numeric_test_results <- test_numeric_vars(depthseries_joined)
-
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(cores_updated, depthseries_joined)
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
 ## Write data ######################
-write_csv(depthseries_joined, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
-write_csv(cores_updated, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
-write_csv(impactsOutput, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_impacts.csv")
-write_csv(study_citations, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")
+write_csv(depthseries, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_depthseries.csv")
+write_csv(cores, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_cores.csv")
+write_csv(impacts, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_impacts.csv")
+write_csv(species, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_species.csv")
+write_csv(methods, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_methods.csv")

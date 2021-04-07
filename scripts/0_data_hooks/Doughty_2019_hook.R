@@ -24,50 +24,77 @@
 library(tidyverse)
 library(RefManageR)
 
+cores_raw <- read_csv("./data/primary_studies/Doughty_2019/original/doughty_et_al_2019_cores.csv")
+depthseries_raw <- read_csv("./data/primary_studies/Doughty_2019/original/doughty_et_al_2019_depthseries.csv")
+sites_raw <- read_csv("./data/primary_studies/Doughty_2019/original/doughty_et_al_2019_sites.csv")
+methods_raw <- read_csv("./data/primary_studies/Doughty_2019/original/doughty_et_al_2019_materials_and_methods.csv")
 species_raw <- read_csv("./data/primary_studies/Doughty_2019/original/doughty_et_al_2019_species.csv")
+
+# Hook Data ####
+
+cores <- cores_raw
+depthseries <- depthseries_raw
+sites <- sites_raw
+methods <- methods_raw
 
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
   select(study_id, site_id, core_id, species_code)
 
-## Create citation info  
-associated_bib_doi <- "10.1007/s12237-015-9993-8"
-data_release_doi <- "10.25573/data.9695918.v1"
-study_id_value <- "Doughty_et_al_2016"
+## Create citation info  ####
 
-paper_bib_raw <- GetBibEntryWithDOI(associated_bib_doi)
-data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
+if(!file.exists("data/primary_studies/Doughty_2019/derivative/Doughty_et_al_2019_study_citations.csv")){
+  associated_bib_doi <- "10.1007/s12237-015-9993-8"
+  data_release_doi <- "10.25573/data.9695918.v1"
+  study_id_value <- "Doughty_et_al_2016"
+  
+  paper_bib_raw <- GetBibEntryWithDOI(associated_bib_doi)
+  data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
+  
+  # Convert this to a dataframe
+  paper_biblio <- as.data.frame(paper_bib_raw) %>%
+    mutate(study_id = study_id_value,
+           bibliography_id = "Doughty_et_al_2015_article",
+           publication_type = "associated")
+  
+  data_biblio <- as.data.frame(data_bib_raw) %>%
+    mutate(study_id = study_id_value,
+           bibliography_id = "Doughty_et_al_2019_data",
+           publication_type = "primary")
+  
+  # Curate biblio so ready to read out as a BibTex-style .bib file
+  study_citations <- data_biblio %>%
+    bind_rows(paper_biblio) %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/Doughty_2019/derivative/Doughty_et_al_2019.bib")
+  write_csv(study_citations, "data/primary_studies/Doughty_2019/derivative/Doughty_et_al_2019_study_citations.csv")
+}
 
-# Convert this to a dataframe
-paper_biblio <- as.data.frame(paper_bib_raw) %>%
-  rownames_to_column("key") %>%
-  mutate(study_id = study_id_value) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = study_id_value,
-         key = "Doughty_et_al_2016") 
+## QA/QC ###############
+source("./scripts/1_data_formatting/qa_functions.R")
 
-data_biblio <- as.data.frame(data_bib_raw) %>%
-  rownames_to_column("key") %>%
-  mutate(study_id = study_id_value) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = study_id_value,
-         key = "Doughty_et_al_2019") 
+# Check col and varnames
+testTableCols(table_names = c("sites", "methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("sites", "methods", "cores", "depthseries", "species"))
 
-# Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- data_biblio %>%
-  bind_rows(paper_biblio) %>%
-  mutate(publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year),
-         volume = as.numeric(volume))
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Doughty_2019/derivative/Doughty_et_al_2019.bib")
-
-write_csv(study_citations, "data/primary_studies/Doughty_2019/derivative/Doughty_et_al_2019_study_citations.csv")
+## Export curated data ###########
 write_csv(species, "data/primary_studies/Doughty_2019/derivative/doughty_et_al_2019_species.csv")
+write_csv(cores, "data/primary_studies/Doughty_2019/derivative/doughty_et_al_2019_cores.csv")
+write_csv(depthseries, "data/primary_studies/Doughty_2019/derivative/doughty_et_al_2019_depthseries.csv")
+write_csv(sites, "data/primary_studies/Doughty_2019/derivative/doughty_et_al_2019_sites.csv")
+write_csv(methods, "data/primary_studies/Doughty_2019/derivative/doughty_et_al_2019_methods.csv")

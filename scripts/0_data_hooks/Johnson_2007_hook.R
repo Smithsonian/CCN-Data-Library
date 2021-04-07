@@ -18,9 +18,15 @@ age_depth_raw <- read_csv("./data/primary_studies/Johnson_2007/original/Johnson_
 carbon_stocks_raw <- read_csv("./data/primary_studies/Johnson_2007/original/Johnson_et_al_2007_depthseries_data.csv")
 cores <-  read_csv("./data/primary_studies/Johnson_2007/original/Johnson_et_al_2007_core_data.csv")
 species <- read_csv("./data/primary_studies/Johnson_2007/original/Johnson_et_al_2007_species_data.csv")
-methods <- read_csv("./data/primary_studies/Johnson_2007/original/Johnson_et_al_2007_methods_data.csv")
+methods_raw <- read_csv("./data/primary_studies/Johnson_2007/original/Johnson_et_al_2007_methods_data.csv")
 
 ## Curate depthseries #########
+
+methods <- methods_raw %>%
+  select_if(function(x) {!all(is.na(x))}) %>%
+  select(-publication_type) %>%
+  mutate(fraction_carbon_type = "organic carbon")
+
 ## ... Age depth #####
 age_depth <- age_depth_raw %>%
   # delta c13 was measured for the bulk sediment and for higher plant leaf wax (HPLW) lipid biomarkers
@@ -44,49 +50,46 @@ depthseries <- carbon_stocks_raw %>%
          everything())
   
 ## Generate citation ##############
-doi <- "10.1016/j.orggeochem.2006.06.006"
-study <- "Johnson_et_al_2007"
 
-biblio_raw <- GetBibEntryWithDOI(doi)
-biblio_df <- as.data.frame(biblio_raw)
-study_citations <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study, 
-         study_id = study,
-         key = study,
-         publication_type = "Article", 
-         year = as.numeric(year), 
-         volume = as.numeric(volume), 
-         number = as.numeric(number)) %>%
-  select(study_id, bibliography_id, publication_type, everything())
-
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  column_to_rownames("key")
-
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Johnson_2007/derivative/Johnson_et_al_2007.bib")
+if(!file.exists("data/primary_studies/Johnson_2007/derivative/Johnson_et_al_2007_study_citations.csv")){
+  doi <- "10.1016/j.orggeochem.2006.06.006"
+  study <- "Johnson_et_al_2007"
+  
+  biblio_raw <- GetBibEntryWithDOI(doi)
+  biblio_df <- as.data.frame(biblio_raw) 
+  
+  study_citations <- biblio_df %>%
+    mutate(bibliography_id = "Johnson_et_al_2007_article", 
+           study_id = study,
+           publication_type = "associated") %>%
+    select(study_id, bibliography_id, publication_type, everything()) %>%
+    remove_rownames()
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Johnson_2007/derivative/Johnson_et_al_2007.bib")
+  write_csv(study_citations, "./data/primary_studies/Johnson_2007/derivative/Johnson_et_al_2007_study_citations.csv")
+  
+}
 
 ## QA/QC ##########################
 source("./scripts/1_data_formatting/qa_functions.R")
 
-test_colnames("core_level", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
 
-test_varnames(cores)
-test_varnames(depthseries)
-test_varnames(species)
-
-test_numeric_vars(depthseries)
-
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(cores, depthseries)
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
 ## Write data #####################
 write_csv(depthseries, "./data/primary_studies/Johnson_2007/derivative/Johnson_et_al_2007_depthseries.csv")
 write_csv(cores, "./data/primary_studies/Johnson_2007/derivative/Johnson_et_al_2007_cores.csv")
 write_csv(methods, "./data/primary_studies/Johnson_2007/derivative/Johnson_et_al_2007_methods.csv")
 write_csv(species, "./data/primary_studies/Johnson_2007/derivative/Johnson_et_al_2007_species.csv")
-write_csv(study_citations, "./data/primary_studies/Johnson_2007/derivative/Johnson_et_al_2007_study_citations.csv")

@@ -49,31 +49,35 @@ depthseries <- depthseries_raw %>%
          cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA))
 
 ## Citations ####
-doi <- "https://doi.org/10.25573/serc.12043335"
-study_id_value <- "Lagomasino_et_al_2020"
 
-associated_pub <- as.data.frame(associated_pub_raw) %>%
-  mutate(doi = "10.1007/s12237-013-9625-0")
-
-data_release_raw <- as.data.frame(GetBibEntryWithDOI(doi))
-
-study_citations <- data_release_raw %>%
-  bind_rows(associated_pub) %>%
-  mutate(year = as.numeric(year),
-         volume = as.numeric(volume),
-         number = as.numeric(number),
-         bibliography_id = paste0("Lagomasino_et_al_", year),
-         publication_type = c("primary", "associated"),
-         study_id = study_id_value) %>%
-  remove_rownames() %>%
-  select(study_id, bibliography_id, publication_type, bibtype, everything())
+if(!file.exists("data/primary_studies/Lagomasino_et_al_2020/derivative/lagomasino_et_al_2020_study_citations.csv")){
+  doi <- "https://doi.org/10.25573/serc.12043335"
+  study_id_value <- "Lagomasino_et_al_2020"
   
-## Format bibliography
-bib_file <- study_citations %>%
-  select(-study_id, -publication_type) %>%
-  column_to_rownames("bibliography_id")
-
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/lagomasino_et_al_2020/derivative/lagomasino_et_al_2020.bib")
+  associated_pub <- as.data.frame(associated_pub_raw) %>%
+    mutate(doi = "10.1007/s12237-013-9625-0",
+           bibliography_id = paste0("Lagomasino_et_al_", year, "_article"),
+           publication_type = "associated") 
+  
+  data_release_raw <- as.data.frame(GetBibEntryWithDOI(doi))
+  
+  study_citations <- data_release_raw %>%
+    mutate(bibliography_id = paste0("Lagomasino_et_al_", year, "_data"),
+           publication_type = "primary") %>%
+    bind_rows(associated_pub) %>%
+    mutate(study_id = study_id_value) %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything())
+  
+  ## Format bibliography
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  # write citations
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/lagomasino_et_al_2020/derivative/lagomasino_et_al_2020.bib")
+  write_csv(study_citations, "./data/primary_studies/Lagomasino_et_al_2020/derivative/lagomasino_et_al_2020_study_citations.csv")
+}
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -84,11 +88,16 @@ cores <- reorderColumns("cores", cores)
 
 # test cols and vars
 testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+test_depthseries <- test_numeric_vars(depthseries)
 
 # write data
 write_csv(methods, "./data/primary_studies/Lagomasino_et_al_2020/derivative/lagomasino_et_al_2020_methods.csv")
 write_csv(cores, "./data/primary_studies/Lagomasino_et_al_2020/derivative/lagomasino_et_al_2020_cores.csv")
 write_csv(depthseries, "./data/primary_studies/Lagomasino_et_al_2020/derivative/lagomasino_et_al_2020_depthseries.csv")
 write_csv(species, "./data/primary_studies/Lagomasino_et_al_2020/derivative/lagomasino_et_al_2020_species.csv")
-write_csv(study_citations, "./data/primary_studies/Lagomasino_et_al_2020/derivative/lagomasino_et_al_2020_study_citations.csv")
