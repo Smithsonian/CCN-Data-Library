@@ -14,34 +14,40 @@ library(stringr)
 
 # Read in data from NWCA 
 
-# condition report (impacts)
-condition <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_cond_stress.csv")
-condition_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_cond_stress-meta.txt")
+# DATA DOWNLOAD WORKFLOW ARCHIVED 
 
-# site information (site)
-siteinfo <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_siteinfo.csv")
-siteinfo_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_siteinfo-meta.txt")
+# # condition report (impacts)
+# condition <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_cond_stress.csv")
+# condition_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_cond_stress-meta.txt")
+# 
+# # site information (site)
+# siteinfo <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_siteinfo.csv")
+# siteinfo_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_siteinfo-meta.txt")
+# 
+# # soil chemistry (cores/depthseries)
+# soilchem <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_soilchem.csv")
+# soilchem_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_soilchem-meta.txt")
+# 
+# # vegetation (species)
+# veg <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_plant_pres_cvr.csv")
+# veg_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_plant_pres_cvr-meta.txt")
+# 
+# # hydrology
+# # hydro <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_hydro.csv")
+# # hydro_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_hydro-meta.txt")
+# 
+# 
+# # write original data
+# # write_csv(condition, "./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_cond_stress.csv")
+# # write_csv(soilchem, "./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_soilchem.csv")
+# # write_csv(siteinfo, "./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_siteinfo-meta.csv")
+# # write_csv(veg, "./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_plant_pres_cvr.csv")
 
-# soil chemistry (cores/depthseries)
-soilchem <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_soilchem.csv")
-soilchem_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_soilchem-meta.txt")
-
-# vegetation (species)
-veg <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_plant_pres_cvr.csv")
-veg_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_plant_pres_cvr-meta.txt")
-
-# hydrology
-# hydro <- read_csv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_hydro.csv")
-# hydro_md <- read_tsv("https://www.epa.gov/sites/production/files/2016-10/nwca2011_hydro-meta.txt")
-
-# citations
-study_citations <- read_csv("./data/primary_studies/Nahlik_Fennessy_2016/original/Nahlik_Fennessy_2016_citations.csv")
-
-# write original data
-# write_csv(condition, "./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_cond_stress.csv")
-# write_csv(soilchem, "./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_soilchem.csv")
-# write_csv(siteinfo, "./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_siteinfo-meta.csv")
-# write_csv(veg, "./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_plant_pres_cvr.csv")
+# read in data
+condition <- read_csv("./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_cond_stress.csv")
+soilchem <- read_csv("./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_soilchem.csv")
+siteinfo <- read_csv("./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_siteinfo-meta.csv")
+veg <- read_csv("./data/primary_studies/Nahlik_Fennessy_2016/original/nwca2011_plant_pres_cvr.csv")
 
 # Data Curation #### 
 
@@ -205,25 +211,35 @@ methods <- data.frame(study_id = "Nahlik_and_Fennessy_2016",
 
 ## Citations ####
 
+study_citations_raw <- read_csv("./data/primary_studies/Nahlik_Fennessy_2016/original/Nahlik_Fennessy_2016_citations.csv")
+
+study_citations <- study_citations_raw %>%
+  select(-keywords, -key) %>%
+  mutate(bibliography_id = "Nahlik_and_Fennessy_2016_article",
+         publication_type = "associated") %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
+
 # Format bibliography
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
+  select(-study_id, -publication_type) %>%
   distinct() %>%
-  column_to_rownames("key")
+  column_to_rownames("bibliography_id")
 
-WriteBib(as.BibEntry(bib_file), 
-         "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_and_Fennessy_2016.bib")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_and_Fennessy_2016.bib")
+write_csv(study_citations, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_study_citations.csv")
 
-
-## QA/QC #####
-
+## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("cores", cores) # core_month and core_day are uncontrolled..
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
-test_colnames("methods", methods)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "sites", "species", "impacts"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "sites", "species", "impacts"))
+
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
 library(leaflet)
 leaflet(cores) %>%
@@ -244,6 +260,4 @@ write.csv(impacts, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahli
 write.csv(sites, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_sites.csv",
           row.names = FALSE)
 write.csv(methods, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_methods.csv",
-          row.names = FALSE)
-write.csv(study_citations, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_study_citations.csv",
           row.names = FALSE)

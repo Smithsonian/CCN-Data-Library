@@ -49,6 +49,7 @@ species <- species_raw %>%
   select(study_id, site_id, core_id, species_code)
 
 depthseries <- depthseries_raw %>%
+  rename(delta_c13 = delta_C13) %>%
   mutate(study_id = study_id_value) %>%
   select(-c(cs137_MDA, total_pb210_MDA, ra226_MDA, excess_pb210_inventory,
             excess_pb210_inventory_se, fraction_total_nitrogen, fraction_total_phosphorus,

@@ -1,4 +1,4 @@
-study_id,site_id,core_id,depth_min,depth_max,dry_bulk_density,fraction_organic_matter,fraction_carbon,cs137_activity,cs137_activity_se,total_pb210_activity,total_pb210_activity_se,ra226_activity,ra226_activity_se,excess_pb210_activity,excess_pb210_activity_se,age,age_se,date,delta_C13
+study_id,site_id,core_id,depth_min,depth_max,dry_bulk_density,fraction_organic_matter,fraction_carbon,cs137_activity,cs137_activity_se,total_pb210_activity,total_pb210_activity_se,ra226_activity,ra226_activity_se,excess_pb210_activity,excess_pb210_activity_se,age,age_se,date,delta_c13
 Breithaupt_et_al_2014,WSC-5,SH3-1,0,1,0.879449761,0.134218329,0.07775,NA,NA,3.524980943,0.121135502,1.650930486,0.047084695,1.881260312,0.130464539,2.5958024,0.738413968,2006.404198,-28.40837106
 Breithaupt_et_al_2014,WSC-5,SH3-1,1,2,0.536674641,0.116391031,0.059317497,NA,NA,2.521920737,0.066988392,1.560270937,0.029821758,0.965678376,0.073633732,3.454067519,0.745753768,2005.545932,-25.5
 Breithaupt_et_al_2014,WSC-5,SH3-1,2,3,0.68507177,0.108849001,0.0376,NA,NA,2.49072861,0.072003015,1.514801793,0.031719866,0.980271664,0.079030559,4.601468211,0.754133759,2004.398532,-26.69537272

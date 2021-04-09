@@ -23,10 +23,14 @@ Breithaupt_2014,attribute,methods,dbd_1_cm_section_sample_volume,,needs resoluti
 Breithaupt_2014,attribute,methods,dbd_2_cm_section_sample_volume,,needs resolution,
 Breithaupt_2014,attribute,methods,loi_1_cm_section_sample_volume,,needs resolution,
 Breithaupt_2014,attribute,methods,loi_2_cm_section_sample_volume,,needs resolution,
-Breithaupt_2014,attribute,depthseries,date,,needs resolution,should this be age or c14_age?
-Breithaupt_2014,attribute,depthseries,delta_C13,,needs resolution,
+Breithaupt_2014,attribute,depthseries,date,,needs resolution,should this be age or c14_age or maker_date?
 Boyd_2019,variable,methods,excess_pb210_rate,not specified,needs resolution,
 Belshe_2019,attribute,depthseries,pb210_crs_age,,needs resolution,
 Belshe_2019,attribute,depthseries,pb210_crs_age_sd,,needs resolution,
 Belshe_2019,variable,cores,inundation_class,submerged subtidal,needs resolution,
 Abbott_2019,variable,depthseries,marker_type,dredge horizon,needs resolution,
+Poppe_2019,variable,cores,salinity_class,riverine,needs resolution,
+Poppe_2019,variable,cores,vegetation_class,unvegetated,needs resolution,
+Nahlik_and_Fennessy_2016,variable,cores,salinity_class,palustrine,add to controlled,
+Nahlik_and_Fennessy_2017,attribute,depthseries,representative_depth_min,,needs resolution,
+Nahlik_and_Fennessy_2018,attribute,depthseries,representative_depth_max,,needs resolution,

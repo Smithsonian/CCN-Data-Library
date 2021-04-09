@@ -60,12 +60,60 @@ methods <- methods_raw %>%
   mutate(sediment_sieve_size = as.numeric(gsub(" mm", "", sediment_sieve_size)),
          carbon_profile_notes = "Modeled fraction carbon values available in https://doi.org/10.25573/data.10005248")
 
-## QA #########
+## Citation ####
+
+if(!file.exists("data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_study_citations.csv")){
+  # publications
+  pubs <- read_csv("data/primary_studies/Poppe_2019/original/poppe_and_rybczyk_2019_associated_publications.csv")
+  
+  pub_citations <- pubs %>%
+    select(-bibtex_pubs) %>%
+    rename(doi = doi_pubs, title = title_pubs, publication_type = `publication type`) %>%
+    mutate(bibliography_id = str_c(study_id, publication_type, sep = "_")) %>%
+    mutate(bibtype = recode(publication_type, 
+                            "article" = "Article",
+                            "mastersthesis" = "MastersThesis",
+                            "techreport" = "TechReport")) %>%
+    mutate(publication_type = "associated",
+           institution = ifelse(bibtype == "TechReport", "Western Washington University", NA),
+           school = ifelse(bibtype == "MastersThesis", "Western Washington University", NA)) %>%
+    mutate_all(as.character)
+  
+  # data release
+  doi <- "10.25573/data.10005248"
+  data_bib <- as.data.frame(GetBibEntryWithDOI(doi))
+  
+  study_ids <- unique(cores$study_id)
+  data_citation <-  data.frame(study_id = study_ids, data_bib) %>%
+    mutate(publication_type = "synthesis",
+           bibliography_id = "Poppe_and_Rybczyk_2018_2019_synthesis") 
+  
+  study_citations <- bind_rows(pub_citations, data_citation) %>%
+    arrange(study_id) %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019.bib")
+  write_csv(study_citations, "data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_study_citations.csv")
+}
+
+## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(cores, depthseries)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
+
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
 
 ## Write files #########

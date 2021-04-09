@@ -29,42 +29,44 @@ library(RefManageR)
 
 ## ... 3B. Download data ###############
 
-# 1. Designate the target webpage to scrape for data
-#   Paste the url of the target webpage here, wrapped in quotation marks
+# DATA DOWNLOAD WORKFLOW ARCHIVED
 
-URL <- "https://repository.si.edu/handle/10088/31949"
-
-
-# 2. Name the file
-#   Add the names for each file into this list, wrapped in quotation marks, IN 
-#   THE SAME ORDER THAT THEY ARE LISTED ON THE WEBPAGE ITSELF. Include the file
-#   extension (.csv, .xlsx, etc.) in the name of the file as well.
-
-FILE_NAME <- "Megonigal_J_Patrick-20170103-Abu_Dhabi_Blue_Carbon_Project_Ecological_Applications.xlsx"
-
-# 3. Designate file path of where these data files will go in the CCRCN library
-#   Paste the file path here, wrapped in quotation marks. The getwd() function 
-#   will automatically detect the working directory of the R project (in the case 
-#   of the CCRCN Data library, the location of where this repository is stored on 
-#   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
-#   with whatever you include within the quotation marks.
-
-FILE_PATH <- paste0(getwd(), "/data/primary_studies/Schile-Beers_2017/original/" )
-
-# The stem of the url should always be the same
-BASE_URL <- "https://repository.si.edu"
-
-# Extract and save the url path for each data file embedded on the webpage
-  # if using Chrome, html_node and html_attr data can be obtained 
-  # using an extension such as "SelectorGadget" (html_node) and the "inspect" option 
-  # when right-clicking an element on a webpage (html_attr). 
-page <- read_html(URL)
-page <- page %>%
-  html_nodes('.file-link a') %>% 
-  html_attr("href")
-
-# Download the data to your file path 
-download.file(paste0(BASE_URL, page), paste0(FILE_PATH, FILE_NAME),mode = "wb")
+# # 1. Designate the target webpage to scrape for data
+# #   Paste the url of the target webpage here, wrapped in quotation marks
+# 
+# URL <- "https://repository.si.edu/handle/10088/31949"
+# 
+# 
+# # 2. Name the file
+# #   Add the names for each file into this list, wrapped in quotation marks, IN 
+# #   THE SAME ORDER THAT THEY ARE LISTED ON THE WEBPAGE ITSELF. Include the file
+# #   extension (.csv, .xlsx, etc.) in the name of the file as well.
+# 
+# FILE_NAME <- "Megonigal_J_Patrick-20170103-Abu_Dhabi_Blue_Carbon_Project_Ecological_Applications.xlsx"
+# 
+# # 3. Designate file path of where these data files will go in the CCRCN library
+# #   Paste the file path here, wrapped in quotation marks. The getwd() function 
+# #   will automatically detect the working directory of the R project (in the case 
+# #   of the CCRCN Data library, the location of where this repository is stored on 
+# #   your local drive + "CCRCN-Data-Library"), which will be pasted in combination
+# #   with whatever you include within the quotation marks.
+# 
+# FILE_PATH <- paste0(getwd(), "/data/primary_studies/Schile-Beers_2017/original/" )
+# 
+# # The stem of the url should always be the same
+# BASE_URL <- "https://repository.si.edu"
+# 
+# # Extract and save the url path for each data file embedded on the webpage
+#   # if using Chrome, html_node and html_attr data can be obtained 
+#   # using an extension such as "SelectorGadget" (html_node) and the "inspect" option 
+#   # when right-clicking an element on a webpage (html_attr). 
+# page <- read_html(URL)
+# page <- page %>%
+#   html_nodes('.file-link a') %>% 
+#   html_attr("href")
+# 
+# # Download the data to your file path 
+# download.file(paste0(BASE_URL, page), paste0(FILE_PATH, FILE_NAME),mode = "wb")
 
 ## 3. Curate data to CCRCN Structure #################
 
@@ -75,7 +77,7 @@ FILE_NAME <- "Megonigal_J_Patrick-20170103-Abu_Dhabi_Blue_Carbon_Project_Ecologi
 FILE_PATH <- paste0(getwd(), "/data/primary_studies/Schile-Beers_2017/original/" )
 
 plot_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="plot information")
-raw_depthseries_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="soil carbon data")
+raw_depthseries_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="soil carbon data", na = "nd")
 
 # Revision to original data hook script: The cores in the "seagrass" ecosystem were initially collected as part 
 # of a separate study. I'll change their study ID to "Campbell_et_al_2015"
@@ -297,17 +299,18 @@ study_data_synthesis <- core_data %>%
             doi = synthesis_doi) %>%
   bind_rows(study_data_primary)
 
-## 5. QA/QC of data ################
+## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("core_level", core_data)
-test_colnames("site_level", site_data) 
-test_colnames("depthseries", depthseries_data)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
 
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(core_data, depthseries_data)
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
 ## 6. Write data ##############
 
