@@ -1,0 +1,32 @@
+﻿study_id,uncontrolled_type,table_name,attribute_name,variable_name,action,notes
+Vaughn_et_al_2020,variable,cores,salinity_class,estuarine,add to controlled,
+Thom_2019,variable,methods,coring_methods,PVC tube or thin-walled metal tube,needs resolution,"recode as ""pvc and hammer""?"
+Sanborn_and_Coxson_2020,variable,methods,coring_methods,soil pit,add to controlled,
+Peck_et_al_2020,variable,methods,excess_pb210_rate,mass accumulation and accretion,needs resolution,
+Peck_et_al_2020,variable,methods,excess_pb210_model,CRS and CIC,needs resolution,
+Peck_et_al_2020,variable,cores,vegetation_class,mudflat,needs resolution,"habitat and vegetation_class are starting to overlap in variables. Should we leave ""mudflat"" to habitat and classify it as ""unvegetated"" in vegetation class?"
+Nolte_2020,variable,cores,core_elevation_datum,NHN,add to controlled,
+Nolte_2020,variable,cores,core_elevation_datum,NAP,add to controlled,
+Noe_et_al_2016,variable,impacts,impact_class,salt impacted,add to controlled,
+Noe_et_al_2016,variable,impacts,impact_class,natural,add to controlled,
+Keshta_et_al_2020,variable,cores,habitat,upland,needs resolution,
+Kemp_2020,attribute,depthseries,marker_age,,needs resolution,
+Kemp_2020,attribute,depthseries,marker_age_sd,,needs resolution,
+Kauffman_et_al_2020,attribute,depthseries,representative_depth_min,,needs resolution,
+Kauffman_et_al_2020,attribute,depthseries,representative_depth_max,,needs resolution,
+Gonnea_2018,attribute,depthseries,dating_interval_notes,,needs resolution,rename to depth_interval_notes?
+Drexler_2009,variable,impacts,impact_class,natural,add to controlled,
+Craft_2007,variable,cores,inundation_class,plain,needs resolution,
+Craft_2007,variable,cores,salinity_class,brackish to fresh,needs resolution,
+Callaway_2019,attribute,methods,pb210_background_assumption,,needs resolution,
+Breithaupt_2014,attribute,methods,dbd_1_cm_section_sample_volume,,needs resolution,
+Breithaupt_2014,attribute,methods,dbd_2_cm_section_sample_volume,,needs resolution,
+Breithaupt_2014,attribute,methods,loi_1_cm_section_sample_volume,,needs resolution,
+Breithaupt_2014,attribute,methods,loi_2_cm_section_sample_volume,,needs resolution,
+Breithaupt_2014,attribute,depthseries,date,,needs resolution,should this be age or c14_age?
+Breithaupt_2014,attribute,depthseries,delta_C13,,needs resolution,
+Boyd_2019,variable,methods,excess_pb210_rate,not specified,needs resolution,
+Belshe_2019,attribute,depthseries,pb210_crs_age,,needs resolution,
+Belshe_2019,attribute,depthseries,pb210_crs_age_sd,,needs resolution,
+Belshe_2019,variable,cores,inundation_class,submerged subtidal,needs resolution,
+Abbott_2019,variable,depthseries,marker_type,dredge horizon,needs resolution,
