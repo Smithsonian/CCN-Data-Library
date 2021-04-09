@@ -1,9 +1,22 @@
+## CCRCN Data Library Hook Script ####
+
+## Prepare workspace ####
+
 library(tidyverse)
 library(readxl)
+library(RefManageR)
 
 # Appending cs137 data to carbon stocks data that was already prepared in the Holmquist synthesis
 cores_raw <- read_csv("./data/primary_studies/Craft_2007/intermediate/craft_CCRCN_cores.csv")
 depthseries_raw <- read_csv("./data/primary_studies/Craft_2007/intermediate/craft_CCRCN_depthseries.csv")
+methods_raw <- read_csv(("./data/primary_studies/Craft_2007/original/craft_2007_methods.csv"))
+species_raw <- read_csv("./data/primary_studies/Craft_2007/original/craft_2007_species.csv")
+
+## Curate data ####
+
+methods <- methods_raw %>% mutate(fraction_carbon_type = "total carbon")
+
+species <- species_raw
 
 # Digitized table from Craft 2007
 age_depth_raw <- read_xlsx("./data/primary_studies/Craft_2007/original/Craft2007_cs137_raw.xlsx")
@@ -15,21 +28,49 @@ age_depth <- age_depth_raw %>%
 
 depthseries <- depthseries_raw %>%
   merge(age_depth, by=c("core_id", "depth_min", "depth_max"), all.x=TRUE, all.y=TRUE) %>%
-  mutate(dating_notes = ifelse(cs137_activity == 0, "cs137 activity below detection limits", NA),
+  mutate(depth_interval_notes = ifelse(cs137_activity == 0, "cs137 activity below detection limits", NA),
          cs137_unit = "becquerelsPerKilogram")
 
 cores <- cores_raw %>%
   mutate(core_year = 2001)
 
-# QA ###########
+## Citations ####
+
+bib <- ReadBib("./data/primary_studies/Craft_2007/original/Craft_2007.bib")
+
+study_citations <- as.data.frame(bib) %>%
+  mutate(bibliography_id = "Craft_2007_article",
+         study_id = "Craft_2007",
+         publication_type = "associated") %>%
+  remove_rownames() %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
+
+bib_file <- study_citations %>%
+  select(-study_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("bibliography_id")
+
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Craft_2007/Craft_2007.bib")
+write_csv(study_citations, "./data/primary_studies/Craft_2007/derivative/craft_2007_study_citations.csv")
+
+
+## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 depthseries <- reorderColumns("depthseries", depthseries)
 
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-results <- test_core_relationships(cores, depthseries)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
 
+# write files
 write_csv(depthseries, "./data/primary_studies/Craft_2007/derivative/craft_2007_depthseries.csv")
 write_csv(cores, "./data/primary_studies/Craft_2007/derivative/craft_2007_cores.csv")
+write_csv(methods, "./data/primary_studies/Craft_2007/derivative/craft_2007_methods.csv")
+write_csv(species, "./data/primary_studies/Craft_2007/derivative/craft_2007_species.csv")

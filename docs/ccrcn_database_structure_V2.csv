@@ -115,6 +115,7 @@ depthseries,pb214_activity,Radioactivity counts per unit dry weight for 214 Pb.,
 depthseries,pb214_activity_se,Estimated uncertainty in pb214_activity.,optional,NA,NA,NA,NA,NA,1,NA,NA,NA
 depthseries,pb214_unit,Reported unit for sample interval's 214 Pb activity measurements.,conditional,NA,NA,NA,NA,NA,1,pb214_activity; pb214_activity_se,NA,NA
 depthseries,bi214_activity,Radioactivity counts per unit dry weight for 214 Bi.,optional,NA,NA,NA,age_depth,NA,1,NA,NA,NA
+depthseries,bi214_activity_se,Reported standard error for radioactivity counts per unit dry weight for_214Bi,optional,,,,age_depth,,1,,,
 depthseries,bi214_unit,Reported unit for sample interval's Bi 214 activity measurements.,conditional,NA,NA,NA,NA,NA,1,bi214_activity; bi214_activity_se,NA,NA
 depthseries,c14_age,Radiocarbon age as estimated from AMS measurements.,optional,numeric,radiocarbonYear,c14,age_depth,2,NA,NA,NA,NA
 depthseries,c14_age_se,Estimated uncertainty in c14_age.,conditional,numeric,radiocarbonYear,c14,age_depth,1,NA,c14_age,NA,NA

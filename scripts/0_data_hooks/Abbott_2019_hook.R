@@ -44,38 +44,53 @@ species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
   select(-c(genus, species))
 
-# Create bibtex file
-data_release_doi <- "10.25573/data.10005215"
-associated_pub_doi <- "10.1002/ecs2.2828"
-study_id <- "Abbott_et_al_2019"
+impacts <- impacts_raw
 
-data_bib_raw <- GetBibEntryWithDOI(c(data_release_doi, associated_pub_doi))
+methods <- methods_raw
 
-bib <- as.data.frame(data_bib_raw) %>%
-  rownames_to_column("key") %>%
-  mutate(study_id = study_id) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = study_id,
-         key = ifelse(bibtype == "Misc", "Abbott_et_al_2019_data", key),
-         publication_type = bibtype) 
+# Citation ####
+if(!file.exists("data/primary_studies/abbott_2019/derivative/abbott_et_al_2019_study_citations.csv")){
+  # Create bibtex file
+  data_release_doi <- "10.25573/data.10005215"
+  associated_pub_doi <- "10.1002/ecs2.2828"
+  study_id <- "Abbott_et_al_2019"
+  
+  data_bib_raw <- GetBibEntryWithDOI(c(data_release_doi, associated_pub_doi))
+  
+  study_citations <- as.data.frame(data_bib_raw) %>%
+    mutate(study_id = study_id,
+           bibliography_id = c("Abbott_et_al_2019_data", "Abbott_et_al_2019_article"),
+           publication_type = c("primary", "associated")) %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
+    remove_rownames()
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/Abbott_2019/derivative/Abbott_et_al_2019.bib")
+  write_csv(study_citations, "data/primary_studies/abbott_2019/derivative/abbott_et_al_2019_study_citations.csv")
+}
 
-# Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- bib %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year),
-         volume = as.numeric(volume))
+## QA/QC ###############
+source("./scripts/1_data_formatting/qa_functions.R")
 
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("key")
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "impacts", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "impacts", "species"))
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Abbott_2019/derivative/Abbott_et_al_2019.bib")
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
+# write files
 write_csv(cores, "data/primary_studies/abbott_2019/derivative/abbott_et_al_2019_cores.csv") 
 write_csv(depthseries, "data/primary_studies/abbott_2019/derivative/abbott_et_al_2019_depthseries.csv")
-write_csv(study_citations, "data/primary_studies/abbott_2019/derivative/abbott_et_al_2019_study_citations.csv")
 write_csv(species, "data/primary_studies/abbott_2019/derivative/abbott_et_al_2019_species.csv")
 write_csv(methods, "data/primary_studies/abbott_2019/derivative/abbott_et_al_2019_methods.csv")
+write_csv(impacts, "data/primary_studies/abbott_2019/derivative/abbott_et_al_2019_impacts.csv")
 

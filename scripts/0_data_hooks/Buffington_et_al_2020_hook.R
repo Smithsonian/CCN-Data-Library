@@ -52,33 +52,39 @@ study_id_value <- "Buffington_et_al_2020"
 bib <- GetBibEntryWithDOI(doi)
 
 study_citations <- as.data.frame(bib) %>%
-  mutate(year = as.numeric(year),
-         study_id = study_id_value,
-         bibliography_id = study_id_value,
-         publication_type = bibtype,
-         key = doi) 
+  mutate(study_id = study_id_value,
+         bibliography_id = "Buffington_et_al_2020_data",
+         publication_type = "primary") %>%
+  remove_rownames() %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 ## Format bibliography
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
+  select(-study_id, -publication_type) %>%
   distinct() %>%
-  column_to_rownames("key")
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/buffington_et_al_2020/derivative/buffington_et_al_2020.bib")
+write_csv(study_citations, "./data/primary_studies/buffington_et_al_2020/derivative/buffington_et_al_2020_study_citations.csv")
+
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 depthseries <- reorderColumns("depthseries", depthseries)
 
-# Make sure column names are formatted correctly: 
-test_colnames("cores", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
-test_colnames("methods", methods)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
 
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
+
+# write files
 write_csv(cores, "./data/primary_studies/buffington_et_al_2020/derivative/buffington_et_al_2020_cores.csv")
 write_csv(species, "./data/primary_studies/buffington_et_al_2020/derivative/buffington_et_al_2020_species.csv")
 write_csv(methods, "./data/primary_studies/buffington_et_al_2020/derivative/buffington_et_al_2020_methods.csv")
 write_csv(depthseries, "./data/primary_studies/buffington_et_al_2020/derivative/buffington_et_al_2020_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/buffington_et_al_2020/derivative/buffington_et_al_2020_study_citations.csv")

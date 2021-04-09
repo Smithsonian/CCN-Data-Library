@@ -191,34 +191,37 @@ methods <- reorderColumns("methods", methods)
 
 #### Study Citation ####
 
-data_doi <- "10.5066/P93U3B3E"
-pub_doi <- "10.1029/2020JG005832" # doi not active yet (paper hasnt been officially published)
-
-data_bib <- GetBibEntryWithDOI(data_doi)
-pub_bib <- GetBibEntryWithDOI(pub_doi)
-
-# Convert citations to dataframe
-data_citation <- as.data.frame(data_bib) %>%
-  mutate(study_id = id) %>%
-  mutate(bibliography_id = paste0("Baustian_et_al_", year, "_data"),
-         publication_type = "primary")
-
-pub_citation <- as.data.frame(pub_bib) %>%
-  mutate(study_id = id) %>%
-  mutate(bibliography_id = paste0("Baustian_et_al_", year, "_article"),
-         publication_type = "associated")
-
-# # Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- bind_rows(data_citation, pub_citation) %>%
-  remove_rownames() %>%
-  select(study_id, bibliography_id, publication_type, bibtype, everything())
-
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -publication_type) %>%
-  column_to_rownames("bibliography_id")
-
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021.bib")
+if(!file.exists("./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_study_citations.csv")){
+  data_doi <- "10.5066/P93U3B3E"
+  pub_doi <- "10.1029/2020JG005832"
+  
+  data_bib <- GetBibEntryWithDOI(data_doi)
+  pub_bib <- GetBibEntryWithDOI(pub_doi)
+  
+  # Convert citations to dataframe
+  data_citation <- as.data.frame(data_bib) %>%
+    mutate(study_id = id) %>%
+    mutate(bibliography_id = paste0("Baustian_et_al_", year, "_data"),
+           publication_type = "primary")
+  
+  pub_citation <- as.data.frame(pub_bib) %>%
+    mutate(study_id = id) %>%
+    mutate(bibliography_id = paste0("Baustian_et_al_", year, "_article"),
+           publication_type = "associated")
+  
+  # # Curate biblio so ready to read out as a BibTex-style .bib file
+  study_citations <- bind_rows(data_citation, pub_citation) %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021.bib")
+  write_csv(study_citations, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_study_citations.csv")
+}
 
 
 ## QA/QC ###############
@@ -232,13 +235,13 @@ leaflet(cores) %>%
 
 # Check col and varnames
 testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
 
 test_unique_cores(cores)
 test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
-test_numeric_vars(depthseries)
+results <- test_numeric_vars(depthseries)
 
 ## Write derivative data ####
 # write_csv(sites, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_sites.csv")
@@ -246,6 +249,5 @@ write_csv(cores, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian
 write_csv(species, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_species.csv")
 write_csv(methods, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_methods.csv")
 write_csv(depthseries, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_study_citations.csv")
 
 

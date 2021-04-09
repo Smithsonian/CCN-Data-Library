@@ -26,7 +26,8 @@ library(stringr)
 library(tidyverse)
 library(lubridate)
 library(rcrossref)
-library(bib2df)
+# library(bib2df)
+library(RefManageR)
 
 ## ... 2A. download and save below ground biomass #########
 infile1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-pie/216/2/e2c8e7c0b2338c593f00ab988d0e9774" 
@@ -139,42 +140,43 @@ site_data <- site_data %>%
 ## 4. Create study-level data ######
 # Get bibtex citation from DOI
 # The following function works haphazardly: sometimes it acquires the information and sometimes it doesn't.
-# biblio_raw <- GetBibEntryWithDOI(c("10.6073/pasta/bc041b3546ba4a3730fd391852741620", 
+# biblio_raw <- GetBibEntryWithDOI(c("10.6073/pasta/bc041b3546ba4a3730fd391852741620",
 #                                    "10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee"))
 
-biblio_raw <- list(c(BibEntry(bibtype = "Misc", 
-                            key = "Deegan_et_al_2009_a", 
-                            title = "2009 LENS aboveground biomass core results",
-                            author = "Linda Deegan and Duncan FitzGerald and Sergio Fagherazz", 
-                            year = "2012", 
-                            doi = "10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee",
-                            url = "https://doi.org/10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee", 
-                            publisher = "Environmental Data Initiative"),
-                   BibEntry(bibtype = "Misc", 
-                            key = "Deegan_et_al_2009_b", 
-                            title = "2009 LENS belowground biomass core results",
-                            author = "Linda Deegan and Duncan FitzGerald and Sergio Fagherazz", 
-                            year = "2012", 
-                            doi = "10.6073/pasta/bc041b3546ba4a3730fd391852741620",
-                            url = "https://doi.org/10.6073/pasta/bc041b3546ba4a3730fd391852741620", 
-                            publisher = "Environmental Data Initiative")
-                   ))
+biblio_raw <- list(c(BibEntry(bibtype = "Misc",
+                              key = "Deegan_et_al_2009_a_data",
+                              title = "2009 LENS aboveground biomass core results",
+                              author = "Linda Deegan and Duncan FitzGerald and Sergio Fagherazz",
+                              year = "2012",
+                              doi = "10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee",
+                              url = "https://doi.org/10.6073/pasta/6830381e663fedc52bbdb3c501fdf3ee",
+                              publisher = "Environmental Data Initiative"),
+                     BibEntry(bibtype = "Misc",
+                              key = "Deegan_et_al_2009_b_data",
+                              title = "2009 LENS belowground biomass core results",
+                              author = "Linda Deegan and Duncan FitzGerald and Sergio Fagherazz",
+                              year = "2012",
+                              doi = "10.6073/pasta/bc041b3546ba4a3730fd391852741620",
+                              url = "https://doi.org/10.6073/pasta/bc041b3546ba4a3730fd391852741620",
+                              publisher = "Environmental Data Initiative")
+))
 
 biblio_df <- as.data.frame(biblio_raw)
+
 study_citations <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = "Deegan_et_al_2012", 
+  mutate(bibliography_id = row.names(.), 
          study_id = "Deegan_et_al_2012",
-         publication_type = "data release", 
-         year = as.numeric(year)) %>%
+         publication_type = "primary") %>%
+  remove_rownames() %>%
   select(study_id, bibliography_id, publication_type, everything())
 
 # Write .bib file
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  column_to_rownames("key")
+  select(-study_id, -publication_type) %>%
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012.bib")
+write_csv(study_citations, "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -192,5 +194,4 @@ results <- test_core_relationships(cores, biomass_depthseries)
 write_csv(cores, "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_cores.csv")
 write_csv(site_data, "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_sites.csv")
 write_csv(biomass_depthseries, "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_study_citations.csv")
 write_csv(biomass_agg, "./data/primary_studies/Deegan_2012/derivative/Deegan_et_al_2012_biomass.csv")

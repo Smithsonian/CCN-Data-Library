@@ -115,36 +115,39 @@ cores <- reorderColumns("cores", cores)
 
 #### Study Citation ####
 
-# associated_bib_doi <- ""
-data_release_doi_2019 <- "10.1575/1912/bco-dmo.775547.1"
-data_release_doi_2020 <- "10.26008/1912/bco-dmo.833824.1"
-
-# paper_bib_raw <- GetBibEntryWithDOI(associated_bib_doi)
-data_bib_raw_2019 <- GetBibEntryWithDOI(data_release_doi_2019)
-data_bib_raw_2020 <- GetBibEntryWithDOI(data_release_doi_2020)
-
-# Convert citations to dataframe
-study_citations_2019 <- as.data.frame(data_bib_raw_2019) %>%
-  mutate(study_id = "Chambers_et_al_2019") %>%
-  mutate(bibliography_id = str_c("Chambers_et_al", year, sep = "_"))
-
-study_citations_2020 <- bind_rows(as.data.frame(data_bib_raw_2020), as.data.frame(data_bib_raw_2020)) %>%
-  mutate(study_id = c("White_et_al_2020_a", "White_et_al_2020_b"),
-         bibliography_id = str_c("White_et_al", year, sep = "_"))
-
-# Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <-  bind_rows(study_citations_2019, study_citations_2020) %>%
-  mutate(publication_type = "primary") %>%
-  remove_rownames() %>%
-  select(study_id, bibliography_id, publication_type, bibtype, everything())
-
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -publication_type) %>%
-  distinct() %>% 
-  column_to_rownames("bibliography_id")
-
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019.bib")
+if(!file.exists("./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_study_citations.csv")){
+  # associated_bib_doi <- ""
+  data_release_doi_2019 <- "10.1575/1912/bco-dmo.775547.1"
+  data_release_doi_2020 <- "10.26008/1912/bco-dmo.833824.1"
+  
+  # paper_bib_raw <- GetBibEntryWithDOI(associated_bib_doi)
+  data_bib_raw_2019 <- GetBibEntryWithDOI(data_release_doi_2019)
+  data_bib_raw_2020 <- GetBibEntryWithDOI(data_release_doi_2020)
+  
+  # Convert citations to dataframe
+  study_citations_2019 <- as.data.frame(data_bib_raw_2019) %>%
+    mutate(study_id = "Chambers_et_al_2019") %>%
+    mutate(bibliography_id = str_c("Chambers_et_al", year, "data", sep = "_"))
+  
+  study_citations_2020 <- bind_rows(as.data.frame(data_bib_raw_2020), as.data.frame(data_bib_raw_2020)) %>%
+    mutate(study_id = c("White_et_al_2020_a", "White_et_al_2020_b"),
+           bibliography_id = str_c("White_et_al", year, "data", sep = "_"))
+  
+  # Curate biblio so ready to read out as a BibTex-style .bib file
+  study_citations <-  bind_rows(study_citations_2019, study_citations_2020) %>%
+    mutate(publication_type = "primary") %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>% 
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019.bib")
+  write_csv(study_citations, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_study_citations.csv")
+}
 
 
 ## QA/QC ###############
@@ -157,17 +160,18 @@ leaflet(cores) %>%
 
 # Check col and varnames
 testTableCols(table_names = c("methods", "cores", "depthseries"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries"))
 
-# unique coords
-test_unique_coords(final_cores) # not all unique
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
+
 
 ## Write derivative data ####
-# write_csv(sites, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_sites.csv")
 write_csv(cores, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_cores.csv")
-# write_csv(species, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_species.csv")
 write_csv(methods, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_methods.csv")
 write_csv(depthseries, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_study_citations.csv")
 
 

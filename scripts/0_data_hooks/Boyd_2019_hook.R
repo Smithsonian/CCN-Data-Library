@@ -32,6 +32,10 @@ cores_raw <- read_csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_2019
 depthseries_raw <- read.csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_2019_depthseries.csv")
 impacts_raw <-read_csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_2019_impacts.csv")
 species_raw <- read_csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_2019_species.csv")
+methods_raw <- read_csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_2019_material_and_methods.csv")
+
+# Data Curation ####
+methods <- methods_raw
 
 cores <- cores_raw %>%
   mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id)) %>%
@@ -62,50 +66,61 @@ species <- species_raw %>%
   select(study_id, site_id, core_id, species_code) %>%
   mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id))
 
-# Merge associated pubs with data release DOI
-bib <- read_csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_2019_associated_publications.csv")
-data_release_doi <- "10.25573/data.9747065"
-key_value <- "Boyd_et_al_2019"
+# Create Citation ####
 
-data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
+if(!file.exists("data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_study_citations.csv")){
+  # Merge associated pubs with data release DOI
+  bib <- read_csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_2019_associated_publications.csv")
+  data_release_doi <- "10.25573/data.9747065"
+  key_value <- "Boyd_et_al_2019"
+  
+  data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
+  
+  # study ids will expand data citation to associate with all studies
+  study_ids <- bib %>% select(study_id) %>% 
+    mutate(bibliography_id = "Boyd_et_al_2019_data")
+  
+  data_biblio <- as.data.frame(data_bib_raw) %>%
+    mutate(bibliography_id = "Boyd_et_al_2019_data", 
+           publication_type = "primary") %>%
+    full_join(study_ids)
+  
+  pub_biblio <- bib %>% 
+    mutate_all(as.character) %>%
+    mutate(bibliography_id = str_c(study_id, "article", sep = "_"),
+           publication_type = "associated")
+  
+  # Curate biblio so ready to read out as a BibTex-style .bib file
+  study_citations <- bind_rows(pub_biblio, data_biblio) %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019.bib")
+  write_csv(study_citations, "data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_study_citations.csv")
+}
 
-data_biblio <- as.data.frame(data_bib_raw) %>%
-  rownames_to_column("key") %>%
-  mutate(study_id = key_value) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = key_value,
-         key = key_value) 
 
-study_ids <- bib$study_id
+## QA/QC ###############
+source("./scripts/1_data_formatting/qa_functions.R")
 
-data_biblio_all_citations <- data_biblio %>%
-  bind_rows(data_biblio) %>%
-  bind_rows(data_biblio) %>%
-  bind_rows(data_biblio) %>%
-  mutate(year = as.numeric(year))
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
 
-data_biblio_all_citations$study_id <- study_ids
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
-# Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- bib %>%
-  mutate(bibliography_id = study_id,
-         key = study_id) %>%
-  bind_rows(data_biblio_all_citations) %>%
-  mutate(publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year),
-         volume = as.numeric(volume))
-
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("key")
-
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019.bib")
-
+# write files
 write_csv(cores, "data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_cores.csv") 
 write_csv(depthseries, "data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_depthseries.csv")
 write_csv(impacts, "data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_impacts.csv")
-write_csv(study_citations, "data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_study_citations.csv")
 write_csv(species, "data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_species.csv")
+write_csv(methods, "data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_methods.csv")

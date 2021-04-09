@@ -31,6 +31,9 @@ library(RefManageR)
 cores_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_et_al_2019_cores.csv")
 species_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_et_al_2019_species.csv")
 depthseries_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_et_al_2019_depthseries.csv")
+impacts_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_et_al_2019_impacts.csv")
+sites_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_et_al_2019_sites.csv")
+methods_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_et_al_2019_methods.csv")
 
 # Remove accumulation/accretion rates for core level
 cores <- cores_raw %>%
@@ -49,46 +52,62 @@ depthseries <- depthseries_raw %>%
          pb210_unit = ifelse(!is.na(excess_pb210_activity), "picocuriesPerGram", NA),
          bi214_unit = ifelse(!is.na(bi214_activity), "becquerelsPerKilogram", NA))
 
+sites <- sites_raw
+impacts <- impacts_raw
+methods <- methods_raw
+
 ## Create citation info  
-associated_bib_doi <- "10.1007/s12237-012-9508-9"
-data_release_doi <- "10.25573/data.9693251"
-study_id_value <- unique(cores$study_id)
 
-paper_bib_raw <- GetBibEntryWithDOI(associated_bib_doi)
-data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
+if(!file.exists("data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_study_citations.csv")){
+  associated_bib_doi <- "10.1007/s12237-012-9508-9"
+  data_release_doi <- "10.25573/data.9693251"
+  study_id_value <- unique(cores$study_id)
+  
+  paper_bib_raw <- GetBibEntryWithDOI(associated_bib_doi)
+  data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
+  
+  # Convert this to a dataframe
+  paper_biblio <- as.data.frame(paper_bib_raw) %>%
+    mutate(study_id = study_id_value,
+           bibliography_id = "Callaway_et_al_2012_article",
+           publication_type = "associated")
+  
+  data_biblio <- as.data.frame(data_bib_raw) %>%
+    mutate(study_id = study_id_value,
+           bibliography_id = "Callaway_et_al_2019_data",
+           publication_type = "primary")
+  
+  # Curate biblio so ready to read out as a BibTex-style .bib file
+  study_citations <- data_biblio %>%
+    bind_rows(paper_biblio) %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019.bib")
+  write_csv(study_citations, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_study_citations.csv")
+}
 
-# Convert this to a dataframe
-paper_biblio <- as.data.frame(paper_bib_raw) %>%
-  rownames_to_column("key") %>%
-  mutate(study_id = study_id_value) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = study_id_value,
-         key = "Callaway_et_al_2012") 
+## QA/QC ###############
+source("./scripts/1_data_formatting/qa_functions.R")
 
-data_biblio <- as.data.frame(data_bib_raw) %>%
-  rownames_to_column("key") %>%
-  mutate(study_id = study_id_value) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = study_id_value,
-         key = study_id_value) 
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
 
-# Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- data_biblio %>%
-  bind_rows(paper_biblio) %>%
-  mutate(publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year),
-         volume = as.numeric(volume))
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("key")
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019.bib")
-
-write_csv(study_citations, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_study_citations.csv")
+# write files
 write_csv(species, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_species.csv")
 write_csv(cores, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_cores.csv")
 write_csv(depthseries, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_depthseries.csv")

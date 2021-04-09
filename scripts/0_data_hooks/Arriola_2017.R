@@ -11,6 +11,7 @@ library(tidyverse)
 library(RefManageR)
 library(rnaturalearth)
 library(sf)
+
 source("./scripts/1_data_formatting/qa_functions.R")
 
 cores_raw <- read_csv("./data/primary_studies/Arriola_2017/intermediate/arriola_and_cable_2017_core_raw.csv")
@@ -81,44 +82,44 @@ methods <- methods_raw %>%
   select(-age_depth_model_notes)
 
 ## Citation ####
-doi <- "https://doi.org/10.1002/lno.10652"
 
-citation_raw <- as.data.frame(GetBibEntryWithDOI(doi))
+if(!file.exists("./data/primary_studies/arriola_2017/derivative/arriola_and_cable_2017_study_citations.csv")){
+  doi <- "https://doi.org/10.1002/lno.10652"
+  
+  citation_raw <- as.data.frame(GetBibEntryWithDOI(doi))
+  
+  study_citations <- citation_raw %>%
+    mutate(bibliography_id = "Arriola_and_Cable_2017_article",
+           study_id = study_id_value,
+           publication_type = "associated") %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
+    remove_rownames()
+  
+  ## Format bibliography
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/arriola_2017/derivative/arriola_and_cable_2017.bib")
+  write_csv(study_citations, "./data/primary_studies/arriola_2017/derivative/arriola_and_cable_2017_study_citations.csv")
+  
+}
 
-study_citations <- citation_raw %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study_id_value,
-         study_id = study_id_value,
-         publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  select(-number) %>%
-  mutate(year = as.numeric(year),
-         volume = as.numeric(volume))
+## QA/QC ###############
 
-## Format bibliography
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("key")
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries"))
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/arriola_2017/derivative/arriola_and_cable_2017.bib")
-
-## QAQC ######
-test_colnames("cores", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("methods", methods)
-
-results <- test_core_relationships(cores, depthseries)
-
-numeric_results <- test_numeric_vars(depthseries)
-
-test_varnames(methods)
-test_varnames(cores)
-test_varnames(depthseries)
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
 ## Write files ####
 write_csv(cores, "./data/primary_studies/arriola_2017/derivative/arriola_and_cable_2017_cores.csv")
 write_csv(methods, "./data/primary_studies/arriola_2017/derivative/arriola_and_cable_2017_methods.csv")
 write_csv(depthseries, "./data/primary_studies/arriola_2017/derivative/arriola_and_cable_2017_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/arriola_2017/derivative/arriola_and_cable_2017_study_citations.csv")
 

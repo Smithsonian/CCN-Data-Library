@@ -69,33 +69,43 @@ methods <- methods_raw %>%
             loss_on_ignition_1_cm_section_sample_volume, loss_on_ignition_2_cm_section_sample_volume))
 
 ## Citations ####
-doi <- "https://doi.org/10.25573/data.9894266"
+
+# doi <- "https://doi.org/10.25573/data.9894266"
 study_id_value <- "Breithaupt_et_al_2020"
 
 study_citations <- study_citations_raw %>%
-  mutate(year = as.numeric(year))
+  rename(url = key) %>%
+  mutate(bibliography_id = "Breithaupt_et_al_2020_data",
+         publication_type = "primary") %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 ## Format bibliography
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
+  select(-study_id, -publication_type) %>%
   distinct() %>%
-  column_to_rownames("key")
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020.bib")
+write_csv(study_citations, "./data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020_study_citations.csv")
+
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("cores", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
-test_colnames("methods", methods)
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
 
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
+
+# write files
 write_csv(cores, "./data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020_cores.csv")
 write_csv(species, "./data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020_species.csv")
 write_csv(methods, "./data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020_methods.csv")
 write_csv(depthseries, "./data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020_study_citations.csv")
 
 

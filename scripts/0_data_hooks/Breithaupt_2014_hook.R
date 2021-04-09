@@ -31,6 +31,9 @@ species_raw <- read_csv("./data/primary_studies/breithaupt_2014/original/breitha
 methods_raw <- read_csv("./data/primary_studies/breithaupt_2014/original/breithaupt_et_al_2014_materials_and_methods.csv")
 bib <- ReadBib("./data/primary_studies/breithaupt_2014/original/citations.bib")
 
+
+## Data Curation ####
+
 study_id_value <- "Breithaupt_et_al_2014"
 
 cores <- cores_raw %>%
@@ -54,25 +57,37 @@ depthseries <- depthseries_raw %>%
 methods <- methods_raw %>%
   mutate(study_id = study_id_value) 
 
+## Citations ####
 study_citations <- as.data.frame(bib) %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = key,
+  mutate(bibliography_id = c("Breithaupt_et_al_2014_article","Breithaupt_et_al_2019_data"), 
          study_id = study_id_value,
-         bibliography_id = study_id_value,
-         publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year),
-         volume = as.numeric(volume))
+         publication_type = c("associated", "primary")) %>%
+  remove_rownames() %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
+  select(-study_id, -publication_type) %>%
   distinct() %>%
-  column_to_rownames("key")
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/breithaupt_2014/derivative/breithaupt_et_al_2014.bib")
+write_csv(study_citations, "data/primary_studies/breithaupt_2014/derivative/breithaupt_et_al_2014_study_citations.csv")
 
+## QA/QC ###############
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
+
+# write files
 write_csv(cores, "data/primary_studies/breithaupt_2014/derivative/breithaupt_et_al_2014_cores.csv") 
 write_csv(depthseries, "data/primary_studies/breithaupt_2014/derivative/breithaupt_et_al_2014_depthseries.csv")
-write_csv(study_citations, "data/primary_studies/breithaupt_2014/derivative/breithaupt_et_al_2014_study_citations.csv")
 write_csv(species, "data/primary_studies/breithaupt_2014/derivative/breithaupt_et_al_2014_species.csv")
 write_csv(methods, "./data/primary_studies/breithaupt_2014/derivative/breithaupt_et_al_2014_methods.csv")

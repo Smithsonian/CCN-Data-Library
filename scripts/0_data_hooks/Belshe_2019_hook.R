@@ -24,6 +24,13 @@ library(RefManageR)
 
 depthseries_raw <- read.csv("./data/primary_studies/Belshe_2019/original/belshe_et_al_2019_depthseries.csv")
 methods_raw <-read_csv("./data/primary_studies/Belshe_2019/original/belshe_et_al_2019_material_and_methods.csv")
+sites_raw <-read_csv("./data/primary_studies/Belshe_2019/original/belshe_et_al_2019_sites.csv")
+cores_raw <-read_csv("./data/primary_studies/Belshe_2019/original/belshe_et_al_2019_cores.csv")
+
+
+## Data Curation ####
+sites <- sites_raw
+cores <- cores_raw
 
 depthseries <- depthseries_raw %>%
   rename(pb210_crs_age = pb210_age, 
@@ -34,36 +41,51 @@ depthseries <- depthseries_raw %>%
 methods <- methods_raw %>%
   mutate(carbon_measured_or_modeled = "measured")
 
-# Create bibtex file
-data_release_doi <- "10.25573/data.9856769"
-associated_pub_doi <- "10.1029/2019JG005233"
-study_id <- "Belshe_et_al_2019"
+## Create Citation ####
 
-data_bib_raw <- GetBibEntryWithDOI(c(data_release_doi, associated_pub_doi))
+if(!file.exists("data/primary_studies/Belshe_2019/derivative/belshe_et_al_2019_study_citations.csv")){
+  # Create bibtex file
+  data_release_doi <- "10.25573/data.9856769"
+  associated_pub_doi <- "10.1029/2019JG005233"
+  study_id <- "Belshe_et_al_2019"
+  
+  data_bib_raw <- GetBibEntryWithDOI(c(data_release_doi, associated_pub_doi))
+  
+  study_citations <- as.data.frame(data_bib_raw) %>%
+    mutate(study_id = study_id,
+           bibliography_id = c("Belshe_et_al_2019_data", "Belshe_et_al_2019_article"),
+           publication_type = c("primary", "associated")) %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
+    remove_rownames()
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/Belshe_2019/derivative/Belshe_et_al_2019.bib")
+  write_csv(study_citations, "data/primary_studies/Belshe_2019/derivative/belshe_et_al_2019_study_citations.csv")
+}
 
-bib <- as.data.frame(data_bib_raw) %>%
-  rownames_to_column("key") %>%
-  mutate(study_id = study_id) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = study_id,
-         key = ifelse(bibtype == "Misc", study_id, key),
-         publication_type = bibtype) 
 
-# Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- bib %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year))
+## QA/QC ###############
+source("./scripts/1_data_formatting/qa_functions.R")
 
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("key")
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "sites"), version = "1")
+testTableVars(table_names = c("methods", "cores", "depthseries", "sites"))
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Belshe_2019/derivative/Belshe_et_al_2019.bib")
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
+# write files
 write_csv(depthseries, "data/primary_studies/Belshe_2019/derivative/belshe_et_al_2019_depthseries.csv")
 write_csv(methods, "data/primary_studies/Belshe_2019/derivative/belshe_et_al_2019_methods.csv")
-write_csv(study_citations, "data/primary_studies/Belshe_2019/derivative/belshe_et_al_2019_study_citations.csv")
+write_csv(cores, "data/primary_studies/Belshe_2019/derivative/belshe_et_al_2019_cores.csv")
+write_csv(sites, "data/primary_studies/Belshe_2019/derivative/belshe_et_al_2019_sites.csv")
 
 
