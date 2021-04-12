@@ -453,3 +453,37 @@ testTableVars <- function(table_names) {
 
 # example code
 # testTableVars(table_names = table_names)
+
+## Check for required attributes ####
+
+# compile a table of studies and the required attributes they are missing
+
+testRequired <- function(){
+  # read in database guidance
+  guidance <- read_csv("docs/ccrcn_database_structure_V2.csv", col_types = cols()) 
+  required <- guidance %>% filter(required == "required")
+  
+  # read in CCRCN synthesis
+  methods <- read_csv("data/CCRCN_V2/methods.csv", guess_max = 10000, col_types = cols())
+  cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max = 10000, col_types = cols())
+  depthseries <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 100000, col_types = cols())
+  
+  studies <- sort(unique(cores$study_id)) # unique study ids
+  
+  # create df to store results
+  missing_required <- data.frame()
+  
+  # create table of studies and attributes
+  core_attributes <- gather(cores)
+    pivot_longer(cols = -study_id, names_to = "attribute_name")
+  
+  # for(study in studies){
+  #   
+  # }
+}
+
+## Check for duplicate cores in the database ####
+checkDuplicates <- function(){
+  # read in CCRCN synthesis tables (cores and depthseries)
+}
+

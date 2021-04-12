@@ -3,25 +3,15 @@
 #          lonnemanm@si.edu
 
 ## 1. Data and publication citations #########
-# Data citation: 
-# Schile, Lisa M. and Megonigal, J. Patrick. 2017. [Dataset] 
-# "Abu Dhabi Blue Carbon Demonstration Project." Distributed by Smithsonian Environmental Research Center. https://doi.org/10.5479/data_serc/10088/31949
-study_schile <- "Schile-Beers_and_Megonigal_2017"
-doi_schile <- "10.5479/data_serc/10088/31949"
 
-# Citation for segrass cores: 
-# Campbell, J. E., Lacey, E. A., Decker, R. A., Crooks, S., & Fourqurean, J. W. (2015). 
-# Carbon storage in seagrass beds of Abu Dhabi, United Arab Emirates. Estuaries and Coasts, 38(1), 242-251. 
-study_campbell <- "Campbell_et_al_2015"
-doi_campbell <- "10.1007/s12237-014-9802-9"
 
 ## 2. Prep workspace and scrape data from web ####################
 
 ## ... 2A. Load packages #######################
 # Load RCurl, a package used to download files from a URL
-library(rvest)
-library(stringr)
-library(RCurl)
+# library(rvest)
+# library(stringr)
+# library(RCurl)
 library(tidyverse)
 library(lubridate)
 library(readxl)
@@ -76,7 +66,7 @@ library(RefManageR)
 FILE_NAME <- "Megonigal_J_Patrick-20170103-Abu_Dhabi_Blue_Carbon_Project_Ecological_Applications.xlsx"
 FILE_PATH <- paste0(getwd(), "/data/primary_studies/Schile-Beers_2017/original/" )
 
-plot_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="plot information")
+plot_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="plot information", na = "n.d.")
 raw_depthseries_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="soil carbon data", na = "nd")
 
 # Revision to original data hook script: The cores in the "seagrass" ecosystem were initially collected as part 
@@ -92,7 +82,7 @@ raw_depthseries_data <- read_excel(paste0(FILE_PATH, FILE_NAME), sheet="soil car
 # 2. According to the methods in the publication, core depth was to either 3 m (the corer was 1 m long) or until parent material
 # There is no clear core_depth_flag code for the former, and I have coded it as "core depth limited by length of corer"
 
-depthseries_data <- raw_depthseries_data %>%
+depthseries <- raw_depthseries_data %>%
   rename(site_id = "Site", 
          core_length = "total core length (cm)") %>%
   # I will remove the following cores that have no or conflicting core-level entries: 
@@ -131,7 +121,8 @@ depthseries_data <- raw_depthseries_data %>%
   mutate(core_length = ifelse(is.na(core_length), 0, core_length)) %>%
   mutate(core_length = sum(core_length)) %>%
   mutate(depth_max = ifelse(is.na(depth_max)==TRUE,core_length, depth_max)) %>%
-  select(-core_length)
+  select(-core_length) %>%
+  ungroup()
 
 # The depth (cm) category does not provide depth_max if it's entered as >100. 
 # However, the first entry for each core provides a core length. I'll summarize the data to get that information, 
@@ -178,7 +169,7 @@ core_data <- plot_data %>%
 
 # Some plot are missing coordinates. From the site description we can estimate
 #   the locations and add coordinates in
-core_data <- core_data %>% 
+cores <- core_data %>% 
   mutate(core_latitude = ifelse(site_id == "Kalba East", 25.007509, 
                           ifelse(site_id == "Kalba South", 24.999839,
                             core_latitude))) %>% 
@@ -202,7 +193,7 @@ core_data <- core_data %>%
 options(digits=6)
 
 # Rename and curate
-site_data <- core_data %>%
+site_data <- cores %>%
   select(site_id, core_id, study_id, core_latitude, core_longitude, core_elevation, vegetation_notes) 
   
 # Find min and max lat/long for each site
@@ -213,7 +204,7 @@ site_data <- site_data %>%
   select(-core_latitude, -core_longitude)
 
 # Now aggeregate data to the site level
-site_data <- site_data %>%
+sites <- site_data %>%
   group_by(site_id) %>%
   summarize(study_id = first(study_id),  
             site_longitude_max = first(site_longitude_max), site_longitude_min = first(site_longitude_min),
@@ -221,90 +212,95 @@ site_data <- site_data %>%
   filter(is.na(site_longitude_max) == FALSE)
 
 ## 4. Create study-citation table ######
-# import the CCRCN bibliography 
-# Get bibtex citation from DOI for Campbell
-biblio_campbell <- GetBibEntryWithDOI(doi_campbell)
-biblio_df <- as.data.frame(biblio_campbell)
-study_citations_campbell <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study_campbell, 
-         study_id = study_campbell,
-         key = study_campbell,
-         publication_type = "Article") %>%
-  select(study_id, bibliography_id, publication_type, everything())
 
-# The DOI for Schile-Beers and Megonigal does not return the necessary information
-biblio_schile <- BibEntry(bibtype = "Misc", 
-                          key = study_schile, 
-                          title = "Abu Dhabi Blue Carbon Demonstration Project",
-                          author = "Schile, Lisa M. and Megonigal, J. Patrick", 
-                          doi = doi_schile,
-                          publisher = "Smithsonian Environmental Research Center",
-                          year = "2017", 
-                          url = "https://repository.si.edu/handle/10088/31949")
-biblio_df <- as.data.frame(biblio_schile)
-study_citations_schile <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study_schile, 
-         study_id = study_schile,
-         key = study_schile,
-         publication_type = "data release") %>%
-  select(study_id, bibliography_id, publication_type, everything())
-
-study_citations_synthesis <- biblio_df %>%
-  rownames_to_column("key") %>%
-  mutate(bibliography_id = study_schile, 
-         study_id = study_campbell,
-         key = study_schile,
-         publication_type = "synthesis") %>%
-  select(study_id, bibliography_id, publication_type, everything()) %>%
-  bind_rows(study_citations_campbell, study_citations_schile) %>%
-  mutate(year = as.numeric(year),
-         volume = as.numeric(volume),
-         number = as.numeric(number))
-
-# Write .bib file
-bib_file <- study_citations_synthesis %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("key")
-
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017.bib")
-
-
-library(bib2df)
-CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
-
-# link each study to primary citation and join with synthesis table
-studies <- unique(core_data$study_id)
-
-study_data_primary <- CCRCN_bib %>%
-  select(BIBTEXKEY, CATEGORY, DOI) %>%
-  rename(bibliography_id = BIBTEXKEY,
-         study_type = CATEGORY,
-         doi = DOI) %>%
-  filter(bibliography_id %in% studies) %>%
-  mutate(study_id = bibliography_id, 
-         study_type = tolower(study_type)) %>%
-  select(study_id, study_type, bibliography_id, doi) 
-
-synthesis_study_id <- "Schile-Beers_and_Megonigal_2017"
-synthesis_doi <- "10.5479/data_serc/10088/31949"
+if(!file.exists("./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")){
+  # Citation for segrass cores article: 
+  # Campbell, J. E., Lacey, E. A., Decker, R. A., Crooks, S., & Fourqurean, J. W. (2015). 
+  # Carbon storage in seagrass beds of Abu Dhabi, United Arab Emirates. Estuaries and Coasts, 38(1), 242-251. 
+  study_campbell <- "Campbell_et_al_2015"
+  doi_campbell <- "10.1007/s12237-014-9802-9"
   
-study_data_synthesis <- core_data %>%
-  filter(study_id == "Campbell_et_al_2015") %>%
-  group_by(study_id) %>%
-  summarize(study_type = "synthesis",
-            bibliography_id = synthesis_study_id, 
-            doi = synthesis_doi) %>%
-  bind_rows(study_data_primary)
+  # import the CCRCN bibliography 
+  # Get bibtex citation from DOI for Campbell
+  biblio_campbell <- GetBibEntryWithDOI(doi_campbell)
+  biblio_df <- as.data.frame(biblio_campbell)
+  
+  study_citations_campbell <- biblio_df %>%
+    mutate(bibliography_id = "Campbell_et_al_2014_article", 
+           study_id = study_campbell,
+           publication_type = "associated") %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  # Data citation: 
+  # Schile, Lisa M. and Megonigal, J. Patrick. 2017. [Dataset] 
+  # "Abu Dhabi Blue Carbon Demonstration Project." Distributed by Smithsonian Environmental Research Center. https://doi.org/10.5479/data_serc/10088/31949
+  study_schile <- "Schile-Beers_and_Megonigal_2017"
+  doi_schile <- "10.5479/data_serc/10088/31949"
+  
+  # The DOI for Schile-Beers and Megonigal does not return the necessary information
+  biblio_schile <- BibEntry(bibtype = "Misc", 
+                            key = study_schile, 
+                            title = "Abu Dhabi Blue Carbon Demonstration Project",
+                            author = "Schile, Lisa M. and Megonigal, J. Patrick", 
+                            doi = doi_schile,
+                            publisher = "Smithsonian Environmental Research Center",
+                            year = "2017", 
+                            url = "https://repository.si.edu/handle/10088/31949")
+  
+  # link each study to primary citation and join with synthesis table
+  studies <- unique(cores$study_id)
+  # expand data citation to include all the studies
+  data_citations <- data.frame(study_id = studies,
+                               as.data.frame(biblio_schile)) %>%
+    mutate(publication_type = "synthesis", 
+           bibliography_id = "Schile-Beers_et_al_2017_data")
+  
+  # bind all citations together
+  study_citations <- bind_rows(study_citations_campbell, data_citations) %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017.bib")
+  write_csv(study_citations, "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")
+  
+}
+
+# library(bib2df)
+# CCRCN_bib <- bib2df("./docs/CCRCN_bibliography.bib")
+# 
+# study_data_primary <- CCRCN_bib %>%
+#   select(BIBTEXKEY, CATEGORY, DOI) %>%
+#   rename(bibliography_id = BIBTEXKEY,
+#          study_type = CATEGORY,
+#          doi = DOI) %>%
+#   filter(bibliography_id %in% studies) %>%
+#   mutate(study_id = bibliography_id, 
+#          study_type = tolower(study_type)) %>%
+#   select(study_id, study_type, bibliography_id, doi) 
+# 
+# synthesis_study_id <- "Schile-Beers_and_Megonigal_2017"
+# synthesis_doi <- "10.5479/data_serc/10088/31949"
+#   
+# study_data_synthesis <- cores %>%
+#   filter(study_id == "Campbell_et_al_2015") %>%
+#   group_by(study_id) %>%
+#   summarize(study_type = "synthesis",
+#             bibliography_id = synthesis_study_id, 
+#             doi = synthesis_doi) %>%
+#   bind_rows(study_data_primary)
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names = c("sites", "cores", "depthseries"), version = "1")
+testTableVars(table_names = c("sites", "cores", "depthseries"))
 
 test_unique_cores(cores)
 test_unique_coords(cores)
@@ -314,7 +310,6 @@ results <- test_numeric_vars(depthseries)
 
 ## 6. Write data ##############
 
-write_csv(site_data, "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
-write_csv(core_data, "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
-write_csv(depthseries_data, "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")
-write_csv(study_citations_synthesis, "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_study_citations.csv")
+write_csv(sites, "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_sites.csv")
+write_csv(cores, "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_cores.csv")
+write_csv(depthseries, "./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beers_Megonigal_2017_depthseries.csv")
