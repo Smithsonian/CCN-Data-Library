@@ -1,0 +1,67 @@
+study_id,coring_method,roots_flag,sediment_sieved_flag,sediment_sieve_size,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_sample_volume,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,loss_on_ignition_sample_mass,loss_on_ignition_flag,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_method,fraction_carbon_type,carbon_profile_notes,cs137_counting_method,pb210_counting_method,excess_pb210_rate,excess_pb210_model,ra226_assumption,c14_counting_method,dating_notes,age_depth_model_reference
+Weis_et_al_2001,hargas corer,NA,NA,NA,NA,95,24,NA,NA,550,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Watson_and_Byrne_2013,russian corer,NA,NA,NA,NA,104,24,NA,NA,550,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,AMS,NA,NA
+Vaughn_et_al_2020,vibracore,roots and rhizomes included,sediment sieved,NA,no obvious compaction,NA,NA,76.97,freeze dried,NA,NA,NA,NA,measured,TRUE,acid fumigation,EA,organic carbon,NA,gamma,gamma,NA,CRS,each sample,AMS,NA,CE
+Thorne_et_al_2015,none specified,NA,NA,NA,not specified,550,8,NA,to constant mass,550,8,NA,NA,NA,NA,NA,NA,NA,NA,gamma,NA,NA,NA,NA,NA,NA,NA
+Thom_1992,PVC tube or thin-walled metal tube,NA,NA,NA,corer limits compaction,90,NA,NA,NA,500,1,NA,NA,NA,NA,NA,NA,NA,NA,gamma,NA,NA,NA,NA,NA,NA,NA
+StLaurent_et_al_2020,pvc and hammer,roots and rhizomes separated,sediment sieved,1,compaction qualified,50,36,5,time approximate,450,8,NA,NA,NA,FALSE,NA,EA,organic carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sanborn_and_Coxson_2020,soil pit,roots and rhizomes included,sediment not sieved,NA,NA,105,24,550,NA,NA,NA,NA,NA,measured,FALSE,NA,NA,total carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Poppe_Rybczyk_2018,pvc and hammer,roots and rhizomes included,sediment sieved,0.5,no obvious compaction,NA,72,NA,to constant mass,500,24,NA,NA,NA,FALSE,NA,not specified,not specified,Modeled fraction carbon values available in https://doi.org/10.25573/data.10005248,gamma,gamma,NA,NA,NA,NA,NA,NA
+Poppe_Rybczyk_2019,pvc and hammer,roots and rhizomes included,sediment sieved,0.5,no obvious compaction,60,96,NA,to constant mass,500,8,NA,NA,NA,FALSE,NA,local regression,organic carbon,Modeled fraction carbon values available in https://doi.org/10.25573/data.10005248,gamma,gamma,NA,NA,NA,NA,NA,NA
+Poppe_et_al_2019,pvc and hammer,roots and rhizomes included,sediment sieved,0.5,no obvious compaction,60,96,NA,to constant mass,500,8,NA,NA,NA,FALSE,NA,local regression,organic carbon,Modeled fraction carbon values available in https://doi.org/10.25573/data.10005248,gamma,gamma,NA,NA,NA,NA,NA,NA
+Peck_et_al_2020,pvc and hammer,roots and rhizomes separated,sediment sieved,NA,compaction quantified,60,24,NA,time approximate,550,4,1,NA,measured,TRUE,direct acid treatment,EA,organic carbon,NA,gamma,gamma,mass accumulation and accretion,CRS and CIC,NA,NA,NA,NA
+Nolte_2020,pvc and hammer,roots and rhizomes included,sediment not sieved,NA,compaction quantified,105,52,NA,to constant mass,550,4,5,NA,NA,FALSE,NA,NA,NA,NA,gamma,gamma,NA,NA,each sample,NA,NA,core collection date
+Noe_et_al_2016,NA,roots and rhizomes separated,NA,NA,NA,60,NA,NA,air dried to constant mass,NA,NA,NA,NA,measured,NA,NA,EA,organic carbon,NA,NA,alpha,NA,CRS,NA,NA,NA,core collection date
+Nahlik_and_Fennessy_2016,soil pit,NA,sediment sieved,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,measured,TRUE,direct acid treatment,EA,organic carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Messerschmidt_and_Kirwan_2020,push core,NA,NA,NA,no obvious compaction,60,72,NA,to constant mass,550,6,5,NA,NA,NA,NA,NA,NA,NA,gamma,gamma,NA,CRS,NA,NA,NA,CE
+McTigue_et_al_2020,russian corer,roots and rhizomes included,sediment not sieved,NA,corer limits compaction,60,NA,NA,to constant mass,450,6,NA,time approximate,NA,TRUE,direct acid treatment,EA,organic carbon,NA,NA,alpha,mass accumulation,CFCS,NA,AMS,NA,core collection date
+Luk_et_al_2020_a,piston corer,roots and rhizomes separated,sediment sieved,1,no obvious compaction,60,NA,NA,air dried to constant mass,NA,NA,NA,NA,measured,TRUE,acid fumigation,EA,total carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020_b,piston corer,NA,NA,NA,no obvious compaction,NA,168,NA,freeze dried,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,gamma,gamma,NA,NA,NA,NA,NA,NA
+Lagomasino_et_al_2019,none specified,NA,NA,NA,NA,NA,NA,NA,modeled,550,4,NA,NA,NA,NA,NA,NA,NA,NA,gamma,alpha,accretion,CFCS,NA,NA,NA,NA
+Krauss_et_al_2018a,piston corer,NA,NA,NA,compaction quantified,NA,NA,NA,modeled,550,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,AMS,NA,core collection date
+Krauss_et_al_2018b,vibracore,NA,NA,NA,compaction quantified,NA,NA,NA,modeled,550,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,AMS,NA,core collection date
+Krauss_et_al_2018c,russian corer,NA,NA,NA,corer limits compaction,NA,NA,NA,modeled,550,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,AMS,NA,core collection date
+Keshta_et_al_2020_a,russian corer,roots and rhizomes separated,sediment sieved,2,corer limits compaction,105,72,45.2389,air dried to constant mass,550,2,NA,time approximate,modeled,TRUE,direct acid treatment,local regression,total carbon,"a peat sampler was used for all wetland habitats, except the adjacent uplands where regular soil core was used for soil sampling",NA,NA,NA,NA,NA,NA,NA,NA
+Keshta_et_al_2020_b,push core,roots and rhizomes separated,sediment sieved,2,corer limits compaction,105,72,171.0597,air dried to constant mass,550,2,NA,time approximate,modeled,TRUE,direct acid treatment,local regression,total carbon,"a peat sampler was used for all wetland habitats, except the adjacent uplands where regular soil core was used for soil sampling",NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2020,piston corer,NA,NA,NA,corer limits compaction,110,24,NA,NA,550,4,4,NA,NA,NA,NA,NA,NA,NA,gamma,gamma,NA,NA,NA,NA,NA,CE
+Kauffman_et_al_2020,gouge auger,roots and rhizomes included,sediment not sieved,NA,NA,60,96,NA,time approximate,NA,NA,NA,NA,measured,FALSE,NA,EA,total carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Johnson_et_al_2007,vibracore,NA,NA,NA,NA,100,NA,NA,to constant mass,NA,NA,NA,NA,measured,TRUE,direct acid treatment,NA,organic carbon,NA,NA,NA,NA,NA,NA,AMS,NA,YBP
+Breithaupt_et_al_2017,piston corer,NA,NA,NA,corer limits compaction,NA,NA,NA,no details,550,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cochran_et_al_1998,mccaffrey peat cutter,NA,NA,NA,NA,60,48,NA,duplicate measurements,450,12,NA,duplicate measurements,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+CRMS_Database,push core,NA,NA,NA,< 10-20%,NA,NA,NA,no details,NA,NA,NA,no details,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Drake_et_al_2015,none specified,NA,NA,NA,NA,105,NA,NA,time not specified,NA,NA,NA,NA,measured,NA,none specified,NA,fraction_organic_carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Elsey_Quirk_et_al_2011,push core,NA,NA,NA,NA,60,12,NA,time approximate,460,8,NA,NA,measured,TRUE,HCl fumigation,NA,fraction_organic_carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Hill_and_Anisfeld_2015,push core,NA,NA,NA,NA,60,NA,NA,time not specified,550,NA,NA,time not specified,measured,TRUE,HCl fumigation,NA,fraction_organic_carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kulawardhana_et_al_2015,other shallow corer,roots seperated using floation,NA,NA,no obvious compaction,105,48,NA,NA,440,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Merrill_1999,mcauley corer,NA,NA,NA,corer limits compaction,NA,NA,NA,no details,550,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Neubauer_2002,push core,NA,NA,NA,NA,50,NA,NA,time not specified,500,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Noe_et_al_2013,push core,NA,NA,NA,NA,NA,NA,NA,no details,550,4,NA,ground and sieved,measured,FALSE,NA,NA,fraction_total_carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Nuttle_1996,none specified,NA,NA,NA,NA,NA,NA,NA,no details,NA,NA,NA,no details,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Nyman_et_al_1993,other shallow corer,NA,NA,NA,NA,80,NA,NA,removed non structural water,400,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Orson_1990,russian corer,NA,NA,NA,corer limits compaction,NA,NA,NA,no details,475,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pastore_et_al_2017,gouge auger,NA,NA,NA,NA,60,336,NA,time approximate,NA,NA,NA,NA,measured,FALSE,low carbonate soil,NA,fraction_total_carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Piazza_et_al_2011,none specified,NA,NA,NA,NA,60,NA,NA,time not specified,550,2,NA,NA,NA,NA,NA,NA,fraction_total_carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Radabaugh_et_al_2018,russian corer,roots and rhizomes included,NA,NA,NA,105,24,NA,NA,550,3,NA,NA,modeled,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Windham_Meyers_et_al_2010,piston corer,NA,NA,NA,NA,105,12,NA,time approximate,450,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gerlach_et_al_2017,russian corer,NA,NA,NA,NA,NA,NA,NA,not specified,NA,NA,NA,not specified,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,AMS,NA,YBP
+Ensign_et_al_2020,piston corer,roots and rhizomes included,sediment not sieved,NA,compaction quantified,60,NA,56.745,air dried to constant mass,550,4,NA,NA,measured,FALSE,NA,EA,total carbon,NA,gamma,NA,NA,NA,NA,NA,NA,NA
+Drexler_et_al_2019,hargas corer,NA,sediment sieved,2,corer limits compaction,80,NA,NA,time approximate,NA,NA,NA,NA,measured,TRUE,acid fumigation,EA,organic carbon,NA,NA,gamma,mass accumulation,CRS,each sample,NA,NA,NA
+Drexler_et_al_2013,hargas corer,NA,NA,2,corer limits compaction,80,NA,NA,time approximate,NA,NA,NA,NA,measured,TRUE,acid fumigation,EA,organic carbon,NA,gamma,gamma,mass accumulation,CRS,each sample,NA,NA,CE
+Drexler_et_al_2009,piston corer,NA,NA,NA,NA,105,12,NA,time approximate,550,4,NA,NA,modeled,FALSE,low carbonate soil,NA,total carbon,fraction carbon extrapolated from subset of samples,NA,NA,NA,NA,NA,AMS,NA,YBP
+Doughty_et_al_2016,other shallow corer,roots and rhizomes separated,sediment not sieved,NA,compaction quantified,105,336,NA,air dried to constant mass,NA,NA,NA,NA,measured,FALSE,NA,EA,total carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Craft_2007,none specified,NA,NA,NA,NA,NA,NA,NA,air dried to constant mass,NA,NA,NA,NA,measured,TRUE,direct acid treatment,EA,total carbon,NA,gamma,NA,NA,NA,NA,NA,NA,NA
+Chambers_et_al_2019,push core,roots and rhizomes included,sediment not sieved,NA,no obvious compaction,70,72,NA,time approximate,550,3,NA,NA,measured,FALSE,NA,EA,total carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+White_et_al_2020_a,push core,roots and rhizomes included,sediment not sieved,NA,no obvious compaction,60,NA,384.85,air dried to constant mass,550,4,NA,NA,measured,FALSE,NA,EA,total carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+White_et_al_2020_b,piston corer,NA,sediment not sieved,NA,not specified,60,NA,384.85,air dried to constant mass,550,4,NA,NA,measured,FALSE,NA,EA,total carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Callaway_et_al_2019,hargas corer,NA,NA,NA,compaction qualified,85,72,NA,NA,450,8,NA,NA,measured,NA,NA,EA,NA,NA,gamma,gamma,accretion,CIC,NA,NA,NA,NA
+Buffington_et_al_2020,russian corer,roots and rhizomes included,sediment not sieved,NA,corer limits compaction,80,24,1,NA,500,4,NA,NA,modeled,FALSE,NA,NA,total carbon,NA,gamma,NA,NA,NA,NA,NA,NA,CE
+Breithaupt_et_al_2020,pvc and hammer,roots and rhizomes included,sediment not sieved,NA,no obvious compaction,105,24,NA,air dried to constant mass,550,3,NA,NA,measured,TRUE,acid fumigation,EA,organic carbon,NA,gamma,gamma,NA,CRS,NA,NA,NA,core collection date
+Breithaupt_et_al_2014,pvc and hammer,roots and rhizomes included,sediment not sieved,NA,no obvious compaction,105,24,NA,air dried to constant mass,550,3,NA,NA,measured,TRUE,acid fumigation,EA,organic carbon,NA,gamma,gamma,NA,CRS,NA,NA,NA,core collection date
+Boyd_2012,pvc and hammer,NA,NA,NA,NA,NA,NA,NA,modeled,550,4,4,NA,NA,NA,NA,NA,NA,NA,gamma,gamma,accretion,CIC,NA,NA,NA,NA
+Boyd_and_Sommerfield_2016,pvc and hammer,NA,NA,NA,NA,NA,NA,NA,modeled,550,4,4,NA,NA,NA,NA,NA,NA,NA,gamma,gamma,accretion,CFCS,NA,NA,NA,NA
+Boyd_et_al_2017,piston corer,roots and rhizomes included,NA,NA,corer limits compaction,NA,NA,NA,modeled,550,4,4,NA,measured,TRUE,acid fumigation,NA,organic carbon,NA,gamma,gamma,not specified,CFCS,NA,NA,NA,NA
+Unger_et_al_2016,piston corer,roots and rhizomes included,NA,NA,corer limits compaction,NA,NA,NA,modeled,550,4,4,NA,measured,TRUE,acid fumigation,NA,organic carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Belshe_et_al_2019,pvc and hammer,roots and rhizomes included,sediment not sieved,NA,compaction quantified,60,48,24.5,to constant mass,NA,NA,NA,NA,measured,TRUE,direct acid treatment,EA,organic carbon,NA,NA,alpha,mass accumulation,CRS,NA,AMS,"Mix of dating methods used for each core. 14C measurements were made on particualte OM, dead seagrass sheaths",YBP
+Baustian_et_al_2021,mcauley corer,NA,NA,NA,NA,NA,NA,40.85641245993526,freeze dried,550,14,NA,NA,NA,NA,NA,NA,NA,NA,gamma,gamma,NA,NA,NA,NA,NA,NA
+Arriola_and_Cable_2017,push core,NA,NA,NA,compaction qualified,60,48,NA,NA,550,4,NA,NA,measured,NA,NA,EA,total carbon,NA,gamma,gamma,NA,CRS,each sample,NA,NA,core collection date
+Abbott_et_al_2019,polycarbonate tube,roots and rhizomes included,NA,NA,corer limits compaction,60,NA,NA,to constant mass,550,4,NA,NA,measured,TRUE,acid fumigation,EA,organic carbon,NA,NA,NA,NA,NA,NA,NA,NA,NA

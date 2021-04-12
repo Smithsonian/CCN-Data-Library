@@ -33,6 +33,11 @@ library(rmarkdown)
 library(DT)
 
 directory <- "./data/primary_studies/"
+
+# read in list of file paths to data curated under old guidance
+v1_dirs <- read_csv("docs/versioning/v1_data_paths.csv") %>% pull(file_paths)
+
+
 # Index of table names
 tables <- c("depthseries", "cores", "sites", "species", "impacts", "methods", "studycitations")
 # Other objects that we will need to track

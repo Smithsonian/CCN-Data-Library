@@ -464,7 +464,7 @@ testRequired <- function(){
   required <- guidance %>% filter(required == "required")
   
   # read in CCRCN synthesis
-  methods <- read_csv("data/CCRCN_V2/methods.csv", guess_max = 10000, col_types = cols())
+  methods <- read_csv("data/CCRCN_V2/methods.csv", col_types = cols())
   cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max = 10000, col_types = cols())
   depthseries <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 100000, col_types = cols())
   
@@ -473,9 +473,20 @@ testRequired <- function(){
   # create df to store results
   missing_required <- data.frame()
   
-  # create table of studies and attributes
-  core_attributes <- gather(cores)
-    pivot_longer(cols = -study_id, names_to = "attribute_name")
+  # create table of attributes present in each table for each study
+  cols_methods <- methods %>%
+    mutate_all(as.character) %>%
+    pivot_longer(cols = -study_id, names_to = "attribute_name", values_to = "value") %>%
+    drop_na(value)
+  
+  cols_cores <- cores %>%
+    mutate_all(as.character) %>%
+    pivot_longer(cols = -study_id, names_to = "attribute_name", values_to = "value") %>%
+    drop_na(value) %>%
+    select(-value) %>% distinct()
+  
+  required_cores <- cols_cores %>%
+    filter(attribute_name %in% required$attribute_name)
   
   # for(study in studies){
   #   
