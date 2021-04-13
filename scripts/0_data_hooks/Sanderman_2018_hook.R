@@ -6,7 +6,7 @@
 ## Workspace prep ##########
 
 library(tidyverse)
-library(RCurl)
+# library(RCurl)
 library(readxl)
 library(lubridate)
 library(RefManageR)
@@ -27,7 +27,7 @@ internatl_core_data_raw <- read_excel("data/primary_studies/Sanderman_2018/origi
                                       sheet = 3)
 
 #m Other core level data found here (but not necessary):
-"https://raw.githubusercontent.com/whrc/Mangrove-Soil-Carbon/master/R_code/41558_2018_162_MOESM2_ESM.csv"
+# "https://raw.githubusercontent.com/whrc/Mangrove-Soil-Carbon/master/R_code/41558_2018_162_MOESM2_ESM.csv"
 
 # Jon sent me some updated data as a few sites were inaccurate.
 # We'll need to insert in the new data for these sites
@@ -230,124 +230,160 @@ internatl_depthseries_data <- internatl_depthseries_data %>%
 ## QA/QC Functions ##########################
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Test for variables that are not in CCRCN guidance
-# Make sure column names are formatted correctly: 
-test_colnames("core_level", internatl_core_data)
-test_colnames("depthseries", internatl_depthseries_data)
-test_colnames("species", internatl_species_data)
-test_colnames("methods_and_materials", methods)
+# remove data that has since been published independently
+studies_to_remove <- "Breithaupt_et_al_2014"
 
-# Re-order columns
-depthseries <- select_and_reorder_columns("depthseries", internatl_depthseries_data, "/data/primary_studies/Sanderman_2018/derivative/")
-core_data <- select_and_reorder_columns("core_level", internatl_core_data, "/data/primary_studies/Sanderman_2018/derivative/")
-methods <- select_and_reorder_columns("methods_and_materials", methods, "/data/primary_studies/Sanderman_2018/derivative/")
-# No guidance for biomass yet
-species <- select_and_reorder_columns("species", internatl_species_data, "/data/primary_studies/Sanderman_2018/derivative/")
-study_citations <- select_and_reorder_columns("associated_publications", study_citations, "/data/primary_studies/Sanderman_2018/derivative/")
+depthseries <- reorderColumns("depthseries", internatl_depthseries_data) %>%
+  filter(!(study_id %in% studies_to_remove))
+cores <- reorderColumns("cores", internatl_core_data) %>%
+  filter(!(study_id %in% studies_to_remove))
+species <- reorderColumns("species", internatl_species_data) %>%
+  filter(!(study_id %in% studies_to_remove))
 
+# Check col and varnames
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1") # DBD_measured_or_modeled
+testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
 
-# test variable names
-test_varnames(core_data)
-test_varnames(depthseries)
-test_varnames(site_data)
-test_varnames(species)
-test_varnames(study_citations)
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+result <- test_numeric_vars(depthseries)
 
-## Write data ###############
+## Generate study citation table ######
 
-#write_csv(internatl_study_metadata, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_methods.csv")
-
-# write_csv(internatl_core_data, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_cores.csv")
-# 
-# write_csv(internatl_species_data, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species.csv")
-# 
-# write_csv(internatl_depthseries_data, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries.csv")
-
-## DOCUMENT AND FILTER UNPUBLISHED OR UN-CITED STUDIES ###################
-# read back in hooked and curated Sanderman data
-cores <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_cores.csv")
-depthseries <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries.csv")
-species <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species.csv")
-
-## ... Remove Breithaupt et al. 2014 cores ###########
-# Cores are present in a figshare data release organized by the CCN
-# It appears Sanderman cores may have some data issues
-
-cores <- filter(cores, study_id != "Breithaupt_et_al_2014")
-depthseries <- filter(depthseries, study_id != "Breithaupt_et_al_2014")
-species <- filter(species, study_id != "Breithaupt_et_al_2014")
-
-write_csv(cores, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_cores.csv")
-write_csv(species, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species.csv")
-write_csv(depthseries, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries.csv")
-
-## Generate study citation table ###################
 # there should be two entries per study: 
 # one for the primary study associated with the Study ID
 # and another for the synthesis study (Sanderman 2018)
 
-# The follow file represents the initial study citations file that has since been deprecated
-# The citations listed as "unpublished" in the map repo are still uncited below
-citations <- read.csv("data/primary_studies/Sanderman_2018/intermediate/initial_citations.csv")
+citations_raw <- read_csv("data/primary_studies/Sanderman_2018/intermediate/Sanderman_2018_study_citations.csv")
 
-# Build citations for primary studies that have DOIs
-primary_dois <- citations %>%
-  filter(is.na(doi)==FALSE) %>%
-  filter(study_type != "synthesis") %>%
-  select(study_id, bibliography_id, doi) %>%
-  filter(study_id != "Breithaupt_et_al_2014")
-
-primary <- GetBibEntryWithDOI(primary_dois$doi)
-primary_df <- as.data.frame(primary)
-
-study_citations_primary <- primary_df %>%
-  rownames_to_column("key") %>%
-  merge(primary_dois, by="doi", all.x=TRUE, all.y=FALSE) %>%
-  mutate(publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything())
-
-# Import citations for primary studies that do not have DOIs
-primary_no_dois <- citations %>%
-  filter(is.na(year)==FALSE) %>%
-  mutate(year = as.character(year),
-         volume = as.character(volume), 
-         number = as.character(number)) %>%
-  mutate(publication_type = "Article",
-         bibtype = "Article",
-         key = study_id) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, year, volume, number, author, title, journal)
-
-# Build the synthesis citation table and join all 
-biblio_synthesis <- BibEntry(bibtype = "Misc", 
-                             key = "Sanderman_2018", 
-                             title = "Global mangrove soil carbon: dataset and spatial maps",
-                             author = "Jonathan Sanderman", 
-                             doi = "10.7910/dvn/ocyuit",
-                             publisher = "Harvard Dataverse",
-                             year = "2017", 
-                             url = "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OCYUIT")
-
-biblio_synthesis <- as.data.frame(biblio_synthesis)
-
-study_citations_synthesis <- citations %>%
-  filter(study_type == "synthesis" & study_id != "Breithaupt_et_al_2014") %>%
-  select(study_id, bibliography_id, doi) %>%
-  merge(biblio_synthesis, by="doi", all.x=TRUE, all.y=TRUE) %>%
-  mutate(key = "Sanderman_2017",
-         publication_type = "synthesis") %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything()) %>%
-  bind_rows(study_citations_primary, primary_no_dois) %>%
-  mutate(year = as.numeric(year),
-         volume = as.numeric(volume), 
-         number = as.numeric(number)) 
+study_citations <- citations_raw %>%
+  select(-key) %>%
+  mutate(publication_type = ifelse(bibliography_id == "Sanderman_2018", "synthesis", "associated")) %>%
+  mutate(bibliography_id = case_when(publication_type == "synthesis" ~ paste0(bibliography_id, "_data"),
+                                     bibliography_id == "Alongi_et_al_2000" & month == "oct" ~ "Alongi_et_al_2000_oct_article",
+                                     TRUE ~ paste0(bibliography_id, "_article"))) %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Write .bib file
-bib_file <- study_citations_synthesis %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
+bib_file <- study_citations %>%
+  select(-study_id, -publication_type) %>%
   distinct() %>%
-  column_to_rownames("key")
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018.bib")
+write_csv(study_citations, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_study_citations.csv")
 
-# write 
-write_csv(study_citations_synthesis, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_study_citations.csv")
+## Write data ###############
+
+# write_csv(internatl_study_metadata, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_methods.csv")
+write_csv(cores, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_cores.csv")
+write_csv(species, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species.csv")
+write_csv(depthseries, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries.csv")
+
+#-----
+
+# # Re-order columns
+# depthseries <- select_and_reorder_columns("depthseries", internatl_depthseries_data, "/data/primary_studies/Sanderman_2018/derivative/")
+# core_data <- select_and_reorder_columns("core_level", internatl_core_data, "/data/primary_studies/Sanderman_2018/derivative/")
+# methods <- select_and_reorder_columns("methods_and_materials", methods, "/data/primary_studies/Sanderman_2018/derivative/")
+# # No guidance for biomass yet
+# species <- select_and_reorder_columns("species", internatl_species_data, "/data/primary_studies/Sanderman_2018/derivative/")
+# study_citations <- select_and_reorder_columns("associated_publications", study_citations, "/data/primary_studies/Sanderman_2018/derivative/")
+# 
+# 
+# # test variable names
+# test_varnames(cores)
+# test_varnames(depthseries)
+# test_varnames(site_data)
+# test_varnames(species)
+# test_varnames(study_citations)
+
+
+## DOCUMENT AND FILTER UNPUBLISHED OR UN-CITED STUDIES ###################
+# # read back in hooked and curated Sanderman data
+# cores <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_cores.csv")
+# depthseries <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries.csv")
+# species <- read.csv("data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species.csv")
+#
+# ## ... Remove Breithaupt et al. 2014 cores ###########
+# # Cores are present in a figshare data release organized by the CCN
+# # It appears Sanderman cores may have some data issues
+# 
+# cores <- filter(cores, study_id != "Breithaupt_et_al_2014")
+# depthseries <- filter(depthseries, study_id != "Breithaupt_et_al_2014")
+# species <- filter(species, study_id != "Breithaupt_et_al_2014")
+# 
+# write_csv(cores, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_cores.csv")
+# write_csv(species, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species.csv")
+# write_csv(depthseries, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries.csv")
+
+
+## ARCHIVED CITATION WORKFLOW ##
+# studies <- cores %>% select(study_id) %>% distinct() %>% mutate(bibliography_id = "Sanderman_et_al_2018_data")
+# 
+# # create data citation
+# data_bib <- GetBibEntryWithDOI("10.7910/dvn/ocyuit")
+# data_citation <- as.data.frame(data_bib) %>%
+#   mutate(bibliography_id = "Sanderman_et_al_2018_data",
+#          publication_type = "primary") %>%
+#   left_join(studies)
+# 
+# # The follow file represents the initial study citations file that has since been deprecated
+# # The citations listed as "unpublished" in the map repo are still uncited below
+# # citations <- read_csv("data/primary_studies/Sanderman_2018/intermediate/initial_citations.csv")
+# 
+# no_doi <- citations %>% filter(is.na(doi)) %>% filter(study_id != "Breithaupt_et_al_2014")
+# 
+# # Build citations for primary studies that have DOIs
+# pub_dois <- citations %>% 
+#   filter(!is.na(doi)) %>%
+#   # filter(study_id %in% studies$study_id) %>%
+#   filter(study_type != "synthesis") %>% 
+#   select(study_id, bibliography_id, doi)
+#   
+# primary <- GetBibEntryWithDOI(primary_dois$doi)
+# primary_df <- as.data.frame(primary)
+# 
+# study_citations_primary <- primary_df %>%
+#   rownames_to_column("key") %>%
+#   merge(primary_dois, by="doi", all.x=TRUE, all.y=FALSE) %>%
+#   mutate(publication_type = bibtype) %>%
+#   select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything())
+# 
+# # Import citations for primary studies that do not have DOIs
+# primary_no_dois <- citations %>%
+#   filter(is.na(year)==FALSE) %>%
+#   mutate(year = as.character(year),
+#          volume = as.character(volume), 
+#          number = as.character(number)) %>%
+#   mutate(publication_type = "Article",
+#          bibtype = "Article",
+#          key = study_id) %>%
+#   select(study_id, bibliography_id, publication_type, key, bibtype, year, volume, number, author, title, journal)
+# 
+# # Build the synthesis citation table and join all 
+# biblio_synthesis <- BibEntry(bibtype = "Misc", 
+#                              key = "Sanderman_2018", 
+#                              title = "Global mangrove soil carbon: dataset and spatial maps",
+#                              author = "Jonathan Sanderman", 
+#                              doi = "10.7910/dvn/ocyuit",
+#                              publisher = "Harvard Dataverse",
+#                              year = "2017", 
+#                              url = "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OCYUIT")
+# 
+# biblio_synthesis <- as.data.frame(biblio_synthesis)
+# 
+# study_citations_synthesis <- citations %>%
+#   filter(study_type == "synthesis" & study_id != "Breithaupt_et_al_2014") %>%
+#   select(study_id, bibliography_id, doi) %>%
+#   merge(biblio_synthesis, by="doi", all.x=TRUE, all.y=TRUE) %>%
+#   mutate(key = "Sanderman_2017",
+#          publication_type = "synthesis") %>%
+#   select(study_id, bibliography_id, publication_type, key, bibtype, doi, everything()) %>%
+#   bind_rows(study_citations_primary, primary_no_dois) %>%
+#   mutate(year = as.numeric(year),
+#          volume = as.numeric(volume), 
+#          number = as.numeric(number)) 
+

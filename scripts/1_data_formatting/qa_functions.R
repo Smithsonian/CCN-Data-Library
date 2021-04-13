@@ -446,7 +446,7 @@ testTableVars <- function(table_names) {
     print("Looks good! All variable names match CCRCN standards")
     
   } else {
-    print(paste0("View resulting invalid variable names for the ", names(datasets)[k], " table."))
+    print("View resulting invalid variable names:")
     return(invalid_df)  
   }
 }
