@@ -23,21 +23,6 @@ library(RefManageR)
 
 Fourqurean_raw <- read_excel("./data/primary_studies/Fourqurean_2012/intermediate/JFourqurean_edited.xls")
 
-## Recode References to study_ids
-# Create vector of references
-references <- tibble(reference = na.omit(unique(Fourqurean_raw$Reference)))
-references <- references %>%
-  arrange(reference)
-
-# Write this out to an intermediate file
-write_csv(references, "data/primary_studies/Fourqurean_2012/intermediate/references.csv")
-
-# Now that 'references' was manually joined and inspected to a manually-compiled
-#   set of study IDs and DOIs, read that in
-study_doi_manual <- read_csv("data/primary_studies/Fourqurean_2012/intermediate/study_doi_manual.csv")
-# Additionally, read in the full set of citations for studies with no DOI: 
-citations_without_dois <- read_csv("data/primary_studies/Fourqurean_2012/intermediate/citations_without_dois.csv")
-
 ## 3. Curate data ######################
 
 ## ....3a. Prelim curation to raw dataset ###############
@@ -268,107 +253,142 @@ species <- Fourqurean %>%
   # remove all entries without a species code 
   filter(is.na(species_code) == FALSE) 
 
-## ....3h. Create study-level data ##########################
+## ....3h. Create Citations ##########################
   
-# We have a data table that was manually generating, which includes study IDs,
-#   DOIs, and a URL if there is no DOI. No row has a value in both DOI and URL
+citations_raw <- read_csv("data/primary_studies/Fourqurean_2012/intermediate/Fourqurean_2012_study_citations.csv")
 
-# Select down to just the rows that have DOIs, which will reduce # of warnings
-#   thrown by GetBibEntryWithDOI()
-doi <- study_doi_manual %>%
-  select(doi) %>%
-  na.omit() %>%
-  group_by(doi) %>%
-  summarize(doi_ = first(doi))
-
-# Get BibTex entries from DOI
-biblio_raw <- GetBibEntryWithDOI(doi$doi_)
-# Convert this to a dataframe
-biblio <- as.data.frame(biblio_raw) %>%
-  # GetBibEntryWithDOI() defaults study name as a row name, convert to column
-  rownames_to_column("key") %>%
-  mutate(doi = tolower(doi))
-
-# Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- study_doi_manual %>%
-  select(-url, -reference) %>%
-  # Convert uppercase to lowercase for DOIs
-  mutate(doi = tolower(doi)) %>%
-  merge(biblio, by="doi", all.x = FALSE, all.y = TRUE) %>%
-  mutate(publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  mutate(year = as.numeric(year),
-         volume = as.numeric(volume)) %>%
-  # Join entires without a DOI
-  bind_rows(citations_without_dois)
-
-# Create a separate row for each primary study_id - synthesis_id link
-synthesis_data <- study_citations %>%
-  filter(doi == "10.1038/ngeo1477") %>%
-  select(-study_id, -publication_type) %>%
-  distinct()
-
-synthesis_citations <- study_citations %>%
-  select(study_id) %>%
-  mutate(bibliography_id = "Fourqurean_et_al_2012", 
-         publication_type = "synthesis") %>%
-  merge(synthesis_data, by="bibliography_id") %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
-  bind_rows(study_citations) %>%
-  mutate(number = as.numeric(number),
-         key = recode(key, "Alongi_2008" = "Alongi_2008_seagrass")) %>%
-  distinct() 
+study_citations <- citations_raw %>%
+  select(-key) %>%
+  mutate(publication_type = ifelse(bibliography_id == "Fourqurean_et_al_2012", "synthesis", "associated")) %>%
+  mutate(bibliography_id = case_when(publication_type == "synthesis" ~ paste0(bibliography_id, "_synthesis"),
+                                     TRUE ~ paste0(bibliography_id, "_article"))) %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Write .bib file
-bib_file <- synthesis_citations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
+bib_file <- study_citations %>%
+  select(-study_id, -publication_type) %>%
   distinct() %>%
-  column_to_rownames("key")
+  column_to_rownames("bibliography_id")
 
-WriteBib(as.BibEntry(bib_file), "data/Fourqurean_2012/derivative/Fourqurean_2012.bib")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012.bib")
+write_csv(study_citations, "data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")
+
+# -----
+## ARCHIVED DATA CITATION WORKFLOW ##
+# 
+# ## Recode References to study_ids
+# # Create vector of references
+# references <- tibble(reference = na.omit(unique(Fourqurean_raw$Reference)))
+# references <- references %>%
+#   arrange(reference)
+# 
+# # Write this out to an intermediate file
+# # write_csv(references, "data/primary_studies/Fourqurean_2012/intermediate/references.csv")
+# 
+# # We have a data table that was manually generating, which includes study IDs,
+# #   DOIs, and a URL if there is no DOI. No row has a value in both DOI and URL
+# 
+# # Now that 'references' was manually joined and inspected to a manually-compiled
+# #   set of study IDs and DOIs, read that in
+# study_doi_manual <- read_csv("data/primary_studies/Fourqurean_2012/intermediate/study_doi_manual.csv")
+# # Additionally, read in the full set of citations for studies with no DOI: 
+# citations_without_dois <- read_csv("data/primary_studies/Fourqurean_2012/intermediate/citations_without_dois.csv")
+# 
+# # Select down to just the rows that have DOIs, which will reduce # of warnings
+# #   thrown by GetBibEntryWithDOI()
+# doi <- study_doi_manual %>%
+#   select(doi) %>%
+#   na.omit() %>%
+#   group_by(doi) %>%
+#   summarize(doi_ = first(doi))
+# 
+# # Get BibTex entries from DOI
+# biblio_raw <- GetBibEntryWithDOI(doi$doi_)
+# # Convert this to a dataframe
+# biblio <- as.data.frame(biblio_raw) %>%
+#   # GetBibEntryWithDOI() defaults study name as a row name, convert to column
+#   rownames_to_column("key") %>%
+#   mutate(doi = tolower(doi))
+# 
+# # Curate biblio so ready to read out as a BibTex-style .bib file
+# study_citations <- study_doi_manual %>%
+#   select(-url, -reference) %>%
+#   # Convert uppercase to lowercase for DOIs
+#   mutate(doi = tolower(doi)) %>%
+#   merge(biblio, by="doi", all.x = FALSE, all.y = TRUE) %>%
+#   mutate(publication_type = bibtype) %>%
+#   select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
+#   mutate(year = as.numeric(year),
+#          volume = as.numeric(volume)) %>%
+#   # Join entires without a DOI
+#   bind_rows(citations_without_dois)
+# 
+# # Create a separate row for each primary study_id - synthesis_id link
+# synthesis_data <- study_citations %>%
+#   filter(doi == "10.1038/ngeo1477") %>%
+#   select(-study_id, -publication_type) %>%
+#   distinct()
+# 
+# synthesis_citations <- study_citations %>%
+#   select(study_id) %>%
+#   mutate(bibliography_id = "Fourqurean_et_al_2012", 
+#          publication_type = "synthesis") %>%
+#   merge(synthesis_data, by="bibliography_id") %>%
+#   select(study_id, bibliography_id, publication_type, key, bibtype, everything()) %>%
+#   bind_rows(study_citations) %>%
+#   mutate(number = as.numeric(number),
+#          key = recode(key, "Alongi_2008" = "Alongi_2008_seagrass")) %>%
+#   distinct() 
+# 
+# # Write .bib file
+# bib_file <- synthesis_citations %>%
+#   select(-study_id, -bibliography_id, -publication_type) %>%
+#   distinct() %>%
+#   column_to_rownames("key")
+# 
+# WriteBib(as.BibEntry(bib_file), "data/Fourqurean_2012/derivative/Fourqurean_2012.bib")
 
 ## 4. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Test column names 
-test_colnames("core_level", core_data)
-test_colnames("depthseries", depthseries)
-test_colnames("site_level", site_data)
-test_colnames("species", species)
-test_colnames("associated_publications", study_citations)
+cores <- reorderColumns("cores", core_data)
+sites <- reorderColumns("sites", site_data)
 
-# Re-order columns
-depthseries <- select_and_reorder_columns("depthseries", depthseries, "./data/Fourqurean_2012/derivative/")
-site_data <- select_and_reorder_columns("site_level", site_data, "./data/Fourqurean_2012/derivative/")
-core_data <- select_and_reorder_columns("core_level", core_data, "./data/Fourqurean_2012/derivative/")
-# No guidance for biomass yet
-species <- select_and_reorder_columns("species", species, "./data/Fourqurean_2012/derivative/")
-study_citations <- select_and_reorder_columns("associated_publications", study_citations, "./data/Fourqurean_2012/derivative/")
+# Check col and varnames
+testTableCols(table_names = c("sites", "cores", "depthseries", "species"), version = "1")
+testTableVars(table_names = c("sites", "cores", "depthseries", "species"))
 
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries)
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
 
-# test variable names
-test_varnames(core_data)
-test_varnames(depthseries)
-test_varnames(site_data)
-test_varnames(species)
-test_varnames(study_citations)
+# # Test column names 
+# test_colnames("core_level", core_data)
+# test_colnames("depthseries", depthseries)
+# test_colnames("site_level", site_data)
+# test_colnames("species", species)
+# test_colnames("associated_publications", study_citations)
 
-## ....4B. Quality control on cell values ###################
-# Make sure that all core IDs are unique
-test_unique_cores(core_data)
+# # Re-order columns
+# depthseries <- select_and_reorder_columns("depthseries", depthseries, "./data/Fourqurean_2012/derivative/")
+# site_data <- select_and_reorder_columns("site_level", site_data, "./data/Fourqurean_2012/derivative/")
+# core_data <- select_and_reorder_columns("core_level", core_data, "./data/Fourqurean_2012/derivative/")
+# # No guidance for biomass yet
+# species <- select_and_reorder_columns("species", species, "./data/Fourqurean_2012/derivative/")
+# study_citations <- select_and_reorder_columns("associated_publications", study_citations, "./data/Fourqurean_2012/derivative/")
 
-# Provide summary stats on each numeric column, to check for oddities
-numeric_test_results <- test_numeric_vars(depthseries)
-
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-
-results <- test_core_relationships(core_data, depthseries)
+# # test variable names
+# test_varnames(core_data)
+# test_varnames(depthseries)
+# test_varnames(site_data)
+# test_varnames(species)
+# test_varnames(study_citations)
 
 ## 5. write out data ##############
 write_csv(depthseries, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_depthseries.csv")
-write_csv(site_data, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_sites.csv")
-write_csv(core_data, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_cores.csv")
+write_csv(sites, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_sites.csv")
+write_csv(cores, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_cores.csv")
 write_csv(species, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_species.csv")
 write_csv(biomass, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_biomass.csv")
-write_csv(synthesis_citations, "./data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")
