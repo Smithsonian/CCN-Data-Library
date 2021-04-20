@@ -1,9 +1,14 @@
-# Not in species table
+## CCRCN Data Library ####
+## Database investigation
 
-species2 <- read_csv("data/CCRCN_V2/species.csv") %>%
+# How many studies don't have species
+
+library(tidyverse)
+
+species2 <- read_csv("data/CCRCN_synthesis/original/CCRCN_species.csv") %>%
   filter(complete.cases(species_code))
 
-cores2 <- read_csv("data/CCRCN_V2/cores.csv", guess_max=10000)
+cores2 <- read_csv("data/CCRCN_synthesis/original/CCRCN_cores.csv", guess_max=10000)
 
 all_core_studies <- unique(cores2$study_id)
 

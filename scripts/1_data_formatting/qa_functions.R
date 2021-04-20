@@ -344,15 +344,17 @@ reorderColumns <- function(category, df) {
 ## Test column names in table list ###########
 
 # Make sure column names match CCRCN guidelines
-testTableCols <- function(table_names, version) {
+testTableCols <- function(table_names, current_version = TRUE) {
   # create a list of datasets from the provided table names
   datasets <- mget(table_names, envir = .GlobalEnv)
   
   # load guidance
-  switch(version,
-         "1" = {database_structure <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols())},
-         "2" = {database_structure <- read_csv("docs/ccrcn_database_structure_V2.csv", col_types = cols())}
-  )
+  if(current_version == FALSE){
+    database_structure <- read_csv("docs/versioning/archive/ccrcn_database_structure_v1.csv", col_types = cols())
+  }else{
+    database_structure <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols())
+  }
+  
   # Create a vector of all the table names
   tables <- unique(database_structure$table)
   
@@ -460,37 +462,65 @@ testTableVars <- function(table_names) {
 
 testRequired <- function(){
   # read in database guidance
-  guidance <- read_csv("docs/ccrcn_database_structure_V2.csv", col_types = cols()) 
-  required <- guidance %>% filter(required == "required")
+  guidance <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols()) 
+  # isolate required attributes
+  required <- guidance %>% filter(required == "required") %>%
+    select(table, attribute_name, required)
   
-  # read in CCRCN synthesis
-  methods <- read_csv("data/CCRCN_V2/methods.csv", col_types = cols())
-  cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max = 10000, col_types = cols())
-  depthseries <- read_csv("data/CCRCN_V2/depthseries.csv", guess_max = 100000, col_types = cols())
+  # read in CCRCN synthesis tables
+  # methods <- read_csv("data/CCRCN_synthesis/original/CCRCN_methods.csv", col_types = cols())
+  cores <- read_csv("data/CCRCN_synthesis/original/CCRCN_cores.csv", guess_max = 10000, col_types = cols())
+  depthseries <- read_csv("data/CCRCN_synthesis/original/CCRCN_depthseries.csv", guess_max = 100000, col_types = cols())
+  # these three tables are the bare minimum required in a data hook
+  # beyond these tables the requirements are conditional
   
-  studies <- sort(unique(cores$study_id)) # unique study ids
+  # create list from all the tables
+  # leaving out methods for now b/c only study_id is required 
+  tables <- list(cores = cores, depthseries = depthseries)
   
   # create df to store results
   missing_required <- data.frame()
   
-  # create table of attributes present in each table for each study
-  cols_methods <- methods %>%
-    mutate_all(as.character) %>%
-    pivot_longer(cols = -study_id, names_to = "attribute_name", values_to = "value") %>%
-    drop_na(value)
-  
-  cols_cores <- cores %>%
-    mutate_all(as.character) %>%
-    pivot_longer(cols = -study_id, names_to = "attribute_name", values_to = "value") %>%
-    drop_na(value) %>%
-    select(-value) %>% distinct()
-  
-  required_cores <- cols_cores %>%
-    filter(attribute_name %in% required$attribute_name)
-  
-  # for(study in studies){
-  #   
-  # }
+  # loop through all the tables
+  for(table in 1:length(tables)){
+    # store table name
+    table_name <- names(tables)[table]
+    # subset the required cols for given table
+    required_for_table <- required %>% filter(table == table_name) %>% pull(attribute_name)
+    
+    # create table of attributes present in each table for each study
+    table_cols <- tables[[table_name]] %>%
+      mutate_all(as.character) %>%
+      pivot_longer(cols = -study_id, names_to = "attribute_name", values_to = "value") %>%
+      drop_na(value) %>%
+      select(-value) %>% distinct() %>%
+      # filter for required attributes
+      filter(attribute_name %in% required_for_table)
+    
+    # condense study attributes into a list
+    study_attributes <- table_cols %>% 
+      group_by(study_id) %>%
+      # study id has to be added manually (which defeats the purpose a bit)
+      summarize(attribute_list = list(c("study_id", attribute_name)))
+    
+    # loop through studies 
+    for(i in 1:nrow(study_attributes)){
+      # identify missing attributes in each study
+      missing_cols <- required_for_table[which(!(required_for_table %in% study_attributes$attribute_list[[i]]))]
+      
+      if(length(missing_cols) > 0){
+        # create table to identify studies lacking required attributes in their tables 
+        missing_from_study <- data.frame(study_id = study_attributes$study_id[i],
+                                         table = table_name,
+                                         missing_attributes = missing_cols)
+        
+        # compile into missing required table
+        # output table should have cols: study_id, table, missing_attributes
+        missing_required <- bind_rows(missing_required, missing_from_study)
+      }
+    }
+  }
+  return(missing_required)
 }
 
 ## Check for duplicate cores in the database ####

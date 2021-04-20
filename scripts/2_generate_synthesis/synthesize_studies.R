@@ -1,22 +1,20 @@
 # Coastal Carbon Research Coordination Network ####
 # Database Versioning Script
 
-# This versioning script performs the following:
-# 1. synthesizes data curated under old database guidance 
-# 2. updates the synthesis to V2 guidance
-# 3. outputs the synthesis to a folder where it will be added to the grande-synthesis
+# This script synthesizes all data that has been aligned to the current guidance. Includes:
+  # - synthesized and updated data from hook scripts that was curated under the old guidance
+  # - data from hook scripts that curate using current guidance
 
 ## 1. Join All Studies ####
-
 
 # Load necessary libraries
 library(tidyverse)
 library(lubridate)
+library(DT)
 # library(skimr)
 # library(knitr)
 # library(markdown)
 # library(rmarkdown)
-library(DT)
 # library(gridExtra)
 
 # join_status gets changed to FALSE if there is an error. 
