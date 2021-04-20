@@ -157,7 +157,7 @@ testCoreRelationships(data_synthesis)
 # testUniqueCoordinates(data_synthesis)
 
 # Provide summary statistics of numeric variables 
-qa_numeric_results <- testNumericVariables(data_synthesis$chamber_timeseries)
+qa_numeric_results <- testNumericVariables(data_synthesis$depthseries)
 # some warnings generated in this step because of data type
 
 # Record summary of warnings 

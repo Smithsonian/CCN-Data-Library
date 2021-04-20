@@ -31,7 +31,7 @@ testAttributeNames <- function(tables, ccrcn_synthesis) {
   tables <- tables[!tables %in% "studycitations"]
   
   database_structure <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols()) %>%
-    bind_rows(read_csv("docs/uncontrolled_attributes.csv")) %>%
+    bind_rows(read_csv("docs/uncontrolled_attributes.csv", col_types = cols())) %>%
     # Only need column names in the tables of the synthesis
     filter(table %in% tables)
    

@@ -17,12 +17,19 @@ raw_cores <- read_csv("./data/primary_studies/Ensign_et_al_2020/original/Ensign_
 raw_depthseries <- read_csv("./data/primary_studies/Ensign_et_al_2020/original/Ensign_et_al_2020_depthseries.csv")
 raw_methods <- read_csv("./data/primary_studies/Ensign_et_al_2020/original/Ensign_et_al_2020_material_and_methods.csv")
 
+guidance <- read_csv("docs/ccrcn_database_structure_V2.csv")
+
 ## Trim Data to Library ####
+
+## NOTE: THIS DATA IS CURATED UNDER GUIDANCE V2
+# It will be left out of the V1 synthesis
 
 id <- "Ensign_et_al_2020"
 
-# cores (no change)
-cores <- raw_cores
+# cores
+cores <- raw_cores %>%
+  rename(year = core_year, latitude = core_latitude, longitude = core_longitude,
+         position_method = core_position_method)
 
 # depthseries (no change)
 depthseries <- raw_depthseries
@@ -74,7 +81,7 @@ if(!file.exists("./data/primary_studies/Ensign_et_al_2020/derivative/Ensign_et_a
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries"), version = "1")
+testTableCols(table_names = c("methods", "cores", "depthseries"), version = "2")
 testTableVars(table_names = c("methods", "cores", "depthseries"))
 
 test_unique_cores(cores)
