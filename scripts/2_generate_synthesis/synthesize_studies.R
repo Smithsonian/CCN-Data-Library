@@ -36,7 +36,7 @@ v1_dirs <- read_csv("docs/versioning/v1_data_paths.csv") %>% pull(file_paths)
 final_dirs <- all_dirs[!(all_dirs %in% v1_dirs)]
 
 # Index of table names
-tables <- c("depthseries", "cores", "sites", "species", "impacts", "methods", "study_citations")
+tables <- c("sites","cores", "depthseries", "species", "impacts", "methods", "study_citations")
 # Other objects that we will need to track
 trackers <- c(
   # CSV files that do not follow established naming conventions go here 
@@ -156,7 +156,7 @@ testAttributeNames(tables, data_synthesis)
 testVariableNames(tables, data_synthesis)
 testUniqueCores(data_synthesis$cores)
 testCoreRelationships(data_synthesis)
-# testUniqueCoordinates(data_synthesis)
+testUniqueCoordinates(data_synthesis$cores)
 
 # Provide summary statistics of numeric variables 
 qa_numeric_results <- testNumericVariables(data_synthesis$depthseries)

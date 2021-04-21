@@ -191,7 +191,7 @@ testNumericVariables <- function(depthseries) {
   ## Skimr package updated with substantial code changes
 
   # list of functions to run on numeric attributes
-  funs <- sfl(
+  funs <- skimr::sfl(
     min = function(x) min(x, na.rm=TRUE), 
     max = function(x) max(x, na.rm=TRUE), 
     median = function(x) median(x, na.rm=TRUE),
@@ -208,7 +208,7 @@ testNumericVariables <- function(depthseries) {
   
   # Set skimr to run with our custom list of functions
   # V2 skimr requires assigning skim_with to object
-  my_skim <- skim_with(numeric = funs, append = TRUE)
+  my_skim <- skimr::skim_with(numeric = funs, append = TRUE)
   
   # Organize into a wide form table and return
   # testing_data %>%
@@ -228,7 +228,7 @@ testUniqueCoordinates <- function(cores) {
   # First, get a list of all unique coordinate combinations
   # And filter out all that only are associated with one core ID
   core_list <- cores %>%
-    mutate(lat_long = paste(core_latitude,core_longitude, sep=", ")) %>%
+    mutate(lat_long = paste(latitude, longitude, sep=", ")) %>%
     group_by(lat_long) %>%
     summarize(n = n(), 
               core_ids = paste(unique(core_id), collapse=", "),
@@ -273,7 +273,7 @@ testUniqueCoordinates <- function(cores) {
 reorderColumns <- function(tables, ccrcn_synthesis) {
   
   # Remove "studycitations" from tables as it is independent of this test
-  tables <- tables[!tables %in% "studycitations"]
+  # tables <- tables[!tables %in% "study_citations"]
   
   database_structure <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols()) 
    

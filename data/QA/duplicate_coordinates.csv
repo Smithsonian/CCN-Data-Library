@@ -269,7 +269,15 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.42524, -91.073014",3,"CRMS0371_1, CRMS0371_2, CRMS0371_3",CRMS_Database,1
 "29.432502, -90.854257",3,"CRMS0382_1, CRMS0382_2, CRMS0382_3",CRMS_Database,1
 "29.432504, -90.354245",3,"CRMS0386_1, CRMS0386_2, CRMS0386_3",CRMS_Database,1
+"29.4414, -89.9026",3,"3_1, 3_2, 3_3",Chambers_et_al_2019,1
+"29.4417, -89.9013",3,"2_1, 2_2, 2_3",Chambers_et_al_2019,1
+"29.443585, -89.899836",2,"Marsh_4_1, Marsh_4_2",White_et_al_2020_a,1
+"29.4436, -89.8998",3,"1_1, 1_2, 1_3",Chambers_et_al_2019,1
 "29.44597, -90.95681",2,"CRMS0294_H_Piazza_1, CRMS0294_H_Piazza_2",Piazza_et_al_2011,1
+"29.44657, -89.90633",3,"Estuary_1, Estuary_2, Estuary_3",White_et_al_2020_b,1
+"29.446688, -89.905857",3,"Marsh_3_1, Marsh_3_2, Marsh_3_3",White_et_al_2020_a,1
+"29.44679, -89.905927",3,"Marsh_2_1, Marsh_2_2, Marsh_2_3",White_et_al_2020_a,1
+"29.446837, -89.905628",3,"Marsh_1_1, Marsh_1_2, Marsh_1_3",White_et_al_2020_a,1
 "29.447016, -91.073014",3,"CRMS0327_1, CRMS0327_2, CRMS0327_3",CRMS_Database,1
 "29.447019, -90.854257",3,"CRMS0381_1, CRMS0381_2, CRMS0381_3",CRMS_Database,1
 "29.454277, -90.666753",3,"CRMS0392_1, CRMS0392_2, CRMS0392_3",CRMS_Database,1
@@ -626,14 +634,14 @@ lat_long,n,core_ids,study_ids,num_studies
 "42.046, 3.217",2,"Mateo_et_al_1997_12, Mateo_et_al_1997_13",Mateo_et_al_1997,1
 "42.293, 3.293",2,"Mateo_and_Serrano_unpublished_1, Serrano_unpublished_1","Mateo_and_Serrano_unpublished, Serrano_unpublished",2
 "42.294, 3.289",3,"Mateo_et_al_1997_10, Mateo_et_al_1997_8, Mateo_et_al_1997_9",Mateo_et_al_1997,1
-"42.73739991, -70.84580382",2,MARSH_2_2,"Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.73742543, -70.8459912",2,MARSH_2_1,"Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.73743074, -70.84619211",2,POND_2,"Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.73796176, -70.84701132",2,POND_1,"Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.73818498, -70.84720027",2,MARSH_1_2,"Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.74133674, -70.83030015",2,POND_3,"Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.74134648, -70.83016904",2,MARSH_3_2,"Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.741354, -70.83000142",2,MARSH_3_1,"Luk_et_al_2020_a, Luk_et_al_2020_b",2
+"42.73739991, -70.84580382",2,"MARSH_2_2_a, MARSH_2_2_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
+"42.73742543, -70.8459912",2,"MARSH_2_1_a, MARSH_2_1_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
+"42.73743074, -70.84619211",2,"POND_2_a, POND_2_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
+"42.73796176, -70.84701132",2,"POND_1_a, POND_1_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
+"42.73818498, -70.84720027",2,"MARSH_1_2_a, MARSH_1_2_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
+"42.74133674, -70.83030015",2,"POND_3_a, POND_3_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
+"42.74134648, -70.83016904",2,"MARSH_3_2_a, MARSH_3_2_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
+"42.741354, -70.83000142",2,"MARSH_3_1_a, MARSH_3_1_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
 "43.423, 3.643",12,"Rigollet_et_al_2004_13, Rigollet_et_al_2004_14, Rigollet_et_al_2004_15, Rigollet_et_al_2004_16, Rigollet_et_al_2004_17, Rigollet_et_al_2004_18, Rigollet_et_al_2004_19, Rigollet_et_al_2004_20, Rigollet_et_al_2004_21, Rigollet_et_al_2004_22, Rigollet_et_al_2004_23, Rigollet_et_al_2004_24",Rigollet_et_al_2004,1
 "43.4392, -3.7749",12,"Mateo_and_Serrano_unpublished_15, Mateo_and_Serrano_unpublished_16, Mateo_and_Serrano_unpublished_17, Mateo_and_Serrano_unpublished_18, Mateo_and_Serrano_unpublished_19, Mateo_and_Serrano_unpublished_20, Mateo_and_Serrano_unpublished_21, Mateo_and_Serrano_unpublished_22, Mateo_and_Serrano_unpublished_23, Mateo_and_Serrano_unpublished_24, Mateo_and_Serrano_unpublished_25, Mateo_and_Serrano_unpublished_26",Mateo_and_Serrano_unpublished,1
 "44.2, 9.12",28,"Danovaro_1996_1, Danovaro_1996_10, Danovaro_1996_11, Danovaro_1996_12, Danovaro_1996_13, Danovaro_1996_14, Danovaro_1996_15, Danovaro_1996_2, Danovaro_1996_3, Danovaro_1996_4, Danovaro_1996_5, Danovaro_1996_6, Danovaro_1996_7, Danovaro_1996_8, Danovaro_1996_9, Danovaro_and_Gambi_2002_1, Danovaro_and_Gambi_2002_10, Danovaro_and_Gambi_2002_11, Danovaro_and_Gambi_2002_12, Danovaro_and_Gambi_2002_13, Danovaro_and_Gambi_2002_2, Danovaro_and_Gambi_2002_3, Danovaro_and_Gambi_2002_4, Danovaro_and_Gambi_2002_5, Danovaro_and_Gambi_2002_6, Danovaro_and_Gambi_2002_7, Danovaro_and_Gambi_2002_8, Danovaro_and_Gambi_2002_9","Danovaro_1996, Danovaro_and_Gambi_2002",2

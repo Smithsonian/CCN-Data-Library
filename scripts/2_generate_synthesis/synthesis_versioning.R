@@ -19,6 +19,10 @@ library(lubridate)
 # library(DT)
 # library(gridExtra)
 
+# source scripts
+source("./scripts/2_generate_synthesis/qa_synthesis_functions.R", local = T)
+
+
 # join_status gets changed to FALSE if there is an error. 
 # the synthesis continues but is deposited in another folder and the error is recorded
 join_status <- TRUE
@@ -36,7 +40,7 @@ join_status <- TRUE
 final_dirs <- read_csv("docs/versioning/v1_data_paths.csv") %>% pull(file_paths)
 
 # Index of table names
-tables <- c("depthseries", "cores", "sites", "species", "impacts", "methods", "study_citations")
+tables <- c("sites", "cores", "depthseries", "species", "impacts", "methods", "study_citations")
 # Other objects that we will need to track
 trackers <- c(
   # CSV files that do not follow established naming conventions go here 
@@ -125,52 +129,13 @@ if(nrow(synthesis_errors) > 0) {
   join_status <- FALSE
 }
 
-# save synthesized tables to objects 
-if(join_status == TRUE){
-  
-  methods <- data_synthesis$methods
-  sites <- data_synthesis$sites
-  cores <- data_synthesis$cores
-  depthseries <- data_synthesis$depthseries
-  impacts <- data_synthesis$impacts
-  species <-data_synthesis$species
-  study_citations <- data_synthesis$study_citations
-}
-
-## ... QA/QC ##########
-
-source("./scripts/2_generate_synthesis/qa_synthesis_functions.R", local = T)
-
-# Reorder columns 
-data_synthesis <- reorderColumns(tables, data_synthesis)
-
-# create empty table for QA results
-qa_results <- tibble(test = NA_character_,
-                     result = NA_character_,
-                     .rows=0)
-
-# run synthesis QA tests
-testAttributeNames(tables, data_synthesis)
-testVariableNames(tables, data_synthesis)
-testUniqueCores(data_synthesis$cores)
-testCoreRelationships(data_synthesis)
-# testUniqueCoordinates(data_synthesis)
-
-# Provide summary statistics of numeric variables 
-qa_numeric_results <- testNumericVariables(data_synthesis$depthseries)
-# some warnings generated in this step because of data type
-
-# Record summary of warnings 
-warning_summary <- summary(warnings())
-warning_summary
-
 ## 2. Update to current database guidance ####
 
-# source("scripts/3_post_processing/scripts/qa_functions.R")
-
 # guidance for data table updates
-guidance <- read_csv("docs/versioning/converting_v1p2_to_v2.csv")
+versioning_guidance <- read_csv("docs/versioning/converting_v1p2_to_v2.csv")
+database_guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
+# load lookup tables for targeted fixes
 # Species table fixes 
 species_fixes <- read_csv("docs/versioning/species-habitat-classification-JH-20200824.csv")
 
@@ -179,104 +144,214 @@ core_depth_fixes <- read_csv("docs/versioning/studies_revisited.csv") %>%
   select(study_id, core_length_flag) %>% 
   rename(core_length_flag_correct = core_length_flag)
 
-## ... Prepare Tables for Update ####
-
-# Fix the two different 210Pb in the depth series
-depthseries_fixed <- depthseries %>% 
-  mutate_at(vars(contains("pb214_activity")), as.numeric) %>%
-  mutate(pb214_activity = ifelse(is.na(pb214_activity),
-                                 (pb214_activity_352keV + pb214_activity_295keV)/2,
-                                 pb214_activity),
-         # Assume errors are 100% correlated
-         pb214_activity_se = ifelse(is.na(pb214_activity_se),
-                                    (pb214_activity_se_352keV + pb214_activity_se_295keV)/2,
-                                    pb214_activity_se))
-
-# Fix dates
-cores_fixed <- cores %>% 
-  # correct Breithaupt core date
-  mutate(core_date = ifelse(study_id == "Breithaupt_et_al_2020", 
-                            as.character(strptime(core_date, format = "%m/%d/%Y")), core_date)) %>%
-  # separate out year month day
-  mutate(year = year(ymd(core_date)), 
-         month = month(ymd(core_date)),
-         day = day(ymd(core_date))) %>%
-  # resolve cases where core date is NA but core year month or day are provided
-  mutate(year = ifelse(is.na(year) & !is.na(core_year), yes = core_year, no = year),
-         month = ifelse(is.na(month) & !is.na(core_month), yes = core_month, no = month),
-         day = ifelse(is.na(day) & !is.na(core_day), yes = core_day, no = day)) %>%
-  select(-core_date) %>% # get rid of date
-  # Fix depths
-  left_join(core_depth_fixes) %>% # join with fixed core depths
-  mutate(core_length_flag = ifelse(is.na(core_length_flag),
-                                   core_length_flag_correct,
-                                   core_length_flag)) %>% 
-  select(-core_length_flag_correct) 
-# left_join(habitat2)
-
-# Fix species
-species_fixed <- species %>%
-  left_join(species_fixes) %>% 
-  mutate(species_code = ifelse(!is.na(recode_as), 
-                               recode_as, 
-                               species_code)) %>% 
-  select(-c(recode_as, notes))
-
-
 ## ... Update Synthesis Tables ####
 
-# Rename attributes from guidance v1.2 to 2
-list_of_tables <- list(methods = methods,
-                       cores = cores_fixed,
-                       depthseries = depthseries_fixed,
-                       species = species_fixed)
-
-# Iterate through list of tables
-for (i in 1:length(list_of_tables)) {
-  # Subset guidance by name of the table 
-  category <- names(list_of_tables[i])
+# create function to loop through the column headers and rename them
+renameColumns <- function(x, key) {
   
-  guidance_subset <- filter(guidance, heirarchy == category)
-  guidance_subset_actions <- filter(guidance_subset, !is.na(action))
-  
-  # If the guidance involves a rename, rename it
-  if (nrow(guidance_subset_actions) > 0) {
-    for (j in 1:nrow(guidance_subset_actions)) {
-      if (guidance_subset_actions$action[j] == "rename") {
-        
-        # Old names
-        if (guidance_subset_actions$attribute_name_v1p2[j] %in% names(list_of_tables[[i]])) {
-          old_column <- list_of_tables[[i]][,guidance_subset_actions$attribute_name_v1p2[j]][[1]]
-          
-          # For any not NA entries in the old category, 
-          list_of_tables[[i]][!is.na(old_column),guidance_subset_actions$attribute_name[j]] <- 
-            old_column[!is.na(old_column)] # write them over to a column with a new category
-        }
-      }
+  for (i in 1:length(x)) {
+    # store column name for potential renaming
+    colname <- names(x)[i]
+    
+    # if the column name matches one in the key, rename it
+    if (!is.na(match(colname, key$attribute_name_v1p2)) == TRUE) {
+      #  replace the old column name with the new
+      colnames(x)[colnames(x) == colname] <- key$attribute_name[match(colname, key$attribute_name_v1p2)]
     }
   }
+  return(x)
+}
+
+
+# test out the renaming function
+# x <- list_of_tables[[3]]
+to_rename <- versioning_guidance %>% filter(action == "rename")
+# result <- renameColumns(x = x, key = to_rename)
+to_delete <- versioning_guidance %>% filter(action == "deletion" & heirarchy != "species_definitions")
+
+# create list of tables that will become the updated synthesis
+tables_to_update <- data_synthesis
+
+# Iterate through list of tables
+for (i in 1:length(tables_to_update)) {
+  # Store table category
+  category <- names(tables_to_update[i])
   
-  # Classes to include
-  include_these <- unique(guidance_subset$attribute_name[guidance_subset$attribute_name %in% names(list_of_tables[[i]])])
+  # ... Table Fixes ####
+  # Apply fixes that should occur to specific tables before column renaming and targeted deletions
   
-  # Remove attributes not in guidance 2
-  # ... and order columns as in guidance v2
-  renamed_and_reordered <- list_of_tables[[i]][,include_these]
+  # Depthseries table fixes
+  if(category == "depthseries"){
+    print("Fixing depthseries table.")
+    # Fix the two different 210Pb in the depth series
+    depthseries_fixed <- tables_to_update[[i]] %>% 
+      mutate_at(vars(contains("pb214_activity")), as.numeric) %>%
+      mutate(pb214_activity = ifelse(is.na(pb214_activity),
+                                     (pb214_activity_352keV + pb214_activity_295keV)/2,
+                                     pb214_activity),
+             # Assume errors are 100% correlated
+             pb214_activity_se = ifelse(is.na(pb214_activity_se),
+                                        (pb214_activity_se_352keV + pb214_activity_se_295keV)/2,
+                                        pb214_activity_se)) %>%
+      # these columns need to be coalesced 
+      # assumes that coalesced columns won't have non-NA values in the same row
+      # this should be vectorized so it's not manual
+      mutate(age_se = coalesce(age_se, age_sd),
+             cs137_activity_se = coalesce(cs137_activity_se, cs137_activity_sd),
+             total_pb210_activity_se = coalesce(total_pb210_activity_se, total_pb210_activity_sd),
+             ra226_activity_se = coalesce(ra226_activity_se, ra226_activity_sd),
+             excess_pb210_activity_se = coalesce(excess_pb210_activity_se, excess_pb210_activity_sd),
+             marker_date = coalesce(marker_date, marker_age),
+             marker_date_se = coalesce(marker_date_sd, marker_age_sd),
+             depth_interval_notes = coalesce(depth_interval_notes, dating_interval_notes),
+             pb214_activity_se = coalesce(pb214_activity_se, pb214_activity_sd),
+             bi214_activity_se = coalesce(bi214_activity_se, bi214_activity_sd)) %>%
+      select(-c(age_sd, cs137_activity_sd, total_pb210_activity_sd, ra226_activity_sd,
+                excess_pb210_activity_sd, marker_age, marker_date_sd, marker_age_sd,
+                dating_interval_notes, pb214_activity_sd, bi214_activity_sd))
+    # test
+    length(unique(names(depthseries_fixed))) == length(depthseries_fixed)
+    
+    # store updated table
+    tables_to_update[[i]] <- depthseries_fixed
+  }
+
+  # Core table fixes
+  if(category == "cores"){
+    print("Fixing cores table.")
+    # Fix dates
+    cores_fixed <- tables_to_update[[i]] %>% 
+      # correct Breithaupt core date
+      mutate(core_date = ifelse(study_id == "Breithaupt_et_al_2020", 
+                                # transfer this to the hook script at some point
+                                as.character(strptime(core_date, format = "%m/%d/%Y")), core_date)) %>%
+      # separate out year month day
+      mutate(year = year(ymd(core_date)), 
+             month = month(ymd(core_date)),
+             day = day(ymd(core_date))) %>%
+      # resolve cases where core date is NA but core year month or day are provided
+      mutate(year = ifelse(is.na(year) & !is.na(core_year), yes = core_year, no = year),
+             month = ifelse(is.na(month) & !is.na(core_month), yes = core_month, no = month),
+             day = ifelse(is.na(day) & !is.na(core_day), yes = core_day, no = day)) %>%
+      select(-c(core_date, core_year, core_month, core_day)) %>% # get rid of cols used to generate split date cols
+      rename(core_year = year) %>%
+      # Fix depths
+      left_join(core_depth_fixes) %>% # join with fixed core depths
+      mutate(core_length_flag = ifelse(is.na(core_length_flag),
+                                       core_length_flag_correct,
+                                       core_length_flag)) %>% 
+      select(-core_length_flag_correct) 
+    # store updated table
+    tables_to_update[[i]] <- cores_fixed
+  }
+
+  # Species table fixes
+  if(category == "species"){
+    print("Fixing species table.")
+    # Fix species
+    species_fixed <- tables_to_update[[i]] %>%
+      left_join(species_fixes) %>% 
+      mutate(species_code = ifelse(!is.na(recode_as), 
+                                   recode_as, 
+                                   species_code)) %>% 
+      select(-c(recode_as, notes))
+    # store updated table
+    tables_to_update[[i]] <- species_fixed
+  }  
+
+
+  # ... Rename, Delete, and Reorder Columns ####
   
-  list_of_tables[[i]] <- renamed_and_reordered
+  # Rename columns
+  # If any colnames are in the to_rename table, rename these columns 
+  if(any(names(tables_to_update[[i]]) %in% to_rename$attribute_name_v1p2)){
+    print(paste0("Renaming columns for ", category))
+    # apply renaming function
+    tables_to_update[[i]] <- renameColumns(x = tables_to_update[[i]], key = to_rename)
+  }
+  # this step will cause duplication of colnames if the new colnames already exist in the df
+  
+  # Delete (specified) columns
+  # If any colnames are in the to_delete table, deselect these columns 
+  if(any(names(tables_to_update[[i]]) %in% to_delete$attribute_name_v1p2)){
+    print(paste0("Deleting targeted columns for ", category))
+    tables_to_update[[i]] <- tables_to_update[[i]] %>% select(-any_of(to_delete$attribute_name_v1p2))
+  }
+  
+  # table_guidance <- filter(database_guidance, table == category)
+  # guidance_subset_actions <- filter(guidance_subset, !is.na(action))
+  #
+  # # If the guidance involves a rename, rename it
+  # if (nrow(guidance_subset_actions) > 0) {
+  #   for (j in 1:nrow(guidance_subset_actions)) {
+  #     if (guidance_subset_actions$action[j] == "rename") {
+  #       
+  #       # Old names
+  #       if (guidance_subset_actions$attribute_name_v1p2[j] %in% names(tables_to_update[[i]])) {
+  #         # isolate the old column 
+  #         old_column <- tables_to_update[[i]][,guidance_subset_actions$attribute_name_v1p2[j]]
+  #         # [[1]] not sure what this was for
+  #         
+  #         # For any not NA entries in the old category, 
+  #         tables_to_update[[i]][!is.na(old_column), guidance_subset_actions$attribute_name[j]] <- 
+  #           old_column[!is.na(old_column)] # write them over to a column with a new category
+  #       }
+  #     }
+  #   }
+  # }
+  # 
+  # # Classes to include
+  # include_these <- unique(guidance_subset$attribute_name[guidance_subset$attribute_name %in% names(tables_to_update[[i]])])
+  # 
+  # # Remove attributes not in guidance 2
+  # # ... and order columns as in guidance v2
+  # renamed_and_reordered <- tables_to_update[[i]][, include_these]
+  # 
+  # tables_to_update[[i]] <- renamed_and_reordered
 } 
+
+# reorder columns according to guidance
+final_synthesis <- reorderColumns(tables = tables, ccrcn_synthesis = tables_to_update)
+
+
+## ... QA/QC ##########
+
+# create empty table for QA results
+qa_results <- tibble(test = NA_character_,
+                     result = NA_character_,
+                     .rows=0)
+
+# run synthesis QA tests
+testAttributeNames(tables, final_synthesis)
+testVariableNames(tables, final_synthesis)
+testUniqueCores(final_synthesis$cores)
+testCoreRelationships(final_synthesis)
+# testUniqueCoordinates(data_synthesis) # replace with check for duplicate cores
+
+# Provide summary statistics of numeric variables 
+qa_numeric_results <- testNumericVariables(final_synthesis$depthseries)
+# some warnings generated in this step because of data type
+
+# Record summary of warnings 
+# warning_summary <- summary(warnings())
+# warning_summary
+
+# save synthesized tables to objects to investigate
+# methods <- final_synthesis$methods
+#   sites <- final_synthesis$sites
+view_cores <- final_synthesis$cores
+view_depthseries <- final_synthesis$depthseries
+#   impacts <- final_synthesis$impacts
+#   species <-final_synthesis$species
+#   study_citations <- final_synthesis$study_citations
+
+# Messerschmidt_and_Kirwan_2020 have pb214_activity at different KeV's
 
 ## 3. Write Updated CCRCN Synthesis ###########
 
 output_dir <- "data/primary_studies/CCRCN_synthesis_2021/derivative/"
 
-# write the tables that were updated
-for (i in 1:length(list_of_tables)) {
-  write_csv(list_of_tables[[i]], paste0(output_dir, "CCRCN_", names(list_of_tables)[i], ".csv"))
+# write updated tables
+for (j in 1:length(final_synthesis)) {
+  write_csv(final_synthesis[[j]], paste0(output_dir, "CCRCN_", names(final_synthesis)[j], ".csv"))
 }
-
-# write the tables that weren't updated
-write_csv(sites, paste0(output_dir, "CCRCN_sites.csv"))
-write_csv(impacts, paste0(output_dir, "CCRCN_impacts.csv"))
-write_csv(study_citations, paste0(output_dir, "CCRCN_study_citations.csv"))
-
