@@ -47,6 +47,7 @@ methods_raw <- read_csv("./data/primary_studies/breithaupt_2020/original/breitha
 study_citations_raw <- read_csv("./data/primary_studies/breithaupt_2020/original/breithaupt_et_al_2020_study_citations.csv")
 
 cores <- cores_raw %>%
+  mutate(core_date = as.character(strptime(core_date, format = "%m/%d/%Y"))) %>%
   mutate(core_year = year(anydate(core_date))) %>%
   select(study_id, site_id, core_id, core_year, core_date, everything())
 
@@ -93,7 +94,7 @@ write_csv(study_citations, "./data/primary_studies/breithaupt_2020/derivative/br
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"))
 testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
 
 test_unique_cores(cores)

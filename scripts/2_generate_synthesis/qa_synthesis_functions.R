@@ -139,7 +139,7 @@ testCoreRelationships <- function(ccrcn_synthesis) {
   
   if(length(core_results) > 0){
     core_results <- paste0("No core ID in depthseries table: ", 
-                          paste(core_results, collapse = ", "))
+                          paste(unique(core_results), collapse = ", "))
   } else core_results <- "Passed"
   
   # results <- setNames(data.frame(matrix(c(table_type, core_results), 
@@ -155,7 +155,7 @@ testCoreRelationships <- function(ccrcn_synthesis) {
 
   if(length(depthseries_results) > 0) {
     depthseries_results <- paste0("No core ID in core table: ", 
-                           paste(depthseries_results, collapse = ", "))
+                           paste(unique(depthseries_results), collapse = ", "))
   } else depthseries_results <- "Passed"
   
   # setNames(data.frame(matrix(c(table_type, depthseries_results), 

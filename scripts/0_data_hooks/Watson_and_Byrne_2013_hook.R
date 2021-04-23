@@ -80,33 +80,38 @@ site_boundaries <- create_multiple_geographic_coverages(site_boundaries)
 # Not including sites as there is no site-level info available from the publication - this table will be automatically generated 
 
 ## Bibliography #######
-doi <- "10.1007/s12237-013-9598-z"
-study_id_value <- "Watson_and_Byrne_2013"
 
-# Get bibtex citation from DOI
-biblio_raw <- GetBibEntryWithDOI(doi)
-
-biblio_df <- as.data.frame(biblio_raw)
-
-study_citations <- biblio_df %>%
-  mutate(bibliography_id = "Watson_and_Byrne_2013_article", 
-         study_id = study_id_value,
-         publication_type = "associated") %>%
-  remove_rownames() %>%
-  select(study_id, bibliography_id, publication_type, everything())
-
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -publication_type) %>%
-  column_to_rownames("bibliography_id")
-
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013.bib")
+if(!file.exists("./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013_study_citations.csv")){
+  doi <- "10.1007/s12237-013-9598-z"
+  study_id_value <- "Watson_and_Byrne_2013"
+  
+  # Get bibtex citation from DOI
+  biblio_raw <- GetBibEntryWithDOI(doi)
+  
+  biblio_df <- as.data.frame(biblio_raw)
+  
+  study_citations <- biblio_df %>%
+    mutate(bibliography_id = "Watson_and_Byrne_2013_article", 
+           study_id = study_id_value,
+           publication_type = "associated") %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013.bib")
+  write_csv(study_citations, "./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013_study_citations.csv")
+  
+}
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries"), version = "1")
+testTableCols(table_names = c("methods", "cores", "depthseries"))
 testTableVars(table_names = c("methods", "cores", "depthseries"))
 
 test_unique_cores(cores)
@@ -118,6 +123,5 @@ test_numeric_vars(depthseries)
 
 ## Write files #########
 write_csv(depthseries, "./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013_study_citations.csv")
 write_csv(methods, "./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013_methods.csv")
 

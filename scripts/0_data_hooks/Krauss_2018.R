@@ -28,8 +28,8 @@
 #   wrong.
 library(tidyverse)
 library(readxl)
-library(rvest)
-library(RCurl)
+# library(rvest)
+# library(RCurl)
 library(lubridate)
 library(RefManageR)
 
@@ -145,6 +145,12 @@ LOI_heavy_salt_raw  <- read_csv("./data/primary_studies/Jones_2017/original/data
 LOI_mod_salt_raw  <- read_csv("./data/primary_studies/Jones_2017/original/dataset25365.csv")
 
 ## 3. Curate data ######################
+
+# Use curation functions if you need
+source("./scripts/1_data_formatting/curation_functions.R")
+
+id <- "Krauss_et_al_2018"
+
 ## ....3A. Depthseries data ##################
 
 ## ......3Aa. Prep depthseries from Krauss #####################
@@ -170,7 +176,7 @@ Krauss_depthseries <- depthseries_DBD_raw %>%
   mutate(compaction_fraction = compaction_fraction / 100) %>% 
   
   # Add study id
-  mutate(study_id = "Krauss_et_al_2018") %>%
+  mutate(study_id = id) %>%
   
   # Recode cores
   mutate(core_id = recode(core_id, "11-11-2-1" = "turkey_creek_1",
@@ -318,21 +324,20 @@ Jones_depthseries <- geochron %>%
 ## ......3Ac. Join Krauss and Jones depthseries data  #####################
 
 # only including if resolved to join in c14 ages from Jones 2017
-depthseries <- Krauss_depthseries %>%
+depthseries_join <- Krauss_depthseries %>%
   full_join(Jones_depthseries)
 
 # Update study IDs based on revised methods table
 # Three different coring methods were used on these cores, each combination gets a unique study ID
-depthseries <- depthseries %>%
-  mutate(study_id = ifelse(core_id == "butler_island_1" | 
+depthseries <- depthseries_join %>%
+  mutate(method_id = ifelse(core_id == "butler_island_1" | 
                              core_id == "turkey_creek_2" |
                              core_id == "richmond_island_1", "Krauss_et_al_2018a", 
                            ifelse(core_id == "turkey_creek_1", "Krauss_et_al_2018b", "Krauss_et_al_2018c")))
 
-## ....3B. Core-level data ##################
+depthseries <- reorderColumns("depthseries", depthseries)
 
-# Use curation functions if you need
-source("./scripts/1_data_formatting/curation_functions.R")
+## ....3B. Core-level data ##################
 
 cores <- depthseries %>%
   select(study_id, site_id, core_id) %>%
@@ -429,6 +434,7 @@ impacts <- cores %>%
 
 ## ....3F. Species data ##############
 species <- species_edited %>%
+  mutate(study_id = id) %>%
   select(-common_name)
 
 ## ....Methods ####
@@ -436,9 +442,11 @@ species <- species_edited %>%
 raw_methods <- read_csv("data/primary_studies/Krauss_2018/intermediate/Krauss_et_al_2018_methods.csv")
 
 methods <- raw_methods %>%
-  mutate(coring_method = recode(coring_method,
+  mutate(study_id = id,
+         coring_method = recode(coring_method,
                                 "Russian peat corer" = "russian corer",
-                                "vibracorer" = "vibracore"))
+                                "vibracorer" = "vibracore")) %>%
+  select(study_id, everything())
 
 ## ....3H. Study citations ################
 
@@ -454,8 +462,8 @@ if(!file.exists("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_s
   # } else {
   #   # Otherwise manually write it 
   #   data_bib <- tibble(
-  #     study_id = "Krauss_et_al_2018",
-  #     bibliography_id = "Krauss_et_al_2018",
+  #     study_id = id,
+  #     bibliography_id = id,
   #     publication_type = "misc",
   #     key = "Krauss_2018_data",
   #     bibtype = "misc",
@@ -489,6 +497,10 @@ if(!file.exists("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_s
     bind_rows(paper_biblio) %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything())
   
+  # Make corrections 
+  # raw_citations <- read_csv("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
+  # study_citations <- raw_citations %>% mutate(study_id = id) %>% distinct()
+  
   # Write .bib file
   bib_file <- study_citations %>%
     select(-study_id, -publication_type) %>%
@@ -505,7 +517,7 @@ if(!file.exists("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_s
 source("./scripts/1_data_formatting/qa_functions.R")
 
 ## ....4A. Column and Variable names ###############
-testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"), version = "1")
+testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
 testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
 
 ## ....4B. Quality control on cell values ###################

@@ -46,10 +46,14 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 ## Trim Data to Library ####
 
+id <- "Chambers_and_White_2020" # or should it be White_et_al_2020?
+
 # methods
 methods <- raw_methods %>%
   slice(-c(1:2)) %>%
-  select_if(function(x) {!all(is.na(x))})
+  select_if(function(x) {!all(is.na(x))}) %>%
+  rename(method_id = study_id) %>%
+  mutate(study_id = id)
 
 methods <- reorderColumns("methods", methods)
 
@@ -65,18 +69,19 @@ chambers_data <- raw_Chambers %>%
          core_latitude = latitude,
          depth = depth2) %>%
   mutate_at(vars(-depth, -site_id), as.numeric) %>%
-  mutate(study_id = "Chambers_et_al_2019")
+  mutate(method_id = "Chambers_et_al_2019")
 
 white_data <- raw_White %>%
   rename(core_longitude = lon,
          core_latitude = lat,
          site_id = Site_id) %>%
-  mutate(study_id = ifelse(site_id == "Estuary", "White_et_al_2020_b", "White_et_al_2020_a"))
+  mutate(method_id = ifelse(site_id == "Estuary", "White_et_al_2020_b", "White_et_al_2020_a"))
 
 # join tables together and curate depthseries
 join_depthseries <- bind_rows(chambers_data, white_data) %>%
   rename(dry_bulk_density = bulk_density_g_cm_3) %>%
   mutate(core_id = str_c(site_id, replicate, sep = "_"),
+         study_id = id,
          # calculate fraction total carbon (make sure all the values are included in the computation)
          # make sure these values arent modeled
          fraction_carbon = carbon_density_g_cm_3/dry_bulk_density, 
@@ -95,7 +100,7 @@ depthseries <- reorderColumns("depthseries", join_depthseries) %>%
 
 # cores
 cores <- join_depthseries %>%
-  select(contains("_id"), core_latitude, core_longitude, sampling_date) %>%
+  select(study_id, site_id, core_id, core_latitude, core_longitude, sampling_date) %>%
   distinct() %>%
   mutate(core_year = year(as.Date(sampling_date)),
          core_month = month(as.Date(sampling_date)),
@@ -139,6 +144,10 @@ if(!file.exists("./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_
     remove_rownames() %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything())
   
+  # make corrections for new methods IDs
+  # raw_citations <- read_csv("data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_study_citations.csv")
+  # study_citations <- raw_citations %>% mutate(study_id = id) %>% distinct()
+  
   # Write .bib file
   bib_file <- study_citations %>%
     select(-study_id, -publication_type) %>%
@@ -159,7 +168,7 @@ leaflet(cores) %>%
 
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries"), version = "1")
+testTableCols(table_names = c("methods", "cores", "depthseries"))
 testTableVars(table_names = c("methods", "cores", "depthseries"))
 
 test_unique_cores(cores)

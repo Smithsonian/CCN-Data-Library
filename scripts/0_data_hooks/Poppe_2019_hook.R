@@ -26,20 +26,32 @@
 library(tidyverse)
 library(RefManageR)
 
+source("./scripts/1_data_formatting/qa_functions.R")
+
+# read in data
 cores_raw <- read_csv("./data/primary_studies/Poppe_2019/original/poppe_and_rybczyk_2019_cores.csv")
 depthseries_raw <- read_csv("./data/primary_studies/Poppe_2019/original/poppe_and_rybczyk_2019_depthseries.csv")
 species_raw <- read_csv("./data/primary_studies/Poppe_2019/original/poppe_and_rybczyk_2019_species.csv")
 impacts_raw <- read_csv("./data/primary_studies/Poppe_2019/original/poppe_and_rybczyk_2019_impacts.csv")
 methods_raw <- read_csv("./data/primary_studies/Poppe_2019/original/poppe_and_rybczyk_2019_material_and_methods.csv")
 
+## Curate Data ####
+
+id <- "Poppe_et_al_2019_synthesis"
+
 # Rename core year variable since date requires a full date string
 cores <- cores_raw %>%
-  mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
+  mutate(study_id = id,
+         core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
+         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK"),
+         core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
   select(-estuary_id)
 
 # Provide unit columns
 depthseries <- depthseries_raw %>%
-  mutate(pb210_unit = ifelse(!is.na(total_pb210_activity), "becquerelsPerKilogram", NA), 
+  rename(method_id = study_id) %>%
+  mutate(study_id = id,
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "becquerelsPerKilogram", NA), 
          pb214_unit = ifelse(!is.na(pb214_activity), "becquerelsPerKilogram", NA))%>%
   mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
   select(-estuary_id, -fraction_carbon_modeled) %>%
@@ -50,15 +62,23 @@ species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
   select(study_id, site_id, core_id, species_code) %>%
   mutate(species_code = gsub("sp.", "spp", species_code))%>% 
-  mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) 
+  mutate(study_id = id,
+         core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) 
 
 impacts <- impacts_raw %>%
-  mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
+  mutate(study_id = id,
+         core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
   select(-estuary_id)
 
 methods <- methods_raw %>%
-  mutate(sediment_sieve_size = as.numeric(gsub(" mm", "", sediment_sieve_size)),
-         carbon_profile_notes = "Modeled fraction carbon values available in https://doi.org/10.25573/data.10005248")
+  rename(method_id = study_id) %>%
+  mutate(study_id = id,
+         method_id = recode(method_id, 
+                            "Poppe_Rybczyk_2018" = "Poppe_and_Rybczyk_2018",
+                            "Poppe_Rybczyk_2019" = "Poppe_and_Rybczyk_2019"),
+         sediment_sieve_size = as.numeric(gsub(" mm", "", sediment_sieve_size)),
+         carbon_profile_notes = "Modeled fraction carbon values available in https://doi.org/10.25573/data.10005248") %>%
+  reorderColumns("methods", .)
 
 ## Citation ####
 
@@ -92,6 +112,10 @@ if(!file.exists("data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_20
     arrange(study_id) %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything())
   
+  # make corrections for mixed methos
+  # raw_citations <- read_csv("data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_study_citations.csv")
+  # study_citations <- raw_citations %>% mutate(study_id = id) %>% distinct()
+  
   # Write .bib file
   bib_file <- study_citations %>%
     select(-study_id, -publication_type) %>%
@@ -103,10 +127,9 @@ if(!file.exists("data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_20
 }
 
 ## QA/QC ###############
-source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"), version = "1")
+testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
 testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
 
 test_unique_cores(cores)

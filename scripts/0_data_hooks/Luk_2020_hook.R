@@ -37,14 +37,15 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 ## Trim Data to Library ####
 
-# id <- "Luk_et_al_2020"
+id <- "Luk_et_al_2020"
 
 names(raw_iso) <- tolower(names(raw_iso))
 names(raw_soil) <- tolower(names(raw_soil))
 
 soil <- raw_soil %>% 
   separate(date, c("core_year", "core_month"), sep = "-") %>%
-  mutate(study_id = "Luk_et_al_2020_a",
+  mutate(study_id = id, 
+         method_id = "Luk_et_al_2020_a",
          fraction_carbon = toc/100, # total organic
          core_month = as.numeric(core_month),
          core_year = as.numeric(core_year)) %>%
@@ -54,7 +55,8 @@ soil <- raw_soil %>%
 
 isotopes <- raw_iso %>% rename(dry_bulk_density = dbd,
                                location = status) %>%
-  mutate(study_id = "Luk_et_al_2020_b",
+  mutate(study_id = id, 
+         method_id = "Luk_et_al_2020_b",
          core_year = year(as.Date(date, format = "%m/%d/%Y")),
          core_month = month(as.Date(date, format = "%m/%d/%Y")),
          core_day = day(as.Date(date, format = "%m/%d/%Y"))) %>%
@@ -88,10 +90,11 @@ depthseries_join <- full_join(soil, isotopes) %>%
          core_elevation_notes = "Calculated by subtracting the minimum depth of soil horizon from the NAVD88 elevation of the core location (given at min_depth = 0)",
          pb210_unit = "decaysPerMinutePerGram",
          ra226_unit = "decaysPerMinutePerGram") %>%
-  mutate(site_id = str_c("SITE", site_id, sep = "_"),
+  mutate(site_id = str_c("SITE", site_id, sep = "_"))
          # make split core IDs unique 
-         core_id = ifelse(study_id == "Luk_et_al_2020_a", str_c(core_id, "a", sep = "_"),
-                          str_c(core_id, "b", sep = "_")))
+         # Unecessary with the method_id now
+         # core_id = ifelse(method_id == "Luk_et_al_2020_a", str_c(core_id, "a", sep = "_"),
+         #                  str_c(core_id, "b", sep = "_")))
 # Pond surface elevations were calculated as the difference between elevation of the marsh surface on the edge of the pond and pond depth
 # pond depths: POND 1 was 0.030 m; POND 2 was 0.026 m; POND 3 was 0.026 m.
 
@@ -100,39 +103,12 @@ depthseries <- reorderColumns("depthseries", depthseries_join) %>%
   select(-c(core_longitude, core_latitude, habitat, contains("core_elevation"),
             core_year, core_month, core_day))
 
-# FIX THIS
-# data <- raw_iso %>%
-#   rename(habitat = status, 
-#          core_latitude = lat, 
-#          core_longitude = lon,
-#          core_elevation = elevation, # is this elevation for the depth increment?
-#          dry_bulk_density = dbd,
-#          total_pb210_activity = `210pb`,
-#          total_pb210_activity_se = `210pb_e`,
-#          excess_pb210_activity = `210pbex`,
-#          excess_pb210_activity_se = `210pbex_e`,
-#          ra226_activity = `226ra`,
-#          ra226_activity_se = `226ra_e`,
-#          cs137_activity = `137cs`,
-#          cs137_activity_se = `137cs_e`) %>%
-#   mutate(study_id = id,
-#          core_id = ifelse(habitat == "POND", str_c(habitat, site_id, sep = "_"),
-#                           str_c(habitat, site_id, core_id, sep = "_")),
-#          core_elevation_notes = "Calculated by subtracting the minimum depth of soil horizon from the NAVD88 elevation of the core location (given at min_depth = 0)",
-#          pb210_unit = "decaysPerMinutePerGram",
-#          ra226_unit = "decaysPerMinutePerGram",
-#          sample_volume = pi*(depth_max-depth_min)*(5.5^2),
-#          core_year = year(as.Date(date, format = "%m/%d/%Y")),
-#          core_month = month(as.Date(date, format = "%m/%d/%Y")),
-#          core_day = day(as.Date(date, format = "%m/%d/%Y"))) %>%
-#   mutate(site_id = str_c("SITE", site_id, sep = "_")) %>%
-#   select(-date)
-
 # cores
 cores <- depthseries_join %>%
   filter(depth_min == 0) %>%
   select(study_id, site_id, contains("core"), habitat, core_elevation) %>%
-  # drop_na(core_elevation) %>%
+  drop_na(core_elevation) %>%
+  # distinct() %>%
   mutate(core_position_method = "RTK",
          core_position_accuracy = 0.001,
          core_elevation_method = "RTK",
@@ -142,7 +118,7 @@ cores <- depthseries_join %>%
          vegetation_notes = "marsh sites dominated by Spartina patens, Spartina alterniflora, and Distichlis spicata",
          inundation_class = ifelse(habitat == "MARSH", "high", "low"),
          inundation_method = "field observation",
-         core_notes = "Nine cores were split in half and increments were processed independently") %>%
+         core_notes = "Nine cores were split in half and increments were processed independently (see method_id)") %>%
   select(-habitat)
 
 cores <- reorderColumns("cores", cores)
@@ -191,6 +167,10 @@ if(!file.exists("data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_study_c
     bind_rows(spivak_data_citation, luk_data_citation) %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything())
   
+  # Make corrections to the existing file
+  # raw_citation <- read_csv("data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_study_citations.csv")
+  # study_citations <- raw_citation %>% mutate(study_id = id) %>% distinct()
+  
   # Write .bib file
   bib_file <- study_citations %>%
     select(-study_id, -publication_type) %>%
@@ -201,8 +181,7 @@ if(!file.exists("data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_study_c
   WriteBib(as.BibEntry(bib_file), "data/primary_studies/Luk_2020/derivative/Luk_et_al_2020.bib")
   write_csv(study_citations, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_study_citations.csv")
   
-}
-
+} 
 
 ## QA/QC ###############
 
@@ -215,14 +194,14 @@ leaflet(cores) %>%
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries"), version = "1")
+testTableCols(table_names = c("methods", "cores", "depthseries"), current_version = F)
 testTableVars(table_names = c("methods", "cores", "depthseries"))
 
 test_unique_cores(cores)
 test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
-test_numeric_vars(depthseries)
+result <- test_numeric_vars(depthseries)
 
 ## Write derivative data ####
 write_csv(cores, "./data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_cores.csv")

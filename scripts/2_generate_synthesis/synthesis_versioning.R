@@ -221,10 +221,9 @@ for (i in 1:length(tables_to_update)) {
     print("Fixing cores table.")
     # Fix dates
     cores_fixed <- tables_to_update[[i]] %>% 
-      # correct Breithaupt core date
-      mutate(core_date = ifelse(study_id == "Breithaupt_et_al_2020", 
-                                # transfer this to the hook script at some point
-                                as.character(strptime(core_date, format = "%m/%d/%Y")), core_date)) %>%
+      # some recoding
+      mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
+             core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK")) %>%
       # separate out year month day
       mutate(year = year(ymd(core_date)), 
              month = month(ymd(core_date)),
@@ -268,6 +267,10 @@ for (i in 1:length(tables_to_update)) {
     print(paste0("Renaming columns for ", category))
     # apply renaming function
     tables_to_update[[i]] <- renameColumns(x = tables_to_update[[i]], key = to_rename)
+    
+    if(length(unique(names(tables_to_update[[i]]))) != length(names(tables_to_update[[i]]))){
+      warning(paste0("Column names duplicated during renaming: ", category))
+    }
   }
   # this step will cause duplication of colnames if the new colnames already exist in the df
   
@@ -326,7 +329,7 @@ testAttributeNames(tables, final_synthesis)
 testVariableNames(tables, final_synthesis)
 testUniqueCores(final_synthesis$cores)
 testCoreRelationships(final_synthesis)
-# testUniqueCoordinates(data_synthesis) # replace with check for duplicate cores
+# testUniqueCoordinates(final_synthesis$cores) # replace with check for duplicate cores
 
 # Provide summary statistics of numeric variables 
 qa_numeric_results <- testNumericVariables(final_synthesis$depthseries)
@@ -343,7 +346,7 @@ view_cores <- final_synthesis$cores
 view_depthseries <- final_synthesis$depthseries
 #   impacts <- final_synthesis$impacts
 #   species <-final_synthesis$species
-#   study_citations <- final_synthesis$study_citations
+view_study_citations <- final_synthesis$study_citations
 
 # Messerschmidt_and_Kirwan_2020 have pb214_activity at different KeV's
 

@@ -74,6 +74,7 @@ data_doi <- "10.25573/serc.12252005"
 study_citations <- study_citations_raw %>%
   select(-key, -keywords, -journal) %>%
   mutate(doi = data_doi,
+         bibliography_id = paste0(study_id_value, "_data"),
          publication_type = "primary")
 
 ## Format bibliography
@@ -83,6 +84,7 @@ bib_file <- study_citations %>%
   column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020.bib")
+write_csv(study_citations, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_study_citations.csv")
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -103,6 +105,4 @@ write_csv(cores, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_
 write_csv(species, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_species.csv")
 write_csv(methods, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_methods.csv")
 write_csv(depthseries, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_study_citations.csv")
-
 

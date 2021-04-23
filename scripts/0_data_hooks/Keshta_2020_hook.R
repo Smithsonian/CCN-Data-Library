@@ -10,6 +10,8 @@ library(tidyverse)
 library(RefManageR)
 # library(lubridate)
 
+source("./scripts/1_data_formatting/qa_functions.R")
+
 # load data
 cores_raw <- read.csv("./data/primary_studies/Keshta_et_al_2020/original/Keshta_et_al_2020_cores.csv")
 depthseries_raw <- read.csv("./data/primary_studies/Keshta_et_al_2020/original/Keshta_et_al_2020_depthseries.csv")
@@ -19,30 +21,38 @@ study_citations_raw <- read_csv("./data/primary_studies/Keshta_et_al_2020/origin
 
 ## Trim Data to Library ####
 
-# id <- "Keshta_et_al_2020"
+id <- "Keshta_et_al_2020"
 
 # cores uncontrolled: 
 # core_length, habitat (keep habitat, it will be included in V2 guidance)
-cores <- cores_raw %>% select(-core_length)
+cores <- cores_raw %>% select(-core_length) %>%
+  mutate(study_id = id)
 
 # depthseries uncontrolled: 
 # total_carbon_stock, soil_moisture
 depthseries <- depthseries_raw %>%
-  select(-c(total_carbon_stock, soil_moisture))
+  rename(method_id = study_id) %>%
+  mutate(study_id = id) %>%
+  select(-c(total_carbon_stock, soil_moisture)) %>%
+  reorderColumns("depthseries", .)
 
 # methods (no change)
-methods <- methods_raw
+methods <- methods_raw %>%
+  rename(method_id = study_id) %>%
+  mutate(study_id = id) %>%
+  reorderColumns("methods", .)
 
 # species uncontrolled:
 # genus species
 species <- species_raw %>%
-  mutate(species_code = paste(genus, species, sep=" ")) %>%
+  mutate(species_code = paste(genus, species, sep=" "),
+         study_id = id) %>%
   select(study_id, site_id, core_id, species_code)
 
 
 ## 2. Create Citations ####
 
-study_citations <- study_citations_raw
+study_citations <- study_citations_raw %>% mutate(study_id = id) %>% distinct()
 
 # Write .bib file
 bib_file <- study_citations %>%
@@ -55,10 +65,9 @@ write_csv(study_citations, "./data/primary_studies/Keshta_et_al_2020/derivative/
 
 
 ## QA/QC ###############
-source("./scripts/1_data_formatting/qa_functions.R")
 
 # test cols and vars
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableCols(table_names = c("methods", "cores", "depthseries", "species"))
 testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
 
 test_unique_cores(cores)

@@ -529,33 +529,35 @@ checkDuplicates <- function(){
   cores <- read_csv("data/CCRCN_synthesis/original/CCRCN_cores.csv", guess_max = 10000, col_types = cols())
   depthseries <- read_csv("data/CCRCN_synthesis/original/CCRCN_depthseries.csv", guess_max = 100000, col_types = cols())
   
-  # Strategy: select cols from the tables and join 
-  # look at coords, values along depth increments
+  # Strategy: look for similarities in values across coords and depth intervals
+  
+  # check out cores table
   core_subset <- cores %>%
-    # mutate(coretable_id = str_c(study_id, site_id, core_id, sep = "_")) %>%
-    # select(coretable_id, latitude, longitude) %>%
-    mutate(lat_long = paste(latitude, longitude, sep = ",")) %>%
-    group_by(lat_long) %>%
-    summarize(n = n(), 
+    group_by(latitude, longitude) %>%
+    summarize(n = n(),
               core_ids = paste(unique(core_id), collapse = ", "),
               study_ids = paste(unique(study_id), collapse = ", "),
               num_studies = length(unique(study_id))) %>%
     filter(n > 1 & num_studies > 1)
   
-  # First, get a list of all unique core_ids
-  core_list <- data %>%
-    mutate(lat_long = paste(core_latitude,core_longitude, sep=",")) %>%
-    group_by(lat_long) %>%
-    summarize(n = n(), 
+  # depthseries
+  ds_subset <- depthseries %>%
+    group_by(depth_min, depth_max, dry_bulk_density,
+             fraction_carbon, fraction_organic_matter) %>%
+    summarise(n = n(),
               core_ids = paste(unique(core_id), collapse=", "),
               study_ids = paste(unique(study_id), collapse=", "),
               num_studies = length(unique(study_id))) %>%
-    filter(n > 1)
+    filter(n > 1 & num_studies > 1)
   
-  if(length(core_list$core_ids)>0){
-    warning("Some cores in the core-level data have duplicate coordinates. Check 'data/QA/duplicate_cores.csv' for the list.")
-  } else {
-    print("All core coordinates are unique.")
-  }
+  # join_subsets <- left_join(core_subset, ds_subset)
+  
+  # if(length(core_list$core_ids)>0){
+  #   warning("Some cores in the core-level data have duplicate coordinates. Check 'data/QA/duplicate_cores.csv' for the list.")
+  # } else {
+  #   print("All core coordinates are unique.")
+  # }
+  
+  print("Function is still in the works.")
 }
 

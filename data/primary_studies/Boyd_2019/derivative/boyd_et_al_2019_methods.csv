@@ -1,5 +1,5 @@
-study_id,coring_method,roots_flag,compaction_flag,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,loss_on_ignition_sample_mass,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_type,cs137_counting_method,pb210_counting_method,excess_pb210_rate,excess_pb210_model
-Boyd_2012,pvc and hammer,NA,NA,modeled,550,4,4,NA,NA,NA,NA,gamma,gamma,accretion,CIC
-Boyd_and_Sommerfield_2016,pvc and hammer,NA,NA,modeled,550,4,4,NA,NA,NA,NA,gamma,gamma,accretion,CFCS
-Boyd_et_al_2017,piston corer,roots and rhizomes included,corer limits compaction,modeled,550,4,4,measured,TRUE,acid fumigation,organic carbon,gamma,gamma,not specified,CFCS
-Unger_et_al_2016,piston corer,roots and rhizomes included,corer limits compaction,modeled,550,4,4,measured,TRUE,acid fumigation,organic carbon,NA,NA,NA,NA
+study_id,method_id,coring_method,roots_flag,compaction_flag,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,loss_on_ignition_sample_mass,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_type,cs137_counting_method,pb210_counting_method,excess_pb210_rate,excess_pb210_model
+Boyd_et_al_2019,Boyd_2012,pvc and hammer,NA,NA,modeled,550,4,4,NA,NA,NA,NA,gamma,gamma,accretion,CIC
+Boyd_et_al_2019,Boyd_and_Sommerfield_2016,pvc and hammer,NA,NA,modeled,550,4,4,NA,NA,NA,NA,gamma,gamma,accretion,CFCS
+Boyd_et_al_2019,Boyd_et_al_2017,piston corer,roots and rhizomes included,corer limits compaction,modeled,550,4,4,measured,TRUE,acid fumigation,organic carbon,gamma,gamma,not specified,CFCS
+Boyd_et_al_2019,Unger_et_al_2016,piston corer,roots and rhizomes included,corer limits compaction,modeled,550,4,4,measured,TRUE,acid fumigation,organic carbon,NA,NA,NA,NA

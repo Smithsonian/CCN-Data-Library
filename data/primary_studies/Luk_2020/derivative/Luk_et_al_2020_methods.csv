@@ -1,3 +1,3 @@
-study_id,coring_method,roots_flag,sediment_sieved_flag,sediment_sieve_size,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_flag,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_method,fraction_carbon_type,cs137_counting_method,pb210_counting_method
-Luk_et_al_2020_a,piston corer,roots and rhizomes separated,sediment sieved,1,no obvious compaction,60,NA,air dried to constant mass,measured,TRUE,acid fumigation,EA,total carbon,NA,NA
-Luk_et_al_2020_b,piston corer,NA,NA,NA,no obvious compaction,NA,168,freeze dried,NA,NA,NA,NA,NA,gamma,gamma
+study_id,method_id,coring_method,roots_flag,sediment_sieved_flag,sediment_sieve_size,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_flag,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_method,fraction_carbon_type,cs137_counting_method,pb210_counting_method
+Luk_et_al_2020,Luk_et_al_2020_a,piston corer,roots and rhizomes separated,sediment sieved,1,no obvious compaction,60,NA,air dried to constant mass,measured,TRUE,acid fumigation,EA,total carbon,NA,NA
+Luk_et_al_2020,Luk_et_al_2020_b,piston corer,NA,NA,NA,no obvious compaction,NA,168,freeze dried,NA,NA,NA,NA,NA,gamma,gamma

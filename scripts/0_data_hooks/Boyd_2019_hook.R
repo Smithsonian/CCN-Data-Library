@@ -27,6 +27,8 @@
 library(tidyverse)
 library(RefManageR)
 
+source("./scripts/1_data_formatting/qa_functions.R")
+
 # Change to all files: Make Unger core IDs unique
 cores_raw <- read_csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_2019_cores.csv")
 depthseries_raw <- read.csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_2019_depthseries.csv")
@@ -35,14 +37,21 @@ species_raw <- read_csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_20
 methods_raw <- read_csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_2019_material_and_methods.csv")
 
 # Data Curation ####
-methods <- methods_raw
+
+id <- "Boyd_et_al_2019"
+
+methods <- methods_raw %>%
+  rename(method_id = study_id) %>% mutate(study_id = id) %>%
+  reorderColumns("methods", .)
 
 cores <- cores_raw %>%
   mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id)) %>%
+  mutate(study_id = id) %>%
   rename(core_year = core_date)
 
 impacts <- impacts_raw %>%
-  mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id))
+  mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id)) %>%
+  mutate(study_id = id)
 
 depthseries <- depthseries_raw %>%
   mutate(core_id = as.character(core_id),
@@ -58,13 +67,16 @@ depthseries <- depthseries_raw %>%
          pb212_unit = ifelse(!is.na(pb212_activity), "becquerelsPerKilogram", NA), 
          bi214_unit = ifelse(!is.na(bi214_activity), "becquerelsPerKilogram", NA), 
          be7_unit = ifelse(!is.na(be7_activity), "becquerelsPerKilogram", NA),
-         am241_unit = ifelse(!is.na(am241_activity), "becquerelsPerKilogram", NA))
+         am241_unit = ifelse(!is.na(am241_activity), "becquerelsPerKilogram", NA)) %>%
+  rename(method_id = study_id) %>% mutate(study_id = id) %>%
+  reorderColumns("depthseries", .)
 
 # Species data needs to combine genus and species into one and remove other columns
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
   select(study_id, site_id, core_id, species_code) %>%
-  mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id))
+  mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id)) %>%
+  mutate(study_id = id)
 
 # Create Citation ####
 
@@ -72,7 +84,6 @@ if(!file.exists("data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_study
   # Merge associated pubs with data release DOI
   bib <- read_csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_2019_associated_publications.csv")
   data_release_doi <- "10.25573/data.9747065"
-  key_value <- "Boyd_et_al_2019"
   
   data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
   
@@ -94,6 +105,11 @@ if(!file.exists("data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_study
   study_citations <- bind_rows(pub_biblio, data_biblio) %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything())
   
+  # Make corrections for mixed methods
+  # raw_citations <- read_csv("data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_study_citations.csv")
+  # study_citations <- raw_citations %>% mutate(study_id = id) %>% distinct() %>%
+  #   select_if(function(x) {!all(is.na(x))})
+  
   # Write .bib file
   bib_file <- study_citations %>%
     select(-study_id, -publication_type) %>%
@@ -106,10 +122,9 @@ if(!file.exists("data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_study
 
 
 ## QA/QC ###############
-source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"), version = "1")
+testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
 testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
 
 test_unique_cores(cores)

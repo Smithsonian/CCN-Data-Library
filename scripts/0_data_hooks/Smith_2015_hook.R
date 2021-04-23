@@ -106,43 +106,39 @@ sites <- site_data %>%
   mutate(site_description = "Rockefeller Wildlife Refuge")
 
 ## 5. Create study-citation table ######
-study <- "Smith_et_al_2015"
-doi <- "10.3133/ds877"
 
-# Get bibtex citation from DOI
-biblio_raw <- GetBibEntryWithDOI(doi)
-
-biblio_df <- as.data.frame(biblio_raw)
-
-study_citations <- biblio_df %>%
-  mutate(bibliography_id = "Smith_et_al_2015_data", 
-         study_id = study,
-         publication_type = "primary") %>%
-  remove_rownames() %>%
-  select(study_id, bibliography_id, publication_type, everything())
-
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -publication_type) %>%
-  column_to_rownames("bibliography_id")
-
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015.bib")
-
+if(!file.exists("./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_study_citations.csv")){
+  Smith_thesis <- read_csv("data/primary_studies/Smith_2015/intermediate/Smith_2015_thesis_citation.csv") %>%
+    mutate_all(as.character)
+  
+  study <- "Smith_et_al_2015"
+  doi <- "10.3133/ds877"
+  
+  # Get bibtex citation from DOI
+  biblio_raw <- GetBibEntryWithDOI(doi)
+  
+  biblio_df <- as.data.frame(biblio_raw)
+  
+  study_citations <- biblio_df %>%
+    mutate(bibliography_id = "Smith_et_al_2015_data", 
+           study_id = study,
+           publication_type = "primary") %>%
+    remove_rownames() %>%
+    bind_rows(Smith_thesis) %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015.bib")
+  write_csv(study_citations, "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_study_citations.csv")
+  
+}
 
 ## 6. QA/QC  ################
 source("./scripts/1_data_formatting/qa_functions.R")
-
-# # Make sure column names are formatted correctly: 
-# test_colnames("core_level", cores)
-# test_colnames("site_level", site_data) 
-# test_colnames("depthseries", depthseries_data) 
-# 
-# # cores <- reorder_columns(core_data, "core_level")
-# site_data <- reorder_columns(site_data, "site_level")
-# 
-# # Test relationships between core_ids at core- and depthseries-levels
-# # the test returns all core-level rows that did not have a match in the depth series data
-# results <- test_core_relationships(core_data, depthseries_data)
 
 # Check col and varnames
 testTableCols(table_names = c("sites", "methods", "cores", "depthseries"), version = "1")
@@ -158,6 +154,5 @@ test_numeric_vars(depthseries)
 write_csv(cores, "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_cores.csv")
 write_csv(sites, "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_sites.csv")
 write_csv(depthseries, "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_study_citations.csv")
 write_csv(methods, "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_methods.csv")
 

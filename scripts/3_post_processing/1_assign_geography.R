@@ -54,7 +54,7 @@ divisions <- readOGR(dsn = "./data/input_shapefiles/admin_divisions/",
 divisions_sp <- spTransform(divisions, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
 # Core data updated to V2 guidance
-cores <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", guess_max=7000) %>%
+cores <- read_csv("data/CCRCN_synthesis/original/CCRCN_cores.csv", guess_max=7000) %>%
   rename(original_core_id = core_id) %>%
   # create a REAL unique core id
   mutate(core_id = str_c(study_id, original_core_id, sep = "_"))

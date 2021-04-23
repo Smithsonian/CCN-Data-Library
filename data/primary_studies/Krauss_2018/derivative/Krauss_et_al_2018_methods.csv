@@ -1,4 +1,4 @@
-study_id,coring_method,compaction_flag,loss_on_ignition_temperature,loss_on_ignition_time,dry_bulk_density_flag,c14_counting_method,age_depth_model_reference
-Krauss_et_al_2018a,piston corer,compaction quantified,550,1,modeled,AMS,core collection date
-Krauss_et_al_2018b,vibracore,compaction quantified,550,1,modeled,AMS,core collection date
-Krauss_et_al_2018c,russian corer,corer limits compaction,550,1,modeled,AMS,core collection date
+study_id,method_id,coring_method,compaction_flag,loss_on_ignition_temperature,loss_on_ignition_time,dry_bulk_density_flag,c14_counting_method,age_depth_model_reference
+Krauss_et_al_2018,Krauss_et_al_2018a,piston corer,compaction quantified,550,1,modeled,AMS,core collection date
+Krauss_et_al_2018,Krauss_et_al_2018b,vibracore,compaction quantified,550,1,modeled,AMS,core collection date
+Krauss_et_al_2018,Krauss_et_al_2018c,russian corer,corer limits compaction,550,1,modeled,AMS,core collection date
