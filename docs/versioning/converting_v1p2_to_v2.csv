@@ -51,6 +51,8 @@ cores,study_id,,study_id,,required,,,,"Unique identifier for the study made up o
 cores,site_id,,site_id,,optional,,,,Site identification code unique to each study.,factor,NA,,,,,
 cores,core_id,,core_id,,required,,,,Core identification code unique to each site.,factor,NA,,,,,
 cores,core_year,rename,year,common attribute with other syntheses,required,,,,Year of core collection,numeric,YYYY,,,,1,
+cores,core_month,rename,month,common attribute with other syntheses,optional,,,,Numeric month of year of core,numeric,MM,,,,,
+cores,core_day,rename,day,common attribute with other syntheses,optional,,,,Numeric day of month of core,numeric,DD,,,,,
 cores,core_date,split,year,add flexibility,optional,,,,Date of core collection.,Date,YYYY-MM-DD,,,,,
 cores,core_date,split,month,add flexibility,optional,,,,Numeric month of year of core,numeric,MM,,,,,
 cores,core_date,split,day,add flexibility,optional,,,,Numeric day of month of core,numeric,DD,,,,,

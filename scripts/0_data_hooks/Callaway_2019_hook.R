@@ -37,8 +37,15 @@ methods_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_
 
 # Remove accumulation/accretion rates for core level
 cores <- cores_raw %>%
+  mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
+         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK"),
+         core_length_flag = "core depth limited by length of corer") %>%
+  mutate(core_year = year(ymd(core_date)),
+         core_month = month(ymd(core_date)),
+         core_day = day(ymd(core_date))) %>%
   select(-c(cs137_accretion_rate, cs137_mineral_accumulation_rate, cs137_carbon_accumulation_rate,
-            pb210_accretion_rate, pb210_mineral_accumulation_rate, pb210_carbon_accumulation_rate))
+            pb210_accretion_rate, pb210_mineral_accumulation_rate, pb210_carbon_accumulation_rate,
+            core_date))
 
 # Species data needs to combine genus and species into one and remove other columns
 species <- species_raw %>%
@@ -48,13 +55,14 @@ species <- species_raw %>%
 # Remove NS cores from depthseries (no other metadata)
 depthseries <- depthseries_raw %>%
   filter(!grepl("NS_B", core_id)) %>%
-  mutate(cs137_unit = ifelse(!is.na(cs137_activity), "picocuriesPerGram", NA), 
+  mutate(method_id = "single set of methods", 
+         cs137_unit = ifelse(!is.na(cs137_activity), "picocuriesPerGram", NA), 
          pb210_unit = ifelse(!is.na(excess_pb210_activity), "picocuriesPerGram", NA),
-         bi214_unit = ifelse(!is.na(bi214_activity), "becquerelsPerKilogram", NA))
+         bi214_unit = ifelse(!is.na(bi214_activity), "becquerelsPerKilogram", NA)) 
 
 sites <- sites_raw
 impacts <- impacts_raw
-methods <- methods_raw
+methods <- methods_raw %>% mutate(method_id = "single set of methods")
 
 ## Create citation info  
 
@@ -70,12 +78,12 @@ if(!file.exists("data/primary_studies/Callaway_2019/derivative/Callaway_et_al_20
   paper_biblio <- as.data.frame(paper_bib_raw) %>%
     mutate(study_id = study_id_value,
            bibliography_id = "Callaway_et_al_2012_article",
-           publication_type = "associated")
+           publication_type = "associated source")
   
   data_biblio <- as.data.frame(data_bib_raw) %>%
     mutate(study_id = study_id_value,
            bibliography_id = "Callaway_et_al_2019_data",
-           publication_type = "primary")
+           publication_type = "primary dataset")
   
   # Curate biblio so ready to read out as a BibTex-style .bib file
   study_citations <- data_biblio %>%
@@ -93,12 +101,28 @@ if(!file.exists("data/primary_studies/Callaway_2019/derivative/Callaway_et_al_20
   write_csv(study_citations, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("sites", "methods", "cores", "depthseries", "species", "impacts")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+sites <- updated$sites
+impacts <- updated$impacts
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
@@ -106,8 +130,10 @@ test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
 
-
 # write files
 write_csv(species, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_species.csv")
 write_csv(cores, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_cores.csv")
 write_csv(depthseries, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_depthseries.csv")
+write_csv(sites, "data/primary_studies/Callaway_2019/derivative/callaway_et_al_2019_sites.csv")
+write_csv(impacts, "data/primary_studies/Callaway_2019/derivative/callaway_et_al_2019_impacts.csv")
+

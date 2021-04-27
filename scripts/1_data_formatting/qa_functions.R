@@ -28,7 +28,7 @@ test_unique_cores <- function(data) {
 test_unique_coords <- function(data) {
   # First, get a list of all unique core_ids
   core_list <- data %>%
-    mutate(lat_long = paste(core_latitude,core_longitude, sep=",")) %>%
+    mutate(lat_long = paste(latitude, longitude, sep=",")) %>%
     group_by(lat_long) %>%
     summarize(n = n(), 
               core_ids = paste(unique(core_id), collapse=", "),

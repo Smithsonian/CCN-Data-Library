@@ -1,2 +1,2 @@
-study_id,coring_method,roots_flag,sediment_sieved_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_flag,carbon_measured_or_modeled,carbonates_removed,fraction_carbon_method,fraction_carbon_type
-Kauffman_et_al_2020,gouge auger,roots and rhizomes included,sediment not sieved,60,96,time approximate,measured,FALSE,EA,total carbon
+study_id,method_id,coring_method,roots_flag,sediment_sieved_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_flag,carbon_measured_or_modeled,carbonates_removed,fraction_carbon_method,fraction_carbon_type
+Kauffman_et_al_2020,single set of methods,gouge auger,roots and rhizomes included,sediment not sieved,60,96,time approximate,measured,FALSE,EA,total carbon

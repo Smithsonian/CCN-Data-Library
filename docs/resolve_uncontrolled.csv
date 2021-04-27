@@ -1,8 +1,8 @@
 ﻿study_id,uncontrolled_type,table_name,attribute_name,variable_name,action,definition,notes
 Vaughn_et_al_2020,variable,cores,core_length_flag,﻿full profiles omitted,needs resolution,,
 Vaughn_et_al_2020,variable,cores,salinity_class,estuarine,add to controlled,,
-Thom_2019,variable,methods,coring_methods,PVC tube or thin-walled metal tube,needs resolution,,"recode as ""pvc and hammer""?"
-Sanborn_and_Coxson_2020,variable,methods,coring_methods,soil pit,add to controlled,,
+Thom_2019,variable,methods,coring_method,PVC tube or thin-walled metal tube,needs resolution,,"recode as ""pvc and hammer""?"
+Sanborn_and_Coxson_2020,variable,methods,coring_method,soil pit,add to controlled,,
 Peck_et_al_2020,variable,methods,excess_pb210_rate,mass accumulation and accretion,needs resolution,,
 Peck_et_al_2020,variable,methods,excess_pb210_model,CRS and CIC,needs resolution,,
 Peck_et_al_2020,variable,cores,vegetation_class,mudflat,needs resolution,,"habitat and vegetation_class are starting to overlap in variables. Should we leave ""mudflat"" to habitat and classify it as ""unvegetated"" in vegetation class?"
@@ -28,6 +28,7 @@ Belshe_2019,attribute,depthseries,pb210_crs_age,,needs resolution,,
 Belshe_2019,attribute,depthseries,pb210_crs_age_sd,,needs resolution,,
 Belshe_2019,variable,cores,inundation_class,submerged subtidal,needs resolution,,
 Abbott_2019,variable,depthseries,marker_type,dredge horizon,needs resolution,,
+Abbott_2019,variable,methods,coring_method,polycarbonate tube,needs resolution,,
 Poppe_2019,variable,cores,salinity_class,riverine,add to controlled,,
 Poppe_2019,variable,cores,vegetation_class,unvegetated,needs resolution,,
 Nahlik_and_Fennessy_2016,variable,cores,salinity_class,palustrine,add to controlled,,

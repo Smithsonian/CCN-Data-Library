@@ -1,16 +1,11 @@
 attribute_name,variable_name,variable_definition
 corresponding_author,TRUE,The author should be contacted with any further questions.
 corresponding_author,FALSE,The author should not be contacted with any further questions.
-publication_type,article,Journal article
-publication_type,book,Book
-publication_type,mastersthesis,Master's Thesis
-publication_type,misc,Miscellaneous publications such as online datasets
-publication_type,phdthesis,PhD thesis or dissertation
-publication_type,techreport,Technical report
-publication_type,primary,TBD.
-publication_type,associated,TBD.
-publication_type,synthesis,TBD.
-publication_type,unpublished,Unpublished source.
+publication_type,combined dataset and manuscript,Primary dataset and associated manuscript are from the same source.
+publication_type,primary dataset,Primary published dataset.
+publication_type,associated source,Source associated with primary dataset.
+publication_type,synthesis dataset,Published dataset associated with the data synthesis.
+publication_type,synthesis source,Source associated with data synthesis contribution.
 coring_method,cryo core,A technique involving collecting a core by freezing soil using liquid nitrogen to a copper tube
 coring_method,gouge auger,"A half cylinder coring device in which the coring section is open, not sealed off by a fin"
 coring_method,hargas corer,"A large diameter (>10 cm) coring device consisting of a tube, piston, and a cutting head"
@@ -157,6 +152,7 @@ habitat,seagrass,Intertidal to subtidal and dominated by specialized predominant
 habitat,algal mat,Dominated by algae.
 habitat,unvegetated,Unvegetated.
 habitat,mudflat,Describes unvegetated areas exposed and flooded by the tides.
+habitat,upland,Predominately above sea level and dominated by trees.
 code_type,description,Cover description not related to plant taxonomy.
 code_type,Family,Refers to taxonomic family without indicating a genus or species.
 code_type,Genus,Refers to a taxonomic genus without indicating a species.

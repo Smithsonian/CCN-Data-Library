@@ -36,19 +36,22 @@ study_citations_raw <- read_csv("./data/primary_studies/Kauffman_et_al_2020/orig
 
 study_id_value <- "Kauffman_et_al_2020"
 
-# site (no change):
+# site 
 sites <- sites_raw
 
 # cores uncontrolled: 
 # peat_depth, peat_depth_notes, core_length, pH, porewater_salinity
 cores <- cores_raw %>%
+  mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
+         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK")) %>%
   select(-c(peat_depth, peat_depth_notes, core_length, pH, porewater_salinity))
 
-# depthseries uncontrolled: 
-depthseries <- depthseries_raw
+# depthseries
+depthseries <- depthseries_raw %>% mutate(method_id = "single set of methods")
 
-# methods (no change)
-methods <- methods_raw
+# methods 
+methods <- methods_raw %>% mutate(method_id = "single set of methods") %>%
+  select(study_id, method_id, everything())
 
 # species uncontrolled:
 # genus species
@@ -58,9 +61,7 @@ species <- species_raw %>%
          species_code = paste(genus, species, sep=" ")) %>%
   select(study_id, site_id, core_id, species_code)
 
-
-################
-## Create citation info  
+## Create citation info  #######
 # associated_bib_doi <- "10.1111/gcb.15248"
 # data_release_doi <- "10.25573/serc.12640172"
 # 
@@ -90,7 +91,10 @@ species <- species_raw %>%
 #   mutate(year = as.numeric(year),
 #          month = "aug")
 
-study_citations <- study_citations_raw
+study_citations <- study_citations_raw %>%
+  mutate(publication_type = recode(publication_type,
+                                   "primary" = "primary dataset",
+                                   "associated" = "associated source"))
 
 # Write .bib file
 bib_file <- study_citations %>%
@@ -102,19 +106,33 @@ WriteBib(as.BibEntry(bib_file), "data/primary_studies/Kauffman_et_al_2020/deriva
 write_csv(study_citations, "./data/primary_studies/Kauffman_et_al_2020/derivative/kauffman_et_al_2020_study_citations.csv")
 
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("sites", "methods", "cores", "depthseries", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+sites <- updated$sites
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names = c("sites", "methods", "cores", "depthseries", "species"))
+testTableVars(table_names = c("sites", "methods", "cores", "depthseries", "species"))
 
 test_unique_cores(cores)
 test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
 test_depthseries <- test_numeric_vars(depthseries)
-
 
 ## Write derivative data ####
 write_csv(sites, "./data/primary_studies/Kauffman_et_al_2020/derivative/kauffman_et_al_2020_sites.csv")

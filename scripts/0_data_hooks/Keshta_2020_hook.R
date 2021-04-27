@@ -31,28 +31,39 @@ cores <- cores_raw %>% select(-core_length) %>%
 # depthseries uncontrolled: 
 # total_carbon_stock, soil_moisture
 depthseries <- depthseries_raw %>%
-  rename(method_id = study_id) %>%
+  mutate(method_id = ifelse(study_id == "Keshta_et_al_2020_a", 
+                            "wetland cores", "upland cores")) %>%
   mutate(study_id = id) %>%
   select(-c(total_carbon_stock, soil_moisture)) %>%
   reorderColumns("depthseries", .)
 
 # methods (no change)
 methods <- methods_raw %>%
-  rename(method_id = study_id) %>%
   mutate(study_id = id) %>%
+  mutate(method_id = ifelse(coring_method == "russian corer", 
+                            "wetland cores", "upland cores")) %>%
   reorderColumns("methods", .)
 
 # species uncontrolled:
 # genus species
+# transfer habitats from cores table
+habitats <- cores %>% distinct(core_id, habitat) 
+
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" "),
+         code_type = "Genus species",
          study_id = id) %>%
-  select(study_id, site_id, core_id, species_code)
-
+  left_join(habitats) %>%
+  select(-genus, -species)
+# species already has habitat and code_type => doesn't need update
 
 ## 2. Create Citations ####
 
-study_citations <- study_citations_raw %>% mutate(study_id = id) %>% distinct()
+study_citations <- study_citations_raw %>% 
+  mutate(study_id = id) %>% distinct() %>%
+  mutate(publication_type = recode(publication_type,
+                                   "primary" = "primary dataset",
+                                   "associated" = "associated source"))
 
 # Write .bib file
 bib_file <- study_citations %>%
@@ -63,6 +74,20 @@ bib_file <- study_citations %>%
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Keshta_et_al_2020/derivative/Keshta_et_al_2020.bib")
 write_csv(study_citations, "./data/primary_studies/Keshta_et_al_2020/derivative/Keshta_et_al_2020_study_citations.csv")
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+# sites <- updated$sites
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+# species <- updated$species
 
 ## QA/QC ###############
 

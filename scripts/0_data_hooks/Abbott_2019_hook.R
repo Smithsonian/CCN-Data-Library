@@ -29,15 +29,22 @@ cores_raw <- read_csv("./data/primary_studies/Abbott_2019/original/abbott_et_al_
 depthseries_raw <- read.csv("./data/primary_studies/Abbott_2019/original/abbott_et_al_2019_depthseries.csv")
 impacts_raw <-read_csv("./data/primary_studies/Abbott_2019/original/abbott_et_al_2019_impacts.csv")
 species_raw <- read_csv("./data/primary_studies/Abbott_2019/original/abbott_et_al_2019_species.csv")
-methods <- read_csv("./data/primary_studies/Abbott_2019/original/abbott_et_al_2019_material_and_methods.csv")
+methods_raw <- read_csv("./data/primary_studies/Abbott_2019/original/abbott_et_al_2019_material_and_methods.csv")
 
 ## Curate data ####
 # Remove uncontrolled vocab
 cores <- cores_raw %>%
-  select(study_id, site_id, core_id, core_date, core_longitude, core_latitude, core_position_method,
+  mutate(core_length_flag = "core depth represents deposit depth") %>%
+  mutate(core_year = year(core_date), 
+         core_month = month(core_date),
+         core_day = day(core_date)) %>%
+  mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
+         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK")) %>%
+  select(study_id, site_id, core_id, core_year, core_month, core_day, core_longitude, core_latitude, core_position_method,
          core_elevation, core_elevation_method, salinity_class, vegetation_class)
 
 depthseries <- depthseries_raw %>%
+  mutate(method_id = "single set of methods") %>%
   select(-fraction_nitrogen)
 
 species <- species_raw %>%
@@ -46,7 +53,7 @@ species <- species_raw %>%
 
 impacts <- impacts_raw
 
-methods <- methods_raw
+methods <- methods_raw %>% mutate(method_id = "single set of methods")
 
 # Citation ####
 if(!file.exists("data/primary_studies/abbott_2019/derivative/abbott_et_al_2019_study_citations.csv")){
@@ -60,7 +67,7 @@ if(!file.exists("data/primary_studies/abbott_2019/derivative/abbott_et_al_2019_s
   study_citations <- as.data.frame(data_bib_raw) %>%
     mutate(study_id = study_id,
            bibliography_id = c("Abbott_et_al_2019_data", "Abbott_et_al_2019_article"),
-           publication_type = c("primary", "associated")) %>%
+           publication_type = c("primary dataset", "associated source")) %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
     remove_rownames()
   
@@ -74,12 +81,27 @@ if(!file.exists("data/primary_studies/abbott_2019/derivative/abbott_et_al_2019_s
   write_csv(study_citations, "data/primary_studies/abbott_2019/derivative/abbott_et_al_2019_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "impacts", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+impacts <- updated$impacts
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "impacts", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "impacts", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

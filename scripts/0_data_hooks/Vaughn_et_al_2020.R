@@ -30,46 +30,69 @@ species_raw <- read_csv("./data/primary_studies/Vaughn_et_al_2020/original/vaugh
 methods_raw <- read_csv("./data/primary_studies/Vaughn_et_al_2020/original/vaughn_et_al_2020_materials_and_methods.csv")
 
 cores <- cores_raw %>%
-  mutate(core_date = as_date(core_date)) %>%
+  mutate(core_length_flag = "full profiles omitted",
+         core_date = as_date(core_date)) %>%
   mutate(core_year = year(core_date), 
          core_month = month(core_date),
-         core_day = day(core_date))
+         core_day = day(core_date)) %>%
+  select(-core_date)
 
 depthseries <- depthseries_raw %>%
   select(study_id:CRS_age_se) %>%
   rename(age = CRS_model_age,
-         age_se = CRS_age_se)
+         age_se = CRS_age_se) %>%
+  mutate(method_id = "single set of methods")
 
 species <- species_raw %>%
-  mutate(species_code = paste(genus, species, sep=" ")) %>%
-  select(study_id, site_id, core_id, species_code)
+  mutate(species_code = paste(genus, species, sep=" "),
+         code_type = "Genus species") %>%
+  select(-species, -genus)
 
 methods <- methods_raw %>%
   mutate(excess_pb210_model = "CRS",
-         coring_method = "vibracore") %>%
+         coring_method = "vibracore",
+         method_id = "single set of methods") %>%
   rename(c14_counting_method = cs14_counting_method)
 
-## Citations
-doi <- "10.25573/serc.10552004"
+## Citations ####
+if(!file.exists("./data/primary_studies/Vaughn_et_al_2020/derivative/vaughn_et_al_2020_study_citations.csv")){
+  doi <- "10.25573/serc.10552004"
+  
+  study_id_value <- "Vaughn_et_al_2020"
+  
+  bib <- GetBibEntryWithDOI(doi)
+  
+  study_citations <- as.data.frame(bib) %>%
+    mutate(study_id = study_id_value,
+           bibliography_id = "Vaughn_et_al_2021_data",
+           publication_type = "primary dataset") %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  ## Format bibliography
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Vaughn_et_al_2020/derivative/Vaughn_et_al_2020.bib")
+  write_csv(study_citations, "./data/primary_studies/Vaughn_et_al_2020/derivative/vaughn_et_al_2020_study_citations.csv")
+}
 
-study_id_value <- "Vaughn_et_al_2020"
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
 
-bib <- GetBibEntryWithDOI(doi)
+table_names <- c("methods", "cores", "depthseries", "species")
 
-study_citations <- as.data.frame(bib) %>%
-  mutate(study_id = study_id_value,
-         bibliography_id = "Vaughn_et_al_2020_data",
-         publication_type = "primary") %>%
-  remove_rownames() %>%
-  select(study_id, bibliography_id, publication_type, everything())
+updated <- updateTables(table_names)
 
-## Format bibliography
-bib_file <- study_citations %>%
-  select(-study_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("bibliography_id")
+# save listed tables to objects
 
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Vaughn_et_al_2020/derivative/Vaughn_et_al_2020.bib")
+# sites <- updated$sites
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -79,14 +102,14 @@ methods <- reorderColumns("methods", methods)
 cores <- reorderColumns("cores", cores)
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
-test_numeric_vars(depthseries)
+test <- test_numeric_vars(depthseries)
 
 # Make sure column names are formatted correctly: 
 # test_colnames("cores", cores)
@@ -98,4 +121,3 @@ write_csv(cores, "./data/primary_studies/Vaughn_et_al_2020/derivative/vaughn_et_
 write_csv(species, "./data/primary_studies/Vaughn_et_al_2020/derivative/vaughn_et_al_2020_species.csv")
 write_csv(methods, "./data/primary_studies/Vaughn_et_al_2020/derivative/vaughn_et_al_2020_methods.csv")
 write_csv(depthseries, "./data/primary_studies/Vaughn_et_al_2020/derivative/vaughn_et_al_2020_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Vaughn_et_al_2020/derivative/vaughn_et_al_2020_study_citations.csv")

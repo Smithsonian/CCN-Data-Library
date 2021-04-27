@@ -148,6 +148,7 @@ depthseries_join <- full_join(stock, radionuclides) %>%
 #   drop_na(core_date) # drop NA dates
 
 depthseries <- reorderColumns("depthseries", depthseries_join) %>%
+  mutate(method_id = "single set of methods") %>%
   select(-c(Batch, "2014_Habitat Type", Most_Freq_Occ_Habitat_1949to1988))
 
 # Cores ----
@@ -166,10 +167,11 @@ cores <- left_join(coreinfo, date_ref) %>%
 
 cores <- reorderColumns("cores", cores)
 
-# Species
+# Species ----
 species <- coreinfo %>%
   select(study_id, site_id, core_id, species) %>%
-  mutate(species = str_split(species, "/")) %>% 
+  mutate(species = str_split(species, "/"),
+         code_type = "Genus species") %>% 
   unnest(species) %>% mutate(species = trimws(species)) %>%
   rename(species_code = species)
   # separate(species, into = c("genus", "species"), sep = " ")
@@ -178,6 +180,7 @@ species <- coreinfo %>%
 # Methods ----
 
 methods <- data.frame(study_id = id,
+                      method_id = "single set of methods",
                       coring_method = "mcauley corer",
                       dry_bulk_density_flag = "freeze dried",
                       loss_on_ignition_temperature = 550, 
@@ -202,12 +205,12 @@ if(!file.exists("./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_
   data_citation <- as.data.frame(data_bib) %>%
     mutate(study_id = id) %>%
     mutate(bibliography_id = paste0("Baustian_et_al_", year, "_data"),
-           publication_type = "primary")
+           publication_type = "primary dataset")
   
   pub_citation <- as.data.frame(pub_bib) %>%
     mutate(study_id = id) %>%
     mutate(bibliography_id = paste0("Baustian_et_al_", year, "_article"),
-           publication_type = "associated")
+           publication_type = "associated source")
   
   # # Curate biblio so ready to read out as a BibTex-style .bib file
   study_citations <- bind_rows(data_citation, pub_citation) %>%
@@ -223,6 +226,20 @@ if(!file.exists("./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_
   write_csv(study_citations, "./data/primary_studies/Baustian_et_al_2021/derivative/Baustian_et_al_2021_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 
 ## QA/QC ###############
 
@@ -234,8 +251,8 @@ leaflet(cores) %>%
 # Make sure column names are formatted correctly: 
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

@@ -41,11 +41,12 @@ cores <- cores_raw %>%
                           "S" = "snipe_creek_high_marsh",
                           "F" = "snipe_creek_high_marsh"),
          core_position_method = "handheld",
+         core_length_flag = "not specified",
          core_id = paste("snipe_creek", core_id, sep="_")) %>%
   mutate(vegetation_class = "emergent",
          vegetation_notes = ifelse(grepl("snipe_creek_HI", core_id) | grepl("snipe_creek_F", core_id) | grepl("snipe_creek_S", core_id),
                                    "Core collected in emergent vegetation but located near tree hammocks", NA)) %>%
-  select(study_id, site_id, core_id, core_year, core_month, core_day, 
+  select(study_id, site_id, core_id, core_year, core_month, core_day, core_length_flag,
          core_latitude, core_longitude, core_position_method, vegetation_class, vegetation_notes)
 
 ## Curate depthseries ####
@@ -68,17 +69,21 @@ depthseries_curated <- depthseries_raw %>%
          core_id = paste("snipe_creek", core_id, sep="_"),
          depth_min = as.numeric(depth_min),
          depth_max = as.numeric(depth_max),
-         cs137_activity = ifelse(cs137_activity == 0, NA, cs137_activity)
-         ) %>% 
+         cs137_activity = ifelse(cs137_activity == 0, NA, cs137_activity),
+         method_id = "single set of methods") %>% 
   mutate(cs137_unit = ifelse(is.na(cs137_activity), NA, "becquerelsPerKilogram"),
          pb210_unit = ifelse(is.na(excess_pb210_activity), NA, "becquerelsPerKilogram"),
          ra226_unit = ifelse(is.na(ra226_activity), NA, "becquerelsPerKilogram"))
 
 depthseries <- reorderColumns("depthseries", depthseries_curated) %>%
-  select(1:17) # Remove all uncontrolled variables
+  # Remove all uncontrolled variables
+  select(-c("δ15N", "N %", "C/N", "δ13C/δ15N", "g OC/gsed", "g N/gsed", "dbd_gC/CC",
+            "Mass Depth", "Porosity", "LOW", "Age (y)", "Rate", "Mass Acc. Rate",
+            "Carbon Acc. Rate", "Total Mass Acc.", "Total Carbon Acc."))
   
 methods <- methods_raw %>%
-  mutate(study_id = study_id_value) %>%
+  mutate(study_id = study_id_value,
+         method_id = "single set of methods") %>%
   select(-age_depth_model_notes)
 
 ## Citation ####
@@ -91,7 +96,7 @@ if(!file.exists("./data/primary_studies/arriola_2017/derivative/arriola_and_cabl
   study_citations <- citation_raw %>%
     mutate(bibliography_id = "Arriola_and_Cable_2017_article",
            study_id = study_id_value,
-           publication_type = "associated") %>%
+           publication_type = "associated source") %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
     remove_rownames()
   
@@ -106,11 +111,24 @@ if(!file.exists("./data/primary_studies/arriola_2017/derivative/arriola_and_cabl
   
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+
 ## QA/QC ###############
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
