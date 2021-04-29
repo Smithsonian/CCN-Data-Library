@@ -92,8 +92,8 @@ cores <- updated$cores
 ## QA/QC ###############
 
 # test cols and vars
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"))
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

@@ -38,7 +38,7 @@
 library(tidyverse)
 library(RefManageR)
 library(lubridate)
-library(anytime)
+# library(anytime)
 
 cores_raw <- read.csv("./data/primary_studies/breithaupt_2020/original/breithaupt_et_al_2020_cores.csv")
 depthseries_raw <- read.csv("./data/primary_studies/breithaupt_2020/original/breithaupt_et_al_2020_depthseries.csv")
@@ -48,24 +48,29 @@ study_citations_raw <- read_csv("./data/primary_studies/breithaupt_2020/original
 
 cores <- cores_raw %>%
   mutate(core_date = as.character(strptime(core_date, format = "%m/%d/%Y"))) %>%
-  mutate(core_year = year(anydate(core_date))) %>%
-  select(study_id, site_id, core_id, core_year, core_date, everything())
+  mutate(core_year = year(core_date),
+         core_month = month(core_date),
+         core_day = day(core_date)) %>%
+  select(-core_date)
 
 depthseries <- depthseries_raw %>%
   rename(fraction_carbon = fraction_organic_carbon,
          delta_c13 = delta_13C) %>%
   mutate(pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
          ra226_unit = ifelse(!is.na(ra226_activity), "disintegrationsPerMinutePerGram", NA), 
-         cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA)) %>%
+         cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA),
+         method_id = "single set of methods") %>%
   select(-c(ra226_mda, excess_pb210_mda, date, fraction_CaCO3, fraction_total_nitrogen, fraction_total_phosphorus, fraction_total_lignin,
             delta_15N, ratio_ad_al_vanillyls, ratio_ad_al_syringyls, ratio_syringyls_vanillyls, ratio_p.hydroxyls_vanillyls_plus_syringyls,
             ratio_PON_totalP_phenols, gamma_counting_sedmass, cumulative_sedmass_atdepth, excess_pb210_inventory, excess_pb210_inventory_se))
 
 species <- species_raw %>%
-  mutate(species_code = paste(genus, species, sep=" ")) %>%
-  select(study_id, site_id, core_id, species_code) 
+  mutate(species_code = paste(genus, species, sep=" "),
+         code_type = "Genus species") %>%
+  select(-genus, -species) 
 
 methods <- methods_raw %>%
+  mutate(method_id = "single set of methods") %>%
   select(-c(dry_bulk_density_1_cm_section_sample_volume, dry_bulk_density_2_cm_section_sample_volume, 
             loss_on_ignition_1_cm_section_sample_volume, loss_on_ignition_2_cm_section_sample_volume))
 
@@ -77,7 +82,7 @@ study_id_value <- "Breithaupt_et_al_2020"
 study_citations <- study_citations_raw %>%
   rename(url = key) %>%
   mutate(bibliography_id = "Breithaupt_et_al_2020_data",
-         publication_type = "primary") %>%
+         publication_type = "primary dataset") %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 ## Format bibliography
@@ -89,13 +94,26 @@ bib_file <- study_citations %>%
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020.bib")
 write_csv(study_citations, "./data/primary_studies/breithaupt_2020/derivative/breithaupt_et_al_2020_study_citations.csv")
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"))
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

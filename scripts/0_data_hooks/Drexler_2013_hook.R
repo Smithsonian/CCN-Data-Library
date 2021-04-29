@@ -4,45 +4,43 @@
 # Contact: Michael Lonneman, lonnemanM@si.edu
 
 library(tidyverse)
+library(lubridate)
 library(RefManageR)
 
 raw_cores <- read_csv("./data/primary_studies/drexler_2013/original/drexler_2019_initial_sites.csv")
-raw_depthseries <- read_csv("./data/primary_studies/drexler_2013/original/drexler_2019_initial_depthseries.csv")
+raw_depthseries <- read_csv("./data/primary_studies/drexler_2013/original/drexler_2019_initial_depthseries.csv") # DOESNT EXIST IN ORIGINAL FOLDER
 raw_methods <- read_csv("./data/primary_studies/drexler_2013/original/drexler_et_al_2013_methods.csv")
 
 ## Curate data #########
 study_id_value <- "Drexler_et_al_2013"
 
-## ... methods ####
-methods <- raw_methods
-
-## ... core data #######
-cores <- raw_cores %>%
-  mutate(site_id = gsub(" ", "_", site_id)) %>%
+## clean up general core data
+core_data <- raw_cores %>%
+  mutate(site_id = gsub(" ", "_", site_id),
+         core_date = as_date(core_date, format="%m/%d/%Y", tz="UTC")) %>%
   mutate(study_id = study_id_value,
          core_id = paste(site_id, core_number, sep = "_"),
-         core_date = as.Date(core_date))
-
-sites_raw <- cores
-impacts_raw <- cores
-species_raw <- cores
-
-cores <- cores %>%
+         core_year = year(core_date), 
+         core_month = month(core_date),
+         core_day = day(core_date)) %>%
+  select(-core_date) %>%
   separate(core_position, into=c("core_latitude", "core_longitude"), sep=",") %>%
   mutate(core_latitude = as.numeric(core_latitude), 
-         core_longitude = as.numeric(core_longitude)) %>%
-  select(study_id, site_id, core_id, core_date, core_latitude, core_longitude)
+         core_longitude = as.numeric(core_longitude))
+  
+## ... methods ####
+methods <- raw_methods %>% mutate(method_id = "single set of methods")
 
 ## ... site data #######
 source("./scripts/1_data_formatting/curation_functions.R") 
 
-site_boundaries <- cores %>%
+site_boundaries <- core_data %>%
   select(study_id, site_id, core_id, core_latitude, core_longitude) %>%
   filter(is.na(core_latitude) == FALSE)
 
 site_boundaries <- create_multiple_geographic_coverages(site_boundaries)
 
-sites <- sites_raw %>%
+sites <- core_data %>%
   group_by(site_id) %>%
   summarize(study_id = first(study_id),
             site_description = first(site_description)) %>%
@@ -50,15 +48,19 @@ sites <- sites_raw %>%
   select(study_id, site_id, everything())
 
 ## ... impact data #####
-impacts <- impacts_raw %>%
+impacts <- core_data %>%
   select(study_id, site_id, core_id, impact_class)
 
 ## ... species data ####
-species <- species_raw %>%
+species <- core_data %>%
+  mutate(species_code = recode(species_code, 
+                               "ZIMI" = "Zizaniopsis miliacea",
+                               "SCTA2" = "Schoenoplectus tabernaemontani")) %>%
   select(study_id, site_id, core_id, species_code) %>%
   filter(!is.na(species_code))
 
 ## ... depthseries #####
+# DEPTHSERIES TABLE MISSING
 depthseries <- raw_depthseries %>%
   mutate(site_id = gsub(" ", "_", site_id)) %>%
   mutate(study_id = study_id_value,
@@ -72,9 +74,16 @@ depthseries <- raw_depthseries %>%
          total_pb210_activity, total_pb210_activity_sd, excess_pb210_activity, excess_pb210_activity_sd, pb210_unit,
          age, age_sd, cs137_peak_present, depth_interval_notes) 
 
-# Filter out cores that aren't in the depthseries
-cores <- cores %>%
-  filter(core_id %in% depthseries$core_id)
+# .... core data #####
+
+cores <- core_data %>%
+  mutate(core_length_flag = "core depth limited by length of corer") %>%
+  # Filter out cores that aren't in the depthseries
+  # DEPTHSERIES TABLE MISSING
+  # filter(core_id %in% depthseries$core_id) %>%
+  select(-c(impact_class, species_code, core_notes, core_number, core_length, `Lat/Long`, site_description)) %>%
+  select(study_id, site_id, core_id, core_latitude, core_longitude, core_year, core_month, core_day, everything())
+
 
 ## Create study-level data ######
 if(!file.exists("./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_study_citations.csv")){
@@ -85,7 +94,7 @@ if(!file.exists("./data/primary_studies/drexler_2013/derivative/drexler_et_al_20
   study_citations <- biblio_df %>%
     mutate(bibliography_id = "Drexler_et_al_2013_article", 
            study_id = study_id_value,
-           publication_type = "associated") %>%
+           publication_type = "associated source") %>%
     remove_rownames() %>%
     select(study_id, bibliography_id, publication_type, everything())
   
@@ -98,12 +107,27 @@ if(!file.exists("./data/primary_studies/drexler_2013/derivative/drexler_et_al_20
   write_csv(study_citations, "./data/primary_studies/drexler_2013/derivative/drexler_et_al_2013_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "impacts", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+impacts <- updated$impacts
+methods <- updated$methods
+# depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("sites", "methods", "cores"), version = "1")
-testTableVars(table_names = c("sites", "methods", "cores"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

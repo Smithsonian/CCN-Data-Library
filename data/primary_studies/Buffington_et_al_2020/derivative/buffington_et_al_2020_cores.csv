@@ -1,2 +1,2 @@
-study_id,site_id,core_id,core_year,core_latitude,core_longitude,core_position_method,core_elevation,core_elevation_datum,core_elevation_method
-Buffington_et_al_2020,Miner_Slough,MS-C1,2017,38.23409,-121.67174,RTK-GPS,1.716,NAVD88,RTK-GPS
+study_id,site_id,core_id,year,latitude,longitude,position_method,elevation,elevation_datum,elevation_method,core_length_flag
+Buffington_et_al_2020,Miner_Slough,MS-C1,2017,38.23409,-121.67174,RTK,1.716,NAVD88,RTK,not specified

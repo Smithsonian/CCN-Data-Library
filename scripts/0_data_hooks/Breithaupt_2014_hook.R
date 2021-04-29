@@ -37,32 +37,37 @@ bib <- ReadBib("./data/primary_studies/breithaupt_2014/original/citations.bib")
 study_id_value <- "Breithaupt_et_al_2014"
 
 cores <- cores_raw %>%
-  mutate(core_year = year(as_date(core_date, format="%m/%d/%Y", tz="UTC")),
-         core_date = as_date(core_date, format="%m/%d/%Y", tz="UTC"),
+  mutate(core_date = as_date(core_date, format="%m/%d/%Y", tz="UTC")) %>%
+  mutate(core_year = year(core_date),
+         core_month = month(core_date),
+         core_day = day(core_date),
          study_id = study_id_value) %>%
-  select(study_id, site_id, core_id, core_year, core_date, everything()) 
+  select(-core_date)
 
 # Species data needs to combine genus and species into one and remove other columns
 species <- species_raw %>%
   mutate(study_id = study_id_value,
-         species_code = paste(genus, species, sep=" ")) %>%
-  select(study_id, site_id, core_id, species_code)
+         species_code = paste(genus, species, sep=" "),
+         code_type = "Genus species") %>%
+  select(-genus, -species)
 
 depthseries <- depthseries_raw %>%
   rename(delta_c13 = delta_C13) %>%
-  mutate(study_id = study_id_value) %>%
+  mutate(study_id = study_id_value,
+         method_id = "single set of methods") %>%
   select(-c(cs137_MDA, total_pb210_MDA, ra226_MDA, excess_pb210_inventory,
             excess_pb210_inventory_se, fraction_total_nitrogen, fraction_total_phosphorus,
             delta_N15, gamma_counting_sedmass, cumulative_sedmass_atdepth))
 
 methods <- methods_raw %>%
-  mutate(study_id = study_id_value) 
+  mutate(study_id = study_id_value,
+         method_id = "single set of methods") 
 
 ## Citations ####
 study_citations <- as.data.frame(bib) %>%
   mutate(bibliography_id = c("Breithaupt_et_al_2014_article","Breithaupt_et_al_2019_data"), 
          study_id = study_id_value,
-         publication_type = c("associated", "primary")) %>%
+         publication_type = c("associated source", "primary dataset")) %>%
   remove_rownames() %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
@@ -74,12 +79,26 @@ bib_file <- study_citations %>%
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/breithaupt_2014/derivative/breithaupt_et_al_2014.bib")
 write_csv(study_citations, "data/primary_studies/breithaupt_2014/derivative/breithaupt_et_al_2014_study_citations.csv")
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

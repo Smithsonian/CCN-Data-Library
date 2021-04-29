@@ -20,6 +20,7 @@
 # custom.css - Contains display information for metadata.html.
 
 library(tidyverse)
+library(lubridate)
 library(RefManageR)
 
 depthseries_raw <- read.csv("./data/primary_studies/Belshe_2019/original/belshe_et_al_2019_depthseries.csv")
@@ -29,17 +30,25 @@ cores_raw <-read_csv("./data/primary_studies/Belshe_2019/original/belshe_et_al_2
 
 
 ## Data Curation ####
+
 sites <- sites_raw
-cores <- cores_raw
+
+cores <- cores_raw %>%
+  mutate(core_year = year(core_date), 
+         core_month = month(core_date),
+         core_day = day(core_date)) %>%
+  select(-core_date)
 
 depthseries <- depthseries_raw %>%
   rename(pb210_crs_age = pb210_age, 
          pb210_crs_age_sd = pb210_age_sd,
          fraction_carbon = fraction_carbon_measured) %>%
+  mutate(method_id = "single set of methods") %>%
   select(-c(depth_max_decompressed, fraction_carbon_modeled, fraction_carbon_density_measured, fraction_carbon_density_modeled))
 
 methods <- methods_raw %>%
-  mutate(carbon_measured_or_modeled = "measured")
+  mutate(carbon_measured_or_modeled = "measured",
+         method_id = "single set of methods")
 
 ## Create Citation ####
 
@@ -54,7 +63,7 @@ if(!file.exists("data/primary_studies/Belshe_2019/derivative/belshe_et_al_2019_s
   study_citations <- as.data.frame(data_bib_raw) %>%
     mutate(study_id = study_id,
            bibliography_id = c("Belshe_et_al_2019_data", "Belshe_et_al_2019_article"),
-           publication_type = c("primary", "associated")) %>%
+           publication_type = c("primary dataset", "associated source")) %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
     remove_rownames()
   
@@ -68,13 +77,25 @@ if(!file.exists("data/primary_studies/Belshe_2019/derivative/belshe_et_al_2019_s
   write_csv(study_citations, "data/primary_studies/Belshe_2019/derivative/belshe_et_al_2019_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("sites", "methods", "cores", "depthseries")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+sites <- updated$sites
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "sites"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "sites"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

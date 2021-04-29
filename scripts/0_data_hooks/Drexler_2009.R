@@ -40,6 +40,7 @@ methods <- methods_raw %>%
   select_if(function(x) {!all(is.na(x))}) %>%
   select(-publication_type, -fraction_carbon_flag) %>%
   mutate(fraction_carbon_type = "total carbon",
+         method_id = "single set of methods",
          carbon_profile_notes = "fraction carbon extrapolated from subset of samples")
 
 ## ... depthseries ##################
@@ -72,18 +73,17 @@ age_depthseries <- age_depth_data %>%
 # Joining carbon stock and age depthseries 
 # Because there are 13 cores with age depth data but only 3 of those are in the clearinghouse
 # and thus have locational data, I'm filtering the non-matching cores out
-depthseries_joined <- age_depthseries %>%
+depthseries <- age_depthseries %>%
   filter(core_id %in% carbon_stock_data$core_id) %>%
   bind_rows(carbon_stock_data) %>%
   mutate(fraction_carbon_type = recode(fraction_carbon_type, 
-                                       "fraction_total_carbon" = "total carbon")) %>%
-  select(study_id, core_id, sample_id, depth_min, depth_max, 
-         dry_bulk_density:fraction_carbon_type, 
-         c14_age:age_depth_model_reference) %>%
+                                       "fraction_total_carbon" = "total carbon"),
+         method_id = "single set of methods") %>%
   group_by(core_id) %>%
   arrange(core_id, depth_min, sample_id, .by_group = TRUE) %>%
   # Following attribute should only be in methods table
-  select(-age_depth_model_reference, -fraction_carbon_type)
+  select(-c(age_depth_model_reference, fraction_carbon_type, min_elevation_meters, site_id)) %>%
+  ungroup()
 
 ## ... core-level ##################
 
@@ -109,8 +109,8 @@ cores <- cores_raw %>%
   select(-core_elevation) %>% 
   left_join(core_elevations_navd88) %>%
   mutate(core_elevation_accuracy = 0.075,
-         core_elevation_method = "RTK-GPS",
-         core_position_method = "RTK-GPS") %>% 
+         core_elevation_method = "RTK",
+         core_position_method = "RTK") %>% 
   select(study_id, site_id, core_id, core_latitude, core_longitude, core_position_method, core_position_notes, core_elevation, core_elevation_datum, 
          core_elevation_accuracy, core_elevation_method,
          salinity_class, vegetation_class, core_length_flag)
@@ -137,7 +137,7 @@ if(!file.exists("./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_20
   study_citations <- biblio_df %>%
     mutate(bibliography_id = "Drexler_et_al_2009_article", 
            study_id = "Drexler_et_al_2009",
-           publication_type = "associated") %>%
+           publication_type = "associated source") %>%
     remove_rownames() %>%
     select(study_id, bibliography_id, publication_type, everything())
   
@@ -150,14 +150,27 @@ if(!file.exists("./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_20
   write_csv(study_citations, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "impacts", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+impacts <- updated$impacts
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
-depthseries <- reorderColumns("depthseries", depthseries_joined) %>% ungroup()
-
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "impacts", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "impacts", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
@@ -171,3 +184,4 @@ write_csv(cores, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2
 write_csv(impacts, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_impacts.csv")
 write_csv(species, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_species.csv")
 write_csv(methods, "./data/primary_studies/Drexler_2009/derivative/Drexler_et_al_2009_methods.csv")
+

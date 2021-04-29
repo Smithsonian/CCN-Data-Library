@@ -32,14 +32,21 @@ species_raw <- read_csv("./data/primary_studies/Doughty_2019/original/doughty_et
 
 # Hook Data ####
 
-cores <- cores_raw
-depthseries <- depthseries_raw
+cores <- cores_raw %>%
+  mutate(core_year = year(core_date), 
+         core_month = month(core_date),
+         core_day = day(core_date)) %>%
+  select(-core_date)
+
+depthseries <- depthseries_raw %>% mutate(method_id = "single set of methods")
+
 sites <- sites_raw
-methods <- methods_raw
+
+methods <- methods_raw %>% mutate(method_id = "single set of methods")
 
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
-  select(study_id, site_id, core_id, species_code)
+  select(-genus, -species, -common_name)
 
 ## Create citation info  ####
 
@@ -55,12 +62,12 @@ if(!file.exists("data/primary_studies/Doughty_2019/derivative/Doughty_et_al_2019
   paper_biblio <- as.data.frame(paper_bib_raw) %>%
     mutate(study_id = study_id_value,
            bibliography_id = "Doughty_et_al_2015_article",
-           publication_type = "associated")
+           publication_type = "associated source")
   
   data_biblio <- as.data.frame(data_bib_raw) %>%
     mutate(study_id = study_id_value,
            bibliography_id = "Doughty_et_al_2019_data",
-           publication_type = "primary")
+           publication_type = "primary dataset")
   
   # Curate biblio so ready to read out as a BibTex-style .bib file
   study_citations <- data_biblio %>%
@@ -78,12 +85,25 @@ if(!file.exists("data/primary_studies/Doughty_2019/derivative/Doughty_et_al_2019
   write_csv(study_citations, "data/primary_studies/Doughty_2019/derivative/Doughty_et_al_2019_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("sites", "methods", "cores", "depthseries", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("sites", "methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("sites", "methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

@@ -46,6 +46,8 @@ methods <- methods_raw %>%
 
 cores <- cores_raw %>%
   mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id)) %>%
+  mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
+         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK")) %>%
   mutate(study_id = id) %>%
   rename(core_year = core_date)
 
@@ -93,13 +95,13 @@ if(!file.exists("data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_study
   
   data_biblio <- as.data.frame(data_bib_raw) %>%
     mutate(bibliography_id = "Boyd_et_al_2019_data", 
-           publication_type = "primary") %>%
+           publication_type = "primary dataset") %>%
     full_join(study_ids)
   
   pub_biblio <- bib %>% 
     mutate_all(as.character) %>%
     mutate(bibliography_id = str_c(study_id, "article", sep = "_"),
-           publication_type = "associated")
+           publication_type = "associated source")
   
   # Curate biblio so ready to read out as a BibTex-style .bib file
   study_citations <- bind_rows(pub_biblio, data_biblio) %>%
@@ -120,12 +122,26 @@ if(!file.exists("data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_study
   write_csv(study_citations, "data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "impacts", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+impacts <- updated$impacts
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
 
 ## QA/QC ###############
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
-testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

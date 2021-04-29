@@ -1,13 +1,13 @@
-study_id,site_id,core_id,core_date,core_latitude,core_longitude
-Drexler_et_al_2013,Hasty_Point_Managed_Shallow,Hasty_Point_Managed_Shallow_1,2010-05-03,33.543317,-79.17055
-Drexler_et_al_2013,Hasty_Point_Managed_Shallow,Hasty_Point_Managed_Shallow_2,2010-05-03,33.543417,-79.1705
-Drexler_et_al_2013,Coastal_EDU_Field,Coastal_EDU_Field_1,2010-05-03,33.517233,-79.15905
-Drexler_et_al_2013,Coastal_EDU_Field,Coastal_EDU_Field_2,2010-05-03,NA,NA
-Drexler_et_al_2013,Bird_Field,Bird_Field_1,2010-05-04,33.494217,-79.1744
-Drexler_et_al_2013,Bird_Field,Bird_Field_2,2010-05-04,33.493517,-79.17255
-Drexler_et_al_2013,Sandy_Island_Natural,Sandy_Island_Natural_2,2010-05-04,33.5178,-79.148283
-Drexler_et_al_2013,Sandy_Island_Natural,Sandy_Island_Natural_3,2010-05-05,33.51795,-79.148233
-Drexler_et_al_2013,Sandy_Island_Deeply_Flooded,Sandy_Island_Deeply_Flooded_1,2010-05-05,33.52085,-79.1477
-Drexler_et_al_2013,Sandy_Island_Deeply_Flooded,Sandy_Island_Deeply_Flooded_2,2010-05-05,33.52075,-79.147667
-Drexler_et_al_2013,Wardlaw_Shallow_Managed,Wardlaw_Shallow_Managed_1,2010-05-05,33.524567,-79.15725
-Drexler_et_al_2013,Wardlaw_Shallow_Managed,Wardlaw_Shallow_Managed_2,2010-05-05,33.523567,-79.15645
+study_id,site_id,core_id,latitude,longitude,year,month,day,core_length_flag
+Drexler_et_al_2013,Hasty_Point_Managed_Shallow,Hasty_Point_Managed_Shallow_1,33.543317,-79.17055,2010,5,3,core depth limited by length of corer
+Drexler_et_al_2013,Hasty_Point_Managed_Shallow,Hasty_Point_Managed_Shallow_2,33.543417,-79.1705,2010,5,3,core depth limited by length of corer
+Drexler_et_al_2013,Coastal_EDU_Field,Coastal_EDU_Field_1,33.517233,-79.15905,2010,5,3,core depth limited by length of corer
+Drexler_et_al_2013,Coastal_EDU_Field,Coastal_EDU_Field_2,NA,NA,2010,5,3,core depth limited by length of corer
+Drexler_et_al_2013,Bird_Field,Bird_Field_1,33.494217,-79.1744,2010,5,4,core depth limited by length of corer
+Drexler_et_al_2013,Bird_Field,Bird_Field_2,33.493517,-79.17255,2010,5,4,core depth limited by length of corer
+Drexler_et_al_2013,Sandy_Island_Natural,Sandy_Island_Natural_2,33.5178,-79.148283,2010,5,4,core depth limited by length of corer
+Drexler_et_al_2013,Sandy_Island_Natural,Sandy_Island_Natural_3,33.51795,-79.148233,2010,5,5,core depth limited by length of corer
+Drexler_et_al_2013,Sandy_Island_Deeply_Flooded,Sandy_Island_Deeply_Flooded_1,33.52085,-79.1477,2010,5,5,core depth limited by length of corer
+Drexler_et_al_2013,Sandy_Island_Deeply_Flooded,Sandy_Island_Deeply_Flooded_2,33.52075,-79.147667,2010,5,5,core depth limited by length of corer
+Drexler_et_al_2013,Wardlaw_Shallow_Managed,Wardlaw_Shallow_Managed_1,33.524567,-79.15725,2010,5,5,core depth limited by length of corer
+Drexler_et_al_2013,Wardlaw_Shallow_Managed,Wardlaw_Shallow_Managed_2,33.523567,-79.15645,2010,5,5,core depth limited by length of corer

@@ -1,18 +1,18 @@
-study_id,site_id,core_id,species_code
-Breithaupt_et_al_2020,NMg,UFU1A,Avicennia germinans
-Breithaupt_et_al_2020,NMg,UFU1A,Rhizophora mangle
-Breithaupt_et_al_2020,NMg,UFU1A,Laguncularia racemosa
-Breithaupt_et_al_2020,NMg,CCB2,Avicennia germinans
-Breithaupt_et_al_2020,NMg,CCB2,Rhizophora mangle
-Breithaupt_et_al_2020,NMg,CCB2,Laguncularia racemosa
-Breithaupt_et_al_2020,NMg,BWB1A,Avicennia germinans
-Breithaupt_et_al_2020,NMg,BWB1A,Rhizophora mangle
-Breithaupt_et_al_2020,SMg,WSC2A,Conocarpus erectus
-Breithaupt_et_al_2020,SMg,WSC2A,Rhizophora mangle
-Breithaupt_et_al_2020,SMg,WSC2A,Laguncularia racemosa
-Breithaupt_et_al_2020,SMg,WSC8A,Rhizophora mangle
-Breithaupt_et_al_2020,SMg,WSC8A,Laguncularia racemosa
-Breithaupt_et_al_2020,SMg,WSC8A,Avicennia germinans
-Breithaupt_et_al_2020,SMs,WSC2B,Cladium mariscus
-Breithaupt_et_al_2020,SMs,WSC2B,Juncus roemerianus
-Breithaupt_et_al_2020,SMs,WSC8B,Cladium mariscus
+study_id,site_id,core_id,species_code,code_type,habitat
+Breithaupt_et_al_2020,NMg,UFU1A,Avicennia germinans,Genus species,mangrove
+Breithaupt_et_al_2020,NMg,UFU1A,Rhizophora mangle,Genus species,mangrove
+Breithaupt_et_al_2020,NMg,UFU1A,Laguncularia racemosa,Genus species,mangrove
+Breithaupt_et_al_2020,NMg,CCB2,Avicennia germinans,Genus species,mangrove
+Breithaupt_et_al_2020,NMg,CCB2,Rhizophora mangle,Genus species,mangrove
+Breithaupt_et_al_2020,NMg,CCB2,Laguncularia racemosa,Genus species,mangrove
+Breithaupt_et_al_2020,NMg,BWB1A,Avicennia germinans,Genus species,mangrove
+Breithaupt_et_al_2020,NMg,BWB1A,Rhizophora mangle,Genus species,mangrove
+Breithaupt_et_al_2020,SMg,WSC2A,Conocarpus erectus,Genus species,mangrove
+Breithaupt_et_al_2020,SMg,WSC2A,Rhizophora mangle,Genus species,mangrove
+Breithaupt_et_al_2020,SMg,WSC2A,Laguncularia racemosa,Genus species,mangrove
+Breithaupt_et_al_2020,SMg,WSC8A,Rhizophora mangle,Genus species,mangrove
+Breithaupt_et_al_2020,SMg,WSC8A,Laguncularia racemosa,Genus species,mangrove
+Breithaupt_et_al_2020,SMg,WSC8A,Avicennia germinans,Genus species,mangrove
+Breithaupt_et_al_2020,SMs,WSC2B,Cladium mariscus,Genus species,marsh
+Breithaupt_et_al_2020,SMs,WSC2B,Juncus roemerianus,Genus species,marsh
+Breithaupt_et_al_2020,SMs,WSC8B,Cladium mariscus,Genus species,marsh

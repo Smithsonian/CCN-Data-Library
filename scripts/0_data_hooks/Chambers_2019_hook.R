@@ -140,7 +140,7 @@ if(!file.exists("./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_
   
   # Curate biblio so ready to read out as a BibTex-style .bib file
   study_citations <-  bind_rows(study_citations_2019, study_citations_2020) %>%
-    mutate(publication_type = "primary") %>%
+    mutate(publication_type = "primary dataset") %>%
     remove_rownames() %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything())
   
@@ -158,6 +158,17 @@ if(!file.exists("./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_
   write_csv(study_citations, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
 
 ## QA/QC ###############
 
@@ -168,8 +179,8 @@ leaflet(cores) %>%
 
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries"))
-testTableVars(table_names = c("methods", "cores", "depthseries"))
+testTableCols(table_names)
+testTableVars(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

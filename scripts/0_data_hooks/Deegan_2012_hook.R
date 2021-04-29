@@ -21,49 +21,50 @@
 
 
 ## 2. Prep workspace and scrape data #######################
-library(rvest)
+# library(rvest)
 library(stringr)
 library(tidyverse)
 library(lubridate)
-library(rcrossref)
+# library(rcrossref)
 # library(bib2df)
 library(RefManageR)
 
-## ... 2A. download and save below ground biomass #########
-infile1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-pie/216/2/e2c8e7c0b2338c593f00ab988d0e9774" 
-infile1 <- sub("^https","http",infile1) 
-dt1 <-read.csv(infile1,header=F 
-               ,skip=1
-               ,sep=","  
-               , col.names=c(
-                 "Location",     
-                 "Site.Number",     
-                 "Collection.Date",     
-                 "Latitude",     
-                 "Longitude",     
-                 "Biomass.Core.Segment",     
-                 "Live.Rhizomes",     
-                 "Live.Roots",     
-                 "Detritus"    ), check.names=TRUE)
-
-write_csv(dt1, "./data/primary_studies/Deegan_2012/original/LTE-TIDE-LENS-2009-below-bio.csv")
-
-## ... 2B. download above ground biomass data ###########
-infile2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-pie/217/2/79e90861144b45ea7c229ca40cdaba40" 
-infile2 <- sub("^https","http",infile2) 
-dt2 <-read.csv(infile2,header=F 
-               ,skip=1
-               ,sep=","  
-               , col.names=c(
-                 "Location",     
-                 "Site.Number",     
-                 "Collection.Date",     
-                 "Latitude",     
-                 "Longitude",     
-                 "Aboveground.Stem.Length",     
-                 "Aboveground.mass"    ), check.names=TRUE)
-
-write_csv(dt2, "./data/primary_studies/Deegan_2012/original/LTE-TIDE-LENS-2009-above-bio.csv")
+## DATA DOWNLOAD WORKFLOW ARCHIVED ####
+# ## ... 2A. download and save below ground biomass #########
+# infile1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-pie/216/2/e2c8e7c0b2338c593f00ab988d0e9774" 
+# infile1 <- sub("^https","http",infile1) 
+# dt1 <-read.csv(infile1,header=F 
+#                ,skip=1
+#                ,sep=","  
+#                , col.names=c(
+#                  "Location",     
+#                  "Site.Number",     
+#                  "Collection.Date",     
+#                  "Latitude",     
+#                  "Longitude",     
+#                  "Biomass.Core.Segment",     
+#                  "Live.Rhizomes",     
+#                  "Live.Roots",     
+#                  "Detritus"    ), check.names=TRUE)
+# 
+# write_csv(dt1, "./data/primary_studies/Deegan_2012/original/LTE-TIDE-LENS-2009-below-bio.csv")
+# 
+# ## ... 2B. download above ground biomass data ###########
+# infile2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-pie/217/2/79e90861144b45ea7c229ca40cdaba40" 
+# infile2 <- sub("^https","http",infile2) 
+# dt2 <-read.csv(infile2,header=F 
+#                ,skip=1
+#                ,sep=","  
+#                , col.names=c(
+#                  "Location",     
+#                  "Site.Number",     
+#                  "Collection.Date",     
+#                  "Latitude",     
+#                  "Longitude",     
+#                  "Aboveground.Stem.Length",     
+#                  "Aboveground.mass"    ), check.names=TRUE)
+# 
+# write_csv(dt2, "./data/primary_studies/Deegan_2012/original/LTE-TIDE-LENS-2009-above-bio.csv")
 
 ## 3. Curate data #################
 dt1 <- read_csv("data/primary_studies/Deegan_2012/original/LTE-TIDE-LENS-2009-below-bio.csv")

@@ -1,4 +1,4 @@
-study_id,site_id,core_id,species_code
-Buffington_et_al_2020,Miner_Slough,MS-C1,Schoenoplectus acutus
-Buffington_et_al_2020,Miner_Slough,MS-C1,Typha sp
-Buffington_et_al_2020,Miner_Slough,MS-C1,Cornus sericea
+study_id,site_id,core_id,species_code,code_type,habitat
+Buffington_et_al_2020,Miner_Slough,MS-C1,Schoenoplectus acutus,Genus species,marsh
+Buffington_et_al_2020,Miner_Slough,MS-C1,Typha spp.,Genus,marsh
+Buffington_et_al_2020,Miner_Slough,MS-C1,Cornus sericea,Genus species,swamp

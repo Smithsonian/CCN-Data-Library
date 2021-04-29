@@ -1,27 +1,27 @@
-study_id,site_id,core_id,depth_min,depth_max,dry_bulk_density,fraction_organic_matter,fraction_carbon,cs137_activity,cs137_activity_se,cs137_unit,cs137_peak_present,age
-Buffington_et_al_2020,Miner_Slough,MS-C1,0,2,0.5345,0.18181999999999998,0.0738,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,2,4,0.5729,0.19355,0.0789,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,4,6,0.4427,0.17390999999999998,0.0704,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,6,8,0.5147,0.19231,0.0783,0.265,0.023,becquerelsPerKilogram,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,8,10,0.4852,0.18181999999999998,0.0738,0.205,0.019,becquerelsPerKilogram,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,10,12,0.5207,0.16,0.0645,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,12,14,0.6325,0.15385,0.061900000000000004,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,14,16,0.6994,0.17390999999999998,0.0704,0.187,0.021,becquerelsPerKilogram,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,16,18,0.4819,0.2,0.0816,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,18,20,0.4458,0.27777999999999997,0.11599999999999999,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,20,22,0.472,0.17857,0.0724,0.201,0.019,becquerelsPerKilogram,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,22,24,0.5014,0.17390999999999998,0.0704,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,24,26,0.5884,0.14815,0.059500000000000004,0.231,0.022,becquerelsPerKilogram,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,26,28,0.491,0.125,0.0499,0.322,0.021,becquerelsPerKilogram,TRUE,1963
-Buffington_et_al_2020,Miner_Slough,MS-C1,28,30,0.5587,0.61353,0.2813,0.262,0.025,becquerelsPerKilogram,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,30,32,0.6344,0.13793,0.0553,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,32,34,0.6251,0.125,0.0499,0.26,0.019,becquerelsPerKilogram,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,34,36,0.593,0.13333,0.053399999999999996,0.21,0.017,becquerelsPerKilogram,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,36,38,0.5691,0.17857,0.0724,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,38,40,0.4836,0.13635999999999998,0.0546,0.146,0.019,becquerelsPerKilogram,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,40,42,0.5839,0.14286,0.057300000000000004,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,42,44,0.6135,0.08824,0.0348,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,44,46,0.5987,0.09677,0.0383,0.042,0.02,becquerelsPerKilogram,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,46,48,0.6485,0.10345,0.040999999999999995,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,48,50,0.4918,NA,NA,NA,NA,NA,NA,NA
-Buffington_et_al_2020,Miner_Slough,MS-C1,50,NA,NA,NA,NA,0.015,0.012,becquerelsPerKilogram,NA,NA
+study_id,site_id,core_id,method_id,depth_min,depth_max,dry_bulk_density,fraction_organic_matter,fraction_carbon,cs137_activity,cs137_activity_se,cs137_unit,age
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,0,2,0.5345,0.18181999999999998,0.0738,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,2,4,0.5729,0.19355,0.0789,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,4,6,0.4427,0.17390999999999998,0.0704,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,6,8,0.5147,0.19231,0.0783,0.265,0.023,becquerelsPerKilogram,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,8,10,0.4852,0.18181999999999998,0.0738,0.205,0.019,becquerelsPerKilogram,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,10,12,0.5207,0.16,0.0645,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,12,14,0.6325,0.15385,0.061900000000000004,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,14,16,0.6994,0.17390999999999998,0.0704,0.187,0.021,becquerelsPerKilogram,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,16,18,0.4819,0.2,0.0816,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,18,20,0.4458,0.27777999999999997,0.11599999999999999,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,20,22,0.472,0.17857,0.0724,0.201,0.019,becquerelsPerKilogram,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,22,24,0.5014,0.17390999999999998,0.0704,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,24,26,0.5884,0.14815,0.059500000000000004,0.231,0.022,becquerelsPerKilogram,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,26,28,0.491,0.125,0.0499,0.322,0.021,becquerelsPerKilogram,1963
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,28,30,0.5587,0.61353,0.2813,0.262,0.025,becquerelsPerKilogram,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,30,32,0.6344,0.13793,0.0553,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,32,34,0.6251,0.125,0.0499,0.26,0.019,becquerelsPerKilogram,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,34,36,0.593,0.13333,0.053399999999999996,0.21,0.017,becquerelsPerKilogram,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,36,38,0.5691,0.17857,0.0724,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,38,40,0.4836,0.13635999999999998,0.0546,0.146,0.019,becquerelsPerKilogram,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,40,42,0.5839,0.14286,0.057300000000000004,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,42,44,0.6135,0.08824,0.0348,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,44,46,0.5987,0.09677,0.0383,0.042,0.02,becquerelsPerKilogram,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,46,48,0.6485,0.10345,0.040999999999999995,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,48,50,0.4918,NA,NA,NA,NA,NA,NA
+Buffington_et_al_2020,Miner_Slough,MS-C1,single set of methods,50,NA,NA,NA,NA,0.015,0.012,becquerelsPerKilogram,NA

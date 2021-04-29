@@ -1,2 +1,2 @@
-study_id,coring_method,dry_bulk_density_flag,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_type,fraction_carbon_method,cs137_counting_method
-Craft_2007,none specified,air dried to constant mass,measured,TRUE,direct acid treatment,total carbon,EA,gamma
+study_id,coring_method,dry_bulk_density_flag,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_type,fraction_carbon_method,cs137_counting_method,method_id
+Craft_2007,none specified,air dried to constant mass,measured,TRUE,direct acid treatment,total carbon,EA,gamma,single set of methods
