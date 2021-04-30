@@ -22,7 +22,7 @@ extra_elevations <- read_csv("data/primary_studies/Gerlach_2017/original/gerlach
 core_id_value <- "LMR_14_9B"
 study_id_value <- "Gerlach_et_al_2017"
 
-site_relationships <- cores %>%
+site_relationships <- cores_raw %>%
   select(core_id, site_id)
   
 # species
@@ -31,7 +31,7 @@ species <- site_relationships %>%
   select(study_id, site_id, core_id, species_code)
 
 # methods
-methods <- methods_raw
+methods <- methods_raw %>% mutate(method_id = "single set of methods")
 
 # depthseries
 age_depth <- age_depth_raw %>%
@@ -53,6 +53,7 @@ depthseries <- depthseries_raw %>%
   arrange(core_id, depth_min) %>%
   rename(marker_date_sd = marker_sd,
          marker_notes = marker_type) %>%
+  mutate(method_id = "single set of methods") %>%
   select(-site_id) %>%
   full_join(site_relationships)
 
@@ -68,7 +69,7 @@ citations_raw <- read_csv("./data/primary_studies/Gerlach_2017/intermediate/gerl
 
 study_citations <- citations_raw %>%
   select(-key) %>%
-  mutate(publication_type = "associated",
+  mutate(publication_type = "associated source",
          bibliography_id = "Gerlach_et_al_2017_article") %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
@@ -81,12 +82,27 @@ bib_file <- study_citations %>%
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Gerlach_2017/derivative/gerlach_et_al_2017.bib")
 write_csv(study_citations, "data/primary_studies/Gerlach_2017/derivative/gerlach_et_al_2017_study_citations.csv")
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

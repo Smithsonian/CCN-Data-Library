@@ -14,6 +14,9 @@ library(tidyverse)
 library(readxl)
 library(RefManageR)
 
+source("./scripts/1_data_formatting/qa_functions.R")
+
+
 # Read in data
 # 177 cores were missing a reference 
 # and a subset of of these cores also included two cores under the same core serial number
@@ -22,6 +25,7 @@ library(RefManageR)
 # The original data is in the "original" folder and the revised file is in the "intermediate" folder. 
 
 Fourqurean_raw <- read_excel("./data/primary_studies/Fourqurean_2012/intermediate/JFourqurean_edited.xls")
+study_doi_manual <- read_csv("data/primary_studies/Fourqurean_2012/intermediate/study_doi_manual.csv")
 
 ## 3. Curate data ######################
 
@@ -131,6 +135,8 @@ kamp_missing_cores <- c("Kamp-Nielsen_et_al_2002_14", "Kamp-Nielsen_et_al_2002_1
 core_data <- core_data %>%
   filter(!core_id %in% kamp_missing_cores)
 
+cores <- reorderColumns("cores", core_data)
+
 ## ....3c. Site-level data #############
 # Create site boundaries
 site_boundaries <- core_data %>%
@@ -148,9 +154,11 @@ site_data <- Fourqurean %>%
          vegetation_class) %>%
   mutate(vegetation_class = ifelse(vegetation_class == "unvegetated marine", NA, vegetation_class))
 
+sites <- reorderColumns("sites", site_data)
+
 ## ....3d. Depthseries data ################
 
-depthseries <- Fourqurean %>%
+synthesis_depthseries <- Fourqurean %>%
   # The depth increment attribute is messy and needs some typos fixed/substitutions
   rename(depth = `Depth increment of slice`, depth_center = `depth at center of slice (cm)`,
          thickness = `slice thickness (cm)`) %>%
@@ -211,7 +219,8 @@ depthseries <- Fourqurean %>%
 # Join site_ids from core_data
 depthseries <- core_data %>%
   select(core_id, site_id) %>%
-  right_join(depthseries, by = "core_id")
+  right_join(synthesis_depthseries, by = "core_id") %>%
+  mutate(method_id = "single set of methods")
 
 ## ....3e. Materials and Methods data ##############
 
@@ -259,9 +268,11 @@ citations_raw <- read_csv("data/primary_studies/Fourqurean_2012/intermediate/Fou
 
 study_citations <- citations_raw %>%
   select(-key) %>%
-  mutate(publication_type = ifelse(bibliography_id == "Fourqurean_et_al_2012", "synthesis", "associated")) %>%
-  mutate(bibliography_id = case_when(publication_type == "synthesis" ~ paste0(bibliography_id, "_synthesis"),
-                                     TRUE ~ paste0(bibliography_id, "_article"))) %>%
+  # ifelse(bibliography_id == "Fourqurean_et_al_2012", "synthesis dataset", "synthesis source")
+  mutate(publication_type = "synthesis source",
+         bibliography_id = paste0(bibliography_id, "_", tolower(bibtype))) %>%
+  # mutate(bibliography_id = case_when(publication_type == "synthesis" ~ paste0(bibliography_id, "_synthesis"),
+  #                                    TRUE ~ paste0(bibliography_id, "_article"))) %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Write .bib file
@@ -348,15 +359,25 @@ write_csv(study_citations, "data/primary_studies/Fourqurean_2012/derivative/Four
 # 
 # WriteBib(as.BibEntry(bib_file), "data/Fourqurean_2012/derivative/Fourqurean_2012.bib")
 
-## 4. QA/QC of data ################
-source("./scripts/1_data_formatting/qa_functions.R")
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
 
-cores <- reorderColumns("cores", core_data)
-sites <- reorderColumns("sites", site_data)
+table_names <- c("sites", "cores", "depthseries", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+sites <- updated$sites
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
+## 4. QA/QC of data ################
 
 # Check col and varnames
-testTableCols(table_names = c("sites", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("sites", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

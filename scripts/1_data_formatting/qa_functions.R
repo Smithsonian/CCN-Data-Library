@@ -457,26 +457,18 @@ testTableVars <- function(table_names) {
 # testTableVars(table_names = table_names)
 
 ## Check for required attributes ####
-
-# compile a table of studies and the required attributes they are missing
-
-testRequired <- function(){
+# compile a table of the required attributes missing in each table
+testRequired <- function(table_names){
   # read in database guidance
   guidance <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols()) 
+  
   # isolate required attributes
   required <- guidance %>% filter(required == "required") %>%
+    filter(attribute_name != "study_id") %>%
     select(table, attribute_name, required)
   
-  # read in CCRCN synthesis tables
-  # methods <- read_csv("data/CCRCN_synthesis/original/CCRCN_methods.csv", col_types = cols())
-  cores <- read_csv("data/CCRCN_synthesis/original/CCRCN_cores.csv", guess_max = 10000, col_types = cols())
-  depthseries <- read_csv("data/CCRCN_synthesis/original/CCRCN_depthseries.csv", guess_max = 100000, col_types = cols())
-  # these three tables are the bare minimum required in a data hook
-  # beyond these tables the requirements are conditional
-  
-  # create list from all the tables
-  # leaving out methods for now b/c only study_id is required 
-  tables <- list(cores = cores, depthseries = depthseries)
+  # create a list of datasets from the provided table names
+  tables <- mget(table_names, envir = .GlobalEnv)
   
   # create df to store results
   missing_required <- data.frame()
@@ -497,30 +489,25 @@ testRequired <- function(){
       # filter for required attributes
       filter(attribute_name %in% required_for_table)
     
-    # condense study attributes into a list
-    study_attributes <- table_cols %>% 
-      group_by(study_id) %>%
-      # study id has to be added manually (which defeats the purpose a bit)
-      summarize(attribute_list = list(c("study_id", attribute_name)))
+    # identify missing attributes in current table
+    missing_cols <- required_for_table[which(!(required_for_table %in% table_cols$attribute_name))]
     
-    # loop through studies 
-    for(i in 1:nrow(study_attributes)){
-      # identify missing attributes in each study
-      missing_cols <- required_for_table[which(!(required_for_table %in% study_attributes$attribute_list[[i]]))]
+    if(length(missing_cols) > 0){
+      # create table to identify studies lacking required attributes in their tables 
+      missing_from_study <- data.frame(table = table_name,
+                                       missing_attributes = missing_cols)
       
-      if(length(missing_cols) > 0){
-        # create table to identify studies lacking required attributes in their tables 
-        missing_from_study <- data.frame(study_id = study_attributes$study_id[i],
-                                         table = table_name,
-                                         missing_attributes = missing_cols)
-        
-        # compile into missing required table
-        # output table should have cols: study_id, table, missing_attributes
-        missing_required <- bind_rows(missing_required, missing_from_study)
-      }
+      # compile into missing required table
+      # output table should have cols: table, missing_attributes
+      missing_required <- bind_rows(missing_required, missing_from_study)
     }
   }
-  return(missing_required)
+  
+  if(!is_empty(missing_required)){
+    return(missing_required)
+  } else {
+    print("All required attributes are present!")
+  }
 }
 
 ## Check for duplicate cores in the database ####

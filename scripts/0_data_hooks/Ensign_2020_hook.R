@@ -22,7 +22,6 @@ guidance <- read_csv("docs/ccrcn_database_structure_V2.csv")
 ## Trim Data to Library ####
 
 ## NOTE: THIS DATA IS CURATED UNDER GUIDANCE V2
-# It will be left out of the V1 synthesis
 
 id <- "Ensign_et_al_2020"
 
@@ -32,10 +31,11 @@ cores <- raw_cores %>%
          position_method = core_position_method)
 
 # depthseries (no change)
-depthseries <- raw_depthseries
+depthseries <- raw_depthseries %>%
+  mutate(method_id = "single set of studies")
 
 # methods (no change)
-methods <- raw_methods
+methods <- raw_methods %>% mutate(method_id = "single set of studies")
 
 ################
 ## Create citation info 
@@ -51,13 +51,13 @@ if(!file.exists("./data/primary_studies/Ensign_et_al_2020/derivative/Ensign_et_a
   paper_biblio <- as.data.frame(paper_bib_raw) %>%
     mutate(study_id = id,
            bibliography_id = "Ensign_et_al_2015_article",
-           publication_type = "associated") %>%
+           publication_type = "associated source") %>%
     remove_rownames()
   
   data_biblio <- as.data.frame(data_bib_raw) %>%
     mutate(study_id = id,
            bibliography_id = "Ensign_et_al_2020_data",
-           publication_type = "primary") %>%
+           publication_type = "primary dataset") %>%
     remove_rownames()
   
   # Curate biblio so ready to read out as a BibTex-style .bib file
@@ -80,9 +80,12 @@ if(!file.exists("./data/primary_studies/Ensign_et_al_2020/derivative/Ensign_et_a
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
+table_names <- c("methods", "cores", "depthseries")
+
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries"), version = "2")
-testTableVars(table_names = c("methods", "cores", "depthseries"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

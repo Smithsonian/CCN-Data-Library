@@ -1,19 +1,19 @@
-site_id,study_id,core_id,species_code
-Animal_Slough,Drexler_et_al_2019,AS14,Carex lyngbyei
-Animal_Slough,Drexler_et_al_2019,AS14,Juncus balticus
-Animal_Slough,Drexler_et_al_2019,AS14,Potentilla anserine
-Animal_Slough,Drexler_et_al_2019,AS15,Carex lyngbyei
-Animal_Slough,Drexler_et_al_2019,AS15,Juncus balticus
-Animal_Slough,Drexler_et_al_2019,AS15,Potentilla anserine
-Animal_Slough,Drexler_et_al_2019,AS16,Carex lyngbyei
-Animal_Slough,Drexler_et_al_2019,AS16,Juncus balticus
-Animal_Slough,Drexler_et_al_2019,AS16,Potentilla anserine
-Animal_Slough,Drexler_et_al_2019,AS7,Carex lyngbyei
-Animal_Slough,Drexler_et_al_2019,AS7,Juncus balticus
-Animal_Slough,Drexler_et_al_2019,AS7,Potentilla anserine
-Animal_Slough,Drexler_et_al_2019,AS8,Carex lyngbyei
-Animal_Slough,Drexler_et_al_2019,AS8,Juncus balticus
-Animal_Slough,Drexler_et_al_2019,AS8,Potentilla anserine
-Animal_Slough,Drexler_et_al_2019,AS9,Carex lyngbyei
-Animal_Slough,Drexler_et_al_2019,AS9,Juncus balticus
-Animal_Slough,Drexler_et_al_2019,AS9,Potentilla anserine
+site_id,study_id,core_id,species_code,code_type,habitat
+Animal_Slough,Drexler_et_al_2019,AS14,Carex lyngbyei,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS14,Juncus balticus,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS14,Potentilla anserina,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS15,Carex lyngbyei,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS15,Juncus balticus,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS15,Potentilla anserina,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS16,Carex lyngbyei,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS16,Juncus balticus,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS16,Potentilla anserina,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS7,Carex lyngbyei,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS7,Juncus balticus,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS7,Potentilla anserina,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS8,Carex lyngbyei,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS8,Juncus balticus,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS8,Potentilla anserina,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS9,Carex lyngbyei,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS9,Juncus balticus,Genus species,marsh
+Animal_Slough,Drexler_et_al_2019,AS9,Potentilla anserina,Genus species,marsh
