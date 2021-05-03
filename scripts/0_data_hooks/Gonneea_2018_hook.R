@@ -16,10 +16,12 @@
 
 ## Prep workspace #######################
 # Load RCurl, a package used to download files from a URL
-library(RCurl)
+# library(RCurl)
 library(tidyverse)
 library(lubridate)
 library(RefManageR)
+
+source("./scripts/1_data_formatting/qa_functions.R")
 
 ## Download data ########################
 
@@ -142,7 +144,12 @@ Gonneea_2018_core_Data <- Gonneea_2018 %>%
   left_join(core_elevation) %>%
   # convert elevation from cm to meters
   mutate(core_elevation = core_elevation * .01,
-         core_elevation_method = "RTK")
+         core_elevation_method = "RTK") %>%
+  mutate(core_year = year(core_date), 
+         core_month = month(core_date),
+         core_day = day(core_date)) %>%
+  select(-core_date) %>%
+  ungroup()
 
 # Depth Series data
 Gonneea_2018_depth_series_data <- Gonneea_2018 %>%
@@ -160,23 +167,7 @@ Gonneea_2018_depth_series_data <- Gonneea_2018 %>%
 ## Add site data ################
 # The data is missing site IDs but we have records of them from the Holmquist et al. 2018 data release. 
 
-Gonneea_2018_core_Data <- Gonneea_2018_core_Data %>%
-  mutate(site_id = recode_factor(core_id, 
-                                 "EPA" = "Eel_Pond", 
-                                 "EPB" = "Eel_Pond",
-                                 "GPA" = "Great_Pond", 
-                                 "GPB" = "Great_Pond", 
-                                 "GPC" = "Great_Pond", 
-                                 "HBA" = "Hamblin_Pond",
-                                 "HBB" = "Hamblin_Pond",
-                                 "HBC" = "Hamblin_Pond", 
-                                 "SLPA" = "Sage_Log_Pond", 
-                                 "SLPB" = "Sage_Log_Pond",
-                                 "SLPC" = "Sage_Log_Pond"
-  ))
-
-
-Gonneea_2018_depth_series_data <- Gonneea_2018_depth_series_data %>%
+cores <- Gonneea_2018_core_Data %>%
   mutate(site_id = recode_factor(core_id, 
                                  "EPA" = "Eel_Pond", 
                                  "EPB" = "Eel_Pond",
@@ -190,7 +181,27 @@ Gonneea_2018_depth_series_data <- Gonneea_2018_depth_series_data %>%
                                  "SLPB" = "Sage_Log_Pond",
                                  "SLPC" = "Sage_Log_Pond"
   )) %>%
+  mutate(core_length_flag = ifelse(site_id != "Hamblin_Pond", "core depth represents deposit depth", NA))
+
+
+depthseries <- Gonneea_2018_depth_series_data %>%
+  mutate(site_id = recode_factor(core_id, 
+                                 "EPA" = "Eel_Pond", 
+                                 "EPB" = "Eel_Pond",
+                                 "GPA" = "Great_Pond", 
+                                 "GPB" = "Great_Pond", 
+                                 "GPC" = "Great_Pond", 
+                                 "HBA" = "Hamblin_Pond",
+                                 "HBB" = "Hamblin_Pond",
+                                 "HBC" = "Hamblin_Pond", 
+                                 "SLPA" = "Sage_Log_Pond", 
+                                 "SLPB" = "Sage_Log_Pond",
+                                 "SLPC" = "Sage_Log_Pond")) %>%
   select(study_id, site_id, core_id, everything())
+
+# cores <- reorderColumns("cores", Gonneea_2018_core_Data) %>% ungroup()
+# depthseries <- reorderColumns("depthseries", Gonneea_2018_depth_series_data) %>% ungroup()
+
 
 ## Create study-level data ######
 
@@ -205,7 +216,7 @@ if(!file.exists("data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018
   study_citations <- biblio_df %>%
     mutate(bibliography_id = "Gonneea_et_al_2018_data", 
            study_id = study,
-           publication_type = "primary") %>%
+           publication_type = "primary dataset") %>%
     remove_rownames() %>%
     select(study_id, bibliography_id, publication_type, everything())
   
@@ -218,16 +229,25 @@ if(!file.exists("data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018
   write_csv(study_citations, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("cores", "depthseries")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+# methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
 
 ## QA/QC of data ################
-source("./scripts/1_data_formatting/qa_functions.R")
-
-cores <- reorderColumns("cores", Gonneea_2018_core_Data) %>% ungroup()
-depthseries <- reorderColumns("depthseries", Gonneea_2018_depth_series_data) %>% ungroup()
 
 # Check col and varnames
-testTableCols(table_names = c("cores", "depthseries"), version = "1")
-testTableVars(table_names = c("cores", "depthseries"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

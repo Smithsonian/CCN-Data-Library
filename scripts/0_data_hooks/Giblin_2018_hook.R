@@ -16,8 +16,8 @@
 
 
 ## 2. Prep workspace and scrape data #######################
-library(rvest)
-library(stringr)
+# library(rvest)
+# library(stringr)
 library(tidyverse)
 library(lubridate)
 library(RefManageR)
@@ -74,10 +74,11 @@ depthseries <- dt1 %>%
   # create unique core IDs
   mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
          study_id = "Giblin_and_Forbrich_2018",
-         site_id = "Nelson_Island_Creek") %>%
+         site_id = "Nelson_Island_Creek",
+         method_id = "single set of methods") %>%
   mutate(depth_min = section - 1, 
          depth_max = section + 1) %>%
-  select(study_id, site_id, core_id, depth_min, depth_max, 
+  select(study_id, site_id, core_id, method_id, depth_min, depth_max, 
          dry_bulk_density, fraction_carbon, 
          cs137_activity, cs137_unit, total_pb210_activity, pb210_unit,
          pb214_activity, pb214_unit, bi214_activity, bi214_unit)
@@ -98,7 +99,12 @@ cores <- dt1 %>%
          core_elevation_datum = "NAVD88", 
          site_id = "Nelson_Island_Creek", 
          study_id = "Giblin_and_Forbrich_2018") %>%
-  select(study_id, site_id, core_id, core_latitude, core_longitude, core_elevation, core_elevation_datum, core_length_flag)
+  mutate(core_year = year(core_date), 
+         core_month = month(core_date),
+         core_day = day(core_date)) %>%
+  select(-core_date) %>%
+  select(study_id, site_id, core_id, core_latitude, core_longitude, core_elevation, core_elevation_datum, core_length_flag,
+         everything())
 
 ## ... 2C. Vegetation data #####################
 species <- dt1 %>%
@@ -148,7 +154,7 @@ if(!file.exists("data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich
   study_citations <- biblio_df %>%
     mutate(bibliography_id = "Giblin_and_Forbrich_2018_data", 
            study_id = study,
-           publication_type = "primary") %>%
+           publication_type = "primary dataset") %>%
     remove_rownames() %>%
     select(study_id, bibliography_id, publication_type, everything())
   
@@ -161,12 +167,28 @@ if(!file.exists("data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich
   write_csv(study_citations, "./data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("cores", "depthseries", "sites", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+sites <- updated$sites
+# methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## 4. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("sites", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("sites", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

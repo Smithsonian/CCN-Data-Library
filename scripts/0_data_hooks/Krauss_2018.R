@@ -148,6 +148,8 @@ LOI_mod_salt_raw  <- read_csv("./data/primary_studies/Jones_2017/original/datase
 
 # Use curation functions if you need
 source("./scripts/1_data_formatting/curation_functions.R")
+source("./scripts/1_data_formatting/qa_functions.R")
+
 
 id <- "Krauss_et_al_2018"
 
@@ -256,7 +258,7 @@ geochron_heavy_salt <- geochron_heavy_salt %>%
 geochron_mod_salt <- geochron_mod_salt %>%
   mutate(core_id = "butler_island_1")
 
-source("./scripts/1_data_formatting/curation_functions.R")
+# source("./scripts/1_data_formatting/curation_functions.R")
 geochron <- geochron_oligo %>%
   bind_rows(geochron_heavy_salt) %>%
   bind_rows(geochron_mod_salt) %>%
@@ -330,12 +332,16 @@ depthseries_join <- Krauss_depthseries %>%
 # Update study IDs based on revised methods table
 # Three different coring methods were used on these cores, each combination gets a unique study ID
 depthseries <- depthseries_join %>%
-  mutate(method_id = ifelse(core_id == "butler_island_1" | 
-                             core_id == "turkey_creek_2" |
-                             core_id == "richmond_island_1", "Krauss_et_al_2018a", 
-                           ifelse(core_id == "turkey_creek_1", "Krauss_et_al_2018b", "Krauss_et_al_2018c")))
+  mutate(method_id = case_when(core_id == "butler_island_1" | core_id == "turkey_creek_2" | core_id == "richmond_island_1" ~ "piston corer used", 
+                               core_id == "turkey_creek_1" ~ "vibracore used",
+                               TRUE ~ "russian corer used"))
 
 depthseries <- reorderColumns("depthseries", depthseries)
+
+# former ID associations
+# Krauss_et_al_2018a piston corer 
+# Krauss_et_al_2018b vibracore    
+# Krauss_et_al_2018c russian corer
 
 ## ....3B. Core-level data ##################
 
@@ -345,64 +351,42 @@ cores <- depthseries %>%
 
   # manually add core coordinates sent to JH, ML, and DK on 2019-04-19
   # email subject: FW: [EXTERNAL] Positional Information for Krauss and Jones Data Release
-  mutate(core_latitude = ifelse(core_id == "turkey_creek_1", 33.35003,
-                           ifelse(core_id == "turkey_creek_2", 33.34001,
-                             ifelse(core_id == "butler_island_1", 33.422823,
-                               ifelse(core_id == "richmond_island_1", 33.55564,
-                                  ifelse(core_id == "savannah_mid_1", 32.17,
-                                      ifelse(core_id == "savannah_low_1", 32.18, 
-                                          ifelse(core_id == "savannah_mid_2", 32.24, 
-                                              ifelse(core_id == "savannah_high_1", 32.238, 
-                                                   NA))))))))) %>%
+  mutate(core_latitude = case_when(core_id == "turkey_creek_1" ~ 33.35003,
+                                   core_id == "turkey_creek_2"~ 33.34001,
+                                   core_id == "butler_island_1"~ 33.422823,
+                                   core_id == "richmond_island_1"~ 33.55564,
+                                   core_id == "savannah_mid_1"~ 32.17,
+                                   core_id == "savannah_low_1"~ 32.18,
+                                   core_id == "savannah_mid_2" ~ 32.24,
+                                   core_id == "savannah_high_1" ~ 32.238)) %>%
   
-  mutate(core_longitude = ifelse(core_id == "turkey_creek_1", -79.3447,
-                            ifelse(core_id == "turkey_creek_2", -79.34166,
-                              ifelse(core_id == "butler_island_1", -79.207996,
-                                 ifelse(core_id == "richmond_island_1", -79.08943,
-                                   ifelse(core_id == "savannah_mid_1", -81.14,
-                                     ifelse(core_id == "savannah_low_1", -81.14, 
-                                        ifelse(core_id == "savannah_mid_2", -81.15, 
-                                            ifelse(core_id == "savannah_high_1", -81.155, 
-                                             NA))))))))) %>%
+  mutate(core_longitude = case_when(core_id == "turkey_creek_1" ~ -79.3447,
+                                    core_id == "turkey_creek_2" ~ -79.34166,
+                                    core_id == "butler_island_1" ~ -79.207996,
+                                    core_id == "richmond_island_1" ~ -79.08943,
+                                    core_id == "savannah_mid_1" ~ -81.14,
+                                    core_id == "savannah_low_1" ~ -81.14, 
+                                    core_id == "savannah_mid_2" ~ -81.15,
+                                    core_id == "savannah_high_1" ~ -81.155)) %>%
   
   # Designate salinity class. Note that both the "oligohaline", "salty", and 
   #   "fresh tidal" sites are all classified as oligohaline according to CCRCN standards.
   #   Salinity measurements pulled from metadata.
-  mutate(salinity_class = ifelse(core_id == "savannah_mid_1" | core_id == "turkey_creek_1"
-                                | core_id == "savannah_low_1" | core_id == "turkey_creek_2"
-                                | core_id == "savannah_mid_2" | core_id == "butler_island_1",
-                                "oligohaline",
-                                ifelse(core_id == "savannah_high_1" | core_id == "richmond_island_1",
-                                       "fresh", NA
-                                ))) %>%
-  mutate(vegetation_class = ifelse(core_id == "savannah_low_1" 
-                                   | core_id == "savannah_mid_1"
-                                   | core_id == "turkey_creek_1",
-                                   "emergent",
-                                   ifelse(core_id == "butler_island_1" 
-                                          | core_id == "turkey_creek_2",
-                                          "forested to emergent",
-                                          ifelse(core_id == "savannah_mid_2" 
-                                                 | core_id == "richmond_island_1"
-                                                 | core_id == "savannah_high_1",
-                                                 "forested", NA
-                                          )))) %>%
-  mutate(vegetation_method = "measurement") %>%
-  mutate(inundation_class = ifelse(core_id == "savannah_low_1" 
-                                   | core_id == "savannah_mid_1"
-                                   | core_id == "turkey_creek_1"
-                                   | core_id == "turkey_creek_2",
-                                   "low",
-                                   ifelse(core_id == "butler_island_1" | 
-                                          core_id == "savannah_mid_2",
-                                          "mid",
-                                          ifelse(core_id == "richmond_island_1"
-                                                 | core_id == "savannah_high_1",
-                                                 "high", NA
-                                          )))) %>%
+#   core_id == "savannah_mid_1" | core_id == "turkey_creek_1" | core_id == "savannah_low_1" | core_id == "turkey_creek_2"
+# | core_id == "savannah_mid_2" | core_id == "butler_island_1" ~ "oligohaline",
+  mutate(salinity_class = case_when(core_id == "savannah_high_1" | core_id == "richmond_island_1" ~ "fresh", 
+                                TRUE ~ "oligohaline")) %>%
+  mutate(vegetation_class = case_when(core_id == "savannah_low_1" | core_id == "savannah_mid_1" | core_id == "turkey_creek_1" ~ "emergent",
+                                      core_id == "butler_island_1" | core_id == "turkey_creek_2" ~ "forested to emergent",
+                                      core_id == "savannah_mid_2" | core_id == "richmond_island_1" | core_id == "savannah_high_1" ~ "forested")) %>%
+  mutate(vegetation_method = "measurement",
+         core_length_flag = "not specified") %>%
+  mutate(inundation_class = case_when(core_id == "savannah_low_1" | core_id == "savannah_mid_1" | core_id == "turkey_creek_1" | core_id == "turkey_creek_2" ~ "low",
+                                      core_id == "butler_island_1" | core_id == "savannah_mid_2" ~ "mid",
+                                      core_id == "richmond_island_1" | core_id == "savannah_high_1" ~ "high"))
                                    
-  select(study_id, site_id, core_id, core_latitude, core_longitude, salinity_class,
-         vegetation_class, vegetation_method, inundation_class)
+  # select(study_id, site_id, core_id, core_latitude, core_longitude, salinity_class,
+  #        vegetation_class, vegetation_method, inundation_class)
 
 
 
@@ -432,13 +416,6 @@ impacts <- cores %>%
 #                                   "corer limits compaction")) %>%
 #   mutate(age_depth_model_reference = "YBP")
 
-## ....3F. Species data ##############
-species <- species_edited %>%
-  mutate(study_id = id) %>%
-  select(-common_name)
-
-## ....Methods ####
-
 raw_methods <- read_csv("data/primary_studies/Krauss_2018/intermediate/Krauss_et_al_2018_methods.csv")
 
 methods <- raw_methods %>%
@@ -446,7 +423,14 @@ methods <- raw_methods %>%
          coring_method = recode(coring_method,
                                 "Russian peat corer" = "russian corer",
                                 "vibracorer" = "vibracore")) %>%
+  mutate(method_id = paste0(coring_method, " used")) %>%
   select(study_id, everything())
+
+## ....3F. Species data ##############
+species <- species_edited %>%
+  mutate(study_id = id) %>%
+  select(-common_name)
+
 
 ## ....3H. Study citations ################
 
@@ -483,12 +467,12 @@ if(!file.exists("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_s
   # Convert this to a dataframe
   paper_biblio <- as.data.frame(paper_bibs_raw) %>%
     mutate(bibliography_id = c("Krauss_et_al_2018_article", "Jones_et_al_2017_article"),
-           publication_type = "associated") %>%
+           publication_type = "associated source") %>%
     # GetBibEntryWithDOI() defaults study name as a row name, convert to column
     merge(study_ids)
   
   data_biblio <- as.data.frame(data_bib_raw) %>% 
-    mutate(publication_type = "primary",
+    mutate(publication_type = "primary dataset",
            bibliography_id = "Krauss_et_al_2018_data") %>%
     merge(study_ids)
   
@@ -496,10 +480,6 @@ if(!file.exists("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_s
   study_citations <- data_biblio %>%
     bind_rows(paper_biblio) %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything())
-  
-  # Make corrections 
-  # raw_citations <- read_csv("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_study_citations.csv")
-  # study_citations <- raw_citations %>% mutate(study_id = id) %>% distinct()
   
   # Write .bib file
   bib_file <- study_citations %>%
@@ -512,13 +492,28 @@ if(!file.exists("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_s
   
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("sites", "methods", "cores", "depthseries", "impacts", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+sites <- updated$sites
+impacts <- updated$impacts
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
 
 ## 4. QA/QC of data ################
-source("./scripts/1_data_formatting/qa_functions.R")
 
 ## ....4A. Column and Variable names ###############
-testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
-testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 ## ....4B. Quality control on cell values ###################
 test_unique_cores(cores)
@@ -528,7 +523,7 @@ fraction_not_percent(depthseries)
 numeric_test_results <- test_numeric_vars(depthseries)
 
 
-# Select only controlled attributes, and re-order them according to CCRCN guidance
+# Reorder tables according to CCRCN guidance
 cores <- reorderColumns("cores", cores)
 depthseries <- reorderColumns("depthseries", depthseries)
 sites <- reorderColumns("sites", sites)

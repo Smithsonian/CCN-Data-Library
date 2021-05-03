@@ -1,5 +1,5 @@
-study_id,site_id,core_id,core_latitude,core_longitude,core_elevation,core_elevation_datum,core_length_flag
-Giblin_and_Forbrich_2018,Nelson_Island_Creek,Giblin2018Core_1,42.742579,-70.830535,1.36,NAVD88,core depth limited by length of corer
-Giblin_and_Forbrich_2018,Nelson_Island_Creek,Giblin2018Core_2,42.742317,-70.830782,1.36,NAVD88,core depth limited by length of corer
-Giblin_and_Forbrich_2018,Nelson_Island_Creek,Giblin2018Core_3,42.742438,-70.830618,1.38,NAVD88,core depth limited by length of corer
-Giblin_and_Forbrich_2018,Nelson_Island_Creek,Giblin2018Core_4,42.742393,-70.83063,1.38,NAVD88,core depth limited by length of corer
+study_id,site_id,core_id,latitude,longitude,elevation,elevation_datum,core_length_flag,year,month,day
+Giblin_and_Forbrich_2018,Nelson_Island_Creek,Giblin2018Core_1,42.742579,-70.830535,1.36,NAVD88,core depth limited by length of corer,2014,10,30
+Giblin_and_Forbrich_2018,Nelson_Island_Creek,Giblin2018Core_2,42.742317,-70.830782,1.36,NAVD88,core depth limited by length of corer,2014,10,30
+Giblin_and_Forbrich_2018,Nelson_Island_Creek,Giblin2018Core_3,42.742438,-70.830618,1.38,NAVD88,core depth limited by length of corer,2014,10,30
+Giblin_and_Forbrich_2018,Nelson_Island_Creek,Giblin2018Core_4,42.742393,-70.83063,1.38,NAVD88,core depth limited by length of corer,2014,10,30

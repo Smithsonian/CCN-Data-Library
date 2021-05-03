@@ -101,6 +101,7 @@ depthseries_carbon <- raw_depthseries %>%
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"),
+         method_id = "single set of methods",
          compaction_notes = ifelse(study_id == "CRMS_Database", "< 10-20%", NA)) %>%
   filter(!(study_id %in% removed_studies))
 # Fraction carbon type should be in the methods metadata, not depthseries level
@@ -121,7 +122,8 @@ species <- raw_species %>%
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
   filter(!(study_id %in% removed_studies)) %>%
-  recode_species(species_code = species_code) 
+  recode_species(species_code = species_code) %>%
+  drop_na(species_code)
 
 # Methods
 # Fraction carbon type should be in the methods metadata, not depthseries level 
@@ -150,7 +152,23 @@ methods <- raw_methods %>%
          loss_on_ignition_flag = recode(loss_on_ignition_flag, 
                                         "time not specified" = "not specified",
                                         "no details" = "not specified"),
-         compaction_flag = ifelse(study_id == "CRMS_Database", "compaction quantified", compaction_flag))
+         compaction_flag = ifelse(study_id == "CRMS_Database", "compaction quantified", compaction_flag),
+         method_id = "single set of methods")
+
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "impacts", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+impacts <- updated$impacts
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
 
 ## QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -158,8 +176,9 @@ source("./scripts/1_data_formatting/qa_functions.R")
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"), version = "1") 
-testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
+testTableCols(table_names) 
+testTableVars(table_names) # quite a few uncontrolled variables
+testRequired(table_names) # core year and position method
 
 test_unique_cores(cores)
 test_unique_coords(cores)
@@ -267,9 +286,8 @@ citations <- read_csv("data/primary_studies/Holmquist_2018/intermediate/Holmquis
 
 study_citations_synthesis <- citations %>%
   select(-key) %>%
-  mutate(publication_type = ifelse(bibliography_id != "Holmquist_et_al_2018", "associated", publication_type)) %>%
-  mutate(bibliography_id = case_when(bibliography_id != "Holmquist_et_al_2018" ~ paste0(bibliography_id, "_", tolower(bibtype)),
-                                     bibliography_id == "Holmquist_et_al_2018" ~ paste0("Holmquist_et_al_2018", "_synthesis")))
+  mutate(bibliography_id = paste0(bibliography_id, "_", tolower(publication_type))) %>%
+  mutate(publication_type = ifelse(publication_type != "synthesis", "synthesis source", "synthesis dataset"))
 
 # Write .bib file
 bib_file <- study_citations_synthesis %>%

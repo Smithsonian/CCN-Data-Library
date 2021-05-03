@@ -25,7 +25,8 @@ methods_raw <- read_csv("./data/primary_studies/Johnson_2007/original/Johnson_et
 methods <- methods_raw %>%
   select_if(function(x) {!all(is.na(x))}) %>%
   select(-publication_type) %>%
-  mutate(fraction_carbon_type = "organic carbon")
+  mutate(fraction_carbon_type = "organic carbon",
+         method_id = "single set of methods")
 
 ## ... Age depth #####
 age_depth <- age_depth_raw %>%
@@ -46,6 +47,7 @@ depthseries <- carbon_stocks_raw %>%
   select(study_id, site_id, core_id, depth_min, depth_max,
          dry_bulk_density, fraction_carbon) %>%
   merge(age_depth, by="depth_min", all.x=TRUE, all.y=TRUE) %>%
+  mutate(method_id = "single set of methods") %>%
   select(study_id, site_id, core_id, depth_min, depth_max, sample_id,
          everything())
   
@@ -61,7 +63,7 @@ if(!file.exists("data/primary_studies/Johnson_2007/derivative/Johnson_et_al_2007
   study_citations <- biblio_df %>%
     mutate(bibliography_id = "Johnson_et_al_2007_article", 
            study_id = study,
-           publication_type = "associated") %>%
+           publication_type = "associated source") %>%
     select(study_id, bibliography_id, publication_type, everything()) %>%
     remove_rownames()
   
@@ -75,12 +77,26 @@ if(!file.exists("data/primary_studies/Johnson_2007/derivative/Johnson_et_al_2007
   
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ##########################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names) # year and positon method
 
 test_unique_cores(cores)
 test_unique_coords(cores)

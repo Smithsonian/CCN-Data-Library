@@ -33,9 +33,11 @@ methods_raw <- read_csv("./data/primary_studies/kemp_2020/original/kemp_et_al_20
 bib <- ReadBib("./data/primary_studies/kemp_2020/original/citations.bib")
 
 depthseries <- depthseries_raw %>%
-  select(-cs137_age, -pb210_cic_age, -pb210_crs_age)
+  mutate(method_id = "single set of methods") %>%
+  select(-cs137_age, -pb210_cic_age, -pb210_crs_age) 
 
 cores <- cores_raw %>%
+  mutate(core_length_flag = "not specified") %>%
   rename(core_year = core_date)
 
 species <- species_raw  %>%
@@ -45,14 +47,14 @@ species <- species_raw  %>%
 impacts <- impacts_raw %>%
   filter(impact_class != "eutrophic")
 
-methods <- methods_raw
+methods <- methods_raw %>% mutate(method_id = "single set of methods")
 
 # Citations ####
 
 study_citations <- as.data.frame(bib) %>%
   mutate(bibliography_id = c("Kemp_et_al_2012_article", "Kemp_et_al_2020_data"),
          study_id = "Kemp_et_al_2020",
-         publication_type = c("associated", "primary")) %>%
+         publication_type = c("associated source", "primary dataset")) %>%
   remove_rownames() %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
@@ -64,12 +66,28 @@ bib_file <- study_citations %>%
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/kemp_2020/derivative/kemp_et_al_2020.bib")
 write_csv(study_citations, "data/primary_studies/kemp_2020/derivative/kemp_et_al_2020_study_citations.csv")
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "species", "impacts")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+impacts <- updated$impacts
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

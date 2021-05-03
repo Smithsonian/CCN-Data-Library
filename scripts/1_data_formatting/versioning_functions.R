@@ -26,7 +26,7 @@ renameColumns <- function(x, key) {
 # "Poppe_and_Rybczyk_2018"        "Poppe_and_Rybczyk_2019"        "Poppe_et_al_2019"             
 # "Peck_et_al_2020"               "Messerschmidt_and_Kirwan_2020" "Giblin_and_Forbrich_2018"  
 
-# CHANGE IN HOOK SCRIPTS INSTEAD?
+# CHANGE THE FOLLOWING CODE IN EACH HOOK SCRIPT ####
 
 # # Depthseries table fixes
 # if(category == "depthseries"){
@@ -42,22 +42,6 @@ renameColumns <- function(x, key) {
 #            pb214_activity_se = ifelse(is.na(pb214_activity_se),
 #                                       (pb214_activity_se_352keV + pb214_activity_se_295keV)/2,
 #                                       pb214_activity_se))
-#     # these columns need to be coalesced 
-#     # assumes that coalesced columns won't have non-NA values in the same row
-#     # this should be vectorized so it's not manual
-#     # mutate(age_se = coalesce(age_se, age_sd),
-#     #        cs137_activity_se = coalesce(cs137_activity_se, cs137_activity_sd),
-#     #        total_pb210_activity_se = coalesce(total_pb210_activity_se, total_pb210_activity_sd),
-#     #        ra226_activity_se = coalesce(ra226_activity_se, ra226_activity_sd),
-#     #        excess_pb210_activity_se = coalesce(excess_pb210_activity_se, excess_pb210_activity_sd),
-#     #        marker_date = coalesce(marker_date, marker_age),
-#     #        marker_date_se = coalesce(marker_date_sd, marker_age_sd),
-#     #        depth_interval_notes = coalesce(depth_interval_notes, dating_interval_notes),
-#     #        pb214_activity_se = coalesce(pb214_activity_se, pb214_activity_sd),
-#     #        bi214_activity_se = coalesce(bi214_activity_se, bi214_activity_sd)) %>%
-#     # select(-c(age_sd, cs137_activity_sd, total_pb210_activity_sd, ra226_activity_sd,
-#     #           excess_pb210_activity_sd, marker_age, marker_date_sd, marker_age_sd,
-#     #           dating_interval_notes, pb214_activity_sd, bi214_activity_sd))
 #   # test
 #   length(unique(names(depthseries_fixed))) == length(depthseries_fixed)
 #   
