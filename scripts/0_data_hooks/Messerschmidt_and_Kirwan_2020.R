@@ -22,7 +22,7 @@
 library(tidyverse)
 library(RefManageR)
 library(lubridate)
-library(anytime)
+# library(anytime)
 
 cores_raw <- read.csv("./data/primary_studies/messerschmidt_2020/original/messerschmidt_and_kirwan_2020_cores.csv")
 depthseries_raw <- read.csv("./data/primary_studies/messerschmidt_2020/original/messerschmidt_and_kirwan_2020_depthseries.csv")
@@ -31,7 +31,8 @@ methods_raw <- read_csv("./data/primary_studies/messerschmidt_2020/original/mess
 
 cores <- cores_raw %>%
   mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
-         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK")) 
+         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK"),
+         core_length_flag = "not specified") 
 
 depthseries <- depthseries_raw %>%
   mutate(cs137_unit = ifelse(is.na(cs137_activity), NA, "disintegrationsPerMinutePerGram"),

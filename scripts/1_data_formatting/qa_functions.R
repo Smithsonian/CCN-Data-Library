@@ -55,19 +55,19 @@ test_core_relationships <- function(core_data, depth_data) {
   
   if(length(results) > 0){
     warning("Check the following core_ids in the core-level data:")
-    print(results)
+    print(unique(results))
   } 
   
   if(length(results2) > 0) {
     warning("Check the following core_ids in the depthseries data:")
-    print(results2)
+    print(unique(results2))
   }
   
   if(length(results)== 0 & length(results2) == 0) {
     print("Core IDs match.")
   }
   append(results,results2)
-  return(results)
+  return(unique(results))
 }
 
 
@@ -247,7 +247,7 @@ test_numeric_vars <- function(input_data) {
   to_check <- subset(colnames(input_data), colnames(input_data) %in% numeric_attributes$attribute_name)
   testing_data <- input_data %>%
     ungroup() %>%
-    select(to_check) 
+    select(all_of(to_check))
   
   library(skimr)
   

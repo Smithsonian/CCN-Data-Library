@@ -46,10 +46,10 @@ cores <- raw_cores %>%
   mutate(salinity_class = recode(salinity_class, "intermediate" = "brackish"))
 # cores <- reorderColumns("cores", cores)
 
-
 # depthseries
 # uncontrolled: fraction_nitrogen
-depthseries <- raw_depthseries %>% select(-fraction_nitrogen)
+depthseries <- raw_depthseries %>% select(-fraction_nitrogen) %>% 
+  mutate(method_id = "single set of methods")
 
 # species
 species <- raw_species %>%
@@ -57,7 +57,8 @@ species <- raw_species %>%
   select(study_id, site_id, core_id, species_code)
 
 # methods
-methods <- raw_methods
+methods <- raw_methods %>%
+  mutate(method_id = "single set of methods")
 
 # impacts
 impacts <- raw_impacts
@@ -72,51 +73,56 @@ report_bib <- GetBibEntryWithDOI(report_doi)
 
 # Convert citations to dataframe
 data_citation <- as.data.frame(data_bib) %>%
-  rownames_to_column("key") %>%
   mutate(study_id = id) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = id,
-         key = id)
+  mutate(bibliography_id = "Piazza_et_al_2011_data",
+         publication_type = "primary dataset")
 
 report_citation <- as.data.frame(report_bib) %>%
-  rownames_to_column("key") %>%
-  mutate(study_id = id) %>%
-  mutate(doi = tolower(doi),
-         bibliography_id = "Piazza_et_al_2011",
-         key = "Piazza_et_al_2011")
+  mutate(study_id = id,
+         bibliography_id = "Piazza_et_al_2011_article",
+         publication_type = "associated source")
 
 # # Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- data_citation %>%
-  bind_rows(report_citation) %>%
-  mutate(publication_type = bibtype) %>%
-  select(study_id, bibliography_id, publication_type, key, bibtype, everything())
+study_citations <- bind_rows(report_citation, data_citation) %>%
+  remove_rownames() %>% 
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Write .bib file
 bib_file <- study_citations %>%
-  # slice(1) %>%
-  # select(-study_id, -bibliography_id, -publication_type) %>%
-  # distinct() %>%
-  column_to_rownames("key")
+  select(-study_id, -publication_type) %>%
+  column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020.bib")
+write_csv(study_citations, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_study_citations.csv")
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "impacts", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+impacts <- updated$impacts
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
-# Make sure column names are formatted correctly: 
-test_colnames("sites", sites)
-test_colnames("cores", cores)
-test_colnames("depthseries", depthseries)
-test_colnames("species", species)
-test_colnames("methods", methods)
-test_colnames("impacts", impacts)
+# Check col and varnames
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
-test_varnames(sites) 
-test_varnames(cores)
-# test_varnames(methods)
-# test_varnames(depthseries)
-# test_varnames(species)
+test_unique_cores(cores)
+test_unique_coords(cores)
+test_core_relationships(cores, depthseries) # there are core_ids missing
+fraction_not_percent(depthseries)
+results <- test_numeric_vars(depthseries)
+
 
 ## Write derivative data ####
 write_csv(sites, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_sites.csv")
@@ -124,6 +130,5 @@ write_csv(cores, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_202
 write_csv(species, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_species.csv")
 write_csv(methods, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_methods.csv")
 write_csv(depthseries, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_study_citations.csv")
 
 

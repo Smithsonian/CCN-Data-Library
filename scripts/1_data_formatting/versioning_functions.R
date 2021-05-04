@@ -151,7 +151,7 @@ updateTables <- function(table_names){
     # Delete (specified) columns
     # If any colnames are in the to_delete table, deselect these columns 
     if(any(names(tables_to_update[[i]]) %in% to_delete$attribute_name_v1p2)){
-      print(paste0("Deleting targeted columns for ", category))
+      print(paste0("Deleting targeted columns in ", category))
       print(names(tables_to_update[[i]])[which(names(tables_to_update[[i]]) %in% to_delete$attribute_name_v1p2)])
       
       tables_to_update[[i]] <- tables_to_update[[i]] %>% select(-any_of(to_delete$attribute_name_v1p2))

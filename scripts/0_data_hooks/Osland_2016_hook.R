@@ -56,9 +56,9 @@
 
 ## Prep workspace #######################
 # Load RCurl, a package used to download files from a URL
-library(rvest)
-library(stringr)
-library(RCurl)
+# library(rvest)
+# library(stringr)
+# library(RCurl)
 library(tidyverse)
 library(lubridate)
 library(readxl)
@@ -315,6 +315,22 @@ Osland_2016_species_data <- Osland_2016_species_data %>%
   recode_species(species_code = species_code) %>%
   select(study_id, site_id, core_id, species_code)
 
+# reorder columns 
+source("./scripts/1_data_formatting/qa_functions.R")
+
+sites <- reorderColumns("sites", Osland_2016_site_data)
+
+cores <- Osland_2016_core_data %>%
+  reorderColumns("cores", .) %>%
+  mutate(core_year = year(core_date), 
+         core_month = month(core_date),
+         core_day = day(core_date)) %>% select(-core_date)
+
+depthseries <- Osland_2016_depth_series_data %>% 
+  reorderColumns("depthseries", .) %>%
+  mutate(method_id = "unknown methods")
+
+species <- reorderColumns("species", Osland_2016_species_data)
 
 ## Create study-level data ######
 
@@ -329,7 +345,7 @@ if(!file.exists("data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_s
   study_citations <- biblio_df %>%
     mutate(bibliography_id = "Osland_et_al_2016_data", 
            study_id = study,
-           publication_type = "primary") %>%
+           publication_type = "primary dataset") %>%
     remove_rownames() %>%
     select(study_id, bibliography_id, publication_type, everything())
   
@@ -342,45 +358,33 @@ if(!file.exists("data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_s
   write_csv(study_citations, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_study_citations.csv")
 }
 
-## QA/QC of data ################
-source("./scripts/1_data_formatting/qa_functions.R")
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
 
-# reorder columns 
-sites <- reorderColumns("sites", Osland_2016_site_data)
-cores <- reorderColumns("cores", Osland_2016_core_data)
-depthseries <- reorderColumns("depthseries", Osland_2016_depth_series_data)
-species <- reorderColumns("species", Osland_2016_species_data)
+table_names <- c("cores", "depthseries", "sites", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+sites <- updated$sites
+# methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
+## QA/QC of data ################
 
 # Check col and varnames
-testTableCols(table_names = c("cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
-test_numeric_vars(depthseries)
-
-
-# # Make sure column names are formatted correctly: 
-# test_colnames("core_level", Osland_2016_core_data) 
-# test_colnames("site_level", Osland_2016_site_data) 
-# test_colnames("depthseries", Osland_2016_depth_series_data) 
-# test_colnames("species", Osland_2016_species_data)
-#               
-# # Test relationships between core_ids at core- and depthseries-levels
-# # the test returns all core-level rows that did not have a match in the depth series data
-# results <- test_core_relationships(Osland_2016_core_data, Osland_2016_depth_series_data)
-# 
-# # Re-order columns
-# Osland_2016_species_data <- select_and_reorder_columns("species", Osland_2016_species_data, 
-#                                                        "/data/primary_studies/Osland_2016/derivative/")
-# Osland_2016_depth_series_data <- select_and_reorder_columns("depthseries", Osland_2016_depth_series_data,
-#                                                             "/data/primary_studies/Osland_2016/derivative/")
-# Osland_2016_site_data <- select_and_reorder_columns("site_level", Osland_2016_site_data,
-#                                                     "/data/primary_studies/Osland_2016/derivative/")
-# Osland_2016_core_data <- select_and_reorder_columns("core_level", Osland_2016_core_data, 
-#                                                     "/data/primary_studies/Osland_2016/derivative/")
+results <- test_numeric_vars(depthseries)
 
 ## Write data #################
 write_csv(species, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_species.csv")

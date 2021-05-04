@@ -23,9 +23,9 @@
 library(tidyverse)
 library(RefManageR)
 library(lubridate)
-library(anytime)
+# library(anytime)
 
-cores_raw <- read.csv("./data/primary_studies/peck_2020/original/peck_et_al_2020_cores.csv")
+cores_raw <- read_csv("./data/primary_studies/peck_2020/original/peck_et_al_2020_cores.csv")
 depthseries_raw <- read.csv("./data/primary_studies/peck_2020/original/peck_et_al_2020_depthseries.csv")
 species_raw <- read_csv("./data/primary_studies/peck_2020/original/peck_et_al_2020_species.csv")
 methods_raw <- read_csv("./data/primary_studies/peck_2020/original/peck_et_al_2020_materials_and_methods.csv")
@@ -35,23 +35,27 @@ impacts_raw <- read_csv("./data/primary_studies/peck_2020/original/peck_et_al_20
 
 impacts <- impacts_raw
 
-methods <- methods_raw
+methods <- methods_raw %>% mutate(method_id = "single set of methods")
 
 cores <- cores_raw %>%
-  separate(core_date, into=c("month", "day", "core_year"), sep="/") %>%
-  mutate(core_year = paste0("20", core_year)) %>%
-  mutate(core_date = anydate(paste(core_year, month, day, sep="/")),
+  mutate(core_date = as.Date(core_date, format = "%m/%d/%y"),
          core_notes = ifelse(!is.na(core_notes),
                              paste0("Abbreviated core ID: ", abbreviated_core_id, ". ", core_notes),
                              paste0("Abbreviated core ID: ", abbreviated_core_id))) %>%
-  select(-month, -day, -abbreviated_core_id) %>%
-  select(study_id, site_id, core_id, core_year, core_date, everything())
+  mutate(core_year = year(core_date), 
+         core_month = month(core_date),
+         core_day = day(core_date)) %>%
+  mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
+         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK")) %>%
+  select(-abbreviated_core_id, -core_date) %>%
+  select(study_id, site_id, core_id, core_year, everything())
 
 depthseries <- depthseries_raw %>%
   select(-fraction_carbon_modeled, -dry_bulk_density_modeled) %>%
   rename(fraction_carbon = fraction_carbon_measured,
          dry_bulk_density = dry_bulk_density_measured) %>%
-  mutate(pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
+  mutate(method_id = "single set of methods",
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
          pb214_unit = ifelse(!is.na(pb214_activity), "disintegrationsPerMinutePerGram", NA), 
          cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA))
 
@@ -70,7 +74,7 @@ if(!file.exists("data/primary_studies/peck_2020/derivative/peck_et_al_2020_study
   study_citations <- citation_raw %>%
     mutate(bibliography_id = "Peck_et_al_2020_data",
            study_id = "Peck_et_al_2020",
-           publication_type = "primary") %>%
+           publication_type = "primary dataset") %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
     remove_rownames()
   
@@ -84,22 +88,39 @@ if(!file.exists("data/primary_studies/peck_2020/derivative/peck_et_al_2020_study
   write_csv(study_citations, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "species", "impacts")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+impacts <- updated$impacts
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
-test_core_relationships(cores, depthseries)
+test_core_relationships(cores, depthseries) # a few cores will not be present in the depthseries
 fraction_not_percent(depthseries)
 test_numeric_vars(depthseries)
 
 # write files
 write_csv(cores, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_cores.csv")
 write_csv(species, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_species.csv")
-write_csv(methods_raw, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_methods.csv")
+write_csv(methods, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_methods.csv")
 write_csv(depthseries, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_depthseries.csv")
+write_csv(impacts, "./data/primary_studies/peck_2020/derivative/peck_et_al_2020_impacts.csv")
 

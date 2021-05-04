@@ -1,5 +1,5 @@
-study_id,site_id,core_id,core_latitude,core_longitude,core_elevation,salinity_class,vegetation_class,core_length_flag
-Noe_et_al_2016,Bulter_Island,W2,33.42268,-79.20802,NA,freshwater,forested,core depth limited by length of corer
-Noe_et_al_2016,Richmond_Island,W1,33.55564,-79.08943,NA,freshwater,forested,core depth limited by length of corer
-Noe_et_al_2016,Turkey_Creek,W3,33.34001,-79.34166,NA,freshwater,forested,core depth limited by length of corer
-Noe_et_al_2016,Turkey_Creek,W4,33.35003,-79.3447,NA,oligohaline,emergent,core depth limited by length of corer
+study_id,site_id,core_id,latitude,longitude,salinity_class,vegetation_class,core_length_flag
+Noe_et_al_2016,Bulter_Island,W2,33.42268,-79.20802,fresh,forested,core depth limited by length of corer
+Noe_et_al_2016,Richmond_Island,W1,33.55564,-79.08943,fresh,forested,core depth limited by length of corer
+Noe_et_al_2016,Turkey_Creek,W3,33.34001,-79.34166,fresh,forested,core depth limited by length of corer
+Noe_et_al_2016,Turkey_Creek,W4,33.35003,-79.3447,oligohaline,emergent,core depth limited by length of corer

@@ -27,7 +27,8 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 methods <- methods_raw %>%
   select(-publication_type) %>%
-  mutate(fraction_carbon_type = "organic carbon")
+  mutate(fraction_carbon_type = "organic carbon",
+         method_id = "single set of methods")
 
 ## Curate depthseries data #####
 # The raw data is in a Word document where red colored text indicated a modeled value. 
@@ -44,6 +45,7 @@ depthseries <- depthseries_raw %>%
          age = `Age (yr)`, 
          age_sd = `Age uncertainty (+- yr)`) %>%
   mutate(study_id = "Noe_et_al_2016",
+         method_id = "single set of methods",
   # specify site IDs based on CCRCN clearinghouse data 
          site_id = recode(core_id, 
                    "W1" = "Butler_Island",
@@ -57,7 +59,7 @@ depthseries <- depthseries_raw %>%
   # Convert mid depth to min and max
   mutate(depth_min = ifelse(core_id == "W3", mid_depth - 1, mid_depth - .5), 
          depth_max = ifelse(core_id == "W3", mid_depth + 1, mid_depth + .5)) %>%
-  select(study_id, site_id, core_id, depth_min, depth_max, 
+  select(study_id, site_id, core_id, method_id, depth_min, depth_max, 
          dry_bulk_density, fraction_carbon, 
          total_pb210_activity, total_pb210_activity_sd, excess_pb210_activity, pb210_unit, 
          age, age_sd)
@@ -66,6 +68,7 @@ depthseries <- depthseries_raw %>%
 cores <- cores_raw %>%
   select(study_id, site_id, core_id, core_latitude, core_longitude, core_elevation, 
          salinity_class, vegetation_class, core_length_flag) %>%
+  select_if(function(x) {!all(is.na(x))}) %>%
   mutate(salinity_class = recode(salinity_class, "freshwater" = "fresh"))
 
 ## Curate species and impact data ###########
@@ -96,9 +99,9 @@ if(!file.exists("data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_study_c
   biblio_df <- as.data.frame(biblio_raw)
   
   study_citations <- biblio_df %>%
-    mutate(bibliography_id = "Noe_et_al_2016_article", 
+    mutate(bibliography_id = "Noe_et_al_2016_combined", 
            study_id = "Noe_et_al_2016",
-           publication_type = "associated") %>%
+           publication_type = "combined dataset and manuscript") %>%
     remove_rownames() %>%
     select(study_id, bibliography_id, publication_type, everything())
   
@@ -111,35 +114,34 @@ if(!file.exists("data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_study_c
   write_csv(study_citations, "./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "impacts", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+impacts <- updated$impacts
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
 
 ## QA/QC ##########################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species",  "impacts"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
-test_numeric_vars(depthseries)
-
-# # Make sure column names are formatted correctly: 
-# test_colnames("core_level", cores)
-# test_colnames("depthseries", depthseries)
-# test_colnames("species", species)
-# test_colnames("impact", impacts)
-# test_varnames(cores)
-# test_varnames(depthseries)
-# test_varnames(impacts)
-# test_varnames(species)
-# 
-# test_numeric_vars(depthseries)
-
-# Test relationships between core_ids at core- and depthseries-levels
-# the test returns all core-level rows that did not have a match in the depth series data
-# results <- test_core_relationships(cores, depthseries)
+results <- test_numeric_vars(depthseries)
 
 ## Write data ######################
 write_csv(depthseries, "./data/primary_studies/Noe_2016/derivative/Noe_et_al_2016_depthseries.csv")

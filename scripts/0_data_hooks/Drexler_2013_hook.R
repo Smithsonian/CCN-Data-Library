@@ -92,9 +92,9 @@ if(!file.exists("./data/primary_studies/drexler_2013/derivative/drexler_et_al_20
   biblio_df <- as.data.frame(biblio_raw)
   
   study_citations <- biblio_df %>%
-    mutate(bibliography_id = "Drexler_et_al_2013_article", 
+    mutate(bibliography_id = "Drexler_et_al_2013_combined", 
            study_id = study_id_value,
-           publication_type = "associated source") %>%
+           publication_type = "combined dataset and manuscript") %>%
     remove_rownames() %>%
     select(study_id, bibliography_id, publication_type, everything())
   

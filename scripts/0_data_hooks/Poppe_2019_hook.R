@@ -37,20 +37,19 @@ methods_raw <- read_csv("./data/primary_studies/Poppe_2019/original/poppe_and_ry
 
 ## Curate Data ####
 
-id <- "Poppe_et_al_2019_synthesis"
-
 # Rename core year variable since date requires a full date string
 cores <- cores_raw %>%
-  mutate(study_id = id,
-         core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
+  mutate(core_year = year(core_date), 
+         core_month = month(core_date),
+         core_day = day(core_date)) %>% 
+  mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
          core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK"),
          core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
-  select(-estuary_id)
+  select(-estuary_id, -core_date)
 
 # Provide unit columns
 depthseries <- depthseries_raw %>%
-  rename(method_id = study_id) %>%
-  mutate(study_id = id,
+  mutate(method_id = "single set of methods",
          pb210_unit = ifelse(!is.na(total_pb210_activity), "becquerelsPerKilogram", NA), 
          pb214_unit = ifelse(!is.na(pb214_activity), "becquerelsPerKilogram", NA))%>%
   mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
@@ -62,21 +61,19 @@ species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
   select(study_id, site_id, core_id, species_code) %>%
   mutate(species_code = gsub("sp.", "spp", species_code))%>% 
-  mutate(study_id = id,
-         core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) 
+  mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) 
 
 impacts <- impacts_raw %>%
-  mutate(study_id = id,
-         core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
+  mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
   select(-estuary_id)
 
 methods <- methods_raw %>%
-  rename(method_id = study_id) %>%
-  mutate(study_id = id,
-         method_id = recode(method_id, 
-                            "Poppe_Rybczyk_2018" = "Poppe_and_Rybczyk_2018",
-                            "Poppe_Rybczyk_2019" = "Poppe_and_Rybczyk_2019"),
-         sediment_sieve_size = as.numeric(gsub(" mm", "", sediment_sieve_size)),
+  mutate(method_id = "single set of methods") %>%
+  # mutate(study_id = id,
+  #        method_id = recode(method_id,
+  #                           "Poppe_Rybczyk_2018" = "Poppe_and_Rybczyk_2018",
+  #                           "Poppe_Rybczyk_2019" = "Poppe_and_Rybczyk_2019")) %>% 
+  mutate(sediment_sieve_size = as.numeric(gsub(" mm", "", sediment_sieve_size)),
          carbon_profile_notes = "Modeled fraction carbon values available in https://doi.org/10.25573/data.10005248") %>%
   reorderColumns("methods", .)
 
@@ -94,7 +91,7 @@ if(!file.exists("data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_20
                             "article" = "Article",
                             "mastersthesis" = "MastersThesis",
                             "techreport" = "TechReport")) %>%
-    mutate(publication_type = "associated",
+    mutate(publication_type = "synthesis source",
            institution = ifelse(bibtype == "TechReport", "Western Washington University", NA),
            school = ifelse(bibtype == "MastersThesis", "Western Washington University", NA)) %>%
     mutate_all(as.character)
@@ -105,16 +102,12 @@ if(!file.exists("data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_20
   
   study_ids <- unique(cores$study_id)
   data_citation <-  data.frame(study_id = study_ids, data_bib) %>%
-    mutate(publication_type = "synthesis",
-           bibliography_id = "Poppe_and_Rybczyk_2018_2019_synthesis") 
+    mutate(publication_type = "synthesis dataset",
+           bibliography_id = "Poppe_et_al_2019_synthesis") 
   
   study_citations <- bind_rows(pub_citations, data_citation) %>%
     arrange(study_id) %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything())
-  
-  # make corrections for mixed methos
-  # raw_citations <- read_csv("data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_study_citations.csv")
-  # study_citations <- raw_citations %>% mutate(study_id = id) %>% distinct()
   
   # Write .bib file
   bib_file <- study_citations %>%
@@ -126,11 +119,26 @@ if(!file.exists("data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_20
   write_csv(study_citations, "data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "impacts", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+impacts <- updated$impacts
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
-testTableVars(table_names = c("methods", "cores", "depthseries", "species", "impacts"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

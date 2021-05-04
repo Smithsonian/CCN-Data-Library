@@ -41,7 +41,8 @@ raw_methods <- read_csv("data/primary_studies/Smith_2015/original/Smith_et_al_20
 methods <- raw_methods %>% 
   select_if(function(x) {!all(is.na(x))}) %>% 
   mutate(study_id = "Smith_et_al_2015",
-         sediment_sieved_flag = "sediment sieved")
+         sediment_sieved_flag = "sediment sieved",
+         method_id = "single set of methods")
 
 ## ... 4A. Core-level data ###########
 # Although the original file says sites, it is the core-level data. 
@@ -52,10 +53,13 @@ cores <- raw_cores %>%
          core_longitude = Longitude,
          core_date = Date) %>%
   mutate(core_date = as.Date(core_date, format = "%m/%d/%Y")) %>%
+  mutate(core_year = year(core_date), 
+         core_month = month(core_date),
+         core_day = day(core_date)) %>% 
   mutate(core_position_method = "handheld", 
          study_id = "Smith_et_al_2015", site_id = "09WCC01") %>%
-  select(core_id, site_id, study_id, 
-         core_date, core_latitude, core_longitude, core_position_method)
+  select(-c(core_date, Time, SW_depth, SW_salinity, PW10_salinity, PW30_salinity)) %>% 
+  select(core_id, site_id, study_id, core_latitude, core_longitude, core_position_method, everything())
 
 ## ... 4B. Depthseries data ##########
 
@@ -74,9 +78,12 @@ depthseries <- raw_depthseries %>%
   separate(core_id, into=c("core_id", "depth_interval"), sep=10) %>%
   # establish min and max depths for each sample
   mutate(depth_interval = as.numeric(gsub("_", "", depth_interval))) %>%
-  mutate(depth_min = depth_interval - 1, depth_max = depth_interval + 1,
-         study_id = "Smith_et_al_2015", site_id = "09WCC01") %>%
-  select(study_id, site_id, core_id, depth_min, depth_max,
+  mutate(depth_min = depth_interval - 1, 
+         depth_max = depth_interval + 1,
+         study_id = "Smith_et_al_2015", 
+         site_id = "09WCC01",
+         method_id = "single set of methods") %>%
+  select(study_id, site_id, core_id, method_id, depth_min, depth_max,
          dry_bulk_density,
          fraction_organic_matter,
          cs137_activity, cs137_activity_sd, cs137_unit,
@@ -122,7 +129,7 @@ if(!file.exists("./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_s
   study_citations <- biblio_df %>%
     mutate(bibliography_id = "Smith_et_al_2015_data", 
            study_id = study,
-           publication_type = "primary") %>%
+           publication_type = "primary dataset") %>%
     remove_rownames() %>%
     bind_rows(Smith_thesis) %>%
     select(study_id, bibliography_id, publication_type, everything())
@@ -137,18 +144,33 @@ if(!file.exists("./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_s
   
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("sites", "methods", "cores", "depthseries")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+sites <- updated$sites
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+
 ## 6. QA/QC  ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("sites", "methods", "cores", "depthseries"), version = "1")
-testTableVars(table_names = c("sites", "methods", "cores", "depthseries"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
-test_numeric_vars(depthseries)
+results <- test_numeric_vars(depthseries)
 
 ## 7. Write data ##################
 write_csv(cores, "./data/primary_studies/Smith_2015/derivative/Smith_et_al_2015_cores.csv")

@@ -125,9 +125,10 @@ cores <- soil_marine %>%
             by = c("site_id", "core_id")) %>%
   mutate(core_year = year(core_date),
          core_month = month(core_date),
-         core_day = day(core_date)) %>%
+         core_day = day(core_date),
+         core_length_flag = "not specified") %>%
   select(study_id, site_id, core_id, core_year, core_month, core_day, core_latitude, core_longitude,
-         salinity_class, salinity_method, vegetation_class, vegetation_method) %>%
+         salinity_class, salinity_method, vegetation_class, vegetation_method, core_length_flag) %>%
   distinct()
 
 ## Depthseries
@@ -146,8 +147,9 @@ depthseries <- soil_marine %>%
                                          "g/cc" = NA_character_),
          depth_interval_notes = paste0(str_to_sentence(DEPTH_FLAG), " ", dry_bulk_density_notes),
          depth_interval_notes = gsub("NA", "",depth_interval_notes), 
-         depth_interval_notes = trimws(depth_interval_notes)) %>%
-  select(study_id, site_id, core_id, sample_id, representative_depth_min, representative_depth_max, 
+         depth_interval_notes = trimws(depth_interval_notes),
+         method_id = "single set of methods") %>%
+  select(study_id, site_id, core_id, method_id, sample_id, representative_depth_min, representative_depth_max, 
          dry_bulk_density, fraction_carbon, depth_interval_notes)
 
 depthseries$depth_interval_notes[which(depthseries$depth_interval_notes == "")] <- NA
@@ -200,6 +202,7 @@ impacts <- condition %>%
 
 # Methods ----
 methods <- data.frame(study_id = "Nahlik_and_Fennessy_2016",
+                      method_id = "single set of methods",
                       coring_method = "soil pit",
                       sediment_sieved_flag = "sediment sieved",
                       sediment_sieve_size = 2,
@@ -214,9 +217,6 @@ methods <- data.frame(study_id = "Nahlik_and_Fennessy_2016",
 study_citations_raw <- read_csv("./data/primary_studies/Nahlik_Fennessy_2016/original/Nahlik_Fennessy_2016_citations.csv")
 
 study_citations <- study_citations_raw %>%
-  select(-keywords, -key) %>%
-  mutate(bibliography_id = "Nahlik_and_Fennessy_2016_article",
-         publication_type = "associated") %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Format bibliography
@@ -228,12 +228,29 @@ bib_file <- study_citations %>%
 WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_and_Fennessy_2016.bib")
 write_csv(study_citations, "./data/primary_studies/Nahlik_Fennessy_2016/derivative/Nahlik_Fennessy_2016_study_citations.csv")
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "sites", "species", "impacts")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+sites <- updated$sites
+impacts <- updated$impacts
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "sites", "species", "impacts"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "sites", "species", "impacts"))
+testTableCols(table_names)
+testTableVars(table_names) # palustrine
+testRequired(table_names) # depth min and max (although representative depth is present)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
@@ -244,7 +261,7 @@ results <- test_numeric_vars(depthseries)
 library(leaflet)
 leaflet(cores) %>%
  addTiles() %>%
- addCircles(lng = ~core_longitude, lat = ~core_latitude)
+ addCircles(lng = ~longitude, lat = ~latitude)
 
 ## Output Curated Data ####
 

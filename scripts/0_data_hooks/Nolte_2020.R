@@ -33,8 +33,7 @@ methods_raw <- read_csv("./data/primary_studies/nolte_2020/original/nolte_2020_m
 impacts_raw <- read_csv("./data/primary_studies/nolte_2020/original/nolte_2020_impacts.csv")
 associated_pub_bib <- ReadBib("./data/primary_studies/nolte_2020/original/associated_publications.bib")
 
-cores <- cores_raw %>%
-  select(-core_length_flag)
+cores <- cores_raw 
 
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
@@ -44,10 +43,11 @@ impacts <- impacts_raw %>%
   mutate(impact_class = recode(impact_class,
                                "livestock grazing" = "farmed"))
 
-methods <- methods_raw 
+methods <- methods_raw %>% mutate(method_id = "single set of methods")
 
 depthseries <- depthseries_raw %>%
-  mutate(cs137_unit = ifelse(!is.na(cs137_activity), "becquerelsPerKilogram", NA),
+  mutate(method_id = "single set of methods",
+         cs137_unit = ifelse(!is.na(cs137_activity), "becquerelsPerKilogram", NA),
          pb210_unit = ifelse(is.na(total_pb210_activity) & is.na(excess_pb210_activity), NA, "becquerelsPerKilogram"),
          ra226_unit = ifelse(!is.na(ra226_activity), "becquerelsPerKilogram", NA)) %>%
   select(-c(slice_thickness, kolker_bulk_density, kolker_pb_inventory, fraction_small_grain)) 
@@ -64,14 +64,14 @@ if(!file.exists("data/primary_studies/nolte_2020/derivative/nolte_2020_study_cit
   associated_publication <- as.data.frame(pub_bib) %>%
     mutate(bibliography_id = paste0("Nolte_et_al_", year, "_article"),
            study_id = study_id_value,
-           publication_type = "associated")
+           publication_type = "associated source")
   # mutate(year = as.numeric(year),
   #        volume = as.numeric(volume))
   
   data_citation <- as.data.frame(data_bib) %>%
     mutate(bibliography_id = paste0("Nolte_", year, "_data"),
            study_id = study_id_value,
-           publication_type = "primary")
+           publication_type = "primary dataset")
   
   study_citations <- bind_rows(data_citation, associated_publication) %>%
     remove_rownames() %>%
@@ -86,21 +86,36 @@ if(!file.exists("data/primary_studies/nolte_2020/derivative/nolte_2020_study_cit
   write_csv(study_citations, "./data/primary_studies/nolte_2020/derivative/nolte_2020_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "species", "impacts")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+impacts <- updated$impacts
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 depthseries <- reorderColumns("depthseries", depthseries)
 
-
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
-test_numeric_vars(depthseries)
+result <- test_numeric_vars(depthseries)
 
 # write data to derivative folder
 write_csv(cores, "./data/primary_studies/nolte_2020/derivative/nolte_2020_cores.csv")
