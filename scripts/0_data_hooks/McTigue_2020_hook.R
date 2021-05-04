@@ -41,7 +41,8 @@ depthseries_PB <- depthseries_raw %>%
 
 depthseries <- depthseries_raw %>%
   filter(study_id != "McTigue_et_al_2020b") %>%
-  mutate(study_id = study_id_value) %>%
+  mutate(study_id = study_id_value,
+         method_id = "single set of methods") %>%
   bind_rows(depthseries_PB) %>%
   rename(fraction_carbon = fraction_carbon_measured) %>%
   select(-fraction_carbon_modeled, -mass_depth) %>%
@@ -51,9 +52,12 @@ depthseries <- depthseries_raw %>%
   ungroup()
   
 cores <- cores_raw %>%
-  mutate(core_year = year(core_date)) %>%
+  mutate(core_year = year(core_date),
+         core_month = month(core_date),
+         core_day = day(core_date)) %>%
   filter(study_id != "McTigue_et_al_2020b") %>%
-  mutate(study_id = study_id_value)
+  mutate(study_id = study_id_value) %>%
+  select(-core_date)
   
 species <- species_raw  %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
@@ -66,7 +70,8 @@ methods <- methods_raw %>%
   mutate(pb210_counting_method = "alpha",
          excess_pb210_rate = "mass accumulation",
          excess_pb210_model = "CFCS",
-         study_id = study_id_value)
+         study_id = study_id_value,
+         method_id = "single set of methods")
 
 # Citations ####
 if(!file.exists("data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020_study_citations.csv")){
@@ -76,7 +81,7 @@ if(!file.exists("data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020
   study_citations <- as.data.frame(bib) %>%
     mutate(bibliography_id = c("McTigue_et_al_2019_article", "McTigue_et_al_2020_data"),
            study_id = study_id_value,
-           publication_type = c("associated", "primary")) %>%
+           publication_type = c("associated source", "primary dataset")) %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
     remove_rownames()
   
@@ -90,12 +95,27 @@ if(!file.exists("data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020
   
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

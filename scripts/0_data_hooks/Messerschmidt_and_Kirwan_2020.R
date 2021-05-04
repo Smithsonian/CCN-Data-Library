@@ -29,17 +29,29 @@ depthseries_raw <- read.csv("./data/primary_studies/messerschmidt_2020/original/
 species_raw <- read_csv("./data/primary_studies/messerschmidt_2020/original/messerschmidt_and_kirwan_2020_species.csv")
 methods_raw <- read_csv("./data/primary_studies/messerschmidt_2020/original/messerschmidt_and_kirwan_2020_materials_and_methods.csv")
 
-cores <- cores_raw
+cores <- cores_raw %>%
+  mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
+         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK")) 
 
 depthseries <- depthseries_raw %>%
   mutate(cs137_unit = ifelse(is.na(cs137_activity), NA, "disintegrationsPerMinutePerGram"),
-         pb210_unit = ifelse(is.na(total_pb210_activity) & is.na(excess_pb210_activity), NA, "disintegrationsPerMinutePerGram"),
+         pb210_unit = ifelse(is.na(total_pb210_activity) & is.na(excess_pb210_activity), 
+                             NA, "disintegrationsPerMinutePerGram"),
          bi214_unit = ifelse(is.na(bi214_activity), NA, "disintegrationsPerMinutePerGram"),
-         pb214_unit = ifelse(is.na(pb214_activity_295keV) & is.na(pb214_activity_352keV), NA, "disintegrationsPerMinutePerGram")) %>%
-  select(-sedimentation_rate, -sedimentation_rate_se)
+         pb214_unit = ifelse(is.na(pb214_activity_295keV) & is.na(pb214_activity_352keV), 
+                             NA, "disintegrationsPerMinutePerGram")) %>%
+  mutate(method_id = "single set of methods") %>%
+  # average pb214
+  mutate(pb214_activity = (pb214_activity_352keV + pb214_activity_295keV)/2,
+         # Assume errors are 100% correlated
+         pb214_activity_se = (pb214_activity_se_352keV + pb214_activity_se_295keV)/2) %>%
+  select(-c(sedimentation_rate, sedimentation_rate_se, pb214_activity_352keV, pb214_activity_295keV,
+            pb214_activity_se_352keV, pb214_activity_se_295keV))
+
 
 methods <- methods_raw %>%
-  mutate(dry_bulk_density_flag = "to constant mass") %>%
+  mutate(dry_bulk_density_flag = "to constant mass",
+         method_id = "single set of methods") %>%
   select(-dry_bulk_density_sample_volume)
 
 species <- species_raw %>%
@@ -57,7 +69,7 @@ if(!file.exists("data/primary_studies/messerschmidt_2020/derivative/messerschmid
   study_citations <- as.data.frame(bib) %>%
     mutate(study_id = study_id_value,
            bibliography_id = "Messerschmidt_and_Kirwan_2020_data",
-           publication_type = "primary") %>%
+           publication_type = "primary dataset") %>%
     remove_rownames() %>%
     select(study_id, bibliography_id, publication_type, everything())
   
@@ -71,6 +83,20 @@ if(!file.exists("data/primary_studies/messerschmidt_2020/derivative/messerschmid
   write_csv(study_citations, "./data/primary_studies/messerschmidt_2020/derivative/messerschmidt_and_kirwan_2020_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
@@ -78,8 +104,9 @@ depthseries <- reorderColumns("depthseries", depthseries)
 methods <- reorderColumns("methods", methods)
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

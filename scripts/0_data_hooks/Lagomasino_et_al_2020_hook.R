@@ -24,7 +24,7 @@
 library(tidyverse)
 library(RefManageR)
 library(lubridate)
-library(anytime)
+# library(anytime)
 
 cores_raw <- read_csv("./data/primary_studies/lagomasino_et_al_2020/original/lagomasino_et_al_2020_cores.csv")
 depthseries_raw <- read.csv("./data/primary_studies/lagomasino_et_al_2020/original/lagomasino_et_al_2020_depthseries.csv")
@@ -36,9 +36,13 @@ cores <- cores_raw %>%
   mutate(core_year = year(core_date),
          core_month = month(core_date),
          core_day = day(core_date)) %>%
+  mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
+         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK"),
+         core_length_flag = "not specified") %>%
   select(-core_date)
 
-methods <- methods_raw
+methods <- methods_raw %>%
+  mutate(method_id = "single set of methods")
 
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
@@ -46,7 +50,8 @@ species <- species_raw %>%
 
 depthseries <- depthseries_raw %>%
   mutate(pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
-         cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA))
+         cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA),
+         method_id = "single set of methods")
 
 ## Citations ####
 
@@ -57,13 +62,13 @@ if(!file.exists("data/primary_studies/Lagomasino_et_al_2020/derivative/lagomasin
   associated_pub <- as.data.frame(associated_pub_raw) %>%
     mutate(doi = "10.1007/s12237-013-9625-0",
            bibliography_id = paste0("Lagomasino_et_al_", year, "_article"),
-           publication_type = "associated") 
+           publication_type = "associated source") 
   
   data_release_raw <- as.data.frame(GetBibEntryWithDOI(doi))
   
   study_citations <- data_release_raw %>%
     mutate(bibliography_id = paste0("Lagomasino_et_al_", year, "_data"),
-           publication_type = "primary") %>%
+           publication_type = "primary dataset") %>%
     bind_rows(associated_pub) %>%
     mutate(study_id = study_id_value) %>%
     remove_rownames() %>%
@@ -79,6 +84,20 @@ if(!file.exists("data/primary_studies/Lagomasino_et_al_2020/derivative/lagomasin
   write_csv(study_citations, "./data/primary_studies/Lagomasino_et_al_2020/derivative/lagomasino_et_al_2020_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
@@ -87,8 +106,9 @@ depthseries <- reorderColumns("depthseries", depthseries)
 cores <- reorderColumns("cores", cores)
 
 # test cols and vars
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

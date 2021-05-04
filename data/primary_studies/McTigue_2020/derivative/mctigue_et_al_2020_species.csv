@@ -1,7 +1,3 @@
-study_id,site_id,core_id,species_code
-McTigue_et_al_2020,Traps_Bay,TB_1L,Spartina alterniflora
-McTigue_et_al_2020,Traps_Bay,TB_1L,Juncus roemerianus
-McTigue_et_al_2020,Traps_Bay,TB_2L,Spartina alterniflora
-McTigue_et_al_2020,Traps_Bay,TB_2L,Juncus roemerianus
-McTigue_et_al_2020,Traps_Bay,TB_3L,Spartina alterniflora
-McTigue_et_al_2020,Traps_Bay,TB_3L,Juncus roemerianus
+study_id,site_id,core_id,species_code,code_type,habitat
+Messerschmidt_and_Kirwan_2020,GCREW,C3,Schoenoplectus americanus,Genus species,marsh
+Messerschmidt_and_Kirwan_2020,GCREW,C4,Spartina patens,Genus species,marsh

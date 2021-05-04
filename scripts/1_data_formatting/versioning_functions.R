@@ -32,7 +32,7 @@ renameColumns <- function(x, key) {
 # if(category == "depthseries"){
 #   print("Fixing depthseries table.")
 #   
-#   # Fix the two different 210Pb in the depth series
+#   # Fix the two different 210Pb in the depth series (Messerschmidt_and_Kirwan_2020)
 #   depthseries_fixed <- tables_to_update[[i]] %>% 
 #     mutate_at(vars(contains("pb214_activity")), as.numeric) %>%
 #     mutate(pb214_activity = ifelse(is.na(pb214_activity),

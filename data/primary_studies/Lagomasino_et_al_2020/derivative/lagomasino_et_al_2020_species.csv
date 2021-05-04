@@ -1,9 +1,9 @@
-study_id,site_id,core_id,species_code
-Lagomasino_et_al_2020,Huddy_Gut,HG1,Spartina alterniflora
-Lagomasino_et_al_2020,Huddy_Gut,HG1,Spartina patens
-Lagomasino_et_al_2020,Huddy_Gut,HG2,Spartina alterniflora
-Lagomasino_et_al_2020,Huddy_Gut,HG2,Spartina patens
-Lagomasino_et_al_2020,Huddy_Gut,HG3,Spartina cynosuroides
-Lagomasino_et_al_2020,Porpoise_Point,PP1,Spartina alterniflora
-Lagomasino_et_al_2020,Porpoise_Point,PP2,Spartina patens
-Lagomasino_et_al_2020,Porpoise_Point,PP3,Juncus roemerianus
+study_id,site_id,core_id,species_code,code_type,habitat
+Lagomasino_et_al_2020,Huddy_Gut,HG1,Spartina alterniflora,Genus species,marsh
+Lagomasino_et_al_2020,Huddy_Gut,HG1,Spartina patens,Genus species,marsh
+Lagomasino_et_al_2020,Huddy_Gut,HG2,Spartina alterniflora,Genus species,marsh
+Lagomasino_et_al_2020,Huddy_Gut,HG2,Spartina patens,Genus species,marsh
+Lagomasino_et_al_2020,Huddy_Gut,HG3,Spartina cynosuroides,Genus species,marsh
+Lagomasino_et_al_2020,Porpoise_Point,PP1,Spartina alterniflora,Genus species,marsh
+Lagomasino_et_al_2020,Porpoise_Point,PP2,Spartina patens,Genus species,marsh
+Lagomasino_et_al_2020,Porpoise_Point,PP3,Juncus roemerianus,Genus species,marsh
