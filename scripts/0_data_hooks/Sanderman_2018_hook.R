@@ -227,22 +227,52 @@ internatl_depthseries_data <- internatl_depthseries_data %>%
          -DBD_measured_or_modeled, -carbon_profile_notes, -fraction_carbon_type,
          -OC_measured_or_modeled, - CD_measured_or_modeled)
 
-## QA/QC Functions ##########################
+
+## Final Formatting ####
+
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # remove data that has since been published independently
 studies_to_remove <- "Breithaupt_et_al_2014"
 
 depthseries <- reorderColumns("depthseries", internatl_depthseries_data) %>%
-  filter(!(study_id %in% studies_to_remove))
+  filter(!(study_id %in% studies_to_remove)) %>%
+  mutate(method_id = "single set of methods")
+
+ids <- depthseries %>% distinct(study_id, site_id, core_id)
+
 cores <- reorderColumns("cores", internatl_core_data) %>%
-  filter(!(study_id %in% studies_to_remove))
+  filter(!(study_id %in% studies_to_remove)) %>% 
+  mutate(core_year = year(core_date), 
+         core_month = month(core_date),
+         core_day = day(core_date)) %>% select(-core_date) %>%
+  # some site ids were NA so I'm joining them from the depthseries table
+  select(-site_id) %>% left_join(ids)
+
 species <- reorderColumns("species", internatl_species_data) %>%
-  filter(!(study_id %in% studies_to_remove))
+  filter(!(study_id %in% studies_to_remove)) %>%
+  drop_na(species_code) %>% mutate(species_code = trimws(species_code))
+
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("cores", "depthseries", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+# methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+
+## QA/QC Functions ##########################
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1") # DBD_measured_or_modeled
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
@@ -260,8 +290,8 @@ citations_raw <- read_csv("data/primary_studies/Sanderman_2018/intermediate/Sand
 
 study_citations <- citations_raw %>%
   select(-key) %>%
-  mutate(publication_type = ifelse(bibliography_id == "Sanderman_2018", "synthesis", "associated")) %>%
-  mutate(bibliography_id = case_when(publication_type == "synthesis" ~ paste0(bibliography_id, "_data"),
+  mutate(publication_type = ifelse(bibliography_id == "Sanderman_2018", "synthesis dataset", "synthesis source")) %>%
+  mutate(bibliography_id = case_when(publication_type == "synthesis dataset" ~ paste0(bibliography_id, "_data"),
                                      bibliography_id == "Alongi_et_al_2000" & month == "oct" ~ "Alongi_et_al_2000_oct_article",
                                      TRUE ~ paste0(bibliography_id, "_article"))) %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything())

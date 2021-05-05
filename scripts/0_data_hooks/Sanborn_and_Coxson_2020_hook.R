@@ -43,14 +43,16 @@ sites <- sites_raw %>%
 # cores uncontrolled: 
 # pH pH_notes carbon_stock carbon_stock_method carbon_stock_0.5m carbon_stock_0.1m
 cores <- cores_raw %>%
-  mutate(study_id = study_id_value) %>%
+  mutate(study_id = study_id_value,
+         core_length_flag = "not specified") %>%
   select(-c(pH, pH_notes, carbon_stock, carbon_stock_method, 
             carbon_stock_0.5m, carbon_stock_0.1m))
 
 # depthseries uncontrolled: 
 # fraction_carbon_measured fraction_carbon_modeled fraction_nitrogen C_to_N_ratio carbon_stock carbon_density
 depthseries <- depthseries_raw %>%
-  mutate(study_id = study_id_value) %>%
+  mutate(study_id = study_id_value,
+         method_id = "single set of methods") %>%
   rename(fraction_carbon = fraction_carbon_measured) %>%
   drop_na(fraction_carbon) %>%
   select(-c(fraction_carbon_modeled, fraction_nitrogen,
@@ -59,6 +61,7 @@ depthseries <- depthseries_raw %>%
 # methods
 methods <- methods_raw %>% 
   mutate(study_id = study_id_value,
+         method_id = "single set of methods",
          carbon_measured_or_modeled = "measured")
 
 # species uncontrolled:
@@ -75,7 +78,7 @@ study_citations <- study_citations_raw %>%
   select(-key, -keywords, -journal) %>%
   mutate(doi = data_doi,
          bibliography_id = paste0(study_id_value, "_data"),
-         publication_type = "primary")
+         publication_type = "primary dataset")
 
 ## Format bibliography
 bib_file <- study_citations %>%
@@ -86,18 +89,33 @@ bib_file <- study_citations %>%
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020.bib")
 write_csv(study_citations, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_study_citations.csv")
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("sites", "methods", "cores", "depthseries", "species")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
+sites <- updated$sites
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries",  "species"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
-test_numeric_vars(depthseries)
+results <- test_numeric_vars(depthseries)
 
 ## Write derivative data ####
 write_csv(sites, "./data/primary_studies/Sanborn_Coxson_2020/derivative/sanborn_and_coxson_2020_sites.csv")

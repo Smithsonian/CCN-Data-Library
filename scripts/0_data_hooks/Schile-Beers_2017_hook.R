@@ -122,7 +122,8 @@ depthseries <- raw_depthseries_data %>%
   mutate(core_length = sum(core_length)) %>%
   mutate(depth_max = ifelse(is.na(depth_max)==TRUE,core_length, depth_max)) %>%
   select(-core_length) %>%
-  ungroup()
+  ungroup() %>%
+  mutate(method_id = "single set of methods")
 
 # The depth (cm) category does not provide depth_max if it's entered as >100. 
 # However, the first entry for each core provides a core length. I'll summarize the data to get that information, 
@@ -149,7 +150,10 @@ core_data <- plot_data %>%
   # Core IDs are expressed as factor not numeric
   # Paste site, ecosystem, and plot values to create a unique core ID 
   mutate(core_id = as.factor(gsub(" ", "_", paste(site_id, paste(Ecosystem, Plot, sep="_"), sep="_")))) %>%
-  mutate(core_date = as.Date(as.numeric(Date), origin="1899-12-30")) %>%
+  # mutate(core_date = as.Date(as.numeric(Date), origin="1899-12-30")) %>%
+  mutate(core_year = year(Date), 
+         core_month = month(Date),
+         core_day = day(Date)) %>%
   rename(vegetation_notes = "Ecosystem") %>%
   rename(XYZ = "XYZ source") %>%
   mutate(core_position_method = ifelse(XYZ == "RTK GPS", "RTK", 
@@ -159,17 +163,21 @@ core_data <- plot_data %>%
   rename(core_latitude = "Latitude", core_longitude = "Longitude",
          core_elevation = "elevation",
          core_depth = "core depth (cm)") %>%
-  mutate(core_depth_flag = ifelse(core_depth<300, "core depth represents deposit depth", 
+  mutate(core_length_flag = ifelse(core_depth<300, "core depth represents deposit depth", 
                                   ifelse(core_depth==300, "core depth limited by length of corer", NA))) %>%
   mutate(salinity_class = ifelse(salinity > 50, "brine", 
                                  ifelse(salinity < 51 & salinity > 29, "saline", "brackish"))) %>%
-  select(study_id, site_id, core_id, core_date, core_latitude, core_longitude, 
-        core_position_method, core_elevation, core_elevation_datum, core_elevation_method, vegetation_notes)
+  select(study_id, site_id, core_id, core_latitude, core_longitude, core_year, core_month, core_day,
+        core_position_method, core_elevation, core_elevation_datum, core_elevation_method, vegetation_notes,
+        salinity_class, everything())
 
 
 # Some plot are missing coordinates. From the site description we can estimate
 #   the locations and add coordinates in
 cores <- core_data %>% 
+  select(study_id, site_id, core_id, core_latitude, core_longitude, core_year, core_month, core_day,
+         core_position_method, core_elevation, core_elevation_datum, core_elevation_method, vegetation_notes,
+         salinity_class, core_length_flag) %>%
   mutate(core_latitude = ifelse(site_id == "Kalba East", 25.007509, 
                           ifelse(site_id == "Kalba South", 24.999839,
                             core_latitude))) %>% 
@@ -228,7 +236,7 @@ if(!file.exists("./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beer
   study_citations_campbell <- biblio_df %>%
     mutate(bibliography_id = "Campbell_et_al_2014_article", 
            study_id = study_campbell,
-           publication_type = "associated") %>%
+           publication_type = "synthesis source") %>%
     select(study_id, bibliography_id, publication_type, everything())
   
   # Data citation: 
@@ -252,7 +260,7 @@ if(!file.exists("./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beer
   # expand data citation to include all the studies
   data_citations <- data.frame(study_id = studies,
                                as.data.frame(biblio_schile)) %>%
-    mutate(publication_type = "synthesis", 
+    mutate(publication_type = "synthesis dataset", 
            bibliography_id = "Schile-Beers_et_al_2017_data")
   
   # bind all citations together
@@ -295,12 +303,27 @@ if(!file.exists("./data/primary_studies/Schile-Beers_2017/derivative/Schile-Beer
 #             doi = synthesis_doi) %>%
 #   bind_rows(study_data_primary)
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("cores", "depthseries", "sites")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+# methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+sites <- updated$sites
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("sites", "cores", "depthseries"), version = "1")
-testTableVars(table_names = c("sites", "cores", "depthseries"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

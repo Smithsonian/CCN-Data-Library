@@ -25,59 +25,75 @@
 library(tidyverse)
 library(RefManageR)
 
-depthseries_raw <- read.csv("./data/primary_studies/Thom_2019/original/thom_2019_depthseries.csv")
+depthseries_raw <- read_csv("./data/primary_studies/Thom_2019/original/thom_2019_depthseries.csv")
 methods_raw <-read_csv("./data/primary_studies/Thom_2019/original/thom_2019_material_and_methods.csv")
 species_raw <- read_csv("./data/primary_studies/Thom_2019/original/thom_2019_species.csv")
 cores_raw <- read_csv("./data/primary_studies/Thom_2019/original/thom_2019_cores.csv")
   
 # hook data
-cores <- cores_raw
+cores <- cores_raw %>%
+  mutate(core_length_flag = "core depth limited by length of corer")
 
 depthseries <- depthseries_raw %>%
-  mutate(cs137_unit = "countsPerGramDryWeightPerHour")
+  mutate(cs137_unit = "countsPerGramDryWeightPerHour",
+         method_id = "single set of methods")
 
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
   select(-c(genus, species))
 
 methods <- methods_raw %>%
-  mutate(study_id = "Thom_1992")
+  mutate(study_id = "Thom_1992",
+         method_id = "single set of methods")
 
-# Create bibtex file
-data_release_doi <- "10.25573/data.10046189"
-associated_pub_doi <- "10.1007/BF03160603"
-study_id <- "Thom_1992"
+# Create Citation ####
 
-data_bib_raw <- GetBibEntryWithDOI(c(data_release_doi, associated_pub_doi))
+if(!file.exists("data/primary_studies/Thom_2019/derivative/thom_2019_study_citations.csv")){
+  data_release_doi <- "10.25573/data.10046189"
+  associated_pub_doi <- "10.1007/BF03160603"
+  study_id <- "Thom_1992"
+  
+  data_bib_raw <- GetBibEntryWithDOI(c(data_release_doi, associated_pub_doi))
+  
+  study_citations <- as.data.frame(data_bib_raw) %>%
+    mutate(study_id = study_id) %>%
+    mutate(bibliography_id = c("Thom_1992_data", "Thom_1992_article"),
+           publication_type = c("primary dataset", "associated source")) %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/Thom_2019/derivative/Thom_2019.bib")
+  write_csv(study_citations, "data/primary_studies/Thom_2019/derivative/thom_2019_study_citations.csv")
+  
+}
 
-study_citations <- as.data.frame(data_bib_raw) %>%
-  mutate(study_id = study_id) %>%
-  mutate(bibliography_id = c("Thom_1992_data", "Thom_1992_article"),
-         publication_type = c("primary", "associated")) %>%
-  remove_rownames() %>%
-  select(study_id, bibliography_id, publication_type, bibtype, everything())
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
 
-# Curate biblio so ready to read out as a BibTex-style .bib file
-# study_citations <- bib %>%
-#   select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
-#   mutate(year = as.numeric(year),
-#          volume = as.numeric(volume),
-#          number = as.numeric(number))
+table_names <- c("methods", "cores", "depthseries", "species")
 
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("bibliography_id")
+updated <- updateTables(table_names)
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Thom_2019/derivative/Thom_2019.bib")
+# save listed tables to objects
+
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
@@ -85,9 +101,8 @@ test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
 test_numeric_vars(depthseries)
 
-# write files
+# Write files ####
 write_csv(depthseries, "data/primary_studies/Thom_2019/derivative/thom_2019_depthseries.csv")
 write_csv(cores, "data/primary_studies/Thom_2019/derivative/thom_2019_cores.csv")
 write_csv(methods, "data/primary_studies/Thom_2019/derivative/thom_2019_methods.csv")
-write_csv(study_citations, "data/primary_studies/Thom_2019/derivative/thom_2019_study_citations.csv")
 write_csv(species, "data/primary_studies/Thom_2019/derivative/thom_2019_species.csv")

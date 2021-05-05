@@ -1,86 +1,86 @@
-study_id,site_id,core_id,depth_min,depth_max,sample_id,dry_bulk_density,fraction_carbon,depth_interval_notes
-Sanborn_and_Coxson_2020,BC14-22,391,10,17,391a,0.24,0.1795,Ah horizon
-Sanborn_and_Coxson_2020,BC14-22,391,35,42,391b,0.51,0.0609,Cg1 horizon
-Sanborn_and_Coxson_2020,BC14-22,391,60,67,391c,0.82,0.0264,Cg2 horizon
-Sanborn_and_Coxson_2020,BC14-23,392,8,15,392a,0.5,0.0657,Ah horizon
-Sanborn_and_Coxson_2020,BC14-25,393,10,17,393a,1.24,0.0133,Cg1 horizon
-Sanborn_and_Coxson_2020,BC14-26,394,1,8,394a,0.46,0.0633,Ah horizon
-Sanborn_and_Coxson_2020,BC14-26,394,30,37,394b,0.73,0.0356,Cg horizon
-Sanborn_and_Coxson_2020,BC14-27,395,0,7,395a,0.22,0.1841,Ah horizon
-Sanborn_and_Coxson_2020,BC14-27,395,35,42,395b,0.26,0.0873,Cg horizon
-Sanborn_and_Coxson_2020,BC14-28,396,10,17,396a,0.31,0.1277,Ah horizon
-Sanborn_and_Coxson_2020,BC14-28,396,42,49,396b,0.4,0.0809,Cg horizon
-Sanborn_and_Coxson_2020,BC14-29,397,8,15,397a,0.59,0.0403,Ah horizon
-Sanborn_and_Coxson_2020,BC14-29,397,35,42,397b,0.64,0.0317,AC horizon
-Sanborn_and_Coxson_2020,BC14-29,397,65,72,397c,0.8,0.0269,C horizon
-Sanborn_and_Coxson_2020,BC14-30,398,10,17,398a,1.09,0.0142,AC horizon
-Sanborn_and_Coxson_2020,BC14-30,398,65,72,398c,1.16,0.0127,Cg2 horizon
-Sanborn_and_Coxson_2020,BC14-31,399,25,32,399a,0.59,0.0455,AC horizon
-Sanborn_and_Coxson_2020,BC14-31,399,65,72,399b,0.78,0.026,Cg horizon
-Sanborn_and_Coxson_2020,BC17-08,400,0,7,400a,0.55,0.0466,Om horizon
-Sanborn_and_Coxson_2020,BC17-08,400,50,57,400c,0.79,0.0372,Cg2 horizon
-Sanborn_and_Coxson_2020,BC17-08,400,75,82,400d,0.91,0.0248,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-09,401,0,7,401a,0.72,0.0305,Cg1 horizon
-Sanborn_and_Coxson_2020,BC17-09,401,50,57,401c,1.35,0.0107,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-09,401,80,87,401d,1.35,0.0096,Cg4 horizon
-Sanborn_and_Coxson_2020,BC17-10,402,0,7,402a,1.1,0.0092,Cg1 horizon
-Sanborn_and_Coxson_2020,BC17-10,402,50,57,402c,1.34,0.0077,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-10,402,80,87,402d,1.08,0.0102,Cg4 horizon
-Sanborn_and_Coxson_2020,BC17-11,403,0,7,403a,0.24,0.1504,Om horizon
-Sanborn_and_Coxson_2020,BC17-11,403,50,57,403c,0.79,0.0337,Cg2 horizon
-Sanborn_and_Coxson_2020,BC17-11,403,80,87,403d,0.92,0.0302,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-12,404,0,7,404a,0.55,0.056,Om horizon
-Sanborn_and_Coxson_2020,BC17-12,404,50,57,404c,0.57,0.0424,Cg2 horizon
-Sanborn_and_Coxson_2020,BC17-12,404,80,87,404d,0.72,0.0354,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-13,405,0,7,405a,1.22,0.0116,Cg1 horizon
-Sanborn_and_Coxson_2020,BC17-13,405,50,57,405c,1.3,0.0084,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-13,405,80,87,405d,1.34,0.0089,Cg4 horizon
-Sanborn_and_Coxson_2020,BC17-14,406,0,7,406a,1.23,0.0183,Cg1 horizon
-Sanborn_and_Coxson_2020,BC17-14,406,50,57,406c,1.35,0.0094,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-14,406,75,82,406d,1.21,0.0101,Cg4 horizon
-Sanborn_and_Coxson_2020,BC17-15,407,0,7,407a,0.6,0.0384,Cg1 horizon
-Sanborn_and_Coxson_2020,BC17-15,407,50,57,407c,1.01,0.0234,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-15,407,90,97,407d,1.46,0.0114,Cg4 horizon
-Sanborn_and_Coxson_2020,BC17-16,408,20,27,408a,0.18,0.2503,Om horizon
-Sanborn_and_Coxson_2020,BC17-16,408,50,57,408b,0.36,0.0728,Cg1 horizon
-Sanborn_and_Coxson_2020,BC17-16,408,80,87,408c,0.31,0.067,Cg2 horizon
-Sanborn_and_Coxson_2020,BC17-17,409,10,17,409a,0.34,0.1187,Om horizon
-Sanborn_and_Coxson_2020,BC17-17,409,50,57,409c,0.57,0.0425,Cg2 horizon
-Sanborn_and_Coxson_2020,BC17-17,409,80,87,409d,0.82,0.0284,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-18,410,0,7,410a,0.51,0.0485,Cg1 horizon
-Sanborn_and_Coxson_2020,BC17-18,410,50,57,410c,0.76,0.0541,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-18,410,80,87,410d,1.26,0.0127,Cg4 horizon
-Sanborn_and_Coxson_2020,BC17-19,411,0,7,411a,1.31,0.0144,Cg1 horizon
-Sanborn_and_Coxson_2020,BC17-19,411,50,57,411c,1.21,0.0085,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-19,411,90,97,411d,1.24,0.0084,Cg4 horizon
-Sanborn_and_Coxson_2020,BC17-20,412,10,17,412a,0.3,0.1079,Om horizon
-Sanborn_and_Coxson_2020,BC17-20,412,50,57,412c,0.76,0.0362,Cg2 horizon
-Sanborn_and_Coxson_2020,BC17-20,412,80,87,412d,0.69,0.0399,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-21,413,0,7,413a,0.44,0.0593,Om horizon
-Sanborn_and_Coxson_2020,BC17-21,413,40,47,413b,0.87,0.0306,Cg1 horizon
-Sanborn_and_Coxson_2020,BC17-21,413,80,87,413d,0.96,0.0224,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-22,414,0,7,414a,0.15,0.189,Om1 horizon
-Sanborn_and_Coxson_2020,BC17-22,414,25,32,414b,0.22,0.191,Om2 horizon
-Sanborn_and_Coxson_2020,BC17-22,414,80,87,414d,0.39,0.0882,Cg2 horizon
-Sanborn_and_Coxson_2020,BC17-23,415,0,7,415a,0.45,0.0557,Om horizon
-Sanborn_and_Coxson_2020,BC17-23,415,50,57,415d,0.81,0.0289,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-23,415,80,87,415e,0.96,0.0236,Cg4 horizon
-Sanborn_and_Coxson_2020,BC17-24,416,10,17,416a,0.33,0.1545,Om horizon
-Sanborn_and_Coxson_2020,BC17-24,416,50,57,416c,0.95,0.0388,Cg2 horizon
-Sanborn_and_Coxson_2020,BC17-24,416,90,97,416d,0.85,0.0389,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-25,417,0,7,417a,0.54,0.0632,Om horizon
-Sanborn_and_Coxson_2020,BC17-25,417,35,42,417b,0.65,0.0359,Cg1 horizon
-Sanborn_and_Coxson_2020,BC17-25,417,80,87,417d,1,0.0145,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-26,418,10,17,418a,1.28,0.0142,Cg1 horizon
-Sanborn_and_Coxson_2020,BC17-26,418,68,75,418c,1.36,0.0109,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-27,419,75,82,419c,1.34,0.0161,Cg2 horizon
-Sanborn_and_Coxson_2020,BC17-28,420,0,7,420a,0.42,0.0583,Om horizon
-Sanborn_and_Coxson_2020,BC17-28,420,25,32,420b,0.67,0.0453,Cg horizon
-Sanborn_and_Coxson_2020,BC17-29,421,0,7,421a,0.14,0.0946,Om1 horizon
-Sanborn_and_Coxson_2020,BC17-29,421,25,32,421b,0.38,0.1444,Om2 horizon
-Sanborn_and_Coxson_2020,BC17-30,422,10,17,422a,1.19,0.016,Cg1 horizon
-Sanborn_and_Coxson_2020,BC17-30,422,40,47,422b,1.19,0.0161,Cg2 horizon
-Sanborn_and_Coxson_2020,BC17-30,422,80,87,422d,1.47,0.0146,Cg4 horizon
-Sanborn_and_Coxson_2020,BC17-31,423,10,17,423a,1.2,0.012,Cg1 horizon
-Sanborn_and_Coxson_2020,BC17-31,423,50,57,423c,1.42,0.0092,Cg3 horizon
-Sanborn_and_Coxson_2020,BC17-31,423,80,87,423d,1.18,0.0078,Cg4 horizon
+study_id,site_id,core_id,depth_min,depth_max,sample_id,dry_bulk_density,fraction_carbon,depth_interval_notes,method_id
+Sanborn_and_Coxson_2020,BC14-22,391,10,17,391a,0.24,0.1795,Ah horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-22,391,35,42,391b,0.51,0.0609,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-22,391,60,67,391c,0.82,0.0264,Cg2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-23,392,8,15,392a,0.5,0.0657,Ah horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-25,393,10,17,393a,1.24,0.0133,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-26,394,1,8,394a,0.46,0.0633,Ah horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-26,394,30,37,394b,0.73,0.0356,Cg horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-27,395,0,7,395a,0.22,0.1841,Ah horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-27,395,35,42,395b,0.26,0.0873,Cg horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-28,396,10,17,396a,0.31,0.1277,Ah horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-28,396,42,49,396b,0.4,0.0809,Cg horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-29,397,8,15,397a,0.59,0.0403,Ah horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-29,397,35,42,397b,0.64,0.0317,AC horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-29,397,65,72,397c,0.8,0.0269,C horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-30,398,10,17,398a,1.09,0.0142,AC horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-30,398,65,72,398c,1.16,0.0127,Cg2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-31,399,25,32,399a,0.59,0.0455,AC horizon,single set of methods
+Sanborn_and_Coxson_2020,BC14-31,399,65,72,399b,0.78,0.026,Cg horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-08,400,0,7,400a,0.55,0.0466,Om horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-08,400,50,57,400c,0.79,0.0372,Cg2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-08,400,75,82,400d,0.91,0.0248,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-09,401,0,7,401a,0.72,0.0305,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-09,401,50,57,401c,1.35,0.0107,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-09,401,80,87,401d,1.35,0.0096,Cg4 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-10,402,0,7,402a,1.1,0.0092,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-10,402,50,57,402c,1.34,0.0077,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-10,402,80,87,402d,1.08,0.0102,Cg4 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-11,403,0,7,403a,0.24,0.1504,Om horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-11,403,50,57,403c,0.79,0.0337,Cg2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-11,403,80,87,403d,0.92,0.0302,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-12,404,0,7,404a,0.55,0.056,Om horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-12,404,50,57,404c,0.57,0.0424,Cg2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-12,404,80,87,404d,0.72,0.0354,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-13,405,0,7,405a,1.22,0.0116,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-13,405,50,57,405c,1.3,0.0084,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-13,405,80,87,405d,1.34,0.0089,Cg4 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-14,406,0,7,406a,1.23,0.0183,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-14,406,50,57,406c,1.35,0.0094,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-14,406,75,82,406d,1.21,0.0101,Cg4 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-15,407,0,7,407a,0.6,0.0384,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-15,407,50,57,407c,1.01,0.0234,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-15,407,90,97,407d,1.46,0.0114,Cg4 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-16,408,20,27,408a,0.18,0.2503,Om horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-16,408,50,57,408b,0.36,0.0728,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-16,408,80,87,408c,0.31,0.067,Cg2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-17,409,10,17,409a,0.34,0.1187,Om horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-17,409,50,57,409c,0.57,0.0425,Cg2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-17,409,80,87,409d,0.82,0.0284,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-18,410,0,7,410a,0.51,0.0485,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-18,410,50,57,410c,0.76,0.0541,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-18,410,80,87,410d,1.26,0.0127,Cg4 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-19,411,0,7,411a,1.31,0.0144,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-19,411,50,57,411c,1.21,0.0085,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-19,411,90,97,411d,1.24,0.0084,Cg4 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-20,412,10,17,412a,0.3,0.1079,Om horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-20,412,50,57,412c,0.76,0.0362,Cg2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-20,412,80,87,412d,0.69,0.0399,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-21,413,0,7,413a,0.44,0.0593,Om horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-21,413,40,47,413b,0.87,0.0306,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-21,413,80,87,413d,0.96,0.0224,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-22,414,0,7,414a,0.15,0.189,Om1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-22,414,25,32,414b,0.22,0.191,Om2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-22,414,80,87,414d,0.39,0.0882,Cg2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-23,415,0,7,415a,0.45,0.0557,Om horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-23,415,50,57,415d,0.81,0.0289,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-23,415,80,87,415e,0.96,0.0236,Cg4 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-24,416,10,17,416a,0.33,0.1545,Om horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-24,416,50,57,416c,0.95,0.0388,Cg2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-24,416,90,97,416d,0.85,0.0389,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-25,417,0,7,417a,0.54,0.0632,Om horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-25,417,35,42,417b,0.65,0.0359,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-25,417,80,87,417d,1,0.0145,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-26,418,10,17,418a,1.28,0.0142,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-26,418,68,75,418c,1.36,0.0109,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-27,419,75,82,419c,1.34,0.0161,Cg2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-28,420,0,7,420a,0.42,0.0583,Om horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-28,420,25,32,420b,0.67,0.0453,Cg horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-29,421,0,7,421a,0.14,0.0946,Om1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-29,421,25,32,421b,0.38,0.1444,Om2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-30,422,10,17,422a,1.19,0.016,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-30,422,40,47,422b,1.19,0.0161,Cg2 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-30,422,80,87,422d,1.47,0.0146,Cg4 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-31,423,10,17,423a,1.2,0.012,Cg1 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-31,423,50,57,423c,1.42,0.0092,Cg3 horizon,single set of methods
+Sanborn_and_Coxson_2020,BC17-31,423,80,87,423d,1.18,0.0078,Cg4 horizon,single set of methods

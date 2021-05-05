@@ -121,16 +121,21 @@ peaks <- core_data %>%
 
 depthseries <- depthseries_data %>%
   merge(peaks, by="core_id", all.x=TRUE, all.y=TRUE) %>%
-  mutate(cs137_peak_present = ifelse(is.na(cs137_peak_cm)==TRUE, FALSE, ifelse(cs137_peak_cm == depth_min, TRUE, FALSE))) %>%
+  mutate(cs137_peak_present = ifelse(is.na(cs137_peak_cm)==TRUE, FALSE, ifelse(cs137_peak_cm == depth_min, TRUE, FALSE)),
+         method_id = "single set of methods") %>%
   select(-cs137_peak_cm)
 
-cores <- select(core_data, -cs137_peak_cm)
+cores <- core_data %>% 
+  select(-cs137_peak_cm) %>%
+  mutate(core_length_flag = "core depth limited by length of corer")
+  
 
 ## ... methods ####
 
 methods_raw <- read_csv("data/primary_studies/Thorne_2015_a/original/Thorne_et_al_2015_methods.csv")
 
 methods <- methods_raw %>%
+  mutate(method_id = "single set of methods") %>% 
   select_if(function(x) {!all(is.na(x))})
 
 
@@ -156,7 +161,7 @@ if(!file.exists("./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_20
   study_citations <- biblio_df %>%
     mutate(bibliography_id = c("Thorne_et_al_2015_data", "Thorne_et_al_2015_article"), 
            study_id = study,
-           publication_type = c("primary", "associated")) %>%
+           publication_type = c("primary dataset", "associated source")) %>%
     remove_rownames() %>%
     select(study_id, bibliography_id, publication_type, everything())
   
@@ -169,18 +174,32 @@ if(!file.exists("./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_20
   write_csv(study_citations, "./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015_study_citations.csv")
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
-test_numeric_vars(depthseries)
+results <- test_numeric_vars(depthseries)
 
 ## 6. Export data
 write_csv(cores, "./data/primary_studies/Thorne_2015_a/derivative/Thorne_et_al_2015_cores.csv")

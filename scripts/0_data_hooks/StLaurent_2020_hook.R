@@ -29,12 +29,14 @@ cores <- cores_raw
 # fraction_hydrogen fraction_sulfur porewater_salinity
 depthseries <- depthseries_raw %>%
   rename(fraction_carbon = fraction_carbon_measured) %>%
+  mutate(method_id = "single set of methods") %>% 
   select(-c(fraction_carbon_modeled, fraction_carbonate, 
             fraction_nitrogen, fraction_hydrogen, fraction_sulfur, porewater_salinity))
 
 # methods (no change)
 methods <- methods_raw %>%
-  mutate(fraction_carbon_method = "EA")
+  mutate(fraction_carbon_method = "EA",
+         method_id = "single set of methods")
 
 # species uncontrolled:
 # fraction_cover
@@ -45,44 +47,61 @@ species <- species_raw %>%
 
 ## 2. Create Citation ####
 
-associated_bib_doi <- "10.1007/s11852-020-00783-3"
-data_release_doi <- "10.25573/serc.13315472"
+if(!file.exists("./data/primary_studies/StLaurent_et_al_2020/derivative/StLaurent_et_al_2020_study_citations.csv")){
+  associated_bib_doi <- "10.1007/s11852-020-00783-3"
+  data_release_doi <- "10.25573/serc.13315472"
+  
+  paper_bib_raw <- GetBibEntryWithDOI(associated_bib_doi)
+  data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
+  
+  # Convert this to a dataframe
+  paper_biblio <- as.data.frame(paper_bib_raw) %>%
+    mutate(study_id = id) %>%
+    mutate(bibliography_id = paste0(id, "_article"),
+           publication_type = "associated source")
+  
+  data_biblio <- as.data.frame(data_bib_raw) %>%
+    mutate(study_id = id) %>%
+    mutate(bibliography_id = paste0(id, "_data"),
+           publication_type = "primary dataset")
+  
+  # Curate biblio so ready to read out as a BibTex-style .bib file
+  study_citations <- bind_rows(data_biblio, paper_biblio) %>%
+    mutate(month = ifelse(is.na(month), "dec", month)) %>% 
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/StLaurent_et_al_2020/derivative/StLaurent_et_al_2020.bib")
+  write_csv(study_citations, "./data/primary_studies/StLaurent_et_al_2020/derivative/StLaurent_et_al_2020_study_citations.csv")
+}
 
-paper_bib_raw <- GetBibEntryWithDOI(associated_bib_doi)
-data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
 
-# Convert this to a dataframe
-paper_biblio <- as.data.frame(paper_bib_raw) %>%
-  mutate(study_id = id) %>%
-  mutate(bibliography_id = id)
+table_names <- c("methods", "cores", "depthseries", "species")
 
-data_biblio <- as.data.frame(data_bib_raw) %>%
-  mutate(study_id = id) %>%
-  mutate(bibliography_id = paste0(id, "_data"))
+updated <- updateTables(table_names)
 
-# Curate biblio so ready to read out as a BibTex-style .bib file
-study_citations <- bind_rows(data_biblio, paper_biblio) %>%
-  mutate(publication_type = c("primary", "associated"),
-         year = as.numeric(year),
-         month = ifelse(is.na(month), "dec", month)) %>% 
-  remove_rownames() %>%
-  select(study_id, bibliography_id, publication_type, bibtype, everything())
+# save listed tables to objects
 
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -publication_type) %>%
-  column_to_rownames("bibliography_id")
-
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/StLaurent_et_al_2020/derivative/StLaurent_et_al_2020.bib")
-
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
 
 ## 3. QA/QC ####
 
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # test cols and vars
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
@@ -95,6 +114,5 @@ write_csv(cores, "./data/primary_studies/StLaurent_et_al_2020/derivative/StLaure
 write_csv(species, "./data/primary_studies/StLaurent_et_al_2020/derivative/StLaurent_et_al_2020_species.csv")
 write_csv(methods, "./data/primary_studies/StLaurent_et_al_2020/derivative/StLaurent_et_al_2020_methods.csv")
 write_csv(depthseries, "./data/primary_studies/StLaurent_et_al_2020/derivative/StLaurent_et_al_2020_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/StLaurent_et_al_2020/derivative/StLaurent_et_al_2020_study_citations.csv")
 
 

@@ -1,2 +1,2 @@
-study_id,coring_method,compaction_flag,dry_bulk_density_temperature,loss_on_ignition_temperature,loss_on_ignition_time,cs137_counting_method
-Thom_1992,PVC tube or thin-walled metal tube,corer limits compaction,90,500,1,gamma
+study_id,coring_method,compaction_flag,dry_bulk_density_temperature,loss_on_ignition_temperature,loss_on_ignition_time,cs137_counting_method,method_id
+Thom_1992,PVC tube or thin-walled metal tube,corer limits compaction,90,500,1,gamma,single set of methods

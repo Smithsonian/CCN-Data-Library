@@ -132,7 +132,6 @@ updateTables <- function(table_names){
       tables_to_update[[i]] <- species_fixed
     }  
     
-    
     # ... Rename and Delete Necessary Columns ####
     
     # Rename columns
@@ -146,47 +145,16 @@ updateTables <- function(table_names){
         warning(paste0("Column names duplicated during renaming: ", category))
       }
     }
-    # this step will cause duplication of colnames if the new colnames already exist in the df
-    
+
     # Delete (specified) columns
     # If any colnames are in the to_delete table, deselect these columns 
     if(any(names(tables_to_update[[i]]) %in% to_delete$attribute_name_v1p2)){
       print(paste0("Deleting targeted columns in ", category))
+      # print the cols which are being deleted
       print(names(tables_to_update[[i]])[which(names(tables_to_update[[i]]) %in% to_delete$attribute_name_v1p2)])
       
       tables_to_update[[i]] <- tables_to_update[[i]] %>% select(-any_of(to_delete$attribute_name_v1p2))
     }
-    
-    # table_guidance <- filter(database_guidance, table == category)
-    # guidance_subset_actions <- filter(guidance_subset, !is.na(action))
-    #
-    # # If the guidance involves a rename, rename it
-    # if (nrow(guidance_subset_actions) > 0) {
-    #   for (j in 1:nrow(guidance_subset_actions)) {
-    #     if (guidance_subset_actions$action[j] == "rename") {
-    #       
-    #       # Old names
-    #       if (guidance_subset_actions$attribute_name_v1p2[j] %in% names(tables_to_update[[i]])) {
-    #         # isolate the old column 
-    #         old_column <- tables_to_update[[i]][,guidance_subset_actions$attribute_name_v1p2[j]]
-    #         # [[1]] not sure what this was for
-    #         
-    #         # For any not NA entries in the old category, 
-    #         tables_to_update[[i]][!is.na(old_column), guidance_subset_actions$attribute_name[j]] <- 
-    #           old_column[!is.na(old_column)] # write them over to a column with a new category
-    #       }
-    #     }
-    #   }
-    # }
-    # 
-    # # Classes to include
-    # include_these <- unique(guidance_subset$attribute_name[guidance_subset$attribute_name %in% names(tables_to_update[[i]])])
-    # 
-    # # Remove attributes not in guidance 2
-    # # ... and order columns as in guidance v2
-    # renamed_and_reordered <- tables_to_update[[i]][, include_these]
-    # 
-    # tables_to_update[[i]] <- renamed_and_reordered
   } 
   
   # reorder columns according to guidance
