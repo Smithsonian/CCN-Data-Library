@@ -45,7 +45,7 @@ names(raw_soil) <- tolower(names(raw_soil))
 soil <- raw_soil %>% 
   separate(date, c("core_year", "core_month"), sep = "-") %>%
   mutate(study_id = id, 
-         method_id = "Luk_et_al_2020_a",
+         method_id = "soil carbon measured",
          fraction_carbon = toc/100, # total organic
          core_month = as.numeric(core_month),
          core_year = as.numeric(core_year)) %>%
@@ -56,7 +56,7 @@ soil <- raw_soil %>%
 isotopes <- raw_iso %>% rename(dry_bulk_density = dbd,
                                location = status) %>%
   mutate(study_id = id, 
-         method_id = "Luk_et_al_2020_b",
+         method_id = "radioisotopes measured",
          core_year = year(as.Date(date, format = "%m/%d/%Y")),
          core_month = month(as.Date(date, format = "%m/%d/%Y")),
          core_day = day(as.Date(date, format = "%m/%d/%Y"))) %>%
@@ -127,6 +127,9 @@ cores <- reorderColumns("cores", cores)
 # methods
 methods <- raw_methods %>%
   slice(-c(1:2)) %>%
+  mutate(method_id = recode(method_id, 
+                            "Luk_et_al_2020_a" = "soil carbon measured",
+                            "Luk_et_al_2020_b" = "radioisotopes measured")) %>% 
   select_if(function(x) {!all(is.na(x))})
 
 methods <- reorderColumns("methods", methods)
@@ -144,21 +147,22 @@ if(!file.exists("data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_study_c
   pub_bib <- GetBibEntryWithDOI(pub_doi)
   
   # Convert citations to dataframe
-  pub_citation <- bind_rows(as.data.frame(pub_bib), as.data.frame(pub_bib)) %>%
+  pub_citation <- as.data.frame(pub_bib) %>%
     mutate(bibliography_id = str_c("Luk_et_al", year, "article", sep = "_"),
-           publication_type = "associated") %>%
-    mutate(study_id = c("Luk_et_al_2020_a", "Luk_et_al_2020_b")) %>%
+           publication_type = "associated source",
+           study_id = id) %>%
+    # mutate(study_id = c("Luk_et_al_2020_a", "Luk_et_al_2020_b")) %>%
     remove_rownames()
   
   luk_data_citation <- as.data.frame(luk_bib) %>%
-    mutate(study_id = "Luk_et_al_2020_b",
-           publication_type = "primary") %>%
+    mutate(study_id = id,
+           publication_type = "primary dataset") %>%
     mutate(bibliography_id = str_c("Luk_et_al", year, "data", sep = "_")) %>%
     remove_rownames()
   
   spivak_data_citation <- as.data.frame(spivak_bib) %>%
-    mutate(study_id = "Luk_et_al_2020_a",
-           publication_type = "primary",
+    mutate(study_id = id,
+           publication_type = "primary dataset",
            bibliography_id = str_c("Spivak", year, "data", sep = "_")) %>%
     remove_rownames()
   
@@ -166,10 +170,6 @@ if(!file.exists("data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_study_c
   study_citations <- pub_citation %>%
     bind_rows(spivak_data_citation, luk_data_citation) %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything())
-  
-  # Make corrections to the existing file
-  # raw_citation <- read_csv("data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_study_citations.csv")
-  # study_citations <- raw_citation %>% mutate(study_id = id) %>% distinct()
   
   # Write .bib file
   bib_file <- study_citations %>%
@@ -183,19 +183,33 @@ if(!file.exists("data/primary_studies/Luk_2020/derivative/Luk_et_al_2020_study_c
   
 } 
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+
 ## QA/QC ###############
 
 library(leaflet)
 leaflet(cores) %>%
   addProviderTiles(providers$CartoDB) %>%
-  addCircleMarkers(lng = ~as.numeric(core_longitude), lat = ~as.numeric(core_latitude), radius = 5, label = ~site_id)
+  addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), radius = 5, label = ~site_id)
 
 ## QA/QC tests 
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries"), current_version = F)
-testTableVars(table_names = c("methods", "cores", "depthseries"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

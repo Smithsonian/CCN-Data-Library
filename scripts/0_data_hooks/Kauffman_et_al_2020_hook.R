@@ -26,8 +26,8 @@ library(lubridate)
 # library(anytime)
 
 sites_raw <- read_csv("./data/primary_studies/Kauffman_et_al_2020/original/kauffman_et_al_2020_site.csv")
-cores_raw <- read.csv("./data/primary_studies/Kauffman_et_al_2020/original/kauffman_et_al_2020_cores.csv")
-depthseries_raw <- read.csv("./data/primary_studies/Kauffman_et_al_2020/original/kauffman_et_al_2020_depthseries.csv")
+cores_raw <- read_csv("./data/primary_studies/Kauffman_et_al_2020/original/kauffman_et_al_2020_cores.csv")
+depthseries_raw <- read_csv("./data/primary_studies/Kauffman_et_al_2020/original/kauffman_et_al_2020_depthseries.csv")
 species_raw <- read_csv("./data/primary_studies/Kauffman_et_al_2020/original/kauffman_et_al_2020_species.csv")
 methods_raw <- read_csv("./data/primary_studies/Kauffman_et_al_2020/original/kauffman_et_al_2020_material_and_methods.csv")
 study_citations_raw <- read_csv("./data/primary_studies/Kauffman_et_al_2020/original/kauffman_et_al_2020_study_citations.csv")
@@ -58,7 +58,7 @@ methods <- methods_raw %>% mutate(method_id = "single set of methods") %>%
 species <- species_raw %>%
   select(-species_code) %>%
   mutate(study_id = study_id_value,
-         species_code = paste(genus, species, sep=" ")) %>%
+         species_code = trimws(paste(genus, species, sep=" "))) %>%
   select(study_id, site_id, core_id, species_code)
 
 ## Create citation info  #######
@@ -114,7 +114,6 @@ table_names <- c("sites", "methods", "cores", "depthseries", "species")
 updated <- updateTables(table_names)
 
 # save listed tables to objects
-
 sites <- updated$sites
 methods <- updated$methods
 depthseries <- updated$depthseries
@@ -125,8 +124,9 @@ species <- updated$species
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("sites", "methods", "cores", "depthseries", "species"))
-testTableVars(table_names = c("sites", "methods", "cores", "depthseries", "species"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

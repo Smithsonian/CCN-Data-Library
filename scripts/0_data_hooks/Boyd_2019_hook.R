@@ -38,22 +38,23 @@ methods_raw <- read_csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_20
 
 # Data Curation ####
 
-id <- "Boyd_et_al_2019"
+id <- "Boyd_et_al_2019" # use if we are treating this as one study
 
 methods <- methods_raw %>%
-  rename(method_id = study_id) %>% mutate(study_id = id) %>%
+  mutate(method_id = "single set of methods") %>% 
+  # rename(method_id = study_id) %>% mutate(study_id = id) %>%
   reorderColumns("methods", .)
 
 cores <- cores_raw %>%
   mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id)) %>%
   mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
          core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK")) %>%
-  mutate(study_id = id) %>%
+  # mutate(study_id = id) %>%
   rename(core_year = core_date)
 
 impacts <- impacts_raw %>%
-  mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id)) %>%
-  mutate(study_id = id)
+  # mutate(study_id = id) %>% 
+  mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id))
 
 depthseries <- depthseries_raw %>%
   mutate(core_id = as.character(core_id),
@@ -70,15 +71,16 @@ depthseries <- depthseries_raw %>%
          bi214_unit = ifelse(!is.na(bi214_activity), "becquerelsPerKilogram", NA), 
          be7_unit = ifelse(!is.na(be7_activity), "becquerelsPerKilogram", NA),
          am241_unit = ifelse(!is.na(am241_activity), "becquerelsPerKilogram", NA)) %>%
-  rename(method_id = study_id) %>% mutate(study_id = id) %>%
+  mutate(method_id = "single set of methods") %>% 
+  # rename(method_id = study_id) %>% mutate(study_id = id) %>%
   reorderColumns("depthseries", .)
 
 # Species data needs to combine genus and species into one and remove other columns
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
   select(study_id, site_id, core_id, species_code) %>%
-  mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id)) %>%
-  mutate(study_id = id)
+  # mutate(study_id = id) %>% 
+  mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id))
 
 # Create Citation ####
 
@@ -95,13 +97,13 @@ if(!file.exists("data/primary_studies/Boyd_2019/derivative/boyd_et_al_2019_study
   
   data_biblio <- as.data.frame(data_bib_raw) %>%
     mutate(bibliography_id = "Boyd_et_al_2019_data", 
-           publication_type = "primary dataset") %>%
+           publication_type = "synthesis dataset") %>%
     full_join(study_ids)
   
   pub_biblio <- bib %>% 
     mutate_all(as.character) %>%
     mutate(bibliography_id = str_c(study_id, "article", sep = "_"),
-           publication_type = "associated source")
+           publication_type = "synthesis source")
   
   # Curate biblio so ready to read out as a BibTex-style .bib file
   study_citations <- bind_rows(pub_biblio, data_biblio) %>%
@@ -130,7 +132,6 @@ table_names <- c("methods", "cores", "depthseries", "impacts", "species")
 updated <- updateTables(table_names)
 
 # save listed tables to objects
-
 impacts <- updated$impacts
 methods <- updated$methods
 depthseries <- updated$depthseries
@@ -142,6 +143,7 @@ species <- updated$species
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

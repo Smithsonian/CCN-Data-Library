@@ -11,7 +11,7 @@
 library(tidyverse)
 library(RefManageR)
 library(readxl)
-library(stringr)
+# library(stringr)
 
 ## Read in data #####################
 age_depth_data <- read_excel("./data/primary_studies/Watson_Byrne_2013/original/watson_byrne_2013_age_depth.xlsx")
@@ -21,7 +21,8 @@ raw_methods <- read_csv("./data/primary_studies/Watson_Byrne_2013/intermediate/w
 
 ## Curate data ######################
 
-methods <- raw_methods %>% select(-publication_type)
+methods <- raw_methods %>% select(-publication_type) %>% 
+  mutate(method_id = "single set of methods")
 
 ## ... depthseries data #############
 # carbon stocks and age-depth information will be joined, 
@@ -67,7 +68,9 @@ depthseries <- age_depth_data %>%
   # order it according to core id and depth
   arrange(depth_min, .by_group = TRUE) %>%
   # Filter out the core that does not have matching carbon stock data
-  filter(core_id != "Alviso_1") %>% ungroup()
+  filter(core_id != "Alviso_1") %>% 
+  mutate(method_id = "single set of methods") %>% 
+  ungroup()
 
 ## ... Site data ###########
 source("./scripts/1_data_formatting/curation_functions.R") 
@@ -93,7 +96,7 @@ if(!file.exists("./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_
   study_citations <- biblio_df %>%
     mutate(bibliography_id = "Watson_and_Byrne_2013_article", 
            study_id = study_id_value,
-           publication_type = "associated") %>%
+           publication_type = "associated source") %>%
     remove_rownames() %>%
     select(study_id, bibliography_id, publication_type, everything())
   
@@ -107,21 +110,36 @@ if(!file.exists("./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_
   
 }
 
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
+
+table_names <- c("methods", "cores", "depthseries")
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries"))
-testTableVars(table_names = c("methods", "cores", "depthseries"))
+testTableCols(table_names)
+testTableVars(table_names) 
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
-test_numeric_vars(depthseries)
+results <- test_numeric_vars(depthseries)
 
 
 ## Write files #########
 write_csv(depthseries, "./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013_depthseries.csv")
 write_csv(methods, "./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013_methods.csv")
+write_csv(cores, "./data/primary_studies/Watson_Byrne_2013/derivative/watson_and_byrne_2013_cores.csv")
 

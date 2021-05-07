@@ -43,7 +43,9 @@ methods <- methods_raw %>%
 species <- species_raw %>%
   filter(species != "bare ground" & species != "wrack") %>%
   select(-fraction_cover) %>%
-  rename(species_code = species)
+  rename(species_code = species) %>%
+  mutate(species_code = trimws(species_code)) %>%
+  mutate(species_code = recode(species_code, "Spatina cyanosuriodes" = "Spartina cynosuroides"))
 
 ## 2. Create Citation ####
 

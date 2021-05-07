@@ -46,13 +46,15 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 ## Trim Data to Library ####
 
-id <- "Chambers_and_White_2020" # or should it be White_et_al_2020?
+id <- "Chambers_et_al_2019" # or should it be White_et_al_2020?
 
 # methods
 methods <- raw_methods %>%
   slice(-c(1:2)) %>%
   select_if(function(x) {!all(is.na(x))}) %>%
-  rename(method_id = study_id) %>%
+  mutate(method_id = case_when(study_id == "Chambers_et_al_2019" ~ "1 meter cores",
+                               study_id == "White_et_al_2020_a" ~ "2 meter cores",
+                               study_id == "White_et_al_2020_b" ~ "0.5 meter cores")) %>%
   mutate(study_id = id)
 
 methods <- reorderColumns("methods", methods)
@@ -69,13 +71,13 @@ chambers_data <- raw_Chambers %>%
          core_latitude = latitude,
          depth = depth2) %>%
   mutate_at(vars(-depth, -site_id), as.numeric) %>%
-  mutate(method_id = "Chambers_et_al_2019")
+  mutate(method_id = "1 meter cores")
 
 white_data <- raw_White %>%
   rename(core_longitude = lon,
          core_latitude = lat,
          site_id = Site_id) %>%
-  mutate(method_id = ifelse(site_id == "Estuary", "White_et_al_2020_b", "White_et_al_2020_a"))
+  mutate(method_id = ifelse(site_id == "Estuary", "0.5 meter cores", "2 meter cores"))
 
 # join tables together and curate depthseries
 join_depthseries <- bind_rows(chambers_data, white_data) %>%
@@ -174,13 +176,14 @@ cores <- updated$cores
 
 leaflet(cores) %>%
   addProviderTiles(providers$CartoDB) %>%
-  addCircleMarkers(lng = ~as.numeric(core_longitude), lat = ~as.numeric(core_latitude), 
+  addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
                    radius = 5, label = ~core_id)
 
 
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

@@ -28,7 +28,8 @@ study <- "Trettin_et_al_2017"
 
 depthseries <- raw_depthseries %>%
   mutate(site_id = as.character(Plot)) %>%
-  mutate(study_id = study) %>%
+  mutate(study_id = study,
+         method_id = "single set of methods") %>%
   # Paste plot and subplot values to create a unique core ID 
   mutate(core_id = as.factor(paste(Plot, Subplot, sep="_"))) %>%
   # One sample interval has double _ _ 
@@ -37,7 +38,7 @@ depthseries <- raw_depthseries %>%
   rename(percent_carbon = '%C') %>%
   mutate(fraction_carbon = percent_carbon / 100) %>%
   separate(col='Actual Sample Interval', into=c("depth_min", "depth_max"), sep="_") %>%
-  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon) %>%
+  select(study_id, site_id, core_id, method_id, depth_min, depth_max, dry_bulk_density, fraction_carbon) %>%
   mutate(depth_min = ifelse(is.na(depth_max==TRUE),100,depth_min)) %>%
   mutate(depth_min = as.numeric(depth_min), 
          depth_max = as.numeric(depth_max)) %>%
@@ -60,20 +61,26 @@ species <- coreLocations %>%
 print(unique(species$species_code))
 
 species <- species %>%
-  mutate(species_code = recode_factor(species_code, "H. Littoralis" = "Heritiera littoralis",
-                "B. Gymnorrhiza" = "Bruguiera gymnorrhiza",
-                "R. Mucronata" = "Rhizophora mucronata",
-                "X. Granatum" = "Xylocarpus granatum",
-                "A. Marina" = "Avicennia marina",
-                "C. Tagal" = "Ceriops tagal",
-                "S. Alba" = "Sonneratia alba"))
+  mutate(
+    species_code = recode_factor(
+      species_code,
+      "H. Littoralis" = "Heritiera littoralis",
+      "B. Gymnorrhiza" = "Bruguiera gymnorrhiza",
+      "R. Mucronata" = "Rhizophora mucronata",
+      "X. Granatum" = "Xylocarpus granatum",
+      "A. Marina" = "Avicennia marina",
+      "C. Tagal" = "Ceriops tagal",
+      "S. Alba" = "Sonneratia alba"
+    )
+  )
 
 cores <- depthseries %>%
   select(study_id, site_id, core_id) %>%
   distinct() %>%
   left_join(coreLocations) %>%
+  mutate(core_length_flag = "not specified") %>% 
   rename(core_latitude = Lati, core_longitude = Long) %>%
-  select(study_id, site_id, core_id, core_latitude, core_longitude)
+  select(study_id, site_id, core_id, core_latitude, core_longitude, core_length_flag)
 
 ## ... Site-level ##########
 sites <- cores %>%
@@ -81,7 +88,8 @@ sites <- cores %>%
   summarize(site_longitude_max = max(core_longitude),
             site_longitude_min = min(core_longitude),
             site_latitude_max = max(core_latitude),
-            site_latitude_min = min(core_latitude))
+            site_latitude_min = min(core_latitude)) %>% 
+  ungroup()
 
 # West_Bounding_Coordinate: 36.30681
 # East_Bounding_Coordinate: 36.11881
@@ -91,45 +99,63 @@ sites <- cores %>%
 ## 4. Create study-citation table ######
 # Get bibtex citation from DOI
 
-doi <- "10.2737/RDS-2017-0053"
+if(!file.exists("./data/primary_studies/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")){
+  doi <- "10.2737/RDS-2017-0053"
+  
+  biblio_raw <- GetBibEntryWithDOI(doi)
+  biblio_df <- as.data.frame(biblio_raw)
+  
+  study_citations <- biblio_df %>%
+    mutate(bibliography_id = "Trettin_et_al_2017_data", 
+           study_id = study,
+           publication_type = "primary dataset", 
+           year = 2017) %>%
+    remove_rownames() %>%
+    select(study_id, bibliography_id, publication_type, everything())
+  
+  # Write .bib file
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+  
+  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Trettin_2017/derivative/Trettin_2017.bib")
+  write_csv(study_citations, "./data/primary_studies/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
+  
+}
 
-biblio_raw <- GetBibEntryWithDOI(doi)
-biblio_df <- as.data.frame(biblio_raw)
+# Update Tables ###########
+source("./scripts/1_data_formatting/versioning_functions.R")
 
-study_citations <- biblio_df %>%
-  # rownames_to_column("key") %>%
-  mutate(bibliography_id = "Trettin_et_al_2017_data", 
-         study_id = study,
-         publication_type = "primary", 
-         year = 2017) %>%
-  remove_rownames() %>%
-  select(study_id, bibliography_id, publication_type, everything())
+table_names <- c("sites", "cores", "depthseries", "species")
 
-# Write .bib file
-bib_file <- study_citations %>%
-  select(-study_id, -publication_type) %>%
-  distinct() %>%
-  column_to_rownames("bibliography_id")
+updated <- updateTables(table_names)
 
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Trettin_2017/derivative/Trettin_2017.bib")
+# save listed tables to objects
+
+sites <- updated$sites
+# methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
+species <- updated$species
 
 ## 5. QA/QC of data ################
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # Check col and varnames
-testTableCols(table_names = c("methods", "cores", "depthseries", "species"), version = "1")
-testTableVars(table_names = c("methods", "cores", "depthseries"))
+testTableCols(table_names)
+testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
-test_numeric_vars(depthseries)
+results <- test_numeric_vars(depthseries)
 
 ## 6. Write data ##############
 write_csv(sites, "./data/primary_studies/Trettin_2017/derivative/Trettin_et_al_2017_sites.csv")
 write_csv(cores, "./data/primary_studies/Trettin_2017/derivative/Trettin_et_al_2017_cores.csv")
 write_csv(depthseries, "./data/primary_studies/Trettin_2017/derivative/Trettin_et_al_2017_depthseries.csv")
-write_csv(study_citations, "./data/primary_studies/Trettin_2017/derivative/Trettin_et_al_2017_study_citations.csv")
 write_csv(species, "./data/primary_studies/Trettin_2017/derivative/Trettin_et_al_2017_species.csv")
 

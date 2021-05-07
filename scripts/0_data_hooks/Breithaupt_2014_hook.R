@@ -28,9 +28,10 @@ library(lubridate)
 cores_raw <- read_csv("./data/primary_studies/breithaupt_2014/original/breithaupt_et_al_2014_cores.csv")
 depthseries_raw <- read.csv("./data/primary_studies/breithaupt_2014/original/breithaupt_et_al_2014_depthseries.csv")
 species_raw <- read_csv("./data/primary_studies/breithaupt_2014/original/breithaupt_et_al_2014_species.csv")
-methods_raw <- read_csv("./data/primary_studies/breithaupt_2014/original/breithaupt_et_al_2014_materials_and_methods.csv")
+methods_raw <- read_csv("./data/primary_studies/breithaupt_2014/intermediate/breithaupt_et_al_2014_materials_and_methods.csv")
 bib <- ReadBib("./data/primary_studies/breithaupt_2014/original/citations.bib")
 
+guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 ## Data Curation ####
 
@@ -54,14 +55,17 @@ species <- species_raw %>%
 depthseries <- depthseries_raw %>%
   rename(delta_c13 = delta_C13) %>%
   mutate(study_id = study_id_value,
-         method_id = "single set of methods") %>%
+         method_id = case_when(depth_max-depth_min == 1 ~ "1 cm intervals",
+                               depth_max-depth_min == 2 ~ "2 cm intervals",
+                               TRUE ~ NA_character_)) %>%
   select(-c(cs137_MDA, total_pb210_MDA, ra226_MDA, excess_pb210_inventory,
             excess_pb210_inventory_se, fraction_total_nitrogen, fraction_total_phosphorus,
             delta_N15, gamma_counting_sedmass, cumulative_sedmass_atdepth))
+# 'date' attribute: date at bottom of the depth interval, calculated as coring date minus sample age
 
 methods <- methods_raw %>%
-  mutate(study_id = study_id_value,
-         method_id = "single set of methods") 
+  select(-c(dbd_1_cm_section_sample_volume, dbd_2_cm_section_sample_volume,
+            loi_1_cm_section_sample_volume, loi_2_cm_section_sample_volume))
 
 ## Citations ####
 study_citations <- as.data.frame(bib) %>%
@@ -99,6 +103,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
