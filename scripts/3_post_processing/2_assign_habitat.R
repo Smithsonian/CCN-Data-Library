@@ -6,10 +6,10 @@
 # contact: James Holmquist (HolmquistJ@si.edu) or Jaxine Wolfe (wolfejax@si.edu)
 require(tidyverse)
 
-methods2 <- read_csv("data/CCRCN_synthesis/CCRCN_methods.csv") # methods
-cores2 <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", guess_max = 7000)
-depthseries2 <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max = 50000)
-species2 <- read_csv("data/CCRCN_synthesis/CCRCN_species.csv")
+methods2 <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_methods.csv") # methods
+cores2 <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_cores.csv", guess_max = 7000)
+depthseries2 <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv", guess_max = 50000)
+species2 <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_species.csv")
 
 # If habitat is defined explicitly, then it will be used
 if ("habitat" %in% names(cores2)) {
@@ -100,7 +100,7 @@ cores_with_habitat <- cores2 %>%
   select(-habitat1) # Keshta habitat is defined in the hook script
 
 # write to file
-write_csv(cores_with_habitat, "data/CCRCN_synthesis/CCRCN_cores.csv")
+write_csv(cores_with_habitat, "data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
 
 # ggplot(data = cores_with_habitat, aes(x=longitude, y=latitude)) +
 #   geom_point(aes(color=habitat), alpha=0.4) +

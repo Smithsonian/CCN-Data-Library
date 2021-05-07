@@ -67,14 +67,12 @@ The following table summarizes which entries across the range of synthesis table
 
 ```{r, echo=FALSE}
 
-if(log_changes == TRUE){
-  # data table of change log results 
-  datatable(change_log_results)
-  
-  if(nrow(change_log_errors) > 0){
-    datatable(change_log_errors)
-    }
-}
+  # # data table of change log results 
+  # datatable(change_log_results)
+  # 
+  # if(nrow(change_log_errors) > 0){
+  #   datatable(change_log_errors)
+  #   }
 
 ```
 

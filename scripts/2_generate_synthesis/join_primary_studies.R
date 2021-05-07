@@ -130,9 +130,9 @@ if(nrow(synthesis_errors) > 0) {
 
 # Prepare .bib file
 bib_file <- ccrcn_synthesis$studycitations %>%
-  select(-study_id, -bibliography_id, -publication_type) %>%
+  select(-study_id, -publication_type) %>%
   distinct() %>%
-  column_to_rownames("key")
+  column_to_rownames("bibliography_id")
 
 ## 4.Read in previous synthesis & compare #################
 
@@ -140,10 +140,10 @@ bib_file <- ccrcn_synthesis$studycitations %>%
 archived_synthesis <- vector("list", length(tables))
 names(archived_synthesis) <- tables
 
-synthesis_directory <- "./data/CCRCN_synthesis/"
+synthesis_directory <- "./data/CCRCN_synthesis/original/"
 
 # Get file names of previous synthesis
-archived_filepaths <- dir(synthesis_directory)
+archived_filepaths <- dir("./data/CCRCN_synthesis/archive/")
 
 # Read in data 
 for(file in archived_filepaths){
@@ -157,7 +157,7 @@ for(file in archived_filepaths){
       gsub("CCRCN", "", .) %>%
       gsub(".csv", "", .)
     
-    archived_synthesis[[table_type]] <- read_csv(paste0(synthesis_directory, file),
+    archived_synthesis[[table_type]] <- read_csv(paste0("./data/CCRCN_synthesis/archive/", file),
                                                  col_types = cols(.default = "c")) # %>%
       # type_convert(na = "NA")
   }
@@ -271,26 +271,26 @@ qa_numeric_results <- testNumericVariables(ccrcn_synthesis$depthseries)
 if(join_status == TRUE){
   
   # Archive previous synthesis
-  write_csv(archived_synthesis$cores, "./data/CCRCN_synthesis/archive/archived_synthesis_cores.csv")
-  write_csv(archived_synthesis$depthseries, "./data/CCRCN_synthesis/archive/archived_synthesis_depthseries.csv")
-  write_csv(archived_synthesis$sites, "./data/CCRCN_synthesis/archive/archived_synthesis_sites.csv")
-  write_csv(archived_synthesis$impacts, "./data/CCRCN_synthesis/archive/archived_synthesis_impacts.csv")
-  write_csv(archived_synthesis$methods, "./data/CCRCN_synthesis/archive/archived_synthesis_methods.csv")
-  write_csv(archived_synthesis$species, "./data/CCRCN_synthesis/archive/archived_synthesis_species.csv")
-  write_csv(archived_synthesis$studycitations, "./data/CCRCN_synthesis/archive/archived_synthesis_study_citations.csv")
+  # write_csv(archived_synthesis$cores, "./data/CCRCN_synthesis/archive/archived_synthesis_cores.csv")
+  # write_csv(archived_synthesis$depthseries, "./data/CCRCN_synthesis/archive/archived_synthesis_depthseries.csv")
+  # write_csv(archived_synthesis$sites, "./data/CCRCN_synthesis/archive/archived_synthesis_sites.csv")
+  # write_csv(archived_synthesis$impacts, "./data/CCRCN_synthesis/archive/archived_synthesis_impacts.csv")
+  # write_csv(archived_synthesis$methods, "./data/CCRCN_synthesis/archive/archived_synthesis_methods.csv")
+  # write_csv(archived_synthesis$species, "./data/CCRCN_synthesis/archive/archived_synthesis_species.csv")
+  # write_csv(archived_synthesis$studycitations, "./data/CCRCN_synthesis/archive/archived_synthesis_study_citations.csv")
   # Copy the previous .bib file
-  file.copy("data/CCRCN_synthesis/CCRCN_bibliography.bib", "data/CCRCN_synthesis/archive")
+  # file.copy("data/CCRCN_synthesis/CCRCN_bibliography.bib", "data/CCRCN_synthesis/archive")
   
   # Write new synthesis data
-  write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis/CCRCN_cores.csv")
-  write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis/CCRCN_depthseries.csv")
-  write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis/CCRCN_sites.csv")
-  write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis/CCRCN_impacts.csv")
-  write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis/CCRCN_methods.csv")
-  write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/CCRCN_species.csv")
-  write_csv(ccrcn_synthesis$studycitations, "./data/CCRCN_synthesis/CCRCN_study_citations.csv")
+  write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis/original/CCRCN_cores.csv")
+  write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis/original/CCRCN_depthseries.csv")
+  write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis/original/CCRCN_sites.csv")
+  write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis/original/CCRCN_impacts.csv")
+  write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis/original/CCRCN_methods.csv")
+  write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/original/CCRCN_species.csv")
+  write_csv(ccrcn_synthesis$studycitations, "./data/CCRCN_synthesis/original/CCRCN_study_citations.csv")
   
-  WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/CCRCN_bibliography.bib")
+  # WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/original/CCRCN_bibliography.bib")
 }
 
 # Record summary of warnings 

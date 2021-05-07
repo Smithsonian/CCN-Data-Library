@@ -271,13 +271,13 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.432504, -90.354245",3,"CRMS0386_1, CRMS0386_2, CRMS0386_3",CRMS_Database,1
 "29.4414, -89.9026",3,"3_1, 3_2, 3_3",Chambers_et_al_2019,1
 "29.4417, -89.9013",3,"2_1, 2_2, 2_3",Chambers_et_al_2019,1
-"29.443585, -89.899836",2,"Marsh_4_1, Marsh_4_2",White_et_al_2020_a,1
+"29.443585, -89.899836",2,"Marsh_4_1, Marsh_4_2",Chambers_et_al_2019,1
 "29.4436, -89.8998",3,"1_1, 1_2, 1_3",Chambers_et_al_2019,1
 "29.44597, -90.95681",2,"CRMS0294_H_Piazza_1, CRMS0294_H_Piazza_2",Piazza_et_al_2011,1
-"29.44657, -89.90633",3,"Estuary_1, Estuary_2, Estuary_3",White_et_al_2020_b,1
-"29.446688, -89.905857",3,"Marsh_3_1, Marsh_3_2, Marsh_3_3",White_et_al_2020_a,1
-"29.44679, -89.905927",3,"Marsh_2_1, Marsh_2_2, Marsh_2_3",White_et_al_2020_a,1
-"29.446837, -89.905628",3,"Marsh_1_1, Marsh_1_2, Marsh_1_3",White_et_al_2020_a,1
+"29.44657, -89.90633",3,"Estuary_1, Estuary_2, Estuary_3",Chambers_et_al_2019,1
+"29.446688, -89.905857",3,"Marsh_3_1, Marsh_3_2, Marsh_3_3",Chambers_et_al_2019,1
+"29.44679, -89.905927",3,"Marsh_2_1, Marsh_2_2, Marsh_2_3",Chambers_et_al_2019,1
+"29.446837, -89.905628",3,"Marsh_1_1, Marsh_1_2, Marsh_1_3",Chambers_et_al_2019,1
 "29.447016, -91.073014",3,"CRMS0327_1, CRMS0327_2, CRMS0327_3",CRMS_Database,1
 "29.447019, -90.854257",3,"CRMS0381_1, CRMS0381_2, CRMS0381_3",CRMS_Database,1
 "29.454277, -90.666753",3,"CRMS0392_1, CRMS0392_2, CRMS0392_3",CRMS_Database,1
@@ -539,12 +539,12 @@ lat_long,n,core_ids,study_ids,num_studies
 "32.23818, -81.15608",2,"S1AU, S1BL",Noe_et_al_2013,1
 "32.23879, -81.15609",2,"S1AL, S1CU",Noe_et_al_2013,1
 "32.23916, -81.15631",2,"S1BU, S1CL",Noe_et_al_2013,1
-"33.34001, -79.34166",2,"W3, turkey_creek_2","Noe_et_al_2016, Krauss_et_al_2018a",2
-"33.35003, -79.3447",2,"W4, turkey_creek_1","Noe_et_al_2016, Krauss_et_al_2018b",2
+"33.34001, -79.34166",2,"W3, turkey_creek_2","Noe_et_al_2016, Krauss_et_al_2018",2
+"33.35003, -79.3447",2,"W4, turkey_creek_1","Noe_et_al_2016, Krauss_et_al_2018",2
 "33.5547, -79.08993",2,"W1BU, W1CL",Noe_et_al_2013,1
 "33.55509, -79.08983",2,"W1AL, W1CU",Noe_et_al_2013,1
 "33.55547, -79.08958",2,"W1AU, W1BL",Noe_et_al_2013,1
-"33.55564, -79.08943",2,"W1, richmond_island_1","Noe_et_al_2016, Krauss_et_al_2018a",2
+"33.55564, -79.08943",2,"W1, richmond_island_1","Noe_et_al_2016, Krauss_et_al_2018",2
 "34.4015, 33.0358",2,"Holmer_et_al_2007_10, Holmer_et_al_2007_9",Holmer_et_al_2007,1
 "34.6925, -76.6188",2,"Townsend_and_Fonseca_1998_17, Townsend_and_Fonseca_1998_18",Townsend_and_Fonseca_1998,1
 "34.88362396, -76.51596497",2,"NWCA11-2025-3403, NWCA11-2025-5400",Nahlik_and_Fennessy_2016,1
@@ -584,6 +584,8 @@ lat_long,n,core_ids,study_ids,num_studies
 "38.728, 1.4572",3,"Mateo_and_Serrano_unpublished_5, Mateo_and_Serrano_unpublished_6, Mateo_and_Serrano_unpublished_7",Mateo_and_Serrano_unpublished,1
 "38.728, 1.4592",2,"Mateo_and_Serrano_unpublished_8, Mateo_and_Serrano_unpublished_9",Mateo_and_Serrano_unpublished,1
 "38.7402, -76.6864",4,"Transect_A_11m, Transect_A_30m, Transect_A_50m_1, Transect_A_50m_2",Merrill_1999,1
+"38.87363778, -76.54973048",2,C3,Messerschmidt_and_Kirwan_2020,1
+"38.87492769, -76.54990587",2,C4,Messerschmidt_and_Kirwan_2020,1
 "38.9118, 1.4583",3,"Mateo_and_Serrano_unpublished_2, Mateo_and_Serrano_unpublished_3, Mateo_and_Serrano_unpublished_4",Mateo_and_Serrano_unpublished,1
 "39.171719, -74.875761",2,"DN1, DN1U","Boyd_et_al_2017, Unger_et_al_2016",2
 "39.176258, -74.862284",2,"DN2, DN2U","Boyd_et_al_2017, Unger_et_al_2016",2
@@ -634,14 +636,6 @@ lat_long,n,core_ids,study_ids,num_studies
 "42.046, 3.217",2,"Mateo_et_al_1997_12, Mateo_et_al_1997_13",Mateo_et_al_1997,1
 "42.293, 3.293",2,"Mateo_and_Serrano_unpublished_1, Serrano_unpublished_1","Mateo_and_Serrano_unpublished, Serrano_unpublished",2
 "42.294, 3.289",3,"Mateo_et_al_1997_10, Mateo_et_al_1997_8, Mateo_et_al_1997_9",Mateo_et_al_1997,1
-"42.73739991, -70.84580382",2,"MARSH_2_2_a, MARSH_2_2_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.73742543, -70.8459912",2,"MARSH_2_1_a, MARSH_2_1_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.73743074, -70.84619211",2,"POND_2_a, POND_2_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.73796176, -70.84701132",2,"POND_1_a, POND_1_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.73818498, -70.84720027",2,"MARSH_1_2_a, MARSH_1_2_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.74133674, -70.83030015",2,"POND_3_a, POND_3_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.74134648, -70.83016904",2,"MARSH_3_2_a, MARSH_3_2_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
-"42.741354, -70.83000142",2,"MARSH_3_1_a, MARSH_3_1_b","Luk_et_al_2020_a, Luk_et_al_2020_b",2
 "43.423, 3.643",12,"Rigollet_et_al_2004_13, Rigollet_et_al_2004_14, Rigollet_et_al_2004_15, Rigollet_et_al_2004_16, Rigollet_et_al_2004_17, Rigollet_et_al_2004_18, Rigollet_et_al_2004_19, Rigollet_et_al_2004_20, Rigollet_et_al_2004_21, Rigollet_et_al_2004_22, Rigollet_et_al_2004_23, Rigollet_et_al_2004_24",Rigollet_et_al_2004,1
 "43.4392, -3.7749",12,"Mateo_and_Serrano_unpublished_15, Mateo_and_Serrano_unpublished_16, Mateo_and_Serrano_unpublished_17, Mateo_and_Serrano_unpublished_18, Mateo_and_Serrano_unpublished_19, Mateo_and_Serrano_unpublished_20, Mateo_and_Serrano_unpublished_21, Mateo_and_Serrano_unpublished_22, Mateo_and_Serrano_unpublished_23, Mateo_and_Serrano_unpublished_24, Mateo_and_Serrano_unpublished_25, Mateo_and_Serrano_unpublished_26",Mateo_and_Serrano_unpublished,1
 "44.2, 9.12",28,"Danovaro_1996_1, Danovaro_1996_10, Danovaro_1996_11, Danovaro_1996_12, Danovaro_1996_13, Danovaro_1996_14, Danovaro_1996_15, Danovaro_1996_2, Danovaro_1996_3, Danovaro_1996_4, Danovaro_1996_5, Danovaro_1996_6, Danovaro_1996_7, Danovaro_1996_8, Danovaro_1996_9, Danovaro_and_Gambi_2002_1, Danovaro_and_Gambi_2002_10, Danovaro_and_Gambi_2002_11, Danovaro_and_Gambi_2002_12, Danovaro_and_Gambi_2002_13, Danovaro_and_Gambi_2002_2, Danovaro_and_Gambi_2002_3, Danovaro_and_Gambi_2002_4, Danovaro_and_Gambi_2002_5, Danovaro_and_Gambi_2002_6, Danovaro_and_Gambi_2002_7, Danovaro_and_Gambi_2002_8, Danovaro_and_Gambi_2002_9","Danovaro_1996, Danovaro_and_Gambi_2002",2
@@ -690,4 +684,4 @@ lat_long,n,core_ids,study_ids,num_studies
 "9.5, 138.1",12,"M1416, M1417, M1418, M1419, M1420, M1421, M1471, M1472, M1473, M1474, M1475, M1476",Donato_et_al_2011,1
 "9.6, 138.1",12,"M1465, M1466, M1467, M1468, M1469, M1470, M1477, M1478, M1479, M1480, M1481, M1482",Donato_et_al_2011,1
 "9.6, 138.2",6,"M1373, M1374, M1375, M1376, M1377, M1378",Donato_et_al_2011,1
-"NA, NA",23,"Waccasassa_Bay_Mangrove_replicate, SB1, SS1, Bu_Tinah_Shamal_mangrove_2, M0537, M0538, M0539, M0541, M0542, M0638, M0639, M0640, M0641, M0642, M0643, M0644, M0645, M0646, NE_B, SP_B, COL-BLI-TS-2, Coastal_EDU_Field_2, SM10","Vaughn_et_al_2020, Thom_1992, Schile-Beers_and_Megonigal_2017, Nsombo_et_al_2016, Eid_and_Shaltout_2016_Egypt, Eid_et_al_2016_Saudi_Arabia, Poppe_et_al_2019, Kauffman_et_al_2020, Drexler_et_al_2013, Belshe_et_al_2019",10
+"NA, NA",24,"Waccasassa_Bay_Mangrove_replicate, SB1, SS1, Bu_Tinah_Shamal_mangrove_2, M0537, M0538, M0539, M0541, M0542, M0638, M0639, M0640, M0641, M0642, M0643, M0644, M0645, M0646, NE_B, SP_B, COL-BLI-TS-2, Copertino_unpublished_1, Coastal_EDU_Field_2, SM10","Vaughn_et_al_2020, Thom_1992, Schile-Beers_and_Megonigal_2017, Nsombo_et_al_2016, Eid_and_Shaltout_2016_Egypt, Eid_et_al_2016_Saudi_Arabia, Poppe_et_al_2019, Kauffman_et_al_2020, Copertino_unpublished, Drexler_et_al_2013, Belshe_et_al_2019",11

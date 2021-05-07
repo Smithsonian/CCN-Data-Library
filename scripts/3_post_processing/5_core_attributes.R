@@ -11,8 +11,8 @@
 library(tidyverse)
 
 # read in necessary data
-cores <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", guess_max = 10000)
-depthseries <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max = 50000)
+cores <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_cores.csv", guess_max = 10000)
+depthseries <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv", guess_max = 50000)
 
 ## Step 1: Get unique ids for study, site, and core ####
 

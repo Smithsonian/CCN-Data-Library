@@ -484,14 +484,14 @@ Nahlik_and_Fennessy_2016,NWCA11-4706,San Pablo Bay; California,NA,NA,NA,NA,estua
 Nahlik_and_Fennessy_2016,NWCA11-4713,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
 Nahlik_and_Fennessy_2016,NWCA11-4716,McGrath Lake-Frontal Pacific Ocean; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
 Nahlik_and_Fennessy_2016,NWCA11-4721,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
-Krauss_et_al_2018c,Savannah_River_low,NA,NA,NA,NA,NA,oligohaline,NA,emergent,measurement,NA,low,NA,NA
-Krauss_et_al_2018c,Savannah_River_mid,NA,NA,NA,NA,NA,oligohaline,NA,forested,measurement,NA,mid,NA,NA
-Krauss_et_al_2018c,Savannah_River_mid,NA,NA,NA,NA,NA,oligohaline,NA,emergent,measurement,NA,low,NA,NA
-Krauss_et_al_2018c,Savannah_River_high,NA,NA,NA,NA,NA,fresh,NA,forested,measurement,NA,high,NA,NA
-Krauss_et_al_2018a,Waccamaw_River_Butler_island,NA,NA,NA,NA,NA,oligohaline,NA,forested to emergent,measurement,NA,mid,NA,NA
-Krauss_et_al_2018b,Waccamaw_River_Turkey_creek_high,NA,NA,NA,NA,NA,oligohaline,NA,emergent,measurement,NA,low,NA,NA
-Krauss_et_al_2018a,Waccamaw_River_Turkey_creek_low,NA,NA,NA,NA,NA,oligohaline,NA,forested to emergent,measurement,NA,low,NA,NA
-Krauss_et_al_2018a,Waccamaw_River_Richmond_island,NA,NA,NA,NA,NA,fresh,NA,forested,measurement,NA,high,NA,NA
+Krauss_et_al_2018,Savannah_River_low,NA,NA,NA,NA,NA,oligohaline,NA,emergent,measurement,NA,low,NA,NA
+Krauss_et_al_2018,Savannah_River_mid,NA,NA,NA,NA,NA,oligohaline,NA,forested,measurement,NA,mid,NA,NA
+Krauss_et_al_2018,Savannah_River_mid,NA,NA,NA,NA,NA,oligohaline,NA,emergent,measurement,NA,low,NA,NA
+Krauss_et_al_2018,Savannah_River_high,NA,NA,NA,NA,NA,fresh,NA,forested,measurement,NA,high,NA,NA
+Krauss_et_al_2018,Waccamaw_River_Butler_island,NA,NA,NA,NA,NA,oligohaline,NA,forested to emergent,measurement,NA,mid,NA,NA
+Krauss_et_al_2018,Waccamaw_River_Turkey_creek_high,NA,NA,NA,NA,NA,oligohaline,NA,emergent,measurement,NA,low,NA,NA
+Krauss_et_al_2018,Waccamaw_River_Turkey_creek_low,NA,NA,NA,NA,NA,oligohaline,NA,forested to emergent,measurement,NA,low,NA,NA
+Krauss_et_al_2018,Waccamaw_River_Richmond_island,NA,NA,NA,NA,NA,fresh,NA,forested,measurement,NA,high,NA,NA
 Kauffman_et_al_2020,Barview Eelgrass,Coos Bay Estuary,43.3459,43.3454,-124.3182,-124.3189,NA,NA,seagrass,NA,NA,NA,NA,NA
 Kauffman_et_al_2020,Blind Slough Swamp,Lower Columbia River Estuary,46.1924,46.1919,-123.579,-123.5807,NA,NA,forested,NA,NA,NA,NA,NA
 Kauffman_et_al_2020,Chehalis Flood Plain,Grays Harbor Estuary,46.9419,46.9411,-123.7209,-123.7215,NA,NA,forested,NA,NA,NA,NA,NA
@@ -636,8 +636,8 @@ Fourqurean_and_Kendrick_unpublished,Shark_Bay,NA,-25.718145,-26.026965,114.26608
 Holmer_et_al_2007,Sicily,NA,36.71183333,36.71183333,15.14066667,15.14066667,NA,NA,seagrass,NA,NA,NA,NA,NA
 Holmer_et_al_2007,Sounion,NA,37.686743337,37.363023333,23.992316663,23.542516666999997,NA,NA,seagrass,NA,NA,NA,NA,NA
 Holmer_et_al_2007,Spain,NA,38.4208,38.4208,-0.3477,-0.3477,NA,NA,NA,NA,NA,NA,NA,NA
-Grady_1981,St._Andrews_Bay_Florida_USA,NA,30.174300000000002,30.0867,-85.6105,-85.7365,NA,NA,seagrass,NA,NA,NA,NA,NA
 Lewis_et_al_2007,St_Joseph_Bay,NA,29.868,29.868,-85.366,-85.366,NA,NA,seagrass,NA,NA,NA,NA,NA
+Grady_1981,St._Andrews_Bay_Florida_USA,NA,30.174300000000002,30.0867,-85.6105,-85.7365,NA,NA,seagrass,NA,NA,NA,NA,NA
 Calleja_et_al_2007,Sta_Maria_,NA,39.15116667,39.15116667,2.948666667,2.948666667,NA,NA,seagrass,NA,NA,NA,NA,NA
 Mateo_et_al_1997,Tabarca_North,NA,38.167,38.167,-0.476,-0.476,NA,NA,seagrass,NA,NA,NA,NA,NA
 Mateo_et_al_1997,Tabarca_South,NA,38.162,38.162,-0.473,-0.473,NA,NA,seagrass,NA,NA,NA,NA,NA

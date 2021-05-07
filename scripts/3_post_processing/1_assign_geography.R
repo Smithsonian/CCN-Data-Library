@@ -341,5 +341,5 @@ leaflet(na_admin_division) %>%
 # withr::with_dir("data/QA", saveWidget(m2, file="assigned_geography.html"))
 
 # 6. Write updated core table to CCRCN V2 folder ####
-write_csv(core_geography, "data/CCRCN_V2/cores.csv")
+write_csv(core_geography, "data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
 # write_csv(core_geography, "data/CCRCN_V2/core_geography.csv") # this is redundant but the atlas uses this currently as the cores table
