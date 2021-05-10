@@ -302,18 +302,22 @@ testRequired <- function(){
   guidance <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols()) 
   # isolate required attributes
   required <- guidance %>% filter(required == "required") %>%
+    filter(attribute_name != "study_id") %>%
     select(table, attribute_name, required)
   
   # read in CCRCN synthesis tables
-  # methods <- read_csv("data/CCRCN_synthesis/original/CCRCN_methods.csv", col_types = cols())
+  methods <- read_csv("data/CCRCN_synthesis/original/CCRCN_methods.csv", col_types = cols())
   cores <- read_csv("data/CCRCN_synthesis/original/CCRCN_cores.csv", guess_max = 10000, col_types = cols())
   depthseries <- read_csv("data/CCRCN_synthesis/original/CCRCN_depthseries.csv", guess_max = 100000, col_types = cols())
-  # these three tables are the bare minimum required in a data hook
-  # beyond these tables the requirements are conditional
+  study_citations <- read_csv("data/CCRCN_synthesis/original/CCRCN_study_citations.csv", col_types = cols())
+  # site, impact, and species tables are optional
+  # but if they are included, there are required attributes
   
-  # create list from all the tables
-  # leaving out methods for now b/c only study_id is required 
-  tables <- list(cores = cores, depthseries = depthseries)
+  # create list from all the tables with required attributes
+  tables <- list(cores = cores, 
+                 depthseries = depthseries,
+                 methods = methods,
+                 study_citations = study_citations)
   
   # create df to store results
   missing_required <- data.frame()
@@ -335,10 +339,9 @@ testRequired <- function(){
       filter(attribute_name %in% required_for_table)
     
     # condense study attributes into a list
-    study_attributes <- table_cols %>% 
-      group_by(study_id) %>%
+    study_attributes <- table_cols %>% group_by(study_id) %>%
       # study id has to be added manually (which defeats the purpose a bit)
-      summarize(attribute_list = list(c("study_id", attribute_name)))
+      summarize(attribute_list = list(attribute_name))
     
     # loop through studies 
     for(i in 1:nrow(study_attributes)){
@@ -357,7 +360,94 @@ testRequired <- function(){
       }
     }
   }
-  return(missing_required)
+  
+  if(!is_empty(missing_required)){
+    return(missing_required)
+    write_csv(missing_required, "data/QA/missing_required_attributes.csv")
+    print("Missing attributes table output to data/QA/missing_required_attributes.csv")
+  } else {
+    print("All required attributes are present!")
+  }
 }
 
+## Check for conditional attributes ####
 
+# compile a table of studies and the required attributes they are missing
+
+# testConditional <- function(){
+#   # read in database guidance
+#   guidance <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols()) 
+#   # isolate required attributes
+#   conditional <- guidance %>% filter(required == "conditional") %>%
+#     # filter(attribute_name != "study_id") %>%
+#     select(table, attribute_name, required, contains("conditional"))
+#   
+#   # read in CCRCN synthesis tables
+#   methods <- read_csv("data/CCRCN_synthesis/original/CCRCN_methods.csv", col_types = cols())
+#   cores <- read_csv("data/CCRCN_synthesis/original/CCRCN_cores.csv", guess_max = 10000, col_types = cols())
+#   depthseries <- read_csv("data/CCRCN_synthesis/original/CCRCN_depthseries.csv", guess_max = 100000, col_types = cols())
+#   species <- read_csv("data/CCRCN_synthesis/original/CCRCN_species.csv", col_types = cols())
+#   # site, impact, and species tables are optional
+#   # but if they are included, there are required attributes
+#   
+#   # create list from all the tables with required attributes
+#   tables <- list(cores = cores, 
+#                  depthseries = depthseries,
+#                  methods = methods,
+#                  species = species)
+#   
+#   # create df to store results
+#   missing_conditional <- data.frame()
+#   
+#   # if an attribute is present, 
+#   # check to see if there is a conditional variable
+#   # if the variable is a certain value
+#   # check for presence of conditional attribute(s)
+#   
+#   # loop through all the tables
+#   for(table in 1:length(tables)){
+#     # store table name
+#     table_name <- names(tables)[table]
+#     # subset the required cols for given table
+#     conditional_for_table <- conditional %>% filter(table == table_name) %>% pull(conditional_on)
+#     
+#     # create table of attributes present in each table for each study
+#     table_cols <- tables[[table_name]] %>%
+#       mutate_all(as.character) %>%
+#       pivot_longer(cols = -study_id, names_to = "attribute_name", values_to = "value") %>%
+#       drop_na(value) %>%
+#       select(-value) %>% distinct() %>%
+#       # filter for required attributes
+#       filter(attribute_name %in% required_for_table)
+#     
+#     # condense study attributes into a list
+#     study_attributes <- table_cols %>% group_by(study_id) %>%
+#       # study id has to be added manually (which defeats the purpose a bit)
+#       summarize(attribute_list = list(attribute_name))
+#     
+#     # loop through studies 
+#     for(i in 1:nrow(study_attributes)){
+#       # identify missing attributes in each study
+#       missing_cols <- required_for_table[which(!(required_for_table %in% study_attributes$attribute_list[[i]]))]
+#       
+#       if(length(missing_cols) > 0){
+#         # create table to identify studies lacking required attributes in their tables 
+#         missing_from_study <- data.frame(study_id = study_attributes$study_id[i],
+#                                          table = table_name,
+#                                          missing_attributes = missing_cols)
+#         
+#         # compile into missing required table
+#         # output table should have cols: study_id, table, missing_attributes
+#         missing_required <- bind_rows(missing_required, missing_from_study)
+#       }
+#     }
+#   }
+#   
+#   if(!is_empty(missing_required)){
+#     return(missing_required)
+#     write_csv(missing_required, "data/QA/missing_required_attributes.csv")
+#     print("Missing attributes table output to data/QA/missing_required_attributes.csv")
+#   } else {
+#     print("All required attributes are present!")
+#   }
+# }
