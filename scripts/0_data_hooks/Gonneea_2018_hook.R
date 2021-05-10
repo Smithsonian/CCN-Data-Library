@@ -196,8 +196,9 @@ depthseries <- Gonneea_2018_depth_series_data %>%
                                  "HBC" = "Hamblin_Pond", 
                                  "SLPA" = "Sage_Log_Pond", 
                                  "SLPB" = "Sage_Log_Pond",
-                                 "SLPC" = "Sage_Log_Pond")) %>%
-  select(study_id, site_id, core_id, everything())
+                                 "SLPC" = "Sage_Log_Pond"),
+         method_id = "unknown methods") %>%
+  select(study_id, site_id, core_id, method_id, everything())
 
 # cores <- reorderColumns("cores", Gonneea_2018_core_Data) %>% ungroup()
 # depthseries <- reorderColumns("depthseries", Gonneea_2018_depth_series_data) %>% ungroup()
@@ -257,10 +258,7 @@ results <- test_numeric_vars(depthseries)
 
 ## Export files ##############################
   
-# Export core data
 write_csv(cores, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_cores.csv")
-
-# Export depth series data
 write_csv(depthseries, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_depthseries.csv")
   
 # Export master data

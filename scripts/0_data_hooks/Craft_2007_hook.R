@@ -14,6 +14,8 @@ species_raw <- read_csv("./data/primary_studies/Craft_2007/original/craft_2007_s
 
 ## Curate data ####
 
+id <- "Craft_2007"
+
 methods <- methods_raw %>% mutate(fraction_carbon_type = "total carbon",
                                   method_id = "single set of methods")
 
@@ -31,7 +33,8 @@ depthseries <- depthseries_raw %>%
   merge(age_depth, by=c("core_id", "depth_min", "depth_max"), all.x=TRUE, all.y=TRUE) %>%
   mutate(depth_interval_notes = ifelse(cs137_activity == 0, "cs137 activity below detection limits", NA),
          cs137_unit = "becquerelsPerKilogram",
-         method_id = "single set of methods")
+         method_id = "single set of methods",
+         study_id = id)
 
 cores <- cores_raw %>%
   mutate(core_year = 2001)
@@ -76,6 +79,7 @@ depthseries <- reorderColumns("depthseries", depthseries)
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

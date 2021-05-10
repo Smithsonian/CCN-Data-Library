@@ -253,6 +253,7 @@ leaflet(cores) %>%
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
