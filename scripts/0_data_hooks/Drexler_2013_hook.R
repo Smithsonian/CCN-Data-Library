@@ -8,7 +8,7 @@ library(lubridate)
 library(RefManageR)
 
 raw_cores <- read_csv("./data/primary_studies/drexler_2013/original/drexler_2019_initial_sites.csv")
-raw_depthseries <- read_csv("./data/primary_studies/drexler_2013/original/drexler_2019_initial_depthseries.csv") # DOESNT EXIST IN ORIGINAL FOLDER
+raw_depthseries <- read_csv("./data/primary_studies/drexler_2013/original/drexler_et_al_2013_depthseries.csv")
 raw_methods <- read_csv("./data/primary_studies/drexler_2013/original/drexler_et_al_2013_methods.csv")
 
 ## Curate data #########
@@ -60,27 +60,35 @@ species <- core_data %>%
   filter(!is.na(species_code))
 
 ## ... depthseries #####
-# DEPTHSERIES TABLE MISSING
+
+# NEEDS RESOLUTION
+
+# original depthseries curation
+# there was radioisotope information present...where did it go?
+# depthseries <- raw_depthseries %>%
+#   mutate(site_id = gsub(" ", "_", site_id)) %>%
+#   mutate(study_id = study_id_value,
+#          core_id = paste(site_id, `core_number`, sep = "_")) %>%
+#   mutate(fraction_carbon = organic_carbon_percent / 100,
+#          pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrations per minute per gram", NA), 
+#          cs137_unit = ifelse(!is.na(cs137_unit), "picoCuries per gram", NA)) %>% 
+#   select(study_id, site_id, core_id, depth_min, depth_max,
+#          dry_bulk_density, fraction_carbon, 
+#          cs137_activity, cs137_activity_sd, cs137_unit,
+#          total_pb210_activity, total_pb210_activity_sd, excess_pb210_activity, excess_pb210_activity_sd, pb210_unit,
+#          age, age_sd, cs137_peak_present, depth_interval_notes) 
+
+# depthseries curation with recycled derivative table
+# we couldn't find the original CSV that was extracted from the supplementary material
 depthseries <- raw_depthseries %>%
-  mutate(site_id = gsub(" ", "_", site_id)) %>%
-  mutate(study_id = study_id_value,
-         core_id = paste(site_id, `core_number`, sep = "_")) %>%
-  mutate(fraction_carbon = organic_carbon_percent / 100,
-         pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrations per minute per gram", NA), 
-         cs137_unit = ifelse(!is.na(cs137_unit), "picoCuries per gram", NA)) %>% 
-  select(study_id, site_id, core_id, depth_min, depth_max,
-         dry_bulk_density, fraction_carbon, 
-         cs137_activity, cs137_activity_sd, cs137_unit,
-         total_pb210_activity, total_pb210_activity_sd, excess_pb210_activity, excess_pb210_activity_sd, pb210_unit,
-         age, age_sd, cs137_peak_present, depth_interval_notes) 
+  mutate(method_id = "single set of methods")
 
 # .... core data #####
 
 cores <- core_data %>%
   mutate(core_length_flag = "core depth limited by length of corer") %>%
   # Filter out cores that aren't in the depthseries
-  # DEPTHSERIES TABLE MISSING
-  # filter(core_id %in% depthseries$core_id) %>%
+  filter(core_id %in% depthseries$core_id) %>%
   select(-c(impact_class, species_code, core_notes, core_number, core_length, `Lat/Long`, site_description)) %>%
   select(study_id, site_id, core_id, core_latitude, core_longitude, core_year, core_month, core_day, everything())
 
@@ -110,7 +118,8 @@ if(!file.exists("./data/primary_studies/drexler_2013/derivative/drexler_et_al_20
 # Update Tables ###########
 source("./scripts/1_data_formatting/versioning_functions.R")
 
-table_names <- c("methods", "cores", "impacts", "species")
+# once the depthseries table is resolved, add it to the list of table names
+table_names <- c("methods", "cores", "depthseries", "impacts", "species")
 
 updated <- updateTables(table_names)
 
@@ -118,7 +127,7 @@ updated <- updateTables(table_names)
 
 impacts <- updated$impacts
 methods <- updated$methods
-# depthseries <- updated$depthseries
+depthseries <- updated$depthseries
 cores <- updated$cores
 species <- updated$species
 
@@ -128,6 +137,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
