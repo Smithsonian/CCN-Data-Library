@@ -548,3 +548,70 @@ checkDuplicates <- function(){
   print("Function is still in the works.")
 }
 
+## Check for conditionally required attributes ####
+
+## Need a new QA function that iterates through the guidence, makes sure that every required attribute,
+# and any conditional are there. (repurposed from the SWG, written by James Holmquist)
+testConditional <- function(table_names, database_structure_doc = "docs/ccrcn_database_structure.csv") {
+  # original guidance in the SWG
+  # biomass/agb_biomass_inundation/docs/CCN Biomass and Elevation Data Synthesis Guidence Draft 200925.csv
+  
+  database_structure <- readr::read_csv(database_structure_doc, col_types = cols())
+  datasets <- mget(table_names, envir = .GlobalEnv)
+  
+  requirement_warnings <- c()
+  # Create a vector of all the table names
+  tables <- unique(database_structure$table)
+  
+  for (i in 1:length(datasets)) {
+    
+    # define the category to filter the database by
+    category <- names(datasets[i])
+    
+    if(category %in% database_structure$table == FALSE) {
+      # Warn user they have not supplied a valid table categories and provide the list 
+      print(paste(category,"is not a valid categories. Please use one of these options:"))
+      print(tables)
+      return()
+    }
+    
+    this_table = tables[i]
+    required <- database_structure %>% 
+      dplyr::filter(table == this_table,
+                    required == "required")
+    
+    if (all(required$attribute_name %in% names(datasets[[i]]))) {
+      requirement_warnings <- c(requirement_warnings, 
+                                paste(this_table, ": all required attributes present.", sep="")
+      )
+    } else {
+      missing_attributes <- required$attribute_name[! (required$attribute_name %in% names(datasets[[i]]))]
+      requirement_warnings <- c(requirement_warnings, 
+                                paste(this_table, " (required) : ",
+                                      paste(missing_attributes, sep="", collapse = ", "),
+                                      " missing.", sep="")
+      )
+      # conditional attributes
+      conditional_attributes <- database_structure %>%
+        dplyr::filter(table == this_table,
+                      required == "conditional",
+                      ! is.na(conditional_on)) %>% 
+        separate_rows(conditional_on, sep="; ") %>% 
+        filter(conditional_on %in% names(datasets[[i]]))
+      
+      if (all(conditional_attributes$attribute_name %in% names(datasets[[i]]))) {
+        requirement_warnings <- c(requirement_warnings, 
+                                  paste(this_table, " (conditional): all conditional attributes present.", sep="")
+        )
+      } else {
+        missing_attributes <- conditional_attributes$attribute_name[! (conditional_attributes$attribute_name %in% names(datasets[[i]]))]
+        requirement_warnings <- c(requirement_warnings, 
+                                  paste(this_table, " (conditional): ",
+                                        paste(missing_attributes, sep="", collapse = ", "),
+                                        " missing.", sep=""))
+      }
+    }
+  }
+  
+  print(requirement_warnings)
+}
