@@ -264,6 +264,17 @@ species <- Fourqurean %>%
 
 ## ....3h. Create Citations ##########################
   
+# Kristensen et al 2000 is also cited in Sanderman but the doi is not present here
+# update the citation to match the Sanderman so a synthesis bib can be created without duplicates
+Kristensen_bib <- as.data.frame(GetBibEntryWithDOI("10.3354/ame022199"))
+
+Kristensen_citation <- Kristensen_bib %>% 
+  mutate(bibliography_id = "Kristensen_et_al_2000_article",
+         study_id = "Kristensen_et_al_2000",
+         publication_type = "synthesis source") %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
+  remove_rownames()
+
 citations_raw <- read_csv("data/primary_studies/Fourqurean_2012/intermediate/Fourqurean_2012_study_citations.csv")
 
 study_citations <- citations_raw %>%
@@ -271,8 +282,11 @@ study_citations <- citations_raw %>%
   # ifelse(bibliography_id == "Fourqurean_et_al_2012", "synthesis dataset", "synthesis source")
   mutate(publication_type = "synthesis source",
          bibliography_id = paste0(bibliography_id, "_", tolower(bibtype))) %>%
-  # mutate(bibliography_id = case_when(publication_type == "synthesis" ~ paste0(bibliography_id, "_synthesis"),
-  #                                    TRUE ~ paste0(bibliography_id, "_article"))) %>%
+  mutate(bibliography_id = ifelse(bibliography_id == "Alongi_et_al_2008_article", 
+                                  paste0(bibliography_id, "_", month), bibliography_id)) %>% 
+  filter(bibliography_id != "Kristensen_et_al_2000_article") %>% 
+  mutate_all(as.character) %>% 
+  bind_rows(Kristensen_citation) %>% 
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Write .bib file
@@ -281,7 +295,7 @@ bib_file <- study_citations %>%
   distinct() %>%
   column_to_rownames("bibliography_id")
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012.bib")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012.bib") # there might be some improper utf characters present
 write_csv(study_citations, "data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")
 
 # -----

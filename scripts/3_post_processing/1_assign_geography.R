@@ -315,7 +315,7 @@ library(leaflet)
 leaflet(na_admin_division) %>% 
   addProviderTiles(providers$CartoDB) %>%
   addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
-                   radius = 5, label = ~country)
+                   radius = 2, label = ~country)
 
 
 # THIS MAP IS UNECESSARY (the EEZ shapefile fills in the previous NAs)

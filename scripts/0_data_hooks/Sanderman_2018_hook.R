@@ -282,6 +282,17 @@ result <- test_numeric_vars(depthseries)
 
 ## Generate study citation table ######
 
+# Kristensen et al 2000 is also cited in Fourqurean but the doi is not present here
+# update the citation to match the Fourqurean so a synthesis bib can be created without duplicates
+Kristensen_bib <- as.data.frame(GetBibEntryWithDOI("10.3354/ame022199"))
+
+Kristensen_citation <- Kristensen_bib %>% 
+  mutate(bibliography_id = "Kristensen_et_al_2000_article",
+         study_id = "Kristensen_et_al_2000",
+         publication_type = "synthesis source") %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
+  remove_rownames()
+
 # there should be two entries per study: 
 # one for the primary study associated with the Study ID
 # and another for the synthesis study (Sanderman 2018)
@@ -292,8 +303,12 @@ study_citations <- citations_raw %>%
   select(-key) %>%
   mutate(publication_type = ifelse(bibliography_id == "Sanderman_2018", "synthesis dataset", "synthesis source")) %>%
   mutate(bibliography_id = case_when(publication_type == "synthesis dataset" ~ paste0(bibliography_id, "_data"),
-                                     bibliography_id == "Alongi_et_al_2000" & month == "oct" ~ "Alongi_et_al_2000_oct_article",
+                                     bibliography_id == "Alongi_et_al_2000" & month == "oct" ~ paste0(bibliography_id, "_article_", month),
+                                     bibliography_id == "Alongi_et_al_2008" ~ paste0(bibliography_id, "_article_", month),
                                      TRUE ~ paste0(bibliography_id, "_article"))) %>%
+  filter(bibliography_id != "Kristensen_et_al_2000_article") %>% 
+  mutate_all(as.character) %>% 
+  bind_rows(Kristensen_citation) %>% 
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Write .bib file

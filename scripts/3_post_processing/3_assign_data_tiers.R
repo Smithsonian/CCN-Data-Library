@@ -264,11 +264,12 @@ if ("dates_qual_code" %in% names(cores)) { cores <- select(cores, -dates_qual_co
 if ("elevation_qual_code" %in% names(cores)) { cores <- select(cores, -elevation_qual_code) }
 
 # !!! write to a directory
-cores <- cores %>% 
-  left_join(study_site_core, by=c("study_id", "core_id"))
+updated_cores <- cores %>% 
+  left_join(study_site_core)
+  # add_count(study_id, core_id) %>% filter(n>1)
 
 # Join to core table, then write over input 
-write_csv(cores, "data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
+write_csv(updated_cores, "data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
 
 # Stocks
 

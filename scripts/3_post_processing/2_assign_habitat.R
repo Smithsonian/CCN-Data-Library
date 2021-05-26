@@ -49,9 +49,9 @@ cores_sal_veg_habitat <- cores2 %>%
   select(study_id:core_id, vegetation_class, salinity_class, habitat1, habitat3, habitat7)
 
 cores_species_habitat <- species2 %>% 
-  mutate(habiat = factor(habitat, levels = rev(c("unvegetated", "algal mat", "seagrass", "marsh", "scrub/shrub", "swamp", "mangrove")))) %>% 
-  arrange(study_id, core_id, habiat) %>% 
-  group_by(study_id, core_id, core_id) %>%
+  mutate(habitat = factor(habitat, levels = rev(c("unvegetated", "algal mat", "seagrass", "marsh", "scrub/shrub", "swamp", "mangrove")))) %>% 
+  arrange(study_id, core_id, habitat) %>% 
+  group_by(study_id, core_id) %>% 
   summarise(habitat4 = first(habitat)) %>% 
   mutate(habitat4 = as.character(habitat4))
 

@@ -26,8 +26,8 @@ library(tidyverse)
 library(RefManageR)
 library(lubridate)
 
-cores_raw <- read.csv("./data/primary_studies/mctigue_2020/original/mctigue_et_al_2020_cores.csv")
-depthseries_raw <- read.csv("./data/primary_studies/mctigue_2020/original/mctigue_et_al_2020_depthseries.csv")
+cores_raw <- read_csv("./data/primary_studies/mctigue_2020/original/mctigue_et_al_2020_cores.csv")
+depthseries_raw <- read_csv("./data/primary_studies/mctigue_2020/original/mctigue_et_al_2020_depthseries.csv")
 species_raw <- read_csv("./data/primary_studies/mctigue_2020/original/mctigue_et_al_2020_species.csv")
 methods_raw <- read_csv("./data/primary_studies/mctigue_2020/original/mctigue_et_al_2020_materials_and_methods.csv")
 
@@ -115,7 +115,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
-testRequired(table_names)
+testRequired(table_names) 
 
 test_unique_cores(cores)
 test_unique_coords(cores)

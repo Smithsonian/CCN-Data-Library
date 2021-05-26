@@ -16,10 +16,6 @@
 # 6. Materials and methods metadata
 # 7. Study citation links - Each study is associated with one or more citations 
 
-# join_status is changed to F if there is an error. 
-# the synthesis continues but is deposited in another folder and the error is recorded
-join_status <- TRUE
-
 ## 2. Scan directory and assemble study lists #########
 # The data/primary_studies folder will be scanned 
 # If a filename meets the necessary format (study_id_XXXX_table_type.csv), 
@@ -32,11 +28,12 @@ library(markdown)
 library(rmarkdown)
 library(DT)
 
+# join_status is changed to F if there is an error. 
+# the synthesis continues but is deposited in another folder and the error is recorded
+join_status <- TRUE
+
+# designate directory to pull data from
 directory <- "./data/primary_studies/"
-
-# read in list of file paths to data curated under old guidance
-# v1_dirs <- read_csv("docs/versioning/v1_data_paths.csv") %>% pull(file_paths)
-
 
 # Index of table names
 tables <- c("depthseries", "cores", "sites", "species", "impacts", "methods", "studycitations")
@@ -282,6 +279,7 @@ if(join_status == TRUE){
   # file.copy("data/CCRCN_synthesis/CCRCN_bibliography.bib", "data/CCRCN_synthesis/archive")
   
   # Write new synthesis data
+  # to original folder
   write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis/original/CCRCN_cores.csv")
   write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis/original/CCRCN_depthseries.csv")
   write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis/original/CCRCN_sites.csv")
@@ -290,7 +288,18 @@ if(join_status == TRUE){
   write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/original/CCRCN_species.csv")
   write_csv(ccrcn_synthesis$studycitations, "./data/CCRCN_synthesis/original/CCRCN_study_citations.csv")
   
-  # WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/original/CCRCN_bibliography.bib")
+  WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/original/CCRCN_bibliography.bib")
+  
+  # to derivative folder for post-processing (this will be served through the Atlas)
+  write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
+  write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv")
+  write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis/derivative/CCRCN_sites.csv")
+  write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis/derivative/CCRCN_impacts.csv")
+  write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis/derivative/CCRCN_methods.csv")
+  write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/derivative/CCRCN_species.csv")
+  write_csv(ccrcn_synthesis$studycitations, "./data/CCRCN_synthesis/derivative/CCRCN_study_citations.csv")
+  
+  WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/derivative/CCRCN_bibliography.bib")
 }
 
 # Record summary of warnings 

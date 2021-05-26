@@ -35,7 +35,10 @@ impacts_raw <- read_csv("./data/primary_studies/peck_2020/original/peck_et_al_20
 
 impacts <- impacts_raw
 
-methods <- methods_raw %>% mutate(method_id = "single set of methods")
+methods <- methods_raw %>%
+  mutate(method_id = "single set of methods",
+         excess_pb210_model = "CIC",
+         excess_pb210_rate = "mass accumulation")
 
 cores <- cores_raw %>%
   mutate(core_date = as.Date(core_date, format = "%m/%d/%y"),
@@ -67,14 +70,15 @@ species <- species_raw %>%
 
 if(!file.exists("data/primary_studies/peck_2020/derivative/peck_et_al_2020_study_citations.csv")){
   
-  peck_doi <- "https://doi.org/10.25573/serc.11317820.v2"
+  data_doi <- "https://doi.org/10.25573/serc.11317820.v2"
+  pub_doi <- "10.1029/2019JG005464"
   
-  citation_raw <- as.data.frame(GetBibEntryWithDOI(peck_doi))
+  citation_raw <- as.data.frame(GetBibEntryWithDOI(c(data_doi, pub_doi)))
   
   study_citations <- citation_raw %>%
-    mutate(bibliography_id = "Peck_et_al_2020_data",
+    mutate(bibliography_id = c("Peck_et_al_2020_data", "Peck_et_al_2020_article"),
            study_id = "Peck_et_al_2020",
-           publication_type = "primary dataset") %>%
+           publication_type = c("primary dataset", "associated source")) %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
     remove_rownames()
   
