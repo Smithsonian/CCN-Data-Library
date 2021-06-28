@@ -537,3 +537,50 @@ cr_ccrcn <- function (dois, format = "bibtex", style = "apa", locale = "en-US",
     cn(dois, ...)
   }
 }
+
+## Resolve Taxonomy ####
+
+## function to resolve taxa names using GNR 
+# uses taxonomic authorities to resolve spelling rather than recoding everything by hand
+resolveTaxa <- function(taxa) {
+  
+  resolved <- data.frame()
+  unresolved <- vector()
+  
+  for (i in 1:length(taxa)){
+    # gnr_sources <- taxize::gnr_datasources()
+    
+    # store resolved results
+    gnr_result <- taxize::gnr_resolve(sci = as.vector(taxa[i]), 
+                                      canonical = TRUE) %>%
+      # gnr_datasources()
+      # preferred_data_sources = c(150, 9, 4, 3)
+      
+      # pick the first result
+      slice(1)
+    
+    if (!plyr::empty(gnr_result)) {
+      # compile list of resolved taxa
+      resolved <- rbind(resolved, gnr_result)
+      
+    } else {
+      # save unresolved taxa
+      unresolved <- rbind(unresolved, taxa[i])
+      # skip unresolved taxa
+      i <- i + 1
+      next
+    }
+  }
+  
+  if (length(unresolved) > 0) {
+    print("The following taxa could not be resolved:")
+    print(unresolved)
+  }
+  
+  return(resolved)
+}
+
+
+
+
+
