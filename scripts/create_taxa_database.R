@@ -35,7 +35,9 @@ cleaned_taxa <- resolved %>%
   select(species_code, resolved_taxa, data_source, score)
 
 
-write_csv(cleaned_taxa, "docs/CCRCN_taxa_database.csv")
+write_csv(resolved, "docs/CCRCN_taxa_database.csv")
+
+## This is a modification to the script
 
 
 ### MWG Taxa Workflow
