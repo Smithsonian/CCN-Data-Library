@@ -8,6 +8,9 @@ source("scripts/1_data_formatting/curation_functions.R")
 
 # taxa_db <- read_csv("docs/CCRCN_taxa_database.csv")
 
+species_habitats <- read_csv("docs/versioning/species-habitat-classification-JH-20200824.csv") %>%
+  select(species_code, code_type, habitat)
+
 species <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_species.csv") %>%
   filter(code_type != "description") %>% 
   mutate(species_code = recode(species_code,
@@ -17,28 +20,44 @@ species <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_species.csv") %>%
   unnest(species_code) %>% 
   mutate(species_code = trimws(species_code))
  
+# extract taxa from species habitat table that aren't in the species synthesis table
+more_taxa <- species_habitats %>%
+  filter(!(species_code %in% unique(species$species_code))) %>% 
+  filter(species_code != "Avicennia marina; Sonneratia alba") %>% 
+  filter(code_type != "description")
+
 # create a unique taxa list to resolve
-taxa <- unique(sort(species$species_code))
+taxa <- unique(sort(c(species$species_code, more_taxa$species_code)))
 
-# they need to filter for genus species 
-
+# resolve misspellings
 resolved <- resolveTaxa(taxa)
 
 # Unresolved
 # "Arrow arum" => Peltandra virginica (Merill_1999 => Holmquist 2018)
 # "Thassia hemprichii" => Thalassia hemprichii (Agawin_et_al_1996 => Forquerean)
+# "Asppagus officinalis" => correct spelling exists in the database
+# "Typa domingensis" => correct spelling exists in the database
 
 cleaned_taxa <- resolved %>%
   rename(resolved_taxa = matched_name2,
          data_source = data_source_title,
          species_code = user_supplied_name) %>%
-  select(species_code, resolved_taxa, data_source, score)
+  mutate(name_updated = ifelse(species_code != resolved_taxa, T, F)) %>% 
+  select(species_code, resolved_taxa, data_source, score, name_updated)
 
+# These following species are not recognized by any data source
+# GNR drops species and leaves the genus 
+# Avicennia corniculatum
+# Schoenoplectus montevidensis
+# Amphibolis australis
+# Trapa natis => trapa natans? (exists in database) 
 
-write_csv(resolved, "docs/CCRCN_taxa_database.csv")
+taxa_merged <- ccrcn_taxa %>%
+  left_join(species_habitats)
+# habitat and code_type have to be assigned
 
-## This is a modification to the script
-
+# write finalized taxa database
+write_csv(cleaned_taxa, "docs/CCRCN_taxa_database.csv")
 
 ### MWG Taxa Workflow
 
