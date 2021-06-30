@@ -6,8 +6,16 @@ library(tidyverse)
 
 source("scripts/1_data_formatting/curation_functions.R")
 
+# taxa_db <- read_csv("docs/CCRCN_taxa_database.csv")
+
 species <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_species.csv") %>%
-  filter(code_type != "description")
+  filter(code_type != "description") %>% 
+  mutate(species_code = recode(species_code,
+                               "Arrow arum" = "Peltandra virginica",
+                               "Thassia hemprichii" = "Thalassia hemprichii")) %>% 
+  mutate(species_code = str_split(species_code, ";")) %>% 
+  unnest(species_code) %>% 
+  mutate(species_code = trimws(species_code))
  
 # create a unique taxa list to resolve
 taxa <- unique(sort(species$species_code))
@@ -20,15 +28,22 @@ resolved <- resolveTaxa(taxa)
 # "Arrow arum" => Peltandra virginica (Merill_1999 => Holmquist 2018)
 # "Thassia hemprichii" => Thalassia hemprichii (Agawin_et_al_1996 => Forquerean)
 
-write_csv(resolved, "docs/CCRCN_taxa_database.csv")
+cleaned_taxa <- resolved %>%
+  rename(resolved_taxa = matched_name2,
+         data_source = data_source_title,
+         species_code = user_supplied_name) %>%
+  select(species_code, resolved_taxa, data_source, score)
+
+
+write_csv(cleaned_taxa, "docs/CCRCN_taxa_database.csv")
 
 
 ### MWG Taxa Workflow
 
 # # resolve taxa names using GNR
-# taxa <- sort(unique(species$species))
+# taxa <- sort(unique(species$species_code))
 # 
-# taxa_index <- which(!(taxa %in% taxa_db$species))
+# taxa_index <- which(!(taxa %in% taxa_db$user_supplied_name))
 # 
 # if(length(taxa_index) > 0){
 #   
