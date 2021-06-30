@@ -45,3 +45,5 @@ Note that positional data can be assigned at the core level, or at the site leve
 
 ## Soil Depth Series
 This level of hierarchy contains the actual depth series information. At minimum a submission needs to specify minimum and maximum depth increments, dry bulk density, and either fraction organic matter or fraction carbon. Sample ID’s should be used in the case that there are multiple replicates of a measurements. There is plenty of room for recording raw data from various dating techniques as well as age depth models.
+
+
