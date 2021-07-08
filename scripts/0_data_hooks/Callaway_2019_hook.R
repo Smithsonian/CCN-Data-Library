@@ -50,7 +50,12 @@ cores <- cores_raw %>%
 # Species data needs to combine genus and species into one and remove other columns
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
-  select(study_id, site_id, core_id, species_code) 
+  mutate(species_code = recode(species_code,
+                               "Typa domingensis" = "Typha domingensis")) %>% 
+  select(study_id, site_id, core_id, species_code) %>% 
+  resolveTaxa(.) %>% 
+  mutate(species_code = ifelse(species_code != resolved_taxa, resolved_taxa, species_code)) %>%
+  select(-resolved_taxa)
 
 # Remove NS cores from depthseries (no other metadata)
 depthseries <- depthseries_raw %>%

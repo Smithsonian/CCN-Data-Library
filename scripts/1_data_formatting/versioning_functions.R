@@ -120,6 +120,7 @@ updateTables <- function(table_names){
       # load lookup tables for targeted fixes
       # Species table fixes 
       species_fixes <- read_csv("docs/versioning/species-habitat-classification-JH-20200824.csv", col_types = cols())
+      # taxa_db <- read_csv("docs/CCRCN_taxa_database.csv")
       
       # Fix species
       species_fixed <- tables_to_update[[i]] %>%

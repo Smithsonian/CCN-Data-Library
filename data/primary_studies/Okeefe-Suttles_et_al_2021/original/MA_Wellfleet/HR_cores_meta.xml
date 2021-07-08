@@ -1,0 +1,840 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Jennifer A. O'Keefe Suttles</origin>
+        <origin>Meagan J. Eagle</origin>
+        <origin>Adrian G. Mann</origin>
+        <origin>Faming Wang</origin>
+        <origin>Jim Tang</origin>
+        <origin>Daniel Roberts</origin>
+        <origin>Kelly Sanks</origin>
+        <origin>Timothy P. Smith</origin>
+        <origin>Kevin D. Kroeger</origin>
+        <pubdate>20210630</pubdate>
+        <title>Collection, analysis, and age-dating of sediment cores from Herring River wetlands and other nearby wetlands in Wellfleet, Massachusetts, 2015–17</title>
+        <edition>1.0</edition>
+        <geoform>tabular digital data</geoform>
+        <serinfo>
+          <sername>data release</sername>
+          <issue>DOI: 10.5066/P95RXPHB</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>Reston, VA</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <othercit>Suggested citation:O’Keefe Suttles, J.A., Eagle, M.J., Mann, A.G., Wang, F., Tang, J., Roberts, D., Sanks, K., Smith, T.P., and Kroeger, K.D., 2021, Collection, analysis, and age-dating of sediment cores from Herring River wetlands and other nearby wetlands in Wellfleet, Massachusetts, 2015–17: U.S. Geological Survey data release,  https://doi.org/10.5066/P95RXPHB.</othercit>
+        <onlink>https://doi.org/10.5066/P95RXPHB</onlink>
+        <onlink>https://www.sciencebase.gov/catalog/item/60bfb916d34e86b938916da1</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>The Herring River estuary in Wellfleet, Cape Cod, Massachusetts, has been tidally restricted for more than a century by a dike constructed near the mouth of the river. Upstream from the dike, the tidal restriction has caused the conversion of salt marsh wetlands to various other ecosystems including impounded freshwater marshes, flooded shrub land, drained forested upland, and brackish wetlands dominated by Phragmites australis. This estuary is now managed by the National Park Service, which plans to replace the aging dike and restore tidal flow to the estuary. To assist National Park Service land managers with restoration planning, the U.S. Geological Survey collected fourteen sediment cores from different ecosystems within the tidally restricted Herring River estuary (four sites) and an estuary in Wellfleet Harbor near the Herring River dike (three sites) between 2015 and 2017. Collected cores were up to 70 cm in length with dry bulk density ranges from 0.03 to 2.39 grams per cubic centimeter and carbon content 0.23% to 46.25%. Land surface elevation was measured at each site (ranging from -0.149 meters to 1.494 meters relative to NAVD88) to determine the boundaries for each site within current tidal conditions. Gamma counting results for excess lead-210 were used to construct Constant Rate of Supply (CRS) age models to age-date individual depth intervals in the cores. Additionally, gamma counting results for other radionuclides, particularly cesium-137 gave further insight to evaluate how vertical accretion and carbon burial rates have changed during the past century. This dataset can help evaluate differences among the varied ecosystems and vegetation types to make predictions about potential changes as tidal restoration commences in the Herring River estuary.</abstract>
+      <purpose>Sediment cores were collected, age-dated, and their carbon content was measured to calculate vertical accretion and carbon burial rates. Data were collected to facilitate National Park Service restoration planning and provide background data of differences in water level, vegetation types, carbon burial rates, and land-surface elevation between sites.</purpose>
+      <supplinf>For more information, see the following field activities:
+https://cmgds.marine.usgs.gov/fan_info.php?fan=2015-042-FA
+https://cmgds.marine.usgs.gov/fan_info.php?fan=2015-044-FA
+https://cmgds.marine.usgs.gov/fan_info.php?fan=2015-063-FA
+https://cmgds.marine.usgs.gov/fan_info.php?fan=2016-016-FA
+https://cmgds.marine.usgs.gov/fan_info.php?fan=2016-036-FA
+https://cmgds.marine.usgs.gov/fan_info.php?fan=2017-035-FA
+https://cmgds.marine.usgs.gov/fan_info.php?fan=2018-054-FA</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <mdattim>
+          <sngdate>
+            <caldate>20150618</caldate>
+          </sngdate>
+          <sngdate>
+            <caldate>20150619</caldate>
+          </sngdate>
+          <sngdate>
+            <caldate>20160628</caldate>
+          </sngdate>
+          <sngdate>
+            <caldate>20171027</caldate>
+          </sngdate>
+        </mdattim>
+      </timeinfo>
+      <current>Ground Condition. These are the dates when the cores were collected.</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-70.07056</westbc>
+        <eastbc>-70.02808</eastbc>
+        <northbc>41.96033</northbc>
+        <southbc>41.92977</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>soil chemistry</themekey>
+        <themekey>radiometric dating</themekey>
+        <themekey>piston coring</themekey>
+        <themekey>carbon isotope analysis</themekey>
+        <themekey>carbon</themekey>
+        <themekey>nitrogen</themekey>
+        <themekey>sea-level change</themekey>
+        <themekey>sedimentation</themekey>
+        <themekey>wetland ecosystems</themekey>
+      </theme>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>geoscientificInformation</themekey>
+        <themekey>location</themekey>
+        <themekey>elevation</themekey>
+        <themekey>oceans</themekey>
+        <themekey>environment</themekey>
+        <themekey>inlandWaters</themekey>
+      </theme>
+      <theme>
+        <themekt>National Agricultural Library Thesaurus</themekt>
+        <themekey>salt marshes</themekey>
+        <themekey>wetland soils</themekey>
+        <themekey>wetlands</themekey>
+        <themekey>ecological restoration</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>age model</themekey>
+        <themekey>Constant Rate of Supply (CRS) model</themekey>
+        <themekey>210-lead</themekey>
+        <themekey>137-cesium</themekey>
+        <themekey>accretion rate</themekey>
+        <themekey>carbon burial</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:60bfb916d34e86b938916da1</themekey>
+      </theme>
+      <place>
+        <placekt>Geographic Names Information System (GNIS)</placekt>
+        <placekey>Cape Cod (606914)</placekey>
+        <placekey>Herring River (616776)</placekey>
+        <placekey>Town of Wellfleet (618261)</placekey>
+        <placekey>Cape Cod National Seashore (606900)</placekey>
+        <placekey>Barnstable County (606927)</placekey>
+        <placekey>Commonwealth of Massachusetts (606926)</placekey>
+        <placekey>United States of America</placekey>
+        <placekey>Duck Creek (616758)</placekey>
+        <placekey>Wellfleet Harbor (616838)</placekey>
+      </place>
+    </keywords>
+    <accconst>none</accconst>
+    <useconst>none</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Meagan J Eagle</cntper>
+          <cntorg>Northeast Region: WOODS HOLE COASTAL AND MARINE SCIENCE</cntorg>
+        </cntperp>
+        <cntpos>Research Physical Scientist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>384 Woods Hole Road</address>
+          <city>Woods Hole</city>
+          <state>MA</state>
+          <postal>02543</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>508-548-8700 x2280</cntvoice>
+        <cntemail>meagle@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <browse>
+      <browsen>https://www.sciencebase.gov/catalog/file/get/60bfb916d34e86b938916da1?name=HR_wetland_Phragmites.JPG</browsen>
+      <browsed>Browse graphic is a photograph of a Phragmites wetland in the Herring River estuary in Wellfleet, MA.</browsed>
+      <browset>JPEG</browset>
+    </browse>
+    <datacred>Barry Irwin (USGS Geophysicist), Sandra Brosnahan (USGS Physical Scientist), Jonathan Borden (USGS Electronics Technician), and Allyson Boggess (USGS Geologist) helped with RTK GPS data collection at these study sites.</datacred>
+    <crossref>
+      <citeinfo>
+        <origin>O'Keefe Suttles, Jennifer A.</origin>
+        <origin>Gonneea, Meagan E.</origin>
+        <origin>Brosnahan, Sandra M.</origin>
+        <origin>Mann, Adrian G.</origin>
+        <origin>Brooks, Thomas W.</origin>
+        <origin>Kroeger, Kevin D.</origin>
+        <origin>Medeiros, Kelly</origin>
+        <origin>Smith, Timothy P.</origin>
+        <origin>Wang, Faming</origin>
+        <origin>Tang, Jim</origin>
+        <pubdate>20200625</pubdate>
+        <title>Continuous Monitoring Data from Herring River Wetlands, Cape Cod, Massachusetts, 2015 to January 2020</title>
+        <edition>1.0</edition>
+        <geoform>tabular digital data</geoform>
+        <serinfo>
+          <sername>data release</sername>
+          <issue>DOI:10.5066/P9R4SRTR</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>Reston, VA</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/P9R4SRTR</onlink>
+        <onlink>https://www.sciencebase.gov/catalog/item/5eab1f3582cefae35a225504</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>Radionuclide detection limits are specific to an individual sample and are a function of: 1) the detector efficiency at the energy level of the peak being measured; 2) the branching ratio (expected fraction of decay events at the energy level), 3) the background activity within the sample. Detector efficiency was determined from EPA standard pitchblende ore in the same geometry as the samples. Activities of 7Be, 137Cs, and excess 210Pb (i.e. unsupported) were decay-corrected to time of collection. Suppression of low energy peaks by self-absorption was corrected for according to Cutshall and others, 1983. Peak detection, with respect to background activity, is calculated for each radionuclide in the APTEC peak integration spectroscopy software during sample analysis. Generally, measured radionuclide activity greater than or equal to 0.43 (210Pb), 0.18 (226Ra), 2.05 (7Be), and 0.02 (137Cs) dpm/g were accepted as above detection limit for this dataset.
+
+Samples were analyzed for weight percent carbon and nitrogen and the isotopic signature of carbon and nitrogen in organic matter at the University of California - Davis (UC Davis), Stable Isotope Facility (SIF) with an Elementar Vario EL Cube or Micro Cube elemental analyzer interfaced to a PDZ Europa 20-20 isotope ratio mass spectrometer. During analysis, samples were interspersed with several replicates of at least four different laboratory reference materials; these reference materials have a long-term standard deviation of 0.2 per mil for 13C and 0.3 per mil for 15N. Any analysis value below detection is given the numerical value of 0. Any attribute that was not measured for a specific sample is left as a blank cell.
+
+Cutshall, N.H., Larsen, I.L., and Olsen, C.R., 1983, Direct analysis of 210 Pb in sediment samples—Self-absorption corrections: Nuclear Instruments and Methods in Physics Research, v. 206, issues 1–2, p. 309–312, https://doi.org/10.1016/0167-5087(83)91273-5.</attraccr>
+    </attracc>
+    <logic>Dataset was queried for maximum and minimum values to be sure sample analyses were within expected ranges for the environmental conditions.  Data were plotted to look for any obvious outliers that may have been indicative of analytical error. Samples with questionable results were re-analyzed. Detection limits are defined in the attribute accuracy section of the metadata. Any analysis value below detection is given the numerical value of 0. Any attribute that was not measured for a specific sample is listed as an empty or blank cell. Each sample was treated in the same manner for each analysis.</logic>
+    <complete>The dataset is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details. All sample measurements are reported.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>Latitude and longitude were measured with a handheld Garmin GPSMAP 76Cx unit in the field at time of sediment core collection. The GPS unit indicated accuracy was within 3 meters. No formal positional accuracy tests were conducted.</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>Land surface elevations were measured by Trimble Real-Time Kinematic (RTK) GPS across the collection area after core collection. Surveyors returned to the core collection site on the dates listed below, navigated to the core collection locations, and surveyed several points. HROC and HRHT: 01/11/2017; MYN, MYUR, and HRCH: 12/11/2017; HRP and HRHK: 07/11/2018. Average vertical accuracy of this method is +/- 5 centimeters. No formal positional accuracy tests were conducted.</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>A piston coring system was used to collect sediment cores from coastal wetlands in 2015, 2016, and 2017. The PVC core liner (diameter 11 cm, 1-2 m in length) was fitted with a gasketed piston that was placed on the sediment surface. The clear, sharpened core liner was pushed down into the marsh subsurface, while the piston was maintained at the marsh surface via tension on the piston. We visually observed the sediment surface to ensure that the soil column did not compact during collection. Once the core reached the desired depth, the core liner and piston were removed from the marsh with a pulley system. The process date reflects the last occurrence of the work.</procdesc>
+        <procdate>20171027</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>At the end of each core collection date, the sediment cores were immediately returned to the USGS Woods Hole Coastal and Marine Science Center. They were placed in a refrigerator for 1 to 3 days, then split vertically, sectioned at 1 or 2 cm intervals, frozen, and then freeze dried for 7 days, until sediment weights did not change further. Dry bulk density was determined as the dry weight of a known volume of sample. Approximately 5 g of dried sediment sample was blended and homogenized prior to sealing in a jar for a minimum of three weeks and then placed on a planar-type gamma counter for 24 to 48 hours to measure 7Be, 137Cs, 210Pb, and 226Ra at 477, 662, 46.5 and 352 kiloelectronvolts (KeV) energies respectively (Canberra Inc., USA). Detector efficiency was determined from EPA standard pitchblende ore in the same geometry as the samples. Excess 210PB was calculated as the decay-corrected difference between total 210Pb and supported 210Pb (considered to be equal to 226Ra). Activities of 7Be, 137Cs, and excess 210Pb were decay corrected to time of collection, using their respective half-lives. Suppression of low energy peaks by self-absorption was corrected for according to Cutshall and others, 1983. Gamma spectroscopy detection limits were determined in APTEC software for each sample; refer to the attribute accuracy section of this metadata for further details. Values reported are above this limit, while values below are reported as 0. Core sections not analyzed are reported as blank cells. Sediment ages and accretion rates were calculated with the Constant Rate of Supply (CRS) excess 210Pb age model, a variant on the advection-decay equation (Appleby and Oldfield, 1978; Goldberg, 1963). This model assumes that 210Pb supply to the sediment surface is constant through time, but allows for changing sedimentation rates, in addition to decay, to control the down-core activity of excess 210Pb. The common form of the CRS model, as derived by Appleby and Oldfield (1978), solves for age based on the distribution of exces 210Pb in the sediment record. Prior to application of the age model, excess 210Pb profiles were evaluated to ensure they were sufficiently resolved to apply the CRS model without bias towards ages that are too old or accretion rates that are too low at depth (Binford, 1990). All gamma analyses were ongoing from 2015 and completed in 2018.  
+
+Appleby, P.G., and Oldfield, F., 1978, The calculation of lead-210 dates assuming a constant rate of supply of unsupported 210Pb to the sediment: Catena, v. 5, issue 1, p. 1–8, https://doi.org/10.1016/S0341-8162(78)80002-2.   
+
+Binford, M.W., 1990, Calculation and uncertainty analysis of 210 Pb dates for PIRLA project lake sediment cores: Journal of Paleolimnology, v. 3, issue 3, p. 253-267, https://doi.org/10.1007/BF00219461.
+
+Cutshall, N.H., Larsen, I.L., and Olsen, C.R., 1983, Direct analysis of 210 Pb in sediment samples—Self-absorption corrections: Nuclear Instruments and Methods in Physics Research, v. 206, issues 1–2, p. 309–312, https://doi.org/10.1016/0167-5087(83)91273-5.
+
+Goldberg, E.D., 1963, Geochronology with 210 Pb, in Miller, J.A., convener, Radioactive dating: International Atomic Energy Agency Symposium on Radioactive Dating, Athens, Greece, November 19-23, 1962, [Proceedings], p. 121-131.</procdesc>
+        <procdate>2018</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>A subsample of freeze dried sediment (0.5 g) was ball-milled to a fine powder and packaged for analysis at the USGS Woods Hole Coastal and Marine Science Center. Samples were analyzed for Total Carbon and Nitrogen at the University of California-Davis (UC Davis) Stable Isotope Facility (SIF). Weight percent carbon and nitrogen and the isotopic signature of carbon and nitrogen in organic matter was analyzed with an Elementar Vario EL Cube or Micro Cube elemental analyzer interfaced to a PDZ Europa 20-20 isotope ratio mass spectrometer. During analysis, samples are interspersed with several replicates of at least four different laboratory reference material; these reference materials have a long-term standard deviation of 0.2 per mil for 13C and 0.3 per mil for 15N. Analyses occurred concurrently with analyses in the previous process step; after radionuclide analysis was completed on a core, we would begin the total carbon and nitrogen analysis (as other cores were still in the process of being analyzed for radionuclides).</procdesc>
+        <procdate>2019</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Land surface elevations were measured by Trimble Real-Time Kinematic (RTK) GPS across the collection area after core collection. Surveyors returned to the core collection site on the dates listed below, navigated to the core collection locations, and surveyed several points. HROC and HRHT: 01/11/2017; MYN, MYUR, and HRCH: 12/11/2017; HRP and HRHK: 07/11/2018. Average vertical accuracy of this method is +/- 5 centimeters. No formal positional accuracy tests were conducted.</procdesc>
+        <procdate>2018</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Raw data were entered into an Excel spreadsheet where all calculations were completed. The Excel spreadsheet was exported as a CSV file from Excel for Mac version 15.33. The CSV file was processed in MATLAB to round calculated values to appropriate place values and again exported as a comma separated comma separated text file (*.csv). Note that all calculations were performed prior to rounding and truncating values reported in this data release.</procdesc>
+        <procdate>2020</procdate>
+        <proccont>
+          <cntinfo>
+            <cntperp>
+              <cntper>Meagan J Eagle</cntper>
+              <cntorg>Northeast Region: WOODS HOLE COASTAL AND MARINE SCIENCE CENTER</cntorg>
+            </cntperp>
+            <cntpos>Research Physical Scientist</cntpos>
+            <cntaddr>
+              <addrtype>mailing and physical</addrtype>
+              <address>384 Woods Hole Road</address>
+              <city>Woods Hole</city>
+              <state>MA</state>
+              <postal>02543</postal>
+              <country>US</country>
+            </cntaddr>
+            <cntvoice>508-548-8700 x2280</cntvoice>
+            <cntemail>meagle@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <indspref>Geographic Names Information System (GNIS) placenames are included as keywords to give the general location of core collections. The entity contains attributes with specific latitude and longitude of each core collection; several attributes are also included to describe the core collection location: nearest body of water, vegetation type, and in some cases, the nearest road. Refer to the entity and attribute definitions for "Site", "Status", and "ID" for details.</indspref>
+    <direct>Point</direct>
+    <ptvctinf>
+      <sdtsterm>
+        <sdtstype>Point</sdtstype>
+        <ptvctcnt>645</ptvctcnt>
+      </sdtsterm>
+    </ptvctinf>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <geograph>
+        <latres>1.0E-5</latres>
+        <longres>1.0E-5</longres>
+        <geogunit>Decimal degrees</geogunit>
+      </geograph>
+      <geodetic>
+        <horizdn>North American Datum of 1983</horizdn>
+        <ellips>Geodetic Reference System 80</ellips>
+        <semiaxis>6378137.0</semiaxis>
+        <denflat>298.257222101</denflat>
+      </geodetic>
+    </horizsys>
+    <vertdef>
+      <altsys>
+        <altdatum>North American Vertical Datum of 1988</altdatum>
+        <altres>0.01</altres>
+        <altunits>meters</altunits>
+        <altenc>Attribute values</altenc>
+      </altsys>
+    </vertdef>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>Data_HerringRiver_Cores.csv</enttypl>
+        <enttypd>Comma separated text file with soil core data collected from sites within the tidally restricted Herring River Estuary and other wetlands nearby. The file includes latitude and longitude of core collection, calculated values of soil dry bulk density, mass accumulation rates, vertical accretion rates, and carbon burial rates. Also included are the data required for those calculations: radionuclide data, soil carbon and nitrogen content. The dataset includes 646 records.</enttypd>
+        <enttypds>Producer-defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Site</attrlabl>
+        <attrdef>A text identifier for the general location of the study site. Note that both sites have tidal restrictions and cores were collected upstream and downstream from these restrictions. Refer to the "Status" attribute for further details on the core collection location.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>Herring River</edomv>
+            <edomvd>A data point from a sediment core collected from either the tidally restricted wetlands upstream from the Chequessett Neck Dike or the salt marsh downstream from the tidal restriction in the Herring River estuary.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Mayo Creek</edomv>
+            <edomvd>A data point from a sediment core collected from either the Mayo Creek Phragmites wetland on Kendrick Avenue upstream from the tidal restriction or the salt marsh downstream from the tidal restriction near the Wellfleet Harbor on Dock Creek.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Status</attrlabl>
+        <attrdef>A text identifier indicating the vegetation type that now dominates the sediment core collection site.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>Forest</edomv>
+            <edomvd>Data point collected from a location in the Herring River estuary that is now "dry" or drained and forested (dominated by upland tree species).</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Typha</edomv>
+            <edomvd>Data point collected from a location in the Herring River estuary that is now dominated by Typha (cattail).</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Wet Shrub</edomv>
+            <edomvd>Data point collected from a location in the Herring River estuary that is now dominated by shrubs tolerant of periodic standing water.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Phragmites</edomv>
+            <edomvd>Data point collected from a study site (either within the Herring River estuary or Mayo Creek) that is now dominated by Phragmites.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Salt marsh</edomv>
+            <edomvd>Data point collected from a study site that is dominated by salt marsh plant species (e.g. Spartina alterniflora).</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ID</attrlabl>
+        <attrdef>Abbreviated alphabetical identification code of each core to indicate: 1) the study site from which it was collected using a two letter abbreviation (HR for Herring River, and MY for Mayo Creek); 2) the status of the marsh (URA for un-restored, N for natural salt marsh, or a two letter abbreviation specific for a core collection location ); and 3) a qualifier of A or B to indicate the order of core collection over time.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>HRPA</edomv>
+            <edomvd>Herring River, Phragmites, core A</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>HRPB</edomv>
+            <edomvd>Herring River, Phragmites, core B</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>HRHKA</edomv>
+            <edomvd>Herring River, Wet Shrub (near Hopkins Drive, i.e. HK), core A</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>HRHKB</edomv>
+            <edomvd>Herring River, Wet Shrub (near Hopkins Drive, i.e. HK), core B</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>HRHTA</edomv>
+            <edomvd>Herring River, Dry Forest (near High Toss Road, i.e. HT), core A</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>HRHTB</edomv>
+            <edomvd>Herring River, Dry Forest (near High Toss Road, i.e. HT), core B</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>HROCA</edomv>
+            <edomvd>Herring River, Typha wetland (near Old County Road, i.e. OC), core A</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>HROCB</edomv>
+            <edomvd>Herring River, Typha wetland (near Old County Road, i.e. OC), core A</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>HRCHA</edomv>
+            <edomvd>Herring River, salt marsh wetland (downstream of the Chequessett Neck Dike, i.e. CH), core A</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>HRCHB</edomv>
+            <edomvd>Herring River, salt marsh wetland (downstream of the Chequessett Neck Dike, i.e. CH), core B</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MYNA</edomv>
+            <edomvd>Mayo Creek, natural salt marsh wetland (downstream from the Kendrick Avenue tidal restriction; near to Wellfleet Harbor in Dock Creek), core A</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MYNB</edomv>
+            <edomvd>Mayo Creek, natural salt marsh wetland (downstream from the Kendrick Avenue tidal restriction; near to Wellfleet Harbor in Dock Creek), core B</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MYURA</edomv>
+            <edomvd>Mayo Creek, un-restored Phragmites wetland (upstream from the Kendrick Avenue tidal restriction; near to Wellfleet Harbor in Dock Creek), core A</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MYURB</edomv>
+            <edomvd>Mayo Creek, un-restored Phragmites wetland (upstream from the Kendrick Avenue tidal restriction; near to Wellfleet Harbor in Dock Creek), core B</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Date</attrlabl>
+        <attrdef>A numeric identifier of the date the core was collected in the format of month/day/year.</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>06/18/15</rdommin>
+            <rdommax>10/27/17</rdommax>
+            <attrunit>mm/dd/yyy</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Lat</attrlabl>
+        <attrdef>Latitude decimal degrees north, NAD83</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>41.92977</rdommin>
+            <rdommax>41.96033</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Lon</attrlabl>
+        <attrdef>Longitude decimal degrees west, NAD83. The negative value indicates a location in the western hemisphere.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-70.07056</rdommin>
+            <rdommax>-70.02808</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth</attrlabl>
+        <attrdef>A numeric identifier of the interval mid-point depth below the sediment interface in centimeters. Note that depth = 0 cm is given as a reference point in order to include the land surface elevation within the dataset. Sediment core analyses are not reported for this sample depth because it is not a sampled horizon within a collected core. The minimum interval mid-point for each core is 0.5 cm.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>69.5</rdommax>
+            <attrunit>centimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Elevation</attrlabl>
+        <attrdef>A numeric identifier of interval mid-point elevation relative to NAVD88 datum in centimeters. Calculated by subtracting the mid-interval sample depth from the NAVD88 elevation of the core location reported as depth = 0 cm within the dataset for each core.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-79.9</rdommin>
+            <rdommax>149.4</rdommax>
+            <attrunit>centimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>DBD</attrlabl>
+        <attrdef>Dry Bulk Density: A numeric identifier of the sediment dry bulk density in grams per cubic centimeter (g/cm3). Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0263</rdommin>
+            <rdommax>2.3898</rdommax>
+            <attrunit>grams per cubic centimeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pb</attrlabl>
+        <attrdef>A numeric identifier of the sediment total lead-210 activity in decays per minute per gram (dpm/g). Measured at 46.5 kiloelectron volts (KeV) on a planar gamma counter. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.4321</rdommin>
+            <rdommax>31.6170</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pb_e</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total lead-210 activity in decays per minute per gram (dpm/g). Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0317</rdommin>
+            <rdommax>1.6623</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>226Ra</attrlabl>
+        <attrdef>A numeric identifier of the sediment total radium-226 activity in decays per minute per gram (dpm/g). Measured at 352 kiloelectron volts (KeV) on a planar gamma counter. Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.1884</rdommin>
+            <rdommax>5.1101</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>226Ra_e</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total radium-226 activity in decays per minute per gram (dpm/g). Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0112</rdommin>
+            <rdommax>0.3555</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pbex</attrlabl>
+        <attrdef>A numeric identifier of the sediment excess lead-210 activity in decays per minute per gram (dpm/g), decay-corrected to date of core collection. Calculated as the difference between total lead-210 and total radium-226 activities. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-0.3651</rdommin>
+            <rdommax>31.2933</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pbex_e</attrlabl>
+        <attrdef>A numeric identifier of the propagated measurement error in sediment excess lead-210 activity in decays per minute per gram (dpm/g), decay-corrected to date of core collection. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0336</rdommin>
+            <rdommax>1.6653</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>137Cs</attrlabl>
+        <attrdef>A numeric identifier of the sediment total cesium-137 activity in decays per minute per gram (dpm/g), decay-corrected to date of core collection. Measured at 662 kiloelectron volts (KeV) on a planar gamma counter. Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0200</rdommin>
+            <rdommax>6.1129</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>137Cs_e</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total cesium-137 activity in decays per minute per gram (dpm/g), decay-corrected to date of core collection. Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0000</rdommin>
+            <rdommax>0.2636</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>7Be</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total beryllium-7 activity in decays per minute per gram (dpm/g), decay-corrected to date of core collection. Measured at 477 kiloelectron volts (KeV) on a planar gamma counter. Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2.0593</rdommin>
+            <rdommax>7.4195</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>7Be_e</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total beryllium-7 activity in decays per minute per gram (dpm/g), decay-corrected to date of core collection. Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.2550</rdommin>
+            <rdommax>2.9610</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>wtC</attrlabl>
+        <attrdef>Total amount of carbon by weight percent in soil. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.23</rdommin>
+            <rdommax>46.25</rdommax>
+            <attrunit>unitless</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>wtN</attrlabl>
+        <attrdef>Total amount of nitrogen by weight percent in soil. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.02</rdommin>
+            <rdommax>2.49</rdommax>
+            <attrunit>unitless</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>13C</attrlabl>
+        <attrdef>The carbon isotopic signature of the soil sample relative to Pee Dee Belemnite (PDB) standard. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-29.92</rdommin>
+            <rdommax>-13.95</rdommax>
+            <attrunit>parts per thousand OR per mil</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>15N</attrlabl>
+        <attrdef>The nitrogen isotopic signature of the soil sample relative to air. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.80</rdommin>
+            <rdommax>7.88</rdommax>
+            <attrunit>parts per thousand OR per mil</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Age</attrlabl>
+        <attrdef>A numeric identifier for the age in years from the collection date of the core interval based on the Constant Rate of Supply excess lead-210 age model. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.2</rdommin>
+            <rdommax>115.7</rdommax>
+            <attrunit>years</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Age_e</attrlabl>
+        <attrdef>A numeric identifier for the age model uncertainty in years of the core interval based on the Constant Rate of Supply excess lead-210 age model. Error is propagated through the model. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.4</rdommin>
+            <rdommax>32.2</rdommax>
+            <attrunit>years</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>VAR</attrlabl>
+        <attrdef>Vertical Accretion Rate: A numeric identifier for the vertical accretion rate of the sediment in millimeters per year (mm/y). Calculated as the difference in interval midpoint divided by the difference in ages of those adjacent sediment intervals.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.6</rdommin>
+            <rdommax>61.5</rdommax>
+            <attrunit>millimeters per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>MAR</attrlabl>
+        <attrdef>Mass Accumulation Rate: A numeric identifier for the mass accumulation rate of the sediment in grams per square meter per year (g/m2/y). Calculated by multiplying dry bulk density times vertical accretion rate.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>129</rdommin>
+            <rdommax>30266</rdommax>
+            <attrunit>grams sediment per square meter per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>CAR</attrlabl>
+        <attrdef>Carbon Accumulation Rate: A numeric identifier for the carbon mass accumulation rate of the sediment in grams of carbon per square meter per year (gC/m2/y). Calculated by multiplying the average mass accumulations rate for the combined depth interval of the elemental sample times weight percent carbon.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>23</rdommin>
+            <rdommax>824</rdommax>
+            <attrunit>grams carbon per square meter per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Year</attrlabl>
+        <attrdef>The year corresponding to the soil horizon based on the Constant Rate of Supply excess lead-210 age model. Calculated as collection date minus age of sediment at each depth interval.</attrdef>
+        <attrdefs>Producer-defined.</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1900.4</rdommin>
+            <rdommax>2017.9</rdommax>
+            <attrunit>calendar year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>ScienceBase</cntper>
+          <cntorg>U.S. Geological Survey - ScienceBase</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>The dataset contains one CSV file containing the data (Data_HerringRiver_Cores.csv), the browse graphic, and the FGDC CSDGM metadata in XML format.</resdesc>
+    <distliab>Neither the U.S. Government, the Department of the Interior, nor the USGS, nor any of their employees, contractors, or subcontractors, make any warranty, express or implied, nor assume any legal liability or responsibility for the accuracy, completeness, or usefulness of any information, apparatus, product, or process disclosed, nor represent that its use would not infringe on privately owned rights. The act of distribution shall not constitute any such warranty, and no responsibility is assumed by the USGS in the use of these data or related materials. Any use of trade, product, or firm names is for descriptive purposes only and does not imply endorsement by the U.S. Government.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>CSV</formname>
+          <formvern>Microsoft Excel Office 365</formvern>
+          <formcont>The data release includes 1 comma separated file, a browse graphic, and the FGDC CSDGM metadata.</formcont>
+          <transize>5</transize>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://www.sciencebase.gov/catalog/file/get/60bfb916d34e86b938916da1</networkr>
+                <networkr>https://www.sciencebase.gov/catalog/item/60bfb916d34e86b938916da1</networkr>
+                <networkr>https://doi.org/10.5066/P95RXPHB</networkr>
+              </networka>
+            </computer>
+            <accinstr>The first link is to download the data in a ZIP file. The second and third links are to the landing page of the data. The last two links go to the same place; one is the DOI designation of the publication.</accinstr>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+    <techpreq>The data release includes 1 comma-delimited text file. The user must have software capable of opening the text file and reading the data formats.</techpreq>
+  </distinfo>
+  <metainfo>
+    <metd>20210630</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Jennifer A. O'Keefe Suttles</cntper>
+          <cntorg>Northeast Region: WOODS HOLE COASTAL AND MARINE SCIENCE CENTER</cntorg>
+        </cntperp>
+        <cntpos>Chemist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>384 Woods Hole Road</address>
+          <city>Woods Hole</city>
+          <state>MA</state>
+          <postal>02543</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>508-548-8700 x2385</cntvoice>
+        <cntemail>jokeefesuttles@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>

@@ -1,0 +1,1178 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Meagan J. Eagle</origin>
+        <origin>Cathleen Wigand</origin>
+        <origin>Benjamin Branoff</origin>
+        <origin>Stephen Balogh</origin>
+        <origin>Kenneth M. Miller</origin>
+        <origin>Rose M. Martin</origin>
+        <origin>Alana Hanson</origin>
+        <origin>Autumn J. Oczkowski</origin>
+        <origin>Evelyn Huerta</origin>
+        <origin>Joseph Loffredo</origin>
+        <origin>Elizabeth B. Watson</origin>
+        <origin>Jennifer A. O'Keefe Suttles</origin>
+        <pubdate>20210630</pubdate>
+        <title>Collection, analysis, and age-dating of sediment cores from mangrove wetlands in San Juan Bay Estuary, Puerto Rico, 2016</title>
+        <edition>1.0</edition>
+        <geoform>tabulated comma-separated values file (*.csv).</geoform>
+        <serinfo>
+          <sername>data release</sername>
+          <issue>DOI:10.5066/P97CAF30</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>Reston, VA</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <othercit>Suggested citation: Eagle, M.J., Wigand, C., Branoff, B., Balogh, S., Miller, K.M., Martin, R.M., Hanson, A., Oczkowski, A.J., Huertas, E., Loffredo, J., Watson, E.B., and O'Keefe Suttles, J.A., 2021, Collection, analysis, and age-dating of sediment cores from mangrove wetlands, San Juan Bay estuary Puerto Rico, 2016: U.S. Geological Survey data release, https://doi.org/10.5066/P97CAF30.</othercit>
+        <onlink>https://doi.org/10.5066/P97CAF30</onlink>
+        <onlink>https://www.sciencebase.gov/catalog/item/60902e3fd34e93746a710491</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>The San Juan Bay Estuary, Puerto Rico, contains mangrove forests that store significant amounts of organic carbon in soils and biomass. There is a strong urbanization gradient across the estuary, from the highly urbanized and clogged Caño Martin Peña in the western part of the estuary, a series of lagoons in the center of the estuary, and a tropical forest reserve (Piñones) in the easternmost part with limited urbanization. We collected sediment cores to determine carbon burial rates and vertical sediment accretion from five sites in the San Juan Bay Estuary. Cores were radiometrically-dated using lead-210 and the Plum age model. Sites had soil C burial rates ranging from 50 grams per meter squared per year (g m-2 y-1) in the San José lagoon to 632 g m-2 y-1 in the Caño Martin Peña in recent decades. Soil accretion and carbon burial rates were greater in recent decades (1970-2016) compared to historic decades (1930-1970) at some of the forest mangrove sites (i.e. Caño Martin Peña). Apparently, not only urbanization, but site-specific flushing patterns, landscape setting, and soil characteristics affected soil C burial rates. This dataset can help evaluate how differences in urbanization (low in the forest preserve to high in the clogged canal), flushing, and landscape setting influence soil accretion and carbon burial in urban, tropical mangrove forests.</abstract>
+      <purpose>Sediment cores were collected, age-dated, and their carbon and nitrogen content were measured to calculate vertical accretion and carbon and nitrogen burial rates. Data were collected to evaluate how urban influence and hydrology impact accretion in mangrove forests.</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <mdattim>
+          <sngdate>
+            <caldate>20160303</caldate>
+          </sngdate>
+          <sngdate>
+            <caldate>20160305</caldate>
+          </sngdate>
+          <sngdate>
+            <caldate>20160306</caldate>
+          </sngdate>
+        </mdattim>
+      </timeinfo>
+      <current>Ground Condition. These are the dates when the cores were collected.</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-66.05859</westbc>
+        <eastbc>-65.95644</eastbc>
+        <northbc>18.44027</northbc>
+        <southbc>18.42839</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>geoscientificInformation</themekey>
+        <themekey>utilitiesCommunication</themekey>
+        <themekey>health</themekey>
+        <themekey>oceans</themekey>
+        <themekey>environment</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>soil chemistry</themekey>
+        <themekey>radiometric dating</themekey>
+        <themekey>carbon isotope analysis</themekey>
+        <themekey>carbon</themekey>
+        <themekey>nitrogen</themekey>
+        <themekey>sea-level change</themekey>
+        <themekey>sedimentation</themekey>
+        <themekey>wetland ecosystems</themekey>
+      </theme>
+      <theme>
+        <themekt>National Agricultural Library Thesaurus</themekt>
+        <themekey>mangrove sediments</themekey>
+        <themekey>wetland soils</themekey>
+        <themekey>wetlands</themekey>
+        <themekey>ecological restoration</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>age model</themekey>
+        <themekey>Plum age model</themekey>
+        <themekey>210-lead</themekey>
+        <themekey>137-cesium</themekey>
+        <themekey>accretion rate</themekey>
+        <themekey>carbon burial</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:60902e3fd34e93746a710491</themekey>
+      </theme>
+      <place>
+        <placekt>Geographic Names Information System (GNIS)</placekt>
+        <placekey>Commonwealth of Puerto Rico (1779808)</placekey>
+        <placekey>United States of America (1890467)</placekey>
+        <placekey>San Juan (1612697)</placekey>
+        <placekey>Laguna La Torrecilla (1611340)</placekey>
+        <placekey>Laguna San José (1611343)</placekey>
+        <placekey>Laguna de Pinoñes (1611336)</placekey>
+        <placekey>Caño de Martín Peña (1613013)</placekey>
+      </place>
+    </keywords>
+    <accconst>none</accconst>
+    <useconst>none</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Meagan J Eagle</cntper>
+          <cntorg>Northeast Region: WOODS HOLE COASTAL and MARINE SCIENCE CENTER</cntorg>
+        </cntperp>
+        <cntpos>Research Physical Scientist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>384 Woods Hole Road</address>
+          <city>Woods Hole</city>
+          <state>MA</state>
+          <postal>02543</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>508-548-8700 x2280</cntvoice>
+        <cntemail>meagle@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <browse>
+      <browsen>https://www.sciencebase.gov/catalog/file/get/60902e3fd34e93746a710491?name=PR_mangrove_coring.png</browsen>
+      <browsed>Browse graphic is a photograph of study collaborators collecting a sediment core in a mangrove, Puerto Rico.</browsed>
+      <browset>PNG</browset>
+    </browse>
+    <crossref>
+      <citeinfo>
+        <origin>Wigand, Cathleen</origin>
+        <origin>Eagle, Meagan</origin>
+        <origin>Branoff, Benjamin</origin>
+        <origin>Balogh, Stephen</origin>
+        <origin>Miller, Kenneth, M.</origin>
+        <origin>Martin, Rose M.</origin>
+        <origin>Hanson, Alana</origin>
+        <origin>Oczkowski, Autumn J.</origin>
+        <origin>Huertas, Evelyn</origin>
+        <origin>Loffredo, Joseph</origin>
+        <origin>Watson, Elizabeth B.</origin>
+        <pubdate>2021</pubdate>
+        <title>Recent carbon storage and burial exceed historic rates in the San Juan Bay Estuary peri-urban mangrove forests (Puerto Rico, USA)</title>
+        <serinfo>
+          <sername>Frontiers in Forests and Global Change</sername>
+          <issue>doi: 10.3389/ffgc.2021.676691</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>Mountain View, CA</pubplace>
+          <publish>Creative Commons</publish>
+        </pubinfo>
+        <othercit>The journal article this data release supports.</othercit>
+        <onlink>https://doi.org/10.3389/ffgc.2021.676691</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>One core collected from Martin Peña West (MPW) was damaged during air transport to the US mainland and was not radiometrically dated. Additionally, only one of the two replicates from the San José (SJ) lagoon was processed for dry bulk density (DBD) due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from that site.
+
+Radionuclide detection limits are specific to an individual sample and are a function of: 1) the detector efficiency at the energy level of the peak being measured; 2) the branching ratio (expected fraction of decay events at the energy level), 3) the background activity within the sample. Detector efficiency was determined from EPA standard pitchblende ore in the same geometry as the samples. Activities of 7Be, 137Cs, and excess 210Pb (i.e. unsupported) were decay-corrected to time of collection. Suppression of low energy peaks by self-absorption was corrected for according to Cutshall and others, 1983. Peak detection, with respect to background activity, is calculated for each radionuclide in the APTEC peak integration spectroscopy software during sample analysis. Generally, measured radionuclide activity greater than or equal to 0.08 (210Pb), 0.05 (226Ra), 2.17 (7Be), and 0.08 (137Cs) dpm/g were accepted as above detection limit for this dataset.
+
+The C and N isotope compositions were determined using an Elementar Vario Micro elemental analyzer connected to a continuous flow Isoprime 100 isotope ratio mass spectrometer (IRMS) (Elementar Americas, Mt. Laurel, NJ). Replicate analyses of isotopic standard reference materials USGS 40 (δ13C = -26.39 ‰; δ15N = -4.52 ‰) and USGS 41 (δ13C = 37.63 ‰; δ15N = 47.57 ‰) were used to normalize isotopic values of working standards to the air (δ15N) and Vienna Pee Dee Belemnite (δ13C) scales (Paul and others, 2007). Working standards were analyzed after every 24 samples to monitor instrument performance and check data normalization. The precision of the laboratory standards was better than ± 0.3‰ for δ13C and δ15N. The %C and %N were calculated by comparing the peak area of the unknown sample to a standard curve of peak area versus the C or N content of a known standard.
+
+Paul, D., Skrzypek, G. and Fórizs, I. (2007). Normalization of measured stable isotopic compositions to isotope reference scales – A review. Rapid Communications in Mass Spectrometry 21 (18): 3006–3014.
+
+Cutshall, N.H., Larsen, I.L., and Olsen, C.R., 1983, Direct analysis of 210 Pb in sediment samples—Self-absorption corrections: Nuclear Instruments and Methods in Physics Research, v. 206, issues 1–2, p. 309–312, https://doi.org/10.1016/0167-5087(83)91273-5.</attraccr>
+    </attracc>
+    <logic>Dataset was queried for maximum and minimum values to be sure sample analyses were within expected ranges for the environmental conditions.  Data were plotted to look for any obvious outliers that may have been indicative of analytical error. Samples with questionable results were re-analyzed. Detection limits are defined in the attribute accuracy section of the metadata. Any analysis value below detection is given the numerical value of 0. Any attribute that was not measured for a specific sample is listed as an empty or blank cell (in some instances, empty spaces were used as place holders for blank cells). Each sample was treated in the same manner for each analysis. Note that 7Be was not detectable in this sample set.</logic>
+    <complete>One core collected from Martin Peña West (MPW) was damaged during air transport to the US mainland and was not radiometrically dated. Additionally, only one of the two replicates from the San José (SJ) lagoon was processed for dry  bulk density (DBD) due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from that site. Otherwise, cores collected were treated in the same manner. All sample measurements are reported.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>Latitude and longitude were measured in the field at time of sediment core collection using the Soft Stack Dev application, Map Coordinates (http://softstackdev.com/), on a GPS-enabled smart phone. The GPS coordinates are accurate to within 5 meters. Duplicate sediment cores were collected from within 1 meter of each other, the same latitude and longitude are reported for all cores collected from each site.</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>Samples were collected every centimeter in the core using a meter stick affixed to the core tube as a reference. Sample depth is defined as the interval within the core. No formal positional accuracy tests were conducted.</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>Five mangrove sites along an urbanization gradient in the San Juan Bay Estuary, Puerto Rico were selected for this study. Sites included the highly urbanized and clogged Caño Martin Peña in the western part of the estuary, a series of lagoons in the center of the estuary, and a tropical forest reserve (Piñones) in the eastern-most part. Mangrove sediment cores, two from each site, about 1 m apart, were collected in March 2016 in the Martin Peña West (MPW), Martin  Peña East (MPE), San José Lagoon (SJ), Torrecilla Lagoon (Torr), and Piñones forest (Pin) with a Russian peat sampler to a maximum depth of 50 cm depending upon ability to penetrate coarse mangrove rhizomes. Core depths ranged from 37 – 50 cm. Cores were first covered in saran wrap, then aluminum foil, and then secured with duct tape in a PVC holder for stabilization and transport to the lab. Samples were placed in coolers and shipped to the US mainland via FedEx overnight air transport. Cores were shipped to the USEPA Environmental Effects Research Laboratory, Atlantic Ecology Division in Narragansett, RI. Upon arrival at the lab, the cores were put into the freezer (-18C) until processed.
+
+One core collected from MPW was damaged during air transport to the US mainland and was not radiometrically dated. The other nine cores were sliced in one cm increments at the surface (0 - 3 cm) and then every 2 cm to the bottom of the core (unless otherwise indicated). After slicing, the subsamples were dried in pre-weighed aluminum tins (see subsequent processing steps below). Soil subsamples were used for radiometric dating, stable isotope, percent C, dry bulk density (DBD), and sediment accretion analyses as described below. However, only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from that site.</procdesc>
+        <procdate>2016</procdate>
+        <proccont>
+          <cntinfo>
+            <cntperp>
+              <cntper>Cathleen Wigand</cntper>
+              <cntorg>USEPA Environmental Effects Research Laboratory</cntorg>
+            </cntperp>
+            <cntpos>Research Physical Scientist</cntpos>
+            <cntaddr>
+              <addrtype>mailing and physical</addrtype>
+              <address>27 Tarzwell Drive</address>
+              <city>Narragansett</city>
+              <state>RI</state>
+              <postal>02882</postal>
+              <country>US</country>
+            </cntaddr>
+            <cntvoice>401-782-3090</cntvoice>
+            <cntemail>Wigand.cathleen@Epa.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>Sliced subsamples were measured (length, width, and height) and then dried at 60°C for at least 48 hours. The soils were not sieved so the peat included live and decomposing roots. The dried soils were used to determine dry bulk density (gram dry weight divided by volume; g ml-1).  A subsample of the dried soil was ground to a fine powder using a mortar and pestle. The dried, ground material was used for stable isotope (C,N) and percent C and N analyses. To remove carbonates, subsamples to be used for %C and C isotope analyses were fumigated prior to analyses with 12 M HCl following the method of Harris and others, 2001. Subsamples for %N and N isotope analyses were not fumigated. The C and N isotope compositions were determined using an Elementar Vario Micro elemental analyzer connected to a continuous flow Isoprime 100 isotope ratio mass spectrometer (IRMS) (Elementar Americas, Mt. Laurel, NJ). Replicate analyses of isotopic standard reference materials USGS 40 (δ13C = -26.39 ‰; δ15N = -4.52 ‰) and USGS 41 (δ13C = 37.63 ‰; δ15N = 47.57 ‰) were used to normalize isotopic values of working standards to the air (δ15N) and Vienna Pee Dee Belemnite (δ13C) scales (Paul and others, 2007). Stable isotope values are expressed in sigma (δ) notation following the formula δX (‰) = [(Rsample / Rstandard) – 1] × 103, where X is the less common isotope and R is ratio of the less common to more common isotope [13C/12C or 15N/14N]. Working standards were analyzed after every 24 samples to monitor instrument performance and check data normalization. The precision of the laboratory standards was better than ± 0.3‰ for δ13C and δ15N. The %C and %N were calculated by comparing the peak area of the unknown sample to a standard curve of peak area versus the C or N content of a known standard.
+
+Harris, D., Horwarth, W.R., and van Kessel, C., 2001, Acid fumigation of soils to remove carbonates prior to total organic carbon or carbon-13 isotopic analysis: Soil Sci. Soc. Am. J. 65:1853–6.
+
+Paul, D., Skrzypek, G. and Fórizs, I., 2007, Normalization of measured stable isotopic compositions to isotope reference scales – A review: Rapid Communications in Mass Spectrometry 21 (18): 3006–3014.</procdesc>
+        <procdate>2018</procdate>
+        <proccont>
+          <cntinfo>
+            <cntperp>
+              <cntper>Cathleen Wigand</cntper>
+              <cntorg>USEPA Environmental Effects Research Laboratory</cntorg>
+            </cntperp>
+            <cntpos>Research Physical Scientist</cntpos>
+            <cntaddr>
+              <addrtype>mailing and physical</addrtype>
+              <address>27 Tarzwell Drive</address>
+              <city>Narragansett</city>
+              <state>RI</state>
+              <postal>02882</postal>
+              <country>US</country>
+            </cntaddr>
+            <cntvoice>401-782-3090</cntvoice>
+            <cntemail>Wigand.cathleen@Epa.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>Gamma analysis was performed on 10 to 20 samples that spanned each sediment core. One to ten grams of homogenized sediment were sealed for 3 weeks and counted on a planar-type gamma counter for 24 to 48 hours to measure 137Cs, 210Pb, and 226Ra at 661.6, 46.5 and 352 KeV energies respectively (Canberra Inc. USA). Activities of 137Cs and 210Pb were decay corrected to time of collection; suppression of low energy peaks by self-absorption was corrected according to Cutshall and others, 1983. Age models were developed using Plum (Aquino-López and others, 2018; Blaauw and others, 2020) version 0.1.4 in R version 4.0.0 (R Core Team 2020). Plum is an age-depth model that utilizes 210Pb and is based on the same Bayesian chronology statistical treatment as Bacon, a widely used model with 14C ages (Blaauw and Christen 2011). Plum uses distributions of prior environmental parameters that impact the 210Pb profile, including 210Pb deposition rates, supported 210Pb (i.e., 226Ra) and accretion rates, with posterior distributions providing realistic uncertainty estimates. A major benefit of Plum over the commonly used analytical solution to the continuous rate of supply model (Appleby and Oldfield 1978) is that chronologies can be calculated even if radioisotopes have not been analyzed for the entire core. Furthermore, this model yields more than one accretion rate estimate, unlike the constant initial concentration model (Goldberg, 1963) which is normally used for cores with discontinuous 210PB profiles. Total 210Pb data were input into Plum, with supported 210Pb (i.e., 226Ra) estimated within the model framework from the deepest samples. We broadened the priors from default settings within Plum. We simulated means (50%) and the lower (6%) and upper confidence limits (94%) for each 1 cm depth in the sediment cores. We report means and 88% confidence intervals in the age-depth profiles for each core. Sediment accretion rates (SAR) were obtained from each chronology using the “accrate depth” function in Plum at 1 cm depth intervals.
+
+Cutshall, N.H., Larsen, I.L., and Olsen, C.R., 1983, Direct analysis of 210 Pb in sediment samples—Self-absorption corrections: Nuclear Instruments and Methods in Physics Research, v. 206, issues 1–2, p. 309–312, https://doi.org/10.1016/0167-5087(83)91273-5.
+
+Aquino-López, M.A., Blaauw, M., Christen, J.A., and Sanderson, N.K., 2018, Bayesian analysis of 210 Pb dating: Journal of Agricultural, Biological and Environmental Statistics, v. 23, p. 317–333, https://doi.org/10.1007/s13253-018-0328-7.
+
+Blaauw, M., Christen, J.A., Aquino-López, M.A., Esquivel-Vazquez, J., Gonzalez V., O.M., Belding, T., Theiler, J., Gough, B. and Karney, C., 2020, rplum: Bayesian Age-Depth Modelling of Cores Dated by Pb-210. R package version 0.1.4. https://cran.r-project.org/web/packages/rplum/index.html.
+
+Blaauw, M., and Christen, J.A., 2011. Flexible paleoclimate age-depth models using an autoregressive gamma process: Bayesian Analysis, v. 6, p. 457–474, https://doi.org/10.1214/11-BA618.
+
+Appleby, P.G., and Oldfield, F., 1978, The calculation of lead-210 dates assuming a constant rate of supply of unsupported 210Pb to the sediment: Catena, v. 5, issue 1, p. 1–8, https://doi.org/10.1016/S0341-8162(78)80002-2. 
+
+Goldberg, E.D., 1963, Geochronology with 210 Pb, in Miller, J.A., convener, Radioactive dating: International Atomic Energy Agency Symposium on Radioactive Dating, Athens, Greece, November 19-23, 1962, [Proceedings], p. 121-131.</procdesc>
+        <procdate>2018</procdate>
+        <proccont>
+          <cntinfo>
+            <cntperp>
+              <cntper>Meagan J Eagle</cntper>
+              <cntorg>Northeast Region: WOODS HOLE COASTAL and MARINE SCIENCE CENTER</cntorg>
+            </cntperp>
+            <cntpos>Research Physical Scientist</cntpos>
+            <cntaddr>
+              <addrtype>mailing and physical</addrtype>
+              <address>384 Woods Hole Road</address>
+              <city>Woods Hole</city>
+              <state>MA</state>
+              <postal>02543</postal>
+              <country>US</country>
+            </cntaddr>
+            <cntvoice>508-548-8700 x2280</cntvoice>
+            <cntemail>meagle@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>For data in the entity, Data_PR_Cores.csv (and Data_PR_Cores.xlsx), raw data were entered into Excel spreadsheets where calculations for radionuclide decays per minute per gram (dpm/g), dry bulk density, percent carbon, percent nitrogen, and carbon and nitrogen isotope content were completed. Calculations are described in the process steps for each analysis or in each attribute definition. These calculated values were compiled into a CSV file using Microsoft Excel. The CSV file was processed in MATLAB to round calculated values to appropriate place values and truncate extra digits; it was then exported as a comma separated text file (*.csv). Using Microsoft Excel, this exported file was edited to allow for preferential use of special characters and formats, and re-saved as a CSV UTF-8 file, Data_PR_Cores.csv, included in this data release.
+
+The entity, Data_PR_AgeModel.csv, is an output from analysis in R in which we used a bootstrap approach to generate means and 95% confidence bounds for each parameter within cores and specific time periods. The bootstrap analysis generated 1,000 sets of randomly selected data from the reported values for the given core/time period (Efron and Tibshirani 1993). The mean of those 1,000 values was used as the overall mean estimate for the parameter, and the 2.5th and 97.5th percentiles of those 1,000 values were the upper and lower confidence bounds. We report age means and 95% confidence intervals in the age-depth profiles for each core and use these estimates to calculate accretion rates. This file is saved as csv UTF-8.
+
+Note that all calculations were performed prior to rounding and truncating values reported in this data release. Microsoft Excel (*.xlsx) versions of each entity are provided for users to verify proper text formatting that may not be preserved when opening the .csv files in certain editors.
+
+Efron, B., and Tibshirani, R.J., 1993, An Introduction to the Bootstrap. Boca Raton, FL: Chapman and Hall/CRC.</procdesc>
+        <procdate>2021</procdate>
+        <proccont>
+          <cntinfo>
+            <cntperp>
+              <cntper>Meagan J Eagle</cntper>
+              <cntorg>Northeast Region: WOODS HOLE COASTAL and MARINE SCIENCE CENTER</cntorg>
+            </cntperp>
+            <cntpos>Research Physical Scientist</cntpos>
+            <cntaddr>
+              <addrtype>mailing and physical</addrtype>
+              <address>384 Woods Hole Road</address>
+              <city>Woods Hole</city>
+              <state>MA</state>
+              <postal>02543</postal>
+              <country>US</country>
+            </cntaddr>
+            <cntvoice>508-548-8700 x2280</cntvoice>
+            <cntemail>meagle@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spref>
+    <horizsys>
+      <geograph>
+        <latres>1.0E-5</latres>
+        <longres>1.0E-5</longres>
+        <geogunit>Decimal degrees</geogunit>
+      </geograph>
+      <geodetic>
+        <horizdn>North American Datum of 1983</horizdn>
+        <ellips>Geodetic Reference System 80</ellips>
+        <semiaxis>6378137.0</semiaxis>
+        <denflat>298.257222101</denflat>
+      </geodetic>
+    </horizsys>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>Data_PR_Cores.csv</enttypl>
+        <enttypd>Comma separated text file (*csv) and Microsoft Excel file (.xlsx) with soil core data collected from five mangrove sites along an urbanization gradient in San Juan, Puerto Rico. Mirosoft Excel versions of each entitiy are provided for users to verify proper text formatting that may not be preserved when opening the CSV UTF-8 files in certain editors. The file includes latitude and longitude of core collection, calculated values of soil dry bulk density, radionuclide data from gamma spectroscopy, soil carbon and nitrogen content, carbon-13 and nitrogen-15 data for select core sections. The dataset includes 184 records.</enttypd>
+        <enttypds>Producer-defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Site</attrlabl>
+        <attrdef>A text identifier for the general location of the study site. Note that multiple cores were collected from the same site. Refer to the attributes "Replicate" and "ID" for specific core details.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>Martin Peña West</edomv>
+            <edomvd>A data point from a sediment core collected from a mangrove wetland in a dredged canal along the west end of the Caño de Martín Peña. Relative flushing at this site is medium to high.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Martin Peña East</edomv>
+            <edomvd>A data point from a sediment core collected from a mangrove wetland in a clogged canal along the east end of the Caño de Martín Peña, toward the Laguna San José. Relative flushing at this site is low.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Torrecilla Lagoon</edomv>
+            <edomvd>A data point from a sediment core collected from a mangrove wetland in the Torrecilla Lagoon. Relative flushing at this site is medium to high.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>San José Lagoon</edomv>
+            <edomvd>A data point from a sediment core collected from a mangrove wetland in the José Lagoon. Relative flushing at this site is medium.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Piñones</edomv>
+            <edomvd>A data point from a sediment core collected from a mangrove wetland within the Piñones Forested Reserve. Relative flushing at this site is low.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Replicate</attrlabl>
+        <attrdef>A numerical identifier indicating from which duplicate core the data is reported.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>One</edomv>
+            <edomvd>Data point collected from a replicate core number 1.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Two</edomv>
+            <edomvd>Data point collected from replicate core number 2.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ID</attrlabl>
+        <attrdef>Abbreviated alphabetical identification code of each core to indicate: 1) the study site from which it was collected using a two or three letter abbreviation; and 2) a number 1 or 2 to indicate the replicate core number from which the data is reported.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>MPW1</edomv>
+            <edomvd>Martin Peña West, core 1.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MPE1</edomv>
+            <edomvd>Martin Peña East, core 1.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MPE2</edomv>
+            <edomvd>Martin Peña East, core 2.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>TORR1</edomv>
+            <edomvd>Torrecilla, core 1.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>TORR2</edomv>
+            <edomvd>Torrecilla, core 2.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>SJ1</edomv>
+            <edomvd>San José, core 1.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>SJ2</edomv>
+            <edomvd>San José, core 2.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>PIN1</edomv>
+            <edomvd>Piñones, core 1.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>PIN2</edomv>
+            <edomvd>Piñones, core 2.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Date</attrlabl>
+        <attrdef>A numeric identifier of the date the core was collected in the format of month/day/year.</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>03/03/2016</rdommin>
+            <rdommax>03/06/20106</rdommax>
+            <attrunit>mm/dd/yyyy</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Lat</attrlabl>
+        <attrdef>Latitude decimal degrees north, NAD83</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>18.42839</rdommin>
+            <rdommax>18.44027</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Lon</attrlabl>
+        <attrdef>Longitude decimal degrees west, NAD83. The negative value indicates a location in the western hemisphere.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-66.05859</rdommin>
+            <rdommax>-65.95644</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth_min</attrlabl>
+        <attrdef>A numeric identifier of the interval minimum depth below the sediment interface in centimeters.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>49</rdommax>
+            <attrunit>centimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth_max</attrlabl>
+        <attrdef>A numeric identifier of the interval maximum depth below the sediment interface in centimeters.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.0</rdommin>
+            <rdommax>51.0</rdommax>
+            <attrunit>centimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth_mid</attrlabl>
+        <attrdef>A numeric identifier of the interval mid-point depth below the sediment interface in centimeters.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.5</rdommin>
+            <rdommax>50.0</rdommax>
+            <attrunit>centimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>DBD</attrlabl>
+        <attrdef>Dry Bulk Density: A numeric identifier of the sediment dry bulk density in grams per cubic centimeter (g/cm3). Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0587</rdommin>
+            <rdommax>2.3570</rdommax>
+            <attrunit>grams per cubic centimeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pb</attrlabl>
+        <attrdef>A numeric identifier of the sediment total lead-210 activity in decays per minute per gram (dpm/g). Measured at 46.5 kiloelectron volts (KeV) on a planar gamma counter. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0892</rdommin>
+            <rdommax>18.1456</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pb_e</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total lead-210 activity in decays per minute per gram (dpm/g). Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0205</rdommin>
+            <rdommax>1.5671</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>226Ra</attrlabl>
+        <attrdef>A numeric identifier of the sediment total radium-226 activity in decays per minute per gram (dpm/g). Measured at 352 kiloelectron volts (KeV) on a planar gamma counter. Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0509</rdommin>
+            <rdommax>10.9070</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>226Ra_e</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total radium-226 activity in decays per minute per gram (dpm/g). Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0021</rdommin>
+            <rdommax>0.8606</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pbex</attrlabl>
+        <attrdef>A numeric identifier of the sediment excess lead-210 activity in decays per minute per gram (dpm/g), decay-corrected to date of core collection. Calculated as the difference between total lead-210 and total radium-226 activities. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-3.4577</rdommin>
+            <rdommax>16.5907</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pbex_e</attrlabl>
+        <attrdef>A numeric identifier of the propagated measurement error in sediment excess lead-210 activity in decays per minute per gram (dpm/g), decay-corrected to date of core collection. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0206</rdommin>
+            <rdommax>1.8000</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>137Cs</attrlabl>
+        <attrdef>A numeric identifier of the sediment total cesium-137 activity in decays per minute per gram (dpm/g), decay-corrected to date of core collection. Measured at 662 kiloelectron volts (KeV) on a planar gamma counter. Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0825</rdommin>
+            <rdommax>1.0983</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>137Cs_e</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total cesium-137 activity in decays per minute per gram (dpm/g), decay-corrected to date of core collection. Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0048</rdommin>
+            <rdommax>0.0993</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>7Be</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total beryllium-7 activity in decays per minute per gram (dpm/g), decay-corrected to date of core collection. Measured at 477 kiloelectron volts (KeV) on a planar gamma counter. Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0000</rdommin>
+            <rdommax>0.0000</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>7Be_e</attrlabl>
+        <attrdef>A numeric identifier of the measurement error in sediment total beryllium-7 activity in decays per minute per gram (dpm/g), decay-corrected to date of core collection. Blank/empty cells indicate the measurement was not done. The value 0.00 is given to analyzed samples found to be below detection.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0000</rdommin>
+            <rdommax>0.0000</rdommax>
+            <attrunit>decays per minute per gram</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>wtC</attrlabl>
+        <attrdef>Total amount of organic carbon by weight percent in soil. Sediments in this sample set were placed in an acid fuming desiccator to remove inorganic carbon prior to analysis. Blank/empty cells indicate the measurement was not done. Refer to the attribute accuracy and process step sections for further details.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.1033</rdommin>
+            <rdommax>35.5859</rdommax>
+            <attrunit>unitless</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>wtN</attrlabl>
+        <attrdef>Total amount of organic nitrogen by weight percent in soil. Sediments in this sample set were placed in a acid fuming desicator to remove inorganics prior to analysis. Blank/empty cells indicate the measurement was not done. Refer to the attribute accuracy and process step sections for further details.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0722</rdommin>
+            <rdommax>2.2809</rdommax>
+            <attrunit>unitless</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>13C</attrlabl>
+        <attrdef>The carbon isotopic signature of the soil sample relative to Pee Dee Belemnite (PDB) standard. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-29.2365</rdommin>
+            <rdommax>-23.8330</rdommax>
+            <attrunit>parts per thousand OR per mil</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>15N</attrlabl>
+        <attrdef>The nitrogen isotopic signature of the soil sample relative to air. Blank/empty cells indicate the measurement was not done.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2.3182</rdommin>
+            <rdommax>7.6890</rdommax>
+            <attrunit>parts per thousand OR per mil</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Data_PR_AgeModel.csv</enttypl>
+        <enttypd>Comma separated text file (*csv) and Microsoft Excel file (.xlsx) with soil core modeled age depth data from five mangrove sites along an urbanization gradient in San Juan, Puerto Rico. Mirosoft Excel versions of each entitiy are provided for users to verify proper text formatting that may not be preserved when opening the CSV UTF-8 files in certain editors. The file includes latitude and longitude of core collection and modeled mass accumulation rates, vertical accretion rates, carbon accretion rates and nitrogen accretion rates based on lead-210 derived Plum sediment age-models. Vertical accretion rates were obtained from each chronology using the “accrate depth” function in Plum at 1 cm depth intervals. Data required for those calculations (radionuclides, DBD, wtC, wtN) as well as carbon and nitrogen isotope ratios (13C, 15N) are reported in an additional entity provided with this data release. Note that actual cores were sectioned at 1 cm or 2 cm intervals, with finer sections near the sediment surface and coarser sectioning at depth. The age-model was run at 1 cm intervals for the entire core, with the modeled mass, carbon and nitrogen accretion rates based on analysis of parameters from 2 cm sediment sections. DBD, wtC and wtN were only matched to one modeled core interval per measurement, so blank values occur. For example, sediment properties were measured on the 10-12 cm interval, and matched with model results from 10-11 cm, with no sediment properties matched to 11-12 cm. The dataset includes 323 records.</enttypd>
+        <enttypds>Producer-defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Site</attrlabl>
+        <attrdef>A text identifier for the general location of the study site. Note that multiple cores were collected from the same site. Refer to the attributes "Replicate" and "ID" for specific core details.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>Martin Peña West</edomv>
+            <edomvd>A data point from a sediment core collected from a mangrove wetland in a dredged canal along the west end of the Caño de Martín Peña. Relative flushing at this site is medium to high.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Martin Peña East</edomv>
+            <edomvd>A data point from a sediment core collected from a mangrove wetland in a clogged canal along the east end of the Caño de Martín Peña, toward the Laguna San José. Relative flushing at this site is low.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Torrecilla Lagoon</edomv>
+            <edomvd>A data point from a sediment core collected from a mangrove wetland in the Torrecilla Lagoon. Relative flushing at this site is medium to high.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>San José Lagoon</edomv>
+            <edomvd>A data point from a sediment core collected from a mangrove wetland in the José Lagoon. Relative flushing at this site is medium.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Piñones</edomv>
+            <edomvd>A data point from a sediment core collected from a mangrove wetland within the Piñones Forested Reserve. Relative flushing at this site is low.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Replicate</attrlabl>
+        <attrdef>A numerical identifier indicating from which duplicate core the data is reported.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>One</edomv>
+            <edomvd>Data point collected from a replicate core number 1.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Two</edomv>
+            <edomvd>Data point collected from replicate core number 2.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ID</attrlabl>
+        <attrdef>Abbreviated alphabetical identification code of each core to indicate: 1) the study site from which it was collected using a two or three letter abbreviation; and 2) a number 1 or 2 to indicate the replicate core number from which the data is reported.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>MPW1</edomv>
+            <edomvd>Martin Peña West core 1.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MPE1</edomv>
+            <edomvd>Martin Peña East, core 1.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MPE2</edomv>
+            <edomvd>Martin Peña East, core 2.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>TORR1</edomv>
+            <edomvd>Torrecilla, core 1.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>TORR2</edomv>
+            <edomvd>Torrecilla, core 2.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>SJ1</edomv>
+            <edomvd>San José, core 1.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>SJ2</edomv>
+            <edomvd>San José, core 2.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>PIN1</edomv>
+            <edomvd>Piñones, core 1.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>PIN2</edomv>
+            <edomvd>Piñones, core 2.</edomvd>
+            <edomvds>Producer-defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Date</attrlabl>
+        <attrdef>A numeric identifier of the date the core was collected in the format of month/day/year.</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>03/03/2016</rdommin>
+            <rdommax>03/06/20106</rdommax>
+            <attrunit>mm/dd/yyyy</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Lat</attrlabl>
+        <attrdef>Latitude decimal degrees north, NAD83</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>18.42839</rdommin>
+            <rdommax>18.44027</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Lon</attrlabl>
+        <attrdef>Longitude decimal degrees west, NAD83. The negative value indicates a location in the western hemisphere.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-66.05859</rdommin>
+            <rdommax>-65.95644</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth_min</attrlabl>
+        <attrdef>A numeric identifier of the interval minimum depth below the sediment interface in centimeters.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>49</rdommax>
+            <attrunit>centimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth_max</attrlabl>
+        <attrdef>A numeric identifier of the interval maximum depth below the sediment interface in centimeters.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>50</rdommax>
+            <attrunit>centimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>VAR_LL</attrlabl>
+        <attrdef>Vertical Accretion Rate at the lower limit of the 95% confidence interval. A numeric identifier for the vertical accretion rate of the sediment in millimeters per year (mm/y). Accretion rates were obtained from each chronology using the “accrate depth” function in Plum at 1 cm depth intervals.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.3</rdommin>
+            <rdommax>7.2</rdommax>
+            <attrunit>millimeters per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>VAR_50</attrlabl>
+        <attrdef>Mean Vertical Accretion Rate. A numeric identifier for the vertical accretion rate of the sediment in millimeters per year (mm/y). Accretion rates were obtained from each chronology using the “accrate depth” function in Plum at 1 cm depth intervals..</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.62</rdommin>
+            <rdommax>13.68</rdommax>
+            <attrunit>millimeters per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>VAR_UL</attrlabl>
+        <attrdef>Vertical Accretion Rate at the upper limit of the 95% confidence interval. A numeric identifier for the vertical accretion rate of the sediment in millimeters per year (mm/y). Accretion rates were obtained from each chronology using the “accrate depth” function in Plum at 1 cm depth intervals.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.43</rdommin>
+            <rdommax>26.07</rdommax>
+            <attrunit>millimeters per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>MAR_LL</attrlabl>
+        <attrdef>Mass Accumulation Rate at the lower limit of the 95% confidence interval. A numeric identifier for the mass accumulation rate of the sediment in grams per square meter per year (g/m2/y). Calculated by multiplying dry bulk density times vertical accretion rate. Refer to the entity description for an explanation of blank cells.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>46</rdommin>
+            <rdommax>3710</rdommax>
+            <attrunit>grams sediment per square meter per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>MAR_50</attrlabl>
+        <attrdef>Mean Mass Accumulation Rate. A numeric identifier for the mass accumulation rate of the sediment in grams per square meter per year (g/m2/y). Calculated by multiplying dry bulk density times vertical accretion rate. Refer to the entity description for an explanation of blank cells.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>82</rdommin>
+            <rdommax>8635</rdommax>
+            <attrunit>grams sediment per square meter per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>MAR_UL</attrlabl>
+        <attrdef>Mass Accumulation Rate at the upper limit of the 95% confidence interval. A numeric identifier for the mass accumulation rate of the sediment in grams per square meter per year (g/m2/y). Calculated by multiplying dry bulk density times vertical accretion rate. Refer to the entity description for an explanation of blank cells.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>147</rdommin>
+            <rdommax>27036</rdommax>
+            <attrunit>grams sediment per square meter per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>CAR_LL</attrlabl>
+        <attrdef>Carbon Accumulation Rate at the lower limit of the 95% confidence interval. A numeric identifier for the carbon mass accumulation rate of the sediment in grams of carbon per square meter per year (gC/m2/y). Calculated by multiplying the average mass accumulation rates for the combined depth interval of the elemental sample times weight percent carbon. Refer to the entity description for an explanation of blank cells.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>5.84</rdommin>
+            <rdommax>606.98</rdommax>
+            <attrunit>grams carbon per square meter per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>CAR_50</attrlabl>
+        <attrdef>Mean Carbon Accumulation Rate. A numeric identifier for the carbon mass accumulation rate of the sediment in grams of carbon per square meter per year (gC/m2/y). Calculated by multiplying the average mass accumulation rates for the combined depth interval of the elemental sample times weight percent carbon. Refer to the entity description for an explanation of blank cells.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>12.1</rdommin>
+            <rdommax>1108.63</rdommax>
+            <attrunit>grams carbon per square meter per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>CAR_UL</attrlabl>
+        <attrdef>Carbon Accumulation Rate at the upper limit of the 95% confidence interval. A numeric identifier for the carbon mass accumulation rate of the sediment in grams of carbon per square meter per year (gC/m2/y). Calculated by multiplying the average mass accumulation rates for the combined depth interval of the elemental sample times weight percent carbon. Refer to the entity description for an explanation of blank cells.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>31.3</rdommin>
+            <rdommax>2356.17</rdommax>
+            <attrunit>grams carbon per square meter per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>NAR_LL</attrlabl>
+        <attrdef>Nitrogen Accumulation Rate at the lower limit of the 95% confidence interval. A numeric identifier for the nitrogen mass accumulation rate of the sediment in grams of nitrogen per square meter per year (g N/m2/y). Calculated by multiplying the average mass accumulation rates for the combined depth interval of the elemental sample times weight percent nitrogen. Refer to the entity description for an explanation of blank cells.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.47</rdommin>
+            <rdommax>34.52</rdommax>
+            <attrunit>grams nitrogen per square meter per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>NAR_50</attrlabl>
+        <attrdef>Mean Nitrogen Accumulation Rate. A numeric identifier for the nitrogen mass accumulation rate of the sediment in grams of nitrogen per square meter per year (g N/m2/y). Calculated by multiplying the average mass accumulation rates for the combined depth interval of the elemental sample times weight percent nitrogen. Refer to the entity description for an explanation of blank cells.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.86</rdommin>
+            <rdommax>68.51</rdommax>
+            <attrunit>grams nitrogen per square meter per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>NAR_UL</attrlabl>
+        <attrdef>Nitrogen Accumulation Rate at the upper limit of the 95% confidence interval. A numeric identifier for the nitrogen mass accumulation rate of the sediment in grams of nitrogen per square meter per year (g N/m2/y). Calculated by multiplying the average mass accumulation rates for the combined depth interval of the elemental sample times weight percent nitrogen. Refer to the entity description for an explanation of blank cells.</attrdef>
+        <attrdefs>Producer-defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.56</rdommin>
+            <rdommax>181.85</rdommax>
+            <attrunit>grams nitrogen per square meter per year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Year_LL</attrlabl>
+        <attrdef>The year corresponding to the soil horizon at the lower limit of the 95% confidence interval based on the age-depth models generated by radiometric dating and Plum models. Calculated as collection date minus age of sediment at each depth interval.</attrdef>
+        <attrdefs>Producer-defined.</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1814</rdommin>
+            <rdommax>2016</rdommax>
+            <attrunit>calendar year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Year_50</attrlabl>
+        <attrdef>Mean of the year corresponding to the soil horizon based on the age-depth models generated by radiometric dating and Plum models. Calculated as collection date minus age of sediment at each depth interval.</attrdef>
+        <attrdefs>Producer-defined.</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1842</rdommin>
+            <rdommax>2016</rdommax>
+            <attrunit>calendar year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Year_UL</attrlabl>
+        <attrdef>The year corresponding to the soil horizon at the upper limit of the confidence interval, 97.5th percentile based on the age-depth models generated by radiometric dating and Plum models. Calculated as collection date minus age of sediment at each depth interval.</attrdef>
+        <attrdefs>Producer-defined.</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1875</rdommin>
+            <rdommax>2016</rdommax>
+            <attrunit>calendar year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey</cntorg>
+          <cntper>ScienceBase</cntper>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>The dataset contains two CSV files containing the data (Data_PR_Cores.csv; Data_PR_AgeModel.csv) as well as two Microsoft Excel files (Data_PR_Cores.xlsx; Data_PR_AgeModel.xlsx), the browse graphic, and the FGDC CSDGM metadata in XML format.</resdesc>
+    <distliab>Neither the U.S. Government, the Department of the Interior, nor the USGS, nor any of their employees, contractors, or subcontractors, make any warranty, express or implied, nor assume any legal liability or responsibility for the accuracy, completeness, or usefulness of any information, apparatus, product, or process disclosed, nor represent that its use would not infringe on privately owned rights. The act of distribution shall not constitute any such warranty, and no responsibility is assumed by the USGS in the use of these data or related materials. Any use of trade, product, or firm names is for descriptive purposes only and does not imply endorsement by the U.S. Government.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>CSV</formname>
+          <formvern>Microsoft Excel Office 365</formvern>
+          <formcont>The data release includes 2 comma separated files, 2 Excel files, a browse graphic, and the FGDC CSDGM metadata. Mirosoft Excel versions of each entitiy are provided for users to verify proper text formatting that may not be preserved when opening the CSV UTF-8 files in certain editors.</formcont>
+          <transize>1</transize>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://www.sciencebase.gov/catalog/file/get/60902e3fd34e93746a710491</networkr>
+                <networkr>https://doi.org/10.5066/P97CAF30</networkr>
+              </networka>
+            </computer>
+            <accinstr>The first link downloads all the files on the landing page. The second link takes the user to the landing page where files can be downloaded individually.</accinstr>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <digform>
+        <digtinfo>
+          <formname>XLSX</formname>
+          <formvern>Microsoft Excel Office 365</formvern>
+          <formcont>The data release includes 2 comma separated files, 2 Excel files, a browse graphic, and the FGDC CSDGM metadata. Mirosoft Excel versions of each entitiy are provided for users to verify proper text formatting that may not be preserved when opening the CSV UTF-8 files in certain editors.</formcont>
+          <transize>1</transize>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://www.sciencebase.gov/catalog/file/get/60902e3fd34e93746a710491</networkr>
+                <networkr>https://doi.org/10.5066/P97CAF30</networkr>
+              </networka>
+            </computer>
+            <accinstr>The first link downloads all the files on the landing page. The second link takes the user to the landing page where files can be downloaded individually.</accinstr>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+    <techpreq>The data release includes 2 comma-delimited text files. The user must have software capable of opening the text file and reading the data formats.</techpreq>
+  </distinfo>
+  <metainfo>
+    <metd>20210630</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Jennifer A. O'Keefe Suttles</cntper>
+          <cntorg>Northeast Region: WOODS HOLE COASTAL and MARINE SCIENCE CENTER</cntorg>
+        </cntperp>
+        <cntpos>Chemist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>384 Woods Hole Road</address>
+          <city>Woods Hole</city>
+          <state>MA</state>
+          <postal>02543</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>508-548-8700 x2385</cntvoice>
+        <cntemail>jokeefesuttles@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>

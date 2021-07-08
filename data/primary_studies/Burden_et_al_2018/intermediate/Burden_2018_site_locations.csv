@@ -1,22 +1,22 @@
-﻿site_id,Year of breach,Years since breach (to 2011),Northing,Easting,latitude,longitude,impact_class,Notes
-Tollesbury,1995,16,595839,211346,,,,Restored and accidentally breached salt marsh sites – grid reference and age of sites
-Orplands,1995,16,597882,206118,,,,Restored and accidentally breached salt marsh sites – grid reference and age of sites
-Northey MR,1991,20,587598,205727,,,,Restored and accidentally breached salt marsh sites – grid reference and age of sites
-Barrow Hill,1953,58,601649,214913,,,,Restored and accidentally breached salt marsh sites – grid reference and age of sites
-Ferry Lane (B),1945,66,603929,221249,,,,Restored and accidentally breached salt marsh sites – grid reference and age of sites
-Wallasea Island,1953,58,594439,195203,,,,Restored and accidentally breached salt marsh sites – grid reference and age of sites
-Northey Island,1897,114,587806,205781,,,,Restored and accidentally breached salt marsh sites – grid reference and age of sites
-North Fambridge,1897,114,584530,196712,,,,Restored and accidentally breached salt marsh sites – grid reference and age of sites
-Brandy Hole,1897,114,583156,195563,,,,Restored and accidentally breached salt marsh sites – grid reference and age of sites
-Tollesbury Natural,,,595812,211637,,,natural,Natural salt marsh sites – grid reference
-Orplands Natural,,,597649,206062,,,natural,Natural salt marsh sites – grid reference
-Northey Natural,,,587247,205782,,,natural,Natural salt marsh sites – grid reference; Northey Natural used as the natural reference marsh for both Northey and Northey Island restored and accidentally breached sites
-Barrow Hill Natural,,,601531,214977,,,natural,Natural salt marsh sites – grid reference
-Ferry Lane (B) Natural,,,603967,221284,,,natural,Natural salt marsh sites – grid reference
-Wallasea Island Natural,,,594710,195119,,,natural,Natural salt marsh sites – grid reference
-North Fambridge Natural,,,584432,196717,,,natural,Natural salt marsh sites – grid reference
-Brandy Hole Natural,,,583189,195629,,,natural,Natural salt marsh sites – grid reference
-Barrow Hill Field,,,601788,214655,,,,Fields on former salt marsh – grid reference
-Wallasea Island Field,,,596072,193767,,,,Fields on former salt marsh – grid reference
-Brandy Hole Field,,,582692,195559,,,,Fields on former salt marsh – grid reference
-Tollesbury Field,,,595745,211539,,,,Fields on former salt marsh – grid reference
+﻿site_id,year_of_breach,Northing,Easting,impact_class,Notes
+Tollesbury,1995,595839,211346,restored,Restored and accidentally breached salt marsh sites – grid reference and age of sites
+Orplands,1995,597882,206118,restored,Restored and accidentally breached salt marsh sites – grid reference and age of sites
+Northey MR,1991,587598,205727,restored,Restored and accidentally breached salt marsh sites – grid reference and age of sites
+Barrow Hill,1953,601649,214913,restored,Restored and accidentally breached salt marsh sites – grid reference and age of sites
+Ferry Lane (B),1945,603929,221249,restored,Restored and accidentally breached salt marsh sites – grid reference and age of sites
+Wallasea Island,1953,594439,195203,restored,Restored and accidentally breached salt marsh sites – grid reference and age of sites
+Northey Island,1897,587806,205781,restored,Restored and accidentally breached salt marsh sites – grid reference and age of sites
+North Fambridge,1897,584530,196712,restored,Restored and accidentally breached salt marsh sites – grid reference and age of sites
+Brandy Hole,1897,583156,195563,restored,Restored and accidentally breached salt marsh sites – grid reference and age of sites
+Tollesbury Natural,,595812,211637,natural,Natural salt marsh sites – grid reference
+Orplands Natural,,597649,206062,natural,Natural salt marsh sites – grid reference
+Northey Natural,,587247,205782,natural,Natural salt marsh sites – grid reference; Northey Natural used as the natural reference marsh for both Northey and Northey Island restored and accidentally breached sites
+Barrow Hill Natural,,601531,214977,natural,Natural salt marsh sites – grid reference
+Ferry Lane (B) Natural,,603967,221284,natural,Natural salt marsh sites – grid reference
+Wallasea Island Natural,,594710,195119,natural,Natural salt marsh sites – grid reference
+North Fambridge Natural,,584432,196717,natural,Natural salt marsh sites – grid reference
+Brandy Hole Natural,,583189,195629,natural,Natural salt marsh sites – grid reference
+Barrow Hill Field,,601788,214655,farmed,Fields on former salt marsh – grid reference
+Wallasea Island Field,,596072,193767,farmed,Fields on former salt marsh – grid reference
+Brandy Hole Field,,582692,195559,farmed,Fields on former salt marsh – grid reference
+Tollesbury Field,,595745,211539,farmed,Fields on former salt marsh – grid reference

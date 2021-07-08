@@ -23,7 +23,7 @@ species <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_species.csv") %>%
 # extract taxa from species habitat table that aren't in the species synthesis table
 more_taxa <- species_habitats %>%
   filter(!(species_code %in% unique(species$species_code))) %>% 
-  filter(species_code != "Avicennia marina; Sonneratia alba") %>% 
+  filter(species_code != "Avicennia marina; Sonneratia alba") %>% # from Sanderman
   filter(code_type != "description")
 
 # create a unique taxa list to resolve
@@ -35,8 +35,8 @@ resolved <- resolveTaxa(taxa)
 # Unresolved
 # "Arrow arum" => Peltandra virginica (Merill_1999 => Holmquist 2018)
 # "Thassia hemprichii" => Thalassia hemprichii (Agawin_et_al_1996 => Forquerean)
-# "Asppagus officinalis" => correct spelling exists in the database
-# "Typa domingensis" => correct spelling exists in the database
+# "Asppagus officinalis" => Ignore: doesn't exist in the synthesis but the correct spelling exists in the database
+# "Typa domingensis" => correct spelling exists in the database (Callway 2019)
 
 cleaned_taxa <- resolved %>%
   rename(resolved_taxa = matched_name2,
@@ -50,7 +50,7 @@ cleaned_taxa <- resolved %>%
 # Avicennia corniculatum
 # Schoenoplectus montevidensis
 # Amphibolis australis
-# Trapa natis => trapa natans? (exists in database) 
+# Trapa natis => trapa natans? (which exists in database) Not in the synthesis: Ignore
 
 taxa_merged <- ccrcn_taxa %>%
   left_join(species_habitats)

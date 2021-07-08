@@ -2,12 +2,13 @@
 ## contact: Jaxine Wolfe, wolfejax@si.edu
 
 ## Hook script for Burden et al 2018
-## Information about the dataset (i.e. title, authors, citation, DOI)
+# https://doi.org/10.5285/0b1faab4-3539-457f-9169-b0b1fbd59bc2
 
 # load necessary libraries
 library(tidyverse)
 library(readxl)
 library(lubridate)
+library(rgdal)
 
 # load in helper functions
 source("scripts/1_data_formatting/curation_functions.R") # For curation
@@ -32,45 +33,84 @@ id <- "Burden_et_al_2018"
 sample_volume <- pi*(2^2)*30
 
 # curate materials and methods
-# methods <- raw_methods
-
+methods <- raw_methods %>% 
+  select_if(function(x) {!all(is.na(x))})
 
 ## ... Core Depthseries ####
 
 ds_2010_2017 <- raw_data_2010_2017 %>%
   mutate(year = ifelse(SiteName == "Tollesbury Field", 2010, 2017),
-         month = ifelse(SiteName == "Tollesbury Field", 7, 4))
+         month = ifelse(SiteName == "Tollesbury Field", 7, 4),
+         SiteCode = as.character(SiteCode))
 
 ds_2011 <- raw_data_2011 %>%
-  mutate(year = 2011, month = 10)
+  mutate(year = 2011, month = 10,
+         SiteCode = as.character(SiteCode))
   
 # curate depthseries-level data
-depthseries <- bind_rows(ds_2010_2017, ds_2011) %>% 
+depthseries_data <- bind_rows(ds_2010_2017, ds_2011) %>% 
   rename(site_id = SiteName,
          core_id = SiteCode,
          dry_bulk_density = BulkDensity) %>% 
   mutate(study_id = id,
+         method_id = "single set of methods (MAYBE)",
          depth_min = 0,
          depth_max = 30,
          fraction_organic_matter = OrganicMatter/100,
-         fraction_carbon = Carbon/100)
+         fraction_carbon = Carbon/100,
+         core_id = gsub("[.]", "_", core_id)) %>% 
+  select(-c(MoistureContent, pH, Conductivity, `NO3-N`,
+            `NH4-N`, OrganicMatter, BelowGround, Carbon, Nitrogen))
+
+depthseries <- reorderColumns("depthseries", depthseries_data) %>%
+  select(-year, -month)
 
 ## ... Core-Level ####
 
 # curate core-level data
-cores <- depthseries %>% 
-  distinct(study_id, site_id, core_id) %>% 
+core_data <- depthseries_data %>% 
+  distinct(study_id, site_id, core_id, year, month) %>% 
   left_join(site_info) %>% # 	Barrow Hill Field doesn't exist in the depthseries
   mutate(elevation = 1.5,
-         elevation_datum = "OD")
+         elevation_datum = "OD", # ordanence datum
+         zone = 31,
+         core_notes = ifelse(!is.na(year_of_breach), 
+                             paste0("Year of breach: ", year_of_breach), NA)) 
+
+# calculate lat long from UTM coordinates
+latlong <- convert_UTM_to_latlong(core_data$Easting, 
+                                 core_data$Northing, 
+                                 core_data$zone, 
+                                 core_data$core_id)
+# Northing is incorrect, ends up off the coast of Ghana
+# spatial reference system is: OSGB 1936 / British National Grid
+
+cores <- full_join(core_data, latlong) %>%
+  rename(latitude = core_latitude, longitude = core_longitude) %>% 
+  select(-c(Easting, Northing, zone, impact_class, year_of_breach, Notes))
+# what is the position_method
+
+cores <- reorderColumns('cores', cores)
 
 ## ... Impacts ####
 
-# there is natural salt marsh, restored and accidentally breached, and fields on former salt marsh 
+# Classes:
+# natural salt marsh
+# restored and accidentally breached
+# fields on former salt marsh 
+
+impacts <- core_data %>% 
+  select(contains("_id"), impact_class)
 
 ## 2. QAQC ####
 
-table_names <- c("methods", "cores", "depthseries")
+library(leaflet)
+
+leaflet(cores) %>% 
+  addTiles() %>% 
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
+
+table_names <- c("methods", "cores", "depthseries", "impacts")
 
 # Check col and varnames
 testTableCols(table_names)
@@ -88,7 +128,7 @@ results <- test_numeric_vars(depthseries)
 # Use RefManageR package to pull DOI
 library(RefManageR)
 
-# if(!file.exists("data/primary_studies/Belshe_2019/derivative/belshe_et_al_2019_study_citations.csv")){
+# if(!file.exists("data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_study_citations.csv")){
   # Create bibtex file
   data_release_doi <- '10.5285/0b1faab4-3539-457f-9169-b0b1fbd59bc2'
   
@@ -114,11 +154,11 @@ library(RefManageR)
 ## 4. Write files ####
 
 # Adjust the filepaths to output to the correct derivative folder
-write_csv(cores, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_cores.csv") 
-write_csv(depthseries, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_depthseries.csv")
-write_csv(methods, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_methods.csv")
-# write_csv(sites, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_sites.csv")
-# write_csv(species, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_species.csv")
-# write_csv(impacts, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_impacts.csv")
+write_csv(cores, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_cores.csv") 
+write_csv(depthseries, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_depthseries.csv")
+write_csv(methods, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_methods.csv")
+# write_csv(sites, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_sites.csv")
+# write_csv(species, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_species.csv")
+write_csv(impacts, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_impacts.csv")
 
 

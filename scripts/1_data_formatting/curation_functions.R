@@ -542,7 +542,9 @@ cr_ccrcn <- function (dois, format = "bibtex", style = "apa", locale = "en-US",
 
 ## function to resolve taxa names using GNR 
 # uses taxonomic authorities to resolve spelling rather than recoding everything by hand
-resolveTaxa <- function(taxa) {
+resolveTaxa <- function(species) {
+  # create unique list of species codes to save time
+  taxa <- unique(sort(species$species_code))
   
   resolved <- data.frame()
   unresolved <- vector()
@@ -576,11 +578,40 @@ resolveTaxa <- function(taxa) {
     print("The following taxa could not be resolved:")
     print(unresolved)
   }
+  # bind results to the species dataframe provided
+  resolved_species <- left_join(species, resolved, by = c("species_code" = "user_supplied_name")) %>% 
+    rename(resolved_taxa = matched_name2) %>% # more informative colname
+    select(-c(submitted_name, data_source_title, score))
   
-  return(resolved)
+  return(resolved_species)
 }
 
-
+# this function should only be used on resolved taxa
+# the ncbi database doesn't seem super reliable, sometimes it pulls the wrong classification
+# classifyTaxa <- function(species, database = "ncbi"){
+#   
+#   taxa_list <- unique(sort(species$species_code)) # save time with unique list
+#   
+#   classified_taxa <- data.frame()
+#   
+#   for(taxa in taxa_list){
+#     # determine the taxonomic classification for each taxa
+#     classified <- taxize::classification(taxa, db = database, rows = 1)
+#     classified_df <- as.data.frame(classified[[1]])
+#     
+#     # extract the highest taxonomic level
+#     taxa_class <- classified_df[nrow(classified_df),]
+#     
+#     # add to dataframe
+#     classified_taxa <- bind_rows(classified_taxa, taxa_class)
+#   }
+#   
+#   # bind results to the species dataframe provided
+#   its_classified <- left_join(species, classified_taxa, by = c("species_code" = "name"))
+#   # do some renaming
+#   
+#   return(its_classified)
+# }
 
 
 
