@@ -59,6 +59,21 @@ taxa_merged <- ccrcn_taxa %>%
 # write finalized taxa database
 write_csv(cleaned_taxa, "docs/CCRCN_taxa_database.csv")
 
+## Taxa Summary Stats
+# taxa_db <- read_csv("docs/CCRCN_taxa_database.csv")
+# 
+# taxa_count <- left_join(species, taxa_db) %>%
+#   # arrange(resolved_taxa) %>% 
+#   # add_count(species_code, name = "original_count") %>% 
+#   count(resolved_taxa, name = "n_taxa") %>% 
+#   arrange(desc(n_taxa))
+# 
+# taxa_count %>% filter(n_taxa > 50) %>% 
+#   mutate(resolved_taxa = fct_reorder(resolved_taxa, n_taxa)) %>% 
+#   ggplot(aes(resolved_taxa, n_taxa)) +
+#   geom_col() +
+#   coord_flip()
+  
 ### MWG Taxa Workflow
 
 # # resolve taxa names using GNR

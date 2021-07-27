@@ -23,8 +23,6 @@ raw_FL <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/FL/D
 raw_RI <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/RI/Data_RhodeIsland_Cores.csv")
 raw_MA1 <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/MA_Cape/Data_RestoredMarshes_Cores.csv")
 raw_MA2 <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/MA_Wellfleet/Data_HerringRiver_Cores.csv")
-raw_PR_age <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/PR/Data_PR_AgeModel.csv")
-raw_PR <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/PR/Data_PR_Cores.csv")
 
 # read in database guidance for easy reference
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
@@ -41,23 +39,24 @@ id <- "Okeefe-Suttles_et_al_2021"
 
 ## ... Core Depthseries ####
 
-suttle_ds <- bind_rows(raw_FL, raw_MA1, raw_MA2, raw_RI) %>%
+FL <- raw_FL %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_FL",
+                        core_id = paste0("FL_", ID))
+MA1 <- raw_MA1 %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_MA1",
+                          core_id = paste0("MA_", ID))
+MA2 <- raw_MA2 %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_MA2",
+                          core_id = paste0("MA_", ID))
+RI <- raw_RI %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_RI",
+                        core_id = paste0("RI_", ID))
+
+# bind all the depthseries together
+suttle_ds <- bind_rows(FL, MA1, MA2, RI) %>%
   mutate(year = year(as.Date(Date, format = "%m/%d/%Y")),
          month = month(as.Date(Date, format = "%m/%d/%Y")),
          day = day(as.Date(Date, format = "%m/%d/%Y"))) %>% 
-  select(-Date)
-
-eagle_ds <- full_join(raw_PR, raw_PR_age) %>%
-  mutate(year = year(as.Date(Date, format = "%m/%d/%y")),
-         month = month(as.Date(Date, format = "%m/%d/%y")),
-         day = day(as.Date(Date, format = "%m/%d/%y"))) %>% 
-  select(-Date)
-
-ds_all <- suttle_ds %>% 
-  # bind_rows(eagle_ds) %>% # bind to PR dataset?
   rename(longitude = Lon, latitude = Lat,
-         site_id = Site, core_id = ID,
+         site_id = Site, 
          dry_bulk_density = DBD,
+         delta_c13 = `13C`,
          total_pb210_activity = `210Pb`, 
          total_pb210_activity_se = `210Pb_e`,
          excess_pb210_activity = `210Pbex`, 
@@ -68,45 +67,65 @@ ds_all <- suttle_ds %>%
          ra226_activity_se = `226Ra_e`,
          be7_activity = `7Be`,
          be7_activity_se = `7Be_e`) %>% 
-  mutate(study_id = id,
-         fraction_carbon = wtC/100,
-         Depth_mid = coalesce(Depth_mid, Depth)) %>% 
-  select(-c(Depth, wtC, wtN))
+  mutate(fraction_carbon = wtC/100,
+         Depth_mid = coalesce(Depth_mid, Depth))
+
+depthseries <- suttle_ds %>% 
+  select(-c(Depth, wtC, wtN, Date, ID, `15N`, Status, latitude, longitude))
 
 # multiple methods IDs
 
-# depthseries <- reorderColumns("depthseries", depthseries)
+depthseries <- reorderColumns("depthseries", depthseries)
 
 ## ... Core-Level ####
 
-pr_cores <- eagle_ds %>%
-  distinct(Site, Replicate, ID, year, month, day, Lat, Lon)
-
 # curate core-level data
-cores <- depthseries %>%
-  distinct(study_id, site_id, Status, ID, year, month, day, latitude, longitude) %>% 
-  add_count(ID) # two duplicate core IDs
+cores <- suttle_ds %>%
+  group_by(study_id, site_id, core_id, year, month, day, latitude, longitude) %>% 
+  mutate(core_elevation = max(Elevation)) %>% # no elevation for gansett 
+  select(study_id, site_id, core_id, year, month, day, latitude, longitude, 
+         Status, Year_restored, core_elevation) %>% 
+  distinct() %>% 
+  mutate(habitat = case_when(Status == "Mangrove" ~ "mangrove",
+                             Status == "Young Mangrove" ~ "mangrove",
+                             Status == "Salt Barren" ~ "unvegetated",
+                             Status == "Phragmites" ~ "marsh",
+                             Status == "Juncus Marsh" ~ "marsh",
+                             Status == "Typha" ~ "marsh",
+                             TRUE ~ NA_character_),
+         position_method = case_when(study_id == "Okeefe-Suttles_et_al_2021_RI" ~ "handheld",
+                                     study_id == "Okeefe-Suttles_et_al_2021_FL" ~ "DGPS",
+                                     TRUE ~ NA_character_))
 
-# cores <- reorderColumns('cores', cores)
+cores <- reorderColumns('cores', cores)
 
-library(leaflet)
-
-leaflet(cores) %>% 
-  addTiles() %>% 
-  addCircleMarkers(lng = ~longitude, lat = ~latitude,
-                   radius = 3, label = ~site_id)
-
-leaflet(pr_cores) %>% 
-  addTiles() %>% 
-  addCircleMarkers(lng = ~Lon, lat = ~Lat,
-                   radius = 3, label = ~Site) 
-  
 ## ... Impacts ####
 
-sort(unique(ds_all$Status)) # mix of species and impacts
+sort(unique(suttle_ds$Status)) # mix of species and impacts, might be more info in the metadata of each
 
-# impacts <- cores %>% 
-#   select(contains("_id"), Status)
+impacts <- suttle_ds %>%
+  select(study_id, site_id, core_id, Status) %>% 
+  distinct() %>%
+  mutate(impact_class = case_when(Status == "Natural" ~ "natural",
+                                  Status == "Restored" ~ "restored",
+                                  site_id == "E.G. Simmons" | site_id == "Fort de Soto" ~ "restored",
+                                  TRUE ~ NA_character_))
+  # filter(Status == "Natural" | Status == "Restored") %>% 
+
+  
+
+## ... Species ####
+
+species <- suttle_ds %>%
+  select(study_id, site_id, core_id, Status) %>% 
+  distinct() %>%
+  mutate(species = case_when(Status == "Mangrove" ~ "Rhizophora mangle; Laguncularia racemosa; Avicennia germinans",
+                             Status == "Young Mangrove" ~ "mangrove",
+                             Status == "Phragmites" ~ "Phragmites spp.",
+                             Status == "Juncus Marsh" ~ "Juncus spp.; Spartina alterniflora",
+                             Status == "Typha" ~ "Typha spp.",
+                             TRUE ~ NA_character_))
+
 
 ## 2. QAQC ####
 
@@ -116,7 +135,7 @@ leaflet(cores) %>%
   addTiles() %>% 
   addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
 
-table_names <- c("methods", "cores", "depthseries", "impacts")
+table_names <- c("methods", "cores", "depthseries", "impacts", "species")
 
 # Check col and varnames
 testTableCols(table_names)
