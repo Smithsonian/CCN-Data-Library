@@ -8,7 +8,8 @@
 library(tidyverse)
 library(readxl)
 library(lubridate)
-library(rgdal)
+library(leaflet)
+library(sf)
 
 # load in helper functions
 source("scripts/1_data_formatting/curation_functions.R") # For curation
@@ -53,6 +54,8 @@ depthseries_data <- bind_rows(ds_2010_2017, ds_2011) %>%
          core_id = SiteCode,
          dry_bulk_density = BulkDensity) %>% 
   mutate(study_id = id,
+         # make the core ID more unique
+         core_id = str_c(substr(site_id, 1, 5), core_id, sep = "_"),
          method_id = "single set of methods (MAYBE)",
          depth_min = 0,
          depth_max = 30,
@@ -71,26 +74,53 @@ depthseries <- reorderColumns("depthseries", depthseries_data) %>%
 core_data <- depthseries_data %>% 
   distinct(study_id, site_id, core_id, year, month) %>% 
   left_join(site_info) %>% # 	Barrow Hill Field doesn't exist in the depthseries
-  mutate(elevation = 1.5,
-         elevation_datum = "OD", # ordanence datum
-         zone = 31,
+  rename(easting = Easting, northing = Northing) %>% 
+  mutate(vegetation_class = "emergent",
+         core_length_flag = "core depth limited by length of corer",
+         elevation_notes = "All salt marsh samples were taken from permanently vegetated marsh above 1.5 m ordnance datum (OD)",
          core_notes = ifelse(!is.na(year_of_breach), 
                              paste0("Year of breach: ", year_of_breach), NA)) 
 
-# calculate lat long from UTM coordinates
-latlong <- convert_UTM_to_latlong(core_data$Easting, 
-                                 core_data$Northing, 
-                                 core_data$zone, 
-                                 core_data$core_id)
+UTM_to_DD <- function(df, zone){
+  
+  # define UTM and latlong projections
+  # not sure if custom projections should be defined or use the ESPG codes...
+  utm_prj <- paste0("+proj=utm +zone=", zone, " +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+  dd_prj <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+  
+  # isolate UTM coordinates
+  # utm_coords <- data.frame(core_id = "Chelmsford", easting = 325205.77, northing = 5734662.8) # test
+  utm_coords <- df %>% select(core_id, easting, northing)
+  
+  # create spatial object and assign coords utm coordinate system
+  utm_coords <- st_as_sf(utm_coords, coords = c("easting", "northing"), crs = 27700) 
+  # st_crs(utm_coords) # check projection
+  
+  dd_coords <- st_transform(utm_coords, crs = 4326) %>% 
+    # extract lat lon from geometry
+    extract(geometry, into = c('longitude', 'latitude'), '\\((.*),(.*)\\)', 
+            convert = T) %>%
+    select(core_id, longitude, latitude)
+  
+  # join back to the dataframe
+  df_decimal <- left_join(df, dd_coords)
+  
+  return(df_decimal)
+}
+
+# convert UTM to decimal degrees
+cores_decimal <- UTM_to_DD(core_data, "31")
+
+leaflet(cores_decimal) %>%
+  addTiles() %>% 
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
 # Northing is incorrect, ends up off the coast of Ghana
 # spatial reference system is: OSGB 1936 / British National Grid
 
-cores <- full_join(core_data, latlong) %>%
-  rename(latitude = core_latitude, longitude = core_longitude) %>% 
-  select(-c(Easting, Northing, zone, impact_class, year_of_breach, Notes))
-# what is the position_method
-
-cores <- reorderColumns('cores', cores)
+cores <- cores_decimal %>%
+  select(-c(easting, northing, impact_class, year_of_breach, Notes)) %>% 
+  reorderColumns('cores', .)
+# what is the position_method?
 
 ## ... Impacts ####
 
@@ -103,12 +133,6 @@ impacts <- core_data %>%
   select(contains("_id"), impact_class)
 
 ## 2. QAQC ####
-
-library(leaflet)
-
-leaflet(cores) %>% 
-  addTiles() %>% 
-  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
 
 table_names <- c("methods", "cores", "depthseries", "impacts")
 
@@ -130,14 +154,16 @@ library(RefManageR)
 
 # if(!file.exists("data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_study_citations.csv")){
   # Create bibtex file
-  data_release_doi <- '10.5285/0b1faab4-3539-457f-9169-b0b1fbd59bc2'
+  data_doi <- '10.5285/0b1faab4-3539-457f-9169-b0b1fbd59bc2'
+  pub_doi <- "10.1098/rsbl.2018.0773"
   
-  data_bib_raw <- GetBibEntryWithDOI(data_release_doi)
+  data_bib <- as.data.frame(GetBibEntryWithDOI(data_doi))
+  pub_bib <- as.data.frame(GetBibEntryWithDOI(pub_doi))
   
-  study_citations <- as.data.frame(data_bib_raw) %>%
+  study_citations <- bind_rows(data_bib, pub_bib) %>%
     mutate(study_id = id,
-           bibliography_id = "Burden_et_al_2018_data",
-           publication_type = "primary dataset") %>%
+           bibliography_id = c("Burden_et_al_2018_data", "Burden_et_al_2019_article"),
+           publication_type = c("primary dataset", "associated source")) %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
     remove_rownames()
   
@@ -157,8 +183,5 @@ library(RefManageR)
 write_csv(cores, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_cores.csv") 
 write_csv(depthseries, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_depthseries.csv")
 write_csv(methods, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_methods.csv")
-# write_csv(sites, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_sites.csv")
-# write_csv(species, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_species.csv")
 write_csv(impacts, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_impacts.csv")
-
-
+# write_csv(species, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_species.csv")

@@ -59,11 +59,20 @@ species <- species_raw %>%
 
 ## 2. Create Citations ####
 
+pub_bib <- GetBibEntryWithDOI("10.1111/rec.13437")
+pub_citation <- as.data.frame(pub_bib) %>%
+  mutate(study_id = id) %>%
+  mutate(bibliography_id = paste0("Keshta_et_al_", year, "_article"),
+         publication_type = "associated source") %>%
+  remove_rownames()
+
 study_citations <- study_citations_raw %>% 
   mutate(study_id = id) %>% distinct() %>%
   mutate(publication_type = recode(publication_type,
                                    "primary" = "primary dataset",
-                                   "associated" = "associated source"))
+                                   "associated" = "associated source"),
+         year = as.character(year)) %>% 
+  bind_rows(pub_citation)
 
 # Write .bib file
 bib_file <- study_citations %>%

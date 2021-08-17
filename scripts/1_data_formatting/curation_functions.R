@@ -61,6 +61,35 @@ convert_percent_to_fraction <- function(col_input) {
   return(col_output)
 }
 
+# Convert UTM to decimal degree ##########
+# assumed columns: core_id, easting, northing
+UTM_to_DD <- function(df, zone){
+  
+  require(sf)
+  
+  # define UTM and latlong projections
+  utm_prj <- paste0("+proj=utm +zone=", zone, " +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+  dd_prj <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+  
+  # isolate UTM coordinates
+  # utm_coords <- data.frame(core_id = "Chelmsford", easting = 325205.77, northing = 5734662.8) # test
+  utm_coords <- df %>% select(core_id, easting, northing)
+  
+  # create spatial object and assign coords utm coordinate system
+  utm_coords <- st_as_sf(utm_coords, coords = c("easting", "northing"), crs = utm_prj) 
+  # st_crs(utm_coords) # check projection
+  
+  dd_coords <- st_transform(utm_coords, crs = dd_prj) %>% 
+    # extract lat lon from geometry
+    extract(geometry, into = c('longitude', 'latitude'), '\\((.*),(.*)\\)', convert = T) %>%
+    select(core_id, longitude, latitude)
+  
+  # join back to the dataframe
+  df_decimal <- left_join(df, dd_coords)
+  
+  return(df_decimal)
+}
+
 ## Convert UTM to lat/long ###############
 convert_UTM_to_latlong <- function(easting, northing, zone, core_id) {
   

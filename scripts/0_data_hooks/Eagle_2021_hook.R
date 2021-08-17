@@ -2,15 +2,11 @@
 ## contact: Jaxine Wolfe, wolfejax@si.edu
 
 ## Hook script for data releases
-# FL: https://www.sciencebase.gov/catalog/item/60bfb8a4d34e86b938916d6f
-# RI: https://www.sciencebase.gov/catalog/item/60bfb7c2d34e86b938916d1e
-# MA: https://www.sciencebase.gov/catalog/item/60bfb987d34e86b938916dc9
-# MA: https://www.sciencebase.gov/catalog/item/60bfb916d34e86b938916da1
-# Puerto Rico: https://www.sciencebase.gov/catalog/item/60902e3fd34e93746a710491
+# Puerto Rico cores: https://www.sciencebase.gov/catalog/item/60902e3fd34e93746a710491
 
 # load necessary libraries
 library(tidyverse)
-# library(readxl)
+library(readxl)
 library(lubridate)
 # library(rgdal)
 
@@ -21,6 +17,7 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 ## Read in data
 raw_PR_age <- read_csv("data/primary_studies/Eagle_et_al_2021/original/Data_PR_AgeModel.csv")
 raw_PR <- read_csv("data/primary_studies/Eagle_et_al_2021/original/Data_PR_Cores.csv")
+raw_methods <- read_xlsx("data/primary_studies/Eagle_et_al_2021/intermediate/Eagle_2021_material_and_methods.xlsx")
 
 # read in database guidance for easy reference
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
@@ -32,16 +29,11 @@ id <- "Eagle_et_al_2021"
 ## ... Methods ####
 
 # curate materials and methods
-# methods <- raw_methods %>% 
-#   select_if(function(x) {!all(is.na(x))})
+methods <- raw_methods %>%
+  drop_na(study_id) %>% 
+  select_if(function(x) {!all(is.na(x))})
 
 ## ... Core Depthseries ####
-
-# suttle_ds <- bind_rows(raw_FL, raw_MA1, raw_MA2, raw_RI) %>%
-#   mutate(year = year(as.Date(Date, format = "%m/%d/%Y")),
-#          month = month(as.Date(Date, format = "%m/%d/%Y")),
-#          day = day(as.Date(Date, format = "%m/%d/%Y"))) %>% 
-#   select(-Date)
 
 eagle_ds <- full_join(raw_PR, raw_PR_age) %>%
   mutate(year = year(as.Date(Date, format = "%m/%d/%y")),
@@ -69,21 +61,32 @@ eagle_ds <- full_join(raw_PR, raw_PR_age) %>%
          age_min = Year_LL,
          age_max = Year_UL) %>% 
   mutate(study_id = id,
+         method_id = "single set of methods",
          fraction_carbon = wtC/100)
+# San Jose Lagoon cores have the same DBD
 
 depthseries <- eagle_ds %>% 
   select(-c(year, month, day, latitude, longitude, wtC, wtN, `15N`,
             Date, Replicate, Depth_mid, contains("_UL"), contains("_LL"),
-            contains("_50")))
-
-depthseries <- reorderColumns("depthseries", depthseries)
+            contains("_50"))) %>% 
+  reorderColumns("depthseries", .)
 
 ## ... Core-Level ####
 
+# site info
+# Martin Peña West: a mangrove wetland in a dredged canal along the west end of the Caño de Martín Peña. Relative flushing at this site is medium to high.
+# Martin Peña East: a mangrove wetland in a clogged canal along the east end of the Caño de Martín Peña, toward the Laguna San José. Relative flushing at this site is low.
+# Torrecilla Lagoon: a mangrove wetland in the Torrecilla Lagoon. Relative flushing at this site is medium to high.
+# San José Lagoon: a mangrove wetland in the José Lagoon. Relative flushing at this site is medium.
+# Piñones: a mangrove wetland within the Piñones Forested Reserve. Relative flushing at this site is low.
+
 cores <- eagle_ds %>%
   distinct(study_id, site_id, core_id, year, month, day, latitude, longitude) %>% 
-  mutate(position_accuracy = 5,
-         position_method = "handheld GPS (cellphone)")
+  mutate(habitat = "mangrove",
+         core_length_flag = "core depth limited by length of corer",
+         position_accuracy = 5,
+         position_method = "other moderate resolution",
+         position_notes = "cellphone GPS")
 
 
 # cores <- reorderColumns('cores', cores)
