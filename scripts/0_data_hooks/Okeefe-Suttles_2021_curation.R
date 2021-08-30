@@ -6,13 +6,10 @@
 # RI: https://www.sciencebase.gov/catalog/item/60bfb7c2d34e86b938916d1e
 # MA: https://www.sciencebase.gov/catalog/item/60bfb987d34e86b938916dc9
 # MA: https://www.sciencebase.gov/catalog/item/60bfb916d34e86b938916da1
-# Puerto Rico: https://www.sciencebase.gov/catalog/item/60902e3fd34e93746a710491
 
 # load necessary libraries
 library(tidyverse)
-# library(readxl)
 library(lubridate)
-# library(rgdal)
 
 # load in helper functions
 source("scripts/1_data_formatting/curation_functions.R") # For curation
@@ -23,19 +20,21 @@ raw_FL <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/FL/D
 raw_RI <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/RI/Data_RhodeIsland_Cores.csv")
 raw_MA1 <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/MA_Cape/Data_RestoredMarshes_Cores.csv")
 raw_MA2 <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/MA_Wellfleet/Data_HerringRiver_Cores.csv")
+raw_methods <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermediate/OkeefeSuttle_2021_material_and_methods.csv")
+raw_citations <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermediate/Okeefe-Suttle_2021_release_dois.csv")
 
 # read in database guidance for easy reference
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 ## 1. Curation ####
 
-id <- "Okeefe-Suttles_et_al_2021"
-
 ## ... Methods ####
 
 # curate materials and methods
-# methods <- raw_methods %>% 
-#   select_if(function(x) {!all(is.na(x))})
+methods <- raw_methods %>%
+  drop_na(study_id) %>% 
+  select_if(function(x) {!all(is.na(x))})
+# still in progress
 
 ## ... Core Depthseries ####
 
@@ -69,39 +68,83 @@ suttle_ds <- bind_rows(FL, MA1, MA2, RI) %>%
          be7_activity_se = `7Be_e`) %>% 
   mutate(fraction_carbon = wtC/100,
          Depth_mid = coalesce(Depth_mid, Depth))
+# resolve mid-depth interval to depth min and max
+# merge multiple methods IDs
+
+# VAR = vertical accretion rate
+# MAR = mass accumulation rate (DBD * VAR)
+# CAR = carbon accumulation rate
 
 depthseries <- suttle_ds %>% 
-  select(-c(Depth, wtC, wtN, Date, ID, `15N`, Status, latitude, longitude))
-
-# multiple methods IDs
-
-depthseries <- reorderColumns("depthseries", depthseries)
+  reorderColumns("depthseries", .) %>% 
+  select(-c(Depth, wtC, wtN, Date, ID, `15N`, Status, latitude, longitude, 
+            year, month, day, Elevation, Year_restored))
 
 ## ... Core-Level ####
 
 # curate core-level data
-cores <- suttle_ds %>%
+suttle_cores <- suttle_ds %>%
   group_by(study_id, site_id, core_id, year, month, day, latitude, longitude) %>% 
-  mutate(core_elevation = max(Elevation)) %>% # no elevation for gansett 
+  mutate(core_elevation = max(Elevation)/100) %>% # no elevation for gansett 
   select(study_id, site_id, core_id, year, month, day, latitude, longitude, 
          Status, Year_restored, core_elevation) %>% 
   distinct() %>% 
+  # finish classifying the following
   mutate(habitat = case_when(Status == "Mangrove" ~ "mangrove",
                              Status == "Young Mangrove" ~ "mangrove",
                              Status == "Salt Barren" ~ "unvegetated",
                              Status == "Phragmites" ~ "marsh",
                              Status == "Juncus Marsh" ~ "marsh",
                              Status == "Typha" ~ "marsh",
+                             Status == "Salt marsh" ~ "marsh",
                              TRUE ~ NA_character_),
-         position_method = case_when(study_id == "Okeefe-Suttles_et_al_2021_RI" ~ "handheld",
-                                     study_id == "Okeefe-Suttles_et_al_2021_FL" ~ "DGPS",
-                                     TRUE ~ NA_character_))
+         vegetation_class = case_when(habitat == "marsh" ~ "emergent",
+                                      TRUE ~ NA_character_))
 
-cores <- reorderColumns('cores', cores)
+
+# lot of study-specific core-level info
+# cores need to be separately curated before re-synthesizing
+
+fl_coreinfo <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermediate/FL_coreinfo.csv")
+fl_cores <- suttle_cores %>% 
+  filter(study_id == "Okeefe-Suttles_et_al_2021_FL") %>% 
+  select(-Year_restored, -Status) %>% 
+  left_join(fl_coreinfo) %>% # merge positional and elevation accurracy
+  mutate(position_method = ifelse(position_accuracy < 1, 
+                                  "other high resolution", "other moderate resolution"),
+         elevation_method = ifelse(position_accuracy < 0.5, 
+                                  "other high resolution", "other low resolution"),
+         position_notes = "DGPS", elevation_notes = "DGPS", # DGPS = differential global positioning system
+         core_notes = ifelse(habitat == "unvegetated", 
+                             "not possible to take a sediment core so a section of sediment was removed with a shovel", NA),
+         core_length_flag = ifelse(site_id == "E.G. Simmons" | site_id == "Fort de Soto",
+                                   "core depth represents deposit depth",
+                                   "core depth limited by length of corer")) 
+
+
+ri_cores <- suttle_cores %>% 
+  filter(study_id == "Okeefe-Suttles_et_al_2021_RI") %>% 
+  select(-Year_restored) %>% 
+  mutate(position_method = "handheld")
+
+ma1_cores <- suttle_cores %>% 
+  filter(study_id == "Okeefe-Suttles_et_al_2021_MA1") %>% 
+  mutate(core_length_flag = "core depth limited by length of corer",
+         core_notes = ifelse(!is.na(Year_restored), paste0("restored in ", Year_restored), NA)) %>% 
+  select(-Year_restored) 
+
+ma2_cores <- suttle_cores %>% 
+  filter(study_id == "Okeefe-Suttles_et_al_2021_MA2") %>% 
+  mutate(core_length_flag = "core depth limited by length of corer") %>% 
+  select(-Year_restored) 
+
+# bind cores back together
+cores <- bind_rows(fl_cores, ri_cores, ma1_cores, ma2_cores) %>% 
+  reorderColumns('cores', .)
 
 ## ... Impacts ####
 
-sort(unique(suttle_ds$Status)) # mix of species and impacts, might be more info in the metadata of each
+sort(unique(suttle_cores$Status)) # mix of species and impacts, might be more info in the metadata of each
 
 impacts <- suttle_ds %>%
   select(study_id, site_id, core_id, Status) %>% 
@@ -127,7 +170,7 @@ species <- suttle_ds %>%
                              TRUE ~ NA_character_))
 
 
-## 2. QAQC ####
+## QAQC ####
 
 library(leaflet)
 
@@ -135,9 +178,9 @@ leaflet(cores) %>%
   addTiles() %>% 
   addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
 
+# Check col and varnames
 table_names <- c("methods", "cores", "depthseries", "impacts", "species")
 
-# Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)

@@ -125,8 +125,6 @@ results <- test_numeric_vars(depthseries)
 # Use RefManageR package to pull DOI
 library(RefManageR)
 
-# consider this a synthesis? 
-
 # if(!file.exists("data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_study_citations.csv")){
 # Create bibtex file
 dois <- c("10.5066/P97CAF30", "10.3389/ffgc.2021.676691")
