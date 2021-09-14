@@ -79,6 +79,7 @@ depthseries <- suttle_ds %>%
   reorderColumns("depthseries", .) %>% 
   select(-c(Depth, wtC, wtN, Date, ID, `15N`, Status, latitude, longitude, 
             year, month, day, Elevation, Year_restored))
+# create method_id lookup to merge to depthseries
 
 ## ... Core-Level ####
 
@@ -109,11 +110,12 @@ fl_coreinfo <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermed
 fl_cores <- suttle_cores %>% 
   filter(study_id == "Okeefe-Suttles_et_al_2021_FL") %>% 
   select(-Year_restored, -Status) %>% 
-  left_join(fl_coreinfo) %>% # merge positional and elevation accurracy
+  left_join(fl_coreinfo) %>% # merge positional and elevation accuracy
   mutate(position_method = ifelse(position_accuracy < 1, 
                                   "other high resolution", "other moderate resolution"),
          elevation_method = ifelse(position_accuracy < 0.5, 
                                   "other high resolution", "other low resolution"),
+         elevation_datum = "NAVD88",
          position_notes = "DGPS", elevation_notes = "DGPS", # DGPS = differential global positioning system
          core_notes = ifelse(habitat == "unvegetated", 
                              "not possible to take a sediment core so a section of sediment was removed with a shovel", NA),
@@ -142,7 +144,11 @@ ma1_cores <- suttle_cores %>%
 
 ma2_cores <- suttle_cores %>% 
   filter(study_id == "Okeefe-Suttles_et_al_2021_MA2") %>% 
-  mutate(core_length_flag = "core depth limited by length of corer") %>% 
+  mutate(core_length_flag = "core depth limited by length of corer",
+         position_method = "handheld",
+         elevation_method = "RTK",
+         elevation_accuracy = 0.05,
+         elevation_datum = "NAVD88") %>% 
   select(-Year_restored) 
 
 # bind cores back together
@@ -158,6 +164,7 @@ impacts <- suttle_ds %>%
   distinct() %>%
   mutate(impact_class = case_when(Status == "Natural" ~ "natural",
                                   Status == "Restored" ~ "tidally restored",
+                                  site_id = "Herring River" ~ "tidally restricted",
                                   site_id == "E.G. Simmons" | site_id == "Fort de Soto" ~ "restored",
                                   TRUE ~ NA_character_))
   # filter(Status == "Natural" | Status == "Restored") %>% 
