@@ -9,7 +9,7 @@ library(tidyverse)
 library(readxl)
 library(lubridate)
 library(leaflet)
-library(sf)
+# library(sf)
 
 # load in helper functions
 source("scripts/1_data_formatting/curation_functions.R") # For curation
@@ -19,7 +19,7 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 raw_data_2010_2017 <- read_csv("data/primary_studies/Burden_et_al_2018/original/Saltmarsh _Chronosequence_data_2010_2017.csv")
 raw_data_2011 <- read_csv("data/primary_studies/Burden_et_al_2018/original/Saltmarsh _Chronosequence_data_2011.csv")
 # locations extracted from the .rtf file
-site_info <- read_csv("data/primary_studies/Burden_et_al_2018/intermediate/Burden_2018_site_locations.csv")
+site_info <- read_xls("data/primary_studies/Burden_et_al_2018/intermediate/Burden_2018_site_locations_w_lat_lon.xls", na = "NA")
 raw_methods <- read_csv("data/primary_studies/Burden_et_al_2018/intermediate/Burden_2018_materials_and_methods.csv")
 
 # read in database guidance for easy reference
@@ -74,53 +74,48 @@ depthseries <- reorderColumns("depthseries", depthseries_data) %>%
 core_data <- depthseries_data %>% 
   distinct(study_id, site_id, core_id, year, month) %>% 
   left_join(site_info) %>% # 	Barrow Hill Field doesn't exist in the depthseries
-  rename(easting = Easting, northing = Northing) %>% 
+  rename(latitude = core_latitude, longitude = core_longitude) %>%
   mutate(vegetation_class = "emergent",
          core_length_flag = "core depth limited by length of corer",
+         position_notes = "coordinates converted from spatial reference system OSGB 1936 / British National Grid",
          elevation_notes = "All salt marsh samples were taken from permanently vegetated marsh above 1.5 m ordnance datum (OD)",
-         core_notes = ifelse(!is.na(year_of_breach), 
-                             paste0("Year of breach: ", year_of_breach), NA)) 
+         core_notes = ifelse(!is.na(year_of_breach), paste0("year of tidal breach: ", year_of_breach), NA)) 
 
-UTM_to_DD <- function(df, zone){
-  
-  # define UTM and latlong projections
-  # not sure if custom projections should be defined or use the ESPG codes...
-  utm_prj <- paste0("+proj=utm +zone=", zone, " +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
-  dd_prj <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
-  
-  # isolate UTM coordinates
-  # utm_coords <- data.frame(core_id = "Chelmsford", easting = 325205.77, northing = 5734662.8) # test
-  utm_coords <- df %>% select(core_id, easting, northing)
-  
-  # create spatial object and assign coords utm coordinate system
-  utm_coords <- st_as_sf(utm_coords, coords = c("easting", "northing"), crs = 27700) 
-  # st_crs(utm_coords) # check projection
-  
-  dd_coords <- st_transform(utm_coords, crs = 4326) %>% 
-    # extract lat lon from geometry
-    extract(geometry, into = c('longitude', 'latitude'), '\\((.*),(.*)\\)', 
-            convert = T) %>%
-    select(core_id, longitude, latitude)
-  
-  # join back to the dataframe
-  df_decimal <- left_join(df, dd_coords)
-  
-  return(df_decimal)
-}
+# UTM_to_DD <- function(df, zone){
+#   
+#   # define UTM and latlong projections
+#   # not sure if custom projections should be defined or use the ESPG codes...
+#   utm_prj <- paste0("+proj=utm +zone=", zone, " +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+#   dd_prj <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+#   
+#   # isolate UTM coordinates
+#   # utm_coords <- data.frame(core_id = "Chelmsford", easting = 325205.77, northing = 5734662.8) # test
+#   utm_coords <- df %>% select(core_id, easting, northing)
+#   
+#   # create spatial object and assign coords utm coordinate system
+#   utm_coords <- st_as_sf(utm_coords, coords = c("easting", "northing"), crs = 27700) 
+#   # st_crs(utm_coords) # check projection
+#   
+#   dd_coords <- st_transform(utm_coords, crs = 4326) %>% 
+#     # extract lat lon from geometry
+#     extract(geometry, into = c('longitude', 'latitude'), '\\((.*),(.*)\\)', 
+#             convert = T) %>%
+#     select(core_id, longitude, latitude)
+#   
+#   # join back to the dataframe
+#   df_decimal <- left_join(df, dd_coords)
+#   
+#   return(df_decimal)
+# }
+# 
+# # convert UTM to decimal degrees
+# cores_decimal <- UTM_to_DD(core_data, "31")
 
-# convert UTM to decimal degrees
-cores_decimal <- UTM_to_DD(core_data, "31")
 
-leaflet(cores_decimal) %>%
-  addTiles() %>% 
-  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
-# Northing is incorrect, ends up off the coast of Ghana
-# spatial reference system is: OSGB 1936 / British National Grid
-
-cores <- cores_decimal %>%
-  select(-c(easting, northing, impact_class, year_of_breach, Notes)) %>% 
+cores <- core_data %>%
+  select(-c(Easting, Northing, impact_class, year_of_breach, Notes, OBJECTID)) %>% 
   reorderColumns('cores', .)
-# what is the position_method?
+# position_method? position_notes?
 
 ## ... Impacts ####
 
@@ -134,6 +129,12 @@ impacts <- core_data %>%
 
 ## 2. QAQC ####
 
+## Mapping
+leaflet(core_data) %>%
+  addTiles() %>% 
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
+
+## Table testing
 table_names <- c("methods", "cores", "depthseries", "impacts")
 
 # Check col and varnames
@@ -152,7 +153,7 @@ results <- test_numeric_vars(depthseries)
 # Use RefManageR package to pull DOI
 library(RefManageR)
 
-# if(!file.exists("data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_study_citations.csv")){
+if(!file.exists("data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_study_citations.csv")){
   # Create bibtex file
   data_doi <- '10.5285/0b1faab4-3539-457f-9169-b0b1fbd59bc2'
   pub_doi <- "10.1098/rsbl.2018.0773"
@@ -173,9 +174,9 @@ library(RefManageR)
     distinct() %>%
     column_to_rownames("bibliography_id")
   
-  # WriteBib(as.BibEntry(bib_file), "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018.bib")
-  # write_csv(study_citations, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_study_citations.csv")
-# }
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018.bib")
+  write_csv(study_citations, "data/primary_studies/Burden_et_al_2018/derivative/Burden_et_al_2018_study_citations.csv")
+}
 
 ## 4. Write files ####
 

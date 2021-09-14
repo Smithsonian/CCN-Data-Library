@@ -125,13 +125,20 @@ fl_cores <- suttle_cores %>%
 ri_cores <- suttle_cores %>% 
   filter(study_id == "Okeefe-Suttles_et_al_2021_RI") %>% 
   select(-Year_restored) %>% 
-  mutate(position_method = "handheld")
+  mutate(position_method = "handheld",
+         position_accuracy = 3)
 
 ma1_cores <- suttle_cores %>% 
   filter(study_id == "Okeefe-Suttles_et_al_2021_MA1") %>% 
   mutate(core_length_flag = "core depth limited by length of corer",
+         position_method = "RTK",
+         elevation_datum = "NAVD88",
          core_notes = ifelse(!is.na(Year_restored), paste0("restored in ", Year_restored), NA)) %>% 
   select(-Year_restored) 
+# vertical accuracy was +/- 5cm
+# assigning methodsID for ma1 cores: Sediments in this sample set that were analyzed for both carbon content and 
+# isotopic carbon signature were not fumed prior to analysis and reported wtC is total carbon. 
+# Sediment sections without a reported isotopic signature were run in a separate lab and were fumed to remove inorganic carbon prior to analysis.
 
 ma2_cores <- suttle_cores %>% 
   filter(study_id == "Okeefe-Suttles_et_al_2021_MA2") %>% 
@@ -150,7 +157,7 @@ impacts <- suttle_ds %>%
   select(study_id, site_id, core_id, Status) %>% 
   distinct() %>%
   mutate(impact_class = case_when(Status == "Natural" ~ "natural",
-                                  Status == "Restored" ~ "restored",
+                                  Status == "Restored" ~ "tidally restored",
                                   site_id == "E.G. Simmons" | site_id == "Fort de Soto" ~ "restored",
                                   TRUE ~ NA_character_))
   # filter(Status == "Natural" | Status == "Restored") %>% 
@@ -200,7 +207,7 @@ library(RefManageR)
 
 # if(!file.exists("data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_study_citations.csv")){
 # Create bibtex file
-dois <- c()
+dois <- c(raw_citations$doi)
 
 data_bibs <- GetBibEntryWithDOI(dois)
 
