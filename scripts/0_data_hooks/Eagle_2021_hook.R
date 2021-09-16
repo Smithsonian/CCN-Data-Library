@@ -71,6 +71,12 @@ depthseries <- eagle_ds %>%
             contains("_50"))) %>% 
   reorderColumns("depthseries", .)
 
+ggplot(depthseries) +
+  # geom_smooth() +
+  geom_point(aes(dry_bulk_density, fraction_carbon))
+  # geom_point(aes(depth_min, dry_bulk_density)) +
+  # facet_wrap(vars(core_id), scales = "free")
+
 ## ... Core-Level ####
 
 # site info
@@ -83,20 +89,37 @@ depthseries <- eagle_ds %>%
 cores <- eagle_ds %>%
   distinct(study_id, site_id, core_id, year, month, day, latitude, longitude) %>% 
   mutate(habitat = "mangrove",
+         # inundation_class = "", # can relative flushing indicate where the site is in tidal frame?
+         inundation_notes = case_when(site_id == "Martin Peña West" ~ "Dredged canal, relative flushing at this site is medium to high.",
+                                      site_id == "Martin Peña East" ~ "Clogged canal, relative flushing at this site is low.",
+                                      site_id == "Torrecilla Lagoon" ~ "Relative flushing at this site is medium to high.",
+                                      site_id == "San José Lagoon" ~ "Relative flushing at this site is medium.",
+                                      site_id == "Piñones" ~ "Relative flushing at this site is low."),
+         vegetation_class = "forested",
          core_length_flag = "core depth limited by length of corer",
          position_accuracy = 5,
          position_method = "other moderate resolution",
-         position_notes = "cellphone GPS")
+         position_notes = "cellphone GPS") %>% 
+  reorderColumns('cores', .)
+
+## ... Impacts ####
+
+impacts <- eagle_ds %>%
+  distinct(study_id, site_id, core_id) %>% 
+  mutate(impact_class = case_when(site_id == "Martin Peña West" ~ "tidally restored",
+                                  site_id == "Martin Peña East" ~ "tidally restricted",
+                                  TRUE ~ NA_character_)) %>% 
+  drop_na(impact_class)
 
 
-# cores <- reorderColumns('cores', cores)
+## ... Species ####
 
-library(leaflet)
-
-leaflet(cores) %>% 
-  addTiles() %>% 
-  addCircleMarkers(lng = ~longitude, lat = ~latitude,
-                   radius = 3, label = ~site_id)
+species <- eagle_ds %>%
+  distinct(study_id, site_id, core_id) %>% 
+  mutate(species_code = ifelse(site_id == "Piñones", "Avicennia germinans",
+                          "Rhizophora mangle; Laguncularia racemosa; Avicennia germinans"),
+         species_code = strsplit(species_code, split = "; ")) %>% 
+  unnest(species_code)
 
 
 ## 2. QAQC ####
@@ -107,7 +130,7 @@ leaflet(cores) %>%
   addTiles() %>% 
   addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
 
-table_names <- c("methods", "cores", "depthseries")
+table_names <- c("methods", "cores", "depthseries", "impacts", "species")
 
 # Check col and varnames
 testTableCols(table_names)

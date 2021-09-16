@@ -36,7 +36,7 @@ cores_sal_veg_habitat <- cores2 %>%
                            ifelse(vegetation_class == "seagrass", "seagrass",
                                   ifelse(vegetation_class %in% c("mudflat", "unvegetated"),
                                          "unvegetated",
-                                         ifelse(vegetation_class == "scrub shrub", "scrub/shrub", NA)))),
+                                         ifelse(vegetation_class == "scrub shrub", "scrub shrub", NA)))),
         # Kind of junk classification, but best we can do if none is better
         habitat7 = ifelse(vegetation_class %in% c("forested", "forested to shrub", "forested to emergent") &
                             salinity_class %in% c("saline", "brackish", "mesohaline",
@@ -49,7 +49,7 @@ cores_sal_veg_habitat <- cores2 %>%
   select(study_id:core_id, vegetation_class, salinity_class, habitat1, habitat3, habitat7)
 
 cores_species_habitat <- species2 %>% 
-  mutate(habitat = factor(habitat, levels = rev(c("unvegetated", "algal mat", "seagrass", "marsh", "scrub/shrub", "swamp", "mangrove")))) %>% 
+  mutate(habitat = factor(habitat, levels = rev(c("unvegetated", "algal mat", "seagrass", "marsh", "scrub shrub", "swamp", "mangrove")))) %>% 
   arrange(study_id, core_id, habitat) %>% 
   group_by(study_id, core_id) %>% 
   summarise(habitat4 = first(habitat)) %>% 
