@@ -55,9 +55,8 @@ methods <- raw_methods %>%
   mutate(method_id = case_when(study_id == "Chambers_et_al_2019" ~ "1 meter cores",
                                study_id == "White_et_al_2020_a" ~ "2 meter cores",
                                study_id == "White_et_al_2020_b" ~ "0.5 meter cores")) %>%
-  mutate(study_id = id)
-
-methods <- reorderColumns("methods", methods)
+  mutate(study_id = ifelse(study_id != "Chambers_et_al_2019", "White_et_al_2020", study_id)) %>% 
+  reorderColumns("methods", .)
 
 # depthseries
 # sample_vol <- pi*(3.8^2)*10 # for the 2m cores (White_et_al_2020_a)
@@ -71,19 +70,21 @@ chambers_data <- raw_Chambers %>%
          core_latitude = latitude,
          depth = depth2) %>%
   mutate_at(vars(-depth, -site_id), as.numeric) %>%
-  mutate(method_id = "1 meter cores")
+  mutate(study_id = "Chambers_et_al_2019",
+         method_id = "1 meter cores")
 
 white_data <- raw_White %>%
   rename(core_longitude = lon,
          core_latitude = lat,
          site_id = Site_id) %>%
-  mutate(method_id = ifelse(site_id == "Estuary", "0.5 meter cores", "2 meter cores"))
+  mutate(study_id = "White_et_al_2020",
+         method_id = ifelse(site_id == "Estuary", "0.5 meter cores", "2 meter cores"))
 
 # join tables together and curate depthseries
 join_depthseries <- bind_rows(chambers_data, white_data) %>%
   rename(dry_bulk_density = bulk_density_g_cm_3) %>%
   mutate(core_id = str_c(site_id, replicate, sep = "_"),
-         study_id = id,
+         # study_id = id,
          # calculate fraction total carbon (make sure all the values are included in the computation)
          # make sure these values arent modeled
          fraction_carbon = carbon_density_g_cm_3/dry_bulk_density, 
@@ -136,8 +137,8 @@ if(!file.exists("./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_
     mutate(study_id = "Chambers_et_al_2019") %>%
     mutate(bibliography_id = str_c("Chambers_et_al", year, "data", sep = "_"))
   
-  study_citations_2020 <- bind_rows(as.data.frame(data_bib_raw_2020), as.data.frame(data_bib_raw_2020)) %>%
-    mutate(study_id = c("White_et_al_2020_a", "White_et_al_2020_b"),
+  study_citations_2020 <- as.data.frame(data_bib_raw_2020) %>%
+    mutate(study_id = "White_et_al_2020",
            bibliography_id = str_c("White_et_al", year, "data", sep = "_"))
   
   # Curate biblio so ready to read out as a BibTex-style .bib file
@@ -175,10 +176,10 @@ cores <- updated$cores
 ## QA/QC ###############
 
 leaflet(cores) %>%
-  addProviderTiles(providers$CartoDB) %>%
+  addTiles() %>% 
+  # addProviderTiles(providers$CartoDB) %>%
   addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
                    radius = 5, label = ~core_id)
-
 
 # Check col and varnames
 testTableCols(table_names)

@@ -1,4 +1,4 @@
 study_id,method_id,coring_method,roots_flag,sediment_sieved_flag,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_sample_volume,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,carbon_measured_or_modeled,carbonates_removed,fraction_carbon_method,fraction_carbon_type
 Chambers_et_al_2019,1 meter cores,push core,roots and rhizomes included,sediment not sieved,no obvious compaction,70,72,NA,time approximate,550,3,measured,FALSE,EA,total carbon
-Chambers_et_al_2019,2 meter cores,push core,roots and rhizomes included,sediment not sieved,no obvious compaction,60,NA,384.85,air dried to constant mass,550,4,measured,FALSE,EA,total carbon
-Chambers_et_al_2019,0.5 meter cores,piston corer,NA,sediment not sieved,not specified,60,NA,384.85,air dried to constant mass,550,4,measured,FALSE,EA,total carbon
+White_et_al_2020,2 meter cores,push core,roots and rhizomes included,sediment not sieved,no obvious compaction,60,NA,384.85,air dried to constant mass,550,4,measured,FALSE,EA,total carbon
+White_et_al_2020,0.5 meter cores,piston corer,NA,sediment not sieved,not specified,60,NA,384.85,air dried to constant mass,550,4,measured,FALSE,EA,total carbon
