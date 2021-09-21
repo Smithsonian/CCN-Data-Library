@@ -8,13 +8,14 @@ library(tidyverse)
 
 # Prepare Workspace ####
 
-cores <- read_csv("data/CCRCN_V2/cores.csv", guess_max = 7000)
-citations <- read_csv("data/CCRCN_synthesis/CCRCN_study_citations.csv")
+cores <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_cores.csv", guess_max = 7000)
+citations <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_study_citations.csv")
 
 # Create a table of core sampling date and data publishing date
 
 pub_dates <- citations %>% 
-  filter(bibtype == "Misc") %>% 
+  filter(publication_type %in% c("primary dataset", "synthesis dataset", "combined dataset and manuscript")) %>% 
+  # filter(bibtype == "Misc") %>% 
   select(study_id, year) %>% 
   filter(study_id != "Windham_Meyers_et_al_2010" | year == "2010") %>%
   filter(study_id != "Piazza_et_al_2011" | year == "2011") %>%
@@ -38,7 +39,7 @@ sampled_cores <- core_dates %>%
   arrange(sampled_year)
 
 # plot the number of cores collected for each sampling year 
-# (that were published in our database)
+# that were made available in our database (is there bias here?)
 ggplot(sampled_cores, aes(sampled_year, n)) +
   geom_col(fill = "darkgreen") + theme_bw() +
   ggtitle("Number of cores collected per year")
@@ -78,17 +79,20 @@ ggsave("database_paper/figures/cores_sampled_v_published.jpg")
 
 # compute latency of data
 data_latency <- dates %>%  
-  mutate(latency = pub_year - sampled_year) %>%
-  select(sampled_year, pub_year, latency) %>% distinct() %>%
-  # join core count per year to normalize latency by the number of cores collected per year
-  left_join(sampled_cores) %>%
-  mutate(norm_latency = latency/n) %>%
-  arrange(sampled_year)
+  count(sampled_year, pub_year) %>% 
+  mutate(latency = pub_year - sampled_year,
+         norm_latency = latency/n) # normalize latency by the number of cores sampled in each group
 
 # plot relationship between year of sampling and the time it took to publish
-ggplot(data_latency, aes(sampled_year, norm_latency)) +
-  geom_point() + 
-  # geom_smooth(method=lm, col = "black", lty = 2, alpha = 0.3) +
+# show that data collected more recently is more likely to get published sooner
+data_latency %>% 
+  group_by(sampled_year) %>% 
+  summarise(mean_latency = mean(norm_latency),
+            sd_latency = sd(norm_latency)) %>% 
+  ggplot(aes(sampled_year, mean_latency)) +
+  geom_point(size = 2, col = "blue") + 
+  # geom_pointrange(aes(ymin = mean_latency-sd_latency, ymax = mean_latency+sd_latency))   +
+  geom_segment(aes(x=sampled_year, xend=sampled_year, y=0, yend=mean_latency))+
   theme_bw() +
-  ggtitle("Relationship between sampling year and latency")
+  ggtitle("Relationship between sampling year and average latency")
 ggsave("database_paper/figures/data_latency.jpg")

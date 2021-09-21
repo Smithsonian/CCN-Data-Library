@@ -1,34 +1,40 @@
 attribute_name,definition,required,data_type,format_unit_codes
-study_id,"Unique identifier for the study made up of the first authorês family name, as well as the second authorês family name or ¥et al.ê if more than three, then publication year separated by underscores.",required,factor,NA
-site_id,Site identification code unique to each study.,optional,factor,NA
-core_id,Core identification code unique to each site.,required,factor,NA
-year,Year of core collection,required,numeric,YYYY
-month,Numeric month of year of core,optional,numeric,MM
-day,Numeric day of month of core,optional,numeric,DD
+study_id,"Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.",required,character,NA
+site_id,Site identification code unique to each study.,optional,character,NA
+core_id,Core identification code unique to each site.,required,character,NA
+year,Year of core collection.,required,numeric,YYYY
+month,Numeric month of year of core.,optional,numeric,MM
+day,Numeric day of month of core.,optional,numeric,DD
 core_notes,Any other relevant submitter generated notes on how cores were collected.,optional,character,NA
 latitude,Positional latitude of the core in decimal degree WGS84.,required,numeric,degree
 longitude,Positional longitude of the core in decimal degree WGS84.,required,numeric,degree
 position_accuracy,"Accuracy of latitude and longitude measurement, if determined and recorded.",encouraged,numeric,meter
-position_method,Code indicating how latitude and longitude were determined.,conditional,factor,NA
+position_method,Code indicating how latitude and longitude were determined.,required,factor,NA
 position_notes,Any relevant submitter generated notes on how latitude and longitude were determined.,optional,character,NA
 elevation,Surface elevation of the core relative to defined datum.,optional,numeric,meters
 elevation_datum,The datum relative to which the core elevation was measured against (For a complete list of datum names and aliases please refer to the ISO Geodedic Registry_https://iso.registry.bespire.eu/register/geodetic/VerticalDatum).,conditional,factor,NA
 elevation_accuracy,"Accuracy of elevation measurement, if determined and recorded",optional,numeric,meters
 elevation_method,Code indicating how elevation was determined,conditional,factor,NA
-elevation_notes,Any relevant submitter generated notes on how elevation was determined,optional,character,NA
+elevation_notes,Any relevant submitter generated notes on how elevation was determined.,optional,character,NA
 salinity_class,"Code based on submitter field observation or measurement indicating average annual salinity (Note: Palustrine and freshwater should only include tidal wetlands, or wetlands that are potentially/formerly tidal but artificially freshened due to artificial tidal restrictions).",optional,factor,NA
-salinity_method,Indicate whether salinity_class was determined using a field observation or a measurement,encouraged,factor,NA
-salinity_notes,Any relevant submitter generated notes on how salinity_class was determined,optional,character,NA
+salinity_method,Indicate whether salinity_class was determined using a field observation or a measurement.,encouraged,factor,NA
+salinity_notes,Any relevant submitter generated notes on how salinity_class was determined.,optional,character,NA
 vegetation_class,Code based on submitter field observations or measurement indicating dominant wetland vegetation type.,optional,factor,NA
-vegetation_method,Indicate whether vegetation_class was determined using a field observation or a measurement,encouraged,factor,NA
+vegetation_method,Indicate whether vegetation_class was determined using a field observation or a measurement.,encouraged,factor,NA
 vegetation_notes,Any relevant submitter generated notes on how vegetation_class and dominant_species were determined.,optional,character,NA
 inundation_class,Code based on submitter field observation or measurement indicating how often the coring location is inundated.,optional,factor,NA
 inundation_method,Indicate whether inundation_class was determined using a field observation or a measurement,encouraged,factor,NA
-habitat,"Defines whether the code refers to a description, or level of plant taxonomy.",optional,factor,NA
-inundation_notes,Any relevant submitter generated notes on how elevation was determined,optional,character,NA
+habitat,Habitat classification of the sampled location based on description or dominate vegetation.,optional,factor,NA
+inundation_notes,Any relevant submitter generated notes on how elevation was determined.,optional,character,NA
 core_length_flag,"Indicated whether or not the coring team believes they recovered a full sediment profile, down to bedrock, or other non-marsh interface.",encouraged,factor,NA
 pb210_cic_accretion_rate,Accretion rate according to a lead-210 based Constant Initial Concentration model.,optional,numeric,centimetersPerYear
 pb210_cic_accretion_rate_se,Accretion rate parameter error according to a lead-210 based Constant Initial Concentration model.,encouraged,numeric,millimetersPerYear
 pb210_cic_notes,Any notes associated with a lead-210 based Constant Initial Concentration model.,optional,character,NA
 pb210_cic_max_depth,"Maximum depth to which a lead-210 based Constant Initial Concentration model was applied, in centimeters depth relevant to surface.",conditional,numeric,centimeter
 pb210_cic_r2,"The coefficient of determination, or R-squared value, for the lead-210 based Constatn Initial Concentration model.",encouraged,numeric,dimensionless
+stocks_qual_code,TBD.,added automatically,factor,NA
+dates_qual_code,TBD.,added automatically,factor,NA
+elevation_qual_code,TBD.,added automatically,factor,NA
+max_depth,Maximum depth of the sampled soil profile.,added automatically,numeric,NA
+country,Country in which data was collected.,added automatically,character,NA
+admin_division,Administrative division in which data was collected.,added automatically,character,NA
