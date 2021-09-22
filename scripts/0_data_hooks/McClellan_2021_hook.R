@@ -14,7 +14,7 @@ library(tidyverse)
 library(RefManageR)
 library(lubridate)
 library(readxl)
-# library(anytime)
+library(leaflet)
 
 # load in helper functions
 source("scripts/1_data_formatting/curation_functions.R") # For curation
@@ -22,7 +22,9 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 
 # read in data
 soil_data_raw <- read_xlsx("./data/primary_studies/McClellan_et_al_2021/original/Soil_data_ECOENG_106326.xlsx")
-# methods_raw <- read_csv("./data/primary_studies/McClellan_et_al_2021/intermediate/mcclellan_et_al_2021_materials_and_methods.csv")
+methods_raw <- read_xlsx("./data/primary_studies/McClellan_et_al_2021/intermediate/McClellan_2021_material_and_methods.xlsx")
+site_info <- read_delim("data/primary_studies/McClellan_et_al_2021/intermediate/site_locations.txt", 
+                        delim = ", ", trim_ws = T) %>% select(-lat_coord, -long_coord)
 
 # read in database guidance for easy reference
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
@@ -45,17 +47,19 @@ soil_data <- soil_data_raw %>%
          fraction_organic_matter = `Soil loss-on-ignition (mg·g−1)`, # need conversion
          fraction_carbon = `Total soil organic carbon (mg·g−1)`, # need conversion
          dry_bulk_density = `Soil bulk density (g·cm−3)`) %>% 
-  separate(sample_id, into = c("site", "plot", "depth_min"), sep = "-") %>% 
+  separate(sample_id, into = c("site", "plot", "depth_min"), sep = "-", remove = F) %>% 
   mutate(study_id = id,
+         plot = case_when(site == "S50" & plot <= 3 ~ paste0(plot,"A"),
+                          site == "S50" & plot >= 4 ~ paste0(plot, "B"),
+                          TRUE ~ plot),
          site_id = ifelse(grepl("S", site), "Sabine","WLD"),
          core_id = str_c(site, plot, sep = "-"),
          fraction_organic_matter = fraction_organic_matter/1000,
          fraction_carbon = fraction_carbon/1000,
          depth_min = as.numeric(depth_min),
          depth_max = depth_min + 5) %>% 
-  select(-c(site, plot, `Total soil nitrogen (mg·g−1)`, `Refractory soil nitrogen (mg·g−1)`,
-            `Soil moisture content (%)`, `Refractory soil organic carbon (mg·g−1)`)) %>% 
-  reorderColumns("depthseries", .)
+  select(-c(`Total soil nitrogen (mg·g−1)`, `Refractory soil nitrogen (mg·g−1)`,
+            `Soil moisture content (%)`, `Refractory soil organic carbon (mg·g−1)`))
 # there are no locations for the cores
 
 ggplot(soil_data) +
@@ -66,27 +70,60 @@ ggplot(soil_data) +
 # "Soil loss-on-ignition (mg·g−1)" => fraction_organic_matter     
 # "Total soil organic carbon (mg·g−1)" => fraction_carbon
 
+depthseries <- soil_data %>% 
+  reorderColumns("depthseries", .) %>% 
+  select(-plot, -site)
+
 ## ... Cores ####
 
-cores <- soil_data %>% distinct(study_id, site_id, core_id) %>% 
+cores <- soil_data %>% distinct(study_id, site_id, core_id, site, plot) %>% 
   # vegetation is measured
-  mutate(vegetation_method = "measurement")
+  mutate(year = "2016",
+         marsh = case_when(site == "S01" ~ "1 year",
+                           site == "S06" ~ "6 years",
+                           site == "S14" ~ "14 years",
+                           site == "S33" ~ "33 years",
+                           grepl("A", plot) ~ "Reference A",
+                           grepl("B", plot) ~ "Reference B",
+                           site == "W16" ~ "16 years",
+                           site == "W29" ~ "29 years",
+                           site == "W41" ~ "41 years",
+                           site == "W60" ~ "Reference",
+                           TRUE ~ NA_character_)) %>% 
+  full_join(site_info) %>% 
+  mutate(elevation = elevation/100,
+         elevation_accuracy = elevation_accuracy/100,
+         core_length_flag = "core depth limited by length of corer", # except 1 year old sabine marsh
+         vegetation_method = "measurement",
+         position_notes = "triplicate samples were collected haphazardly within 10 m of these coordinates",
+         elevation_datum = "NAVD88",
+         elevation_method = ifelse(site_id == "Sabine", "RTK", "LiDAR"),
+         vegetation_class = ifelse(marsh != "1 year", "emergent", "unvegetated")) %>% 
+  reorderColumns("cores", .) %>% 
+  select(-c(site, marsh, plot, aboveground_biomass))
+
 
 ## ... Methods ####
 
-methods <- methods_raw
+methods <- methods_raw %>% 
+  drop_na(study_id) %>% 
+  select_if(function(x) {!all(is.na(x))})
 
 ## ... Impacts ####
 
-impacts <- impacts_raw
+impacts <- soil_data %>% distinct(study_id, site_id, core_id) %>% 
+  mutate(impact_class = ifelse(site_id == "WLD", "sediment diversion", "sediment addition"))
 # WLD: sediment diversion
 # Sabine: marsh created through sediment addition
 
 ## ... Impacts ####
 
-species <- soil_data %>% distinct(study_id, site_id)
-# WLD: Nelumbo lutea, Colocasia esculenta, Polygonum puntatum, Salix nigra
-# Sabine: Spartina alterniflora (Sporobolus alterniflorus), Distichlis spicata, Spartina patens (Sporobolus pumilus)
+species <- soil_data %>% distinct(study_id, site_id) %>% 
+  mutate(species_code = ifelse(site_id == "WLD", "Nelumbo lutea, Colocasia esculenta, Polygonum puntatum, Salix nigra",
+                               # sabine species
+                               "Spartina alterniflora, Distichlis spicata, Spartina patens"),
+         species_code = strsplit(species_code, split = ", ")) %>% 
+  unnest(species_code)
 
 ## 2. Study Citations ####
 
@@ -116,6 +153,12 @@ if(!file.exists("data/primary_studies/McClellan_et_al_2021/derivative/mcclellan_
 
 ## 3. QA/QC ####
 
+# map sites
+leaflet(cores) %>%
+  addTiles() %>% 
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, label = ~core_id)
+
+# test tables
 table_names <- c("methods", "cores", "depthseries", "species", "impacts")
 
 # Check col and varnames
