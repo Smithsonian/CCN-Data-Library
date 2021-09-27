@@ -1,5 +1,5 @@
-attribute_name,definition,required,data_type,format_unit_codes
-study_id,"Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et. al if more than three, then publication year separated by underscores.",required,character,NA
+attribute_name,attribute_definition,required,data_type,unit
+study_id,"Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.",required,character,NA
 method_id,Methods identification code unique to each study.,required,character,NA
 coring_method,Code indicating what type of device was used to collect soil depth profiles.,encouraged,factor,NA
 roots_flag,Code indicating whether live roots were included or excluded from carbon assessments.,encouraged,factor,NA

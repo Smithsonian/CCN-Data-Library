@@ -7,16 +7,17 @@ library(tidyverse)
 # columns to include
 # field name, description, class, units, required?
 guidance <- read_csv("docs/ccrcn_database_structure.csv") %>%
-  select(-c(data_category, parent_data_category, quality_class, uncontrolled, contains("conditional"))) %>%
-  mutate(format_unit_codes = ifelse(data_type != "numeric", NA, format_unit_codes))
+  mutate(unit = ifelse(data_type != "numeric", NA, format_unit_codes)) %>% 
+  select(-c(data_category, parent_data_category, quality_class, uncontrolled,
+            format_unit_codes, number_type, contains("conditional")))
 
 # subset guidance into individual tables
 methods <- guidance %>% filter(table == "methods") %>% select(-table)
 sites <- guidance %>% filter(table == "sites") %>% select(-table)
 cores <- guidance %>% filter(table == "cores") %>% select(-table)
 depthseries <- guidance %>% filter(table == "depthseries") %>% select(-table)
-species <- guidance %>% filter(table == "species") %>% select(-table)
-impacts <- guidance %>% filter(table == "impacts") %>% select(-table)
+species <- guidance %>% filter(table == "species") %>% select(-table, -unit)
+impacts <- guidance %>% filter(table == "impacts") %>% select(-table, -unit)
 
 # write tables
 write_csv(methods, "database_paper/tables/methods_attributes.csv")

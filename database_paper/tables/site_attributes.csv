@@ -1,4 +1,4 @@
-attribute_name,definition,required,data_type,format_unit_codes
+attribute_name,attribute_definition,required,data_type,unit
 study_id,"Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.",required,character,NA
 site_id,Site identification code unique to each study.,optional,character,NA
 site_description,Site description including relevant study details and political geographic units. Some of these descriptions can be automated by the ingestion code.,optional,character,NA
@@ -12,7 +12,7 @@ salinity_method,Indicate whether salinity_class was determined using a field obs
 salinity_notes,Any relevant submitter generated notes on how salinity_class was determined.,optional,character,NA
 vegetation_class,Code based on submitter field observations or measurement indicating dominant wetland vegetation type.,optional,factor,NA
 vegetation_method,Indicate whether vegetation_class was determined using a field observation or a measurement.,optional,factor,NA
-vegetation_notes,Any relevant submitter generated notes on how vegetation_class was were determined.,optional,character,NA
+vegetation_notes,Any relevant submitter generated notes on how vegetation_class and/or dominant species were determined.,optional,character,NA
 inundation_class,Code based on submitter field observation or measurement indicating how often the coring location is inundated.,optional,factor,NA
 inundation_method,Indicate whether inundation_class was determined using a field observation or a measurement.,optional,factor,NA
 inundation_notes,Any relevant submitter generated notes on how inundation was determined.,optional,character,NA
