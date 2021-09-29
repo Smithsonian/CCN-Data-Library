@@ -1,8 +1,10 @@
 ## CCRCN Data Library ########
 ## contact: Jaxine Wolfe, wolfejax@si.edu
 
-## Hook script for data releases
-# Puerto Rico cores: https://www.sciencebase.gov/catalog/item/60902e3fd34e93746a710491
+## Hook script for data release
+
+# public data release: https://www.sciencebase.gov/catalog/item/60902e3fd34e93746a710491
+# associated paper: https://www.frontiersin.org/articles/10.3389/ffgc.2021.676691/full
 
 # load necessary libraries
 library(tidyverse)
@@ -78,13 +80,6 @@ ggplot(depthseries) +
   # facet_wrap(vars(core_id), scales = "free")
 
 ## ... Core-Level ####
-
-# site info
-# Martin Peña West: a mangrove wetland in a dredged canal along the west end of the Caño de Martín Peña. Relative flushing at this site is medium to high.
-# Martin Peña East: a mangrove wetland in a clogged canal along the east end of the Caño de Martín Peña, toward the Laguna San José. Relative flushing at this site is low.
-# Torrecilla Lagoon: a mangrove wetland in the Torrecilla Lagoon. Relative flushing at this site is medium to high.
-# San José Lagoon: a mangrove wetland in the José Lagoon. Relative flushing at this site is medium.
-# Piñones: a mangrove wetland within the Piñones Forested Reserve. Relative flushing at this site is low.
 
 cores <- eagle_ds %>%
   distinct(study_id, site_id, core_id, year, month, day, latitude, longitude) %>% 

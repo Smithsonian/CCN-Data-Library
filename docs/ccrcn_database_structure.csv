@@ -51,18 +51,18 @@ sites,inundation_notes,Any relevant submitter generated notes on how inundation 
 cores,study_id,"Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.",required,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
 cores,site_id,Site identification code unique to each study.,optional,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
 cores,core_id,Core identification code unique to each site.,required,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
-cores,year,Year of core collection.,required,numeric,nominalYear,NA,NA,NA,NA,1,NA,NA,NA
-cores,month,Numeric month of year of core collection.,optional,numeric,nominalMonth,NA,NA,NA,NA,NA,NA,NA,NA
-cores,day,Numeric day of month of core collection.,optional,numeric,nominalDay,NA,NA,NA,NA,NA,NA,NA,NA
+cores,year,Year of core collection.,required,numeric,nominalYear,integer,NA,NA,NA,1,NA,NA,NA
+cores,month,Numeric month of year of core collection.,optional,numeric,nominalMonth,integer,NA,NA,NA,NA,NA,NA,NA
+cores,day,Numeric day of month of core collection.,optional,numeric,nominalDay,integer,NA,NA,NA,NA,NA,NA,NA
 cores,core_notes,Any other relevant submitter generated notes on how cores were collected.,optional,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
-cores,latitude,Positional latitude of the core in decimal degree WGS84.,required,numeric,degree,NA,NA,position,NA,NA,NA,NA,NA
-cores,longitude,Positional longitude of the core in decimal degree WGS84.,required,numeric,degree,NA,NA,position,NA,NA,NA,NA,NA
-cores,position_accuracy,"Accuracy of latitude and longitude measurement, if determined and recorded.",encouraged,numeric,meter,NA,NA,position,NA,NA,NA,NA,NA
+cores,latitude,Positional latitude of the core in decimal degree WGS84.,required,numeric,degree,real,NA,position,NA,NA,NA,NA,NA
+cores,longitude,Positional longitude of the core in decimal degree WGS84.,required,numeric,degree,real,NA,position,NA,NA,NA,NA,NA
+cores,position_accuracy,"Accuracy of latitude and longitude measurement, if determined and recorded.",encouraged,numeric,meter,real,NA,position,NA,NA,NA,NA,NA
 cores,position_method,Code indicating how latitude and longitude were determined.,required,factor,RTK = Real-time kinematic global position system (GPS); handheld = Conventional Commercially available hand-held GPS; other high resolution = Any other technique resulting in positional error < 1 meter; other moderate resolution = Any other technique resulting in positional error < 30 meters; other low resolution = Any other technique resulting in positional error > 30 meters.,NA,NA,position,NA,NA,latitude; longitude,NA,NA
 cores,position_notes,Any relevant submitter generated notes on how latitude and longitude were determined.,optional,character,NA,NA,NA,position,NA,NA,NA,NA,NA
-cores,elevation,Surface elevation of the core relative to defined datum.,optional,numeric,meters,NA,NA,elevation,NA,NA,NA,NA,NA
+cores,elevation,Surface elevation of the core relative to defined datum.,optional,numeric,meters,real,NA,elevation,NA,NA,NA,NA,NA
 cores,elevation_datum,The datum relative to which the core elevation was measured against (For a complete list of datum names and aliases please refer to the ISO Geodedic Registry_https://iso.registry.bespire.eu/register/geodetic/VerticalDatum).,conditional,factor,"NAVD88 = A gravity-based geodetic datum, North American Vertical Datum of 1988; MSL = A tidal datum, Mean Sea Level as measured against a local tide gauge; MTL = A tidal datum, Mean Tidal Level as measured against a local tide gauge; MHW = A tidal datum, Mean High Water as measured against a local tide gauge; MHHW = A tidal datum, Mean Higher High Water as measured against a local tide gauge; MHHWS = A tidal datum, Mean Higher High Water for Spring Tides as measured against a local tide gauge; MLW = A tidal datum, Mean Low Water as measured against a local tide gauge; MLLW = A tidal datum, Mean Lower Low Water as measured against a local tide gauge.; NHN = TBD.; NAP = TBD.",NA,NA,elevation,NA,NA,elevation,NA,NA
-cores,elevation_accuracy,"Accuracy of elevation measurement, if determined and recorded",optional,numeric,meters,NA,NA,elevation,NA,NA,NA,NA,NA
+cores,elevation_accuracy,"Accuracy of elevation measurement, if determined and recorded",optional,numeric,meters,real,NA,elevation,NA,NA,NA,NA,NA
 cores,elevation_method,Code indicating how elevation was determined,conditional,factor,RTK = Real-time kinematic GPS; other high resolution = Any other technique resulting in positional error < 5 cm of random error; LiDAR = Handheld GPS matched to lidar-based digital elevation model; DEM = Handheld GPS matched to another digital elevation model; other low resolution = Any other technique resulting in positional error > 5 cm of random error.,NA,NA,elevation,NA,NA,elevation,NA,NA
 cores,elevation_notes,Any relevant submitter generated notes on how elevation was determined.,optional,character,NA,NA,NA,elevation,NA,NA,NA,NA,NA
 cores,salinity_class,"Code based on submitter field observation or measurement indicating average annual salinity (Note: Palustrine and freshwater should only include tidal wetlands, or wetlands that are potentially/formerly tidal but artificially freshened due to artificial tidal restrictions).",optional,factor,estuarine = 0.5-35 ppt.; brine = >50 ppt.; saline = 30-50 ppt.; brackish = 0.5-30 ppt.; fresh = <0.5 ppt.; mixoeuhaline = 30-40 ppt.; polyhaline = 18-30 ppt.; mesohaline = 5-18 ppt.; oligohaline = 0.5-5 ppt.; estuarine C-CAP = 5-35 parts per thousand salinity (ppt) according to the coastal change analysis program; palustrine C-CAP = < 5 ppt according to the coastal change analysis program,NA,NA,salinity,NA,NA,NA,NA,NA
@@ -76,15 +76,15 @@ cores,inundation_class,Code based on submitter field observation or measurement 
 cores,inundation_method,Indicate whether inundation_class was determined using a field observation or a measurement.,encouraged,factor,field observation = Inundation inferred by field observation such as vegetation; measurement = Inundation class assessed from elevation and nearby tide gauge or other similar method.,NA,NA,inundation,NA,NA,inundation_class,NA,NA
 cores,inundation_notes,Any relevant submitter generated notes on how inundation was determined.,optional,character,NA,NA,NA,inundation,NA,NA,NA,NA,NA
 cores,core_length_flag,"Indicated whether or not the coring team believes they recovered a full sediment profile, down to bedrock, or other non-marsh interface.",encouraged,factor,core depth limited by length of corer = The total depth of the core was limited by the length of the coring device; core depth represents deposit depth = Authors report that the depth of the core represents the depth of the wetland soil deposit; not specified = Authors did not specify whether or not the depth of the core represents the depth of the wetland soil deposit.,NA,NA,NA,NA,NA,NA,NA,NA
-cores,pb210_cic_accretion_rate,Accretion rate according to a lead-210 based Constant Initial Concentration model.,optional,numeric,centimetersPerYear,NA,NA,NA,NA,NA,NA,NA,NA
-cores,pb210_cic_accretion_rate_se,Accretion rate parameter error according to a lead-210 based Constant Initial Concentration model.,encouraged,numeric,millimetersPerYear,NA,NA,NA,NA,NA,pb210_cic_accretion_rate,NA,NA
+cores,pb210_cic_accretion_rate,Accretion rate according to a lead-210 based Constant Initial Concentration model.,optional,numeric,centimetersPerYear,real,NA,NA,NA,NA,NA,NA,NA
+cores,pb210_cic_accretion_rate_se,Accretion rate parameter error according to a lead-210 based Constant Initial Concentration model.,encouraged,numeric,millimetersPerYear,real,NA,NA,NA,NA,pb210_cic_accretion_rate,NA,NA
 cores,pb210_cic_notes,Any notes associated with a lead-210 based Constant Initial Concentration model.,optional,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
-cores,pb210_cic_max_depth,"Maximum depth to which a lead-210 based Constant Initial Concentration model was applied, in centimeters depth relevant to surface.",conditional,numeric,centimeter,NA,NA,NA,NA,NA,pb210_cic_accretion_rate,NA,NA
-cores,pb210_cic_r2,"The coefficient of determination, or R-squared value, for the lead-210 based Constatn Initial Concentration model.",encouraged,numeric,dimensionless,NA,NA,NA,NA,NA,pb210_cic_accretion_rate,NA,NA
+cores,pb210_cic_max_depth,"Maximum depth to which a lead-210 based Constant Initial Concentration model was applied, in centimeters depth relevant to surface.",conditional,numeric,centimeter,real,NA,NA,NA,NA,pb210_cic_accretion_rate,NA,NA
+cores,pb210_cic_r2,"The coefficient of determination, or R-squared value, for the lead-210 based Constatn Initial Concentration model.",encouraged,numeric,dimensionless,real,NA,NA,NA,NA,pb210_cic_accretion_rate,NA,NA
 cores,stocks_qual_code,TBD.,added automatically,factor,"C2 = Carbon stock data complete, not confirmed to be a complete profile.; C1 = Carbon stock data complete, confirmed to be a complete profile.",NA,NA,NA,NA,NA,NA,NA,NA
 cores,dates_qual_code,TBD.,added automatically,factor,"B2 = Dating information present, but not complete.; B1 = Dating information present and complete.",NA,NA,NA,NA,NA,NA,NA,NA
 cores,elevation_qual_code,TBD.,added automatically,factor,"A3 = Elevation data present but of low quality, dating info present.; A2 = Elevation data is high quality, and dating info present but incomplete.; A1 = Elevation data is high quality, and dating info is complete.",NA,NA,NA,NA,NA,NA,NA,NA
-cores,max_depth,Maximum depth of the sampled soil profile.,added automatically,numeric,centimeter,NA,NA,NA,NA,NA,NA,NA,NA
+cores,max_depth,Maximum depth of the sampled soil profile.,added automatically,numeric,centimeter,real,NA,NA,NA,NA,NA,NA,NA
 cores,country,Country in which data was collected.,added automatically,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
 cores,admin_division,Administrative division in which data was collected.,added automatically,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
 depthseries,study_id,"Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.",required,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -93,8 +93,8 @@ depthseries,core_id,Core identification code unique to each site.,required,chara
 depthseries,method_id,Methods identification code unique to each study.,required,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
 depthseries,depth_min,Minimum depth of a sampling increment.,required,numeric,centimeter,real,NA,NA,NA,NA,NA,NA,NA
 depthseries,depth_max,Maximum depth of a sampling increment.,required,numeric,centimeter,real,NA,NA,NA,NA,NA,NA,NA
-depthseries,representative_depth_min,Minimum depth of a soil horizon of which the sample is representative.,optional,numeric,centimeter,NA,NA,NA,NA,NA,NA,NA,NA
-depthseries,representative_depth_max,Maximum depth of a soil horizon of which the sample is representative.,optional,numeric,centimeter,NA,NA,NA,NA,NA,NA,NA,NA
+depthseries,representative_depth_min,Minimum depth of a soil horizon of which the sample is representative.,optional,numeric,centimeter,real,NA,NA,NA,NA,NA,NA,NA
+depthseries,representative_depth_max,Maximum depth of a soil horizon of which the sample is representative.,optional,numeric,centimeter,real,NA,NA,NA,NA,NA,NA,NA
 depthseries,sample_id,"Sample identification unique to the core. This should be used in the case that there are relevant lab specific sample codes, or in the case that there are multiple replicate samples.",optional,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
 depthseries,dry_bulk_density,Dry mass per unit volume of a soil sample. This does not include ash free bulk density.,required,numeric,gramsPerCubicCentimeter,real,dry_bulk_density,carbon_stock,NA,NA,NA,NA,NA
 depthseries,fraction_organic_matter,Mass of organic matter relative to sample dry mass. Ash free bulk density should not be used here but should be expressed as a loss on ignition fraction.,encouraged,numeric,dimensionless,real,loss_on_ignition,carbon_stock,NA,NA,NA,NA,NA
@@ -103,15 +103,15 @@ depthseries,compaction_fraction,Fraction of the sample depth interval reduced du
 depthseries,compaction_notes,Any submitter generated notes on compaction.,optional,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
 depthseries,cs137_peak_age,Age of documented 137Cs Peak.,optional,numeric,NA,NA,NA,NA,NA,NA,NA,NA,NA
 depthseries,cs137_activity,Radioactivity counts per unit dry weight for radiocesium (137Cs).,encouraged,numeric,becquerelPerKilogram,real,cs137,age_depth,2,NA,cs137_peak_age; cs137_peak_present,NA,NA
-depthseries,cs137_activity_se,1 standard error of uncertainty associated with cs137_activity.,encouraged,numeric,becquerelPerKilogram,NA,cs137,age_depth,1,NA,cs137_activity,NA,NA
+depthseries,cs137_activity_se,1 standard error of uncertainty associated with cs137_activity.,encouraged,numeric,becquerelPerKilogram,real,cs137,age_depth,1,NA,cs137_activity,NA,NA
 depthseries,cs137_unit,Reported unit for sample interval's Cs 137 activity measurements.,conditional,character,NA,NA,NA,NA,NA,1,cs137_activity; cs137_activity_se,NA,NA
 depthseries,excess_pb210_activity,Excess radioactivity counts per unit dry weight for excess lead 210 (210Pb).,optional,numeric,becquerelPerKilogram,real,pb210,age_depth,2,NA,NA,NA,NA
-depthseries,excess_pb210_activity_se,1 standard error of uncertainty associated with excess_pb210_activity.,optional,numeric,becquerelPerKilogram,NA,pb210,age_depth,1,NA,NA,NA,NA
+depthseries,excess_pb210_activity_se,1 standard error of uncertainty associated with excess_pb210_activity.,optional,numeric,becquerelPerKilogram,real,pb210,age_depth,1,NA,NA,NA,NA
 depthseries,total_pb210_activity,Total radioactivity counts per unit dry weight for excess lead 210 (210Pb).,encouraged,numeric,becquerelPerKilogram,real,pb210,age_depth,2,NA,excess_pb210_activity,NA,NA
-depthseries,total_pb210_activity_se,1 standard error of uncertainty associated with total_pb210_activity.,encouraged,numeric,becquerelPerKilogram,NA,pb210,age_depth,1,NA,total_pb210_activity,NA,NA
+depthseries,total_pb210_activity_se,1 standard error of uncertainty associated with total_pb210_activity.,encouraged,numeric,becquerelPerKilogram,real,pb210,age_depth,1,NA,total_pb210_activity,NA,NA
 depthseries,pb210_unit,Reported unit for sample interval's Pb-210 activity measurements.,conditional,character,NA,NA,NA,NA,NA,1,total_pb210_activity; total_pb210_activity_se; excess_pb210_activity; excess_pb210_activity_se,NA,NA
 depthseries,ra226_activity,Total radioactivity counts per unit dry weight for Radium 226 (226Ra) if measured as part of the_210Pb dating process.,optional,numeric,becquerelPerKilogram,real,pb210,age_depth,2,NA,NA,NA,NA
-depthseries,ra226_activity_se,1 standard error of uncertainty associated with ra226_activity.,optional,numeric,becquerelPerKilogram,NA,pb210,age_depth,2,NA,NA,NA,NA
+depthseries,ra226_activity_se,1 standard error of uncertainty associated with ra226_activity.,optional,numeric,becquerelPerKilogram,real,pb210,age_depth,2,NA,NA,NA,NA
 depthseries,ra226_unit,Reported unit for sample interval's Ra 226 activity measurements.,conditional,character,NA,NA,NA,NA,NA,NA,ra226_activity; ra226_activity_se,NA,NA
 depthseries,pb214_activity,Radioactivity counts per unit dry weight for 214 Pb.,optional,numeric,NA,NA,NA,NA,NA,1,NA,NA,NA
 depthseries,pb214_activity_se,Estimated uncertainty in pb214_activity.,optional,numeric,NA,NA,NA,NA,NA,1,NA,NA,NA
@@ -120,12 +120,12 @@ depthseries,bi214_activity,Radioactivity counts per unit dry weight for 214 Bi.,
 depthseries,bi214_activity_se,Reported standard error for radioactivity counts per unit dry weight for_214Bi,optional,numeric,NA,NA,NA,age_depth,NA,1,NA,NA,NA
 depthseries,bi214_unit,Reported unit for sample interval's Bi 214 activity measurements.,conditional,character,NA,NA,NA,NA,NA,1,bi214_activity; bi214_activity_se,NA,NA
 depthseries,c14_age,Radiocarbon age as estimated from AMS measurements.,optional,numeric,radiocarbonYear,real,c14,age_depth,2,NA,NA,NA,NA
-depthseries,c14_age_se,Estimated uncertainty in c14_age.,conditional,numeric,radiocarbonYear,NA,c14,age_depth,1,NA,c14_age,NA,NA
+depthseries,c14_age_se,Estimated uncertainty in c14_age.,conditional,numeric,radiocarbonYear,real,c14,age_depth,1,NA,c14_age,NA,NA
 depthseries,c14_material,Description of the material selected for radiocarbon (14C) dating.,conditional,character,NA,NA,c14,age_depth,2,NA,c14_age,NA,NA
 depthseries,c14_notes,Any relevant submitter generated notes on 14C dating process.,optional,character,NA,NA,c14,age_depth,NA,NA,NA,NA,NA
 depthseries,delta_c13,The isotopic signature of 13C. This is oftentimes measured along with c14_age and can be useful for analyzing carbon lability and provenance.,optional,numeric,partsPerMillion,real,c14,age_depth,2,NA,NA,NA,NA
 depthseries,be7_activity,Radioactivity counts per unit dry weight for 7Be.,optional,numeric,becquerelPerKilogram,real,be7,age_depth,2,NA,NA,NA,NA
-depthseries,be7_activity_se,Estimated uncertainty in be_7_activity.,optional,numeric,becquerelPerKilogram,NA,be7,age_depth,1,NA,NA,NA,NA
+depthseries,be7_activity_se,Estimated uncertainty in be_7_activity.,optional,numeric,becquerelPerKilogram,real,be7,age_depth,1,NA,NA,NA,NA
 depthseries,be7_unit,Reported unit for sample interval's Be 7 activity measurements.,conditional,character,NA,NA,NA,NA,NA,1,be7_activity,NA,NA
 depthseries,marker_date,"The age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.",optional,Date,YYYY,NA,other_dated_horizon,age_depth,2,NA,NA,NA,NA
 depthseries,marker_date_se,"The standard error of the age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.",optional,Date,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -134,7 +134,7 @@ depthseries,marker_notes,Any other submitter generated notes about the origin of
 depthseries,age,"Most likely, median, or mean age of the depth interval from submitter generated age depth model.",optional,numeric,year,integer,age_depth_model,age_depth,2,NA,NA,NA,NA
 depthseries,age_min,Minimum age of the depth interval from submitter generated age depth model.,optional,numeric,year,integer,age_depth_model,age_depth,2,NA,NA,NA,NA
 depthseries,age_max,Maximum age of the depth interval from submitter generated age depth model.,optional,numeric,year,integer,age_depth_model,age_depth,2,NA,NA,NA,NA
-depthseries,age_se,Standard error of age estimate from submitter generated age depth model.,optional,numeric,year,NA,age_depth_model,age_depth,1,NA,NA,NA,NA
+depthseries,age_se,Standard error of age estimate from submitter generated age depth model.,optional,numeric,year,integer,age_depth_model,age_depth,1,NA,NA,NA,NA
 depthseries,depth_interval_notes,Any other submitter generated notes specific to the depth interval.,optional,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
 species,study_id,"Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.",optional,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
 species,site_id,Site identification code unique to each study.,optional,character,NA,NA,NA,NA,NA,NA,NA,NA,NA

@@ -5,7 +5,7 @@ output: html_document
   
 ### Introduction 
 The CCRCN clearinghouse provides a synthesized and curated set of coastal carbon data that promotes the sharing of open data, novel analyses, and collaboration opportunities. 
-The synthesis is created by curating and merging publically available data through an automated script. 
+The synthesis is created by curating and merging publicly available data through an automated script. 
 This report documents the success or failure of the automated synthesis process, documents changes, 
 conducts QA/QC tests, and provides visualizations and summaries of data within the clearinghouse. 
 
@@ -13,7 +13,7 @@ conducts QA/QC tests, and provides visualizations and summaries of data within t
 
 #### Report date: `r formated_date`
 #### Synthesis status: `r if(join_status) {"Successful"} else "Failed"`
-#### Contact: Michael Lonneman (lonnemanM@si.edu)  
+#### Contact: Jaxine Wolfe (wolfejax@si.edu)  
 
 ***
 
