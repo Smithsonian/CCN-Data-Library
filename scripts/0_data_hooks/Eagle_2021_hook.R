@@ -1,7 +1,7 @@
 ## CCRCN Data Library ########
 ## contact: Jaxine Wolfe, wolfejax@si.edu
 
-## Hook script for data release
+## Hook script for data ingestion
 
 # public data release: https://www.sciencebase.gov/catalog/item/60902e3fd34e93746a710491
 # associated paper: https://www.frontiersin.org/articles/10.3389/ffgc.2021.676691/full
