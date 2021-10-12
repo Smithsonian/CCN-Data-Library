@@ -31,7 +31,7 @@ testAttributeNames <- function(tables, ccrcn_synthesis) {
   tables <- tables[!tables %in% "studycitations"]
   
   database_structure <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols()) %>%
-    bind_rows(read_csv("docs/uncontrolled_attributes.csv", col_types = cols())) %>%
+    # bind_rows(read_csv("docs/uncontrolled_attributes.csv", col_types = cols())) %>%
     # Only need column names in the tables of the synthesis
     filter(table %in% tables)
    
@@ -176,8 +176,8 @@ testCoreRelationships <- function(ccrcn_synthesis) {
 testNumericVariables <- function(depthseries) {
   
   # Get both controlled and approved uncontrolled variables
-  numeric_attributes <- read_csv("./docs/uncontrolled_attributes.csv", col_types = cols()) %>%
-    bind_rows(read_csv("./docs/controlled_attributes.csv", col_types = cols())) %>%
+  numeric_attributes <- read_csv("./docs/controlled_attributes.csv", col_types = cols()) %>%
+    # bind_rows(read_csv("./docs/uncontrolled_attributes.csv", col_types = cols())) %>%
     filter(data_type == "numeric") 
   
   # select only numeric columns 

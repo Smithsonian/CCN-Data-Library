@@ -18,9 +18,9 @@ Gonneea_et_al_2004,Celestun_Lagoon,20.9254,20.9254,-90.3446,-90.3446,seagrass
 Gonneea_et_al_2004,Chelem_Lagoon,21.2746,21.2746,-89.6863,-89.6863,seagrass
 Lewis_et_al_2007,Choctwhatchee_Bay,30.416,30.416,-86.573,-86.573,seagrass
 Mateo_et_al_1997,Culip,42.322,42.322,3.309,3.309,seagrass
-Holmer_et_al_2007,Cyprus,34.4015,34.4015,33.0358,33.0358,NA
+Holmer_et_al_2007,Cyprus,34.4015,34.4015,33.0358,33.0358,unvegetated
 Vichkovitten_et_al_2005,Denmark,55.28,55.28,11.05,11.05,seagrass
-Yamamuro_et_al_1993,Dravuni_Is,-18.75,-18.75,178.5,178.5,NA
+Yamamuro_et_al_1993,Dravuni_Is,-18.75,-18.75,178.5,178.5,unvegetated
 Yamamuro_et_al_1993,Dravuni_Is._Fiji,-18.75,-18.75,178.5,178.5,seagrass
 Koch_and_Madden_2001,Eastern_Grand_Bahama,26.621,26.621,-77.828,-77.828,seagrass
 Pedersen_et_al_1997,Ebro_Delta,40.6,40.6,0.716666667,0.716666667,seagrass
@@ -40,8 +40,8 @@ Bouillon_et_al_2004,Gazi_bay,-4.22,-4.22,39.3,39.3,seagrass
 De_Troch_et_al_2006,Gazi_Bay,-4.394437,-4.661233,39.5223,39.2547,seagrass
 Mellors_et_al_2002,Geoffrey_Bay,-19.16745,-19.16745,146.8602,146.8602,seagrass
 Spivak_et_al_2009,Goodwin_islands,37.227998888888884,37.21121222222222,-76.38806888900001,-76.39684222100001,seagrass
-Holmer_et_al_2007,Greece,37.3945,37.3945,23.58,23.58,NA
-Miyajima_et_al_1998,Green_Island_Great_Barrier_Reef,-16.45,-16.45,145.58,145.58,NA
+Holmer_et_al_2007,Greece,37.3945,37.3945,23.58,23.58,unvegetated
+Miyajima_et_al_1998,Green_Island_Great_Barrier_Reef,-16.45,-16.45,145.58,145.58,unvegetated
 Al-Rousan_et_al_2005,Gulf_of_Aqaba,29.537000000000003,29.453,34.980999999999995,34.969,seagrass
 Danovaro_et_al_1994,Gulf_of_Marconi,44.333,44.333,9.233,9.233,seagrass
 De_Falco_et_al_2006,Gulf_of_Oristano,39.845,39.845,8.519,8.519,seagrass
@@ -58,7 +58,7 @@ Carruthers_et_al_2005,Laguna_de_Chiriqui_Panama,9.007419,9.007419,-82.023899,-82
 Gonneea_et_al_2004,Laguna_de_Terminos,18.6297,18.6297,-91.7997,-91.7997,seagrass
 Pulich_1985,Laguna_Madre,27.52,27.52,-97.3,-97.3,seagrass
 Fonseca_et_al_2011,Lake_Conjola,-35.25,-35.25,150.48333333333332,150.48333333333332,seagrass
-Qu_et_al_2006,Lake_Illawara,-34.32,-34.32,150.5,150.5,NA
+Qu_et_al_2006,Lake_Illawara,-34.32,-34.32,150.5,150.5,unvegetated
 Eyre_and_Ferguson_2002,Lake_Macquarie,-33.4,-33.4,151.35,151.35,seagrass
 Krause-Jensen_et_al_2011,Limfjorden,56.88,56.88,9.07,9.07,seagrass
 Krause-Jensen_et_al_2011,Little_Belt_area,55.02,55.02,10,10,seagrass
@@ -82,9 +82,9 @@ Lewis_et_al_2007,Ohio_Key,24.674,24.674,-81.242,-81.242,seagrass
 Mateo_and_Serrano_unpublished,Oued_Tahaddart,35.5788,35.5788,-5.9897,-5.9897,seagrass
 Carruthers_et_al_2005,Outer_Lagoon,9.221818,9.221818,-82.023482,-82.023482,seagrass
 Kairis_and_Rybczyk_2010,Padilla_Bay,48.51479,48.51479,-122.52914,-122.52914,seagrass
-Leduc_and_Probert_2011,Papanui_Inlet,-45.847435973,-45.847470977,170.71185868,170.71182652000002,NA
+Leduc_and_Probert_2011,Papanui_Inlet,-45.847435973,-45.847470977,170.71185868,170.71182652000002,unvegetated
 Sfriso_and_Marcomini_1999,Petta_di_Po_-_Venice,45.39,45.39,12.33,12.33,seagrass
-Kristensen_et_al_2000,Phuket,8.052366666666668,8.023966666666666,98.43298,98.41522,NA
+Kristensen_et_al_2000,Phuket,8.052366666666668,8.023966666666666,98.43298,98.41522,unvegetated
 Fonseca_et_al_2011,Pittwater,-33.583333333333336,-33.583333333333336,151.26666666666668,151.26666666666668,seagrass
 Calleja_et_al_2007,Pollença,39.8965,39.8965,2.09205,2.09205,seagrass
 Mellors_et_al_2002,Port_Dennison,-20.026,-20.026,148.255,148.255,seagrass
@@ -113,7 +113,7 @@ Lee_et_al_2005,Seungbong_Island,37.15,37.15,126.2833,126.2833,NA
 Fourqurean_and_Kendrick_unpublished,Shark_Bay,-25.718145,-26.026965,114.26608599999999,113.894974,seagrass
 Holmer_et_al_2007,Sicily,36.71183333,36.71183333,15.14066667,15.14066667,seagrass
 Holmer_et_al_2007,Sounion,37.686743337,37.363023333,23.992316663,23.542516666999997,seagrass
-Holmer_et_al_2007,Spain,38.4208,38.4208,-0.3477,-0.3477,NA
+Holmer_et_al_2007,Spain,38.4208,38.4208,-0.3477,-0.3477,unvegetated
 Lewis_et_al_2007,St_Joseph_Bay,29.868,29.868,-85.366,-85.366,seagrass
 Grady_1981,St._Andrews_Bay_Florida_USA,30.174300000000002,30.0867,-85.6105,-85.7365,seagrass
 Calleja_et_al_2007,Sta_Maria_,39.15116667,39.15116667,2.948666667,2.948666667,seagrass
@@ -127,7 +127,7 @@ Kamp-Nielsen_et_al_2002,Trang,7.31625,7.18325,99.57376666666666,99.3805666666666
 Krause-Jensen_et_al_2011,Vejle_Fjord,55.64,55.64,9.87,9.87,seagrass
 Rigollet_et_al_2004,Venice_lagoon,45.233,45.233,12.26,12.26,seagrass
 Mateo_unpublished,Villajoyosa,38.504,38.504,-0.226,-0.226,seagrass
-McGlathery_et_al_2012,Virginia_Coastal_Bays,37.2750858,37.2359322,-75.807667734,-75.86603820600001,NA
+McGlathery_et_al_2012,Virginia_Coastal_Bays,37.2750858,37.2359322,-75.807667734,-75.86603820600001,unvegetated
 Maher_and_Eyre_2010,Wallis_Lake,-32.15,-32.15,152.28,152.28,seagrass
 Fourqurean_and_Kendrick_unpublished,Western_Australia,-31.989966666666668,-31.989966666666668,116.91666666666667,116.91666666666667,seagrass
 Borg_et_al_2010,White_Rocks,35.56,35.56,14.28,14.28,seagrass

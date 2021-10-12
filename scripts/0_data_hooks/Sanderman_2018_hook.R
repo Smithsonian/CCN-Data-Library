@@ -235,23 +235,30 @@ source("./scripts/1_data_formatting/qa_functions.R")
 # remove data that has since been published independently
 studies_to_remove <- "Breithaupt_et_al_2014"
 
-depthseries <- reorderColumns("depthseries", internatl_depthseries_data) %>%
+depthseries <- internatl_depthseries_data %>%
   filter(!(study_id %in% studies_to_remove)) %>%
-  mutate(method_id = "single set of methods")
+  mutate(method_id = "single set of methods") %>% 
+  reorderColumns("depthseries", .)
 
 ids <- depthseries %>% distinct(study_id, site_id, core_id)
 
-cores <- reorderColumns("cores", internatl_core_data) %>%
+cores <- internatl_core_data %>%
   filter(!(study_id %in% studies_to_remove)) %>% 
   mutate(core_year = year(core_date), 
          core_month = month(core_date),
          core_day = day(core_date)) %>% select(-core_date) %>%
   # some site ids were NA so I'm joining them from the depthseries table
-  select(-site_id) %>% left_join(ids)
+  select(-site_id) %>% left_join(ids) %>% 
+  rename(habitat = vegetation_notes) %>% 
+  reorderColumns("cores", .)
 
-species <- reorderColumns("species", internatl_species_data) %>%
+species <- internatl_species_data %>%
   filter(!(study_id %in% studies_to_remove)) %>%
-  drop_na(species_code) %>% mutate(species_code = trimws(species_code))
+  drop_na(species_code) %>% 
+  mutate(species_code = trimws(species_code),
+         species_code = strsplit(species_code, split = "; ")) %>% 
+  unnest(species_code) %>% 
+  reorderColumns("species", .)
 
 # Update Tables ###########
 source("./scripts/1_data_formatting/versioning_functions.R")

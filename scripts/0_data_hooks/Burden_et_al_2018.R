@@ -56,7 +56,7 @@ depthseries_data <- bind_rows(ds_2010_2017, ds_2011) %>%
   mutate(study_id = id,
          # make the core ID more unique
          core_id = str_c(substr(site_id, 1, 5), core_id, sep = "_"),
-         method_id = "single set of methods (MAYBE)",
+         method_id = "single set of methods",
          depth_min = 0,
          depth_max = 30,
          fraction_organic_matter = OrganicMatter/100,

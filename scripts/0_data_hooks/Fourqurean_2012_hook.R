@@ -39,7 +39,7 @@ Fourqurean <- Fourqurean_raw %>%
   mutate(vegetation_class = tolower(vegetation_class)) %>%
   # Standardize ontology for vegetation_class
   mutate(vegetation_class = ifelse(vegetation_class != "seagrass", 
-                                   "unvegetated marine", vegetation_class)) %>%
+                                   "unvegetated", vegetation_class)) %>%
   # Join to the manual-compiled study list
   full_join(study_doi_manual) %>%
   select(-doi, -url, -reference, -bibliography_id, 
@@ -123,9 +123,10 @@ core_data <- Fourqurean %>%
   # Remove some studies that have biomass data, but not core data
   filter(study_id != "Mateo_and_Romero_1997" & study_id != "Pedersen_et_al_1997") %>%
 
-  select(study_id, site_id, core_id, core_latitude, core_longitude) %>%
+  select(study_id, site_id, core_id, core_latitude, core_longitude, vegetation_class) %>%
   group_by(core_id) %>%
-  summarise_all(first) 
+  summarise_all(first) %>% 
+  rename(habitat = vegetation_class)
 
 
 kamp_missing_cores <- c("Kamp-Nielsen_et_al_2002_14", "Kamp-Nielsen_et_al_2002_15", "Kamp-Nielsen_et_al_2002_16", "Kamp-Nielsen_et_al_2002_17",
@@ -133,7 +134,7 @@ kamp_missing_cores <- c("Kamp-Nielsen_et_al_2002_14", "Kamp-Nielsen_et_al_2002_1
                         "Kamp-Nielsen_et_al_2002_57", "Kamp-Nielsen_et_al_2002_58", "Kamp-Nielsen_et_al_2002_59", "Kamp-Nielsen_et_al_2002_60")
 
 core_data <- core_data %>%
-  filter(!core_id %in% kamp_missing_cores)
+  filter(!core_id %in% kamp_missing_cores) 
 
 cores <- reorderColumns("cores", core_data)
 

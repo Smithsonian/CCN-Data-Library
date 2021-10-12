@@ -571,7 +571,7 @@ cr_ccrcn <- function (dois, format = "bibtex", style = "apa", locale = "en-US",
 
 ## function to resolve taxa names using GNR 
 # uses taxonomic authorities to resolve spelling rather than recoding everything by hand
-resolveTaxa <- function(species) {
+resolveTaxa <- function(species, db = NULL) {
   # create unique list of species codes to save time
   taxa <- unique(sort(species$species_code))
   
@@ -583,12 +583,12 @@ resolveTaxa <- function(species) {
     
     # store resolved results
     gnr_result <- taxize::gnr_resolve(sci = as.vector(taxa[i]), 
+                                      preferred_data_sources = db, # default no preference
                                       canonical = TRUE) %>%
       # gnr_datasources()
       # preferred_data_sources = c(150, 9, 4, 3)
       
-      # pick the first result
-      slice(1)
+      slice(1) # pick the first result
     
     if (!plyr::empty(gnr_result)) {
       # compile list of resolved taxa
@@ -610,6 +610,9 @@ resolveTaxa <- function(species) {
   # bind results to the species dataframe provided
   resolved_species <- left_join(species, resolved, by = c("species_code" = "user_supplied_name")) %>% 
     rename(resolved_taxa = matched_name2) %>% # more informative colname
+    mutate(name_updated = ifelse(species_code == resolved_taxa, FALSE, TRUE)) %>% 
+    # could replace the updated species codes with the resolved name
+    # but this is tricky if it didn't resolve and the resolved_taxa is NA
     select(-c(submitted_name, data_source_title, score))
   
   return(resolved_species)

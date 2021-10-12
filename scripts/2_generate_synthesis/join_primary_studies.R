@@ -290,16 +290,16 @@ if(join_status == TRUE){
   
   WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/original/CCRCN_bibliography.bib")
   
-  # to derivative folder for post-processing (this will be served through the Atlas)
-  write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
-  write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv")
-  write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis/derivative/CCRCN_sites.csv")
-  write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis/derivative/CCRCN_impacts.csv")
-  write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis/derivative/CCRCN_methods.csv")
-  write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/derivative/CCRCN_species.csv")
-  write_csv(ccrcn_synthesis$studycitations, "./data/CCRCN_synthesis/derivative/CCRCN_study_citations.csv")
-  
-  WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/derivative/CCRCN_bibliography.bib")
+  # # to derivative folder for post-processing (this will be served through the Atlas)
+  # write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
+  # write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv")
+  # write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis/derivative/CCRCN_sites.csv")
+  # write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis/derivative/CCRCN_impacts.csv")
+  # write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis/derivative/CCRCN_methods.csv")
+  # write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/derivative/CCRCN_species.csv")
+  # write_csv(ccrcn_synthesis$studycitations, "./data/CCRCN_synthesis/derivative/CCRCN_study_citations.csv")
+  # 
+  # WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/derivative/CCRCN_bibliography.bib")
 }
 
 # Record summary of warnings 
