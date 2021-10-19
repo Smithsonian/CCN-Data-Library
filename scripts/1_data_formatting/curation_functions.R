@@ -307,7 +307,7 @@ recode_species <- function(df, species_code) {
   output_df <- df %>%
     mutate(species_code = recode_factor(species_code,
                                         "AgSp" = "Agrostis spp.", "AlPh" = "Alternanthera philoxeroides", "AmCa" = "Amaranthus cannabinus", 
-                                        "AmTr" = "Ambrosia trifida", "ArAr" = "Arrow arum.", "AtFi" = "Athyrium filix-femina",
+                                        "AmTr" = "Ambrosia trifida", "ArAr" = "Peltandra virginica", "AtFi" = "Athyrium filix-femina",
                                         "AvGe" = "Avicennia germinans", "BaHa" = "Baccharis halimifolia", "BaMa" = "Batis maritima",
                                         "BiLa" = "Bidens laevis", "BoMa" = "Bolboschoenus maritimus", "CaLy" = "Carex lyngbyei", "CoSe" = "Cornus sericea",  
                                         "CuSa" = "Cuscuta salina", "DiSp" = "Distichlis spicata", "EcSpp" = "Echinochloa spp", "ElPa" = "Eleocharis palustris",

@@ -41,9 +41,9 @@ methods <- raw_methods %>%
 
 FL <- raw_FL %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_FL",
                         core_id = paste0("FL_", ID))
-MA1 <- raw_MA1 %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_MA1",
+MA1 <- raw_MA1 %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_Cape",
                           core_id = paste0("MA_", ID))
-MA2 <- raw_MA2 %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_MA2",
+MA2 <- raw_MA2 %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_Wellfleet",
                           core_id = paste0("MA_", ID))
 RI <- raw_RI %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_RI",
                         core_id = paste0("RI_", ID))
@@ -73,7 +73,6 @@ suttle_ds <- bind_rows(FL, MA1, MA2, RI) %>%
          depth_min = ifelse(Depth_mid %% 1 == 0.5, Depth_mid - 0.5, Depth_mid - 1),
          depth_max = ifelse(Depth_mid %% 1 == 0.5, Depth_mid + 0.5, Depth_mid + 1)) %>% 
   select(-Age)
-# merge multiple methods IDs
 
 # Should we leave these out? since they're derivative calculations?
 # VAR = vertical accretion rate
@@ -83,15 +82,23 @@ suttle_ds <- bind_rows(FL, MA1, MA2, RI) %>%
 depthseries <- suttle_ds %>% 
   filter(Depth_mid != 0) %>% 
   rename(age = Year, age_se = Age_e) %>% 
+  # assign method IDs
+  # mutate(method_id = case_when(study_id == "Okeefe-Suttles_et_al_2021_Cape" & is.na(delta_c13) ~ "organic_carbon",
+  #                              study_id == "Okeefe-Suttles_et_al_2021_Cape" & !is.na(delta_c13) ~ "total_carbon",
+  #                              # conflict, there are cases where fraction carbon was not measured...do we need a third methods ID for Cape cores?
+  #                              TRUE ~ "single set of methods")) %>% 
+  # filter(study_id == "Okeefe-Suttles_et_al_2021_Cape") %>% 
   reorderColumns("depthseries", .) %>% 
   select(-c(Depth, Depth_mid, wtC, wtN, Date, ID, `15N`, Status, latitude, longitude, 
             LOI, year, month, day, Elevation, Year_restored))
 # create method_id lookup to merge to depthseries
 
 ggplot(depthseries) +
-  geom_point(aes(dry_bulk_density, fraction_carbon))
+  geom_point(aes(dry_bulk_density, fraction_carbon, col = study_id)) +
   # geom_point(aes(depth_min, fraction_carbon)) +
-  # facet_wrap(~site_id)
+  facet_wrap(~study_id) +
+  theme_bw() +
+  theme(legend.position = "none")
 
 
 ## ... Core-Level ####
@@ -113,13 +120,14 @@ suttle_cores <- suttle_ds %>%
                              Status == "Salt marsh" ~ "marsh",
                              Status == "Wet Shrub" ~ "scrub shrub",
                              Status == "Forest" ~ "upland",
-                             study_id == "Okeefe-Suttles_et_al_2021_MA1" ~ "marsh",
+                             study_id == "Okeefe-Suttles_et_al_2021_Cape" ~ "marsh",
                              TRUE ~ NA_character_),
          vegetation_class = case_when(habitat == "marsh" ~ "emergent",
                                       habitat == "unvegetated" ~ "unvegetated",
                                       Status == "Forest" | habitat == "mangrove" ~ "forested",
                                       Status == "Wet Shrub" ~ "scrub shrub",
-                                      TRUE ~ NA_character_))
+                                      TRUE ~ NA_character_)) %>% 
+  ungroup()
 
 
 # lot of study-specific core-level info
@@ -151,7 +159,7 @@ ri_cores <- suttle_cores %>%
          position_accuracy = 3)
 
 ma1_cores <- suttle_cores %>% 
-  filter(study_id == "Okeefe-Suttles_et_al_2021_MA1") %>% 
+  filter(study_id == "Okeefe-Suttles_et_al_2021_Cape") %>% 
   mutate(core_length_flag = "core depth limited by length of corer",
          position_method = "handheld",
          position_accuracy = 3,
@@ -159,14 +167,14 @@ ma1_cores <- suttle_cores %>%
          elevation_method = "RTK",
          elevation_accuracy = 0.05,
          elevation_datum = "NAVD88",
-         core_notes = ifelse(!is.na(Year_restored), paste0("restored in ", Year_restored), NA)) %>% 
+         core_notes = ifelse(!is.na(Year_restored), paste0("sampling site restored in ", Year_restored), NA)) %>% 
   select(-Year_restored) 
 # assigning methodsID for ma1 cores: Sediments in this sample set that were analyzed for both carbon content and 
 # isotopic carbon signature were not fumed prior to analysis and reported wtC is total carbon. 
 # Sediment sections without a reported isotopic signature were run in a separate lab and were fumed to remove inorganic carbon prior to analysis.
 
 ma2_cores <- suttle_cores %>% 
-  filter(study_id == "Okeefe-Suttles_et_al_2021_MA2") %>% 
+  filter(study_id == "Okeefe-Suttles_et_al_2021_Wellfleet") %>% 
   mutate(core_length_flag = "core depth limited by length of corer",
          position_method = "handheld",
          position_notes = "Garmin GPSMAP 76Cx unit",
@@ -178,11 +186,13 @@ ma2_cores <- suttle_cores %>%
 
 # bind cores back together
 cores <- bind_rows(fl_cores, ri_cores, ma1_cores, ma2_cores) %>% 
-  reorderColumns('cores', .)
+  reorderColumns('cores', .) %>% 
+  select(-Status)
 
 ## ... Impacts ####
 
-sort(unique(suttle_cores$Status)) # mix of species and impacts, might be more info in the metadata of each
+sort(unique(suttle_cores$Status)) 
+# mix of species and impacts, checking xml metadata for more info
 
 impacts <- suttle_ds %>%
   select(study_id, site_id, core_id, Status) %>% 
@@ -224,7 +234,7 @@ leaflet(cores) %>%
 table_names <- c("methods", "cores", "depthseries", "impacts", "species")
 
 testTableCols(table_names)
-testTableVars(table_names)
+testTableVars(table_names) # methods and cores
 testRequired(table_names)
 
 test_unique_cores(cores)

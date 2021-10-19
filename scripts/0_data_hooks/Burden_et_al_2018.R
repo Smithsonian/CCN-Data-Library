@@ -68,6 +68,9 @@ depthseries_data <- bind_rows(ds_2010_2017, ds_2011) %>%
 depthseries <- reorderColumns("depthseries", depthseries_data) %>%
   select(-year, -month)
 
+ggplot(depthseries) +
+  geom_point(aes(dry_bulk_density, fraction_carbon))
+
 ## ... Core-Level ####
 
 # curate core-level data
@@ -120,9 +123,9 @@ cores <- core_data %>%
 ## ... Impacts ####
 
 # Classes:
-# natural salt marsh
-# restored and accidentally breached
-# fields on former salt marsh 
+# natural salt marsh => natural
+# restored and accidentally breached => restored
+# fields on former salt marsh => farmed
 
 impacts <- core_data %>% 
   select(contains("_id"), impact_class)
