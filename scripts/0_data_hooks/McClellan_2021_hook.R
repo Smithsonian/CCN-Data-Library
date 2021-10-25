@@ -72,11 +72,12 @@ ggplot(soil_data) +
 
 depthseries <- soil_data %>% 
   reorderColumns("depthseries", .) %>% 
-  select(-plot)
+  select(-plot, -marsh)
 
 ## ... Cores ####
 
-core_data <- soil_data %>% distinct(study_id, site_id, core_id, marsh, plot) %>% 
+core_data <- soil_data %>% 
+  distinct(study_id, site_id, core_id, marsh, plot) %>% 
   # vegetation is measured
   mutate(year = "2016",
          marsh_age = case_when(site_id == "S01" ~ "1 year",
@@ -103,20 +104,29 @@ core_data <- soil_data %>% distinct(study_id, site_id, core_id, marsh, plot) %>%
          # floodtime_avg = (floodtime_min + floodtime_max)/2,
          salinity_class = ifelse(marsh == "Sabine", "saline", "fresh"),
          elevation_method = ifelse(marsh == "Sabine", "RTK", "LiDAR"),
+         elevation_notes = paste0("Site elevation: ", elevation, " ± ", elevation_se),
          vegetation_class = case_when(marsh == "WLD" ~ "forested to emergent", 
-                                      marsh == "Sabine" & marsh_age == "1 year" ~ "unvegetated",
+                                      marsh == "Sabine" & marsh_age == "1 year" ~ NA_character_,
                                       TRUE ~ "emergent"),
          habitat = case_when(marsh == "WLD" ~ "swamp", # need to check this habitat assignment
-                             vegetation_class == "unvegetated" ~ "unvegetated", 
-                             TRUE ~ "marsh")) %>% 
-  rename(elevation_accuracy = elevation_se) %>% 
-  reorderColumns("cores", .) %>% 
-  select(-c(plot, aboveground_biomass))
+                             is.na(vegetation_class) ~ "unvegetated", 
+                             TRUE ~ "marsh"),
+         vegetation_notes = ifelse(!is.na(aboveground_biomass), 
+                                   paste0("Aboveground biomass estimate (g m-2): ", aboveground_biomass), NA_character_)) 
+
+cores <- reorderColumns("cores", core_data) %>% 
+  select(-c(plot, aboveground_biomass, vegetation_notes, elevation_se, elevation, inundation_notes, marsh, marsh_age))
 
 ## ... Site ####
 
-sites <- core_data %>% distinct(study_id, site_id, marsh, marsh_age, elevation, elevation_accuracy, inundation_time)
-# include elevation or not? No site-level elevation, perhaps as a note in the core table?
+sites <- core_data %>% 
+  distinct(study_id, site_id, marsh, marsh_age, inundation_notes, vegetation_notes) %>% 
+  mutate(inundation_notes = paste0("Estimated annual time flooded (%): ", inundation_notes), 
+         marsh = recode(marsh, "WLD" = "Wax Lake Delta", "Sabine" = "Chenier Plain"),
+         marsh_age = ifelse(grepl("year", marsh_age), paste0(marsh_age, " old"), marsh_age),
+         site_description = str_c(marsh, marsh_age, sep = "; ")) %>% 
+  reorderColumns("sites", .) %>% 
+  select(-marsh, -marsh_age)
 
 ## ... Methods ####
 
@@ -129,16 +139,18 @@ methods <- methods_raw %>%
 # WLD: sediment diversion => sediment added
 # Sabine: marsh created through sediment addition => wetlands built
 
-impacts <- soil_data %>% distinct(study_id, site_id, core_id) %>% 
-  mutate(impact_class = ifelse(site_id == "WLD", "sediment added", "wetlands built"))
+impacts <- soil_data %>% 
+  mutate(impact_class = ifelse(marsh == "WLD", "sediment added", "wetlands built")) %>% 
+  select(study_id, site_id, impact_class) %>% distinct()
 
 ## ... Impacts ####
 
 # sp_lookup <- read_csv("docs/versioning/species-habitat-classification-JH-20200824.csv") %>% 
 #   select(-notes, -recode_as)
 
-species <- soil_data %>% distinct(study_id, site_id) %>% 
-  mutate(species_code = ifelse(site_id == "WLD", "Nelumbo lutea, Colocasia esculenta, Polygonum puntatum, Salix nigra",
+species <- soil_data %>% 
+  select(study_id, site_id, marsh) %>% 
+  mutate(species_code = ifelse(marsh == "WLD", "Nelumbo lutea, Colocasia esculenta, Polygonum puntatum, Salix nigra",
                                # sabine species
                                "Spartina alterniflora, Distichlis spicata, Spartina patens"),
          species_code = strsplit(species_code, split = ", "),
@@ -146,7 +158,8 @@ species <- soil_data %>% distinct(study_id, site_id) %>%
   unnest(species_code) %>% 
   resolveTaxa(., db = c(150, 9, 4, 3)) %>% # cooool new function!
   select(study_id, site_id, resolved_taxa, code_type) %>% 
-  rename(species_code = resolved_taxa)
+  rename(species_code = resolved_taxa) %>% 
+  distinct()
 
 ## 2. Study Citations ####
 
@@ -191,7 +204,7 @@ table_names <- c("methods", "cores", "depthseries", "species", "impacts")
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
-testRequired(table_names)
+testRequired(table_names) # no core position method
 
 test_unique_cores(cores)
 test_unique_coords(cores)
