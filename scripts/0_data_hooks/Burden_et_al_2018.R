@@ -143,7 +143,7 @@ table_names <- c("methods", "cores", "depthseries", "impacts")
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
-testRequired(table_names)
+testRequired(table_names) # no position method
 
 test_unique_cores(cores)
 test_unique_coords(cores)

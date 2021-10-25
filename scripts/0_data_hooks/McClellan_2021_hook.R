@@ -154,29 +154,29 @@ species <- soil_data %>% distinct(study_id, site_id) %>%
 # A bibentry of bibtype ‘Article’ has to specify the field: c("journaltitle", "journal")
 # may have to enter the citation into a spreadsheet
 
-# if(!file.exists("data/primary_studies/McClellan_et_al_2021/derivative/mcclellan_et_al_2021_study_citations.csv")){
-#   
-#   data_doi <- "10.17632/5zbv2mb5zp.1"
-#   pub_doi <- "10.1016/j.ecoleng.2021.106326"
-#   
-#   citation_raw <- as.data.frame(GetBibEntryWithDOI(c(data_doi, pub_doi)))
-#   
-#   study_citations <- citation_raw %>%
-#     mutate(bibliography_id = c("McClellan_et_al_2021_data", "McClellan_et_al_2021_article"),
-#            study_id = id,
-#            publication_type = c("primary dataset", "associated source")) %>%
-#     select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
-#     remove_rownames()
-#   
-#   ## Format bibliography
-#   bib_file <- study_citations %>%
-#     select(-study_id, -publication_type) %>%
-#     distinct() %>%
-#     column_to_rownames("bibliography_id")
-#   
-#   WriteBib(as.BibEntry(bib_file), "data/primary_studies/McClellan_et_al_2021/derivative/mcclellan_et_al_2021.bib")
-#   write_csv(study_citations, "./data/primary_studies/McClellan_et_al_2021/derivative/mcclellan_et_al_2021_study_citations.csv")
-# }
+if(!file.exists("data/primary_studies/McClellan_et_al_2021/derivative/mcclellan_et_al_2021_study_citations.csv")){
+
+  data_bib <- as.data.frame(GetBibEntryWithDOI("10.17632/5zbv2mb5zp.1"))
+  # pub_doi <- "10.1016/j.ecoleng.2021.106326" # doesn't work, downloaded bib file instead
+  pub_bib <- as.data.frame(ReadBib("data/primary_studies/McClellan_et_al_2021/original/McClellan_pub_citation_2021.bib"))
+
+  # create citation df
+  study_citations <- bind_rows(data_bib, pub_bib) %>%
+    mutate(bibliography_id = c("McClellan_et_al_2021_data", "McClellan_et_al_2021_article"),
+           study_id = id,
+           publication_type = c("primary dataset", "associated source")) %>%
+    select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
+    remove_rownames()
+
+  ## Format bibliography
+  bib_file <- study_citations %>%
+    select(-study_id, -publication_type) %>%
+    distinct() %>%
+    column_to_rownames("bibliography_id")
+
+  WriteBib(as.BibEntry(bib_file), "data/primary_studies/McClellan_et_al_2021/derivative/mcclellan_et_al_2021.bib")
+  write_csv(study_citations, "./data/primary_studies/McClellan_et_al_2021/derivative/mcclellan_et_al_2021_study_citations.csv")
+}
 
 ## 3. QA/QC ####
 
