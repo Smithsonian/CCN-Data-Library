@@ -37,6 +37,11 @@ methods <- raw_methods %>%
 
 ## ... Core Depthseries ####
 
+# d1 <- raw_PR %>% distinct(Site, Replicate, ID, Date, Lat, Lon, Depth_min, Depth_max)
+# d2 <- raw_PR_age %>% distinct(Site, Replicate, ID, Date, Lat, Lon, Depth_min, Depth_max)
+
+# expansion when the tables are joined because of different sampling intervals used to 
+# measure different things in each core
 eagle_ds <- full_join(raw_PR, raw_PR_age) %>%
   mutate(year = year(as.Date(Date, format = "%m/%d/%y")),
          month = month(as.Date(Date, format = "%m/%d/%y")),
@@ -64,8 +69,10 @@ eagle_ds <- full_join(raw_PR, raw_PR_age) %>%
          age_max = Year_UL) %>% 
   mutate(study_id = id,
          method_id = "single set of methods",
+         depth_interval_notes = ifelse(site_id == "San José Lagoon" & !is.na(dry_bulk_density), 
+                                       "only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site.",
+                                       NA_character_),
          fraction_carbon = wtC/100)
-# San Jose Lagoon cores have the same DBD
 
 depthseries <- eagle_ds %>% 
   select(-c(year, month, day, latitude, longitude, wtC, wtN, `15N`,
@@ -75,8 +82,8 @@ depthseries <- eagle_ds %>%
 
 ggplot(depthseries) +
   # geom_smooth() +
-  geom_point(aes(dry_bulk_density, fraction_carbon))
-  # geom_point(aes(depth_min, dry_bulk_density)) +
+  # geom_point(aes(dry_bulk_density, depth_min, col = core_id), alpha = 0.5)
+  geom_point(aes(fraction_carbon, dry_bulk_density))
   # facet_wrap(vars(core_id), scales = "free")
 
 ## ... Core-Level ####
@@ -84,12 +91,12 @@ ggplot(depthseries) +
 cores <- eagle_ds %>%
   distinct(study_id, site_id, core_id, year, month, day, latitude, longitude) %>% 
   mutate(habitat = "mangrove",
-         # inundation_class = "", # can relative flushing indicate where the site is in tidal frame?
-         inundation_notes = case_when(site_id == "Martin Peña West" ~ "Dredged canal, relative flushing at this site is medium to high.",
-                                      site_id == "Martin Peña East" ~ "Clogged canal, relative flushing at this site is low.",
-                                      site_id == "Torrecilla Lagoon" ~ "Relative flushing at this site is medium to high.",
-                                      site_id == "San José Lagoon" ~ "Relative flushing at this site is medium.",
-                                      site_id == "Piñones" ~ "Relative flushing at this site is low."),
+         # inundation_class = "", # relative flushing doesn't necessarily indicate where the site is in tidal frame
+         inundation_notes = case_when(site_id == "Martin Peña West" ~ "Dredged canal, relative flushing at this site is medium to high",
+                                      site_id == "Martin Peña East" ~ "Clogged canal, relative flushing at this site is low",
+                                      site_id == "Torrecilla Lagoon" ~ "Relative flushing at this site is medium to high",
+                                      site_id == "San José Lagoon" ~ "Relative flushing at this site is medium",
+                                      site_id == "Piñones" ~ "Relative flushing at this site is low"),
          vegetation_class = "forested",
          core_length_flag = "core depth limited by length of corer",
          position_accuracy = 5,
@@ -100,7 +107,7 @@ cores <- eagle_ds %>%
 ## ... Impacts ####
 
 impacts <- eagle_ds %>%
-  distinct(study_id, site_id, core_id) %>% 
+  select(study_id, site_id, core_id) %>% distinct() %>% 
   mutate(impact_class = case_when(site_id == "Martin Peña West" ~ "tidally restored",
                                   site_id == "Martin Peña East" ~ "tidally restricted",
                                   TRUE ~ NA_character_)) %>% 
@@ -110,12 +117,14 @@ impacts <- eagle_ds %>%
 ## ... Species ####
 
 species <- eagle_ds %>%
-  distinct(study_id, site_id, core_id) %>% 
+  select(study_id, site_id, core_id) %>% distinct() %>% 
   mutate(species_code = ifelse(site_id == "Piñones", "Avicennia germinans",
                           "Rhizophora mangle; Laguncularia racemosa; Avicennia germinans"),
-         species_code = strsplit(species_code, split = "; ")) %>% 
-  unnest(species_code)
-
+         species_code = strsplit(species_code, split = "; "),
+         code_type = "Genus species") %>% 
+  unnest(species_code) %>% 
+  resolveTaxa(.) %>% 
+  select(-resolved_taxa, -name_updated)
 
 ## 2. QAQC ####
 
@@ -143,16 +152,13 @@ results <- test_numeric_vars(depthseries)
 # Use RefManageR package to pull DOI
 library(RefManageR)
 
-# if(!file.exists("data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_study_citations.csv")){
-# Create bibtex file
-dois <- c("10.5066/P97CAF30", "10.3389/ffgc.2021.676691")
+data_bib <- as.data.frame(GetBibEntryWithDOI("10.5066/P97CAF30"))
+pub_bib <- as.data.frame(ReadBib("data/primary_studies/Eagle_et_al_2021/original/Wigand_et_al_2021.bib"))
 
-data_bibs <- GetBibEntryWithDOI(dois)
-
-study_citations <- as.data.frame(data_bibs) %>%
+study_citations <- bind_rows(data_bib, pub_bib) %>%
   mutate(study_id = id,
-         bibliography_id = "Eagle_et_al_2021_data",
-         publication_type = "primary dataset") %>%
+         bibliography_id = c("Eagle_et_al_2021_data", "Wigand_et_al_2021_article"),
+         publication_type = c("primary dataset", "associated source")) %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
   remove_rownames()
 
@@ -162,18 +168,16 @@ bib_file <- study_citations %>%
   distinct() %>%
   column_to_rownames("bibliography_id")
 
-# WriteBib(as.BibEntry(bib_file), "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021.bib")
-# write_csv(study_citations, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_study_citations.csv")
-# }
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021.bib")
+write_csv(study_citations, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_study_citations.csv")
 
 ## 4. Write files ####
 
 # Adjust the filepaths to output to the correct derivative folder
-# write_csv(cores, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_cores.csv") 
-# write_csv(depthseries, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_depthseries.csv")
-# write_csv(methods, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_methods.csv")
-# write_csv(sites, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_sites.csv")
-# write_csv(species, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_species.csv")
-# write_csv(impacts, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_impacts.csv")
+write_csv(cores, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_cores.csv")
+write_csv(depthseries, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_depthseries.csv")
+write_csv(methods, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_methods.csv")
+write_csv(species, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_species.csv")
+write_csv(impacts, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_impacts.csv")
 
 

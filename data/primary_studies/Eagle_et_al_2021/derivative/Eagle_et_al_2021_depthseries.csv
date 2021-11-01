@@ -1,0 +1,487 @@
+study_id,site_id,core_id,method_id,depth_min,depth_max,dry_bulk_density,fraction_carbon,cs137_activity,cs137_activity_se,excess_pb210_activity,excess_pb210_activity_se,total_pb210_activity,total_pb210_activity_se,ra226_activity,ra226_activity_se,delta_c13,be7_activity,be7_activity_se,age,age_min,age_max,depth_interval_notes
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,0,1,0.2794,0.121578,0,0,0.0912,1.1647,3.9874,1.1332,3.8962,0.2688,-28.7072,0,0,2016,2016,2016,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,1,2,0.6333,0.092254,0,0,1.2081,0.8035,2.8908,0.7924,1.6827,0.1333,-28.8294,0,0,2011,2007,2014,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,2,3,0.2022,0.098364,0,0,2.1562,0.4761,3.1332,0.4712,0.977,0.0677,-28.8283,0,0,2009,2004,2013,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,3,5,0.3289,0.079189,0,0,1.8724,0.3423,2.5929,0.3397,0.7206,0.0422,-28.8231,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,5,7,0.3236,0.09283,0,0,1.5192,0.3135,2.3545,0.3115,0.8353,0.0352,-28.8177,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,7,9,0.3251,0.079385,0,0,1.4036,0.3967,2.467,0.393,1.0634,0.054,-28.9365,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,9,11,0.383,0.095785,0.099,0.0227,2.8179,0.2901,3.5297,0.2887,0.7118,0.0285,-28.9223,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,11,13,0.4412,0.120765,0,0,3.3166,0.3863,4.0503,0.3844,0.7338,0.0385,-28.9808,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,13,15,0.4157,0.121079,0,0,2.9789,0.3733,4.1287,0.3703,1.1497,0.047,-29.0053,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,15,17,0.3329,0.105998,0,0,2.3658,0.3646,2.9774,0.3636,0.6117,0.0277,-28.7282,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,17,19,0.4449,0.081613,0,0,1.3447,0.2924,2.2981,0.29,0.9534,0.037,-28.6123,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,19,21,0.2991,0.097834,0,0,1.2188,0.4517,2.0134,0.4496,0.7946,0.0432,-28.3744,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,21,23,0.5553,0.094231,0.1296,0.0278,1.4759,0.3954,2.2801,0.3938,0.8042,0.0356,-28.1185,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,23,25,0.3167,0.132519,0.2305,0.035,1.088,0.3541,2.1267,0.3516,1.0387,0.0423,-27.9687,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,25,27,0.4367,0.127721,0.1916,0.0349,1.9464,0.3919,2.8924,0.3893,0.9461,0.0448,-28.0007,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,27,29,0.4293,0.121321,0.1713,0.0255,1.9117,0.2824,2.8621,0.2808,0.9505,0.0304,-27.9617,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,29,31,0.9718,0.101303,0.1408,0.0318,1.4561,0.3458,2.4786,0.3435,1.0225,0.0394,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,31,33,0.2099,0.09693500000000001,0.1529,0.028,1.8865,0.3594,2.7953,0.3572,0.9088,0.0392,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,33,35,0.9675,0.072091,0.1423,0.0351,0.7691,0.3091,1.7698,0.3065,1.0006,0.0396,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,35,37,1.4961,0.063411,0.1231,0.0344,2.1221,0.3851,2.9422,0.3825,0.8201,0.0444,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,37,39,0.6773,0.034748,0,0,0.6333,0.3158,1.5358,0.3118,0.9026,0.0505,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,0,2,1.6577,0.14257899999999998,0,0,13.4251,1.3444,16.2178,1.3315,2.7927,0.1857,-28.2027,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,2,4,0.5688,0.133026,0.1611,0.0376,16.5907,0.6022,18.1456,0.5988,1.5549,0.0638,-27.9634,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,4,6,0.7959,0.156911,0.1159,0.0334,16.5111,0.5109,18.091,0.5084,1.5799,0.0509,-27.9642,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,6,8,0.6689,0.18404900000000002,NA,NA,NA,NA,NA,NA,NA,NA,-27.9505,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,8,10,1.0451,0.16721,NA,NA,NA,NA,NA,NA,NA,NA,-27.7,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,10,12,1.1717,0.127926,0.0825,0.0338,6.6607,0.4123,8.0597,0.4094,1.399,0.0488,-27.3488,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,12,14,1.3002,0.117192,NA,NA,NA,NA,NA,NA,NA,NA,-27.0762,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,14,16,0.8765,0.10156000000000001,NA,NA,NA,NA,NA,NA,NA,NA,-26.7471,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,16,18,0.5598,0.092466,0.1166,0.0326,3.1641,0.371,4.3485,0.3679,1.1844,0.0476,-26.8544,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,18,20,1.5347,0.06722500000000001,NA,NA,NA,NA,NA,NA,NA,NA,-26.5385,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,20,22,0.7097,0.065346,NA,NA,NA,NA,NA,NA,NA,NA,-26.6989,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,22,24,1.6113,0.069071,0.1009,0.0256,2.0196,0.2917,3.2656,0.2884,1.246,0.0437,-26.6812,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,24,26,1.0323,0.07111200000000001,NA,NA,NA,NA,NA,NA,NA,NA,-26.7859,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,26,28,0.601,0.079002,NA,NA,NA,NA,NA,NA,NA,NA,-26.8674,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,28,30,0.309,0.08717599999999999,0.1853,0.0484,4.7601,0.5852,6.1617,0.5817,1.4016,0.0642,-26.8938,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,30,32,1.0147,0.10364699999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,32,34,1.622,0.095695,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,34,36,2.2674,0.086905,0.2631,0.0325,4.1786,0.4014,5.3504,0.3997,1.1718,0.037,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,36,38,1.0386,0.076804,0.2114,0.0048,3.087,0.4304,4.6629,0.4257,1.5759,0.063,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,0,1,0.3901,0.16118400000000002,0,0,7.8558,1.3464,11.8333,1.3289,3.9775,0.2164,-27.6426,0,0,2016,2016,2016,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,1,2,0.2393,0.151144,NA,NA,NA,NA,NA,NA,NA,NA,-27.6523,NA,NA,2012,2006,2015,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,2,3,0.4128,0.144698,NA,NA,NA,NA,NA,NA,NA,NA,-27.5432,NA,NA,2010,2002,2014,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,3,5,0.1722,0.135336,0,0,8.142,0.6087,10.1292,0.6017,1.9872,0.092,-27.487,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,5,7,0.4137,0.11458299999999999,NA,NA,NA,NA,NA,NA,NA,NA,-27.2262,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,7,9,0.483,0.11153,NA,NA,NA,NA,NA,NA,NA,NA,-27.0791,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,9,11,0.4153,0.12198600000000001,0.1395,0.0406,7.7251,0.4921,9.4028,0.4889,1.6776,0.0557,-27.1168,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,11,13,1.0417,0.10573,NA,NA,NA,NA,NA,NA,NA,NA,-27.0404,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,13,15,0.6608,0.098036,NA,NA,NA,NA,NA,NA,NA,NA,-26.8761,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,15,17,0.5628,0.096204,0.2434,0.0313,6.7814,0.4196,8.4004,0.4175,1.619,0.0416,-26.9325,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,17,19,0.7719,0.093514,NA,NA,NA,NA,NA,NA,NA,NA,-26.9301,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,19,21,0.4482,0.087533,NA,NA,NA,NA,NA,NA,NA,NA,-26.9954,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,21,23,0.6818,0.088637,0.147,0.029,5.1711,0.416,6.7698,0.4136,1.5986,0.044,-27.073,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,23,25,0.4912,0.088275,NA,NA,NA,NA,NA,NA,NA,NA,-26.9838,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,25,27,0.3803,0.091223,NA,NA,NA,NA,NA,NA,NA,NA,-26.8863,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,27,29,0.3989,0.09709300000000001,0.2314,0.0367,4.7346,0.3949,6.0358,0.3923,1.3011,0.0454,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,29,31,0.6406,0.091525,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,31,33,0.5217,0.08924,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,33,35,0.5377,0.07450899999999999,0.5164,0.0404,6.8569,0.5052,8.8714,0.503,2.0145,0.0469,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,35,37,0.8013,0.078084,0.3624,0.0375,4.0989,0.4095,5.4678,0.4074,1.3689,0.042,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,37,39,0.7673,0.087129,0.2966,0.0276,2.8237,0.2944,3.6001,0.2927,0.7764,0.0313,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,0,2,0.2438,0.20741800000000002,0,0,7.9395,0.5739,9.0131,0.5696,1.0736,0.0697,-28.5044,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,2,4,0.219,0.226544,0,0,6.9402,0.6792,7.8125,0.6742,0.8723,0.0821,-28.5811,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,4,6,0.193,0.22199100000000002,0,0,6.5582,0.512,7.5738,0.5074,1.0155,0.068,-28.4036,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,6,8,0.1587,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,8,10,0.2066,0.17503900000000003,0,0,2.3721,0.6561,3.4868,0.6489,1.1147,0.0971,-28.0575,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,10,12,0.284,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,12,14,0.1811,0.163292,0,0,3.6923,0.4714,4.3867,0.4694,0.6943,0.0432,-27.688,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,14,16,0.2261,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,16,18,0.21560000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,18,20,0.2783,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,20,22,0.2461,0.092012,0,0,1.3951,0.2706,1.9295,0.2692,0.5343,0.0275,-27.5783,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,22,24,0.3128,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,24,26,0.0937,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,26,28,0.4025,0.073976,0,0,0.8537,0.3479,1.7197,0.3441,0.866,0.0514,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,28,30,0.414,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,30,32,0.2098,0.062218999999999997,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,32,34,NA,NA,0,0,1.6527,0.3361,2.3169,0.3341,0.6643,0.0364,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,34,36,NA,NA,0.7245,0.0277,7.2998,0.2848,7.8199,0.2839,0.52,0.0226,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,0,1,1.4567,0.190917,0,0,3.1717,1.5811,5.9537,1.5569,2.782,0.2754,-28.2155,0,0,2016,2016,2016,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,1,2,1.358,0.16616499999999998,0,0,4.2,1.8,15.107,1.5671,10.907,0.8606,-28.081,0,0,2010,2005,2013,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,2,3,0.7393,0.178414,0,0,5.477,1.1032,7.1697,1.0927,1.6928,0.1522,-27.8371,0,0,2004,2000,2008,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,3,5,0.9713,0.156027,0,0,4.8074,0.8601,6.2346,0.8523,1.4272,0.1159,-27.9742,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,5,7,0.8244,0.145515,0,0,4.9435,0.8088,6.2705,0.8033,1.327,0.0945,-27.9367,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,7,9,1.1375,0.14038,0,0,4.8048,0.8358,5.9243,0.83,1.1195,0.0986,-27.8631,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,9,11,0.8456,0.10970200000000001,0,0,3.3244,0.7911,4.2602,0.7835,0.9359,0.11,-27.6579,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,11,13,0.5819,0.07171,0,0,2.1696,0.6014,2.8505,0.5952,0.6809,0.0865,-27.6541,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,13,15,1.532,0.09792400000000001,0,0,2.7488,0.4894,3.4227,0.4864,0.6739,0.0543,-27.6912,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,15,17,1.6527,0.050302,0,0,0.9289,0.2632,1.4316,0.2607,0.5027,0.0365,-27.6487,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,17,19,2.0025,0.057392000000000006,0,0,1.0362,0.3309,1.5149,0.3289,0.4787,0.0367,-26.6215,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,19,21,2.357,0.039015,0,0,1.0996,0.2754,1.5228,0.2743,0.4232,0.0248,-27.191,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,21,23,1.5534,0.029235,0,0,1.5865,0.4499,2.0634,0.4486,0.477,0.0347,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,23,25,1.579,0.027139000000000003,0,0,0.4307,0.2002,0.8891,0.1989,0.4584,0.0226,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,25,27,2.0115,0.028874,0,0,0.5323,0.242,1.169,0.2398,0.6367,0.0326,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,27,29,1.3618,0.023256000000000002,0,0,0.0384,0.0206,0.0892,0.0205,0.0509,0.0021,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,29,31,1.8007,0.011033,0,0,0.4885,0.2385,1.0236,0.2377,0.5351,0.0199,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,31,33,2.2477,0.011573,0,0,0.4704,0.2028,0.8703,0.2019,0.3999,0.0192,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,33,35,1.0882,NA,0,0,0.114,0.156,0.61,0.1552,0.4959,0.0163,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,0,1,0.0853,0.3089,0,0,8.2254,1.0607,10.5694,1.0517,2.344,0.1378,-28.453,0,0,2016,2016,2016,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,1,2,0.0833,0.306538,NA,NA,NA,NA,NA,NA,NA,NA,-28.7554,NA,NA,2012,2009,2014,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,2,3,0.1143,0.28228200000000003,NA,NA,NA,NA,NA,NA,NA,NA,-28.363,NA,NA,2008,2003,2011,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,3,5,0.2352,0.25292000000000003,0,0,8.1912,0.5533,9.1757,0.5496,0.9845,0.0637,-28.3576,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,5,7,0.1681,0.272354,NA,NA,NA,NA,NA,NA,NA,NA,-28.2971,NA,NA,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,7,9,0.2472,0.256344,0.3834,0.0506,4.2088,0.4914,4.9723,0.4883,0.7635,0.0549,-27.8027,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,9,11,0.0607,0.253915,0.3664,0.0163,3.2161,0.3584,4.1815,0.3558,0.9654,0.0429,-27.7538,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,11,13,0.2631,0.256223,0.2943,0.0505,3.5141,0.5114,4.3052,0.5085,0.7911,0.0544,-27.9278,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,13,15,0.1101,0.26372,NA,NA,NA,NA,NA,NA,NA,NA,-27.7475,NA,NA,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,15,17,0.1952,0.295505,0.3587,0.0434,1.0146,0.3503,1.7659,0.3482,0.7513,0.0383,-27.8466,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,17,19,0.1789,0.28194800000000003,NA,NA,NA,NA,NA,NA,NA,NA,-27.9056,NA,NA,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,19,21,0.0708,0.319391,NA,NA,NA,NA,NA,NA,NA,NA,-28.6274,NA,NA,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,21,23,0.1081,0.33513800000000005,0,0,0,0,0,0,1.1854,0.1046,-28.6366,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,25,27,0.1046,0.310107,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,27,29,0.1148,0.316551,0.4631,0.0942,1.4402,0.6451,2.6052,0.6396,1.165,0.0846,NA,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,33,35,NA,NA,0.9264,0.0969,1.3267,0.5629,2.4126,0.5539,1.0859,0.1001,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,35,37,NA,NA,0,0,-2.37,1.5377,2.2998,1.4951,4.6698,0.3596,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,0,1,0.0853,0.31578700000000004,0,0,2.5041,0.9659,4.8295,0.9451,2.3254,0.1991,-28.5069,0,0,2016,2016,2016,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,1,2,0.0833,0.32153,0,0,3.9862,0.938,6.39,0.9291,2.4038,0.1291,-28.9316,0,0,2014,2012,2015,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,2,3,0.0833,0.305643,0,0,6.4727,0.7918,7.9587,0.7847,1.486,0.1052,-29.1948,0,0,2011,2009,2013,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,3,5,0.1143,0.314687,0,0,7.3842,0.2725,8.0812,0.2699,0.697,0.0375,-29.213,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,5,7,0.2352,0.297186,0,0,6.7173,0.5815,7.5348,0.5787,0.8175,0.0573,-28.9578,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,7,9,0.1681,0.319237,0,0,5.3596,0.6997,6.4665,0.6939,1.1069,0.0899,-28.2903,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,9,11,0.2472,0.338275,0,0,4.9644,0.6431,5.8326,0.6387,0.8682,0.0757,-27.5014,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,11,13,0.0607,0.329175,0,0,3.5157,0.6748,4.5929,0.6687,1.0772,0.0907,-28.2719,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,13,15,0.2631,0.31537400000000004,0,0,1.153,0.5661,2.5288,0.5606,1.3758,0.0784,-28.9576,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,15,17,0.1101,0.35585900000000004,0,0,1.7069,0.6233,2.9289,0.6104,1.222,0.1264,-29.2365,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,17,19,0.1952,0.32755,0,0,1.6362,0.6549,2.6564,0.6487,1.0202,0.0896,-29.18,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,19,21,0.1789,0.326222,0,0,2.5776,0.5587,3.4282,0.5543,0.8505,0.0696,NA,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,21,23,0.0708,0.33509900000000004,0,0,0.9984,0.4514,1.8899,0.4453,0.8915,0.074,NA,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,23,25,0.1081,0.338818,0,0,0,0,0,0,1.0647,0.1022,NA,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,25,27,0.1046,0.298936,0,0,0,0,0,0,1.046,0.1224,NA,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,27,29,0.1148,0.308938,0.3484,0.0715,0.6275,0.4346,1.5475,0.4267,0.92,0.0825,NA,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,29,31,0.0855,NA,0.39,0.0708,0,0,0,0,0.918,0.0792,NA,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,31,33,0.0682,NA,0,0,-1.0236,0.1027,0,0,1.0236,0.1027,NA,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,33,35,0.0663,NA,0,0,-1.4215,0.1503,0,0,1.4215,0.1503,NA,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,35,37,0.0587,NA,0,0,-3.4577,0.3637,0,0,3.4577,0.3637,NA,0,0,NA,NA,NA,"only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site."
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,0,1,0.804,0.058422,0.86240000000000006,0.0974,8.7439,0.7963,10.1676,0.789,1.4237,0.1076,-25.788,0,0,2016,2016,2016,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,1,2,2.023,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2012,2005,2015,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,2,3,0.9386,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2009,2001,2013,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,3,5,0.9342,0.054715,0.9528,0.0612,8.1315,0.4665,8.9687,0.4637,0.8373,0.0512,-25.3959,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,5,7,0.9657,0.058599,NA,NA,NA,NA,NA,NA,NA,NA,-25.5913,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,7,9,0.6662,0.069001,NA,NA,NA,NA,NA,NA,NA,NA,-26.1097,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,9,11,0.4514,0.059184,0.7787,0.0389,8.8273,0.4016,9.4443,0.4004,0.6171,0.0303,-25.4462,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,11,13,0.7092,0.064474,NA,NA,NA,NA,NA,NA,NA,NA,-25.9831,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,13,15,0.6132,0.058337,NA,NA,NA,NA,NA,NA,NA,NA,-25.7127,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,15,17,0.4055,0.049475,0.6545,0.0536,7.7663,0.5962,8.3625,0.5946,0.5963,0.0433,-24.8046,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,17,19,1.902,0.056098999999999996,NA,NA,NA,NA,NA,NA,NA,NA,-25.2498,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,19,21,0.4269,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,21,23,0.6694,0.04678,0.6127,0.0344,7.6091,0.4266,8.0636,0.4258,0.4545,0.0267,-25.0294,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,23,25,0.64,0.053037,NA,NA,NA,NA,NA,NA,NA,NA,-25.7432,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,25,27,0.4421,0.050782,NA,NA,NA,NA,NA,NA,NA,NA,-25.8365,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,27,29,0.5833,0.036400999999999996,0.2487,0.031,3.0556,0.3574,3.5714,0.3561,0.5157,0.0308,-25.5143,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,29,31,0.3877,0.065707,NA,NA,NA,NA,NA,NA,NA,NA,-26.3751,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,31,33,0.9153,0.070644,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,33,35,0.7375,0.058057,0.4203,0.0278,2.9793,0.2999,3.4212,0.299,0.4419,0.0234,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,35,37,0.3845,0.072905,0.9624,0.0528,4.6626,0.4071,5.3305,0.4051,0.6679,0.0403,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,37,39,0.3068,0.077062,1.0983,0.0677,4.9305,0.4923,5.7412,0.4892,0.8107,0.0555,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,39,41,0.2794,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,0,1,0.4425,0.080635,0.7957,0.0993,12.0472,0.826,13.5233,0.8195,1.4761,0.1032,-26.4299,0,0,2016,2016,2016,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,1,2,0.4231,0.059851999999999995,NA,NA,NA,NA,NA,NA,NA,NA,-25.9877,NA,NA,2013,2006,2015,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,2,3,0.4101,0.074188,NA,NA,NA,NA,NA,NA,NA,NA,-26.2598,NA,NA,2011,2003,2014,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,3,5,0.467,0.06808399999999999,0.9145,0.0716,10.8674,0.6738,11.7043,0.6707,0.8369,0.0647,-25.89,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,5,7,0.6833,0.055494,NA,NA,NA,NA,NA,NA,NA,NA,-25.1685,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,7,9,0.4487,0.067993,NA,NA,NA,NA,NA,NA,NA,NA,-25.8705,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,9,11,0.5971,0.055861999999999995,0.9594,0.0671,11.814,0.599,12.5415,0.597,0.7276,0.0493,-26.4386,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,11,13,0.6033,0.048693999999999994,NA,NA,NA,NA,NA,NA,NA,NA,-25.5714,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,13,15,0.4413,0.052897999999999994,NA,NA,NA,NA,NA,NA,NA,NA,-25.2946,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,15,17,0.6236,0.055313,0.8144,0.0413,8.7111,0.4022,9.2755,0.4007,0.5643,0.0341,-25.3829,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,17,19,0.5657,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,19,21,0.3926,0.054325,NA,NA,NA,NA,NA,NA,NA,NA,-25.3995,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,21,23,0.5605,0.061763000000000005,0.7165,0.0307,8.3111,0.3099,8.8991,0.3088,0.5881,0.0261,-25.9955,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,23,25,0.5665,0.054021,NA,NA,NA,NA,NA,NA,NA,NA,-25.724,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,25,27,0.345,0.05350799999999999,NA,NA,NA,NA,NA,NA,NA,NA,-25.5236,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,27,29,0.2712,0.023936000000000002,0,0,-1.3881,0.104,0,0,1.3881,0.104,-23.833,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,29,31,0.7254,0.041265,NA,NA,NA,NA,NA,NA,NA,NA,-24.7683,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,31,33,0.4203,0.04376699999999999,NA,NA,NA,NA,NA,NA,NA,NA,-25.3583,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,33,35,0.5517,0.052293000000000006,0.6288,0.0448,7.2483,0.5926,7.7379,0.5912,0.4897,0.0414,-25.9105,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,35,37,0.6515,0.046066,NA,NA,NA,NA,NA,NA,NA,NA,-25.8681,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,37,39,0.4861,0.038096,NA,NA,NA,NA,NA,NA,NA,NA,-23.9406,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,39,41,0.2921,0.052615999999999996,0.7598,0.0495,7.0107,0.6102,7.4637,0.609,0.453,0.0374,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,41,43,0.3038,0.048457,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,43,45,0.447,0.052934,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,45,47,0.3379,0.071979,0.883,0.0314,4.7048,0.2983,5.1785,0.2973,0.4737,0.0244,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,47,49,0.3021,0.064341,1.0083,0.025,5.1505,0.197,5.6842,0.1961,0.5337,0.0184,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,49,51,0.6092,0.058044000000000005,0.9327,0.0373,4.5489,0.2818,5.0396,0.2802,0.4907,0.0298,NA,0,0,NA,NA,NA,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,3,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2008,2003,2011,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,4,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2007,2002,2011,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,5,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2006,2001,2010,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,6,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2005,2000,2009,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,7,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2004,1999,2008,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,8,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2003,1998,2007,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,9,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2001,1995,2005,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,10,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1998,1993,2003,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,11,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1995,1989,2000,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,12,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1991,1984,1996,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,13,14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1987,1979,1993,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,14,15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1983,1974,1989,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,15,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1980,1970,1987,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,16,17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1977,1967,1985,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,17,18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1974,1963,1982,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,18,19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1972,1960,1980,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,19,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1970,1957,1979,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,20,21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1967,1953,1977,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,21,22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1965,1950,1974,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,22,23,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1961,1946,1972,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,23,24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1959,1942,1970,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,24,25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1956,1938,1967,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,25,26,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1951,1933,1963,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,26,27,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1946,1928,1959,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,27,28,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1940,1923,1953,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,28,29,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1934,1917,1947,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,29,30,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1928,1912,1941,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,30,31,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1922,1907,1935,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,31,32,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1915,1900,1929,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,32,33,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1908,1894,1923,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,33,34,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1902,1888,1917,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,34,35,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1896,1883,1910,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,35,36,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1890,1879,1904,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,36,37,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1885,1874,1898,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,37,38,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1879,1870,1892,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,single set of methods,38,39,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1874,1865,1886,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,0,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2016,2016,2016,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,1,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2012,2005,2015,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,2,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2009,2000,2013,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,3,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2006,1998,2011,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,4,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2004,1996,2009,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,5,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2002,1993,2007,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,6,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1999,1990,2005,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,7,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1997,1987,2003,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,8,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1995,1984,2001,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,9,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1993,1982,2000,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,10,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1991,1981,1998,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,11,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1989,1978,1996,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,12,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1987,1975,1994,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,13,14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1984,1973,1992,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,14,15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1982,1970,1990,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,15,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1980,1968,1989,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,16,17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1978,1966,1987,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,17,18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1975,1963,1985,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,18,19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1973,1961,1982,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,19,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1970,1958,1980,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,20,21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1967,1954,1977,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,21,22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1962,1948,1973,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,22,23,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1956,1941,1968,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,23,24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1952,1937,1964,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,24,25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1949,1934,1960,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,25,26,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1945,1931,1956,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,26,27,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1942,1928,1953,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,27,28,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1939,1923,1951,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,28,29,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1936,1920,1948,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,29,30,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1932,1916,1944,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,30,31,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1929,1913,1941,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,31,32,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1925,1909,1937,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,32,33,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1921,1905,1933,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,33,34,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1914,1896,1927,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,34,35,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1904,1885,1919,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,35,36,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1889,1861,1910,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,single set of methods,36,37,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1872,1839,1900,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,3,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2009,2001,2013,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,4,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2008,2000,2012,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,5,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2006,1998,2011,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,6,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2004,1996,2009,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,7,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2002,1993,2007,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,8,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1999,1990,2005,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,9,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1997,1987,2003,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,10,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1994,1984,2001,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,11,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1992,1981,1999,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,12,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1989,1978,1997,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,13,14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1986,1975,1994,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,14,15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1983,1971,1992,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,15,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1978,1965,1988,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,16,17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1973,1958,1984,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,17,18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1970,1954,1981,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,18,19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1967,1950,1978,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,19,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1963,1946,1975,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,20,21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1959,1941,1971,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,21,22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1952,1934,1965,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,22,23,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1945,1926,1959,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,23,24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1940,1920,1955,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,24,25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1936,1915,1950,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,25,26,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1931,1910,1946,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,26,27,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1926,1905,1941,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,27,28,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1917,1895,1935,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,28,29,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1907,1886,1927,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,29,30,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1901,1880,1921,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,30,31,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1894,1874,1915,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,31,32,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1888,1868,1910,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,32,33,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1882,1862,1904,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,33,34,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1876,1856,1897,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,34,35,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1869,1850,1890,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,35,36,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1862,1844,1882,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,single set of methods,36,37,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1855,1838,1875,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,0,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2016,2016,2016,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,1,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2011,2010,2012,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,2,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2007,2004,2008,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,3,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2002,1999,2004,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,4,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1998,1993,2001,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,5,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1993,1988,1997,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,6,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1989,1983,1993,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,7,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1984,1978,1990,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,8,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1980,1973,1986,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,9,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1976,1968,1983,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,10,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1972,1964,1979,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,11,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1968,1959,1976,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,12,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1964,1954,1973,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,13,14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1960,1950,1969,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,14,15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1956,1946,1966,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,15,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1952,1941,1963,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,16,17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1949,1937,1960,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,17,18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1945,1933,1958,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,18,19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1941,1929,1955,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,19,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1938,1925,1952,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,20,21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1934,1921,1949,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,21,22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1931,1917,1947,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,22,23,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1927,1914,1944,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,23,24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1924,1910,1942,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,24,25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1921,1907,1940,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,25,26,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1918,1903,1937,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,26,27,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1915,1900,1935,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,27,28,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1912,1897,1933,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,28,29,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1909,1894,1931,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,29,30,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1906,1891,1929,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,single set of methods,30,31,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1904,1888,1927,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,3,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2000,1996,2005,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,4,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1998,1993,2003,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,5,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1995,1989,2000,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,6,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1991,1985,1997,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,7,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1987,1980,1993,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,8,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1982,1975,1989,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,9,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1979,1970,1986,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,10,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1976,1967,1984,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,11,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1974,1964,1982,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,12,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1971,1961,1980,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,13,14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1968,1956,1977,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,14,15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1963,1951,1973,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,15,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1960,1946,1970,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,16,17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1956,1942,1967,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,17,18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1952,1937,1964,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,18,19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1947,1931,1960,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,19,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1942,1923,1956,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,20,21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1935,1916,1951,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,21,22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1928,1908,1946,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,22,23,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1922,1900,1941,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,23,24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1916,1892,1937,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,24,25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1911,1884,1933,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,25,26,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1903,1877,1928,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,26,27,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1895,1869,1923,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,27,28,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1887,1860,1918,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,28,29,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1878,1852,1913,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,29,30,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1868,1843,1907,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,30,31,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1859,1835,1901,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,31,32,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1850,1828,1895,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,single set of methods,32,33,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1842,1821,1891,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,3,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2004,1997,2008,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,4,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2000,1992,2005,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,5,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1996,1987,2002,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,6,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1991,1982,1999,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,7,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1987,1977,1995,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,8,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1983,1973,1992,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,9,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1979,1968,1988,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,10,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1975,1964,1985,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,11,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1972,1960,1981,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,12,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1968,1956,1978,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,13,14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1964,1951,1975,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,14,15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1960,1947,1972,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,15,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1957,1943,1970,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,16,17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1953,1938,1967,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,17,18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1949,1934,1964,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,18,19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1946,1930,1961,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,19,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1942,1926,1958,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,20,21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1938,1922,1955,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,21,22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1934,1918,1952,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,22,23,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1930,1913,1949,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,23,24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1926,1909,1946,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,24,25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1922,1905,1943,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,25,26,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1918,1901,1940,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,26,27,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1915,1898,1937,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,single set of methods,27,28,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1911,1894,1934,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,3,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2006,2003,2008,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,4,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2001,1998,2003,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,5,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1997,1992,2000,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,6,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1992,1987,1996,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,7,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1985,1977,1991,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,8,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1978,1970,1984,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,9,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1976,1967,1982,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,10,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1973,1964,1980,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,11,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1967,1958,1975,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,12,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1961,1951,1968,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,13,14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1958,1948,1966,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,14,15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1955,1945,1964,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,15,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1951,1940,1960,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,16,17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1945,1935,1955,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,17,18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1940,1929,1950,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,18,19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1934,1923,1945,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,19,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1929,1917,1941,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,20,21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1924,1911,1937,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,21,22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1919,1906,1934,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,22,23,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1915,1901,1931,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,23,24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1911,1897,1926,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,24,25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1906,1893,1922,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,25,26,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1901,1890,1916,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,26,27,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1896,1886,1911,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,27,28,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1891,1883,1906,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,single set of methods,28,29,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1886,1879,1901,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,3,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2007,1998,2012,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,4,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2005,1996,2010,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,5,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2002,1994,2007,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,6,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2000,1991,2005,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,7,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1997,1988,2003,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,8,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1995,1985,2001,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,9,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1993,1983,2000,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,10,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1991,1981,1998,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,11,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1989,1979,1996,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,12,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1987,1977,1994,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,13,14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1984,1974,1992,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,14,15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1982,1971,1990,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,15,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1980,1969,1989,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,16,17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1978,1967,1987,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,17,18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1976,1964,1985,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,18,19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1973,1962,1982,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,19,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1971,1959,1980,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,20,21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1967,1955,1977,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,21,22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1962,1948,1973,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,22,23,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1956,1943,1968,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,23,24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1953,1940,1964,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,24,25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1950,1936,1960,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,25,26,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1946,1933,1957,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,26,27,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1943,1930,1955,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,27,28,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1940,1926,1952,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,28,29,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1937,1922,1949,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,29,30,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1933,1918,1946,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,30,31,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1930,1915,1942,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,31,32,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1926,1911,1938,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,32,33,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1921,1907,1934,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,33,34,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1914,1898,1928,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,34,35,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1905,1887,1921,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,35,36,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1890,1862,1911,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,36,37,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1873,1841,1901,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,37,38,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1861,1828,1893,NA
+Eagle_et_al_2021,Piñones,PIN1,single set of methods,38,39,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1850,1816,1885,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,3,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2010,2002,2014,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,4,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2009,2001,2013,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,5,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2007,1999,2011,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,6,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2005,1997,2010,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,7,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2004,1994,2009,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,8,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2002,1992,2007,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,9,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2000,1990,2006,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,10,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1998,1988,2004,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,11,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1996,1986,2002,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,12,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1994,1984,2000,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,13,14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1992,1982,1999,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,14,15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1990,1980,1997,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,15,16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1988,1977,1996,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,16,17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1986,1976,1994,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,17,18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1984,1973,1992,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,18,19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1982,1971,1990,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,19,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1980,1969,1988,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,20,21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1978,1967,1986,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,21,22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1976,1964,1984,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,22,23,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1973,1961,1982,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,23,24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1971,1959,1980,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,24,25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1969,1957,1978,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,25,26,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1967,1955,1976,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,26,27,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1965,1953,1975,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,27,28,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1963,1951,1973,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,28,29,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1961,1949,1971,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,29,30,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1959,1947,1968,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,30,31,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1957,1945,1966,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,31,32,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1955,1943,1964,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,32,33,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1952,1940,1961,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,33,34,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1948,1935,1958,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,34,35,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1943,1930,1954,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,35,36,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1940,1927,1951,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,36,37,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1937,1924,1947,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,37,38,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1934,1922,1944,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,38,39,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1931,1919,1941,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,39,40,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1927,1913,1938,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,40,41,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1922,1908,1934,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,41,42,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1919,1905,1930,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,42,43,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1915,1903,1926,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,43,44,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1912,1900,1922,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,44,45,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1907,1896,1917,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,45,46,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1901,1888,1912,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,46,47,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1892,1878,1905,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,47,48,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1877,1852,1896,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,48,49,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1859,1828,1886,NA
+Eagle_et_al_2021,Piñones,PIN2,single set of methods,49,50,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1847,1814,1876,NA

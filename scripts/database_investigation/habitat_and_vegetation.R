@@ -67,3 +67,8 @@ synth_cores %>% filter(study_id == 'Duncan_et_al_2016') %>%
   leaflet() %>% 
   addTiles() %>% 
   addCircleMarkers(lng = ~longitude, lat = ~latitude)
+
+## MISC
+# ds <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv", guess_max = 60000)
+
+
