@@ -22,7 +22,6 @@ raw_RI <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/RI/D
 raw_MA1 <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/MA_Cape/Data_RestoredMarshes_Cores.csv")
 raw_MA2 <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/MA_Wellfleet/Data_HerringRiver_Cores.csv")
 raw_methods <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermediate/OkeefeSuttle_2021_material_and_methods.csv")
-raw_citations <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermediate/Okeefe-Suttle_2021_release_dois.csv")
 
 # read in database guidance for easy reference
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
@@ -83,22 +82,25 @@ depthseries <- suttle_ds %>%
   filter(Depth_mid != 0) %>% 
   rename(age = Year, age_se = Age_e) %>% 
   # assign method IDs
-  # mutate(method_id = case_when(study_id == "Okeefe-Suttles_et_al_2021_Cape" & is.na(delta_c13) ~ "organic_carbon",
-  #                              study_id == "Okeefe-Suttles_et_al_2021_Cape" & !is.na(delta_c13) ~ "total_carbon",
-  #                              # conflict, there are cases where fraction carbon was not measured...do we need a third methods ID for Cape cores?
-  #                              TRUE ~ "single set of methods")) %>% 
+  mutate(method_id = case_when(study_id == "Okeefe-Suttles_et_al_2021_RI" | study_id == "Okeefe-Suttles_et_al_2021_Wellfleet" ~ "single set of methods",
+                               # study_id == "Okeefe-Suttles_et_al_2021_Cape" & is.na(delta_c13) ~ "organic_carbon",
+                               study_id == "Okeefe-Suttles_et_al_2021_Cape" & is.na(fraction_carbon) ~ "no_fraction_carbon",
+                               study_id == "Okeefe-Suttles_et_al_2021_Cape" & !is.na(delta_c13) ~ "total_carbon",
+                               study_id == "Okeefe-Suttles_et_al_2021_FL" & core_id == "FL_UTSB" ~ "salt_barren",
+                               study_id == "Okeefe-Suttles_et_al_2021_FL" & core_id != "FL_UTSB" ~ "pvc_and_hammer",
+                               TRUE ~ "organic_carbon")) %>%
   # filter(study_id == "Okeefe-Suttles_et_al_2021_Cape") %>% 
   reorderColumns("depthseries", .) %>% 
   select(-c(Depth, Depth_mid, wtC, wtN, Date, ID, `15N`, Status, latitude, longitude, 
-            LOI, year, month, day, Elevation, Year_restored))
+            LOI, year, month, day, Elevation, Year_restored, VAR, MAR, CAR))
 # create method_id lookup to merge to depthseries
 
 ggplot(depthseries) +
-  geom_point(aes(dry_bulk_density, fraction_carbon, col = study_id)) +
-  # geom_point(aes(depth_min, fraction_carbon)) +
-  facet_wrap(~study_id) +
-  theme_bw() +
-  theme(legend.position = "none")
+  geom_point(aes(dry_bulk_density, fraction_carbon, col = method_id)) +
+  # geom_line(aes(fraction_carbon, depth_min, col = method_id)) +
+  # facet_wrap(~study_id) +
+  theme_bw()
+# salt barren core has no fraction carbon
 
 
 ## ... Core-Level ####
@@ -199,28 +201,33 @@ impacts <- suttle_ds %>%
   distinct() %>%
   mutate(impact_class = case_when(Status == "Natural" ~ "natural",
                                   Status == "Restored" ~ "tidally restored",
+                                  site_id == "Mayo Creek" ~ "tidally restricted",
                                   site_id == "Herring River" ~ "tidally restricted",
                                   site_id == "E.G. Simmons" | site_id == "Fort de Soto" ~ "restored",
-                                  TRUE ~ NA_character_))
+                                  TRUE ~ NA_character_)) %>% 
+  select(-Status)
 
-# mayo creek might be natural or tidally restricted
 # no impacts indicated for RI cores
 # no impacts indicated for most of the FL cores
+# call them natural or leave as NA?
 
 ## ... Species ####
 
 species <- suttle_ds %>%
   select(study_id, site_id, core_id, Status) %>% 
   distinct() %>%
-  mutate(species = case_when(Status == "Mangrove" ~ "Rhizophora mangle; Laguncularia racemosa; Avicennia germinans",
-                             # Status == "Young Mangrove" ~ "mangrove",
+  mutate(species_code = case_when(Status == "Mangrove" ~ "Rhizophora mangle; Laguncularia racemosa; Avicennia germinans",
                              Status == "Phragmites" ~ "Phragmites spp.",
                              Status == "Juncus Marsh" ~ "Juncus spp.; Spartina alterniflora",
                              Status == "Typha" ~ "Typha spp.",
                              TRUE ~ NA_character_),
-         species = strsplit(species, split = "; ")) %>% 
-  unnest(species)
-
+         species_code = strsplit(species_code, split = "; ")) %>% 
+  unnest(species_code) %>% 
+  drop_na(species_code) %>% 
+  mutate(code_type = ifelse(grepl("spp.", species_code), "Genus", "Genus species")) %>% 
+  # resolveTaxa(.) %>% 
+  select(-Status) 
+# RI metadata indicates site-level species
 
 ## QAQC ####
 
@@ -248,7 +255,9 @@ results <- test_numeric_vars(depthseries)
 # Use RefManageR package to pull DOI
 library(RefManageR)
 
-# consider this a synthesis? 
+raw_citations <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermediate/Okeefe-Suttle_2021_release_dois.csv")
+
+# consider these as separate data releases...under one curation script 
 
 # if(!file.exists("data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_study_citations.csv")){
 # Create bibtex file
@@ -257,8 +266,8 @@ dois <- c(raw_citations$doi)
 data_bibs <- GetBibEntryWithDOI(dois)
 
 study_citations <- as.data.frame(data_bibs) %>%
-  mutate(study_id = id,
-         bibliography_id = "Okeefe-Suttles_et_al_2021_data",
+  mutate(study_id = raw_citations$study_id,
+         bibliography_id = paste0(study_id, "_data"),
          publication_type = "primary dataset") %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
   remove_rownames()
@@ -269,8 +278,8 @@ bib_file <- study_citations %>%
   distinct() %>%
   column_to_rownames("bibliography_id")
 
-# WriteBib(as.BibEntry(bib_file), "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021.bib")
-# write_csv(study_citations, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_study_citations.csv")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021.bib")
+write_csv(study_citations, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_study_citations.csv")
 # }
 
 ## 4. Write files ####

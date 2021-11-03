@@ -3,14 +3,13 @@
 
 ## Hook script for data ingestion
 
-# public data release:
-# associated paper: 
+# public data release: https://datadryad.org/stash/dataset/doi:10.5061/dryad.m0cfxpp31
+# associated paper: https://bg.copernicus.org/articles/18/4717/2021/
 
 # load necessary libraries
 library(tidyverse)
 library(readxl)
 library(lubridate)
-# library(rgdal)
 
 # load in helper functions
 source("scripts/1_data_formatting/curation_functions.R") # For curation
@@ -37,8 +36,12 @@ id <- "Ward_et_al_2021"
 
 ## ... Core Data ####
 
+# C isotope data
 # In addition, we analyzed sediment OC sources for two individual salt marshes
 # in Elkhorn Slough (“Elkhorn salt marsh”) and Tomales Bay (“Walker Salt Marsh”)
+
+# There's no ID's for these sampling intervals, 
+# making it impossible to relate them to the depthseries data...
 isotopes <- ward_ea %>%
   rename(site_id = Site,
          depth_min = Top_interval_cm,
@@ -47,13 +50,9 @@ isotopes <- ward_ea %>%
   mutate(core_notes = ifelse(Under_wrack_YN == "Yes", 
                              "sediment samples were collected from in areas of salt marsh beneath persient seagrass wrack lines", NA_character_)) %>% 
   select(-Under_wrack_YN, -Surface_Deep_10cm)
-# Pan cores were collected from patches of unvegetated sediment
-# There's no ID's for these sampling intervals, making it impossible to relate them to the depthseries data...
+# Pan cores were collected from patches of unvegetated sediment in salt marshes
   
 # need to create core IDs => create a sequence from the depthseries
-# will these be able to relate the isotope to the rest of the soil data?
-# total of 82 sediment cores, 30 discussed previously in O'Donnell 2017
-# what is the core date?
 
 soil_data <- ward_cores %>% 
   rename(site_id = Site,
@@ -64,14 +63,14 @@ soil_data <- ward_cores %>%
   mutate(study_id = id,
          core_id = str_c(site_id, habitat, sep = "_"),
          fraction_organic_matter = `TOM (%)`/100,
-         fraction_carbon = `OC (%)`, # organic carbon
+         fraction_carbon = `OC (%)`/100, # organic carbon
          longitude = gsub(" ", "", longitude),
          depth_max = depth_min + 2)
 # Newport Bay should have bare sed instead of salt marsh (according to the paper)
 
-# write an if statement to assign core_id
-new_id <- 1
+# write an if statement to assign core_ids based on depth intervals
 # assign the first ID
+new_id <- 1
 soil_data$core_id[1] <- str_c(soil_data$core_id[1], new_id, sep = "_")
 
 for(i in 2:nrow(soil_data)){
@@ -89,22 +88,21 @@ for(i in 2:nrow(soil_data)){
 ggplot(soil_data, aes(`Mud (%)`, `TOM (%)`, col = habitat)) +
   geom_point(size = 0.5)
 
+ggplot(soil_data) +
+  # geom_smooth() +
+  geom_point(aes(dry_bulk_density, fraction_carbon, col = habitat)) +
+  # geom_point(aes(depth_min, dry_bulk_density)) +
+  facet_wrap(~habitat)
+
 ## ... Core Depthseries ####
 
 depthseries <- soil_data %>% 
   select(-c(contains("%"), `OC (kg/m3)`, latitude, longitude, habitat)) %>%
   reorderColumns("depthseries", .)
 
-ggplot(depthseries) +
-  # geom_smooth() +
-  geom_point(aes(dry_bulk_density, fraction_carbon))
-# geom_point(aes(depth_min, dry_bulk_density)) +
-# facet_wrap(vars(core_id), scales = "free")
-
 ## ... Core-Level ####
 
-
-# there should be 82 cores
+# total of 82 sediment cores, 30 discussed previously in O'Donnell 2017
 cores <- soil_data %>% 
   # lat/lon causing expansion due to excel dragging
   mutate(longitude = case_when(core_id == "Elkhorn Slough_Pan_67" ~ "-121.101",
@@ -117,18 +115,40 @@ cores <- soil_data %>%
                                core_id == "Tomales Bay_Salt Marsh_61" ~ "-122.926",
                                core_id == "Tomales Bay_Salt Marsh_62" ~ "-122.934",
                                core_id == "Tomales Bay_Salt Marsh_63" ~ "-122.946",
-                               TRUE ~ longitude)) %>%
+                               TRUE ~ longitude)) %>% 
   distinct(study_id, site_id, core_id, latitude, longitude, habitat) %>% 
+  mutate(vegetation_class = case_when(habitat == "Seagrass" ~ "seagrass",
+                                      habitat == "Salt Marsh" ~ "emergent",
+                                      TRUE ~ NA_character_),
+         vegetation_notes = case_when(habitat == "Bare sed" ~ "unvegetated sediments near seagrass meadows",
+                                      habitat == "Pan" ~ "unvegetated sediments near salt marshes",
+                                      TRUE ~ NA_character_),
+         habitat = recode(habitat, "Seagrass" = "seagrass",
+                          "Salt Marsh" = "marsh",
+                          "Bare sed" = "unvegetated",
+                          "Pan" = "unvegetated"),
+         inundation_class = "low",
+         core_length_flag = "core depth limited by length of corer") %>%
   reorderColumns('cores', .)
+# need core year at least, I think 2019 for some?
+# 
 
 ## ... Impacts ####
 
-# None of our sampling sites were
-# actively restored, and, to our knowledge, respective vegetation has persisted through time.
+# None of our sampling sites were actively restored, and, 
+# to our knowledge, respective vegetation has persisted through time.
 
 ## ... Species ####
 
 # site level species provided in paper
+species <- soil_data %>% 
+  select(study_id, site_id, habitat) %>% distinct() %>% 
+  filter(habitat != "Pan" & habitat != "Bare sed") %>% 
+  mutate(species_code = case_when(habitat == "Seagrass" ~ "Zostera marina",
+                                  habitat == "Salt Marsh" ~ "Sarcocornia pacifica, Distichlis spicata, Jaumea carnosa"),
+         species_code = strsplit(species_code, split = ", "),
+         code_type = "Genus species") %>% 
+  unnest(species_code) %>%  select(-habitat)
 
 ## 2. QAQC ####
 
