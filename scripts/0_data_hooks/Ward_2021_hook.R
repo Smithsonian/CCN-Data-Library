@@ -18,7 +18,7 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 ## Read in data
 ward_ea <- read_csv("data/primary_studies/Ward_2021/original/PublishedEAData.csv")
 ward_cores <- read_csv("data/primary_studies/Ward_2021/original/PublishedCoreData.csv")
-# raw_methods <- read_xlsx("data/primary_studies/Ward_et_al_2021/intermediate/Ward_2021_material_and_methods.xlsx")
+raw_methods <- read_xlsx("data/primary_studies/Ward_2021/intermediate/Ward_2021_methods.xlsx", sheet = 2)
 
 # read in database guidance for easy reference
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
@@ -30,9 +30,9 @@ id <- "Ward_et_al_2021"
 ## ... Methods ####
 
 # curate materials and methods
-# methods <- raw_methods %>%
-#   drop_na(study_id) %>% 
-#   select_if(function(x) {!all(is.na(x))})
+methods <- raw_methods %>% 
+  slice(2) %>%
+  select_if(function(x) {!all(is.na(x))})
 
 ## ... Core Data ####
 
