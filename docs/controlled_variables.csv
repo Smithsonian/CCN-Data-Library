@@ -63,12 +63,15 @@ pb210_counting_method,alpha,Alpha counting method used
 pb210_counting_method,gamma,Gamma counting method used.
 excess_pb210_rate,mass accumulation,Excess 210Pb modeled using mass accumulation rate
 excess_pb210_rate,accretion,Excess 210Pb modeled using vertical accretion rate.
-excess_pb210_model,CRS,Constant rate of supply model used
-excess_pb210_model,CIC,Constant initial concentration model used
+excess_pb210_rate,cumulative mass,Model run as excess 210Pb against cumulative mass.
+excess_pb210_rate,depth,Model run as excess 210Pb against depth.
+excess_pb210_model,CRS,Constant rate of supply model used to estimate mass and/or accretion rates from age profile or chronology.
+excess_pb210_model,CIC,Constant initial concentration model used.
 excess_pb210_model,CFCS,Constant flux constant sedimentation model used.
 ra226_assumption,each sample,226Ra was measured for each sample
 ra226_assumption,total core,226Ra was measured for the total core
 ra226_assumption,at asymptote,asy
+ra226_assumption,selected samples,226Ra measured by spectrometry at selected samples along the soil profile.
 c14_counting_method,AMS,Accelerator mass spectroscopy used
 c14_counting_method,beta,Beta counting used.
 age_depth_model_reference,YBP,"Year zero is defined as years before present, 1960 CE"

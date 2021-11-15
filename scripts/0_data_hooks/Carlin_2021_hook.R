@@ -43,7 +43,8 @@ depthseries <- raw_depthseries %>%
 methods <- raw_methods %>% 
   mutate(method_id = "single set of studies",
          excess_pb210_model = "CRS",
-         age_depth_model_notes = "PLUM software used")
+         age_depth_model_notes = "PLUM software used") %>% 
+  select(-ra226_counting_method)
 
 # impacts (no change)
 impacts <- raw_impacts 

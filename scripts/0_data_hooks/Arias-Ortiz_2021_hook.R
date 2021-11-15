@@ -44,15 +44,17 @@ depthseries <- raw_depthseries %>%
          compaction_notes = paste0("compression corrected max depth: ", decompressed_depth_max)) %>% 
   select(-c(core_diameter, decompressed_depth_max, wet_weight, dry_weight, accumulated_mass,
             mid_section_accumulated_mass, cn_ratio, delta_n15, k40_activity, k40_activity_sd,
-            # fraction_estimated_organic_carbon, 
-            fraction_inorganic_carbon, fraction_nitrogen,  fraction_h2o)) %>% 
-  select(fraction_estimated_organic_carbon, fraction_carbon, everything())
-# should fraction_estimated_organic_carbon be included?
+            fraction_estimated_organic_carbon, fraction_inorganic_carbon, fraction_nitrogen,  fraction_h2o)) %>% 
+  reorderColumns("depthseries", .)
 
 # methods
 # ra226_counting_method not in guidance
 # custom box model and selected samples for ra226 assumption
-methods <- raw_methods %>% mutate(method_id = "single set of studies")
+methods <- raw_methods %>% 
+  mutate(method_id = "single set of studies", 
+         age_depth_model_notes = "custom box model used", 
+         excess_pb210_model = "CRS") %>% 
+  select(-ra226_counting_method)
 
 # impacts (no change)
 impacts <- raw_impacts 
