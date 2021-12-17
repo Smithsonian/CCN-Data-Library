@@ -43,7 +43,7 @@ write_csv(updated_guidance, "docs/ccrcn_database_structure.csv")
 
 # update 
 updated_attributes <- updated_guidance %>% 
-  distinct(attribute_name, attribute_definition, data_type, format_unit_codes, number_type) %>%
+  distinct(attribute_name, attribute_definition, data_type, format_unit_codes, number) %>%
   # create the columns: unit, format_string, values
   mutate(unit = ifelse(data_type == "numeric", format_unit_codes, NA),
          format_string = case_when(data_type == "Date" ~ format_unit_codes,
@@ -52,5 +52,6 @@ updated_attributes <- updated_guidance %>%
                                    format_unit_codes == "nominalDay" ~ "DD",
                                    TRUE ~ NA_character_),
          values = ifelse(data_type == "factor", format_unit_codes, NA))
+
 write_csv(updated_attributes, "docs/controlled_attributes.csv")
 
