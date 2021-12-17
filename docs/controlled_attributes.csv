@@ -8,13 +8,13 @@ sediment_sieve_size,"If sediment was sieved, the size of sieve used.",numeric,mi
 compaction_flag,Code indicating how the authors qualified or quantified compaction of the core.,factor,compaction qualified = Compaction was at least qualified and noted by the authors; compaction quantified = Compaction was quantified and corrected for in core based measurements; corer limits compaction = Authors specified that the coring device's design minimized compaction; no obvious compaction = Authors observed no obvious compaction; not specified = Compaction was not specified.,NA,NA,NA,compaction qualified = Compaction was at least qualified and noted by the authors; compaction quantified = Compaction was quantified and corrected for in core based measurements; corer limits compaction = Authors specified that the coring device's design minimized compaction; no obvious compaction = Authors observed no obvious compaction; not specified = Compaction was not specified.
 dry_bulk_density_temperature,Temperature at which samples were dried to measure dry bulk density. This can include either samples that were freeze dried or oven dried.,numeric,celsius,real,celsius,NA,NA
 dry_bulk_density_time,Time over which samples were dried to measure dry bulk density.,numeric,hour,integer,hour,NA,NA
-dry_bulk_density_sample_volume,"Sample volume used for bulk density measurements, if held constant.",numeric,cubicCentimeters,real,cubicCentimeters,NA,NA
-dry_bulk_density_sample_mass,"Sample mass used for bulk density measurements, if held constant.",numeric,grams,real,grams,NA,NA
+dry_bulk_density_sample_volume,"Sample volume used for bulk density measurements, if held constant.",numeric,cubicCentimeter,real,cubicCentimeter,NA,NA
+dry_bulk_density_sample_mass,"Sample mass used for bulk density measurements, if held constant.",numeric,gram,real,gram,NA,NA
 dry_bulk_density_flag,Any notable codes regarding how the authors quantified dry bulk density.,factor,"air dried to constant mass = Methodology specified that samples were air dried to a constant mass; modeled = Bulk density was not measured, but was modeled from loss on ignition and assumptions about the particle densities of organic and inorganic matter; freeze dried = Bulk density was measured on freeze dried samples; not specified = No additional details regarding bulk density methodology were provided; removed non structural water = Bulk density methodology did not specify drying temperature or length, only that non-strucural water was removed; time approximate = Bulk density time recorded herin is an approximate estimate; to constant mass = Bulk density methodology did not specify drying temperature or length, only that samples were dried to a constant mass",NA,NA,NA,"air dried to constant mass = Methodology specified that samples were air dried to a constant mass; modeled = Bulk density was not measured, but was modeled from loss on ignition and assumptions about the particle densities of organic and inorganic matter; freeze dried = Bulk density was measured on freeze dried samples; not specified = No additional details regarding bulk density methodology were provided; removed non structural water = Bulk density methodology did not specify drying temperature or length, only that non-strucural water was removed; time approximate = Bulk density time recorded herin is an approximate estimate; to constant mass = Bulk density methodology did not specify drying temperature or length, only that samples were dried to a constant mass"
 loss_on_ignition_temperature,Temperature at which samples were combusted to estimate fraction organic matter.,numeric,celsius,real,celsius,NA,NA
 loss_on_ignition_time,Time over which samples were combusted to estimate fraction organic matter.,numeric,hour,integer,hour,NA,NA
-loss_on_ignition_sample_volume,"Sample volume used for loss on ignition, if held constant.",numeric,cubicCentimeters,real,cubicCentimeters,NA,NA
-loss_on_ignition_sample_mass,"Sample mass used for loss on ignition, if held constant.",numeric,grams,real,grams,NA,NA
+loss_on_ignition_sample_volume,"Sample volume used for loss on ignition, if held constant.",numeric,cubicCentimeter,real,cubicCentimeter,NA,NA
+loss_on_ignition_sample_mass,"Sample mass used for loss on ignition, if held constant.",numeric,gram,real,gram,NA,NA
 loss_on_ignition_flag,Common codes regarding loss on ignition methodology.,factor,time approximate = Loss on ignition time recorded herein is an approximate estimate; not specified = No additional details regarding loss on ignition methodology or time were provided,NA,NA,NA,time approximate = Loss on ignition time recorded herein is an approximate estimate; not specified = No additional details regarding loss on ignition methodology or time were provided
 carbon_measured_or_modeled,Code indicating whether fraction carbon was measured or estimated as a function of organic matter.,factor,measured = Fraction carbon was measured as opposed to modeled; modeled = Fraction carbon was modeled as opposed to measured.,NA,NA,NA,measured = Fraction carbon was measured as opposed to modeled; modeled = Fraction carbon was modeled as opposed to measured.
 carbonates_removed,Whether or not carbonates were removed prior to calculating fraction organic carbon.,factor,FALSE = Carbonates were not removed before measuring organic carbon; TRUE = Carbonates were removed before measuring organic carbon.,NA,NA,NA,FALSE = Carbonates were not removed before measuring organic carbon; TRUE = Carbonates were removed before measuring organic carbon.
@@ -86,30 +86,30 @@ fraction_carbon,Mass of carbon relative to sample dry mass.,numeric,dimensionles
 compaction_fraction,Fraction of the sample depth interval reduced due to compaction.,numeric,dimensionless,real,dimensionless,NA,NA
 compaction_notes,Any submitter generated notes on compaction.,character,NA,NA,NA,NA,NA
 cs137_peak_age,Age of documented 137Cs Peak.,numeric,year,integer,year,NA,NA
-cs137_activity,Radioactivity counts per unit dry weight for radiocesium (137Cs).,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
-cs137_activity_se,1 standard error of uncertainty associated with cs137_activity.,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
+cs137_activity,Radioactivity counts per unit dry weight for radiocesium (137Cs).,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
+cs137_activity_se,1 standard error of uncertainty associated with cs137_activity.,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
 cs137_unit,Reported unit for sample interval's Cs 137 activity measurements.,character,NA,NA,NA,NA,NA
-excess_pb210_activity,Excess radioactivity counts per unit dry weight for excess lead 210 (210Pb).,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
-excess_pb210_activity_se,1 standard error of uncertainty associated with excess_pb210_activity.,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
-total_pb210_activity,Total radioactivity counts per unit dry weight for excess lead 210 (210Pb).,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
-total_pb210_activity_se,1 standard error of uncertainty associated with total_pb210_activity.,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
+excess_pb210_activity,Excess radioactivity counts per unit dry weight for excess lead 210 (210Pb).,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
+excess_pb210_activity_se,1 standard error of uncertainty associated with excess_pb210_activity.,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
+total_pb210_activity,Total radioactivity counts per unit dry weight for excess lead 210 (210Pb).,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
+total_pb210_activity_se,1 standard error of uncertainty associated with total_pb210_activity.,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
 pb210_unit,Reported unit for sample interval's Pb-210 activity measurements.,character,NA,NA,NA,NA,NA
-ra226_activity,Total radioactivity counts per unit dry weight for Radium 226 (226Ra) if measured as part of the_210Pb dating process.,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
-ra226_activity_se,1 standard error of uncertainty associated with ra226_activity.,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
+ra226_activity,Total radioactivity counts per unit dry weight for Radium 226 (226Ra) if measured as part of the_210Pb dating process.,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
+ra226_activity_se,1 standard error of uncertainty associated with ra226_activity.,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
 ra226_unit,Reported unit for sample interval's Ra 226 activity measurements.,character,NA,NA,NA,NA,NA
-pb214_activity,Radioactivity counts per unit dry weight for 214 Pb.,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
-pb214_activity_se,Estimated uncertainty in pb214_activity.,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
+pb214_activity,Radioactivity counts per unit dry weight for 214 Pb.,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
+pb214_activity_se,Estimated uncertainty in pb214_activity.,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
 pb214_unit,Reported unit for sample interval's 214 Pb activity measurements.,character,NA,NA,NA,NA,NA
-bi214_activity,Radioactivity counts per unit dry weight for 214 Bi.,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
-bi214_activity_se,Reported standard error for radioactivity counts per unit dry weight for_214Bi,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
+bi214_activity,Radioactivity counts per unit dry weight for 214 Bi.,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
+bi214_activity_se,Reported standard error for radioactivity counts per unit dry weight for_214Bi,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
 bi214_unit,Reported unit for sample interval's Bi 214 activity measurements.,character,NA,NA,NA,NA,NA
 c14_age,Radiocarbon age as estimated from AMS measurements.,numeric,radiocarbonYear,real,radiocarbonYear,NA,NA
 c14_age_se,Estimated uncertainty in c14_age.,numeric,radiocarbonYear,real,radiocarbonYear,NA,NA
 c14_material,Description of the material selected for radiocarbon (14C) dating.,character,NA,NA,NA,NA,NA
 c14_notes,Any relevant submitter generated notes on 14C dating process.,character,NA,NA,NA,NA,NA
 delta_c13,The isotopic signature of 13C. This is oftentimes measured along with c14_age and can be useful for analyzing carbon lability and provenance.,numeric,partsPerMillion,real,partsPerMillion,NA,NA
-be7_activity,Radioactivity counts per unit dry weight for 7Be.,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
-be7_activity_se,Estimated uncertainty in be_7_activity.,numeric,becquerelPerKilogram,real,becquerelPerKilogram,NA,NA
+be7_activity,Radioactivity counts per unit dry weight for 7Be.,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
+be7_activity_se,Estimated uncertainty in be_7_activity.,numeric,becquerelsPerKilogram,real,becquerelsPerKilogram,NA,NA
 be7_unit,Reported unit for sample interval's Be 7 activity measurements.,character,NA,NA,NA,NA,NA
 marker_date,"The age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.",Date,YYYY,NA,NA,YYYY,NA
 marker_date_se,"The standard error of the age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.",Date,NA,NA,NA,NA,NA

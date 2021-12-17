@@ -34,6 +34,10 @@ updated_guidance <- guidance %>%
   # distinct(attribute_name, definition, data_type, format_unit_codes) %>%
   left_join(collapsed_vars) %>% # attributes must be defined in database
   mutate(format_unit_codes = ifelse(!is.na(variable_codes), variable_codes, format_unit_codes)) %>% 
+  mutate(format_unit_codes = recode(format_unit_codes,
+                                    "grams" = "gram",
+                                    "becquerelPerKilogram" = "becquerelsPerKilogram",
+                                    "cubicCentimeters" = "cubicCentimeter")) %>% 
   select(-variable_codes)
 
 # write updated guidance to docs folder
