@@ -69,11 +69,13 @@ counts <- full_join(cumu_sampled, cumu_pub) %>%
 
 # plot cumulative counts for sampled and published cores per year
 ggplot(counts, aes(year, cumulative_count, col = category)) +
-  geom_line() + 
+  geom_line(lwd=1.5) + 
   xlab("Year") + ylab("Cumulative Count") +
   theme_bw() +
-  ggtitle("Cumulative number of cores sampled and published per year")
-ggsave("database_paper/figures/cores_sampled_v_published.jpg")
+  ggtitle("Cumulative number of cores sampled and published per year") +
+  theme(legend.title = element_blank())
+ggsave("database_paper/figures/cores_sampled_v_published.jpg",
+       width = 7, height = 3.5)
 
 ## Data Latency ####
 
