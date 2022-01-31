@@ -6,13 +6,22 @@ output:
     highlight: tango
 ---
 
-### Introduction
+### Database Overview {.tabset .tabset-fade .tabset-pills}
 
-This page serves as guidance for the types and scope of data and metadata that will be archived as part of the tidal wetland soil core data synthesis, developed by the [Coastal Carbon Network](https://serc.si.edu/coastalcarbon). We propose the following data structure and standardized attribute names for metadata and data in order to make datasets machine-readable and inter-operable.
+This page details the database guidance for the types and scope of data that will be archived as part of the tidal wetland soil core data synthesis, developed by the [Coastal Carbon Network](https://serc.si.edu/coastalcarbon). This database structure was developed by members of the community it hopes to serve, and is designed to make datasets machine-readable and interoperable. Data curated for publication or prepared for ingestion into the CCN Data Library will follow the naming conventions outlined herein.
 
-### Coastal Carbon Soil Core Database Structure {.tabset .tabset-fade .tabset-pills}
+The following database structure is organized in hierarchical levels. Each level represents a flat spreadsheet file (i.e. CSV file) where records in each file are linked by common attributes (i.e. columns) such as *study_id*, *site_id*, *core_id*, and *method_id*. Data is housed in up to six separate spreadsheets:
 
-The following database structure is organized in hierarchical levels. Each level represents a flat spreadsheet file (i.e. CSV file) where records in each file are linked by common attributes such as *study_id*, *site_id*, and *core_id*. All variables at each level are accompanied by a definition and, if applicable, associated units or codes. Units are specified for columns that we wish to keep uniform across synthesized datasets, and codes are controlled vocabulary for categorical variables. Throughout the table **key attributes** are in **bold**. Please strive to provide data for these attributes whenever possible. Templates of these spreadsheets can be requested for data entry (see contact information below).
+-   **materials and methods:** contains information on the methodology of how soil cores were collected and processed. (Required)
+-   **sites:** contains positional and descriptive information of the coring sites. (Encouraged if information is not available at the core-level)
+-   **cores:** contains positional and descriptive information about the individual cores collected. (Required)
+-   **depthseries:** contains disaggregated depth-series information for all cores described in the cores table. (Required)
+-   **species:** contains information on the dominant plant species at the site or coring locations. (Encouraged if applicable)
+-   **impacts:** contains information on the anthropogenic impacts at site or coring locations. (Encouraged if applicable)
+
+All variables at each level are accompanied by a definition and, if applicable, associated units or codes. Units are specified for columns that we wish to keep uniform across synthesized datasets, and codes are controlled vocabulary for categorical variables. We also include accompanying sets of recommended controlled vocabulary for key categorical variables (also known as factors). Use the arrows within the tables to expand the definitions for categorical variables.
+
+We welcome contributions of soil core data from any coastal wetlands. We accept data that is published, soon-to-be published, or unpublished as long as it is available in disaggregated form. This means that soil profile information is present down to the level of sampling interval. Please strive to provide data for required attributes whenever possible. Templates of these spreadsheets can be requested for data entry (see contact information below).
 
 Please direct any comments or inquiries to the [Coastal Carbon Network](mailto:CoastalCarbon@si.edu){.email} resource account or [Jaxine Wolfe](mailto:wolfejax@si.edu){.email} (CCN data technician).
 
@@ -22,13 +31,16 @@ Please direct any comments or inquiries to the [Coastal Carbon Network](mailto:C
 
 ```{r, echo=FALSE}
 
-guidance %>%
-  filter(table_name == "methods") %>%
-  mutate(attribute_name = cell_spec(attribute_name, "html", bold = ifelse(required=="required", T, F))) %>%
-  rename('column name' = attribute_name) %>% 
-  select(-c(table_name, required)) %>%
-  kable(format="html", escape=F) %>%
-  kable_styling("striped")
+renderTable("methods")
+
+# code for the old table
+# guidance %>%
+#   filter(table_name == "methods") %>%
+#   mutate(attribute_name = cell_spec(attribute_name, "html", bold = ifelse(required=="required", T, F))) %>%
+#   rename('column name' = attribute_name) %>% 
+#   select(-c(table_name, required)) %>%
+#   kable(format="html", escape=F) %>%
+#   kable_styling("striped")
 
 ```
 
@@ -36,13 +48,7 @@ guidance %>%
 
 ```{r, echo=FALSE}
 
-guidance %>%
-  filter(table_name == "sites") %>%
-  mutate(attribute_name = cell_spec(attribute_name, "html", bold = ifelse(required=="required", T, F))) %>%
-  rename('column name' = attribute_name) %>% 
-  select(-c(table_name, required)) %>%
-  kable(format="html", escape=F) %>%
-  kable_styling("striped")
+renderTable("sites")
 
 ```
 
@@ -50,13 +56,7 @@ guidance %>%
 
 ```{r, echo=FALSE}
 
-guidance %>%
-  filter(table_name == "cores") %>%
-  mutate(attribute_name = cell_spec(attribute_name, "html", bold = ifelse(required=="required", T, F))) %>%
-  rename('column name' = attribute_name) %>%
-  select(-c(table_name, required)) %>%
-  kable(format="html", escape=F) %>%
-  kable_styling("striped")
+renderTable("cores")
 
 ```
 
@@ -64,13 +64,7 @@ guidance %>%
 
 ```{r, echo=FALSE}
 
-guidance %>% 
-  filter(table_name == "depthseries") %>%
-  mutate(attribute_name = cell_spec(attribute_name, "html", bold = ifelse(required=="required", T, F))) %>%
-  rename('column name' = attribute_name) %>%
-  select(-c(table_name, required)) %>%
-  kable(format="html", escape=F) %>%
-  kable_styling("striped") 
+renderTable("depthseries")
 
 ```
 
@@ -78,13 +72,7 @@ guidance %>%
 
 ```{r, echo=FALSE}
 
-guidance %>% 
-  filter(table_name == "impacts") %>%
-  mutate(attribute_name = cell_spec(attribute_name, "html", bold = ifelse(required=="required", T, F))) %>%
-  rename('column name' = attribute_name) %>%
-  select(-c(table_name, required)) %>%
-  kable(format="html", escape=F) %>%
-  kable_styling("striped") 
+renderTable("impacts")
 
 ```
 
@@ -92,12 +80,6 @@ guidance %>%
 
 ```{r, echo=FALSE}
 
-guidance %>% 
-  filter(table_name == "species") %>%
-  mutate(attribute_name = cell_spec(attribute_name, "html", bold = ifelse(required=="required", T, F))) %>%
-  rename('column name' = attribute_name) %>%
-  select(-c(table_name, required)) %>%
-  kable(format="html", escape=F) %>%
-  kable_styling("striped") 
+renderTable("species")
 
 ```
