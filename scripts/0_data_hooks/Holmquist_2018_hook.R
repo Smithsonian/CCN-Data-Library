@@ -96,7 +96,7 @@ cores <- raw_cores %>%
 # Depthseries
 depthseries_carbon <- raw_depthseries %>%
   # The Crooks study ID should be 2014, not 2013. 
-  mutate(study_id = recode_factor(study_id,
+  mutate(study_id = recode(study_id,
                                   "Crooks_et_al_2013" = "Crooks_et_al_2014",
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
@@ -104,8 +104,12 @@ depthseries_carbon <- raw_depthseries %>%
          method_id = "single set of methods",
          compaction_notes = ifelse(study_id == "CRMS_Database", "< 10-20%", NA)) %>%
   filter(!(study_id %in% removed_studies))
-# Fraction carbon type should be in the methods metadata, not depthseries level
-depthseries <- depthseries_carbon  %>% select(-fraction_carbon_type)
+
+# add site ID to final depthseries table
+ids <- distinct(cores, study_id, site_id, core_id)
+depthseries <- depthseries_carbon %>% 
+  left_join(ids) %>% 
+  select(-fraction_carbon_type)
 
 # Impacts
 impacts <- raw_impacts %>%
@@ -133,7 +137,7 @@ fraction_carbon_type_metadata <- depthseries_carbon %>%
 
 methods <- raw_methods %>%
   # The Crooks study ID should be 2014, not 2013. 
-  mutate(study_id = recode_factor(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014",
+  mutate(study_id = recode(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014",
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))%>%
@@ -154,6 +158,25 @@ methods <- raw_methods %>%
                                         "no details" = "not specified"),
          compaction_flag = ifelse(study_id == "CRMS_Database", "compaction quantified", compaction_flag),
          method_id = "single set of methods")
+
+# Some visualization
+depthseries %>% 
+  left_join(methods %>% select(study_id, carbon_measured_or_modeled)) %>% 
+  drop_na(fraction_organic_matter, fraction_carbon) %>% 
+  ggplot(aes(fraction_organic_matter, fraction_carbon, col = carbon_measured_or_modeled)) +
+  geom_point() +
+  facet_wrap(~study_id, scales = 'free')
+# Elsey_Quirk_et_al_2011 data looks modeled
+# there are also modeled values in the Breithaupt et al 2017
+
+depthseries %>% filter(study_id == "Breithaupt_et_al_2017") %>% 
+  filter(site_id %in% c("Broad_River", "Harney_River")) %>% 
+  ggplot(aes(fraction_organic_matter, fraction_carbon, col = core_id)) + 
+  geom_point(alpha = 0.5) +
+  facet_wrap(~core_id) +
+  ggtitle("Breithaupt et al 2017 fraction carbon ~ LOI")
+# suspicious cores: WSC12, WSC13_2, WSC10_1
+ggsave("breithaupt_2017_carbon_loi.jpg")
 
 # Update Tables ###########
 source("./scripts/1_data_formatting/versioning_functions.R")

@@ -216,17 +216,12 @@ internatl_depthseries_data$fraction_carbon_type <- recode(internatl_depthseries_
 #   total carbon or organic carbon was measured (i.e. did not mention whether
 #   carbonates were removed)
 
-## Materials and methods data ################
-methods <- internatl_depthseries_data %>% 
-  select(study_id, core_id, fraction_carbon_type, DBD_measured_or_modeled, 
-         carbon_profile_notes)
-
-# Now remove unwanted attributes from depthseries
-internatl_depthseries_data <- internatl_depthseries_data %>%
-  select(-mid_point, -`TOC (%)`, -CD_reported, -Ocstock_reported, -carbon_density,
-         -DBD_measured_or_modeled, -carbon_profile_notes, -fraction_carbon_type,
-         -OC_measured_or_modeled, - CD_measured_or_modeled)
-
+internatl_depthseries_data %>% 
+  drop_na(fraction_organic_matter, dry_bulk_density) %>% 
+  ggplot(aes(fraction_organic_matter, dry_bulk_density, col = DBD_measured_or_modeled)) + 
+  geom_point(alpha = 0.5) +
+  ggtitle("Sanderman synthesis DBD ~ LOI")
+# ggsave("sanderman_2018_loi_dbd.jpg")
 
 ## Final Formatting ####
 
@@ -237,8 +232,19 @@ studies_to_remove <- "Breithaupt_et_al_2014"
 
 depthseries <- internatl_depthseries_data %>%
   filter(!(study_id %in% studies_to_remove)) %>%
-  mutate(method_id = "single set of methods") %>% 
-  reorderColumns("depthseries", .)
+  mutate(method_id = "single set of methods",
+         # discard modeled values
+         fraction_carbon = ifelse(OC_measured_or_modeled == "modeled", NA, fraction_carbon),
+         dry_bulk_density = ifelse(DBD_measured_or_modeled == "modeled", NA, dry_bulk_density)) %>% 
+  reorderColumns("depthseries", .) %>% 
+  select(-OC_measured_or_modeled, -mid_point, -`TOC (%)`, -CD_reported, -Ocstock_reported, -carbon_density,
+         -DBD_measured_or_modeled, -carbon_profile_notes, -fraction_carbon_type,
+         -CD_measured_or_modeled)
+
+# plot carbon, should only have measured values now
+depthseries %>% 
+  drop_na(fraction_organic_matter, fraction_carbon) %>% 
+  ggplot(aes(fraction_organic_matter, fraction_carbon, col = study_id)) + geom_point()
 
 ids <- depthseries %>% distinct(study_id, site_id, core_id)
 
@@ -259,6 +265,16 @@ species <- internatl_species_data %>%
          species_code = strsplit(species_code, split = "; ")) %>% 
   unnest(species_code) %>% 
   reorderColumns("species", .)
+
+## Materials and methods data ################
+# prelim_methods <- internatl_depthseries_data %>% 
+#   filter(!(study_id %in% studies_to_remove)) %>%
+#   filter(!(study_id == "Blue_Ventures_Unpublished" & fraction_carbon_type == "NA")) %>% 
+#   filter(!(study_id == "Bulmer_et_al_2016" & is.na(fraction_carbon_type))) %>% 
+#   distinct(study_id, fraction_carbon_type, carbon_profile_notes) %>% 
+#   arrange(study_id) 
+#   # mutate(method_id = "single set of methods")
+# write_csv(prelim_methods, "data/primary_studies/Sanderman_2018/intermediate/Sanderman_2018_carbon_methods.csv")
 
 # Update Tables ###########
 source("./scripts/1_data_formatting/versioning_functions.R")
@@ -329,7 +345,7 @@ write_csv(study_citations, "data/primary_studies/Sanderman_2018/derivative/Sande
 
 ## Write data ###############
 
-# write_csv(internatl_study_metadata, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_methods.csv")
+# write_csv(internatl_study_metadata, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_corresponding_authors.csv")
 write_csv(cores, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_cores.csv")
 write_csv(species, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species.csv")
 write_csv(depthseries, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries.csv")

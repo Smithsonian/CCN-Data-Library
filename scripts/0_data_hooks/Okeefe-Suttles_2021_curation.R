@@ -120,14 +120,14 @@ suttle_cores <- suttle_ds %>%
                              Status == "Juncus Marsh" ~ "marsh",
                              Status == "Typha" ~ "marsh",
                              Status == "Salt marsh" ~ "marsh",
-                             Status == "Wet Shrub" ~ "scrub shrub",
+                             Status == "Wet Shrub" ~ "scrub/shrub",
                              Status == "Forest" ~ "upland",
                              study_id == "Okeefe-Suttles_et_al_2021_Cape" ~ "marsh",
                              TRUE ~ NA_character_),
          vegetation_class = case_when(habitat == "marsh" ~ "emergent",
-                                      habitat == "unvegetated" ~ "unvegetated",
+                                      # habitat == "unvegetated" ~ "unvegetated",
                                       Status == "Forest" | habitat == "mangrove" ~ "forested",
-                                      Status == "Wet Shrub" ~ "scrub shrub",
+                                      Status == "Wet Shrub" ~ "scrub/shrub",
                                       TRUE ~ NA_character_)) %>% 
   ungroup()
 
@@ -259,7 +259,7 @@ raw_citations <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/interm
 
 # consider these as separate data releases...under one curation script 
 
-# if(!file.exists("data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_study_citations.csv")){
+if(!file.exists("data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_study_citations.csv")){
 # Create bibtex file
 dois <- c(raw_citations$doi)
 
@@ -280,16 +280,16 @@ bib_file <- study_citations %>%
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021.bib")
 write_csv(study_citations, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_study_citations.csv")
-# }
+}
 
 ## 4. Write files ####
 
 # Adjust the filepaths to output to the correct derivative folder
-# write_csv(cores, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_cores.csv") 
-# write_csv(depthseries, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_depthseries.csv")
-# write_csv(methods, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_methods.csv")
+write_csv(cores, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_cores.csv")
+write_csv(depthseries, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_depthseries.csv")
+write_csv(methods, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_methods.csv")
 # write_csv(sites, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_sites.csv")
-# write_csv(species, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_species.csv")
-# write_csv(impacts, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_impacts.csv")
+write_csv(species, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_species.csv")
+write_csv(impacts, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_impacts.csv")
 
 

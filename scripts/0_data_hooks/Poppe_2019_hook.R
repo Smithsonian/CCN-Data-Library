@@ -56,6 +56,11 @@ depthseries <- depthseries_raw %>%
   select(-estuary_id, -fraction_carbon_modeled) %>%
   rename(fraction_carbon = fraction_carbon_measured)
 
+ggplot(depthseries %>% filter(core_id == "LM3_16" | core_id == "LM4_24"), 
+       aes(fraction_organic_matter, fraction_carbon, col = core_id)) + 
+  geom_point(alpha = 0.5)
+# cores LM3_16 and LM4_24 have 0s in the fraction carbon, is there a reason for this?
+
 # Format species correctly
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%

@@ -17,7 +17,8 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 
 ## Read in data
 ward_ea <- read_csv("data/primary_studies/Ward_2021/original/PublishedEAData.csv")
-ward_cores <- read_csv("data/primary_studies/Ward_2021/original/PublishedCoreData.csv")
+# ward_cores <- read_csv("data/primary_studies/Ward_2021/original/PublishedCoreData.csv")
+ward_cores_updated <- read_csv("data/primary_studies/Ward_2021/original/JaxineData.csv")
 raw_methods <- read_xlsx("data/primary_studies/Ward_2021/intermediate/Ward_2021_methods.xlsx", sheet = 2)
 
 # read in database guidance for easy reference
@@ -54,50 +55,71 @@ isotopes <- ward_ea %>%
   
 # need to create core IDs => create a sequence from the depthseries
 
-soil_data <- ward_cores %>% 
+# soil_data <- ward_cores %>% 
+#   rename(site_id = Site,
+#          habitat = `Habitat Type`,
+#          dry_bulk_density = `Bulk Density (g/cm3)`,
+#          depth_min = `Top Interval (cm)`) %>% 
+#   separate(Coordinates, into = c("latitude", "longitude"), sep = ", ") %>% 
+#   mutate(study_id = id,
+#          core_id = str_c(site_id, habitat, sep = "_"),
+#          fraction_organic_matter = `TOM (%)`/100,
+#          fraction_carbon = `OC (%)`/100, # organic carbon
+#          longitude = gsub(" ", "", longitude),
+#          depth_max = depth_min + 2)
+# Newport Bay should have bare sed instead of salt marsh (according to the paper)
+
+# write an if statement to assign core_ids based on depth intervals
+# assign the first ID
+# new_id <- 1
+# soil_data$core_id[1] <- str_c(soil_data$core_id[1], new_id, sep = "_")
+# 
+# for(i in 2:nrow(soil_data)){
+#   
+#     if(soil_data$depth_min[i - 1] < soil_data$depth_min[i]){
+#       soil_data$core_id[i] <- str_c(soil_data$core_id[i], new_id, sep = "_")
+#     } 
+#     if(soil_data$depth_min[i - 1] > soil_data$depth_min[i]){
+#       new_id <- new_id + 1
+#       soil_data$core_id[i] <- str_c(soil_data$core_id[i], new_id, sep = "_")
+#     }
+# }
+  
+# new data was sent with Core IDs...
+soil_data <- ward_cores_updated %>% 
   rename(site_id = Site,
          habitat = `Habitat Type`,
          dry_bulk_density = `Bulk Density (g/cm3)`,
          depth_min = `Top Interval (cm)`) %>% 
   separate(Coordinates, into = c("latitude", "longitude"), sep = ", ") %>% 
   mutate(study_id = id,
-         core_id = str_c(site_id, habitat, sep = "_"),
+         core_id = str_c(site_id, CoreIndexNum, sep = " "),
+         fraction_carbon = as.numeric(PercCarbOrg_EA)/100, # measurements labeled "Fail" coerced to NA
          fraction_organic_matter = `TOM (%)`/100,
-         fraction_carbon = `OC (%)`/100, # organic carbon
+         fraction_carbon_modeled = `OC (%)`/100, # organic carbon
          longitude = gsub(" ", "", longitude),
          depth_max = depth_min + 2)
-# Newport Bay should have bare sed instead of salt marsh (according to the paper)
 
-# write an if statement to assign core_ids based on depth intervals
-# assign the first ID
-new_id <- 1
-soil_data$core_id[1] <- str_c(soil_data$core_id[1], new_id, sep = "_")
-
-for(i in 2:nrow(soil_data)){
-  
-    if(soil_data$depth_min[i - 1] < soil_data$depth_min[i]){
-      soil_data$core_id[i] <- str_c(soil_data$core_id[i], new_id, sep = "_")
-    } 
-    if(soil_data$depth_min[i - 1] > soil_data$depth_min[i]){
-      new_id <- new_id + 1
-      soil_data$core_id[i] <- str_c(soil_data$core_id[i], new_id, sep = "_")
-    }
-}
-  
 # recreate paper figure
 ggplot(soil_data, aes(`Mud (%)`, `TOM (%)`, col = habitat)) +
   geom_point(size = 0.5)
 
 ggplot(soil_data) +
-  # geom_smooth() +
   geom_point(aes(dry_bulk_density, fraction_carbon, col = habitat)) +
   # geom_point(aes(depth_min, dry_bulk_density)) +
   facet_wrap(~habitat)
 
+# values are modeled
+ggplot(soil_data) +
+  geom_point(aes(fraction_organic_matter, fraction_carbon_modeled, col = "modeled")) +
+  geom_point(aes(fraction_organic_matter, fraction_carbon, col = "measured")) +
+  ylab("Fraction Carbon")
+
 ## ... Core Depthseries ####
 
 depthseries <- soil_data %>% 
-  select(-c(contains("%"), `OC (kg/m3)`, latitude, longitude, habitat)) %>%
+  select(-c(contains("%"), contains("_EA"), CoreIndexNum, fraction_carbon_modeled,
+            `OC (kg/m3)`, latitude, longitude, habitat)) %>%
   reorderColumns("depthseries", .)
 
 ## ... Core-Level ####
@@ -105,17 +127,17 @@ depthseries <- soil_data %>%
 # total of 82 sediment cores, 30 discussed previously in O'Donnell 2017
 cores <- soil_data %>% 
   # lat/lon causing expansion due to excel dragging
-  mutate(longitude = case_when(core_id == "Elkhorn Slough_Pan_67" ~ "-121.101",
-                               core_id == "Elkhorn Slough_Salt Marsh_64" ~ "-121.77",
-                               core_id == "Elkhorn Slough_Salt Marsh_65" ~ "-121.84",
-                               core_id == "Elkhorn Slough_Salt Marsh_66" ~ "-121.92",
-                               core_id == "Elkhorn Slough_Salt Marsh_68" ~ "-121.111",
-                               core_id == "Elkhorn Slough_Salt Marsh_69" ~ "-121.123",
-                               core_id == "Elkhorn Slough_Salt Marsh_70" ~ "-121.131",
-                               core_id == "Tomales Bay_Salt Marsh_61" ~ "-122.926",
-                               core_id == "Tomales Bay_Salt Marsh_62" ~ "-122.934",
-                               core_id == "Tomales Bay_Salt Marsh_63" ~ "-122.946",
-                               TRUE ~ longitude)) %>% 
+  mutate(longitude = case_when(core_id == "Elkhorn Slough 86" ~ "-121.101", # "Elkhorn Slough_Pan_67"
+                               core_id == "Elkhorn Slough 83" ~ "-121.77", # "Elkhorn Slough_Salt Marsh_64"
+                               core_id == "Elkhorn Slough 84" ~ "-121.84", #"Elkhorn Slough_Salt Marsh_65"
+                               core_id == "Elkhorn Slough 85" ~ "-121.92", # "Elkhorn Slough_Salt Marsh_66"
+                               core_id == "Elkhorn Slough 87" ~ "-121.111", # "Elkhorn Slough_Salt Marsh_68"
+                               core_id == "Elkhorn Slough 88" ~ "-121.123", # "Elkhorn Slough_Salt Marsh_69"
+                               core_id == "Elkhorn Slough 89" ~ "-121.131", # "Elkhorn Slough_Salt Marsh_70"
+                               core_id == "Tomales Bay 80" ~ "-122.926", # "Tomales Bay_Salt Marsh_61"
+                               core_id == "Tomales Bay 81" ~ "-122.934", # "Tomales Bay_Salt Marsh_62"
+                               core_id == "Tomales Bay 82" ~ "-122.946", # "Tomales Bay_Salt Marsh_63"
+                               TRUE ~ longitude)) %>%
   distinct(study_id, site_id, core_id, latitude, longitude, habitat) %>% 
   mutate(vegetation_class = case_when(habitat == "Seagrass" ~ "seagrass",
                                       habitat == "Salt Marsh" ~ "emergent",
@@ -127,6 +149,8 @@ cores <- soil_data %>%
                           "Salt Marsh" = "marsh",
                           "Bare sed" = "unvegetated",
                           "Pan" = "unvegetated"),
+         position_method = "handheld",
+         position_notes = ifelse(habitat == "seagrass", "treat as site-level; cores likely taken by SCUBA, with coordinates taken from boat", NA),
          inundation_class = "low",
          core_length_flag = "core depth limited by length of corer") %>%
   reorderColumns('cores', .)
@@ -159,7 +183,7 @@ leaflet(cores) %>%
   addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
                    radius = 3, label = ~core_id)
 
-table_names <- c("methods", "cores", "depthseries", "impacts", "species")
+table_names <- c("methods", "cores", "depthseries", "species")
 
 # Check col and varnames
 testTableCols(table_names)
@@ -179,7 +203,15 @@ library(RefManageR)
 
 # if(!file.exists("data/primary_studies/Ward_et_al_2021/derivative/Ward_et_al_2021_study_citations.csv")){
 # Read in bibtex files
-data_bib <- as.data.frame(GetBibEntryWithDOI("10.5066/P97CAF30"))
+data_bib <- data.frame(study_id = id,
+                       bibtype = "Misc",
+                       author = "Melissa Ward",
+                       title = "Data from: Organic carbon, grain size, elemental/isotopic composition",
+                       year = "2021",
+                       month = "8",
+                       url = "https://doi.org/10.5061/dryad.m0cfxpp31",
+                       doi = "10.5061/dryad.m0cfxpp31")
+
 pub_bib <- as.data.frame(ReadBib("data/primary_studies/Ward_2021/original/Ward_2021_study_citation.bib"))
 
 study_citations <- bind_rows(data_bib, pub_bib) %>%
@@ -195,18 +227,18 @@ bib_file <- study_citations %>%
   distinct() %>%
   column_to_rownames("bibliography_id")
 
-# WriteBib(as.BibEntry(bib_file), "data/primary_studies/Ward_et_al_2021/derivative/Ward_et_al_2021.bib")
-# write_csv(study_citations, "data/primary_studies/Ward_et_al_2021/derivative/Ward_et_al_2021_study_citations.csv")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Ward_2021/derivative/Ward_et_al_2021.bib")
+write_csv(study_citations, "data/primary_studies/Ward_2021/derivative/Ward_et_al_2021_study_citations.csv")
 # }
 
 ## 4. Write files ####
 
 # Adjust the filepaths to output to the correct derivative folder
-# write_csv(cores, "data/primary_studies/Ward_et_al_2021/derivative/Ward_et_al_2021_cores.csv") 
-# write_csv(depthseries, "data/primary_studies/Ward_et_al_2021/derivative/Ward_et_al_2021_depthseries.csv")
-# write_csv(methods, "data/primary_studies/Ward_et_al_2021/derivative/Ward_et_al_2021_methods.csv")
-# write_csv(sites, "data/primary_studies/Ward_et_al_2021/derivative/Ward_et_al_2021_sites.csv")
-# write_csv(species, "data/primary_studies/Ward_et_al_2021/derivative/Ward_et_al_2021_species.csv")
-# write_csv(impacts, "data/primary_studies/Ward_et_al_2021/derivative/Ward_et_al_2021_impacts.csv")
+write_csv(cores, "data/primary_studies/Ward_2021/derivative/Ward_et_al_2021_cores.csv")
+write_csv(depthseries, "data/primary_studies/Ward_2021/derivative/Ward_et_al_2021_depthseries.csv")
+write_csv(methods, "data/primary_studies/Ward_2021/derivative/Ward_et_al_2021_methods.csv")
+# write_csv(sites, "data/primary_studies/Ward_2021/derivative/Ward_et_al_2021_sites.csv")
+write_csv(species, "data/primary_studies/Ward_2021/derivative/Ward_et_al_2021_species.csv")
+# write_csv(impacts, "data/primary_studies/Ward_2021/derivative/Ward_et_al_2021_impacts.csv")
 
 

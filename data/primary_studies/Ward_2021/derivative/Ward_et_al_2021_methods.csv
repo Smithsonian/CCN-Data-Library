@@ -1,0 +1,2 @@
+study_id,method_id,coring_method,roots_flag,sediment_sieved_flag,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,loss_on_ignition_sample_mass,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_method,fraction_carbon_type
+Ward_et_al_2021,single set of methods,pvc and hammer,roots and rhizomes separated,sediment not sieved,compaction quantified,60,not specified,550,4,10,measured,TRUE,direct acid treatment,Craft regression,organic carbon

@@ -37,6 +37,7 @@ impacts <- impacts_raw
 
 methods <- methods_raw %>%
   mutate(method_id = "single set of methods",
+         dating_notes = "activities collected to the detection limit",
          excess_pb210_model = "CIC",
          excess_pb210_rate = "mass accumulation")
 

@@ -58,7 +58,8 @@ species <- raw_species %>%
 
 # methods
 methods <- raw_methods %>%
-  mutate(method_id = "single set of methods")
+  mutate(method_id = "single set of methods",
+         fraction_carbon_type = "total carbon")
 
 # impacts
 impacts <- raw_impacts

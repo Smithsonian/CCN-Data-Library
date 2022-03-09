@@ -63,6 +63,13 @@ depthseries <- depthseries_raw %>%
             delta_N15, gamma_counting_sedmass, cumulative_sedmass_atdepth))
 # 'date' attribute: date at bottom of the depth interval, calculated as coring date minus sample age
 
+# visual check
+ggplot(depthseries, aes(fraction_organic_matter, fraction_carbon, col = core_id)) + 
+  geom_point() +
+  ggtitle("Breithaupt et al 2014 fraction carbon ~ LOI")
+# ggsave("breithaupt_2014_carbon_loi.jpg")
+# I think SH3-5 has modeled data?
+
 methods <- methods_raw %>%
   select(-c(dbd_1_cm_section_sample_volume, dbd_2_cm_section_sample_volume,
             loi_1_cm_section_sample_volume, loi_2_cm_section_sample_volume))
@@ -72,6 +79,9 @@ study_citations <- as.data.frame(bib) %>%
   mutate(bibliography_id = c("Breithaupt_et_al_2014_article","Breithaupt_et_al_2019_data"), 
          study_id = study_id_value,
          publication_type = c("associated source", "primary dataset")) %>%
+  mutate(doi = ifelse(bibliography_id == "Breithaupt_et_al_2014_article", 
+                      "10.1002/2014JG002715", doi),
+         url = paste0("https://doi.org/", doi)) %>% 
   remove_rownames() %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 

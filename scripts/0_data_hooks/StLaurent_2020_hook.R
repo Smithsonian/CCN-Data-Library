@@ -33,9 +33,10 @@ depthseries <- depthseries_raw %>%
   select(-c(fraction_carbon_modeled, fraction_carbonate, 
             fraction_nitrogen, fraction_hydrogen, fraction_sulfur, porewater_salinity))
 
-# methods (no change)
+# methods 
 methods <- methods_raw %>%
   mutate(fraction_carbon_method = "EA",
+         carbon_measured_or_modeled = "measured",
          method_id = "single set of methods")
 
 # species uncontrolled:
