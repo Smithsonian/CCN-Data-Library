@@ -73,7 +73,7 @@ suttle_ds <- bind_rows(FL, MA1, MA2, RI) %>%
          depth_max = ifelse(Depth_mid %% 1 == 0.5, Depth_mid + 0.5, Depth_mid + 1)) %>% 
   select(-Age)
 
-# Should we leave these out? since they're derivative calculations?
+# leaving these out since they're derivative calculations
 # VAR = vertical accretion rate
 # MAR = mass accumulation rate (DBD * VAR)
 # CAR = carbon accumulation rate
@@ -95,13 +95,14 @@ depthseries <- suttle_ds %>%
             LOI, year, month, day, Elevation, Year_restored, VAR, MAR, CAR))
 # create method_id lookup to merge to depthseries
 
-ggplot(depthseries) +
-  geom_point(aes(dry_bulk_density, fraction_carbon, col = method_id)) +
+ggplot(depthseries %>% drop_na(fraction_organic_matter, fraction_carbon)) +
+  geom_point(aes(fraction_organic_matter, fraction_carbon, col = study_id)) +
+  # geom_point(aes(dry_bulk_density, fraction_carbon)) +
   # geom_line(aes(fraction_carbon, depth_min, col = method_id)) +
   # facet_wrap(~study_id) +
   theme_bw()
-# salt barren core has no fraction carbon
-
+# only FL cores have both fraction_organic_matter and fraction_carbon
+# other states have fraction carbon but no LOI
 
 ## ... Core-Level ####
 
@@ -205,6 +206,7 @@ impacts <- suttle_ds %>%
                                   site_id == "Herring River" ~ "tidally restricted",
                                   site_id == "E.G. Simmons" | site_id == "Fort de Soto" ~ "restored",
                                   TRUE ~ NA_character_)) %>% 
+  drop_na(impact_class) %>% 
   select(-Status)
 
 # no impacts indicated for RI cores
@@ -241,7 +243,7 @@ leaflet(cores) %>%
 table_names <- c("methods", "cores", "depthseries", "impacts", "species")
 
 testTableCols(table_names)
-testTableVars(table_names) # methods and cores
+testTableVars(table_names) # coring method: shovel; vegetation class 'scrub/shrub' vs 'scrub shrub' needs standardization
 testRequired(table_names)
 
 test_unique_cores(cores)
@@ -288,7 +290,6 @@ write_csv(study_citations, "data/primary_studies/Okeefe-Suttles_et_al_2021/deriv
 write_csv(cores, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_cores.csv")
 write_csv(depthseries, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_depthseries.csv")
 write_csv(methods, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_methods.csv")
-# write_csv(sites, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_sites.csv")
 write_csv(species, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_species.csv")
 write_csv(impacts, "data/primary_studies/Okeefe-Suttles_et_al_2021/derivative/Okeefe-Suttles_et_al_2021_impacts.csv")
 

@@ -53,6 +53,7 @@ isotopes <- ward_ea %>%
   select(-Under_wrack_YN, -Surface_Deep_10cm)
 # Pan cores were collected from patches of unvegetated sediment in salt marshes
   
+# Melissa provided an updated table wiht core IDs, the following workflow is archived
 # need to create core IDs => create a sequence from the depthseries
 
 # soil_data <- ward_cores %>% 
@@ -109,7 +110,7 @@ ggplot(soil_data) +
   # geom_point(aes(depth_min, dry_bulk_density)) +
   facet_wrap(~habitat)
 
-# values are modeled
+# plot carbon values measured against modeled
 ggplot(soil_data) +
   geom_point(aes(fraction_organic_matter, fraction_carbon_modeled, col = "modeled")) +
   geom_point(aes(fraction_organic_matter, fraction_carbon, col = "measured")) +
@@ -117,6 +118,7 @@ ggplot(soil_data) +
 
 ## ... Core Depthseries ####
 
+# discard modeled values
 depthseries <- soil_data %>% 
   select(-c(contains("%"), contains("_EA"), CoreIndexNum, fraction_carbon_modeled,
             `OC (kg/m3)`, latitude, longitude, habitat)) %>%
@@ -126,7 +128,7 @@ depthseries <- soil_data %>%
 
 # total of 82 sediment cores, 30 discussed previously in O'Donnell 2017
 cores <- soil_data %>% 
-  # lat/lon causing expansion due to excel dragging
+  # lat/lon causing expansion due to excel dragging...
   mutate(longitude = case_when(core_id == "Elkhorn Slough 86" ~ "-121.101", # "Elkhorn Slough_Pan_67"
                                core_id == "Elkhorn Slough 83" ~ "-121.77", # "Elkhorn Slough_Salt Marsh_64"
                                core_id == "Elkhorn Slough 84" ~ "-121.84", #"Elkhorn Slough_Salt Marsh_65"

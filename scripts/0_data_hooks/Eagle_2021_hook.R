@@ -83,7 +83,7 @@ depthseries <- eagle_ds %>%
 ggplot(depthseries) +
   # geom_smooth() +
   # geom_point(aes(dry_bulk_density, depth_min, col = core_id), alpha = 0.5)
-  geom_point(aes(fraction_carbon, dry_bulk_density))
+  geom_point(aes(dry_bulk_density, fraction_carbon))
   # facet_wrap(vars(core_id), scales = "free")
 
 ## ... Core-Level ####
@@ -138,7 +138,7 @@ table_names <- c("methods", "cores", "depthseries", "impacts", "species")
 
 # Check col and varnames
 testTableCols(table_names)
-testTableVars(table_names)
+testTableVars(table_names) # I think we'll be adding selected intervals to controlled variables
 testRequired(table_names)
 
 test_unique_cores(cores)

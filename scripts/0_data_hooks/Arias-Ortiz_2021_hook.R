@@ -47,6 +47,11 @@ depthseries <- raw_depthseries %>%
             fraction_estimated_organic_carbon, fraction_inorganic_carbon, fraction_nitrogen,  fraction_h2o)) %>% 
   reorderColumns("depthseries", .)
 
+# visualize fraction carbon
+ggplot(depthseries) +
+  geom_point(aes(fraction_organic_matter, fraction_carbon, col = core_id)) +
+  facet_wrap(~core_id) + theme_bw()
+
 # methods
 # ra226_counting_method not in guidance
 # custom box model and selected samples for ra226 assumption

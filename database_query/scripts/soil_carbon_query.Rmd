@@ -39,16 +39,23 @@ ds <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv", guess_ma
 # isolate cores with fraction C and LOI data
 cores_to_keep <- ds %>% drop_na(fraction_carbon, fraction_organic_matter) %>% distinct(core_id) %>% pull(core_id)
 
-c_modeled <- c("Chen_and_Twilley_1999", "Jones_et_al_2016", "Liu_2005", "Liu_et_al_2008", "Naidoo_and_Raiman_1982", "Elsey_Quirk_et_al_2011", "He_et_al_2002", "Ren_et_al_2008",
-               "McGlathery_et_al_2012", "Naidoo_1980", "Nsombo_et_al_2016", "Sanders_et_al_2012_MER", "Tam_and_Wong_1998", "Ceron-Breton_et_al_2011", "DelVecchia_et_al_2014",
-               "Vasconcelos_et_al_2014", "Yando_et_al_2016", "Callaway_et_al_1997")
+# c_modeled <- c("Chen_and_Twilley_1999", "Jones_et_al_2016", "Liu_2005", "Liu_et_al_2008", "Naidoo_and_Raiman_1982", "Elsey_Quirk_et_al_2011", "He_et_al_2002", "Ren_et_al_2008",
+#                "McGlathery_et_al_2012", "Naidoo_1980", "Nsombo_et_al_2016", "Sanders_et_al_2012_MER", "Tam_and_Wong_1998", "Ceron-Breton_et_al_2011", "DelVecchia_et_al_2014",
+#                "Vasconcelos_et_al_2014", "Yando_et_al_2016", "Callaway_et_al_1997")
+
+# modeled_cores <- c("WSC12", "WSC13_2", "WSC10_1", "SH3-5")
+# cores LM3_16 and LM4_24 have 0s in the fraction carbon
 
 # merge all...hallelujah
 all <- left_join(ds, cores) %>% 
   left_join(methods) %>%
   filter(core_id %in% cores_to_keep) %>% 
-  mutate(carbon_measured_or_modeled = ifelse(study_id %in% c_modeled, "modeled", 
-                                             carbon_measured_or_modeled)) %>%
+  # knit picky filtering of potentially modeled cores
+  mutate(fraction_carbon = case_when(core_id %in% c("WSC12", "WSC13_2", "WSC10_1", "SH3-5") ~ NA_real_, 
+                                     core_id %in% c("LM3_16", "LM4_24") & fraction_carbon == 0 ~ NA_real_, 
+                                     TRUE ~ fraction_carbon)) %>% 
+  # mutate(carbon_measured_or_modeled = ifelse(study_id %in% c_modeled, "modeled", 
+  #                                            carbon_measured_or_modeled)) %>%
   select_if(function(x) {!all(is.na(x))}) %>% 
   select(study_id, site_id, core_id, method_id, year, month, day, latitude, longitude,
          admin_division, habitat, everything())
@@ -70,8 +77,8 @@ all_measured <- all %>%
   mutate(carbon_measured_or_modeled = ifelse(study_id %in% c_measured, 
                                              "measured", "mixed")) %>% 
   drop_na(fraction_carbon, fraction_organic_matter) %>% 
-  add_count(study_id) %>% select(n, everything()) %>% 
-  filter(n > 20)
+  add_count(study_id) %>% select(n, everything())
+  # filter(n > 20)
 
 all_measured %>% 
   # filter(study_id == "Breithaupt_et_al_2014") %>%

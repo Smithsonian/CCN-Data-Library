@@ -69,7 +69,7 @@ depthseries <- reorderColumns("depthseries", depthseries_data) %>%
   select(-year, -month)
 
 ggplot(depthseries) +
-  geom_point(aes(dry_bulk_density, fraction_carbon))
+  geom_point(aes(fraction_organic_matter, fraction_carbon))
 
 ## ... Core-Level ####
 

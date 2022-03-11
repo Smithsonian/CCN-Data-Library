@@ -28,10 +28,14 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 # cores
 cores <- raw_cores %>% select(-average_salinity) %>% 
-  mutate(habitat = "marsh")
+  mutate(habitat = "marsh",
+         core_id = paste0("NRM_", core_id))
 
 # depthseries
-depthseries <- raw_depthseries %>% mutate(method_id = "single set of methods") %>% 
+depthseries <- raw_depthseries %>% 
+  mutate(method_id = "single set of methods",
+         # make core id more unique
+         core_id = paste0("NRM_", core_id)) %>% 
   reorderColumns("depthseries", .)
 
 # methods

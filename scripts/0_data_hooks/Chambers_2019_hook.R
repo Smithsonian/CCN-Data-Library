@@ -101,6 +101,9 @@ depthseries <- reorderColumns("depthseries", join_depthseries) %>%
   select(-c(core_latitude, core_longitude, sampling_date, 
             total_c_g_kg, total_c_g_cm_3, carbon_density_g_cm_3))
 
+# visualize => confirmed measured carbon
+ggplot(depthseries, aes(fraction_organic_matter, fraction_carbon)) + geom_point(alpha = 0.5)
+
 # cores
 cores <- join_depthseries %>%
   select(study_id, site_id, core_id, core_latitude, core_longitude, sampling_date) %>%
@@ -161,7 +164,7 @@ if(!file.exists("./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_
   write_csv(study_citations, "./data/primary_studies/Chambers_et_al_2019/derivative/Chambers_et_al_2019_study_citations.csv")
 }
 
-# Update Tables ###########
+# Update Tables to V2.1.1 ###########
 source("./scripts/1_data_formatting/versioning_functions.R")
 
 table_names <- c("methods", "cores", "depthseries")

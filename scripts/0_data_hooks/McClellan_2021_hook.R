@@ -44,8 +44,8 @@ soil_data <- soil_data_raw %>%
   select_if(function(x) {!all(is.na(x))}) %>% 
   filter(`Coded ID†` != "Column sum") %>% 
   rename(sample_id = `Coded ID†`,
-         fraction_organic_matter = `Soil loss-on-ignition (mg·g−1)`, # need conversion?
-         fraction_carbon = `Total soil organic carbon (mg·g−1)`, # need conversion?
+         fraction_organic_matter = `Soil loss-on-ignition (mg·g−1)`, 
+         fraction_carbon = `Total soil organic carbon (mg·g−1)`, 
          dry_bulk_density = `Soil bulk density (g·cm−3)`) %>% 
   separate(sample_id, into = c("site_id", "plot", "depth_min"), sep = "-", remove = F) %>% 
   mutate(study_id = id,
@@ -55,6 +55,7 @@ soil_data <- soil_data_raw %>%
                           TRUE ~ plot),
          marsh = ifelse(grepl("S", site_id), "Sabine","WLD"),
          core_id = str_c(site_id, plot, sep = "-"),
+         # convert mg·g−1 to fractions
          fraction_organic_matter = fraction_organic_matter/1000,
          fraction_carbon = fraction_carbon/1000,
          depth_min = as.numeric(depth_min),
@@ -63,12 +64,8 @@ soil_data <- soil_data_raw %>%
             `Soil moisture content (%)`, `Refractory soil organic carbon (mg·g−1)`))
 
 ggplot(soil_data) +
-  # geom_point(aes(fraction_organic_matter, fraction_carbon))
-  geom_point(aes(dry_bulk_density, fraction_carbon))
-
-# need conversion:     
-# "Soil loss-on-ignition (mg·g−1)" => fraction_organic_matter     
-# "Total soil organic carbon (mg·g−1)" => fraction_carbon
+  geom_point(aes(fraction_organic_matter, fraction_carbon))
+  # geom_point(aes(dry_bulk_density, fraction_carbon))
 
 depthseries <- soil_data %>% 
   reorderColumns("depthseries", .) %>% 
