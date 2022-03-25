@@ -58,8 +58,10 @@ depthseries <- depthseries_raw %>%
 
 ggplot(depthseries %>% filter(core_id == "LM3_16" | core_id == "LM4_24"), 
        aes(fraction_organic_matter, fraction_carbon, col = core_id)) + 
-  geom_point(alpha = 0.5)
+  geom_point(alpha = 0.6) +
+  ggtitle("Poppe_and_Rybczyk_2019 cores with zero fraction C")
 # cores LM3_16 and LM4_24 have 0s in the fraction carbon, is there a reason for this?
+# ggsave("database_query/figures/poppe_and_rybczyk_2019_zero_carbon.jpg")
 
 # Format species correctly
 species <- species_raw %>%

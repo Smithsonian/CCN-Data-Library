@@ -87,9 +87,24 @@ all_measured %>%
   theme_bw(base_size = 15) + 
   facet_wrap(~study_id, scales = "free", ncol = 4) +
   theme(legend.position = "bottom")
+
 ```
 
 This dataset contains `r length(unique(all_measured$core_id))` soil profiles in the Coastal Carbon Atlas which have both LOI and %C (represented as fraction_carbon) and across all tidal wetland ecosystem types reported. Fraction C represents only measured values (filtering in progress). The field fraction_carbon_type details whether fraction_carbon is total or organic carbon. Please refer to the database guidance for a more detailed breakdown of the metadata.
+
+```{r fig.height=24, fig.width=12}
+# Dry Bulk Density and Fraction Organic Matter 
+
+all_measured %>% 
+  drop_na(fraction_organic_matter, dry_bulk_density) %>% 
+  # filter(study_id == "Breithaupt_et_al_2014") %>%
+  ggplot(aes(fraction_organic_matter, dry_bulk_density)) +
+  geom_point(alpha = 0.5, size = 0.5) +
+  theme_bw(base_size = 15) + 
+  facet_wrap(~study_id, scales = "free", ncol = 5) +
+  theme(legend.position = "bottom")
+```
+
 
 ### Map of coring locations
 

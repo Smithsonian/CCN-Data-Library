@@ -1,4 +1,4 @@
-## Methane Working Group Chamber Data Synthesis
+## CCRCN Data Library
 
 ## script for generating a pretty HTML version of the database guidance
 ## contact: Jaxine Wolfe, wolfejax@si.edu
@@ -7,6 +7,7 @@ library(tidyverse)
 library(knitr)
 library(kableExtra)
 library(reactable)
+library(reactablefmtr)
 
 # load controlled variables for table nesting
 variables <- read_csv("docs/controlled_variables.csv", col_types = cols()) %>% 
@@ -22,9 +23,16 @@ vars_collapse <- variables %>%
 guidance <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols()) %>% 
   # filter out attributes added during post-processing
   filter(required != "added automatically") %>% 
-  mutate(required = recode(required, "conditional" = "encouraged")) %>% 
-  select(table, attribute_name, attribute_definition, required, data_type, format_unit_codes) %>% 
+  mutate(required = case_when(required %in% c("required", "encouraged") ~ "Y",
+                                   attribute_name %in% c("study_id", "site_id", "core_id", "method_id", "habitat",
+                                                         "salinity_class", "vegetation_class", "inundation_class", "impact_class",
+                                                         "salinity_method", "vegetation_method", "inundation_method") ~ "Y", 
+                                   TRUE ~ NA_character_)) %>% 
+  # mutate(required = recode(required, "conditional" = "encouraged")) %>% 
+  select(table, attribute_name, attribute_definition, required,  data_type, format_unit_codes) %>% 
   left_join(vars_collapse) # join the collapsed variable names
+
+
 
 # write function to generate interactive tables
 renderTable <- function(tabletype){
@@ -33,14 +41,25 @@ renderTable <- function(tabletype){
     filter(table == tabletype) %>% 
     mutate(units = ifelse(data_type == "factor", NA, format_unit_codes)) %>% 
     select(-table, -format_unit_codes) %>% select(-variable_names, variable_names) %>% 
-    rename(column_name = attribute_name, definition = attribute_definition)
+    rename(`column name` = attribute_name, `data type` = data_type, 
+           definition = attribute_definition, `variable names` = variable_names)
   # need to make column names more user friendly
   
   # conditionally displayed table nesting
-  factor_rows <- which(table_guidance$data_type == "factor")
+  factor_rows <- which(table_guidance$`data type` == "factor")
+  # conditional emphasis of key attributes
+  key_rows <- which(table_guidance$required == "Y")
   
   # create interactive table
-  reactable(table_guidance, searchable = TRUE, highlight = TRUE,
+  reactable(table_guidance %>% select(-required), searchable = TRUE, highlight = TRUE, 
+            pagination = FALSE,
+            # bold key attributes
+            columns = list(`column name` = colDef(style = cell_style(rows = key_rows, 
+                                                                     font_weight = "bold",
+                                                                     horizontal_align = "left"),
+                                                  width = 210),
+                           definition = colDef(width = 200),
+                           `data type` = colDef(width =  80)),
             # rowClass = function(index) {
             #   if (table_guidance$required[index] == "required") {
             #     "bold"
@@ -54,7 +73,7 @@ renderTable <- function(tabletype){
             details = function(index) {
     if (index %in% factor_rows) {
       # store variable name at index
-      attribute <- table_guidance$column_name[index]
+      attribute <- table_guidance$`column name`[index]
       # create table of variable codes for given attribute
       reactable(variables %>% 
                   filter(attribute_name == attribute) %>% 
