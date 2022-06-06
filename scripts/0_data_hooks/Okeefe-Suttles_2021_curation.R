@@ -252,6 +252,15 @@ test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
 
+# data visualization reports
+# studies <- unique(cores$study_id)
+
+# for (i in studies) {
+  # cores <- cores %>% filter(study_id == i)
+  # depthseries <- depthseries %>% filter(study_id == i)
+  
+  writeDataVizReport("OKeefe-Suttles_et_al_2021")
+# }
 ## 3. Study Citations ####
 
 # Use RefManageR package to pull DOI

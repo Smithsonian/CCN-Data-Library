@@ -147,6 +147,9 @@ test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
 
+# Data visualization report
+writeDataVizReport(id)
+
 ## 3. Study Citations ####
 
 # Use RefManageR package to pull DOI

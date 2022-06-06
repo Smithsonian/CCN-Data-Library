@@ -14,12 +14,12 @@ species2 <- read_csv("data/CCRCN_synthesis/original/CCRCN_species.csv")
 # read in our taxa database with associated habitat
 # spref <- read_csv("docs/versioning/species-habitat-classification-JH-20200824.csv")
 
-synthspecies <- species2 %>% 
-  select(-habitat, -code_type) %>% 
-  left_join(spref)
+# synthspecies <- species2 %>% 
+#   select(-habitat, -code_type) %>% 
+#   left_join(spref)
 
+# Habitat specific species are now ASSIGNED IN THE HOOK SCRIPTS
 # First classify habitat according to the big habitat-specific syntheses
-# ASSIGNED IN THE HOOK SCRIPTS
 # sanderman <- read_csv("docs/post_processing/habitat_assignment/Sanderman_2018_cores.csv") %>% 
 #   select(study_id, core_id) %>% 
 #   mutate(habitat2 = "mangrove")
@@ -82,11 +82,16 @@ habitat_comparison <- cores_sal_veg_habitat %>% # veg and sal defined habitat
   left_join(study_habitat_ids_manual) %>% # manual classifications
   left_join(habitat_cases) %>% # fuzzy matching
   select(study_id, site_id, core_id, vegetation_class, salinity_class, 
-         habitat1, habitat2, habitat3, habitat4, habitat5, habitat6, habitat7)
+         habitat1, 
+         # habitat2, # assigned in hook scripts now
+         habitat3, habitat4, habitat5, habitat6, habitat7)
 
 
 # investigate the NA habitats left over
-na_habitat_comparison <- filter(habitat_comparison, is.na(habitat1) & is.na(habitat2) & is.na(habitat3) & is.na(habitat4) & is.na(habitat5) & is.na(habitat6) & is.na(habitat7))
+na_habitat_comparison <- filter(habitat_comparison, is.na(habitat1) & 
+                                  # is.na(habitat2) & 
+                                  is.na(habitat3) & 
+                                  is.na(habitat4) & is.na(habitat5) & is.na(habitat6) & is.na(habitat7))
 # Seems pretty reasonable to leave these NA's
 # there are some species described that haven't been associated with a habitat in our species-habitat table
 
@@ -113,6 +118,9 @@ cores_with_habitat <- cores2 %>%
   select(-habitat) %>% # get rid of the original habitat column
   left_join(habitat_final)
 
+if(length(which(is.na(cores_with_habitat$habitat))) > 0){
+  write_csv(filter(cores_with_habitat, is.na(habitat)), "data/QA/no_habitat_cores.csv")
+}
 
 ## Data Visualization ####
 library(leaflet)
@@ -122,7 +130,7 @@ map_cores <- cores_with_habitat %>%
   # current habitats: "algal mat", "mangrove", "marsh", "mudflat", "scrub shrub", "seagrass", "swamp", "unvegetated", "upland"  
   # filter(habitat == "marsh") %>% # filter for particular habitats
   # filter(salinity_class == "brine") %>% 
-  filter(vegetation_class = "emergent")
+  filter(habitat == "mangrove")
 
 pal <- colorFactor(
   palette = 'Dark2',

@@ -93,6 +93,9 @@ test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
 
+# data vis report
+writeDataVizReport(id)
+
 ## Write derivative data ####
 write_csv(cores, "./data/primary_studies/Ensign_et_al_2020/derivative/Ensign_et_al_2020_cores.csv")
 write_csv(methods, "./data/primary_studies/Ensign_et_al_2020/derivative/Ensign_et_al_2020_methods.csv")

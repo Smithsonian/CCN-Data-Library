@@ -45,6 +45,55 @@ Peck_et_al_2020,Tillamook,MID.A009,diked and drained
 Peck_et_al_2020,Tillamook,NOR.A004,diked and drained
 Peck_et_al_2020,Tillamook,NS-CR.A073,diked and drained
 Peck_et_al_2020,Tillamook,SO.CR.A028,diked and drained
+Okeefe-Suttles_et_al_2021_FL,Fort de Soto,FL_FDS,restored
+Okeefe-Suttles_et_al_2021_FL,E.G. Simmons,FL_EGSA,restored
+Okeefe-Suttles_et_al_2021_FL,E.G. Simmons,FL_EGSB,restored
+Okeefe-Suttles_et_al_2021_FL,Holly House,FL_HHMA,NA
+Okeefe-Suttles_et_al_2021_FL,Holly House,FL_HHMB,NA
+Okeefe-Suttles_et_al_2021_FL,Rocky Creek,FL_RCRA,NA
+Okeefe-Suttles_et_al_2021_FL,Rocky Creek,FL_RCRB,NA
+Okeefe-Suttles_et_al_2021_FL,Upper Tampa Bay,FL_UTR,NA
+Okeefe-Suttles_et_al_2021_FL,Weedon Island,FL_WI,NA
+Okeefe-Suttles_et_al_2021_FL,Upper Tampa Bay,FL_UTSB,NA
+Okeefe-Suttles_et_al_2021_Cape,Quivett,MA_QCNA,natural
+Okeefe-Suttles_et_al_2021_Cape,Quivett,MA_QCNB,natural
+Okeefe-Suttles_et_al_2021_Cape,Quivett,MA_QCRA,tidally restored
+Okeefe-Suttles_et_al_2021_Cape,Bass,MA_BCNA,natural
+Okeefe-Suttles_et_al_2021_Cape,Bass,MA_BCNB,natural
+Okeefe-Suttles_et_al_2021_Cape,Bass,MA_BCRA,tidally restored
+Okeefe-Suttles_et_al_2021_Cape,Bass,MA_BCRB,tidally restored
+Okeefe-Suttles_et_al_2021_Cape,Stony,MA_SBNA,natural
+Okeefe-Suttles_et_al_2021_Cape,Stony,MA_SBNB,natural
+Okeefe-Suttles_et_al_2021_Cape,Stony,MA_SBRA,tidally restored
+Okeefe-Suttles_et_al_2021_Cape,Stony,MA_SBRB,tidally restored
+Okeefe-Suttles_et_al_2021_Cape,Boat,MA_BMNA,natural
+Okeefe-Suttles_et_al_2021_Cape,Boat,MA_BMNB,natural
+Okeefe-Suttles_et_al_2021_Cape,Boat,MA_BMRA,tidally restored
+Okeefe-Suttles_et_al_2021_Cape,Boat,MA_BMRB,tidally restored
+Okeefe-Suttles_et_al_2021_Cape,Scusset,MA_SMB,tidally restored
+Okeefe-Suttles_et_al_2021_Cape,Scusset,MA_SMC,tidally restored
+Okeefe-Suttles_et_al_2021_Cape,Scusset,MA_MCA,natural
+Okeefe-Suttles_et_al_2021_Cape,Scusset,MA_MCB,natural
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HRPA,tidally restricted
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HRPB,tidally restricted
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HRHKA,tidally restricted
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HRHKB,tidally restricted
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HRHTA,tidally restricted
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HRHTB,tidally restricted
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HROCA,tidally restricted
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HROCB,tidally restricted
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HRCHA,tidally restricted
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HRCHB,tidally restricted
+Okeefe-Suttles_et_al_2021_Wellfleet,Mayo Creek,MA_MYNA,tidally restricted
+Okeefe-Suttles_et_al_2021_Wellfleet,Mayo Creek,MA_MYNB,tidally restricted
+Okeefe-Suttles_et_al_2021_Wellfleet,Mayo Creek,MA_MYURA,tidally restricted
+Okeefe-Suttles_et_al_2021_Wellfleet,Mayo Creek,MA_MYURB,tidally restricted
+Okeefe-Suttles_et_al_2021_RI,Narragansett Bay,RI_MCA,NA
+Okeefe-Suttles_et_al_2021_RI,Narragansett Bay,RI_MCB,NA
+Okeefe-Suttles_et_al_2021_RI,Narragansett Bay,RI_PIA,NA
+Okeefe-Suttles_et_al_2021_RI,Narragansett Bay,RI_PIB,NA
+Okeefe-Suttles_et_al_2021_RI,Narragansett Bay,RI_MDA,NA
+Okeefe-Suttles_et_al_2021_RI,Narragansett Bay,RI_MDB,NA
 Nolte_2020,NFB,NFB_grazed_seaward,farmed
 Nolte_2020,NFB,NFB_grazed_seaward,ditched
 Nolte_2020,NFB,NFB_grazed_landward,farmed
@@ -269,6 +318,15 @@ Nahlik_and_Fennessy_2016,NWCA11-2562,NA,invasive plants removed
 Nahlik_and_Fennessy_2016,NWCA11-2447,NA,revegetated
 Nahlik_and_Fennessy_2016,NWCA11-1978,NA,revegetated
 Nahlik_and_Fennessy_2016,NWCA11-2562,NA,revegetated
+McClellan_et_al_2021,S01,NA,wetlands built
+McClellan_et_al_2021,S06,NA,wetlands built
+McClellan_et_al_2021,S14,NA,wetlands built
+McClellan_et_al_2021,S33,NA,wetlands built
+McClellan_et_al_2021,S50,NA,wetlands built
+McClellan_et_al_2021,W16,NA,sediment added
+McClellan_et_al_2021,W29,NA,sediment added
+McClellan_et_al_2021,W41,NA,sediment added
+McClellan_et_al_2021,W60,NA,sediment added
 Krauss_et_al_2018,Savannah_River_low,savannah_low_1,tidally restored
 Krauss_et_al_2018,Savannah_River_mid,savannah_mid_2,tidally restored
 Krauss_et_al_2018,Savannah_River_mid,savannah_mid_1,tidally restored
@@ -1636,6 +1694,9 @@ Windham_Meyers_et_al_2010,NA,GH,restoring
 Windham_Meyers_et_al_2010,NA,GL,restoring
 Windham_Meyers_et_al_2010,NA,HH,restoring
 Windham_Meyers_et_al_2010,NA,HL,restoring
+Eagle_et_al_2021,Martin Peña West,MPW1,tidally restored
+Eagle_et_al_2021,Martin Peña East,MPE1,tidally restricted
+Eagle_et_al_2021,Martin Peña East,MPE2,tidally restricted
 Drexler_et_al_2019,Six_Gill_Slough,SG10,tidally restored
 Drexler_et_al_2019,Six_Gill_Slough,SG11,tidally restored
 Drexler_et_al_2019,Six_Gill_Slough,SG12,tidally restored
@@ -1669,6 +1730,86 @@ Callaway_et_al_2019,Muzzi,Muzzi_A_mid,tidally restored
 Callaway_et_al_2019,Muzzi,Muzzi_B_high,tidally restored
 Callaway_et_al_2019,Muzzi,Muzzi_B_low,tidally restored
 Callaway_et_al_2019,Muzzi,Muzzi_B_mid,tidally restored
+Burden_et_al_2018,Wallasea Island Field,Walla_19_1,farmed
+Burden_et_al_2018,Wallasea Island Field,Walla_19_2,farmed
+Burden_et_al_2018,Wallasea Island Field,Walla_19_3,farmed
+Burden_et_al_2018,Wallasea Island Field,Walla_19_4,farmed
+Burden_et_al_2018,Brandy Hole Field,Brand_20_1,farmed
+Burden_et_al_2018,Brandy Hole Field,Brand_20_2,farmed
+Burden_et_al_2018,Tollesbury Field,Tolle_21_1,farmed
+Burden_et_al_2018,Tollesbury Field,Tolle_21_2,farmed
+Burden_et_al_2018,Tollesbury Field,Tolle_21_3,farmed
+Burden_et_al_2018,Tollesbury Field,Tolle_21_4,farmed
+Burden_et_al_2018,Tollesbury Field,Tolle_21_5,farmed
+Burden_et_al_2018,Tollesbury Field,Tolle_21_6,farmed
+Burden_et_al_2018,Tollesbury,Tolle_1_1,restored
+Burden_et_al_2018,Tollesbury,Tolle_1_2,restored
+Burden_et_al_2018,Tollesbury,Tolle_1_3,restored
+Burden_et_al_2018,Tollesbury,Tolle_1_4,restored
+Burden_et_al_2018,Orplands,Orpla_2_1,restored
+Burden_et_al_2018,Orplands,Orpla_2_2,restored
+Burden_et_al_2018,Orplands,Orpla_2_3,restored
+Burden_et_al_2018,Orplands,Orpla_2_4,restored
+Burden_et_al_2018,Northey MR,North_3_1,restored
+Burden_et_al_2018,Northey MR,North_3_2,restored
+Burden_et_al_2018,Northey MR,North_3_3,restored
+Burden_et_al_2018,Northey MR,North_3_4,restored
+Burden_et_al_2018,Barrow Hill,Barro_4_1,restored
+Burden_et_al_2018,Barrow Hill,Barro_4_2,restored
+Burden_et_al_2018,Barrow Hill,Barro_4_3,restored
+Burden_et_al_2018,Barrow Hill,Barro_4_4,restored
+Burden_et_al_2018,Ferry Lane (B),Ferry_5_1,restored
+Burden_et_al_2018,Ferry Lane (B),Ferry_5_2,restored
+Burden_et_al_2018,Ferry Lane (B),Ferry_5_3,restored
+Burden_et_al_2018,Ferry Lane (B),Ferry_5_4,restored
+Burden_et_al_2018,Wallasea Island,Walla_6_1,restored
+Burden_et_al_2018,Wallasea Island,Walla_6_2,restored
+Burden_et_al_2018,Wallasea Island,Walla_6_3,restored
+Burden_et_al_2018,Wallasea Island,Walla_6_4,restored
+Burden_et_al_2018,Northey Island,North_7_1,restored
+Burden_et_al_2018,Northey Island,North_7_2,restored
+Burden_et_al_2018,Northey Island,North_7_3,restored
+Burden_et_al_2018,Northey Island,North_7_4,restored
+Burden_et_al_2018,North Fambridge,North_8_1,restored
+Burden_et_al_2018,North Fambridge,North_8_2,restored
+Burden_et_al_2018,North Fambridge,North_8_3,restored
+Burden_et_al_2018,North Fambridge,North_8_4,restored
+Burden_et_al_2018,Brandy Hole,Brand_9_1,restored
+Burden_et_al_2018,Brandy Hole,Brand_9_2,restored
+Burden_et_al_2018,Brandy Hole,Brand_9_3,restored
+Burden_et_al_2018,Brandy Hole,Brand_9_4,restored
+Burden_et_al_2018,Tollesbury Natural,Tolle_10_1,natural
+Burden_et_al_2018,Tollesbury Natural,Tolle_10_2,natural
+Burden_et_al_2018,Tollesbury Natural,Tolle_10_3,natural
+Burden_et_al_2018,Tollesbury Natural,Tolle_10_4,natural
+Burden_et_al_2018,Orplands Natural,Orpla_11_1,natural
+Burden_et_al_2018,Orplands Natural,Orpla_11_2,natural
+Burden_et_al_2018,Orplands Natural,Orpla_11_3,natural
+Burden_et_al_2018,Orplands Natural,Orpla_11_4,natural
+Burden_et_al_2018,Northey Natural,North_12_1,natural
+Burden_et_al_2018,Northey Natural,North_12_2,natural
+Burden_et_al_2018,Northey Natural,North_12_3,natural
+Burden_et_al_2018,Northey Natural,North_12_4,natural
+Burden_et_al_2018,Barrow Hill Natural,Barro_13_1,natural
+Burden_et_al_2018,Barrow Hill Natural,Barro_13_2,natural
+Burden_et_al_2018,Barrow Hill Natural,Barro_13_3,natural
+Burden_et_al_2018,Barrow Hill Natural,Barro_13_4,natural
+Burden_et_al_2018,Ferry Lane (B) Natural,Ferry_14_1,natural
+Burden_et_al_2018,Ferry Lane (B) Natural,Ferry_14_2,natural
+Burden_et_al_2018,Ferry Lane (B) Natural,Ferry_14_3,natural
+Burden_et_al_2018,Ferry Lane (B) Natural,Ferry_14_4,natural
+Burden_et_al_2018,Wallasea Island Natural,Walla_15_1,natural
+Burden_et_al_2018,Wallasea Island Natural,Walla_15_2,natural
+Burden_et_al_2018,Wallasea Island Natural,Walla_15_3,natural
+Burden_et_al_2018,Wallasea Island Natural,Walla_15_4,natural
+Burden_et_al_2018,North Fambridge Natural,North_16_1,natural
+Burden_et_al_2018,North Fambridge Natural,North_16_2,natural
+Burden_et_al_2018,North Fambridge Natural,North_16_3,natural
+Burden_et_al_2018,North Fambridge Natural,North_16_4,natural
+Burden_et_al_2018,Brandy Hole Natural,Brand_17_1,natural
+Burden_et_al_2018,Brandy Hole Natural,Brand_17_2,natural
+Burden_et_al_2018,Brandy Hole Natural,Brand_17_3,natural
+Burden_et_al_2018,Brandy Hole Natural,Brand_17_4,natural
 Boyd_2012,Little_Creek_Marsh,LC1,impounded
 Boyd_2012,Little_Creek_Marsh,LC2,impounded
 Boyd_2012,Little_Creek_Marsh,LC3,impounded
@@ -1736,6 +1877,12 @@ Unger_et_al_2016,Maurice_River,MR2U,ditched
 Unger_et_al_2016,Reedy_Creek,RC1U,ditched
 Unger_et_al_2016,Reedy_Creek,RC2U,ditched
 Unger_et_al_2016,Reedy_Creek,RC3U,ditched
+Arias-Ortiz_et_al_2021,US-MyB,Typha M1,impounded
+Arias-Ortiz_et_al_2021,US-MyB,Phragmites,impounded
+Arias-Ortiz_et_al_2021,US-MyB,Typha M2,impounded
+Arias-Ortiz_et_al_2021,US-Tw1,Typha W1,impounded
+Arias-Ortiz_et_al_2021,US-Tw1,Typha W2,impounded
+Arias-Ortiz_et_al_2021,US-Tw1,Typha W3,impounded
 Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1983-1,tidally restored
 Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1983-2,tidally restored
 Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1983-3,tidally restored

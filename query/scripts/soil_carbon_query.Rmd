@@ -1,0 +1,346 @@
+---
+title: "Soil Core Data Visualization Report"
+author: "Jaxine Wolfe"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# this sets the working directory to start where the R project is located
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+# load libraries
+library(tidyverse)
+library(leaflet)
+library(DT)
+```
+
+## Overview
+
+```{r echo=FALSE, message=FALSE}
+
+# read in database guidance
+guidance <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols())
+
+# read in synthesis data
+methods <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_methods.csv", col_types = cols()) %>% 
+  mutate(excess_pb210_rate = recode(excess_pb210_rate, 
+                                    "mass accumulation" = "cumulative mass",
+                                    "accretion" = "depth", 
+                                    "mass accumulation and accretion" = "depth"))
+# excess_pb210_model = ifelse(study_id == "Peck_et_al_2020", "CIC", excess_pb210_model) # corrected in hook script
+
+cores <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_cores.csv", guess_max=10000, col_types = cols()) %>% 
+  mutate(habitat = ifelse(core_id == "MR3U", "marsh", habitat))
+
+ds <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv", guess_max=50000, col_types = cols()) %>% 
+  select(-site_id)
+
+# goal is to establish a new %OM vs. %C relationship for low carbon coastal wetland soils
+# isolate cores with fraction C and LOI data
+cores_to_keep <- ds %>% drop_na(fraction_carbon, fraction_organic_matter) %>% distinct(core_id) %>% pull(core_id)
+
+c_modeled <- c("Chen_and_Twilley_1999", "Jones_et_al_2016", "Liu_2005", "Liu_et_al_2008", "Naidoo_and_Raiman_1982", "Elsey_Quirk_et_al_2011", "He_et_al_2002", "Ren_et_al_2008",
+               "McGlathery_et_al_2012", "Naidoo_1980", "Nsombo_et_al_2016", "Sanders_et_al_2012_MER", "Tam_and_Wong_1998", "Ceron-Breton_et_al_2011", "DelVecchia_et_al_2014",
+               "Vasconcelos_et_al_2014", "Yando_et_al_2016", "Callaway_et_al_1997")
+
+# modeled_cores <- c("WSC12", "WSC13_2", "WSC10_1", "SH3-5")
+# cores LM3_16 and LM4_24 have 0s in the fraction carbon
+
+# merge all...hallelujah
+all <- left_join(ds, cores) %>% 
+  left_join(methods) %>%
+  filter(core_id %in% cores_to_keep) %>% 
+  # mutate(carbon_measured_or_modeled = ifelse(study_id %in% c_modeled, "modeled", 
+  #                                            carbon_measured_or_modeled)) %>%
+  select_if(function(x) {!all(is.na(x))}) %>% 
+  select(study_id, site_id, core_id, method_id, year, month, day, latitude, longitude,
+         # country, admin_division, 
+         habitat, everything())
+
+```
+
+```{r echo=FALSE, fig.width=12, fig.height=12}
+# further filtering for unassigned carbon methods to eliminate modeled values
+
+# studies with measured fraction carbon
+c_measured <- c("Abbott_et_al_2019", "Arriola_and_Cable_2017", "Breithaupt_et_al_2020",
+                "Callaway_et_al_2019", "Chambers_et_al_2019", "Danovaro_1996", "Grady_1981", "McTigue_et_al_2020", "Callaway_et_al_2019",
+                "Fourqurean_and_Kendrick_unpublished", "Fourqurean_et_al_2010", "Fourqurean_unpublished", "Hill_and_Anisfeld_2015",
+                "Kamp-Nielsen_et_al_2002", "Noe_et_al_2013", "Orem_et_al_1999", "Peck_et_al_2020", "Piazza_et_al_2011",
+                "Poppe_and_Rybczyk_2018", "Poppe_et_al_2019", "StLaurent_et_al_2020", "Unger_et_al_2016",
+                "Doughty_et_al_2016", "Kazungu_1996", "Kristensen_et_al_1992", "Osland_et_al_2012")
+
+# studies with modeled fraction carbon: Keshta_et_al_2020, Buffington_et_al_2020, Drexler_et_al_2009
+
+all_measured <- all %>% 
+  filter(study_id != "Elsey_Quirk_et_al_2011") %>% # definitely modeled
+  filter(carbon_measured_or_modeled == "measured" | is.na(carbon_measured_or_modeled)) %>%
+  mutate(high_low_carbon = ifelse(fraction_carbon <= 0.12, "low", "high")) %>% # distinguish high and low carbon content
+  mutate(carbon_measured_or_modeled = ifelse(study_id %in% c_measured, "measured", "unknown")) %>%
+    # knit picky filtering of potentially modeled cores
+  mutate(fraction_carbon = case_when(core_id %in% c("WSC12", "WSC13_2", "WSC10_1", "SH3-5") ~ NA_real_, # Breithaupt_et_al_2014
+                                     # "Poppe_et_al_2019", "Poppe_and_Rybczyk_2019", "Poppe_and_Rybczyk_2018"
+                                     core_id %in% c("LM3_16", "LM4_24") & fraction_carbon == 0 ~ NA_real_,
+                                     TRUE ~ fraction_carbon)) %>%
+  drop_na(fraction_carbon, fraction_organic_matter)
+  # add_count(study_id) %>% select(n, everything()) # way to select for sample size
+  # filter(n > 20)
+
+```
+
+This dataset contains `r length(unique(all_measured$core_id))` soil profiles in the Coastal Carbon Atlas which have both LOI and %C (represented as fraction_carbon) and across all tidal wetland ecosystem types reported.
+
+### C vs OM by Habitat and carbon determination
+```{r echo=FALSE, fig.height=12, fig.width=12}
+all_measured %>% 
+  # filter(study_id %in% c("Poppe_et_al_2019", "Poppe_and_Rybczyk_2019", "Poppe_and_Rybczyk_2018")) %>%
+  ggplot(aes(fraction_organic_matter, fraction_carbon, col = carbon_measured_or_modeled)) +
+  geom_point(alpha = 0.5, size = 1.5) +
+  theme_bw(base_size = 15) + 
+  facet_wrap(~habitat, scales = "free", dir = "v") +
+  theme(legend.position = "bottom")
+```
+
+
+### DBD vs. OM by Habitat
+```{r echo=FALSE, fig.height=12, fig.width=12}
+# Dry Bulk Density and Fraction Organic Matter 
+
+all_measured %>% 
+  drop_na(fraction_organic_matter, dry_bulk_density) %>% 
+  # filter(study_id == "Breithaupt_et_al_2014") %>%
+  ggplot(aes(fraction_organic_matter, dry_bulk_density, col = carbon_measured_or_modeled)) +
+  geom_point(alpha = 0.5, size = 1.5) +
+  theme_bw(base_size = 15) + 
+  facet_wrap(~habitat, scales = "free", dir = "v") +
+  theme(legend.position = "bottom")
+```
+
+
+### Map of coring locations
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+map_habs <- all_measured %>% distinct(study_id, site_id, core_id, latitude, longitude, habitat)
+
+pal <- colorFactor(palette = "Set2", map_habs$habitat)
+
+map_habs %>% 
+  leaflet(width = "100%") %>% 
+  addTiles() %>% 
+  addCircleMarkers(lng = ~longitude, lat = ~latitude,
+                   radius = 3, 
+                   color = ~pal(habitat),
+                   label = ~study_id) %>% 
+  addLegend(pal = pal, values = ~habitat)
+
+```
+
+### Summary of core utility and completeness
+
+High-value cores are those which are confirmed to represent an entire wetland soil profile (C1). It includes cores with dated stratigraphy and enough detailed information so that important derived variables like carbon accumulation rate and vertical accretion rate can be replicated (B1). It also contains cores with precise elevation data, which can be used to fit models that forecast wetland elevation and carbon stock response to sea-level rise (A2 and A1). Note: A core can be included in up to three use categories, depending on the information provided.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+# Isolate definitions for quality codes
+quality_defs <- guidance %>% 
+  select(attribute_name, format_unit_codes) %>% 
+  filter(attribute_name %in% c("stocks_qual_code", "dates_qual_code", "elevation_qual_code")) %>% 
+  mutate(code_definition = str_split(format_unit_codes, "; ")) %>% 
+  unnest(code_definition) %>% 
+  separate(code_definition, into = c("quality_code", "code_definition"), sep = " = ") %>% 
+  select(quality_code, code_definition) %>% 
+  arrange(quality_code)
+
+quality_smry <- all_measured %>% 
+  select(study_id, site_id, core_id, stocks_qual_code, dates_qual_code, elevation_qual_code) %>% 
+  pivot_longer(cols = c(stocks_qual_code, dates_qual_code, elevation_qual_code), names_to = "use_category",
+               values_to = "quality_code") %>% 
+  drop_na(quality_code) %>% 
+  distinct() %>% 
+  count(use_category, quality_code, name = "core_count") %>% 
+  left_join(quality_defs) %>% 
+  mutate(use_category = recode(use_category,
+                               "dates_qual_code" = "Dated stratigraphy",
+                               "stocks_qual_code" = "Carbon stock",
+                               "elevation_qual_code" = "Elevation")) %>% 
+  arrange(quality_code)
+
+knitr::kable(quality_smry)
+```
+
+```{r echo=FALSE, fig.height=8, fig.width=12}
+
+### Relationship between LOI and fraction carbon across all ecosystem types
+# all_measured %>% 
+#   drop_na(fraction_carbon, fraction_organic_matter) %>%
+#   ggplot(aes(fraction_organic_matter, fraction_carbon, col = habitat)) +
+#   geom_point(alpha = 0.5, size = 2) +
+#   theme_bw(base_size = 15) + 
+#   facet_wrap(~habitat, scales = "free") +
+#   theme(legend.position = "none")
+
+```
+
+```{r echo=FALSE, fig.width=12, fig.height=12}
+## Habitat Specific Summaries: Mangrove
+# all_measured %>% 
+#   filter(habitat == "mangrove") %>% 
+#   drop_na(fraction_carbon, fraction_organic_matter) %>%
+#   ggplot(aes(fraction_organic_matter, fraction_carbon, 
+#              col = fraction_carbon_type)) +
+#   geom_point(alpha = 0.5, size = 2) +
+#   scale_color_brewer(palette = "Dark2", na.value = "grey50") +
+#   theme_bw(base_size = 15) + 
+#   facet_wrap(~study_id, scales = "free") +
+#   theme(legend.position = "bottom")
+
+# Relationship between fraction carbon and LOI across individual studies. Fraction carbon values may be measured or modeled.
+
+```
+
+
+```{r echo=FALSE}
+
+# **High-value mangrove cores**
+
+# Note: The current version of the CCN database contains no mangrove cores with associated elevation information.
+
+# mangrove_smry <- all_measured %>%
+#   filter(habitat == "mangrove") %>%
+#   filter(stocks_qual_code == "C1" | !is.na(dates_qual_code) |
+#            !is.na(elevation_qual_code)) %>% 
+#   select(study_id, site_id, core_id, stocks_qual_code, dates_qual_code, elevation_qual_code) %>% 
+#   distinct() %>% select(-elevation_qual_code)
+# 
+# datatable(mangrove_smry,
+#           options = list(searching = FALSE,
+#                          paging = FALSE,
+#                          info = FALSE,
+#                          scrollY = 300,
+#                          scrollX = 300,
+#                          scrollCollapse = TRUE),
+#           rownames = FALSE)
+
+```
+
+
+```{r echo=FALSE, fig.width=12, fig.height=12}
+
+### Tidal Marsh
+
+# Relationship between fraction carbon and LOI across individual studies. Fraction carbon values may be measured or modeled.
+# library(RColorBrewer)
+# all_measured %>% 
+#   filter(habitat == "marsh") %>% 
+#   drop_na(fraction_carbon, fraction_organic_matter) %>%
+#   ggplot(aes(fraction_organic_matter, fraction_carbon, 
+#              col = fraction_carbon_type)) +
+#   geom_point(alpha = 0.5, size = 2) +
+#   scale_color_brewer(palette = "Dark2", na.value = "grey50") +
+#   theme_bw(base_size = 15) + 
+#   facet_wrap(~study_id, scales = "free") +
+#   theme(legend.position = "bottom")
+
+```
+
+
+```{r echo=FALSE}
+# **High-value marsh cores**
+# marsh_smry <- all_measured %>%
+#   filter(habitat == "marsh") %>%
+#   filter(stocks_qual_code == "C1" | !is.na(dates_qual_code) |
+#            !is.na(elevation_qual_code)) %>% 
+#   select(study_id, site_id, core_id, stocks_qual_code, dates_qual_code, elevation_qual_code) %>% 
+#   distinct()
+# 
+# datatable(marsh_smry,
+#           options = list(searching = FALSE,
+#                          paging = FALSE,
+#                          info = FALSE,
+#                          scrollY = 300,
+#                          scrollX = 300,
+#                          scrollCollapse = TRUE),
+#           rownames = FALSE)
+```
+
+```{r echo=FALSE}
+
+# # create bibliography
+# bib <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_study_citations.csv", col_types = cols()) %>% 
+#   filter(study_id %in% unique(all_measured$study_id))
+# 
+# # write data and bib
+# write_csv(all_measured, "docs/cores_for_brian/ccrcn_core_data.csv")
+# write_csv(bib, "docs/cores_for_brian/ccrcn_core_data_bibliography.csv")
+```
+
+## Model Fitting Exploration for Marsh Ecosystems
+
+```{r}
+# test out two models in the literature
+four_model <- function(x){0.415*x + 2.8857}
+ouyang_model <- function(x){0.52*x + 1.17}
+
+carbondata <- all_measured %>% 
+  select(core_id, habitat, high_low_carbon, fraction_organic_matter, fraction_carbon) %>% 
+  filter(habitat == "marsh") %>% 
+    mutate(fraction_organic_matter = fraction_organic_matter*100,
+         fraction_carbon = fraction_carbon*100) %>% 
+    mutate(modeled_c_four = four_model(fraction_organic_matter),
+           modeled_c_ouyang = ouyang_model(fraction_organic_matter))
+
+ggplot(carbondata) +
+  geom_point(aes(fraction_organic_matter, fraction_carbon), alpha = 0.5) +
+  geom_line(aes(fraction_organic_matter, modeled_c_four, col = "fourquean model"), size = 1)  +
+  geom_line(aes(fraction_organic_matter, modeled_c_ouyang, col = "ouyang model"), size = 1) +
+  theme_bw()
+```
+
+
+### Add in Low Carbon Model
+
+```{r echo=FALSE}
+
+low_c <- carbondata %>% filter(high_low_carbon == "low")
+
+# low_c %>% 
+#   # filter(habitat == "marsh") %>% 
+#   ggplot(aes(fraction_organic_matter, fraction_carbon, col = fraction_carbon_type)) +
+#   geom_point(alpha = 0.5, size = 1.5) +
+#   theme_bw(base_size = 15) + 
+#   facet_wrap(~habitat, scales = "free", dir = "v") +
+#   theme(legend.position = "bottom")
+
+# summary(lm(fraction_carbon ~ fraction_organic_matter, low_c))
+# residual standard error
+# where e = N(0, sigma^2)
+
+low_c_model <- function(x){0.373165*x - 0.317127}
+
+low_c_modeled <- low_c %>% 
+  mutate(modeled_low_c = low_c_model(fraction_organic_matter))
+  # select(core_id, habitat, fraction_organic_matter, fraction_carbon, modeled_low_c_marsh, modeled_low_c, modeled_c) %>% 
+  # pivot_longer(cols = !c(core_id, habitat, fraction_organic_matter), 
+  #              names_to = "carbon_method",
+  #              values_to = "fraction_carbon")
+
+ggplot(low_c_modeled) +
+  geom_point(aes(fraction_organic_matter, fraction_carbon), alpha = 0.5) +
+  geom_line(aes(fraction_organic_matter, modeled_low_c, col = "low C model"), size = 1) +
+  geom_line(aes(fraction_organic_matter, modeled_c_four, col = "fourquean model"), size = 1)  +
+  geom_line(aes(fraction_organic_matter, modeled_c_ouyang, col = "ouyang model"), size = 1) +
+  theme_bw()
+# maybe plot all carbon data and add a dashed line to delineat low vs high carbon 
+```
+
+```{r}
+# look at depth profiles?
+# needs faceting
+# low_c %>% 
+#   ggplot(aes(x = depth_min, y = fraction_carbon, group = core_id)) +
+#     geom_line() +
+#     geom_point(size = 2, pch=21, fill="white")
+
+```
+

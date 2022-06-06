@@ -14,6 +14,20 @@ Weis_et_al_2001,Tijuana_Estuary,Tijuana_Estuary_West_mid_1,Spartina foliosa,Genu
 Weis_et_al_2001,Tijuana_Estuary,Tijuana_Estuary_West_mid_2,Salicornia virginica,Genus species,marsh
 Weis_et_al_2001,Tijuana_Estuary,Tijuana_Estuary_West_mid_2,Batis maritima,Genus species,marsh
 Weis_et_al_2001,Tijuana_Estuary,Tijuana_Estuary_West_mid_2,Jaumea carnosa,Genus species,marsh
+Ward_et_al_2021,Tomales Bay,NA,Zostera marina,Genus species,NA
+Ward_et_al_2021,Bodega Bay,NA,Zostera marina,Genus species,NA
+Ward_et_al_2021,Newport Bay,NA,Zostera marina,Genus species,NA
+Ward_et_al_2021,Tomales Bay,NA,Sarcocornia pacifica,Genus species,NA
+Ward_et_al_2021,Tomales Bay,NA,Distichlis spicata,Genus species,NA
+Ward_et_al_2021,Tomales Bay,NA,Jaumea carnosa,Genus species,NA
+Ward_et_al_2021,Newport Bay,NA,Sarcocornia pacifica,Genus species,NA
+Ward_et_al_2021,Newport Bay,NA,Distichlis spicata,Genus species,NA
+Ward_et_al_2021,Newport Bay,NA,Jaumea carnosa,Genus species,NA
+Ward_et_al_2021,Elkhorn Slough,NA,Sarcocornia pacifica,Genus species,NA
+Ward_et_al_2021,Elkhorn Slough,NA,Distichlis spicata,Genus species,NA
+Ward_et_al_2021,Elkhorn Slough,NA,Jaumea carnosa,Genus species,NA
+Ward_et_al_2021,Mission Bay,NA,Zostera marina,Genus species,NA
+Ward_et_al_2021,Humboldt Bay,NA,Zostera marina,Genus species,NA
 Vaughn_et_al_2020,St_Augustine,St_Augustine_Mangrove,Avicennia germinans,Genus species,mangrove
 Vaughn_et_al_2020,St_Augustine,St_Augustine_Salt_Marsh,Sporobolus alterniflorus,Genus species,marsh
 Vaughn_et_al_2020,St_Augustine,St_Augustine_Salt_Marsh,Batis maritima,Genus species,marsh
@@ -965,7 +979,8 @@ Duncan_et_al_2016,"Ermita, Dumangas, Iloilo",M1746,Avicennia marina,Genus specie
 Duncan_et_al_2016,"Ermita, Dumangas, Iloilo",M1747,Avicennia marina,Genus species,mangrove
 Duncan_et_al_2016,"Ermita, Dumangas, Iloilo",M1748,Avicennia marina,Genus species,mangrove
 Duncan_et_al_2016,"Ermita, Dumangas, Iloilo",M1749,Avicennia marina,Genus species,mangrove
-Duncan_et_al_2016,"Ermita, Dumangas, Iloilo",M1750,Avicennia marina; Sonneratia alba,Genus species,mangrove
+Duncan_et_al_2016,"Ermita, Dumangas, Iloilo",M1750,Avicennia marina,Genus species,mangrove
+Duncan_et_al_2016,"Ermita, Dumangas, Iloilo",M1750,Sonneratia alba,Genus species,mangrove
 Duncan_et_al_2016,"Bakhawan Ecopark, Buswang, Kalibo, Aklan",M1751,Sonneratia alba,Genus species,mangrove
 Duncan_et_al_2016,"Bakhawan Ecopark, Buswang, Kalibo, Aklan",M1752,Sonneratia alba,Genus species,mangrove
 Duncan_et_al_2016,"Bakhawan Ecopark, Buswang, Kalibo, Aklan",M1753,Sonneratia alba,Genus species,mangrove
@@ -2501,6 +2516,30 @@ Osland_et_al_2016,Tampa_Bay,tampa_bay_94,unvegetated,description,unvegetated
 Osland_et_al_2016,Tampa_Bay,tampa_bay_95,Juncus roemerianus,Genus species,marsh
 Osland_et_al_2016,Tampa_Bay,tampa_bay_96,Juncus roemerianus,Genus species,marsh
 Osland_et_al_2016,Tampa_Bay,tampa_bay_97,Juncus roemerianus,Genus species,marsh
+Okeefe-Suttles_et_al_2021_FL,Fort de Soto,FL_FDS,Rhizophora mangle,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Fort de Soto,FL_FDS,Laguncularia racemosa,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Fort de Soto,FL_FDS,Avicennia germinans,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Holly House,FL_HHMA,Rhizophora mangle,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Holly House,FL_HHMA,Laguncularia racemosa,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Holly House,FL_HHMA,Avicennia germinans,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Holly House,FL_HHMB,Rhizophora mangle,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Holly House,FL_HHMB,Laguncularia racemosa,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Holly House,FL_HHMB,Avicennia germinans,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Rocky Creek,FL_RCRA,Juncus spp.,Genus,NA
+Okeefe-Suttles_et_al_2021_FL,Rocky Creek,FL_RCRA,Spartina alterniflora,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Rocky Creek,FL_RCRB,Juncus spp.,Genus,NA
+Okeefe-Suttles_et_al_2021_FL,Rocky Creek,FL_RCRB,Spartina alterniflora,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Upper Tampa Bay,FL_UTR,Juncus spp.,Genus,NA
+Okeefe-Suttles_et_al_2021_FL,Upper Tampa Bay,FL_UTR,Spartina alterniflora,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Weedon Island,FL_WI,Rhizophora mangle,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Weedon Island,FL_WI,Laguncularia racemosa,Genus species,NA
+Okeefe-Suttles_et_al_2021_FL,Weedon Island,FL_WI,Avicennia germinans,Genus species,NA
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HRPA,Phragmites spp.,Genus,NA
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HRPB,Phragmites spp.,Genus,NA
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HROCA,Typha spp.,Genus,NA
+Okeefe-Suttles_et_al_2021_Wellfleet,Herring River,MA_HROCB,Typha spp.,Genus,NA
+Okeefe-Suttles_et_al_2021_Wellfleet,Mayo Creek,MA_MYURA,Phragmites spp.,Genus,NA
+Okeefe-Suttles_et_al_2021_Wellfleet,Mayo Creek,MA_MYURB,Phragmites spp.,Genus,NA
 Nolte_2020,NFB,NFB_grazed_seaward,Puccinellia maritima,Genus species,marsh
 Nolte_2020,NFB,NFB_grazed_landward,Agrostis stolonifera,Genus species,marsh
 Nolte_2020,NFB,NFB_ungrazed_seaward,Puccinellia maritima,Genus species,marsh
@@ -2570,6 +2609,37 @@ McTigue_et_al_2020,Traps_Bay,TB_2L,Spartina alterniflora,Genus species,marsh
 McTigue_et_al_2020,Traps_Bay,TB_2L,Juncus roemerianus,Genus species,marsh
 McTigue_et_al_2020,Traps_Bay,TB_3L,Spartina alterniflora,Genus species,marsh
 McTigue_et_al_2020,Traps_Bay,TB_3L,Juncus roemerianus,Genus species,marsh
+McClellan_et_al_2021,S01,NA,Spartina alterniflora,Genus species,NA
+McClellan_et_al_2021,S01,NA,Distichlis spicata,Genus species,NA
+McClellan_et_al_2021,S01,NA,Spartina patens,Genus species,NA
+McClellan_et_al_2021,S06,NA,Spartina alterniflora,Genus species,NA
+McClellan_et_al_2021,S06,NA,Distichlis spicata,Genus species,NA
+McClellan_et_al_2021,S06,NA,Spartina patens,Genus species,NA
+McClellan_et_al_2021,S14,NA,Spartina alterniflora,Genus species,NA
+McClellan_et_al_2021,S14,NA,Distichlis spicata,Genus species,NA
+McClellan_et_al_2021,S14,NA,Spartina patens,Genus species,NA
+McClellan_et_al_2021,S33,NA,Spartina alterniflora,Genus species,NA
+McClellan_et_al_2021,S33,NA,Distichlis spicata,Genus species,NA
+McClellan_et_al_2021,S33,NA,Spartina patens,Genus species,NA
+McClellan_et_al_2021,S50,NA,Spartina alterniflora,Genus species,NA
+McClellan_et_al_2021,S50,NA,Distichlis spicata,Genus species,NA
+McClellan_et_al_2021,S50,NA,Spartina patens,Genus species,NA
+McClellan_et_al_2021,W16,NA,Nelumbo lutea,Genus species,NA
+McClellan_et_al_2021,W16,NA,Colocasia esculenta,Genus species,NA
+McClellan_et_al_2021,W16,NA,Polygonum punctatum,Genus species,NA
+McClellan_et_al_2021,W16,NA,Salix nigra,Genus species,NA
+McClellan_et_al_2021,W29,NA,Nelumbo lutea,Genus species,NA
+McClellan_et_al_2021,W29,NA,Colocasia esculenta,Genus species,NA
+McClellan_et_al_2021,W29,NA,Polygonum punctatum,Genus species,NA
+McClellan_et_al_2021,W29,NA,Salix nigra,Genus species,NA
+McClellan_et_al_2021,W41,NA,Nelumbo lutea,Genus species,NA
+McClellan_et_al_2021,W41,NA,Colocasia esculenta,Genus species,NA
+McClellan_et_al_2021,W41,NA,Polygonum punctatum,Genus species,NA
+McClellan_et_al_2021,W41,NA,Salix nigra,Genus species,NA
+McClellan_et_al_2021,W60,NA,Nelumbo lutea,Genus species,NA
+McClellan_et_al_2021,W60,NA,Colocasia esculenta,Genus species,NA
+McClellan_et_al_2021,W60,NA,Polygonum punctatum,Genus species,NA
+McClellan_et_al_2021,W60,NA,Salix nigra,Genus species,NA
 Lagomasino_et_al_2020,Huddy_Gut,HG1,Spartina alterniflora,Genus species,marsh
 Lagomasino_et_al_2020,Huddy_Gut,HG1,Spartina patens,Genus species,marsh
 Lagomasino_et_al_2020,Huddy_Gut,HG2,Spartina alterniflora,Genus species,marsh
@@ -4275,7 +4345,7 @@ Merrill_1999,NA,Jug_Bay_3,Nuphar advena,Genus species,NA
 Merrill_1999,NA,Patuxent_River_01,Spartina spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_01,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_01,Nuphar advena,Genus species,NA
-Merrill_1999,NA,Patuxent_River_01,Arrow arum,Genus species,marsh
+Merrill_1999,NA,Patuxent_River_01,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_01,Typha spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_01,Scirpus americanus,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_01,Hibiscus spp.,Genus,marsh
@@ -4284,7 +4354,7 @@ Merrill_1999,NA,Patuxent_River_01,Zizania aquatica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_02,Spartina spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_02,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_02,Nuphar advena,Genus species,NA
-Merrill_1999,NA,Patuxent_River_02,Arrow arum,Genus species,marsh
+Merrill_1999,NA,Patuxent_River_02,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_02,Typha spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_02,Scirpus americanus,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_02,Hibiscus spp.,Genus,marsh
@@ -4293,7 +4363,7 @@ Merrill_1999,NA,Patuxent_River_02,Zizania aquatica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_03,Spartina spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_03,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_03,Nuphar advena,Genus species,NA
-Merrill_1999,NA,Patuxent_River_03,Arrow arum,Genus species,marsh
+Merrill_1999,NA,Patuxent_River_03,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_03,Typha spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_03,Scirpus americanus,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_03,Hibiscus spp.,Genus,marsh
@@ -4302,7 +4372,7 @@ Merrill_1999,NA,Patuxent_River_03,Zizania aquatica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_04,Spartina spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_04,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_04,Nuphar advena,Genus species,NA
-Merrill_1999,NA,Patuxent_River_04,Arrow arum,Genus species,marsh
+Merrill_1999,NA,Patuxent_River_04,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_04,Typha spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_04,Scirpus americanus,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_04,Hibiscus spp.,Genus,marsh
@@ -4311,7 +4381,7 @@ Merrill_1999,NA,Patuxent_River_04,Zizania aquatica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_05,Spartina spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_05,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_05,Nuphar advena,Genus species,NA
-Merrill_1999,NA,Patuxent_River_05,Arrow arum,Genus species,marsh
+Merrill_1999,NA,Patuxent_River_05,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_05,Typha spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_05,Scirpus americanus,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_05,Hibiscus spp.,Genus,marsh
@@ -4320,7 +4390,7 @@ Merrill_1999,NA,Patuxent_River_05,Zizania aquatica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_06,Spartina spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_06,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_06,Nuphar advena,Genus species,NA
-Merrill_1999,NA,Patuxent_River_06,Arrow arum,Genus species,marsh
+Merrill_1999,NA,Patuxent_River_06,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_06,Typha spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_06,Scirpus americanus,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_06,Hibiscus spp.,Genus,marsh
@@ -4329,7 +4399,7 @@ Merrill_1999,NA,Patuxent_River_06,Zizania aquatica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_07,Spartina spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_07,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_07,Nuphar advena,Genus species,NA
-Merrill_1999,NA,Patuxent_River_07,Arrow arum,Genus species,marsh
+Merrill_1999,NA,Patuxent_River_07,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_07,Typha spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_07,Scirpus americanus,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_07,Hibiscus spp.,Genus,marsh
@@ -4338,7 +4408,7 @@ Merrill_1999,NA,Patuxent_River_07,Zizania aquatica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_08,Spartina spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_08,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_08,Nuphar advena,Genus species,NA
-Merrill_1999,NA,Patuxent_River_08,Arrow arum,Genus species,marsh
+Merrill_1999,NA,Patuxent_River_08,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_08,Typha spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_08,Scirpus americanus,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_08,Hibiscus spp.,Genus,marsh
@@ -4347,7 +4417,7 @@ Merrill_1999,NA,Patuxent_River_08,Zizania aquatica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_09,Spartina spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_09,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_09,Nuphar advena,Genus species,NA
-Merrill_1999,NA,Patuxent_River_09,Arrow arum,Genus species,marsh
+Merrill_1999,NA,Patuxent_River_09,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_09,Typha spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_09,Scirpus americanus,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_09,Hibiscus spp.,Genus,marsh
@@ -4356,7 +4426,7 @@ Merrill_1999,NA,Patuxent_River_09,Zizania aquatica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_11,Spartina spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_11,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_11,Nuphar advena,Genus species,NA
-Merrill_1999,NA,Patuxent_River_11,Arrow arum,Genus species,marsh
+Merrill_1999,NA,Patuxent_River_11,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_11,Typha spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_11,Scirpus americanus,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_11,Hibiscus spp.,Genus,marsh
@@ -4365,7 +4435,7 @@ Merrill_1999,NA,Patuxent_River_11,Zizania aquatica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_12,Spartina spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_12,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_12,Nuphar advena,Genus species,NA
-Merrill_1999,NA,Patuxent_River_12,Arrow arum,Genus species,marsh
+Merrill_1999,NA,Patuxent_River_12,Peltandra virginica,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_12,Typha spp.,Genus,marsh
 Merrill_1999,NA,Patuxent_River_12,Scirpus americanus,Genus species,marsh
 Merrill_1999,NA,Patuxent_River_12,Hibiscus spp.,Genus,marsh
@@ -5415,6 +5485,101 @@ Holmer_et_al_2007,Rottnest,Holmer_et_al_2007_15,Amphibolis australis,Genus speci
 Holmer_et_al_2007,Rottnest,Holmer_et_al_2007_16,Heterozostera nigraulis,Genus species,seagrass
 Van_Engeland_2010,Bay_of_Cadiz,Van_Engeland_2010_1,Cymodocea nodosa,Genus species,seagrass
 Van_Engeland_2010,Bay_of_Cadiz,Van_Engeland_2010_2,Zostera noltii,Genus species,seagrass
+Fell_et_al_2021,GTMNERRSouthern,NM1GW,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM1GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM2GW,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM2GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM3GW,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM3GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM4GW,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM4GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM5GW,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM5GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM6GW,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM6GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM1GC,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM1GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM2GC,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM2GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM3GC,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM3GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM4GC,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM4GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM5GC,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM5GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM6GC,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRSouthern,NM6GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC1GW,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC1GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC2GW,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC2GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC3GW,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC3GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC4GW,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC4GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC5GW,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC5GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC6GW,Spartina alterniflora,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC6GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC1GC,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC1GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC2GC,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC2GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC3GC,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC3GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC4GC,Spartina alterniflora,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC4GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC5GC,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC5GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC6GC,Spartina alterniflora,Genus species,NA
+Fell_et_al_2021,GTMNERRMiddle,GC6GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG1GW,Spartina alterniflora,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG1GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG2GW,Spartina alterniflora,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG2GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG3GW,Spartina alterniflora,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG3GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG4GW,Spartina alterniflora,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG4GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG5GW,Spartina alterniflora,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG5GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG6GW,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG6GW,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG1GC,Spartina alterniflora,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG1GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG2GC,Spartina alterniflora,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG2GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG3GC,Spartina alterniflora,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG3GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG4GC,Spartina alterniflora,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG4GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG5GC,Spartina alterniflora,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG5GC,Avicennia germinans,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG6GC,Batis maritima,Genus species,NA
+Fell_et_al_2021,GTMNERRNorthern,SG6GC,Avicennia germinans,Genus species,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,Rhizophora mangle,Genus species,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,Laguncularia racemosa,Genus species,NA
+Eagle_et_al_2021,Martin Peña West,MPW1,Avicennia germinans,Genus species,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,Rhizophora mangle,Genus species,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,Laguncularia racemosa,Genus species,NA
+Eagle_et_al_2021,Martin Peña East,MPE1,Avicennia germinans,Genus species,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,Rhizophora mangle,Genus species,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,Laguncularia racemosa,Genus species,NA
+Eagle_et_al_2021,Martin Peña East,MPE2,Avicennia germinans,Genus species,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,Rhizophora mangle,Genus species,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,Laguncularia racemosa,Genus species,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR1,Avicennia germinans,Genus species,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,Rhizophora mangle,Genus species,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,Laguncularia racemosa,Genus species,NA
+Eagle_et_al_2021,Torrecilla Lagoon,TORR2,Avicennia germinans,Genus species,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,Rhizophora mangle,Genus species,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,Laguncularia racemosa,Genus species,NA
+Eagle_et_al_2021,San José Lagoon,SJ1,Avicennia germinans,Genus species,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,Rhizophora mangle,Genus species,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,Laguncularia racemosa,Genus species,NA
+Eagle_et_al_2021,San José Lagoon,SJ2,Avicennia germinans,Genus species,NA
+Eagle_et_al_2021,Piñones,PIN1,Avicennia germinans,Genus species,NA
+Eagle_et_al_2021,Piñones,PIN2,Avicennia germinans,Genus species,NA
 Drexler_et_al_2019,Animal_Slough,AS14,Carex lyngbyei,Genus species,marsh
 Drexler_et_al_2019,Animal_Slough,AS14,Juncus balticus,Genus species,marsh
 Drexler_et_al_2019,Animal_Slough,AS14,Potentilla anserina,Genus species,marsh
@@ -5979,6 +6144,37 @@ Baustian_et_al_2021,Terrebonne basin,337,Spartina alterniflora,Genus species,mar
 Baustian_et_al_2021,Terrebonne basin,377,Spartina alterniflora,Genus species,marsh
 Baustian_et_al_2021,Terrebonne basin,4455,Juncus romerianus,Genus species,NA
 Baustian_et_al_2021,Terrebonne basin,4455,Spartina alterniflora,Genus species,marsh
+Arias-Ortiz_et_al_2021,US-MyB,Typha M1,Typha spp.,Genus,NA
+Arias-Ortiz_et_al_2021,US-MyB,Phragmites,Phragmites spp.,Genus,NA
+Arias-Ortiz_et_al_2021,US-MyB,Typha M2,Typha spp.,Genus,NA
+Arias-Ortiz_et_al_2021,US-Tw1,Typha W1,Typha spp.,Genus,NA
+Arias-Ortiz_et_al_2021,US-Tw1,Typha W2,Typha spp.,Genus,NA
+Arias-Ortiz_et_al_2021,US-Tw1,Typha W3,Typha spp.,Genus,NA
+Allen_et_al_2022,Naticoke River Marsh 1,NA,Juncus roemerianus,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 1,NA,Spartina alterniflora,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 1,NA,Distichlis spicata,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 1,NA,Spartina patens,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 1,NA,Bolboschoenus robustus,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 2,NA,Spartina alterniflora,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 2,NA,Spartina patens,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 2,NA,Spartina cynosuroides,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 2,NA,Distichlis spicata,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 2,NA,Bolboschoenus robustus,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 3,NA,Peltandra virginica,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 3,NA,Mikania scandens,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 3,NA,Bidens laevis,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 3,NA,Typha spp.,Genus,NA
+Allen_et_al_2022,Naticoke River Marsh 3,NA,Polygonum punctatum,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 4,NA,Polygonum arifolium,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 4,NA,Impatiens capensis,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 4,NA,Bolboschoenus fluviatilis,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 4,NA,Peltandra virginica,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 4,NA,Pilea pumila,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 5,NA,Peltandra virginica,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 5,NA,Polygonum arifolium,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 5,NA,Zizania aquatica,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 5,NA,Impatiens capensis,Genus species,NA
+Allen_et_al_2022,Naticoke River Marsh 5,NA,Nuphar lutea,Genus species,NA
 Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1983-1,Spartina alterniflora,Genus species,marsh
 Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1983-2,Spartina alterniflora,Genus species,marsh
 Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1983-3,Spartina alterniflora,Genus species,marsh

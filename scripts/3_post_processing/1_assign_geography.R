@@ -279,6 +279,11 @@ na_country <- core_geography %>%
   filter(is.na(country)) %>%
   distinct() %>% arrange(country)
 
+# write cores to QA folder
+if(!is_empty(na_country)){
+  write_csv(na_country, "data/QA/no_country_for_soil_cores.csv")
+}
+
 # all the countries without assigned administrative divisions
 na_admin_division <- core_geography %>% 
   select(study_id, site_id, core_id, longitude, latitude, country, admin_division) %>% 

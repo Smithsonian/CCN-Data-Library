@@ -23,9 +23,9 @@
 library(tidyverse)
 library(RefManageR)
 library(skimr)
-library(knitr)
-library(markdown)
-library(rmarkdown)
+# library(knitr)
+# library(markdown)
+# library(rmarkdown)
 library(DT)
 
 # join_status is changed to F if there is an error. 
