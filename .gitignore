@@ -7,12 +7,9 @@
 .Rproj
 .DS_Store
 
-#
 # ignore a folder
 # folder_to_ignore/
-world_countries/
-# admin_divisions/
-World_EEZ_v11_20191118/
+# large shapefiles should now managed with Github LFS
 
 # ignore any file and folders with the following string in the name
 # *string_to_ignore*
