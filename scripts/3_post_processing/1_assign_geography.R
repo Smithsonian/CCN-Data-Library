@@ -14,47 +14,49 @@ library(sp)
 library(sf)
 library(rnaturalearth)
 
-# A few notes:
-# This script takes a long time to run because its loading large shapefiles
-# perhaps these shapefiles could be merged/reduced in some way to help things run faster
-# the EEZ file takes the longest but it's important for locating cores outside the country shapefile
-# this file is too large to be included on a github commit so users have to have it locally
-
 # Could be useful for a generalized function to be written that will
 # locate each cores table within any desired spatial polygon object 
-# ex. locate cores within...country polgons, state polygons, EEZs, etc
+# ex. locate cores within...country polygons, state polygons, EEZs, etc
 
 ## 2. Read in data ####
 
-# Load  shapefiles
-# countries
-# problem: this does not include EEZs so offshore cores are NA 
+# Load  shapefiles from rdata
+load("data/input_shapefiles/assign_geography.rdata")
 
 # EEZs
 # 200 nautical mile EEZ shapefile 
 # located all the nearshore cores (although its much larger to load into R)
-eez <- readOGR(dsn = "./data/input_shapefiles/World_EEZ_v11_20191118/",
-                  layer = "eez_v11")
-eez_sp <- spTransform(eez, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+# eez <- readOGR(dsn = "./data/input_shapefiles/World_EEZ_v11_20191118/",
+#                   layer = "eez_v11")
 # the 24 nautical mile eez shapefile did not capture all the cores outside of the country shapefile
 
 # world countries
-countries <- readOGR(dsn = "./data/input_shapefiles/world_countries/",
-                     layer = "country")
-countries_sp <- spTransform(countries, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+# countries <- readOGR(dsn = "./data/input_shapefiles/world_countries/",
+#                      layer = "country")
 
 # US States
-states <- readOGR(dsn = "./data/input_shapefiles/us_states/states_political_boundaries",
-                     layer = "state_pol")
-states_sp <- spTransform(states, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+# states <- readOGR(dsn = "./data/input_shapefiles/us_states/states_political_boundaries",
+#                      layer = "state_pol")
 
 # admin divisions
-divisions <- readOGR(dsn = "./data/input_shapefiles/admin_divisions/",
-                     layer = "admin")
+# divisions <- readOGR(dsn = "./data/input_shapefiles/admin_divisions/",
+#                      layer = "admin")
+
+# try saving all shapefiles as Rdata file (for quicker upload)
+# save(countries, eez, divisions, states, file="data/input_shapefiles/assign_geography.rdata")
+
+# convert to spatial data
+countries_sp <- spTransform(countries, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+eez_sp <- spTransform(eez, CRS("+proj=longlat +datum=WGS84 +no_defs"))
+states_sp <- spTransform(states, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 divisions_sp <- spTransform(divisions, CRS("+proj=longlat +datum=WGS84 +no_defs"))
 
+# remove large shapefiles from R's memory
+rm(countries, eez, divisions, states)
+
 # Core data updated to V2 guidance
-cores <- read_csv("data/CCRCN_synthesis/original/CCRCN_cores.csv", guess_max=7000) %>%
+cores <- ccrcn_synthesis$cores %>% # read straight from synthesis
+  mutate(across(c("latitude", "longitude"), as.numeric)) %>% 
   rename(original_core_id = core_id) %>%
   # create a REAL unique core id
   mutate(core_id = str_c(study_id, original_core_id, sep = "_"))
@@ -306,21 +308,14 @@ na_admin_division <- core_geography %>%
 #   geom_point(data = core_geography, mapping = aes(x = longitude, y = latitude, col = country))
 
 ## Interactive
-library(leaflet)
-# library(htmlwidgets)
-# library(htmltools)
-
-# plot all cores 
-# leaflet(core_geography %>% filter(!is.na(latitude))) %>% 
+# library(leaflet)
+# 
+# # plot cores with no associated admin division
+# core_geography %>% filter(is.na(admin_division)) %>% 
+#   leaflet() %>% 
 #   addProviderTiles(providers$CartoDB) %>%
-#   addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
-#                    radius = 5, label = ~country)
-
-# plot cores with no associated admin division
-leaflet(na_admin_division) %>% 
-  addProviderTiles(providers$CartoDB) %>%
-  addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
-                   radius = 2, label = ~country)
+#   addCircleMarkers(lng = ~longitude, lat = ~latitude, 
+#                    radius = 2, label = ~country)
 
 
 # THIS MAP IS UNECESSARY (the EEZ shapefile fills in the previous NAs)
@@ -345,6 +340,13 @@ leaflet(na_admin_division) %>%
 # 
 # withr::with_dir("data/QA", saveWidget(m2, file="assigned_geography.html"))
 
-# 6. Write updated core table to CCRCN V2 folder ####
-write_csv(core_geography, "data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
-# write_csv(core_geography, "data/CCRCN_V2/core_geography.csv") # this is redundant but the atlas uses this currently as the cores table
+# 6. Update core table in CCN synthesis ####
+
+ccrcn_synthesis$cores <- core_geography # will overwrite initial synthesis core table with updated geography
+
+# write_csv(core_geography, "data/CCRCN_synthesis/derivative/CCRCN_cores.csv") # core table is now passed onto the next post-processing function
+
+## 7. Clear variables taking up memory ####
+
+rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results"))])
+

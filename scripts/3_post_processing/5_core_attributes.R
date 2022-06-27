@@ -8,11 +8,11 @@
 # It looks at the data available for each core and extracts the attributes names for which data is not entirely missing.
 # The final table will have the following columns: study_id, core_id, table, attribute_name
 
-library(tidyverse)
+# library(tidyverse)
 
 # read in necessary data
-cores <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_cores.csv", guess_max = 10000)
-depthseries <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv", guess_max = 50000)
+cores <- ccrcn_synthesis$cores
+depthseries <- ccrcn_synthesis$depthseries
 
 ## Step 1: Get unique ids for study, site, and core ####
 
@@ -109,4 +109,5 @@ if(!(plyr::empty(study_site_core))){
   print("There are no new cores to process.")
 }
 
-
+# clear workspace of unnecessary variables
+rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results"))])

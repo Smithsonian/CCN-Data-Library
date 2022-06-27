@@ -1,7 +1,7 @@
 # Max depths
 
-cores <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_cores.csv", guess_max = 7000)
-depthseries <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv", guess_max = 50000)
+cores <- ccrcn_synthesis$cores
+depthseries <- ccrcn_synthesis$depthseries
 
 max_depths <- depthseries %>% 
   filter(complete.cases(depth_max)) %>% 
@@ -11,4 +11,8 @@ max_depths <- depthseries %>%
 cores_w_max_depth <- cores %>% 
   left_join(max_depths, by=c("study_id", "core_id"))
 
-write_csv(cores_w_max_depth, "data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
+# write to synthesis
+ccrcn_synthesis$cores <- cores_w_max_depth
+
+# clear workspace of unnecessary variables
+rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results"))])

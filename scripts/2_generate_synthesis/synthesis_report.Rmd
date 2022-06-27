@@ -1,6 +1,12 @@
 ---
 title: "CCRCN Synthesis Report"
-output: html_document
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: spacelab
+    highlight: tango
 ---
   
 ### Introduction 

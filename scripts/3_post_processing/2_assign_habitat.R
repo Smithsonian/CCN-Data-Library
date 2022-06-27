@@ -4,12 +4,12 @@
 # Synthesis Post-Processing Script
 # Assign habitat to each core in the synthesis
 # contact: James Holmquist (HolmquistJ@si.edu) or Jaxine Wolfe (wolfejax@si.edu)
-require(tidyverse)
+# require(tidyverse)
 
-methods2 <- read_csv("data/CCRCN_synthesis/original/CCRCN_methods.csv")
-cores2 <- read_csv("data/CCRCN_synthesis/original/CCRCN_cores.csv", guess_max = 7000)
-depthseries2 <- read_csv("data/CCRCN_synthesis/original/CCRCN_depthseries.csv", guess_max = 50000)
-species2 <- read_csv("data/CCRCN_synthesis/original/CCRCN_species.csv")
+methods2 <- ccrcn_synthesis$methods
+cores2 <- ccrcn_synthesis$cores
+depthseries2 <- ccrcn_synthesis$depthseries
+species2 <- ccrcn_synthesis$species
 
 # read in our taxa database with associated habitat
 # spref <- read_csv("docs/versioning/species-habitat-classification-JH-20200824.csv")
@@ -115,34 +115,39 @@ habitat_final <- habitat_comparison %>%
 
 
 cores_with_habitat <- cores2 %>% 
-  select(-habitat) %>% # get rid of the original habitat column
-  left_join(habitat_final)
+  select(-habitat) %>% # drop the original habitat column
+  left_join(habitat_final) %>% 
+  select(-habitat_assignment_method) # more for internal use
 
 if(length(which(is.na(cores_with_habitat$habitat))) > 0){
   write_csv(filter(cores_with_habitat, is.na(habitat)), "data/QA/no_habitat_cores.csv")
 }
 
 ## Data Visualization ####
-library(leaflet)
+# library(leaflet)
 
-# filter core table as needed for investigation
-map_cores <- cores_with_habitat %>%
-  # current habitats: "algal mat", "mangrove", "marsh", "mudflat", "scrub shrub", "seagrass", "swamp", "unvegetated", "upland"  
-  # filter(habitat == "marsh") %>% # filter for particular habitats
-  # filter(salinity_class == "brine") %>% 
-  filter(habitat == "mangrove")
-
-pal <- colorFactor(
-  palette = 'Dark2',
-  domain = map_cores$habitat
-)
-
-leaflet(map_cores) %>% 
-  addTiles() %>% 
-  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 1,
-                   label = ~paste0(study_id, "; ", habitat), color = ~pal(habitat)) %>% 
-  addLegend(pal = pal, values = ~habitat)
+# # filter core table as needed for investigation
+# map_cores <- cores_with_habitat %>%
+#   # current habitats: "algal mat", "mangrove", "marsh", "mudflat", "scrub shrub", "seagrass", "swamp", "unvegetated", "upland"  
+#   # filter(habitat == "marsh") %>% # filter for particular habitats
+#   # filter(salinity_class == "brine") %>% 
+#   filter(habitat == "mangrove")
+# 
+# pal <- colorFactor(
+#   palette = 'Dark2',
+#   domain = map_cores$habitat
+# )
+# 
+# leaflet(map_cores) %>% 
+#   addTiles() %>% 
+#   addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 1,
+#                    label = ~paste0(study_id, "; ", habitat), color = ~pal(habitat)) %>% 
+#   addLegend(pal = pal, values = ~habitat)
 # need a legend
 
-# write to file
-write_csv(cores_with_habitat, "data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
+# write to synthesis
+ccrcn_synthesis$cores <- cores_with_habitat
+# write_csv(cores_with_habitat, "data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
+
+# clear workspace of unnecessary variables
+rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results"))])

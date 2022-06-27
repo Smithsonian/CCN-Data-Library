@@ -24,9 +24,9 @@ require(tidyverse)
 # materials and methods
 # cores
 # depth profiles
-methods <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_methods.csv")
-cores <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_cores.csv", guess_max = 7000)
-depthseries <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv", guess_max = 50000)
+methods <- ccrcn_synthesis$methods
+cores <- ccrcn_synthesis$cores
+depthseries <- ccrcn_synthesis$depthseries
 
 # Get Unique Study ID's
 # Get Unique Site ID's
@@ -268,8 +268,11 @@ updated_cores <- cores %>%
   left_join(study_site_core)
   # add_count(study_id, core_id) %>% filter(n>1)
 
-# Join to core table, then write over input 
-write_csv(updated_cores, "data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
+# write to synthesis
+ccrcn_synthesis$cores <- updated_cores
+
+# clear workspace of unnecessary variables
+rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results"))])
 
 # Stocks
 
