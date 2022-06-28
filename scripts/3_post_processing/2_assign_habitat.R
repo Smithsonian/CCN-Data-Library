@@ -123,31 +123,10 @@ if(length(which(is.na(cores_with_habitat$habitat))) > 0){
   write_csv(filter(cores_with_habitat, is.na(habitat)), "data/QA/no_habitat_cores.csv")
 }
 
-## Data Visualization ####
-# library(leaflet)
-
-# # filter core table as needed for investigation
-# map_cores <- cores_with_habitat %>%
-#   # current habitats: "algal mat", "mangrove", "marsh", "mudflat", "scrub shrub", "seagrass", "swamp", "unvegetated", "upland"  
-#   # filter(habitat == "marsh") %>% # filter for particular habitats
-#   # filter(salinity_class == "brine") %>% 
-#   filter(habitat == "mangrove")
-# 
-# pal <- colorFactor(
-#   palette = 'Dark2',
-#   domain = map_cores$habitat
-# )
-# 
-# leaflet(map_cores) %>% 
-#   addTiles() %>% 
-#   addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 1,
-#                    label = ~paste0(study_id, "; ", habitat), color = ~pal(habitat)) %>% 
-#   addLegend(pal = pal, values = ~habitat)
-# need a legend
 
 # write to synthesis
 ccrcn_synthesis$cores <- cores_with_habitat
 # write_csv(cores_with_habitat, "data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
 
 # clear workspace of unnecessary variables
-rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results"))])
+rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results"))])

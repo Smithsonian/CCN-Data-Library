@@ -183,6 +183,10 @@ bib_file <- ccrcn_synthesis$study_citations %>%
   distinct() %>%
   column_to_rownames("bibliography_id")
 
+# find and fix encoding issues
+# https://stackoverflow.com/questions/17291287/how-to-identify-delete-non-utf-8-characters-in-r
+# mutate_at(vars(names(citations)), function(x){iconv(x, "latin1", "UTF-8",sub='')}) %>% 
+
 ## 4. Read in previous synthesis & compare #################
 
 # # this needs to be reworked ***
@@ -291,7 +295,7 @@ testAttributeNames(tables, ccrcn_synthesis)
 testVariableNames(tables, ccrcn_synthesis)
 
 # Provide summary statistics of numeric variables 
-qa_numeric_results <- testNumericVariables(ccrcn_synthesis$depthseries)
+qa_numeric_results <- testNumericVariables()
 
 # qa_results <- 
 #   # Ensure each core ID is unique
@@ -309,6 +313,7 @@ qa_numeric_results <- testNumericVariables(ccrcn_synthesis$depthseries)
 #   # Test variable names to make sure they are in database structure
 #   bind_rows(testVariableNames(tables, ccrcn_synthesis)) 
 
+## 5.5 Synthesis Post-processing ####
 
 ## 6. Write new synthesis ###########
 if(join_status == TRUE){
@@ -340,14 +345,21 @@ if(join_status == TRUE){
 warning_summary <- summary(warnings())
 
 ## 7. Write RMarkdown report #########
+
+guidance <- read_csv("docs/ccrcn_database_structure.csv")
+
 # get date to paste to file name
 url_date <- format(Sys.time(), "%Y%m%d %H%M")
 formated_date <- format(Sys.time(), "%Y/%m/%d-%H:%M")
   
 # Needs updating
+# REQUIRES: file paths, join status, warning summary, etc
 # map cores w habitat?
 # save qa_results
 rmarkdown::render(input = "./scripts/2_generate_synthesis/synthesis_report.Rmd",
-                  output_format = "html_document",
+                  # output_format = "html_document",
                   output_file = paste0("synthesis_report_", url_date, ".html"),
                   output_dir = "./docs/synthesis_reports")
+
+# rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results", "file_paths", "warning_summary", "join_status"))])
+

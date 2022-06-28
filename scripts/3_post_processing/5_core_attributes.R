@@ -110,4 +110,4 @@ if(!(plyr::empty(study_site_core))){
 }
 
 # clear workspace of unnecessary variables
-rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results"))])
+rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results"))])

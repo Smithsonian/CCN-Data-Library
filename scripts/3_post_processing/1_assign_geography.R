@@ -348,5 +348,5 @@ ccrcn_synthesis$cores <- core_geography # will overwrite initial synthesis core 
 
 ## 7. Clear variables taking up memory ####
 
-rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results"))])
+rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results"))])
 

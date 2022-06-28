@@ -170,34 +170,23 @@ testCoreRelationships <- function(ccrcn_synthesis) {
   
 }
 
-
-
-# Provide summary statistics of numeric variables 
-testNumericVariables <- function(depthseries) {
+## Provide stats on numeric columns for a given data table
+testNumericVariables <- function() {
+  # extract numeric attributes and associated units from guidance
+  numeric_attributes <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols()) %>% 
+    filter(data_type == "numeric") %>% 
+    rename(unit = format_unit_codes) %>% 
+    distinct(attribute_name, unit)
   
-  # Get both controlled and approved uncontrolled variables
-  numeric_attributes <- read_csv("./docs/controlled_attributes.csv", col_types = cols()) %>%
-    # bind_rows(read_csv("./docs/uncontrolled_attributes.csv", col_types = cols())) %>%
-    filter(data_type == "numeric") 
+  require(skimr)
   
-  # select only numeric columns 
-  to_check <- subset(colnames(depthseries), 
-                     colnames(depthseries) %in% numeric_attributes$attribute_name)
-  testing_data <- depthseries %>%
-    ungroup() %>%
-    select(to_check) %>%
-    mutate_all(as.numeric)
-  
-  ## Skimr package updated with substantial code changes
-
   # list of functions to run on numeric attributes
-  funs <- skimr::sfl(
+  funs <- sfl(
     min = function(x) min(x, na.rm=TRUE), 
     max = function(x) max(x, na.rm=TRUE), 
     median = function(x) median(x, na.rm=TRUE),
-    mean = function(x) mean(x, na.rm=TRUE),
     na_count = function(x) sum(is.na(x)),
-    NaN_count = function(x) sum(is.nan(x)),
+    # NaN_count = function(x) sum(is.nan(x)),
     p0 = NULL, 
     p25 = NULL, 
     p50 = NULL, 
@@ -205,22 +194,36 @@ testNumericVariables <- function(depthseries) {
     p100 = NULL,
     hist = NULL
   )
-  
   # Set skimr to run with our custom list of functions
-  # V2 skimr requires assigning skim_with to object
-  my_skim <- skimr::skim_with(numeric = funs, append = TRUE)
+  my_skim <- skim_with(numeric = funs, append = TRUE)
   
-  # Organize into a wide form table and return
-  # testing_data %>%
-  #   skim() %>%
-  #   select(variable, type, stat, formatted) %>%
-  #   spread(stat, formatted) %>%
-  #   select(variable, type, n, min, max, median, mean, sd, missing, na_count, NaN_count)
+  results <- data.frame() # initialize results data frame
+  num_tables <- c("methods", "sites", "cores", "depthseries") # numeric tables to skim
   
-  testing_data %>%
-    my_skim()
+  for(i in num_tables){
+    df <- ccrcn_synthesis[[i]]
+    
+    # select only numeric columns 
+    to_check <- names(df)[names(df) %in% unique(numeric_attributes$attribute_name)]
+    testing_data <- df[, to_check]
+    
+    # run skim and format results
+    temp_results <- testing_data %>% 
+      mutate(across(everything(), as.numeric)) %>% 
+      my_skim() %>% 
+      rename(attribute_name = skim_variable,
+             missing_values = n_missing, median = numeric.median,
+             min = numeric.min, max = numeric.max, mean = numeric.mean) %>% 
+      left_join(numeric_attributes) %>% 
+      mutate(table = i) %>% 
+      select(table, attribute_name, unit, min, max, mean, median, missing_values, complete_rate)
+    
+    results <- bind_rows(results, temp_results)
+  }
   
+  return(results)
 }
+
 
 ## Check lat/long uniqueness ########
 # Cores in synthesis should likely have unique lat/long values

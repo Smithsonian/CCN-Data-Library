@@ -9,22 +9,20 @@ output:
     highlight: tango
 ---
   
-### Introduction 
-The CCRCN clearinghouse provides a synthesized and curated set of coastal carbon data that promotes the sharing of open data, novel analyses, and collaboration opportunities. 
-The synthesis is created by curating and merging publicly available data through an automated script. 
-This report documents the success or failure of the automated synthesis process, documents changes, 
-conducts QA/QC tests, and provides visualizations and summaries of data within the clearinghouse. 
+## Introduction 
+The CCRCN clearinghouse provides a synthesized and curated set of coastal carbon data that promotes the sharing of open data, novel analyses, and collaboration opportunities. The synthesis is created by curating and merging publicly available data through an automated script. This report documents the success or failure of the automated synthesis process, documents changes, conducts QA/QC tests, and provides visualizations and summaries of data within the clearinghouse. 
 
 ***
 
-#### Report date: `r formated_date`
-#### Synthesis status: `r if(join_status) {"Successful"} else "Failed"`
-#### Contact: Jaxine Wolfe (wolfejax@si.edu)  
+**Report date: `r formated_date`**
+
+**Synthesis status: `r if(join_status) {"Successful"} else "Failed"`**
+
+**Contact: Jaxine Wolfe (wolfejax@si.edu)**
 
 ***
 
-### QA/QC Test Results
-
+## QA/QC Test Results
 
 ```{r, echo=FALSE}
 
@@ -40,13 +38,70 @@ datatable(qa_results, options = list(pageLength = table_length,
 ```
 
 ***
+## Database Overview
 
-### Numeric Attribute Summary Statistics
+This synthesis contains `r length(unique(ccrcn_synthesis$depthseries$study_id))` studies with soil carbon associated observations across `r length(unique(ccrcn_synthesis$depthseries$site_id))` sites and `r length(unique(ccrcn_synthesis$depthseries$core_id))` cores from around the world. Observations represent a `r max(as.numeric(ccrcn_synthesis$cores$year), na.rm = T) - min(as.numeric(ccrcn_synthesis$cores$year), na.rm = T)` year timespan, from `r min(as.numeric(ccrcn_synthesis$cores$year), na.rm = T)` to `r max(as.numeric(ccrcn_synthesis$cores$year), na.rm = T)`.
+
+### Mapping 
 
 ```{r, echo=FALSE}
 
+library(leaflet)
+library(viridis)
+
+# filter core table as needed for investigation
+map_cores <- ccrcn_synthesis$cores %>%
+  mutate(habitat = case_when(habitat == "scrub shrub" ~ "scrub/shrub",
+                             habitat == "mudflat" ~ "unvegetated", 
+                             TRUE ~ habitat)) %>% 
+  # current habitats: "algal mat", "mangrove", "marsh", "mudflat", "scrub shrub", "seagrass", "swamp", "unvegetated", "upland"
+  # filter(habitat == "mangrove") %>% 
+  drop_na(longitude) 
+
+habs <- unique(map_cores$habitat)
+
+# pal <- colorFactor(palette = 'Dark2', domain = map_cores$habitat)
+pal <- colorFactor(viridis_pal(option = "H")(length(habs)), domain = habs)
+
+leaflet(map_cores, width = "100%") %>%
+  addTiles() %>%
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 1,
+                   label = ~paste0(study_id, "; ", habitat), color = ~pal(habitat)) %>%
+  addLegend(pal = pal, values = ~habitat)
+
+```
+
+**Habitat Core Counts**
+```{r, echo=FALSE}
+habitat_smry <- map_cores %>% 
+  count(habitat) %>% 
+  mutate(pct = round(100*(n/sum(n)), 2),
+         habitat = ifelse(is.na(habitat), "unknown", habitat)) %>% 
+  arrange(desc(pct))
+
+knitr::kable(habitat_smry)
+```
+
+***
+
+### Numeric Attributes
+
+**Summary Statistics:**
+```{r, echo=FALSE}
+# define custom options for data tables
+custom_opts <- list(searching = TRUE,
+                    paging = FALSE,
+                    info = FALSE,
+                    scrollY = 300,
+                    scrollX = 300,
+                    scrollCollapse = TRUE,
+                    fixedColumns = list(leftColumns = 2))
+
 # data table of results 
-datatable(qa_numeric_results)
+datatable(qa_numeric_results,
+          extensions = "FixedColumns",
+          options = custom_opts,
+          rownames = FALSE)
 
 ```
 
@@ -54,22 +109,60 @@ datatable(qa_numeric_results)
 
 ### Depthseries Visualization
 
-```{r, echo=FALSE, fig.width = 10, warning = FALSE}
+**COMING SOON**
 
+```{r, echo=FALSE, fig.width=12, fig.height=12, warning=FALSE}
+ds_numcols <- guidance %>% filter(table == "depthseries" & data_type == "numeric") %>% distinct(attribute_name) %>% pull(attribute_name)
+
+ccrcn_synthesis$depthseries %>%
+  select(any_of(ds_numcols)) %>%
+  mutate(across(everything(), as.numeric)) %>%
+  gather() %>%
+  ggplot(aes(value)) +
+  facet_wrap(~key, scales = "free") +
+  geom_histogram()
+# 
+# # density plot
 # ccrcn_synthesis$depthseries %>%
-#   keep(is.numeric) %>% 
-#   gather() %>% 
+#   select(any_of(ds_numcols)) %>%
+#   mutate(across(everything(), as.numeric)) %>% 
+#   gather() %>%
 #   ggplot(aes(value)) +
-#     facet_wrap(~ key, scales = "free") +
-#     geom_histogram()
+#   facet_wrap(~key, scales = "free") +
+#   # geom_histogram()
+#   geom_density()
+#   # geom_rug()
+```
+
+
+```{r, echo=FALSE, fig.width=12, fig.height=12, warning=FALSE}
+
+# things to plot:
+# density of values (ex. DBD)
+# downcore values?
+
+# table_merge <- ccrcn_synthesis$depthseries %>% 
+#   left_join(ccrcn_synthesis$cores %>% select(contains("_id"), habitat))
+# 
+# table_merge %>% 
+#   drop_na(fraction_carbon, fraction_organic_matter) %>% 
+#   ggplot(aes(fraction_organic_matter, fraction_carbon, col = habitat)) +
+#   geom_point(alpha = 0.5, size = 1.5) +
+#   theme_bw(base_size = 15) + 
+#   # facet_wrap(~habitat, scales = "free", dir = "v") +
+#   theme(legend.position = "bottom")
+
+# study-level summary table of
 
 ```
 
 ***
 
-### Change log results
-The following table summarizes which entries across the range of synthesis tables changed compared to the previous synthesis. Study IDs associated with the "forward" change type represent data that was not present in the previous synthesis, while "backward" indicates that study ID is no longer in the given table. If a study ID in a table is associated with both backward and forward change types, it is likely that one or more values were altered for that row in the new synthesis. 
+## Change Log
 
+**COMING SOON**
+
+The following table summarizes which entries across the range of synthesis tables changed compared to the previous synthesis. Study IDs associated with the "forward" change type represent data that was not present in the previous synthesis, while "backward" indicates that study ID is no longer in the given table. If a study ID in a table is associated with both backward and forward change types, it is likely that one or more values were altered for that row in the new synthesis. 
 
 ```{r, echo=FALSE}
 
@@ -80,11 +173,14 @@ The following table summarizes which entries across the range of synthesis table
   #   datatable(change_log_errors)
   #   }
 
+# document new data added & from which studies
+# new species?
+# document data gaps? => studies that need methods?
 ```
 
 ***
 
-### Miscellaneous filepaths
+## Miscellaneous
 The following files were found in the derivative folders. They either do not match the approved filename structure for csvs or are another filetype
 
 #### Unknown CSVs
@@ -108,5 +204,10 @@ if(!is.null(file_paths$unknown_filetypes)){
 } else {
   "No non-csv or -bib files found in derivative folders"
 }
+```
 
+#### Warnings Encountered
+
+```{r, echo=FALSE}
+print(warning_summary)
 ```

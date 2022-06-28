@@ -272,7 +272,7 @@ updated_cores <- cores %>%
 ccrcn_synthesis$cores <- updated_cores
 
 # clear workspace of unnecessary variables
-rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results"))])
+rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results"))])
 
 # Stocks
 

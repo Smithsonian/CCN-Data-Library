@@ -15,4 +15,4 @@ cores_w_max_depth <- cores %>%
 ccrcn_synthesis$cores <- cores_w_max_depth
 
 # clear workspace of unnecessary variables
-rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results"))])
+rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results"))])
