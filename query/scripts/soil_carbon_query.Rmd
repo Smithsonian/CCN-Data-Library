@@ -23,17 +23,17 @@ library(DT)
 guidance <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols())
 
 # read in synthesis data
-methods <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_methods.csv", col_types = cols()) %>% 
+methods <- read_csv("data/CCRCN_synthesis/CCRCN_methods.csv", col_types = cols()) %>% 
   mutate(excess_pb210_rate = recode(excess_pb210_rate, 
                                     "mass accumulation" = "cumulative mass",
                                     "accretion" = "depth", 
                                     "mass accumulation and accretion" = "depth"))
 # excess_pb210_model = ifelse(study_id == "Peck_et_al_2020", "CIC", excess_pb210_model) # corrected in hook script
 
-cores <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_cores.csv", guess_max=10000, col_types = cols()) %>% 
+cores <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", guess_max=10000, col_types = cols()) %>% 
   mutate(habitat = ifelse(core_id == "MR3U", "marsh", habitat))
 
-ds <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv", guess_max=50000, col_types = cols()) %>% 
+ds <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max=50000, col_types = cols()) %>% 
   select(-site_id)
 
 # goal is to establish a new %OM vs. %C relationship for low carbon coastal wetland soils
@@ -55,7 +55,7 @@ all <- left_join(ds, cores) %>%
   #                                            carbon_measured_or_modeled)) %>%
   select_if(function(x) {!all(is.na(x))}) %>% 
   select(study_id, site_id, core_id, method_id, year, month, day, latitude, longitude,
-         # country, admin_division, 
+         country, admin_division,
          habitat, everything())
 
 ```
@@ -99,7 +99,7 @@ all_measured %>%
   geom_point(alpha = 0.5, size = 1.5) +
   theme_bw(base_size = 15) + 
   facet_wrap(~habitat, scales = "free", dir = "v") +
-  theme(legend.position = "bottom")
+  # theme(legend.position = "bottom")
 ```
 
 
@@ -132,7 +132,7 @@ map_habs %>%
   addCircleMarkers(lng = ~longitude, lat = ~latitude,
                    radius = 3, 
                    color = ~pal(habitat),
-                   label = ~study_id) %>% 
+                   label = ~paste0(study_id, "; ", habitat)) %>% 
   addLegend(pal = pal, values = ~habitat)
 
 ```
@@ -267,7 +267,7 @@ knitr::kable(quality_smry)
 ```{r echo=FALSE}
 
 # # create bibliography
-# bib <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_study_citations.csv", col_types = cols()) %>% 
+# bib <- read_csv("data/CCRCN_synthesis/CCRCN_study_citations.csv", col_types = cols()) %>% 
 #   filter(study_id %in% unique(all_measured$study_id))
 # 
 # # write data and bib
@@ -333,6 +333,35 @@ ggplot(low_c_modeled) +
   theme_bw()
 # maybe plot all carbon data and add a dashed line to delineat low vs high carbon 
 ```
+
+```{r}
+# Data for Brian
+briandata <- all_measured %>% 
+  filter(high_low_carbon == "low" & habitat == "marsh") %>%
+  select_if(function(x) {!all(is.na(x))}) %>% 
+  mutate(fraction_carbon_type = case_when(study_id == "StLaurent_et_al_2020" ~ "total carbon",
+                                            TRUE ~ fraction_carbon_type),
+         fraction_carbon_method = ifelse(study_id == "Ward_et_al_2021", NA, fraction_carbon_method),
+         percent_organic_matter = fraction_organic_matter*100,
+         percent_carbon = fraction_carbon*100)  %>% 
+  select(-fraction_organic_matter, -fraction_carbon)
+
+briandata_methods <- methods %>% filter(study_id %in% unique(briandata$study_id))
+
+brianbib <- read_csv("data/CCRCN_synthesis/CCRCN_study_citations.csv") %>% 
+  filter(study_id %in% unique(briandata$study_id))
+
+briandata %>% 
+  # filter(study_id == "Ward_et_al_2021") %>%
+  ggplot() +
+  geom_point(aes(percent_organic_matter, percent_carbon, col = fraction_carbon_type), alpha = 0.6)
+
+# write data
+write_csv(briandata, "query/data/cores_for_brian/ccrcn_core_data_marsh.csv")
+write_csv(brianbib, "query/data/cores_for_brian/ccrcn_core_data_marsh_bib.csv")
+
+```
+
 
 ```{r}
 # look at depth profiles?

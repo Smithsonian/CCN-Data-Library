@@ -336,7 +336,7 @@ if(join_status == TRUE){
   write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis/CCRCN_impacts.csv")
   write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis/CCRCN_methods.csv")
   write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/CCRCN_species.csv")
-  write_csv(ccrcn_synthesis$studycitations, "./data/CCRCN_synthesis/CCRCN_study_citations.csv")
+  write_csv(ccrcn_synthesis$study_citations, "./data/CCRCN_synthesis/CCRCN_study_citations.csv")
   
   WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/CCRCN_bibliography.bib") # some encoding funny business here
 }
