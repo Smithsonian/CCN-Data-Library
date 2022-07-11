@@ -24,6 +24,7 @@
 # poppe_and_rybczyk_2019_associated_publication.csv - Is a CSV file containing citation information for the associated publication accompanying this data release.
 
 library(tidyverse)
+library(lubridate)
 library(RefManageR)
 
 source("./scripts/1_data_formatting/qa_functions.R")
@@ -37,6 +38,12 @@ methods_raw <- read_csv("./data/primary_studies/Poppe_2019/original/poppe_and_ry
 
 ## Curate Data ####
 
+# create ID lookup to retain the estuary association
+id_lookup <- distinct(cores_raw, estuary_id, site_id) %>% 
+  separate(estuary_id, into = "estuary", sep = " ", remove = F) %>% 
+  mutate(new_site = paste0(estuary, "_", site_id)) %>% 
+  select(site_id, new_site)
+
 # Rename core year variable since date requires a full date string
 cores <- cores_raw %>%
   mutate(core_year = year(core_date), 
@@ -45,7 +52,8 @@ cores <- cores_raw %>%
   mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
          core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK"),
          core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
-  select(-estuary_id, -core_date)
+  select(-estuary_id, -core_date) %>% 
+  left_join(id_lookup) %>% select(-site_id) %>% rename(site_id = new_site) %>% select(study_id, site_id, everything())
 
 # Provide unit columns
 depthseries <- depthseries_raw %>%
@@ -54,7 +62,8 @@ depthseries <- depthseries_raw %>%
          pb214_unit = ifelse(!is.na(pb214_activity), "becquerelsPerKilogram", NA))%>%
   mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
   select(-estuary_id, -fraction_carbon_modeled) %>%
-  rename(fraction_carbon = fraction_carbon_measured)
+  rename(fraction_carbon = fraction_carbon_measured) %>% 
+  left_join(id_lookup) %>% select(-site_id) %>% rename(site_id = new_site) %>% select(study_id, site_id, everything())
 
 ggplot(depthseries %>% filter(core_id == "LM3_16" | core_id == "LM4_24"), 
        aes(fraction_organic_matter, fraction_carbon, col = core_id)) + 
@@ -68,11 +77,14 @@ species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
   select(study_id, site_id, core_id, species_code) %>%
   mutate(species_code = gsub("sp.", "spp", species_code))%>% 
-  mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) 
+  mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, 
+                          paste(site_id, core_id, sep="_"), core_id)) %>% 
+  left_join(id_lookup) %>% select(-site_id) %>% rename(site_id = new_site) %>% select(study_id, site_id, everything())
 
 impacts <- impacts_raw %>%
   mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
-  select(-estuary_id)
+  select(-estuary_id) %>% 
+  left_join(id_lookup) %>% select(-site_id) %>% rename(site_id = new_site) %>% select(study_id, site_id, everything())
 
 methods <- methods_raw %>%
   mutate(method_id = "single set of methods") %>%
@@ -86,45 +98,16 @@ methods <- methods_raw %>%
 
 ## Citation ####
 
-if(!file.exists("data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_study_citations.csv")){
-  # publications
-  pubs <- read_csv("data/primary_studies/Poppe_2019/original/poppe_and_rybczyk_2019_associated_publications.csv")
-  
-  pub_citations <- pubs %>%
-    select(-bibtex_pubs) %>%
-    rename(doi = doi_pubs, title = title_pubs, publication_type = `publication type`) %>%
-    mutate(bibliography_id = str_c(study_id, publication_type, sep = "_")) %>%
-    mutate(bibtype = recode(publication_type, 
-                            "article" = "Article",
-                            "mastersthesis" = "MastersThesis",
-                            "techreport" = "TechReport")) %>%
-    mutate(publication_type = "synthesis source",
-           institution = ifelse(bibtype == "TechReport", "Western Washington University", NA),
-           school = ifelse(bibtype == "MastersThesis", "Western Washington University", NA)) %>%
-    mutate_all(as.character)
-  
-  # data release
-  doi <- "10.25573/data.10005248"
-  data_bib <- as.data.frame(GetBibEntryWithDOI(doi))
-  
-  study_ids <- unique(cores$study_id)
-  data_citation <-  data.frame(study_id = study_ids, data_bib) %>%
-    mutate(publication_type = "synthesis dataset",
-           bibliography_id = "Poppe_et_al_2019_synthesis") 
-  
-  study_citations <- bind_rows(pub_citations, data_citation) %>%
-    arrange(study_id) %>%
-    select(study_id, bibliography_id, publication_type, bibtype, everything())
-  
-  # Write .bib file
-  bib_file <- study_citations %>%
-    select(-study_id, -publication_type) %>%
-    distinct() %>%
-    column_to_rownames("bibliography_id")
-  
-  WriteBib(as.BibEntry(bib_file), "data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019.bib")
-  write_csv(study_citations, "data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_study_citations.csv")
-}
+study_citations <- read_csv("data/primary_studies/Poppe_2019/intermediate/poppe_and_rybczyk_2019_associated_publications.csv")
+
+# Write .bib file
+bib_file <- study_citations %>%
+  select(-study_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("bibliography_id")
+
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019.bib")
+write_csv(study_citations, "data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_study_citations.csv")
 
 # Update Tables ###########
 source("./scripts/1_data_formatting/versioning_functions.R")
@@ -160,3 +143,4 @@ write_csv(depthseries, "./data/primary_studies/Poppe_2019/derivative/poppe_and_r
 write_csv(species, "./data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_species.csv")
 write_csv(impacts, "./data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_impacts.csv")
 write_csv(methods, "./data/primary_studies/Poppe_2019/derivative/poppe_and_rybczyk_2019_methods.csv")
+

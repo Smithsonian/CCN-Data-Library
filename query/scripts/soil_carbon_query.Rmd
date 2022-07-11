@@ -338,13 +338,18 @@ ggplot(low_c_modeled) +
 # Data for Brian
 briandata <- all_measured %>% 
   filter(high_low_carbon == "low" & habitat == "marsh") %>%
+  # filter(habitat == "marsh" | habitat == "mangrove") %>% 
   select_if(function(x) {!all(is.na(x))}) %>% 
   mutate(fraction_carbon_type = case_when(study_id == "StLaurent_et_al_2020" ~ "total carbon",
                                             TRUE ~ fraction_carbon_type),
          fraction_carbon_method = ifelse(study_id == "Ward_et_al_2021", NA, fraction_carbon_method),
          percent_organic_matter = fraction_organic_matter*100,
          percent_carbon = fraction_carbon*100)  %>% 
-  select(-fraction_organic_matter, -fraction_carbon)
+  rename(carbon_flag = fraction_carbon_flag, 
+         carbon_method = fraction_carbon_method, 
+         carbon_type = fraction_carbon_type) %>% 
+  select(-fraction_organic_matter, -fraction_carbon) %>% 
+  select(contains("_id"), percent_organic_matter, percent_carbon, carbon_flag, carbon_method, carbon_type, everything())
 
 briandata_methods <- methods %>% filter(study_id %in% unique(briandata$study_id))
 
@@ -352,9 +357,10 @@ brianbib <- read_csv("data/CCRCN_synthesis/CCRCN_study_citations.csv") %>%
   filter(study_id %in% unique(briandata$study_id))
 
 briandata %>% 
-  # filter(study_id == "Ward_et_al_2021") %>%
+  # filter(study_id == "Burden_et_al_2018") %>%
   ggplot() +
-  geom_point(aes(percent_organic_matter, percent_carbon, col = fraction_carbon_type), alpha = 0.6)
+  geom_point(aes(percent_organic_matter, percent_carbon, col = carbon_measured_or_modeled), alpha = 0.6) +
+  facet_wrap(~habitat)
 
 # write data
 write_csv(briandata, "query/data/cores_for_brian/ccrcn_core_data_marsh.csv")
