@@ -575,44 +575,27 @@ testConditional <- function(table_names, database_structure_doc = "docs/ccrcn_da
       return()
     }
     
-    this_table = tables[i]
-    required <- database_structure %>% 
-      dplyr::filter(table == this_table,
-                    required == "required")
+    this_table = category
     
-    if (all(required$attribute_name %in% names(datasets[[i]]))) {
+    # conditional attributes
+    conditional_attributes <- database_structure %>%
+      dplyr::filter(table == this_table,
+                    required == "conditional",
+                    ! is.na(conditional_on)) %>% 
+      separate_rows(conditional_on, sep="; ") %>% 
+      filter(conditional_on %in% names(datasets[[i]]))
+    
+    if (all(conditional_attributes$attribute_name %in% names(datasets[[i]]))) {
       requirement_warnings <- c(requirement_warnings, 
-                                paste(this_table, ": all required attributes present.", sep="")
-      )
+                                paste(this_table, " (conditional): all conditional attributes present.", sep=""))
     } else {
-      missing_attributes <- required$attribute_name[! (required$attribute_name %in% names(datasets[[i]]))]
+      missing_attributes <- unique(conditional_attributes$attribute_name[! (conditional_attributes$attribute_name %in% names(datasets[[i]]))])
       requirement_warnings <- c(requirement_warnings, 
-                                paste(this_table, " (required) : ",
+                                paste(this_table, " (conditional): ",
                                       paste(missing_attributes, sep="", collapse = ", "),
-                                      " missing.", sep="")
-      )
-      # conditional attributes
-      conditional_attributes <- database_structure %>%
-        dplyr::filter(table == this_table,
-                      required == "conditional",
-                      ! is.na(conditional_on)) %>% 
-        separate_rows(conditional_on, sep="; ") %>% 
-        filter(conditional_on %in% names(datasets[[i]]))
-      
-      if (all(conditional_attributes$attribute_name %in% names(datasets[[i]]))) {
-        requirement_warnings <- c(requirement_warnings, 
-                                  paste(this_table, " (conditional): all conditional attributes present.", sep="")
-        )
-      } else {
-        missing_attributes <- conditional_attributes$attribute_name[! (conditional_attributes$attribute_name %in% names(datasets[[i]]))]
-        requirement_warnings <- c(requirement_warnings, 
-                                  paste(this_table, " (conditional): ",
-                                        paste(missing_attributes, sep="", collapse = ", "),
-                                        " missing.", sep=""))
-      }
+                                      " missing.", sep=""))
     }
   }
-  
   print(requirement_warnings)
 }
 

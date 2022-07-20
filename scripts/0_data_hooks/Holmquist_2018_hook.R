@@ -202,6 +202,7 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 testTableCols(table_names) 
 testTableVars(table_names) # quite a few uncontrolled variables
 testRequired(table_names) # core year and position method
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

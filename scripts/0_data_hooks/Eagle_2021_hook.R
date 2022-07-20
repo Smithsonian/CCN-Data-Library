@@ -134,12 +134,13 @@ leaflet(cores) %>%
   addTiles() %>% 
   addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
 
-table_names <- c("methods", "cores", "depthseries", "impacts", "species")
+table_names <- c("methods", "cores", "depthseries", "impacts")
 
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names) # I think we'll be adding selected intervals to controlled variables
 testRequired(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
