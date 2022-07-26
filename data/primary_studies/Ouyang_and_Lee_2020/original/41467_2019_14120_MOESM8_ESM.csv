@@ -1,0 +1,173 @@
+study_id,site_id,country,site_latitude,site_longitude,latitude_precision,longitude_precision,dead_wood_carbon_stock (Mg ha-1)
+Nam et al. 2016,CGMBR fringe,Vietnam,10.48,106.94,2,2,2.333333333
+Nam et al. 2016,CGMBR interior,Vietnam,10.48,106.94,2,2,4.433333333
+Nam et al. 2016,KVPF fringe,Vietnam,8.65,105.11,2,2,4.2
+Nam et al. 2016,KVPF interior,Vietnam,8.65,105.11,2,2,2.983333333
+Adame et al. (2018),5years,Malaysia,4.838333333,100.6308333,9,7,10.4
+Adame et al. (2018),15 years,Malaysia,4.838333333,100.6308333,9,7,15.3
+Adame et al. (2018),30 years,Malaysia,4.838333333,100.6308333,9,7,35.1
+Adame et al. (2018),40 years,Malaysia,4.838333333,100.6308333,9,7,29.6
+Adame et al. (2018),70 years,Malaysia,4.838333333,100.6308333,9,7,62.7
+Kauffman et al. (2011),Yap-interior,Fed. States of Micronesia,9.5879,138.1277,4,4,26.68
+Kauffman et al. (2011),Yap-Lanward,Fed. States of Micronesia,9.5879,138.1277,4,4,10.9504
+Kauffman et al. (2011),Yap-seaward,Fed. States of Micronesia,9.5879,138.1277,4,4,22.3648
+Kauffman et al. (2011),Airai-interior,Palau,7.3522,134.5393,4,4,11.4608
+Kauffman et al. (2011),Airai-Lanward,Palau,7.3522,134.5393,4,4,15.9616
+Kauffman et al. (2011),Airai-seaward,Palau,7.3522,134.5393,4,4,13.7808
+Kauffman et al (2014),Alta 3-Tall,Dominican Republic,19.7011,-71.7093,4,4,16.845
+Kauffman et al (2014),Bajo final-short,Dominican Republic,19.8763,-71.6514,4,4,0
+Kauffman et al (2014),Balsa alta-tall,Dominican Republic,19.7013,-71.72,4,2,15.285
+Kauffman et al (2014),Granja bajo-short,Dominican Republic,19.882,-17.6473,3,4,0
+Kauffman et al (2014),Guinea media-medium,Dominican Republic,19.7077,-71.7232,4,4,5.01
+Kauffman et al (2014),Laguna media-medium,Dominican Republic,19.6909,-71.7155,4,4,2.745
+Kauffman et al (2014),Mediana sur-medium,Dominican Republic,19.6926,-71.7116,4,4,1.67
+Kauffman et al (2014),Morro bajo-short,Dominican Republic,19.842,-17.6419,3,3,0
+Kauffman et al (2014),Tapio alta-tall,Dominican Republic,19.7243,-71.7246,4,4,19.26
+Kauffman et al. (2016),Boca Pedro Este,Mexico,18.6485,-92.4746,4,4,18
+Kauffman et al. (2016),Boca Pedro Oeste,Mexico,18.6519,-92.4579,4,4,22
+Kauffman et al. (2016),Grijalva,Mexico,18.6056,-92.6848,4,4,35
+Kauffman et al. (2016),Manglar Cometa,Mexico,18.4922,-92.4287,4,4,8
+Kauffman et al. (2016),Manglar Gallego,Mexico,18.5952,-92.4484,4,4,23
+Kauffman et al. (2016),Manglar Vital,Mexico,18.5671,-92.4989,4,4,114
+Kauffman et al. (2016),Sabalo,Mexico,18.594,-92.4675,3,4,48
+Sitoe et al. (2014),Sitoe-1,Mozambique,-20.1833,34.75,4,2,1.83
+Ajonina et al. (2014)_Springer,cam-heavily exploited,Cameroon,3.6381,9.6578,4,4,6.1
+Ajonina et al. (2014)_Springer,cam-mod,Cameroon,3.6381,9.6578,4,4,16.4
+Ajonina et al. (2014)_Springer,cam-undistrubed,Cameroon,3.6381,9.6578,4,4,70.6
+Jones et al. (2014),closed canopy,Madagascar,-13.4333,48.5,4,1,3.33
+Jones et al. (2014),Open canopy I,Madagascar,-13.4333,48.5,4,1,2
+Jones et al. (2014),Open canopy II,Madagascar,-13.4333,48.5,4,1,5.33
+Bhomia et al. (2016),Chismuyo,Honduras,13.4276,-87.61,4,2,8.2
+Bhomia et al. (2016),Isla de Pajaros,Honduras,13.3669,-87.47,4,2,4
+Bhomia et al. (2016),San Bernardo,Honduras,13.0978,-87.18,4,2,8.3
+Bhomia et al. (2016),San Lorenzo,Honduras,13.3676,-87.48,4,2,1.5
+Bhomia et al. (2016),El Canalito,Honduras,15.8742,-87.64,4,2,15.4
+Bhomia et al. (2016),El Marion,Honduras,15.7854,-87.6,4,1,16.9
+Bhomia et al. (2016),La Diamente,Honduras,15.8913,-87.63,4,2,2.6
+Bhomia et al. (2016),Laguna Quemada,Honduras,15.8222,-87.58,4,2,8.7
+Bhomia et al. (2016),Manglon,Honduras,15.8223,-87.6,4,1,8.8
+Bhomia et al. (2016),Milton Bight,Honduras,16.4042,-86.4,4,1,5.9
+Bhomia et al. (2016),Politily,Honduras,16.4013,-86.4,4,1,6.6
+Bhomia et al. (2016),West End,Honduras,16.4184,-85.94,4,2,6.3
+Bhomia et al. (2016),The Bight,Honduras,16.4548,-85.86,4,2,1
+Bhomia et al. (2016),Big Bight,Honduras,16.0885,-86.89,4,2,6.3
+Bhomia et al. (2016),Iron Bound,Honduras,16.1192,-86.9,4,1,5.8
+Bhomia et al. (2016),Weatern Path,Honduras,16.0983,-86.91,4,2,11.5
+Bhomia et al. (2016),Oyster Bed,Honduras,16.0927,-86.91,4,2,3.7
+Bhomia et al. (2016),Turtle Harbor,Honduras,16.11,-86.94,2,2,5.5
+Stringer et al. (2014),height class 1,Mozambique,-18.8946,36.1252,4,4,12.09
+Stringer et al. (2014),height class 2,Mozambique,-18.8946,36.1252,4,4,6.47
+Stringer et al. (2014),height class 3,Mozambique,-18.8946,36.1252,4,4,13.67
+Stringer et al. (2014),height class 4,Mozambique,-18.8946,36.1252,4,4,18.43
+Stringer et al. (2014),height class 5,Mozambique,-18.8946,36.1252,4,4,23.48
+Murdiyarso et al. 2015,Sembilang 1,Indonesia,-2.0745,104.4666667,4,7,2.4
+Murdiyarso et al. 2015,Sembilang 2,Indonesia,-2.0745,104.4666667,4,7,10.9
+Murdiyarso et al. 2015,Sembilang 3,Indonesia,-2.0745,104.4666667,4,7,9.4
+Murdiyarso et al. 2015,Sembilang 4,Indonesia,-2.0745,104.4666667,4,7,16.9
+Murdiyarso et al. 2015,Sembilang 5,Indonesia,-2.0745,104.4666667,4,7,10.3
+Murdiyarso et al. 2015,Sembilang 6,Indonesia,-2.0745,104.4666667,4,7,18.1
+Murdiyarso et al. 2015,Cilacap 1,Indonesia,-7.723333333,108.958,9,3,12.3
+Murdiyarso et al. 2015,Cilacap 2,Indonesia,-7.723333333,108.958,9,3,11.3
+Murdiyarso et al. 2015,Kubu Raya 1,Indonesia,-0.675,109.3616667,3,7,6.7
+Murdiyarso et al. 2015,Kubu Raya 2,Indonesia,-0.675,109.3616667,3,7,15.6
+Murdiyarso et al. 2015,Kubu Raya 3,Indonesia,-0.675,109.3616667,3,7,4.6
+Murdiyarso et al. 2015,Kubu Raya 4,Indonesia,-0.675,109.3616667,3,7,62.6
+Murdiyarso et al. 2015,Kubu Raya 5,Indonesia,-0.675,109.3616667,3,7,19.3
+Murdiyarso et al. 2015,Kubu Raya 6,Indonesia,-0.675,109.3616667,3,7,38.6
+Murdiyarso et al. 2015,Kubu Raya 7,Indonesia,-0.675,109.3616667,3,7,22.2
+Murdiyarso et al. 2015,Tanjung Puting 1,Indonesia,-2.858333333,111.7,9,1,11.2
+Murdiyarso et al. 2015,Tanjung Puting 2,Indonesia,-2.858333333,111.7,9,1,9
+Murdiyarso et al. 2015,Tanjung Puting 3,Indonesia,-2.858333333,111.7,9,1,17.3
+Murdiyarso et al. 2015,Tanjung Puting 4,Indonesia,-2.858333333,111.7,9,1,19
+Murdiyarso et al. 2015,Tanjung Puting 5,Indonesia,-2.858333333,111.7,9,1,36.7
+Murdiyarso et al. 2015,Bunaken 1,Indonesia,1.288333333,124.51,9,2,85.3
+Murdiyarso et al. 2015,Bunaken 2,Indonesia,1.288333333,124.51,9,2,24
+Murdiyarso et al. 2015,Bunaken 3,Indonesia,1.288333333,124.51,9,2,41.1
+Murdiyarso et al. 2015,Bunaken 4,Indonesia,1.288333333,124.51,9,2,21.9
+Murdiyarso et al. 2015,Bunaken 5,Indonesia,1.288333333,124.51,9,2,31.8
+Murdiyarso et al. 2015,Bunaken 6,Indonesia,1.288333333,124.51,9,2,51.9
+Murdiyarso et al. 2015,Teminabuan 1,Indonesia,-1.623333333,131.81,9,2,30.7
+Murdiyarso et al. 2015,Teminabuan 2,Indonesia,-1.623333333,131.81,9,2,15.5
+Murdiyarso et al. 2015,Teminabuan 3,Indonesia,-1.623333333,131.81,9,2,5.6
+Murdiyarso et al. 2015,Teminabuan 4,Indonesia,-1.623333333,131.81,9,2,18.1
+Murdiyarso et al. 2015,Bintuni 1,Indonesia,-2.17,133.5333333,2,7,5.6
+Murdiyarso et al. 2015,Bintuni 2,Indonesia,-2.17,133.5333333,2,7,10.4
+Murdiyarso et al. 2015,Bintuni 3,Indonesia,-2.17,133.5333333,2,7,15.8
+Murdiyarso et al. 2015,Bintuni 4,Indonesia,-2.17,133.5333333,2,7,28.5
+Murdiyarso et al. 2015,Bintuni 5,Indonesia,-2.17,133.5333333,2,7,13.7
+Murdiyarso et al. 2015,Timika 1,Indonesia,-4.861666667,136.7883333,9,7,17.8
+Murdiyarso et al. 2015,Timika 2,Indonesia,-4.861666667,136.7883333,9,7,32.7
+Murdiyarso et al. 2015,Timika 3,Indonesia,-4.861666667,136.7883333,9,7,20
+Murdiyarso et al. 2015,Timika 4,Indonesia,-4.861666667,136.7883333,9,7,41
+Donato et al. (2011),G1,Bangladesh,22.2559,89.2696,4,4,4.2
+Donato et al. (2011),G2,Bangladesh,22.3194,89.6288,4,4,3.9
+Donato et al. (2011),K1,Fed. States of Micronesia,5.34919,162.96306,5,5,14
+Donato et al. (2011),K2,Fed. States of Micronesia,5.28219,162.96406,5,5,7.6
+Donato et al. (2011),K3,Fed. States of Micronesia,5.32633,162.94497,5,5,55.1
+Donato et al. (2011),K4,Fed. States of Micronesia,5.2833,162.9105,4,4,30.8
+Donato et al. (2011),Y1,Fed. States of Micronesia,9.5563,138.1798,4,3,7.8
+Donato et al. (2011),Y2,Fed. States of Micronesia,9.5145,138.1493,4,4,18.6
+Donato et al. (2011),Y3,Fed. States of Micronesia,9.5528,138.0998,4,4,12.3
+Donato et al. (2011),Y4,Fed. States of Micronesia,9.5425,138.0907,4,4,8
+Donato et al. (2011),Y5,Fed. States of Micronesia,9.5884,138.1275,4,4,16.3
+Donato et al. (2011),B1,Indonesia,-2.7367,111.7378,4,4,11.2
+Donato et al. (2011),B2,Indonesia,-2.8489,111.7387,4,4,36.7
+Donato et al. (2011),B3,Indonesia,-2.7839,111.6988,4,4,17.9
+Donato et al. (2011),B4,Indonesia,-2.8559,111.7318,4,4,19
+Donato et al. (2011),B5,Indonesia,-2.7412,111.7138,4,4,9
+Donato et al. (2011),J1,Indonesia,-7.7129,108.9583,4,4,4.2
+Donato et al. (2011),J2,Indonesia,-7.7237,108.9704,4,4,4.3
+Donato et al. (2011),S1,Indonesia,1.7499,124.7362,4,4,552.6
+Donato et al. (2011),S2,Indonesia,1.6945,124.9587,4,4,85.3
+Donato et al. (2011),S3,Indonesia,1.7378,124.7549,4,4,24
+Donato et al. (2011),S4,Indonesia,1.5673,124.8038,4,4,32
+Donato et al. (2011),S5,Indonesia,1.2962,124.5068,4,4,41.1
+Donato et al. (2011),S6,Indonesia,1.3723,124.5507,4,4,21.9
+Donato et al. (2011),PM1,Palau,7.35211,134.53911,5,5,13.8
+Donato et al. (2012),Donato-2012-PM,Palau,7.35325,134.5387,5,4,30
+Donato et al. (2012),YM,Fed. States of Micronesia,9.5426,138.0907,4,4,13
+Adame et al. (2015),Esterillo,Mexico,14.7167,-92.4333,4,4,5.3
+Adame et al. (2015),Las Palmas,Mexico,14.7167,-92.4333,4,4,22.1
+Adame et al. (2015),Paistalon,Mexico,14.7167,-92.4333,4,4,9.4
+Adame et al. (2015),Panzacola,Mexico,14.7167,-92.4333,4,4,43.5
+Adame et al. (2015),Santa Chila,Mexico,14.7167,-92.4333,4,4,11.5
+Adame et al. (2015),Teculapoa,Mexico,14.7167,-92.4333,4,4,11.9
+Adame et al. (2015),Zacapulco,Mexico,14.7167,-92.4333,4,4,102.4
+Tue et al. (2014),Tue-fringe,Vietnam,8.5833,104.8333,4,4,1.24
+Tue et al. (2014),Tue-interior,Vietnam,8.5833,104.8333,4,4,2.26
+Tue et al. (2014),Tue-transition,Vietnam,8.5833,104.8333,4,4,2.71
+Hieu et al. (2017),sc-2 yr forest,Vietnam,19.9269,105.8877,4,4,0
+Hieu et al. (2017),sc-3 yr forest,Vietnam,19.9269,105.8877,4,4,0.0433
+Hieu et al. (2017),kb-9 yr forest,Vietnam,19.9269,105.8877,4,4,0.0433
+Hieu et al. (2017),kb-19 yr forest,Vietnam,19.9269,105.8877,4,4,0.9959
+Hieu et al. (2017),kb-27 yr forest,Vietnam,19.9269,105.8877,4,4,2.6413
+Dung et al. 2016,fringe,Vietnam,10.4,106.88,1,2,1.792245
+Dung et al. 2016,transitinoal ,Vietnam,10.4,106.88,1,2,11.167065
+Dung et al. 2016,interior,Vietnam,10.4,106.88,1,2,11.167065
+Dung et al. 2016,typoon impacted,Vietnam,10.4,106.88,1,2,0
+Adame et al. (2013),Cayo Culebra,Mexico,19.6957,-87.47,4,2,21.4
+Adame et al. (2013),El Playon,Mexico,19.8218,-87.5,4,0,0
+Adame et al. (2013),Hualaxtoc,Mexico,19.6477,-87.45,4,2,12.5
+Adame et al. (2013),Isla Pitaya,Mexico,19.4867,-87.7,4,1,25.7
+Adame et al. (2013),La Raya,Mexico,19.8408,-87.48,4,2,0
+Adame et al. (2013),Laguna Negra,Mexico,19.78,-87.48,2,2,7
+Adame et al. (2013),Xamach,Mexico,19.8612,-87.46,4,2,0
+Ochoa-Gomez et al. (2019),Balandra,Mexico,24.3217,-110.3242,4,4,1.8
+Ochoa-Gomez et al. (2019),Enfermeria,Mexico,24.2167,-110.308,4,3,3.4
+Ochoa-Gomez et al. (2019),Zacatecas,Mexico,24.1667,-110.4333,4,4,1.2
+Mao et al. 2012,inner bay,China,22.5167,114,4,0,2.8144
+Mao et al. 2012,mid bay,China,22.5167,114,4,0,13.1026
+Mao et al. 2012,outer bay,China,22.5167,114,4,0,1.9578
+Krauss et al. 1995 in Hiraishi et al. 2013,RB-Right,USA,26.1667,-81.8069,4,4,6.7598135
+Krauss et al. 1995 in Hiraishi et al. 2013,ENP-Right,USA,25.8587,-81.4817,4,4,13.656731
+Krauss et al. 1995 in Hiraishi et al. 2013,ENP-Eye,USA,26.4393,-80.0825,4,4,17.524507
+Krauss et al. 1995 in Hiraishi et al. 2013,ENP-Left,USA,25.7459,-81.5,4,0,8.5430675
+Krauss et al. 1995 in Hiraishi et al. 2013,TAY-Left,USA,25.7459,-80.555,4,3,3.212924
+Tam et al. 1995 in Hiraishi et al. 2013,AC,China,22.5167,114.0833,4,4,0.382899
+Tam et al. 1995 in Hiraishi et al. 2013,AM,China,22.5167,114.0833,4,4,0.035178
+Robertson and Daniel 1989 in Hiraishi et al. 2013,Missionary Bay_young,Australia,-18.25,146.2,1,1,0.277
+Robertson and Daniel 1989 in Hiraishi et al. 2013,Missionary Bay_mature,Australia,-18.25,146.2,1,1,3.44
+Steinke and Rajh 1995 in Hiraishi et al. 2013,Mgeni estuary,South Africa,-29.8,31.05,1,2,3.44113
+Allen et al. 2000 in Hiraishi et al. 2013,Kosrae,Fed. States of Micronesia,5.3167,163,4,0,15.27988
+Allen et al. 2000 in Hiraishi et al. 2013,Pohnpei,Fed. States of Micronesia,6.9,158.2333,1,4,7.16639
+Allen et al. 2000 in Hiraishi et al. 2013,Yap,Fed. States of Micronesia,9.55,138.15,2,2,5.81339
