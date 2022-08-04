@@ -41,7 +41,8 @@ methods_raw <- read_csv("./data/primary_studies/Boyd_2019/original/boyd_et_al_20
 id <- "Boyd_et_al_2019" # use if we are treating this as one study
 
 methods <- methods_raw %>%
-  mutate(method_id = "single set of methods") %>% 
+  mutate(method_id = "single set of methods", 
+         fraction_carbon_method = "EA") %>% 
   # rename(method_id = study_id) %>% mutate(study_id = id) %>%
   reorderColumns("methods", .)
 
@@ -74,6 +75,10 @@ depthseries <- depthseries_raw %>%
   mutate(method_id = "single set of methods") %>% 
   # rename(method_id = study_id) %>% mutate(study_id = id) %>%
   reorderColumns("depthseries", .)
+
+depthseries %>% drop_na(fraction_carbon, fraction_organic_matter) %>% 
+  left_join(cores %>% select(site_id, salinity_class)) %>% 
+  ggplot(aes(fraction_carbon, fraction_organic_matter, col = salinity_class)) + geom_point(alpha = 0.5)
 
 # Species data needs to combine genus and species into one and remove other columns
 species <- species_raw %>%
@@ -144,6 +149,7 @@ species <- updated$species
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

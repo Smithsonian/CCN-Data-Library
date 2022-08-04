@@ -47,7 +47,8 @@ species <- species_raw %>%
   select(study_id, site_id, core_id, species_code) 
 
 methods <- methods_raw %>%
-  mutate(method_id = "single set of methods") %>%
+  mutate(method_id = "single set of methods",
+         carbonate_removal_method = "carbonates not removed") %>%
   rename(sediment_sieved_flag = sediment_seived_flag)
 
 ## Citations ####
@@ -93,6 +94,7 @@ depthseries <- reorderColumns("depthseries", depthseries)
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

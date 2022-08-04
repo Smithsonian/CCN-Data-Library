@@ -91,7 +91,19 @@ cores <- raw_cores %>%
   # CRMS site IDs are going to be changed to their CRMS code in order to break up very large bounding boxes on the map. 
   # Ex: The site ID associated with CRMS core CRMS0003_2 will be CRMS0003
   mutate(site_id = ifelse(grepl("CRMS", core_id) == TRUE, 
-                          gsub("_.*", "", core_id), site_id))
+                          gsub("_.*", "", core_id), site_id)) %>% 
+  # Jaxine updates
+  mutate(core_year = case_when(study_id == "Drake_et_al_2015" ~ 2012,
+                               study_id == "Elsey_Quirk_et_al_2011" ~ 2008,
+                               study_id == "Noe_et_al_2013" ~ 2010,
+                                         TRUE ~ NA_real_),
+         core_month = case_when(study_id == "Drake_et_al_2015" ~ 6,
+                                         TRUE ~ NA_real_),
+         core_elevation_method = case_when(study_id == "Hill_and_Anisfeld_2015" & !is.na(core_elevation) ~ "other high resolution",
+                                           TRUE ~ NA_character_),
+         core_elevation_notes = case_when(study_id == "Hill_and_Anisfeld_2015" & !is.na(core_elevation) ~ "Topcon GPT-3200 total station", 
+                                          TRUE ~ NA_character_),
+         core_elevation_accuracy = case_when(study_id == "Hill_and_Anisfeld_2015" & !is.na(core_elevation) ~ 0.002, TRUE ~ NA_real_))
 
 # Depthseries
 depthseries_carbon <- raw_depthseries %>%
@@ -140,7 +152,7 @@ methods <- raw_methods %>%
   mutate(study_id = recode(study_id, "Crooks_et_al_2013" = "Crooks_et_al_2014",
                                   "Nuttle_1988" = "Nuttle_1996",
                                   "Radabaugh_et_al_2017" = "Radabaugh_et_al_2018",
-                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015"))%>%
+                                  "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
   filter(!(study_id %in% removed_studies)) %>%
   select(-n, -publication_type) %>%
   merge(fraction_carbon_type_metadata, by="study_id") %>%
@@ -156,8 +168,32 @@ methods <- raw_methods %>%
          loss_on_ignition_flag = recode(loss_on_ignition_flag, 
                                         "time not specified" = "not specified",
                                         "no details" = "not specified"),
-         compaction_flag = ifelse(study_id == "CRMS_Database", "compaction quantified", compaction_flag),
+         compaction_flag = ifelse(study_id == "CRMS_Database", "compaction quantified", compaction_flag)) %>% 
+  # Jaxine updates
+  rename(carbon_profile_notes = fraction_carbon_flag) %>% 
+  mutate(sediment_sieved_flag = case_when(study_id %in% c("Drake_et_al_2015", "Elsey_Quirk_et_al_2011", "Noe_et_al_2013") ~ "sediment sieved",
+                                          TRUE ~ NA_character_),
+         sediment_sieve_size = case_when(study_id %in% c("Drake_et_al_2015", "Noe_et_al_2013") ~ 2,
+                                         study_id == "Elsey_Quirk_et_al_2011" ~ 0.42,
+                                         TRUE ~ NA_real_),
+         fraction_carbon_method = case_when(study_id %in% c("Drake_et_al_2015", "Hill_and_Anisfeld_2015", "Noe_et_al_2013") ~ "EA",
+                                            study_id == "Elsey_Quirk_et_al_2011" ~ "Craft regression",
+                                            TRUE ~ NA_character_),
+         compaction_flag = case_when(study_id == "Elsey_Quirk_et_al_2011" ~ "compaction quantified",
+                                     study_id == "Hill_and_Anisfeld_2015" ~ "corer limits compaction",
+                                     TRUE ~ compaction_flag),
+         coring_method = case_when(study_id == "Elsey_Quirk_et_al_2011" ~ "piston corer", TRUE ~ coring_method),
+         roots_flag = case_when(study_id == "Elsey_Quirk_et_al_2011" ~ "roots and rhizomes separated", TRUE ~ roots_flag),
+         carbon_measured_or_modeled = case_when(study_id == "Elsey_Quirk_et_al_2011" ~ "modeled", 
+                                                TRUE ~ carbon_measured_or_modeled),
+         carbon_profile_notes = na_if(carbon_profile_notes, "no details"),
          method_id = "single set of methods")
+
+# core notes
+# Drake 2015: core diameter 8.5cm; if we had dating info: "Cs137 661.62keV photopeak; Pb210 46.5keV photopeak"
+# Elsey-Quirk 2011: core diameter 10cm; there is no dating info but there should be; carbon is modeled but there might be some measured values in there
+# Hill_and_Anisfeld_2015: core diameter 15cm; core years: two in 2010, twelve in 2012, and two in 2013. compaction_fraction 0.05 but not corrected
+# Noe et al 2013: some samples were fumigated and others were not..
 
 # Some visualization
 depthseries %>% 
@@ -176,7 +212,14 @@ depthseries %>% filter(study_id == "Breithaupt_et_al_2017") %>%
   facet_wrap(~core_id) +
   ggtitle("Breithaupt et al 2017 fraction carbon ~ LOI")
 # suspicious cores: WSC12, WSC13_2, WSC10_1
-ggsave("breithaupt_2017_carbon_loi.jpg")
+# ggsave("breithaupt_2017_carbon_loi.jpg")
+
+
+depthseries %>% filter(study_id == "Radabaugh_et_al_2018") %>% 
+  ggplot(aes(fraction_carbon, fraction_organic_matter, col = site_id)) + geom_point()
+
+library(leaflet)
+leaflet(cores) %>% addTiles() %>% addCircleMarkers(lng = ~core_longitude, lat = ~core_latitude, label = ~study_id, radius = 2)
 
 # Update Tables ###########
 source("./scripts/1_data_formatting/versioning_functions.R")

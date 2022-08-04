@@ -35,7 +35,8 @@ sample_volume <- pi*(2^2)*30
 
 # curate materials and methods
 methods <- raw_methods %>% 
-  select_if(function(x) {!all(is.na(x))})
+  select_if(function(x) {!all(is.na(x))}) %>% 
+  mutate(carbonate_removal_method = "carbonates not removed")
 
 ## ... Core Depthseries ####
 
@@ -144,6 +145,7 @@ table_names <- c("methods", "cores", "depthseries", "impacts")
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names) # no position method
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

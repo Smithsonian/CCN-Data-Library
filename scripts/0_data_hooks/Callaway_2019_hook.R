@@ -35,6 +35,8 @@ impacts_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_
 sites_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_et_al_2019_sites.csv")
 methods_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_et_al_2019_methods.csv")
 
+source("scripts/1_data_formatting/curation_functions.R")
+
 # Remove accumulation/accretion rates for core level
 cores <- cores_raw %>%
   mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
@@ -134,6 +136,9 @@ test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
+
+# Data visualization report
+writeDataVizReport("Callaway_et_al_2019")
 
 # write files
 write_csv(species, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_species.csv")

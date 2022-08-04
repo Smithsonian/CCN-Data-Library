@@ -62,6 +62,8 @@ depthseries <- depthseries_raw %>%
             excess_pb210_inventory_se, fraction_total_nitrogen, fraction_total_phosphorus,
             delta_N15, gamma_counting_sedmass, cumulative_sedmass_atdepth))
 # 'date' attribute: date at bottom of the depth interval, calculated as coring date minus sample age
+# cs137_unit, pb210_unit, ra226_unit missing
+# paper indicates excess pb210 is disintegrationsPerMinutePerGram
 
 # visual check
 ggplot(depthseries, aes(fraction_organic_matter, fraction_carbon, col = core_id)) + 
@@ -114,6 +116,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
@@ -126,3 +129,4 @@ write_csv(cores, "data/primary_studies/breithaupt_2014/derivative/breithaupt_et_
 write_csv(depthseries, "data/primary_studies/breithaupt_2014/derivative/breithaupt_et_al_2014_depthseries.csv")
 write_csv(species, "data/primary_studies/breithaupt_2014/derivative/breithaupt_et_al_2014_species.csv")
 write_csv(methods, "./data/primary_studies/breithaupt_2014/derivative/breithaupt_et_al_2014_methods.csv")
+

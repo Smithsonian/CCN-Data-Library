@@ -40,7 +40,7 @@ id <- "Baustian_et_al_2021"
 cores_ref <- data.frame(salinity_class = c("fresh", "intermediate", "brackish", "saline"), 
                         
                         # Marsh_Type = c(1:4),
-                        core_elevation = c(0.34, 0.13, 0.14, 0.14))
+                        core_elevation = c(0.34, 0.13, 0.14, 0.14)) # in a note supplied from Camille
 # map referenced for marsh type assignment: https://pubs.usgs.gov/sim/3290/pdf/sim3290.pdf
 
 # depth_ref <- data.frame(Core_Increment = c(1,2,3,5),
@@ -159,10 +159,12 @@ date_ref <- stock %>% select(Batch, core_id) %>% distinct() %>%
                                Batch == "2" ~ "7/1/2015"))
 
 cores <- left_join(coreinfo, date_ref) %>%
-    mutate(core_year = year(as.Date(core_date, format = "%m/%d/%Y")),
-           core_month = month(as.Date(core_date, format = "%m/%d/%Y")),
-           core_day = day(as.Date(core_date, format = "%m/%d/%Y"))) %>%
-  mutate(core_length_flag = "core depth limited by length of corer") %>% 
+  mutate(core_year = year(as.Date(core_date, format = "%m/%d/%Y")),
+         core_month = month(as.Date(core_date, format = "%m/%d/%Y")),
+         core_day = day(as.Date(core_date, format = "%m/%d/%Y"))) %>%
+  mutate(core_length_flag = "core depth limited by length of corer", 
+         core_elevation_method = "other low resolution",
+         core_elevation_notes = "elevation supplied by wetland type") %>% 
   select(-core_date, -species, -Batch)
 
 cores <- reorderColumns("cores", cores)
@@ -254,6 +256,7 @@ leaflet(cores) %>%
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

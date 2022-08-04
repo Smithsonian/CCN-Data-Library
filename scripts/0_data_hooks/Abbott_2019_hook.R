@@ -23,6 +23,7 @@
 # abbott_et_al_2019_associated_publications.bib - A citation in bibtex style for associated publications to this data release
 
 library(tidyverse)
+library(lubridate)
 library(RefManageR)
 
 cores_raw <- read_csv("./data/primary_studies/Abbott_2019/original/abbott_et_al_2019_cores.csv")
@@ -39,9 +40,10 @@ cores <- cores_raw %>%
          core_month = month(core_date),
          core_day = day(core_date)) %>%
   mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
-         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK")) %>%
+         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK"),
+         core_elevation_datum = "NAVD88") %>%
   select(study_id, site_id, core_id, core_year, core_month, core_day, core_longitude, core_latitude, core_position_method,
-         core_elevation, core_elevation_method, salinity_class, vegetation_class)
+         core_elevation, core_elevation_datum, core_elevation_method, salinity_class, vegetation_class)
 
 depthseries <- depthseries_raw %>%
   mutate(method_id = "single set of methods") %>%

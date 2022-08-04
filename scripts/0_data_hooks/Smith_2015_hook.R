@@ -60,6 +60,7 @@ cores <- raw_cores %>%
          study_id = "Smith_et_al_2015", site_id = "09WCC01") %>%
   select(-c(core_date, Time, SW_depth, SW_salinity, PW10_salinity, PW30_salinity)) %>% 
   select(core_id, site_id, study_id, core_latitude, core_longitude, core_position_method, everything())
+# core diameter: 10cm
 
 ## ... 4B. Depthseries data ##########
 
@@ -71,8 +72,9 @@ depthseries <- raw_depthseries %>%
          ra226_activity = Ra226, ra226_activity_sd = Ra_error,
          cs137_activity = Cs137, cs137_activity_sd = Cs_error) %>%
   # create unit code for dating methods
-  mutate(pb210_unit = ifelse(is.na(total_pb210_activity) == FALSE, "disintegrations_per_minute_per_gram", NA),
-         cs137_unit = ifelse(is.na(cs137_activity) == FALSE, "disintegrations_per_minute_per_gram", NA)) %>%
+  mutate(pb210_unit = ifelse(is.na(total_pb210_activity) == FALSE, "disintegrationsPerMinutePerGram", NA),
+         cs137_unit = ifelse(is.na(cs137_activity) == FALSE, "disintegrationsPerMinutePerGram", NA),
+         ra226_unit = ifelse(is.na(ra226_activity) == FALSE, "disintegrationsPerMinutePerGram", NA)) %>%
   # convert LOI to a fraction
   mutate(fraction_organic_matter = fraction_organic_matter / 100) %>%
   separate(core_id, into=c("core_id", "depth_interval"), sep=10) %>%

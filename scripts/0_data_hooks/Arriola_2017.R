@@ -19,7 +19,7 @@ depthseries_raw <- read_csv("./data/primary_studies/Arriola_2017/intermediate/ar
 methods_raw <- read_csv("./data/primary_studies/Arriola_2017/original/arriola_cable_2017_material_and_methods.csv")
 
 ## Curate cores ####
-study_id_value = "Arriola_and_Cable_2017"
+study_id_value <- "Arriola_and_Cable_2017"
 
 cores <- cores_raw %>%
   rename(core_id = `Core ID`) %>%
@@ -83,7 +83,9 @@ depthseries <- reorderColumns("depthseries", depthseries_curated) %>%
   
 methods <- methods_raw %>%
   mutate(study_id = study_id_value,
-         method_id = "single set of methods") %>%
+         method_id = "single set of methods",
+         carbonates_removed = TRUE,
+         carbonate_removal_method = "acid fumigation") %>%
   select(-age_depth_model_notes)
 
 ## Citation ####
@@ -129,6 +131,7 @@ cores <- updated$cores
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

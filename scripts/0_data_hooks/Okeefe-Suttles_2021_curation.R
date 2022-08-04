@@ -78,6 +78,8 @@ suttle_ds <- bind_rows(FL, MA1, MA2, RI) %>%
 # MAR = mass accumulation rate (DBD * VAR)
 # CAR = carbon accumulation rate
 
+dating_unit <- "disintegrationsPerMinutePerGram"
+
 depthseries <- suttle_ds %>% 
   filter(Depth_mid != 0) %>% 
   rename(age = Year, age_se = Age_e) %>% 
@@ -88,7 +90,11 @@ depthseries <- suttle_ds %>%
                                study_id == "Okeefe-Suttles_et_al_2021_Cape" & !is.na(delta_c13) ~ "total_carbon",
                                study_id == "Okeefe-Suttles_et_al_2021_FL" & core_id == "FL_UTSB" ~ "salt_barren",
                                study_id == "Okeefe-Suttles_et_al_2021_FL" & core_id != "FL_UTSB" ~ "pvc_and_hammer",
-                               TRUE ~ "organic_carbon")) %>%
+                               TRUE ~ "organic_carbon"),
+         cs137_unit = ifelse(!is.na(cs137_activity), dating_unit, NA),
+         pb210_unit = ifelse(!is.na(total_pb210_activity), dating_unit, NA),
+         ra226_unit = ifelse(!is.na(ra226_activity), dating_unit, NA),
+         be7_unit = ifelse(!is.na(be7_activity), dating_unit, NA)) %>%
   # filter(study_id == "Okeefe-Suttles_et_al_2021_Cape") %>% 
   reorderColumns("depthseries", .) %>% 
   select(-c(Depth, Depth_mid, wtC, wtN, Date, ID, `15N`, Status, latitude, longitude, 
@@ -103,6 +109,11 @@ ggplot(depthseries %>% drop_na(fraction_organic_matter, fraction_carbon)) +
   theme_bw()
 # only FL cores have both fraction_organic_matter and fraction_carbon
 # other states have fraction carbon but no LOI
+
+# radioisotopes
+# ggplot(depthseries %>% drop_na(total_pb210_activity) %>% filter(core_id == "FL_HHMB")) +
+#   geom_point(aes(excess_pb210_activity, depth_min)) +
+#   coord_flip()
 
 ## ... Core-Level ####
 
@@ -245,6 +256,7 @@ table_names <- c("methods", "cores", "depthseries", "impacts", "species")
 testTableCols(table_names)
 testTableVars(table_names) # coring method: shovel; vegetation class 'scrub/shrub' vs 'scrub shrub' needs standardization
 testRequired(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

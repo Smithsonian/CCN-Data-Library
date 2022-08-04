@@ -39,7 +39,8 @@ methods <- methods_raw %>%
   mutate(method_id = "single set of methods",
          dating_notes = "activities collected to the detection limit",
          excess_pb210_model = "CIC",
-         excess_pb210_rate = "mass accumulation")
+         excess_pb210_rate = "mass accumulation") %>% 
+  select(-sediment_sieved_flag) # not confirmed in the paper whether sediment was sieved, just that large plant matter was removed
 
 cores <- cores_raw %>%
   mutate(core_date = as.Date(core_date, format = "%m/%d/%y"),

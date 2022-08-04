@@ -1,25 +1,25 @@
-study_id,site_id,core_id,latitude,longitude,position_method,elevation,elevation_datum,core_length_flag
-Thorne_et_al_2015,Bandon,BM01,43.14237109346368,-124.40345999514061,RTK,2.17,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Bandon,BM03,43.138731003126146,-124.404372709982,RTK,1.58,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Bandon,BM05,43.14014236898623,-124.40236381245452,RTK,2.18,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Coos Bay,CB00,43.36717504541264,-124.17005744882469,RTK,2.43,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Coos Bay,CB03,43.37102106084798,-124.16994624452369,RTK,2.25,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Coos Bay,CB06,43.37387245505405,-124.17375353002086,RTK,1.95,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Grays Harbor,GH01,46.978817060526715,-123.92796837755475,RTK,2.7,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Grays Harbor,GH03,46.98010475330262,-123.93008130285246,RTK,2.43,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Grays Harbor,GH06,46.98092431674723,-123.93221249064193,RTK,1.76,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Nisqually,NQ01,47.09135612698854,-122.69633392436555,RTK,3.05,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Nisqually,NQ04,47.09188750324141,-122.69312911455812,RTK,2.73,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Nisqually,NQ06,47.091971145018576,-122.69077011060116,RTK,2.44,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,PortSusan,PS02,48.19494066145041,-122.36396803287114,RTK,2.78,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,PortSusan,PS04,48.19248123818102,-122.36337950148712,RTK,2.44,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,PortSusan,PS05,48.185888091379034,-122.3620484742188,RTK,1.98,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Skokomish,SK02,47.340715963297754,-123.1452590191924,RTK,2.87,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Skokomish,SK04,47.34247311090436,-123.14327809406392,RTK,2.54,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Skokomish,SK06,47.34352833211183,-123.14132164177836,RTK,2.03,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Siletz,SZ02,44.888083090026434,-123.99553491728861,RTK,2.37,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Siletz,SZ03,44.89233162373036,-124.00278881058372,RTK,2.49,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Siletz,SZ05,44.89635654455872,-124.01287683857832,RTK,2.2,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Willapa,WB01,46.371936694855606,-124.00573820079033,RTK,2.74,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Willapa,WB04,46.375706780916524,-124.00583342423973,RTK,2.32,NAVD88,core depth limited by length of corer
-Thorne_et_al_2015,Willapa,WB06,46.379437845130575,-124.00422445441863,RTK,2.016,NAVD88,core depth limited by length of corer
+study_id,site_id,core_id,latitude,longitude,position_method,elevation,elevation_datum,elevation_method,elevation_accuracy,core_length_flag
+Thorne_et_al_2015,Bandon,BM01,43.14237109346367,-124.40345999514061,RTK,2.17,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Bandon,BM03,43.13873100312614,-124.404372709982,RTK,1.58,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Bandon,BM05,43.14014236898623,-124.40236381245452,RTK,2.18,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Coos Bay,CB00,43.36717504541264,-124.17005744882469,RTK,2.43,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Coos Bay,CB03,43.37102106084798,-124.16994624452369,RTK,2.25,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Coos Bay,CB06,43.373872455054055,-124.17375353002086,RTK,1.95,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Grays Harbor,GH01,46.978817060526715,-123.92796837755475,RTK,2.7,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Grays Harbor,GH03,46.98010475330262,-123.93008130285246,RTK,2.43,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Grays Harbor,GH06,46.98092431674723,-123.93221249064193,RTK,1.76,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Nisqually,NQ01,47.09135612698854,-122.69633392436555,RTK,3.05,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Nisqually,NQ04,47.0918875032414,-122.69312911455812,RTK,2.73,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Nisqually,NQ06,47.091971145018576,-122.69077011060116,RTK,2.44,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,PortSusan,PS02,48.19494066145041,-122.36396803287114,RTK,2.78,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,PortSusan,PS04,48.19248123818102,-122.36337950148712,RTK,2.44,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,PortSusan,PS05,48.18588809137904,-122.3620484742188,RTK,1.98,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Skokomish,SK02,47.34071596329775,-123.1452590191924,RTK,2.87,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Skokomish,SK04,47.34247311090436,-123.14327809406392,RTK,2.54,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Skokomish,SK06,47.34352833211183,-123.14132164177836,RTK,2.03,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Siletz,SZ02,44.888083090026434,-123.99553491728861,RTK,2.37,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Siletz,SZ03,44.89233162373036,-124.00278881058372,RTK,2.49,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Siletz,SZ05,44.896356544558714,-124.01287683857832,RTK,2.2,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Willapa,WB01,46.371936694855606,-124.00573820079033,RTK,2.74,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Willapa,WB04,46.37570678091653,-124.00583342423973,RTK,2.32,NAVD88,RTK,0.02,core depth limited by length of corer
+Thorne_et_al_2015,Willapa,WB06,46.37943784513057,-124.00422445441863,RTK,2.016,NAVD88,RTK,0.02,core depth limited by length of corer

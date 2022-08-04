@@ -37,6 +37,8 @@ methods <- raw_methods %>%
 
 ## ... Core Depthseries ####
 
+dating_unit <- "disintegrationsPerMinutePerGram"
+
 # d1 <- raw_PR %>% distinct(Site, Replicate, ID, Date, Lat, Lon, Depth_min, Depth_max)
 # d2 <- raw_PR_age %>% distinct(Site, Replicate, ID, Date, Lat, Lon, Depth_min, Depth_max)
 
@@ -72,7 +74,11 @@ eagle_ds <- full_join(raw_PR, raw_PR_age) %>%
          depth_interval_notes = ifelse(site_id == "San José Lagoon" & !is.na(dry_bulk_density), 
                                        "only one of the two replicates from the San José lagoon was processed for DBD due to human error, so DBD values from one SJ core were used in calculations of C storage and sequestration for both replicates from this site.",
                                        NA_character_),
-         fraction_carbon = wtC/100)
+         fraction_carbon = wtC/100,
+         cs137_unit = ifelse(!is.na(cs137_activity), dating_unit, NA),
+         pb210_unit = ifelse(!is.na(total_pb210_activity), dating_unit, NA),
+         ra226_unit = ifelse(!is.na(ra226_activity), dating_unit, NA),
+         be7_unit = ifelse(!is.na(be7_activity), dating_unit, NA))
 
 depthseries <- eagle_ds %>% 
   select(-c(year, month, day, latitude, longitude, wtC, wtN, `15N`,

@@ -36,14 +36,15 @@ core_ids <- c("BM01", "BM03", "BM05", "CB00", "CB03", 'CB06', "GH01", "GH03", "G
 num_cores <- length(core_ids)
 
 for(i in 1:num_cores) {
-  d <- read_excel("./data/primary_studies/Thorne_2015_a/original/NWCSC Sediment Core Data.xlsx", sheet=as.character(core_ids[i]))
+  d <- read_excel("./data/primary_studies/Thorne_2015_a/original/NWCSC Sediment Core Data.xlsx", 
+                  sheet=as.character(core_ids[i]), na = "NA")
   d <- d %>%
     mutate(core_id = core_ids[i]) %>%
     rename(depth_min = "Depth (cm)",
            fraction_organic_matter = "Organic Content", 
            dry_bulk_density = "Bulk Density") %>%
-    mutate(fraction_organic_matter = as.double(fraction_organic_matter),
-           dry_bulk_density = as.double(dry_bulk_density))
+    mutate(fraction_organic_matter = fraction_organic_matter,
+           dry_bulk_density = dry_bulk_density)
   assign(core_ids[i],d)
 }
 
@@ -127,7 +128,9 @@ depthseries <- depthseries_data %>%
 
 cores <- core_data %>% 
   select(-cs137_peak_cm) %>%
-  mutate(core_length_flag = "core depth limited by length of corer")
+  mutate(core_elevation_method = "RTK",
+         elevation_accuracy = 0.02,
+         core_length_flag = "core depth limited by length of corer")
   
 
 ## ... methods ####
@@ -194,6 +197,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
