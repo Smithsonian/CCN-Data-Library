@@ -41,6 +41,8 @@ depthseries <- raw_depthseries %>%
          ra226_activity_se = ra226_activity_sd, 
          excess_pb210_activity_se = excess_pb210_activity_sd) %>% 
   mutate(method_id = "single set of methods",
+         ra226_unit = ifelse(!is.na(ra226_activity), "becquerelsPerKilogram", NA),
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "becquerelsPerKilogram", NA),
          compaction_notes = paste0("compression corrected max depth: ", decompressed_depth_max)) %>% 
   select(-c(core_diameter, decompressed_depth_max, wet_weight, dry_weight, accumulated_mass,
             mid_section_accumulated_mass, cn_ratio, delta_n15, k40_activity, k40_activity_sd,

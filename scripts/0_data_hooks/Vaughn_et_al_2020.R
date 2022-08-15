@@ -30,7 +30,7 @@ species_raw <- read_csv("./data/primary_studies/Vaughn_et_al_2020/original/vaugh
 methods_raw <- read_csv("./data/primary_studies/Vaughn_et_al_2020/original/vaughn_et_al_2020_materials_and_methods.csv")
 
 cores <- cores_raw %>%
-  mutate(core_length_flag = "full profiles omitted",
+  mutate(core_notes = "full profiles omitted",
          core_date = as_date(core_date)) %>%
   mutate(core_year = year(core_date), 
          core_month = month(core_date),
@@ -41,6 +41,9 @@ depthseries <- depthseries_raw %>%
   select(study_id:CRS_age_se) %>%
   rename(age = CRS_model_age,
          age_se = CRS_age_se) %>%
+  mutate(ra226_unit = ifelse(!is.na(ra226_activity), "disintegrationsPerMinutePerGram", NA),
+         cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA),
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA)) %>% 
   mutate(method_id = "single set of methods")
 
 species <- species_raw %>%
@@ -55,20 +58,27 @@ methods <- methods_raw %>%
   rename(c14_counting_method = cs14_counting_method)
 
 ## Citations ####
-if(!file.exists("./data/primary_studies/Vaughn_et_al_2020/derivative/vaughn_et_al_2020_study_citations.csv")){
-  doi <- "10.25573/serc.10552004"
-  
-  study_id_value <- "Vaughn_et_al_2020"
-  
-  bib <- GetBibEntryWithDOI(doi)
-  
-  study_citations <- as.data.frame(bib) %>%
-    mutate(study_id = study_id_value,
-           bibliography_id = "Vaughn_et_al_2021_data",
-           publication_type = "primary dataset") %>%
-    remove_rownames() %>%
-    select(study_id, bibliography_id, publication_type, everything())
-  
+
+# create citation for associated publications
+pubbib <- data.frame(author = "Derrick R. Vaughn and Thomas S. Bianchi and Michael R. Shields and William F. Kenney and Todd Z. Osborne",
+                  title = "Increased Organic Carbon Burial in Northern Florida Mangrove-Salt Marsh Transition Zones",
+                  bibtype = "Article",
+                  bibliography_id = "Vaughn_et_al_2020_article",
+                  publication_type = "associated source",
+                  doi = "10.1029/2019GB006334",
+                  url = "https://doi.org/10.1029/2019GB006334",
+                  journal = "Global Biogeochemical Cycles", 
+                  year = "2020", month = "4")
+
+databib <- as.data.frame(ReadBib("data/primary_studies/Vaughn_et_al_2020/original/Vaughn_2020_data_citation.bib")) %>% 
+  rownames_to_column("bibliography_id") %>% 
+  mutate(publication_type = "primary dataset")
+
+# combine citations
+study_citations <- bind_rows(databib, pubbib) %>% 
+  mutate(study_id = "Vaughn_et_al_2020") %>% 
+  select(study_id, bibliography_id, publication_type, everything())
+
   ## Format bibliography
   bib_file <- study_citations %>%
     select(-study_id, -publication_type) %>%
@@ -77,7 +87,7 @@ if(!file.exists("./data/primary_studies/Vaughn_et_al_2020/derivative/vaughn_et_a
   
   WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Vaughn_et_al_2020/derivative/Vaughn_et_al_2020.bib")
   write_csv(study_citations, "./data/primary_studies/Vaughn_et_al_2020/derivative/vaughn_et_al_2020_study_citations.csv")
-}
+# }
 
 # Update Tables ###########
 source("./scripts/1_data_formatting/versioning_functions.R")
@@ -104,6 +114,8 @@ cores <- reorderColumns("cores", cores)
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+testConditional(table_names)
+testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

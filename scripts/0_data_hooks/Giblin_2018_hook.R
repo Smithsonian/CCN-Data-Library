@@ -21,6 +21,7 @@
 library(tidyverse)
 library(lubridate)
 library(RefManageR)
+library(readxl)
 
 # DATA DOWNLOAD WORKFLOW ARCHIVED
 
@@ -48,10 +49,17 @@ library(RefManageR)
 # 
 # write_csv(dt1, "./data/Giblin_2018/original/MAR-NE-MarshSedChemActivity.csv")
 
-# if you read in the original data from the CCRCN library: 
+# read in the original data from the CCRCN library: 
 dt1 <- read.csv("./data/primary_studies/Giblin_2018/original/MAR-NE-MarshSedChemActivity.csv")
-
+raw_methods <- read_xlsx("data/primary_studies/Giblin_2018/intermediate/giblin_2018_methods.xlsx", sheet = 2)
 ## 3. Process data to meet CCRCN standards ############
+
+## ... Methods ####
+# Jaxine edits 
+
+# curate materials and methods
+methods <- raw_methods %>%
+  select_if(function(x) {!all(is.na(x))})
 
 ## ... 3A. Prep depthseries data ############
 depthseries <- dt1 %>%
@@ -67,10 +75,10 @@ depthseries <- dt1 %>%
   mutate(fraction_carbon = ifelse(is.nan(fraction_carbon)==TRUE, NA, fraction_carbon), 
          pb214_activity = ifelse(is.nan(pb214_activity)==TRUE, NA, fraction_carbon)) %>%
   mutate(fraction_carbon = fraction_carbon / 100,
-         cs137_unit = "millibecquerel_per_gram",
-         pb210_unit = "becquerel_per_gram", 
-         pb214_unit = ifelse(is.na(pb214_activity) == FALSE, "becquerel_per_gram", NA),  
-         bi214_unit = "becquerel_per_gram") %>%
+         cs137_unit = "microbecquerelPerGram", # metadata indicates microbecquerelPerGram, not millibecquerelPerGram
+         pb210_unit = "becquerelPerGram", 
+         pb214_unit = ifelse(is.na(pb214_activity) == FALSE, "becquerelPerGram", NA),  
+         bi214_unit = "becquerelPerGram") %>%
   # create unique core IDs
   mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
          study_id = "Giblin_and_Forbrich_2018",
@@ -170,14 +178,14 @@ if(!file.exists("data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich
 # Update Tables ###########
 source("./scripts/1_data_formatting/versioning_functions.R")
 
-table_names <- c("cores", "depthseries", "sites", "species")
+table_names <- c("cores", "depthseries", "sites", "species", "methods")
 
 updated <- updateTables(table_names)
 
 # save listed tables to objects
 
 sites <- updated$sites
-# methods <- updated$methods
+methods <- updated$methods
 depthseries <- updated$depthseries
 cores <- updated$cores
 species <- updated$species
@@ -189,6 +197,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
@@ -197,6 +206,7 @@ fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
 
 ## 5. Write data ################
+write_csv(methods, "./data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich_2018_methods.csv")
 write_csv(sites, "./data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich_2018_sites.csv")
 write_csv(species, "./data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich_2018_species.csv")
 write_csv(cores, "./data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich_2018_cores.csv")

@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Marci E. Marot</origin>
+        <origin>Christopher G. Smith</origin>
+        <origin>Terrence A. McCloskey</origin>
+        <origin>Stanley D. Locker</origin>
+        <origin>Nicole S. Khan</origin>
+        <origin>Kathryn E.L. Smith</origin>
+        <pubdate>20190301</pubdate>
+        <title>Sedimentary Data From Grand Bay, Alabama/Mississippi, 2014-2016</title>
+        <geoform>Multimedia presentation</geoform>
+        <serinfo>
+          <sername>U.S. Geological Survey Data Release</sername>
+          <issue>doi:10.5066/P9FO8R3Y</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>St. Petersburg, FL</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/P9FO8R3Y</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>This data release is an archive of sedimentary field and laboratory analytical data collected in Grand Bay, Alabama/Mississippi from 2014-2016 by scientists from the U.S. Geological Survey St. Petersburg Coastal and Marine Science Center (USGS SPCMSC). This work, a component of the SPCMSC’s Sea-level and Storm Impacts on Estuarine Environments and Shorelines (SSIEES) project, provides the necessary data to quantify sedimentation rates and sediment sources for the marsh and estuary. The SSIEES project objective is to evaluate the exchange of sediment material between the marsh and estuary due to extreme storms and sea-level rise. Micropaleontological data from select cores and surface samples are available in Haller and others (2018, https://doi.org/10.5066/F7MC8X5F, https://doi.org/10.5066/F7445KSG). Single-beam bathymetry of Grand Bay proper and multi-beam bathymetry of several marsh-edge eroding shorelines are reported in Dewitt and others (2017, https://doi.org/10.3133/ds1070) and Stalk and others (2018, https://doi.org/10.5066/F7MC8Z9N), respectively. Subbottom and sidescan sonar data for Grand Bay proper are reported in Locker and others (2018, https://doi.org/10.5066/P9374DKQ).
+This publication includes data for the sediment cores and surface sediments taken in Grand Bay marsh and estuary during five sampling periods of this study, which were designated as USGS Field Activity Numbers (FAN) 2014-323-FA (project ID 14CCT01), 2015-315-FA (project ID 15CCT02), 2016-331-FA (project ID 16CCT03), 2016-348-FA (project ID 16CCT04), and 2016-358-FA (project ID 16CCT07).  Data products include: GPS-derived site locations and elevations; core photographs,logs, and x-radiographs; lithologic, radiochemical, elemental composition, stable isotopic composition, and radiocarbon data; and Federal Geographic Data Committee (FGDC) metadata.</abstract>
+      <purpose>Dissemination of laboratory analytical data from surficial sediments collected from Grand Bay estuary, Alabama/Mississippi in August 2016 (USGS FAN 2016-348-FA, project ID 16CCT04).</purpose>
+      <supplinf>To ensure that USGS St. Petersburg data management protocols were followed, this survey was assigned the following USGS FAN: 2016-348-FA (https://cmgds.marine.usgs.gov/fan_info.php?fan=2016-348-FA). Funding for this survey was provided by the USGS Coastal and Marine Geology Program’s SSIEES project (https://coastal.er.usgs.gov/ssiees/). The authors would like to acknowledge Chelsea Stalk for assistance with sediment sample collection. The authors also acknowledge Cheyenne Everhart and Craig Felson for their assistance with laboratory sample analysis. We would also like to thank Alisha Ellis for pre-release commentary and peer review of this report.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>20160803</begdate>
+          <enddate>20160803</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-88.41130</westbc>
+        <eastbc>-88.39714</eastbc>
+        <northbc>30.38250</northbc>
+        <southbc>30.36620</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>geoscientificInformation</themekey>
+        <themekey>location</themekey>
+        <themekey>biota</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>geology</themekey>
+        <themekey>bulk density</themekey>
+        <themekey>grain-size analysis</themekey>
+        <themekey>unconsolidated deposits</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>sediment</themekey>
+        <themekey>estuaries</themekey>
+        <themekey>grab samples</themekey>
+        <themekey>grain size</themekey>
+        <themekey>GRADISTAT</themekey>
+        <themekey>loss on ignition</themekey>
+        <themekey>U.S. Geological Survey</themekey>
+        <themekey>USGS</themekey>
+        <themekey>St. Petersburg Coastal and Marine Science Center</themekey>
+      </theme>
+      <place>
+        <placekt>Geographic Names Information System (GNIS)</placekt>
+        <placekey>Alabama</placekey>
+        <placekey>Mississippi</placekey>
+        <placekey>Grand Bay</placekey>
+      </place>
+    </keywords>
+    <accconst>None</accconst>
+    <useconst>The U.S. Geological Survey requests that it be acknowledged as the originator of this dataset in any future products or research derived from these data.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey</cntorg>
+          <cntper>Marci E. Marot</cntper>
+        </cntorgp>
+        <cntpos>Geologist</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and physical</addrtype>
+          <address>600 4th Street South</address>
+          <city>St. Petersburg</city>
+          <state>FL</state>
+          <postal>33701</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>727-502-8000</cntvoice>
+        <cntemail>mmarot@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>U.S. Geological Survey, Coastal and Marine Geology Program, St. Petersburg Coastal and Marine Science Center</datacred>
+    <native>Microsoft Windows 7 Enterprise Service Pack 1; Microsoft Excel Version 2010</native>
+    <crossref>
+      <citeinfo>
+        <origin>DeWitt, N.T., Stalk, C.A., Smith, C.G., Locker, S.D., Fredericks, J.J., McCloskey, T.A., and Wheaton, C.J.</origin>
+        <pubdate>2017</pubdate>
+        <title>Single-beam bathymetry data collected in 2015 from Grand Bay, Alabama-Mississippi</title>
+        <serinfo>
+          <sername>U.S. Geological Survey Data Series</sername>
+          <issue>1070</issue>
+        </serinfo>
+        <onlink>https://doi.org/10.3133/ds1070</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Stalk, C.A., Fredericks, J.J., Locker, S.D., and Carlson, C.S.</origin>
+        <pubdate>2018</pubdate>
+        <title>Multibeam bathymetry data collected in 2016 from Grand Bay Alabama/Mississippi</title>
+        <serinfo>
+          <sername>U.S. Geological Survey data release</sername>
+          <issue>doi.org/10.5066/F7MC8Z9N</issue>
+        </serinfo>
+        <onlink>https://doi.org/10.5066/F7MC8Z9N</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Locker, S.D., Forde, A.S., and Smith, C.G.</origin>
+        <pubdate>2018</pubdate>
+        <title>Subbottom and sidescan sonar data acquired in 2015 from Grand Bay, Mississippi and Alabama</title>
+        <serinfo>
+          <sername>U.S. Geological Survey data release</sername>
+          <issue>doi.org/10.5066/P9374DKQ</issue>
+        </serinfo>
+        <onlink>https://doi.org/10.5066/P9374DKQ</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Haller, Christian, Osterman, L.E., Smith, C.G., McCloskey, T.A., Marot, M.E., Ellis, A.M., and Adams, C.S.</origin>
+        <pubdate>2018</pubdate>
+        <title>Benthic foraminiferal data from the eastern Mississippi Sound salt marshes and estuaries</title>
+        <serinfo>
+          <sername>U.S. Geological Survey data release</sername>
+          <issue>doi.org/10.5066/F7MC8X5F</issue>
+        </serinfo>
+        <onlink>https://doi.org/10.5066/F7MC8X5F</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Haller, Christian, Smith, C.G., McCloskey, T.A., Marot, M.E., Ellis, A.M., and Adams, C.S.</origin>
+        <pubdate>2018</pubdate>
+        <title>Benthic foraminiferal data from sedimentary cores collected in the Grand Bay (Mississippi) and Dauphin Island (Alabama) salt marshes</title>
+        <serinfo>
+          <sername>U.S. Geological Survey data release</sername>
+          <issue>doi.org/10.5066/F7445KSG</issue>
+        </serinfo>
+        <onlink>https://doi.org/10.5066/F7445KSG</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Blott, S.J. and Pye, K.</origin>
+        <pubdate>2001</pubdate>
+        <title>Gradistat: A grain size distribution and statistics package for the analysis of unconsolidated sediments</title>
+        <edition>Version 8.0</edition>
+        <serinfo>
+          <sername>Earth Surface Processes and Landforms</sername>
+          <issue>Volume 26</issue>
+        </serinfo>
+        <othercit>Pages 1237-1248</othercit>
+        <onlink>http://www.kpal.co.uk/gradistat.html</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>The positional accuracy of the sample locations was determined by the accuracy of the vessel-mounted Ashtech Proflex Differential Global Positioning System (DGPS) Global Navigation Satellite System (GNSS) antenna and receiver used to record the sample locations during the time of collection. The grain size data represent the sample averages for a subset of the statistical parameters calculated by GRADISTAT. The number of runs included in the averaged results is reported, and the standard deviation of the averaged results is reported for most parameters.</attraccr>
+    </attracc>
+    <logic>The grain-size sample runs in the GRADISTAT output files for which the mean Folk and Ward grain size varied from the set average by more than 1.5 standard deviations are highlighted in yellow and were not included in final averaged results. No formal logical accuracy tests were conducted on the remaining datasets.</logic>
+    <complete>This dataset is considered complete for the information presented, as described in the abstract section. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>Sample locations in the Grand Bay estuary were recorded at the time of collection using a vessel-mounted Ashtech Proflex DGPS GNSS receiver and GNSS antenna located amidship of the 17-foot USGS R/V Mako. Acquisition software HYPACK© (version 2015a) read information from the GPS receiver and allowed the vessel operator to record a point location at the time of sample collection. Expected horizontal error associated with DGPS is 1-2 meters (m). Because of the antenna location, it is expected the sample locations were offset by an additional 1 m from the GPS point locations, thus resulting in a 1-3 m horizontal uncertainty.</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>Surface elevations of the estuarine bottom sediments were not determined.</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>At 21 sites along the western margin of the Grand Bay estuary, bottom surface sediments were collected with a petite ponar grab sampler. The sediment recovered in the grab sampler was inspected for an undisturbed sediment-water interface. If the sediment was disturbed, the sediment was discarded and a new grab sample was collected. If the sediment surface was intact, the overlying water was gently removed, and the uppermost one centimeter of sediment was sampled for sediment characterization. The grab sample identifiers consist of the USGS project ID (16CCT04) and a site-specific identifier (for example, GB300). An alphabetic identifier was appended to each site identifier to denote the collection method (G for bottom sediment grab samples). The site position was recorded with a vessel-mounted Ashtech Proflex DGPS GNSS receiver and GNSS antenna. Site locations and date/time of collection are reported in an Excel spreadsheet. A comma-separated values data file containing the tabular data in plain text are included in the download files.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT04_SiteInformation.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>USA</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>In the SPCMSC laboratory, the surficial sediment grab samples were processed for basic sediment characteristics (dry bulk density and porosity). Water content, porosity and dry bulk density were determined using water mass lost during drying. For each 1-cm interval, 48–60 milliliters (mL) of each wet subsample was packed into a graduated syringe with 0.5 mL resolution. The wet sediment was then extracted into a pre-weighed aluminum tray and the weight of the wet sediment and the volume was recorded. The wet sediment and tray were placed in a drying oven for a minimum of 48 hours at 60 degrees Celsius (°C). Water content (θ) was determined as the mass of water (mass lost when dried) relative to the initial wet sediment mass. Dry bulk density was determined by ratio of dry sediment to the known volume of sediment packed into the syringe. Porosity (φ) was calculated from the equation φ = θ / [θ+(1-θ)/ρs] where ρs is grain density assumed to be 2.5 grams per cubic centimeter (g/cm^3). Salt-mass contributions were removed based on the average salinity (18.5) measured in the Grand Bay estuary in May 2016 (FAN_2016-331-FA, project ID 16CCT03). Water content, porosity and dry bulk density are reported in the Excel spreadsheet. A comma-separated values data file containing the tabular data in plain text is included in the download file.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT04_SedimentPhysicalProperties.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey St. Petersburg Coastal and Marine Science Center</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>U.S.</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>Organic matter content was determined with a mass loss technique, referred to as loss on ignition (LOI). The dry sediment from the previous process was homogenized with a porcelain mortar and pestle. Approximately 5 grams (g) of the dry sediment was placed into a pre-weighed porcelain crucible. The mass of the dried sediment was recorded. The sample was then placed inside a laboratory muffle furnace with stabilizing temperature control. The furnace was heated to 110 °C for a minimum of 6 hours to remove hygroscopic water absorbed onto the sediment particles. The furnace temperature was then lowered to 60 °C, at which point the sediments could be reweighed. The dried sediment was returned to the muffle furnace. The furnace was heated to 550 °C over 30 minutes and kept at 550 °C for 6 hours. The furnace temperature was then lowered to 60 °C and held at this temperature until the sediments could be reweighed. The latter step prevents the absorption of moisture, which can affect the measurement. The mass lost during the 6-hour baking period relative to the 110 °C-dried mass is used as a metric of organic matter content. Data are reported as a ratio of mass (g) of organic matter to mass (g) of dry sediment (post-110 °C drying). Replicate analyses were performed on approximately 20 percent of the samples as a representative subset for quality assurance. Loss on ignition measurements, including replicate analyses, are reported in the Excel spreadsheet. A comma-separated values data file containing the tabular data in plain text is included in the download file.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT04_SedimentPhysicalProperties.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey St. Petersburg Coastal and Marine Science Center</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>U.S.</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>Particle size analysis was performed on the 37 surficial sediment (G &amp; S) samples. Prior to particle size analysis, organic material was chemically removed from the samples using 30% hydrogen peroxide (H2O2). Wet sediment was dissolved in H2O2 overnight. The H2O2 was then evaporated by gentle heating and the sediment washed and centrifuged twice with deionized water. Grain size analyses on the sediment cores were performed using a Coulter LS 13 320 (https://www.beckmancoulter.com/) particle-size analyzer (PSA), which uses laser diffraction to measure the size distribution of sediments ranging in size from 0.4 microns to 2 millimeters (mm) (clay to very coarse-grained sand). To prevent shell fragments from damaging the Coulter instrument, particles greater than 1 mm in diameter were separated from all samples prior to analysis using a number 18 (1000 microns or 1 mm) U.S. standard sieve, which meets the American Society for Testing and Materials (ASTM) E11 standard specifications for determining particle size using woven-wire test sieves. Two subsamples from each depth interval were processed through the instrument a minimum of three runs each. The sediment slurry made from the digested sample and deionized water was sonicated with a wand sonicator for 1 minute before being introduced into the Coulter PSA to breakdown aggregated particles. The Coulter PSA measures the particle-size distribution of each sample by passing sediment suspended in solution between two narrow panes of glass in front of a laser. Light is scattered by the particles into characteristic refraction patterns measured by an array of photodetectors as intensity per unit area and recorded as relative volume for 92 size-related channels (bins). The size-classification boundaries for each bin were specified based on the ASTM E11 standard.</procdesc>
+        <procdate>2016</procdate>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>USA</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>The raw grain size data were then run through the free software program GRADISTAT (Blott and Pye, 2001; http://www.kpal.co.uk/gradistat), which calculates the mean, sorting, skewness, and kurtosis of each sample geometrically in metric units and logarithmically in phi units. GRADISTAT also calculates the fraction of sediment from each sample by size category (for example, clay, coarse silt, fine sand). A macro function in Microsoft Excel, developed by the USGS SPCMSC, was applied to the data to calculate average and standard deviation for each sample set (6-8 runs per sample), and highlight runs that varied from the set average by more than ±1.5 standard deviations. Excessive deviations from the mean are likely the result of equipment error or extraneous organic material in the sample and are not considered representative of the sample. The highlighted runs were removed from the results and the sample average was recalculated using the remaining runs. The averaged results for all samples, including the number of averaged runs and the standard deviation of the averaged results were summarized in an Excel workbook. A comma-separated values data file containing the tabular data in plain text is included in the download file.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT04_GrainSize.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and Physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>USA</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT04_SiteInformation.xlsx</enttypl>
+        <enttypd>Microsoft Excel workbook listing the site identifiers, field sampling dates, and site locations for the surficial sediment samples collected in this study (USGS FAN 2016-348-FA, project ID 16CCT04).</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT04_SiteInformation.csv</enttypl>
+        <enttypd>Comma-separated values text file listing the site identifiers, field sampling dates, and site locations for the surficial sediment samples collected in this study (USGS FAN 2016-348-FA, project ID 16CCT04).</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT04_SedimentPhysicalProperties.xlsx</enttypl>
+        <enttypd>Microsoft Excel workbook listing water content, porosity, bulk density and loss on ignition data for the surficial sediment samples collected in this study (USGS FAN 2016-348-FA, project ID 16CCT04).</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT04_SedimentPhysicalProperties.csv</enttypl>
+        <enttypd>Comma-separated values text file listing water content, porosity, bulk density and loss on ignition data for the surficial sediment samples collected in this study (USGS FAN 2016-348-FA, project ID 16CCT04).</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT04_GrainSize.xlsx</enttypl>
+        <enttypd>Microsoft Excel workbook summarizing grain-size parameters for surficial sediment samples collected in this study (USGS FAN 2016-348-FA, project ID 16CCT04). The averaged results for each sample, including the number of runs used, the standard deviation of the averaged results, and graphical class-size distributions, are provided.</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT04_GrainSize.csv</enttypl>
+        <enttypd>Comma-separated values text file summarizing grain-size parameters for surficial sediment samples collected in this study (USGS FAN 2016-348-FA, project ID 16CCT04). The averaged results for each sample, including the number of runs used, the standard deviation of the averaged results, and graphical class-size distributions, are provided.</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Site ID</attrlabl>
+        <attrdef>Site identifier assigned by the USGS scientist</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <udom>Character string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Date &amp; Time Collected</attrlabl>
+        <attrdef>Calendar date and time of day of field sample collection</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>08/03/2016 10:41</rdommin>
+            <rdommax>08/03/2016 13:47</rdommax>
+            <attrunit>mm/dd/yyyy hh:mm</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Latitude (NAD83)</attrlabl>
+        <attrdef>Latitude of site location relative to the North American Datum of 1983, in decimal degrees</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>30.36620</rdommin>
+            <rdommax>30.38250</rdommax>
+            <attrunit>Decimal degree</attrunit>
+            <attrmres>0.00001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longitude (NAD83)</attrlabl>
+        <attrdef>Longitude of site location relative to the North American Datum of 1983, in decimal degrees,</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-88.41130</rdommin>
+            <rdommax>-88.39714</rdommax>
+            <attrunit>Decimal degree</attrunit>
+            <attrmres>0.00001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Sample ID</attrlabl>
+        <attrdef>Individual sample identifier assigned by the USGS scientist</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <udom>Character string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Water Content (g-water/g-wet)</attrlabl>
+        <attrdef>The ratio of the mass of water to the mass of wet sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.22</rdommin>
+            <rdommax>0.61</rdommax>
+            <attrunit>Grams of water per grams of wet sediment</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Porosity (cm^3-voids/cm^3-wet)</attrlabl>
+        <attrdef>Porosity of the sediment interval</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.41</rdommin>
+            <rdommax>0.80</rdommax>
+            <attrunit>Cubic centimeter of void space per cubic centimeter of wet sediment</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Dry Bulk Density (g/cm^3)</attrlabl>
+        <attrdef>Dry bulk density of the sediment interval</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.47</rdommin>
+            <rdommax>1.37</rdommax>
+            <attrunit>Grams per cubic centimeter</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Loss On Ignition (g-OM/g-dry)</attrlabl>
+        <attrdef>The ratio of the mass of organic matter combusted at 550 Celsius to the pre-combusted mass of dry sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.008</rdommin>
+            <rdommax>0.129</rdommax>
+            <attrunit>Grams of organic matter per grams of dry sediment</attrunit>
+            <attrmres>0.001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <overview>
+      <eaover>The detailed attribute descriptions for the grain size workbook are provided in the included data dictionary (16CCT04_Grain_Size_Data_Dictionary.pdf). These metadata are not complete without this file.</eaover>
+      <eadetcit>Data dictionary for grain-size data tables, in: Marot, M.E., Smith, C.G., McCloskey, T.A., Locker, S.D., Khan, N.S., and Smith, K.E.L., 2019, Sedimentary Data From Grand Bay, Alabama/Mississippi, 2014-2016: U.S. Geological Survey data release, https://doi.org/10.5066/P9FO8R3Y.</eadetcit>
+    </overview>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey, St. Petersburg Coastal and Marine Science Center</cntorg>
+          <cntper>Marci E. Marot</cntper>
+        </cntorgp>
+        <cntpos>Geologist</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and physical</addrtype>
+          <address>600 4th Street South</address>
+          <city>St. Petersburg</city>
+          <state>FL</state>
+          <postal>33701</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>727-502-8000</cntvoice>
+        <cntemail>mmarot@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>Downloadable data</resdesc>
+    <distliab>This publication was prepared by an agency of the United States Government. Although these data have been processed successfully on a computer system at the U.S. Geological Survey, no warranty expressed or implied is made regarding the display or utility of the data on any other system, or for general or scientific purposes, nor shall the act of distribution imply any such warranty. The U.S. Geological Survey shall not be held liable for improper or incorrect use of the data described and (or) contained herein. Reference herein to any specific commercial product, process, or service by trade name, trademark, manufacturer, or otherwise does not constitute or imply its endorsement, recommendation, or favoring by the United States Government or any agency thereof.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Compressed (zip) archive</formname>
+          <formverd>2018</formverd>
+          <formspec>Multimedia presentation</formspec>
+          <formcont>These zip archives includes Microsoft Excel spreadsheets, comma-separated values text files, Portable Document Format (PDF) image files, and accompanying metadata for sediment data from surficial sediments collected from Grand Bay, Alabama/Mississippi in August 2016 (USGS FAN 2016-348-FA, project ID 16CCT04).</formcont>
+          <filedec>Unzip</filedec>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://coastal.er.usgs.gov/data-release/doi-P9FO8R3Y/data/16CCT04_SiteInformation.zip</networkr>
+                <networkr>https://coastal.er.usgs.gov/data-release/doi-P9FO8R3Y/data/16CCT04_SedimentPhysicalProperties.zip</networkr>
+                <networkr>https://coastal.er.usgs.gov/data-release/doi-P9FO8R3Y/data/16CCT04_GrainSize.zip</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None, if obtained online</fees>
+    </stdorder>
+    <techpreq>The data tables for USGS FAN 2016-348-FA (project ID 16CCT04) were created in Microsoft Excel 2010 and can be opened using Microsoft Excel 2007 or higher; these data may also be viewed using the free Microsoft Excel Viewer (http://office.microsoft.com/). The data tables are also provided as comma-separated values text files (.csv). The .csv data file contains the tabular data in plain text and may be viewed with a standard text editor. Portable Document Format (PDF) files can be viewed using the free software Adobe Acrobat Reader (http://get.adobe.com/reader).</techpreq>
+  </distinfo>
+  <metainfo>
+    <metd>20190222</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey</cntorg>
+          <cntper>Marci E. Marot</cntper>
+        </cntorgp>
+        <cntpos>Geologist</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and physical</addrtype>
+          <address>600 4th Street South</address>
+          <city>St. Petersburg</city>
+          <state>FL</state>
+          <postal>33701</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>727-502-8000</cntvoice>
+        <cntemail>mmarot@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+    <metac>None</metac>
+    <metuc>Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution.</metuc>
+    <metsi>
+      <metscs>None</metscs>
+      <metsc>Unclassified</metsc>
+      <metshd>None</metshd>
+    </metsi>
+  </metainfo>
+</metadata>

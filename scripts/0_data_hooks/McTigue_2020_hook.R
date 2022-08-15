@@ -49,7 +49,8 @@ depthseries <- depthseries_raw %>%
   group_by(core_id, depth_min) %>%
   arrange(depth_min, .by_group=T) %>%
   select(study_id, site_id, core_id, depth_min, depth_max, sample_id, everything()) %>%
-  ungroup()
+  ungroup() %>% 
+  mutate(pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA))
   
 cores <- cores_raw %>%
   mutate(core_year = year(core_date),
@@ -81,6 +82,7 @@ if(!file.exists("data/primary_studies/mctigue_2020/derivative/mctigue_et_al_2020
   study_citations <- as.data.frame(bib) %>%
     mutate(bibliography_id = c("McTigue_et_al_2019_article", "McTigue_et_al_2020_data"),
            study_id = study_id_value,
+           doi = ifelse(bibliography_id == "McTigue_et_al_2019_article", "10.1029/2019JG005207", doi),
            publication_type = c("associated source", "primary dataset")) %>%
     select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
     remove_rownames()

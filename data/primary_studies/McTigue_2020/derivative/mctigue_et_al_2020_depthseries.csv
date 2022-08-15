@@ -1,245 +1,245 @@
-study_id,site_id,core_id,depth_min,depth_max,sample_id,dry_bulk_density,fraction_organic_matter,fraction_carbon,total_pb210_activity,total_pb210_activity_se,excess_pb210_activity,excess_pb210_activity_se,c14_age,c14_age_se,c14_material,c14_notes,delta_c13,age,age_se,method_id
-McTigue_et_al_2020,Traps_Bay,TB_1L,2,12,NA,0.096,0.57,0.265,NA,NA,NA,NA,NA,NA,NA,NA,-26.954,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,12,14,NA,0.203,0.467,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,14,16,NA,0.208,0.42,0.197,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,16,20,NA,0.25,0.574,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,20,22,NA,0.178,0.578,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,22,26,NA,0.149,0.569,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,26,28,NA,0.204,0.591,0.299,NA,NA,NA,NA,NA,NA,NA,NA,-25.155,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,28,30,NA,0.136,0.62,0.287,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,30,32,NA,0.175,0.583,0.285,NA,NA,NA,NA,NA,NA,NA,NA,-25.088,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,32,34,NA,0.163,0.549,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,34,36,NA,0.178,0.514,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,36,38,NA,0.18,0.603,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,38,40,NA,0.171,0.675,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,40,42,NA,0.176,0.536,0.271,NA,NA,NA,NA,NA,NA,NA,NA,-25.233,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,42,44,NA,0.193,0.474,0.224,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,44,46,NA,0.216,0.495,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,46,48,NA,0.263,0.491,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,48,50,NA,0.204,0.408,0.193,NA,NA,NA,NA,NA,NA,NA,NA,-29.943,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,50,52,NA,0.215,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,52,54,NA,0.273,0.308,0.143,NA,NA,NA,NA,NA,NA,NA,NA,-28.481,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,54,56,NA,0.481,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,56,58,NA,0.569,0.192,0.135,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,58,60,NA,0.5,0.185,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,60,62,NA,0.147,0.575,0.304,NA,NA,NA,NA,NA,NA,NA,NA,-26.915,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,62,64,NA,0.134,0.632,0.295,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,64,72,NA,0.128,0.627,0.13,NA,NA,NA,NA,NA,NA,NA,NA,-26.368,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,72,74,NA,0.377,0.175,0.097,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,74,80,NA,0.336,0.245,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,80,84,NA,0.179,0.583,0.298,NA,NA,NA,NA,NA,NA,NA,NA,-25.809,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,84,90,NA,0.207,0.649,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,90,94,NA,0.298,0.404,0.203,NA,NA,NA,NA,NA,NA,NA,NA,-25.589,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,94,100,NA,0.175,0.658,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,100,104,NA,0.149,0.567,0.291,NA,NA,NA,NA,NA,NA,NA,NA,-27.024,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,104,110,NA,0.19,0.525,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,110,116,NA,0.174,0.532,0.262,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,116,118,NA,0.155,0.523,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,118,120,NA,0.136,0.583,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,120,126,NA,0.16,0.577,0.313,NA,NA,NA,NA,NA,NA,NA,NA,-27.912,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,126,130,NA,0.114,0.516,0.279,NA,NA,NA,NA,NA,NA,NA,NA,-26.952,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,130,132,NA,0.118,0.475,0.233,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,132,140,NA,0.104,0.503,0.262,NA,NA,NA,NA,NA,NA,NA,NA,-27.123,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,140,142,NA,0.107,0.644,0.326,NA,NA,NA,NA,NA,NA,NA,NA,-24.905,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,142,146,NA,0.092,0.625,0.307,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,146,150,NA,0.085,0.602,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,150,152,NA,0.114,0.581,0.305,NA,NA,NA,NA,NA,NA,NA,NA,-28.072,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,152,154,NA,0.101,0.615,0.312,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,154,160,NA,0.103,0.615,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,160,162,NA,0.125,0.614,0.318,NA,NA,NA,NA,NA,NA,NA,NA,-27.753,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,162,164,NA,0.11,0.624,0.311,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,164,170,NA,0.123,0.64,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,170,176,NA,0.119,0.611,0.324,NA,NA,NA,NA,NA,NA,NA,NA,-27.911,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,176,180,NA,0.127,0.546,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,180,184,NA,0.126,0.48,0.278,NA,NA,NA,NA,NA,NA,NA,NA,-28.404,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,184,188,NA,0.241,0.294,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,188,190,NA,0.502,0.118,0.068,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,190,200,NA,0.421,0.147,0.09,NA,NA,NA,NA,NA,NA,NA,NA,-27.518,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,200,210,NA,0.454,0.176,0.098,NA,NA,NA,NA,NA,NA,NA,NA,-27.524,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,210,214,NA,0.457,0.235,0.095,NA,NA,NA,NA,NA,NA,NA,NA,-24.23,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,214,216,NA,0.866,0.086,0.053,NA,NA,NA,NA,NA,NA,NA,NA,-31.724,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_1L,216,216,NA,NA,NA,NA,NA,NA,NA,NA,2416,20,macroparticulate OM sample,"material clearly identifiable as a single piece of vegetative material was removed from core sections 4, 14, and 24 cm above basal marsh contact",NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,0,1,TB_2LPb_0,NA,NA,NA,12.455508393182,0.151701115778343,11.455508393182,0.013086905485192972,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,1,2,TB_2LPb_1,NA,NA,NA,13.0413331519199,0.151699616299287,12.0413331519199,0.013136969731098033,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,2,4,NA,0.143,0.496,0.175,NA,NA,NA,NA,NA,NA,NA,NA,-25.892,4.1,0.1,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,2,3,TB_2LPb_2,NA,NA,NA,13.3723637927872,0.151697805213312,12.3723637927872,0.013173954486636809,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,3,4,TB_2LPb_3,NA,NA,NA,11.1775961902827,0.151707303591027,10.1775961902827,0.013411230010443028,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,4,6,NA,0.114,0.548,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10.6,0.1,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,4,5,TB_2LPb_4,NA,NA,NA,9.01271171585132,0.151727225359965,8.01271171585132,0.0135647632381506,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,5,6,TB_2LPb_5,NA,NA,NA,8.6231338260833,0.151751615662549,7.623133826083301,0.013627723316690911,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,6,8,NA,0.195,0.42,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,15.7,0.1,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,6,7,TB_2LPb_6,NA,NA,NA,8.91320607145828,0.151730509317004,7.91320607145828,0.014417691161981078,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,7,8,TB_2LPb_7,NA,NA,NA,7.30058556404574,0.151751238666323,6.30058556404574,0.014522376363354133,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,8,10,NA,0.186,0.434,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,21.2,0.2,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,8,9,TB_2LPb_8,NA,NA,NA,5.34602474535505,0.1518810530912,4.34602474535505,0.015111014549602945,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,9,10,TB_2LPb_9,NA,NA,NA,7.82456234067045,0.151769147721785,6.82456234067045,0.015258601563604519,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,10,12,NA,0.188,0.424,0.2,NA,NA,NA,NA,NA,NA,NA,NA,-20.511,27.1,0.2,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,10,11,TB_2LPb_10,NA,NA,NA,6.8152863982588,0.151798464632772,5.8152863982588,0.01611949026610769,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,11,12,TB_2LPb_11,NA,NA,NA,5.75881915001923,0.151914395541689,4.75881915001923,0.018825334148771706,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,12,14,NA,0.195,0.382,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,31.7,0.2,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,12,13,TB_2LPb_12,NA,NA,NA,5.18195173990651,0.151969804912081,4.18195173990651,0.018422120476014166,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,13,14,TB_2LPb_13,NA,NA,NA,5.73208123148913,0.152040728178381,4.73208123148913,0.019246613327461002,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,14,16,NA,0.236,0.367,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,35.4,0.2,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,14,15,TB_2LPb_14,NA,NA,NA,5.44401137405936,0.151959762566851,4.44401137405936,0.020343613822689958,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,15,16,TB_2LPb_15,NA,NA,NA,3.78699972055669,0.152991064214993,2.78699972055669,0.024275837225618376,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,16,18,NA,0.214,0.366,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,40.4,0.3,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,16,17,TB_2LPb_16,NA,NA,NA,4.32551679205769,0.152785810046277,3.32551679205769,0.025718356791299014,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,17,18,TB_2LPb_17,NA,NA,NA,3.80872926583741,0.154932637065749,2.80872926583741,0.02668956491599917,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,18,20,NA,0.142,0.507,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,45.2,0.3,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,18,19,TB_2LPb_18,NA,NA,NA,4.94497298886173,0.152082358653337,3.94497298886173,0.025957752996326525,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,19,20,TB_2LPb_19,NA,NA,NA,1.6947740254125,0.255891184150075,0.6947740254125001,0.030129439879534103,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,20,22,NA,0.126,0.501,0.25,NA,NA,NA,NA,NA,NA,NA,NA,-24.077,49.7,0.3,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,20,21,TB_2LPb_20,NA,NA,NA,2.85572960851464,0.15529111646381,1.8557296085146402,0.02883516229089394,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,21,22,TB_2LPb_21,NA,NA,NA,3.25390732642746,0.155653651558855,2.25390732642746,0.026522830836888212,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,22,24,NA,0.118,0.568,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,54.1,0.3,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,22,23,TB_2LPb_22,NA,NA,NA,3.52612426065608,0.155396020755322,2.52612426065608,0.032428263984689336,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,23,24,TB_2LPb_23,NA,NA,NA,2.78905602084275,0.157789723855935,1.7890560208427502,0.04187536086172071,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,24,26,NA,0.097,0.63,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,59.8,0.4,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,24,25,TB_2LPb_24,NA,NA,NA,4.38785085791741,0.1522798384114,3.3878508579174103,0.04538518231290605,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,25,26,TB_2LPb_25,NA,NA,NA,3.74711788712908,0.152844568108832,2.74711788712908,0.05147231441251411,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,26,28,NA,0.116,0.545,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,68.2,0.4,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,26,27,TB_2LPb_26,NA,NA,NA,3.93361830229366,0.152656281585009,2.93361830229366,0.05170687365263523,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,27,28,TB_2LPb_27,NA,NA,NA,2.99397466810963,0.15390741060305899,1.99,0.17752948430020846,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,28,30,NA,0.122,0.424,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,76.4,0.4,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,28,29,TB_2LPb_28,NA,NA,NA,4.01641686172834,0.152588156740708,3.01641686172834,0.05074018543307962,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,29,30,TB_2LPb_29,NA,NA,NA,2.54980676626739,0.156224093863771,1.5498067662673898,0.061379032255858765,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,30,32,NA,0.176,0.313,0.164,NA,NA,NA,NA,NA,NA,NA,NA,-24.618,88.8,0.5,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,30,31,TB_2LPb_30,NA,NA,NA,3.63393631038624,0.152939885567783,2.63393631038624,0.06511805486128128,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,31,32,TB_2LPb_31,NA,NA,NA,3.12653400729663,0.153996873963947,2.12653400729663,0.07095856120934782,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,32,34,NA,0.112,0.435,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,108.6,0.7,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,32,33,TB_2LPb_32,NA,NA,NA,2.71119117137544,0.155725023387138,1.71119117137544,0.06354685016439304,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,33,34,TB_2LPb_33,NA,NA,NA,3.22960706583104,0.154535194371793,2.22960706583104,0.09202271263071855,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,34,36,NA,0.146,0.366,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,34,35,TB_2LPb_34,NA,NA,NA,2.52819310060027,0.156243365753431,1.5281931006002698,0.06965115673931525,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,35,36,TB_2LPb_35,NA,NA,NA,1.69602588297116,0.188828947155322,0.6960258829711601,0.06686940867489483,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,36,38,NA,0.137,0.407,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,36,37,TB_2LPb_36,NA,NA,NA,1.4840441197762,0.22876922059626,0.4840441197762,0.10361225144834876,NA,NA,NA,NA,NA,NA,NA,NA
-McTigue_et_al_2020,Traps_Bay,TB_2L,38,40,NA,0.148,0.494,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,40,42,NA,0.135,0.415,0.22,NA,NA,NA,NA,NA,NA,NA,NA,-25.268,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,42,44,NA,0.217,0.247,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,44,46,NA,0.223,0.254,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,46,48,NA,0.177,0.343,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,48,50,NA,0.278,0.369,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,50,52,NA,0.338,0.395,0.209,NA,NA,NA,NA,NA,NA,NA,NA,-24.509,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,52,54,NA,0.304,0.387,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,54,56,NA,0.58,0.141,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,56,58,NA,0.736,0.096,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,58,60,NA,0.626,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,60,62,NA,0.328,0.166,0.083,NA,NA,NA,NA,NA,NA,NA,NA,-24.293,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,62,64,NA,0.33,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,64,66,NA,0.346,0.157,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,66,68,NA,0.377,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,68,70,NA,0.339,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,70,72,NA,0.321,0.204,0.155,NA,NA,NA,NA,NA,NA,NA,NA,-30.233,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,72,74,NA,0.408,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,74,76,NA,0.395,0.184,0.109,NA,NA,NA,NA,NA,NA,NA,NA,-23.95,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,76,78,NA,0.398,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,78,80,NA,0.363,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,80,82,NA,0.404,0.2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,82,84,NA,0.437,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,84,86,NA,0.49,0.158,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,86,88,NA,0.483,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,88,90,NA,0.469,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,90,92,NA,0.518,0.147,0.074,NA,NA,NA,NA,NA,NA,NA,NA,-23.566,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,92,94,NA,0.491,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,94,96,NA,0.55,0.099,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,96,98,NA,0.643,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,98,100,NA,0.696,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,100,102,NA,0.705,0.063,0.031,NA,NA,NA,NA,NA,NA,NA,NA,-34.068,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,102,104,NA,0.241,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,104,106,NA,0.261,0.141,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,106,108,NA,0.248,0.143,0.074,NA,NA,NA,NA,NA,NA,NA,NA,-23.739,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,108,110,NA,0.272,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,110,112,NA,0.331,0.146,0.099,NA,NA,NA,NA,NA,NA,NA,NA,-23.944,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,112,114,NA,0.282,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,114,116,NA,0.337,0.156,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,116,118,NA,0.489,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,118,120,NA,0.455,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,120,122,NA,0.492,0.117,0.06,NA,NA,NA,NA,NA,NA,NA,NA,-23.591,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,122,124,NA,0.466,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,124,126,NA,0.468,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,126,128,NA,0.506,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,128,130,NA,0.583,0.109,0.055,NA,NA,NA,NA,NA,NA,NA,NA,-24.526,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,130,132,NA,0.705,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,132,134,NA,0.832,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,134,136,NA,0.864,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,136,138,NA,0.789,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,138,140,NA,1.055,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,140,142,NA,0.892,0.058,0.024,NA,NA,NA,NA,NA,NA,NA,NA,-23.888,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,142,144,NA,0.832,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,144,146,NA,0.927,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,146,148,NA,0.843,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,148,150,NA,0.877,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,150,152,NA,1.002,0.08,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,152,154,NA,0.584,0.121,0.056,NA,NA,NA,NA,NA,NA,NA,NA,-26.977,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,154,156,NA,0.127,0.446,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,156,158,NA,0.114,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,158,160,NA,0.824,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,160,162,NA,1.119,0.068,0.037,NA,NA,NA,NA,NA,NA,NA,NA,-25.38,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,162,164,NA,1.219,0.08,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,164,166,NA,1.148,0.081,0.042,NA,NA,NA,NA,NA,NA,NA,NA,-31.583,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,166,168,NA,1.162,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,168,170,NA,1.221,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,170,172,NA,1.073,0.124,0.048,NA,NA,NA,NA,NA,NA,NA,NA,-30.127,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,172,174,NA,1.232,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,174,176,NA,1.271,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,176,178,NA,1.195,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,178,180,NA,1.278,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,180,182,NA,1.212,0.068,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,182,184,NA,1.317,0.05,0.029,NA,NA,NA,NA,NA,NA,NA,NA,-27.562,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,184,186,NA,1.246,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,186,188,NA,1.257,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,188,190,NA,1.227,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,190,192,NA,1.271,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,192,194,NA,1.008,0.078,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_2L,194,196,NA,0.942,0.067,0.038,NA,NA,NA,NA,NA,NA,NA,NA,-27.795,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,0,2,NA,0.122,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,2,4,NA,0.14,0.403,0.185,NA,NA,NA,NA,NA,NA,NA,NA,-24.654,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,4,6,NA,0.15,0.478,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,6,8,NA,0.143,0.509,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,8,10,NA,0.173,0.374,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,10,12,NA,0.15,0.403,0.193,NA,NA,NA,NA,NA,NA,NA,NA,-24.171,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,12,14,NA,0.259,0.298,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,14,16,NA,0.274,0.216,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,16,18,NA,0.435,0.138,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,18,20,NA,0.417,0.169,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,20,22,NA,0.32,0.2,0.096,NA,NA,NA,NA,NA,NA,NA,NA,-25.173,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,22,24,NA,0.343,0.203,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,24,26,NA,0.567,0.103,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,26,28,NA,0.386,0.175,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,28,30,NA,0.48,0.137,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,30,32,NA,0.449,0.144,0.07,NA,NA,NA,NA,NA,NA,NA,NA,-21.751,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,32,34,NA,0.576,0.135,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,34,36,NA,0.579,0.114,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,36,38,NA,0.755,0.084,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,38,40,NA,0.947,0.076,0.04,NA,NA,NA,NA,NA,NA,NA,NA,-23.721,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,40,42,NA,0.932,0.075,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,42,44,NA,1.214,0.082,0.04,NA,NA,NA,NA,NA,NA,NA,NA,-32.612,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,44,46,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,46,48,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,48,50,NA,1.028,0.048,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,50,52,NA,1.27,0.051,0.032,NA,NA,NA,NA,NA,NA,NA,NA,-23.725,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,52,54,NA,0.971,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,54,56,NA,1.181,0.049,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,56,58,NA,1.198,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,58,60,NA,1.234,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,60,62,NA,1.17,0.048,0.022,NA,NA,NA,NA,NA,NA,NA,NA,-23.595,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,62,64,NA,1.181,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,64,66,NA,1.262,0.042,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,66,68,NA,1.273,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,68,70,NA,1.163,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,70,72,NA,1.076,0.065,0.03,NA,NA,NA,NA,NA,NA,NA,NA,-25.195,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,72,74,NA,1.096,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,74,76,NA,1.101,0.049,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,76,78,NA,1.176,0.045,0.022,NA,NA,NA,NA,NA,NA,NA,NA,-25.163,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,78,80,NA,1.247,0.036,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,80,82,NA,1.193,0.038,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,82,84,NA,1.229,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,84,86,NA,1.364,0.026,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,86,88,NA,1.521,0.02,NA,NA,NA,NA,NA,NA,NA,NA,NA,-44.158,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,88,90,NA,1.512,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,90,92,NA,1.363,0.027,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,92,94,NA,1.264,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,94,96,NA,1.237,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,96,98,NA,1.293,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-McTigue_et_al_2020,Traps_Bay,TB_3L,98,100,NA,1.029,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
+study_id,site_id,core_id,depth_min,depth_max,sample_id,dry_bulk_density,fraction_organic_matter,fraction_carbon,total_pb210_activity,total_pb210_activity_se,excess_pb210_activity,excess_pb210_activity_se,c14_age,c14_age_se,c14_material,c14_notes,delta_c13,age,age_se,method_id,pb210_unit
+McTigue_et_al_2020,Traps_Bay,TB_1L,2,12,NA,0.096,0.57,0.265,NA,NA,NA,NA,NA,NA,NA,NA,-26.954,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,12,14,NA,0.203,0.467,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,14,16,NA,0.208,0.42,0.197,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,16,20,NA,0.25,0.574,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,20,22,NA,0.178,0.578,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,22,26,NA,0.149,0.569,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,26,28,NA,0.204,0.591,0.299,NA,NA,NA,NA,NA,NA,NA,NA,-25.155,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,28,30,NA,0.136,0.62,0.287,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,30,32,NA,0.175,0.583,0.285,NA,NA,NA,NA,NA,NA,NA,NA,-25.088,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,32,34,NA,0.163,0.549,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,34,36,NA,0.178,0.514,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,36,38,NA,0.18,0.603,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,38,40,NA,0.171,0.675,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,40,42,NA,0.176,0.536,0.271,NA,NA,NA,NA,NA,NA,NA,NA,-25.233,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,42,44,NA,0.193,0.474,0.224,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,44,46,NA,0.216,0.495,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,46,48,NA,0.263,0.491,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,48,50,NA,0.204,0.408,0.193,NA,NA,NA,NA,NA,NA,NA,NA,-29.943,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,50,52,NA,0.215,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,52,54,NA,0.273,0.308,0.143,NA,NA,NA,NA,NA,NA,NA,NA,-28.481,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,54,56,NA,0.481,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,56,58,NA,0.569,0.192,0.135,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,58,60,NA,0.5,0.185,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,60,62,NA,0.147,0.575,0.304,NA,NA,NA,NA,NA,NA,NA,NA,-26.915,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,62,64,NA,0.134,0.632,0.295,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,64,72,NA,0.128,0.627,0.13,NA,NA,NA,NA,NA,NA,NA,NA,-26.368,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,72,74,NA,0.377,0.175,0.097,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,74,80,NA,0.336,0.245,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,80,84,NA,0.179,0.583,0.298,NA,NA,NA,NA,NA,NA,NA,NA,-25.809,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,84,90,NA,0.207,0.649,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,90,94,NA,0.298,0.404,0.203,NA,NA,NA,NA,NA,NA,NA,NA,-25.589,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,94,100,NA,0.175,0.658,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,100,104,NA,0.149,0.567,0.291,NA,NA,NA,NA,NA,NA,NA,NA,-27.024,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,104,110,NA,0.19,0.525,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,110,116,NA,0.174,0.532,0.262,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,116,118,NA,0.155,0.523,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,118,120,NA,0.136,0.583,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,120,126,NA,0.16,0.577,0.313,NA,NA,NA,NA,NA,NA,NA,NA,-27.912,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,126,130,NA,0.114,0.516,0.279,NA,NA,NA,NA,NA,NA,NA,NA,-26.952,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,130,132,NA,0.118,0.475,0.233,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,132,140,NA,0.104,0.503,0.262,NA,NA,NA,NA,NA,NA,NA,NA,-27.123,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,140,142,NA,0.107,0.644,0.326,NA,NA,NA,NA,NA,NA,NA,NA,-24.905,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,142,146,NA,0.092,0.625,0.307,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,146,150,NA,0.085,0.602,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,150,152,NA,0.114,0.581,0.305,NA,NA,NA,NA,NA,NA,NA,NA,-28.072,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,152,154,NA,0.101,0.615,0.312,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,154,160,NA,0.103,0.615,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,160,162,NA,0.125,0.614,0.318,NA,NA,NA,NA,NA,NA,NA,NA,-27.753,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,162,164,NA,0.11,0.624,0.311,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,164,170,NA,0.123,0.64,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,170,176,NA,0.119,0.611,0.324,NA,NA,NA,NA,NA,NA,NA,NA,-27.911,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,176,180,NA,0.127,0.546,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,180,184,NA,0.126,0.48,0.278,NA,NA,NA,NA,NA,NA,NA,NA,-28.404,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,184,188,NA,0.241,0.294,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,188,190,NA,0.502,0.118,0.068,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,190,200,NA,0.421,0.147,0.09,NA,NA,NA,NA,NA,NA,NA,NA,-27.518,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,200,210,NA,0.454,0.176,0.098,NA,NA,NA,NA,NA,NA,NA,NA,-27.524,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,210,214,NA,0.457,0.235,0.095,NA,NA,NA,NA,NA,NA,NA,NA,-24.23,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,214,216,NA,0.866,0.086,0.053,NA,NA,NA,NA,NA,NA,NA,NA,-31.724,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_1L,216,216,NA,NA,NA,NA,NA,NA,NA,NA,2416,20,macroparticulate OM sample,"material clearly identifiable as a single piece of vegetative material was removed from core sections 4, 14, and 24 cm above basal marsh contact",NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,0,1,TB_2LPb_0,NA,NA,NA,12.455508393182,0.151701115778343,11.455508393182,0.013086905485192972,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,1,2,TB_2LPb_1,NA,NA,NA,13.0413331519199,0.151699616299287,12.0413331519199,0.013136969731098033,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,2,4,NA,0.143,0.496,0.175,NA,NA,NA,NA,NA,NA,NA,NA,-25.892,4.1,0.1,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,2,3,TB_2LPb_2,NA,NA,NA,13.3723637927872,0.151697805213312,12.3723637927872,0.013173954486636809,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,3,4,TB_2LPb_3,NA,NA,NA,11.1775961902827,0.151707303591027,10.1775961902827,0.013411230010443028,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,4,6,NA,0.114,0.548,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10.6,0.1,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,4,5,TB_2LPb_4,NA,NA,NA,9.01271171585132,0.151727225359965,8.01271171585132,0.0135647632381506,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,5,6,TB_2LPb_5,NA,NA,NA,8.6231338260833,0.151751615662549,7.623133826083301,0.013627723316690911,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,6,8,NA,0.195,0.42,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,15.7,0.1,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,6,7,TB_2LPb_6,NA,NA,NA,8.91320607145828,0.151730509317004,7.91320607145828,0.014417691161981078,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,7,8,TB_2LPb_7,NA,NA,NA,7.30058556404574,0.151751238666323,6.30058556404574,0.014522376363354133,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,8,10,NA,0.186,0.434,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,21.2,0.2,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,8,9,TB_2LPb_8,NA,NA,NA,5.34602474535505,0.1518810530912,4.34602474535505,0.015111014549602945,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,9,10,TB_2LPb_9,NA,NA,NA,7.82456234067045,0.151769147721785,6.82456234067045,0.015258601563604519,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,10,12,NA,0.188,0.424,0.2,NA,NA,NA,NA,NA,NA,NA,NA,-20.511,27.1,0.2,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,10,11,TB_2LPb_10,NA,NA,NA,6.8152863982588,0.151798464632772,5.8152863982588,0.01611949026610769,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,11,12,TB_2LPb_11,NA,NA,NA,5.75881915001923,0.151914395541689,4.75881915001923,0.018825334148771706,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,12,14,NA,0.195,0.382,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,31.7,0.2,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,12,13,TB_2LPb_12,NA,NA,NA,5.18195173990651,0.151969804912081,4.18195173990651,0.018422120476014166,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,13,14,TB_2LPb_13,NA,NA,NA,5.73208123148913,0.152040728178381,4.73208123148913,0.019246613327461002,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,14,16,NA,0.236,0.367,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,35.4,0.2,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,14,15,TB_2LPb_14,NA,NA,NA,5.44401137405936,0.151959762566851,4.44401137405936,0.020343613822689958,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,15,16,TB_2LPb_15,NA,NA,NA,3.78699972055669,0.152991064214993,2.78699972055669,0.024275837225618376,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,16,18,NA,0.214,0.366,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,40.4,0.3,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,16,17,TB_2LPb_16,NA,NA,NA,4.32551679205769,0.152785810046277,3.32551679205769,0.025718356791299014,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,17,18,TB_2LPb_17,NA,NA,NA,3.80872926583741,0.154932637065749,2.80872926583741,0.02668956491599917,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,18,20,NA,0.142,0.507,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,45.2,0.3,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,18,19,TB_2LPb_18,NA,NA,NA,4.94497298886173,0.152082358653337,3.94497298886173,0.025957752996326525,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,19,20,TB_2LPb_19,NA,NA,NA,1.6947740254125,0.255891184150075,0.6947740254125001,0.030129439879534103,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,20,22,NA,0.126,0.501,0.25,NA,NA,NA,NA,NA,NA,NA,NA,-24.077,49.7,0.3,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,20,21,TB_2LPb_20,NA,NA,NA,2.85572960851464,0.15529111646381,1.8557296085146402,0.02883516229089394,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,21,22,TB_2LPb_21,NA,NA,NA,3.25390732642746,0.155653651558855,2.25390732642746,0.026522830836888212,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,22,24,NA,0.118,0.568,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,54.1,0.3,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,22,23,TB_2LPb_22,NA,NA,NA,3.52612426065608,0.155396020755322,2.52612426065608,0.032428263984689336,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,23,24,TB_2LPb_23,NA,NA,NA,2.78905602084275,0.157789723855935,1.7890560208427502,0.04187536086172071,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,24,26,NA,0.097,0.63,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,59.8,0.4,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,24,25,TB_2LPb_24,NA,NA,NA,4.38785085791741,0.1522798384114,3.3878508579174103,0.04538518231290605,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,25,26,TB_2LPb_25,NA,NA,NA,3.74711788712908,0.152844568108832,2.74711788712908,0.05147231441251411,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,26,28,NA,0.116,0.545,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,68.2,0.4,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,26,27,TB_2LPb_26,NA,NA,NA,3.93361830229366,0.152656281585009,2.93361830229366,0.05170687365263523,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,27,28,TB_2LPb_27,NA,NA,NA,2.99397466810963,0.15390741060305899,1.99,0.17752948430020846,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,28,30,NA,0.122,0.424,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,76.4,0.4,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,28,29,TB_2LPb_28,NA,NA,NA,4.01641686172834,0.152588156740708,3.01641686172834,0.05074018543307962,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,29,30,TB_2LPb_29,NA,NA,NA,2.54980676626739,0.156224093863771,1.5498067662673898,0.061379032255858765,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,30,32,NA,0.176,0.313,0.164,NA,NA,NA,NA,NA,NA,NA,NA,-24.618,88.8,0.5,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,30,31,TB_2LPb_30,NA,NA,NA,3.63393631038624,0.152939885567783,2.63393631038624,0.06511805486128128,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,31,32,TB_2LPb_31,NA,NA,NA,3.12653400729663,0.153996873963947,2.12653400729663,0.07095856120934782,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,32,34,NA,0.112,0.435,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,108.6,0.7,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,32,33,TB_2LPb_32,NA,NA,NA,2.71119117137544,0.155725023387138,1.71119117137544,0.06354685016439304,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,33,34,TB_2LPb_33,NA,NA,NA,3.22960706583104,0.154535194371793,2.22960706583104,0.09202271263071855,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,34,36,NA,0.146,0.366,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,34,35,TB_2LPb_34,NA,NA,NA,2.52819310060027,0.156243365753431,1.5281931006002698,0.06965115673931525,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,35,36,TB_2LPb_35,NA,NA,NA,1.69602588297116,0.188828947155322,0.6960258829711601,0.06686940867489483,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,36,38,NA,0.137,0.407,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,36,37,TB_2LPb_36,NA,NA,NA,1.4840441197762,0.22876922059626,0.4840441197762,0.10361225144834876,NA,NA,NA,NA,NA,NA,NA,NA,disintegrationsPerMinutePerGram
+McTigue_et_al_2020,Traps_Bay,TB_2L,38,40,NA,0.148,0.494,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,40,42,NA,0.135,0.415,0.22,NA,NA,NA,NA,NA,NA,NA,NA,-25.268,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,42,44,NA,0.217,0.247,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,44,46,NA,0.223,0.254,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,46,48,NA,0.177,0.343,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,48,50,NA,0.278,0.369,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,50,52,NA,0.338,0.395,0.209,NA,NA,NA,NA,NA,NA,NA,NA,-24.509,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,52,54,NA,0.304,0.387,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,54,56,NA,0.58,0.141,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,56,58,NA,0.736,0.096,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,58,60,NA,0.626,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,60,62,NA,0.328,0.166,0.083,NA,NA,NA,NA,NA,NA,NA,NA,-24.293,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,62,64,NA,0.33,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,64,66,NA,0.346,0.157,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,66,68,NA,0.377,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,68,70,NA,0.339,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,70,72,NA,0.321,0.204,0.155,NA,NA,NA,NA,NA,NA,NA,NA,-30.233,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,72,74,NA,0.408,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,74,76,NA,0.395,0.184,0.109,NA,NA,NA,NA,NA,NA,NA,NA,-23.95,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,76,78,NA,0.398,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,78,80,NA,0.363,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,80,82,NA,0.404,0.2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,82,84,NA,0.437,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,84,86,NA,0.49,0.158,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,86,88,NA,0.483,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,88,90,NA,0.469,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,90,92,NA,0.518,0.147,0.074,NA,NA,NA,NA,NA,NA,NA,NA,-23.566,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,92,94,NA,0.491,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,94,96,NA,0.55,0.099,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,96,98,NA,0.643,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,98,100,NA,0.696,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,100,102,NA,0.705,0.063,0.031,NA,NA,NA,NA,NA,NA,NA,NA,-34.068,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,102,104,NA,0.241,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,104,106,NA,0.261,0.141,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,106,108,NA,0.248,0.143,0.074,NA,NA,NA,NA,NA,NA,NA,NA,-23.739,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,108,110,NA,0.272,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,110,112,NA,0.331,0.146,0.099,NA,NA,NA,NA,NA,NA,NA,NA,-23.944,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,112,114,NA,0.282,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,114,116,NA,0.337,0.156,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,116,118,NA,0.489,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,118,120,NA,0.455,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,120,122,NA,0.492,0.117,0.06,NA,NA,NA,NA,NA,NA,NA,NA,-23.591,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,122,124,NA,0.466,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,124,126,NA,0.468,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,126,128,NA,0.506,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,128,130,NA,0.583,0.109,0.055,NA,NA,NA,NA,NA,NA,NA,NA,-24.526,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,130,132,NA,0.705,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,132,134,NA,0.832,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,134,136,NA,0.864,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,136,138,NA,0.789,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,138,140,NA,1.055,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,140,142,NA,0.892,0.058,0.024,NA,NA,NA,NA,NA,NA,NA,NA,-23.888,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,142,144,NA,0.832,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,144,146,NA,0.927,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,146,148,NA,0.843,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,148,150,NA,0.877,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,150,152,NA,1.002,0.08,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,152,154,NA,0.584,0.121,0.056,NA,NA,NA,NA,NA,NA,NA,NA,-26.977,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,154,156,NA,0.127,0.446,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,156,158,NA,0.114,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,158,160,NA,0.824,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,160,162,NA,1.119,0.068,0.037,NA,NA,NA,NA,NA,NA,NA,NA,-25.38,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,162,164,NA,1.219,0.08,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,164,166,NA,1.148,0.081,0.042,NA,NA,NA,NA,NA,NA,NA,NA,-31.583,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,166,168,NA,1.162,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,168,170,NA,1.221,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,170,172,NA,1.073,0.124,0.048,NA,NA,NA,NA,NA,NA,NA,NA,-30.127,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,172,174,NA,1.232,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,174,176,NA,1.271,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,176,178,NA,1.195,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,178,180,NA,1.278,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,180,182,NA,1.212,0.068,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,182,184,NA,1.317,0.05,0.029,NA,NA,NA,NA,NA,NA,NA,NA,-27.562,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,184,186,NA,1.246,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,186,188,NA,1.257,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,188,190,NA,1.227,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,190,192,NA,1.271,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,192,194,NA,1.008,0.078,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_2L,194,196,NA,0.942,0.067,0.038,NA,NA,NA,NA,NA,NA,NA,NA,-27.795,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,0,2,NA,0.122,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,2,4,NA,0.14,0.403,0.185,NA,NA,NA,NA,NA,NA,NA,NA,-24.654,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,4,6,NA,0.15,0.478,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,6,8,NA,0.143,0.509,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,8,10,NA,0.173,0.374,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,10,12,NA,0.15,0.403,0.193,NA,NA,NA,NA,NA,NA,NA,NA,-24.171,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,12,14,NA,0.259,0.298,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,14,16,NA,0.274,0.216,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,16,18,NA,0.435,0.138,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,18,20,NA,0.417,0.169,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,20,22,NA,0.32,0.2,0.096,NA,NA,NA,NA,NA,NA,NA,NA,-25.173,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,22,24,NA,0.343,0.203,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,24,26,NA,0.567,0.103,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,26,28,NA,0.386,0.175,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,28,30,NA,0.48,0.137,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,30,32,NA,0.449,0.144,0.07,NA,NA,NA,NA,NA,NA,NA,NA,-21.751,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,32,34,NA,0.576,0.135,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,34,36,NA,0.579,0.114,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,36,38,NA,0.755,0.084,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,38,40,NA,0.947,0.076,0.04,NA,NA,NA,NA,NA,NA,NA,NA,-23.721,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,40,42,NA,0.932,0.075,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,42,44,NA,1.214,0.082,0.04,NA,NA,NA,NA,NA,NA,NA,NA,-32.612,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,44,46,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,46,48,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,48,50,NA,1.028,0.048,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,50,52,NA,1.27,0.051,0.032,NA,NA,NA,NA,NA,NA,NA,NA,-23.725,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,52,54,NA,0.971,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,54,56,NA,1.181,0.049,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,56,58,NA,1.198,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,58,60,NA,1.234,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,60,62,NA,1.17,0.048,0.022,NA,NA,NA,NA,NA,NA,NA,NA,-23.595,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,62,64,NA,1.181,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,64,66,NA,1.262,0.042,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,66,68,NA,1.273,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,68,70,NA,1.163,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,70,72,NA,1.076,0.065,0.03,NA,NA,NA,NA,NA,NA,NA,NA,-25.195,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,72,74,NA,1.096,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,74,76,NA,1.101,0.049,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,76,78,NA,1.176,0.045,0.022,NA,NA,NA,NA,NA,NA,NA,NA,-25.163,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,78,80,NA,1.247,0.036,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,80,82,NA,1.193,0.038,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,82,84,NA,1.229,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,84,86,NA,1.364,0.026,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,86,88,NA,1.521,0.02,NA,NA,NA,NA,NA,NA,NA,NA,NA,-44.158,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,88,90,NA,1.512,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,90,92,NA,1.363,0.027,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,92,94,NA,1.264,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,94,96,NA,1.237,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,96,98,NA,1.293,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA
+McTigue_et_al_2020,Traps_Bay,TB_3L,98,100,NA,1.029,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA

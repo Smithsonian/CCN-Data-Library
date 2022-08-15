@@ -20,6 +20,7 @@
 library(tidyverse)
 library(lubridate)
 library(RefManageR)
+library(readxl)
 
 source("./scripts/1_data_formatting/qa_functions.R")
 
@@ -61,18 +62,13 @@ Gonneea_2018 <- read_csv("./data/primary_studies/Gonneea_2018/original/Waquoit_C
 
 # Change column names to values of first row
 # Why? Because the top 2 rows were both dedicated to column headers
-new_colnames <- c(Gonneea_2018 %>%
-  slice(1))
+new_colnames <- c(Gonneea_2018 %>% slice(1))
 colnames(Gonneea_2018) <- new_colnames
-Gonneea_2018 <- Gonneea_2018 %>%
-  slice(2:561)
-
-# Change all no data values to "NA"
-Gonneea_2018 <- Gonneea_2018 %>%
-  na_if(-99999) # Changes all "-99999" values to "NA"
+Gonneea_2018 <- Gonneea_2018 %>% slice(2:561)
 
 # Curate data: 
-Gonneea_2018 <- Gonneea_2018 %>%
+Gonneea_2018_clean <- Gonneea_2018 %>%
+  na_if(-99999) %>% # Changes all "-99999" values to "NA"
   rename(core_id = "ID",
          core_date = "Date", 
          depth = "Depth",
@@ -108,25 +104,25 @@ Gonneea_2018 <- Gonneea_2018 %>%
 # according to the publication, the first 30 cm are 1 cm intervals, 
 # the proceeding interals are at 2 cm 
 # Convert mean interval depth to min and max interval depth
-Gonneea_2018 <- Gonneea_2018 %>%
+Gonneea_2018_final <- Gonneea_2018_clean %>%
   mutate(depth_min = ifelse(depth < 30, depth - .5, 
                             ifelse(depth < 100, depth - 1, depth - 5)), 
          depth_max = ifelse(depth < 30, depth + .5, 
-                            ifelse(depth < 100, depth + 1, depth + 5)))
+                            ifelse(depth < 100, depth + 1, depth + 5))) %>% 
 
 # Provide units and notes for dating techniques 
-Gonneea_2018 <- Gonneea_2018 %>%
-  mutate(pb210_unit = "disintegrations_per_minute_per_gram",
-         cs137_unit = "disintegrations_per_minute_per_gram",
-         be7_unit = "disintegrations_per_minute_per_gram",
-         ra226_unit = "disintegrations_per_minute_per_gram") %>%
+# Gonneea_2018 <- Gonneea_2018 %>%
+  mutate(pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
+         cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA),
+         be7_unit = ifelse(!is.na(be7_activity), "disintegrationsPerMinutePerGram", NA),
+         ra226_unit = ifelse(!is.na(ra226_activity), "disintegrationsPerMinutePerGram", NA)) %>%
   # if 0, below detection limits
   mutate(dating_interval_notes = ifelse(cs137_activity == 0 & be7_activity == 0, "cs137 and be7 activity below detection limits",
                                         ifelse(cs137_activity == 0, "cs137 activity below detection limits", 
-                                               ifelse(be7_activity == 0, "be7 activity below detection limits", NA)))) 
+                                               ifelse(be7_activity == 0, "be7 activity below detection limits", NA)))) %>% 
 
 # Convert percent weights to fractions
-Gonneea_2018 <- Gonneea_2018 %>%
+# Gonneea_2018 <- Gonneea_2018 %>%
   mutate(fraction_carbon = as.numeric(wtC) / 100)
   
 ## Parcel data into separate files according to data level #################
@@ -134,17 +130,18 @@ Gonneea_2018 <- Gonneea_2018 %>%
 
 # Gonneea elevation is calculated for each depth interval. We only want elevation
 #   at the top of the core
-core_elevation <- Gonneea_2018 %>%
+core_elevation <- Gonneea_2018_final %>%
   group_by(core_id) %>%
   summarize(core_elevation = max(as.numeric(Elevation)))
   
-Gonneea_2018_core_Data <- Gonneea_2018 %>%
+Gonneea_2018_core_Data <- Gonneea_2018_final %>%
   group_by(study_id, core_id, core_date) %>%
   summarize(core_latitude = first(core_latitude), core_longitude = first(core_longitude)) %>%
   left_join(core_elevation) %>%
   # convert elevation from cm to meters
   mutate(core_elevation = core_elevation * .01,
-         core_elevation_method = "RTK") %>%
+         core_elevation_method = "RTK",
+         core_elevation_datum = "NAVD88") %>%
   mutate(core_year = year(core_date), 
          core_month = month(core_date),
          core_day = day(core_date)) %>%
@@ -152,7 +149,7 @@ Gonneea_2018_core_Data <- Gonneea_2018 %>%
   ungroup()
 
 # Depth Series data
-Gonneea_2018_depth_series_data <- Gonneea_2018 %>%
+Gonneea_2018_depth_series_data <- Gonneea_2018_final %>%
   select(study_id, core_id, depth_min, depth_max, 
          dry_bulk_density, fraction_carbon, 
          cs137_activity, cs137_activity_sd, cs137_unit, 
@@ -181,8 +178,11 @@ cores <- Gonneea_2018_core_Data %>%
                                  "SLPB" = "Sage_Log_Pond",
                                  "SLPC" = "Sage_Log_Pond"
   )) %>%
-  mutate(core_length_flag = ifelse(site_id != "Hamblin_Pond", "core depth represents deposit depth", NA))
-
+  mutate(core_length_flag = ifelse(site_id != "Hamblin_Pond", "core depth represents deposit depth", NA),
+         inundation_class = ifelse(core_id == "SLPB", "high", "low"),
+         inundation_method = "measurement",
+         core_position_method = "handheld")
+# core diameter: 11cm
 
 depthseries <- Gonneea_2018_depth_series_data %>%
   mutate(site_id = recode_factor(core_id, 
@@ -197,12 +197,21 @@ depthseries <- Gonneea_2018_depth_series_data %>%
                                  "SLPA" = "Sage_Log_Pond", 
                                  "SLPB" = "Sage_Log_Pond",
                                  "SLPC" = "Sage_Log_Pond"),
-         method_id = "unknown methods") %>%
+         method_id = "single set of methods") %>%
   select(study_id, site_id, core_id, method_id, everything())
 
 # cores <- reorderColumns("cores", Gonneea_2018_core_Data) %>% ungroup()
 # depthseries <- reorderColumns("depthseries", Gonneea_2018_depth_series_data) %>% ungroup()
 
+## ... Methods ####
+# Jaxine edits
+
+raw_methods <- read_xlsx("data/primary_studies/Gonneea_2018/intermediate/gonneea_2018_methods.xlsx", sheet = 2)
+
+# curate materials and methods
+methods <- raw_methods %>%
+  # drop_na(study_id) %>% 
+  select_if(function(x) {!all(is.na(x))})
 
 ## Create study-level data ######
 
@@ -233,7 +242,7 @@ if(!file.exists("data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018
 # Update Tables ###########
 source("./scripts/1_data_formatting/versioning_functions.R")
 
-table_names <- c("cores", "depthseries")
+table_names <- c("cores", "depthseries") # methods are already in the correct format
 
 updated <- updateTables(table_names)
 
@@ -246,9 +255,10 @@ cores <- updated$cores
 ## QA/QC of data ################
 
 # Check col and varnames
-testTableCols(table_names)
-testTableVars(table_names)
-testRequired(table_names)
+testTableCols(c(table_names, "methods"))
+testTableVars(c(table_names, "methods"))
+testRequired(c(table_names, "methods"))
+testConditional(c(table_names, "methods"))
 
 test_unique_cores(cores)
 test_unique_coords(cores)
@@ -258,6 +268,7 @@ results <- test_numeric_vars(depthseries)
 
 ## Export files ##############################
   
+write_csv(methods, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_methods.csv")
 write_csv(cores, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_cores.csv")
 write_csv(depthseries, "./data/primary_studies/Gonneea_2018/derivative/Gonneea_et_al_2018_depthseries.csv")
   

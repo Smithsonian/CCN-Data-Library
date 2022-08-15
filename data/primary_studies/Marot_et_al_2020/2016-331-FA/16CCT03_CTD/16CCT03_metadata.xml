@@ -1,0 +1,1707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Marci E. Marot</origin>
+        <origin>Christopher G. Smith</origin>
+        <origin>Terrence A. McCloskey</origin>
+        <origin>Stanley D. Locker</origin>
+        <origin>Nicole S. Khan</origin>
+        <origin>Kathryn E.L. Smith</origin>
+        <pubdate>20190301</pubdate>
+        <title>Sedimentary Data From Grand Bay, Alabama/Mississippi, 2014-2016</title>
+        <geoform>Multimedia presentation</geoform>
+        <serinfo>
+          <sername>U.S. Geological Survey Data Release</sername>
+          <issue>doi:10.5066/P9FO8R3Y</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>St. Petersburg, FL</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/P9FO8R3Y</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>This data release is an archive of sedimentary field and laboratory analytical data collected in Grand Bay, Alabama/Mississippi from 2014-2016 by scientists from the U.S. Geological Survey St. Petersburg Coastal and Marine Science Center (USGS SPCMSC). This work, a component of the SPCMSC’s Sea-level and Storm Impacts on Estuarine Environments and Shorelines (SSIEES) project, provides the necessary data to quantify sedimentation rates and sediment sources for the marsh and estuary. The SSIEES project objective is to evaluate the exchange of sediment material between the marsh and estuary due to extreme storms and sea-level rise. Micropaleontological data from select cores and surface samples are available in Haller and others (2018, https://doi.org/10.5066/F7MC8X5F, https://doi.org/10.5066/F7445KSG). Single-beam bathymetry of Grand Bay proper and multi-beam bathymetry of several marsh-edge eroding shorelines are reported in Dewitt and others (2017, https://doi.org/10.3133/ds1070) and Stalk and others (2018, https://doi.org/10.5066/F7MC8Z9N), respectively. Subbottom and sidescan sonar data for Grand Bay proper are reported in Locker and others (2018, https://doi.org/10.5066/P9374DKQ).
+This publication includes data for the sediment cores and surface sediments taken in Grand Bay marsh and estuary during five sampling periods of this study, which were designated as USGS Field Activity Numbers (FAN) 2014-323-FA (project ID 14CCT01), 2015-315-FA (project ID 15CCT02), 2016-331-FA (project ID 16CCT03), 2016-348-FA (project ID 16CCT04), and 2016-358-FA (project ID 16CCT07). Data products include: GPS-derived site locations and elevations; core photographs,logs, and x-radiographs; lithologic, radiochemical, elemental composition, stable isotopic composition, and radiocarbon data; and Federal Geographic Data Committee (FGDC) metadata.</abstract>
+      <purpose>Dissemination of field data and laboratory analytical data of sediment from push cores, vibracores, and surficial sediments collected from Grand Bay estuary, Alabama/Mississippi in May 2016 (USGS FAN 2016-331-FA, project ID 16CCT03).</purpose>
+      <supplinf>To ensure that USGS St. Petersburg data management protocols were followed, this survey was assigned the following USGS field activity number (FAN): 2016-331-FA (https://cmgds.marine.usgs.gov/fan_info.php?fan=2016-331-FA). Funding for this survey was provided by the USGS Coastal and Marine Geology Program’s Sea-level and Storm Impacts on Estuarine Environments and Shorelines (SSIEES) project (https://coastal.er.usgs.gov/ssiees/). The authors would like to acknowledge the assistance of Kyle Kelso, Cathryn Wheaton, Nick Zaremba, Rangley Mickey, and Hunter Wilcox in field data collection and sediment coring. The authors also acknowledge Alisha Ellis, Cathryn Wheaton, Elsie McBride, Craig Felson, Max Tuten, and Cheyenne Everhart for their assistance with laboratory sample analysis and Nick Zaremba and Julie Bernier for post-processing of the DGPS data. We would also like to thank Alisha Ellis for pre-release commentary and peer review of this report.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>20160514</begdate>
+          <enddate>20160518</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-88.41555</westbc>
+        <eastbc>-88.33280</eastbc>
+        <northbc>30.39805</northbc>
+        <southbc>30.35775</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:178007b1-5998-44f6-b9b8-32c5357c5a12</themekey>
+      </theme>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>geoscientificInformation</themekey>
+        <themekey>location</themekey>
+        <themekey>elevation</themekey>
+        <themekey>biota</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>geology</themekey>
+        <themekey>unconsolidated deposits</themekey>
+        <themekey>CTD measurement</themekey>
+        <themekey>push coring</themekey>
+        <themekey>vibracoring</themekey>
+        <themekey>grab sampling</themekey>
+        <themekey>subsampling</themekey>
+        <themekey>GPS measurement</themekey>
+        <themekey>core analysis</themekey>
+        <themekey>bulk density</themekey>
+        <themekey>grain-size analysis</themekey>
+        <themekey>radiometric dating</themekey>
+        <themekey>isotopic analysis</themekey>
+        <themekey>carbon-14 analysis</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>estuaries</themekey>
+        <themekey>marshes</themekey>
+        <themekey>sediment</themekey>
+        <themekey>GRADISTAT</themekey>
+        <themekey>loss on ignition</themekey>
+        <themekey>stable isotope</themekey>
+        <themekey>metals</themekey>
+        <themekey>radiochemistry</themekey>
+        <themekey>gamma spectroscopy</themekey>
+        <themekey>alpha spectroscopy</themekey>
+        <themekey>radiocarbon</themekey>
+        <themekey>U.S. Geological Survey</themekey>
+        <themekey>USGS</themekey>
+        <themekey>St. Petersburg Coastal and Marine Science Center</themekey>
+      </theme>
+      <place>
+        <placekt>Geographic Names Information System (GNIS)</placekt>
+        <placekey>Alabama</placekey>
+        <placekey>Mississippi</placekey>
+        <placekey>Grand Bay</placekey>
+      </place>
+    </keywords>
+    <accconst>None</accconst>
+    <useconst>The U.S. Geological Survey requests that it be acknowledged as the originator of this dataset in any future products or research derived from these data.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey</cntorg>
+          <cntper>Marci E. Marot</cntper>
+        </cntorgp>
+        <cntpos>Geologist</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and physical</addrtype>
+          <address>600 4th Street South</address>
+          <city>St. Petersburg</city>
+          <state>FL</state>
+          <postal>33701</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>727-502-8000</cntvoice>
+        <cntemail>mmarot@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>U.S. Geological Survey, Coastal and Marine Geology Program, St. Petersburg Coastal and Marine Science Center</datacred>
+    <native>Microsoft Windows 7 Enterprise Service Pack 1; Microsoft Excel Version 2010</native>
+    <crossref>
+      <citeinfo>
+        <origin>DeWitt, N.T., Stalk, C.A., Smith, C.G., Locker, S.D., Fredericks, J.J., McCloskey, T.A., and Wheaton, C.J.</origin>
+        <pubdate>2017</pubdate>
+        <title>Single-beam bathymetry data collected in 2015 from Grand Bay, Alabama-Mississippi</title>
+        <serinfo>
+          <sername>U.S. Geological Survey Data Series</sername>
+          <issue>1070</issue>
+        </serinfo>
+        <onlink>https://doi.org/10.3133/ds1070</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Stalk, C.A., Fredericks, J.J., Locker, S.D., and Carlson, C.S.</origin>
+        <pubdate>2018</pubdate>
+        <title>Multibeam bathymetry data collected in 2016 from Grand Bay Alabama/Mississippi</title>
+        <serinfo>
+          <sername>U.S. Geological Survey data release</sername>
+          <issue>doi.org/10.5066/F7MC8Z9N</issue>
+        </serinfo>
+        <onlink>https://doi.org/10.5066/F7MC8Z9N</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Locker, S.D., Forde, A.S., and Smith, C.G.</origin>
+        <pubdate>2018</pubdate>
+        <title>Subbottom and sidescan sonar data acquired in 2015 from Grand Bay, Mississippi and Alabama</title>
+        <serinfo>
+          <sername>U.S. Geological Survey data release</sername>
+          <issue>doi.org/10.5066/P9374DKQ</issue>
+        </serinfo>
+        <onlink>https://doi.org/10.5066/P9374DKQ</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Haller, Christian, Osterman, L.E., Smith, C.G., McCloskey, T.A., Marot, M.E., Ellis, A.M., and Adams, C.S.</origin>
+        <pubdate>2018</pubdate>
+        <title>Benthic foraminiferal data from the eastern Mississippi Sound salt marshes and estuaries</title>
+        <serinfo>
+          <sername>U.S. Geological Survey data release</sername>
+          <issue>doi.org/10.5066/F7MC8X5F</issue>
+        </serinfo>
+        <onlink>https://doi.org/10.5066/F7MC8X5F</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Haller, Christian, Smith, C.G., McCloskey, T.A., Marot, M.E., Ellis, A.M., and Adams, C.S.</origin>
+        <pubdate>2018</pubdate>
+        <title>Benthic foraminiferal data from sedimentary cores collected in the Grand Bay (Mississippi) and Dauphin Island (Alabama) salt marshes</title>
+        <serinfo>
+          <sername>U.S. Geological Survey data release</sername>
+          <issue>doi.org/10.5066/F7445KSG</issue>
+        </serinfo>
+        <onlink>https://doi.org/10.5066/F7445KSG</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Blott, S.J. and Pye, K.</origin>
+        <pubdate>2001</pubdate>
+        <title>Gradistat: A grain size distribution and statistics package for the analysis of unconsolidated sediments</title>
+        <edition>Version 8.0</edition>
+        <serinfo>
+          <sername>Earth Surface Processes and Landforms</sername>
+          <issue>Volume 26</issue>
+        </serinfo>
+        <othercit>Pages 1237-1248</othercit>
+        <onlink>http://www.kpal.co.uk/gradistat.html</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Cutshall, N.H., Larsen, I.L., and Olsen, C.R.</origin>
+        <pubdate>1983</pubdate>
+        <title>Direct analysis of 210Pb in sediment samples: self-absorption corrections</title>
+        <serinfo>
+          <sername>Nuclear Instruments and Methods</sername>
+          <issue>Volume 206, Issues 1-2</issue>
+        </serinfo>
+        <othercit>Pages 309-312</othercit>
+        <onlink>https://doi.org/10.1016/0167-5087(83)91273-5</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Cutshall, N.H. and Larsen, I.L.</origin>
+        <pubdate>1986</pubdate>
+        <title>Calibration of a portable intrinsic Ge gamma-ray detector using point sources and testing for field applications</title>
+        <serinfo>
+          <sername>Health Physics</sername>
+          <issue>Volume 51</issue>
+        </serinfo>
+        <othercit>Pages 53-59</othercit>
+        <onlink>https://doi.org/10.1097/00004032-198607000-00004</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Flynn, W.W.</origin>
+        <pubdate>1968</pubdate>
+        <title>The determination of low levels of polonium-210 in environmental materials</title>
+        <serinfo>
+          <sername>Analytica Chimica Acta</sername>
+          <issue>Volume 43</issue>
+        </serinfo>
+        <othercit>Pages 221-227</othercit>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Martin, E.A., and Rice, C.A.</origin>
+        <pubdate>1981</pubdate>
+        <title>Sampling and analyzing sediment cores for 210Pb geochronology</title>
+        <serinfo>
+          <sername>U.S. Geological Survey Open-File Report</sername>
+          <issue>81-893</issue>
+        </serinfo>
+        <onlink>https://pubs.er.usgs.gov/publication/ofr81983</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Hadden, C.S., and Cherkinsky, A.</origin>
+        <pubdate>2015</pubdate>
+        <title>14C variations in pre-bomb nearshore habitats of the Florida panhandle USA</title>
+        <serinfo>
+          <sername>Radiocarbon</sername>
+          <issue>Volume 57, Issue 3</issue>
+        </serinfo>
+        <othercit>Pages 469-479</othercit>
+        <onlink>https://doi.org/10.2458/azu_rc.57.18353</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Bevington, P.R.</origin>
+        <pubdate>1969</pubdate>
+        <title>Data Reduction and Error Analysis for the Physical Sciences</title>
+        <edition>1.0</edition>
+        <pubinfo>
+          <pubplace>New York</pubplace>
+          <publish>McGraw-Hill</publish>
+        </pubinfo>
+        <othercit>154 pages</othercit>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>The accuracy of the position and elevation data is determined during data collection. It is a function of the benchmark's horizontal and vertical accuracy, and the quality of the raw differential Global Positioning System (DGPS) position data recorded by the DGPS receiver and antenna. Benchmarks for the base stations were selected based upon the reported positional accuracy of a benchmark and the distance between sample sites (rover antenna) and base station. For this survey the distance was kept within 8 kilometers (km). The final position and associated accuracy of the sample locations was determined through post-processing the DGPS trajectory between the base DGPS and the rover DGPS using Waypoint Product Group's GrafNav software version 8.7. All base station positions, respective antenna profiles, antenna height offsets, and recording intervals were accounted for in post-processing. All base station DGPS sessions were submitted to the NGS (National Geodetic Survey) On-Line Positioning User Service (OPUS) to obtain a position. Replicate analyses of loss on ignition are reported for quality assurance. The grain size data represent the sample averages for a subset of the statistical parameters calculated by GRADISTAT. The number of runs included in the averaged results are reported, and the standard deviation of the averaged results are reported for most parameters. The gamma spectroscopic radioisotope activities reported include the counting error for all samples. The critical level for gamma spectroscopy is reported for each core set. Replicate radioisotopic analyses by alpha spectroscopy are reported for quality assurance.</attraccr>
+    </attracc>
+    <logic>The grain-size sample runs in the GRADISTAT output files for which the mean Folk and Ward grain size varied from the set average by more than 1.5 standard deviations are highlighted in yellow and were not included in final averaged results. No formal logical accuracy tests were conducted on the remaining datasets.</logic>
+    <complete>This dataset is considered complete for the information presented, as described in the abstract section. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>A DGPS base station was erected on benchmark B166 (NGS PID DO5987) located alongside the entrance to the Bayou Heron boat ramp. The North American Datum of 1983 [NAD83 (2011)] position as reported in the OPUS solution is the following: Latitude = 30 24 46.73524 (DD, MM, SS.sssss), Longitude = 88 24 12.08617 (DD, MM, SS.sssss). Benchmark B166 has been occupied multiple times for SSIEES project surveys. For improved accuracy in comparison of the positional measurements for SSIEES surveys, the OPUS solution from USGS FAN 2015-315-FA (https://cmgds.marine.usgs.gov/fan_info.php?fan=2015-315-FA) is used as the default for all subsequent data processing if the current OPUS solution is within 3 standard deviations of the 2015 values. The NAD83 (2011) position of the 2015-315-FA OPUS solution used for this dataset is the following: Latitude = 30 24 46.73366 (DD, MM, SS.sssss), Longitude = 88 24 12.08622 (DD, MM, SS.sssss).</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>All static base station sessions for benchmark B166 were processed through NGS OPUS. The base location results from OPUS were entered into a spreadsheet to compute a final, time-weighted positional coordinate (latitude, longitude, and ellipsoid height). Base station positional error for each GPS session was calculated as the absolute value of the final position minus the session position value. For this survey, the weighted ellipsoid height was -27.631 m with a standard deviation of 0.004 m. Benchmark B166 has been occupied multiple times for SSIEES project surveys. For improved accuracy in comparison of the positional measurements for SSIEES surveys, the OPUS solution from USGS FAN 2015-315-FA (https://cmgds.marine.usgs.gov/fan_info.php?fan=2015-315-FA) is used as the default for all subsequent data processing if the current OPUS solution is within 3 standard deviations of the 2015 values. The weighted ellipsoid height for 2015-315-FA was -27.631 m with a standard deviation of 0.010 m. All sample locations were post-processed to the 2015 base station coordinates.</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>Sediment push cores were collected at 14 estuarine sites across Grand Bay, Alabama/Mississippi. The push cores were collected with 10.2-cm diameter polycarbonate barrels, driven into the sediment until refusal. Upon retrieval, the push cores were capped, labelled, and inspected for integrity.  Push core recovered lengths ranged between 22 and 88 cm. Two push cores were collected at site GB232, labeled as (A) and (B). At each push core site, bottom sediments were collected with a petite ponar grab sampler. The sediment recovered in the grab sampler was inspected for an undisturbed sediment-water interface. If the sediment was disturbed, the sediment was discarded and a new grab sample was collected. If the sediment surface was intact, the overlying water was slowly removed, and the uppermost one centimeter of sediment was sampled for sediment characterization. A replicate surface sample was collected at push sites GB230, GB237, and GB240 and labeled as site GB242, GB241, and GB243, respectively, to investigate homogeneity of the sediments. Water quality properties at each core site were measured with an YSI Professional Plus multi-sensor meter. Water column profiles of temperature, conductivity, and pressure were recorded with a SonTek Castaway-CTD sensor at each core site. Core and surface sample identifiers consist of the USGS project ID (16CCT03) and a site-specific identifier (for example, GB230). An alphabetic identifier was appended to each site identifier to differentiate the sediment collection method (M for push core and G for ponar grab sample). Site positions and elevations were determined using an Ashtech DGPS receiver with a 15-minute occupation time. DGPS locations were not collected at sites GB233, GB235-GB238, and GB240. All site positions were also recorded with a vessel-mounted Garmin echoMAP 50s chartplotter. Site locations, elevations, date of collection, YSI measurements, and CTD water column profiles are reported in Excel spreadsheets. Comma-separated values data files containing the tabular data in plain text are included in the download files.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT03_FieldLogs.zip</srcprod>
+        <srcprod>16CCT03_SiteInformation.zip</srcprod>
+        <srcprod>16CCT03_CTD.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>USA</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>Vibracores were collected at 17 estuarine sites across Grand Bay, Alabama/Mississippi. The vibracores were obtained by using the assemblage of an 8-horse power Briggs and Stratton motor attached to a Dreyer 5.4-cm concrete vibrator head with a 4.9-m flexible shaft. Bolted to the vibrator head is a galvanized steel clamp with a quick release system for connecting the clamp to 7.6-cm diameter, 9.1-m long aluminum core barrels. The aluminum barrel is vibrated into the subsurface until refusal, and then cut to discard any unused portion of the barrel. Measurements were taken on the inside and outside of the barrel to determine compaction or core shortening values. The empty void within the barrel was filled with water and an expansion plug was inserted onto the top of the barrel to ensure a solid vacuum. The full core barrel was extracted from the subsurface using an aluminum tripod and a 2-ton come-along winch. Once the barrel was completely removed from the subsurface, core caps were affixed to the openings on both ends of the barrel and reinforced with duct tape. Vibracore recovered lengths ranged between 0.79 and 3.98 m. At the vibracore sites, bottom sediments were collected with a petite ponar grab sampler following the same procedure as outlined above with the exception of sites GB255, GB257, GB259, GB261, and GB266. Water quality properties at each core site were measured with an YSI 556 MPS multi-sensor meter. Water column profiles of temperature, conductivity, and pressure were recorded with a SonTek Castaway-CTD sensor. CTD profiles are not collected at sites GB255, GB259, GB261, GB262, and GB266. Core and surface sample identifiers consist of the USGS project ID (16CCT03) and a site-specific identifier (for example, GB230). An alphabetic identifier was appended to each site identifier to differentiate the sediment collection method (V for vibracore and G for ponar grab sample). Site positions and elevations were determined using an Ashtech DGPS receiver with an 8 to 10-minute occupation time. DPGS data were not collected at GB255, GB257, GB259, GB261, and GB266. All site positions were also recorded with a hand-held Garmin GPSMAP 78sc receiver. Site locations, elevations, date of collection, YSI measurements, CTD water column profiles are reported in Excel spreadsheets. Comma-separated values data files containing the tabular data in plain text are included in the download files.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT03_FieldLogs.zip</srcprod>
+        <srcprod>16CCT03_SiteInformation.zip</srcprod>
+        <srcprod>16CCT03_CTD.zip</srcprod>
+        <srcprod>16CCT03_CoreLogs.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>USA</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>One marsh push core was collected near the North Rigolets channel along the northern edge of Point Aux Chenes Bay. The push core completed a transect of cores collected in April 2014 (project ID 14CCT01). The push core was collected with a 10.2-cm diameter polycarbonate barrels, driven into the sediment until refusal. Measurements were taken on the inside and outside of the barrels to determine compaction or core shortening. Upon retrieval, the push core was capped, labeled, and inspected for integrity. The uppermost 1 cm of surficial sediment was collected for sediment characterization. Surficial sediments were also collected along two marsh transects near Bayou Heron and Bayou Cumbest. Samples collected along the transects followed an elevation transition from the tidal channel to upland.  Microfossil assemblages for the surface sediments and cores are available in Haller and others, 2018. Surficial water quality properties at each site were measured with an YSI Professional Plus multi-sensor meter with the exception of sites GB280, GB281, and GB282 where there was no standing water. Core and surface sample identifiers consist of the USGS project ID (16CCT03) and a site-specific identifier (for example, GB280). An alphabetic identifier was appended to each site identifier to differentiate the sediment collection method (M for push core and S for surficial sediment sample). Site positions and elevations were determined using an Ashtech DGPS receiver with a 30-minute occupation time (site GB285 occupation time was 15 minutes only). All site positions were also recorded with a hand-held Garmin GPSMAP 62stc receiver. Site locations, elevations, date of collection, and YSI measurements are reported in an Excel spreadsheet. A comma-separated values data file containing the tabular data in plain text is included in the download files.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT03_FieldLogs.zip</srcprod>
+        <srcprod>16CCT03_SiteInformation.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>USA</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>DGPS Post-Processing: The base station coordinates were established using the NGS OPUS. Every base station session was processed using OPUS and a solution in IGS08 was received and logged into a spreadsheet.  The position from each OPUS solution was then converted from the International GNSS Service reference frame of 2008 (IGS08) into NAD83 (2011). The weighted average of the base station positions was calculated and any elevations greater than 3 standard deviations were excluded from the average. Benchmark B166 has been occupied multiple times for SSIEES project surveys. For improved accuracy in comparison of the positional measurements for SSIEES surveys, the OPUS solution from USGS FAN 2015-315-FA (https://cmgds.marine.usgs.gov/fan_info.php?fan=2015-315-FA) is used as the default for all subsequent data processing if the current OPUS solution is within 3 standard deviations of the 2015 values. All DGPS rover sessions were processed in GrafNav version 8.7.  For all DGPS sessions, the antenna height, antenna model and DGPS session type (rover or base) were accounted for and then processed. GrafNav version 8.7 reports the processed marsh core and the surface sediment grab sample coordinates in the NAD83 (2011) datum for the horizontal component and the North American Vertical Datum of 1988 referenced to GEOID12A for the vertical component. A vertical cumulative error is calculated that combines the errors associated with data processing, instrument measurement, and the baseline distance between the rover and base station. The horizontal coordinates, elevation, and errors are reported in an Excel spreadsheet. A comma-separated values data file containing the tabular data in plain text is included in the download files.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT03_SiteInformation.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey</cntorg>
+              <cntper>Marci Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>USA</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>At the SPCMSC, the 16 push cores were vertically extruded and sectioned into 1-cm intervals. The outer circumference of each interval was removed to avoid use of sediment that was in contact with the polycarbonate barrel. Each sediment interval was bagged and homogenized. The bagged intervals were refrigerated until processing.</procdesc>
+        <procdate>2016</procdate>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey St. Petersburg Coastal and Marine Science Center</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>U.S.</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>In the core-analysis laboratory at the USGS SPCMSC, each estuarine vibracore was cut into 1-m sections and split lengthwise. The core was photographed, described, and sealed in plastic wrap. The core was described using standard sediment-logging methods. The reported core lengths on the core logs are the final laboratory measurements. Core elevations reported for sites GB255, GB257, GB259, GB261, and GB266 are estimated from the digital elevation model in DeWitt and others (2017). The elevations were converted from mean lower low water (MLLW) to NAVD88. The core photographs and descriptions are available as jpg files. Samples were collected from 5 vibracores (GB250V, GB255V, GB256V, GB260V, and GB265V) at various depth intervals for radiocarbon dating. All utensils and containers were cleaned by ashing in an oven at 550 degrees Celsius (°C) for 1 hour prior to use. Nitrile gloves were worn while sampling, ashed tweezers or razor blades were used to remove the samples from the core. Samples were washed with Milli-Q water to remove all the sediment from the organic or carbonate sample. One shell cast sample was soaked in a 30% hydrogen peroxide (H2O2) solution to remove surface mold and then thoroughly rinsed with Milli-Q water. Once cleaned the samples were dried in small aluminum dishes and weighed, the weight was recorded. Samples were then placed in glass vials and shipped to the National Ocean Sciences Accelerator Mass Spectrometry Facility (NOSAMS) in Woods Hole, Massachusetts.  Select depth intervals from 2 vibracores were also sampled for sediment physical properties analysis (GB250V and GB250V) and grain size analysis (GB255V only).</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT03_CoreLogs.zip</srcprod>
+        <srcprod>16CCT03_Radiocarbon.zip</srcprod>
+        <srcprod>16CCT03_SedimentPhysicalProperties.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey St. Petersburg Coastal and Marine Science Center</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>U.S.</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>In the SPCMSC laboratory, a subsample from each 1-cm interval of the 16 push cores, the surficial sediment samples (G &amp; S samples), and select intervals from two vibracores (GB250V and GB255V) were processed for basic sediment characteristics (dry bulk density and porosity). Water content, porosity and dry bulk density were determined using water mass lost during drying. For each 1-cm interval, 8–120 milliliters (mL) of each wet subsample was packed into a graduated syringe with 0.5 mL resolution. The wet sediment was then extracted into a pre-weighed aluminum tray and the weight of the wet sediment and the volume was recorded. The wet sediment and tray were placed in a drying oven for a minimum of 48 hours at 60 °C. Water content (θ) was determined as the mass of water (mass lost when dried) relative to the initial wet sediment mass. Dry bulk density was determined by ratio of dry sediment to the known volume of sediment packed into the syringe. Porosity (φ) was calculated from the equation φ = θ / [θ+(1-θ)/ρs] where ρs is grain density assumed to be 2.5 grams per cubic centimeter (g/cm^3). Salt-mass contributions were removed based on the salinity measured at the time of sample collection. Water content, porosity and dry bulk density are reported in the Excel spreadsheet. A comma-separated values data file containing the tabular data in plain text is included in the download file.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT03_SedimentPhysicalProperties.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey St. Petersburg Coastal and Marine Science Center</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>U.S.</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>Organic matter content was determined with a mass loss technique, referred to as loss on ignition (LOI). The dry sediment from the previous process was homogenized with a porcelain mortar and pestle. Approximately 2-6 grams (g) of the dry sediment was placed into a pre-weighed porcelain crucible. The mass of the dried sediment was recorded. The sample was then placed inside a laboratory muffle furnace with stabilizing temperature control. The furnace was heated to 110 °C for a minimum of 6 hours to remove hygroscopic water absorbed onto the sediment particles. The furnace temperature was then lowered to 60 °C, at which point the sediments could be reweighed. The dried sediment was returned to the muffle furnace. The furnace was heated to 550 °C over 30 minutes and kept at 550 °C for 6 hours. The furnace temperature was then lowered to 60 °C and held at this temperature until the sediments could be reweighed. The latter step prevents the absorption of moisture, which can affect the measurement. The mass lost during the 6-hour baking period relative to the 110 °C-dried mass is used as a metric of organic matter content. Data are reported as a ratio of mass (g) of organic matter to mass (g) of dry sediment (post-110 °C drying). Replicate analyses of loss on ignition for a representative subset of the core intervals are reported for quality assurance in the Excel spreadsheet. A comma-separated values data file containing the tabular data in plain text is included in the download file.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT03_SedimentPhysicalProperties.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey St. Petersburg Coastal and Marine Science Center</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>U.S.</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>Down-core particle size analysis was performed on each 1-cm depth interval for 9 estuarine push cores, one vibracore (GB255V), and the surficial sediment (G &amp; S) samples. All intervals from the push cores were analyzed to a depth of 40 cm in the core. Prior to particle size analysis, organic material was chemically removed for the samples using 30% H2O2. Wet sediment was dissolved in H2O2 overnight. The H2O2 was then evaporated by gentle heating and the sediment washed and centrifuged twice with deionized water. Grain size analyses on the sediment cores were performed using a Coulter LS 13 320 (https://www.beckmancoulter.com/) particle-size analyzer (PSA), which uses laser diffraction to measure the size distribution of sediments ranging in size from 0.4 microns to 2 millimeters (mm) (clay to very coarse-grained sand). To prevent shell fragments from damaging the Coulter instrument, particles greater than 1 mm in diameter were separated from all samples prior to analysis using a number 18 (1000 microns or 1 mm) U.S. standard sieve, which meets the American Society for Testing and Materials (ASTM) E11 standard specifications for determining particle size using woven-wire test sieves. Two subsamples from each depth interval were processed through the instrument a minimum of three runs each. The sediment slurry made from the digested sample and deionized water was sonicated with a wand sonicator for 1 minute before being introduced into the Coulter PSA to breakdown aggregated particles. The Coulter PSA measures the particle-size distribution of each sample by passing sediment suspended in solution between two narrow panes of glass in front of a laser. Light is scattered by the particles into characteristic refraction patterns measured by an array of photodetectors as intensity per unit area and recorded as relative volume for 92 size-related channels (bins). The size-classification boundaries for each bin were specified based on the ASTM E11 standard.</procdesc>
+        <procdate>2016</procdate>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>USA</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>The raw grain size data were then run through the free software program GRADISTAT (Blott and Pye, 2001; http://www.kpal.co.uk/gradistat), which calculates the mean, sorting, skewness, and kurtosis of each sample geometrically in metric units and logarithmically in phi units. GRADISTAT also calculates the fraction of sediment from each sample by size category (for example, clay, coarse silt, fine sand). A macro function in Microsoft Excel, developed by the USGS SPCMSC, was applied to the data to calculate average and standard deviation for each sample set (6-8 runs per sample), and highlight runs that varied from the set average by more than ±1.5 standard deviations. Excessive deviations from the mean are likely the result of equipment error or extraneous organic material in the sample and are not considered representative of the sample. The highlighted runs were removed from the results and the sample average was recalculated using the remaining runs. The averaged results for all samples, including the number of averaged runs and the standard deviation of the averaged results were summarized in an Excel workbook with each core on its own tab. A comma-separated values data file containing the tabular data in plain text is included in the download file.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT03_GrainSize.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and Physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>USA</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>Dried, ground sediment from the uppermost three 1-cm depth intervals from the 15 estuarine push cores, all depth intervals from the one marsh push core (GB34M), and the marsh surface grab sample were analyzed for the detection of radionuclides by standard gamma-ray spectrometry (Cutshall and Larsen, 1986) at the USGS SPCMSC radioisotope lab. The sediments (5-50 g) were sealed in airtight polypropylene containers. The sample weights and counting container geometries were matched to pre-determined calibration standards. The sealed samples were stored for a minimum of three weeks prior to analysis to allow Ra-226 to come into secular equilibrium with its daughter isotopes Pb-214 and Bi-214. The sealed samples were then counted for 24-72 hours on a 50-millimeter diameter planar-style, low energy, high-purity germanium, gamma-ray spectrometer. The suite of naturally-occurring and anthropogenic radioisotopes measured along with their corresponding photopeak energies in kiloelectron volts (keV) are Pb-210 (46.5 keV), Th-234 (63.3 keV), Pb-214 (295.7 and 352.5 keV; proxies for Ra-226), Be-7 (477.6), Bi-214 (609.3 keV; proxy for Ra-226), Cs-137 (661.6 keV), and K-40 (1640.8 keV). Sample count rates were corrected for detector efficiency determined with International Atomic Energy Agency RGU-1 reference material, standard photopeak intensity, and self-absorption using a U-238 sealed source (Cutshall and others, 1983).  All activities, with the exception of short-lived Pb-214 and Bi-214, were decay-corrected to the date of field collection. The radioisotopic activities reported in the Excel spreadsheet include the counting error for all samples, results from each core are on its own tab. The critical level is reported for each core. A comma-separated values data file containing the tabular data in plain text is included in the download file.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT03_GammaSpectroscopy.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey St. Petersburg Coastal and Marine Science Center</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>U.S.</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>Total Pb-210 activity was measured by alpha spectroscopy for 15 estuarine push cores. The Pb-210 (half-life = 22.3 years) activity is determined by directly measuring the activity of its granddaughter Po-210 (half-life = 138 days) via alpha particle decay. Po-210 is assumed to be in secular equilibrium with its parent. The analytical method exploits the ability of polonium to self­plate onto silver planchets, which facilitates the alpha counting (Flynn, 1968). The laboratory method used at the USGS SPSMSC for chemical separation of Po-210 from sediments was developed by Martin and Rice (1981). Po-210 was acid leached from 5 grams of dried, ground sediment with concentrated nitric acid and a known activity of the tracer Po-209 was added to the solution. The solution digested overnight and then was dried on a hotplate, followed by several washings with 30% hydrogen peroxide and 8N hydrochloric acid. The final acidic solution was brought to 70 ml with deionized water. Several buffering solutions were added to reduce interference from other cations and oxidants present during the plating process. The pH was adjusted to between 1.8-1.9 with ammonium hydroxide. The Po-210 was autoplated onto 1.9-cm diameter sterling silver plancets while stirring and heating the solution. After 2 hours, the planchets were removed from solution, rinsed and dried. The planchets were counted for 24 hours in low-level alpha spectrometers coupled to a pulse-height analyzer. The radioisotopic activities reported in the Excel spreadsheet include the counting error for all samples. A comma-separated values data file containing the tabular data in plain text is included in the download file.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT03_AlphaSpectroscopy.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey St. Petersburg Coastal and Marine Science Center</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>U.S.</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>Samples were collected from 5 vibracores (GB250V, GB255V, GB256V, GB260V, and GB265V) at various depth intervals for radiocarbon dating. This material was sent to the National Ocean Sciences accelerator mass spectrometry (NOSAMS) laboratory at Woods Hole Oceanographic Institution (Woods Hole, MA, USA), where accelerator mass spectrometry (AMS) radiocarbon dating was performed by means of a 500 kilovolt compact pelletron accelerator. The NOSAMS facility is supported by National Science Foundation Cooperative Agreement number, OCE-1239667. Calibrated radiocarbon ages were calculated using the Bchron package for R statistic software. A marine reservoir correction was applied to the calibrated age for the carbonate shell sample. Values were obtained from the Marine Reservoir Correction database (http://calib.org/marine/). The nearest 9 available Delta R (ΔR) estimates from the northwest coast of Florida (Hadden and Cherkinsky, 2015) were used to calculate a weighted mean ΔR of 164 and standard deviation (square root of variance) of 267 using the equations presented in Bevington (1969). The radiocarbon analytical results and calibrated ages are reported in the Excel spreadsheet. A comma-separated values data file containing the tabular data in plain text is included in the download file.</procdesc>
+        <procdate>2016</procdate>
+        <srcprod>16CCT03_Radiocarbon.zip</srcprod>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey St. Petersburg Coastal and Marine Science Center</cntorg>
+              <cntper>Marci E. Marot</cntper>
+            </cntorgp>
+            <cntpos>Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and physical</addrtype>
+              <address>600 4th Street South</address>
+              <city>St. Petersburg</city>
+              <state>FL</state>
+              <postal>33701</postal>
+              <country>U.S.</country>
+            </cntaddr>
+            <cntvoice>(727) 502-8000</cntvoice>
+            <cntemail>mmarot@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+      <procstep>
+        <procdesc>Added keywords section with USGS persistent identifier as theme keyword.</procdesc>
+        <procdate>20201013</procdate>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>U.S. Geological Survey</cntorg>
+              <cntper>VeeAnn A. Cross</cntper>
+            </cntorgp>
+            <cntpos>Marine Geologist</cntpos>
+            <cntaddr>
+              <addrtype>Mailing and Physical</addrtype>
+              <address>384 Woods Hole Road</address>
+              <city>Woods Hole</city>
+              <state>MA</state>
+              <postal>02543-1598</postal>
+            </cntaddr>
+            <cntvoice>508-548-8700 x2251</cntvoice>
+            <cntfax>508-457-2310</cntfax>
+            <cntemail>vatnipp@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_SiteInformation.xlsx</enttypl>
+        <enttypd>Microsoft Excel workbook defining the field sampling dates, site locations, elevations, water depths, core lengths and compaction, and water quality parameters for the push cores, vibracores, and surficial sediment samples collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03).</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_SiteInformation.csv</enttypl>
+        <enttypd>Comma-separated values text file defining the field sampling dates, site locations, elevations, water depths, core lengths and compaction, and water quality parameters for the push cores, vibracores, and surficial sediment samples collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03).</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_CTD.xlsx</enttypl>
+        <enttypd>Microsoft Excel workbook listing conductivity, temperature, depth, and associated water parameter profiles for the water column at the site locations of the push cores, vibracores, and surficial sediment samples collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03) recorded by a SonTek Castaway CTD. The results for each site location are provided on its own tab.</enttypd>
+        <enttypds>SonTek</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_CTD.csv</enttypl>
+        <enttypd>Comma-separated values text file listing conductivity, temperature, depth, and associated water parameter profiles for the water column at the site locations of the push cores, vibracores, and surficial sediment samples collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03) recorded by a SonTek Castaway CTD.</enttypd>
+        <enttypds>SonTek</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_SedimentPhysicalProperties.xlsx</enttypl>
+        <enttypd>Microsoft Excel workbook listing water content, porosity, bulk density and loss on ignition data for the push cores, vibracores, and surficial sediment samples collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03). The results for each core are provided on its own tab.</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_SedimentPhysicalProperties.csv</enttypl>
+        <enttypd>Comma-separated values text file listing water content, porosity, bulk density and loss on ignition data for the push cores, vibracores, and surficial sediment samples collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03).</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_GrainSize.xlsx</enttypl>
+        <enttypd>Microsoft Excel workbook summarizing grain-size parameters for 12 push cores, 1 vibracore, and surficial sediment samples collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03). The averaged results for each sample, including the number of runs used, the standard deviation of the averaged results, and graphical class-size distributions, are provided for each core on its own tab.</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_GrainSize.csv</enttypl>
+        <enttypd>Comma-separated values text file summarizing grain-size parameters for 12 push cores, 1 vibracore, and surficial sediment samples collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03). The averaged results for each sample, including the number of runs used, the standard deviation of the averaged results, and graphical class-size distributions, are provided.</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_GammaSpectroscopy.xlsx</enttypl>
+        <enttypd>Microsoft Excel workbook listing gamma spectroscopy radiochemistry results for the estuarine and marsh push cores and 1 marsh surface sample collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03). The results for the surficial estuarine  core intervals and the marsh core GB34M are provided on separate tabs.</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_GammaSpectroscopy.csv</enttypl>
+        <enttypd>Comma-separated values text file listing gamma spectroscopy radiochemistry results for the estuarine and marsh push cores and 1 marsh surface sample collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03).</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_AlphaSpectroscopy.xlsx</enttypl>
+        <enttypd>Microsoft Excel workbook listing total Pb-210 activities and counting errors for the estuarine push cores collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03).</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_AlphaSpectroscopy.csv</enttypl>
+        <enttypd>Comma-separated values text file listing total Pb-210 activities and counting errors for estuarine push cores collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03).</enttypd>
+        <enttypds>USGS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_Radiocarbon.xlsx</enttypl>
+        <enttypd>Microsoft Excel workbook summarizing radiocarbon dating results from organic material in 5 vibracores collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03).</enttypd>
+        <enttypds>NOSAMS</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>16CCT03_Radiocarbon.csv</enttypl>
+        <enttypd>Comma-separated values text file summarizing radiocarbon dating results from organic material in 5 vibracores collected in this study (USGS FAN 2016-331-FA, project ID 16CCT03).</enttypd>
+        <enttypds>NOSAMS</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Site ID</attrlabl>
+        <attrdef>Site identifier assigned by the USGS scientist; if the site was sampled in replicate, both sample identifiers are listed</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <udom>Character string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Date Collected</attrlabl>
+        <attrdef>Calendar date of field sample collection</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>05/14/2016</rdommin>
+            <rdommax>05/18/2016</rdommax>
+            <attrunit>mm/dd/yyyy</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Site Description</attrlabl>
+        <attrdef>Site description as either "Marsh" or "Estuarine" as assigned by the USGS scientist</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <udom>Character string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Type of Samples Collected</attrlabl>
+        <attrdef>Alphabetic identifiers designating field collection methods, assigned by the USGS scientist</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <udom>Character string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Latitude (WGS84)</attrlabl>
+        <attrdef>Latitude of site location, in decimal degrees, relative to the World Geodetic System 1984</attrdef>
+        <attrdefs>Garmin</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>30.35775</rdommin>
+            <rdommax>30.40958</rdommax>
+            <attrunit>Decimal degree</attrunit>
+            <attrmres>0.00001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longitude (WGS84)</attrlabl>
+        <attrdef>Longitude of site location, in decimal degrees, relative to the World Geodetic System 1984</attrdef>
+        <attrdefs>Garmin</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-88.43298</rdommin>
+            <rdommax>-88.33280</rdommax>
+            <attrunit>Decimal degree</attrunit>
+            <attrmres>0.00001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Latitude (NAD83)</attrlabl>
+        <attrdef>Latitude of site location, in decimal degrees, relative to the North American Datum of 1983</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>30.35827</rdommin>
+            <rdommax>30.40984</rdommax>
+            <attrunit>Decimal degree</attrunit>
+            <attrmres>0.00001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longitude (NAD83)</attrlabl>
+        <attrdef>Longitude of site location, in decimal degrees, relative to the North American Datum of 1983</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-88.43296</rdommin>
+            <rdommax>-88.33284</rdommax>
+            <attrunit>Decimal degree</attrunit>
+            <attrmres>0.00001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Horizontal Standard Deviation (m)</attrlabl>
+        <attrdef>Standard deviation of DGPS site location, in meters</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.004</rdommin>
+            <rdommax>0.015</rdommax>
+            <attrunit>Meter</attrunit>
+            <attrmres>0.001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Orthometric Height (m, NAVD88, GEOID 12A)</attrlabl>
+        <attrdef>Orthometric height of site location, in meters, relative to the North American Vertical Datum of 1988, Geoid 12A</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>3.732</rdommin>
+            <rdommax>0.684</rdommax>
+            <attrunit>Meter</attrunit>
+            <attrmres>0.001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Cumulative Height Error (m)</attrlabl>
+        <attrdef>Error estimate of the orthometric height measurement, in meters</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.029</rdommin>
+            <rdommax>0.065</rdommax>
+            <attrunit>Meter</attrunit>
+            <attrmres>0.001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Water Depth (m)</attrlabl>
+        <attrdef>Water column depth at the estuarine sampling sites, in meters</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.00</rdommin>
+            <rdommax>3.3</rdommax>
+            <attrunit>Meter</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Recovered Core Length (cm)</attrlabl>
+        <attrdef>Field measurement of the estimated recovered core length, in centimeters</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>22</rdommin>
+            <rdommax>397.5</rdommax>
+            <attrunit>Centimeter</attrunit>
+            <attrmres>0.5</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Vibracore Compaction During Coring (cm)</attrlabl>
+        <attrdef>Field measurement of sediment compaction in the vibracore during coring, in centimeters</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>60.0</rdommax>
+            <attrunit>Centimeter</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Temperature (°C)</attrlabl>
+        <attrdef>Water temperature at each sampling site, in degrees Celsius</attrdef>
+        <attrdefs>YSI</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>22.9</rdommin>
+            <rdommax>28.0</rdommax>
+            <attrunit>Degree Celsius</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Barometric Pressure (mmHg)</attrlabl>
+        <attrdef>Barometric pressure at each sampling site, in millimeters of mercury</attrdef>
+        <attrdefs>YSI</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>761.1</rdommin>
+            <rdommax>766.0</rdommax>
+            <attrunit>Millimeters of mercury</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Dissolved Oxygen (%)</attrlabl>
+        <attrdef>Water column percent dissolved oxygen at each sampling site</attrdef>
+        <attrdefs>YSI</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>11.0</rdommin>
+            <rdommax>161.0</rdommax>
+            <attrunit>Percent</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Dissolved Oxygen (mg/L)</attrlabl>
+        <attrdef>Water column dissolved oxygen at each sampling site, in milligrams per liter</attrdef>
+        <attrdefs>YSI</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.8</rdommin>
+            <rdommax>12.2</rdommax>
+            <attrunit>Milligrams per liter</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Specific Conductance (mS/cm)</attrlabl>
+        <attrdef>Water column specific conductance at each sampling site, in millisiemens per centimeter</attrdef>
+        <attrdefs>YSI</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>23.67</rdommin>
+            <rdommax>33.61</rdommax>
+            <attrunit>Millisiemens per centimeter</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Salinity</attrlabl>
+        <attrdef>Water column salinity at each sampling site</attrdef>
+        <attrdefs>YSI</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>14.34</rdommin>
+            <rdommax>21.07</rdommax>
+            <attrunit>Practical salinity unit</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>pH</attrlabl>
+        <attrdef>Water column pH at each sampling site</attrdef>
+        <attrdefs>YSI</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>5.62</rdommin>
+            <rdommax>10.16</rdommax>
+            <attrunit>Hydrogen ion concentration</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>pH (mV)</attrlabl>
+        <attrdef>Water column pH at each sampling site, in millivolts</attrdef>
+        <attrdefs>YSI</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-79.9</rdommin>
+            <rdommax>72.8</rdommax>
+            <attrunit>millivolts</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Oxidation-Reduction Potential (mV)</attrlabl>
+        <attrdef>Water column oxidation-reduction potential at each sampling site, in millivolts</attrdef>
+        <attrdefs>YSI</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-141.9</rdommin>
+            <rdommax>120.1</rdommax>
+            <attrunit>Millivolt</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Cast Date and Time (Local)</attrlabl>
+        <attrdef>Date and time of SonTek Castaway CTD cast in Central Daylight Time</attrdef>
+        <attrdefs>SonTek</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>05/14/2016 11:00</rdommin>
+            <rdommax>05/18/2016 12:03</rdommax>
+            <attrunit>mm/dd/yyyy hh:mm</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Latitude (WGS84)</attrlabl>
+        <attrdef>Latitude of cast location, in decimal degrees recorded by the SonTek Castaway CTD</attrdef>
+        <attrdefs>SonTek</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>30.35766</rdommin>
+            <rdommax>30.39805</rdommax>
+            <attrunit>Decimal degrees</attrunit>
+            <attrmres>0.00001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longitude (WGS84)</attrlabl>
+        <attrdef>Longitude of cast location, in decimal degrees recorded by the SonTek Castaway CTD</attrdef>
+        <attrdefs>SonTek</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-88.41110</rdommin>
+            <rdommax>-88.33282</rdommax>
+            <attrunit>Decimal degrees</attrunit>
+            <attrmres>0.00001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Pressure (dbar)</attrlabl>
+        <attrdef>Water pressure profile recorded by a SonTek Castaway CTD at each core location, in decibars</attrdef>
+        <attrdefs>SonTek</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.15</rdommin>
+            <rdommax>3.30</rdommax>
+            <attrunit>Decibars</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth (m)</attrlabl>
+        <attrdef>Water column depth profile recorded by a SonTek Castaway CTD at each core location, in meters</attrdef>
+        <attrdefs>SonTek</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.15</rdommin>
+            <rdommax>3.34</rdommax>
+            <attrunit>Meters</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Temperature (°C)</attrlabl>
+        <attrdef>Water column temperature recorded by a SonTek Castaway CTD at each core location, in degrees Celsius</attrdef>
+        <attrdefs>SonTek</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>24.2</rdommin>
+            <rdommax>28.1</rdommax>
+            <attrunit>Degrees Celsius</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Conductivity (µS/cm)</attrlabl>
+        <attrdef>Water column conductivity profile recorded by a SonTek Castaway CTD at each core location, in microsiemens per centimeter</attrdef>
+        <attrdefs>SonTek</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>23231.4</rdommin>
+            <rdommax>32575.6</rdommax>
+            <attrunit>Microsiemens per centimeter</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Specific Conductance (µS/cm)</attrlabl>
+        <attrdef>Water column specific conductance profile recorded by a SonTek Castaway CTD at each core location, in microsiemens per centimeter</attrdef>
+        <attrdefs>SonTek</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>22933.2</rdommin>
+            <rdommax>31837.5</rdommax>
+            <attrunit>Microsiemens per centimeter</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Salinity (PSS)</attrlabl>
+        <attrdef>Water column salinity profile recorded by a SonTek Castaway CTD at each core location, measured on the practical salinity scale</attrdef>
+        <attrdefs>SonTek</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>13.8</rdommin>
+            <rdommax>19.8</rdommax>
+            <attrunit>Practical salinity scale</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Sound Velocity (m/s)</attrlabl>
+        <attrdef>Speed of sound in water profile recorded by a SonTek Castaway CTD at each core location, in meters per second</attrdef>
+        <attrdefs>SonTek</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1513.0</rdommin>
+            <rdommax>1523.3</rdommax>
+            <attrunit>Meters per second</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Density (kg/m^3)</attrlabl>
+        <attrdef>Water column density profile recorded by a SonTek Castaway CTD at each core location, in kilograms per cubic meter</attrdef>
+        <attrdefs>SonTek</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1007.2</rdommin>
+            <rdommax>1011.6</rdommax>
+            <attrunit>Kilograms per cubic meter</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Sample ID</attrlabl>
+        <attrdef>Sample identifier assigned by the USGS scientist</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <udom>Character string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Core ID</attrlabl>
+        <attrdef>Core identifier assigned by the USGS scientist</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <udom>Character string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth (cm)</attrlabl>
+        <attrdef>Depth interval measured below the top of the core, in centimeters</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0-1</rdommin>
+            <rdommax>255-257</rdommax>
+            <attrunit>Centimeters</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Water Content (g-water/g-wet)</attrlabl>
+        <attrdef>The ratio of the mass of water to the mass of wet sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.10</rdommin>
+            <rdommax>0.85</rdommax>
+            <attrunit>Grams of water per grams of wet sediment</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Porosity (cm^3-voids/cm^3-wet)</attrlabl>
+        <attrdef>Porosity of the sediment interval</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.21</rdommin>
+            <rdommax>0.94</rdommax>
+            <attrunit>Cubic centimeter of void space per cubic centimeter of wet sediment</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Dry Bulk Density (g/cm^3)</attrlabl>
+        <attrdef>Dry bulk density of the sediment interval</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.14</rdommin>
+            <rdommax>1.62</rdommax>
+            <attrunit>Grams per cubic centimeter</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Loss On Ignition (g-OM/g-dry)</attrlabl>
+        <attrdef>The ratio of the mass of organic matter combusted at 550 Celsius to the pre-combusted mass of dry sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.004</rdommin>
+            <rdommax>0.435</rdommax>
+            <attrunit>Grams of organic matter per grams of dry sediment</attrunit>
+            <attrmres>0.001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Be-7 (dpm/g)</attrlabl>
+        <attrdef>Beryllium-7 specific activity, measured in disintegrations per minute per gram of dry sediment decay-corrected to the date of field collection</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>Not Detected</rdommin>
+            <rdommax>6.25</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Be-7 Error (+/- dpm/g)</attrlabl>
+        <attrdef>Beryllium-7 specific activity counting error, measured in disintegrations per minute per gram of dry sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>Null</rdommin>
+            <rdommax>1.10</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Be-7 Inventory (g/cm^2)</attrlabl>
+        <attrdef>Beryllium-7 inventory in the sediment, measured in grams per square centimeter</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>Not Detected</rdommin>
+            <rdommax>1.66</rdommax>
+            <attrunit>Grams per square centimeter</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Be-7 Inventory Error (+/- g/cm^2)</attrlabl>
+        <attrdef>Beryllium-7 inventory error in the sediment, measured in grams per square centimeter</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>Null</rdommin>
+            <rdommax>0.42</rdommax>
+            <attrunit>Grams per square centimeter</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Cs-137 (dpm/g)</attrlabl>
+        <attrdef>Cesium-137 specific activity, measured in disintegrations per minute per gram of dry sediment decay-corrected to the date of field collection</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>Not Detected</rdommin>
+            <rdommax>1.84</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Cs-137 Error (+/- dpm/g)</attrlabl>
+        <attrdef>Cesium-137 specific activity counting error, measured in disintegrations per minute per gram of dry sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>Null</rdommin>
+            <rdommax>0.12</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Pb-210 (dpm/g)</attrlabl>
+        <attrdef>Lead-210 specific activity, measured in disintegrations per minute per gram of dry sediment decay-corrected to the date of field collection</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.77</rdommin>
+            <rdommax>13.61</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Pb-210 Error (+/- dpm/g)</attrlabl>
+        <attrdef>Lead-210 specific activity counting error, measured in disintegrations per minute per gram of dry sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.16</rdommin>
+            <rdommax>0.72</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Ra-226 (dpm/g)</attrlabl>
+        <attrdef>Radium-226 specific activity, measured in disintegrations per minute per gram of dry sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.22</rdommin>
+            <rdommax>2.16</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Ra-226 Error (+/- dpm/g)</attrlabl>
+        <attrdef>Radium-226 specific activity counting error, measured in disintegrations per minute per gram of dry sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.06</rdommin>
+            <rdommax>0.17</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Th-234 (dpm/g)</attrlabl>
+        <attrdef>Thorium-234 specific activity, measured in disintegrations per minute per gram of dry sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.44</rdommin>
+            <rdommax>9.12</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Th-234 Error (+/- dpm/g)</attrlabl>
+        <attrdef>Thorium-234 specific activity counting error, measured in disintegrations per minute per gram of dry sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.19</rdommin>
+            <rdommax>0.74</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>K-40 (dpm/g)</attrlabl>
+        <attrdef>Potassium-40 specific activity, measured in disintegrations per minute per gram of dry sediment decay-corrected to the date of field collection</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2.29</rdommin>
+            <rdommax>21.93</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>K-40 Error (+/- dpm/g)</attrlabl>
+        <attrdef>Potassium-40 specific activity counting error, measured in disintegrations per minute per gram of dry sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.45</rdommin>
+            <rdommax>2.50</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Total Pb-210 (dpm/g)</attrlabl>
+        <attrdef>Total Pb-210 specific activity, measured in disintegrations per minute per gram of dry sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.21</rdommin>
+            <rdommax>2.68</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Total Pb-210 (+/- dpm/g)</attrlabl>
+        <attrdef>Total Pb-210 specific activity counting error, measured in disintegrations per minute per gram of dry sediment</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.011</rdommin>
+            <rdommax>0.069</rdommax>
+            <attrunit>Disintegrations per minute per gram</attrunit>
+            <attrmres>0.001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Accession Number</attrlabl>
+        <attrdef>Laboratory-assigned sample identifier</attrdef>
+        <attrdefs>NOSAMS</attrdefs>
+        <attrdomv>
+          <udom>Character string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Date Reported</attrlabl>
+        <attrdef>Report date of the analytical results</attrdef>
+        <attrdefs>NOSAMS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>04/14/2017</rdommin>
+            <rdommax>04/21/2017</rdommax>
+            <attrunit>mm/dd/yyyy</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Sample Type</attrlabl>
+        <attrdef>Description of the sample material submitted for laboratory analysis</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <udom>Character string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Analysis Type</attrlabl>
+        <attrdef>Description of the type of laboratory analysis performed on the sample material</attrdef>
+        <attrdefs>NOSAMS</attrdefs>
+        <attrdomv>
+          <udom>Character string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Fraction Modern</attrlabl>
+        <attrdef>Fraction Modern of the carbon-14/carbon-12 ratio of the sample</attrdef>
+        <attrdefs>NOSAMS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0002</rdommin>
+            <rdommax>0.7682</rdommax>
+            <attrunit>Fractional value</attrunit>
+            <attrmres>0.0001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Fraction Modern Error</attrlabl>
+        <attrdef>Error estimate of precision of the Fraction Modern measurement</attrdef>
+        <attrdefs>NOSAMS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0013</rdommin>
+            <rdommax>0.0021</rdommax>
+            <attrunit>Fractional value</attrunit>
+            <attrmres>0.0001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>δ13C Corrected</attrlabl>
+        <attrdef>Notation from the analytical laboratory indicating the correction value is not reported</attrdef>
+        <attrdefs>NOSAMS</attrdefs>
+        <attrdomv>
+          <udom>Character string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Age</attrlabl>
+        <attrdef>Conventional radiocarbon age</attrdef>
+        <attrdefs>NOSAMS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2120</rdommin>
+            <rdommax>&gt;48000</rdommax>
+            <attrunit>Year</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Age Error</attrlabl>
+        <attrdef>Error in the reported radiocarbon age relative to the Fraction Modern</attrdef>
+        <attrdefs>NOSAMS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>15</rdommin>
+            <rdommax>1600</rdommax>
+            <attrunit>Year</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>δ13C</attrlabl>
+        <attrdef>Ratio of the stable isotopes carbon-13 to carbon-12 in sample material measured by AMS</attrdef>
+        <attrdefs>NOSAMS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-28.11</rdommin>
+            <rdommax>-3.74</rdommax>
+            <attrunit>Parts per thousand</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>δ13C Source</attrlabl>
+        <attrdef>Description of the source of the delta carbon-13 value</attrdef>
+        <attrdefs>NOSAMS</attrdefs>
+        <attrdomv>
+          <udom>Character string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Δ14C</attrlabl>
+        <attrdef>Isotopic Ratio of carbon-14 to carbon-12 relative to the absolute international standard and corrected for age and δ13C fractionation (no values reported by analytical laboratory)</attrdef>
+        <attrdefs>NOSAMS</attrdefs>
+        <attrdomv>
+          <udom>Character string</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Calibrated Age (cal yr BP)</attrlabl>
+        <attrdef>Calibrated carbon-14 age in calendar years before present</attrdef>
+        <attrdefs>BChron</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1546.5</rdommin>
+            <rdommax>5770</rdommax>
+            <attrunit>Calendar years before present</attrunit>
+            <attrmres>0.5</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Calibrated Age 2σ Uncertainty (+/- cal yr BP)</attrlabl>
+        <attrdef>Two sigma uncertainty of the calibrated carbon-14 age, in calendar years before present</attrdef>
+        <attrdefs>BChron</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>41</rdommin>
+            <rdommax>595.5</rdommax>
+            <attrunit>Calendar years before present</attrunit>
+            <attrmres>0.5</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Calibrated Age Range (cal yr BP)</attrlabl>
+        <attrdef>Range for the calibrated carbon-14 age of the organic material, in calendar years before present</attrdef>
+        <attrdefs>BChron</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>951-2142</rdommin>
+            <rdommax>5660-5880</rdommax>
+            <attrunit>Calendar years before present</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <overview>
+      <eaover>The detailed attribute descriptions for the grain size workbook are provided in the included data dictionary (16CCT03_Grain_Size_Data_Dictionary.pdf). These metadata are not complete without this file.</eaover>
+      <eadetcit>Data dictionary for grain-size data tables, in: Marot, M.E., Smith, C.G., McCloskey, T.A., Locker, S.D., Khan, N.S., and Smith, K.E.L., 2019, Sedimentary Data From Grand Bay, Alabama/Mississippi, 2014-2016: U.S. Geological Survey data release, https://doi.org/10.5066/P9FO8R3Y.</eadetcit>
+    </overview>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey, St. Petersburg Coastal and Marine Science Center</cntorg>
+          <cntper>Marci E. Marot</cntper>
+        </cntorgp>
+        <cntpos>Geologist</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and physical</addrtype>
+          <address>600 4th Street South</address>
+          <city>St. Petersburg</city>
+          <state>FL</state>
+          <postal>33701</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>727-502-8000</cntvoice>
+        <cntemail>mmarot@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>Downloadable data</resdesc>
+    <distliab>This publication was prepared by an agency of the United States Government. Although these data have been processed successfully on a computer system at the U.S. Geological Survey, no warranty expressed or implied is made regarding the display or utility of the data on any other system, or for general or scientific purposes, nor shall the act of distribution imply any such warranty. The U.S. Geological Survey shall not be held liable for improper or incorrect use of the data described and (or) contained herein. Reference herein to any specific commercial product, process, or service by trade name, trademark, manufacturer, or otherwise does not constitute or imply its endorsement, recommendation, or favoring by the United States Government or any agency thereof.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Compressed (zip) archive</formname>
+          <formverd>2018</formverd>
+          <formspec>Multimedia presentation</formspec>
+          <formcont>These zip archives includes Microsoft Excel spreadsheets, comma-separated values text files, jpg image files, and accompanying metadata for sediment data from surficial sediments and cores collected from Grand Bay, Alabama/Mississippi in May 2016 (USGS FAN 2016-331-FA, project ID 16CCT03).</formcont>
+          <filedec>Unzip</filedec>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://coastal.er.usgs.gov/data-release/doi-P9FO8R3Y/data/16CCT03_FieldLogs.zip</networkr>
+                <networkr>https://coastal.er.usgs.gov/data-release/doi-P9FO8R3Y/data/16CCT03_SiteInformation.zip</networkr>
+                <networkr>https://coastal.er.usgs.gov/data-release/doi-P9FO8R3Y/data/16CCT03_CTD.zip</networkr>
+                <networkr>https://coastal.er.usgs.gov/data-release/doi-P9FO8R3Y/data/16CCT03_SedimentPhysicalProperties.zip</networkr>
+                <networkr>https://coastal.er.usgs.gov/data-release/doi-P9FO8R3Y/data/16CCT03_GrainSize.zip</networkr>
+                <networkr>https://coastal.er.usgs.gov/data-release/doi-P9FO8R3Y/data/16CCT03_GammaSpectroscopy.zip</networkr>
+                <networkr>https://coastal.er.usgs.gov/data-release/doi-P9FO8R3Y/data/16CCT03_AlphaSpectroscopy.zip</networkr>
+                <networkr>https://coastal.er.usgs.gov/data-release/doi-P9FO8R3Y/data/16CCT03_Radiocarbon.zip</networkr>
+                <networkr>https://coastal.er.usgs.gov/data-release/doi-P9FO8R3Y/data/16CCT03_CoreLogs.zip</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None, if obtained online</fees>
+    </stdorder>
+    <techpreq>The data tables for USGS FAN 2016-331-FA (project ID 16CCT03) were created in Microsoft Excel 2010 and can be opened using Microsoft Excel 2007 or higher; these data may also be viewed using the free Microsoft Excel Viewer (http://office.microsoft.com/). The data tables are also provided as comma-separated values text files (.csv). The .csv data file contains the tabular data in plain text and may be viewed with a standard text editor. Portable Document Format (PDF) files can be viewed using the free software Adobe Acrobat Reader (http://get.adobe.com/reader).</techpreq>
+  </distinfo>
+  <metainfo>
+    <metd>20220623</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey</cntorg>
+          <cntper>Marci E. Marot</cntper>
+        </cntorgp>
+        <cntpos>Geologist</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and physical</addrtype>
+          <address>600 4th Street South</address>
+          <city>St. Petersburg</city>
+          <state>FL</state>
+          <postal>33701</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>727-502-8000</cntvoice>
+        <cntemail>mmarot@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+    <metac>None</metac>
+    <metuc>Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution.</metuc>
+    <metsi>
+      <metscs>None</metscs>
+      <metsc>Unclassified</metsc>
+      <metshd>None</metshd>
+    </metsi>
+  </metainfo>
+</metadata>
