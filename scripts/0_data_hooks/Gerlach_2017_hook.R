@@ -53,6 +53,9 @@ depthseries <- depthseries_raw %>%
   arrange(core_id, depth_min) %>%
   rename(marker_date_sd = marker_sd,
          marker_notes = marker_type) %>%
+  mutate(marker_type = case_when(grepl("pollen", marker_notes) ~ "pollen",
+                                 grepl("lead|arsenic", marker_notes) ~ "pollution",
+                                 TRUE ~ NA_character_)) %>% 
   mutate(method_id = "single set of methods") %>%
   select(-site_id) %>%
   full_join(site_relationships)
@@ -103,6 +106,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

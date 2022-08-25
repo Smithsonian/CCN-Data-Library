@@ -96,9 +96,11 @@ cores <- raw_cores %>%
   mutate(core_year = case_when(study_id == "Drake_et_al_2015" ~ 2012,
                                study_id == "Elsey_Quirk_et_al_2011" ~ 2008,
                                study_id == "Noe_et_al_2013" ~ 2010,
+                               study_id == "Radabaugh_et_al_2018" ~ 2015,
                                          TRUE ~ NA_real_),
          core_month = case_when(study_id == "Drake_et_al_2015" ~ 6,
                                          TRUE ~ NA_real_),
+         core_elevation_datum = ifelse(study_id == "Drake_et_al_2015" & !is.na(core_elevation), "NAVD88", NA_character_),
          core_elevation_method = case_when(study_id == "Hill_and_Anisfeld_2015" & !is.na(core_elevation) ~ "other high resolution",
                                            TRUE ~ NA_character_),
          core_elevation_notes = case_when(study_id == "Hill_and_Anisfeld_2015" & !is.na(core_elevation) ~ "Topcon GPT-3200 total station", 
@@ -172,13 +174,15 @@ methods <- raw_methods %>%
   # Jaxine updates
   rename(carbon_profile_notes = fraction_carbon_flag) %>% 
   mutate(sediment_sieved_flag = case_when(study_id %in% c("Drake_et_al_2015", "Elsey_Quirk_et_al_2011", "Noe_et_al_2013") ~ "sediment sieved",
+                                          study_id == "Radabaugh_et_al_2018" ~ "sediment not sieved",
                                           TRUE ~ NA_character_),
          sediment_sieve_size = case_when(study_id %in% c("Drake_et_al_2015", "Noe_et_al_2013") ~ 2,
                                          study_id == "Elsey_Quirk_et_al_2011" ~ 0.42,
                                          TRUE ~ NA_real_),
-         fraction_carbon_method = case_when(study_id %in% c("Drake_et_al_2015", "Hill_and_Anisfeld_2015", "Noe_et_al_2013") ~ "EA",
+         fraction_carbon_method = case_when(study_id %in% c("Drake_et_al_2015", "Hill_and_Anisfeld_2015", "Noe_et_al_2013", "Radabaugh_et_al_2018") ~ "EA",
                                             study_id == "Elsey_Quirk_et_al_2011" ~ "Craft regression",
                                             TRUE ~ NA_character_),
+         fraction_carbon_type = ifelse(study_id == "Radabaugh_et_al_2018", "total carbon", fraction_carbon_type),
          compaction_flag = case_when(study_id == "Elsey_Quirk_et_al_2011" ~ "compaction quantified",
                                      study_id == "Hill_and_Anisfeld_2015" ~ "corer limits compaction",
                                      TRUE ~ compaction_flag),
@@ -186,6 +190,7 @@ methods <- raw_methods %>%
          roots_flag = case_when(study_id == "Elsey_Quirk_et_al_2011" ~ "roots and rhizomes separated", TRUE ~ roots_flag),
          carbon_measured_or_modeled = case_when(study_id == "Elsey_Quirk_et_al_2011" ~ "modeled", 
                                                 TRUE ~ carbon_measured_or_modeled),
+         carbonates_removed = ifelse(study_id == "Radabaugh_et_al_2018", FALSE, carbonates_removed),
          carbon_profile_notes = na_if(carbon_profile_notes, "no details"),
          method_id = "single set of methods")
 

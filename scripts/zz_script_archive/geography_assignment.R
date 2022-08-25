@@ -29,7 +29,7 @@ cores_pre_geography <- read.csv("./data/CCRCN_synthesis/CCRCN_cores.csv")
 
 # A few cores do not have coordinates. Remove them for now
 cores_pre_geography <- cores_pre_geography %>% 
-  filter(!is.na(core_longitude))
+  filter(!is.na(longitude))
 
 # Import site data. We'll be joining to this once we add geography attributes
 sites <- read_csv("data/CCRCN_synthesis/CCRCN_sites.csv")
@@ -40,8 +40,8 @@ sites <- read_csv("data/CCRCN_synthesis/CCRCN_sites.csv")
 
 # Convert core data to spatialPointsDataFrame, with coordinates and core IDs
 core_coords <- SpatialPointsDataFrame(
-  coords = data.frame(core_longitude = cores_pre_geography$core_longitude, 
-                      core_latitude = cores_pre_geography$core_latitude),
+  coords = data.frame(core_longitude = cores_pre_geography$longitude, 
+                      core_latitude = cores_pre_geography$latitude),
   proj4string = CRS("+proj=longlat +datum=WGS84 +no_defs"),
   data = data.frame(cores_pre_geography$core_id)
 )
@@ -227,11 +227,11 @@ if(num_cores != num_cores_w_geography) {
 
 # Assign country tags
 dfr <- cores_pre_geography %>% 
-  select(core_longitude, core_latitude, core_id) %>%
-  filter(!is.na(core_longitude) & !is.na(core_latitude)) %>%
+  select(longitude, latitude, core_id) %>%
+  filter(!is.na(longitude) & !is.na(latitude)) %>%
   filter(!is.na(core_id))
 
-sfRegion <- st_as_sf(dfr, coords=c('core_longitude', 'core_latitude'))
+sfRegion <- st_as_sf(dfr, coords=c('longitude', 'latitude'))
 sfCountry <- ne_countries(returnclass='sf')
 st_crs(sfRegion) <- 4326
 

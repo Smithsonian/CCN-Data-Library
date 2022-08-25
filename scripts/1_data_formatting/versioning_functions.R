@@ -1,5 +1,9 @@
+## CCRCN Data Library
+# contact: wolfejax@si.edu
 
-# Probably merge this function with updateTables()
+# This script contains functions built to update datasets curated under old guidance
+
+# merge this function with updateTables() ?
 # create function to loop through the column headers and rename them
 renameColumns <- function(x, key) {
   

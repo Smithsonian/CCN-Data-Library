@@ -1,6 +1,6 @@
 # Coastal Carbon Research Coordination Network
 # This script joins all CCRCN datasets into one synthesis
-# Contact: klingesd@si.edu
+# Contact: wolfejax@si.edu
 
 ## 1. Prep Workspace ##############
 

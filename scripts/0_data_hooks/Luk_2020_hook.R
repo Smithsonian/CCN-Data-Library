@@ -88,8 +88,9 @@ depthseries_join <- full_join(soil, isotopes) %>%
                           str_c(habitat, site_id, core_id, sep = "_")),
          # sample_volume = pi*(depth_max-depth_min)*(5.5^2),
          core_elevation_notes = "Calculated by subtracting the minimum depth of soil horizon from the NAVD88 elevation of the core location (given at min_depth = 0)",
-         pb210_unit = "decaysPerMinutePerGram",
-         ra226_unit = "decaysPerMinutePerGram") %>%
+         cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA_character_),
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA_character_),
+         ra226_unit = ifelse(!is.na(ra226_activity), "disintegrationsPerMinutePerGram", NA_character_)) %>%
   mutate(site_id = str_c("SITE", site_id, sep = "_"))
          # make split core IDs unique 
          # Unecessary with the method_id now
@@ -209,6 +210,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+testConditional(table_names)
 testRequired(table_names)
 
 test_unique_cores(cores)

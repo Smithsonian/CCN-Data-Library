@@ -69,7 +69,10 @@ depthseries <- depthseries_raw %>%
 
 sites <- sites_raw
 impacts <- impacts_raw
-methods <- methods_raw %>% mutate(method_id = "single set of methods")
+methods <- methods_raw %>% 
+  mutate(method_id = "single set of methods",
+         carbonates_removed = FALSE,
+         fraction_carbon_type = "total carbon")
 
 ## Create citation info  
 
@@ -130,6 +133,8 @@ source("./scripts/1_data_formatting/qa_functions.R")
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+testRequired(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
@@ -141,6 +146,7 @@ results <- test_numeric_vars(depthseries)
 writeDataVizReport("Callaway_et_al_2019")
 
 # write files
+write_csv(methods, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_methods.csv")
 write_csv(species, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_species.csv")
 write_csv(cores, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_cores.csv")
 write_csv(depthseries, "data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_depthseries.csv")

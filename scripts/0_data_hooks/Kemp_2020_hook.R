@@ -33,7 +33,9 @@ methods_raw <- read_csv("./data/primary_studies/kemp_2020/original/kemp_et_al_20
 bib <- ReadBib("./data/primary_studies/kemp_2020/original/citations.bib")
 
 depthseries <- depthseries_raw %>%
-  mutate(method_id = "single set of methods") %>%
+  mutate(method_id = "single set of methods",
+         cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA_character_),
+         pb210_unit = ifelse(!is.na(excess_pb210_activity), "disintegrationsPerMinutePerGram", NA_character_)) %>%
   select(-cs137_age, -pb210_cic_age, -pb210_crs_age) 
 
 cores <- cores_raw %>%
@@ -88,6 +90,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

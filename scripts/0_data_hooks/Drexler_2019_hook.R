@@ -31,11 +31,12 @@ depthseries <- raw_depthseries %>%
          method_id = "single set of methods") %>%
   # Modify carbon stock variables: 
   mutate(fraction_carbon = percent_carbon / 100,
-         pb210_unit = ifelse(!is.na(total_pb210_activity), "distintegrations per minute per gram", NA)) %>%
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "distintegrationsPerMinutePerGram", NA),
+         ra226_unit = ifelse(!is.na(ra226_activity), "distintegrationsPerMinutePerGram", NA)) %>%
   select(study_id, site_id, core_id, method_id, depth_min, depth_max,
          dry_bulk_density, fraction_carbon, 
          total_pb210_activity, total_pb210_activity_sd,  
-         ra226_activity, ra226_activity_sd, 
+         ra226_activity, ra226_activity_sd, ra226_unit,
          excess_pb210_activity, excess_pb210_activity_sd, pb210_unit)
 
 ## ... core data #######
@@ -133,6 +134,8 @@ source("./scripts/1_data_formatting/qa_functions.R")
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
+testConditional(table_names)
+testTaxa(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

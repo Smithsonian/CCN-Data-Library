@@ -1,6 +1,5 @@
 ## CCRCN Data Library QA/QC scripts
-# contact: Michael Lonneman, lonnemanM@si.edu 
-#          David Klinges, klingesD@si.edu
+# contact: Jaxine Wolfe <wolfejax@si.edu>
 
 ## Check core_id uniqueness ########
 # All cores in synthesis should have unique id
@@ -606,4 +605,60 @@ writeDataVizReport <- function(study_id){
                     # output_format = "html_document",
                     output_file = paste0(study_id, "_dataviz_report"),
                     output_dir = "./docs/dataviz_reports/")
+}
+
+
+## function to resolve taxa names using GNR 
+# uses taxonomic authorities to resolve spelling rather than recoding everything by hand
+testTaxa <- function(table_names) {
+  
+  if("species" %in% table_names){
+    # create unique list of species codes to save time
+    taxa <- unique(sort(species$species_code))
+    
+    resolved <- data.frame()
+    unresolved <- vector()
+    
+    for (i in 1:length(taxa)){
+      # gnr_sources <- taxize::gnr_datasources()
+      
+      # store resolved results
+      gnr_result <- taxize::gnr_resolve(sci = as.vector(taxa[i]), 
+                                        preferred_data_sources = c(150, 9, 4, 3), # default NULL = no preference
+                                        canonical = TRUE) %>%
+        # gnr_datasources()
+        # preferred_data_sources = c(150, 9, 4, 3)
+        
+        slice(1) # pick the first result
+      
+      if (!plyr::empty(gnr_result)) {
+        # compile list of resolved taxa
+        resolved <- rbind(resolved, gnr_result)
+        
+      } else {
+        # save unresolved taxa
+        unresolved <- rbind(unresolved, taxa[i])
+        # skip unresolved taxa
+        i <- i + 1
+        next
+      }
+    }
+    # report any unresolved taxa
+    if (length(unresolved) > 0) {
+      print("The following taxa could not be resolved:")
+      print(unresolved)
+    }
+    # report potentially misspelled taxa
+    if(length(which(resolved$user_supplied_name != resolved$matched_name2)) > 0){
+      misspelled <- resolved$user_supplied_name[resolved$user_supplied_name != resolved$matched_name2]
+      
+      print("Check the spelling of the following species: ")
+      print(misspelled)
+    } else {
+      print("Everything looks good!")
+    }
+    # in the event that no species table is present in the supplied table names
+  } else {
+    print("No species table present.")
+  }
 }

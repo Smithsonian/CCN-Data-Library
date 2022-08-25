@@ -1,5 +1,5 @@
 ## CCRCN Data Library
-# contact: klingesd@si.edu
+# contact: wolfejax@si.edu
 
 # This script contains simple functions built to curate datasets
 

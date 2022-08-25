@@ -1,579 +1,579 @@
-study_id,site_id,core_id,method_id,depth_min,depth_max,dry_bulk_density,fraction_carbon,cs137_activity,cs137_activity_se,excess_pb210_activity,excess_pb210_activity_se,total_pb210_activity,total_pb210_activity_se,pb210_unit,ra226_activity,ra226_activity_se,ra226_unit
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,0,2,0.14,0.2,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,2,4,0.16,0.196,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,4,6,0.17,0.214,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,6,8,0.15,0.215,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,8,10,0.16,0.21899999999999997,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,10,12,0.14,0.196,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,12,14,0.16,0.22,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,14,16,0.12,0.19899999999999998,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,16,18,0.11,0.191,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,18,20,0.14,0.21899999999999997,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,20,22,0.12,0.212,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,22,24,0.16,0.249,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,24,26,0.18,0.254,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,26,28,0.16,0.22,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,28,30,0.2,0.195,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,30,32,0.23,0.152,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,32,34,0.23,0.154,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,34,36,0.22,0.155,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,36,38,0.2,0.124,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,38,40,0.29,0.14300000000000002,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,40,42,0.21,0.145,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,42,44,0.16,0.174,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,44,46,0.19,0.16699999999999998,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,46,48,0.16,0.193,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,48,50,0.15,0.16,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,50,52,0.17,0.131,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,52,54,0.18,0.13699999999999998,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,54,56,0.16,0.142,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,56,58,0.14,0.161,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,58,60,0.18,0.107,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,60,62,0.2,0.099,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,65,67,0.21,0.11800000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,70,72,0.2,0.11699999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,75,77,0.29,0.071,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,80,82,0.28,0.096,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,85,87,0.4,0.069,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,90,92,0.45,0.062,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,98,100,0.39,0.051,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,0,2,0.1,0.264,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,2,4,0.22,0.244,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,4,6,0.16,0.25,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,6,8,0.15,0.244,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,8,10,0.14,0.255,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,10,12,0.14,0.22,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,12,14,0.14,0.228,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,14,16,0.13,0.223,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,16,18,0.11,0.22399999999999998,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,18,20,0.11,0.26899999999999996,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,20,22,0.14,0.24600000000000002,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,22,24,0.17,0.249,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,24,26,0.16,0.22,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,26,28,0.21,0.243,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,28,30,0.27,0.172,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,30,32,0.29,0.14800000000000002,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,32,34,0.28,0.12,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,34,36,0.21,0.16399999999999998,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,36,38,0.15,0.198,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,38,40,0.13,0.184,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,40,42,0.21,0.172,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,42,44,0.25,0.14,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,44,46,0.19,0.155,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,46,48,0.16,0.168,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,48,50,0.2,0.142,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,50,52,0.28,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,52,54,0.32,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,54,56,0.39,0.062,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,56,58,0.39,0.063,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,58,60,0.4,0.055999999999999994,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,60,62,0.4,0.063,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,65,67,0.36,0.064,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,70,72,0.4,0.055999999999999994,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,75,77,0.37,0.066,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,80,82,0.36,0.068,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,85,87,0.39,0.06,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,90,92,0.31,0.067,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,95,97,NA,0.09699999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,0,2,0.19,0.195,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,2,4,0.2,0.207,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,4,6,0.15,0.21600000000000003,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,6,8,0.19,0.183,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,8,10,0.19,0.162,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,10,12,0.2,0.175,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,12,14,0.2,0.152,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,14,16,0.23,0.161,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,16,18,0.2,0.151,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,18,20,0.18,0.184,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,20,22,0.17,0.18899999999999997,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,22,24,0.15,0.195,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,24,26,0.22,0.165,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,26,28,0.19,0.16399999999999998,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,28,30,0.52,0.105,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,30,32,0.58,0.08900000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,32,34,0.32,0.094,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,34,36,0.31,0.10300000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,36,38,0.3,0.10099999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,38,40,0.35,0.08800000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,40,42,0.36,0.10400000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,42,44,0.4,0.107,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,44,46,0.36,0.095,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,46,48,0.33,0.10800000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,48,50,0.47,0.083,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,50,52,0.42,0.073,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,52,54,0.35,0.091,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,54,56,0.35,0.095,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,56,58,0.4,0.124,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,58,60,0.32,0.106,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,60,62,0.54,0.05,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,65,67,0.39,0.076,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,70,72,0.31,0.099,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,75,77,0.33,0.095,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,80,82,0.66,0.053,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,85,87,0.3,0.16899999999999998,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,90,92,0.22,0.18899999999999997,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,95,97,0.23,0.168,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,100,102,NA,0.134,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,0,2,0.27,0.121,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,2,4,0.28,0.135,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,4,6,0.31,0.11599999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,6,8,0.33,0.094,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,8,10,0.26,0.113,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,10,12,0.29,0.109,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,12,14,0.34,0.099,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,14,16,0.36,0.105,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,16,18,0.34,0.10400000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,18,20,0.37,0.142,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,20,22,0.22,0.18,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,22,24,0.31,0.09699999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,24,26,0.84,0.046,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,26,28,0.61,0.062,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,28,30,0.4,0.081,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,30,32,0.48,0.095,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,32,34,0.39,0.10800000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,34,36,0.3,0.09699999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,36,38,0.35,0.08,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,38,40,0.46,0.091,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,40,42,0.5,0.08800000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,42,44,0.39,0.091,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,44,46,0.5,0.081,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,46,48,0.4,0.071,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,48,50,0.49,0.055999999999999994,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,50,52,0.92,0.021,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,52,54,0.89,0.047,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,54,56,0.76,0.034,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,56,58,0.56,0.065,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,58,60,0.45,0.077,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,60,62,0.41,0.065,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,65,67,0.49,0.063,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,70,72,0.88,0.031,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,75,77,0.95,0.027000000000000003,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,80,82,0.53,0.076,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,85,87,0.5,0.067,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,0,2,0.18,0.152,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,2,4,0.2,0.16,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,4,6,0.19,0.185,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,6,8,0.2,0.138,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,8,10,0.21,0.128,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,10,12,0.18,0.149,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,12,14,0.18,0.162,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,14,16,0.18,0.147,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,16,18,0.19,0.142,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,18,20,0.23,0.11900000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,20,22,0.23,0.099,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,22,24,0.25,0.08199999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,24,26,0.29,0.099,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,26,28,0.22,0.10300000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,28,30,0.21,0.11,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,30,32,0.25,0.111,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,32,34,0.2,0.134,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,34,36,0.26,0.11599999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,36,38,0.36,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,38,40,0.32,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,40,42,0.41,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,42,44,0.39,0.07,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,44,46,0.46,0.063,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,46,48,0.37,0.076,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,48,50,0.29,0.08800000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,50,52,0.28,0.11900000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,52,54,0.32,0.11,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,54,56,0.47,0.049,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,56,58,0.49,0.059000000000000004,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,58,60,0.26,0.091,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,60,62,0.28,0.096,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,65,67,0.28,0.11,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,70,72,0.2,0.15,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,75,77,0.26,0.111,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,80,82,0.17,0.142,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,85,87,0.17,0.142,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,90,92,0.22,0.12,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,95,97,0.28,0.124,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,0,2,0.25,0.10800000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,2,4,0.24,0.122,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,4,6,0.27,0.131,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,6,8,0.34,0.10099999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,8,10,0.25,0.124,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,10,12,0.33,0.11900000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,12,14,0.29,0.111,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,14,16,0.26,0.109,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,16,18,0.3,0.08900000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,18,20,0.39,0.081,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,20,22,0.34,0.08800000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,22,24,0.3,0.091,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,24,26,0.23,0.102,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,26,28,0.22,0.11599999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,28,30,0.23,0.11699999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,30,32,0.2,0.096,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,32,34,0.2,0.1,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,34,36,0.21,0.135,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,36,38,0.26,0.10400000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,38,40,0.46,0.055,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,40,42,0.51,0.073,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,42,44,0.37,0.099,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,44,46,0.43,0.085,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,46,48,0.47,0.076,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,48,50,0.46,0.07200000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,50,52,0.66,0.055999999999999994,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,52,54,0.54,0.069,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,54,56,0.55,0.061,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,56,58,0.53,0.063,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,58,60,0.46,0.08199999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,60,62,0.39,0.1,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,65,67,0.41,0.07,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,70,72,0.26,0.066,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,75,77,0.28,0.075,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,80,82,0.33,0.07200000000000001,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,85,87,0.47,0.1,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,90,92,0.34,0.092,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,95,97,0.17,0.115,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,100,102,NA,0.12,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,0,2,0.12,0.175,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,2,4,0.24,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,4,6,0.29,0.141,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,6,8,0.25,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,8,10,0.29,0.175,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,10,12,0.23,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,13,16,0.29,0.135,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,16,18,0.26,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,19,21,0.17,0.159,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,21,24,0.17,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,24,27,0.17,0.14,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,27,30,0.21,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,30,33,0.24,0.177,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,33,36,0.21,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,36,39,0.25,0.128,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,39,41,0.29,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,41,44,0.3,0.11199999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,44,47,0.22,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,47,49,0.16,0.109,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,0,2,0.14,0.184,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,2,4,0.16,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,4,6,0.21,0.158,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,6,8,0.18,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,8,10,0.22,0.128,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,10,12,0.27,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,13,16,0.49,0.057,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,16,18,0.5,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,19,21,0.33,0.063,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,21,24,0.52,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,24,27,0.35,0.063,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,27,30,0.45,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,30,33,0.29,0.079,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,33,36,0.29,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,36,39,0.2,0.115,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,39,41,0.21,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,41,44,0.22,0.11,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,44,47,0.25,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,47,49,0.21,0.111,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,0,2,0.23,0.1,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,2,4,0.16,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,4,6,0.14,0.149,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,6,8,0.17,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,8,10,0.18,0.109,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,10,12,0.24,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,13,16,0.33,0.115,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,16,18,0.26,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,19,21,0.21,0.083,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,21,24,0.29,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,24,27,0.24,0.091,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,27,30,0.18,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,30,33,0.35,0.095,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,33,36,0.35,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,36,39,0.22,0.07,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,39,41,0.18,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,41,44,0.18,0.095,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,44,47,0.23,NA,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,47,49,0.13,0.11699999999999999,NA,NA,NA,NA,NA,NA,decaysPerMinutePerGram,NA,NA,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,0,1,NA,NA,0,0,7.94,0.46,8.18,0.45,decaysPerMinutePerGram,0.25,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,1,2,NA,NA,0,0,8.12,0.47,8.64,0.45,decaysPerMinutePerGram,0.51,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,2,3,NA,NA,0,0,8.81,0.53,9.53,0.51,decaysPerMinutePerGram,0.72,0.13,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,3,4,NA,NA,0,0,10.55,0.42,10.55,0.42,decaysPerMinutePerGram,0,0,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,4,5,NA,NA,0,0,13.88,0.54,14.43,0.53,decaysPerMinutePerGram,0.55,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,5,6,NA,NA,0,0,11.91,0.52,11.91,0.52,decaysPerMinutePerGram,0,0,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,6,7,NA,NA,0,0,8.48,0.43,9.03,0.41,decaysPerMinutePerGram,0.55,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,7,8,NA,NA,0,0,6.91,0.48,7.5,0.47,decaysPerMinutePerGram,0.58,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,8,9,NA,NA,0.19,0.06,6.74,0.36,7.37,0.35,decaysPerMinutePerGram,0.62,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,9,10,NA,NA,0,0,8.33,0.52,8.82,0.5,decaysPerMinutePerGram,0.49,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,10,11,NA,NA,0,0,9.73,0.63,10.47,0.62,decaysPerMinutePerGram,0.74,0.14,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,11,12,NA,NA,0.21,0.06,11.26,0.48,11.8,0.47,decaysPerMinutePerGram,0.55,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,12,13,NA,NA,0,0,9.76,0.66,10.18,0.63,decaysPerMinutePerGram,0.42,0.21,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,13,14,NA,NA,0.3,0.06,5.76,0.37,6.57,0.36,decaysPerMinutePerGram,0.8,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,14,15,NA,NA,0.78,0.09,4.53,0.44,5.06,0.42,decaysPerMinutePerGram,0.54,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,15,16,NA,NA,1.29,0.1,8.53,0.51,9.5,0.49,decaysPerMinutePerGram,0.97,0.13,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,16,17,NA,NA,3.24,0.14,6.02,0.5,7.2,0.47,decaysPerMinutePerGram,1.18,0.15,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,17,18,NA,NA,2.4,0.16,5.33,0.51,6.58,0.48,decaysPerMinutePerGram,1.25,0.16,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,18,19,NA,NA,1.83,0.1,4.87,0.36,5.97,0.34,decaysPerMinutePerGram,1.1,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,19,20,NA,NA,0.85,0.06,3.75,0.25,4.4,0.24,decaysPerMinutePerGram,0.65,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,20,21,NA,NA,0,0,2.75,0.26,3.5,0.24,decaysPerMinutePerGram,0.74,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,21,22,NA,NA,0,0,6.2,0.73,7.71,0.69,decaysPerMinutePerGram,1.51,0.25,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,22,23,NA,NA,0,0,5.18,0.28,5.82,0.27,decaysPerMinutePerGram,0.65,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,23,24,NA,NA,0,0,2.39,0.45,3.38,0.41,decaysPerMinutePerGram,0.99,0.17,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,24,25,NA,NA,0,0,1.94,0.28,2.59,0.27,decaysPerMinutePerGram,0.65,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,25,26,NA,NA,0,0,1.22,0.33,1.7,0.31,decaysPerMinutePerGram,0.48,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,26,27,NA,NA,0,0,0.86,0.3,1.79,0.28,decaysPerMinutePerGram,0.93,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,27,28,NA,NA,0,0,1.4,0.31,1.99,0.3,decaysPerMinutePerGram,0.59,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,28,29,NA,NA,0,0,0.47,0.19,1.15,0.17,decaysPerMinutePerGram,0.68,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,29,30,NA,NA,0,0,0.92,0.23,1.78,0.21,decaysPerMinutePerGram,0.85,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,30,32,NA,NA,0,0,0.22,0.13,1.08,0.12,decaysPerMinutePerGram,0.86,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,32,34,NA,NA,0,0,0.5,0.15,1.38,0.14,decaysPerMinutePerGram,0.88,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,34,36,NA,NA,0,0,0.73,0.19,1.68,0.18,decaysPerMinutePerGram,0.95,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,0,1,NA,NA,0,0,25.1,0.74,26.19,0.73,decaysPerMinutePerGram,1.08,0.15,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,1,2,NA,NA,0,0,13.17,0.57,14.28,0.56,decaysPerMinutePerGram,1.12,0.14,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,2,3,NA,NA,0,0,9.55,0.32,9.98,0.31,decaysPerMinutePerGram,0.43,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,3,4,NA,NA,0,0,7.72,0.38,8.18,0.36,decaysPerMinutePerGram,0.46,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,4,5,NA,NA,0,0,7.42,0.43,8.31,0.42,decaysPerMinutePerGram,0.89,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,5,6,NA,NA,0,0,6.67,0.34,7.37,0.33,decaysPerMinutePerGram,0.7,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,6,7,NA,NA,0,0,5.82,0.39,6.37,0.38,decaysPerMinutePerGram,0.55,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,7,8,NA,NA,0.24,0.06,6.29,0.38,6.88,0.36,decaysPerMinutePerGram,0.59,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,8,9,NA,NA,0,0,4.94,0.32,5.53,0.3,decaysPerMinutePerGram,0.59,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,9,10,NA,NA,0,0,3.14,0.39,3.8,0.37,decaysPerMinutePerGram,0.67,0.13,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,10,11,NA,NA,0,0,2.4,0.23,3.19,0.22,decaysPerMinutePerGram,0.78,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,11,12,NA,NA,0,0,2.69,0.23,3.63,0.22,decaysPerMinutePerGram,0.94,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,12,13,NA,NA,0.4,0.04,3.15,0.26,3.76,0.24,decaysPerMinutePerGram,0.62,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,13,14,NA,NA,0.91,0.09,2.16,0.37,3.3,0.34,decaysPerMinutePerGram,1.14,0.13,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,14,15,NA,NA,0.82,0.06,2.79,0.27,3.76,0.26,decaysPerMinutePerGram,0.97,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,15,16,NA,NA,0.62,0.1,3.82,0.41,4.51,0.4,decaysPerMinutePerGram,0.69,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,16,17,NA,NA,0,0,2.64,0.42,3.35,0.4,decaysPerMinutePerGram,0.72,0.14,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,17,18,NA,NA,0.24,0.08,4.4,0.42,5.09,0.4,decaysPerMinutePerGram,0.7,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,18,19,NA,NA,0,0,7.89,0.5,8.92,0.48,decaysPerMinutePerGram,1.03,0.13,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,19,20,NA,NA,0,0,10.53,0.54,11.03,0.52,decaysPerMinutePerGram,0.5,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,20,21,NA,NA,0,0,7.25,0.39,7.83,0.38,decaysPerMinutePerGram,0.58,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,21,22,NA,NA,0,0,4.51,0.39,5.16,0.37,decaysPerMinutePerGram,0.65,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,22,23,NA,NA,0,0,2.98,0.26,3.64,0.25,decaysPerMinutePerGram,0.66,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,23,24,NA,NA,0,0,2.24,0.3,3.93,0.28,decaysPerMinutePerGram,1.69,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,24,25,NA,NA,0,0,2.73,0.33,3.18,0.31,decaysPerMinutePerGram,0.45,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,25,26,NA,NA,0,0,0.49,0.32,1.51,0.29,decaysPerMinutePerGram,1.02,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,26,27,NA,NA,0,0,1.09,0.29,1.89,0.27,decaysPerMinutePerGram,0.8,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,27,28,NA,NA,0,0,0.86,0.2,1.81,0.18,decaysPerMinutePerGram,0.95,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,28,29,NA,NA,0,0,0.49,0.21,1.69,0.2,decaysPerMinutePerGram,1.2,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,29,30,NA,NA,0,0,0.89,0.26,2.04,0.25,decaysPerMinutePerGram,1.15,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,30,32,NA,NA,0,0,0.34,0.14,1.4,0.13,decaysPerMinutePerGram,1.06,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,32,34,NA,NA,0,0,0.05,0.15,1.28,0.14,decaysPerMinutePerGram,1.23,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,34,36,NA,NA,0,0,0.15,0.17,1.37,0.16,decaysPerMinutePerGram,1.22,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,0,1,NA,NA,0,0,22.04,0.76,23.1,0.74,decaysPerMinutePerGram,1.06,0.15,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,1,2,NA,NA,0,0,8.33,0.48,9.2,0.47,decaysPerMinutePerGram,0.86,0.13,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,2,3,NA,NA,0,0,4.35,0.37,5.03,0.35,decaysPerMinutePerGram,0.68,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,3,4,NA,NA,0.14,0.05,3.55,0.3,4.23,0.28,decaysPerMinutePerGram,0.68,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,4,5,NA,NA,0,0,2.98,0.43,3.74,0.41,decaysPerMinutePerGram,0.76,0.13,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,5,6,NA,NA,0,0,3.8,0.37,4.83,0.35,decaysPerMinutePerGram,1.03,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,6,7,NA,NA,0.16,0.05,4.63,0.3,5.22,0.29,decaysPerMinutePerGram,0.59,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,7,8,NA,NA,0,0,7.67,0.36,8.72,0.35,decaysPerMinutePerGram,1.05,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,8,9,NA,NA,0.18,0.04,9.2,0.34,10.07,0.33,decaysPerMinutePerGram,0.87,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,9,10,NA,NA,0,0,7.59,0.41,8.21,0.4,decaysPerMinutePerGram,0.62,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,10,11,NA,NA,0,0,7.9,0.39,8.78,0.38,decaysPerMinutePerGram,0.88,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,11,12,NA,NA,0.43,0.04,6.4,0.23,7.44,0.22,decaysPerMinutePerGram,1.04,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,12,13,NA,NA,0.47,0.04,4.26,0.23,5.16,0.22,decaysPerMinutePerGram,0.91,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,13,14,NA,NA,0.63,0.05,3.44,0.24,4.4,0.23,decaysPerMinutePerGram,0.96,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,14,15,NA,NA,1.65,0.07,4.7,0.26,5.68,0.25,decaysPerMinutePerGram,0.98,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,15,16,NA,NA,2.2,0.08,5.05,0.45,6,0.28,decaysPerMinutePerGram,0.95,0.36,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,16,17,NA,NA,1.25,0.07,3.47,0.38,4.65,0.25,decaysPerMinutePerGram,1.18,0.29,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,17,18,NA,NA,0.61,0.05,3.76,0.37,4.73,0.26,decaysPerMinutePerGram,0.97,0.27,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,18,19,NA,NA,0.29,0.07,3.07,0.4,3.84,0.38,decaysPerMinutePerGram,0.77,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,19,20,NA,NA,0.25,0.05,2.9,0.32,3.8,0.27,decaysPerMinutePerGram,0.9,0.18,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,20,21,NA,NA,0.17,0.05,2.28,0.33,3.23,0.3,decaysPerMinutePerGram,0.95,0.15,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,21,22,NA,NA,0.21,0.06,1.48,0.32,2.47,0.3,decaysPerMinutePerGram,0.99,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,22,23,NA,NA,0,0,1.35,0.27,2.32,0.25,decaysPerMinutePerGram,0.97,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,23,24,NA,NA,0,0,3.03,0.34,3.82,0.32,decaysPerMinutePerGram,0.8,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,24,25,NA,NA,0,0,2.31,0.3,3.05,0.29,decaysPerMinutePerGram,0.74,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,25,26,NA,NA,0,0,2.01,0.31,3.17,0.3,decaysPerMinutePerGram,1.15,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,26,27,NA,NA,0,0,2.94,0.29,4,0.27,decaysPerMinutePerGram,1.05,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,27,28,NA,NA,0,0,2.42,0.29,3.53,0.27,decaysPerMinutePerGram,1.11,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,28,29,NA,NA,0,0,2.03,0.22,3.15,0.21,decaysPerMinutePerGram,1.12,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,29,30,NA,NA,0,0,0.6,0.16,2.16,0.15,decaysPerMinutePerGram,1.56,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,30,32,NA,NA,0,0,-0.12,0.12,1.34,0.12,decaysPerMinutePerGram,1.46,0.04,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,32,34,NA,NA,0,0,0.15,0.16,1.57,0.15,decaysPerMinutePerGram,1.42,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,34,36,NA,NA,0,0,-0.03,0.14,1.3,0.13,decaysPerMinutePerGram,1.32,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,0,1,NA,NA,0,0,17.08,0.54,18.44,0.52,decaysPerMinutePerGram,1.36,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,1,2,NA,NA,0,0,5.1,0.39,6.3,0.38,decaysPerMinutePerGram,1.2,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,2,3,NA,NA,0,0,3.61,0.24,4.68,0.23,decaysPerMinutePerGram,1.06,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,3,4,NA,NA,0.11,0.03,3,0.24,4.2,0.23,decaysPerMinutePerGram,1.2,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,4,5,NA,NA,0.16,0.04,3.89,0.25,5,0.24,decaysPerMinutePerGram,1.1,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,5,6,NA,NA,0,0,8.06,0.38,9.32,0.37,decaysPerMinutePerGram,1.26,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,6,7,NA,NA,0.16,0.04,4.13,0.29,5.56,0.28,decaysPerMinutePerGram,1.43,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,7,8,NA,NA,0.14,0.04,4.14,0.3,5.62,0.28,decaysPerMinutePerGram,1.48,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,8,9,NA,NA,0,0,4.37,0.25,5.66,0.23,decaysPerMinutePerGram,1.29,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,9,10,NA,NA,0.2,0.05,5.05,0.38,6.25,0.36,decaysPerMinutePerGram,1.2,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,10,11,NA,NA,0.35,0.04,4.89,0.24,6.2,0.23,decaysPerMinutePerGram,1.31,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,11,12,NA,NA,0.24,0.04,5.9,0.24,7.2,0.23,decaysPerMinutePerGram,1.3,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,12,13,NA,NA,0.76,0.09,6.67,0.26,8.1,0.25,decaysPerMinutePerGram,1.42,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,13,14,NA,NA,0.42,0.04,4.44,0.26,5.89,0.25,decaysPerMinutePerGram,1.45,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,14,15,NA,NA,0.61,0.04,2.45,0.2,3.88,0.19,decaysPerMinutePerGram,1.43,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,15,16,NA,NA,1.45,0.06,2.07,0.23,3.48,0.22,decaysPerMinutePerGram,1.41,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,16,17,NA,NA,1.67,0.06,2.53,0.23,3.82,0.21,decaysPerMinutePerGram,1.29,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,17,18,NA,NA,1.08,0.06,2.01,0.24,3.48,0.23,decaysPerMinutePerGram,1.47,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,18,19,NA,NA,0.46,0.04,2.29,0.21,3.57,0.2,decaysPerMinutePerGram,1.28,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,19,20,NA,NA,0.23,0.03,1.8,0.15,3.11,0.14,decaysPerMinutePerGram,1.31,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,20,21,NA,NA,0.19,0.04,2.46,0.22,3.9,0.21,decaysPerMinutePerGram,1.44,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,21,22,NA,NA,0,0,1.61,0.25,2.75,0.23,decaysPerMinutePerGram,1.14,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,22,23,NA,NA,0,0,1.4,0.22,2.47,0.21,decaysPerMinutePerGram,1.07,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,23,24,NA,NA,0,0,0.69,0.22,2.03,0.2,decaysPerMinutePerGram,1.34,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,24,25,NA,NA,0,0,0.08,0.1,1.45,0.1,decaysPerMinutePerGram,1.45,0.04,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,25,26,NA,NA,0,0,0.18,0.14,1.94,0.13,decaysPerMinutePerGram,1.76,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,26,27,NA,NA,0,0,0.16,0.1,1.9,0.1,decaysPerMinutePerGram,1.74,0.04,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,27,28,NA,NA,0,0,-0.09,0.12,1.61,0.11,decaysPerMinutePerGram,1.7,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,28,29,NA,NA,0,0,-0.2,0.14,1.36,0.13,decaysPerMinutePerGram,1.56,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,29,30,NA,NA,0,0,0.02,0.17,1.59,0.16,decaysPerMinutePerGram,1.57,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,0,1,NA,NA,0,0,16.76,0.74,18.09,0.72,decaysPerMinutePerGram,1.32,0.16,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,1,2,NA,NA,0,0,14.4,0.73,16.1,0.71,decaysPerMinutePerGram,1.7,0.17,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,2,3,NA,NA,0,0,9.77,0.5,10.75,0.48,decaysPerMinutePerGram,0.98,0.13,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,3,4,NA,NA,0.22,0.04,5.99,0.28,7.08,0.27,decaysPerMinutePerGram,1.09,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,4,5,NA,NA,0,0,5.13,0.34,6.14,0.33,decaysPerMinutePerGram,1.02,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,5,6,NA,NA,0,0,4.37,0.32,5.73,0.3,decaysPerMinutePerGram,1.35,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,6,7,NA,NA,0,0,3.52,0.23,4.57,0.22,decaysPerMinutePerGram,1.05,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,7,8,NA,NA,0,0,3.39,0.39,4.43,0.37,decaysPerMinutePerGram,1.04,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,8,9,NA,NA,0,0,4.49,0.28,5.61,0.27,decaysPerMinutePerGram,1.12,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,9,10,NA,NA,0,0,7.52,0.47,8.62,0.45,decaysPerMinutePerGram,1.1,0.13,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,10,11,NA,NA,0.33,0.05,6.05,0.34,7.04,0.32,decaysPerMinutePerGram,0.98,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,11,12,NA,NA,0.24,0.06,3.14,0.32,4.08,0.31,decaysPerMinutePerGram,0.93,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,12,13,NA,NA,0.26,0.04,1.96,0.21,3.09,0.2,decaysPerMinutePerGram,1.13,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,13,14,NA,NA,0.28,0.06,1.65,0.3,2.72,0.27,decaysPerMinutePerGram,1.07,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,14,15,NA,NA,0.39,0.06,2.14,0.32,3.4,0.31,decaysPerMinutePerGram,1.26,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,15,16,NA,NA,0.28,0.06,1.66,0.32,2.78,0.3,decaysPerMinutePerGram,1.12,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,16,17,NA,NA,0.5,0.06,1.35,0.27,2.56,0.25,decaysPerMinutePerGram,1.21,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,17,18,NA,NA,0.59,0.06,2.15,0.28,3.47,0.27,decaysPerMinutePerGram,1.32,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,18,19,NA,NA,1.43,0.06,4.87,0.28,6.25,0.27,decaysPerMinutePerGram,1.38,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,19,20,NA,NA,1.62,0.07,5.78,0.32,7.23,0.3,decaysPerMinutePerGram,1.45,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,20,21,NA,NA,1.03,0.06,6.62,0.31,8.01,0.3,decaysPerMinutePerGram,1.39,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,21,22,NA,NA,0.97,0.07,6.83,0.34,8.12,0.32,decaysPerMinutePerGram,1.3,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,22,23,NA,NA,0.79,0.06,6.58,0.31,8.04,0.3,decaysPerMinutePerGram,1.45,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,23,24,NA,NA,0.7,0.05,3.42,0.26,4.53,0.24,decaysPerMinutePerGram,1.11,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,24,25,NA,NA,0.3,0.04,2.93,0.23,4.4,0.22,decaysPerMinutePerGram,1.47,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,25,26,NA,NA,0.27,0.07,2.16,0.26,3.44,0.25,decaysPerMinutePerGram,1.28,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,26,27,NA,NA,0,0,1.71,0.19,3.1,0.18,decaysPerMinutePerGram,1.39,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,27,28,NA,NA,0,0,1.89,0.28,3.17,0.27,decaysPerMinutePerGram,1.28,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,28,29,NA,NA,0,0,1.39,0.23,3.03,0.22,decaysPerMinutePerGram,1.64,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,29,30,NA,NA,0,0,0.82,0.27,2.09,0.26,decaysPerMinutePerGram,1.28,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,30,32,NA,NA,0,0,1.23,0.18,2.6,0.16,decaysPerMinutePerGram,1.37,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,32,34,NA,NA,0,0,1.3,0.19,2.36,0.18,decaysPerMinutePerGram,1.06,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,34,36,NA,NA,0,0,0.8,0.15,2.22,0.14,decaysPerMinutePerGram,1.42,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,36,38,NA,NA,0,0,0.56,0.14,2.02,0.13,decaysPerMinutePerGram,1.46,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,38,40,NA,NA,0,0,0.44,0.13,1.84,0.12,decaysPerMinutePerGram,1.39,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,40,42,NA,NA,0,0,0.2,0.14,1.76,0.13,decaysPerMinutePerGram,1.56,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,42,44,NA,NA,0,0,0.18,0.13,1.83,0.12,decaysPerMinutePerGram,1.65,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,44,46,NA,NA,0,0,0.26,0.12,1.67,0.11,decaysPerMinutePerGram,1.4,0.04,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,46,48,NA,NA,0,0,0.1,0.17,1.44,0.16,decaysPerMinutePerGram,1.34,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,0,1,NA,NA,0,0,14.54,0.38,15.69,0.37,decaysPerMinutePerGram,1.16,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,1,2,NA,NA,0,0,14.21,0.39,15.61,0.38,decaysPerMinutePerGram,1.4,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,2,3,NA,NA,0.22,0.04,17.3,0.4,18.85,0.39,decaysPerMinutePerGram,1.56,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,3,4,NA,NA,0,0,19.67,0.72,21.3,0.7,decaysPerMinutePerGram,1.63,0.16,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,4,5,NA,NA,0.17,0.03,14.65,0.28,15.93,0.27,decaysPerMinutePerGram,1.29,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,5,6,NA,NA,0,0,13.14,0.37,14.68,0.36,decaysPerMinutePerGram,1.54,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,6,7,NA,NA,0.21,0.02,11.23,0.22,12.5,0.22,decaysPerMinutePerGram,1.27,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,7,8,NA,NA,0.16,0.03,9.29,0.22,10.72,0.22,decaysPerMinutePerGram,1.43,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,8,9,NA,NA,0.19,0.04,9.14,0.3,10.45,0.29,decaysPerMinutePerGram,1.3,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,9,10,NA,NA,0.27,0.03,9.32,0.27,10.59,0.26,decaysPerMinutePerGram,1.26,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,10,11,NA,NA,0,0,9.97,0.41,10.95,0.4,decaysPerMinutePerGram,0.99,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,11,12,NA,NA,0.4,0.06,9.12,0.46,10.55,0.44,decaysPerMinutePerGram,1.43,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,12,13,NA,NA,0.34,0.06,6.66,0.34,7.93,0.33,decaysPerMinutePerGram,1.27,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,13,14,NA,NA,0.46,0.05,4.63,0.32,6.26,0.31,decaysPerMinutePerGram,1.63,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,14,15,NA,NA,0.5,0.05,4.55,0.31,6.16,0.29,decaysPerMinutePerGram,1.61,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,15,16,NA,NA,0.5,0.05,4.53,0.26,5.96,0.25,decaysPerMinutePerGram,1.43,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,16,17,NA,NA,0.74,0.05,3.82,0.34,5.23,0.33,decaysPerMinutePerGram,1.41,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,17,18,NA,NA,0.73,0.07,5.64,0.35,6.96,0.33,decaysPerMinutePerGram,1.32,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,18,19,NA,NA,1.4,0.07,5.76,0.31,7.16,0.29,decaysPerMinutePerGram,1.39,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,19,20,NA,NA,1.22,0.05,3.23,0.19,4.66,0.18,decaysPerMinutePerGram,1.43,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,20,21,NA,NA,0.9,0.05,2.28,0.22,3.82,0.2,decaysPerMinutePerGram,1.54,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,21,22,NA,NA,0.66,0.05,1.23,0.24,2.89,0.23,decaysPerMinutePerGram,1.66,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,22,23,NA,NA,0.57,0.05,1.18,0.23,2.88,0.21,decaysPerMinutePerGram,1.69,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,23,24,NA,NA,0.43,0.04,0.77,0.17,2.31,0.16,decaysPerMinutePerGram,1.54,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,24,25,NA,NA,0.25,0.03,1.09,0.2,2.48,0.19,decaysPerMinutePerGram,1.39,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,25,26,NA,NA,0.21,0.04,2.23,0.23,3.53,0.22,decaysPerMinutePerGram,1.3,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,26,27,NA,NA,0,0,2.52,0.27,4,0.25,decaysPerMinutePerGram,1.48,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,27,28,NA,NA,0,0,3.14,0.26,4.39,0.25,decaysPerMinutePerGram,1.25,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,28,29,NA,NA,0,0,3.86,0.29,5.31,0.28,decaysPerMinutePerGram,1.45,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,29,30,NA,NA,0,0,3.27,0.25,4.69,0.24,decaysPerMinutePerGram,1.43,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,30,32,NA,NA,0.25,0.03,2.4,0.24,3.84,0.23,decaysPerMinutePerGram,1.45,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,32,34,NA,NA,0,0,2.77,0.22,3.98,0.21,decaysPerMinutePerGram,1.21,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,34,36,NA,NA,0,0,1.63,0.21,2.73,0.2,decaysPerMinutePerGram,1.11,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,36,38,NA,NA,0,0,0.73,0.16,2.04,0.14,decaysPerMinutePerGram,1.31,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,38,40,NA,NA,0,0,0.07,0.11,1.83,0.1,decaysPerMinutePerGram,1.76,0.04,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,0,1,NA,NA,0,0,5.18,0.52,6.44,0.5,decaysPerMinutePerGram,1.26,0.14,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,1,2,NA,NA,0,0,1.96,0.31,3.08,0.29,decaysPerMinutePerGram,1.12,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,2,3,NA,NA,0,0,0.92,0.22,2.01,0.2,decaysPerMinutePerGram,1.09,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,3,4,NA,NA,0.24,0.06,1.06,0.3,2.57,0.28,decaysPerMinutePerGram,1.51,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,4,5,NA,NA,0,0,0.42,0.28,2.78,0.26,decaysPerMinutePerGram,2.35,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,5,6,NA,NA,0,0,0.38,0.16,1.52,0.15,decaysPerMinutePerGram,1.15,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,6,7,NA,NA,0,0,0.02,0.28,1.57,0.25,decaysPerMinutePerGram,1.55,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,7,8,NA,NA,0,0,-0.27,0.17,1.3,0.14,decaysPerMinutePerGram,1.57,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,8,9,NA,NA,0,0,-0.27,0.17,1.36,0.16,decaysPerMinutePerGram,1.63,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,9,10,NA,NA,0,0,0.35,0.18,1.74,0.17,decaysPerMinutePerGram,1.39,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,10,11,NA,NA,0,0,0,0.16,1.13,0.14,decaysPerMinutePerGram,1.13,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,11,12,NA,NA,0,0,0.3,0.23,1.45,0.21,decaysPerMinutePerGram,1.16,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,12,13,NA,NA,0,0,0.09,0.13,1.28,0.12,decaysPerMinutePerGram,1.19,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,13,14,NA,NA,0,0,0.14,0.18,1.5,0.16,decaysPerMinutePerGram,1.37,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,14,15,NA,NA,0,0,0.07,0.18,1.38,0.17,decaysPerMinutePerGram,1.31,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,15,16,NA,NA,0,0,-0.19,0.19,1.29,0.17,decaysPerMinutePerGram,1.49,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,16,17,NA,NA,0,0,0.76,0.29,2.18,0.27,decaysPerMinutePerGram,1.42,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,17,18,NA,NA,0,0,-0.35,0.27,1.76,0.23,decaysPerMinutePerGram,2.11,0.14,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,18,19,NA,NA,0,0,-0.22,0.15,1.37,0.13,decaysPerMinutePerGram,1.59,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,19,20,NA,NA,0,0,0.27,0.21,1.57,0.19,decaysPerMinutePerGram,1.31,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,20,21,NA,NA,0,0,0,0.27,1.36,0.19,decaysPerMinutePerGram,1.36,0.19,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,21,22,NA,NA,0,0,0.98,0.26,1.38,0.25,decaysPerMinutePerGram,0.4,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,22,23,NA,NA,0,0,0.19,0.22,1.61,0.19,decaysPerMinutePerGram,1.42,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,23,24,NA,NA,0,0,-0.02,0.26,1.79,0.23,decaysPerMinutePerGram,1.81,0.13,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,24,25,NA,NA,0,0,0.13,0.27,1.69,0.25,decaysPerMinutePerGram,1.56,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,25,26,NA,NA,0,0,0.21,0.27,1.55,0.24,decaysPerMinutePerGram,1.34,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,26,27,NA,NA,0,0,0.1,0.35,1.33,0.33,decaysPerMinutePerGram,1.22,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,27,28,NA,NA,0,0,-0.2,0.24,1.44,0.21,decaysPerMinutePerGram,1.64,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,28,29,NA,NA,0,0,0.12,0.2,1.29,0.17,decaysPerMinutePerGram,1.17,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,29,30,NA,NA,0,0,0,0,0,0,decaysPerMinutePerGram,0,0,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,0,1,NA,NA,0,0,11.69,0.59,12.85,0.58,decaysPerMinutePerGram,1.16,0.13,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,1,2,NA,NA,0.22,0.08,7.01,0.38,8.03,0.37,decaysPerMinutePerGram,1.01,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,2,3,NA,NA,0.15,0.04,3.12,0.27,4.06,0.26,decaysPerMinutePerGram,0.94,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,3,4,NA,NA,0,0,2.16,0.23,3.36,0.22,decaysPerMinutePerGram,1.21,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,4,5,NA,NA,0,0,0.41,0.21,1.61,0.18,decaysPerMinutePerGram,1.2,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,5,6,NA,NA,0,0,0.33,0.25,1.97,0.23,decaysPerMinutePerGram,1.65,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,6,7,NA,NA,0,0,0.84,0.26,2.04,0.24,decaysPerMinutePerGram,1.2,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,7,8,NA,NA,0,0,0.05,0.26,1.26,0.23,decaysPerMinutePerGram,1.21,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,8,9,NA,NA,0,0,-0.09,0.24,1.29,0.21,decaysPerMinutePerGram,1.38,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,9,10,NA,NA,0,0,-0.21,0.37,1.65,0.34,decaysPerMinutePerGram,1.87,0.13,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,10,11,NA,NA,0,0,0.84,0.25,2.32,0.23,decaysPerMinutePerGram,1.48,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,11,12,NA,NA,0,0,0.13,0.21,1.92,0.2,decaysPerMinutePerGram,1.79,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,12,13,NA,NA,0,0,0.2,0.28,1.94,0.26,decaysPerMinutePerGram,1.74,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,13,14,NA,NA,0,0,-0.06,0.23,1.9,0.21,decaysPerMinutePerGram,1.96,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,14,15,NA,NA,0,0,0.1,0.15,2.2,0.14,decaysPerMinutePerGram,2.1,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,15,16,NA,NA,0,0,-0.12,0.13,1.61,0.12,decaysPerMinutePerGram,1.73,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,16,17,NA,NA,0,0,-0.01,0.15,1.97,0.14,decaysPerMinutePerGram,1.98,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,17,18,NA,NA,0,0,0.05,0.16,2.05,0.15,decaysPerMinutePerGram,2,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,18,19,NA,NA,0,0,-0.04,0.15,1.57,0.14,decaysPerMinutePerGram,1.61,0.05,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,19,20,NA,NA,0,0,0.18,0.21,1.66,0.19,decaysPerMinutePerGram,1.48,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,20,21,NA,NA,0,0,0.61,0.24,2.34,0.22,decaysPerMinutePerGram,1.74,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,21,22,NA,NA,0,0,0.32,0.21,2.01,0.2,decaysPerMinutePerGram,1.69,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,22,23,NA,NA,0,0,0.09,0.24,1.95,0.22,decaysPerMinutePerGram,1.86,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,23,24,NA,NA,0,0,-0.11,0.2,1.73,0.19,decaysPerMinutePerGram,1.84,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,24,25,NA,NA,0,0,0,0,0,0,decaysPerMinutePerGram,0,0,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,25,26,NA,NA,0,0,0,0,0,0,decaysPerMinutePerGram,0,0,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,26,27,NA,NA,0,0,-0.07,0.2,2.05,0.19,decaysPerMinutePerGram,2.12,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,27,28,NA,NA,0,0,-0.06,0.16,1.77,0.15,decaysPerMinutePerGram,1.83,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,28,29,NA,NA,0,0,0.1,0.2,1.91,0.18,decaysPerMinutePerGram,1.81,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,29,30,NA,NA,0,0,0,0,0,0,decaysPerMinutePerGram,0,0,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,0,1,NA,NA,0.17,0.05,10.13,0.38,11.53,0.37,decaysPerMinutePerGram,1.4,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,1,2,NA,NA,0.21,0.05,7.84,0.32,8.3,0.31,decaysPerMinutePerGram,0.46,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,2,3,NA,NA,0,0,3.62,0.34,4.66,0.32,decaysPerMinutePerGram,1.03,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,3,4,NA,NA,0,0,3.75,0.4,4.62,0.38,decaysPerMinutePerGram,0.87,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,4,5,NA,NA,0,0,2.63,0.41,3.77,0.39,decaysPerMinutePerGram,1.14,0.14,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,5,6,NA,NA,0,0,1.54,0.38,2.76,0.36,decaysPerMinutePerGram,1.23,0.12,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,6,7,NA,NA,0,0,1.76,0.25,2.81,0.23,decaysPerMinutePerGram,1.06,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,7,8,NA,NA,0,0,3.01,0.27,3.45,0.26,decaysPerMinutePerGram,0.44,0.06,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,8,9,NA,NA,0,0,1.89,0.28,2.94,0.26,decaysPerMinutePerGram,1.05,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,9,10,NA,NA,0,0,0.99,0.28,2.25,0.26,decaysPerMinutePerGram,1.26,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,10,11,NA,NA,0,0,1.48,0.26,2.14,0.26,decaysPerMinutePerGram,0.66,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,11,12,NA,NA,0,0,0.98,0.24,2.1,0.22,decaysPerMinutePerGram,1.12,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,12,13,NA,NA,0,0,0.8,0.24,2.04,0.22,decaysPerMinutePerGram,1.23,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,13,14,NA,NA,0,0,0.68,0.32,2.06,0.27,decaysPerMinutePerGram,1.37,0.18,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,14,15,NA,NA,0,0,0.21,0.21,1.81,0.2,decaysPerMinutePerGram,1.6,0.08,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,15,16,NA,NA,0,0,0,0,0,0,decaysPerMinutePerGram,0,0,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,16,17,NA,NA,0,0,0.24,0.18,1.88,0.16,decaysPerMinutePerGram,1.64,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,17,18,NA,NA,0,0,0.11,0.19,1.42,0.17,decaysPerMinutePerGram,1.31,0.07,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,18,19,NA,NA,0,0,-0.01,0.2,1.65,0.18,decaysPerMinutePerGram,1.66,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,19,20,NA,NA,0,0,1.05,0.34,1.86,0.33,decaysPerMinutePerGram,0.81,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,20,21,NA,NA,0,0,0.22,0.21,1.68,0.18,decaysPerMinutePerGram,1.46,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,21,22,NA,NA,0,0,0.03,0.17,1.65,0.15,decaysPerMinutePerGram,1.62,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,22,23,NA,NA,0,0,0.68,0.21,1.41,0.2,decaysPerMinutePerGram,0.73,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,23,24,NA,NA,0,0,-0.28,0.19,1.24,0.16,decaysPerMinutePerGram,1.51,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,24,25,NA,NA,0,0,0.86,0.3,2.14,0.28,decaysPerMinutePerGram,1.28,0.11,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,25,26,NA,NA,0,0,0.12,0.2,1.63,0.18,decaysPerMinutePerGram,1.51,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,26,27,NA,NA,0,0,0.15,0.18,1.79,0.15,decaysPerMinutePerGram,1.64,0.1,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,27,28,NA,NA,0,0,-0.16,0.21,1.36,0.19,decaysPerMinutePerGram,1.51,0.09,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,28,29,NA,NA,0,0,0,0,0,0,decaysPerMinutePerGram,0,0,decaysPerMinutePerGram
-Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,29,30,NA,NA,0,0,0,0,0,0,decaysPerMinutePerGram,0,0,decaysPerMinutePerGram
+study_id,site_id,core_id,method_id,depth_min,depth_max,dry_bulk_density,fraction_carbon,cs137_activity,cs137_activity_se,cs137_unit,excess_pb210_activity,excess_pb210_activity_se,total_pb210_activity,total_pb210_activity_se,pb210_unit,ra226_activity,ra226_activity_se,ra226_unit
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,0,2,0.14,0.2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,2,4,0.16,0.196,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,4,6,0.17,0.214,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,6,8,0.15,0.215,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,8,10,0.16,0.21899999999999997,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,10,12,0.14,0.196,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,12,14,0.16,0.22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,14,16,0.12,0.19899999999999998,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,16,18,0.11,0.191,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,18,20,0.14,0.21899999999999997,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,20,22,0.12,0.212,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,22,24,0.16,0.249,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,24,26,0.18,0.254,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,26,28,0.16,0.22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,28,30,0.2,0.195,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,30,32,0.23,0.152,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,32,34,0.23,0.154,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,34,36,0.22,0.155,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,36,38,0.2,0.124,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,38,40,0.29,0.14300000000000002,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,40,42,0.21,0.145,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,42,44,0.16,0.174,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,44,46,0.19,0.16699999999999998,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,46,48,0.16,0.193,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,48,50,0.15,0.16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,50,52,0.17,0.131,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,52,54,0.18,0.13699999999999998,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,54,56,0.16,0.142,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,56,58,0.14,0.161,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,58,60,0.18,0.107,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,60,62,0.2,0.099,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,65,67,0.21,0.11800000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,70,72,0.2,0.11699999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,75,77,0.29,0.071,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,80,82,0.28,0.096,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,85,87,0.4,0.069,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,90,92,0.45,0.062,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,soil carbon measured,98,100,0.39,0.051,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,0,2,0.1,0.264,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,2,4,0.22,0.244,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,4,6,0.16,0.25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,6,8,0.15,0.244,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,8,10,0.14,0.255,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,10,12,0.14,0.22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,12,14,0.14,0.228,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,14,16,0.13,0.223,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,16,18,0.11,0.22399999999999998,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,18,20,0.11,0.26899999999999996,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,20,22,0.14,0.24600000000000002,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,22,24,0.17,0.249,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,24,26,0.16,0.22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,26,28,0.21,0.243,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,28,30,0.27,0.172,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,30,32,0.29,0.14800000000000002,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,32,34,0.28,0.12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,34,36,0.21,0.16399999999999998,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,36,38,0.15,0.198,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,38,40,0.13,0.184,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,40,42,0.21,0.172,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,42,44,0.25,0.14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,44,46,0.19,0.155,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,46,48,0.16,0.168,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,48,50,0.2,0.142,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,50,52,0.28,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,52,54,0.32,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,54,56,0.39,0.062,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,56,58,0.39,0.063,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,58,60,0.4,0.055999999999999994,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,60,62,0.4,0.063,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,65,67,0.36,0.064,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,70,72,0.4,0.055999999999999994,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,75,77,0.37,0.066,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,80,82,0.36,0.068,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,85,87,0.39,0.06,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,90,92,0.31,0.067,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_2,soil carbon measured,95,97,NA,0.09699999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,0,2,0.19,0.195,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,2,4,0.2,0.207,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,4,6,0.15,0.21600000000000003,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,6,8,0.19,0.183,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,8,10,0.19,0.162,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,10,12,0.2,0.175,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,12,14,0.2,0.152,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,14,16,0.23,0.161,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,16,18,0.2,0.151,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,18,20,0.18,0.184,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,20,22,0.17,0.18899999999999997,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,22,24,0.15,0.195,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,24,26,0.22,0.165,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,26,28,0.19,0.16399999999999998,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,28,30,0.52,0.105,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,30,32,0.58,0.08900000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,32,34,0.32,0.094,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,34,36,0.31,0.10300000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,36,38,0.3,0.10099999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,38,40,0.35,0.08800000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,40,42,0.36,0.10400000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,42,44,0.4,0.107,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,44,46,0.36,0.095,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,46,48,0.33,0.10800000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,48,50,0.47,0.083,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,50,52,0.42,0.073,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,52,54,0.35,0.091,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,54,56,0.35,0.095,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,56,58,0.4,0.124,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,58,60,0.32,0.106,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,60,62,0.54,0.05,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,65,67,0.39,0.076,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,70,72,0.31,0.099,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,75,77,0.33,0.095,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,80,82,0.66,0.053,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,85,87,0.3,0.16899999999999998,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,90,92,0.22,0.18899999999999997,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,95,97,0.23,0.168,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_1,soil carbon measured,100,102,NA,0.134,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,0,2,0.27,0.121,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,2,4,0.28,0.135,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,4,6,0.31,0.11599999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,6,8,0.33,0.094,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,8,10,0.26,0.113,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,10,12,0.29,0.109,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,12,14,0.34,0.099,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,14,16,0.36,0.105,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,16,18,0.34,0.10400000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,18,20,0.37,0.142,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,20,22,0.22,0.18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,22,24,0.31,0.09699999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,24,26,0.84,0.046,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,26,28,0.61,0.062,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,28,30,0.4,0.081,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,30,32,0.48,0.095,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,32,34,0.39,0.10800000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,34,36,0.3,0.09699999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,36,38,0.35,0.08,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,38,40,0.46,0.091,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,40,42,0.5,0.08800000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,42,44,0.39,0.091,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,44,46,0.5,0.081,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,46,48,0.4,0.071,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,48,50,0.49,0.055999999999999994,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,50,52,0.92,0.021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,52,54,0.89,0.047,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,54,56,0.76,0.034,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,56,58,0.56,0.065,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,58,60,0.45,0.077,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,60,62,0.41,0.065,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,65,67,0.49,0.063,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,70,72,0.88,0.031,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,75,77,0.95,0.027000000000000003,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,80,82,0.53,0.076,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,MARSH_2_2,soil carbon measured,85,87,0.5,0.067,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,0,2,0.18,0.152,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,2,4,0.2,0.16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,4,6,0.19,0.185,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,6,8,0.2,0.138,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,8,10,0.21,0.128,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,10,12,0.18,0.149,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,12,14,0.18,0.162,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,14,16,0.18,0.147,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,16,18,0.19,0.142,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,18,20,0.23,0.11900000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,20,22,0.23,0.099,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,22,24,0.25,0.08199999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,24,26,0.29,0.099,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,26,28,0.22,0.10300000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,28,30,0.21,0.11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,30,32,0.25,0.111,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,32,34,0.2,0.134,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,34,36,0.26,0.11599999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,36,38,0.36,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,38,40,0.32,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,40,42,0.41,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,42,44,0.39,0.07,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,44,46,0.46,0.063,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,46,48,0.37,0.076,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,48,50,0.29,0.08800000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,50,52,0.28,0.11900000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,52,54,0.32,0.11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,54,56,0.47,0.049,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,56,58,0.49,0.059000000000000004,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,58,60,0.26,0.091,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,60,62,0.28,0.096,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,65,67,0.28,0.11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,70,72,0.2,0.15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,75,77,0.26,0.111,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,80,82,0.17,0.142,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,85,87,0.17,0.142,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,90,92,0.22,0.12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_1,soil carbon measured,95,97,0.28,0.124,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,0,2,0.25,0.10800000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,2,4,0.24,0.122,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,4,6,0.27,0.131,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,6,8,0.34,0.10099999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,8,10,0.25,0.124,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,10,12,0.33,0.11900000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,12,14,0.29,0.111,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,14,16,0.26,0.109,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,16,18,0.3,0.08900000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,18,20,0.39,0.081,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,20,22,0.34,0.08800000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,22,24,0.3,0.091,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,24,26,0.23,0.102,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,26,28,0.22,0.11599999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,28,30,0.23,0.11699999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,30,32,0.2,0.096,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,32,34,0.2,0.1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,34,36,0.21,0.135,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,36,38,0.26,0.10400000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,38,40,0.46,0.055,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,40,42,0.51,0.073,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,42,44,0.37,0.099,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,44,46,0.43,0.085,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,46,48,0.47,0.076,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,48,50,0.46,0.07200000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,50,52,0.66,0.055999999999999994,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,52,54,0.54,0.069,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,54,56,0.55,0.061,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,56,58,0.53,0.063,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,58,60,0.46,0.08199999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,60,62,0.39,0.1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,65,67,0.41,0.07,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,70,72,0.26,0.066,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,75,77,0.28,0.075,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,80,82,0.33,0.07200000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,85,87,0.47,0.1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,90,92,0.34,0.092,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,95,97,0.17,0.115,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,MARSH_3_2,soil carbon measured,100,102,NA,0.12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,0,2,0.12,0.175,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,2,4,0.24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,4,6,0.29,0.141,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,6,8,0.25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,8,10,0.29,0.175,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,10,12,0.23,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,13,16,0.29,0.135,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,16,18,0.26,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,19,21,0.17,0.159,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,21,24,0.17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,24,27,0.17,0.14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,27,30,0.21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,30,33,0.24,0.177,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,33,36,0.21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,36,39,0.25,0.128,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,39,41,0.29,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,41,44,0.3,0.11199999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,44,47,0.22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,POND_1,soil carbon measured,47,49,0.16,0.109,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,0,2,0.14,0.184,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,2,4,0.16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,4,6,0.21,0.158,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,6,8,0.18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,8,10,0.22,0.128,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,10,12,0.27,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,13,16,0.49,0.057,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,16,18,0.5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,19,21,0.33,0.063,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,21,24,0.52,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,24,27,0.35,0.063,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,27,30,0.45,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,30,33,0.29,0.079,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,33,36,0.29,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,36,39,0.2,0.115,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,39,41,0.21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,41,44,0.22,0.11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,44,47,0.25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_2,POND_2,soil carbon measured,47,49,0.21,0.111,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,0,2,0.23,0.1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,2,4,0.16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,4,6,0.14,0.149,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,6,8,0.17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,8,10,0.18,0.109,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,10,12,0.24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,13,16,0.33,0.115,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,16,18,0.26,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,19,21,0.21,0.083,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,21,24,0.29,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,24,27,0.24,0.091,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,27,30,0.18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,30,33,0.35,0.095,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,33,36,0.35,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,36,39,0.22,0.07,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,39,41,0.18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,41,44,0.18,0.095,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,44,47,0.23,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_3,POND_3,soil carbon measured,47,49,0.13,0.11699999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,0,1,NA,NA,0,0,disintegrationsPerMinutePerGram,7.94,0.46,8.18,0.45,disintegrationsPerMinutePerGram,0.25,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,1,2,NA,NA,0,0,disintegrationsPerMinutePerGram,8.12,0.47,8.64,0.45,disintegrationsPerMinutePerGram,0.51,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,2,3,NA,NA,0,0,disintegrationsPerMinutePerGram,8.81,0.53,9.53,0.51,disintegrationsPerMinutePerGram,0.72,0.13,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,3,4,NA,NA,0,0,disintegrationsPerMinutePerGram,10.55,0.42,10.55,0.42,disintegrationsPerMinutePerGram,0,0,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,4,5,NA,NA,0,0,disintegrationsPerMinutePerGram,13.88,0.54,14.43,0.53,disintegrationsPerMinutePerGram,0.55,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,5,6,NA,NA,0,0,disintegrationsPerMinutePerGram,11.91,0.52,11.91,0.52,disintegrationsPerMinutePerGram,0,0,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,6,7,NA,NA,0,0,disintegrationsPerMinutePerGram,8.48,0.43,9.03,0.41,disintegrationsPerMinutePerGram,0.55,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,7,8,NA,NA,0,0,disintegrationsPerMinutePerGram,6.91,0.48,7.5,0.47,disintegrationsPerMinutePerGram,0.58,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,8,9,NA,NA,0.19,0.06,disintegrationsPerMinutePerGram,6.74,0.36,7.37,0.35,disintegrationsPerMinutePerGram,0.62,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,9,10,NA,NA,0,0,disintegrationsPerMinutePerGram,8.33,0.52,8.82,0.5,disintegrationsPerMinutePerGram,0.49,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,10,11,NA,NA,0,0,disintegrationsPerMinutePerGram,9.73,0.63,10.47,0.62,disintegrationsPerMinutePerGram,0.74,0.14,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,11,12,NA,NA,0.21,0.06,disintegrationsPerMinutePerGram,11.26,0.48,11.8,0.47,disintegrationsPerMinutePerGram,0.55,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,12,13,NA,NA,0,0,disintegrationsPerMinutePerGram,9.76,0.66,10.18,0.63,disintegrationsPerMinutePerGram,0.42,0.21,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,13,14,NA,NA,0.3,0.06,disintegrationsPerMinutePerGram,5.76,0.37,6.57,0.36,disintegrationsPerMinutePerGram,0.8,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,14,15,NA,NA,0.78,0.09,disintegrationsPerMinutePerGram,4.53,0.44,5.06,0.42,disintegrationsPerMinutePerGram,0.54,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,15,16,NA,NA,1.29,0.1,disintegrationsPerMinutePerGram,8.53,0.51,9.5,0.49,disintegrationsPerMinutePerGram,0.97,0.13,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,16,17,NA,NA,3.24,0.14,disintegrationsPerMinutePerGram,6.02,0.5,7.2,0.47,disintegrationsPerMinutePerGram,1.18,0.15,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,17,18,NA,NA,2.4,0.16,disintegrationsPerMinutePerGram,5.33,0.51,6.58,0.48,disintegrationsPerMinutePerGram,1.25,0.16,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,18,19,NA,NA,1.83,0.1,disintegrationsPerMinutePerGram,4.87,0.36,5.97,0.34,disintegrationsPerMinutePerGram,1.1,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,19,20,NA,NA,0.85,0.06,disintegrationsPerMinutePerGram,3.75,0.25,4.4,0.24,disintegrationsPerMinutePerGram,0.65,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,20,21,NA,NA,0,0,disintegrationsPerMinutePerGram,2.75,0.26,3.5,0.24,disintegrationsPerMinutePerGram,0.74,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,21,22,NA,NA,0,0,disintegrationsPerMinutePerGram,6.2,0.73,7.71,0.69,disintegrationsPerMinutePerGram,1.51,0.25,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,22,23,NA,NA,0,0,disintegrationsPerMinutePerGram,5.18,0.28,5.82,0.27,disintegrationsPerMinutePerGram,0.65,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,23,24,NA,NA,0,0,disintegrationsPerMinutePerGram,2.39,0.45,3.38,0.41,disintegrationsPerMinutePerGram,0.99,0.17,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,24,25,NA,NA,0,0,disintegrationsPerMinutePerGram,1.94,0.28,2.59,0.27,disintegrationsPerMinutePerGram,0.65,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,25,26,NA,NA,0,0,disintegrationsPerMinutePerGram,1.22,0.33,1.7,0.31,disintegrationsPerMinutePerGram,0.48,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,26,27,NA,NA,0,0,disintegrationsPerMinutePerGram,0.86,0.3,1.79,0.28,disintegrationsPerMinutePerGram,0.93,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,27,28,NA,NA,0,0,disintegrationsPerMinutePerGram,1.4,0.31,1.99,0.3,disintegrationsPerMinutePerGram,0.59,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,28,29,NA,NA,0,0,disintegrationsPerMinutePerGram,0.47,0.19,1.15,0.17,disintegrationsPerMinutePerGram,0.68,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,29,30,NA,NA,0,0,disintegrationsPerMinutePerGram,0.92,0.23,1.78,0.21,disintegrationsPerMinutePerGram,0.85,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,30,32,NA,NA,0,0,disintegrationsPerMinutePerGram,0.22,0.13,1.08,0.12,disintegrationsPerMinutePerGram,0.86,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,32,34,NA,NA,0,0,disintegrationsPerMinutePerGram,0.5,0.15,1.38,0.14,disintegrationsPerMinutePerGram,0.88,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_1,radioisotopes measured,34,36,NA,NA,0,0,disintegrationsPerMinutePerGram,0.73,0.19,1.68,0.18,disintegrationsPerMinutePerGram,0.95,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,0,1,NA,NA,0,0,disintegrationsPerMinutePerGram,25.1,0.74,26.19,0.73,disintegrationsPerMinutePerGram,1.08,0.15,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,1,2,NA,NA,0,0,disintegrationsPerMinutePerGram,13.17,0.57,14.28,0.56,disintegrationsPerMinutePerGram,1.12,0.14,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,2,3,NA,NA,0,0,disintegrationsPerMinutePerGram,9.55,0.32,9.98,0.31,disintegrationsPerMinutePerGram,0.43,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,3,4,NA,NA,0,0,disintegrationsPerMinutePerGram,7.72,0.38,8.18,0.36,disintegrationsPerMinutePerGram,0.46,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,4,5,NA,NA,0,0,disintegrationsPerMinutePerGram,7.42,0.43,8.31,0.42,disintegrationsPerMinutePerGram,0.89,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,5,6,NA,NA,0,0,disintegrationsPerMinutePerGram,6.67,0.34,7.37,0.33,disintegrationsPerMinutePerGram,0.7,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,6,7,NA,NA,0,0,disintegrationsPerMinutePerGram,5.82,0.39,6.37,0.38,disintegrationsPerMinutePerGram,0.55,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,7,8,NA,NA,0.24,0.06,disintegrationsPerMinutePerGram,6.29,0.38,6.88,0.36,disintegrationsPerMinutePerGram,0.59,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,8,9,NA,NA,0,0,disintegrationsPerMinutePerGram,4.94,0.32,5.53,0.3,disintegrationsPerMinutePerGram,0.59,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,9,10,NA,NA,0,0,disintegrationsPerMinutePerGram,3.14,0.39,3.8,0.37,disintegrationsPerMinutePerGram,0.67,0.13,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,10,11,NA,NA,0,0,disintegrationsPerMinutePerGram,2.4,0.23,3.19,0.22,disintegrationsPerMinutePerGram,0.78,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,11,12,NA,NA,0,0,disintegrationsPerMinutePerGram,2.69,0.23,3.63,0.22,disintegrationsPerMinutePerGram,0.94,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,12,13,NA,NA,0.4,0.04,disintegrationsPerMinutePerGram,3.15,0.26,3.76,0.24,disintegrationsPerMinutePerGram,0.62,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,13,14,NA,NA,0.91,0.09,disintegrationsPerMinutePerGram,2.16,0.37,3.3,0.34,disintegrationsPerMinutePerGram,1.14,0.13,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,14,15,NA,NA,0.82,0.06,disintegrationsPerMinutePerGram,2.79,0.27,3.76,0.26,disintegrationsPerMinutePerGram,0.97,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,15,16,NA,NA,0.62,0.1,disintegrationsPerMinutePerGram,3.82,0.41,4.51,0.4,disintegrationsPerMinutePerGram,0.69,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,16,17,NA,NA,0,0,disintegrationsPerMinutePerGram,2.64,0.42,3.35,0.4,disintegrationsPerMinutePerGram,0.72,0.14,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,17,18,NA,NA,0.24,0.08,disintegrationsPerMinutePerGram,4.4,0.42,5.09,0.4,disintegrationsPerMinutePerGram,0.7,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,18,19,NA,NA,0,0,disintegrationsPerMinutePerGram,7.89,0.5,8.92,0.48,disintegrationsPerMinutePerGram,1.03,0.13,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,19,20,NA,NA,0,0,disintegrationsPerMinutePerGram,10.53,0.54,11.03,0.52,disintegrationsPerMinutePerGram,0.5,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,20,21,NA,NA,0,0,disintegrationsPerMinutePerGram,7.25,0.39,7.83,0.38,disintegrationsPerMinutePerGram,0.58,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,21,22,NA,NA,0,0,disintegrationsPerMinutePerGram,4.51,0.39,5.16,0.37,disintegrationsPerMinutePerGram,0.65,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,22,23,NA,NA,0,0,disintegrationsPerMinutePerGram,2.98,0.26,3.64,0.25,disintegrationsPerMinutePerGram,0.66,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,23,24,NA,NA,0,0,disintegrationsPerMinutePerGram,2.24,0.3,3.93,0.28,disintegrationsPerMinutePerGram,1.69,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,24,25,NA,NA,0,0,disintegrationsPerMinutePerGram,2.73,0.33,3.18,0.31,disintegrationsPerMinutePerGram,0.45,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,25,26,NA,NA,0,0,disintegrationsPerMinutePerGram,0.49,0.32,1.51,0.29,disintegrationsPerMinutePerGram,1.02,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,26,27,NA,NA,0,0,disintegrationsPerMinutePerGram,1.09,0.29,1.89,0.27,disintegrationsPerMinutePerGram,0.8,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,27,28,NA,NA,0,0,disintegrationsPerMinutePerGram,0.86,0.2,1.81,0.18,disintegrationsPerMinutePerGram,0.95,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,28,29,NA,NA,0,0,disintegrationsPerMinutePerGram,0.49,0.21,1.69,0.2,disintegrationsPerMinutePerGram,1.2,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,29,30,NA,NA,0,0,disintegrationsPerMinutePerGram,0.89,0.26,2.04,0.25,disintegrationsPerMinutePerGram,1.15,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,30,32,NA,NA,0,0,disintegrationsPerMinutePerGram,0.34,0.14,1.4,0.13,disintegrationsPerMinutePerGram,1.06,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,32,34,NA,NA,0,0,disintegrationsPerMinutePerGram,0.05,0.15,1.28,0.14,disintegrationsPerMinutePerGram,1.23,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,MARSH_1_2,radioisotopes measured,34,36,NA,NA,0,0,disintegrationsPerMinutePerGram,0.15,0.17,1.37,0.16,disintegrationsPerMinutePerGram,1.22,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,0,1,NA,NA,0,0,disintegrationsPerMinutePerGram,22.04,0.76,23.1,0.74,disintegrationsPerMinutePerGram,1.06,0.15,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,1,2,NA,NA,0,0,disintegrationsPerMinutePerGram,8.33,0.48,9.2,0.47,disintegrationsPerMinutePerGram,0.86,0.13,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,2,3,NA,NA,0,0,disintegrationsPerMinutePerGram,4.35,0.37,5.03,0.35,disintegrationsPerMinutePerGram,0.68,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,3,4,NA,NA,0.14,0.05,disintegrationsPerMinutePerGram,3.55,0.3,4.23,0.28,disintegrationsPerMinutePerGram,0.68,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,4,5,NA,NA,0,0,disintegrationsPerMinutePerGram,2.98,0.43,3.74,0.41,disintegrationsPerMinutePerGram,0.76,0.13,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,5,6,NA,NA,0,0,disintegrationsPerMinutePerGram,3.8,0.37,4.83,0.35,disintegrationsPerMinutePerGram,1.03,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,6,7,NA,NA,0.16,0.05,disintegrationsPerMinutePerGram,4.63,0.3,5.22,0.29,disintegrationsPerMinutePerGram,0.59,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,7,8,NA,NA,0,0,disintegrationsPerMinutePerGram,7.67,0.36,8.72,0.35,disintegrationsPerMinutePerGram,1.05,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,8,9,NA,NA,0.18,0.04,disintegrationsPerMinutePerGram,9.2,0.34,10.07,0.33,disintegrationsPerMinutePerGram,0.87,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,9,10,NA,NA,0,0,disintegrationsPerMinutePerGram,7.59,0.41,8.21,0.4,disintegrationsPerMinutePerGram,0.62,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,10,11,NA,NA,0,0,disintegrationsPerMinutePerGram,7.9,0.39,8.78,0.38,disintegrationsPerMinutePerGram,0.88,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,11,12,NA,NA,0.43,0.04,disintegrationsPerMinutePerGram,6.4,0.23,7.44,0.22,disintegrationsPerMinutePerGram,1.04,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,12,13,NA,NA,0.47,0.04,disintegrationsPerMinutePerGram,4.26,0.23,5.16,0.22,disintegrationsPerMinutePerGram,0.91,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,13,14,NA,NA,0.63,0.05,disintegrationsPerMinutePerGram,3.44,0.24,4.4,0.23,disintegrationsPerMinutePerGram,0.96,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,14,15,NA,NA,1.65,0.07,disintegrationsPerMinutePerGram,4.7,0.26,5.68,0.25,disintegrationsPerMinutePerGram,0.98,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,15,16,NA,NA,2.2,0.08,disintegrationsPerMinutePerGram,5.05,0.45,6,0.28,disintegrationsPerMinutePerGram,0.95,0.36,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,16,17,NA,NA,1.25,0.07,disintegrationsPerMinutePerGram,3.47,0.38,4.65,0.25,disintegrationsPerMinutePerGram,1.18,0.29,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,17,18,NA,NA,0.61,0.05,disintegrationsPerMinutePerGram,3.76,0.37,4.73,0.26,disintegrationsPerMinutePerGram,0.97,0.27,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,18,19,NA,NA,0.29,0.07,disintegrationsPerMinutePerGram,3.07,0.4,3.84,0.38,disintegrationsPerMinutePerGram,0.77,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,19,20,NA,NA,0.25,0.05,disintegrationsPerMinutePerGram,2.9,0.32,3.8,0.27,disintegrationsPerMinutePerGram,0.9,0.18,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,20,21,NA,NA,0.17,0.05,disintegrationsPerMinutePerGram,2.28,0.33,3.23,0.3,disintegrationsPerMinutePerGram,0.95,0.15,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,21,22,NA,NA,0.21,0.06,disintegrationsPerMinutePerGram,1.48,0.32,2.47,0.3,disintegrationsPerMinutePerGram,0.99,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,22,23,NA,NA,0,0,disintegrationsPerMinutePerGram,1.35,0.27,2.32,0.25,disintegrationsPerMinutePerGram,0.97,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,23,24,NA,NA,0,0,disintegrationsPerMinutePerGram,3.03,0.34,3.82,0.32,disintegrationsPerMinutePerGram,0.8,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,24,25,NA,NA,0,0,disintegrationsPerMinutePerGram,2.31,0.3,3.05,0.29,disintegrationsPerMinutePerGram,0.74,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,25,26,NA,NA,0,0,disintegrationsPerMinutePerGram,2.01,0.31,3.17,0.3,disintegrationsPerMinutePerGram,1.15,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,26,27,NA,NA,0,0,disintegrationsPerMinutePerGram,2.94,0.29,4,0.27,disintegrationsPerMinutePerGram,1.05,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,27,28,NA,NA,0,0,disintegrationsPerMinutePerGram,2.42,0.29,3.53,0.27,disintegrationsPerMinutePerGram,1.11,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,28,29,NA,NA,0,0,disintegrationsPerMinutePerGram,2.03,0.22,3.15,0.21,disintegrationsPerMinutePerGram,1.12,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,29,30,NA,NA,0,0,disintegrationsPerMinutePerGram,0.6,0.16,2.16,0.15,disintegrationsPerMinutePerGram,1.56,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,30,32,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.12,0.12,1.34,0.12,disintegrationsPerMinutePerGram,1.46,0.04,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,32,34,NA,NA,0,0,disintegrationsPerMinutePerGram,0.15,0.16,1.57,0.15,disintegrationsPerMinutePerGram,1.42,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_1,radioisotopes measured,34,36,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.03,0.14,1.3,0.13,disintegrationsPerMinutePerGram,1.32,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,0,1,NA,NA,0,0,disintegrationsPerMinutePerGram,17.08,0.54,18.44,0.52,disintegrationsPerMinutePerGram,1.36,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,1,2,NA,NA,0,0,disintegrationsPerMinutePerGram,5.1,0.39,6.3,0.38,disintegrationsPerMinutePerGram,1.2,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,2,3,NA,NA,0,0,disintegrationsPerMinutePerGram,3.61,0.24,4.68,0.23,disintegrationsPerMinutePerGram,1.06,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,3,4,NA,NA,0.11,0.03,disintegrationsPerMinutePerGram,3,0.24,4.2,0.23,disintegrationsPerMinutePerGram,1.2,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,4,5,NA,NA,0.16,0.04,disintegrationsPerMinutePerGram,3.89,0.25,5,0.24,disintegrationsPerMinutePerGram,1.1,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,5,6,NA,NA,0,0,disintegrationsPerMinutePerGram,8.06,0.38,9.32,0.37,disintegrationsPerMinutePerGram,1.26,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,6,7,NA,NA,0.16,0.04,disintegrationsPerMinutePerGram,4.13,0.29,5.56,0.28,disintegrationsPerMinutePerGram,1.43,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,7,8,NA,NA,0.14,0.04,disintegrationsPerMinutePerGram,4.14,0.3,5.62,0.28,disintegrationsPerMinutePerGram,1.48,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,8,9,NA,NA,0,0,disintegrationsPerMinutePerGram,4.37,0.25,5.66,0.23,disintegrationsPerMinutePerGram,1.29,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,9,10,NA,NA,0.2,0.05,disintegrationsPerMinutePerGram,5.05,0.38,6.25,0.36,disintegrationsPerMinutePerGram,1.2,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,10,11,NA,NA,0.35,0.04,disintegrationsPerMinutePerGram,4.89,0.24,6.2,0.23,disintegrationsPerMinutePerGram,1.31,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,11,12,NA,NA,0.24,0.04,disintegrationsPerMinutePerGram,5.9,0.24,7.2,0.23,disintegrationsPerMinutePerGram,1.3,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,12,13,NA,NA,0.76,0.09,disintegrationsPerMinutePerGram,6.67,0.26,8.1,0.25,disintegrationsPerMinutePerGram,1.42,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,13,14,NA,NA,0.42,0.04,disintegrationsPerMinutePerGram,4.44,0.26,5.89,0.25,disintegrationsPerMinutePerGram,1.45,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,14,15,NA,NA,0.61,0.04,disintegrationsPerMinutePerGram,2.45,0.2,3.88,0.19,disintegrationsPerMinutePerGram,1.43,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,15,16,NA,NA,1.45,0.06,disintegrationsPerMinutePerGram,2.07,0.23,3.48,0.22,disintegrationsPerMinutePerGram,1.41,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,16,17,NA,NA,1.67,0.06,disintegrationsPerMinutePerGram,2.53,0.23,3.82,0.21,disintegrationsPerMinutePerGram,1.29,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,17,18,NA,NA,1.08,0.06,disintegrationsPerMinutePerGram,2.01,0.24,3.48,0.23,disintegrationsPerMinutePerGram,1.47,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,18,19,NA,NA,0.46,0.04,disintegrationsPerMinutePerGram,2.29,0.21,3.57,0.2,disintegrationsPerMinutePerGram,1.28,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,19,20,NA,NA,0.23,0.03,disintegrationsPerMinutePerGram,1.8,0.15,3.11,0.14,disintegrationsPerMinutePerGram,1.31,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,20,21,NA,NA,0.19,0.04,disintegrationsPerMinutePerGram,2.46,0.22,3.9,0.21,disintegrationsPerMinutePerGram,1.44,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,21,22,NA,NA,0,0,disintegrationsPerMinutePerGram,1.61,0.25,2.75,0.23,disintegrationsPerMinutePerGram,1.14,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,22,23,NA,NA,0,0,disintegrationsPerMinutePerGram,1.4,0.22,2.47,0.21,disintegrationsPerMinutePerGram,1.07,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,23,24,NA,NA,0,0,disintegrationsPerMinutePerGram,0.69,0.22,2.03,0.2,disintegrationsPerMinutePerGram,1.34,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,24,25,NA,NA,0,0,disintegrationsPerMinutePerGram,0.08,0.1,1.45,0.1,disintegrationsPerMinutePerGram,1.45,0.04,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,25,26,NA,NA,0,0,disintegrationsPerMinutePerGram,0.18,0.14,1.94,0.13,disintegrationsPerMinutePerGram,1.76,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,26,27,NA,NA,0,0,disintegrationsPerMinutePerGram,0.16,0.1,1.9,0.1,disintegrationsPerMinutePerGram,1.74,0.04,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,27,28,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.09,0.12,1.61,0.11,disintegrationsPerMinutePerGram,1.7,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,28,29,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.2,0.14,1.36,0.13,disintegrationsPerMinutePerGram,1.56,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,MARSH_2_2,radioisotopes measured,29,30,NA,NA,0,0,disintegrationsPerMinutePerGram,0.02,0.17,1.59,0.16,disintegrationsPerMinutePerGram,1.57,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,0,1,NA,NA,0,0,disintegrationsPerMinutePerGram,16.76,0.74,18.09,0.72,disintegrationsPerMinutePerGram,1.32,0.16,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,1,2,NA,NA,0,0,disintegrationsPerMinutePerGram,14.4,0.73,16.1,0.71,disintegrationsPerMinutePerGram,1.7,0.17,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,2,3,NA,NA,0,0,disintegrationsPerMinutePerGram,9.77,0.5,10.75,0.48,disintegrationsPerMinutePerGram,0.98,0.13,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,3,4,NA,NA,0.22,0.04,disintegrationsPerMinutePerGram,5.99,0.28,7.08,0.27,disintegrationsPerMinutePerGram,1.09,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,4,5,NA,NA,0,0,disintegrationsPerMinutePerGram,5.13,0.34,6.14,0.33,disintegrationsPerMinutePerGram,1.02,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,5,6,NA,NA,0,0,disintegrationsPerMinutePerGram,4.37,0.32,5.73,0.3,disintegrationsPerMinutePerGram,1.35,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,6,7,NA,NA,0,0,disintegrationsPerMinutePerGram,3.52,0.23,4.57,0.22,disintegrationsPerMinutePerGram,1.05,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,7,8,NA,NA,0,0,disintegrationsPerMinutePerGram,3.39,0.39,4.43,0.37,disintegrationsPerMinutePerGram,1.04,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,8,9,NA,NA,0,0,disintegrationsPerMinutePerGram,4.49,0.28,5.61,0.27,disintegrationsPerMinutePerGram,1.12,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,9,10,NA,NA,0,0,disintegrationsPerMinutePerGram,7.52,0.47,8.62,0.45,disintegrationsPerMinutePerGram,1.1,0.13,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,10,11,NA,NA,0.33,0.05,disintegrationsPerMinutePerGram,6.05,0.34,7.04,0.32,disintegrationsPerMinutePerGram,0.98,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,11,12,NA,NA,0.24,0.06,disintegrationsPerMinutePerGram,3.14,0.32,4.08,0.31,disintegrationsPerMinutePerGram,0.93,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,12,13,NA,NA,0.26,0.04,disintegrationsPerMinutePerGram,1.96,0.21,3.09,0.2,disintegrationsPerMinutePerGram,1.13,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,13,14,NA,NA,0.28,0.06,disintegrationsPerMinutePerGram,1.65,0.3,2.72,0.27,disintegrationsPerMinutePerGram,1.07,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,14,15,NA,NA,0.39,0.06,disintegrationsPerMinutePerGram,2.14,0.32,3.4,0.31,disintegrationsPerMinutePerGram,1.26,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,15,16,NA,NA,0.28,0.06,disintegrationsPerMinutePerGram,1.66,0.32,2.78,0.3,disintegrationsPerMinutePerGram,1.12,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,16,17,NA,NA,0.5,0.06,disintegrationsPerMinutePerGram,1.35,0.27,2.56,0.25,disintegrationsPerMinutePerGram,1.21,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,17,18,NA,NA,0.59,0.06,disintegrationsPerMinutePerGram,2.15,0.28,3.47,0.27,disintegrationsPerMinutePerGram,1.32,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,18,19,NA,NA,1.43,0.06,disintegrationsPerMinutePerGram,4.87,0.28,6.25,0.27,disintegrationsPerMinutePerGram,1.38,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,19,20,NA,NA,1.62,0.07,disintegrationsPerMinutePerGram,5.78,0.32,7.23,0.3,disintegrationsPerMinutePerGram,1.45,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,20,21,NA,NA,1.03,0.06,disintegrationsPerMinutePerGram,6.62,0.31,8.01,0.3,disintegrationsPerMinutePerGram,1.39,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,21,22,NA,NA,0.97,0.07,disintegrationsPerMinutePerGram,6.83,0.34,8.12,0.32,disintegrationsPerMinutePerGram,1.3,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,22,23,NA,NA,0.79,0.06,disintegrationsPerMinutePerGram,6.58,0.31,8.04,0.3,disintegrationsPerMinutePerGram,1.45,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,23,24,NA,NA,0.7,0.05,disintegrationsPerMinutePerGram,3.42,0.26,4.53,0.24,disintegrationsPerMinutePerGram,1.11,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,24,25,NA,NA,0.3,0.04,disintegrationsPerMinutePerGram,2.93,0.23,4.4,0.22,disintegrationsPerMinutePerGram,1.47,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,25,26,NA,NA,0.27,0.07,disintegrationsPerMinutePerGram,2.16,0.26,3.44,0.25,disintegrationsPerMinutePerGram,1.28,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,26,27,NA,NA,0,0,disintegrationsPerMinutePerGram,1.71,0.19,3.1,0.18,disintegrationsPerMinutePerGram,1.39,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,27,28,NA,NA,0,0,disintegrationsPerMinutePerGram,1.89,0.28,3.17,0.27,disintegrationsPerMinutePerGram,1.28,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,28,29,NA,NA,0,0,disintegrationsPerMinutePerGram,1.39,0.23,3.03,0.22,disintegrationsPerMinutePerGram,1.64,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,29,30,NA,NA,0,0,disintegrationsPerMinutePerGram,0.82,0.27,2.09,0.26,disintegrationsPerMinutePerGram,1.28,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,30,32,NA,NA,0,0,disintegrationsPerMinutePerGram,1.23,0.18,2.6,0.16,disintegrationsPerMinutePerGram,1.37,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,32,34,NA,NA,0,0,disintegrationsPerMinutePerGram,1.3,0.19,2.36,0.18,disintegrationsPerMinutePerGram,1.06,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,34,36,NA,NA,0,0,disintegrationsPerMinutePerGram,0.8,0.15,2.22,0.14,disintegrationsPerMinutePerGram,1.42,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,36,38,NA,NA,0,0,disintegrationsPerMinutePerGram,0.56,0.14,2.02,0.13,disintegrationsPerMinutePerGram,1.46,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,38,40,NA,NA,0,0,disintegrationsPerMinutePerGram,0.44,0.13,1.84,0.12,disintegrationsPerMinutePerGram,1.39,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,40,42,NA,NA,0,0,disintegrationsPerMinutePerGram,0.2,0.14,1.76,0.13,disintegrationsPerMinutePerGram,1.56,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,42,44,NA,NA,0,0,disintegrationsPerMinutePerGram,0.18,0.13,1.83,0.12,disintegrationsPerMinutePerGram,1.65,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,44,46,NA,NA,0,0,disintegrationsPerMinutePerGram,0.26,0.12,1.67,0.11,disintegrationsPerMinutePerGram,1.4,0.04,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_1,radioisotopes measured,46,48,NA,NA,0,0,disintegrationsPerMinutePerGram,0.1,0.17,1.44,0.16,disintegrationsPerMinutePerGram,1.34,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,0,1,NA,NA,0,0,disintegrationsPerMinutePerGram,14.54,0.38,15.69,0.37,disintegrationsPerMinutePerGram,1.16,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,1,2,NA,NA,0,0,disintegrationsPerMinutePerGram,14.21,0.39,15.61,0.38,disintegrationsPerMinutePerGram,1.4,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,2,3,NA,NA,0.22,0.04,disintegrationsPerMinutePerGram,17.3,0.4,18.85,0.39,disintegrationsPerMinutePerGram,1.56,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,3,4,NA,NA,0,0,disintegrationsPerMinutePerGram,19.67,0.72,21.3,0.7,disintegrationsPerMinutePerGram,1.63,0.16,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,4,5,NA,NA,0.17,0.03,disintegrationsPerMinutePerGram,14.65,0.28,15.93,0.27,disintegrationsPerMinutePerGram,1.29,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,5,6,NA,NA,0,0,disintegrationsPerMinutePerGram,13.14,0.37,14.68,0.36,disintegrationsPerMinutePerGram,1.54,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,6,7,NA,NA,0.21,0.02,disintegrationsPerMinutePerGram,11.23,0.22,12.5,0.22,disintegrationsPerMinutePerGram,1.27,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,7,8,NA,NA,0.16,0.03,disintegrationsPerMinutePerGram,9.29,0.22,10.72,0.22,disintegrationsPerMinutePerGram,1.43,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,8,9,NA,NA,0.19,0.04,disintegrationsPerMinutePerGram,9.14,0.3,10.45,0.29,disintegrationsPerMinutePerGram,1.3,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,9,10,NA,NA,0.27,0.03,disintegrationsPerMinutePerGram,9.32,0.27,10.59,0.26,disintegrationsPerMinutePerGram,1.26,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,10,11,NA,NA,0,0,disintegrationsPerMinutePerGram,9.97,0.41,10.95,0.4,disintegrationsPerMinutePerGram,0.99,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,11,12,NA,NA,0.4,0.06,disintegrationsPerMinutePerGram,9.12,0.46,10.55,0.44,disintegrationsPerMinutePerGram,1.43,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,12,13,NA,NA,0.34,0.06,disintegrationsPerMinutePerGram,6.66,0.34,7.93,0.33,disintegrationsPerMinutePerGram,1.27,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,13,14,NA,NA,0.46,0.05,disintegrationsPerMinutePerGram,4.63,0.32,6.26,0.31,disintegrationsPerMinutePerGram,1.63,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,14,15,NA,NA,0.5,0.05,disintegrationsPerMinutePerGram,4.55,0.31,6.16,0.29,disintegrationsPerMinutePerGram,1.61,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,15,16,NA,NA,0.5,0.05,disintegrationsPerMinutePerGram,4.53,0.26,5.96,0.25,disintegrationsPerMinutePerGram,1.43,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,16,17,NA,NA,0.74,0.05,disintegrationsPerMinutePerGram,3.82,0.34,5.23,0.33,disintegrationsPerMinutePerGram,1.41,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,17,18,NA,NA,0.73,0.07,disintegrationsPerMinutePerGram,5.64,0.35,6.96,0.33,disintegrationsPerMinutePerGram,1.32,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,18,19,NA,NA,1.4,0.07,disintegrationsPerMinutePerGram,5.76,0.31,7.16,0.29,disintegrationsPerMinutePerGram,1.39,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,19,20,NA,NA,1.22,0.05,disintegrationsPerMinutePerGram,3.23,0.19,4.66,0.18,disintegrationsPerMinutePerGram,1.43,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,20,21,NA,NA,0.9,0.05,disintegrationsPerMinutePerGram,2.28,0.22,3.82,0.2,disintegrationsPerMinutePerGram,1.54,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,21,22,NA,NA,0.66,0.05,disintegrationsPerMinutePerGram,1.23,0.24,2.89,0.23,disintegrationsPerMinutePerGram,1.66,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,22,23,NA,NA,0.57,0.05,disintegrationsPerMinutePerGram,1.18,0.23,2.88,0.21,disintegrationsPerMinutePerGram,1.69,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,23,24,NA,NA,0.43,0.04,disintegrationsPerMinutePerGram,0.77,0.17,2.31,0.16,disintegrationsPerMinutePerGram,1.54,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,24,25,NA,NA,0.25,0.03,disintegrationsPerMinutePerGram,1.09,0.2,2.48,0.19,disintegrationsPerMinutePerGram,1.39,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,25,26,NA,NA,0.21,0.04,disintegrationsPerMinutePerGram,2.23,0.23,3.53,0.22,disintegrationsPerMinutePerGram,1.3,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,26,27,NA,NA,0,0,disintegrationsPerMinutePerGram,2.52,0.27,4,0.25,disintegrationsPerMinutePerGram,1.48,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,27,28,NA,NA,0,0,disintegrationsPerMinutePerGram,3.14,0.26,4.39,0.25,disintegrationsPerMinutePerGram,1.25,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,28,29,NA,NA,0,0,disintegrationsPerMinutePerGram,3.86,0.29,5.31,0.28,disintegrationsPerMinutePerGram,1.45,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,29,30,NA,NA,0,0,disintegrationsPerMinutePerGram,3.27,0.25,4.69,0.24,disintegrationsPerMinutePerGram,1.43,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,30,32,NA,NA,0.25,0.03,disintegrationsPerMinutePerGram,2.4,0.24,3.84,0.23,disintegrationsPerMinutePerGram,1.45,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,32,34,NA,NA,0,0,disintegrationsPerMinutePerGram,2.77,0.22,3.98,0.21,disintegrationsPerMinutePerGram,1.21,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,34,36,NA,NA,0,0,disintegrationsPerMinutePerGram,1.63,0.21,2.73,0.2,disintegrationsPerMinutePerGram,1.11,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,36,38,NA,NA,0,0,disintegrationsPerMinutePerGram,0.73,0.16,2.04,0.14,disintegrationsPerMinutePerGram,1.31,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,MARSH_3_2,radioisotopes measured,38,40,NA,NA,0,0,disintegrationsPerMinutePerGram,0.07,0.11,1.83,0.1,disintegrationsPerMinutePerGram,1.76,0.04,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,0,1,NA,NA,0,0,disintegrationsPerMinutePerGram,5.18,0.52,6.44,0.5,disintegrationsPerMinutePerGram,1.26,0.14,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,1,2,NA,NA,0,0,disintegrationsPerMinutePerGram,1.96,0.31,3.08,0.29,disintegrationsPerMinutePerGram,1.12,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,2,3,NA,NA,0,0,disintegrationsPerMinutePerGram,0.92,0.22,2.01,0.2,disintegrationsPerMinutePerGram,1.09,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,3,4,NA,NA,0.24,0.06,disintegrationsPerMinutePerGram,1.06,0.3,2.57,0.28,disintegrationsPerMinutePerGram,1.51,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,4,5,NA,NA,0,0,disintegrationsPerMinutePerGram,0.42,0.28,2.78,0.26,disintegrationsPerMinutePerGram,2.35,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,5,6,NA,NA,0,0,disintegrationsPerMinutePerGram,0.38,0.16,1.52,0.15,disintegrationsPerMinutePerGram,1.15,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,6,7,NA,NA,0,0,disintegrationsPerMinutePerGram,0.02,0.28,1.57,0.25,disintegrationsPerMinutePerGram,1.55,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,7,8,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.27,0.17,1.3,0.14,disintegrationsPerMinutePerGram,1.57,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,8,9,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.27,0.17,1.36,0.16,disintegrationsPerMinutePerGram,1.63,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,9,10,NA,NA,0,0,disintegrationsPerMinutePerGram,0.35,0.18,1.74,0.17,disintegrationsPerMinutePerGram,1.39,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,10,11,NA,NA,0,0,disintegrationsPerMinutePerGram,0,0.16,1.13,0.14,disintegrationsPerMinutePerGram,1.13,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,11,12,NA,NA,0,0,disintegrationsPerMinutePerGram,0.3,0.23,1.45,0.21,disintegrationsPerMinutePerGram,1.16,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,12,13,NA,NA,0,0,disintegrationsPerMinutePerGram,0.09,0.13,1.28,0.12,disintegrationsPerMinutePerGram,1.19,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,13,14,NA,NA,0,0,disintegrationsPerMinutePerGram,0.14,0.18,1.5,0.16,disintegrationsPerMinutePerGram,1.37,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,14,15,NA,NA,0,0,disintegrationsPerMinutePerGram,0.07,0.18,1.38,0.17,disintegrationsPerMinutePerGram,1.31,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,15,16,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.19,0.19,1.29,0.17,disintegrationsPerMinutePerGram,1.49,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,16,17,NA,NA,0,0,disintegrationsPerMinutePerGram,0.76,0.29,2.18,0.27,disintegrationsPerMinutePerGram,1.42,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,17,18,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.35,0.27,1.76,0.23,disintegrationsPerMinutePerGram,2.11,0.14,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,18,19,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.22,0.15,1.37,0.13,disintegrationsPerMinutePerGram,1.59,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,19,20,NA,NA,0,0,disintegrationsPerMinutePerGram,0.27,0.21,1.57,0.19,disintegrationsPerMinutePerGram,1.31,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,20,21,NA,NA,0,0,disintegrationsPerMinutePerGram,0,0.27,1.36,0.19,disintegrationsPerMinutePerGram,1.36,0.19,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,21,22,NA,NA,0,0,disintegrationsPerMinutePerGram,0.98,0.26,1.38,0.25,disintegrationsPerMinutePerGram,0.4,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,22,23,NA,NA,0,0,disintegrationsPerMinutePerGram,0.19,0.22,1.61,0.19,disintegrationsPerMinutePerGram,1.42,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,23,24,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.02,0.26,1.79,0.23,disintegrationsPerMinutePerGram,1.81,0.13,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,24,25,NA,NA,0,0,disintegrationsPerMinutePerGram,0.13,0.27,1.69,0.25,disintegrationsPerMinutePerGram,1.56,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,25,26,NA,NA,0,0,disintegrationsPerMinutePerGram,0.21,0.27,1.55,0.24,disintegrationsPerMinutePerGram,1.34,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,26,27,NA,NA,0,0,disintegrationsPerMinutePerGram,0.1,0.35,1.33,0.33,disintegrationsPerMinutePerGram,1.22,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,27,28,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.2,0.24,1.44,0.21,disintegrationsPerMinutePerGram,1.64,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,28,29,NA,NA,0,0,disintegrationsPerMinutePerGram,0.12,0.2,1.29,0.17,disintegrationsPerMinutePerGram,1.17,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_1,POND_1,radioisotopes measured,29,30,NA,NA,0,0,disintegrationsPerMinutePerGram,0,0,0,0,disintegrationsPerMinutePerGram,0,0,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,0,1,NA,NA,0,0,disintegrationsPerMinutePerGram,11.69,0.59,12.85,0.58,disintegrationsPerMinutePerGram,1.16,0.13,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,1,2,NA,NA,0.22,0.08,disintegrationsPerMinutePerGram,7.01,0.38,8.03,0.37,disintegrationsPerMinutePerGram,1.01,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,2,3,NA,NA,0.15,0.04,disintegrationsPerMinutePerGram,3.12,0.27,4.06,0.26,disintegrationsPerMinutePerGram,0.94,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,3,4,NA,NA,0,0,disintegrationsPerMinutePerGram,2.16,0.23,3.36,0.22,disintegrationsPerMinutePerGram,1.21,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,4,5,NA,NA,0,0,disintegrationsPerMinutePerGram,0.41,0.21,1.61,0.18,disintegrationsPerMinutePerGram,1.2,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,5,6,NA,NA,0,0,disintegrationsPerMinutePerGram,0.33,0.25,1.97,0.23,disintegrationsPerMinutePerGram,1.65,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,6,7,NA,NA,0,0,disintegrationsPerMinutePerGram,0.84,0.26,2.04,0.24,disintegrationsPerMinutePerGram,1.2,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,7,8,NA,NA,0,0,disintegrationsPerMinutePerGram,0.05,0.26,1.26,0.23,disintegrationsPerMinutePerGram,1.21,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,8,9,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.09,0.24,1.29,0.21,disintegrationsPerMinutePerGram,1.38,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,9,10,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.21,0.37,1.65,0.34,disintegrationsPerMinutePerGram,1.87,0.13,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,10,11,NA,NA,0,0,disintegrationsPerMinutePerGram,0.84,0.25,2.32,0.23,disintegrationsPerMinutePerGram,1.48,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,11,12,NA,NA,0,0,disintegrationsPerMinutePerGram,0.13,0.21,1.92,0.2,disintegrationsPerMinutePerGram,1.79,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,12,13,NA,NA,0,0,disintegrationsPerMinutePerGram,0.2,0.28,1.94,0.26,disintegrationsPerMinutePerGram,1.74,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,13,14,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.06,0.23,1.9,0.21,disintegrationsPerMinutePerGram,1.96,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,14,15,NA,NA,0,0,disintegrationsPerMinutePerGram,0.1,0.15,2.2,0.14,disintegrationsPerMinutePerGram,2.1,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,15,16,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.12,0.13,1.61,0.12,disintegrationsPerMinutePerGram,1.73,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,16,17,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.01,0.15,1.97,0.14,disintegrationsPerMinutePerGram,1.98,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,17,18,NA,NA,0,0,disintegrationsPerMinutePerGram,0.05,0.16,2.05,0.15,disintegrationsPerMinutePerGram,2,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,18,19,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.04,0.15,1.57,0.14,disintegrationsPerMinutePerGram,1.61,0.05,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,19,20,NA,NA,0,0,disintegrationsPerMinutePerGram,0.18,0.21,1.66,0.19,disintegrationsPerMinutePerGram,1.48,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,20,21,NA,NA,0,0,disintegrationsPerMinutePerGram,0.61,0.24,2.34,0.22,disintegrationsPerMinutePerGram,1.74,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,21,22,NA,NA,0,0,disintegrationsPerMinutePerGram,0.32,0.21,2.01,0.2,disintegrationsPerMinutePerGram,1.69,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,22,23,NA,NA,0,0,disintegrationsPerMinutePerGram,0.09,0.24,1.95,0.22,disintegrationsPerMinutePerGram,1.86,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,23,24,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.11,0.2,1.73,0.19,disintegrationsPerMinutePerGram,1.84,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,24,25,NA,NA,0,0,disintegrationsPerMinutePerGram,0,0,0,0,disintegrationsPerMinutePerGram,0,0,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,25,26,NA,NA,0,0,disintegrationsPerMinutePerGram,0,0,0,0,disintegrationsPerMinutePerGram,0,0,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,26,27,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.07,0.2,2.05,0.19,disintegrationsPerMinutePerGram,2.12,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,27,28,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.06,0.16,1.77,0.15,disintegrationsPerMinutePerGram,1.83,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,28,29,NA,NA,0,0,disintegrationsPerMinutePerGram,0.1,0.2,1.91,0.18,disintegrationsPerMinutePerGram,1.81,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_2,POND_2,radioisotopes measured,29,30,NA,NA,0,0,disintegrationsPerMinutePerGram,0,0,0,0,disintegrationsPerMinutePerGram,0,0,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,0,1,NA,NA,0.17,0.05,disintegrationsPerMinutePerGram,10.13,0.38,11.53,0.37,disintegrationsPerMinutePerGram,1.4,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,1,2,NA,NA,0.21,0.05,disintegrationsPerMinutePerGram,7.84,0.32,8.3,0.31,disintegrationsPerMinutePerGram,0.46,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,2,3,NA,NA,0,0,disintegrationsPerMinutePerGram,3.62,0.34,4.66,0.32,disintegrationsPerMinutePerGram,1.03,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,3,4,NA,NA,0,0,disintegrationsPerMinutePerGram,3.75,0.4,4.62,0.38,disintegrationsPerMinutePerGram,0.87,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,4,5,NA,NA,0,0,disintegrationsPerMinutePerGram,2.63,0.41,3.77,0.39,disintegrationsPerMinutePerGram,1.14,0.14,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,5,6,NA,NA,0,0,disintegrationsPerMinutePerGram,1.54,0.38,2.76,0.36,disintegrationsPerMinutePerGram,1.23,0.12,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,6,7,NA,NA,0,0,disintegrationsPerMinutePerGram,1.76,0.25,2.81,0.23,disintegrationsPerMinutePerGram,1.06,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,7,8,NA,NA,0,0,disintegrationsPerMinutePerGram,3.01,0.27,3.45,0.26,disintegrationsPerMinutePerGram,0.44,0.06,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,8,9,NA,NA,0,0,disintegrationsPerMinutePerGram,1.89,0.28,2.94,0.26,disintegrationsPerMinutePerGram,1.05,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,9,10,NA,NA,0,0,disintegrationsPerMinutePerGram,0.99,0.28,2.25,0.26,disintegrationsPerMinutePerGram,1.26,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,10,11,NA,NA,0,0,disintegrationsPerMinutePerGram,1.48,0.26,2.14,0.26,disintegrationsPerMinutePerGram,0.66,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,11,12,NA,NA,0,0,disintegrationsPerMinutePerGram,0.98,0.24,2.1,0.22,disintegrationsPerMinutePerGram,1.12,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,12,13,NA,NA,0,0,disintegrationsPerMinutePerGram,0.8,0.24,2.04,0.22,disintegrationsPerMinutePerGram,1.23,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,13,14,NA,NA,0,0,disintegrationsPerMinutePerGram,0.68,0.32,2.06,0.27,disintegrationsPerMinutePerGram,1.37,0.18,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,14,15,NA,NA,0,0,disintegrationsPerMinutePerGram,0.21,0.21,1.81,0.2,disintegrationsPerMinutePerGram,1.6,0.08,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,15,16,NA,NA,0,0,disintegrationsPerMinutePerGram,0,0,0,0,disintegrationsPerMinutePerGram,0,0,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,16,17,NA,NA,0,0,disintegrationsPerMinutePerGram,0.24,0.18,1.88,0.16,disintegrationsPerMinutePerGram,1.64,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,17,18,NA,NA,0,0,disintegrationsPerMinutePerGram,0.11,0.19,1.42,0.17,disintegrationsPerMinutePerGram,1.31,0.07,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,18,19,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.01,0.2,1.65,0.18,disintegrationsPerMinutePerGram,1.66,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,19,20,NA,NA,0,0,disintegrationsPerMinutePerGram,1.05,0.34,1.86,0.33,disintegrationsPerMinutePerGram,0.81,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,20,21,NA,NA,0,0,disintegrationsPerMinutePerGram,0.22,0.21,1.68,0.18,disintegrationsPerMinutePerGram,1.46,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,21,22,NA,NA,0,0,disintegrationsPerMinutePerGram,0.03,0.17,1.65,0.15,disintegrationsPerMinutePerGram,1.62,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,22,23,NA,NA,0,0,disintegrationsPerMinutePerGram,0.68,0.21,1.41,0.2,disintegrationsPerMinutePerGram,0.73,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,23,24,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.28,0.19,1.24,0.16,disintegrationsPerMinutePerGram,1.51,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,24,25,NA,NA,0,0,disintegrationsPerMinutePerGram,0.86,0.3,2.14,0.28,disintegrationsPerMinutePerGram,1.28,0.11,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,25,26,NA,NA,0,0,disintegrationsPerMinutePerGram,0.12,0.2,1.63,0.18,disintegrationsPerMinutePerGram,1.51,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,26,27,NA,NA,0,0,disintegrationsPerMinutePerGram,0.15,0.18,1.79,0.15,disintegrationsPerMinutePerGram,1.64,0.1,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,27,28,NA,NA,0,0,disintegrationsPerMinutePerGram,-0.16,0.21,1.36,0.19,disintegrationsPerMinutePerGram,1.51,0.09,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,28,29,NA,NA,0,0,disintegrationsPerMinutePerGram,0,0,0,0,disintegrationsPerMinutePerGram,0,0,disintegrationsPerMinutePerGram
+Luk_et_al_2020,SITE_3,POND_3,radioisotopes measured,29,30,NA,NA,0,0,disintegrationsPerMinutePerGram,0,0,0,0,disintegrationsPerMinutePerGram,0,0,disintegrationsPerMinutePerGram

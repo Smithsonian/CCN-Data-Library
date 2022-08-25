@@ -41,7 +41,7 @@ raw_methods <- read_csv("data/primary_studies/Smith_2015/original/Smith_et_al_20
 methods <- raw_methods %>% 
   select_if(function(x) {!all(is.na(x))}) %>% 
   mutate(study_id = "Smith_et_al_2015",
-         sediment_sieved_flag = "sediment sieved",
+         sediment_sieved_flag = "sediment not sieved",
          method_id = "single set of methods")
 
 ## ... 4A. Core-level data ###########
@@ -90,7 +90,7 @@ depthseries <- raw_depthseries %>%
          fraction_organic_matter,
          cs137_activity, cs137_activity_sd, cs137_unit,
          total_pb210_activity, total_pb210_activity_sd,
-         ra226_activity, ra226_activity_sd, pb210_unit)
+         ra226_activity, ra226_activity_sd, ra226_unit, pb210_unit)
 
 ## ... 4C. Site-level data ##########
 site_data <- cores %>%
@@ -167,6 +167,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

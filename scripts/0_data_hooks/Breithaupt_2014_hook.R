@@ -57,13 +57,14 @@ depthseries <- depthseries_raw %>%
   mutate(study_id = study_id_value,
          method_id = case_when(depth_max-depth_min == 1 ~ "1 cm intervals",
                                depth_max-depth_min == 2 ~ "2 cm intervals",
-                               TRUE ~ NA_character_)) %>%
+                               TRUE ~ NA_character_),
+         cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA_character_),
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA_character_),
+         ra226_unit = ifelse(!is.na(ra226_activity), "disintegrationsPerMinutePerGram", NA_character_)) %>%
   select(-c(cs137_MDA, total_pb210_MDA, ra226_MDA, excess_pb210_inventory,
             excess_pb210_inventory_se, fraction_total_nitrogen, fraction_total_phosphorus,
             delta_N15, gamma_counting_sedmass, cumulative_sedmass_atdepth))
 # 'date' attribute: date at bottom of the depth interval, calculated as coring date minus sample age
-# cs137_unit, pb210_unit, ra226_unit missing
-# paper indicates excess pb210 is disintegrationsPerMinutePerGram
 
 # visual check
 ggplot(depthseries, aes(fraction_organic_matter, fraction_carbon, col = core_id)) + 
@@ -117,6 +118,7 @@ testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
 testConditional(table_names)
+testTaxa(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
