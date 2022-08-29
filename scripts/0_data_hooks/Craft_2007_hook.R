@@ -41,6 +41,8 @@ cores <- cores_raw %>%
 
 ## Citations ####
 
+# data bib: https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-gce.274.18
+
 bib <- ReadBib("./data/primary_studies/Craft_2007/original/Craft_2007.bib")
 
 study_citations <- as.data.frame(bib) %>%

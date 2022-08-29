@@ -55,20 +55,27 @@ cores <- cores_raw %>%
   select(-estuary_id, -core_date) %>% 
   left_join(id_lookup) %>% select(-site_id) %>% rename(site_id = new_site) %>% select(study_id, site_id, everything())
 
+# leaflet(cores) %>% 
+#   addTiles() %>% 
+#   addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~site_id)
+
 # Provide unit columns
 depthseries <- depthseries_raw %>%
   mutate(method_id = "single set of methods",
          pb210_unit = ifelse(!is.na(total_pb210_activity), "becquerelsPerKilogram", NA), 
-         pb214_unit = ifelse(!is.na(pb214_activity), "becquerelsPerKilogram", NA))%>%
+         pb214_unit = ifelse(!is.na(pb214_activity), "becquerelsPerKilogram", NA),
+         cs137_unit = ifelse(!is.na(cs137_activity), "becquerelsPerKilogram", NA)) %>%
   mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
   select(-estuary_id, -fraction_carbon_modeled) %>%
   rename(fraction_carbon = fraction_carbon_measured) %>% 
   left_join(id_lookup) %>% select(-site_id) %>% rename(site_id = new_site) %>% select(study_id, site_id, everything())
 
-ggplot(depthseries %>% filter(core_id == "LM3_16" | core_id == "LM4_24"), 
-       aes(fraction_organic_matter, fraction_carbon, col = core_id)) + 
+depthseries %>% 
+  # filter(core_id == "LM3_16" | core_id == "LM4_24") %>% 
+  ggplot(aes(fraction_organic_matter, fraction_carbon, col = study_id)) + 
   geom_point(alpha = 0.6) +
-  ggtitle("Poppe_and_Rybczyk_2019 cores with zero fraction C")
+  # ggtitle("Poppe_and_Rybczyk_2019 cores with zero fraction C")
+  facet_wrap(~study_id, scales = "free")
 # cores LM3_16 and LM4_24 have 0s in the fraction carbon, is there a reason for this?
 # ggsave("database_query/figures/poppe_and_rybczyk_2019_zero_carbon.jpg")
 
@@ -129,6 +136,8 @@ species <- updated$species
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
+testConditional(table_names)
+testTaxa(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

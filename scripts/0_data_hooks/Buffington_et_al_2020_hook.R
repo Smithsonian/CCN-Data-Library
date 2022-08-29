@@ -40,7 +40,8 @@ cores <- cores_raw %>%
 
 depthseries <- depthseries_raw %>%
   mutate(cs137_unit = ifelse(!is.na(cs137_activity), "becquerelsPerKilogram", NA),
-         method_id = "single set of methods")
+         method_id = "single set of methods") %>% 
+  select(-fraction_carbon) # modeled
 
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
@@ -48,8 +49,12 @@ species <- species_raw %>%
 
 methods <- methods_raw %>%
   mutate(method_id = "single set of methods",
-         carbonate_removal_method = "carbonates not removed") %>%
+         carbonate_removal_method = "carbonates not removed",
+         fraction_carbon_method = "Craft regression") %>%
   rename(sediment_sieved_flag = sediment_seived_flag)
+# core diameter: 5.2cm
+# data release note references Callaway 2012 for the LOI ~ C relationship,
+# but that paper references Craft 1991
 
 ## Citations ####
 doi <- "https://doi.org/10.25573/serc.11968740"
@@ -95,6 +100,7 @@ depthseries <- reorderColumns("depthseries", depthseries)
 testTableCols(table_names)
 testTableVars(table_names)
 testConditional(table_names)
+testTaxa(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

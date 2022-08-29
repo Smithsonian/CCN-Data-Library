@@ -165,7 +165,7 @@ cores <- left_join(coreinfo, date_ref) %>%
   mutate(core_length_flag = "core depth limited by length of corer", 
          core_elevation_method = "other low resolution",
          core_elevation_notes = "elevation supplied by wetland type") %>% 
-  select(-core_date, -species, -Batch)
+  select(-c(core_date, species, Batch, contains("elevation")))
 
 cores <- reorderColumns("cores", cores)
 
@@ -175,9 +175,11 @@ species <- coreinfo %>%
   mutate(species = str_split(species, "/"),
          code_type = "Genus species") %>% 
   unnest(species) %>% mutate(species = trimws(species)) %>%
-  rename(species_code = species)
+  rename(species_code = species) %>% 
+  mutate(species_code = recode(species_code,
+                               "Juncus romerianus" = "Juncus roemerianus",
+                              "Scheonoplectus americanus" = "Schoenoplectus americanus"))
   # separate(species, into = c("genus", "species"), sep = " ")
-  
 
 # Methods ----
 
@@ -247,7 +249,7 @@ species <- updated$species
 
 leaflet(cores) %>%
   addProviderTiles(providers$CartoDB) %>%
-  addCircleMarkers(lng = ~as.numeric(core_longitude), lat = ~as.numeric(core_latitude), 
+  addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
                    radius = 5, label = ~core_id)
 
 # Make sure column names are formatted correctly: 
@@ -257,6 +259,7 @@ testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
 testConditional(table_names)
+testTaxa(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

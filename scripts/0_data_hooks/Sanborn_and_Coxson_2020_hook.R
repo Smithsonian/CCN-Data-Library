@@ -62,7 +62,8 @@ depthseries <- depthseries_raw %>%
 methods <- methods_raw %>% 
   mutate(study_id = study_id_value,
          method_id = "single set of methods",
-         carbon_measured_or_modeled = "measured")
+         carbon_measured_or_modeled = "measured",
+         fraction_carbon_method = "EA")
 
 # species uncontrolled:
 # family genus species
@@ -110,6 +111,8 @@ source("./scripts/1_data_formatting/qa_functions.R")
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
+testConditional(table_names)
+testTaxa(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

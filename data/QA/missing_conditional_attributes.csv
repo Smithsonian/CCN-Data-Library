@@ -1,50 +1,44 @@
 synthesis,study_id,table,test_conditional,addressed,action
-,Baustian_et_al_2021,cores,elevation_method missing.,no,elevation was supplied by wetland type - should this be 'other low resolution'?
-,Boyd_et_al_2017,methods,fraction_carbon_method missing.,no,EA? Its a synthesis and I had to remove modeled values previously - worth a double check
-,Buffington_et_al_2020,methods,"sediment_sieve_size, carbonate_removal_method, fraction_carbon_method missing.",no,"all fraction_carbon is modeled, not sure what method (no associated paper)"
 Holmquist,Drake_et_al_2015,cores,"elevation_datum, elevation_method missing.",no,"NAVD88 datum, no confirmed methods"
 ,Drexler_et_al_2009,methods,fraction_carbon_method missing.,no,fraction carbon is modeled and extrapolated from subset of samples
 Holmquist,Elsey_Quirk_et_al_2011,methods,fraction_carbon_method missing.,no,
-,Giblin_and_Forbrich_2018,cores,elevation_method missing.,no,metadata doesn’t specify
+,Giblin_and_Forbrich_2018,cores,elevation_method missing.,no,metadata doesn’t specify; methods table added
 ,Johnson_et_al_2007,methods,fraction_carbon_method missing.,no,can't access full article
 Holmquist,Noe_et_al_2013,methods,"carbonate_removal_method, fraction_carbon_method missing.",no,
 ,Noe_et_al_2016,methods,carbonates_removed missing.,no,
 ,Osland_et_al_2016,cores,elevation_method missing.,no,
 Holmquist,Pastore_et_al_2017,methods,fraction_carbon_method missing.,no,
-,Peck_et_al_2020,methods,sediment_sieve_size missing.,no,"not confirmed in the paper whether sediment was sieved, just that large plant matter was removed"
-,Poppe_and_Rybczyk_2019,depthseries,cs137_unit missing.,no,
-,Poppe_et_al_2019,depthseries,cs137_unit missing.,no,
-Holmquist,Radabaugh_et_al_2018,methods,"carbonates_removed, fraction_carbon_method, fraction_carbon_type missing.",no,
-,Sanborn_and_Coxson_2020,methods,"sediment_sieve_size, carbonate_removal_method, fraction_carbon_method missing.",no,sediment not sieved; carbonates not removed; not sure about the fraction carbon method (no associated article)
-Boyd,Unger_et_al_2016,methods,fraction_carbon_method missing.,no,
-,Vaughn_et_al_2020,methods,sediment_sieve_size missing.,no,
-,Breithaupt_et_al_2014,depthseries,"cs137_unit, pb210_unit, ra226_unit missing.",yes,
-,Drexler_et_al_2019,depthseries,ra226_unit missing.,yes,
-,Smith_et_al_2015,methods,sediment_sieve_size missing.,yes,no indication that sediment was sieved
-,Smith_et_al_2015,depthseries,ra226_unit missing.,yes,not explicitly stated by unsupported Pb210 is derived from in situ decay of Ra226 and all the other radioisotopes are recorded in dpm/g
-,Callaway_et_al_2019,methods,"carbonates_removed, fraction_carbon_type missing.",yes,carbonates not removed
-,Gerlach_et_al_2017,depthseries,marker_type missing.,yes,pollen? Unless some of them are pollution
-,Kemp_et_al_2020,depthseries,"cs137_unit, pb210_unit missing.",yes,dpm/g
-,Luk_et_al_2020,depthseries,cs137_unit missing.,yes,dpm/g
+,Peck_et_al_2020,methods,sediment_sieve_size missing.,no,"not confirmed in the paper whether sediment was sieved, but it's labeled as T in the data release"
+Holmquist,Radabaugh_et_al_2018,methods,"carbonates_removed, fraction_carbon_method, fraction_carbon_type missing.",no,carbonates not removed; fraction carbon not included?
+,Vaughn_et_al_2020,methods,sediment_sieve_size missing.,no,no indication that sediment was sieved: https://doi.org/10.1029/2019GB006334
 ,Abbott_et_al_2019,cores,elevation_datum missing.,yes,
 ,Allen_et_al_2022,methods,sediment_sieve_size missing.,yes,sediment not sieved
 ,Arias-Ortiz_et_al_2021,depthseries,"pb210_unit, ra226_unit missing.",yes,bq/kg
 ,Arriola_and_Cable_2017,methods,carbonates_removed missing.,yes,carbonates were removed using acid fumigation
+,Baustian_et_al_2021,cores,elevation_method missing.,yes,elevation was supplied by wetland type - Jim says don't include
 ,Belshe_et_al_2019,methods,sediment_sieve_size missing.,yes,sediment not sieved
+Boyd,Boyd_et_al_2017,methods,fraction_carbon_method missing.,yes,
+,Breithaupt_et_al_2014,depthseries,"cs137_unit, pb210_unit, ra226_unit missing.",yes,
 ,Breithaupt_et_al_2014,methods,sediment_sieve_size missing.,yes,sediment not sieved
 ,Breithaupt_et_al_2020,methods,sediment_sieve_size missing.,yes,sediment not sieved
+,Buffington_et_al_2020,methods,"sediment_sieve_size, carbonate_removal_method, fraction_carbon_method missing.",yes,fraction carbon values removed (modeled) methods note Craft regression
 ,Burden_et_al_2018,methods,carbonate_removal_method missing.,yes,carbonates not removed
+,Callaway_et_al_2019,methods,"carbonates_removed, fraction_carbon_type missing.",yes,carbonates not removed
 ,Chambers_et_al_2019,methods,"sediment_sieve_size, carbonate_removal_method missing.",yes,sediment not sieved; carbonates not removed
 ,Doughty_et_al_2016,methods,"sediment_sieve_size, carbonate_removal_method missing.",yes,sediment not sieved; carbonates not removed
 Holmquist,Drake_et_al_2015,methods,"carbonates_removed, fraction_carbon_method missing.",yes,"measured organic carbon with EA, but its not specified whether carbonates were removed"
+,Drexler_et_al_2019,depthseries,ra226_unit missing.,yes,
 ,Eagle_et_al_2021,methods,sediment_sieve_size missing.,yes,sediment not sieved
 ,Eagle_et_al_2021,depthseries,"cs137_unit, pb210_unit, ra226_unit, be7_unit missing.",yes,
 ,Ensign_et_al_2020,methods,"sediment_sieve_size, carbonate_removal_method missing.",yes,sediment not sieved; carbonates not removed
 ,Fell_et_al_2021,methods,sediment_sieve_size missing.,yes,sediment not sieved
+,Gerlach_et_al_2017,depthseries,marker_type missing.,yes,
 ,Gonneea_et_al_2018,cores,elevation_datum missing.,yes,added a methods table as well
 Holmquist,Hill_and_Anisfeld_2015,methods,fraction_carbon_method missing.,yes,
 Holmquist,Hill_and_Anisfeld_2015,cores,"elevation_datum, elevation_method missing.",yes,
 ,Kauffman_et_al_2020,methods,"sediment_sieve_size, carbonate_removal_method missing.",yes,sediment not sieved; carbonates not removed
+,Kemp_et_al_2020,depthseries,"cs137_unit, pb210_unit missing.",yes,dpm/g
+,Luk_et_al_2020,depthseries,cs137_unit missing.,yes,dpm/g
 ,McClellan_et_al_2021,methods,sediment_sieve_size missing.,yes,sediment not sieved
 ,McTigue_et_al_2020,methods,sediment_sieve_size missing.,yes,sediment not sieved
 ,McTigue_et_al_2020,depthseries,pb210_unit missing.,yes,dpm/g
@@ -57,9 +51,15 @@ Holmquist,Hill_and_Anisfeld_2015,cores,"elevation_datum, elevation_method missin
 ,Okeefe-Suttles_et_al_2021_RI,depthseries,"cs137_unit, pb210_unit, ra226_unit, be7_unit missing.",yes,
 ,Okeefe-Suttles_et_al_2021_Wellfleet,methods,"sediment_sieve_size, carbonate_removal_method missing.",yes,sediment not sieved; carbonates not removed
 ,Okeefe-Suttles_et_al_2021_Wellfleet,depthseries,"cs137_unit, pb210_unit, ra226_unit, be7_unit missing.",yes,
+,Poppe_and_Rybczyk_2019,depthseries,cs137_unit missing.,yes,bq/kg
+,Poppe_et_al_2019,depthseries,cs137_unit missing.,yes,bq/kg
 ,Poppe_et_al_2019,methods,carbonate_removal_method missing.,yes,carbonates not removed
+,Sanborn_and_Coxson_2020,methods,"sediment_sieve_size, carbonate_removal_method, fraction_carbon_method missing.",yes,sediment not sieved; carbonates not removed; fraction carbon method EA from original data
+,Smith_et_al_2015,methods,sediment_sieve_size missing.,yes,no indication that sediment was sieved
+,Smith_et_al_2015,depthseries,ra226_unit missing.,yes,not explicitly stated by unsupported Pb210 is derived from in situ decay of Ra226 and all the other radioisotopes are recorded in dpm/g
 ,StLaurent_et_al_2020,methods,carbonate_removal_method missing.,yes,carbonates not removed
 ,Thorne_et_al_2015,cores,elevation_method missing.,yes,Leica RX1200 real-time kinematic rover was used (RTK)
+Boyd,Unger_et_al_2016,methods,fraction_carbon_method missing.,yes,
 ,Vaughn_et_al_2020,depthseries,"cs137_unit, pb210_unit, ra226_unit missing.",yes,
 ,Ward_et_al_2021,methods,sediment_sieve_size missing.,yes,sediment not sieved
 ,White_et_al_2020,methods,"sediment_sieve_size, carbonate_removal_method missing.",yes,sediment not sieved; carbonates not removed

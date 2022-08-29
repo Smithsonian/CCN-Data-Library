@@ -77,8 +77,10 @@ depthseries <- depthseries_raw %>%
   reorderColumns("depthseries", .)
 
 depthseries %>% drop_na(fraction_carbon, fraction_organic_matter) %>% 
-  left_join(cores %>% select(site_id, salinity_class)) %>% 
-  ggplot(aes(fraction_carbon, fraction_organic_matter, col = salinity_class)) + geom_point(alpha = 0.5)
+  filter(core_id == "DV3U") %>% # looks slightly sus
+  # left_join(cores %>% select(site_id, salinity_class)) %>% 
+  ggplot(aes(fraction_carbon, fraction_organic_matter)) + geom_point(alpha = 0.5)
+  facet_wrap(~core_id, scales = "free")
 
 # Species data needs to combine genus and species into one and remove other columns
 species <- species_raw %>%
@@ -150,6 +152,7 @@ testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
 testConditional(table_names)
+testTaxa(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
