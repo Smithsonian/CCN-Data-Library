@@ -1,0 +1,140 @@
+---
+title: "QAQC Report"
+subtitle: "`r id`"
+author: "Coastal Carbon Research Coordination Network"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: spacelab
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+# this sets the working directory to start where the R project is located
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+# no warnings or messages
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
+
+# load libraries
+library(leaflet)
+library(DT)
+
+# source QA functions
+# source("scripts/1_data_formatting/qa_functions.R")
+```
+
+## Attribute tests
+
+Attribute names 
+```{r}
+# Check column names
+# coltest <- testTableCols(table_names)
+
+knitr::kable(testTableCols(table_names)) # revise output
+```
+
+Attribute presence
+```{r}
+reqtest <- testRequired(table_names) %>% mutate(attribute_test = "required")
+contest <- testConditional(table_names) %>% mutate(attribute_test = "conditional")
+
+knitr::kable(bind_rows(reqtest, contest) %>% arrange(table) %>% select(table, attribute_test, result))
+```
+
+## Variable test
+```{r}
+vartest <- testTableVars(table_names)
+
+if(nrow(vartest) > 0){
+  "View resulting invalid variable names:"
+  knitr::kable(vartest)
+} else {
+  "No uncontrolled variables detected."
+}
+```
+
+## Uniqueness
+
+Test for non-unique core IDs
+```{r}
+unicores <- testUniqueCores(cores) # revise output
+
+if(nrow(unicores) > 0){
+  "Check on the following cores IDs:"
+  knitr::kable(unicores)
+} else {
+  "All core IDs are unique."
+}
+```
+
+Test for non-unique core locations 
+```{r}
+unicoords <- testUniqueCoords(cores)
+
+if(nrow(unicoords) > 0){
+  "View resulting list of coordinates with more than one associated core:"
+    datatable(unicoords,
+            options = list(searching = FALSE,
+                           paging = FALSE,
+                           info = FALSE,
+                           scrollY = 300,
+                           scrollX = 300,
+                           scrollCollapse = TRUE),
+            rownames = FALSE) 
+  } else {"No duplicate core locations detected."}
+```
+
+## Relational structure
+
+Site IDs in core and depthseries tables: `r testIDs(cores, depthseries, by = "site")`
+```{r}
+testIDs(cores, depthseries, by = "site") # revise output 
+```
+
+Core IDs in the core and depthseries tables: `r testIDs(cores, depthseries, by = "core")`
+```{r}
+
+testIDs(cores, depthseries, by = "core") # revise output
+```
+
+## Numerical values
+
+Check whether fractions are expressed as fractions (and not percentages):
+
+```{r}
+fractionNotPercent(depthseries) # revise output
+```
+
+Numerical ranges
+
+```{r}
+numtest_cores <- testNumericCols(cores) %>% mutate(table = "cores")
+numtest_ds <- testNumericCols(depthseries) %>% mutate(table = "depthseries")
+skim_numerical <- bind_rows(numtest_cores, numtest_ds) %>% select(table, everything())
+
+datatable(skim_numerical,
+          extensions = "FixedColumns",
+          options = list(searching = FALSE,
+                         paging = FALSE,
+                         info = FALSE,
+                         scrollY = 300,
+                         scrollX = 300,
+                         scrollCollapse = TRUE,
+                         fixedColumns = list(leftColumns = 2),
+          rownames = FALSE))
+```
+
+```{r}
+if(any(grepl("activity", names(depthseries)))){
+  # unitcols <- names(depthseries)[grepl("unit", names(depthseries))]
+  dating_units <- depthseries %>% select(contains("unit")) %>% 
+    fill(everything(), .direction = "downup") %>% distinct() %>% 
+  
+  print("Study-specific dating units:")
+  knitr::kable(dating_units)
+}
+```
+

@@ -258,6 +258,13 @@ test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
 result <- test_numeric_vars(depthseries)
 
+# generate data contributor report
+id <- "Holmquist_2018_synthesis"
+rmarkdown::render(input = "./scripts/1_data_formatting/qaqc_report.Rmd",
+                  # output_format = "html_document",
+                  output_file = "Holmquist_2018_synthesis_qa_report",
+                  output_dir = "./docs/qa_reports/")
+
 ## Create Citations ######
 
 # NOTE: the study citations csv generated here is also copied into the /original

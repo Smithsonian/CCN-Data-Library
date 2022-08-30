@@ -51,7 +51,7 @@ depthseries <- raw_depthseries %>%
 
 # visualize fraction carbon
 ggplot(depthseries) +
-  geom_point(aes(fraction_organic_matter, fraction_carbon, col = core_id)) +
+  geom_point(aes(fraction_organic_matter, fraction_carbon, col = core_id), pch = 1) +
   facet_wrap(~core_id) + theme_bw()
 
 # methods
@@ -123,8 +123,8 @@ testTableVars(table_names)
 testRequired(table_names)
 testConditional(table_names)
 
-test_unique_cores(cores)
-test_unique_coords(cores)
+testUniqueCores(cores)
+testUniqueCoords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
