@@ -86,7 +86,7 @@ write_csv(study_citations, "./data/primary_studies/Keshta_et_al_2020/derivative/
 # Update Tables ###########
 source("./scripts/1_data_formatting/versioning_functions.R")
 
-table_names <- c("methods", "cores", "depthseries")
+table_names <- c("methods", "cores", "depthseries", "species")
 
 updated <- updateTables(table_names)
 
@@ -96,19 +96,22 @@ updated <- updateTables(table_names)
 methods <- updated$methods
 depthseries <- updated$depthseries
 cores <- updated$cores
-# species <- updated$species
+species <- updated$species
 
 ## QA/QC ###############
 
-# test cols and vars
-testTableCols(table_names)
-testTableVars(table_names)
+writeQualityReport(id)
 
-test_unique_cores(cores)
-test_unique_coords(cores)
-test_core_relationships(cores, depthseries)
-fraction_not_percent(depthseries)
-test_depthseries <- test_numeric_vars(depthseries)
+# test cols and vars
+# testTableCols(table_names)
+# testTableVars(table_names)
+# testRequired(table_names) # not working, needs investigation
+# 
+# test_unique_cores(cores)
+# test_unique_coords(cores)
+# test_core_relationships(cores, depthseries)
+# fraction_not_percent(depthseries)
+# test_depthseries <- test_numeric_vars(depthseries)
 
 ## Write derivative data ####
 write_csv(cores, "./data/primary_studies/Keshta_et_al_2020/derivative/Keshta_et_al_2020_cores.csv")

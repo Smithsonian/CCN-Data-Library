@@ -11,13 +11,14 @@ testUniqueCores <- function(data) {
     summarize(n = n()) %>%
     filter(n > 1)
   
-  if(length(core_list$core_id)>0){
-    warning("Check the following core_ids in the core-level data:")
-    print(core_list$core_id)
+  if(length(core_list$core_id) > 0){
+    # warning("Check the following core_ids in the core-level data:")
+    return(core_list)
   } else {
-    print("All core IDs are unique.")
+    # print("All core IDs are unique.")
+    return("Passed")
   }
-  return(core_list)
+  # return(core_list)
 }
 
 ## Check lat/long uniqueness ########
@@ -34,19 +35,20 @@ testUniqueCoords <- function(data) {
               num_studies = length(unique(study_id))) %>%
     filter(n > 1)
 
-  if(length(core_list$core_ids)>0){
-    warning("Some cores in the core-level data have duplicate coordinates. Check 'data/QA/duplicate_cores.csv' for the list.")
+  if(length(core_list$core_ids) > 0){
+    # warning("Some cores in the core-level data have duplicate coordinates. Check 'data/QA/duplicate_cores.csv' for the list.")
+    return(core_list)
   } else {
-    print("All core coordinates are unique.")
+    # print("All core coordinates are unique.")
+    return("Passed")
   }
-  return(core_list)
 }
 
 ## Ensure fractions are not percentages #################
 
 # This function reviews all attributes that ought to be a fraction and determines
 #   whether they are in their proper format (e.g. less than 1)
-fractionNotPercent <- function(dataset) {
+fractionNotPercent <- function(df) {
   
   database_structure <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols())
   
@@ -56,14 +58,15 @@ fractionNotPercent <- function(dataset) {
     filter(grepl("fraction", attribute_name)) %>%
     distinct() %>% pull(attribute_name)
   
-  # subset the dataset 
-  match_cols <- dataset[,which(names(dataset) %in% fraction_cols)] %>% 
+  # subset the dataframe 
+  match_cols <- df[,which(names(df) %in% fraction_cols)] %>% 
     # make sure all cols are numeric type
     mutate_all(as.numeric)
   
   # check if there are any fraction-containing columns in the data
   if(plyr::empty(match_cols)) {
-    print("No fraction columns present in the dataset, safe to continue.")
+    # print("No fraction columns present in the dataset, safe to continue.")
+    return("No fraction columns")
     
     # stop function and prevent an error message from displaying
     opt <- options(show.error.messages = FALSE)
@@ -75,11 +78,14 @@ fractionNotPercent <- function(dataset) {
     non_fraction <- match_cols %>%
       filter_all(any_vars(. > 1))
     
-    stop(paste0("At least one of the attributes intended to be expressed as a
-                fraction is expressed as a percent (values > 1). Please review all
-                fraction columns: ", paste(colnames(non_fraction), collapse = ', ')))
+    return(paste(colnames(non_fraction), collapse = ', '))
+    # stop(paste0("At least one of the attributes intended to be expressed as a
+    #             fraction is expressed as a percent (values > 1). Please review all
+    #             fraction columns: ", paste(colnames(non_fraction), collapse = ', ')))
+    stop()
   } else {
-    print("All fractions are expressed as fractions, safe to continue.")
+    # print("All fractions are expressed as fractions, safe to continue.")
+    return("Passed")
   }
 } 
 
@@ -171,23 +177,23 @@ testDataTypes <- function(df) {
 }
 
 ## Reorder columns to reflect guidance ####
-reorderColumns <- function(category, df) {
+reorderColumns <- function(table_type, df) {
   
   database_structure <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols())
   
   # Create a vector of all the table names
   tables <- unique(database_structure$table)
   
-  if(category %in% database_structure$table == FALSE) {
-    # Warn user they have not supplied a valid table category and provide the list 
-    warning(paste(category,"is not a valid category. Please use one of the above listed options."))
+  if(table_type %in% database_structure$table == FALSE) {
+    # Warn user they have not supplied a valid table table_type and provide the list 
+    warning(paste(table_type,"is not a valid table Please use one of the above listed options."))
     print(tables)
     return()
   }
   
   # Get controlled attributes for the current table
   table_structure <- database_structure %>%
-    filter(table == category) %>%
+    filter(table == table_type) %>%
     filter(attribute_name %in% colnames(df))
   
   # Controlled attributes selected first, then all approved uncontrolled attributes
@@ -231,7 +237,7 @@ testTableCols <- function(table_names) {
       results <- bind_rows(results, data.frame(table = category, result = "Passed"))
     } else {
       # print(paste(c("Non-matching attributes in", category, ":", non_matching_columns), collapse=" "))
-      results <- bind_rows(results, data.frame(table = category, result = paste0("Non-matching attributes: ", non_matching_columns)))
+      results <- bind_rows(results, data.frame(table = category, result = paste0("Uncontrolled attributes: ", non_matching_columns)))
     }
   }
   return(results)
@@ -282,26 +288,22 @@ testTableVars <- function(table_names) {
       }
     }
   }
-  return(invalid_df) 
-  # If there are no invalid variables don't pass along the df 
-  # Otherwise indicate to the user there are problems and to check the table 
-  # if(nrow(invalid_df)==0) {
-  #   print("Looks good! All variable names match CCRCN standards")
-  #   
-  # } else {
-  #   print("View resulting invalid variable names:")
-  #   return(invalid_df)  
-  # }
+  # If there are no invalid variables indicated test was passed
+  # Otherwise pass along the table of uncontrolled vars
+  if(nrow(invalid_df) == 0) {
+    # print("Looks good! All variable names match CCRCN standards")
+    return("Passed")
+  } else {
+    # print("View resulting invalid variable names:")
+    return(invalid_df)
+  }
 }
-
-# example code
-# testTableVars(table_names = table_names)
 
 ## Check for required attributes ####
 # compile a table of the required attributes missing in each table
-testRequired <- function(table_names, database_structure = "docs/ccrcn_database_structure.csv"){
+testRequired <- function(table_names){
   # read in database guidance
-  guidance <- read_csv(database_structure, col_types = cols()) 
+  guidance <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols()) 
   
   # isolate required attributes
   required <- guidance %>% filter(required == "required") %>%
@@ -343,7 +345,7 @@ testRequired <- function(table_names, database_structure = "docs/ccrcn_database_
       missing_required <- bind_rows(missing_required, missing_from_study)
     } else{
       missing_required <- bind_rows(missing_required, data.frame(table = table_name,
-                                                                 result = "All required attributes are present."))
+                                                                 result = "Passed"))
     }
   }
   return(missing_required)
@@ -394,7 +396,7 @@ testConditional <- function(table_names, database_structure_doc = "docs/ccrcn_da
     if (all(conditional_attributes$attribute_name %in% names(datasets[[i]]))) {
       # requirement_warnings <- c(requirement_warnings, 
       #                           paste(category, " (conditional): all conditional attributes present.", sep=""))
-      results <- bind_rows(results, data.frame(table = category, result = "All conditional attributes present."))
+      results <- bind_rows(results, data.frame(table = category, result = "Passed"))
     } else {
       missing_attributes <- unique(conditional_attributes$attribute_name[! (conditional_attributes$attribute_name %in% names(datasets[[i]]))])
       # requirement_warnings <- c(requirement_warnings, 
@@ -404,7 +406,6 @@ testConditional <- function(table_names, database_structure_doc = "docs/ccrcn_da
       results <- bind_rows(results, data.frame(table = category, result = paste0("Missing: ", missing_attributes)))
     }
   }
-  print(results)
   return(results)
 }
 
@@ -416,6 +417,15 @@ writeDataVizReport <- function(study_id){
                     # output_format = "html_document",
                     output_file = paste0(study_id, "_dataviz_report"),
                     output_dir = "./docs/dataviz_reports/")
+}
+
+## Create QA Report ####
+
+writeQualityReport <- function(study_id){
+  rmarkdown::render(input = "./scripts/1_data_formatting/qaqc_report.Rmd",
+                    # output_format = "html_document",
+                    output_file = paste0(study_id, "_qa_report"),
+                    output_dir = "./docs/qa_reports/")
 }
 
 ## Check for misspelled taxa ####
@@ -496,7 +506,7 @@ testIDs <- function(table1, table2, by) {
   
   # return results
   if(length(results) == 0 & length(results2) == 0) {
-    print("IDs match.")
+    print("Passed! All IDs match.")
   }
   if(length(results) > 0){
     print("The following IDs are absent from the second table:")

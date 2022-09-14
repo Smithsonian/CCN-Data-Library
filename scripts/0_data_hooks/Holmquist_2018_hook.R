@@ -246,6 +246,8 @@ source("./scripts/1_data_formatting/qa_functions.R")
 
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
+
+
 # Check col and varnames
 testTableCols(table_names) 
 testTableVars(table_names) # quite a few uncontrolled variables
@@ -258,7 +260,9 @@ test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
 result <- test_numeric_vars(depthseries)
 
-# generate data contributor report
+# generate qa report
+writeQualityReport("Holmquist_2018_synthesis")
+
 id <- "Holmquist_2018_synthesis"
 rmarkdown::render(input = "./scripts/1_data_formatting/qaqc_report.Rmd",
                   # output_format = "html_document",
