@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml packageId="knb-lter-fce.1228.2"
+  system="https://pasta.edirepository.org"
+  xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+  xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1  http://nis.lternet.edu/schemas/EML/eml-2.1.1/eml.xsd">
+  <access authSystem="https://pasta.edirepository.org/authentication"
+    order="allowFirst" scope="document" system="https://pasta.edirepository.org">
+    <allow>
+      <principal>uid=FCE,o=LTER,dc=ecoinformatics,dc=org</principal>
+      <permission>all</permission>
+    </allow>
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+  </access>
+  <dataset>
+    <alternateIdentifier system="https://doi.org">doi:10.6073/pasta/45cfe2505580cedf88a82f8911bdd741</alternateIdentifier>
+    <title>Organic and inorganic data for soil cores from Brazil and Florida Bay seagrasses to support Howard et al 2018, CO2 released by carbonate sediment production in some coastal areas may offset the benefits of seagrass “Blue Carbon” storage, Limnology and Oceanography, DOI: 10.1002/lno.10621</title>
+    <creator>
+      <individualName>
+        <givenName>Jason</givenName>
+        <givenName>L</givenName>
+        <surName>Howard</surName>
+      </individualName>
+      <organizationName>FIU</organizationName>
+      <electronicMailAddress>Jhowa003@fiu.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>James</givenName>
+        <givenName>W</givenName>
+        <surName>Fourqurean</surName>
+      </individualName>
+      <organizationName>FIU</organizationName>
+      <electronicMailAddress>jim.fourqurean@fiu.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0002-0811-8500</userId>
+    </creator>
+    <associatedParty>
+      <individualName>
+        <givenName>Joel</givenName>
+        <givenName>C</givenName>
+        <surName>Creed</surName>
+      </individualName>
+      <organizationName>State University of Rio de Janeiro</organizationName>
+      <role>Associated Party</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Mariana</givenName>
+        <givenName>V P</givenName>
+        <surName>Aguiar</surName>
+      </individualName>
+      <organizationName>State University of Rio de Janeiro</organizationName>
+      <role>Associated Party</role>
+    </associatedParty>
+    <pubDate>2020-02-10</pubDate>
+    <abstract>
+      <para>
+  Using piston corers, soils from Florida Bay and Brazilian seagrass
+  meadows were collected to complete organic and inorganic carbon
+  inventories for the top 1 m of soil. Instrumental analyses and loss on
+  ignition at 500C were used to measure C content of downcore slices.
+</para>
+    </abstract>
+    <keywordSet>
+      <keyword>seagrass</keyword>
+      <keyword>organic carbon</keyword>
+      <keyword>inorganic nutrients</keyword>
+      <keyword>soil carbon</keyword>
+      <keyword>soil</keyword>
+      <keywordThesaurus>https://vocab.lternet.edu/vocab/vocab/index.php</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>blue carbon</keyword>
+      <keyword>inorganic carbon</keyword>
+      <keyword>dry bulk density</keyword>
+    </keywordSet>
+    <intellectualRights>
+      <para>
+  This data package is released to the "public domain" under
+  Creative Commons CC0 1.0 "No Rights Reserved" (see:
+  https://creativecommons.org/publicdomain/zero/1.0/). It is considered
+  professional etiquette to provide attribution of the original work if
+  this data package is shared in whole or by individual components. A
+  generic citation is provided for this data package on the website
+  https://portal.edirepository.org (herein "website") in the
+  summary metadata page. Communication (and collaboration) with the
+  creators of this data package is recommended to prevent duplicate
+  research or publication. This data package (and its components) is
+  made available "as is" and with no warranty of accuracy or
+  fitness for use. The creators of this data package and the website
+  shall not be liable for any damages resulting from misinterpretation
+  or misuse of the data package or its components. Periodic updates of
+  this data package may be available from the website. Thank you.
+</para>
+    </intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Urca</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-43.163558</westBoundingCoordinate>
+          <eastBoundingCoordinate>-43.163558</eastBoundingCoordinate>
+          <northBoundingCoordinate>-22.947603</northBoundingCoordinate>
+          <southBoundingCoordinate>-22.947603</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Arraial do Cabo</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-42.020278</westBoundingCoordinate>
+          <eastBoundingCoordinate>-42.020278</eastBoundingCoordinate>
+          <northBoundingCoordinate>-22.973434</northBoundingCoordinate>
+          <southBoundingCoordinate>-22.973434</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Ilha do Japones - site 1</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-42.002751</westBoundingCoordinate>
+          <eastBoundingCoordinate>-42.002751</eastBoundingCoordinate>
+          <northBoundingCoordinate>-22.881841</northBoundingCoordinate>
+          <southBoundingCoordinate>-22.881841</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Ilha do Japones - site 2</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-42.003653</westBoundingCoordinate>
+          <eastBoundingCoordinate>-42.003653</eastBoundingCoordinate>
+          <northBoundingCoordinate>-22.878932</northBoundingCoordinate>
+          <southBoundingCoordinate>-22.878932</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Praia dos Ossos</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-41.88145</westBoundingCoordinate>
+          <eastBoundingCoordinate>-41.88145</eastBoundingCoordinate>
+          <northBoundingCoordinate>-22.745867</northBoundingCoordinate>
+          <southBoundingCoordinate>-22.745867</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Praia da Ferradura</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-41.888983</westBoundingCoordinate>
+          <eastBoundingCoordinate>-41.888983</eastBoundingCoordinate>
+          <northBoundingCoordinate>-22.772383</northBoundingCoordinate>
+          <southBoundingCoordinate>-22.772383</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Manguinhos</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-41.912172</westBoundingCoordinate>
+          <eastBoundingCoordinate>-41.912172</eastBoundingCoordinate>
+          <northBoundingCoordinate>-22.769126</northBoundingCoordinate>
+          <southBoundingCoordinate>-22.769126</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Ilha Grande - site 1</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-44.213233</westBoundingCoordinate>
+          <eastBoundingCoordinate>-44.213233</eastBoundingCoordinate>
+          <northBoundingCoordinate>-23.104933</northBoundingCoordinate>
+          <southBoundingCoordinate>-23.104933</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Ilha Grande - site 2</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-44.151083</westBoundingCoordinate>
+          <eastBoundingCoordinate>-44.151083</eastBoundingCoordinate>
+          <northBoundingCoordinate>-23.133783</northBoundingCoordinate>
+          <southBoundingCoordinate>-23.133783</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Bracui - site 1</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-44.384567</westBoundingCoordinate>
+          <eastBoundingCoordinate>-44.384567</eastBoundingCoordinate>
+          <northBoundingCoordinate>-22.9571</northBoundingCoordinate>
+          <southBoundingCoordinate>-22.9571</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Bracui - site 2</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-44.381133</westBoundingCoordinate>
+          <eastBoundingCoordinate>-44.381133</eastBoundingCoordinate>
+          <northBoundingCoordinate>-22.957267</northBoundingCoordinate>
+          <southBoundingCoordinate>-22.957267</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Santa Cruz</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-40.152067</westBoundingCoordinate>
+          <eastBoundingCoordinate>-40.152067</eastBoundingCoordinate>
+          <northBoundingCoordinate>-19.95365</northBoundingCoordinate>
+          <southBoundingCoordinate>-19.95365</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Vitoria</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-40.285967</westBoundingCoordinate>
+          <eastBoundingCoordinate>-40.285967</eastBoundingCoordinate>
+          <northBoundingCoordinate>-20.301767</northBoundingCoordinate>
+          <southBoundingCoordinate>-20.301767</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Vila Velha</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-40.271533</westBoundingCoordinate>
+          <eastBoundingCoordinate>-40.271533</eastBoundingCoordinate>
+          <northBoundingCoordinate>-20.325117</northBoundingCoordinate>
+          <southBoundingCoordinate>-20.325117</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Bob Allen Key</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-80.681</westBoundingCoordinate>
+          <eastBoundingCoordinate>-80.681</eastBoundingCoordinate>
+          <northBoundingCoordinate>25.0248</northBoundingCoordinate>
+          <southBoundingCoordinate>25.0248</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>rb</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-80.6397</westBoundingCoordinate>
+          <eastBoundingCoordinate>-80.6397</eastBoundingCoordinate>
+          <northBoundingCoordinate>25.0343</northBoundingCoordinate>
+          <southBoundingCoordinate>25.0343</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>nm</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-80.8642</westBoundingCoordinate>
+          <eastBoundingCoordinate>-80.8642</eastBoundingCoordinate>
+          <northBoundingCoordinate>24.9412</northBoundingCoordinate>
+          <southBoundingCoordinate>24.9412</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>tc</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-80.5404</westBoundingCoordinate>
+          <eastBoundingCoordinate>-80.5404</eastBoundingCoordinate>
+          <northBoundingCoordinate>25.2148</northBoundingCoordinate>
+          <southBoundingCoordinate>25.2148</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2015-06-01</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2015-08-31</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <maintenance>
+      <description>completed</description>
+    </maintenance>
+    <contact>
+      <individualName>
+        <givenName>James</givenName>
+        <givenName>W</givenName>
+        <surName>Fourqurean</surName>
+      </individualName>
+      <organizationName>FIU</organizationName>
+      <electronicMailAddress>jim.fourqurean@fiu.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0002-0811-8500</userId>
+    </contact>
+    <methods>
+      <methodStep>
+        <description>
+          <para>
+  For seagrass characteristics, 15cm diameter cores were collected at
+  randomly chosen locations during low tide within each sampling site in
+  triplicate. Seagrass biomass was separated from sediment using a
+  coarse mesh bag. Seagrasses were separated by species and shoots were
+  counted. Leaves were counted on each shoot, measured and scraped of
+  any epiphytes. Aboveground and belowground components were separated
+  and dried at 50C until a constant weight was achieved. Dry weight of
+  above- and belowground components were recorded. The dried leaf
+  samples were homogenized and ground to a fine powder using a motorized
+  mortar and pestle. Powdered samples were analyzed for total carbon (C)
+  and nitrogen (N) content using a CHN analyzer (Thermo Flash EA, 1112
+  series). Total phosphorus content was determined by a dry-oxidation,
+  acid hydrolysis extraction followed by a colorimetric analysis of
+  phosphate concentration of the extract. Homogenized leaf samples were
+  additionally analyzed for δ13C using EA-IRMS techniques; high
+  temperature catalytic combustion was used to combust the organic
+  carbon to CO2, which was then measured on a Finnigan MAT Delta C IRMS
+  in a continuous flow mode. Isotopic ratios (R) were reported in the
+  standard delta notation (‰ ): δ (‰) = [(Rsample/Rstandard)-1]×1000.
+  These results are presented with respect to the international standard
+  Vienna Pee Dee Belemnite (V-PDB). Analytical reproducibility of the
+  reported values, based on sample replicates, was better than ±0.08‰.
+</para>
+          <para>
+  Soil cores were collected at randomly selected locations within each
+  site in duplicate by driving a manually operated piston core (6cm
+  diameter) into the soil until 1m depth or the depth at which the
+  piston core could no longer be inserted. A depth of one meter was
+  chosen for straightforward comparison to existing soil carbon
+  inventories and is not associated with a known period of accumulation.
+  This method yielded samples of ~9 cm3 along the depth profile, while
+  minimizing compaction. Sediment samples of a known wet volume were
+  dried and weighed to calculate dry bulk density (g dry soil mL wet
+  soil-1). Soil samples were homogenized using a motorized mortar and
+  pestle then analyzed for Corg and Cinorg
+</para>
+        </description>
+      </methodStep>
+    </methods>
+    <project>
+      <title>Doutoradosandu_iche Reverso</title>
+      <personnel>
+        <individualName>
+          <givenName>Jason</givenName>
+          <givenName>L</givenName>
+          <surName>Howard</surName>
+        </individualName>
+        <organizationName>FIU</organizationName>
+        <electronicMailAddress>Jhowa003@fiu.edu</electronicMailAddress>
+        <role>Principal Investigator</role>
+      </personnel>
+      <funding>Foundation for Support of Tinker Field Research Grant: E-26/200.027/2015</funding>
+      <relatedProject>
+        <title>No project title to report</title>
+        <personnel>
+          <individualName>
+            <givenName>Joel</givenName>
+            <givenName>C</givenName>
+            <surName>Creed</surName>
+          </individualName>
+          <organizationName>State University of Rio de Janeiro</organizationName>
+          <role>Principal Investigator</role>
+        </personnel>
+        <funding>Conselho Nacional de Desenvolvimento Cient?fico e Tecnologico: 307117_2014-6</funding>
+      </relatedProject>
+      <relatedProject>
+        <title>FCE LTER</title>
+        <personnel>
+          <individualName>
+            <givenName>Evelyn</givenName>
+            <surName>Gaiser</surName>
+          </individualName>
+          <organizationName>FIU</organizationName>
+          <role>Principal Investigator</role>
+        </personnel>
+        <funding>NSF: DEB-1237517</funding>
+      </relatedProject>
+    </project>
+    <dataTable>
+      <entityName>brazil_cores.csv</entityName>
+      <entityDescription>brazil_cores.csv</entityDescription>
+      <physical>
+        <objectName>brazil_cores.csv</objectName>
+        <size unit="bytes">25800</size>
+        <authentication method="MD5">ba80164c86810621868f95e330a1c496</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url>https://pasta.lternet.edu/package/data/eml/knb-lter-fce/1228/2/06cf57a513ea48bcf94e93b2df94f030</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>Site</attributeName>
+          <attributeDefinition>Site Name</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Site Name</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Latitude</attributeName>
+          <attributeDefinition>Latitude</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-23.13</minimum>
+                  <maximum exclusive="false">-19.95</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Longitude</attributeName>
+          <attributeDefinition>Longitude</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-44.38</minimum>
+                  <maximum exclusive="false">-40.15</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Rep</attributeName>
+          <attributeDefinition>Core Replicate</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Core Replicate</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth</attributeName>
+          <attributeDefinition>Depth in Soil Profile</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+                <bounds>
+                  <minimum exclusive="false">-99</minimum>
+                  <maximum exclusive="false">0</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>loi</attributeName>
+          <attributeDefinition>Loss on ignition at 500 C (percent of dry weight of sample)</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.38</minimum>
+                  <maximum exclusive="false">11.98</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Cinorg</attributeName>
+          <attributeDefinition>Inorganic Carbon Content (percent of dry weight of sample)</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">7.8</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Corg</attributeName>
+          <attributeDefinition>Organic Carbon Content (percent of dry weight of sample)</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">3.08</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dbd</attributeName>
+          <attributeDefinition>Dry Bulk Density (grams dry weight per centimeter cubed)</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>gramPerCentimeterCubed</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.22</minimum>
+                  <maximum exclusive="false">1.77</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>300</numberOfRecords>
+    </dataTable>
+    <dataTable>
+      <entityName>Fl_bay_cores.csv</entityName>
+      <entityDescription>Fl_bay_cores.csv</entityDescription>
+      <physical>
+        <objectName>Fl_bay_cores.csv</objectName>
+        <size unit="bytes">5981</size>
+        <authentication method="MD5">ea8c50d9ef84a57dac9cdb3c5b4ab9a3</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url>https://pasta.lternet.edu/package/data/eml/knb-lter-fce/1228/2/ea42cda71af1f5725280ef22d3e29aca</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>Site</attributeName>
+          <attributeDefinition>Site Name</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Site Name</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Lat</attributeName>
+          <attributeDefinition>Latitude</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">24.94</minimum>
+                  <maximum exclusive="false">25.21</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Long</attributeName>
+          <attributeDefinition>Longitude</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-80.86</minimum>
+                  <maximum exclusive="false">-80.54</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Rep</attributeName>
+          <attributeDefinition>Core Replicate</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Core Replicate</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth</attributeName>
+          <attributeDefinition>Depth in Soil Profile</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+                <bounds>
+                  <minimum exclusive="false">-100</minimum>
+                  <maximum exclusive="false">0</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>loi</attributeName>
+          <attributeDefinition>Loss on ignition at 500 C (percent of dry weight of sample)</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">2.88</minimum>
+                  <maximum exclusive="false">12.29</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Cinorg</attributeName>
+          <attributeDefinition>Inorganic Carbon Content (percent of dry weight of sample)</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">8.14</minimum>
+                  <maximum exclusive="false">10.72</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Corg</attributeName>
+          <attributeDefinition>Organic Carbon Content (percent of dry weight of sample)</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">1</minimum>
+                  <maximum exclusive="false">4.85</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dbd</attributeName>
+          <attributeDefinition>Dry Bulk Density (grams dry weight per centimeter cubed)</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>gramPerCentimeterCubed</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.43</minimum>
+                  <maximum exclusive="false">1.02</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>82</numberOfRecords>
+    </dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="gramPerCentimeterCubed" multiplierToSI="1000"
+          name="gramPerCentimeterCubed" parentSI="kilogramPerCubicMeter" unitType="massDensity">
+          <description>grams per cubic centimeter</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>

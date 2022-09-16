@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qr:qualityReport
+  xmlns="eml://ecoinformatics.org/qualityReport"
+  xmlns:qr="eml://ecoinformatics.org/qualityReport"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="eml://ecoinformatics.org/qualityReport https://raw.githubusercontent.com/PASTAplus/PASTA/master/DataPackageManager/WebRoot/xml/qualityReportSchema.xsd"
+  >
+  <creationDate>2020-02-10T16:13:06</creationDate>
+  <packageId>knb-lter-fce.1228.2</packageId>
+  <includeSystem>lter</includeSystem>
+  <includeSystem>knb</includeSystem>
+  <datasetReport>
+    <qualityCheck qualityType="metadata" system="lter" statusType="error" >
+      <identifier>packageIdPattern</identifier>
+      <name>packageId pattern matches "scope.identifier.revision"</name>
+      <description>Check against LTER requirements for scope.identifier.revision</description>
+      <expected>'scope.n.m', where 'n' and 'm' are integers and 'scope' is one of an allowed set of values</expected>
+      <found>knb-lter-fce.1228.2</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="error" >
+      <identifier>emlVersion</identifier>
+      <name>EML version 2.1.0 or beyond</name>
+      <description>Check the EML document declaration for version 2.1.0 or higher</description>
+      <expected>eml://ecoinformatics.org/eml-2.1.0 or higher</expected>
+      <found>eml://ecoinformatics.org/eml-2.1.1</found>
+      <status>valid</status>
+      <explanation>Validity of this quality report is dependent on this check being valid.</explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="error" >
+      <identifier>schemaValid</identifier>
+      <name>Document is schema-valid EML</name>
+      <description>Check document schema validity</description>
+      <expected>schema-valid</expected>
+      <found>Document validated for namespace: 'eml://ecoinformatics.org/eml-2.1.1'</found>
+      <status>valid</status>
+      <explanation>Validity of this quality report is dependent on this check being valid.</explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="error" >
+      <identifier>parserValid</identifier>
+      <name>Document is EML parser-valid</name>
+      <description>Check document using the EML IDs and references parser</description>
+      <expected>Validates with the EML IDs and references parser</expected>
+      <found>EML IDs and references parser succeeded</found>
+      <status>valid</status>
+      <explanation>Validity of this quality report is dependent on this check being valid.</explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="error" >
+      <identifier>schemaValidDereferenced</identifier>
+      <name>Dereferenced document is schema-valid EML</name>
+      <description>References are dereferenced, and the resulting file validated</description>
+      <expected>schema-valid</expected>
+      <found>Dereferenced document validated for namespace: 'eml://ecoinformatics.org/eml-2.1.1'</found>
+      <status>valid</status>
+      <explanation>Validity of this quality report is dependent on this check being valid.</explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="warn" >
+      <identifier>keywordPresent</identifier>
+      <name>keyword element is present</name>
+      <description>Checks to see if at least one keyword is present</description>
+      <expected>Presence of one or more keyword elements</expected>
+      <found>8 'keyword' element(s) found</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="warn" >
+      <identifier>methodsElementPresent</identifier>
+      <name>A 'methods' element is present</name>
+      <description>All datasets should contain a 'methods' element, at a minimum a link to a separate methods doc.</description>
+      <expected>presence of 'methods' at one or more xpaths.</expected>
+      <found>1 'methods' element(s) found</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference>EML Best Practices, p. 28</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="warn" >
+      <identifier>coveragePresent</identifier>
+      <name>coverage element is present</name>
+      <description>At least one coverage element should be present in a dataset.</description>
+      <expected>At least one of geographicCoverage, taxonomicCoverage, or temporalCoverage is present in the EML.</expected>
+      <found>1 'coverage' element(s) found</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="info" >
+      <identifier>geographicCoveragePresent</identifier>
+      <name>geographicCoverage is present</name>
+      <description>Check that geographicCoverage exists in EML at the dataset level, or at least one entity's level, or at least one attribute's level.</description>
+      <expected>geographicCoverage at least at the dataset level.</expected>
+      <found>18 'geographicCoverage' element(s) found</found>
+      <status>info</status>
+      <explanation>Many but not all datasets are appropriate to have spatial coverage.</explanation>
+      <suggestion>If sampling EML is used within methods, does that obviate geographicCoverage? Or should those sites be repeated or referenced?</suggestion>
+      <reference>EML Best Practices v.2, p. 22-23. "One geographicCoverage element should be included, whose boundingCoordinates describe the extent of the data....Additional geographicCoverage elements may be entered at the dataset level if there are significant distances between study sites and it would be confusing if they were grouped into one bounding box." 6 decimal places.</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="info" >
+      <identifier>taxonomicCoveragePresent</identifier>
+      <name>taxonomicCoverage is present</name>
+      <description>Check that taxonomicCoverage exists in EML at the dataset level, or at least one entity's level, or at least one attribute's level.</description>
+      <expected>taxonomicCoverage at least at the dataset level.</expected>
+      <found>0 'taxonomicCoverage' element(s) found</found>
+      <status>info</status>
+      <explanation>Only when taxa are pertinent to the dataset will they have taxonomicCoverage.</explanation>
+      <suggestion>Could search title, abstract, keywords for any taxonomic name (huge). Could search keywordType="taxonomic".</suggestion>
+      <reference>EML Best Practices v.2, p. 25</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="info" >
+      <identifier>temporalCoveragePresent</identifier>
+      <name>temporalCoverage is present</name>
+      <description>Check that temporalCoverage exists in EML at the dataset level, or at least one entity's level, or at least one attribute's level.</description>
+      <expected>temporalCoverage at least at the dataset level.</expected>
+      <found>1 'temporalCoverage' element(s) found</found>
+      <status>info</status>
+      <explanation>LTER wants to search datasets by time; the best place to search is the dataset level temporal coverage.</explanation>
+      <suggestion>Most datasets have a temporal range.</suggestion>
+      <reference>EML Best Practices v.2, p. 24</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="error" >
+      <identifier>pastaDoiAbsent</identifier>
+      <name>An alternateIdentifier with a DOI system attribute that looks like it is generated by PASTA should not be present</name>
+      <description>Reject the data package if it contains an alternateIdentifier DOI that looks like PASTA generated it.</description>
+      <expected>No PASTA DOIs are expected to be found in the uploaded data package</expected>
+      <found>No PASTA DOI alternateIdentifier elements found</found>
+      <status>valid</status>
+      <explanation>PASTA DOI values might appear in an uploaded data package (by various mechanisms). PASTA will assign a DOI after the upload has completed successfully, so an initial one should not be there.</explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="warn" >
+      <identifier>titleLength</identifier>
+      <name>Dataset title length is at 5 least words.</name>
+      <description>If the title is shorter than 5 words, it might be insufficient. Title word count between 7 and 20 including prepositions and numbers.</description>
+      <expected>Between 7 and 20 words</expected>
+      <found>37 words found.</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference>EML Best Practices, v.2, p. 13</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="warn" >
+      <identifier>fundingPresence</identifier>
+      <name>check to see if funding element is present</name>
+      <description>Checks to see if the funding element is included.</description>
+      <expected>the funding element is expected to be included</expected>
+      <found>Foundation for Support of Tinker Field Research Grant: E-26/200.027/2015</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="warn" >
+      <identifier>pubDatePresent</identifier>
+      <name>'pubDate' element is present</name>
+      <description>Check for presence of the pubDate element</description>
+      <expected>The date that the dataset was submitted for publication in PASTA must be included.
+            (The EML schema does not require this element, but when present, it does constrain its
+            format to YYYY-MM-DD or just YYYY. Citation format uses only the YYYY portion even if a
+            full date is entered.)  
+      </expected>
+      <found>2020-02-10</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference>EML Best Practices v.2, p. 17</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="warn" >
+      <identifier>datasetAbstractLength</identifier>
+      <name>Dataset abstract element is a minimum of 20 words</name>
+      <description>Check the length of a dataset abstract and warn if less than 20 words.</description>
+      <expected>An abstract is 20 words or more.</expected>
+      <found>35 words found.</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference>EML Best Practices</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="error" >
+      <identifier>duplicateEntityName</identifier>
+      <name>There are no duplicate entity names</name>
+      <description>Checks that content is not duplicated by other entityName elements in the document</description>
+      <expected>entityName is not a duplicate within the document</expected>
+      <found>No duplicates found</found>
+      <status>valid</status>
+      <explanation>Data Manager requires a non-empty, non-duplicate entityName value for every entity</explanation>
+      <suggestion>Declare a non-empty entityName and ensure that there are no duplicate entityName values in the document</suggestion>
+      <reference></reference>
+    </qualityCheck>
+  </datasetReport>
+  <entityReport>
+    <entityName>brazil_cores.csv</entityName>
+    <qualityCheck qualityType="metadata" system="knb" statusType="warn" >
+      <identifier>entityNameLength</identifier>
+      <name>Length of entityName is not excessive (less than 100 char)</name>
+      <description>length of entity name is less than 100 characters</description>
+      <expected>entityName value is 100 characters or less</expected>
+      <found>16</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="warn" >
+      <identifier>entityDescriptionPresent</identifier>
+      <name>An entity description is present</name>
+      <description>Check for presence of an entity description.</description>
+      <expected>EML Best practices pp. 32-33, "...should have enough information for a user..."</expected>
+      <found>true</found>
+      <status>valid</status>
+      <explanation>With entityName sometimes serving as a file name rather than a title, it is important to be very descriptive here.</explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="info" >
+      <identifier>numHeaderLinesPresent</identifier>
+      <name>'numHeaderLines' element is present</name>
+      <description>Check for presence of the 'numHeaderLines' element.</description>
+      <expected>Document contains 'numHeaderLines' element.</expected>
+      <found>'numHeaderLines' element: 1</found>
+      <status>info</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="info" >
+      <identifier>numFooterLinesPresent</identifier>
+      <name>'numFooterLines' element is present</name>
+      <description>Check for presence of the 'numFooterLines' element.</description>
+      <expected>Document contains 'numFooterLines' element.</expected>
+      <found>No 'numFooterLines' element found</found>
+      <status>info</status>
+      <explanation>If data file contains footer lines, 'numFooterLines' must be specified.</explanation>
+      <suggestion>Add 'numFooterLines' element if needed.</suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="error" >
+      <identifier>fieldDelimiterValid</identifier>
+      <name>Field delimiter is a single character</name>
+      <description>Field delimiters should be one character only</description>
+      <expected>A single character is expected</expected>
+      <found>,</found>
+      <status>valid</status>
+      <explanation>A valid fieldDelimiter value was found</explanation>
+      <suggestion></suggestion>
+      <reference>http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-physical.html#fieldDelimiter</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="warn" >
+      <identifier>recordDelimiterPresent</identifier>
+      <name>Record delimiter is present</name>
+      <description>Check presence of record delimiter. Check that the record delimiter is one of the suggested values.</description>
+      <expected>A record delimiter from a list of suggested values: \n, \r, \r\n, #x0A, #x0D, #x0D#x0A</expected>
+      <found>\r\n</found>
+      <status>valid</status>
+      <explanation>A valid recordDelimiter value was found</explanation>
+      <suggestion></suggestion>
+      <reference>http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-physical.html#recordDelimiter</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="warn" >
+      <identifier>numberOfRecordsPresence</identifier>
+      <name>Is the numberOfRecords element present?</name>
+      <description>Warn the user if the numberOfRecords check is not present</description>
+      <expected>A number of records element is expected for this entity</expected>
+      <found>numberOfRecords element found</found>
+      <status>valid</status>
+      <explanation>This is a valuable check that we have the correct table.</explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="warn" >
+      <identifier>entitySizePresence</identifier>
+      <name>Check for presence of an entity size element</name>
+      <description>Look for entity size element as a prep for checking congruence, and if not present, generate a warn. Note that to be most useful (i.e, to check congruence), entity size should contain the most precise measure of size, which is "byte" (the default unit); however, the presence or name of the entity size unit is NOT checked.</description>
+      <expected>Entity size is present. If unit="byte" or unit is omitted (default = byte), then congruence can be checked.</expected>
+      <found>Found entity size element with value of 25800 and size unit specified as 'bytes'. Please note that a size element specified with a unit other than 'byte' will not be tested for congruence.</found>
+      <status>valid</status>
+      <explanation>Examining the entity size is prep for checking congruence. Including the element is best practice, and if not present, a warn is generated. To be most useful, entity size should contain the most precise measure of size, which is "byte" (the default unit).</explanation>
+      <suggestion>Include an entity size in bytes</suggestion>
+      <reference> Example success: knb-lter-sbc.3.12. Example of size in units other than byte: knb-lter-mcr.6.56.</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="warn" >
+      <identifier>integrityChecksumPresence</identifier>
+      <name>A physical/authentication element is present and specifies a method attribute with a value of MD5 or SHA-1</name>
+      <description>Check for presence of a physical/authentication element containing a checksum or hash value for an integrity check (e.g. MD5, SHA-1). Warn if an entity does not have a physical/authentication element, or if none of the physical/authentication elements specify a method attribute with a value of MD5 or SHA-1.</description>
+      <expected>At least one physical/authentication element with a method attribute specifying MD5 or SHA-1 and containing a checksum or hash value that can be used to perform an integrity check on the data.</expected>
+      <found>true</found>
+      <status>valid</status>
+      <explanation>PASTA will use this value to check the integrity of the data it downloads from your site. In addition, PASTA is planning to compare the contributor-supplied checksum/hash value documented 
+      in the physical/authentication element to the checksum/hash value of this entity downloaded from previous revisions of this data package. If PASTA already has a copy of this entity, it will be able 
+      to avoid an unnecessary download of the entity from your site, resulting in faster processing of the new data package revision when you update it in PASTA.</explanation>
+      <suggestion>Add a physical/authentication element and store the entity checksum or hash value in it using a method such as MD5 or SHA-1.</suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="warn" >
+      <identifier>attributeNamesUnique</identifier>
+      <name>Attribute names are unique</name>
+      <description>Checks if attributeName values are unique in the table. Not required by EML.</description>
+      <expected>Unique attribute names.</expected>
+      <found>true</found>
+      <status>valid</status>
+      <explanation>A good table does not have duplicate column names.</explanation>
+      <suggestion></suggestion>
+      <reference>EML Best Practices</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="data" system="knb" statusType="info" >
+      <identifier>displayDownloadData</identifier>
+      <name>Display downloaded data</name>
+      <description>Display the first kilobyte of data that is downloaded</description>
+      <expected>Up to one kilobyte of data should be displayed</expected>
+      <found><![CDATA[
+Site,Latitude,Longitude,Rep,depth,loi,Cinorg,Corg,dbd
+Urca,-22.947603,-43.163558,1,0,0.7073791,0.106946162,1.034896084,1.060744444
+Urca,-22.947603,-43.163558,1,-6,0.8586238,0.140078322,0.922101601,1.357311111
+Urca,-22.947603,-43.163558,1,-12,0.9764268,0.258179468,0.381856459,1.4302
+Urca,-22.947603,-43.163558,1,-18,1.180537,1.039943509,1.017850824,1.472311111
+Urca,-22.947603,-43.163558,1,-24,0.815439,0,0.038859591,1.367088889
+Urca,-22.947603,-43.163558,1,-30,0.7819195,0,0.030873103,1.449977778
+Urca,-22.947603,-43.163558,1,-39,0.8565677,0,0.403503716,1.3441
+Urca,-22.947603,-43.163558,1,-48,0.7171579,0,0.041425284,1.360333333
+Urca,-22.947603,-43.163558,1,-57,4.9761167,0,0.861843705,1.396166667
+Urca,-22.947603,-43.163558,1,-66,1.7012563,0,0.489015013,1.447411111
+Urca,-22.947603,-43.163558,2,0,0.8161852,0.022931016,0.311269038,1.067944444
+Urca,-22.947603,-43.163558,2,-18,1.1949902,0.843719138,0.730470763,1.5765
+Urca,-22.947603,-43.163558,2,-39,0.8065278,0,0,1.462855556
+Urca,-22.947603,-43.163558,2,-6]]></found>
+      <status>info</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="error" >
+      <identifier>urlReturnsData</identifier>
+      <name>URL returns data</name>
+      <description>Checks whether a URL returns data. Unless the URL is specified to be function="information", the URL should return the resource for download.</description>
+      <expected>A data entity that matches the metadata</expected>
+      <found>true</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference>http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-resource.html#UrlType</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="error" >
+      <identifier>onlineURLs</identifier>
+      <name>Online URLs are live</name>
+      <description>Check that online URLs return something</description>
+      <expected>true</expected>
+      <found>true</found>
+      <status>valid</status>
+      <explanation>Succeeded in accessing URL: <![CDATA[https://portal.lternet.edu/nis/data/FCE-upload-2020-02-10-1581376370501/brazil_cores.csv]]></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="lter" statusType="error" >
+      <identifier>integrityChecksum</identifier>
+      <name>Compare the metadata checksum for an entity to the checksum of the downloaded entity</name>
+      <description>Two possible responses: valid if checksums match; error if checksums do not match.</description>
+      <expected>ba80164c86810621868f95e330a1c496</expected>
+      <found>ba80164c86810621868f95e330a1c496</found>
+      <status>valid</status>
+      <explanation>Matching checksums will ensure data integrity during upload to the repository.</explanation>
+      <suggestion>If the found integrity hash value does not match the expected integrity hash value, there may have been a loss of integrity in the data download. Check that the hash method and hash value documented in the metadata are the correct values.</suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="error" >
+      <identifier>entitySizeCongruence</identifier>
+      <name>Check that the entity size in the Level 0 metadata matches the one PASTA+ generates.</name>
+      <description>Compare raw file size of file to [entity]/physical/size element in metadata. Return error if not matching.</description>
+      <expected>25800</expected>
+      <found>25800</found>
+      <status>valid</status>
+      <explanation>Examining the entity size is a method for checking that this is the correct entity.</explanation>
+      <suggestion>Check the entity size.</suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="error" >
+      <identifier>databaseTableCreated</identifier>
+      <name>Database table created</name>
+      <description>Status of creating a database table</description>
+      <expected>A database table is expected to be generated from the EML attributes.</expected>
+      <found>A database table was generated from the attributes description</found>
+      <status>valid</status>
+      <explanation><![CDATA[CREATE TABLE brazil_cores_csv("Site" TEXT,"Latitude" FLOAT,"Longitude" FLOAT,"Rep" TEXT,"depth" FLOAT,"loi" FLOAT,"Cinorg" FLOAT,"Corg" FLOAT,"dbd" FLOAT);]]></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="warn" >
+      <identifier>examineRecordDelimiter</identifier>
+      <name>Data are examined and possible record delimiters are displayed</name>
+      <description>If no record delimiter was specified, we assume that \r\n is the delimiter. Search the first row for other record delimiters and see if other delimiters are found.</description>
+      <expected>No other potential record delimiters expected in the first row.</expected>
+      <found>No other potential record delimiters were detected. A valid record delimiter was previously detected</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference>http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-physical.html#recordDelimiter</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="data" system="knb" statusType="info" >
+      <identifier>displayFirstInsertRow</identifier>
+      <name>Display first insert row</name>
+      <description>Display the first row of data values to be inserted into the database table</description>
+      <expected>The first row of data values should be displayed</expected>
+      <found><![CDATA[Urca, -22.947603, -43.163558, 1, 0, 0.7073791, 0.106946162, 1.034896084, 1.060744444]]></found>
+      <status>info</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="error" >
+      <identifier>onlineURLs</identifier>
+      <name>Online URLs are live</name>
+      <description>Check that online URLs return something</description>
+      <expected>true</expected>
+      <found>true</found>
+      <status>valid</status>
+      <explanation>Succeeded in accessing URL: <![CDATA[file:///pasta/data1/knb-lter-fce.1228.2/06cf57a513ea48bcf94e93b2df94f030]]></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="error" >
+      <identifier>tooFewFields</identifier>
+      <name>Data does not have fewer fields than metadata attributes</name>
+      <description>Compare number of fields specified in metadata to number of fields found in a data record</description>
+      <expected></expected>
+      <found>No errors detected</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference>http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-physical.html#dataFormat</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="error" >
+      <identifier>tooManyFields</identifier>
+      <name>Data does not have more fields than metadata attributes</name>
+      <description>Compare number of fields specified in metadata to number of fields found in a data record</description>
+      <expected></expected>
+      <found>No errors detected</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference>http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-physical.html#dataFormat</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="warn" >
+      <identifier>dataLoadStatus</identifier>
+      <name>Data can be loaded into the database</name>
+      <description>Status of loading the data table into a database</description>
+      <expected>No errors expected during data loading or data loading was not attempted for this data entity</expected>
+      <found>The data table loaded successfully into a database</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="warn" >
+      <identifier>numberOfRecords</identifier>
+      <name>Number of records in metadata matches number of rows loaded</name>
+      <description>Compare number of records specified in metadata to number of records found in data</description>
+      <expected>300</expected>
+      <found>300</found>
+      <status>valid</status>
+      <explanation>The expected number of records (300) was found in the data table.</explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="lter" statusType="info" >
+      <identifier>headerRowAttributeNames</identifier>
+      <name>Header row is displayed alongside attribute names</name>
+      <description>Compare tne content of the data header row to the content of EML attribute names.</description>
+      <expected>No expectation, information only</expected>
+      <found><![CDATA[*** HEADER ROWS ***
+Site,Latitude,Longitude,Rep,depth,loi,Cinorg,Corg,dbd
+*** ATTRIBUTE LIST ***
+Site,Latitude,Longitude,Rep,depth,loi,Cinorg,Corg,dbd]]></found>
+      <status>info</status>
+      <explanation></explanation>
+      <suggestion>Customer should evaluate the findings</suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="lter" statusType="warn" >
+      <identifier>dateFormatMatches</identifier>
+      <name>Date format in metadata matches data</name>
+      <description>dateTime/formatString in attribute metadata is from the preferred list, and the data matches. A non-match generates only a warn.</description>
+      <expected>Format string is preferred, and all data values match the format string</expected>
+      <found>Data values matched the specified formatString.</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion>Dates should be consistently formatted and match the formatString in metadata.</suggestion>
+      <reference></reference>
+    </qualityCheck>
+  </entityReport>
+  <entityReport>
+    <entityName>Fl_bay_cores.csv</entityName>
+    <qualityCheck qualityType="metadata" system="knb" statusType="warn" >
+      <identifier>entityNameLength</identifier>
+      <name>Length of entityName is not excessive (less than 100 char)</name>
+      <description>length of entity name is less than 100 characters</description>
+      <expected>entityName value is 100 characters or less</expected>
+      <found>16</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="warn" >
+      <identifier>entityDescriptionPresent</identifier>
+      <name>An entity description is present</name>
+      <description>Check for presence of an entity description.</description>
+      <expected>EML Best practices pp. 32-33, "...should have enough information for a user..."</expected>
+      <found>true</found>
+      <status>valid</status>
+      <explanation>With entityName sometimes serving as a file name rather than a title, it is important to be very descriptive here.</explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="info" >
+      <identifier>numHeaderLinesPresent</identifier>
+      <name>'numHeaderLines' element is present</name>
+      <description>Check for presence of the 'numHeaderLines' element.</description>
+      <expected>Document contains 'numHeaderLines' element.</expected>
+      <found>'numHeaderLines' element: 1</found>
+      <status>info</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="info" >
+      <identifier>numFooterLinesPresent</identifier>
+      <name>'numFooterLines' element is present</name>
+      <description>Check for presence of the 'numFooterLines' element.</description>
+      <expected>Document contains 'numFooterLines' element.</expected>
+      <found>No 'numFooterLines' element found</found>
+      <status>info</status>
+      <explanation>If data file contains footer lines, 'numFooterLines' must be specified.</explanation>
+      <suggestion>Add 'numFooterLines' element if needed.</suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="error" >
+      <identifier>fieldDelimiterValid</identifier>
+      <name>Field delimiter is a single character</name>
+      <description>Field delimiters should be one character only</description>
+      <expected>A single character is expected</expected>
+      <found>,</found>
+      <status>valid</status>
+      <explanation>A valid fieldDelimiter value was found</explanation>
+      <suggestion></suggestion>
+      <reference>http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-physical.html#fieldDelimiter</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="warn" >
+      <identifier>recordDelimiterPresent</identifier>
+      <name>Record delimiter is present</name>
+      <description>Check presence of record delimiter. Check that the record delimiter is one of the suggested values.</description>
+      <expected>A record delimiter from a list of suggested values: \n, \r, \r\n, #x0A, #x0D, #x0D#x0A</expected>
+      <found>\r\n</found>
+      <status>valid</status>
+      <explanation>A valid recordDelimiter value was found</explanation>
+      <suggestion></suggestion>
+      <reference>http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-physical.html#recordDelimiter</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="warn" >
+      <identifier>numberOfRecordsPresence</identifier>
+      <name>Is the numberOfRecords element present?</name>
+      <description>Warn the user if the numberOfRecords check is not present</description>
+      <expected>A number of records element is expected for this entity</expected>
+      <found>numberOfRecords element found</found>
+      <status>valid</status>
+      <explanation>This is a valuable check that we have the correct table.</explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="warn" >
+      <identifier>entitySizePresence</identifier>
+      <name>Check for presence of an entity size element</name>
+      <description>Look for entity size element as a prep for checking congruence, and if not present, generate a warn. Note that to be most useful (i.e, to check congruence), entity size should contain the most precise measure of size, which is "byte" (the default unit); however, the presence or name of the entity size unit is NOT checked.</description>
+      <expected>Entity size is present. If unit="byte" or unit is omitted (default = byte), then congruence can be checked.</expected>
+      <found>Found entity size element with value of 5981 and size unit specified as 'bytes'. Please note that a size element specified with a unit other than 'byte' will not be tested for congruence.</found>
+      <status>valid</status>
+      <explanation>Examining the entity size is prep for checking congruence. Including the element is best practice, and if not present, a warn is generated. To be most useful, entity size should contain the most precise measure of size, which is "byte" (the default unit).</explanation>
+      <suggestion>Include an entity size in bytes</suggestion>
+      <reference> Example success: knb-lter-sbc.3.12. Example of size in units other than byte: knb-lter-mcr.6.56.</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="lter" statusType="warn" >
+      <identifier>integrityChecksumPresence</identifier>
+      <name>A physical/authentication element is present and specifies a method attribute with a value of MD5 or SHA-1</name>
+      <description>Check for presence of a physical/authentication element containing a checksum or hash value for an integrity check (e.g. MD5, SHA-1). Warn if an entity does not have a physical/authentication element, or if none of the physical/authentication elements specify a method attribute with a value of MD5 or SHA-1.</description>
+      <expected>At least one physical/authentication element with a method attribute specifying MD5 or SHA-1 and containing a checksum or hash value that can be used to perform an integrity check on the data.</expected>
+      <found>true</found>
+      <status>valid</status>
+      <explanation>PASTA will use this value to check the integrity of the data it downloads from your site. In addition, PASTA is planning to compare the contributor-supplied checksum/hash value documented 
+      in the physical/authentication element to the checksum/hash value of this entity downloaded from previous revisions of this data package. If PASTA already has a copy of this entity, it will be able 
+      to avoid an unnecessary download of the entity from your site, resulting in faster processing of the new data package revision when you update it in PASTA.</explanation>
+      <suggestion>Add a physical/authentication element and store the entity checksum or hash value in it using a method such as MD5 or SHA-1.</suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="warn" >
+      <identifier>attributeNamesUnique</identifier>
+      <name>Attribute names are unique</name>
+      <description>Checks if attributeName values are unique in the table. Not required by EML.</description>
+      <expected>Unique attribute names.</expected>
+      <found>true</found>
+      <status>valid</status>
+      <explanation>A good table does not have duplicate column names.</explanation>
+      <suggestion></suggestion>
+      <reference>EML Best Practices</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="data" system="knb" statusType="info" >
+      <identifier>displayDownloadData</identifier>
+      <name>Display downloaded data</name>
+      <description>Display the first kilobyte of data that is downloaded</description>
+      <expected>Up to one kilobyte of data should be displayed</expected>
+      <found><![CDATA[
+Site,Lat,Long,Rep,depth,loi,Cinorg,Corg,dbd
+bob,25.0248,-80.681,1,0,7.565392354,9.629995863,3.005428225,0.8538
+bob,25.0248,-80.681,1,-10,7.060629317,9.797380227,2.590704303,0.687333333
+bob,25.0248,-80.681,1,-20,6.00500417,10.09815539,2.443237985,0.6535
+bob,25.0248,-80.681,1,-40,5.816640986,10.13912006,2.204278093,0.6535
+bob,25.0248,-80.681,1,-50,5.479452055,10.16808642,2.104393273,0.831666667
+bob,25.0248,-80.681,1,-60,5.22544043,10.13997928,2.062827502,0.711666667
+bob,25.0248,-80.681,1,-70,6.181533646,10.04229732,2.428402948,0.777666667
+bob,25.0248,-80.681,1,-80,4.970544919,10.27086651,2.029570763,0.770833333
+bob,25.0248,-80.681,1,-90,6.098406098,10.11934219,2.206865356,0.824333333
+bob,25.0248,-80.681,1,-98,6.310679612,10.0160201,2.314188738,0.856833333
+bob,25.0248,-80.681,2,0,6.370721789,9.677522196,2.508977804,0.558333333
+bob,25.0248,-80.681,2,-10,6.19047619,9.827485714,2.367514286,0.681833333
+bob,25.0248,-80.681,2,-20,6.13449692,10.07411512,2.311884882,0.734
+bob,25.0248,-80.681,2,-40,6.171201]]></found>
+      <status>info</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="error" >
+      <identifier>urlReturnsData</identifier>
+      <name>URL returns data</name>
+      <description>Checks whether a URL returns data. Unless the URL is specified to be function="information", the URL should return the resource for download.</description>
+      <expected>A data entity that matches the metadata</expected>
+      <found>true</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference>http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-resource.html#UrlType</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="error" >
+      <identifier>onlineURLs</identifier>
+      <name>Online URLs are live</name>
+      <description>Check that online URLs return something</description>
+      <expected>true</expected>
+      <found>true</found>
+      <status>valid</status>
+      <explanation>Succeeded in accessing URL: <![CDATA[https://portal.lternet.edu/nis/data/FCE-upload-2020-02-10-1581376370501/Fl_bay_cores.csv]]></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="lter" statusType="error" >
+      <identifier>integrityChecksum</identifier>
+      <name>Compare the metadata checksum for an entity to the checksum of the downloaded entity</name>
+      <description>Two possible responses: valid if checksums match; error if checksums do not match.</description>
+      <expected>ea8c50d9ef84a57dac9cdb3c5b4ab9a3</expected>
+      <found>ea8c50d9ef84a57dac9cdb3c5b4ab9a3</found>
+      <status>valid</status>
+      <explanation>Matching checksums will ensure data integrity during upload to the repository.</explanation>
+      <suggestion>If the found integrity hash value does not match the expected integrity hash value, there may have been a loss of integrity in the data download. Check that the hash method and hash value documented in the metadata are the correct values.</suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="error" >
+      <identifier>entitySizeCongruence</identifier>
+      <name>Check that the entity size in the Level 0 metadata matches the one PASTA+ generates.</name>
+      <description>Compare raw file size of file to [entity]/physical/size element in metadata. Return error if not matching.</description>
+      <expected>5981</expected>
+      <found>5981</found>
+      <status>valid</status>
+      <explanation>Examining the entity size is a method for checking that this is the correct entity.</explanation>
+      <suggestion>Check the entity size.</suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="metadata" system="knb" statusType="error" >
+      <identifier>databaseTableCreated</identifier>
+      <name>Database table created</name>
+      <description>Status of creating a database table</description>
+      <expected>A database table is expected to be generated from the EML attributes.</expected>
+      <found>A database table was generated from the attributes description</found>
+      <status>valid</status>
+      <explanation><![CDATA[CREATE TABLE Fl_bay_cores_csv("Site" TEXT,"Lat" FLOAT,"Long" FLOAT,"Rep" TEXT,"depth" FLOAT,"loi" FLOAT,"Cinorg" FLOAT,"Corg" FLOAT,"dbd" FLOAT);]]></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="warn" >
+      <identifier>examineRecordDelimiter</identifier>
+      <name>Data are examined and possible record delimiters are displayed</name>
+      <description>If no record delimiter was specified, we assume that \r\n is the delimiter. Search the first row for other record delimiters and see if other delimiters are found.</description>
+      <expected>No other potential record delimiters expected in the first row.</expected>
+      <found>No other potential record delimiters were detected. A valid record delimiter was previously detected</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference>http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-physical.html#recordDelimiter</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="data" system="knb" statusType="info" >
+      <identifier>displayFirstInsertRow</identifier>
+      <name>Display first insert row</name>
+      <description>Display the first row of data values to be inserted into the database table</description>
+      <expected>The first row of data values should be displayed</expected>
+      <found><![CDATA[bob, 25.0248, -80.681, 1, 0, 7.565392354, 9.629995863, 3.005428225, 0.8538]]></found>
+      <status>info</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="error" >
+      <identifier>onlineURLs</identifier>
+      <name>Online URLs are live</name>
+      <description>Check that online URLs return something</description>
+      <expected>true</expected>
+      <found>true</found>
+      <status>valid</status>
+      <explanation>Succeeded in accessing URL: <![CDATA[file:///pasta/data1/knb-lter-fce.1228.2/ea42cda71af1f5725280ef22d3e29aca]]></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="error" >
+      <identifier>tooFewFields</identifier>
+      <name>Data does not have fewer fields than metadata attributes</name>
+      <description>Compare number of fields specified in metadata to number of fields found in a data record</description>
+      <expected></expected>
+      <found>No errors detected</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference>http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-physical.html#dataFormat</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="error" >
+      <identifier>tooManyFields</identifier>
+      <name>Data does not have more fields than metadata attributes</name>
+      <description>Compare number of fields specified in metadata to number of fields found in a data record</description>
+      <expected></expected>
+      <found>No errors detected</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference>http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-physical.html#dataFormat</reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="warn" >
+      <identifier>dataLoadStatus</identifier>
+      <name>Data can be loaded into the database</name>
+      <description>Status of loading the data table into a database</description>
+      <expected>No errors expected during data loading or data loading was not attempted for this data entity</expected>
+      <found>The data table loaded successfully into a database</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="knb" statusType="warn" >
+      <identifier>numberOfRecords</identifier>
+      <name>Number of records in metadata matches number of rows loaded</name>
+      <description>Compare number of records specified in metadata to number of records found in data</description>
+      <expected>82</expected>
+      <found>82</found>
+      <status>valid</status>
+      <explanation>The expected number of records (82) was found in the data table.</explanation>
+      <suggestion></suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="lter" statusType="info" >
+      <identifier>headerRowAttributeNames</identifier>
+      <name>Header row is displayed alongside attribute names</name>
+      <description>Compare tne content of the data header row to the content of EML attribute names.</description>
+      <expected>No expectation, information only</expected>
+      <found><![CDATA[*** HEADER ROWS ***
+Site,Lat,Long,Rep,depth,loi,Cinorg,Corg,dbd
+*** ATTRIBUTE LIST ***
+Site,Lat,Long,Rep,depth,loi,Cinorg,Corg,dbd]]></found>
+      <status>info</status>
+      <explanation></explanation>
+      <suggestion>Customer should evaluate the findings</suggestion>
+      <reference></reference>
+    </qualityCheck>
+    <qualityCheck qualityType="congruency" system="lter" statusType="warn" >
+      <identifier>dateFormatMatches</identifier>
+      <name>Date format in metadata matches data</name>
+      <description>dateTime/formatString in attribute metadata is from the preferred list, and the data matches. A non-match generates only a warn.</description>
+      <expected>Format string is preferred, and all data values match the format string</expected>
+      <found>Data values matched the specified formatString.</found>
+      <status>valid</status>
+      <explanation></explanation>
+      <suggestion>Dates should be consistently formatted and match the formatString in metadata.</suggestion>
+      <reference></reference>
+    </qualityCheck>
+  </entityReport>
+</qr:qualityReport>
