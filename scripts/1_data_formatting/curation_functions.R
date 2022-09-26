@@ -62,44 +62,54 @@ convert_percent_to_fraction <- function(col_input) {
 }
 
 # Convert UTM to decimal degree ##########
-# assumed columns: core_id, easting, northing
+# assumed columns: core_id, easting, northing, zone
 UTM_to_DD <- function(df, core_id, easting, northing, zone){
   
   require(sf)
   
-  # define UTM and latlong projections
-  utm_prj <- paste0("+proj=utm +zone=", zone, " +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+  # define latlong projection
   dd_prj <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
   
-  # isolate UTM coordinates
-  # utm_coords <- data.frame(core_id = "Chelmsford", easting = 325205.77, northing = 5734662.8) # test
-  utm_coords <- df %>% select(core_id, easting, northing)
-  
+  zones <- unique(df$zone) # isolate specific zones
+  dd_results <- data.frame()
+    
+  # loop through zones
   # create spatial object and assign coords utm coordinate system
-  utm_coords <- st_as_sf(utm_coords, coords = c("easting", "northing"), crs = utm_prj) 
-  # st_crs(utm_coords) # check projection
-  
-  dd_coords <- st_transform(utm_coords, crs = dd_prj) %>%
-    # extract lat lon from geometry
-    mutate(longitude = sf::st_coordinates(.)[,1],
-           latitude = sf::st_coordinates(.)[,2]) %>% 
-    # extract(geometry, into = c('longitude', 'latitude'), '\\((.*),(.*)\\)', convert = T) %>% 
-    dplyr::select(core_id, longitude, latitude) %>% 
-    sf::st_set_geometry(NULL)
-  
+  for(z in zones){
+    
+    # define UTM projection with specified zone
+    utm_prj <- paste0("+proj=utm +zone=", z, " +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+    # subset dataframe into specific zone
+    
+    utm_df <- df %>% filter(zone == z)
+    
+    utm_coords <- st_as_sf(utm_df, coords = c("easting", "northing"), crs = utm_prj) 
+    # st_crs(utm_coords) # check projection
+    dd_coords <- st_transform(utm_coords, crs = dd_prj) %>% 
+      # extract lat lon from geometry
+      mutate(longitude = sf::st_coordinates(.)[,1],
+             latitude = sf::st_coordinates(.)[,2]) %>% 
+      # extract(geometry, into = c('longitude', 'latitude'), '\\((.*),(.*)\\)', convert = T) %>% 
+      dplyr::select(core_id, longitude, latitude) %>% 
+      sf::st_set_geometry(NULL)
+    
+    dd_results <- bind_rows(dd_results, dd_coords)
+  }
+
   # join back to the dataframe
-  df_decimal <- left_join(df, dd_coords)
+  df_decimal <- left_join(df, dd_results)
   
   return(df_decimal)
 }
+
 # testing
-# df <- data.frame(core_id = c('Wilmington', 'New Bern'), 
-#                  zone = 18,
-#                  easting = c(228739.63048392, 313704.36),
-#                  northing = c(3791107.69823704, 3886986.48))
-# 
-# df_decimal <- df %>% 
-#   UTM_to_DD(easting = easting, northing = northing, zone = 18, core_id = core_id)
+# df <- data.frame(core_id = c('Wilmington', 'New Bern', "Shallotte"),
+#                  zone = c(18, 18, 17),
+#                  easting = c(228739.63048392, 313704.36, 741519.99),
+#                  northing = c(3791107.69823704, 3886986.48, 3762267.73),
+#                  other_info = "blah blah")
+# df_decimal <- df %>% UTM_to_DD()
+# leaflet(df_decimal) %>% addTiles() %>% addCircleMarkers(lng = ~longitude, lat = ~latitude)
 
 ## Convert UTM to lat/long ###############
 convert_UTM_to_latlong <- function(easting, northing, zone, core_id) {
