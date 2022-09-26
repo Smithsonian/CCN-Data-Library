@@ -63,7 +63,7 @@ convert_percent_to_fraction <- function(col_input) {
 
 # Convert UTM to decimal degree ##########
 # assumed columns: core_id, easting, northing
-UTM_to_DD <- function(df, zone){
+UTM_to_DD <- function(df, core_id, easting, northing, zone){
   
   require(sf)
   
@@ -79,19 +79,31 @@ UTM_to_DD <- function(df, zone){
   utm_coords <- st_as_sf(utm_coords, coords = c("easting", "northing"), crs = utm_prj) 
   # st_crs(utm_coords) # check projection
   
-  dd_coords <- st_transform(utm_coords, crs = dd_prj) %>% 
+  dd_coords <- st_transform(utm_coords, crs = dd_prj) %>%
     # extract lat lon from geometry
-    extract(geometry, into = c('longitude', 'latitude'), '\\((.*),(.*)\\)', convert = T) %>%
-    select(core_id, longitude, latitude)
+    mutate(longitude = sf::st_coordinates(.)[,1],
+           latitude = sf::st_coordinates(.)[,2]) %>% 
+    # extract(geometry, into = c('longitude', 'latitude'), '\\((.*),(.*)\\)', convert = T) %>% 
+    dplyr::select(core_id, longitude, latitude) %>% 
+    sf::st_set_geometry(NULL)
   
   # join back to the dataframe
   df_decimal <- left_join(df, dd_coords)
   
   return(df_decimal)
 }
+# testing
+# df <- data.frame(core_id = c('Wilmington', 'New Bern'), 
+#                  zone = 18,
+#                  easting = c(228739.63048392, 313704.36),
+#                  northing = c(3791107.69823704, 3886986.48))
+# 
+# df_decimal <- df %>% 
+#   UTM_to_DD(easting = easting, northing = northing, zone = 18, core_id = core_id)
 
 ## Convert UTM to lat/long ###############
 convert_UTM_to_latlong <- function(easting, northing, zone, core_id) {
+  warning('This function has been superceded by UTM_to_DD().')
   
   # Remove non-numeric characters from zone attribute
   zone <- gsub("[^0-9]", "", zone)
