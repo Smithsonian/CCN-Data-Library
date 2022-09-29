@@ -1,0 +1,227 @@
+## CCN Data Library Hook Script########
+## contact: Rose Cheney, cheneyr@si.edu
+
+#Dataset- https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-fce.1228.2
+#### Organic and inorganic data for soil cores from Brazil and Florida Bay seagrasses to support 
+# Howard and Fourqurean 2020, CO2 released by carbonate sediment production in some coastal areas may offset the benefits of seagrass 
+# and Blue Carbon storage, Limnology and Oceanography, DOI: 10.1002/lno.10621. 
+
+# load necessary libraries
+library(tidyverse)
+library(readxl)
+library(lubridate)
+library(RefManageR)
+library(skimr)
+library(leaflet)
+
+
+# load in helper functions
+source("scripts/1_data_formatting/curation_functions.R") # For curation
+source("scripts/1_data_formatting/qa_functions.R") # For QAQC
+
+# read in raw data 
+brazil_cores <- read_csv("data/primary_studies/Howard_and_Fourqurean_2020/original/knb-lter-fce.1228.2/brazil_cores.csv")
+fl_bay_cores <- read_csv("data/primary_studies/Howard_and_Fourqurean_2020/original/knb-lter-fce.1228.2/Fl_bay_cores.csv")
+methods_raw <- read_xlsx("data/primary_studies/Howard_and_Fourqurean_2020/intermediate/Howard_and_Fourqurean_2020_materials_and_methods.xlsx", 2)
+sites_raw <- read_csv("data/primary_studies/Howard_and_Fourqurean_2020/intermediate/Howard_and_Fourqurean_2020_supplement.csv")
+
+
+## 1. Curation ####
+
+# this study ID must match the name of the dataset folder
+# include this id in a study_id column for every curated table
+id <- "Howard_and_Fourqurean_2020"
+# if there are only two authors: Author_and_Author_year
+# "year" will be exchanged with "unpublished" in some cases
+
+## ... Methods ####
+
+# curate materials and methods table
+methods <- methods_raw %>% mutate(method_id = "single set of methods",
+                                  roots_flag = "roots and rhizomes separated")
+
+
+## ... Sites ####
+# curate and format site level data from full data table
+sites<- sites_raw %>% rename(site_description = notes) %>% 
+                   mutate(salinity_class = "saline",
+                          salinity_method = "measurement",
+                          vegetation_class = "seagrass",
+                          inundation_class = "low",
+                          inundation_method = "field observation",
+                          study_id = id) %>% 
+                  relocate(study_id, .before = site_id)
+dfsites<- names(sites) %in% c("latitude", "longitude", "salinity", "seagrass present")
+sites<- sites[!dfsites]
+
+
+## ... Cores ####
+#curate core level data table 
+
+# rename variables to match accross datasets
+fl_bay_cores <- fl_bay_cores %>% rename(Latitude = Lat,
+                                        Longitude = Long)
+# join FL Bay and SE Brazil datasets
+full_data<- brazil_cores %>% bind_rows(brazil_cores,fl_bay_cores) %>% 
+                        mutate(core_id = paste(Site, "-",Rep)) %>% 
+                        mutate(study_id= id) %>% 
+                        rename(latitude = Latitude,
+                               longitude = Longitude) %>% 
+                        relocate(core_id, .after = Site) %>% 
+                        relocate(study_id, .before = Site)
+
+
+#reformat variables and add needed columns for cores table
+cores <- full_data %>% rename(site_id = Site) %>% 
+          mutate(year= case_when(latitude > -20 ~ "2015",
+                         latitude < -20 ~ "2004")) %>% 
+        mutate(vegetation_class ="seagrass",
+        vegetation_method = "field observation",
+        habitat = "seagrass",
+        position_method = NA,
+        core_length_flag = "core depth limited by length of corer") 
+
+## remove duplicate/unneeded columns 
+dfcores<- names(cores) %in% c("Lat", "Long", "depth", "loi","dbd", "Cinorg", "Corg", "Rep")
+cores<- cores[!dfcores]
+
+
+
+## ... Depthseries ####
+
+# curate depthseries data table
+## rename and add relevant variables 
+depthseries <- full_data %>% mutate(fraction_organic_matter = loi/100,
+                                    fraction_carbon = Corg/100,
+                                  depth_min = depth,
+                                  method_id = "single set of methods",
+                                  compaction_notes = "corer minimizes compaction") %>% 
+                rename(dry_bulk_density =dbd, site_id =Site) %>% 
+                relocate(depth_min, .before = depth) %>% 
+                relocate(method_id, .before = depth_min) %>% 
+                mutate(representative_depth_max = depth + -9) %>% 
+                relocate(representative_depth_max, .after= depth_min)
+
+#remove unneeded columns
+dfdepth <- names(depthseries) %in% c("latitude", "longitude", "loi","depth","Rep", "Cinorg", "Corg")
+depthseries <- depthseries[!dfdepth]
+
+
+
+## ... Species ####
+
+# if provided at the site or core-level, curate taxa table
+# Note: this information may need to be isolated from another table
+
+species <- sites_raw %>% select(c(1,5)) %>% 
+          rename('species_code' = 'seagrass present') %>%
+          mutate(study_id = id,
+                 code_type = "Genus species",
+                 habitat = "seagrass") %>%
+          relocate(code_type, .after = species_code) %>% 
+          relocate(study_id, .before = site_id) %>% 
+          mutate(species_code = str_split(species_code, " & ")) %>% 
+          unnest(species_code)
+
+
+####recode sps names
+species$species_code[species$species_code == "H. wrightii"] <- "Halodule wrightii"
+species$species_code[species$species_code == "T. testudinum"] <- "Thalassia testudinum"
+species$species_code[species$species_code == "H. decipiens"] <- "Halophilia decipiens"
+
+## ... Impacts ####
+## Not provided in dataset 
+
+
+## 2. QAQC ####
+
+## Mapping
+leaflet(cores) %>%
+    addTiles() %>% 
+    addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
+
+## Table testing
+table_names <- c("methods", "sites", "cores", "depthseries", "species")
+
+# Check col and varnames
+testTableCols(table_names)
+testTableVars(table_names)
+
+# test required and conditional attributes
+### group species code to run qc
+species <- species %>% group_by(species_code)
+testRequired(table_names)
+testConditional(table_names)
+
+# test uniqueness
+testUniqueCores(cores)
+testUniqueCoords(cores)
+
+# test relational structure of data tables
+testIDs(cores, depthseries, by = "site")
+testIDs(cores, depthseries, by = "site")
+
+# test numeric attribute ranges
+fractionNotPercent(depthseries)
+test_numeric_vars(depthseries)
+
+#visualize fraction organic matter ~ fraction carbon 
+ggplot(depthseries) +
+  geom_point(aes(fraction_organic_matter, fraction_carbon))
+
+
+## 3. Write Curated Data ####
+
+# write data to final folder
+write_csv(methods, "data/primary_studies/Howard_and_Fourqurean_2020/derivative/Howard_and_Fourqurean_2020_methods.csv")
+write_csv(sites, "data/primary_studies/Howard_and_Fourqurean_2020/derivative/Howard_and_Fourqurean_2020_sites.csv")
+write_csv(cores, "data/primary_studies/Howard_and_Fourqurean_2020/derivative/Howard_and_Fourqurean_2020_cores.csv")
+write_csv(depthseries, "data/primary_studies/Howard_and_Fourqurean_2020/derivative/Howard_and_Fourqurean_2020_depthseries.csv")
+write_csv(species, "data/primary_studies/Howard_and_Fourqurean_2020/derivative/Howard_and_Fourqurean_2020_species.csv")
+## Impacts not included, write_csv(impacts, "data/primary_studies/Howard_and_Fourqurean_2020/derivative/Howard_and_Fourqurean_2020_impacts.csv")
+
+## 4. Bibliography ####
+
+####Create bibtex citation for dataset and associated article 
+
+#citation for primary dataset
+study_citation_data <- data.frame(bibliography_id = "Howard_and_Fourqurean_2020",
+           title = "Organic and inorganic data for soil cores from Brazil and Florida Bay seagrasses to support Howard et al 2018, CO2 released by carbonate sediment production in some coastal areas may offset the benefits of seagrass “Blue Carbon” storage",
+           author = "Jason L. Howard and James W. Fourqurean",
+           bibtype = "Misc",
+           doi = "DOI: 10.1002/lno.10621",
+           url = "https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-fce.1228.2", 
+           journal = "Limnology and Oceanography",
+           publication_type = "primary dataset", ###if article -- "associated source"
+           year = "2020") %>% 
+  column_to_rownames("bibliography_id")
+
+#citation for associated article
+study_citation_article <- data.frame(bibliography_id = "Howard_et_al_2018",
+                                    title = "CO2 released by carbonate sediment production in some coastal areas may offset the benefits of seagrass “Blue Carbon” storage",
+                                    author = "Howard, J.L., Creed, J.C., Aguiar, M.V.P. and Fourqurean, J.W.",
+                                    bibtype = "Article",
+                                    doi = "DOI: 10.1002/lno.10621",
+                                    url = "https://aslopubs.onlinelibrary.wiley.com/doi/10.1002/lno.10621",
+                                    journal = "Limnology and Oceanography",
+                                    publication_type = "associated source",
+                                    year = "2018") %>% 
+                column_to_rownames("bibliography_id")
+#merge               
+study_citations <- bind_rows(study_citation_data, study_citation_article) %>%
+                  mutate(study_id = id,
+                  bibliography_id = c("Howard_and_Fourqurean_2020_dataset", "Howard_et_al_2018_paper"),
+                         publication_type = c("primary dataset", "associated source")) %>%
+                  remove_rownames() %>% 
+                  select(study_id, bibliography_id, publication_type, bibtype, everything())
+                
+#Write to joined .bib file 
+bib_file <- study_citations %>%
+           select(-study_id, -publication_type) %>%
+           column_to_rownames("bibliography_id")                
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Howard_and_Fourqurean_2020/derivative/Howard_and_Fourqurean_2020.bib")
+write_csv(study_citations, "./data/primary_studies/Howard_and_Fourqurean_2020/derivative/Howard_and_Fourqurean_2020_citations.csv")
+
+
+                
+                
