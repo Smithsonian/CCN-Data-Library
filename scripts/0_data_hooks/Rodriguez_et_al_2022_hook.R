@@ -27,7 +27,7 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 
 cores_raw <- read_xlsx("./data/primary_studies/Rodriguez_et_al_2022/original/Supplementary_Data.xlsx", sheet = 1)
 depthseries_raw <- read_xlsx("./data/primary_studies/Rodriguez_et_al_2022/original/Supplementary_Data.xlsx", sheet = 2)
-species_raw <- read_csv("./data/primary_studies/Rodriguez_et_al_2022/intermediate/Table_1.csv") # this is the converted .csv file (.../Rodriguez_et_al_2022/intermediate) made from the original .docx (.../Rodriguez_et_al_2022/original)
+species_raw <- read_csv("./data/primary_studies/Rodriguez_et_al_2022/intermediate/Table_1.csv", skip = 1) # this is the converted .csv file (.../Rodriguez_et_al_2022/intermediate) made from the original .docx (.../Rodriguez_et_al_2022/original)
 methods_raw <- read_csv("./data/primary_studies/Rodriguez_et_al_2022/intermediate/Methods.csv")
 
 # Note that each of the following data frame set ups need to be run as a whole because variables are sequentially edited
@@ -42,8 +42,8 @@ cores_set_up <- cores_raw %>%
          c14_age_se = 'Age Error') %>% 
   unite(col = "core_id", site_id : core_id, sep = '_', remove = FALSE) %>% 
   distinct(core_id, .keep_all = TRUE) %>% 
-  mutate(core_id = str_replace_all(string = cores$core_id, pattern = '-', replacement = '_'),
-         site_id = str_replace_all(string = cores$site_id, pattern = '-', replacement = '_'),
+  mutate(core_id = str_replace_all(string = core_id, pattern = '-', replacement = '_'),
+         site_id = str_replace_all(string = site_id, pattern = '-', replacement = '_'),
          study_id = "Rodriguez_et_al_2022",
          elevation_datum = "NAVD88",
          elevation_method = 'RTK',
@@ -58,18 +58,21 @@ cores_set_up <- cores_raw %>%
   
 
 ## Species
-species_set_up <- species_raw[-c(1, 24:26), ] %>% # eliminating metadata rows
-  rename(core_id = 'Table 1: Site information and salt marsh unit measurements.', species_code = '...2', 
-         development_mode = '...3', year = '...4', easting = '...5', northing = '...6', elevation_species = '...7', 
-         thickness = '...8', age = '...9', stock = '...10') %>% 
+species_set_up <- species_raw %>% 
+  # species_raw[-c(1, 24:26), ] %>% # eliminating metadata rows
+  drop_na(Easting) %>% 
+  rename(core_id = "Site Name; \nCore #", species_code = Species, 
+         development_mode = "Development \nMode", year = "Sampling\nYear (CE)", 
+         easting = Easting, northing = Northing, elevation_species = "Elev. (m; \nNAVD88)", 
+         thickness = "Thickness \n(m)", age = "Date \n(CE) a", stock = "C Stock (g \nm-2) b") %>% 
   separate(col = core_id, into = "site_id", sep = ";", remove = FALSE) %>% 
   mutate(study_id = "Rodriguez_et_al_2022",
          code_type = 'genus',
          habitat = 'marsh',
-         core_id = gsub('; ', '_', species$core_id),
-         core_id = str_replace_all(string = species$core_id, pattern = '-', replacement = '_'),
+         core_id = gsub('; ', '_', core_id),
+         core_id = str_replace_all(string = core_id, pattern = '-', replacement = '_'),
          core_id = ifelse(core_id == 'NB_3', "NB_3b", core_id), # core_id NB_3 in this dataset is named NB_3b in other datasets; correcting the name here
-         site_id = str_replace_all(string = species$site_id, pattern = '-', replacement = '_'),
+         site_id = str_replace_all(string = site_id, pattern = '-', replacement = '_'),
          zone = ifelse(site_id == "SRE_U", 17,
                        ifelse(site_id == "SRE_D", 17, 18))) %>% 
   UTM_to_DD(core_id = core_id, easting = easting, northing = northing, zone = zone)
@@ -87,7 +90,7 @@ depthseries_set_up <- depthseries_raw %>%
   separate(col = core_id, into = c("site_id_1", "site_id_2", "site_id_3"), sep = "-", remove = FALSE) %>% 
 # there will be a warning message of missing pieces: this is OK as not all core_id data have 2 "-"; corrected below
   mutate(site_id = ifelse(is.na(site_id_3), site_id_1, paste(site_id_1, site_id_2, sep = "_")),
-         core_id = str_replace_all(string = depthseries$core_id, pattern = '-', replacement = '_'))
+         core_id = str_replace_all(string = core_id, pattern = '-', replacement = '_'))
 
 
 ## Step 2: Adding/subtracting required columns from data frame set ups to add to final data frames ####
@@ -111,10 +114,11 @@ depthseries <- full_join(depthseries_set_up, cores_set_up) %>%
 species <- select(species_set_up, -c(development_mode, year, easting, northing, elevation_species, thickness, age, 
                                      stock, zone, latitude, longitude))
 
-methods <- select(methods_raw, -c(method_id, roots_flag, dry_bulk_density_sample_volume, dry_bulk_density_sample_mass, 
-                                  loss_on_ignition_sample_mass, loss_on_ignition_sample_volume, carbon_profile_notes, 
-                                  cs137_counting_method, pb210_counting_method, excess_pb210_rate, excess_pb210_model, 
-                                  ra226_assumption, age_depth_model_notes))
+methods <- methods_raw %>% select(where(notAllNA))
+  # select(methods_raw, -c(method_id, roots_flag, dry_bulk_density_sample_volume, dry_bulk_density_sample_mass, 
+  #                                 loss_on_ignition_sample_mass, loss_on_ignition_sample_volume, carbon_profile_notes, 
+  #                                 cs137_counting_method, pb210_counting_method, excess_pb210_rate, excess_pb210_model, 
+  #                                 ra226_assumption, age_depth_model_notes))
 
 ## Step 3: QAQC ####
 

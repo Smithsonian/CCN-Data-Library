@@ -5,6 +5,11 @@
 
 library(tidyverse)
 
+
+## Remove all columns 
+# https://stackoverflow.com/questions/2643939/remove-columns-from-dataframe-where-all-values-are-na
+notAllNA <- function(x) any(!is.na(x))
+
 ## Convert mean depth to min and max depth ############
 # For conversion of depth interval values: if a dataframe
 #   has a mean depth attribute, this will create a min depth
