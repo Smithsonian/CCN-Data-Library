@@ -38,7 +38,9 @@ id <- "Howard_and_Fourqurean_2020"
 
 # curate materials and methods table
 methods <- methods_raw %>% mutate(method_id = "single set of methods",
-                                  roots_flag = "roots and rhizomes separated")
+                                  roots_flag = "roots and rhizomes separated",
+                                  fraction_carbon_method = "EA",
+                                  carbon_profile_notes = "organic C was calculated as the difference between inorganic C and total C")
 
 
 ## ... Sites ####
@@ -50,7 +52,9 @@ sites<- sites_raw %>% rename(site_description = notes) %>%
                           inundation_class = "low",
                           inundation_method = "field observation",
                           study_id = id) %>% 
-                  relocate(study_id, .before = site_id)
+                  relocate(study_id, .before = site_id) %>% 
+                  mutate(site_id = recode(site_id, "bob" = "Bob Allen Keys","rb" = "Russell Bank",
+                                                    "nm" = "Nine Mile Bank", "tc" = "Trout Cove"))
 dfsites<- names(sites) %in% c("latitude", "longitude", "salinity", "seagrass present")
 sites<- sites[!dfsites]
 
@@ -58,23 +62,24 @@ sites<- sites[!dfsites]
 ## ... Cores ####
 #curate core level data table 
 
-# rename variables to match accross datasets
+# rename variables to match across FL and Brazil datasets
 fl_bay_cores <- fl_bay_cores %>% rename(Latitude = Lat,
                                         Longitude = Long)
-# join FL Bay and SE Brazil datasets
+# join datasets
 full_data<- brazil_cores %>% bind_rows(brazil_cores,fl_bay_cores) %>% 
-                        mutate(core_id = paste(Site, "-",Rep)) %>% 
-                        mutate(study_id= id) %>% 
-                        rename(latitude = Latitude,
-                               longitude = Longitude) %>% 
-                        relocate(core_id, .after = Site) %>% 
-                        relocate(study_id, .before = Site)
-
-
+                  rename(latitude = Latitude,
+                      longitude = Longitude,
+                      site_id = Site) %>% 
+                  mutate(site_id = recode(site_id, "bob" = "Bob Allen Keys", "rb" = "Russell Bank",
+                          "nm" = "Nine Mile Bank", "tc" = "Trout Cove"),
+                          core_id = paste(site_id, "-",Rep), study_id = id) %>% 
+                  relocate(core_id, .after = site_id) %>% 
+                  relocate(study_id, .before = site_id)
+  
+ 
 #reformat variables and add needed columns for cores table
-cores <- full_data %>% rename(site_id = Site) %>% 
-          mutate(year= case_when(latitude > -20 ~ "2015",
-                         latitude < -20 ~ "2004")) %>% 
+cores <- full_data %>% mutate(year= case_when(latitude > -20 ~ "2015",
+                       latitude < -20 ~ "2004")) %>% 
         mutate(vegetation_class ="seagrass",
         vegetation_method = "field observation",
         habitat = "seagrass",
@@ -93,13 +98,13 @@ cores<- cores[!dfcores]
 ## rename and add relevant variables 
 depthseries <- full_data %>% mutate(fraction_organic_matter = loi/100,
                                     fraction_carbon = Corg/100,
-                                  depth_min = depth,
+                                  depth_min = abs(depth),
                                   method_id = "single set of methods",
-                                  compaction_notes = "corer minimizes compaction") %>% 
-                rename(dry_bulk_density =dbd, site_id =Site) %>% 
+                                  compaction_notes = "corer minimizes compaction",
+                                  representative_depth_max = abs(depth + -9)) %>%
+                rename(dry_bulk_density =dbd) %>% 
                 relocate(depth_min, .before = depth) %>% 
                 relocate(method_id, .before = depth_min) %>% 
-                mutate(representative_depth_max = depth + -9) %>% 
                 relocate(representative_depth_max, .after= depth_min)
 
 #remove unneeded columns
@@ -107,30 +112,29 @@ dfdepth <- names(depthseries) %in% c("latitude", "longitude", "loi","depth","Rep
 depthseries <- depthseries[!dfdepth]
 
 
-
 ## ... Species ####
 
 # if provided at the site or core-level, curate taxa table
-# Note: this information may need to be isolated from another table
-
+#add and recode relevant variables 
 species <- sites_raw %>% select(c(1,5)) %>% 
           rename('species_code' = 'seagrass present') %>%
           mutate(study_id = id,
                  code_type = "Genus species",
-                 habitat = "seagrass") %>%
+                 habitat = "seagrass",
+                 site_id = recode(site_id, "bob" = "Bob Allen Keys", "rb" = "Russell Bank",
+                                         "nm" = "Nine Mile Bank", "tc" = "Trout Cove")) %>%
           relocate(code_type, .after = species_code) %>% 
           relocate(study_id, .before = site_id) %>% 
           mutate(species_code = str_split(species_code, " & ")) %>% 
-          unnest(species_code)
+          unnest(species_code) %>% 
+          mutate(species_code = recode(species_code, "H. wrightii" = "Halodule wrightii", 
+                               "T. testudinum" = "Thalassia testudinum",
+                               "H. decipiens" = "Halophilia decipiens"))
 
-
-####recode sps names
-species$species_code[species$species_code == "H. wrightii"] <- "Halodule wrightii"
-species$species_code[species$species_code == "T. testudinum"] <- "Thalassia testudinum"
-species$species_code[species$species_code == "H. decipiens"] <- "Halophilia decipiens"
 
 ## ... Impacts ####
 ## Not provided in dataset 
+
 
 
 ## 2. QAQC ####
