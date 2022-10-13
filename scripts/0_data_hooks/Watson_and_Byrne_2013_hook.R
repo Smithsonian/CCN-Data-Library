@@ -11,6 +11,7 @@
 library(tidyverse)
 library(RefManageR)
 library(readxl)
+library(dplyr)
 # library(stringr)
 
 ## Read in data #####################
@@ -71,6 +72,16 @@ depthseries <- age_depth_data %>%
   filter(core_id != "Alviso_1") %>% 
   mutate(method_id = "single set of methods") %>% 
   ungroup()
+
+
+#### create lookup table to match site_id from cores table to depthseries 
+lookupdf <- data.frame(cores[c("site_id", "core_id")])
+depthseries<- merge(depthseries, lookupdf, by = "core_id", all = T)
+
+#reorder columns per database guidance // reorderColumns() not working with depthseries table? 
+depthseries <- depthseries %>% relocate(study_id, .before = core_id) %>% 
+                               relocate(site_id, .before = core_id)
+
 
 ## ... Site data ###########
 source("./scripts/1_data_formatting/curation_functions.R") 
