@@ -61,12 +61,14 @@ cores <- cores_raw %>%
          zone = 10,
          salinity_class = "estuarine",
          salinity_method = "measurement",
+         vegetation_class = 'emergent',
+         vegetation_method = 'field observation',
          habitat = "marsh",
          core_length_flag = ifelse(core_id == 'JSF1', "core depth represents deposit depth", "core depth limited by length of corer"),
          core_id = ifelse(core_id == 'JSF1', "JSF2", core_id)) %>%  # core_id JSF1 in this dataset is named JSF2 in depthseries; correcting the name here
   UTM_to_DD() %>% 
   select(c(study_id, site_id, core_id, year, month, day, latitude, longitude, elevation, salinity_class, salinity_method, 
-           habitat, core_length_flag))
+           vegetation_class, vegetation_method, habitat, core_length_flag))
 
 ## Methods
 methods <- methods_raw %>% 

@@ -78,12 +78,16 @@ depthseries <- age_depthseries %>%
   bind_rows(carbon_stock_data) %>%
   mutate(fraction_carbon_type = recode(fraction_carbon_type, 
                                        "fraction_total_carbon" = "total carbon"),
-         method_id = "single set of methods") %>%
+         method_id = "single set of methods",
   group_by(core_id) %>%
   arrange(core_id, depth_min, sample_id, .by_group = TRUE) %>%
   # Following attribute should only be in methods table
   select(-c(age_depth_model_reference, fraction_carbon_type, min_elevation_meters, site_id)) %>%
   ungroup()
+
+# adding in site_id from cores_raw
+ids <- cores_raw[,c("site_id", "core_id")]
+depthseries <- left_join(depthseries, ids)
 
 ## ... core-level ##################
 
