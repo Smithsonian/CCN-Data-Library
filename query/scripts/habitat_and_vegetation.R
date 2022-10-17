@@ -5,9 +5,9 @@
 
 library(tidyverse)
 
-synth_cores <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_cores.csv", guess_max = 7000)
-synth_species <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_species.csv", guess_max = 7000)
-synthe_ds <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv", guess_max = 50000)
+synth_cores <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", guess_max = 7000)
+synth_species <- read_csv("data/CCRCN_synthesis/CCRCN_species.csv", guess_max = 7000)
+synth_ds <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max = 50000)
 
 # look at differences in the assignment of vegetation and habitat
 mangrove <- synth_cores %>%
