@@ -41,8 +41,11 @@ raw_methods <- read_csv("data/primary_studies/Smith_2015/original/Smith_et_al_20
 methods <- raw_methods %>% 
   select_if(function(x) {!all(is.na(x))}) %>% 
   mutate(study_id = "Smith_et_al_2015",
+         method_id = "single set of methods",
          sediment_sieved_flag = "sediment not sieved",
-         method_id = "single set of methods")
+         fraction_carbon_method = "not specified",
+         fraction_carbon_type = "organic carbon")
+      
 
 ## ... 4A. Core-level data ###########
 # Although the original file says sites, it is the core-level data. 
@@ -57,9 +60,16 @@ cores <- raw_cores %>%
          core_month = month(core_date),
          core_day = day(core_date)) %>% 
   mutate(core_position_method = "handheld", 
-         study_id = "Smith_et_al_2015", site_id = "09WCC01") %>%
+         study_id = "Smith_et_al_2015", site_id = "09WCC01",
+         core_length_flag = "not specified",
+         vegetation_class = "emergent",
+         salinity_method = "measured") %>%
   select(-c(core_date, Time, SW_depth, SW_salinity, PW10_salinity, PW30_salinity)) %>% 
-  select(core_id, site_id, study_id, core_latitude, core_longitude, core_position_method, everything())
+  select(core_id, site_id, study_id, core_latitude, core_longitude, core_position_method, everything()) %>% 
+  mutate(salinity_class = case_when(core_id == "09WCC01_03" ~ "polyhaline",
+                                    core_id == "09WCC01_04" ~ "polyhaline",
+                                    core_id == "09WCC01_07" ~ "polyhaline",
+                                    TRUE~ "mesohaline"))
 # core diameter: 10cm
 
 ## ... 4B. Depthseries data ##########
@@ -90,11 +100,37 @@ depthseries <- raw_depthseries %>%
          fraction_organic_matter,
          cs137_activity, cs137_activity_sd, cs137_unit,
          total_pb210_activity, total_pb210_activity_sd,
-         ra226_activity, ra226_activity_sd, ra226_unit, pb210_unit)
+         ra226_activity, ra226_activity_sd, ra226_unit, pb210_unit) %>% 
+## add compaction fraction manually from thesis 
+  mutate(compaction_fraction = case_when(core_id == "09WCC01_01" ~ 0.15,
+                                         core_id == "09WCC01_02" ~ 0.28,
+                                         core_id == "09WCC01_05" ~ 0.28,
+                                         core_id == "09WCC01_03" ~ 0.34,
+                                         core_id == "09WCC01_04" ~ 0.34,
+                                         core_id == "09WCC01_06" ~ 0.29,
+                                         core_id == "09WCC01_07" ~ 0.29,
+                                         core_id == "09WCC01_08" ~ 0.21,
+                                         core_id == "09WCC01_09" ~ 0.03))
 
 ## ... 4C. Site-level data ##########
 site_data <- cores %>%
   select(site_id, core_id, study_id, core_latitude, core_longitude)
+
+
+### ...4D. Species data ##########
+# taxa information taken from Smith 2012 thesis 
+species <- cores %>% select(c(study_id, site_id, core_id)) %>% 
+              mutate(code_type = "Genus species",
+                     habitat = "marsh",
+                     species_code = c("Spartina patens", "Spartina patens & Schoenoplectus robustus", 
+                                      "Schoenoplectus robustus & Distichlis spicata", "Distichlis spicata & Schoenoplectus robustus",
+                                      "Spartina alterniflora",
+                                      "Spartina alterniflora & Distichlis spicata", "Spartina patens",
+                                      "Spartina patens", "Spartina patens")) %>% 
+                     mutate(species_code = str_split(species_code, " & ")) %>% 
+                     unnest(species_code) %>% 
+                     relocate(species_code, .before = code_type)
+  
 
 # Find min and max lat/long for each site
 source("./scripts/1_data_formatting/curation_functions.R")
@@ -112,7 +148,8 @@ sites <- site_data %>%
   summarize(study_id = first(study_id), 
             site_longitude_max = first(site_longitude_max), site_longitude_min = first(site_longitude_min),
             site_latitude_max = first(site_latitude_max), site_latitude_min = first(site_latitude_min)) %>%
-  mutate(site_description = "Rockefeller Wildlife Refuge")
+  mutate(site_description = "Rockefeller Wildlife Refuge",
+         vegetation_class = "emergent")
 
 ## 5. Create study-citation table ######
 
