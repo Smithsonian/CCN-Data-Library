@@ -45,7 +45,8 @@ id <- "Weston_et_al_2020"
 
 methods <-  methods_raw %>% mutate(method_id = "single set of methods",
                                    excess_pb210_rate = "depth",
-                                   excess_pb210_model = "CRS") 
+                                   excess_pb210_model = "CRS",
+                                   dry_bulk_density_flag = "not specified") 
 
 #reorder columns 
 methods <- reorderColumns("methods", methods)
@@ -74,20 +75,21 @@ cores <- cores_raw %>% rename(year = core_year,
 ## ... Depthseries ####
 
 depthseries <- depthseries_raw %>% mutate(method_id = "single set of methods") %>% 
-                                   relocate(method_id, .after = study_id) %>% 
                                    select(!depth_interval_notes) %>% 
                                    mutate(cs137_unit = "becquerelsPerKilogram",
                                           pb210_unit = "becquerelsPerKilogram",    ##check units?? not in data pub/based off of guidance 
                                           pb214_unit = "becquerelsPerKilogram",
                                           bi214_unit = "becquerelsPerKilogram")
 
+depthseries <- reorderColumns("depthseries", depthseries)
+
+
 ## ... Species ####
 
-species <- species_raw %>% mutate(code_type = "Genus species",
-                           species_code = paste(genus, species),
-                           habitat = "marsh") %>% 
-                           select(!c("genus", "species"))
-
+species <- species_raw %>% mutate(species_code = paste(genus, species),
+                                  code_type = "Genus species",
+                                  habitat = "marsh") %>% 
+                                  select(!c("genus", "species"))
 
 
 ## ... Impacts ####
