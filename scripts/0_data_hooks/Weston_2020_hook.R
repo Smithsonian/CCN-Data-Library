@@ -45,8 +45,11 @@ id <- "Weston_et_al_2020"
 
 methods <-  methods_raw %>% mutate(method_id = "single set of methods",
                                    excess_pb210_rate = "depth",
-                                   excess_pb210_model = "CRS",
-                                   dry_bulk_density_flag = "not specified") 
+                                  # excess_pb210_model = "CRS and CIC",
+                                   dry_bulk_density_flag = "not specified",
+                                   dating_notes = "CRC model used to determine age-dependent rates of soil accretion for each section of soil cores.
+                                   CIC model used to calculate a whole-core accretion rate using Pb210 activities.",
+                                  age_depth_model_reference = "CE") 
 
 #reorder columns 
 methods <- reorderColumns("methods", methods)
@@ -77,7 +80,7 @@ cores <- cores_raw %>% rename(year = core_year,
 depthseries <- depthseries_raw %>% mutate(method_id = "single set of methods") %>% 
                                    select(!depth_interval_notes) %>% 
                                    mutate(cs137_unit = "becquerelsPerKilogram",
-                                          pb210_unit = "becquerelsPerKilogram",    ##check units?? not in data pub/based off of guidance 
+                                          pb210_unit = "microcuriesPerGram",
                                           pb214_unit = "becquerelsPerKilogram",
                                           bi214_unit = "becquerelsPerKilogram")
 
