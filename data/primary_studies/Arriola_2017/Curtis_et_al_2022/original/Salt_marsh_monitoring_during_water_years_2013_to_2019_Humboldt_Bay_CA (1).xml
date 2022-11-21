@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Jennifer A. Curtis</origin>
+        <origin>Karen M. Thorne</origin>
+        <origin>Chase M. Freeman</origin>
+        <origin>Kevin J. Buffington</origin>
+        <origin>Judith Z. Drexler</origin>
+        <pubdate>20220623</pubdate>
+        <title>Salt marsh monitoring during water years 2013 to 2019, Humboldt Bay, CA, 2018</title>
+        <geoform>tabular digital data</geoform>
+        <pubinfo>
+          <pubplace>https://www.sciencebase.gov</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/P9QLAL7B</onlink>
+        <lworkcit>
+          <citeinfo>
+            <origin>Jennifer A. Curtis</origin>
+            <origin>Karen M. Thorne</origin>
+            <origin>Chase M. Freeman</origin>
+            <origin>Kevin J. Buffington</origin>
+            <origin>Judith Z. Drexler</origin>
+            <pubdate>2022</pubdate>
+            <title>A summary of water-quality  and salt marsh monitoring, Humboldt Bay, California</title>
+            <geoform>publication</geoform>
+            <pubinfo>
+              <pubplace>n/a</pubplace>
+              <publish>US Geological Survey</publish>
+            </pubinfo>
+            <onlink>https://doi.org/10.3133/ofr20221076</onlink>
+          </citeinfo>
+        </lworkcit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>This data release includes monitoring data collected by the U.S. Geological Survey (USGS) Humboldt Bay Water Quality and Salt Marsh Monitoring Project. The datasets include continuous water levels collected at a 6-minute time step collected in two study marshes (Mad River and Hookton). Surface deposition, elevation changes and carbon storage (in marsh edge environments) measured in five USGS study marshes (Mad River, Manila, Jacoby, White and Hookton). The monitoring data presented in this data release represent fundamental datasets needed to manage blue carbon stocks, assess marsh vulnerability, inform sea-level rise (SLR) adaptation planning, and build coastal resiliency to climate change in Humboldt Bay, CA 
+
+Additional documentation is provided in a companion report. Curtis et al, 2022 A Summary of Water-Quality and Salt Marsh Monitoring during Water Years 2013 to 2019, Humboldt Bay, CA.</abstract>
+      <purpose>The intended use of these salt marsh monitoring datasets includes, but is not limited to, characterization of inundation frequency, surface deposition, elevation change, accretion, and blue carbon storage in edge environments susceptible to edge erosion in five USGS study marshes.</purpose>
+      <supplinf>Additional documentation is provided in a companion report. Curtis et al, 2022 A  Summary of Water-Quality and Salt Marsh Monitoring during Water Years 2016 to 2019, Humboldt Bay, CA.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>20130620</begdate>
+          <enddate>20190910</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>observed</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-124.2713</westbc>
+        <eastbc>-124.0796</eastbc>
+        <northbc>40.9107</northbc>
+        <southbc>40.6765</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>biota</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>carbon storage</themekey>
+        <themekey>bulk density</themekey>
+        <themekey>marsh ecosystems</themekey>
+        <themekey>estuarine processes</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>salt marsh</themekey>
+        <themekey>blue carbon</themekey>
+        <themekey>surface deposition</themekey>
+        <themekey>accretion</themekey>
+        <themekey>SET-MH</themekey>
+        <themekey>water level</themekey>
+        <themekey>inundation</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:61d73e21d34ed7929400504d</themekey>
+      </theme>
+      <place>
+        <placekt>Common geographic areas</placekt>
+        <placekey>California</placekey>
+        <placekey>Humboldt County</placekey>
+      </place>
+      <place>
+        <placekt>None</placekt>
+        <placekey>Mad River marsh</placekey>
+        <placekey>Manila marsh</placekey>
+        <placekey>Jacoby marsh</placekey>
+        <placekey>White marsh</placekey>
+        <placekey>Hookton marsh</placekey>
+        <placekey>Humboldt Bay</placekey>
+      </place>
+    </keywords>
+    <accconst>None.  Please see 'Distribution Info' for details.</accconst>
+    <useconst>None.  Users are advised to read the dataset's metadata thoroughly to understand appropriate use and data limitations.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Jennifer A Curtis</cntper>
+          <cntorg>U.S. Geological Survey, SOUTHWEST REGION</cntorg>
+        </cntperp>
+        <cntpos>Research Geologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>716 UNIT E W Cedar Street</address>
+          <city>Eureka</city>
+          <state>CA</state>
+          <postal>95501</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>707-442-3169</cntvoice>
+        <cntemail>jacurtis@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>California State Coastal Conservancy, the Humboldt Bay National Wildlife Refuge, and the California Department of Fish and Wildlife</datacred>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>No formal attribute accuracy tests were conducted</attraccr>
+    </attracc>
+    <logic>No formal logical accuracy tests were conducted</logic>
+    <complete>Data set is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>No formal positional accuracy tests were conducted</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>No formal positional accuracy tests were conducted</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>Methods are described in additional metadata records associated with each child page.</procdesc>
+        <procdate>20220112</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spref>
+    <horizsys>
+      <planar>
+        <gridsys>
+          <gridsysn>Universal Transverse Mercator</gridsysn>
+          <utm>
+            <utmzone>10</utmzone>
+            <transmer>
+              <sfctrmer>0.9996</sfctrmer>
+              <longcm>-123.0</longcm>
+              <latprjo>0.0</latprjo>
+              <feast>500000.0</feast>
+              <fnorth>0.0</fnorth>
+            </transmer>
+          </utm>
+        </gridsys>
+        <planci>
+          <plance>coordinate pair</plance>
+          <coordrep>
+            <absres>0.6096</absres>
+            <ordres>0.6096</ordres>
+          </coordrep>
+          <plandu>meters</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>North_American_Datum_1983</horizdn>
+        <ellips>GRS_1980</ellips>
+        <semiaxis>6378137.0</semiaxis>
+        <denflat>298.257222101</denflat>
+      </geodetic>
+    </horizsys>
+    <vertdef>
+      <altsys>
+        <altdatum>North American Vertical Datum of 1988</altdatum>
+        <altres>0.01</altres>
+        <altunits>meters</altunits>
+        <altenc>Explicit elevation coordinate included with horizontal coordinates</altenc>
+      </altsys>
+    </vertdef>
+  </spref>
+  <eainfo>
+    <overview>
+      <eaover>This data release includes multiple tabular digital dataset published on three separate child pages with separate metadata records. The comma-separated value (csv) files are viewable with any open source data viewer and the jpeg image of the five USGS study marshes is viewable with any open source image viewer.</eaover>
+      <eadetcit>https://doi.org/10.5066/P9QLAL7B</eadetcit>
+    </overview>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey</cntorg>
+          <cntper>GS ScienceBase</cntper>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data for other purposes, nor on all computer systems, nor shall the act of distribution constitute any such warranty. Any use of trade, firm, or product names is for descriptive purposes only and does not imply endorsement by the U.S. Government.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Digital Data</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/P9QLAL7B</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20220919</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Jennifer A Curtis</cntper>
+          <cntorg>U.S. Geological Survey, SOUTHWEST REGION</cntorg>
+        </cntperp>
+        <cntpos>Research Geologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>716 UNIT E W Cedar Street</address>
+          <city>Eureka</city>
+          <state>CA</state>
+          <postal>95501</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>707-442-3169</cntvoice>
+        <cntemail>jacurtis@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>

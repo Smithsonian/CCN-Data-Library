@@ -39,20 +39,20 @@ depthseries <- depthseries_raw %>%
          depth_min = `Section Bottom Depth (cm)` - 10,
          method_id = 'single set of methods',
          marker_type = "artificial horizon",
+         marker_date = '2013',
          method_id = "single set of methods",
          compaction_notes = "little to no compaction because once corer is inserted, the core is rotated 180 degrees, and a sample is collected adjacent to where it was driven into the ground") %>% 
   rename(depth_max = `Section Bottom Depth (cm)`,
          dry_bulk_density = `Dry Bulk Density (g cm-3)`,
-         fraction_organic_matter = `Fraction OC`) %>% 
-  select(c(study_id, site_id, core_id, method_id, depth_min, depth_max, sample_id, dry_bulk_density, fraction_organic_matter, 
-           marker_type))
+         fraction_carbon = `Fraction OC`) %>% 
+  select(c(study_id, site_id, core_id, method_id, depth_min, depth_max, sample_id, dry_bulk_density, fraction_carbon, 
+           marker_type, marker_date))
 
 ## Cores
 cores <- cores_raw %>% 
   rename(core_id = `Core ID`,
          easting = `Easting (meters)`,
-         northing = `Northing (meters)`,
-         elevation = `Elevation (meters)`) %>% 
+         northing = `Northing (meters)`) %>% 
   mutate(study_id = 'Curtis_et_al_2022',
          site_id = substr(core_id, 1, 3),
          day = day(as.Date(Date, "%m/%d/%Y")),
@@ -64,17 +64,25 @@ cores <- cores_raw %>%
          vegetation_class = 'emergent',
          vegetation_method = 'field observation',
          habitat = "marsh",
+         inundation_class = ifelse(site_id == "MMF", "low",
+                                   ifelse(site_id == "MRF", "high",
+                                          ifelse(site_id == "JNF", "high",
+                                                 ifelse(site_id == "JSF", "high",
+                                                        ifelse(site_id == "WMF", "low",
+                                                               ifelse(site_id == "HSF", "low", "")))))),
+         inundation_method = "measurement",
+         position_method = "RTK",
+         elevation_notes = "measurements taken at site level",
          core_length_flag = ifelse(core_id == 'JSF1', "core depth represents deposit depth", "core depth limited by length of corer"),
          core_id = ifelse(core_id == 'JSF1', "JSF2", core_id)) %>%  # core_id JSF1 in this dataset is named JSF2 in depthseries; correcting the name here
   UTM_to_DD() %>% 
-  select(c(study_id, site_id, core_id, year, month, day, latitude, longitude, elevation, salinity_class, salinity_method, 
-           vegetation_class, vegetation_method, habitat, core_length_flag))
+  select(c(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method, elevation_notes, 
+           salinity_class, salinity_method, vegetation_class, vegetation_method, habitat, inundation_class, inundation_method, 
+           core_length_flag))
 
 ## Methods
 methods <- methods_raw %>% 
-  select(c(study_id, method_id, compaction_flag, dry_bulk_density_temperature, dry_bulk_density_time, dry_bulk_density_sample_volume, 
-              dry_bulk_density_flag, carbon_measured_or_modeled, carbonates_removed, carbonate_removal_method, fraction_carbon_method, 
-              fraction_carbon_type, carbon_profile_notes))
+  select(where(notAllNA))
 
 ## Impacts
 impacts <- cores[, c("study_id", "site_id", "core_id")] %>% 

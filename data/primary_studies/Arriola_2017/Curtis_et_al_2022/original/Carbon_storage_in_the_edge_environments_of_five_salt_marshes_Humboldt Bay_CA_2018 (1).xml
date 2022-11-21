@@ -1,0 +1,600 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Jennifer A. Curtis</origin>
+        <origin>Judith Z. Drexler</origin>
+        <pubdate>20220623</pubdate>
+        <title>Soil carbon storage in the edge environments of five salt marshes, Humboldt Bay, CA, 2018</title>
+        <geoform>tabular digital data</geoform>
+        <pubinfo>
+          <pubplace>https://www.sciencebase.gov</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/P9QLAL7B</onlink>
+        <lworkcit>
+          <citeinfo>
+            <origin>Jennifer A. Curtis</origin>
+            <origin>Karen M. Thorne</origin>
+            <origin>Chase M. Freeman</origin>
+            <origin>Kevin J. Buffington</origin>
+            <origin>Judith Z. Drexler</origin>
+            <pubdate>2022</pubdate>
+            <title>A summary of water-quality  and salt marsh monitoring, Humboldt Bay, California</title>
+            <geoform>publication</geoform>
+            <pubinfo>
+              <pubplace>n/a</pubplace>
+              <publish>US Geological Survey</publish>
+            </pubinfo>
+            <onlink>https://doi.org/10.3133/ofr20221076</onlink>
+          </citeinfo>
+        </lworkcit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>Blue carbon storage in coastal vegetated habitats is an important component of the global carbon cycle. In 2018, shallow sediment cores were collected in five USGS study marshes located in Humboldt Bay, CA. The cores were collected within 2 meters of the marsh edge to characterize carbon storage in areas susceptible to marsh edge erosion. Two sediment cores were collected in each of the five study marshes (Mad River, Manila, Jacoby, White, Hookton) using an Ejkelkamp peat sampler (52 mm diameter). The sampler was pounded in the sediments with a heavy plastic mallet. This method produces little to no compaction because once inserted, the corer is rotated 180°, and a sample is collected adjacent to where it was driven into the ground. A total of 10 shallow cores (1-meter) were collected with one exception. At the Jacoby South (CoreID - JSF1) a sandy substrate limited the core depth to 50 cm. The cores were sectioned at 10 cm intervals in the field and placed in labeled, pre-weighed metal tins. The 10-cm core sections were transported on ice and held in cold-storage. The 10-cm core sections were weighed, dried at 50 °C for 72 hours, and then re-weighed. Bulk density was determined by dividing the dry weight by the core volume for each 10 cm section of core. Dried core sections were analyzed for percent organic carbon at the University of California, Davis Analytical Lab (https://anlab.ucdavis.edu/) using acid fumigation and dynamic flash combustion. Replicate samples were run every 10 samples to check for instrument drift and the lab detection limit for percent organic carbon was 0.02.</abstract>
+      <purpose>The intended use of this carbon storage dataset includes, but is not limited to, determining sediment characteristics and estimating blue carbon storage in areas susceptible to marsh edge erosion in Humboldt Bay, CA.</purpose>
+      <supplinf>Additional documentation is provided in a companion report. Curtis et al, 2022 A  Summary of Water-Quality and Salt Marsh Monitoring during Water Years 2016 to 2019, Humboldt Bay, CA.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>20180626</begdate>
+          <enddate>20180627</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>observed</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-124.2713</westbc>
+        <eastbc>-124.0796</eastbc>
+        <northbc>40.9107</northbc>
+        <southbc>40.6765</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>biota</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>carbon storage</themekey>
+        <themekey>bulk density</themekey>
+        <themekey>marsh ecosystems</themekey>
+        <themekey>estuarine processes</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>salt marsh</themekey>
+        <themekey>blue carbon</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:61df7b6ed34e0e50e7232569</themekey>
+      </theme>
+      <place>
+        <placekt>Common geographic areas</placekt>
+        <placekey>California</placekey>
+        <placekey>Humboldt County</placekey>
+      </place>
+      <place>
+        <placekt>None</placekt>
+        <placekey>Mad River marsh</placekey>
+        <placekey>Manila marsh</placekey>
+        <placekey>Jacoby marsh</placekey>
+        <placekey>White marsh</placekey>
+        <placekey>Hookton marsh</placekey>
+        <placekey>Humboldt Bay</placekey>
+      </place>
+    </keywords>
+    <accconst>None.  Please see 'Distribution Info' for details.</accconst>
+    <useconst>None.  Users are advised to read the dataset's metadata thoroughly to understand appropriate use and data limitations.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Jennifer A Curtis</cntper>
+          <cntorg>U.S. Geological Survey, SOUTHWEST REGION</cntorg>
+        </cntperp>
+        <cntpos>Research Geologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>716 UNIT E W Cedar Street</address>
+          <city>Eureka</city>
+          <state>CA</state>
+          <postal>95501</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>707-442-3169</cntvoice>
+        <cntemail>jacurtis@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>California State Coastal Conservancy, the Humboldt Bay National Wildlife Refuge, and the California Department of Fish and Wildlife</datacred>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>No formal attribute accuracy tests were conducted</attraccr>
+    </attracc>
+    <logic>No formal logical accuracy tests were conducted</logic>
+    <complete>Data set is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>No formal positional accuracy tests were conducted</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>No formal positional accuracy tests were conducted</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>Soil carbon density was determined for each core section by multiplying bulk density by percent organic carbon. Mean values of dry bulk density, percent organic carbon, and carbon density were calculated for each of the five study marshes. Sediment characteristics are provided in Sediment_characteristics_of_five_salt_marshes_Humboldt_Bay_CA_2018.csv. Soil carbon summary is provided in Summary_of_soil_carbon_storage_in_five_salt_marshes_Humboldt_Bay_CA_2018.csv.</procdesc>
+        <procdate>20180626</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spref>
+    <horizsys>
+      <planar>
+        <gridsys>
+          <gridsysn>Universal Transverse Mercator</gridsysn>
+          <utm>
+            <utmzone>10</utmzone>
+            <transmer>
+              <sfctrmer>0.9996</sfctrmer>
+              <longcm>-123.0</longcm>
+              <latprjo>0.0</latprjo>
+              <feast>500000.0</feast>
+              <fnorth>0.0</fnorth>
+            </transmer>
+          </utm>
+        </gridsys>
+        <planci>
+          <plance>coordinate pair</plance>
+          <coordrep>
+            <absres>0.6096</absres>
+            <ordres>0.6096</ordres>
+          </coordrep>
+          <plandu>meters</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>North_American_Datum_1983</horizdn>
+        <ellips>GRS_1980</ellips>
+        <semiaxis>6378137.0</semiaxis>
+        <denflat>298.257222101</denflat>
+      </geodetic>
+    </horizsys>
+    <vertdef>
+      <altsys>
+        <altdatum>North American Vertical Datum of 1988</altdatum>
+        <altres>0.01</altres>
+        <altunits>meters</altunits>
+        <altenc>Explicit elevation coordinate included with horizontal coordinates</altenc>
+      </altsys>
+    </vertdef>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>Summary_of_soil_carbon_cores_in_five_salt_marshes_Humboldt_Bay_CA_2018.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing environmental data.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Date</attrlabl>
+        <attrdef>Date of core collection</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>06262018</rdommin>
+            <rdommax>06272018</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Site Name</attrlabl>
+        <attrdef>Unique site name</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>Manila</edomv>
+            <edomvd>Study marsh name</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Mad River</edomv>
+            <edomvd>Study marsh name</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Jacoby</edomv>
+            <edomvd>Study marsh name</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Hookton</edomv>
+            <edomvd>Study marsh name</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>White</edomv>
+            <edomvd>Study marsh name</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Core ID</attrlabl>
+        <attrdef>Core ID</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>MMF1</edomv>
+            <edomvd>Manila marsh core1</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MMF2</edomv>
+            <edomvd>Manila marsh core2</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MRF1</edomv>
+            <edomvd>Mad River marsh core1</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MRF2</edomv>
+            <edomvd>Mad River marsh core2</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>JNF1</edomv>
+            <edomvd>Jacoby marsh core1</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>JSF1</edomv>
+            <edomvd>Jacoby marsh core2</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>HSF1</edomv>
+            <edomvd>Hookton marsh core1</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>HSF2</edomv>
+            <edomvd>Hookton marsh core2</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>WMF1</edomv>
+            <edomvd>White marsh core1</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>WMF2</edomv>
+            <edomvd>White marsh core1</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Easting (meters)</attrlabl>
+        <attrdef>Geographic cartesian x-coordinate. Horizontal Datum:  Universal Transverse Mercator (UTM) Zone 10. Measured with Real-Time Kinematic GPS (RTK-GPS; Leica GS-15, Leica Geosystems, Norcross, GA, USA; 2 cm accuracy)</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>397127.6721</rdommin>
+            <rdommax>408572.4166</rdommax>
+            <attrunit>meters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Northing (meters)</attrlabl>
+        <attrdef>Geographic cartesian y-coordinate. Horizontal Datum:  Universal Transverse Mercator (UTM) Zone 10. Measured with Real-Time Kinematic GPS (RTK-GPS; Leica GS-15, Leica Geosystems, Norcross, GA, USA; 2 cm accuracy)</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>4503648.66</rdommin>
+            <rdommax>4525364.449</rdommax>
+            <attrunit>meters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Elevation (meters)</attrlabl>
+        <attrdef>Elevation above sea level in meters. Vertical Datum: NAVD88, GRS-80 Ellipsoid, 12a Geoid. Measured with Real-Time Kinematic GPS (RTK-GPS; Leica GS-15, Leica Geosystems, Norcross, GA, USA; 2 cm accuracy)</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.7455</rdommin>
+            <rdommax>2.2283</rdommax>
+            <attrunit>meters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Bottom Depth (cm)</attrlabl>
+        <attrdef>Bottom depth of sediment core in centimeters.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>50</rdommin>
+            <rdommax>100</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Mean Dry Bulk Density (g cm-3)</attrlabl>
+        <attrdef>Mean dry bulk density for entire sediment core In grams per cubic centimeter.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.649</rdommin>
+            <rdommax>0.957</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Mean Percent OC by Weight (%)</attrlabl>
+        <attrdef>Mean percent organic carbon for entire sediment core In grams per cubic centimeter.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2.29</rdommin>
+            <rdommax>5.84</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Mean Carbon Density (g C cm-3)</attrlabl>
+        <attrdef>Mean carbon density for entire sediment core.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.019</rdommin>
+            <rdommax>0.038</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Sediment_characteristics_of_five_salt_marshes_Humboldt_Bay_CA_2018.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Sample ID</attrlabl>
+        <attrdef>Sample ID</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>HSF1</edomv>
+            <edomvd>Hookton marsh core1</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>HSF2</edomv>
+            <edomvd>Hookton marsh core2</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>JNF1</edomv>
+            <edomvd>Jacoby marsh core1</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>JSF2</edomv>
+            <edomvd>Jacoby marsh core2</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MMF1</edomv>
+            <edomvd>Manila marsh core1</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MMF2</edomv>
+            <edomvd>Manila marsh core2</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MRF1</edomv>
+            <edomvd>Mad River marsh core 1</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>MRF2</edomv>
+            <edomvd>Mad River marsh core 2</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>WMF1</edomv>
+            <edomvd>White marsh core 1</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>WMF2</edomv>
+            <edomvd>White marsh core 2</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Section Bottom Depth (cm)</attrlabl>
+        <attrdef>Bottom depth of 10-cm intervals subsampled for lab analysis.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>10</rdommin>
+            <rdommax>100</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Dry Bulk Density (g cm-3)</attrlabl>
+        <attrdef>Dry bulk density for 10-cm subsample in grams per cubic centimeter.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.594</rdommin>
+            <rdommax>1.145</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Percent OC by weight (%)</attrlabl>
+        <attrdef>Percent organic carbon for 10-cm intervals in percent.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.84</rdommin>
+            <rdommax>9.93</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Fraction OC</attrlabl>
+        <attrdef>Fraction of organic carbon for 10-cm intervals</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0084</rdommin>
+            <rdommax>0.0993</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Carbon Density (g C cm-3)</attrlabl>
+        <attrdef>Carbon density for 10-cm intervals in grams of carbon per cubic centimeter.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.009</rdommin>
+            <rdommax>0.062</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <overview>
+      <eaover>This data release includes tabular digital data. The file format (comma-separated values) is viewable with any open source data viewer.</eaover>
+      <eadetcit>https://doi.org/10.5066/P9QLAL7B</eadetcit>
+    </overview>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey</cntorg>
+          <cntper>GS ScienceBase</cntper>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data for other purposes, nor on all computer systems, nor shall the act of distribution constitute any such warranty. Any use of trade, firm, or product names is for descriptive purposes only and does not imply endorsement by the U.S. Government.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Digital Data</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/P9QLAL7B</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20220919</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Jennifer A Curtis</cntper>
+          <cntorg>U.S. Geological Survey, SOUTHWEST REGION</cntorg>
+        </cntperp>
+        <cntpos>Research Geologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>716 UNIT E W Cedar Street</address>
+          <city>Eureka</city>
+          <state>CA</state>
+          <postal>95501</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>707-442-3169</cntvoice>
+        <cntemail>jacurtis@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>

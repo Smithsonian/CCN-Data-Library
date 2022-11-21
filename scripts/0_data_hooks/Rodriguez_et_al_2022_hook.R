@@ -27,7 +27,7 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 
 cores_raw <- read_xlsx("./data/primary_studies/Rodriguez_et_al_2022/original/Supplementary_Data.xlsx", sheet = 1)
 depthseries_raw <- read_xlsx("./data/primary_studies/Rodriguez_et_al_2022/original/Supplementary_Data.xlsx", sheet = 2)
-species_raw <- read_csv("./data/primary_studies/Rodriguez_et_al_2022/intermediate/Table_1.csv") # this is the converted .csv file (.../Rodriguez_et_al_2022/intermediate) made from the original .docx (.../Rodriguez_et_al_2022/original)
+species_raw <- read_csv("./data/primary_studies/Rodriguez_et_al_2022/intermediate/Table_1.csv", skip = 1) # this is the converted .csv file (.../Rodriguez_et_al_2022/intermediate) made from the original .docx (.../Rodriguez_et_al_2022/original)
 methods_raw <- read_csv("./data/primary_studies/Rodriguez_et_al_2022/intermediate/Methods.csv")
 
 ## Cores
@@ -60,17 +60,19 @@ cores_set_up <- cores_raw %>%
          c14_age = na_if(c14_age, 'n/a'),
          c14_material = ifelse(is.na(c14_age), "NA", "plant fragment"))
   
-## Species
-species_set_up <- species_raw[-c(1, 24:26), ] %>% # eliminating metadata rows
-  rename(core_id = 'Table 1: Site information and salt marsh unit measurements.', species_code = '...2', 
-         development_mode = '...3', year = '...4', easting = '...5', northing = '...6', elevation_species = '...7', 
-         thickness = '...8', age = '...9', stock = '...10') %>% 
-  separate(col = core_id, into = "site_id", sep = ";", remove = FALSE) %>% 
+## Species #### START HERE
+species_set_up <- species_raw[-c(23:25), ] %>% # eliminating metadata rows
+  separate(col = "Site Name; \nCore #", into = "site_id", sep = ";", remove = FALSE) %>% 
+  rename(species_code = 'Species',
+         core_id = "Site Name; \nCore #",
+         easting = Easting,
+         northing = Northing,
+         year = "Sampling\nYear (CE)") %>% 
   mutate(study_id = "Rodriguez_et_al_2022",
          code_type = 'Genus',
          species_code = paste(species_code, "", sep = ' sp.'),
          habitat = 'marsh',
-         core_id = gsub('; ', '_', core_id),
+         core_id = gsub(pattern = '; ', replacement = '_', core_id),
          core_id = str_replace_all(string = core_id, pattern = '-', replacement = '_'),
          core_id = ifelse(core_id == 'NB_3', "NB_3b", core_id), # core_id NB_3 in this dataset is named NB_3b in other datasets; correcting the name here
          site_id = str_replace_all(string = site_id, pattern = '-', replacement = '_'),
