@@ -267,7 +267,7 @@ species <- Fourqurean %>%
   
 # Kristensen et al 2000 is also cited in Sanderman but the doi is not present here
 # update the citation to match the Sanderman so a synthesis bib can be created without duplicates
-Kristensen_bib <- as.data.frame(GetBibEntryWithDOI("10.3354/ame022199"))
+Kristensen_bib <- as.data.frame(ReadBib("data/primary_studies/Fourqurean_2012/intermediate/Kristensen_citation.bib"))
 
 Kristensen_citation <- Kristensen_bib %>% 
   mutate(bibliography_id = "Kristensen_et_al_2000_article",
@@ -276,11 +276,10 @@ Kristensen_citation <- Kristensen_bib %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
   remove_rownames()
 
-citations_raw <- read_csv("data/primary_studies/Fourqurean_2012/intermediate/Fourqurean_2012_study_citations.csv")
-
-study_citations <- citations_raw %>%
+# bring in all primary associated articles
+primary_sources <- read_csv("data/primary_studies/Fourqurean_2012/intermediate/Fourqurean_2012_study_citations.csv") %>% 
+  filter(key != "Fourqurean_2012") %>%
   select(-key) %>%
-  # ifelse(bibliography_id == "Fourqurean_et_al_2012", "synthesis dataset", "synthesis source")
   mutate(publication_type = "synthesis source",
          bibliography_id = paste0(bibliography_id, "_", tolower(bibtype))) %>%
   mutate(bibliography_id = ifelse(bibliography_id == "Alongi_et_al_2008_article", 
@@ -288,6 +287,25 @@ study_citations <- citations_raw %>%
   filter(bibliography_id != "Kristensen_et_al_2000_article") %>% 
   mutate_all(as.character) %>% 
   bind_rows(Kristensen_citation) %>% 
+  select(study_id, bibliography_id, publication_type, bibtype, everything())
+
+# create one synthesis citation and expand it to include all the studies
+synthesis_citation <- data.frame(study_id = unique(cores$study_id),
+                                 bibliography_id = "Fourqurean_et_al_2012_article",
+                                 publication_type = "synthesis source",
+                                 bibtype = "Article",
+                                 doi = "10.1038/ngeo1477",
+                                 title = "Seagrass ecosystems as a globally significant carbon stock",
+                                 author = "James W. Fourqurean and Carlos M. Duarte and Hilary Kennedy and NÃºria Mar {à} and Marianne Holmer and Miguel Angel Mateo and Eugenia T. Apostolaki and Gary A. Kendrick and Dorte Krause-Jensen and Karen J. McGlathery and Oscar Serrano",
+                                 publisher = "Springer Nature",
+                                 year = "2012", month = "may",
+                                 volume = "5", number = "7", pages = "505--509",
+                                 journal = "Nature Geoscience",
+                                 url = "https://doi.org/10.1038/ngeo1477")
+
+
+study_citations <- bind_rows(primary_sources, synthesis_citation) %>%
+  arrange(study_id) %>% 
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Write .bib file

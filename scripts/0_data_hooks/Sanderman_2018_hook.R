@@ -307,7 +307,7 @@ result <- test_numeric_vars(depthseries)
 
 # Kristensen et al 2000 is also cited in Fourqurean but the doi is not present here
 # update the citation to match the Fourqurean so a synthesis bib can be created without duplicates
-Kristensen_bib <- as.data.frame(GetBibEntryWithDOI("10.3354/ame022199"))
+Kristensen_bib <- as.data.frame(ReadBib("data/primary_studies/Sanderman_2018/intermediate/Kristensen_citation.bib"))
 
 Kristensen_citation <- Kristensen_bib %>% 
   mutate(bibliography_id = "Kristensen_et_al_2000_article",
@@ -316,22 +316,36 @@ Kristensen_citation <- Kristensen_bib %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
   remove_rownames()
 
+# bring in all primary associated articles
+primary_sources <- read_csv("data/primary_studies/Sanderman_2018/intermediate/Sanderman_2018_study_citations.csv") %>% 
+  # filter(key != "Sanderman_2017") %>% 
+  select(-key) %>%
+  mutate(publication_type = "synthesis source") %>% 
+  mutate(bibliography_id = case_when(bibliography_id == "Alongi_et_al_2000" & month == "oct" ~ paste0(bibliography_id, "_article_", month),
+                                     bibliography_id == "Alongi_et_al_2008" ~ paste0(bibliography_id, "_article_", month),
+                                     TRUE ~ paste0(bibliography_id, "_article"))) %>% 
+  filter(bibliography_id != "Kristensen_et_al_2000_article") %>% 
+  mutate_all(as.character) %>% 
+  bind_rows(Kristensen_citation)
+
 # there should be two entries per study: 
 # one for the primary study associated with the Study ID
 # and another for the synthesis study (Sanderman 2018)
 
-citations_raw <- read_csv("data/primary_studies/Sanderman_2018/intermediate/Sanderman_2018_study_citations.csv")
+# create one synthesis citation and expand it to include all the studies
+synthesis_citation <- data.frame(study_id = unique(cores$study_id),
+                                 bibliography_id = "Sanderman_2018_data",
+                                 publication_type = "synthesis dataset",
+                                 bibtype = "Misc",
+                                 doi = "10.7910/dvn/ocyuit",
+                                 title = "Global mangrove soil carbon: dataset and spatial maps",
+                                 author = "Jonathan Sanderman",
+                                 publisher = "Harvard Dataverse",
+                                 year = "2017",
+                                 url = "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OCYUIT")
 
-study_citations <- citations_raw %>%
-  select(-key) %>%
-  mutate(publication_type = ifelse(bibliography_id == "Sanderman_2018", "synthesis dataset", "synthesis source")) %>%
-  mutate(bibliography_id = case_when(publication_type == "synthesis dataset" ~ paste0(bibliography_id, "_data"),
-                                     bibliography_id == "Alongi_et_al_2000" & month == "oct" ~ paste0(bibliography_id, "_article_", month),
-                                     bibliography_id == "Alongi_et_al_2008" ~ paste0(bibliography_id, "_article_", month),
-                                     TRUE ~ paste0(bibliography_id, "_article"))) %>%
-  filter(bibliography_id != "Kristensen_et_al_2000_article") %>% 
-  mutate_all(as.character) %>% 
-  bind_rows(Kristensen_citation) %>% 
+study_citations <- bind_rows(primary_sources, synthesis_citation) %>%
+  arrange(study_id) %>% 
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 # Write .bib file

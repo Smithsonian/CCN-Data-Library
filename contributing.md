@@ -1,6 +1,10 @@
 # Contributing Data to the Coastal Carbon Network
 
-Thanks for your interest in contributing data to the CCRCN! We welcome contributions of soil core data from any coastal wetlands. We accept data that is published, soon-to-be published, or unpublished as long as it is available in disaggregated form (i.e. soil profile information is present down to the level of sampling interval). Visit our page on [data submission and joining the network](https://serc.si.edu/coastalcarbon/join-the-network) for more information.
+Thank you for your interest in contributing data to the CCN! If you would like to make your data discoverable through the Coastal Carbon Atlas, we currently welcome contributions of soil carbon data from coastal wetland habitats that experience tidal influence (or are anticipated to the future). We accept data that is published, soon-to-be published, or unpublished as long as the original measurements can made available (ex. soil profile information is present down to the level of sampling interval). Data that we bring into this synthesis includes both data we curate and data from any outside sources that meet basic availability, archiving, and metadata standards. All attribution to the original authors is retained.
+
+Currently, the Atlas only supports soil core-based carbon data, however, the our Network also engages in the curation, archival, and synthesis of other types of carbon data from coastal wetlands, such as biomass, greenhouse gas flux, soil pore water.
+
+Visit our resource page on [data contribution](https://smithsonian.github.io/CCN-Community-Resources/contributing.html) for more information or contact [CoastalCarbon\@si.edu](mailto:CoastalCarbon@si.edu){.email} with particular inquiries.
 
 ### Data Ingestion
 
@@ -25,13 +29,3 @@ Things to know:
 -   Data is licensed under CCBY 4.0
 
 Templates for data entry can be downloaded from the [CCRCN Data Templates](https://drive.google.com/drive/folders/14N-7l1s151Qmp4AqQOWtIeMtc3efsYZT?usp=sharing) folder on Google Drive.
-
-[Data Submission Templates: How to Use]{.ul}
-
-1.  Open up the template corresponding to the level of data you will input (core level, materials and methods, etc.)
-
-2.  Fill out the template, referring to the database structure detailed below or the **glossary** sheet on the template to determine what input is appropriate for each column. Please strive to provide data for required attributes whenever possible. If you have data that does not conform to the CCRCN structure, you can add additional columns in the template, or add this additional data as a different file.
-
-3.  Save the file as lastNameOfFirstAuthor_year_template (e.g. Doe_2022_cores)
-
-4.  Once you have completed the templates, please email to data to [CoastalCarbon\@si.edu](mailto:CoastalCarbon@si.edu){.email} and CCRCN personnel will assist you in the rest of the process.
