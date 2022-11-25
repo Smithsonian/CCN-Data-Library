@@ -1,11 +1,11 @@
-study_id,site_id,core_id,year,month,day,latitude,longitude,elevation,salinity_class,salinity_method,habitat,core_length_flag
-Curtis_et_al_2022,MMF,MMF1,2018,6,26,40.864222398017716,-124.14965858236103,2.0461,estuarine,measurement,marsh,core depth limited by length of corer
-Curtis_et_al_2022,MMF,MMF2,2018,6,26,40.863641485412465,-124.1487817995645,2.0613,estuarine,measurement,marsh,core depth limited by length of corer
-Curtis_et_al_2022,MRF,MRF1,2018,6,26,40.8726788105106,-124.15049681981375,2.1158,estuarine,measurement,marsh,core depth limited by length of corer
-Curtis_et_al_2022,MRF,MRF2,2018,6,26,40.87363299846187,-124.14886238439078,2.1228,estuarine,measurement,marsh,core depth limited by length of corer
-Curtis_et_al_2022,JNF,JNF1,2018,6,26,40.84692503289634,-124.08502624187545,2.2025,estuarine,measurement,marsh,core depth limited by length of corer
-Curtis_et_al_2022,JSF,JSF2,2018,6,26,40.84343421110299,-124.08453780218211,2.2283,estuarine,measurement,marsh,core depth represents deposit depth
-Curtis_et_al_2022,HSF,HSF1,2018,6,27,40.67778403494584,-124.21614005108628,1.7927,estuarine,measurement,marsh,core depth limited by length of corer
-Curtis_et_al_2022,HSF,HSF2,2018,6,27,40.67730927079036,-124.21726077170466,1.8052,estuarine,measurement,marsh,core depth limited by length of corer
-Curtis_et_al_2022,WMF,WMF1,2018,6,27,40.704026684646536,-124.21411095330916,1.7896,estuarine,measurement,marsh,core depth limited by length of corer
-Curtis_et_al_2022,WMF,WMF2,2018,6,27,40.70450898105087,-124.21425264881515,1.7455,estuarine,measurement,marsh,core depth limited by length of corer
+study_id,site_id,core_id,year,month,day,latitude,longitude,position_method,elevation_notes,salinity_class,salinity_method,vegetation_class,vegetation_method,habitat,inundation_class,inundation_method,core_length_flag
+Curtis_et_al_2022,MMF,MMF1,2018,6,26,40.864222398017716,-124.14965858236103,RTK,measurements taken at site level,estuarine,measurement,emergent,field observation,marsh,low,measurement,core depth limited by length of corer
+Curtis_et_al_2022,MMF,MMF2,2018,6,26,40.863641485412465,-124.1487817995645,RTK,measurements taken at site level,estuarine,measurement,emergent,field observation,marsh,low,measurement,core depth limited by length of corer
+Curtis_et_al_2022,MRF,MRF1,2018,6,26,40.8726788105106,-124.15049681981375,RTK,measurements taken at site level,estuarine,measurement,emergent,field observation,marsh,high,measurement,core depth limited by length of corer
+Curtis_et_al_2022,MRF,MRF2,2018,6,26,40.87363299846187,-124.14886238439078,RTK,measurements taken at site level,estuarine,measurement,emergent,field observation,marsh,high,measurement,core depth limited by length of corer
+Curtis_et_al_2022,JNF,JNF1,2018,6,26,40.84692503289634,-124.08502624187545,RTK,measurements taken at site level,estuarine,measurement,emergent,field observation,marsh,high,measurement,core depth limited by length of corer
+Curtis_et_al_2022,JSF,JSF2,2018,6,26,40.84343421110299,-124.08453780218211,RTK,measurements taken at site level,estuarine,measurement,emergent,field observation,marsh,high,measurement,core depth represents deposit depth
+Curtis_et_al_2022,HSF,HSF1,2018,6,27,40.67778403494584,-124.21614005108628,RTK,measurements taken at site level,estuarine,measurement,emergent,field observation,marsh,low,measurement,core depth limited by length of corer
+Curtis_et_al_2022,HSF,HSF2,2018,6,27,40.67730927079036,-124.21726077170466,RTK,measurements taken at site level,estuarine,measurement,emergent,field observation,marsh,low,measurement,core depth limited by length of corer
+Curtis_et_al_2022,WMF,WMF1,2018,6,27,40.704026684646536,-124.21411095330916,RTK,measurements taken at site level,estuarine,measurement,emergent,field observation,marsh,low,measurement,core depth limited by length of corer
+Curtis_et_al_2022,WMF,WMF2,2018,6,27,40.70450898105087,-124.21425264881515,RTK,measurements taken at site level,estuarine,measurement,emergent,field observation,marsh,low,measurement,core depth limited by length of corer

@@ -103,11 +103,11 @@ sediment_with_depth <- ss_df %>%
          dry_bulk_density = 5,
          fraction_organic_matter = 6) %>% 
   filter(!grepl("=|Note", core_id)) %>% 
+  mutate(depth = ifelse(depth == "Bulk", "0-1", depth)) %>% 
   separate(depth, into = c("depth_min", "depth_max"), sep = "-") %>% 
   mutate(depth_max = sub("[*]|a", "", depth_max),
          depth_max = ifelse(depth_min == "Top*", 1, depth_max),
-         depth_min = ifelse(depth_min == "Top*", 0, 
-                            ifelse(depth_min == "Bulk", NA, depth_min)),
+         depth_min = ifelse(depth_min == "Top*", 0, depth_min),
          depth_max = as.numeric(depth_max),
          depth_min = as.numeric(depth_min))
 
@@ -134,7 +134,6 @@ alpha_merge <- df %>%
 
 ## 2016: this has depth data
 alpha_raw <- data.frame()
-i <- NULL
 for (i in sheets) {
   alpha_path <- "./data/primary_studies/Marot_et_al_2020/original/2016-331-FA/16CCT03_AlphaSpectroscopy/16CCT03_AlphaSpectroscopy.xlsx"
   sheets <- excel_sheets(alpha_path)
@@ -162,8 +161,6 @@ df_alpha <- alpha_raw %>%
 
 # Read in docs without Be data
 gamma_raw <- data.frame()
-a <- NULL
-b <- NULL
 gamma_files <- list("./data/primary_studies/Marot_et_al_2020/original/2014-323-FA/14CCT01_GammaSpectroscopy/14CCT01_GammaSpectroscopy.xlsx",
                     "./data/primary_studies/Marot_et_al_2020/original/2016-358-FA/16CCT07_GammaSpectroscopy/16CCT07_GammaSpectroscopy.xlsx") 
 for (a in gamma_files) {
@@ -269,7 +266,9 @@ field_wo_cores <- wide_result %>%
                                                            ifelse(`Vegetation/Sediment Type` == "Juncus r.", "Juncus roemerianus",
                                                                   ifelse(`Vegetation/Sediment Type` == "Juncus", "Juncus sp.",
                                                                          ifelse(`Vegetation/Sediment Type` == "Juncus/Mud", "Juncus sp.",
-                                                                                ifelse(`Vegetation/Sediment Type` == "Juncus / Mud - stiff", "Juncus sp.", ""))))))))),
+                                                                                ifelse(`Vegetation/Sediment Type` == "Juncus / Mud - stiff", "Juncus sp.", 
+                                                                                       ifelse(`Vegetation/Sediment Type` == "Distichlis", "Distichlis sp.",
+                                                                                              ifelse(`Vegetation/Sediment Type` == "Transition, Spartina→Juncus", "Spartina and Juncus sp.", ""))))))))))),
          species_code = str_c(species_code_v, sep = "", species_code_s),
          code_type = ifelse(grepl("sp.", species_code), "Genus", 
                             ifelse(species_code == "", "", "Genus species")),
@@ -285,9 +284,13 @@ field_wo_cores <- wide_result %>%
          day = day(as_full_date),
          latitude = coalesce(`Latitude (DD)`, Latitude),
          longitude = coalesce(`Longitude (DD)`, Longitude),
-         position_method = ifelse(`Handheld GPS used` == "", "", "handheld"),
-         salinity_class = case_when(Salinity < 5 ~ 'mesohaline',
-                                    Salinity < 18 ~ "polyhaline",
+         position_method = ifelse(`Handheld GPS used` == "", NA, "handheld"),
+         salinity_class_f = case_when(Salinity < 5 ~ 'oligohaline',
+                                    Salinity < 18 ~ "mesohaline",
+                                    Salinity < 30 ~ "polyhaline",
+                                    Salinity < 40 ~ "mixoeuhaline",
+                                    Salinity < 50 ~ "saline",
+                                    Salinity > 50 ~ "brine",
                                     T ~ ""),
          salinity_method = "measurement",
          compaction_m = ifelse(`Compaction (m)` == "2 0.1", "0.1",
@@ -400,8 +403,7 @@ df_site <- site_join() %>%
           filter(!is.na(core_id_2)) %>% 
           mutate(core_id = core_id_2)) %>% 
   rename(samples = "Type of Samples Collected") %>% 
-  mutate(study_id = "Marot_et_al_2020",
-         year = year(date),
+  mutate(year = year(date),
          month = month(date),
          day = day(date),
          salinity_class = case_when(salinity < 5 ~ 'oligohaline',
@@ -453,31 +455,45 @@ df_radio <- full_join(radio_14, radio_16, by = c("site_id", "core_id", "c14_mate
 depth_joins <- c("depth_min", "depth_max", "site_id", "core_id")
 depthseries_raw <- full_join(df_sediment, df_gamma, by = depth_joins) %>% 
   full_join(df_radio, by = depth_joins) %>% 
-  full_join(df_field, by = c("site_id", "core_id")) %>% 
-  full_join(df_site, by = c("site_id", "core_id", "year", "month", "day", "salinity_class", "salinity_method", "position_method")) %>% 
   full_join(df_alpha, by = c(depth_joins, "total_pb210_activity", "total_pb210_activity_se", "method_id")) %>% 
-  fill(study_id, .direction = "downup") %>%
+  mutate(study_id = "Marot_et_al_2020") %>% 
   mutate(core_id = gsub("[(]|[)]|,", "", core_id)) 
 
 depthseries <- depthseries_raw %>% 
   select(c(study_id, site_id, core_id, method_id, depth_min, depth_max, dry_bulk_density, 
          fraction_organic_matter, cs137_activity, cs137_activity_se, cs137_unit, total_pb210_activity, 
          total_pb210_activity_se, pb210_unit, ra226_activity, ra226_activity_se, ra226_unit, c14_age, 
-         c14_age_se, c14_material, be7_activity, be7_activity_se, be7_unit, compaction)) 
+         c14_age_se, c14_material, be7_activity, be7_activity_se, be7_unit)) 
 
 
 ## Step 7: Make the Cores table ####
+cores <- full_join(df_field, df_site, by = c("site_id", "core_id")) %>% 
+  mutate(elevation_accuracy = .014,
+         latitude = as.numeric(latitude),
+         longitude = as.numeric(longitude),
+         study_id = "Marot_et_al_2020") %>%
+  select(c(study_id, site_id, core_id, year.x, year.y, month.x, month.y, day.x, day.y, latitude,longitude, position_method.x, position_method.y, 
+           elevation, elevation_datum, elevation_accuracy, salinity_class, salinity_class_f, salinity_method.x, salinity_method.y, 
+           core_length_flag))
+# there are cores with multiple entreis bc th entries have unique data. create a new core id for these. 
+# i took salinity class out of joiners and changed its name in df_field to salinity_class_f bc it lists a different result than df_site's salinity_class
+#, "year", "month", "day", "salinity_method", "position_method")) %>% 
+
+ 
+
+## Step 7: Make the Cores table [old code]
 cores <- depthseries_raw %>% 
   mutate(elevation_accuracy = .014,
          latitude = as.numeric(latitude),
          longitude = as.numeric(longitude)) %>% 
   select(c(study_id, site_id, core_id, year, month, day, latitude,longitude, position_method, 
            elevation, elevation_datum, elevation_accuracy, salinity_class, salinity_method, 
-           core_length_flag))
+           core_length_flag)) %>% 
+  distinct()
 
 
 ## Step 8: Make the Species table ####
-species <- depthseries_raw %>% 
+species <- cores %>% 
   select(c(study_id, site_id, core_id, species_code, code_type))
 
 
