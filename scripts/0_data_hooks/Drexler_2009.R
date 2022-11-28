@@ -78,7 +78,7 @@ depthseries <- age_depthseries %>%
   bind_rows(carbon_stock_data) %>%
   mutate(fraction_carbon_type = recode(fraction_carbon_type, 
                                        "fraction_total_carbon" = "total carbon"),
-         method_id = "single set of methods",
+         method_id = "single set of methods") %>% 
   group_by(core_id) %>%
   arrange(core_id, depth_min, sample_id, .by_group = TRUE) %>%
   # Following attribute should only be in methods table
@@ -175,6 +175,9 @@ source("./scripts/1_data_formatting/qa_functions.R")
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+
+testRequired(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

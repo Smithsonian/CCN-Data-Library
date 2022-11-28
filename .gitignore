@@ -9,7 +9,7 @@
 
 # ignore a folder
 # folder_to_ignore/
-# large shapefiles should now managed with Github LFS
+# large shapefiles are now managed with Github LFS
 
 # ignore any file and folders with the following string in the name
 # *string_to_ignore*
@@ -21,7 +21,6 @@
 *Shaw_et_al_2019*
 *Gedan_et_al_2020*
 *gedan_et_al*
-*baustian*
-*Baustian*
+
 temp/*
 .~*
