@@ -42,6 +42,7 @@ methods <- methods_raw %>% mutate(method_id = "single set of methods",
                                   fraction_carbon_method = "EA",
                                   carbon_profile_notes = "organic C was calculated as the difference between inorganic C and total C")
 
+methods <- reorderColumns("methods", methods)
 
 ## ... Sites ####
 # curate and format site level data from full data table
@@ -54,9 +55,9 @@ sites<- sites_raw %>% rename(site_description = notes) %>%
                           study_id = id) %>% 
                   relocate(study_id, .before = site_id) %>% 
                   mutate(site_id = recode(site_id, "bob" = "Bob Allen Keys","rb" = "Russell Bank",
-                                                    "nm" = "Nine Mile Bank", "tc" = "Trout Cove"))
-dfsites<- names(sites) %in% c("latitude", "longitude", "salinity", "seagrass present")
-sites<- sites[!dfsites]
+                                                    "nm" = "Nine Mile Bank", "tc" = "Trout Cove")) %>% 
+            select(-latitude, -longitude, -salinity, -`seagrass present`)
+
 
 
 ## ... Cores ####
@@ -71,10 +72,8 @@ full_data<- brazil_cores %>% bind_rows(brazil_cores,fl_bay_cores) %>%
                       longitude = Longitude,
                       site_id = Site) %>% 
                   mutate(site_id = recode(site_id, "bob" = "Bob Allen Keys", "rb" = "Russell Bank",
-                          "nm" = "Nine Mile Bank", "tc" = "Trout Cove"),
-                          core_id = paste(site_id, "-",Rep), study_id = id) %>% 
-                  relocate(core_id, .after = site_id) %>% 
-                  relocate(study_id, .before = site_id)
+                          "nm" = "Nine Mile Bank", "tc" = "Trout Cove"), 
+                         core_id = paste(site_id, "_", Rep), study_id = id)
   
  
 #reformat variables and add needed columns for cores table
@@ -84,13 +83,12 @@ cores <- full_data %>% mutate(year= case_when(latitude > -20 ~ "2015",
         vegetation_method = "field observation",
         habitat = "seagrass",
         position_method = NA,
-        core_length_flag = "core depth limited by length of corer") 
+        core_length_flag = "core depth limited by length of corer") %>% 
+      select( -depth, -loi, -dbd, -Cinorg, -Corg, -Rep) %>% 
+  distinct() #collapse into unique cores 
 
-## remove duplicate/unneeded columns 
-dfcores<- names(cores) %in% c("Lat", "Long", "depth", "loi","dbd", "Cinorg", "Corg", "Rep")
-cores<- cores[!dfcores]
-
-
+#reorder columns 
+cores <- reorderColumns("cores", cores)
 
 ## ... Depthseries ####
 
@@ -98,18 +96,12 @@ cores<- cores[!dfcores]
 ## rename and add relevant variables 
 depthseries <- full_data %>% mutate(fraction_organic_matter = loi/100,
                                     fraction_carbon = Corg/100,
-                                  depth_min = abs(depth),
                                   method_id = "single set of methods",
-                                  compaction_notes = "corer minimizes compaction",
-                                  representative_depth_max = abs(depth + -9)) %>%
-                rename(dry_bulk_density =dbd) %>% 
-                relocate(depth_min, .before = depth) %>% 
-                relocate(method_id, .before = depth_min) %>% 
-                relocate(representative_depth_max, .after= depth_min)
-
-#remove unneeded columns
-dfdepth <- names(depthseries) %in% c("latitude", "longitude", "loi","depth","Rep", "Cinorg", "Corg")
-depthseries <- depthseries[!dfdepth]
+                                  compaction_notes = "corer minimizes compaction") %>%
+                             rename(dry_bulk_density =dbd) %>% 
+                             select(-latitude, -longitude, -loi, -Rep, -Cinorg, -Corg)
+#reorder columns 
+depthseries <- reorderColumns("depthseries", depthseries)
 
 
 ## ... Species ####
