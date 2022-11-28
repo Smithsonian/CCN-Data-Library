@@ -44,12 +44,12 @@ id <- "Weston_et_al_2020"
 ## ... Methods ####
 
 methods <-  methods_raw %>% mutate(method_id = "single set of methods",
-                                   excess_pb210_rate = "depth",
-                                  # excess_pb210_model = "CRS and CIC",
+                                   # excess_pb210_rate = "depth",
+                                   # excess_pb210_model = "CRS and CIC",
                                    dry_bulk_density_flag = "not specified",
-                                   dating_notes = "CRC model used to determine age-dependent rates of soil accretion for each section of soil cores.
-                                   CIC model used to calculate a whole-core accretion rate using Pb210 activities.",
-                                  age_depth_model_reference = "CE") 
+                                   # age_depth_model_reference = "CE",
+                                   dating_notes = "CRC model used to determine age-dependent rates of soil accretion for each section of soil cores. CIC model used to calculate a whole-core accretion rate using Pb210 activities."
+                                   )
 
 #reorder columns 
 methods <- reorderColumns("methods", methods)
@@ -123,7 +123,7 @@ testUniqueCoords(cores)
 
 # test relational structure of data tables
 testIDs(cores, depthseries, by = "site")
-testIDs(cores, depthseries, by = "site")
+testIDs(cores, depthseries, by = "core")
 
 # test numeric attribute ranges
 fractionNotPercent(depthseries)
@@ -160,17 +160,22 @@ write_csv(species, "data/primary_studies/Weston_et_al_2020/derivative/Weston_et_
 # 
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
 
-study_citation <- data.frame(bibliography_id = "Weston_et_al_2022",
+study_citation <- data.frame(study_id = id, 
+                             bibliography_id = "Weston_et_al_2022_data",
+                             publication_type = "primary dataset",
+                             bibtype = "Misc", 
                              title = "Dataset: Recent Acceleration of Coastal Wetland Accretion Along the U.S. East Coast",
                              author = "Nathaniel B Weston and Elise Rodriguez and Brian Donnelly and Elena Solohin and Kristen Jezycki and Sandra Demberger 
                              and Lori Sutter and James T. Morris and Scott C. Neubauer and Christopher B Craft",
-                             bibtype = "Misc", 
                              doi = "10.25573/serc.13043054.v1",
                              url = "https://smithsonian.figshare.com/articles/dataset/Dataset_Recent_Acceleration_of_Coastal_Wetland_Accretion_Along_the_U_S_East_Coast/13043054",
-                             year = "2022") %>% 
+                             year = "2022")
+  
+weston_bib <- study_citation %>% select(-study_id, -publication_type) %>%   
                   column_to_rownames("bibliography_id")
 
-WriteBib(as.BibEntry(study_citation), "data/primary_studies/Weston_et_al_2020/derivative/Weston_et_al_2020.bib")
+write_csv(study_citation, "data/primary_studies/Weston_et_al_2020/derivative/Weston_et_al_2020_study_citations.csv")
+WriteBib(as.BibEntry(weston_bib), "data/primary_studies/Weston_et_al_2020/derivative/Weston_et_al_2020.bib")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/

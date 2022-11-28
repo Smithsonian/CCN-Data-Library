@@ -84,7 +84,7 @@ testUniqueCoords(cores)
 
 # test relational structure of data tables
 testIDs(cores, depthseries, by = "site")
-testIDs(cores, depthseries, by = "site")
+testIDs(cores, depthseries, by = "core")
 
 # test numeric attribute ranges
 fractionNotPercent(depthseries)
@@ -108,17 +108,24 @@ write_csv(impacts, "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_
     # 3) create a study_citation table in an intermediate folder, read it in and output bib file to derivative folder
 
 # example study citation creation:
-# study_citation <- data.frame(bibliography_id = "Spera_et_al_2020",
+# study_citations <- data.frame(study_id = "Spera_et_al_2020",
+#                              bibliography_id = "Spera_et_al_2020_data",
+#                              publication_type = "primary dataset",
+#                              bibtype = "Article",
 #                              title = "Spatial and temporal changes to a hydrologically-reconnected coastal wetland: Implications for restoration",
 #                              author = "Alina C. Spera and John R. White and Ron Corstanje",
-#                              bibtype = "Article",
 #                              doi = "10.1016/j.ecss.2020.106728",
 #                              url = "https://doi.org/10.1016/j.ecss.2020.106728", 
 #                              journal = "Estuarine, Coastal and Shelf Science",
 #                              year = "2020") %>% 
+# 
+# study_bib <- study_citations %>% 
+#     select(-study_id, -publication_type) %>% 
+#     distinct() %>% 
 #     column_to_rownames("bibliography_id")
 # 
-# WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
+# write_csv(study_citations, "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_study_citations.csv")
+# WriteBib(as.BibEntry(study_bib), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY.bib")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/

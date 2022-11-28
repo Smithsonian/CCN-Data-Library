@@ -54,8 +54,8 @@ cores_set_up <- cores_raw %>%
          inundation_method = 'field observation',
          inundation_class = ifelse(site_id %in% c("SRE_U", "SRE_D", "NPR_D"), "low", "high"),
          position_method = "RTK",
-         elevation_accuracy = "±.02–.03",
-         position_accuracy = "<.01",
+         elevation_accuracy = "0.025",
+         position_accuracy = "0.01",
          c14_age_se = na_if(c14_age_se, 'n/a'),
          c14_age = na_if(c14_age, 'n/a'),
          c14_material = ifelse(is.na(c14_age), "NA", "plant fragment"))
@@ -100,7 +100,7 @@ depthseries_set_up <- depthseries_raw %>%
 # Adding lat., long., & year from 'species' to 'cores'
 cores <- full_join(cores_set_up, species_set_up) %>% 
   select(c(study_id, site_id, core_id, year, latitude, longitude, position_accuracy, position_method, elevation_cores, 
-           elevation_datum, elevation_method, salinity_class, salinity_method, vegetation_class, vegetation_method, 
+           elevation_datum, elevation_method, elevation_accuracy, salinity_class, salinity_method, vegetation_class, vegetation_method, 
            habitat, inundation_class, inundation_method, core_length_flag)) %>%  
   rename(elevation = elevation_cores)
 
@@ -144,7 +144,7 @@ testUniqueCoords(cores)
 
 # test relational structure of data tables
 testIDs(cores, depthseries, by = "site")
-testIDs(cores, depthseries, by = "site")
+testIDs(cores, depthseries, by = "core")
 
 # test numeric attribute ranges
 fractionNotPercent(depthseries)
