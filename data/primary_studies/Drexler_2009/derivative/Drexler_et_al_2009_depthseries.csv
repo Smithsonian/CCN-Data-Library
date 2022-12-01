@@ -1,4 +1,4 @@
-study_id,core_id,sample_id,depth_min,depth_max,c14_age,c14_age_sd,c14_material,age,dry_bulk_density,fraction_organic_matter,fraction_carbon,method_id,site_id
+study_id,core_id,sample_id,depth_min,depth_max,c14_age,c14_age_se,c14_material,age,dry_bulk_density,fraction_organic_matter,fraction_carbon,method_id,site_id
 Drexler_et_al_2009,BACHI,NA,2,4,NA,NA,NA,NA,0.287,NA,NA,single set of methods,Bacon Channel Island
 Drexler_et_al_2009,BACHI,NA,4,6,NA,NA,NA,NA,0.257,0.408,0.197938,single set of methods,Bacon Channel Island
 Drexler_et_al_2009,BACHI,NA,6,8,NA,NA,NA,NA,0.306,NA,NA,single set of methods,Bacon Channel Island

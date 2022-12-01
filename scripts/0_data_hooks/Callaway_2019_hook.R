@@ -28,6 +28,9 @@
 library(tidyverse)
 library(RefManageR)
 
+source("scripts/1_data_formatting/curation_functions.R")
+
+
 cores_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_et_al_2019_cores.csv")
 species_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_et_al_2019_species.csv")
 depthseries_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_et_al_2019_depthseries.csv")
@@ -35,7 +38,6 @@ impacts_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_
 sites_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_et_al_2019_sites.csv")
 methods_raw <- read_csv("./data/primary_studies/Callaway_2019/original/callaway_et_al_2019_methods.csv")
 
-source("scripts/1_data_formatting/curation_functions.R")
 
 # Remove accumulation/accretion rates for core level
 cores <- cores_raw %>%
@@ -54,10 +56,10 @@ species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
   mutate(species_code = recode(species_code,
                                "Typa domingensis" = "Typha domingensis")) %>% 
-  select(study_id, site_id, core_id, species_code) %>% 
-  resolveTaxa(.) %>% 
-  mutate(species_code = ifelse(species_code != resolved_taxa, resolved_taxa, species_code)) %>%
-  select(-resolved_taxa)
+  select(study_id, site_id, core_id, species_code) 
+  # resolveTaxa(.) %>% 
+  # mutate(species_code = ifelse(species_code != resolved_taxa, resolved_taxa, species_code)) %>%
+  # select(-resolved_taxa)
 
 # Remove NS cores from depthseries (no other metadata)
 depthseries <- depthseries_raw %>%
@@ -68,7 +70,9 @@ depthseries <- depthseries_raw %>%
          bi214_unit = ifelse(!is.na(bi214_activity), "becquerelsPerKilogram", NA)) 
 
 sites <- sites_raw
+
 impacts <- impacts_raw
+
 methods <- methods_raw %>% 
   mutate(method_id = "single set of methods",
          carbonates_removed = FALSE,
@@ -133,13 +137,19 @@ source("./scripts/1_data_formatting/qa_functions.R")
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+
+testTaxa(table_names)
+
 testRequired(table_names)
 testConditional(table_names)
 
-test_unique_cores(cores)
-test_unique_coords(cores)
-test_core_relationships(cores, depthseries)
-fraction_not_percent(depthseries)
+testUniqueCores(cores)
+testUniqueCoords(cores)
+
+testIDs(cores, depthseries, by = "site")
+testIDs(cores, depthseries, by = "core")
+
+fractionNotPercent(depthseries)
 results <- test_numeric_vars(depthseries)
 
 # Data visualization report

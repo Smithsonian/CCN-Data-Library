@@ -46,8 +46,8 @@ depthseries <- raw_depthseries %>%
 methods <- raw_methods %>% 
   mutate(method_id = "single set of studies",
          excess_pb210_model = "CRS",
-         age_depth_model_notes = "PLUM software used") 
-  # select(-ra226_counting_method) # not sure why this was dropped
+         age_depth_model_notes = "PLUM software used") %>% 
+  select(-ra226_counting_method) 
 
 # impacts (no change)
 impacts <- raw_impacts 
@@ -106,8 +106,11 @@ table_names <- c("methods", "cores", "depthseries", "species", "impacts")
 # Check col and varnames
 testTableCols(table_names)
 testTableVars(table_names)
+
 testRequired(table_names)
 testConditional(table_names)
+
+testTaxa(table_names)
 
 testUniqueCores(cores)
 testUniqueCoords(cores)

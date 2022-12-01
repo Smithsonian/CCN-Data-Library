@@ -189,7 +189,12 @@ cores <- core_data %>%
                                   core_position_method)) %>% 
   mutate(core_position_notes = ifelse(core_position_method == "other low resolution",
                                       "location coarsely estimated from Google Maps",
-                                       NA))
+                                       NA)) %>% 
+  # jaxine edits
+  # need to deal with sabkha and microbial mat later
+  mutate(habitat = case_when(grepl("mangrove", vegetation_notes) ~ "mangrove",
+                             vegetation_notes == "salt marsh" ~ "marsh",
+                             vegetation_notes == "seagrass" ~ "seagrass"))
   
 
 ## ... 3D. Site level data #############
@@ -324,6 +329,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
+testConditional(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)

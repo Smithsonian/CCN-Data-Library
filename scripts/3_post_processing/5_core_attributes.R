@@ -33,7 +33,8 @@ if(!(file.exists("docs/core_attributes.csv"))){
   # Get unique ids for study, site, and core
   study_site_core <- cores %>% 
     filter(!(core_id %in% current_core_attributes$core_id)) %>%
-    select(study_id, site_id, core_id)
+    select(study_id, site_id, core_id) %>% 
+    filter(study_id != "Copertino_unpublished")
   
   update_existing_table <- TRUE
 }
@@ -110,4 +111,4 @@ if(!(plyr::empty(study_site_core))){
 }
 
 # clear workspace of unnecessary variables
-rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results"))])
+rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results", "join_status", "file_paths"))])
