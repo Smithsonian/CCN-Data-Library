@@ -102,30 +102,30 @@ depthseries,fraction_carbon,Mass of carbon relative to sample dry mass.,optional
 depthseries,compaction_fraction,Fraction of the sample depth interval reduced due to compaction.,optional,numeric,dimensionless,real,NA,NA,NA,NA,NA,NA,NA
 depthseries,compaction_notes,Any submitter generated notes on compaction.,optional,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
 depthseries,cs137_peak_age,Age of documented 137Cs Peak.,optional,numeric,year,integer,NA,NA,NA,NA,NA,NA,NA
-depthseries,cs137_activity,Radioactivity counts per unit dry weight for radiocesium (137Cs).,encouraged,numeric,becquerelsPerKilogram,real,cs137,age_depth,2,NA,cs137_peak_age; cs137_peak_present,NA,NA
-depthseries,cs137_activity_se,1 standard error of uncertainty associated with cs137_activity.,encouraged,numeric,becquerelsPerKilogram,real,cs137,age_depth,1,NA,cs137_activity,NA,NA
+depthseries,cs137_activity,Radioactivity counts per unit dry weight for radiocesium (137Cs).,encouraged,numeric,NA,real,cs137,age_depth,2,NA,cs137_peak_age; cs137_peak_present,NA,NA
+depthseries,cs137_activity_se,1 standard error of uncertainty associated with cs137_activity.,encouraged,numeric,NA,real,cs137,age_depth,1,NA,cs137_activity,NA,NA
 depthseries,cs137_unit,Reported unit for sample interval's Cs 137 activity measurements.,conditional,character,NA,NA,NA,NA,NA,1,cs137_activity; cs137_activity_se,NA,NA
-depthseries,excess_pb210_activity,Excess radioactivity counts per unit dry weight for excess lead 210 (210Pb).,optional,numeric,becquerelsPerKilogram,real,pb210,age_depth,2,NA,NA,NA,NA
-depthseries,excess_pb210_activity_se,1 standard error of uncertainty associated with excess_pb210_activity.,optional,numeric,becquerelsPerKilogram,real,pb210,age_depth,1,NA,NA,NA,NA
-depthseries,total_pb210_activity,Total radioactivity counts per unit dry weight for excess lead 210 (210Pb).,encouraged,numeric,becquerelsPerKilogram,real,pb210,age_depth,2,NA,excess_pb210_activity,NA,NA
-depthseries,total_pb210_activity_se,1 standard error of uncertainty associated with total_pb210_activity.,encouraged,numeric,becquerelsPerKilogram,real,pb210,age_depth,1,NA,total_pb210_activity,NA,NA
+depthseries,excess_pb210_activity,Excess radioactivity counts per unit dry weight for excess lead 210 (210Pb).,optional,numeric,NA,real,pb210,age_depth,2,NA,NA,NA,NA
+depthseries,excess_pb210_activity_se,1 standard error of uncertainty associated with excess_pb210_activity.,optional,numeric,NA,real,pb210,age_depth,1,NA,NA,NA,NA
+depthseries,total_pb210_activity,Total radioactivity counts per unit dry weight for excess lead 210 (210Pb).,encouraged,numeric,NA,real,pb210,age_depth,2,NA,excess_pb210_activity,NA,NA
+depthseries,total_pb210_activity_se,1 standard error of uncertainty associated with total_pb210_activity.,encouraged,numeric,NA,real,pb210,age_depth,1,NA,total_pb210_activity,NA,NA
 depthseries,pb210_unit,Reported unit for sample interval's Pb-210 activity measurements.,conditional,character,NA,NA,NA,NA,NA,1,total_pb210_activity; total_pb210_activity_se; excess_pb210_activity; excess_pb210_activity_se,NA,NA
-depthseries,ra226_activity,Total radioactivity counts per unit dry weight for Radium 226 (226Ra) if measured as part of the_210Pb dating process.,optional,numeric,becquerelsPerKilogram,real,pb210,age_depth,2,NA,NA,NA,NA
-depthseries,ra226_activity_se,1 standard error of uncertainty associated with ra226_activity.,optional,numeric,becquerelsPerKilogram,real,pb210,age_depth,2,NA,NA,NA,NA
+depthseries,ra226_activity,Total radioactivity counts per unit dry weight for Radium 226 (226Ra) if measured as part of the_210Pb dating process.,optional,numeric,NA,real,pb210,age_depth,2,NA,NA,NA,NA
+depthseries,ra226_activity_se,1 standard error of uncertainty associated with ra226_activity.,optional,numeric,NA,real,pb210,age_depth,2,NA,NA,NA,NA
 depthseries,ra226_unit,Reported unit for sample interval's Ra 226 activity measurements.,conditional,character,NA,NA,NA,NA,NA,NA,ra226_activity; ra226_activity_se,NA,NA
-depthseries,pb214_activity,Radioactivity counts per unit dry weight for 214 Pb.,optional,numeric,becquerelsPerKilogram,real,NA,NA,NA,1,NA,NA,NA
-depthseries,pb214_activity_se,Estimated uncertainty in pb214_activity.,optional,numeric,becquerelsPerKilogram,real,NA,NA,NA,1,NA,NA,NA
+depthseries,pb214_activity,Radioactivity counts per unit dry weight for 214 Pb.,optional,numeric,NA,real,NA,NA,NA,1,NA,NA,NA
+depthseries,pb214_activity_se,Estimated uncertainty in pb214_activity.,optional,numeric,NA,real,NA,NA,NA,1,NA,NA,NA
 depthseries,pb214_unit,Reported unit for sample interval's 214 Pb activity measurements.,conditional,character,NA,NA,NA,NA,NA,1,pb214_activity; pb214_activity_se,NA,NA
-depthseries,bi214_activity,Radioactivity counts per unit dry weight for 214 Bi.,optional,numeric,becquerelsPerKilogram,real,NA,age_depth,NA,1,NA,NA,NA
-depthseries,bi214_activity_se,Reported standard error for radioactivity counts per unit dry weight for_214Bi,optional,numeric,becquerelsPerKilogram,real,NA,age_depth,NA,1,NA,NA,NA
+depthseries,bi214_activity,Radioactivity counts per unit dry weight for 214 Bi.,optional,numeric,NA,real,NA,age_depth,NA,1,NA,NA,NA
+depthseries,bi214_activity_se,Reported standard error for radioactivity counts per unit dry weight for_214Bi,optional,numeric,NA,real,NA,age_depth,NA,1,NA,NA,NA
 depthseries,bi214_unit,Reported unit for sample interval's Bi 214 activity measurements.,conditional,character,NA,NA,NA,NA,NA,1,bi214_activity; bi214_activity_se,NA,NA
 depthseries,c14_age,Radiocarbon age as estimated from AMS measurements.,optional,numeric,radiocarbonYear,real,c14,age_depth,2,NA,NA,NA,NA
 depthseries,c14_age_se,Estimated uncertainty in c14_age.,conditional,numeric,radiocarbonYear,real,c14,age_depth,1,NA,c14_age,NA,NA
 depthseries,c14_material,Description of the material selected for radiocarbon (14C) dating.,conditional,character,NA,NA,c14,age_depth,2,NA,c14_age,NA,NA
 depthseries,c14_notes,Any relevant submitter generated notes on 14C dating process.,optional,character,NA,NA,c14,age_depth,NA,NA,NA,NA,NA
 depthseries,delta_c13,The isotopic signature of 13C. This is oftentimes measured along with c14_age and can be useful for analyzing carbon lability and provenance.,optional,numeric,partsPerMillion,real,c14,age_depth,2,NA,NA,NA,NA
-depthseries,be7_activity,Radioactivity counts per unit dry weight for 7Be.,optional,numeric,becquerelsPerKilogram,real,be7,age_depth,2,NA,NA,NA,NA
-depthseries,be7_activity_se,Estimated uncertainty in be_7_activity.,optional,numeric,becquerelsPerKilogram,real,be7,age_depth,1,NA,NA,NA,NA
+depthseries,be7_activity,Radioactivity counts per unit dry weight for 7Be.,optional,numeric,NA,real,be7,age_depth,2,NA,NA,NA,NA
+depthseries,be7_activity_se,Estimated uncertainty in be_7_activity.,optional,numeric,NA,real,be7,age_depth,1,NA,NA,NA,NA
 depthseries,be7_unit,Reported unit for sample interval's Be 7 activity measurements.,conditional,character,NA,NA,NA,NA,NA,1,be7_activity,NA,NA
 depthseries,marker_date,"The age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.",optional,Date,YYYY,NA,other_dated_horizon,age_depth,2,NA,NA,NA,NA
 depthseries,marker_date_se,"The standard error of the age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.",optional,Date,NA,NA,NA,NA,NA,NA,NA,NA,NA

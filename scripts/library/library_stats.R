@@ -6,14 +6,13 @@
 ## Prepare Workspace ####
 
 library(tidyverse)
-library(viridis)
+# library(viridis)
 library(RColorBrewer)
 
 # read in synthesis data
 cores <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", guess_max = 7000)
-ds <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max = 60000)
+ds <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max = 55000)
 
-length(unique(cores$core_id))
 
 country_smry <- cores %>% 
   count(country, name = "core_count") %>% 
@@ -60,20 +59,21 @@ us_cores <- cores %>% filter(country == "United States")
 # elevation_cores <- length(which(!is.na(us_cores$elevation_qual_code)))
 
 # other metrics
-length(unique(us_cores$core_id)) # 3985
+length(unique(us_cores$core_id)) # 4041
 length(unique(us_cores$admin_division)) # 23 states
 min(unique(us_cores$year), na.rm = T) # oldest core: 1969
 
 # us_ds <- ds %>% filter(core_id %in% unique(us_cores$core_id))
 max(unique(us_cores$max_depth), na.rm = T)
 
-us_cores %>% filter(max_depth < 800) %>% 
+us_cores %>% 
+  # filter(max_depth < 800) %>% 
   ggplot(aes(max_depth)) + 
   geom_density() + geom_rug() +
   ggtitle("Max Depth Distribution for U.S. Atlas Cores (exluding 1 core max depth 894cm)")
 
 cores %>% 
-  filter(max_depth < 800) %>%
+  # filter(max_depth < 800) %>%
   ggplot(aes(max_depth)) + 
   geom_density() + geom_rug() +
   ggtitle("Max Depth Distribution for Atlas Cores (exluding 1 core max depth 894cm)")
@@ -82,7 +82,7 @@ cores %>%
 
 # compare to habitats across all cores
 # studies w a lot of unidentified habitats: Schile-Beers_and_Megonigal_2017, Osland_et_al_2016, Drexler_et_al_2019
-core_habitats <- us_cores %>% 
+us_habitats <- us_cores %>% 
   mutate(habitat = recode(habitat, 
                           "scrub shrub" = "scrub/shrub",
                           "mudflat" = "unvegetated")) %>% 
@@ -92,11 +92,11 @@ core_habitats <- us_cores %>%
   mutate(percent = 100*(n/sum(n)))
 
 # plot
-core_habitats %>%
-  # all_habitat %>% 
+# us_habitats %>%
+  all_habitat %>%
   mutate(habitat = fct_reorder(habitat, percent)) %>% 
   filter(!is.na(habitat)) %>% 
-ggplot(aes(habitat, percent, fill = percent)) + 
+  ggplot(aes(habitat, percent, fill = percent)) + 
   xlab("Habitat Type") + ylab("Percent of Cores per Habitat") +
   geom_col() + 
   scale_color_brewer(palette = "BrBG") +
@@ -106,7 +106,8 @@ ggplot(aes(habitat, percent, fill = percent)) +
   # theme(axis.text.x = element_text(angle = 45, hjust=1))
 # ggsave("agu_town_hall/figures/core_habitat_synthesis.jpg")
 
-
+# habitat area coverage?
+  
 ## ... State Data Quality ####
 
 corequal <- us_cores %>%
@@ -135,12 +136,13 @@ corequal <- us_cores %>%
 
 # plot
 corequal %>% 
-    count(level, data_tier) %>% 
+  count(level, data_tier) %>% 
   mutate(percent = 100*(n/sum(n))) %>% 
-ggplot(aes(level, percent, fill = percent)) + 
+  ggplot(aes(level, percent, fill = data_tier)) + 
   geom_col() +
-  ylab("Number of Cores") + xlab("Data Quality Tiers") +
-  theme_classic()
+  theme(legend.position = "bottom") +
+  ylab("Percent of Cores (%)") + xlab("Data Quality Tiers")
+  # theme_classic()
 # ggsave("agu_town_hall/figures/data_quality.jpg")
 
 # try something else
