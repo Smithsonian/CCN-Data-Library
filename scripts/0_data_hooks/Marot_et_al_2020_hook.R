@@ -11,6 +11,7 @@ library(tidyverse)
 library(readxl)
 library(lubridate)
 library(leaflet)
+library(RefManageR)
 
 # load in helper functions
 source("scripts/1_data_formatting/curation_functions.R") # For curation
@@ -26,10 +27,9 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 sediment <- "./data/primary_studies/Marot_et_al_2020/original/2014-323-FA/14CCT01_SedimentPhysicalProperties/14CCT01_SedimentPhysicalProperties.xlsx"
 results <- function(path){
   df <- data.frame()
-  i <- NULL
   # Read sheets 2:12
-  for (i in 2:12) {
-    sheet <- i
+  for (a in 2:12) {
+    sheet <- a
     temp.df <- read_xlsx(path, sheet = sheet, skip = 1, na = "--") 
     colnames(temp.df) <- 1:6 # Rename because R doesn't read the column names as the same between sheets
     df <- rbind(df, temp.df)
@@ -82,14 +82,12 @@ sediment_ss <- full_join(sediment_2015, sediment_2016_4) %>%
 
 ## 2016 mixed core data (depth provided)
 ss_df <- data.frame()
-a <- NULL
-b <- NULL
 sed_depth_files <- list("./data/primary_studies/Marot_et_al_2020/original/2016-358-FA/16CCT07_SedimentPhysicalProperties/16CCT07_SedimentPhysicalProperties.xlsx", 
                         "./data/primary_studies/Marot_et_al_2020/original/2016-331-FA/16CCT03_SedimentPhysicalProperties/16CCT03_SedimentPhysicalProperties.xlsx")
-for (a in sed_depth_files) {
-  sheets <- excel_sheets(a)
-    for (b in sheets) {
-    temp.df <- read_xlsx(a, sheet = b, skip = 1, na = "--") 
+for (b in sed_depth_files) {
+  sheets <- excel_sheets(b)
+    for (c in sheets) {
+    temp.df <- read_xlsx(b, sheet = c, skip = 1, na = "--") 
     colnames(temp.df) <- 1:6
     ss_df <- rbind(ss_df, temp.df)  
   }
@@ -109,12 +107,33 @@ sediment_with_depth <- ss_df %>%
          depth_max = ifelse(depth_min == "Top*", 1, depth_max),
          depth_min = ifelse(depth_min == "Top*", 0, depth_min),
          depth_max = as.numeric(depth_max),
-         depth_min = as.numeric(depth_min))
+         depth_min = as.numeric(depth_min),
+         core_id = ifelse(core_id == "16CCT03-GB254G(M)", "16CCT03-GB254G_3", # See the renaming of core GB254_x in df_site and df_field
+                          ifelse(core_id == "16CCT03-GB254G(V)", "16CCT03-GB254G_4", core_id)))
 
 ## Merge all Sediment data
 df_sediment <- full_join(sediment_with_depth, sediment_ss) %>% 
   separate(core_id, into = c("site_id", "core_id"), sep = "-", remove = T) %>% 
-  drop_na(core_id)
+  drop_na(core_id) %>% 
+# Resolve core ID duplicate naming conventions to core_id_x, where x = duplicate #
+# Note that some naming edits will drop a character as the datasheets already provide distinct core IDs for "duplicate pairs"
+  mutate(core_id = gsub("GB200G[(]A[)]", "GB200G", core_id),
+         core_id = gsub("GB200G[(]B[)]a", "GB200G_3", core_id), # Note that this must be read before the subsequent line
+         core_id = gsub("GB200G[(]B[)]", "GB200G_2", core_id),
+         core_id = gsub("GB230G1", "GB230G", core_id),
+         core_id = gsub("GB233Ga", "GB233G_2", core_id),
+         core_id = gsub("GB237G2", "GB237G_2", core_id),
+         core_id = gsub("GB238Ga", "GB238G_2", core_id),
+         core_id = gsub("GB240G3", "GB240G_2", core_id),
+         core_id = gsub("GB241G2", "GB241G_2", core_id),
+         core_id = gsub("GB242G1", "GB242G_2", core_id),
+         core_id = gsub("GB243G3,a", "GB243G_3", core_id), # Note that this must be read before the subsequent line
+         core_id = gsub("GB243G3", "GB243G_2", core_id),
+         core_id = gsub("GB256Ga", "GB256G_2", core_id),
+         core_id = gsub("GB256Ga", "GB256G_2", core_id),
+         core_id = gsub("GB265Ga", "GB265G_2", core_id),
+         core_id = gsub("GB282Sa", "GB282S_2", core_id),
+         core_id = gsub("GB289Sa", "GB289S_2", core_id))
 
 
 ## Step 2: Alpha Spectroscopy ####
@@ -123,8 +142,8 @@ df_sediment <- full_join(sediment_with_depth, sediment_ss) %>%
 alpha_files <- list("./data/primary_studies/Marot_et_al_2020/original/2014-323-FA/14CCT01_AlphaSpectroscopy/14CCT01_AlphaSpectroscopy.xlsx",
                     "./data/primary_studies/Marot_et_al_2020/original/2015-315-FA/15CCT02_AlphaSpectroscopy/15CCT02_AlphaSpectroscopy.xlsx")
 df <- data.frame()
-for (a in alpha_files) {
-  temp.df <- read_xlsx(a, skip = 1) 
+for (d in alpha_files) {
+  temp.df <- read_xlsx(d, skip = 1) 
   df <- rbind(df, temp.df)  
 }
 
@@ -134,10 +153,10 @@ alpha_merge <- df %>%
 
 ## 2016: this has depth data
 alpha_raw <- data.frame()
-for (i in sheets) {
-  alpha_path <- "./data/primary_studies/Marot_et_al_2020/original/2016-331-FA/16CCT03_AlphaSpectroscopy/16CCT03_AlphaSpectroscopy.xlsx"
-  sheets <- excel_sheets(alpha_path)
-  temp.df <- read_xlsx(alpha_path, sheet = i, skip = 1) 
+alpha_path <- "./data/primary_studies/Marot_et_al_2020/original/2016-331-FA/16CCT03_AlphaSpectroscopy/16CCT03_AlphaSpectroscopy.xlsx"
+names <- excel_sheets(alpha_path)
+for (e in names) {
+  temp.df <- read_xlsx(alpha_path, sheet = e, skip = 1) 
   alpha_raw <- rbind(alpha_raw, temp.df)  
 }
 
@@ -153,8 +172,9 @@ df_alpha <- alpha_raw %>%
          total_pb210_activity = "Total Pb-210 \r\n(dpm/g)",
          total_pb210_activity_se = "Total Pb-210 Error \r\n(+/- dpm/g)") %>% 
   filter(!grepl("=", core_id)) %>% 
-  mutate(method_id = "alpha spectroscopy") %>% 
-  separate(core_id, into = c("site_id", "core_id"), sep = "-", remove = T)
+  separate(core_id, into = c("site_id", "core_id"), sep = "-", remove = T) %>% 
+  mutate(method_id = "alpha spectroscopy",
+         site_id = gsub("166CCT03", "16CCT03", site_id)) 
 
 
 ## Step 3: GammaSpectroscopy ####
@@ -163,10 +183,10 @@ df_alpha <- alpha_raw %>%
 gamma_raw <- data.frame()
 gamma_files <- list("./data/primary_studies/Marot_et_al_2020/original/2014-323-FA/14CCT01_GammaSpectroscopy/14CCT01_GammaSpectroscopy.xlsx",
                     "./data/primary_studies/Marot_et_al_2020/original/2016-358-FA/16CCT07_GammaSpectroscopy/16CCT07_GammaSpectroscopy.xlsx") 
-for (a in gamma_files) {
-  sheets <- excel_sheets(a)
-  for (b in sheets) {
-    temp.df <- read_xlsx(a, sheet = b, skip = 1, na = c("ND", "Tr", "--")) 
+for (f in gamma_files) {
+  sheets <- excel_sheets(f)
+  for (g in sheets) {
+    temp.df <- read_xlsx(f, sheet = g, skip = 1, na = c("ND", "Tr", "--")) 
     gamma_raw <- rbind(gamma_raw, temp.df)  
   }
 }
@@ -271,7 +291,7 @@ field_wo_cores <- wide_result %>%
                                                                                               ifelse(`Vegetation/Sediment Type` == "Transition, Spartina→Juncus", "Spartina and Juncus sp.", ""))))))))))),
          species_code = str_c(species_code_v, sep = "", species_code_s),
          code_type = ifelse(grepl("sp.", species_code), "Genus", 
-                            ifelse(species_code == "", "", "Genus species")),
+                            ifelse(species_code == "", NA_character_, "Genus species")),
          full_date = ifelse(Date == 42504, "May 14, 2016",
                        ifelse(Date == 42505, "May 15, 2016",
                               ifelse(Date == 42506, "May 16, 2016",
@@ -284,15 +304,14 @@ field_wo_cores <- wide_result %>%
          day = day(as_full_date),
          latitude = coalesce(`Latitude (DD)`, Latitude),
          longitude = coalesce(`Longitude (DD)`, Longitude),
-         position_method = ifelse(`Handheld GPS used` == "", NA, "handheld"),
-         salinity_class_f = case_when(Salinity < 5 ~ 'oligohaline',
+         Salinity = as.numeric(Salinity),
+         salinity_class = case_when(Salinity < 5 ~ 'oligohaline',
                                     Salinity < 18 ~ "mesohaline",
                                     Salinity < 30 ~ "polyhaline",
                                     Salinity < 40 ~ "mixoeuhaline",
                                     Salinity < 50 ~ "saline",
                                     Salinity > 50 ~ "brine",
-                                    T ~ ""),
-         salinity_method = "measurement",
+                                    T ~ NA_character_),
          compaction_m = ifelse(`Compaction (m)` == "2 0.1", "0.1",
                                ifelse(`Compaction (m)` == "Not recorded", "", `Compaction (m)`)),
          compaction_m = as.numeric(compaction_m)*100,
@@ -315,7 +334,9 @@ field_raw <- field_wo_cores %>% # Resolve entries that list multiple cores on a 
          core_id_2 = gsub("DMRS", "D,M,R,S", core_id_2),
          core_id_2 = gsub(" |&", "", core_id_2)) %>% 
   separate(core_id_2, into = c("core_id_2", "core_type"), sep = ",", extra = "merge") %>% # Pull out core type ids (DMRSVG)
-  separate_rows(core_type, sep = ",") # Disaggregate cores into rows
+  separate_rows(core_type, sep = ",") %>% # Disaggregate cores into rows
+  mutate(flag = ifelse(substr(core_id_2, nchar(core_id_2), nchar(core_id_2)) == "B", 1, 0)) %>% # Flag "B" cores (no associated data)
+  filter(flag < 1) # Remove "B" cores
   
 df_field <- field_raw %>% 
   rbind(field_raw %>% 
@@ -325,8 +346,11 @@ df_field <- field_raw %>%
   rename(core_id = core_id_2) %>% 
   mutate(core_id = ifelse(core_id == "241G", "GB241G",
                           ifelse(core_id == "243G", "GB243G", 
-                                 ifelse(grepl("14GB", core_id), substr(core_id, 3, nchar(core_id)), core_id))))
-
+                                 ifelse(grepl("14GB", core_id), substr(core_id, 3, nchar(core_id)), core_id))),
+         core_id = gsub("GB257V[(]B[)]", "GB257V_2", core_id),
+         core_id = ifelse(core_id == "GB254G" & day == 16, "GB254G",
+                          ifelse(core_id == "GB254G" & day == 17, "GB254G_2", core_id))) # 254G has two position measurements
+         
 
 ## Step 4: Site Information ####
 
@@ -372,14 +396,16 @@ site_2016_4 <- read_excel(site_files[4], skip = 1) %>%
   separate("Site ID", into = c("site_id", "core_id"), sep = "-") %>% 
   rename(date = "Date & Time\r\nCollected",
          latitude_nad83 = "Latitude (NAD83)",
-         longitude_nad83 = "Longitude (NAD83)")
+         longitude_nad83 = "Longitude (NAD83)") %>% 
+  mutate(core_id = paste(core_id, "G", sep = "")) # Defined as surface sample ("G") in metadata
 
 site_2016_7 <- read_excel(site_files[5], skip = 1) %>% 
   separate("Site ID", into = c("site_id", "core_id"), sep = "-") %>% 
   rename(date = "Date \r\nCollected",
          latitude_nad83 = "Latitude (NAD83)",
          longitude_nad83 = "Longitude (NAD83)",
-         elevation = "Orthometric Height\r\n(m, NAVD88 Geoid 12A)")
+         elevation = "Orthometric Height\r\n(m, NAVD88 Geoid 12A)") %>% 
+  mutate(core_id = paste(core_id, "M", sep = "")) # Defined as push core ("M") in metadata
 
 ## Merge Site Information
 site_join <- function(){
@@ -412,21 +438,22 @@ df_site <- site_join() %>%
                                     salinity < 40 ~ "mixoeuhaline",
                                     salinity < 50 ~ "saline",
                                     salinity > 50 ~ "brine",
-                                    T ~ ""),
-         salinity_method = ifelse(salinity > 0, "measurement", ""),
-         elevation_datum = "NAVD88",
-         position_method = "handheld",
-         core_id = gsub("[*]|M|V", "", core_id),
+                                    T ~ NA_character_),
+         core_id = gsub("[*]", "", core_id),
+         core_id = gsub("254M|254V", "254", core_id), # This core is double named in the datasheet 
          core_id = gsub(" ", "", core_id),
          samples = gsub(" ", "", samples)) %>% 
-  separate_rows(samples, sep = ",") %>% 
-  filter(!grepl("B", samples)) %>% # Remove non-cores
-  mutate(core_length_flag = ifelse(samples == "M", "core depth represents deposit depth", 
-                                   ifelse(samples == "R", "core depth represents deposit depth",
-                                          ifelse(samples == "V", "core depth represents deposit depth", 
-                                                 "core depth limited by length of corer")))) %>% 
-  unite(col = "core_id", "core_id", samples, sep = "", na.rm = T)
-  
+  separate_rows(samples, sep = ",") %>%
+  mutate(samples = ifelse(core_id == "GB254" & day == 16, "G", # These two GB254 cores match those of df_field but not df_sediment
+                          ifelse(core_id == "GB254" & day == 17, "G_2", samples))) %>% 
+  filter(!grepl("B", samples)) %>% # Remove "B" non-cores
+# Don't assign the core_length_flag until after the merge to make the cores table
+#  mutate(core_length_flag = ifelse(samples == "M", "core depth represents deposit depth", 
+#                                   ifelse(samples == "R", "core depth represents deposit depth",
+#                                          ifelse(samples == "V", "core depth represents deposit depth", 
+#                                                 "core depth limited by length of corer")))) %>% 
+  unite(col = "core_id", "core_id", samples, sep = "", na.rm = T) %>% 
+  mutate(core_id = gsub("GB30S", "GB30S_2", core_id)) # Rename because this salinity measurement is distinct from GB30S in df_field
 
 ## Step 5: Radiocarbon #### 
 radio_14 <- read_excel("./data/primary_studies/Marot_et_al_2020/original/2014-323-FA/14CCT01_Radiocarbon/14CCT01_Radiocarbon.xlsx", skip = 1) %>% 
@@ -435,7 +462,8 @@ radio_14 <- read_excel("./data/primary_studies/Marot_et_al_2020/original/2014-32
          c14_age_se = "Age\r\nError",
          c14_material = "Sample\r\nType",
          date = "Date\r\nReported",
-         depth_max = "Depth\r\n(cm)")
+         depth_max = "Depth\r\n(cm)") %>% 
+  mutate(depth_min = depth_max - 1)
   
 radio_16 <- read_excel("./data/primary_studies/Marot_et_al_2020/original/2016-331-FA/16CCT03_Radiocarbon/16CCT03_Radiocarbon.xlsx", skip = 1, na = c("--", "N/A")) %>% 
   slice(1:(n()-1)) %>% 
@@ -449,17 +477,31 @@ radio_16 <- read_excel("./data/primary_studies/Marot_et_al_2020/original/2016-33
          c14_age_se = "Age\r\nError",
          date = "Date\r\nReported")
 
-df_radio <- full_join(radio_14, radio_16, by = c("site_id", "core_id", "c14_material", "c14_age", "c14_age_se", "date", "depth_max"))
+df_radio <- full_join(radio_14, radio_16, by = c("site_id", "core_id", "c14_material", "c14_age", "c14_age_se", "date", "depth_min", "depth_max"))
+
 
 ## Step 6: Make the Depthseries table ####
 depth_joins <- c("depth_min", "depth_max", "site_id", "core_id")
 depthseries_raw <- full_join(df_sediment, df_gamma, by = depth_joins) %>% 
   full_join(df_radio, by = depth_joins) %>% 
   full_join(df_alpha, by = c(depth_joins, "total_pb210_activity", "total_pb210_activity_se", "method_id")) %>% 
-  mutate(study_id = "Marot_et_al_2020") %>% 
-  mutate(core_id = gsub("[(]|[)]|,", "", core_id)) 
+  mutate(study_id = "Marot_et_al_2020",
+         core_id = gsub("GB232M[(]A[)]", "GB232M", core_id), # Resolve duplicate naming conventions
+         core_id = gsub("GB232M[(]B[)]", "GB232M_2", core_id),
+         core_id = gsub("GB53M[(]A[)]", "GB53M", core_id),
+         core_id = gsub("GB53M[(]B[)]", "GB53M_2", core_id),
+         core_id = paste(site_id, core_id, sep = "_"),
+         core_method = substr(core_id, nchar(core_id) - 2, nchar(core_id)),
+         method_id = ifelse(is.na(method_id), "no spectroscopy", method_id))
 
 depthseries <- depthseries_raw %>% 
+  mutate(core_method = ifelse(grepl("D", core_method), "shovel_corer",
+                              ifelse(grepl("M", core_method), "push_core",
+                                     ifelse(grepl("R", core_method), "russian_corer",
+                                            ifelse(grepl("S", core_method), "surface_sample",
+                                                   ifelse(grepl("V", core_method), "vibracore",
+                                                          ifelse(grepl("G", core_method), "surface sample", "")))))),
+         method_id = paste(core_method, method_id, sep = "_")) %>% 
   select(c(study_id, site_id, core_id, method_id, depth_min, depth_max, dry_bulk_density, 
          fraction_organic_matter, cs137_activity, cs137_activity_se, cs137_unit, total_pb210_activity, 
          total_pb210_activity_se, pb210_unit, ra226_activity, ra226_activity_se, ra226_unit, c14_age, 
@@ -467,38 +509,38 @@ depthseries <- depthseries_raw %>%
 
 
 ## Step 7: Make the Cores table ####
-cores <- full_join(df_field, df_site, by = c("site_id", "core_id")) %>% 
-  mutate(elevation_accuracy = .014,
+cores <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "month", "day", "salinity_class")) %>% 
+  mutate(core_id = paste(site_id, core_id, sep = "_"),
+         elevation_accuracy = .014,
          latitude = as.numeric(latitude),
          longitude = as.numeric(longitude),
-         study_id = "Marot_et_al_2020") %>%
-  select(c(study_id, site_id, core_id, year.x, year.y, month.x, month.y, day.x, day.y, latitude,longitude, position_method.x, position_method.y, 
-           elevation, elevation_datum, elevation_accuracy, salinity_class, salinity_class_f, salinity_method.x, salinity_method.y, 
-           core_length_flag))
-# there are cores with multiple entreis bc th entries have unique data. create a new core id for these. 
-# i took salinity class out of joiners and changed its name in df_field to salinity_class_f bc it lists a different result than df_site's salinity_class
-#, "year", "month", "day", "salinity_method", "position_method")) %>% 
-
- 
-
-## Step 7: Make the Cores table [old code]
-cores <- depthseries_raw %>% 
-  mutate(elevation_accuracy = .014,
-         latitude = as.numeric(latitude),
-         longitude = as.numeric(longitude)) %>% 
-  select(c(study_id, site_id, core_id, year, month, day, latitude,longitude, position_method, 
-           elevation, elevation_datum, elevation_accuracy, salinity_class, salinity_method, 
-           core_length_flag)) %>% 
+         study_id = "Marot_et_al_2020",
+         elevation_datum = "NAVD88",
+         elevation_method = "other high resolution",
+         position_method = "other high resolution",
+         salinity_method = "measurement",
+         core_length_flag = ifelse(grepl("M", core_id), "core depth represents deposit depth", 
+                                   ifelse(grepl("R", core_id), "core depth represents deposit depth",
+                                          ifelse(grepl("V", core_id), "core depth represents deposit depth", 
+                                                 "core depth limited by length of corer")))) %>%
+  full_join(depthseries_raw, by = c("study_id", "site_id", "core_id")) %>% # Add 19 core IDs from depthseries data (this will only add their IDs and no cores-table related data)
+  mutate(inundation_class = ifelse(grepl("G", substr(core_id, nchar(core_id) - 2, nchar(core_id))), "low", NA),
+         inundation_method = "field observation") %>% 
+  select(c(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method,
+           elevation, elevation_datum, elevation_accuracy, elevation_method, salinity_class, salinity_method, 
+           inundation_class, inundation_method, core_length_flag)) %>% 
   distinct()
 
 
 ## Step 8: Make the Species table ####
-species <- cores %>% 
+species <- df_field %>% 
+  mutate(study_id = "Marot_et_al_2022") %>% 
   select(c(study_id, site_id, core_id, species_code, code_type))
 
 
 ## Step 9: Make the Methods table ####
-methods <- read_excel("data/primary_studies/Marot_et_al_2020/original/Marot_et_al_2020_methods.xlsx", col_names = T)
+methods <- read_excel("data/primary_studies/Marot_et_al_2020/original/Marot_et_al_2020_methods.xlsx", sheet = 2, na = "NA") %>% 
+  select(where(notAllNA))
 
 
 ## Step 10: QAQC ####
@@ -533,6 +575,22 @@ testNumericCols(depthseries)
 
 
 ## Step 11: Bibliography ####
+study_citation <- data.frame(study_id = "Marot_et_al_2020",
+                            bibliography_id = "Marot_et_al_2020_data",
+                            title = "Sedimentary data from Grand Bay, Alabama/Mississippi, 2014–2016 (ver. 1.1, April 2020): U.S. Geological Survey data release",
+                            author = "Marot, M.E., Smith, C.G., McCloskey, T.A., Locker, S.D., Khan, N.S., and Smith, K.E.L.",
+                            publication_type = "primary dataset",
+                            doi = "10.5066/P9FO8R3Y",
+                            url = "https://doi.org/10.5066/P9FO8R3Y",
+                            bibtype = "Misc",
+                            year = "2020",
+                            month = "apr",
+                            day = "28")
+
+bib_file <- study_citation %>%
+  remove_rownames() %>% 
+  select(-c(study_id, publication_type)) %>% 
+  column_to_rownames("bibliography_id")
 
 
 ## Step 12: Write curated data ####
@@ -541,7 +599,7 @@ write_csv(depthseries, "data/primary_studies/Marot_et_al_2020/derivative/Marot_e
 write_csv(species, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_species.csv")
 write_csv(methods, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_methods.csv")
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_study_citations.bib")
-write_csv(study_citations, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_study_citations.csv")
+write_csv(study_citation, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_study_citations.csv")
 
 
 
