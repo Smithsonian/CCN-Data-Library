@@ -428,10 +428,12 @@ df_site <- site_join() %>%
   rbind(site_join() %>% 
           filter(!is.na(core_id_2)) %>% 
           mutate(core_id = core_id_2)) %>% 
-  rename(samples = "Type of Samples Collected") %>% 
+  rename(samples = "Type of Samples Collected",
+         site_description = "Site Description") %>% 
   mutate(year = year(date),
          month = month(date),
          day = day(date),
+         habitat = ifelse(site_description == "Marsh", "marsh", NA),
          salinity_class = case_when(salinity < 5 ~ 'oligohaline',
                                     salinity < 18 ~ "mesohaline",
                                     salinity < 30 ~ "polyhaline",
@@ -528,14 +530,15 @@ cores <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "mont
          inundation_method = "field observation") %>% 
   select(c(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method,
            elevation, elevation_datum, elevation_accuracy, elevation_method, salinity_class, salinity_method, 
-           inundation_class, inundation_method, core_length_flag)) %>% 
+           habitat, inundation_class, inundation_method, core_length_flag)) %>% 
   distinct()
 
 
 ## Step 8: Make the Species table ####
-species <- df_field %>% 
-  mutate(study_id = "Marot_et_al_2022") %>% 
-  select(c(study_id, site_id, core_id, species_code, code_type))
+species <- full_join(df_field, df_site, by = c("site_id", "core_id")) %>% 
+  mutate(core_id = paste(site_id, core_id, sep = "_"),
+         study_id = "Marot_et_al_2022") %>% 
+  select(c(study_id, site_id, core_id, species_code, code_type, habitat))
 
 
 ## Step 9: Make the Methods table ####
