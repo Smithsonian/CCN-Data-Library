@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Gregg A. Snedden</origin>
+        <pubdate>2018</pubdate>
+        <title>Soil properties, soil radioisotope activity, and end-of-season belowground biomass across Barataria basin wetlands (2016)</title>
+        <geoform>csv file</geoform>
+        <pubinfo>
+          <pubplace>Lafayette, LA</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/F7BK1BJ8</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>The sustainability of coastal wetlands largely hinges on their ability to accrue elevation capital at a rate that equals or exceeds relative sea-level rise.  A better understanding of these processes is needed to accurately assess the sustainability of these landscapes, and to predict their response to restoration measures such as sediment delivery through river diversions.</abstract>
+      <purpose>In this project, soil bulk density, percent organic matter, percent total carbon, percent total nitrogen, lead-210 and cesium-137 activity, and end-of-season belowground biomass were measured at 25 marsh locations across Barataria basin, Louisiana.  These data will provide information related to rates of vertical accretion, organic and mineral accumulation, nitrogen and carbon burial, and productivity in wetland soils across a large portion of the Mississippi River delta plain.</purpose>
+      <supplinf>Author ORCIDs: Snedden, G.A.(0000-0001-7821-3709)</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>20160330</begdate>
+          <enddate>20161019</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-90.565795898418</westbc>
+        <eastbc>-89.313354492218</eastbc>
+        <northbc>29.992631474995</northbc>
+        <southbc>29.099002890254</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>none</themekt>
+        <themekey>sedimentation</themekey>
+        <themekey>vertical accretion</themekey>
+        <themekey>lead-210</themekey>
+        <themekey>cesium-137</themekey>
+        <themekey>radioisotope</themekey>
+        <themekey>carbon burial</themekey>
+        <themekey>soil bulk density</themekey>
+        <themekey>soil organic matter</themekey>
+        <themekey>belowground biomass</themekey>
+        <themekey>coastal wetland</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:5a4eae82e4b0d05ee8c6649c</themekey>
+      </theme>
+      <place>
+        <placekt>none</placekt>
+        <placekey>Louisiana</placekey>
+        <placekey>Barataria basin</placekey>
+        <placekey>Gulf of Mexico</placekey>
+      </place>
+      <temporal>
+        <tempkt>none</tempkt>
+        <tempkey>modern</tempkey>
+      </temporal>
+    </keywords>
+    <accconst>none</accconst>
+    <useconst>none</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Gregg Snedden</cntper>
+          <cntorg>Southeast Region</cntorg>
+        </cntperp>
+        <cntpos>Research Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>Louisiana State University</address>
+          <city>Baton Rouge</city>
+          <state>LA</state>
+          <postal>70803</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>225-578-7583</cntvoice>
+        <cntemail>sneddeng@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>U.S. Army Corps of Engineers</datacred>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>No formal attribute accuracy tests were conducted</attraccr>
+    </attracc>
+    <logic>No formal logical accuracy tests were conducted</logic>
+    <complete>Data set is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>No formal positional accuracy tests were conducted</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>No formal positional accuracy tests were conducted</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>Radioisotope samples were collected with 10cm diameter, 60cm long aluminum coring tubes.  Tubes were inserted into the marsh soil, removed, transported back to the laboratory, and frozen at -80 deg C.  Once frozen, soil cores were extruded, and sliced into 2-cm depth increments.  One quarter of each core slice was used to analyze soil for bulk density, percent organic matter, total nitrogen, and total carbon.  The remaining 75% of each core section was used for quantification of Cs-137 and excess Pb-210 activity via gamma detection. 
+
+Belowground biomass samples were obtained with 10cm diameter, 50cm long PVC coring tubes.  Each core was removed from the ground and sectioned into 8-cm depth increments down to 32 cm below the marsh surface (0-8cm, 8-16cm, 16-24cm, 24-32 cm).  Cores were then sieved in the laboratory to retain live and dead plant material, which was dried to constant weight and weighed. 
+
+After data entry all datasets were reviewed for QA/QC by at least two people</procdesc>
+        <procdate>20170820</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Point</direct>
+  </spdoinfo>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>FSP_Snedden_Belowground_Biomass.csv</enttypl>
+        <enttypd>text spreadsheet with belowground biomass</enttypd>
+        <enttypds>producer defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Site ID</attrlabl>
+        <attrdef>site descriptor</attrdef>
+        <attrdefs>https://lacoast.gov/crms2/home.aspx</attrdefs>
+        <attrdomv>
+          <udom>unique identifier for each site</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Date Collected</attrlabl>
+        <attrdef>date sample was collected (yyyymmdd)</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <udom>calendar date (YYYYMMDD)</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Plot</attrlabl>
+        <attrdef>plot designation</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>plot 1</edomvd>
+            <edomvds>producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>plot 2</edomvd>
+            <edomvds>producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>plot 3</edomvd>
+            <edomvds>producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth Interval Code</attrlabl>
+        <attrdef>core section location along vertical depth profile</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>4</rdommax>
+            <attrunit>8-centimeter increments starting with 0-8 cm and increasing with depth</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Section Top Depth</attrlabl>
+        <attrdef>depth below marsh surface of core section top</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>centimeters (cm); "." indicates missing data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Section Bottom Depth</attrlabl>
+        <attrdef>depth below marsh surface of core section bottom</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>centimeters (cm); "." indicates missing data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Section Diameter</attrlabl>
+        <attrdef>diameter of core section</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>10.16</rdommin>
+            <rdommax>10.16</rdommax>
+            <attrunit>centimeters; "," indicates missing data</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Live Biomass</attrlabl>
+        <attrdef>mass of live plant material retained in 2mm sieve</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>grams (g); "." indicates missing data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Dead Biomass</attrlabl>
+        <attrdef>mass of dead plant material retained in 2mm sieve</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>grams (g); "," indicates missing data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Macro biomass</attrlabl>
+        <attrdef>mass of all plant material passed through 2mm sieve and retained in 0.5 mm sieve</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>grams (g); "." indicates missing data</udom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>FSP_Snedden_Soil_Properties_Radioisotope_Activity.csv</enttypl>
+        <enttypd>text spreadsheet with soil properties and radioisotope activity</enttypd>
+        <enttypds>producer defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Site ID</attrlabl>
+        <attrdef>site descriptor</attrdef>
+        <attrdefs>https://lacoast.gov/crms2/home.aspx</attrdefs>
+        <attrdomv>
+          <udom>unique identifier for each site</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Date Collected</attrlabl>
+        <attrdef>date sample was collected</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>calendar date (YYYYMMDD)</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth Interval Code</attrlabl>
+        <attrdef>core section location along vertical depth profile</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>27</rdommax>
+            <attrunit>2-centimeter increments starting with 0-2 cm and increasing with depth</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Bulk Density</attrlabl>
+        <attrdef>soil bulk density, dry basis</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>grams per cubic centimeter (g cm-3); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Percent Organic Matter</attrlabl>
+        <attrdef>soil percent organic matter</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>percent (%); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Percent TN</attrlabl>
+        <attrdef>soil percent total nitrogen</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>percent (%); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Percent TC</attrlabl>
+        <attrdef>soil percent total carbon</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>percent (%); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>137Cs</attrlabl>
+        <attrdef>cesium-137 activity</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>disintegrations per minute per gram (dpm/g); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>137Cs error</attrlabl>
+        <attrdef>error, cesium-137 activity</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>disintegrations per minute per gram (dpm/g); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pb total</attrlabl>
+        <attrdef>lead-210 activity, total</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>disintegrations per minute per gram (dpm/g); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pb supported</attrlabl>
+        <attrdef>lead-210 activity, supported</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>disintegrations per minute per gram (dpm/g); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pb unsupported</attrlabl>
+        <attrdef>lead-210 activity, unsupported</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>disintegrations per minute per gram (dpm/g); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>210Pb unsupported error</attrlabl>
+        <attrdef>error, lead-210 activity, unsupported</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>disintegrations per minute per gram (dpm/g); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey - ScienceBase</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Distributor assumes no liability for misuse of data.</distliab>
+  </distinfo>
+  <metainfo>
+    <metd>20200830</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Gregg Snedden</cntper>
+          <cntorg>Southeast Region</cntorg>
+        </cntperp>
+        <cntpos>Research Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>Louisiana State University</address>
+          <city>Baton Rouge</city>
+          <state>LA</state>
+          <postal>70803</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>225-578-7583</cntvoice>
+        <cntemail>sneddeng@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>
