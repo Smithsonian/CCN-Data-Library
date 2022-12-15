@@ -9,6 +9,7 @@
 
 # load necessary libraries
 library(tidyverse)
+library(dplyr)
 library(readxl)
 library(lubridate)
 library(RefManageR)
@@ -44,30 +45,31 @@ methods <- data.frame(study_id = id,
                       compaction_flag = "not specified",
                       dry_bulk_density_flag = "not specified",
                       carbon_measured_or_modeled = "measured",
+                      carbonates_removed = "FALSE",
+                      carbonate_removal_method = "none specified",
                       fraction_carbon_method = "not specified",
                       fraction_carbon_type = "total carbon",
                       cs137_counting_method = "gamma",
                       pb210_counting_method = "gamma")
 
 
-
 #reorder columns 
 methods <- reorderColumns("methods", methods)
 
 
-## ... Sites ####
-
-# if necessary, curate site-level data
 
 ## ... Cores ####
-cores <- data_raw %>% select(`Site ID`,`Date Collected`, `Depth Interval Code`) %>% 
+cores <- data_raw %>% dplyr::select(`Site ID`,`Date Collected`, `Depth Interval Code`) %>% 
                        rename("site_id" = "Site ID") %>% 
                        mutate(study_id = id,
-                              core_id = paste(site_id, 1, sep = "_"), #assign core id 
+                              core_id = paste(site_id, 1, sep = "_"), #assign core id
                               vegetation_class = "emergent",
                               vegetation_method = "field observation",
                               habitat = "marsh",
-                              core_length_flag = "not specified") %>% 
+                              core_length_flag = "not specified",
+                              position_method = "other high resolution",
+                              position_notes = "coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location") %>% 
                       mutate(dates = ymd(data_raw$`Date Collected`),
                              year = year(dates),
                              month = month(dates),
@@ -76,13 +78,11 @@ cores <- data_raw %>% select(`Site ID`,`Date Collected`, `Depth Interval Code`) 
 
 #add site coords --> ###accessed using CRMS database https://lacoast.gov/crms2/home.aspx
 cores <- merge(cores, coords) %>% distinct() %>% 
-        mutate(elevation_datum = "NAVD88",
-               elevation = elevation * 0.304,
-               salinity_class = "estuarine",
+        mutate(salinity_class = "estuarine",
                salinity_method = "measurement",
-               elevation_method = "other high resolution",
                inundation_class = "low",
-               inundation_method = "field observation") #convert ft to meters
+               inundation_method = "field observation") %>% 
+        select(-elevation,-elevation_notes)
 
 #reorder columns 
 cores <- reorderColumns("cores", cores)
@@ -90,7 +90,7 @@ cores <- reorderColumns("cores", cores)
 
   
 ## ... Depthseries #### 
-#### Depth intervals --> "2-centimeter increments starting with 0-2 cm and increasing with depth"
+#### Depth interval codes --> "2-centimeter increments starting with 0-2 cm and increasing with depth"
 
 depthseries <- data_raw %>% mutate(study_id = id,
                                    method_id = "single set of methods") %>% 
@@ -98,7 +98,6 @@ depthseries <- data_raw %>% mutate(study_id = id,
                                           pb210_unit = "disintegrationsPerminutePerGram",
                                           fraction_organic_matter = `Percent Organic Matter`/100,
                                           fraction_carbon = `Percent TC`/100) %>% 
-                               ##   mutate(depth_min = )
                                   rename(site_id = `Site ID`,
                                          dry_bulk_density = `Bulk Densisty`,
                                          cs137_activity = `137Cs`,
@@ -123,21 +122,21 @@ depthseries <- depthseries %>% rename(depth_code = "Depth Interval Code") %>%
                                                             depth_code == 17 ~ 32, depth_code == 18 ~ 34,
                                                             depth_code == 19 ~ 36, depth_code == 20 ~ 38,
                                                             depth_code == 21 ~ 40, depth_code == 22 ~ 42,
-                                                            depth_code == 23 ~ 43, depth_code == 24 ~ 44,
-                                                            depth_code == 25 ~ 46, depth_code == 26 ~ 48,
-                                                            depth_code == 27 ~ 50) ,
+                                                            depth_code == 23 ~ 44, depth_code == 24 ~ 46,
+                                                            depth_code == 25 ~ 48, depth_code == 26 ~ 50,
+                                                            depth_code == 27 ~ 52) ,
                                       depth_max = depth_min + 2) %>% 
                                    select(-depth_code)
       
 #reorder columns 
 depthseries <- reorderColumns("depthseries", depthseries)
 
+## ... Sites ####
 
 ## ... Species ####
 
 ## ... Impacts ####
 
-# if provided, curation table of anthropogenic impacts
 
 ## 2. QAQC ####
 

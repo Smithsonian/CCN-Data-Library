@@ -1,26 +1,51 @@
-study_id,site_id,core_id,year,month,day,latitude,longitude,elevation,elevation_datum,elevation_method,elevation_notes,salinity_class,salinity_method,vegetation_class,vegetation_method,habitat,inundation_class,inundation_method,core_length_flag
-Snedden_2018,171,171_1,2016,6,28,29.3237667,-89.79605,0.1064,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,172,172_1,2016,6,21,29.316534,-89.73433,0.03648,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,173,173_1,2016,6,21,29.4542961,-89.72993,0.06688,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,175,175_1,2016,5,31,29.2874,-90.1379242,0.09728,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,189,189_1,2016,5,11,29.8099251,-90.26049,NA,NAVD88,other high resolution,variable elevation,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,192,192_1,2016,5,25,29.8534756,-90.54175,NA,NAVD88,other high resolution,variable elevation,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,209,209_1,2016,4,21,29.4905663,-89.7917252,0.18847999999999998,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,211,211_1,2016,5,25,29.7808952,-90.47925,NA,NAVD88,other high resolution,variable elevation,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,224,224_1,2016,4,20,29.4978237,-89.91673,0.20368,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,225,225_1,2016,4,21,29.5631485,-90.01048,0.19456,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,237,237_1,2016,4,20,29.4760513,-89.94798,0.20672000000000001,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,253,253_1,2016,4,20,29.5558929,-90.07299,0.21583999999999998,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,261,261_1,2016,6,22,29.59944,-90.10424,0.17631999999999998,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,273,273_1,2016,5,11,29.8171844,-90.32299,NA,NAVD88,other high resolution,variable elevation,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,287,287_1,2016,6,22,29.6865368,-90.01048,NA,NAVD88,other high resolution,variable elevation,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,3054,3054_1,2016,5,25,29.722826,-90.35425,0.18847999999999998,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,3166,3166_1,2016,5,11,29.8585,-90.28868,NA,NAVD88,other high resolution,variable elevation,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,3169,3169_1,2016,5,11,29.88891,-90.27227,NA,NAVD88,other high resolution,variable elevation,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,3565,3565_1,2016,4,20,29.497825,-90.104246,0.12768,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,3617,3617_1,2016,10,14,29.5486317,-89.91673,0.14287999999999998,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,3985,3985_1,2016,3,30,29.7175,-90.14901,0.14592,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,4218,4218_1,2016,4,20,29.563148,-90.166745,0.1976,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,4245,4245_1,2016,3,30,29.67202,-90.13549,NA,NAVD88,other high resolution,variable elevation,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,4529,4529_1,2016,4,21,29.468788,-89.82297521,0.14895999999999998,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
-Snedden_2018,4690,4690_1,2016,4,20,29.4978256,-90.04174,0.14895999999999998,NAVD88,other high resolution,NA,estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+study_id,site_id,core_id,year,month,day,latitude,longitude,position_method,position_notes,salinity_class,salinity_method,vegetation_class,vegetation_method,habitat,inundation_class,inundation_method,core_length_flag
+Snedden_2018,171,171_1,2016,6,28,29.3237667,-89.79605,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,172,172_1,2016,6,21,29.316534,-89.73433,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,173,173_1,2016,6,21,29.4542961,-89.72993,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,175,175_1,2016,5,31,29.2874,-90.1379242,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,189,189_1,2016,5,11,29.8099251,-90.26049,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,192,192_1,2016,5,25,29.8534756,-90.54175,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,209,209_1,2016,4,21,29.4905663,-89.7917252,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,211,211_1,2016,5,25,29.7808952,-90.47925,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,224,224_1,2016,4,20,29.4978237,-89.91673,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,225,225_1,2016,4,21,29.5631485,-90.01048,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,237,237_1,2016,4,20,29.4760513,-89.94798,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,253,253_1,2016,4,20,29.5558929,-90.07299,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,261,261_1,2016,6,22,29.59944,-90.10424,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,273,273_1,2016,5,11,29.8171844,-90.32299,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,287,287_1,2016,6,22,29.6865368,-90.01048,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,3054,3054_1,2016,5,25,29.722826,-90.35425,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,3166,3166_1,2016,5,11,29.8585,-90.28868,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,3169,3169_1,2016,5,11,29.88891,-90.27227,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,3565,3565_1,2016,4,20,29.497825,-90.104246,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,3617,3617_1,2016,10,14,29.5486317,-89.91673,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,3985,3985_1,2016,3,30,29.7175,-90.14901,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,4218,4218_1,2016,4,20,29.563148,-90.166745,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,4245,4245_1,2016,3,30,29.67202,-90.13549,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,4529,4529_1,2016,4,21,29.468788,-89.82297521,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified
+Snedden_2018,4690,4690_1,2016,4,20,29.4978256,-90.04174,other high resolution,"coordinates were likely high quality but may refer to a gerneal
+                              area rather than individual core location",estuarine,measurement,emergent,field observation,marsh,low,field observation,not specified

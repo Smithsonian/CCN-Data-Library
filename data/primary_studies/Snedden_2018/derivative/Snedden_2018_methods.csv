@@ -1,2 +1,2 @@
-study_id,method_id,coring_method,roots_flag,sediment_sieved_flag,compaction_flag,dry_bulk_density_flag,carbon_measured_or_modeled,fraction_carbon_method,fraction_carbon_type,cs137_counting_method,pb210_counting_method
-Snedden_2018,single set of methods,push core,roots and rhizomes included,sediment not sieved,not specified,not specified,measured,not specified,total carbon,gamma,gamma
+study_id,method_id,coring_method,roots_flag,sediment_sieved_flag,compaction_flag,dry_bulk_density_flag,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_method,fraction_carbon_type,cs137_counting_method,pb210_counting_method
+Snedden_2018,single set of methods,push core,roots and rhizomes included,sediment not sieved,not specified,not specified,measured,FALSE,none specified,not specified,total carbon,gamma,gamma
