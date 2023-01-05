@@ -1,0 +1,593 @@
+<?xml-stylesheet href='C:\Program Files (x86)\USDA Forest Service\Metavist.Preview1\XML\NBII_classic.xsl' type='text/xsl'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Trettin, Carl C.</origin>
+        <origin>Dai, Zhaohua</origin>
+        <origin>Tang, Wenwu</origin>
+        <origin>Lagomasino, David</origin>
+        <origin>Thomas, Nathan</origin>
+        <origin>Lee, Seung-Kuk</origin>
+        <origin>Ebanega, Médard Obiang</origin>
+        <origin>Simard, Marc</origin>
+        <origin>Fatoyinbo, Temilola E.</origin>
+        <pubdate>2020</pubdate>
+        <title>Carbon stock inventory of mangroves, Pongara National Park, Gabon</title>
+        <geoform>tabular digital data</geoform>
+        <pubinfo>
+          <pubplace>Fort Collins, CO</pubplace>
+          <publish>USDA Forest Service Research Data Archive</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.2737/RDS-2020-0040</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>Mangroves in Pongara National Park, Gabon, West Africa were inventoried and soils sampled using a stratified random sampling design to provide a basis for estimating ecosystem carbon stocks. Mangrove canopy height, derived from remote sensing data, was used as the basis for stratification, and a spatial decision support system was used to objectively allocate the inventory plots. The inventory was designed to provide estimates of above-ground and below-ground carbon stocks for the Park using the remote sensing data as the basis. Seventeen plots, representing the range in stand conditions, were inventoried 9-24 February, 2017.  Measurements include mangrove species, total tree height, and diameter at breast height for overstory, understory and dead trees. Soil samples were collected to estimate the carbon and nitrogen content to 2 meters below the surface. Data on individual trees and soil samples within plots is provided.</abstract>
+      <purpose>Mangroves are recognized for their numerous ecosystem services and functions that are critical to environmental health and human wellbeing in the regions where they occur and beyond. Although mangroves comprise only 0.7% of the world’s tropical forests, they have been shown to contain globally-significant carbon pools, storing up to five times more carbon than typical upland tropical forests per area. This work was conducted to (a) demonstrate the utility of utilizing remote sensing data to provide the basis for an objective inventory of mangrove carbon stocks, and (b) to provide a basis for validating estimates of mangrove biomass derived from remote sensing based tools.</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>2017</begdate>
+          <enddate>2019</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>Ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>As needed</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>9.26218122</westbc>
+        <eastbc>10.01052171</eastbc>
+        <northbc>0.3590689</northbc>
+        <southbc>-1.1322898</southbc>
+        <boundalt>
+          <altmin>0</altmin>
+          <altmax>5</altmax>
+          <altunits>meters</altunits>
+        </boundalt>
+      </bounding>
+      <descgeog>Mangroves within the Pongara National Park, Gabon, West Africa</descgeog>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>biota</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>mangrove carbon stocks</themekey>
+        <themekey>mangrove inventory</themekey>
+        <themekey>biomass</themekey>
+        <themekey>blue carbon</themekey>
+      </theme>
+      <theme>
+        <themekt>National Research &amp; Development Taxonomy</themekt>
+        <themekey>Climate change</themekey>
+        <themekey>Carbon</themekey>
+        <themekey>Ecology, Ecosystems, &amp; Environment</themekey>
+        <themekey>Hydrology, watersheds, sedimentation</themekey>
+        <themekey>Plant ecology</themekey>
+        <themekey>Soil</themekey>
+      </theme>
+      <place>
+        <placekt>None</placekt>
+        <placekey>West Africa</placekey>
+        <placekey>Pongara National Park</placekey>
+        <placekey>Gabon</placekey>
+      </place>
+    </keywords>
+    <taxonomy>
+      <keywtax>
+        <taxonkt>None</taxonkt>
+        <taxonkey>multiple species</taxonkey>
+        <taxonkey>plants</taxonkey>
+      </keywtax>
+      <taxonsys>
+        <classsys>
+          <classcit>
+            <citeinfo>
+              <origin>ITIS</origin>
+              <pubdate>2020</pubdate>
+              <title>Integrated Taxonomic Information System</title>
+              <geoform>database</geoform>
+              <othercit>Retrieved [July, 6, 2020]</othercit>
+              <onlink>https://www.itis.gov</onlink>
+            </citeinfo>
+          </classcit>
+          <classmod>Taxonomy was not available for 2 species through https://www.itis.gov, and therefore is not included. However, information about these species can be found at the links provided (current as of 7/6/2020):
+
+1. Rhizophora harrisonii: http://www.plantsoftheworldonline.org/taxon/urn:lsid:ipni.org:names:219395-2 or https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&amp;id=133555
+
+2. Rhizophora racemosa: http://www.plantsoftheworldonline.org/?q=Rhizophora+racemosa or https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&amp;id=106627</classmod>
+        </classsys>
+      </taxonsys>
+      <taxoncl>
+        <taxonrn>Kingdom</taxonrn>
+        <taxonrv>Plantae</taxonrv>
+        <common>plantes</common>
+        <common>Planta</common>
+        <common>Vegetal</common>
+        <common>plants</common>
+        <taxoncl>
+          <taxonrn>Subkingdom</taxonrn>
+          <taxonrv>Viridiplantae</taxonrv>
+          <common>green plants</common>
+          <taxoncl>
+            <taxonrn>Infrakingdom</taxonrn>
+            <taxonrv>Streptophyta</taxonrv>
+            <common>land plants</common>
+            <taxoncl>
+              <taxonrn>Superdivision</taxonrn>
+              <taxonrv>Embryophyta</taxonrv>
+              <taxoncl>
+                <taxonrn>Division</taxonrn>
+                <taxonrv>Tracheophyta</taxonrv>
+                <common>vascular plants</common>
+                <common>tracheophytes</common>
+                <taxoncl>
+                  <taxonrn>Subdivision</taxonrn>
+                  <taxonrv>Spermatophytina</taxonrv>
+                  <common>spermatophytes</common>
+                  <common>seed plants</common>
+                  <common>phanérogames</common>
+                  <taxoncl>
+                    <taxonrn>Class</taxonrn>
+                    <taxonrv>Magnoliopsida</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Superorder</taxonrn>
+                      <taxonrv>Asteranae</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Order</taxonrn>
+                        <taxonrv>Lamiales</taxonrv>
+                        <taxoncl>
+                          <taxonrn>Family</taxonrn>
+                          <taxonrv>Acanthaceae</taxonrv>
+                          <common>acanthacées</common>
+                          <taxoncl>
+                            <taxonrn>Genus</taxonrn>
+                            <taxonrv>Avicennia</taxonrv>
+                            <common>black mangrove</common>
+                            <common>mangrove</common>
+                            <taxoncl>
+                              <taxonrn>Species</taxonrn>
+                              <taxonrv>Avicennia germinans</taxonrv>
+                              <common>black mangrove</common>
+                            </taxoncl>
+                          </taxoncl>
+                        </taxoncl>
+                      </taxoncl>
+                    </taxoncl>
+                    <taxoncl>
+                      <taxonrn>Superorder</taxonrn>
+                      <taxonrv>Rosanae</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Order</taxonrn>
+                        <taxonrv>Myrtales</taxonrv>
+                        <taxoncl>
+                          <taxonrn>Family</taxonrn>
+                          <taxonrv>Combretaceae</taxonrv>
+                          <common>combretums</common>
+                          <taxoncl>
+                            <taxonrn>Genus</taxonrn>
+                            <taxonrv>Conocarpus</taxonrv>
+                            <common>mangrove</common>
+                            <taxoncl>
+                              <taxonrn>Species</taxonrn>
+                              <taxonrv>Conocarpus erectus</taxonrv>
+                              <common>button mangrove</common>
+                            </taxoncl>
+                          </taxoncl>
+                        </taxoncl>
+                      </taxoncl>
+                      <taxoncl>
+                        <taxonrn>Order</taxonrn>
+                        <taxonrv>Malpighiales</taxonrv>
+                        <taxoncl>
+                          <taxonrn>Family</taxonrn>
+                          <taxonrv>Rhizophoraceae</taxonrv>
+                          <common>mangroves</common>
+                          <taxoncl>
+                            <taxonrn>Genus</taxonrn>
+                            <taxonrv>Rhizophora</taxonrv>
+                            <common>mangrove</common>
+                            <taxoncl>
+                              <taxonrn>Species</taxonrn>
+                              <taxonrv>Rhizophora mangle</taxonrv>
+                              <common>American mangrove</common>
+                              <common>red mangrove</common>
+                            </taxoncl>
+                          </taxoncl>
+                        </taxoncl>
+                      </taxoncl>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+              </taxoncl>
+            </taxoncl>
+          </taxoncl>
+        </taxoncl>
+      </taxoncl>
+    </taxonomy>
+    <accconst>None</accconst>
+    <useconst>These data were collected using funding from the U.S. Government and can be used without additional permissions or fees. If you use these data in a publication, presentation, or other research product please use the following citation: 
+
+Trettin, Carl C.; Dai, Zhaohua; Tang, Wenwu; Lagomasino, David; Thomas, Nathan; Lee, Seung-Kuk; Ebanega, Médard Obiang; Simard, Marc; Fatoyinbo, Temilola E. 2020. Carbon stock inventory of mangroves, Pongara National Park, Gabon. Fort Collins, CO: Forest Service Research Data Archive. https://doi.org/10.2737/RDS-2020-0040</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>USDA Forest Service, Southern Research Station, Center for Forested Wetlands Research</cntorg>
+          <cntper>Carl Trettin</cntper>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>3734 Highway 402</address>
+          <city>Cordesville</city>
+          <state>SC</state>
+          <postal>29434</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>843-336-5602</cntvoice>
+        <cntpos>Team Leader</cntpos>
+        <cntemail>carl.c.trettin@usda.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>This project was funded by the U.S. National Aeronautics and Space Agency (NASA) through the Carbon Monitoring Systems program (#80HQTR18T0012). Funding also provided by U.S. Department of Agriculture (USDA), Forest Service, Southern Research Station.
+	
+We would also like to acknowledge the Gabon Agence Nationale des Parcs Nationaux (ANPN) for permission to work in Pongara National Park and for facilitating the field mission. CENAREST (National Center for Scientific and Technological Research) provided the research permit (No. 02740).</datacred>
+    <crossref>
+      <citeinfo>
+        <origin>Lee, Seung-Kuk</origin>
+        <origin>Fatoyinbo, Temilola E.</origin>
+        <origin>Lagomasino, David</origin>
+        <origin>Feliciano, Emanuelle</origin>
+        <origin>Trettin, Carl</origin>
+        <pubdate>2018</pubdate>
+        <title>Multibaseline TanDEM-X mangrove height estimation: The selection of the vertical wavenumber</title>
+        <geoform>journal article</geoform>
+        <serinfo>
+          <sername>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</sername>
+          <issue>11(10); 3434-3442</issue>
+        </serinfo>
+        <onlink>https://doi.org/10.1109/JSTARS.2018.2835647</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>Quality assurance (QA) and quality control (QC) checks were used throughout the entire inventory process. The Quality Assurance for the data collection during the field inventory consisted of:
+	  
+(a)	Training – the field crew was trained on the field measurement tools and techniques (see Stringer et al. 2015) in a mangrove stand near Libreville in advance of deploying for the field mission. Repetitive measurements and independent validation measurements were used to verify that the field crew had competency in the measurement of stem diameter and total tree height. For the soil samples the crew was trained in the operation of the gouge auger and techniques for extracting samples from prescribed soil depths. 
+
+(b)	Field Operations – during the field inventory, consistency in measurements were achieved by re-measurement of selected trees and independent cross-checks. See description in Overstory Data set section.
+
+(c)	Laboratory Analyses – QA for the laboratory analyses of total carbon and nitrogen was provided by the use of known standards, and analyses of duplicate samples.  See description in Soils Data set section.
+
+The field sampling protocols for this project are based on the East Africa Mangrove Carbon Stock Inventory – Field Methods (Stringer et al. 2015), which are methodologies adapted from use in Africa based following protocols developed by CIFOR and USFS (Kauffman and Donato 2012) that was developed based on established forest sampling methodologies and first-applied in Indo-Pacific mangrove forests.  
+
+
+Kauffman, J.B.; Donato, D. 2012. Protocols for the measurement, monitoring and reporting of structure, biomass and carbon stocks in mangrove forests. Center for International Forestry Research (CIFOR). https://doi.org/10.17528/cifor/003749
+
+Stringer, Christina E.; Trettin, Carl C.; Jones, T.G.; Ravaorinorotsihoarana, L.; Glass, L.; Raherindray, R. 2015. Mangrove carbon stock inventory: Field methods. Report prepared for West Indian Ocean Mangrove Network, thru the East Africa Mangrove Project, U.S. Agency for International Development. 33 pg.  (included in this data publication package: \Supplements\EastAfricaFieldMethods_English.pdf)
+</attraccr>
+    </attracc>
+    <logic>The field inventory data were transcribed into an Excel spreadsheet. Consistency of data entry were evaluated by assessing height x diameter relationship at the plot level and aggregated for the entire inventory area.</logic>
+    <complete>Missing data (data not recorded) are denoted with blank cells. There are no missing data in the plot or soils data files. In the overstory data, crown width was only measured on dwarf mangroves; this was to provide data in case it was needed for use in biomass calculations. The dwarf mangrove stands were low stature (generally &lt; 4 meters [m] tall), hence they could be readily measured. No attempt was made to measure crown dimensions of the full-stature stands. The understory strata consists of trees less than 5 centimeters (cm) diameter at breast height (DBH), growing within a 2 m radius subplot located at the center of the inventory plot. Only 5 plots had understory data recorded because (a) on the full-stature stands, the vast majority of the trees were large with a dominant or co-dominant canopy position, and (b) in the dwarf stands, which consisted of widely spaced, low-stature individual trees, all trees within the plot area were measured.</complete>
+    <lineage>
+      <method>
+        <methdesc>STUDY DESIGN
+
+Carbon stocks in mangroves in Pongara National Park, Gabon, West Africa were inventoried using a stratified random sampling design. Mangrove canopy height was used as the basis for stratification, as measured using TanDX remote sensing data (Lee et al. 2018). This objective-based inventory was designed to provide estimates of above-ground and below-ground carbon stocks for the entire Park using the remote sensing data as the basis. The mangroves stands in the Park varied considerably in stature across the Park, with the western portion have large areas of dwarf mangroves, and the eastern portion containing large areas of tall, full-stature stands (based on canopy height data from TanDX). To constrain the potential area where plots were located (to accommodate logistical considerations), blocks within the east (5,027 hectares [ha]) and west (3,412 ha) portions of the Park were selected to provide the basis for estimating carbon stocks for the entire park using the canopy height classes. Three canopy height classes were used as the basis for stratification (HTC1:1-11 m, HTC2: 11-21 m, HTC3: 21+ m). A spatial decision support system (SDSS, Tang et al. 2016) was used to objectively allocate plots within each of the inventory blocks. Potential areas for locating an inventory plot were 0.5 ha in size to ensure relatively uniform conditions within the sampling area. The SDSS also provided capacity to address logistical constraints, such as camp location, the distance from camp (e.g. transit time), and accessibility (e.g., hiking / climbing distance).  A total of seventeen plots were used in the inventory; each plot had randomly selected alternates pre-selected, in case the selected plot was not able to be used because of unanticipated difficulties.
+
+
+DATA COLLECTION	
+
+The field protocols followed those suggested by Stringer et al. (2015), which were developed to provide a common basis for mangrove inventories in Africa. The Stringer et al. (2015) report is based on methodologies reported by Kauffman and Donato (2012); which was based on established forest sampling methodologies largely developed by the USDA Forest Service Forest Inventory and Analysis program, and first-applied in Indo-Pacific mangrove forests.
+
+Plot Data:
+The locations of the seventeen plots were recorded in the field using a Trimble Geo-7X GPS. The plot size is the calculated area based on the plot radius (see Overstory Data for description). Canopy height class (HTC1: 1-11 m, HTC2: 11-21 m, HTC3: 21+ m) is based on the calculated canopy height using TanDX data (Lee et al. 2018). 
+
+Overstory Data:
+Overstory trees (DBH ≥ 5 cm) were measured within 11.3 or 12.6 m radius circular plots. DBH, height, and species were recorded for overstory trees in each plot. (The species for mangrove trees in both overstory and understory that could not be identified were included in an “unknown” category for descriptive and analytical purposes.) All diameters were measured to the nearest 0.1 cm using a diameter tape. If the tree was dead, the decay class as illustrated in figure 13 of Kauffman  and Donato (2012) was recorded in addition to the DBH. For Rhizophora harrisonii and Rhizophora racemosa with prop roots, measurements were made at 30 cm above the highest prop root. Height was measured (± 0.5 m) for every tree using a Haglof Vertex III hypsometer (Haglof Inc, Sweden). Both diameter and height measurements were subject to quality assurance protocols by the field crew supervisor who repeated these measurements for 5 trees within each subplot. If there was a discrepancy between the 2 measurements greater than 0.3 cm for DBH or 1.0 m for height, then all of the overstory trees in that subplot were re-measured.
+
+For plots located in dwarf mangrove stands, recognized by open spacing and tree height &lt; 5 m, a 6 m plot radius was used. Height and DBH on all trees was measured as described above. Additionally, average crown width (m) was determined by measuring the crown width on two perpendicular axes (e.g., ‘+’).  
+
+Understory Data:
+All understory trees and saplings reaching 1.3 m (breast height) were measured within a nested 2 m radius circular subplot within the larger plot used for the overstory measurements, except for the plot containing dwarf mangroves. Understory trees were defined as DBH &lt; 5 cm.  Both live and dead trees were measured following same protocols described for overstory trees.
+
+Soils Data:
+The soil was sampled to a depth of 200 cm from 3 random points within the plot using a 1 m gouge auger (AMS Inc., American Falls, Idaho, USA). Volumetric soil samples were collected within 6 depth intervals (0-15, 15-30, 30-45, 45-110, 110-180, 180-200 cm), and composited among common depths from each core. The length of the volumetric sample was measured to the nearest millimeter (mm), and the sample placed in a pre-labeled container. 
+
+Field samples were returned to the laboratory where they were dried (105 °Celsius), weighed and ground to pass a 2 mm sieve. The oven-dry sample mass was used to calculate the soil bulk density for the sample: Db (g cm⁻³) = mass (g) / volume (cm³); where the sample volume was calculated based on the cross-sectional area (cm²) of the gouge auger and the length (cm) of the sample core. 
+
+The soil organic C (SOC) concentration of each soil sample was determined at the Center for Applied Isotope Analyses, University of Georgia, USA. Pulverized subsamples were analyzed using a Carlo Erba, NA1500 CHN Analyzer (Carlo Erba Strumentazione, Milan, Italy) via a Thermo Conflo III open split interface. Quality assurance of analyses was provided by the analysis of duplicates, and calibration of the instrument with certified standards. The precision of duplicate samples was &lt; ± 0.1% for C.</methdesc>
+        <methcite>
+          <citeinfo>
+            <origin>Tang, Wenwu</origin>
+            <origin>Feng, Wenpeng</origin>
+            <origin>Jia, Meijuan</origin>
+            <origin>Shi, Jiyang</origin>
+            <origin>Zuo, Huifang</origin>
+            <origin>Stringer, Christina E.</origin>
+            <origin>Trettin, Carl C.</origin>
+            <pubdate>2016</pubdate>
+            <title>A cyber-enabled spatial decision support system to inventory mangroves in Mozambique: Coupling scientific workflows and cloud computing</title>
+            <geoform>journal article</geoform>
+            <serinfo>
+              <sername>International Journal of Geographical Information Science</sername>
+              <issue>31(5): 907-938</issue>
+            </serinfo>
+            <onlink>https://doi.org/10.1080/13658816.2016.1245419</onlink>
+          </citeinfo>
+        </methcite>
+        <methcite>
+          <citeinfo>
+            <origin>Lee, Seung-Kuk</origin>
+            <origin>Fatoyinbo, Temilola E.</origin>
+            <origin>Lagomasino, David</origin>
+            <origin>Feliciano, Emanuelle</origin>
+            <origin>Trettin, Carl</origin>
+            <pubdate>2018</pubdate>
+            <title>Multibaseline TanDEM-X mangrove height estimation: The selection of the vertical wavenumber</title>
+            <geoform>journal article</geoform>
+            <serinfo>
+              <sername>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</sername>
+              <issue>11(10); 3434-3442</issue>
+            </serinfo>
+            <onlink>https://doi.org/10.1109/JSTARS.2018.2835647</onlink>
+          </citeinfo>
+        </methcite>
+        <methcite>
+          <citeinfo>
+            <origin>Stringer, Christina E.</origin>
+            <origin>Trettin, Carl C.</origin>
+            <origin>Jones, T.G.</origin>
+            <origin>Ravaorinorotsihoarana, L.</origin>
+            <origin>Glass, L.</origin>
+            <origin>Raherindray, R.</origin>
+            <pubdate>2015</pubdate>
+            <title>Mangrove carbon stock inventory: Field methods</title>
+            <geoform>document</geoform>
+            <othercit>Report prepared for the East Africa Mangrove Carbon Project. 33 pg. ( (included in this data publication package: \Supplements\EastAfricaFieldMethods_English.pdf). This project methodology was adapted from Kauffman, J.B.; Donato, D.C. 2012. Protocols for the measurement, monitoring and reporting of structure, biomass and carbon stocks in mangrove forests. Center for International Forestry Research. Bogor, Indonesia.</othercit>
+          </citeinfo>
+        </methcite>
+        <methcite>
+          <citeinfo>
+            <origin>Kauffman, J.B.</origin>
+            <origin>Donato, D.</origin>
+            <pubdate>2012</pubdate>
+            <title>Protocols for the measurement, monitoring and reporting of structure, biomass and carbon stocks in mangrove forests</title>
+            <geoform>document</geoform>
+            <pubinfo>
+              <publish>Center for International Forestry Research (CIFOR)</publish>
+            </pubinfo>
+            <onlink>https://doi.org/10.17528/cifor/003749</onlink>
+          </citeinfo>
+        </methcite>
+        <methtype>Field</methtype>
+      </method>
+      <procstep>
+        <procdesc>See methodology section</procdesc>
+        <procdate>Unknown</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <eainfo>
+    <overview>
+      <eaover>Below you will find a list and description of the files available in this data publication.
+          
+CODES USED:
+		  
+Species Codes = Complete list of mangrove species codes monitored in data collection.
+1 = Avicennia germinans 
+2 = Lumnitzera racemosa
+3 = Rhizophora harrisonii 
+4 = Rhizophora mangle 
+5 = Rhizophora racemosa 
+6 = Conocarpus erectus 
+88 = Unknown
+          
+Dead Code =  Complete list of decay status of standing dead trees monitored in data collection.
+1 = newly died trees 
+2 = small branches lost 
+3 = only bole left
+
+
+DATA FILES (4):
+
+1. \Data\Gabon_Overstory.csv: Comma-delimited ASCII text file containing tree overstory  inventory data collected within the measurement subplots.
+        
+Variables in this file include:
+          
+Plot ID = number of the plot that is a specific area of a mangrove forest selected for mangrove inventory
+          
+Tree Number = identification number for the specific tree within the subplot
+          
+Species Code = code used to represent mangrove species  
+3 = Rhizophora harrisonii 
+5 = Rhizophora racemosa 
+
+DBH-live(cm) = tree diameter at breast height for live trees, measured in centimeters
+
+DBH-Dead(cm) = tree diameter at breast height for dead trees, measured in centimeters
+          
+Dead Code = decay status of standing dead trees
+1 = newly died trees 
+3 = only bole left
+          
+Crown Width (m) = cross sectional width of the crown, measured in meters. Only measured on dwarf mangroves.
+
+Height = heights of live and/or dead trees, measured in meters
+  
+    
+2. \Data\Gabon_Plots.csv: Comma-delimited ASCII text file containing descriptive data about tree inventory measurement plots.
+
+Variables in this file include:
+          
+Plot ID = number of the plot that is a specific area of mangrove forest randomly selected within the inventory area
+          
+Latitude = latitude in decimal degrees
+          
+Longitude = longitude in decimal degrees
+          
+Plot_size (m2) = area of inventory units, measured in square meters
+          
+Canopy Height Class = forest canopy height class based on classification of TanDEM-X data (Lee et al. 2018). These classes were used to stratify the inventory area.
+1 = height class 1, which is 0-11 meters
+2 = height class 2, which is 11-21 meters
+3 = height class 3, which is &gt; 21 meters
+          
+
+3. \Data\Gabon_soils.csv: Comma-delimited ASCII text file containing soil data collected to estimate soil carbon stocks. Volumetric samples were collected within the measurement plots to a depth of 2 meters. The objective was to obtain samples to estimate stocks to 2 meters below the soil surface.
+        
+Variables in this file include:        
+          
+Sample # = consecutive number of soil samples collected during the mission
+
+Plot ID = plot number specific to an area of a mangrove forest selected for mangrove inventory
+          
+Interval = coding representing a soil sample depth from 1A to 6A 
+1A = 0-15 centimeters (cm)
+2A = 15-30 cm 
+3A = 30-45 cm 
+4A = 45- 110cm 
+5A = 110-180 cm 
+6A = 180-200 cm
+          
+Db (g/cm3) = sample bulk density calculation based on the mass of three volumetric samples collected within the designated soil depth interval, units measured in grams per cubic centimeter
+          
+Total %C = carbon concentration at relevant soil layer based on a composite sample from 3 volumetric samples, units measured by percent concentration
+          
+Total %N = nitrogen concentration at relevant soil layer based on a composite sample from 3 volumetric samples, units measured by percent concentration
+          
+Depth (cm) = soil depth at which the sample was taken, measured in centimeters
+0-15
+15-30
+30-45
+45-110
+110-180
+180-200
+
+
+4. \Data\Gabon_Understory.csv: Comma-delimited ASCII text file containing tree understory data collected within the measurement subplot.
+          
+Plot ID = number of the plot that is a specific area of a mangrove forest selected for mangrove inventory
+          
+Tree Number = identification number for the specific tree within the subplot
+          
+Species Code = code used to represent mangrove species  
+3 = Rhizophora harrisonii 
+5 = Rhizophora racemosa 
+       
+DBH-live(cm) = tree diameter at breast height for live trees, measured in centimeters
+
+DBH-Dead(cm) = tree diameter at breast height for dead trees, measured in centimeters
+          
+Dead Code =  decay status of standing dead trees
+2 = small branches lost 
+		
+Height (m) = height of live and/or dead trees, measured in meters
+
+
+
+SUPPLEMENTAL FILES (2):
+
+1. \Supplements\EastAfricaFieldMethods_English.pdf: Portable document format file containing the Stringer et al. (2015) report: "Mangrove Carbon Stock Inventory: Field Methods" prepared for the East African Coast Mangrove Project. 
+
+2. \Supplements\Mission_Pictorial.pdf: Portable document format file containing multiple photographs taken during the field mission. 
+</eaover>
+      <eadetcit>Lee, Seung-Kuk; Fatoyinbo, Temilola E.; Lagomasino, David; Feliciano, Emanuelle; Trettin, Carl. 2018. Multibaseline TanDEM-X mangrove height estimation: The selection of the vertical wavenumber. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing 11(10): 3434-3442. https://doi.org/10.1109/JSTARS.2018.2835647			
+		  
+Stringer, Christina E.; Trettin, Carl C.; Jones, T.G.; Ravaorinorotsihoarana, L.; Glass, L.; Raherindray, R. 2015. Mangrove carbon stock inventory: Field methods. Report prepared for West Indian Ocean Mangrove Network, thru the East Africa Mangrove Project, U.S. Agency for International Development. 33 pg. (included in this data publication package: \Supplements\EastAfricaFieldMethods_English.pdf)</eadetcit>
+    </overview>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>USDA Forest Service, Research and Development</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>240 West Prospect Road</address>
+          <city>Fort Collins</city>
+          <state>CO</state>
+          <postal>80526</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>see Contact Instructions</cntvoice>
+        <cntpos>Research Data Archivist</cntpos>
+        <cntinst>This contact information was current as of July 2020. For current information see Contact Us page on: https://doi.org/10.2737/RDS.</cntinst>
+      </cntinfo>
+    </distrib>
+    <resdesc>RDS-2020-0040</resdesc>
+    <distliab>Metadata documents have been reviewed for accuracy and completeness. Unless otherwise stated, all data and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. However, neither the author, the Archive, nor any part of the federal government can assure the reliability or suitability of these data for a particular purpose. The act of distribution shall not constitute any such warranty, and no responsibility is assumed for a user's application of these data or related materials.
+
+The metadata, data, or related materials may be updated without notification. If a user believes errors are present in the metadata, data or related materials, please use the information in (1) Identification Information: Point of Contact, (2) Metadata Reference: Metadata Contact, or (3) Distribution Information: Distributor to notify the author or the Archive of the issues.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>ASCII</formname>
+          <formvern>see Format Specification</formvern>
+          <formspec>Comma-delimited ASCII text file (CSV)</formspec>
+          <filedec>Files zipped with 7-Zip 19.0</filedec>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.2737/RDS-2020-0040</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <digform>
+        <digtinfo>
+          <formname>PDF</formname>
+          <formvern>see Format Specification</formvern>
+          <formspec>Portable document format file (PDF)</formspec>
+          <filedec>Files zipped with 7-Zip 19.0</filedec>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.2737/RDS-2020-0040</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20200707</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>USDA Forest Service, Southern Research Station</cntorg>
+          <cntper>Carl Trettin</cntper>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>3734 Highway 402</address>
+          <city>Cordesville</city>
+          <state>SC</state>
+          <postal>29434</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>843-336-5602</cntvoice>
+        <cntpos>Team Leader</cntpos>
+        <cntemail>carl.c.trettin@usda.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001.1-1999</metstdv>
+  </metainfo>
+</metadata>
