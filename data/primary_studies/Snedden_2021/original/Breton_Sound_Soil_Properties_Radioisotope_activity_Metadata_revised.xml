@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Gregg A. Snedden</origin>
+        <pubdate>20210217</pubdate>
+        <title>Soil properties and soil radioisotope activity across Breton Sound basin wetlands (2008-2013)</title>
+        <geoform>csv file</geoform>
+        <pubinfo>
+          <pubplace>Lafayette, LA</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/P9XWAXOT</onlink>
+        <lworkcit>
+          <citeinfo>
+            <origin>Smith, J.E., Bentley, S.J., Snedden, G.A., White, C.</origin>
+            <pubdate>2015</pubdate>
+            <title>What Role do Hurricanes Play in Sediment Delivery to Subsiding River Deltas?</title>
+            <geoform>Peer reviewed journal article</geoform>
+            <pubinfo>
+              <pubplace>Scientific Reports</pubplace>
+              <publish>Nature</publish>
+            </pubinfo>
+            <onlink>https://www.doi.org/10.1038/srep17582</onlink>
+          </citeinfo>
+        </lworkcit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>This dataset contains vertical profiles of soil bulk density, percent organic matter, percent total carbon  and cesium-137 activity from the surface down to 50-60 cm deep at 25 marsh locations across Breton Sound basin, Louisiana. These data will provide information related to rates of vertical accretion, organic and mineral accumulation and carbon burial in wetland soils across a large portion of the Mississippi River delta plain.</abstract>
+      <purpose>The sustainability of coastal wetlands largely hinges on their ability to accrue elevation capital at a rate that equals or exceeds relative sea-level rise. A better understanding of these processes is needed to accurately assess the sustainability of these landscapes, and to predict their response to restoration measures such as sediment delivery through river diversions.  The data presented here, collected at 25 marsh sites in Breton Sound basin, Louisiana, between 2008 and 2013 with coring tubes 60 cm long and 10 cm in diameter, provide a means to assess whether accrual of elevation capital in this region can keep pace with sea-level rise, and provides insight into the region's sustainability in the coming decades.</purpose>
+      <supplinf>Author ORCIDs: Snedden, G.A.(0000-0001-7821-3709)</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>20080123</begdate>
+          <enddate>20130228</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-89.952200000002</westbc>
+        <eastbc>-89.6134</eastbc>
+        <northbc>29.8449</northbc>
+        <southbc>29.5895</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>wetland ecosystems</themekey>
+      </theme>
+      <theme>
+        <themekt>none</themekt>
+        <themekey>sedimentation</themekey>
+        <themekey>vertical accretion</themekey>
+        <themekey>cesium-137</themekey>
+        <themekey>cesium-137</themekey>
+        <themekey>radioisotope</themekey>
+        <themekey>carbon burial</themekey>
+        <themekey>soil organic matter</themekey>
+        <themekey>coastal wetlands</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:60078ab4d34e162231fb1ce7</themekey>
+      </theme>
+      <place>
+        <placekt>none</placekt>
+        <placekey>Louisiana</placekey>
+        <placekey>Breton Sound basin</placekey>
+        <placekey>Gulf of Mexico</placekey>
+      </place>
+      <temporal>
+        <tempkt>none</tempkt>
+        <tempkey>modern</tempkey>
+      </temporal>
+    </keywords>
+    <accconst>none</accconst>
+    <useconst>none</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Gregg Snedden</cntper>
+          <cntorg>Southeast Region</cntorg>
+        </cntperp>
+        <cntpos>Research Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>700 Cajundome Blvd</address>
+          <city>Lafayette</city>
+          <state>LA</state>
+          <postal>70506</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>225-268-7730</cntvoice>
+        <cntemail>sneddeng@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>U.S. Army Corps of Engineers</datacred>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>No formal attribute accuracy tests were conducted</attraccr>
+    </attracc>
+    <logic>No formal logical accuracy tests were conducted</logic>
+    <complete>Data set is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>No formal positional accuracy tests were conducted</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>No formal positional accuracy tests were conducted</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>Radioisotope samples were collected with 10cm diameter, 60cm long aluminum coring tubes. Tubes were inserted into the marsh soil, removed, transported back to the laboratory, and frozen at -80 deg C. Once frozen, soil cores were extruded, and sliced into 2-cm depth increments. One quarter of each core slice was used to analyze soil for bulk density, loss on ignition, and total carbon. The remaining 75% of each core section was used for quantification of Cs-137 activity via gamma detection.</procdesc>
+        <procdate>20140901</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Point</direct>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <geograph>
+        <latres>1.0E-4</latres>
+        <longres>1.0E-4</longres>
+        <geogunit>Decimal degrees</geogunit>
+      </geograph>
+    </horizsys>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>Breton_Sound_Soil_Properties_Radioisotope_Activity.csv</enttypl>
+        <enttypd>text spreadsheet with soil properties and radioisotope activity</enttypd>
+        <enttypds>producer defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Site ID</attrlabl>
+        <attrdef>site descriptor</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>unique identifier for each site</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth Interval Code</attrlabl>
+        <attrdef>core section location along vertical depth profile</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>29</rdommax>
+            <attrunit>2-centimeter increments starting with 0-2 cm and increasing with depth</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Bulk Density</attrlabl>
+        <attrdef>soil bulk density, dry basis</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>grams per cubic centimeter (g cm-3); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Loss on Ignition</attrlabl>
+        <attrdef>proportion of soil sample mass eliminated by combustion at 550 degrees C for 24 hours</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>grams per gram (g/g); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Percent TC</attrlabl>
+        <attrdef>soil percent total carbon</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>percent (%); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>137Cs</attrlabl>
+        <attrdef>cesium-137 activity</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>disintegrations per minute per gram (dpm/g); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>137Cs error</attrlabl>
+        <attrdef>error, cesium-137 activity</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>disintegrations per minute per gram (dpm/g); "." indicates no data</udom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Breton_Sound_Core_Coordinates.csv</enttypl>
+        <enttypd>text spreadsheet with latitude/longitude coordinates for soil cores</enttypd>
+        <enttypds>producer defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Site ID</attrlabl>
+        <attrdef>site descriptor</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>unique identifier for each site</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>DateCollected</attrlabl>
+        <attrdef>date sample was collected</attrdef>
+        <attrdefs>producer defined</attrdefs>
+        <attrdomv>
+          <udom>calendar date (YYYYMMDD)</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Latitude</attrlabl>
+        <attrdef>latitude coordinate of coring site</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>29.5895</rdommin>
+            <rdommax>29.8449</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longitude</attrlabl>
+        <attrdef>longitude coordinate of coring site</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-89.9522</rdommin>
+            <rdommax>-89.6134</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <overview>
+      <eaover>A file entitled "breton_sound_cores_legend.xlsx" is included that serves as a brief data legend.  It describes a brief summary of the variables in the datasets, including their attribute names, a brief descriptor of each attribute, the units the attributes are reported in, their range, and some other notes that may be helpful to users of these data.</eaover>
+      <eadetcit>N/A</eadetcit>
+    </overview>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey - ScienceBase</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data for other purposes, nor on all computer systems, nor shall the act of distribution constitute any such warranty</distliab>
+  </distinfo>
+  <metainfo>
+    <metd>20210217</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Gregg Snedden</cntper>
+          <cntorg>Southeast Region</cntorg>
+        </cntperp>
+        <cntpos>Research Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>700 Cajundome Blvd</address>
+          <city>Lafayette</city>
+          <state>LA</state>
+          <postal>70506</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>225-268-7730</cntvoice>
+        <cntemail>sneddeng@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>

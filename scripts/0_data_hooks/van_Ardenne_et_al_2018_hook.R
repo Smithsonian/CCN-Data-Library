@@ -170,7 +170,7 @@ depthseries <- reorderColumns("depthseries", depthseries)
 
 ## ... Species ####
 
-#data from % species of roots/rhizomes in cores, detailed in paper 
+#species data from proportion of roots/rhizomes in cores, detailed in paper 
 species <- data_raw %>% select(Site, `S. alt.`, `S. pat.`, `J. ger.`, Triglochin, 
                                Plantago, Carex, Salicornia, Phrag, unknown,
                                Distichlis, Limonnium, Transect, Flag, `lower depth (cm)`) %>% 
