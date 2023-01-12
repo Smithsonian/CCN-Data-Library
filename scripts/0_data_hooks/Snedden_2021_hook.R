@@ -192,16 +192,16 @@ write_csv(depthseries, "data/primary_studies/Snedden_2021/derivative/Snedden_202
 # 
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
 
-study_citation <- data.frame(bibliography_id = "Snedden 2018",
-                             title = "Dataset: Soil properties, soil radioisotope activity, and end-of-season belowground biomass across Barataria basin wetlands (2016)",
+study_citation <- data.frame(bibliography_id = "Snedden 2021",
+                             title = "Soil properties and soil radioisotope activity across Breton Sound basin wetlands (2008-2013)",
                              author = "Gregg A. Snedden",
                              bibtype = "Misc", 
-                             doi = "https://doi.org/10.5066/F7BK1BJ8",
-                             url = "https://www.sciencebase.gov/catalog/item/5a4eae82e4b0d05ee8c6649c",
-                             year = "2018") %>% 
+                             doi = "https://doi.org/10.5066/P9XWAXOT",
+                             url = "https://www.sciencebase.gov/catalog/item/60078ab4d34e162231fb1ce7",
+                             year = "2021") %>% 
                   column_to_rownames("bibliography_id")
 
-WriteBib(as.BibEntry(study_citation), "data/primary_studies/Snedden_2018/derivative/Snedden_2018.bib")
+WriteBib(as.BibEntry(study_citation), "data/primary_studies/Snedden_2021/derivative/Snedden_2021.bib")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/
