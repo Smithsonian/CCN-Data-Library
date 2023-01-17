@@ -75,7 +75,6 @@ methods <- reorderColumns("methods", methods)
 
 ## ... Sites #### 
 
-
 ## ... Cores ####
 cores <- data_raw %>% select(Site, Site_Num, Transect, Flag) %>% 
                       mutate(study_id = id,
@@ -140,9 +139,8 @@ cores <- left_join(cores, latlong)
 #fix core coding issues 
 cores <- cores %>% mutate(latitude = case_when(core_id == "Grant's Beach_AO10X2" ~ 46.17300, TRUE ~ latitude),
                           longitude = case_when(core_id == "Grant's Beach_AO10X2" ~ -64.04982,
-                                                TRUE ~ longitude)) %>% 
-                   recode(cores,"Wells_A17X-3" = "Wells_A17X3")
-  
+                                                TRUE ~ longitude),
+                          core_id = recode(core_id,"Wells_A17X-3" = "Wells_A17X3"))
                         
 cores <- reorderColumns("cores", cores)
 
@@ -192,7 +190,6 @@ species <- data_raw %>% select(Site, `S. alt.`, `S. pat.`, `J. ger.`, Triglochin
 species <- reorderColumns("species", species)                      
 ## ... Impacts ####
 
-# if provided, curation table of anthropogenic impacts
 
 ## 2. QAQC ####
 

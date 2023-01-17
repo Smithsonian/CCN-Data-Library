@@ -4,7 +4,7 @@
 ## Sediment characteristics of the mangrove forest of Bonaire, Dutch Caribbean. PANGAEA, https://doi.org/10.1594/PANGAEA.910431,
 ## contact: Rose Cheney, cheneyr@si.edu 
 
-## Notes about the dataset 
+
 ## Dataset: https://doi.org/10.1594/PANGAEA.910431,
 ## Associated paper: https://www.sciencedirect.com/science/article/abs/pii/S0048969720353468?via%3Dihub
 # data published separately through PANGEA 
