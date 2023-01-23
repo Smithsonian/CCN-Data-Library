@@ -63,7 +63,9 @@ methods <- reorderColumns("methods", methods)
 
 ## ... Sites ####
 
+
 ## ... Cores ####
+
 cores <- data %>% select(Latitude, Longitude, Site, `Date/Time`,`Sample ID`) %>% 
                   rename(latitude = Latitude,
                          longitude = Longitude,
@@ -108,7 +110,8 @@ depthseries <- reorderColumns("depthseries", depthseries)
 
 
 ## ... Species ####
-#from associated paper, sites are dominated by 3 species 
+#from associated paper, sites are dominated by 3 species
+
 species <- cores %>% select(study_id, site_id, habitat) %>% distinct() %>% 
                      mutate(code_type = "Genus species",
                             species_code = "Rhizophora mangle & Avicennia germinans & Laguncularia racemosa") %>% 
@@ -119,12 +122,19 @@ species <- cores %>% select(study_id, site_id, habitat) %>% distinct() %>%
 species <- reorderColumns("species", species)
 
 ## ... Impacts ####
-#impacts <- data %>% select(Site,Status) %>% 
-                  #  rename(site_id = Site,
-                  #         impact_class = Status) %>% 
-                  #  mutate(study_id = id,
-                  #         impact_class = recode(impact_class, Intact = "natural")) %>% 
-                  #  na.omit(site_id) %>% distinct()
+
+impacts <- data %>% select(Site,Status, `Sample ID`) %>% 
+            rename(site_id = Site,
+                   impact_class = Status,
+                   core_id = `Sample ID`) %>% 
+            mutate(study_id = id,
+                   impact_class = recode(impact_class, Intact = "natural"),
+                   impact_class = recode(impact_class, Degraded = "degraded")) %>% 
+            na.omit(site_id)
+
+impacts <- reorderColumns("impacts", impacts)
+
+
 
 ## 2. QAQC ####
 
@@ -165,7 +175,7 @@ write_csv(methods, "data/primary_studies/Senger_et_al_2020/derivative/Senger_et_
 write_csv(cores, "data/primary_studies/Senger_et_al_2020/derivative/Senger_et_al_2020_cores.csv")
 write_csv(depthseries, "data/primary_studies/Senger_et_al_2020/derivative/Senger_et_al_2020_depthseries.csv")
 write_csv(species, "data/primary_studies/Senger_et_al_2020/derivative/Senger_et_al_2020_species.csv")
-  #write_csv(impacts, "data/primary_studies/Senger_et_al_2020/derivative/Senger_et_al_2020_impacts.csv")
+write_csv(impacts, "data/primary_studies/Senger_et_al_2020/derivative/Senger_et_al_2020_impacts.csv")
 
 ## 4. Bibliography ####
 
@@ -187,7 +197,7 @@ write_csv(species, "data/primary_studies/Senger_et_al_2020/derivative/Senger_et_
 # 
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
 
-study_citation <- data.frame(bibliography_id = "Senger_et_al_2020",
+study_citation <- data.frame(bibliography_id = "Senger_et_al_2020_dataset",
                              title = "Sediment characteristics of the mangrove forest of Bonaire, Dutch Caribbean",
                              author = "Senger, Florian; Gillis, Lucy Gwen; Engel, Sabine",
                              bibtype = "Misc", 
