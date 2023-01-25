@@ -12,6 +12,7 @@ library(RColorBrewer)
 # read in synthesis data
 cores <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", guess_max = 7000)
 ds <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max = 55000)
+impacts <- read_csv("data/CCRCN_synthesis/CCRCN_impacts.csv", guess_max = 2000)
 
 
 country_smry <- cores %>% 
@@ -26,14 +27,14 @@ cores_per_hab <- cores %>%
   count(habitat, name = "core_count") %>% 
   arrange(core_count)
 
-cores_per_hab %>% 
-  # NA doesnt get picked up, needs reassignment or to be left out
-  mutate(habitat = fct_reorder(habitat, core_count)) %>% 
-  ggplot(aes(x = habitat, y = core_count, fill = habitat)) +
-  geom_col() +
-  coord_flip() +
-  scale_fill_brewer(palette = "BrBG") +
-  theme_bw()
+# cores_per_hab %>% 
+#   # NA doesnt get picked up, needs reassignment or to be left out
+#   mutate(habitat = fct_reorder(habitat, core_count)) %>% 
+#   ggplot(aes(x = habitat, y = core_count, fill = habitat)) +
+#   geom_col() +
+#   coord_flip() +
+#   scale_fill_brewer(palette = "BrBG") +
+#   theme_bw()
 
 
 all_habitat <- cores %>% 
@@ -67,18 +68,20 @@ min(unique(us_cores$year), na.rm = T) # oldest core: 1969
 max(unique(us_cores$max_depth), na.rm = T)
 
 us_cores %>% 
-  # filter(max_depth < 800) %>% 
+  filter(!is.na(max_depth)) %>%
   ggplot(aes(max_depth)) + 
   geom_density() + geom_rug() +
-  ggtitle("Max Depth Distribution for U.S. Atlas Cores (exluding 1 core max depth 894cm)")
+  ggtitle("Max Depth Distribution for U.S. Atlas Cores")
+ggsave("data/library_metrics/figures/maxdepth_dist_US.jpg", width = 6, height = 6)
 
 cores %>% 
-  # filter(max_depth < 800) %>%
+  filter(!is.na(max_depth)) %>%
   ggplot(aes(max_depth)) + 
   geom_density() + geom_rug() +
-  ggtitle("Max Depth Distribution for Atlas Cores (exluding 1 core max depth 894cm)")
+  ggtitle("Max Depth Distribution for Atlas Cores")
+ggsave("data/library_metrics/figures/maxdepth_dist.jpg", width = 6, height = 6)
 
-## ... State Habitats ####
+## ... Habitats ####
 
 # compare to habitats across all cores
 # studies w a lot of unidentified habitats: Schile-Beers_and_Megonigal_2017, Osland_et_al_2016, Drexler_et_al_2019
@@ -93,24 +96,27 @@ us_habitats <- us_cores %>%
 
 # plot
 # us_habitats %>%
-  all_habitat %>%
+all_habitat %>%
   mutate(habitat = fct_reorder(habitat, percent)) %>% 
   filter(!is.na(habitat)) %>% 
   ggplot(aes(habitat, percent, fill = percent)) + 
-  xlab("Habitat Type") + ylab("Percent of Cores per Habitat") +
-  geom_col() + 
-  scale_color_brewer(palette = "BrBG") +
-  # geom_text(aes(label = paste0(round(percent, 1), "%")), size = 2.75, hjust = -0.2) +
+  geom_col(fill = "darkgreen") + 
+  # scale_color_brewer(palette = "BuGn") +
+  xlab("Habitat Type") + ylab("Proportion of Cores (%)") +
+  geom_text(aes(label = paste0(round(percent, 1), "%")), size = 2.75, hjust = -0.2) +
+  ylim(0, 50) +
   # theme_classic() +
-  coord_flip()
+  coord_flip() + 
+  theme_classic(base_size = 17)  
   # theme(axis.text.x = element_text(angle = 45, hjust=1))
-# ggsave("agu_town_hall/figures/core_habitat_synthesis.jpg")
+ggsave("data/library_metrics/figures/cores_per_habitat.jpg", width = 6, height = 6)
 
 # habitat area coverage?
   
 ## ... State Data Quality ####
 
 corequal <- us_cores %>%
+  filter(habitat == "mangrove") %>%
   select(core_id, stocks_qual_code, dates_qual_code, elevation_qual_code) %>% 
   pivot_longer(-core_id, names_to = "utility", values_to = "quality") %>% 
   drop_na(quality) %>% 
@@ -141,9 +147,36 @@ corequal %>%
   ggplot(aes(level, percent, fill = data_tier)) + 
   geom_col() +
   theme(legend.position = "bottom") +
-  ylab("Percent of Cores (%)") + xlab("Data Quality Tiers")
+  ylab("Proportion of Cores (%)") + xlab("Data Quality Tiers")
   # theme_classic()
 # ggsave("agu_town_hall/figures/data_quality.jpg")
 
-# try something else
+# proportion of impact classes
+
+impacts_prep <- impacts %>% drop_na(impact_class) %>% 
+  mutate(impact_class_site = ifelse(is.na(core_id), impact_class, NA_character_)) %>% 
+  rename(impact_class_core = impact_class)
+
+us_impacts <- us_cores %>%
+  left_join(impacts_prep) %>% 
+  mutate(impact_class = coalesce(impact_class_core, impact_class_site)) %>% 
+  group_by(impact_class) %>%
+  tally() %>%
+  ungroup() %>%
+  mutate(percent = 100*(n/sum(n)))
+
+us_impacts %>% 
+  mutate(impact_class = fct_reorder(impact_class, percent)) %>% 
+  filter(!is.na(impact_class)) %>% 
+  ggplot(aes(impact_class, percent, fill = percent)) + 
+  geom_col(fill = "darkgreen") + 
+  # scale_color_brewer(palette = "BuGn") +
+  xlab("Impact Type") + ylab("Proportion of Cores (%)") +
+  geom_text(aes(label = paste0(round(percent, 1), "%")), size = 2.75, hjust = -0.2) +
+  ylim(0, 50) +
+  # theme_classic() +
+  coord_flip() + 
+  theme_classic(base_size = 17)  
+# theme(axis.text.x = element_text(angle = 45, hjust=1))
+ggsave("data/library_metrics/figures/cores_per_habitat.jpg", width = 6, height = 6)
 
