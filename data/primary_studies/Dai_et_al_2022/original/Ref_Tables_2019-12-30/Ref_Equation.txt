@@ -1,0 +1,30 @@
+"ID","SPECID","COMPID","EQUAT","OUTPUT","OUT_UNITS","EQUATION","INPUT_PARAMETERS","R2","SE","N","MIND","MAXD","COUNTRYID","ORIGIN","CITID","NOTES"
+1,5,2,1,"Biomass","kg","0.0754*DBH^2.505*Sg","DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,,326,,132,137,"Micronesia",96,
+2,5,5,1,"Biomass","kg","10^(-1.1679+1.4914*log(D))","D - diameter (cm)",0.85,1.57,17,2,24,12,"Austrailia",30,
+3,18,2,1,"Biomass","kg","0.0695*DBH^2.644*Sg","DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.89,,191,,60,137,"Micronesia",96,
+4,16,5,1,"Biomass","kg","10^(-1.8571+2.1072*log(D))","D - diameter (cm)",0.85,1.59,23,3,23,12,"Austrailia",30,
+5,16,7,1,"Biomass","kg","0.00698*DBH^2.61","DBH - diameter at breast height (cm)",0.99,,11,15,77,127,"Malaysia",103,
+6,20,2,1,"Biomass","kg","0.3841*DBH^2.101*Sg","DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.92,,346,,323,137,"Micronesia",96,
+7,22,1,1,"Biomass","kg","0.0823*DBH^2.59","DBH - diameter at breast height (cm)",0.99,1.13,15,3,17,12,"Australia",103,
+8,3,1,1,"Biomass","kg","0.308*DBH^2.11","DBH - diameter at breast height (cm)",0.97,,22,,35,12,"Australia",103,
+9,3,7,1,"Biomass","kg","1.28*DBH^1.17","DBH - diameter at breast height (cm)",0.80,,14,,35,12,"Australia",103,
+10,7,7,1,"Biomass","kg","0.0188*((D^2)*(D/((0.025*D)+0.583)))^0.909","D - diameter (cm)",,,11,,33,202,"Thailand",103,
+13,25,6,1,"Biomass","kg","AGBwood*0.101","AGBwood - above ground wood biomass (kg)",,,,,5,12,"Australia",95,"Equation based on min/max diameter range"
+14,25,6,2,"Biomass","kg","AGBwood*0.204","AGBwood - above ground wood biomass (kg)",,,,5,10,12,"Australia",95,"Equation based on min/max diameter range"
+15,25,6,3,"Biomass","kg","AGBwood*0.356","AGBwood - above ground wood biomass (kg)",,,,10,15,12,"Australia",95,"Equation based on min/max diameter range"
+16,25,6,4,"Biomass","kg","AGBwood*0.273","AGBwood - above ground wood biomass (kg)",,,,15,20,12,"Australia",95,"Equation based on min/max diameter range"
+17,25,6,5,"Biomass","kg","AGBwood*0.210","AGBwood - above ground wood biomass (kg)",,,,20,,12,"Australia",95,"Equation based on min/max diameter range"
+18,25,14,1,"Biomass","Mg/ha","Sg*(Pi^2*((d1^2+d2^2+d3^2+...dn^2)/(8*L)))","Sp - Specific gravity wood (g/cm3), Pi  - mathmatical constant (3.14159265359), d1,d2,etc = diameters of intersecting pieces (cm), L - length of transect (m)",,,,8,,,,95,
+19,25,11,1,"Biomass","Mg/ha","Sg*(Pi^2*(( N*QMD^2)/(8*L)))","Sp - Specific gravity wood (g/cm3), Pi  - mathmatical constant (3.14159265359), N - count of pieces, QMD - quadratic mean diameter (cm), L - length of transect (m)",,,,0,8,,,95,
+20,24,7,1,"Biomass","kg","0.199*Sg*0.899*D^2.22","Sp - Specific gravity wood (g/cm3), D - diameter (cm)",0.95,,26,,45,,"Thailand/Indonesia",103,
+21,22,1,2,"Biomass","kg","0.1832*DBH^2.21","DBH - diameter at breast height (cm)",,,,,,96,"Indonesia",162,
+22,16,1,1,"Biomass","kg","0.043*DBH^2.63","DBH - diameter at breast height (cm)",,,,,,96,"Indonesia",162,
+23,24,1,1,"Biomass","kg","0.251*Sg*DBH^2.46","DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",,,,,,,,102,
+25,3,1,2,"Biomass","kg","0.1848*DBH^2.3524","DBH - diameter at breast height (cm)",,,,,,96,"Indonesia",162,
+27,25,15,1,"Biomass","Mg/ha","0.01*(DWT/A)","DWT - sample dry weight (g), A - sample area (m2)",,,,,,,,,
+28,3,1,3,"Biomass","kg","0.19633*??^2.08791*??^0.29654","D-diameter at breast height (cm), H - total tree height (m)",,,,,,,,175,
+29,3,7,2,"Biomass","kg","1.4204*??^1.44260","D-diameter at breast height (cm)",,,,,,,,175,
+30,29,1,1,"Biomass","kg","0.19633*??^2.1 0853*??^0.29654","D-diameter at breast height (cm), H - total tree height (m)",,,,,,,,175,
+31,29,7,1,"Biomass","kg","1.4204*D^1.68979","D-diameter at breast height (cm)",,,,,,,,175,
+32,20,1,1,"Biomass","kg","0.19633*??^2.04113*H^0.29654","D-diameter at breast height (cm), H - total tree height (m)",,,,,,,,175,
+33,20,7,1,"Biomass","kg","1.4204*??^1.65760","D-diameter at breast height (cm)",,,,,,,,175,

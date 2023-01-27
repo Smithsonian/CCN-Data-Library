@@ -29,6 +29,7 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 #load in data 
 #import raw data without additional metadata rows 
 data <- read_xlsx("data/primary_studies/Lafratta_et_al_2018/original/Dataset_Lafratta_et_al._BiolLett_dataset_for_RO.xlsx", skip = 1) 
+dating <- read_xlsx("data/primary_studies/Lafratta_et_al_2018/original/1-s2.0-S0964569120302052-mmc1.xlsx")
 
 
 ## 1. Curation ####
@@ -39,7 +40,7 @@ id <- "Lafratta_et_al_2018"
 
 
 #format original data 
-data <- data %>% rename(core_id = `core ID`,
+data <- data %>% dplyr::rename(core_id = `core ID`,
                         site_id = Location,
                         se = ...19) 
 
@@ -62,7 +63,8 @@ methods <- data.frame(study_id = id,
                       pb210_counting_method = "alpha",
                       excess_pb210_rate = "depth",
                       excess_pb210_model = "CFCS",
-                      ra226_assumption = "selected samples")
+                      ra226_assumption = "selected samples",
+                      c14_counting_method = "AMS")
 
 
 #reorder columns 
@@ -123,6 +125,23 @@ depthseries <- data %>% select(site_id, core_id, `Dry bulk density`, `Organic ca
                                delta_c13 = as.numeric(δ13C)*1000) %>% #convert to ppm 
                         select(-depth_interval, -`cm decompressed`, -`Organic carbon`, -se, -`Dry bulk density`, -`Total -210Pb`, -δ13C)
 
+
+
+##add radiocarbon data 
+radiocarbon <- dating %>% select(`Core ID`,`Raw age`,`Age error`, Depth) %>% 
+                               rename(core_id = `Core ID`,
+                                      c14_age = `Raw age`,
+                                      c14_age_se = `Age error`) %>% 
+                               na.omit(core_id) %>% 
+                               mutate(c14_material = "shell",
+                                      site_id = "False bay",
+                                      depth = as.numeric(Depth),
+                                      depth = case_when()) %>% 
+                          select(-Depth)
+
+
+#merge radiocarbon data with depthseries, depth values to make the merge 
+depthseries <-cbind(depthseries, radiocarbon)
 
 
 #reorder columns 

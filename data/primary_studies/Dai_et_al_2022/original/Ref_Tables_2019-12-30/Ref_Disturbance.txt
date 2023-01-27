@@ -1,0 +1,24 @@
+"ID","DISTURBANCE","DISTURBANCE_DESCR"
+1,"No disturbance",
+2,"Anthropogenic light",
+3,"Anthropogenic moderate",
+4,"Anthropogenic severe",
+5,"Cyclone light",
+6,"Cyclone moderate",
+7,"Cyclone severe",
+8,"Disease light",
+9,"Disease moderate",
+10,"Disease severe",
+11,"Harvest high",">70%  basal area"
+12,"Harvest low","<30% basal area"
+13,"Harvest medium","30–70% basal area"
+14,"Insect light",
+15,"Insect moderate",
+16,"Insect severe",
+17,"Plantation",
+18,"Recent wildfire light",
+19,"Recent wildfire moderate",
+20,"recent wildfire severe",
+21,"Restoration",
+22,"Disturbed","Disturbance not specified"
+100,"NA","Not Available"
