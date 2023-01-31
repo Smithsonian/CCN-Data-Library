@@ -68,6 +68,7 @@ cores <- cores_raw %>%
          study_id = "Hamzeh_and_lahijani_2022",
          core_length_flag = "core depth represents deposit depth",
          habitat = substr(habitat, 4, nchar(habitat)),
+         position_method = "other low resolution",
          position_notes = "position data is provided only at the site level") %>% 
   separate_rows(core_id, sep = ",") %>% 
   left_join(elevation_grab, c('site_id' = 'Cre')) %>% 
