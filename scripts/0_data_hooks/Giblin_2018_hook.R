@@ -151,7 +151,7 @@ sites <- site_data %>%
 
 ## 3. Create study-level data ######
 
-if(!file.exists("data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")){
+# if(!file.exists("data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")){
   doi <- "10.6073/pasta/d1d5cbf87602ccf51de30b87b8e46d01"
   study <- "Giblin_and_Forbrich_2018"
   
@@ -173,7 +173,7 @@ if(!file.exists("data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich
   
   WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich_2018.bib")
   write_csv(study_citations, "./data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")
-}
+# }
 
 # Update Tables ###########
 source("./scripts/1_data_formatting/versioning_functions.R")
