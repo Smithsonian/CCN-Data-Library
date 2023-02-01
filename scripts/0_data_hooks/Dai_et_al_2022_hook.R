@@ -55,6 +55,7 @@ methods <- data.frame(study_id = id,
                       dry_bulk_density_flag = "to constant mass",
                       loss_on_ignition_flag = "not specified", 
                       carbonates_removed = FALSE,
+                      carbonate_removal_method = "none specified",
                       carbon_measured_or_modeled = "measured",
                       fraction_carbon_type = "organic carbon",
                       fraction_carbon_method = "EA") 
@@ -100,9 +101,8 @@ depthseries <- soil %>% select(-AREA, -VOL, -DWT) %>%
                                fraction_carbon = C/100) %>% 
                         rename(depth_min = MIND,
                                depth_max = MAXD,
-                               sample_id = SAMP,
                                dry_bulk_density = BD) %>% 
-                        select(-ID, -SUBPID, -INTD, -C, -N, -C_CONT, -N_CONT, -CNR)
+                        select(-ID, -SUBPID, -INTD, -C, -N, -C_CONT, -N_CONT, -CNR, -SAMP)
 
 
 #reorder columns 

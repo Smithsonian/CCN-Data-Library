@@ -48,7 +48,7 @@ methods <- data.frame(study_id = id,
                       loss_on_ignition_temperature = 550,
                       loss_on_ignition_time = 24,
                       carbonates_removed = "FALSE",
-                      carbonate_removal_method = "none specified",
+                      carbonate_removal_method = "not specified",
                       fraction_carbon_method = "not specified",
                       fraction_carbon_type = "total carbon",
                       cs137_counting_method = "gamma")
@@ -66,6 +66,8 @@ cores <- coords %>%  rename("site_id" = "Site ID") %>%
                               site_id = "Breton_Sound_Basin",
                               vegetation_class = "emergent",
                               vegetation_method = "field observation",
+                              salinity_class = "estuarine",
+                              salinity_method = "field observation",
                               habitat = "marsh",
                               core_length_flag = "not specified",
                               position_method = "other high resolution",
@@ -78,7 +80,6 @@ cores <- coords %>%  rename("site_id" = "Site ID") %>%
                              longitude = Longitude) %>% 
                       select(-dates, -'DateCollected')
 
-#position method not made clear in methods 
 
 #reorder columns 
 cores <- reorderColumns("cores", cores)

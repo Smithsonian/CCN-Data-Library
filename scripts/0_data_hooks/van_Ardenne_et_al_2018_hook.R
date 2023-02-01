@@ -8,9 +8,9 @@
 ## Dataset: https://doi.org/10.1016/j.dib.2018.07.037
 ## Associated paper: https://www.sciencedirect.com/science/article/pii/S0016706117317172?via%3Dihub
 
-#######   ~NOTES~
-## Vegetation was recorded within an ~0.5 m radius around each site where a core was collected,
-# or depth recorded. Location of each sample site was recorded using a differential GPS.
+## NOTES
+## Vegetation was recorded within an ~0.5 m radius around each site where a core was collected, or depth recorded. 
+
 
 # load necessary libraries
 library(tidyverse)
@@ -19,7 +19,6 @@ library(lubridate)
 library(RefManageR)
 library(leaflet)
 library(sf)
-library(proj4)
 
 
 # load in helper functions
@@ -34,8 +33,8 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 #load in data 
 data_raw <- read_xlsx("data/primary_studies/van_Ardenne_et_al_2018/original/DiB_Marsh_Soils.xlsx")
 
-#load shapefiles for gps points 
-wells_spit <- st_read("data/primary_studies/van_Ardenne_et_al_2018/original/1-s2.0-S2352340918308102-mmc2/Wells_Int_GPS.shp", stringsAsFactors = FALSE)
+#position data 
+wells_spit <- st_read("data/primary_studies/van_Ardenne_et_al_2018/original/1-s2.0-S2352340918308102-mmc2/Wells_Spit_GPS.shp")
 wells_int <- st_read("data/primary_studies/van_Ardenne_et_al_2018/original/1-s2.0-S2352340918308102-mmc2/Wells_Int_GPS.shp")
 point_carron <- st_read("data/primary_studies/van_Ardenne_et_al_2018/original/1-s2.0-S2352340918308102-mmc2/Point_Carron_GPS.shp")
 grants_beach <- st_read("data/primary_studies/van_Ardenne_et_al_2018/original/1-s2.0-S2352340918308102-mmc2/Grants_Beach_GPS.shp")
@@ -44,7 +43,6 @@ grants_beach <- st_read("data/primary_studies/van_Ardenne_et_al_2018/original/1-
 ## 1. Curation ####
 
 # this study ID must match the name of the dataset folder
-# include this id in a study_id column for every curated table
 id <- "van_Ardenne_et_al_2018"
 
 
@@ -76,71 +74,107 @@ methods <- reorderColumns("methods", methods)
 ## ... Sites #### 
 
 ## ... Cores ####
-cores <- data_raw %>% select(Site, Site_Num, Transect, Flag) %>% 
+cores <- data_raw %>% select(Site, Transect, Flag) %>% 
                       mutate(study_id = id,
                              core_id = paste(Site, Transect, sep = "_"),
-                             core_id = paste(core_id, Flag, sep = ""),
-                             position_method = "other high resolution",
-                             position_notes = "Lecia Viva differential GPS",
-                             core_length_flag = "core depth represents deposit depth",
-                             salinity_class = "estuarine",
-                             salinity_method = "field observation",
-                             vegetation_class = "emergent",
-                             vegetation_method = "field observation") %>% 
-                     rename(site_id = Site) %>% 
-                     select(- Site_Num, -Transect, -Flag) %>% distinct()
+                             core_id = paste(core_id, Flag, sep = "_")) %>% 
+                           #   %>% 
+                     rename(site_id = Site) %>% distinct()
 
 
-#transform points into lat long (reference = https://spatialreference.org/)
-proj4_CA <- "+proj=sterea +lat_0=46.5 +lon_0=-66.5 +k=0.999912 +x_0=2500000 +y_0=7500000 +ellps=GRS80 +units=m +no_defs"
-proj4_wells <- "+proj=utm +zone=19 +ellps=GRS80 +datum=NAD83 +units=m +no_defs"
+##function for extracting coords from shp files
+extractCoords <- function(x){
+  # convert coord reference system to WGS 1984 (EPSG:4326)
+  df_4326 <- x %>% st_transform(4326)
+  
+  extract_coords <- x %>% 
+    # select(Flag_Numbe, Transect, Flag_Trans) %>% # can't include this since colnames can differ, clean this up after
+    st_drop_geometry() %>%  # convert to data frame
+    bind_cols(as.data.frame(st_coordinates(df_4326))) # extract transformed coordinates to this table 
+  
+  return(extract_coords)
+}
 
-#transform each site to lat long 
-lon_lat_gb <- project(grants_beach[,4:5], proj4_CA, inverse = TRUE)
-lon_lat_pt <- project(point_carron[,3:4], proj4_CA, inverse = TRUE)
-lon_lat_wells_int <- project(wells_int[,3:4], proj4_wells, inverse = TRUE)
-lon_lat_wells_spit <- project(wells_spit[,3:4], proj4_wells, inverse = TRUE)
+#extract coords
+## "Core names which do not have an analogue in the core data table are sites where only depth was measured."
+wells_int_coords <- extractCoords(wells_int)
+wells_spit_coords <- extractCoords(wells_spit)
+gb_coords <- extractCoords(grants_beach)
+pt_coords <- extractCoords(point_carron)
 
-#grants beach cores
-grants_beach_coords <- data.frame(longitude = lon_lat_gb$x, latitude = lon_lat_gb$y) %>% cbind(grants_beach)
-grants_beach <- grants_beach_coords %>% mutate(core_id = paste("Grant's Beach", Transect, sep = "_"),
-                                               core_id = paste(core_id, Flag, sep = "")) %>% 
-                                              dplyr::select(longitude, latitude, core_id) 
+#grants beach 
+grants_beach <- gb_coords %>% rename(latitude = Y,
+                                     longitude = X) %>% 
+                              mutate(site_id = "Grant's Beach",
+                                     Flag = case_when(Core == "FLAG-W-30" ~ "W30",
+                                                      Core == "FLAG-W-35"~ "W35", TRUE ~ Flag),
+                                     Transect = case_when(Flag == "W30" ~ "E", 
+                                                          Flag == "W35" ~ "G", TRUE ~ Transect)) %>% 
+                              filter(!is.na(Flag)) %>% 
+                              select(site_id, Flag, Transect, longitude, latitude) #missing core -- 	C_W7 (only depth/dbd data included)
+                                              
+#point carron 
+pt_stock <- data_raw %>% select(Site, Transect, Flag, `Core Carbon Stock (g/sqm)`) %>% 
+                         filter(Site == "Pt Carron") %>% filter(!is.na(`Core Carbon Stock (g/sqm)`)) %>% 
+                         rename("stock" = "Core Carbon Stock (g/sqm)","site_id" = "Site") %>% 
+                         select(site_id, Transect, Flag, stock)
+              #match core c stock to id in shp file  --> missing core B40
+pt_coords <- pt_coords %>% rename(latitude = Y...9, longitude = X...8, 
+                                     stock = Carbon_Sto) %>% mutate(site_id = "Pt Carron") %>% 
+                           separate(Core, c(NA, "Transect", "Flag")) 
 
-#point carron cores
-point_carron_coords <- data.frame(longitude = lon_lat_pt$x, latitude = lon_lat_pt$y) %>% 
-                      cbind(point_carron)
-point_carron <- point_carron_coords %>% separate(Core,c('NA','Transect', 'Flag')) %>% 
-                                        mutate(core_id = paste("Pt Carron",Transect, sep = "_"),
-                                               core_id = paste(core_id, Flag, sep = "")) %>% #Flags/transects do not match to core table 
-                dplyr::select(longitude, latitude, core_id) 
+point_carron <- left_join(pt_coords, pt_stock) %>% 
+                        mutate(Flag = recode(Flag, "05" = "5"),
+                              Transect = case_when(Flag == "30"|Flag == "32"|Flag == "33"|Flag == "35"|Flag == "40" ~ "B",
+                                                   Flag == "24" & Transect == "P" ~ "A",
+                                                   Flag == "11" & Transect == "O" ~ "A",
+                                                   Flag == "17" & Transect == "O" ~ "A",
+                                                   Flag == "20"|Flag == "21"|Flag == "5" ~ "A")) %>% 
+                             filter(!is.na(Transect)) %>% select(site_id, Flag, Transect, longitude, latitude) 
 
 
-#wells cores
-wells_int_coords <- data.frame(longitude = lon_lat_wells_int$x, latitude = lon_lat_wells_int$y) %>% 
-                    cbind(wells_int) %>% `[`(-c(44,45),)   #remove duplicate A8 and A9, rows 44 and 45 
-wells_int <- wells_int_coords %>% mutate(core_id = paste("Wells", Transect, sep = "_"),
-                                  core_id = paste(core_id, Flag_Numbe, sep = "")) %>% 
-                                  mutate(core_id = recode(core_id,"Wells_A17" = "Wells_A17X-3")) %>% #rename to match 
-                                  dplyr::select(longitude, latitude, core_id) 
+#wells 
+wells_int <- wells_int_coords %>% rename(latitude = Y...12,
+                                         longitude = X...11,
+                                         Flag = Flag_Numbe) %>% 
+                                  mutate(site_id = "Wells",
+                                         Flag = recode(Flag,"17"="17X-3"),
+                                         Flag = case_when(Flag_Trans == "TRANSECT_A_4_CORE_9" ~ "4",
+                                                          Flag_Trans == "TRANSECT_A_3_CORE_8" ~ "3",
+                                                          Flag_Trans == "TRANSECT_A_7_CORE_10" ~ "7",
+                                                          Flag_Trans == "TRANSECT_A_10" ~ "10",
+                                                          TRUE ~ Flag)) %>% filter(!is.na(Flag)) %>% 
+                                  select(site_id, Flag, Transect, longitude, latitude) # missing cores A1, A2
 
+#wells spit 
+wells_spit <- wells_spit_coords %>% rename(latitude = Y...12,
+                                    longitude = X...11,
+                                    Flag = Flag_Numbe) %>% 
+                                    mutate(site_id = "Wells spit",
+                                           Flag = case_when(Flag_Trans == "CORE_B_6" ~ "6",
+                                                            Flag_Trans == "TRANSECT_B_21_CORE_11" ~ "11",
+                                                            TRUE ~ Flag)) %>%   
+                                   select(site_id, Transect, Flag, longitude, latitude)
 
-#wells spit cores
-wells_spit_coords <- data.frame(longitude = lon_lat_wells_spit$x, latitude = lon_lat_wells_spit$y) %>% cbind(wells_spit)
-wells_spit <- wells_spit_coords %>% mutate(core_id = paste("Wells_spit", Transect, sep = "_"),
-                                         core_id = paste(core_id, Flag_Numbe, sep = "")) %>% 
-                             dplyr::select(longitude, latitude, core_id) 
-
-
-#JOIN ALL to cores table 
+#JOIN ALL LAT/LONG to cores table 
 latlong <- bind_rows(grants_beach, point_carron, wells_int, wells_spit) 
-cores <- left_join(cores, latlong) 
+cores <- left_join(cores, latlong) %>% distinct()
 
-#fix core coding issues 
-cores <- cores %>% mutate(latitude = case_when(core_id == "Grant's Beach_AO10X2" ~ 46.17300, TRUE ~ latitude),
-                          longitude = case_when(core_id == "Grant's Beach_AO10X2" ~ -64.04982,
-                                                TRUE ~ longitude),
-                          core_id = recode(core_id,"Wells_A17X-3" = "Wells_A17X3"))
+#add additional variables
+cores <- cores %>% mutate(position_method = "other high resolution",
+                          position_notes = "Lecia Viva differential GPS",
+                          year = "2015",
+                          core_length_flag = "core depth represents deposit depth",
+                          salinity_class = "estuarine",
+                          salinity_method = "field observation",
+                          vegetation_class = "emergent",
+                          vegetation_method = "field observation",
+                          habitat = "marsh",
+                          inundation_class = "low",
+                          inundation_method = "field observation",
+                          latitude = case_when(core_id == "Grant's Beach_A_O10X2" ~ 46.17301, TRUE ~ latitude),
+                          longitude = case_when(core_id == "Grant's Beach_A_O10X2" ~ -64.04982,
+                                                TRUE ~ longitude)) %>% select(-Transect, -Flag)
                         
 cores <- reorderColumns("cores", cores)
 
@@ -152,8 +186,7 @@ depthseries <- data_raw %>% select(Site, Transect, Flag, Corer, `upper depth (cm
                                    method_id = case_when(Corer == "60 mm" ~ 2,
                                                                      Corer == "25 mm" ~ 1, 
                                                                      TRUE ~ 1),
-                                   core_id = paste(Site, Transect, sep = "_"),
-                                   core_id = paste(core_id, Flag, sep = ""),
+                                   core_id = paste(Site, Transect, Flag, sep = "_"),
                                    fraction_carbon = `Organic Carbon Craft (%)`/100) %>% 
                             rename(site_id = Site,
                                    depth_min = `upper depth (cm)`,

@@ -4,7 +4,7 @@
 ## contact: Rose Cheney, cheneyr@si.edu 
 
 ## Notes about the dataset 
-## Dataset: https://www.sciencebase.gov/catalog/item/5a4eae82e4b0d05ee8c6649c
+## Dataset: https://www.sciencebase.gov/catalog/item/5a4eae82e4b0d05ee8c6649
 ## Environmental and positional data from CRMS database : https://lacoast.gov/crms2/home.aspx
 
 # load necessary libraries
@@ -44,6 +44,7 @@ methods <- data.frame(study_id = id,
                       sediment_sieved_flag = "sediment not sieved",
                       compaction_flag = "not specified",
                       dry_bulk_density_flag = "not specified",
+                      loss_on_ignition_flag = "not specified",
                       carbon_measured_or_modeled = "measured",
                       carbonates_removed = "FALSE",
                       carbonate_removal_method = "none specified",

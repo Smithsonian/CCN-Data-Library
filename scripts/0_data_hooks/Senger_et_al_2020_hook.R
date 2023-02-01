@@ -8,6 +8,7 @@
 ## Dataset: https://doi.org/10.1594/PANGAEA.910431,
 ## Associated paper: https://www.sciencedirect.com/science/article/abs/pii/S0048969720353468?via%3Dihub
 # data published separately through PANGEA 
+# includes AGB and BGB
 
 
 # load necessary libraries
@@ -46,7 +47,7 @@ methods <- data.frame(study_id = id,
                       coring_method = "gouge auger",
                       roots_flag = "roots and rhizomes separated",
                       compaction_flag = "not specified",
-                      sediment_sieved_flag = "sediment sieved",
+                      sediment_sieved_flag = "sediment not sieved",
                       dry_bulk_density_temperature = 40,
                       dry_bulk_density_time = 72,
                       dry_bulk_density_flag = "time approximate",
@@ -144,7 +145,7 @@ leaflet(cores) %>%
     addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
 
 ## Table testing
-table_names <- c("methods", "cores", "depthseries") 
+table_names <- c("methods", "cores", "depthseries", "species", "impacts") 
 
 # Check col and varnames
 testTableCols(table_names)

@@ -1,2 +1,2 @@
-study_id,method_id,coring_method,roots_flag,sediment_sieved_flag,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_flag,loss_on_ignition_flag,carbon_measured_or_modeled,carbonates_removed,fraction_carbon_method,fraction_carbon_type
-Dai_et_al_2022,single set of methods,gouge auger,roots and rhizomes separated,sediment not sieved,not specified,105,to constant mass,not specified,measured,FALSE,EA,organic carbon
+study_id,method_id,coring_method,roots_flag,sediment_sieved_flag,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_flag,loss_on_ignition_flag,carbon_measured_or_modeled,carbonates_removed,carbonate_removal_method,fraction_carbon_method,fraction_carbon_type
+Dai_et_al_2022,single set of methods,gouge auger,roots and rhizomes separated,sediment not sieved,not specified,105,to constant mass,not specified,measured,FALSE,none specified,EA,organic carbon

@@ -14,6 +14,7 @@ library(readxl)
 library(lubridate)
 library(RefManageR)
 library(leaflet)
+library(plyr)
 library(sp)
 
 
@@ -77,18 +78,19 @@ methods <- reorderColumns("methods", methods)
 
 cores <- data %>% select(site_id, core_id, latitude, longitude,Habitat) %>% 
                   na.omit(Location) %>% 
-                  rename(habitat = Habitat) %>% 
+                  dplyr::rename(habitat = Habitat) %>% 
                   mutate(study_id = id,
                          year = 2014,
                          vegetation_class = "seagrass",
                          vegetation_method = "field observation",
                          core_length_flag = "not specified",
-                         position_method = " ",
                          salinity_class = "saline",
                          salinity_method = "field observation",
                          inundation_class = "low",
                          inundation_method = "field observation",
                          core_notes = "cores collected at 5m depth in seagrass meadows",
+                         position_method = "other low resolution",
+                         position_notes = "position data provided at meadow resolution, not individual core",
                          latitude = as.numeric(char2dms(latitude, chd = "°", chm = "'", chs = "\"")),
                          longitude = as.numeric(char2dms(longitude, chd = "°", chm = "'", chs = "\""))) %>% distinct()
 
@@ -98,17 +100,22 @@ cores <- reorderColumns("cores", cores)
 
 ## ... Depthseries #### 
 #depth intervals are separated into "low resolution" >21 cm and "high resolution" < 21 cm downcore samples 
+
+radiocarbon <- dating %>% select(`Core ID`,`Raw age`,`Age error`, Depth) %>% 
+                            dplyr::rename(core_id = `Core ID`,
+                                   c14_age = `Raw age`,
+                                   c14_age_se = `Age error`) %>% 
+                            na.omit(core_id) %>% 
+                            mutate(c14_material = "shell",
+                                   site_id = "False bay",
+                                   depth_min = as.numeric(Depth)) %>% select(-Depth)
+
+
 depthseries <- data %>% select(site_id, core_id, `Dry bulk density`, `Organic carbon`, `Total -210Pb`, se,
                                δ13C,`cm compressed`, `cm decompressed`) %>% 
                         filter(!is.na(site_id)) %>% 
                         separate(`cm compressed`, c("depth_min", "depth_max"), sep = "-", fill = "right") %>% 
-                        mutate(study_id = id,
-                               method_id = "single set of methods",
-                               dry_bulk_density = as.numeric(`Dry bulk density`),
-                               fraction_carbon = as.numeric(`Organic carbon`)/100, #percent to fraction
-                               total_pb210_activity = as.numeric(`Total -210Pb`),
-                               pb210_unit = "becquerelsPerKilogram",
-                               depth_min = as.numeric(depth_min),
+                        mutate(depth_min = as.numeric(depth_min),
                                compaction_fraction = depth_min/`cm decompressed`, #check?
                                depth_interval = case_when(core_id == "1Rs" ~ 1,
                                                           core_id == "3Rc" ~ 1,
@@ -118,55 +125,51 @@ depthseries <- data %>% select(site_id, core_id, `Dry bulk density`, `Organic ca
                                depth_max = case_when(depth_interval = 1 & depth_min <= 21 ~ depth_min +0.5,
                                                      depth_interval = 1 & depth_min > 21 ~ depth_min +1,
                                                      depth_interval = 2 & depth_min <= 21 ~ depth_min +1,
-                                                     TRUE ~ depth_min + 4),
-                               dry_bulk_density = as.numeric(dry_bulk_density),
-                               total_pb210_activity = as.numeric(total_pb210_activity),
-                               total_pb210_activity = se,
-                               delta_c13 = as.numeric(δ13C)*1000) %>% #convert to ppm 
-                        select(-depth_interval, -`cm decompressed`, -`Organic carbon`, -se, -`Dry bulk density`, -`Total -210Pb`, -δ13C)
+                                                     TRUE ~ depth_min + 4))
+         
+#add radiocarbon data to depthseries table   
+depthseries <- rbind.fill(depthseries, radiocarbon) %>% 
+                mutate(study_id = id,
+                       method_id = "single set of methods",
+                       dry_bulk_density = as.numeric(`Dry bulk density`),
+                       fraction_carbon = as.numeric(`Organic carbon`)/100, #percent to fraction
+                       total_pb210_activity = as.numeric(`Total -210Pb`),
+                       pb210_unit = case_when(!is.na(total_pb210_activity) ~ "becquerelsPerKilogram")) %>% 
+                dplyr::rename(delta_c13 = `δ13C`,
+                       total_pb210_activity_se = se) %>% 
+                select(-`Dry bulk density`, -`Organic carbon`, -`Total -210Pb`, -`cm decompressed`, -depth_interval)
 
-
-
-##add radiocarbon data 
-radiocarbon <- dating %>% select(`Core ID`,`Raw age`,`Age error`, Depth) %>% 
-                               rename(core_id = `Core ID`,
-                                      c14_age = `Raw age`,
-                                      c14_age_se = `Age error`) %>% 
-                               na.omit(core_id) %>% 
-                               mutate(c14_material = "shell",
-                                      site_id = "False bay",
-                                      depth = as.numeric(Depth),
-                                      depth = case_when()) %>% 
-                          select(-Depth)
-
-
-#merge radiocarbon data with depthseries, depth values to make the merge 
-depthseries <-cbind(depthseries, radiocarbon)
-
-
+            
 #reorder columns 
 depthseries <- reorderColumns("depthseries", depthseries)
+
 
 
 ## ... Species ####
 
 species <- data %>% select(site_id, core_id, Habitat, meadow) %>% 
                     na.omit(core_id) %>% 
-                    rename(habitat = Habitat) %>% 
+                    dplyr::rename(habitat = Habitat) %>% 
                     mutate(study_id = id,
                            species_code = case_when(meadow == "Bare" ~ "previously vegetated soils",
-                                          TRUE ~ "Posidonia australis"),
-                           code_type = case_when(species_code == "Posidonia australis" ~ "Genus species",
-                                        TRUE ~ "description")) %>%
-                    select(!meadow) %>% distinct()
+                                                    meadow == "Resilient" ~ "Posidonia australis & Posidonia sinuosa",
+                                                    TRUE ~ "Posidonia australis"),
+                           code_type = case_when(species_code == "previously vegetated soils" ~ "description",
+                                                  TRUE ~ "Genus species")) %>%
+                    separate(species_code, c("species_code1","species_code2"), sep =" & ", fill = "right") %>% 
+                    pivot_longer(!c(study_id, site_id, core_id, habitat, code_type, meadow), 
+                                 names_to = NULL, values_to = "species_code") %>% 
+                    na.omit(species_code) %>% 
+                    select(-meadow) %>% distinct()
 
 species <- reorderColumns("species", species)
 
 ## ... Impacts ####
+#best way to classify 'disturbed'?
 
 impacts <- data %>% select(site_id, core_id, meadow) %>% 
                     na.omit(core_id) %>% 
-                    rename(impact_class = meadow) %>% distinct() %>% 
+                    dplyr::rename(impact_class = meadow) %>% distinct() %>% 
                     mutate(study_id = id,
                            impact_class = case_when(impact_class == "Resilient" ~ "natural",
                                                     impact_class == "Recovered" ~ "restored",
