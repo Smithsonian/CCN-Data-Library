@@ -1,0 +1,46 @@
+/* DATA DESCRIPTION:
+Citation:	Kusumaningtyas, Mariska Astrid; Hutahaean, Andreas A; Jennerjahn, Tim C (2018): Carbon, nitrogen and stable carbon isotopes in the sediment core B1 from Berau, Indonesia. PANGAEA, https://doi.org/10.1594/PANGAEA.896854, 
+	In supplement to: Kusumaningtyas, Mariska Astrid; Hutahaean, Andreas A; Fischer, Helmut W; Pérez-Mayo, Manuel; Ransby, Daniela; Jennerjahn, Tim C (2019): Variability in the organic carbon stocks, sources, and accumulation rates of Indonesian mangrove ecosystems. Estuarine, Coastal and Shelf Science, 218, 310-323, https://doi.org/10.1016/j.ecss.2018.12.007
+Abstract:	What was sampled: Mangrove sediment
+	Parameter measured and method:
+	1. Organic carbon (Corg), analyzed using elemental analyzer (Eurovector E3000 Elemental Analyzer)
+	2. Total nitrogen (N), analyzed using elemental analyzer (Eurovector E3000 Elemental Analyzer)
+	3. Stable carbon isotope composition (δ13Corg), analyzed using Thermo Finnigan Delta plus mass spectrometer coupled to a Flash EA1112 Elemental Analyzer
+	Where was sampled: Berau, East Kalimantan, Indonesia
+	When was sampled: Sediment samples were taken in May 2013
+	How it was sampled: Mangrove sediments were collected using a 1 m long semi-cylindrical auger. Sediments were taken down to 1 m depth, and were sampled in 5 cm interval.
+Project(s):	Leibniz Centre for Tropical Marine Research (ZMT) (URI: https://www.leibniz-zmt.de/en/)
+	Science for the Protection of Indonesian Coastal Environment (SPICE)
+Coverage:	LATITUDE: 2.423470 * LONGITUDE: 118.000720
+	DATE/TIME START: 2013-05-24T00:00:00 * DATE/TIME END: 2013-05-24T00:00:00
+	MINIMUM DEPTH, sediment/rock: 0.025 m * MAXIMUM DEPTH, sediment/rock: 0.825 m
+Event(s):	Berau-B1 (B1) * LATITUDE: 2.423470 * LONGITUDE: 118.000720 * DATE/TIME: 2013-05-24T00:00:00 * Recovery: 0.85 m * LOCATION: Berau * METHOD/DEVICE: Hand auger (drill) (HADR)
+Parameter(s):	DEPTH, sediment/rock [m] (Depth) * GEOCODE * PI: Kusumaningtyas, Mariska Astrid (https://orcid.org/0000-0003-3538-4959, m.astridkusuma@yahoo.com)
+	Depth, top/min [m] (Depth top) * PI: Kusumaningtyas, Mariska Astrid (https://orcid.org/0000-0003-3538-4959, m.astridkusuma@yahoo.com)
+	Depth, bottom/max [m] (Depth bot) * PI: Kusumaningtyas, Mariska Astrid (https://orcid.org/0000-0003-3538-4959, m.astridkusuma@yahoo.com)
+	Carbon, organic, total [%] (TOC) * PI: Kusumaningtyas, Mariska Astrid (https://orcid.org/0000-0003-3538-4959, m.astridkusuma@yahoo.com) * METHOD/DEVICE: Element analyser, Eurovector E3000
+	Nitrogen, total [%] (TN) * PI: Kusumaningtyas, Mariska Astrid (https://orcid.org/0000-0003-3538-4959, m.astridkusuma@yahoo.com) * METHOD/DEVICE: Element analyser, Eurovector E3000
+	δ13C, organic carbon [‰ PDB] (δ13C Corg) * PI: Kusumaningtyas, Mariska Astrid (https://orcid.org/0000-0003-3538-4959, m.astridkusuma@yahoo.com) * METHOD/DEVICE: Mass spectrometer Thermo Finnigan DELTA plus coupled to a Flash EA1112 Elemental Analyzer
+	Carbon/Nitrogen ratio (C/N) * PI: Kusumaningtyas, Mariska Astrid (https://orcid.org/0000-0003-3538-4959, m.astridkusuma@yahoo.com) * COMMENT: C_org/N, atomic
+	Density, dry bulk [g/cm**3] (DBD) * PI: Kusumaningtyas, Mariska Astrid (https://orcid.org/0000-0003-3538-4959, m.astridkusuma@yahoo.com)
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	119 data points
+*/
+Depth [m]	Depth top [m]	Depth bot [m]	TOC [%]	TN [%]	δ13C Corg [‰ PDB]	C/N	DBD [g/cm**3]
+0.025	0.00	0.05	2.63	0.10	-27.77	29.81	1.12
+0.075	0.05	0.10	4.46	0.16	-27.86	33.09	1.04
+0.125	0.10	0.15	4.82	0.16	-28.01	35.32	1.14
+0.175	0.15	0.20	5.07	0.17	-28.19	35.84	1.45
+0.225	0.20	0.25	2.98	0.11	-28.06	30.71	2.38
+0.275	0.25	0.30	3.51	0.13	-27.58	31.69	1.82
+0.325	0.30	0.35	5.08	0.18	-28.00	33.88	1.29
+0.375	0.35	0.40	4.40	0.17	-27.94	30.15	1.09
+0.425	0.40	0.45	4.67	0.17	-27.82	32.78	1.51
+0.475	0.45	0.50	4.92	0.17	-27.93	33.53	0.89
+0.525	0.50	0.55	4.36	0.15	-27.98	34.84	1.25
+0.575	0.55	0.60	2.92	0.10	-27.74	34.78	1.32
+0.625	0.60	0.65	4.47	0.12	-27.81	42.35	0.75
+0.675	0.65	0.70	5.23	0.13	-27.79	47.64	1.30
+0.725	0.70	0.75	4.10	0.10	-27.75	45.98	1.65
+0.775	0.75	0.80	1.26	0.04	-26.90	33.29	2.00
+0.825	0.80	0.85	1.21	0.05	-27.00	29.32	2.08
