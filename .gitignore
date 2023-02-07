@@ -6,21 +6,10 @@
 .Ruserdata
 .Rproj
 .DS_Store
+.Rapp.history
+temp/*
+.~*
 
 # ignore a folder
 # folder_to_ignore/
 # large shapefiles are now managed with Github LFS
-
-# ignore any file and folders with the following string in the name
-# *string_to_ignore*
-
-# Data being prepped for a release 
-*Megonigal_2019*
-*megonigal_2019*
-*shaw_et_al_2019*
-*Shaw_et_al_2019*
-*Gedan_et_al_2020*
-*gedan_et_al*
-
-temp/*
-.~*
