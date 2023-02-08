@@ -215,6 +215,7 @@ study_citations <- bind_rows(study_citation, study_citation_article) %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 WriteBib(as.BibEntry(study_citations), "data/primary_studies/Dai_et_al_2022/derivative/Dai_et_al_2022.bib")
+write_csv(study_citations, "data/primary_studies/Dai_et_al_2022/derivative/Dai_et_al_2022_study_citations.csv")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/

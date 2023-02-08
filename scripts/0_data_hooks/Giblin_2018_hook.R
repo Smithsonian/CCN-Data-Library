@@ -155,24 +155,40 @@ sites <- site_data %>%
   doi <- "10.6073/pasta/d1d5cbf87602ccf51de30b87b8e46d01"
   study <- "Giblin_and_Forbrich_2018"
   
-  # Get bibtex citation from DOI
+  # Get bibtex citation from DOI (primary dataset)
   biblio_raw <- GetBibEntryWithDOI(doi)
   biblio_df <- as.data.frame(biblio_raw)
   
-  study_citations <- biblio_df %>%
+  study_citation <- biblio_df %>%
     mutate(bibliography_id = "Giblin_and_Forbrich_2018_data", 
            study_id = study,
            publication_type = "primary dataset") %>%
     remove_rownames() %>%
     select(study_id, bibliography_id, publication_type, everything())
   
-  # Write .bib file
-  bib_file <- study_citations %>%
-    select(-study_id, -publication_type) %>%
-    column_to_rownames("bibliography_id")
+
+  #load article citation
+giblin_2018 <- ReadBib("data/primary_studies/Giblin_2018/intermediate/Giblin_2018_article.bib")
+study_citation_article <- as.data.frame(giblin_2018) %>% 
+                        mutate(bibliography_id = "Giblin_and_Forbrich_2018_data", 
+                               study_id = study,
+                               publication_type = "associated source") %>%
+                        remove_rownames() %>%
+                        select(study_id, bibliography_id, publication_type, everything())
   
-  WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich_2018.bib")
-  write_csv(study_citations, "./data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")
+
+# Write .bib file    
+study_citations <- bind_rows(study_citation, study_citation_article) %>%
+    mutate(study_id = study,
+           bibliography_id = c("Giblin_and_Forbrich_2018_data", "Giblin_and_Forbrich_2018_article"),
+           publication_type = c("primary dataset", "associated source")) %>%
+    remove_rownames() %>% 
+    select(study_id, bibliography_id, publication_type, bibtype, everything())
+
+
+WriteBib(as.BibEntry(study_citations), "./data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich_2018.bib")
+write_csv(study_citations, "./data/primary_studies/Giblin_2018/derivative/Giblin_and_Forbrich_2018_study_citations.csv")
+
 # }
 
 # Update Tables ###########

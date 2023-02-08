@@ -210,6 +210,7 @@ study_citation <- data.frame(bibliography_id = "Snedden 2018",
                   column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(study_citation), "data/primary_studies/Snedden_2018/derivative/Snedden_2018.bib")
+write_csv(study_citation, "data/primary_studies/Snedden_2018/derivative/Snedden_et_al_2018_study_citation.csv")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/

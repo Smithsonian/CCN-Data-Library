@@ -141,7 +141,7 @@ study_citation <- data.frame(study_id = id,
 
 
 
-study_citation_article <- data.frame(bibliography_id = "Rovai_et_al_2018",
+study_citation_article <- data.frame(bibliography_id = "Rovai_et_al_2018_article",
                                      title = "Global controls on carbon storage in mangrove soils",
                                      author = "André S. Rovai, Robert R. Twilley, Edward Castañeda-Moya, Pablo Riul, Miguel Cifuentes-Jara, 
                                      Marilyn Manrow-Villalobos, Paulo A. Horta, José C. Simonassi, Alessandra L. Fonseca & Paulo R. Pagliosa", 
@@ -162,6 +162,7 @@ study_citations <- bind_rows(study_citation, study_citation_article) %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
 WriteBib(as.BibEntry(study_citations), "data/primary_studies/Rovai_et_al_2022/derivative/Rovai_et_al_2022.bib")
+write_csv(study_citations, "data/primary_studies/Rovai_et_al_2022/derivative/Rovai_et_al_2022_study_citations.csv")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/
