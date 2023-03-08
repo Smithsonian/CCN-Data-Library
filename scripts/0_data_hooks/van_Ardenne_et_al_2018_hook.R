@@ -72,6 +72,9 @@ methods <- reorderColumns("methods", methods)
 
 
 ## ... Sites #### 
+sites <- data_raw %>% select(Site)
+
+
 
 ## ... Cores ####
 cores <- data_raw %>% select(Site, Transect, Flag) %>% 

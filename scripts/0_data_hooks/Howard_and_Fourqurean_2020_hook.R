@@ -13,6 +13,7 @@ library(lubridate)
 library(RefManageR)
 library(skimr)
 library(leaflet)
+library(data.table)
 
 
 # load in helper functions
@@ -46,17 +47,16 @@ methods <- reorderColumns("methods", methods)
 
 ## ... Sites ####
 # curate and format site level data from full data table
-sites<- sites_raw %>% rename(site_description = notes) %>% 
-                   mutate(salinity_class = "saline",
-                          salinity_method = "measurement",
-                          vegetation_class = "seagrass",
-                          inundation_class = "low",
-                          inundation_method = "field observation",
-                          study_id = id) %>% 
-                  relocate(study_id, .before = site_id) %>% 
-                  mutate(site_id = recode(site_id, "bob" = "Bob Allen Keys","rb" = "Russell Bank",
-                                                    "nm" = "Nine Mile Bank", "tc" = "Trout Cove")) %>% 
-            select(-latitude, -longitude, -salinity, -`seagrass present`)
+sites <- sites_raw %>% rename(site_description = notes) %>% 
+                       mutate(salinity_class = "saline",
+                              salinity_method = "measurement",
+                              vegetation_class = "seagrass",
+                              inundation_class = "low",
+                              inundation_method = "field observation",
+                              study_id = id) %>% 
+                       mutate(site_id = recode(site_id,"bob" = "Bob Allen Keys","rb" = "Russell Bank",
+                                                        "nm" = "Nine Mile Bank", "tc" = "Trout Cove")) %>% 
+                       select(-latitude, -longitude, -salinity, -`seagrass present`)
 
 
 
@@ -67,39 +67,60 @@ sites<- sites_raw %>% rename(site_description = notes) %>%
 fl_bay_cores <- fl_bay_cores %>% rename(Latitude = Lat,
                                         Longitude = Long)
 # join datasets
-full_data<- brazil_cores %>% bind_rows(brazil_cores,fl_bay_cores) %>% 
-                  rename(latitude = Latitude,
-                      longitude = Longitude,
-                      site_id = Site) %>% 
-                  mutate(site_id = recode(site_id, "bob" = "Bob Allen Keys", "rb" = "Russell Bank",
-                          "nm" = "Nine Mile Bank", "tc" = "Trout Cove"), 
-                         core_id = paste(site_id, "_", Rep), study_id = id)
+full_data <- brazil_cores %>% bind_rows(brazil_cores,fl_bay_cores) %>% 
+                              rename(latitude = Latitude,
+                                     longitude = Longitude,
+                                     site_id = Site) %>% 
+                              mutate(core_id = paste(site_id, "_", Rep),
+                                     study_id = id,
+                                     site_id = recode(site_id, "bob" = "Bob Allen Keys", 
+                                                              "rb" = "Russell Bank",
+                                                              "nm" = "Nine Mile Bank", 
+                                                              "tc" = "Trout Cove"))
   
  
 #reformat variables and add needed columns for cores table
 cores <- full_data %>% mutate(year= case_when(latitude > -20 ~ "2015",
-                       latitude < -20 ~ "2004")) %>% 
-        mutate(vegetation_class ="seagrass",
-        vegetation_method = "field observation",
-        habitat = "seagrass",
-        position_method = NA,
-        core_length_flag = "core depth limited by length of corer") %>% 
-      select( -depth, -loi, -dbd, -Cinorg, -Corg, -Rep) %>% 
-  distinct() #collapse into unique cores 
+                       latitude < -20 ~ "2002")) %>% 
+                       mutate(vegetation_class ="seagrass",
+                              vegetation_method = "field observation",
+                              habitat = "seagrass",
+                              position_method = "other high resolution",
+                              core_length_flag = "core depth limited by length of corer") %>% 
+                     select( -depth, -loi, -dbd, -Cinorg, -Corg, -Rep) %>% 
+                     distinct() #collapse into unique cores 
 
 #reorder columns 
 cores <- reorderColumns("cores", cores)
 
+
 ## ... Depthseries ####
 
-# curate depthseries data table
-## rename and add relevant variables 
+# curate depthseries table        
 depthseries <- full_data %>% mutate(fraction_organic_matter = loi/100,
                                     fraction_carbon = Corg/100,
-                                  method_id = "single set of methods",
-                                  compaction_notes = "corer minimizes compaction") %>%
-                             rename(dry_bulk_density =dbd) %>% 
-                             select(-latitude, -longitude, -loi, -Rep, -Cinorg, -Corg)
+                                    method_id = "single set of methods",
+                                    compaction_notes = "corer minimizes compaction",
+                                    depth = abs(depth),
+                                    depth_1 = abs(shift(depth, n=1, type = "lead")),
+                                    depth_2 = abs(shift(depth_1, n=1, type = "lead")), 
+                                    depth_min = case_when(depth_1 == 0 ~ depth,
+                                                          TRUE ~ ((depth + depth_1)/2)),
+                                    depth_max = case_when(depth_1 == 0 ~ depth_min + 9,
+                                                          depth_2 == 0 ~ depth_min + 9,
+                                                          TRUE ~  ((depth_2 + depth_1)/2))) %>% 
+                              rename(dry_bulk_density = dbd) %>% 
+                              select(-latitude, -longitude, -loi, -Rep, -Cinorg, -Corg,
+                                      -depth, -depth_1, -depth_2)
+#FIND NAs
+which(is.na(depthseries), arr.ind = TRUE)
+
+#recode missing values to match depth interval
+depthseries <- depthseries %>% mutate(depth_min = if_else(is.na(depth_min), 90, depth_min, missing = NULL),
+                                      depth_max = case_when(dry_bulk_density == 0.9425000 ~ 90,
+                                                            dry_bulk_density == 1.0235000 ~ 95,
+                                                            TRUE ~ depth_max))
+
 #reorder columns 
 depthseries <- reorderColumns("depthseries", depthseries)
 
@@ -109,24 +130,23 @@ depthseries <- reorderColumns("depthseries", depthseries)
 # if provided at the site or core-level, curate taxa table
 #add and recode relevant variables 
 species <- sites_raw %>% select(c(1,5)) %>% 
-          rename('species_code' = 'seagrass present') %>%
-          mutate(study_id = id,
-                 code_type = "Genus species",
-                 habitat = "seagrass",
-                 site_id = recode(site_id, "bob" = "Bob Allen Keys", "rb" = "Russell Bank",
-                                         "nm" = "Nine Mile Bank", "tc" = "Trout Cove")) %>%
-          relocate(code_type, .after = species_code) %>% 
-          relocate(study_id, .before = site_id) %>% 
-          mutate(species_code = str_split(species_code, " & ")) %>% 
-          unnest(species_code) %>% 
-          mutate(species_code = recode(species_code, "H. wrightii" = "Halodule wrightii", 
-                               "T. testudinum" = "Thalassia testudinum",
-                               "H. decipiens" = "Halophilia decipiens"))
-
+           rename(species_code = `seagrass present`) %>%
+           mutate(study_id = id,
+                  code_type = "Genus species",
+                  habitat = "seagrass",
+                  site_id = recode(site_id, "bob" = "Bob Allen Keys", "rb" = "Russell Bank",
+                                            "nm" = "Nine Mile Bank", "tc" = "Trout Cove")) %>%
+           separate(species_code, c("species_code", "species2"), sep = " & ") %>% 
+           pivot_longer(cols = starts_with("species"), names_to = NULL,
+                               values_to = "species_code", values_drop_na = TRUE) %>% 
+           mutate(species_code = recode(species_code, "H. wrightii" = "Halodule wrightii", 
+                                                      "T. testudinum" = "Thalassia testudinum",
+                                                      "H. decipiens" = "Halophilia decipiens"))
+           
+species <- reorderColumns("species", species)
 
 ## ... Impacts ####
 ## Not provided in dataset 
-
 
 
 ## 2. QAQC ####
@@ -145,7 +165,6 @@ testTableVars(table_names)
 
 # test required and conditional attributes
 ### group species code to run qc
-species <- species %>% group_by(species_code)
 testRequired(table_names)
 testConditional(table_names)
 
