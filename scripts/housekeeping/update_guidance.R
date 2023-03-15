@@ -51,9 +51,9 @@ updated_attributes <- updated_guidance %>%
   # create the columns: unit, format_string, values
   mutate(unit = ifelse(data_type == "numeric", format_unit_codes, NA),
          format_string = case_when(data_type == "Date" ~ format_unit_codes,
-                                   format_unit_codes == "nominalYear" ~ "YYYY",
-                                   format_unit_codes == "nominalMonth" ~ "MM",
-                                   format_unit_codes == "nominalDay" ~ "DD",
+                                   # format_unit_codes == "nominalYear" ~ "YYYY",
+                                   # format_unit_codes == "nominalMonth" ~ "MM",
+                                   # format_unit_codes == "nominalDay" ~ "DD",
                                    TRUE ~ NA_character_),
          values = ifelse(data_type == "factor", format_unit_codes, NA))
 

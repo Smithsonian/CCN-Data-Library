@@ -123,7 +123,7 @@ depthseries,c14_age,Radiocarbon age as estimated from AMS measurements.,optional
 depthseries,c14_age_se,Estimated uncertainty in c14_age.,conditional,numeric,radiocarbonYear,real,c14,age_depth,1,NA,c14_age,NA,NA
 depthseries,c14_material,Description of the material selected for radiocarbon (14C) dating.,conditional,character,NA,NA,c14,age_depth,2,NA,c14_age,NA,NA
 depthseries,c14_notes,Any relevant submitter generated notes on 14C dating process.,optional,character,NA,NA,c14,age_depth,NA,NA,NA,NA,NA
-depthseries,delta_c13,The isotopic signature of 13C. This is oftentimes measured along with c14_age and can be useful for analyzing carbon lability and provenance.,optional,numeric,dimensionless,real,c14,age_depth,2,NA,NA,NA,NA
+depthseries,delta_c13,The isotopic signature of 13C. This is oftentimes measured along with c14_age and can be useful for analyzing carbon lability and provenance.,optional,numeric,permil,real,c14,age_depth,2,NA,NA,NA,NA
 depthseries,be7_activity,Radioactivity counts per unit dry weight for 7Be.,optional,numeric,NA,real,be7,age_depth,2,NA,NA,NA,NA
 depthseries,be7_activity_se,Estimated uncertainty in be_7_activity.,optional,numeric,NA,real,be7,age_depth,1,NA,NA,NA,NA
 depthseries,be7_unit,Reported unit for sample interval's Be 7 activity measurements.,conditional,character,NA,NA,NA,NA,NA,1,be7_activity,NA,NA
@@ -131,10 +131,10 @@ depthseries,marker_date,"The age of any other dated depth horizon such as an art
 depthseries,marker_date_se,"The standard error of the age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.",optional,Date,NA,NA,NA,NA,NA,NA,NA,NA,NA
 depthseries,marker_type,Code indicating the type of marker.,conditional,factor,"artificial horizon = Horizon was added to the surface artificially by using materials such as feldspar, glitter, or rare earth elements; pollen = Pollen analysis was used to tie horizon to the timing of vegetation change such as the arrival of invasives, or the beginning of local agriculture; pollution = Chemical analysis was used to tie the horizon to the timing of a pollution event; tsunami = Sediment analysis was used to tie the horizon to the timing of a tsunami event.",NA,other_dated_horizon,age_depth,NA,NA,marker_date,NA,NA
 depthseries,marker_notes,Any other submitter generated notes about the origin of the marker.,optional,character,NA,NA,other_dated_horizon,age_depth,NA,NA,NA,NA,NA
-depthseries,age,"Most likely, median, or mean age of the depth interval from submitter generated age depth model.",optional,numeric,nominalYear,integer,age_depth_model,age_depth,2,NA,NA,NA,NA
-depthseries,age_min,Minimum age of the depth interval from submitter generated age depth model.,optional,numeric,nominalYear,integer,age_depth_model,age_depth,2,NA,NA,NA,NA
-depthseries,age_max,Maximum age of the depth interval from submitter generated age depth model.,optional,numeric,nominalYear,integer,age_depth_model,age_depth,2,NA,NA,NA,NA
-depthseries,age_se,Standard error of age estimate from submitter generated age depth model.,optional,numeric,nominalYear,integer,age_depth_model,age_depth,1,NA,NA,NA,NA
+depthseries,age,"Most likely, median, or mean age of the depth interval from submitter generated age depth model.",optional,numeric,nominalYear,real,age_depth_model,age_depth,2,NA,NA,NA,NA
+depthseries,age_min,Minimum age of the depth interval from submitter generated age depth model.,optional,numeric,nominalYear,real,age_depth_model,age_depth,2,NA,NA,NA,NA
+depthseries,age_max,Maximum age of the depth interval from submitter generated age depth model.,optional,numeric,nominalYear,real,age_depth_model,age_depth,2,NA,NA,NA,NA
+depthseries,age_se,Standard error of age estimate from submitter generated age depth model.,optional,numeric,nominalYear,real,age_depth_model,age_depth,1,NA,NA,NA,NA
 depthseries,depth_interval_notes,Any other submitter generated notes specific to the depth interval.,optional,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
 species,study_id,"Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.",optional,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
 species,site_id,Site identification code unique to each study.,optional,character,NA,NA,NA,NA,NA,NA,NA,NA,NA
