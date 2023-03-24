@@ -1,0 +1,68 @@
+data_type,attribute_name
+soil,filename
+soil,No ID
+soil,Site ID
+soil,Plot
+soil,Sub-plot
+soil,Depth interval (cm)
+soil,Collected sample depth/depth range (cm)
+soil,Soil organic matter depth (cm)
+soil,Bag. No
+soil,Wet weight (gr)
+soil,Dry weight (g)
+soil,Auger volume (cm3)
+soil,Bulk density (g/cm3)
+soil,Carbon content (%)
+soil,Nitrogen content (%)
+soil,C/N ratio
+soil,Carbon density (mg/cm3)
+soil,Carbon stocks (Mg/ha)
+soil,Salinity (ppt)
+soil,pH
+soil,Temperature (Celcius)
+soil,Latitude
+soil,Longitude
+soil,Macroscale_Typology
+soil,Hydroperiod_Typology
+soil,Carbon stocks (Mg C /ha)
+soil,Soil C mass profile (Mg C /ha)
+soil,C-stocks Normal All  (Mg C /ha)
+soil,C-Stocks Normal Site (Mg C /ha)
+soil,C-Stocks Normal All (Mg C /ha)
+vegetation,filename
+vegetation,No ID
+vegetation,Site ID
+vegetation,Data collection date (dd/mm/yyyy)
+vegetation,Plot
+vegetation,Sub-plot
+vegetation,Latitude
+vegetation,Longitude
+vegetation,Species name (scientific)
+vegetation,Species name (local)
+vegetation,DBH (cm)
+vegetation,Status (live/1/2/3)
+vegetation,notes
+vegetation,wood density (g/cm3)
+vegetation,volume (cm3)
+vegetation,Wood Mass AG (kg)
+vegetation,Total AGB (kg)
+vegetation,BG root mass (kg)
+vegetation,Sub-plot area (ha)
+vegetation,Sub-plot design
+vegetation,AGB (Mg/ha)
+vegetation,BGB (Mg/ha)
+vegetation,AGC (MgC/ha)
+vegetation,BGC (MgC/ha)
+vegetation,Basal area per ha (m2)
+vegetation,AGB summed per plot (Mg/ha)
+vegetation,BGB summed per plot (Mg/ha)
+vegetation,AGC summed per plot (MgC/ha)
+vegetation,BGC summed per plot (MgC/ha)
+vegetation,Basal area (m2/ha) summed per plot
+vegetation,source for density
+vegetation,source for allometry
+vegetation,Basal area per ha
+vegetation,Macroscale_Typology
+vegetation,Hydroperiod_Typology
+vegetation,source for AGB allometry
+vegetation,source for BGB allometry

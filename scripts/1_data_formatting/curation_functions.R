@@ -671,39 +671,3 @@ resolveTaxa <- function(species, db = NULL) {
 #   
 #   return(its_classified)
 # }
-
-## Read Excel Workbook ####
-
-# provide path to excel work book and this function will return a list
-# where each list element is one sheet from the workbook
-# Note: this fxn currently assumes that the first row of each sheet will be the column headers
-readExcelWorkbook <- function(path){
-  workbook_sheets <- readxl::excel_sheets(path)
-  
-  result_list <- list()
-  
-  for(sheet in workbook_sheets){
-    result_list[[sheet]] <- read_xlsx(path, sheet = sheet, guess_max = 10000)
-  }
-  return(result_list)
-}
-
-# result_list[[1]] will return the data table in the first sheet
-
-## Get Table Names from List ####
-
-# used in concert with the output from readExcelWorkbook()
-# harvest table and attribute names from each sheet
-# provide function with a list object and it will extract the names of each table
-# the output table can be used to create a lookup table which aligns the output with CCN data structure
-getTableNamesFromList <- function(x){
-  result_df <- data.frame()
-  
-  for(i in 1:length(x)){
-    df <- data.frame(table = names(x[i]),
-                     attribute_name = names(x[[i]]))
-    
-    result_df <- bind_rows(result_df, df)
-  }
-  return(result_df)
-}
