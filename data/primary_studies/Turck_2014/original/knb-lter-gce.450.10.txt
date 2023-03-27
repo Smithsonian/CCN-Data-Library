@@ -1,0 +1,613 @@
+Dataset title:  Vibracore and Tree Stump Data from the Marsh Near Mary Hammock, McIntosh County, GA
+
+Dataset ID:  GEL-GCES-1402.1.0
+Dataset Creator
+
+	Organization:	Georgia Coastal Ecosystems LTER Project
+	
+	Address:
+			Dept. of Marine Sciences
+			University of Georgia
+			Athens, Georgia 30602-3636  USA
+	
+	Email:		gcelter@uga.edu
+	URL:		http://gce-lter.marsci.uga.edu/
+
+	Name:		John Turck
+	Organization:	University of Georgia
+	
+	Address:
+			Department of Anthropology
+			250A Baldwin Hall, Jackson St.
+			University of Georgia
+			Athens, Georgia 30602-1619  USA
+	
+	Email:		jaturck@uga.edu
+
+
+Metadata Provider
+
+
+
+Dataset Abstract
+
+	The purpose of this study was to determine the geologic/ sedimentologic history of the marsh near Mary Hammock, a marsh island in McIntosh County, GA. During the Summer of 2009, a vibracore machine was used to extract six sediment cores (MT01 through MT06) from the marsh north of Mary Hammock. In addition, tree stumps buried under the marsh were recorded, and one was extracted and analyzed, to facilitate in understanding the sedimentological history of the marsh. A GPS unit was used to record the precise locations and elevations of the core extraction sites and stumps. The cores were then transported to the Georgia Southern Coastal Research Lab at the Skidaway Institute of Oceanography (SkIO), in Savannah, GA, for analysis. The tree stump was brought back to the University of Georgia for analysis. Although there was a large degree of bioturbation in the marsh near Mary Hammock, sediment core analysis (visual inspection, X-Ray analysis, particle size analysis, and analysis of organic matter content), and stump analysis (species determination and radiocarbon dating), revealed three main facies in the marsh. The topmost layer is recent marsh. The middle layer is a sandy layer, representing the former upland surface prior to sea level rise, inundation, and marsh formation (around 5,000 to 4,000 years ago). The bottom layer is a highly compact greenish-gray clay layer. The conclusion is that the former upland surface, consisting mostly of sandy soils, was inundated due to sea level rise around 4,200 B.P. Marsh sedimentation occurred after this, depositing fine-grained sediments on top of the sandy surface (Turck and Alexander, 2013).
+
+
+Dataset Keywords
+
+	Georgia
+	Sapelo Island
+	USA
+	GCE
+	Georgia Coastal Ecosystems
+	LTER
+	cores
+	geographic information systems
+	hammock
+	historical
+	holocene
+	landscape change
+	salt marshes
+	sea level
+
+
+Intellectual Rights
+
+	All publications based on this data set must cite the contributor and Georgia Coastal Ecosystems LTER project, and two copies of the manuscript must be submitted to the GCE-LTER Information Management Office.
+
+
+Distribution
+
+	Online distribution:  http://gce-lter.marsci.uga.edu/public/app/dataset_details.asp?accession=GEL-GCES-1402
+
+
+Temporal Coverage
+
+	Start Date:  2009-06-01
+	End Date:  2009-09-01
+
+
+Dataset Contact
+
+	Position:	Information Manager
+	Organization:	LTER Network Office
+	
+	Address:
+			UNM Biology Department, MSC03-2020
+			1 University of New Mexico
+			Albuquerque, NM 87131-0001  USA
+	
+	Phone:		505 277-2535
+	Fax:		505 277-2541
+	Email:		tech-support@lternet.edu
+	URL:		http://www.lternet.edu
+
+
+Methods
+
+	Sampling Description 
+
+
+
+	Method Step 
+
+		Description 
+
+
+
+		Instrumentation
+
+			Backpack Concrete Vibrator; manufacturer: Oztec Insustries, Inc. (model: BP-50)
+			RTK GPS; manufacturer: Trimble (model: R6); parameter: Elevation (accuracy: 20mm + 1 ppm RMS, readability: 1mm, )
+			RTK GPS; manufacturer: Trimble (model: R6); parameter: Latitude (accuracy: 10 mm + 1 ppm RMS, readability: 1mm, range: 0-90 degrees)
+			RTK GPS; manufacturer: Trimble (model: R6); parameter: Longitude (accuracy: 10 mm + 1 ppm RMS, readability: 1mm, range: 0-180 degrees)
+			RTK-GPS, Vibracore Machine
+
+
+	Method Step 
+
+		Description 
+
+
+
+		Instrumentation
+
+			Circular saw, wire, digital camera, "D-tube"
+
+
+	Method Step 
+
+		Description 
+
+
+
+		Instrumentation
+
+			X-Ray machine; manufacturer: Medison Acoma Co. Ltd. (model: VR1020)
+			VR 1020 portable X-Ray machine
+
+
+	Method Step 
+
+		Description 
+
+
+
+		Instrumentation
+
+			Sieves of Clark Alexander at the Skidaway Institute of Oceanography
+
+
+	Method Step 
+
+		Description 
+
+
+
+		Instrumentation
+
+			Oven of the Georgia Cooperative Extension, Soil, Plant, and Water Laboratory, College of Agricultural and Environmental Sciences, University of Georgia
+
+
+	Method Step 
+
+		Description 
+
+
+
+		Instrumentation
+
+			RTK GPS; manufacturer: Trimble (model: R6); parameter: Elevation (accuracy: 20mm + 1 ppm RMS, readability: 1mm, )
+			RTK GPS; manufacturer: Trimble (model: R6); parameter: Latitude (accuracy: 10 mm + 1 ppm RMS, readability: 1mm, range: 0-90 degrees)
+			RTK GPS; manufacturer: Trimble (model: R6); parameter: Longitude (accuracy: 10 mm + 1 ppm RMS, readability: 1mm, range: 0-180 degrees)
+			Garmin GPS (Stump 1), RTK-GPS (Stump 2)
+
+
+Data Table
+
+	Entity Name:  GEL-GCES-1402_sampling
+	Entity Description:  Sampling and location data for data set GEL-GCES-1402
+	Object Name:  GEL-GCES-1402_sampling_1_0.CSV
+
+
+
+Data Format
+
+	Number of Header Lines:  5
+	Attribute Orientation:  column
+	Field Delimiter:  ,
+	Number of Records:  8
+
+
+
+Attributes
+
+	Attribute Name:  Type
+	Attribute Label:  
+	Attribute Definition:  Data type (i.e., vibracore or tree stump).
+	Storage Type:  string
+	Measurement Scale: 
+		Data type (i.e., vibracore or tree stump).
+	Missing Value Code: 
+
+
+	Attribute Name:  Name
+	Attribute Label:  
+	Attribute Definition:  Unique name given each data sampling location.
+	Storage Type:  string
+	Measurement Scale: 
+		Unique name given each data sampling location.
+	Missing Value Code: 
+
+
+	Attribute Name:  East_NAD83
+	Attribute Label:  
+	Attribute Definition:  Easting (X) coordinate of the sampling location, in the UTM coordinate system, Zone 17, and the North American Datum of 1983
+	Storage Type:  float
+	Measurement Scale: 
+		Units:  meter
+		Precision:  0.001
+		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_East_NAD83
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Easting (X) coordinate of the sampling location, in the UTM coordinate system, Zone 17, and the North American Datum of 1983 (flagging criteria, where "x" is East_NAD83: )
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Easting (X) coordinate of the sampling location, in the UTM coordinate system, Zone 17, and the North American Datum of 1983 (flagging criteria, where "x" is East_NAD83: )
+	Missing Value Code: 
+
+
+	Attribute Name:  Nrth_NAD83
+	Attribute Label:  
+	Attribute Definition:  Northing (Y) coordinate of the sampling location, in the UTM coordinate system, Zone 17, and the North American Datum of 1983
+	Storage Type:  float
+	Measurement Scale: 
+		Units:  meter
+		Precision:  0.001
+		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_Nrth_NAD83
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Northing (Y) coordinate of the sampling location, in the UTM coordinate system, Zone 17, and the North American Datum of 1983 (flagging criteria, where "x" is Nrth_NAD83: )
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Northing (Y) coordinate of the sampling location, in the UTM coordinate system, Zone 17, and the North American Datum of 1983 (flagging criteria, where "x" is Nrth_NAD83: )
+	Missing Value Code: 
+
+
+	Attribute Name:  Extraction
+	Attribute Label:  
+	Attribute Definition:  Yes or No column indicating whether or not a sample was extracted from the location.
+	Storage Type:  string
+	Measurement Scale: 
+		Yes or No column indicating whether or not a sample was extracted from the location.
+	Missing Value Code: 
+
+
+	Attribute Name:  Vegetation
+	Attribute Label:  
+	Attribute Definition:  Vegetation type noted on the surface of the marsh
+	Storage Type:  string
+	Measurement Scale: 
+		Vegetation type noted on the surface of the marsh
+	Missing Value Code: 
+
+
+	Attribute Name:  Elv_NAVD88
+	Attribute Label:  
+	Attribute Definition:  Present-day elevation of the marsh surface, in cm above NAVD88
+	Storage Type:  float
+	Measurement Scale: 
+		Units:  centimeter
+		Precision:  0.1
+		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_Elv_NAVD88
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Present-day elevation of the marsh surface, in cm above NAVD88 (flagging criteria, where "x" is Elv_NAVD88: )
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Present-day elevation of the marsh surface, in cm above NAVD88 (flagging criteria, where "x" is Elv_NAVD88: )
+	Missing Value Code: 
+
+
+	Attribute Name:  Elev_MLLW
+	Attribute Label:  
+	Attribute Definition:  Present-day elevation of the marsh surface, in cm above mean lower low water
+	Storage Type:  float
+	Measurement Scale: 
+		Units:  centimeter
+		Precision:  0.1
+		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_Elev_MLLW
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Present-day elevation of the marsh surface, in cm above mean lower low water (flagging criteria, where "x" is Elev_MLLW: )
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Present-day elevation of the marsh surface, in cm above mean lower low water (flagging criteria, where "x" is Elev_MLLW: )
+	Missing Value Code: 
+
+
+	Attribute Name:  Marsh_Thic
+	Attribute Label:  
+	Attribute Definition:  Thickness of the present-day marsh layer in centimeters, in absolute or range format
+	Storage Type:  string
+	Measurement Scale: 
+		Thickness of the present-day marsh layer in centimeters, in absolute or range format
+	Missing Value Code: 
+
+
+	Attribute Name:  Flag_Marsh_Thic
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Thickness of the present-day marsh layer, in absolute or range format (flagging criteria, where "x" is Marsh_Thic: )
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Thickness of the present-day marsh layer, in absolute or range format (flagging criteria, where "x" is Marsh_Thic: )
+	Missing Value Code: 
+
+
+	Attribute Name:  Sand_Elev
+	Attribute Label:  
+	Attribute Definition:  Elevation of the top of the sand layer, which is underneath the present-day marsh, in absolute or range foramt, in cm above Mean Lower Low Water
+	Storage Type:  string
+	Measurement Scale: 
+		Elevation of the top of the sand layer, which is underneath the present-day marsh, in absolute or range foramt, in cm above Mean Lower Low Water
+	Missing Value Code: 
+
+
+	Attribute Name:  Flag_Sand_Elev
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Elevation of the top of the sand layer, which is underneath the present-day marsh, in absolute orr ange foramt, in cm above Mean Lower Low Water (flagging criteria, where "x" is Sand_Elev: )
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Elevation of the top of the sand layer, which is underneath the present-day marsh, in absolute orr ange foramt, in cm above Mean Lower Low Water (flagging criteria, where "x" is Sand_Elev: )
+	Missing Value Code: 
+
+
+	Attribute Name:  Sand_Thick
+	Attribute Label:  
+	Attribute Definition:  Thickness of the sand layer in centimeters, in absolute or range format
+	Storage Type:  string
+	Measurement Scale: 
+		Thickness of the sand layer in centimeters, in absolute or range format
+	Missing Value Code: 
+
+
+	Attribute Name:  Flag_Sand_Thick
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Thickness of the sand layer, in absolute or range format (flagging criteria, where "x" is Sand_Thick: )
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Thickness of the sand layer, in absolute or range format (flagging criteria, where "x" is Sand_Thick: )
+	Missing Value Code: 
+
+
+	Attribute Name:  Clay_Elev
+	Attribute Label:  
+	Attribute Definition:  Elevation of the top of the greeen-grey clay layer, which is underneath the sand layer, in cm above Mean Lower Low Water
+	Storage Type:  float
+	Measurement Scale: 
+		Units:  centimeter
+		Precision:  0.1
+		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_Clay_Elev
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Elevation of the top of the greeen-grey clay layer, which is underneath the sand layer, in cm above Mean Lower Low Water (flagging criteria, where "x" is Clay_Elev: )
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Elevation of the top of the greeen-grey clay layer, which is underneath the sand layer, in cm above Mean Lower Low Water (flagging criteria, where "x" is Clay_Elev: )
+	Missing Value Code: 
+
+
+	Attribute Name:  Clay_Thick
+	Attribute Label:  
+	Attribute Definition:  Thickness of the green-grey clay layer in centimeters, which is greater than
+	Storage Type:  string
+	Measurement Scale: 
+		Thickness of the green-grey clay layer in centimeters, which is greater than
+	Missing Value Code: 
+
+
+	Attribute Name:  Flag_Clay_Thick
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Thickness of the green-grey clay layer, which is greater than  (flagging criteria, where "x" is Clay_Thick: )
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Thickness of the green-grey clay layer, which is greater than  (flagging criteria, where "x" is Clay_Thick: )
+	Missing Value Code: 
+
+
+	Attribute Name:  Sampl_Lgth
+	Attribute Label:  
+	Attribute Definition:  Length of the entire sediment sample, after compaction
+	Storage Type:  float
+	Measurement Scale: 
+		Units:  centimeter
+		Precision:  0.1
+		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_Sampl_Lgth
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Length of the entire sediment sample, after compaction (flagging criteria, where "x" is Sampl_Lgth: )
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Length of the entire sediment sample, after compaction (flagging criteria, where "x" is Sampl_Lgth: )
+	Missing Value Code: 
+
+
+	Attribute Name:  Removed
+	Attribute Label:  
+	Attribute Definition:  Length of the top layer of marsh sediment removed prior to coring 
+	Storage Type:  float
+	Measurement Scale: 
+		Units:  centimeter
+		Precision:  0.1
+		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_Removed
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Length of the top layer of marsh sediment removed prior to coring  (flagging criteria, where "x" is Removed: )
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Length of the top layer of marsh sediment removed prior to coring  (flagging criteria, where "x" is Removed: )
+	Missing Value Code: 
+
+
+	Attribute Name:  Compaction
+	Attribute Label:  
+	Attribute Definition:  Amount of soil compaction that occurred during coring
+	Storage Type:  float
+	Measurement Scale: 
+		Units:  centimeter
+		Precision:  0.1
+		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_Compaction
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Amount of soil compaction that occurred during coring (flagging criteria, where "x" is Compaction: )
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Amount of soil compaction that occurred during coring (flagging criteria, where "x" is Compaction: )
+	Missing Value Code: 
+
+
+	Attribute Name:  Name
+	Attribute Label:  
+	Attribute Definition:  Unique name given each data sampling location.
+	Storage Type:  string
+	Measurement Scale: 
+		Unique name given each data sampling location.
+	Missing Value Code: 
+
+
+	Attribute Name:  Distance_Above_MLLW
+	Attribute Label:  
+	Attribute Definition:  Elevation range from where the sediment sample was extracted, in centimeters above Mean Lower Low Water
+	Storage Type:  string
+	Measurement Scale: 
+		Elevation range from where the sediment sample was extracted, in centimeters above Mean Lower Low Water
+	Missing Value Code: 
+
+
+	Attribute Name:  Distance_Below_Ground_Surface
+	Attribute Label:  
+	Attribute Definition:  Relative location within core (or near the stump) where sediment sample was extracted, in cm below ground surface
+	Storage Type:  float
+	Measurement Scale: 
+		Units:  centimeter
+		Precision:  0.1
+		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_Distance_Below_Ground_Surface
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Relative location within core (or near the stump) where sediment sample was extracted, in cm below ground surface (flagging criteria, where "x" is Distance_Below_Ground_Surface: )
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Relative location within core (or near the stump) where sediment sample was extracted, in cm below ground surface (flagging criteria, where "x" is Distance_Below_Ground_Surface: )
+	Missing Value Code: 
+
+
+	Attribute Name:  Percent_Sand
+	Attribute Label:  
+	Attribute Definition:  Percent sand in the sediment sample 
+	Storage Type:  float
+	Measurement Scale: 
+		Units  percent
+		Precision:0.1		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_Percent_Sand
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Percent sand in the sediment sample  (flagging criteria, where "x" is Percent_Sand: x<0="I", x>100="I")
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Percent sand in the sediment sample  (flagging criteria, where "x" is Percent_Sand: x<0="I", x>100="I")
+	Missing Value Code: 
+
+
+	Attribute Name:  Percent_Silt
+	Attribute Label:  
+	Attribute Definition:  Percent silt in the sediment sample 
+	Storage Type:  float
+	Measurement Scale: 
+		Units  percent
+		Precision:0.1		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_Percent_Silt
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Percent silt in the sediment sample  (flagging criteria, where "x" is Percent_Silt: x<0="I", x>100="I")
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Percent silt in the sediment sample  (flagging criteria, where "x" is Percent_Silt: x<0="I", x>100="I")
+	Missing Value Code: 
+
+
+	Attribute Name:  Percent_Clay
+	Attribute Label:  
+	Attribute Definition:  Percent clay in the sediment sample
+	Storage Type:  float
+	Measurement Scale: 
+		Units  percent
+		Precision:0.1		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_Percent_Clay
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Percent clay in the sediment sample (flagging criteria, where "x" is Percent_Clay: x<0="I", x>100="I")
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Percent clay in the sediment sample (flagging criteria, where "x" is Percent_Clay: x<0="I", x>100="I")
+	Missing Value Code: 
+
+
+	Attribute Name:  Soil_Texture
+	Attribute Label:  
+	Attribute Definition:  Soil texture classification terms for sediment samples, from the USDA
+	Storage Type:  string
+	Measurement Scale: 
+		Soil texture classification terms for sediment samples, from the USDA
+	Missing Value Code: 
+
+
+	Attribute Name:  Lab_ID
+	Attribute Label:  
+	Attribute Definition:  Unique laboratory identifier for organic matter sample, assigned by lab
+	Storage Type:  integer
+	Measurement Scale: 
+		Unique laboratory identifier for organic matter sample, assigned by lab
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Sample_ID
+	Attribute Label:  
+	Attribute Definition:  Unique sample identifier for organic matter sample, assigned by John Turck
+	Storage Type:  string
+	Measurement Scale: 
+		Unique sample identifier for organic matter sample, assigned by John Turck
+	Missing Value Code: 
+
+
+	Attribute Name:  Percent_Organic_Matter
+	Attribute Label:  
+	Attribute Definition:  Organic matter content in the sediment sample in percent by weight of sample
+	Storage Type:  float
+	Measurement Scale: 
+		Units  percent
+		Precision:0.01		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_Percent_Organic_Matter
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Organic matter content in the sediment sample in percent by weight of sample (flagging criteria, where "x" is Percent_Organic_Matter: x<0="I", x>100="I")
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Organic matter content in the sediment sample in percent by weight of sample (flagging criteria, where "x" is Percent_Organic_Matter: x<0="I", x>100="I")
+	Missing Value Code: 
+
+
+	Attribute Name:  Total_Carbon
+	Attribute Label:  
+	Attribute Definition:  Total inorganic and organic carbon in the sediment sample in percent by weight of sample
+	Storage Type:  float
+	Measurement Scale: 
+		Units  percent
+		Precision:0.01		Number Type:  real
+	Missing Value Code: NaN  (value not recorded or censored based on quality control analysis (see methods))
+
+
+	Attribute Name:  Flag_Total_Carbon
+	Attribute Label:  
+	Attribute Definition:  QA/QC flags for Total inorganic and organic carbon in the sediment sample in percent by weight of sample (flagging criteria, where "x" is Total_Carbon: x<0="I", x>100="I")
+	Storage Type:  string
+	Measurement Scale: 
+		QA/QC flags for Total inorganic and organic carbon in the sediment sample in percent by weight of sample (flagging criteria, where "x" is Total_Carbon: x<0="I", x>100="I")
+	Missing Value Code: 
+
+

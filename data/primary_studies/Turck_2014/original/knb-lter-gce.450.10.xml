@@ -1,0 +1,1471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml packageId="knb-lter-gce.450.10"
+  system="https://pasta.lternet.edu"
+  xmlns:ds="eml://ecoinformatics.org/dataset-2.1.0"
+  xmlns:eml="eml://ecoinformatics.org/eml-2.1.0"
+  xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.0 http://gce-lter.marsci.uga.edu/public/files/schemas/eml-210/eml.xsd">
+  <access authSystem="https://pasta.lternet.edu/authentication"
+    order="allowFirst" scope="document" system="https://pasta.lternet.edu">
+    <allow>
+      <principal>uid=GCE,o=lter,dc=ecoinformatics,dc=org</principal>
+      <permission>all</permission>
+    </allow>
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+  </access>
+  <dataset>
+    <alternateIdentifier>GEL-GCES-1402.1.0</alternateIdentifier>
+    <title>Vibracore and Tree Stump Data from the Marsh Near Mary Hammock, McIntosh County, GA</title>
+    <creator id="GCE-LTER">
+      <organizationName>Georgia Coastal Ecosystems LTER Project</organizationName>
+      <address>
+        <deliveryPoint>Dept. of Marine Sciences</deliveryPoint>
+        <deliveryPoint>University of Georgia</deliveryPoint>
+        <city>Athens</city>
+        <administrativeArea>Georgia</administrativeArea>
+        <postalCode>30602-3636</postalCode>
+        <country>USA</country>
+      </address>
+      <electronicMailAddress>gcelter@uga.edu</electronicMailAddress>
+      <onlineUrl>http://gce-lter.marsci.uga.edu/</onlineUrl>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>John</givenName>
+        <givenName>A.</givenName>
+        <surName>Turck</surName>
+      </individualName>
+      <organizationName>University of Georgia</organizationName>
+      <address>
+        <deliveryPoint>Department of Anthropology</deliveryPoint>
+        <deliveryPoint>250A Baldwin Hall, Jackson St.</deliveryPoint>
+        <deliveryPoint>University of Georgia</deliveryPoint>
+        <city>Athens</city>
+        <administrativeArea>Georgia</administrativeArea>
+        <postalCode>30602-1619</postalCode>
+        <country>USA</country>
+      </address>
+      <electronicMailAddress>jaturck@uga.edu</electronicMailAddress>
+    </creator>
+    <metadataProvider>
+      <references>GCE-LTER</references>
+    </metadataProvider>
+    <associatedParty>
+      <individualName>
+        <salutation>Dr.</salutation>
+        <givenName>Clark</givenName>
+        <givenName>R.</givenName>
+        <surName>Alexander</surName>
+      </individualName>
+      <organizationName>Skidaway Institute of Oceanography</organizationName>
+      <electronicMailAddress>clark.alexander@skio.uga.edu</electronicMailAddress>
+      <role>co-investigator</role>
+    </associatedParty>
+    <pubDate>2014</pubDate>
+    <abstract>
+      <para>The purpose of this study was to determine the geologic/ sedimentologic history of the marsh near Mary Hammock, a marsh island in McIntosh County, GA. During the Summer of 2009, a vibracore machine was used to extract six sediment cores (MT01 through MT06) from the marsh north of Mary Hammock. In addition, tree stumps buried under the marsh were recorded, and one was extracted and analyzed, to facilitate in understanding the sedimentological history of the marsh. A GPS unit was used to record the precise locations and elevations of the core extraction sites and stumps. The cores were then transported to the Georgia Southern Coastal Research Lab at the Skidaway Institute of Oceanography (SkIO), in Savannah, GA, for analysis. The tree stump was brought back to the University of Georgia for analysis. Although there was a large degree of bioturbation in the marsh near Mary Hammock, sediment core analysis (visual inspection, X-Ray analysis, particle size analysis, and analysis of organic matter content), and stump analysis (species determination and radiocarbon dating), revealed three main facies in the marsh. The topmost layer is recent marsh. The middle layer is a sandy layer, representing the former upland surface prior to sea level rise, inundation, and marsh formation (around 5,000 to 4,000 years ago). The bottom layer is a highly compact greenish-gray clay layer. The conclusion is that the former upland surface, consisting mostly of sandy soils, was inundated due to sea level rise around 4,200 B.P. Marsh sedimentation occurred after this, depositing fine-grained sediments on top of the sandy surface (Turck and Alexander, 2013).</para>
+    </abstract>
+    <keywordSet>
+      <keyword keywordType="place">Georgia</keyword>
+      <keyword keywordType="place">Sapelo Island</keyword>
+      <keyword keywordType="place">USA</keyword>
+      <keyword keywordType="theme">GCE</keyword>
+      <keyword keywordType="theme">Georgia Coastal Ecosystems</keyword>
+      <keyword keywordType="theme">LTER</keyword>
+      <keywordThesaurus>GCE-LTER Controlled Vocabulary</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword keywordType="theme">cores</keyword>
+      <keyword keywordType="theme">geographic information systems</keyword>
+      <keyword keywordType="theme">hammock</keyword>
+      <keyword keywordType="theme">historical</keyword>
+      <keyword keywordType="theme">holocene</keyword>
+      <keyword keywordType="theme">landscape change</keyword>
+      <keyword keywordType="theme">salt marshes</keyword>
+      <keyword keywordType="theme">sea level</keyword>
+      <keywordThesaurus>LTER Controlled Vocabulary</keywordThesaurus>
+    </keywordSet>
+    <intellectualRights>
+      <para>All publications based on this data set must cite the contributor and Georgia Coastal Ecosystems LTER project, and two copies of the manuscript must be submitted to the GCE-LTER Information Management Office.</para>
+    </intellectualRights>
+    <distribution>
+      <online>
+        <url function="information">http://gce-lter.marsci.uga.edu/public/app/dataset_details.asp?accession=GEL-GCES-1402</url>
+      </online>
+    </distribution>
+    <coverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2009-06-01</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2009-09-01</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <contact>
+      <positionName>Information Manager</positionName>
+      <organizationName>LTER Network Office</organizationName>
+      <address>
+        <deliveryPoint>UNM Biology Department, MSC03-2020</deliveryPoint>
+        <deliveryPoint>1 University of New Mexico</deliveryPoint>
+        <city>Albuquerque</city>
+        <administrativeArea>NM</administrativeArea>
+        <postalCode>87131-0001</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">505 277-2535</phone>
+      <phone phonetype="fax">505 277-2541</phone>
+      <electronicMailAddress>tech-support@lternet.edu</electronicMailAddress>
+      <onlineUrl>http://www.lternet.edu</onlineUrl>
+    </contact>
+    <contact>
+      <positionName>GCE-LTER Information Manager</positionName>
+      <address>
+        <deliveryPoint>Dept. of Marine Sciences</deliveryPoint>
+        <deliveryPoint>University of Georgia</deliveryPoint>
+        <city>Athens</city>
+        <administrativeArea>Georgia</administrativeArea>
+        <postalCode>30602-3636</postalCode>
+        <country>USA</country>
+      </address>
+      <electronicMailAddress>gcelter@uga.edu</electronicMailAddress>
+    </contact>
+    <publisher>
+      <references>GCE-LTER</references>
+    </publisher>
+    <methods>
+      <methodStep>
+        <description>
+          <section>
+            <title>Extraction of Sediment Cores</title>
+            <para>A vibracore machine was used to extract six sediment cores (MT01 through MT06) from the marsh near Mary Hammock. A Real-Time Kinematic Global Positioning System (RTK-GPS) was used to record the precise locations and elevations of the core extraction sites. A bucket auger with a 12.7 cm (5 in) diameter and 17.8 cm (7 in.) length was used to remove the first 18-36 cm of marsh in the location to be cored. A tripod was set up over the hole, and aluminum core pipe (irrigation tubing), at 3.1 m (10 ft) in length and 7.6 cm (3 in) in diameter, was placed within the tripod. The end of the vibracoring mechanism was clamped near the top of the core pipe. While holding the pipe steady, and pushing down on it, the vibracoring motor was turned on, and the core pipe was eased into the ground. When the core pipe could not be pushed any further, the vibracore machine was turned off, and the clamp removed. Measurements of the core pipe were taken, and then extracted using a come-along. One end was attached to the tripod, and the other end was attached to straps tied tightly around the core. Once out, a cap was placed on the bottom of the core, extra pipe at the top was cut off using a hacksaw, and another cap was placed on top of the core. The caps were clearly marked as to the location of the core, as well as which end was top and bottom. Cores were then cut into 1.5-meter sections, for ease of transport. Again, caps labeled top or bottom were placed on the ends, and then a sharpie was used to label the different core sections.</para>
+          </section>
+        </description>
+        <instrumentation>Backpack Concrete Vibrator; manufacturer: Oztec Insustries, Inc. (model: BP-50)</instrumentation>
+        <instrumentation>RTK GPS; manufacturer: Trimble (model: R6); parameter: Elevation (accuracy: 20mm + 1 ppm RMS, readability: 1mm, )</instrumentation>
+        <instrumentation>RTK GPS; manufacturer: Trimble (model: R6); parameter: Latitude (accuracy: 10 mm + 1 ppm RMS, readability: 1mm, range: 0-90 degrees)</instrumentation>
+        <instrumentation>RTK GPS; manufacturer: Trimble (model: R6); parameter: Longitude (accuracy: 10 mm + 1 ppm RMS, readability: 1mm, range: 0-180 degrees)</instrumentation>
+        <instrumentation>RTK-GPS, Vibracore Machine</instrumentation>
+      </methodStep>
+      <methodStep>
+        <description>
+          <section>
+            <title>Preparation of Sediment Cores</title>
+            <para>The cores were transported to the Georgia Southern Coastal Research Lab at the Skidaway Institute of Oceanography (SkIO), in Savannah, GA, whre they were analyzed. The core pipes were cut open with a circular saw, and a wire was pulled through the middle of the sediment sample, splitting the core sample into two sections. Core samples were then visually inspected and described, noting how color, texture, inclusions, etc. changed down core. Both halves of each core were then photographed with a digital camera. Since it took several images (between 7 and 9) to capture the whole core, the images were mosaiced together in Photoshop, creating one seamless image for each core. One half of each core was wrapped in plastic wrap, put into a plastic “D-tube” with a damp sponge, and put into refrigerated storage at SkIO. The other core halves, (which will be referred to hereafter as “working halves”), were then analyzed.</para>
+          </section>
+        </description>
+        <instrumentation>Circular saw, wire, digital camera, "D-tube"</instrumentation>
+      </methodStep>
+      <methodStep>
+        <description>
+          <section>
+            <title>X-Ray Analysis of Cores</title>
+            <para>Each working half was X-rayed to find discrete layers and sedimentary structures not visible to the naked eye (see Butler 1992). A VR 1020 portable X-Ray machine was set up in a trailer about 90 cm above the floor. Film was placed on the floor underneath the X-Ray machine, and the top section of the working half of the core was placed on top of that. From a safe distance, the film for each section of core was exposed to X-Rays between 18 and 22 seconds, at a tube voltage of 60kV and current of 20mA.</para>
+          </section>
+        </description>
+        <instrumentation>X-Ray machine; manufacturer: Medison Acoma Co. Ltd. (model: VR1020)</instrumentation>
+        <instrumentation>VR 1020 portable X-Ray machine</instrumentation>
+      </methodStep>
+      <methodStep>
+        <description>
+          <section>
+            <title>Particle Size Analysis</title>
+            <para>Sediment samples were then taken at arbitrary 10-cm intervals from cores MT01, MT03, and MT06. Particle size analysis was performed by dry sieving the larger grains, and using the pipette method for smaller grains (after Galehouse 1971; also see Folk 1980; Loveland and Whalley 2001). For each sample, the large fraction (i.e., sand, or anything bigger or equal to 63 microns) was separated from the small fraction (i.e., silt and clay, or anything smaller than 63 microns). The large fraction was then put through stacked sieves and weighed to the nearest ten-thousandth of a gram, revealing the amount of sand in the sample. The small fraction was put in a graduated cylinder with 1,000 ml of deionized water, shaken, and then 20 ml were sampled twice using a pipette. The first sample, extracted near the bottom of the cylinder directly after it has been shaken, was used to determine the weight of silt and clay in the entire graduated cylinder. After a specified length of time had passed, the second sample of 20 ml was taken, with the pipette only 5 cm down. This determined the weight of clay. This was then subtracted from the previous calculation to get the amount of silt.</para>
+          </section>
+        </description>
+        <instrumentation>Sieves of Clark Alexander at the Skidaway Institute of Oceanography</instrumentation>
+      </methodStep>
+      <methodStep>
+        <description>
+          <section>
+            <title>Analysis of Organic Matter Content</title>
+            <para>This analysis was performed by the Georgia Cooperative Extension, Soil, Plant, and Water Laboratory, College of Agricultural and Environmental Sciences, at the University of Georgia. Organic matter and total carbon (all the carbon in the sample, including both inorganic and organic carbon) were determined by the Loss on Ignition (LOI) method, and are expressed as percent by weight (Kissel and Sonon 2008:20). Samples were combusted in an oxygen atmosphere at 1350ºC, which converts elemental carbon into CO2. This gas is then passed through infrared cells to determine the carbon content (Kissel and Sonon 2008:20).</para>
+          </section>
+        </description>
+        <instrumentation>Oven of the Georgia Cooperative Extension, Soil, Plant, and Water Laboratory, College of Agricultural and Environmental Sciences, University of Georgia</instrumentation>
+      </methodStep>
+      <methodStep>
+        <description>
+          <section>
+            <title>Recording of Tree Stumps</title>
+            <para>The last piece of evidence to help determine the sedimentological history of the area was the recording of drowned tree stumps. These were noticed at low tide, eroding out of the creek banks to the north of Mary Hammock, near where the cores were extracted. The position of one stump (Stump 1) was recorded using a Garmin GPS. The more precise vertical and horizontal position of a second stump (Stump 2) was also recorded. Stump 2 was found eroding out of the creek bank, buried under the marsh. The RTK-GPS unit was used to record the marsh above Stump 2, and measurements were taken to determine the position of the stump in relation to that point. Several characteristics of Stump 2 and the surrounding stratigraphy were noted at this time. First, the stump was vertical, so there is a good chance that this was the position the tree was in when it died. Second, the roots of Stump 2 were recorded to estimate where the ground surface was when the tree was alive. Third, the positions of sedimentary structures were noted in the creek bank profile, and their depths were recorded in relation to Stump 2. The former land surface when the stump was alive was determined to be around 127-132 cm below the present-day marsh surface (or, between 65 and 60 cm above present-day Mean Lower Low Water). Stump 2 was removed, and brought back to the University of Georgia for further analysis. A section was cut off and brough to Laurie Schimleck, of the Forestry department at UGA. Using a micrscope, he determined that the stump was most likely a pine. Another section was cut off, a sample was removed from one of the inner rings, and it was brought to the Center for Applied Isotope Studies at UGA for radiocarbon dating.</para>
+          </section>
+        </description>
+        <instrumentation>RTK GPS; manufacturer: Trimble (model: R6); parameter: Elevation (accuracy: 20mm + 1 ppm RMS, readability: 1mm, )</instrumentation>
+        <instrumentation>RTK GPS; manufacturer: Trimble (model: R6); parameter: Latitude (accuracy: 10 mm + 1 ppm RMS, readability: 1mm, range: 0-90 degrees)</instrumentation>
+        <instrumentation>RTK GPS; manufacturer: Trimble (model: R6); parameter: Longitude (accuracy: 10 mm + 1 ppm RMS, readability: 1mm, range: 0-180 degrees)</instrumentation>
+        <instrumentation>Garmin GPS (Stump 1), RTK-GPS (Stump 2)</instrumentation>
+      </methodStep>
+      <sampling>
+        <studyExtent>
+          <coverage>
+            <temporalCoverage>
+              <rangeOfDates>
+                <beginDate>
+                  <calendarDate>2009-06-01</calendarDate>
+                </beginDate>
+                <endDate>
+                  <calendarDate>2009-09-01</calendarDate>
+                </endDate>
+              </rangeOfDates>
+            </temporalCoverage>
+          </coverage>
+          <coverage>
+            <geographicCoverage>
+              <geographicDescription>GCE Study Site PN_v_23 -- Hammock PN_v_23, Sapelo Island, Georgia, USA.  Marsh hammock of Pleistocene origin located in the North region of the Georgia Coastal Ecosystems study area, assigned to nominal size class V (10 to 15 hectares). Note that the bounding polygon determined by ground GPS survey was simplified to 200 vertices for reporting and display.</geographicDescription>
+              <boundingCoordinates>
+                <westBoundingCoordinate>-81.296428</westBoundingCoordinate>
+                <eastBoundingCoordinate>-81.292274</eastBoundingCoordinate>
+                <northBoundingCoordinate>31.448363</northBoundingCoordinate>
+                <southBoundingCoordinate>31.443911</southBoundingCoordinate>
+              </boundingCoordinates>
+            </geographicCoverage>
+          </coverage>
+        </studyExtent>
+        <samplingDescription>
+          <section>
+            <title>Mary Hammock core and stump data 2009</title>
+            <para>Sediment cores and tree stumps near Mary Hammock were analyzed to determine the geologic/ sedimentologic history of the marsh. A vibracore machine was used to extract six sediment cores (MT01 through MT06) from the marsh. In addition, tree stumps buried under the marsh were recorded, and one was extracted and analyzed, to facilitate in understanding the sedimentological history of the marsh. GPS units were used to record the precise locations and elevations of the core extraction sites and stumps. The cores were then transported to the Georgia Southern Coastal Research Lab at the Skidaway Institute of Oceanography (SkIO), in Savannah, GA, for analysis. The tree stump was brought back to the University of Georgia for analysis. The sediment cores were analysed by visual inspection, X-Ray analysis, particle size analysis, and analysis of organic matter content.  The tree stump was analysed by species determination and radiocarbon dating.  Sediment samples were analyzed by John Turck for particle size and organic matter content. These samples were obtained from the cores that were extracted in the marsh, as well as from the site where the stump was extracted.</para>
+            <para>Six sediment cores were extracted from the marsh with a vibracore machine. The average spacing of the cores was around 75m, and the lengths of sediment core samples were between 1 and 3 meters. Three of those cores were sub-sampled at 10 cm intervals. A tree stump from under the marsh was also extracted from the marsh by hand and shovel.  The cores were sub-sampled at 10 cm intervals, removing two sets of sediment samples at each interval. One sediment sample for particle size analysis was taken from the former ground surface that the tree stump was sitting on.</para>
+          </section>
+        </samplingDescription>
+        <spatialSamplingUnits>
+          <referencedEntityId>GEL-GCES-1402.kml</referencedEntityId>
+        </spatialSamplingUnits>
+      </sampling>
+    </methods>
+    <project>
+      <title>Georgia Coastal Ecosystems LTER Project II</title>
+      <personnel>
+        <individualName>
+          <givenName>Merryl</givenName>
+          <surName>Alber</surName>
+        </individualName>
+        <role>principalInvestigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Steven</givenName>
+          <givenName>C.</givenName>
+          <surName>Pennings</surName>
+        </individualName>
+        <role>principalInvestigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Wade</givenName>
+          <givenName>M.</givenName>
+          <surName>Sheldon</surName>
+        </individualName>
+        <role>informationManager</role>
+      </personnel>
+      <abstract>
+        <para>The Georgia Coastal Ecosystems (GCE) LTER program, located on the central Georgia coast, was established in 2000. The study domain encompasses three adjacent sounds (Altamaha, Doboy, Sapelo) and includes upland (mainland, barrier islands, marsh hammocks), intertidal (fresh, brackish and salt marsh) and submerged (river, estuary, continental shelf) habitats. Patterns and processes in this complex landscape vary spatially within and between sites, and temporally on multiple scales (tidal, diurnal, seasonal, and interannual). Overlain on this spatial and temporal variation are long-term trends caused by climate change, sea level rise, and human alterations of the landscape. These long-term trends are likely to manifest in many ways, including changes in water quality, river discharge, runoff and tidal inundation patterns throughout the estuarine landscape. The overarching goal of the GCE program is to understand the mechanisms by which variation in the quality, source and amount of both fresh and salt water create temporal and spatial variability in estuarine habitats and processes, in order to predict directional changes that will occur in response to long-term shifts in estuarine salinity patterns.</para>
+      </abstract>
+      <funding>
+        <para>This material is based upon work supported by the National Science Foundation under grant numbers OCE-9982133 and OCE-0620959. Any opinions, findings, conclusions, or recommendations expressed in the material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</para>
+      </funding>
+    </project>
+    <dataTable>
+      <entityName>GEL-GCES-1402_sampling</entityName>
+      <entityDescription>Sampling and location data for data set GEL-GCES-1402</entityDescription>
+      <physical>
+        <objectName>GEL-GCES-1402_sampling_1_0.CSV</objectName>
+        <size unit="kilobyte">2.37</size>
+        <characterEncoding>ASCII</characterEncoding>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>5</numHeaderLines>
+            <numFooterLines>0</numFooterLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <numPhysicalLinesPerRecord>1</numPhysicalLinesPerRecord>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <onlineDescription>Spreadsheet comma-separated value (CSV) text file with a five line header containing the data set title, column titles, units and column types</onlineDescription>
+            <url function="download">https://pasta.lternet.edu/package/data/eml/knb-lter-gce/450/10/347cbc285d400d2f00451fa67479ccd0</url>
+          </online>
+          <access authSystem="https://pasta.lternet.edu/authentication"
+            order="allowFirst" scope="document" system="https://pasta.lternet.edu">
+            <allow>
+              <principal>uid=GCE,o=lter,dc=ecoinformatics,dc=org</principal>
+              <permission>all</permission>
+            </allow>
+            <allow>
+              <principal>public</principal>
+              <permission>read</permission>
+            </allow>
+          </access>
+        </distribution>
+      </physical>
+      <methods>
+        <methodStep>
+          <description>
+            <para>Data file post-processing in the GCE-LTER Information Management Office</para>
+          </description>
+          <software>
+            <title>GCE Data Toolbox for MATLAB(r)</title>
+            <creator>
+              <individualName>
+                <salutation>Mr.</salutation>
+                <givenName>Wade</givenName>
+                <givenName>M.</givenName>
+                <surName>Sheldon</surName>
+              </individualName>
+              <address>
+                <deliveryPoint>Dept. of Marine Sciences</deliveryPoint>
+                <deliveryPoint>University of Georgia</deliveryPoint>
+                <city>Athens</city>
+                <administrativeArea>Georgia</administrativeArea>
+                <postalCode>30602-3636</postalCode>
+                <country>USA</country>
+              </address>
+              <electronicMailAddress>sheldon@uga.edu</electronicMailAddress>
+              <onlineUrl>http://gce-lter.marsci.uga.edu/public/app/personnel_bios.asp?id=wsheldon</onlineUrl>
+            </creator>
+            <associatedParty>
+              <organizationName>Georgia Coastal Ecosystems LTER Project</organizationName>
+              <address>
+                <deliveryPoint>Dept. of Marine Sciences</deliveryPoint>
+                <deliveryPoint>University of Georgia</deliveryPoint>
+                <city>Athens</city>
+                <administrativeArea>Georgia</administrativeArea>
+                <postalCode>30602-3636</postalCode>
+                <country>USA</country>
+              </address>
+              <electronicMailAddress>gcelter@uga.edu</electronicMailAddress>
+              <role>sponsoring research program</role>
+            </associatedParty>
+            <abstract>
+              <para>The GCE Data Toolbox is a comprehensive library of functions for metadata-based analysis
+quality control, transformation and management of ecological data sets. The toolbox is based on the GCE Data 
+Structure, a MATLAB specification for storing tabular data along with all information required to interpret 
+the data and generate formatted metadata (documentation). Metadata fields in the structure are queried 
+by toolbox functions for all operations, allowing functions to process and format values appropriately 
+based on the type of information they represent. This semantic processing approach supports highly 
+automated and intelligent data analysis and ensures data set validity throughout all processing steps.</para>
+            </abstract>
+            <implementation>
+              <distribution>
+                <online>
+                  <url function="information">http://gce-lter.marsci.uga.edu/public/im/tools/toolbox_download.htm</url>
+                </online>
+              </distribution>
+              <operatingSystem>Linux</operatingSystem>
+              <operatingSystem>Microsoft Windows</operatingSystem>
+              <operatingSystem>Sun Solaris</operatingSystem>
+              <operatingSystem>Apple Macintosh OS/X</operatingSystem>
+              <programmingLanguage>MATLAB</programmingLanguage>
+            </implementation>
+            <version>3.x</version>
+          </software>
+          <subStep>
+            <description>
+              <para>02/26/2014: new GCE Data Structure 1.1 created ("newstruct")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: 8 rows imported from ASCII data file "GEL-GCES-1402.txt" ("imp_ascii")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: 70 metadata fields in file header parsed ("parse_header")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: data structure validated ("gce_valid")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: imported Dataset, Project, Site, Study, Status, Supplement metadata descriptors from the GCE Metabase ("imp_gcemetadata")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: updated 48 metadata fields in the Dataset, Project, Site, Status, Study, Supplement sections ("addmeta")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: Variable Type of column Extraction changed from "boolean" to "logical";Numeric Type of column Removed changed from "coutinuous" to "continuous ("ui_editor")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: imported Dataset, Project, Site, Study, Status, Supplement metadata descriptors from the GCE Metabase ("imp_gcemetadata")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: updated 48 metadata fields in the Dataset, Project, Site, Status, Study, Supplement sections ("addmeta")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: imported Dataset, Project, Site, Study, Status, Supplement metadata descriptors from the GCE Metabase ("imp_gcemetadata")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: updated 48 metadata fields in the Dataset, Project, Site, Status, Study, Supplement sections ("addmeta")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: manually edited data set metadata ("ui_editmetadata")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: updated 4 metadata fields ("addmeta")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: updated 15 metadata fields in the Status, Data sections to reflect attribute metadata ("updatecols")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: parsed and formatted metadata ("listmeta")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: flags for columns East_NAD83, Nrth_NAD83, Elv_NAVD88, Elev_MLLW, Marsh_Thic, Sand_Elev, Sand_Thick, Clay_Elev, Clay_Thick, Sampl_Lgth, Removed and Compaction converted to data columns, flag codes updated in metadata ("flags2cols")</para>
+            </description>
+          </subStep>
+        </methodStep>
+        <qualityControl>
+          <description>
+            <para>Quality control analysis was performed using the GCE Data Toolbox for MATLAB software. Column data types are validated upon importing the table into MATLAB, and qualifier flags are automatically generated for data values based on QA/QC criteria for each data column pre-defined in metadata templates (e.g. value range checks, sanity checks, pattern checks). Qualifier flags are also assigned to values that are imputed or derived, revised, or otherwise differ from values in the original data submission. A column of coded qualifier flags is generated and included in the data table if flags are assigned to any value in a data column.</para>
+          </description>
+        </qualityControl>
+      </methods>
+      <attributeList>
+        <attribute id="GEL-GCES-1402_sampling.1">
+          <attributeName>Type</attributeName>
+          <attributeDefinition>Data type (i.e., vibracore or tree stump).</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Data type (i.e., vibracore or tree stump).</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.2">
+          <attributeName>Name</attributeName>
+          <attributeDefinition>Unique name given each data sampling location.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Unique name given each data sampling location.</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.3">
+          <attributeName>East_NAD83</attributeName>
+          <attributeDefinition>Easting (X) coordinate of the sampling location, in the UTM coordinate system, Zone 17, and the North American Datum of 1983</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.4">
+          <attributeName>Flag_East_NAD83</attributeName>
+          <attributeDefinition>QA/QC flags for Easting (X) coordinate of the sampling location, in the UTM coordinate system, Zone 17, and the North American Datum of 1983 (flagging criteria, where "x" is East_NAD83: )</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Easting (X) coordinate of the sampling location, in the UTM coordinate system, Zone 17, and the North American Datum of 1983 (flagging criteria, where "x" is East_NAD83: )</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.5">
+          <attributeName>Nrth_NAD83</attributeName>
+          <attributeDefinition>Northing (Y) coordinate of the sampling location, in the UTM coordinate system, Zone 17, and the North American Datum of 1983</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.6">
+          <attributeName>Flag_Nrth_NAD83</attributeName>
+          <attributeDefinition>QA/QC flags for Northing (Y) coordinate of the sampling location, in the UTM coordinate system, Zone 17, and the North American Datum of 1983 (flagging criteria, where "x" is Nrth_NAD83: )</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Northing (Y) coordinate of the sampling location, in the UTM coordinate system, Zone 17, and the North American Datum of 1983 (flagging criteria, where "x" is Nrth_NAD83: )</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.7">
+          <attributeName>Extraction</attributeName>
+          <attributeDefinition>Yes or No column indicating whether or not a sample was extracted from the location.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Yes or No column indicating whether or not a sample was extracted from the location.</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.8">
+          <attributeName>Vegetation</attributeName>
+          <attributeDefinition>Vegetation type noted on the surface of the marsh</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Vegetation type noted on the surface of the marsh</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.9">
+          <attributeName>Elv_NAVD88</attributeName>
+          <attributeDefinition>Present-day elevation of the marsh surface, in cm above NAVD88</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <precision>0.1</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.10">
+          <attributeName>Flag_Elv_NAVD88</attributeName>
+          <attributeDefinition>QA/QC flags for Present-day elevation of the marsh surface, in cm above NAVD88 (flagging criteria, where "x" is Elv_NAVD88: )</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Present-day elevation of the marsh surface, in cm above NAVD88 (flagging criteria, where "x" is Elv_NAVD88: )</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.11">
+          <attributeName>Elev_MLLW</attributeName>
+          <attributeDefinition>Present-day elevation of the marsh surface, in cm above mean lower low water</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <precision>0.1</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.12">
+          <attributeName>Flag_Elev_MLLW</attributeName>
+          <attributeDefinition>QA/QC flags for Present-day elevation of the marsh surface, in cm above mean lower low water (flagging criteria, where "x" is Elev_MLLW: )</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Present-day elevation of the marsh surface, in cm above mean lower low water (flagging criteria, where "x" is Elev_MLLW: )</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.13">
+          <attributeName>Marsh_Thic</attributeName>
+          <attributeDefinition>Thickness of the present-day marsh layer in centimeters, in absolute or range format</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Thickness of the present-day marsh layer in centimeters, in absolute or range format</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.14">
+          <attributeName>Flag_Marsh_Thic</attributeName>
+          <attributeDefinition>QA/QC flags for Thickness of the present-day marsh layer, in absolute or range format (flagging criteria, where "x" is Marsh_Thic: )</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Thickness of the present-day marsh layer, in absolute or range format (flagging criteria, where "x" is Marsh_Thic: )</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.15">
+          <attributeName>Sand_Elev</attributeName>
+          <attributeDefinition>Elevation of the top of the sand layer, which is underneath the present-day marsh, in absolute or range foramt, in cm above Mean Lower Low Water</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Elevation of the top of the sand layer, which is underneath the present-day marsh, in absolute or range foramt, in cm above Mean Lower Low Water</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.16">
+          <attributeName>Flag_Sand_Elev</attributeName>
+          <attributeDefinition>QA/QC flags for Elevation of the top of the sand layer, which is underneath the present-day marsh, in absolute orr ange foramt, in cm above Mean Lower Low Water (flagging criteria, where "x" is Sand_Elev: )</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Elevation of the top of the sand layer, which is underneath the present-day marsh, in absolute orr ange foramt, in cm above Mean Lower Low Water (flagging criteria, where "x" is Sand_Elev: )</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.17">
+          <attributeName>Sand_Thick</attributeName>
+          <attributeDefinition>Thickness of the sand layer in centimeters, in absolute or range format</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Thickness of the sand layer in centimeters, in absolute or range format</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.18">
+          <attributeName>Flag_Sand_Thick</attributeName>
+          <attributeDefinition>QA/QC flags for Thickness of the sand layer, in absolute or range format (flagging criteria, where "x" is Sand_Thick: )</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Thickness of the sand layer, in absolute or range format (flagging criteria, where "x" is Sand_Thick: )</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.19">
+          <attributeName>Clay_Elev</attributeName>
+          <attributeDefinition>Elevation of the top of the greeen-grey clay layer, which is underneath the sand layer, in cm above Mean Lower Low Water</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <precision>0.1</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.20">
+          <attributeName>Flag_Clay_Elev</attributeName>
+          <attributeDefinition>QA/QC flags for Elevation of the top of the greeen-grey clay layer, which is underneath the sand layer, in cm above Mean Lower Low Water (flagging criteria, where "x" is Clay_Elev: )</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Elevation of the top of the greeen-grey clay layer, which is underneath the sand layer, in cm above Mean Lower Low Water (flagging criteria, where "x" is Clay_Elev: )</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.21">
+          <attributeName>Clay_Thick</attributeName>
+          <attributeDefinition>Thickness of the green-grey clay layer in centimeters, which is greater than</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Thickness of the green-grey clay layer in centimeters, which is greater than</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.22">
+          <attributeName>Flag_Clay_Thick</attributeName>
+          <attributeDefinition>QA/QC flags for Thickness of the green-grey clay layer, which is greater than  (flagging criteria, where "x" is Clay_Thick: )</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Thickness of the green-grey clay layer, which is greater than  (flagging criteria, where "x" is Clay_Thick: )</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.23">
+          <attributeName>Sampl_Lgth</attributeName>
+          <attributeDefinition>Length of the entire sediment sample, after compaction</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <precision>0.1</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.24">
+          <attributeName>Flag_Sampl_Lgth</attributeName>
+          <attributeDefinition>QA/QC flags for Length of the entire sediment sample, after compaction (flagging criteria, where "x" is Sampl_Lgth: )</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Length of the entire sediment sample, after compaction (flagging criteria, where "x" is Sampl_Lgth: )</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.25">
+          <attributeName>Removed</attributeName>
+          <attributeDefinition>Length of the top layer of marsh sediment removed prior to coring </attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <precision>0.1</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.26">
+          <attributeName>Flag_Removed</attributeName>
+          <attributeDefinition>QA/QC flags for Length of the top layer of marsh sediment removed prior to coring  (flagging criteria, where "x" is Removed: )</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Length of the top layer of marsh sediment removed prior to coring  (flagging criteria, where "x" is Removed: )</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.27">
+          <attributeName>Compaction</attributeName>
+          <attributeDefinition>Amount of soil compaction that occurred during coring</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <precision>0.1</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sampling.28">
+          <attributeName>Flag_Compaction</attributeName>
+          <attributeDefinition>QA/QC flags for Amount of soil compaction that occurred during coring (flagging criteria, where "x" is Compaction: )</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Amount of soil compaction that occurred during coring (flagging criteria, where "x" is Compaction: )</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>8</numberOfRecords>
+    </dataTable>
+    <dataTable>
+      <entityName>GEL-GCES-1402_sediment_analysis</entityName>
+      <entityDescription>Sediment particle size and organic matter content for data set GEL-GCES-1402</entityDescription>
+      <physical>
+        <objectName>GEL-GCES-1402_sediment_analysis_1_1.CSV</objectName>
+        <size unit="kilobyte">5.74</size>
+        <characterEncoding>ASCII</characterEncoding>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>5</numHeaderLines>
+            <numFooterLines>0</numFooterLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <numPhysicalLinesPerRecord>1</numPhysicalLinesPerRecord>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <onlineDescription>Spreadsheet comma-separated value (CSV) text file with a five line header containing the data set title, column titles, units and column types</onlineDescription>
+            <url function="download">https://pasta.lternet.edu/package/data/eml/knb-lter-gce/450/10/a17827fa3564d0a00f1784e091281d5b</url>
+          </online>
+          <access authSystem="https://pasta.lternet.edu/authentication"
+            order="allowFirst" scope="document" system="https://pasta.lternet.edu">
+            <allow>
+              <principal>uid=GCE,o=lter,dc=ecoinformatics,dc=org</principal>
+              <permission>all</permission>
+            </allow>
+            <allow>
+              <principal>public</principal>
+              <permission>read</permission>
+            </allow>
+          </access>
+        </distribution>
+      </physical>
+      <methods>
+        <methodStep>
+          <description>
+            <para>Data file post-processing in the GCE-LTER Information Management Office</para>
+          </description>
+          <software>
+            <title>GCE Data Toolbox for MATLAB(r)</title>
+            <creator>
+              <individualName>
+                <salutation>Mr.</salutation>
+                <givenName>Wade</givenName>
+                <givenName>M.</givenName>
+                <surName>Sheldon</surName>
+              </individualName>
+              <address>
+                <deliveryPoint>Dept. of Marine Sciences</deliveryPoint>
+                <deliveryPoint>University of Georgia</deliveryPoint>
+                <city>Athens</city>
+                <administrativeArea>Georgia</administrativeArea>
+                <postalCode>30602-3636</postalCode>
+                <country>USA</country>
+              </address>
+              <electronicMailAddress>sheldon@uga.edu</electronicMailAddress>
+              <onlineUrl>http://gce-lter.marsci.uga.edu/public/app/personnel_bios.asp?id=wsheldon</onlineUrl>
+            </creator>
+            <associatedParty>
+              <organizationName>Georgia Coastal Ecosystems LTER Project</organizationName>
+              <address>
+                <deliveryPoint>Dept. of Marine Sciences</deliveryPoint>
+                <deliveryPoint>University of Georgia</deliveryPoint>
+                <city>Athens</city>
+                <administrativeArea>Georgia</administrativeArea>
+                <postalCode>30602-3636</postalCode>
+                <country>USA</country>
+              </address>
+              <electronicMailAddress>gcelter@uga.edu</electronicMailAddress>
+              <role>sponsoring research program</role>
+            </associatedParty>
+            <abstract>
+              <para>The GCE Data Toolbox is a comprehensive library of functions for metadata-based analysis
+quality control, transformation and management of ecological data sets. The toolbox is based on the GCE Data 
+Structure, a MATLAB specification for storing tabular data along with all information required to interpret 
+the data and generate formatted metadata (documentation). Metadata fields in the structure are queried 
+by toolbox functions for all operations, allowing functions to process and format values appropriately 
+based on the type of information they represent. This semantic processing approach supports highly 
+automated and intelligent data analysis and ensures data set validity throughout all processing steps.</para>
+            </abstract>
+            <implementation>
+              <distribution>
+                <online>
+                  <url function="information">http://gce-lter.marsci.uga.edu/public/im/tools/toolbox_download.htm</url>
+                </online>
+              </distribution>
+              <operatingSystem>Linux</operatingSystem>
+              <operatingSystem>Microsoft Windows</operatingSystem>
+              <operatingSystem>Sun Solaris</operatingSystem>
+              <operatingSystem>Apple Macintosh OS/X</operatingSystem>
+              <programmingLanguage>MATLAB</programmingLanguage>
+            </implementation>
+            <version>3.x</version>
+          </software>
+          <subStep>
+            <description>
+              <para>02/26/2014: new GCE Data Structure 1.1 created ("newstruct")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: 55 rows imported from ASCII data file "GEL-GCES-1402a.txt" ("imp_ascii")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: 81 metadata fields in file header parsed ("parse_header")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: data structure validated ("gce_valid")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: Q/C flagging criteria applied, "flags" field updated ("dataflag")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: manually edited data set metadata ("ui_editmetadata")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: imported Dataset, Project, Site, Study, Status, Supplement metadata descriptors from the GCE Metabase ("imp_gcemetadata")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: updated 48 metadata fields in the Dataset, Project, Site, Status, Study, Supplement sections ("addmeta")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: imported Dataset, Project, Site, Study, Status, Supplement metadata descriptors from the GCE Metabase ("imp_gcemetadata")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: updated 48 metadata fields in the Dataset, Project, Site, Status, Study, Supplement sections ("addmeta")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: imported Dataset, Project, Site, Study, Status, Supplement metadata descriptors from the GCE Metabase ("imp_gcemetadata")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>02/26/2014: updated 48 metadata fields in the Dataset, Project, Site, Status, Study, Supplement sections ("addmeta")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>04/30/2014: Variable Type of column Name changed from "text" to "nominal"; Variable Type of column Lab_ID changed from "data" to "nominal"; Variable Type of column Sample_ID changed from "text" to "nominal ("ui_editor")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>04/30/2014: updated 4 metadata fields ("addmeta")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>04/30/2014: updated 15 metadata fields in the Status, Data sections to reflect attribute metadata ("updatecols")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>04/30/2014: parsed and formatted metadata ("listmeta")</para>
+            </description>
+          </subStep>
+          <subStep>
+            <description>
+              <para>04/30/2014: flags for columns Distance_Below_Ground_Surface, Percent_Sand, Percent_Silt, Percent_Clay, Percent_Organic_Matter and Total_Carbon converted to data columns, flag codes updated in metadata ("flags2cols")</para>
+            </description>
+          </subStep>
+        </methodStep>
+        <qualityControl>
+          <description>
+            <para>Quality control analysis was performed using the GCE Data Toolbox for MATLAB software. Column data types are validated upon importing the table into MATLAB, and qualifier flags are automatically generated for data values based on QA/QC criteria for each data column pre-defined in metadata templates (e.g. value range checks, sanity checks, pattern checks). Qualifier flags are also assigned to values that are imputed or derived, revised, or otherwise differ from values in the original data submission. A column of coded qualifier flags is generated and included in the data table if flags are assigned to any value in a data column.</para>
+          </description>
+        </qualityControl>
+      </methods>
+      <attributeList>
+        <attribute id="GEL-GCES-1402_sediment_analysis.1">
+          <attributeName>Name</attributeName>
+          <attributeDefinition>Unique name given each data sampling location.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Unique name given each data sampling location.</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.2">
+          <attributeName>Distance_Above_MLLW</attributeName>
+          <attributeDefinition>Elevation range from where the sediment sample was extracted, in centimeters above Mean Lower Low Water</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Elevation range from where the sediment sample was extracted, in centimeters above Mean Lower Low Water</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.3">
+          <attributeName>Distance_Below_Ground_Surface</attributeName>
+          <attributeDefinition>Relative location within core (or near the stump) where sediment sample was extracted, in cm below ground surface</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <precision>0.1</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.4">
+          <attributeName>Flag_Distance_Below_Ground_Surface</attributeName>
+          <attributeDefinition>QA/QC flags for Relative location within core (or near the stump) where sediment sample was extracted, in cm below ground surface (flagging criteria, where "x" is Distance_Below_Ground_Surface: )</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Relative location within core (or near the stump) where sediment sample was extracted, in cm below ground surface (flagging criteria, where "x" is Distance_Below_Ground_Surface: )</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.5">
+          <attributeName>Percent_Sand</attributeName>
+          <attributeDefinition>Percent sand in the sediment sample </attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <customUnit>percent</customUnit>
+              </unit>
+              <precision>0.1</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.6">
+          <attributeName>Flag_Percent_Sand</attributeName>
+          <attributeDefinition>QA/QC flags for Percent sand in the sediment sample  (flagging criteria, where "x" is Percent_Sand: x&lt;0="I", x&gt;100="I")</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Percent sand in the sediment sample  (flagging criteria, where "x" is Percent_Sand: x&lt;0="I", x&gt;100="I")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.7">
+          <attributeName>Percent_Silt</attributeName>
+          <attributeDefinition>Percent silt in the sediment sample </attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <customUnit>percent</customUnit>
+              </unit>
+              <precision>0.1</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.8">
+          <attributeName>Flag_Percent_Silt</attributeName>
+          <attributeDefinition>QA/QC flags for Percent silt in the sediment sample  (flagging criteria, where "x" is Percent_Silt: x&lt;0="I", x&gt;100="I")</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Percent silt in the sediment sample  (flagging criteria, where "x" is Percent_Silt: x&lt;0="I", x&gt;100="I")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.9">
+          <attributeName>Percent_Clay</attributeName>
+          <attributeDefinition>Percent clay in the sediment sample</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <customUnit>percent</customUnit>
+              </unit>
+              <precision>0.1</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.10">
+          <attributeName>Flag_Percent_Clay</attributeName>
+          <attributeDefinition>QA/QC flags for Percent clay in the sediment sample (flagging criteria, where "x" is Percent_Clay: x&lt;0="I", x&gt;100="I")</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Percent clay in the sediment sample (flagging criteria, where "x" is Percent_Clay: x&lt;0="I", x&gt;100="I")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.11">
+          <attributeName>Soil_Texture</attributeName>
+          <attributeDefinition>Soil texture classification terms for sediment samples, from the USDA</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Soil texture classification terms for sediment samples, from the USDA</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.12">
+          <attributeName>Lab_ID</attributeName>
+          <attributeDefinition>Unique laboratory identifier for organic matter sample, assigned by lab</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Unique laboratory identifier for organic matter sample, assigned by lab</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.13">
+          <attributeName>Sample_ID</attributeName>
+          <attributeDefinition>Unique sample identifier for organic matter sample, assigned by John Turck</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Unique sample identifier for organic matter sample, assigned by John Turck</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.14">
+          <attributeName>Percent_Organic_Matter</attributeName>
+          <attributeDefinition>Organic matter content in the sediment sample in percent by weight of sample</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <customUnit>percent</customUnit>
+              </unit>
+              <precision>0.01</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.15">
+          <attributeName>Flag_Percent_Organic_Matter</attributeName>
+          <attributeDefinition>QA/QC flags for Organic matter content in the sediment sample in percent by weight of sample (flagging criteria, where "x" is Percent_Organic_Matter: x&lt;0="I", x&gt;100="I")</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Organic matter content in the sediment sample in percent by weight of sample (flagging criteria, where "x" is Percent_Organic_Matter: x&lt;0="I", x&gt;100="I")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.16">
+          <attributeName>Total_Carbon</attributeName>
+          <attributeDefinition>Total inorganic and organic carbon in the sediment sample in percent by weight of sample</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <customUnit>percent</customUnit>
+              </unit>
+              <precision>0.01</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or censored based on quality control analysis (see methods)</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute id="GEL-GCES-1402_sediment_analysis.17">
+          <attributeName>Flag_Total_Carbon</attributeName>
+          <attributeDefinition>QA/QC flags for Total inorganic and organic carbon in the sediment sample in percent by weight of sample (flagging criteria, where "x" is Total_Carbon: x&lt;0="I", x&gt;100="I")</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>QA/QC flags for Total inorganic and organic carbon in the sediment sample in percent by weight of sample (flagging criteria, where "x" is Total_Carbon: x&lt;0="I", x&gt;100="I")</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>55</numberOfRecords>
+    </dataTable>
+    <otherEntity>
+      <entityName>GEL-GCES-1402_shp</entityName>
+      <entityDescription>Zip file containing GIS shape file</entityDescription>
+      <physical>
+        <objectName>GEL-GCES-1402_1_0-Shp.zip</objectName>
+        <size unit="KB">3</size>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>application/zip</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <onlineDescription>ESRI ArcGIS vector or rastor data and metadata files in a Zip archive</onlineDescription>
+            <url function="download">https://pasta.lternet.edu/package/data/eml/knb-lter-gce/450/10/f89a2dd519a68d022be84c1f0f4a86f9</url>
+          </online>
+          <access authSystem="https://pasta.lternet.edu/authentication"
+            order="allowFirst" scope="document" system="https://pasta.lternet.edu">
+            <allow>
+              <principal>uid=GCE,o=lter,dc=ecoinformatics,dc=org</principal>
+              <permission>all</permission>
+            </allow>
+            <allow>
+              <principal>public</principal>
+              <permission>read</permission>
+            </allow>
+          </access>
+        </distribution>
+      </physical>
+      <entityType>GIS_Shapefile</entityType>
+    </otherEntity>
+    <otherEntity id="GEL-GCES-1402.kml">
+      <entityName>GEL-GCES-1402.kml</entityName>
+      <entityDescription>Google Earth Keyhole Markup Language file describing the geographic locations sampled in data set knb-lter-gce.450.10</entityDescription>
+      <physical>
+        <objectName>GEL-GCES-1402.kml</objectName>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>application/vnd.google-earth.kml+xml</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url function="download">https://pasta.lternet.edu/package/data/eml/knb-lter-gce/450/10/dc739f26eb707088fe1a87950f7bd410</url>
+          </online>
+          <access authSystem="https://pasta.lternet.edu/authentication"
+            order="allowFirst" scope="document" system="https://pasta.lternet.edu">
+            <allow>
+              <principal>uid=GCE,o=lter,dc=ecoinformatics,dc=org</principal>
+              <permission>all</permission>
+            </allow>
+            <allow>
+              <principal>public</principal>
+              <permission>read</permission>
+            </allow>
+          </access>
+        </distribution>
+      </physical>
+      <entityType>KML</entityType>
+    </otherEntity>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <stmml:unitList
+        xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1" xsi:schemaLocation="http://www.xml-cml.org/schema/stmml-1.1 http://gce-lter.marsci.uga.edu/public/files/schemas/eml-210/stmml.xsd">
+        <!--note that the unitTypes here are taken from the eml-unitDictionary.xml-->
+        <stmml:unit abbreviation="%" id="percent" multiplierToSI="1"
+          name="percent" unitType="dimensionless">
+          <stmml:description>ratio of two quantities as percent composition (1:100)</stmml:description>
+        </stmml:unit>
+      </stmml:unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>
