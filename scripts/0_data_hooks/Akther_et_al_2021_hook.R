@@ -65,7 +65,7 @@ methods <- reorderColumns("methods", methods)
 
 cores <- cores_raw %>% mutate(study_id = id,
                               site_id = "Sundarbans",
-                              year = 2021, # year of publication 
+                              year = 2021, # year of publication
                               position_method = "other moderate resolution", 
                               salinity_class = "estuarine",
                               salinity_method = "field observation",
@@ -88,7 +88,9 @@ depthseries <- depthseries_raw %>% mutate(study_id = id,
                                          dry_bulk_density = `BD (g·cm−3)`) %>% 
                                  separate(`Depth (cm)`, c("depth_min", "depth_max")) %>% 
                                  separate(fraction_carbon, c("fraction_carbon", "se"), sep = " ± ") %>% 
-                                 mutate(fraction_carbon = as.numeric(fraction_carbon)/100) %>% #percent to fraction
+                                 mutate(fraction_carbon = as.numeric(fraction_carbon)/100,
+                                        depth_min = as.numeric(depth_min),
+                                        depth_max = as.numeric(depth_max)) %>% #percent to fraction
                                  select(-ph, -`Eh (mV)`, -se)
 
 #reorder columns 
