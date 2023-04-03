@@ -1,0 +1,32 @@
+study_id,site_id,core_id,year,month,day,latitude,longitude,position_method,elevation,elevation_datum,elevation_method,elevation_notes,vegetation_class,vegetation_method,habitat
+Weston_et_al_2023,Kennebec,KEN_1,2016,7,17,43.763326,-69.77064814,RTK,1.723,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Kennebec,KEN_7,2016,7,18,43.742535,-69.80410487,RTK,1.566,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Kennebec,KEN_8,2016,7,18,43.740793,-69.80330684,RTK,1.588,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Plum Island Sound,PIE_1,2015,5,29,42.7364795,-70.843544,RTK,1.356,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Plum Island Sound,PIE_2,2015,5,30,42.734807000000004,-70.8420865,RTK,1.137,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Plum Island Sound,PIE_7,2015,5,30,42.7398106,-70.801985,RTK,1.459,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Plum Island Sound,PIE_8,2015,5,30,42.7328231,-70.819291,RTK,1.372,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Connecticut,CON_1,2015,6,25,41.3001588,-72.3565551,RTK,0.634,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Connecticut,CON_2,2015,6,25,41.300239500000004,-72.3569239,RTK,0.615,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Connecticut,CON_8,2015,6,25,41.2933692,-72.3396728,RTK,0.681,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Delaware,DEL_3,2017,8,17,39.241633,-75.1599044,RTK,0.853,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Delaware,DEL_5,2017,8,17,39.175475,-74.85718324,RTK,0.909,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Delaware,DEL_9,2017,8,26,39.207431,-75.40662405,RTK,1.087,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,York,YRK_2,2018,6,20,37.222046,-76.40676992,RTK,0.499,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,York,YRK_3,2018,6,20,37.221712,-76.40215684,RTK,0.431,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,York,YRK_5,2018,6,20,37.298197,-76.55527604,RTK,0.263,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,James,JMS_2,2018,6,21,36.963321,-76.49417063,RTK,0.501,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,James,JMS_3,2018,6,21,36.960703,-76.49183393,RTK,0.579,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,James,JMS_4,2018,6,21,36.958421,-76.49064114,RTK,0.518,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Cape Fear,CPF_2,2016,6,15,33.9521,-77.9757,RTK,0.481,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Cape Fear,CPF_4,2016,6,15,33.9205,-77.9731,RTK,0.216,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Cape Fear,CPF_6,2016,6,15,33.911,-77.9733,RTK,0.116,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Cape Fear,CPF_7,2016,6,15,33.9098,-77.97,RTK,0.095,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Edisto,EDS_1,2017,6,21,32.512638,-80.369912379202,RTK,0.752,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Edisto,EDS_5,2017,6,21,32.539472,-80.3780401675841,RTK,0.677,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Edisto,EDS_9,2017,6,21,32.539344,-80.4149930687957,RTK,0.803,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Edisto,EDS_10,2017,6,21,32.549202,-80.4229021999138,RTK,0.859,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Altamaha,ALT_3,2016,5,12,31.310387,-81.340843,RTK,1.008,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Altamaha,ALT_5,2016,5,12,31.328405,-81.371843,RTK,0.933,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Altamaha,ALT_6,2016,5,12,31.322869,-81.348718,RTK,0.838,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
+Weston_et_al_2023,Altamaha,ALT_9,2016,5,12,31.337534,-81.367691,RTK,0.922,NAVD88,RTK,Trimble 5800 RTK-GPS,emergent,field observation,marsh
