@@ -397,6 +397,24 @@ recode_salinity <- function(df, salinity_class) {
   return(output_df)
 }
 
+## Convert Salinity to Salinity Class ----
+
+assignSalinityClass <- function(x) {
+  # fresh = <0.5 ppt.; oligohaline = 0.5-5 ppt.; mesohaline = 5-18 ppt.; 
+  # polyhaline = 18-30 ppt.; mixoeuhaline = 30-40 ppt.; saline = 30-50 ppt.; brine = >50 ppt.
+  
+  # nested ifelse statement to assign salinity class from given salinity
+  sal_class <- ifelse(x < 0.5, "fresh",
+                      ifelse(x > 50, "brine", 
+                             ifelse(between(x, 0.5, 5), "oligohaline", 
+                                    ifelse(between(x, 5, 18), "mesohaline", 
+                                           ifelse(between(x, 18, 30), "polyhaline", 
+                                                  ifelse(between(x, 30, 40), "mixoeuhaline", 
+                                                         ifelse(between(x, 40, 50), "saline", 
+                                                                "other salinity class")))))))
+  return(sal_class)
+}
+
 ## Customized cr_cn function ##############
 
 # Pulled from ropenscri/crossref
