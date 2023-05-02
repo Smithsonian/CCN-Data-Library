@@ -1,6 +1,6 @@
 ## CCN Data Library ####
 
-## Soil core data curation script for McGlathery et al 2014
+## Soil core data curation script for McGlathery et al 2018
 ## contact: Henry Betts, BettsH@si.edu
 ## URL: https://doi.org/10.6073/pasta/b43fe3f3341ff2266dc50cfb8f47d026
 
