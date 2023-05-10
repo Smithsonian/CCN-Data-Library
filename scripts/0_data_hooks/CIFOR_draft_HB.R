@@ -1,8 +1,8 @@
-# Reading in CIFOR data
-# Henry Betts, BettsH@si.edu
+## CCN Data Library
+# Reading in CIFOR SWAMP data
+# contact: Henry Betts, BettsH@si.edu
 
-
-## Load libraries ####
+## Set up environment
 library(readxl)
 library(tidyverse)
 library(lubridate)
@@ -14,31 +14,15 @@ source("scripts/1_data_formatting/curation_functions.R")
 
 
 ## Questions ####
-# More methods data?
-# Do we want to include any of these:
+# impact_class = ecosystem_condition for soil impacts table?
+# is plot area (broken into TREE_AREA and SAP_AREA) nested? 
+# include swamp_soil$Soil$C_CONT as plot_sediment_carbon (plot table)?
 
-## Plot
-# PROJID = SWAMP v CIFOR identifier
+# check for missing files
+# BC manual - methods data
+# as.data.frame(GetBibEntryWithDOI(""))
+# modeled data? matching lat/long? 
 
-## Soil 
-# N, N_CONT, CNR = Nitrogen info
-
-## Tree & Sapling
-# BA (basal area): include equation?
-
-## TreeBiomass & SaplingBiomass (NB: columns renamed with _AGB and _BGB during pivot)
-# C_CONCID = equation reference for C concentration (biomass to C-content conversion) 
-# EQID = equation reference for biomass calculation
-# COMPID = debris part (i.e., stem, branch, leaf, tree, root)
-
-
-## Variable definitions to check:
-# impact_class = eco_cond, disturb
-# decay_class = decay_status
-# plot_id (veg) = core_id (soil) = SUBPID (subplot id)
-# study_id = filename
-# transect/radius info = protocol_method_id
-# plot_sediment_carbon (veg) = swamp_soil$Soil$C_CONT
 
 
 
@@ -56,7 +40,7 @@ SWAMP_veg_converter <- function(swamp_type) {
   
   # disturbance impact class look up table
   ref_disturb <- read_excel(ref_path, sheet = "Ref_Disturbance")
-  getdisturb <- paste(ref_disturb$DISTURBANCE, swamp_type$Disturbance$DISTURBANCE_NOTES, sep = "_")
+  getdisturb <- ref_disturb$DISTURBANCE
   names(getdisturb) <- ref_disturb$ID
   
   # ecological impact class look up table
@@ -78,12 +62,7 @@ SWAMP_veg_converter <- function(swamp_type) {
   ref_species <- read_excel(ref_path, sheet = "Ref_Species")
   getspecies <- ref_species$SCIENTIFIC_NAME
   names(getspecies) <- ref_species$ID
-  
-  # decay status look up table
-  ref_status <- read_excel(ref_path, sheet = "Ref_TreeStatus")
-  getstatus <- ref_status$STATUS_DESCR
-  names(getstatus) <- ref_status$ID
-  
+
   # function to find dominant species, i.e., the mode of a character vector
   getmode <- function(v) {
     uniqv <- unique(v)
@@ -95,6 +74,16 @@ SWAMP_veg_converter <- function(swamp_type) {
   getgrav <- ref_grav$SG
   names(getgrav) <- ref_grav$ID
   
+  # C concentration look up table
+  ref_conc <- read_excel(ref_path, sheet = "Ref_C_Concentration")
+  getconc <- ref_conc$C
+  names(getconc) <- ref_conc$ID 
+  
+  # biomass calculation equation look up table
+  ref_eq <- read_excel(ref_path, sheet = "Ref_Equation")
+  geteq <- ref_eq$EQUATION
+  names(geteq) <- ref_eq$ID
+  
   ## 2. Join Plot, SubPlot, Disturbance, Tree, and Sapling tables 
   subplot_table <- swamp_type$Plot %>% 
     rename(PLOTID = ID,
@@ -104,10 +93,10 @@ SWAMP_veg_converter <- function(swamp_type) {
     rename(SUBPID = ID,
            subplot_latitude = LATITUDE, # specify subplot-level position
            subplot_longitude = LONGITUDE) %>% 
-    mutate(pos_select_lat = ifelse(is.na(plot_latitude), 1, 0), # choose plot- or subplot-level position data depending on presence of NAs
-           pos_select_long = ifelse(is.na(plot_longitude), 1, 0),
-           latitude = ifelse(pos_select_lat > 0, subplot_latitude, plot_latitude),
-           longitude = ifelse(pos_select_long > 0, subplot_longitude, plot_longitude)) %>% 
+    mutate(pos_select_lat = ifelse(is.na(subplot_latitude), 1, 0), # choose plot- or subplot-level position data depending on presence of NAs
+           pos_select_long = ifelse(is.na(subplot_longitude), 1, 0),
+           latitude = ifelse(pos_select_lat > 0, paste(plot_latitude, "plot", sep = "_"), paste(subplot_latitude,"subplot", sep = "_")),
+           longitude = ifelse(pos_select_long > 0, paste(plot_longitude, "plot", sep = "_"), paste(subplot_longitude, "subplot", sep = "_"))) %>% 
     full_join(swamp_type$Disturbance, by = c("filename", "SUBPID"))
   
   tree_table <- full_join(subplot_table, swamp_type$Tree %>% # join plot and subplot data to Tree and Sapling tables separately
@@ -160,48 +149,49 @@ SWAMP_veg_converter <- function(swamp_type) {
            day = day(MDATE),
            site_name = gsub(" ", "_", getsiteid[SITEID]), 
            habitat = getlandcov[LANDCOVID],
-           eco_cond = getecocond[ECOID],
-           disturb = getdisturb[DISTRUBID],
+           ecosystem_condition = getecocond[ECOID],
+           disturbance_class = getdisturb[DISTRUBID],
            geomorphic_id = getgeo[GEOID],
            specific_gravity = getgrav[SGID],
-           decay_status = getstatus[STATID], 
+           decay_class = ifelse(STATID == 2, 1,
+                                ifelse(STATID == 3, 2,
+                                       ifelse(STATID == 4, 3, NA_character_))),
            species_code = getspecies[SPECID],
            code_type = case_when(grepl("spp", species_code) ~ "Genus",
                                  T ~ "Genus species"),
            site_id = paste(site_name, PLOTID, sep = "_"),
-           plot_id = paste(site_id, SUBPID, sep = "_")) %>% 
+           plot_id = paste(site_id, SUBPID, sep = "_"),
+           study_id = substr(filename, 1, nchar(filename) - 11)) %>% 
+    separate(col = "latitude", into = c("latitude", "position_level_note"), sep = "_") %>% 
+    separate(col = "longitude", into = "longitude", sep = "_") %>% 
     group_by(plot_id) %>% 
     mutate(plant_count = n(),
            dominant_species = getmode(species_code)) %>%  
     rename(elevation = ELEVATION,
-           study_id = filename,
+           disturbance_note = DISTURBANCE_NOTES,
            position_accuracy = ACCURACY,
            height = HGT,
            diameter_breast_height = DBH,
            diameter_base = DBASE,
-           basal_area = BA,
-           protocol_method_id = PROTOID,
-           plant_biomass_AGB = BIOMASS_AGB,
-           plant_biomass_BGB = BIOMASS_BGB,
-           plant_C_AGB = C_CONT_AGB,
-           plant_C_BGB = C_CONT_BGB,
-           deadbreak_height = DEADBREAK_HGT)
+           plant_AGB = BIOMASS_AGB,
+           plant_BGB = BIOMASS_BGB,
+           plant_AGC = C_CONT_AGB,
+           plant_BGC = C_CONT_BGB)
 }
 
 
 ## Veg Tables ####
 plot <- SWAMP_veg_converter(swamp_veg) %>% 
-  select(c(study_id, plot_id, site_id, protocol_method_id, dominant_species, year, month, day, 
-           longitude, latitude, position_accuracy, elevation, plant_count)) %>% 
+  select(c(study_id, plot_id, site_id, dominant_species, year, month, day, 
+           longitude, latitude, position_accuracy, position_level_note, elevation, 
+           plant_count, subplot_AGC, subplot_BGC)) %>% 
   distinct()
 
 plant <- SWAMP_veg_converter(swamp_veg) %>% 
-  select(c(study_id, site_id, plot_id, plant_id, species_code, code_type, decay_status, 
-           habitat, eco_cond, disturb, geomorphic_id, protocol_method_id, height, diameter_base,
-           diameter_breast_height, basal_area, plant_biomass_AGB, plant_biomass_BGB, plant_C_AGB, 
-           plant_C_BGB, subplot_AGC, subplot_BGC, subplot_BA, deadbreak_height, tree_or_sapling, 
-           specific_gravity))
-
+  select(c(study_id, site_id, plot_id, plant_id, species_code, code_type, decay_class, 
+           habitat, ecosystem_condition, disturbance_class, disturbance_note, geomorphic_id, 
+           height, diameter_base, diameter_breast_height, plant_AGB, plant_BGB,
+           plant_AGC, plant_BGC, tree_or_sapling, specific_gravity))
 
 
 ## Soil Function ####
@@ -218,7 +208,7 @@ SWAMP_soil_converter <- function(swamp_type) { # use synthSWAMP() output here
   
   # disturbance impact class look up table
   ref_disturb <- read_excel(ref_path, sheet = "Ref_Disturbance")
-  getdisturb <- paste(ref_disturb$DISTURBANCE, swamp_type$Disturbance$DISTURBANCE_NOTES, sep = "_")
+  getdisturb <- ref_disturb$DISTURBANCE
   names(getdisturb) <- ref_disturb$ID
   
   # ecological impact class look up table
@@ -245,10 +235,10 @@ SWAMP_soil_converter <- function(swamp_type) { # use synthSWAMP() output here
     rename(SUBPID = ID,
            subplot_latitude = LATITUDE, # specify subplot-level position
            subplot_longitude = LONGITUDE) %>% 
-    mutate(pos_select_lat = ifelse(is.na(plot_latitude), 1, 0), # choose plot- or subplot-level position data depending on presence of NAs
-           pos_select_long = ifelse(is.na(plot_longitude), 1, 0),
-           latitude = ifelse(pos_select_lat > 0, subplot_latitude, plot_latitude),
-           longitude = ifelse(pos_select_long > 0, subplot_longitude, plot_longitude)) %>% 
+    mutate(pos_select_lat = ifelse(is.na(subplot_latitude), 1, 0), # choose plot- or subplot-level position data depending on presence of NAs
+           pos_select_long = ifelse(is.na(subplot_longitude), 1, 0),
+           latitude = ifelse(pos_select_lat > 0, paste(plot_latitude, "plot", sep = "_"), paste(subplot_latitude,"subplot", sep = "_")),
+           longitude = ifelse(pos_select_long > 0, paste(plot_longitude, "plot", sep = "_"), paste(subplot_longitude, "subplot", sep = "_"))) %>% 
     full_join(swamp_type$Disturbance, by = c("filename", "SUBPID")) %>% 
     right_join(swamp_type$Soil, by = c("filename", "SUBPID")) %>% # drop site-level only data
 
@@ -259,19 +249,21 @@ SWAMP_soil_converter <- function(swamp_type) { # use synthSWAMP() output here
            fraction_carbon = C/100,
            site_name = gsub(" ", "_", getsiteid[SITEID]), 
            habitat = getlandcov[LANDCOVID],
-           eco_cond = getecocond[ECOID],
-           disturb = getdisturb[DISTRUBID],
-           impact_class = paste(eco_cond, disturb, sep = "_"),
+           ecosystem_condition = getecocond[ECOID],
+           disturbance_class = getdisturb[DISTRUBID],
            geomorphic_id = getgeo[GEOID],
            site_id = paste(site_name, PLOTID, sep = "_"),
-           core_id = paste(site_id, SUBPID, sep = "_")) %>% 
+           core_id = paste(site_id, SUBPID, sep = "_"),
+           study_id = substr(filename, 1, nchar(filename) - 11)) %>% 
+    separate(col = "latitude", into = c("latitude", "position_level_note"), sep = "_") %>% 
+    separate(col = "longitude", into = "longitude", sep = "_") %>% 
     rename(elevation = ELEVATION,
+           disturbance_note = DISTURBANCE_NOTES,
            position_accuracy = ACCURACY,
            depth_min = MIND,
            depth_max = MAXD,
            dry_bulk_density = BD,
-           study_id = filename,
-           protocol_method_id = PROTOID) 
+           impact_class = ecosystem_condition) 
 }
 
 
@@ -281,7 +273,7 @@ depthseries <- SWAMP_soil_converter(swamp_soil) %>%
 
 cores <- SWAMP_soil_converter(swamp_soil) %>% 
   select(c(study_id, site_id, core_id, year, month, day, latitude, longitude, position_accuracy, 
-           elevation, habitat, geomorphic_id, protocol_method_id)) %>% 
+           position_level_note, elevation, habitat, geomorphic_id)) %>% 
   distinct()
 
 impacts <- SWAMP_soil_converter(swamp_soil) %>% 
