@@ -40,7 +40,6 @@ depthseries <- depthseries_raw %>%
          method_id = 'single set of methods',
          marker_type = "artificial horizon",
          marker_date = '2013',
-         method_id = "single set of methods",
          compaction_notes = "little to no compaction because once corer is inserted, the core is rotated 180 degrees, and a sample is collected adjacent to where it was driven into the ground") %>% 
   rename(depth_max = `Section Bottom Depth (cm)`,
          dry_bulk_density = `Dry Bulk Density (g cm-3)`,

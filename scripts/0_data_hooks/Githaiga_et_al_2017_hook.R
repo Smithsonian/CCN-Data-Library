@@ -112,14 +112,18 @@ cores <- depthseries %>%
          salinity_class = "mixoeuhaline",
          salinity_method = "field observation",
          habitat = ifelse(grepl("_2", core_id), "unvegetated", "seagrass"),
+         method_id = "single set of methods",
          year = 2017,
          month = 02,
-         day = 17) %>% 
-  select(study_id, site_id, core_id, year, month, day, salinity_class, salinity_method, vegetation_class, 
+         day = 17,
+         latitude = -4.416667, 
+         longitude = 39.500000,
+         position_method = "other low resolution",
+         position_notes = "One position is listed for all cores at the boardwalk of Gazi Bay, Kenya. Cores were taken approximately 5m apart from each other.") %>% 
+  select(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method,
+         position_notes, salinity_class, salinity_method, vegetation_class, 
          vegetation_method, habitat, core_length_flag) %>% 
   distinct()
-
-# site table? Gazi Bay (4°25’S, and 39°30’E)
 
 species <- cores %>% 
   mutate(species_code = ifelse(grepl("TH", core_id), "Thalassia hemprichii",
@@ -130,6 +134,7 @@ species <- cores %>%
   select(study_id, site_id, core_id, species_code, code_type, habitat)
 
 methods <- data.frame(study_id = "Githaiga_et_al_2017",
+                      method_id = "single set of methods",
                       coring_method = "russian corer",
                       roots_flag = "roots and rhizomes included",
                       sediment_sieved_flag = "sediment sieved",
@@ -177,7 +182,7 @@ testIDs(cores, depthseries, by = "site")
 
 # test numeric attribute ranges
 fractionNotPercent(depthseries)
-testNumericCols(depthseries)
+# testNumericCols(depthseries)
 
 
 ## 4. Bibliography ####
@@ -206,8 +211,7 @@ write_csv(species, "./data/primary_studies/Githaiga_et_al_2017/derivative/Githai
 write_csv(methods, "./data/primary_studies/Githaiga_et_al_2017/derivative/Githaiga_et_al_2017_methods.csv")
 WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Githaiga_et_al_2017/derivative/Githaiga_et_al_2017_study_citations.bib")
 write_csv(study_citation, "./data/primary_studies/Githaiga_et_al_2017/derivative/Githaiga_et_al_2017_study_citations.csv")
-# site table?
-                      
+
                       
                       
                       

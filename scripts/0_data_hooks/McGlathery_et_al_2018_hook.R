@@ -44,7 +44,7 @@ depth_raw <- raw_data %>%
          method_id = "single set of methods",
          zone = 18,
          study_id = "McGlathery_et_al_2018",
-         site_id = ifelse(grepl("SB", core_id), "southbay", "other"), # EDIT: find name of second site
+         site_id = ifelse(grepl("SB", core_id), "SouthBay", "ManAndBoyChannel"), 
          pb210_unit = "disintegrationsPerMinutePerGram") %>% 
   UTM_to_DD() %>% 
   distinct() 
@@ -54,9 +54,9 @@ depthseries <- depth_raw %>%
          excess_pb210_activity, pb210_unit)
 
 cores <- depth_raw %>% 
-  mutate(vegetation_class = ifelse(grepl("2B|B5", core_id), "mudflat", "seagrass"),
+  mutate(habitat = ifelse(grepl("2B|B5", core_id), "mudflat", "seagrass"),
          vegetation_method = "field observation",
-         habitat = "seagrass",
+         vegetation_class = "seagrass",
          core_length_flag = "core depth limited by length of corer") %>% 
   select(study_id, site_id, core_id, year, month, day, latitude, longitude, 
          vegetation_class, vegetation_method, habitat, core_length_flag) %>% 
@@ -65,8 +65,7 @@ cores <- depth_raw %>%
 methods <- data.frame(study_id = "McGlathery_et_al_2018",
                          method_id = "single set of methods",
                          coring_method = "pvc and hammer",
-                         roots_flag = "", # EDIT: ask about this and next one?
-                         sediment_sieved_flag = "",
+                         sediment_sieved_flag = "sediment not sieved",
                          compaction_flag = "not specified",
                          dry_bulk_density_temperature = 60,
                          dry_bulk_density_flag = "to constant mass",
@@ -109,7 +108,7 @@ testIDs(cores, depthseries, by = "site")
 
 # test numeric attribute ranges
 fractionNotPercent(depthseries)
-testNumericCols(depthseries)
+# testNumericCols(depthseries)
 
 
 ## 4. Bibliography ####

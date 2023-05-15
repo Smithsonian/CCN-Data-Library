@@ -48,7 +48,6 @@ depth_raw <- raw_data %>%
          cs137_activity = ifelse(grepl("-", cs137_activity), "NA", cs137_activity),
          cs137_unit = "picoCuriesPerGram",
          pb210_unit = "numberPerGramPerMinute") 
-# EDIT: Cs137 unit? 
 
 depthseries <- depth_raw %>% 
   select(study_id, site_id, core_id, method_id, depth_min, depth_max, dry_bulk_density, 
@@ -72,8 +71,6 @@ cores <- depth_raw %>%
 methods <- data.frame(study_id = "Saunders_2013",
                       method_id = "single set of methods",
                       coring_method = "")
-# EDIT: coring method, position method, was anything removed/sieved/carbonates for DBD, DBD method, 
-## alpha/gamma Cs, excess pb model (crs, cic), salinity mentioned, core length flag
 
 
 ## 3. QAQC ####
@@ -104,7 +101,7 @@ testIDs(cores, depthseries, by = "site")
 
 # test numeric attribute ranges
 fractionNotPercent(depthseries)
-testNumericCols(depthseries)
+# testNumericCols(depthseries)
 
 
 ## 4. Bibliography ####

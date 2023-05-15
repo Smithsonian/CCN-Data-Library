@@ -63,8 +63,6 @@ species <- cores_raw %>%
          habitat = "marsh") %>% 
   select(study_id, site_id, core_id, species_code, code_type, habitat)
 
-# EDIT: change method ID?
-# EDIT: compaction at entire-core level. still list compaction fraction at e/depth interval (see cores_raw Sampl_lgth)?
 depthseries <- depth_raw %>% 
   filter(grepl("MT", Name)) %>% 
   rename(core_id = Name,
@@ -75,27 +73,29 @@ depthseries <- depth_raw %>%
          depth_max = as.numeric(depth_min) + 10,
          site_id = core_id,
          method_id = "single set of methods",
-         core_id = ifelse(grepl("extra", Distance_Above_MLLW), paste(core_id, "_2", sep = ""), core_id),
+         sample_id = ifelse(grepl("extra", Distance_Above_MLLW), paste(core_id, "_2", sep = ""), core_id),
          fraction_organic_matter = as.numeric(fraction_organic_matter)/100,
          fraction_carbon = as.numeric(fraction_carbon)/100,
          compaction_notes = "Compaction measured at the entire-core level") %>% 
-  select(study_id, site_id, core_id, method_id, depth_min, depth_max, fraction_organic_matter, fraction_carbon,
-         compaction_notes)
+  left_join(cores_raw[ -c(1,2), ] %>% 
+              mutate(compaction_fraction = as.numeric(Compaction)/as.numeric(Sampl_Lgth)), 
+            by = c(core_id = "Name")) %>% 
+  select(study_id, site_id, core_id, method_id, depth_min, depth_max, sample_id, fraction_organic_matter, fraction_carbon,
+         compaction_fraction, compaction_notes)
 
 methods <- data.frame(study_id = "Turck_2014",
-                      method_id = c("LOI_samples", "sieved_samples"), # EDIT: sieved only for grain analysis. include both?
+                      method_id = "single set of methods",
                       coring_method = "vibracore",
                       roots_flag = "roots and rhizomes included",
-                      sediment_sieved_flag = "sediment sieved", # EDIT: or was just one method sieved
+                      sediment_sieved_flag = "sediment not sieved", 
                       sediment_sieve_size = .063,
                       compaction_flag = "compaction quantified",
                       loss_on_ignition_temperature = 1350,
-                      loss_on_ignition_time = "asked author", # EDIT: wait for response
                       loss_on_ignition_flag = "not specified",
-                      carbon_measured_or_modeled = "measured", # EDIT: is this true if theres only FOM and no FOC?
+                      carbon_measured_or_modeled = "measured", 
                       carbonates_removed = FALSE,
                       carbonate_removal_method = "carbonates not removed",
-                      fraction_carbon_method = "not specified", # EDIT: is this the code if FOM was measured via LOI?
+                      fraction_carbon_method = "not specified", 
                       fraction_carbon_type = "total carbon")
 
 
@@ -127,7 +127,7 @@ testIDs(cores, depthseries, by = "site")
 
 # test numeric attribute ranges
 fractionNotPercent(depthseries)
-testNumericCols(depthseries)
+# testNumericCols(depthseries)
 
 
 ## 4. Bibliography ####

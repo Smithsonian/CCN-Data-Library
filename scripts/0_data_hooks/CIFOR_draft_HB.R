@@ -13,15 +13,14 @@ source("scripts/1_data_formatting/qa_functions.R") # for reorderColumns()
 source("scripts/1_data_formatting/curation_functions.R") 
 
 
-## Questions ####
-# impact_class = ecosystem_condition for soil impacts table?
-# is plot area (broken into TREE_AREA and SAP_AREA) nested? 
-# include swamp_soil$Soil$C_CONT as plot_sediment_carbon (plot table)?
+## Issues ####
+# synthSWAMP() error
 
-# check for missing files
-# BC manual - methods data
-# as.data.frame(GetBibEntryWithDOI(""))
-# modeled data? matching lat/long? 
+# impact_class = ecosystem_condition for soil impacts table?
+# include swamp_soil$Soil$C_CONT as plot_sediment_carbon (plot table)?
+# request restricted files
+# make bib: as.data.frame(GetBibEntryWithDOI(""))
+# qaqc: modeled data? matching lat/long? 
 
 
 
@@ -148,7 +147,7 @@ SWAMP_veg_converter <- function(swamp_type) {
            month = month(MDATE),
            day = day(MDATE),
            site_name = gsub(" ", "_", getsiteid[SITEID]), 
-           habitat = getlandcov[LANDCOVID],
+           ecotype = getlandcov[LANDCOVID],
            ecosystem_condition = getecocond[ECOID],
            disturbance_class = getdisturb[DISTRUBID],
            geomorphic_id = getgeo[GEOID],
@@ -159,6 +158,13 @@ SWAMP_veg_converter <- function(swamp_type) {
            species_code = getspecies[SPECID],
            code_type = case_when(grepl("spp", species_code) ~ "Genus",
                                  T ~ "Genus species"),
+           plot_biomass_carbon = subplot_AGC + subplot_BGC,
+           biomass_total = BIOMASS_AGB + BIOMASS_BGB,
+           biomass_total_carbon = C_CONT_AGB + C_CONT_BGB,
+           biomass_decay_corrected = case_when(decay_class == 1 ~ BIOMASS_AGB * .975,
+                                               decay_class == 2 ~ BIOMASS_AGB * .85,
+                                               decay_class == 3 ~ BIOMASS_AGB * .5,
+                                               T ~ NA_character_),
            site_id = paste(site_name, PLOTID, sep = "_"),
            plot_id = paste(site_id, SUBPID, sep = "_"),
            study_id = substr(filename, 1, nchar(filename) - 11)) %>% 
@@ -167,6 +173,10 @@ SWAMP_veg_converter <- function(swamp_type) {
     group_by(plot_id) %>% 
     mutate(plant_count = n(),
            dominant_species = getmode(species_code)) %>%  
+    ungroup() %>% 
+    group_by(ecotype) %>% 
+    mutate(plot_biomass_carbon = n(),
+           total_ecosystem_carbon = sum(plot_biomass_carbon)) %>% 
     rename(elevation = ELEVATION,
            disturbance_note = DISTURBANCE_NOTES,
            position_accuracy = ACCURACY,
@@ -176,22 +186,25 @@ SWAMP_veg_converter <- function(swamp_type) {
            plant_AGB = BIOMASS_AGB,
            plant_BGB = BIOMASS_BGB,
            plant_AGC = C_CONT_AGB,
-           plant_BGC = C_CONT_BGB)
+           plant_BGC = C_CONT_BGB,
+           field_or_manipulation_code = "field",
+           harvest_or_allometry = "allometry")
 }
 
 
 ## Veg Tables ####
 plot <- SWAMP_veg_converter(swamp_veg) %>% 
-  select(c(study_id, plot_id, site_id, dominant_species, year, month, day, 
-           longitude, latitude, position_accuracy, position_level_note, elevation, 
-           plant_count, subplot_AGC, subplot_BGC)) %>% 
+  select(c(study_id, plot_id, site_id, dominant_species, year, month, day, harvest_or_allometry,
+           field_or_manipulation_code, longitude, latitude, position_accuracy, position_level_note, 
+           elevation, plant_count, subplot_AGC, subplot_BGC, plot_biomass_carbon)) %>% 
   distinct()
 
 plant <- SWAMP_veg_converter(swamp_veg) %>% 
   select(c(study_id, site_id, plot_id, plant_id, species_code, code_type, decay_class, 
-           habitat, ecosystem_condition, disturbance_class, disturbance_note, geomorphic_id, 
-           height, diameter_base, diameter_breast_height, plant_AGB, plant_BGB,
-           plant_AGC, plant_BGC, tree_or_sapling, specific_gravity))
+           ecotype, ecosystem_condition, disturbance_class, disturbance_note, geomorphic_id, 
+           height, diameter_base, diameter_breast_height, plant_AGB, plant_BGB, biomass_total,
+           biomass_decay_corrected, plant_AGC, plant_BGC, biomass_total_carbon, tree_or_sapling, 
+           specific_gravity))
 
 
 ## Soil Function ####
