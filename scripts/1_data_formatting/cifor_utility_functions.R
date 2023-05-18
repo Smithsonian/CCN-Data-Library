@@ -164,7 +164,7 @@ synthSWAMP <- function(data_type){
   
   # loop through files, reading and combining into one table
   for(file in synth_files){
-    
+
     # only read the file if it has a "Data" or "Tree Data" sheet
     if(any(c("Site", "Plot") %in% readxl::excel_sheets(file))){
       
@@ -177,7 +177,7 @@ synthSWAMP <- function(data_type){
       # combine list dataframes based on element names
       keys <- unique(c(names(result), names(templist)))
       # add to result list
-      result <- lapply(setNames(keys, keys), function(x) {rbind(result[[x]], templist[[x]])})
+      result <- lapply(setNames(keys, keys), function(x) {bind_rows(result[[x]], templist[[x]])})
     } 
   }
   return(result)
