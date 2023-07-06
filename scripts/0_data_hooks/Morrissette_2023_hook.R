@@ -34,7 +34,9 @@ id <- "Morrissette_et_al_2023"
 
 ## ... Methods ####
 
-methods <-  methods_raw
+methods <-  methods_raw %>% 
+  mutate(fraction_carbon_type = "organic carbon",
+         carbonates_removed = TRUE)
 
 #reorder columns 
 methods <- reorderColumns("methods", methods)
@@ -51,14 +53,16 @@ core_plot <- plots_raw %>%
 # divvy into core and plot level tables
 cores <- core_plot %>% 
   select(-c(transect_id, plot_id, section_n, max_depth, pH, ORP, tree_count, dominant_species, 
-            salinity, protection_status, protection_notes, ecosystem_health,
+            salinity, protection_status, protection_notes, ecosystem_health, ecotype,
             inundation_notes, plot_notes, contains("_carbon")))
 
 plots <- core_plot %>%
+  rename(plant_count = tree_count,
+         ecosystem_type = ecotype) %>% 
   select(-c(core_id, section_n, max_depth, pH, ORP, salinity,
             protection_status, protection_notes, ecosystem_health, inundation_notes, 
             # retain biomass and carbon calculations?
-            contains("_carbon")))
+            contains("_carbon"), transect_id))
 
 ## ... Depthseries ####
 
@@ -74,12 +78,12 @@ depthseries <- depthseries_raw %>%
 ## ... Biomass ####
 
 biomass <- biomass_raw %>% 
-  rename(diameter_crown = canopy_width,
+  rename(basal_width = diameter_base,
          height = tree_height,
          debris_count = debris_number) %>% 
   mutate(plot_id = str_c(site_id, transect_id, plot_id, sep = "_"),
          plot_area = pi*(plot_radius^2)) %>% 
-  select(-c(transect_id))
+  select(-c(transect_id, contains("_scaled")))
 
 # which attributes to drop/retain?
 # add? plot shape is circle
