@@ -188,7 +188,7 @@ The following files were found in the derivative folders. They either do not mat
 ```{r, echo=FALSE}
 
 if(!is.null(file_paths$unknown_csv)){
-  paste(file_paths$unknown_csv, collapse = ", ")
+  paste(unique(file_paths$unknown_csv), collapse = ", ")
 }else {
   "No unknown csv files found in derivative folders"
 }

@@ -44,14 +44,14 @@ join_status <- TRUE
 # designate directory to pull data from
 # directory <- "./data/primary_studies/"
 
-final_dirs <- list.dirs("data/primary_studies")[grepl("derivative", list.dirs("data/primary_studies"))]
+final_dirs <- list.dirs("data/primary_studies")[grepl("derivative|final", list.dirs("data/primary_studies"))]
 
 # remove any directories that shouldn't be drawn into the synthesis
-exclude_dirs <- c("Curtis_et_al_2022", "Howard_and_Fourqurean_2020")
-
-if(!is_empty(exclude_dirs)){
-  final_dirs <- final_dirs[!grepl(paste0(exclude_dirs, collapse = "|"), final_dirs)]
-}
+# exclude_dirs <- c("Curtis_et_al_2022", "Howard_and_Fourqurean_2020")
+# 
+# if(!is_empty(exclude_dirs)){
+#   final_dirs <- final_dirs[!grepl(paste0(exclude_dirs, collapse = "|"), final_dirs)]
+# }
 
 # Index of table names
 tables <- c("depthseries", "cores", "sites", "species", "impacts", "methods", "study_citations")

@@ -36,7 +36,10 @@ id <- "Morrissette_et_al_2023"
 
 methods <-  methods_raw %>% 
   mutate(fraction_carbon_type = "organic carbon",
-         carbonates_removed = TRUE)
+         carbonates_removed = TRUE,
+         method_id = "single set of methods",
+         carbon_profile_notes = paste("Samples dried over 36-48hrs for DBD.", carbon_profile_notes)) %>% 
+  select(-dry_bulk_density_time_min, -dry_bulk_density_time_max)
 
 #reorder columns 
 methods <- reorderColumns("methods", methods)
@@ -60,7 +63,7 @@ plots <- core_plot %>%
   rename(plant_count = tree_count,
          ecosystem_type = ecotype) %>% 
   select(-c(core_id, section_n, max_depth, pH, ORP, salinity,
-            protection_status, protection_notes, ecosystem_health, inundation_notes, 
+            protection_status, protection_notes, inundation_notes, 
             # retain biomass and carbon calculations?
             contains("_carbon"), transect_id))
 
@@ -94,7 +97,7 @@ species <- plots_raw %>%
   rename(species_code = dominant_species) %>% 
   mutate(plot_id = str_c(site_id, transect_id, plot_id, sep = "_"),
          species_code = strsplit(species_code, split = ", ")) %>% 
-  select(study_id, site_id, plot_id, habitat, species_code) %>% 
+  select(study_id, site_id, core_id, habitat, species_code) %>% 
   unnest(species_code) %>% 
   mutate(code_type = "Genus species")
 
@@ -103,10 +106,11 @@ sort(unique(species$species_code))
 ## ... Impacts ####
 
 # create impacts table from plot level
-impacts <- plots_raw %>% 
-  select(contains("_id"), ecosystem_health) %>% 
-  distinct()
+# impacts <- plots_raw %>% 
+#   select(contains("_id"), ecosystem_health) %>% 
+#   distinct()
 # unique impacts at the site and transect level
+# this is more related to the aboveground
 
 ## 2. QAQC ####
 
@@ -128,7 +132,7 @@ testConditional(table_names)
 
 # test uniqueness
 testUniqueCores(cores)
-testUniqueCoords(cores)
+testUniqueCoords(cores) # there are two, the seagrass cores share coordinates with mangrove sites
 
 # test relational structure of data tables
 testIDs(cores, depthseries, by = "site")
@@ -137,7 +141,8 @@ testIDs(cores, depthseries, by = "core")
 # test numeric attribute ranges
 fractionNotPercent(depthseries)
       #testNumericCols(depthseries)
-test_numeric_vars(depthseries) ##testNumericCols producing error message 
+test <- test_numeric_vars(depthseries) ##testNumericCols producing error message 
+# testNumericCols(depthseries)
 
 ## 3. Write Curated Data ####
 
@@ -152,9 +157,9 @@ write_csv(species, "data/primary_studies/Morrissette_et_al_2023/derivative/Morri
 ## 4. Bibliography ####
   
 # read in data and article citations
-release_bib <- as.data.frame(GetBibEntryWithDOI("10.25573/serc.13043054")) %>% 
+release_bib <- as.data.frame(GetBibEntryWithDOI("10.25573/serc.21298338")) %>% 
   mutate(bibliography_id = "Morrissette_et_al_2023_data", publication_type = "primary dataset")
-pub_bib <- as.data.frame(ReadBib("data/primary_studies/Morrissette_et_al_2023/original/Morrissette_et_al_2023.bib")) %>% 
+pub_bib <- as.data.frame(ReadBib("data/primary_studies/Morrissette_et_al_2023/original/Morrissette_et_al_2023_associated_publication.bib")) %>% 
   mutate(bibliography_id = "Morrissette_et_al_2023_article", publication_type = "primary source")
 
 study_citation <- bind_rows(release_bib, pub_bib) %>% 

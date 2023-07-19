@@ -312,12 +312,16 @@ study_citation_article <- data.frame(bibliography_id = "van_Ardenne_et_al_2018_a
 #merge and write bib             
 study_citations <- bind_rows(study_citation, study_citation_article) %>%
   mutate(study_id = id,
-         bibliography_id = c("van_Ardenne_et_al_2018", "van_Ardenne_et_al_2018"),
+         bibliography_id = c("van_Ardenne_et_al_2018_dataset", "van_Ardenne_et_al_2018_article"),
          publication_type = c("primary dataset", "associated source")) %>%
   remove_rownames() %>% 
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
-WriteBib(as.BibEntry(study_citations), "data/primary_studies/van_Ardenne_et_al_2018/derivative/van_Ardenne_et_al_2018.bib")
+# create bib
+van_arden_bib <- study_citations %>% select(-study_id, -publication_type) %>%   
+  column_to_rownames("bibliography_id")
+
+WriteBib(as.BibEntry(van_arden_bib), "data/primary_studies/van_Ardenne_et_al_2018/derivative/van_Ardenne_et_al_2018.bib")
 write_csv(study_citations, "data/primary_studies/van_Ardenne_et_al_2018/derivative/van_Ardenne_et_al_2018_study_citations.csv")
 
 # link to bibtex guide
