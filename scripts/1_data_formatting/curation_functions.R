@@ -3,56 +3,10 @@
 
 # This script contains simple functions built to curate datasets
 
-library(tidyverse)
-
-
-## Remove all columns 
+## Remove all empty columns 
 # https://stackoverflow.com/questions/2643939/remove-columns-from-dataframe-where-all-values-are-na
 notAllNA <- function(x) any(!is.na(x))
 
-## Convert mean depth to min and max depth ############
-# For conversion of depth interval values: if a dataframe
-#   has a mean depth attribute, this will create a min depth
-#   and max depth attributes
-
-# NOTE: this function assumes constant sampling interval (as in, each slice of
-#   core is of equal length)
-convert_mean_depth_to_min_max <- function(dataframe, df_mean.depth) {
-  # Set l as th length of the dataframe
-  l <- length(df_mean.depth)
-  df_mean.depth <- as.numeric(df_mean.depth)
-  # For each row....
-  for (i in 1:l) {
-    min <- (df_mean.depth[i - 1] + df_mean.depth[i])/2 # Take mean of previous cell and current cell
-    max <- (df_mean.depth[i + 1] + df_mean.depth[i])/2 # Take mean of current cell and next cell
-      # If initial iteration...
-      if (i == 1) {
-        depth_min = as.vector(min) # create depth_min vector
-        depth_max = as.vector(max) # create depth_max vector
-      } else { # If not initial iteration, add min/max
-               #  value to depth_min/max vector
-        
-          depth_min[i] <- min
-          depth_max[i] <- max
-        }
-  }
-
-  if (df_mean.depth[1] == 0) {
-    depth_min[1] <- 0
-    depth_max[1] <- 0
-    depth_min[2] <- 0
-    depth_max[l] <- depth_min[l] + 2 * (df_mean.depth[l] - depth_min[l])
-  } else {
-    depth_min[1] <- 0
-    depth_max[l] <- depth_min[l] + 2 * (df_mean.depth[l] - depth_min[l])
-    }
-
-  dataframe <- dataframe %>%
-    mutate(depth_min = depth_min) %>%
-    mutate(depth_max = depth_max)
-
-  return(dataframe)
-}       
 
 ## Convert disintegration/min/gram to becquerel/kilogram ###########
 convert_dpm_g_to_bec_kg <- function(col_input) {
@@ -60,11 +14,6 @@ convert_dpm_g_to_bec_kg <- function(col_input) {
   return(col_output)
 }
 
-## Convert percent to fraction ###############
-convert_percent_to_fraction <- function(col_input) {
-  col_output <- as.numeric(col_input)/100
-  return(col_output)
-}
 
 # Convert UTM to decimal degree ##########
 # assumed columns: core_id, easting, northing, zone
@@ -117,6 +66,7 @@ UTM_to_DD <- function(df, core_id, easting, northing, zone){
 # leaflet(df_decimal) %>% addTiles() %>% addCircleMarkers(lng = ~longitude, lat = ~latitude)
 
 ## Convert UTM to lat/long ###############
+# only used in Thorne hook
 convert_UTM_to_latlong <- function(easting, northing, zone, core_id) {
   warning('This function has been superceded by UTM_to_DD().')
   
@@ -226,6 +176,7 @@ convert_UTM_to_latlong <- function(easting, northing, zone, core_id) {
 }
 
 ## Create site-level bounding box from core-level locations #############
+
 create_multiple_geographic_coverages <- function(core_table) {
   
   subsite_bounding_box <- core_table %>%
@@ -249,6 +200,7 @@ create_multiple_geographic_coverages <- function(core_table) {
 }
 
 ## Create IDs from study IDs FOR CORE-LEVEL DATA ############
+# only used in Fourqurean synthesis hook
 
 create_IDs_from_study_IDs_corelevel <- function(df, # dataframe
                                       new_ID # string for the name of the new ID column
@@ -299,6 +251,7 @@ create_IDs_from_study_IDs_corelevel <- function(df, # dataframe
 ## Recode variables ##################
 
 ## ... Recode vegetation classes to full names
+# used in Drexler 2009 and Holmquist synthesis
 
 recode_vegetation <- function(df, vegetation_class) {
   output_df <- df %>%
@@ -312,6 +265,7 @@ recode_vegetation <- function(df, vegetation_class) {
 }
 
 ## ... Recode impact classes to full names 
+# used in Holmquist synthesis
 
 recode_impact <- function(df, impact_class) {
   output_df <- df %>%
@@ -329,7 +283,9 @@ recode_impact <- function(df, impact_class) {
   output_df
 }
  
-## ... Recode species codes to full names 
+## ... Recode species codes to full names
+## used in Holmquist synth and Osland 2016
+
 recode_species <- function(df, species_code) {
   output_df <- df %>%
     mutate(species_code = recode_factor(species_code,
@@ -378,6 +334,8 @@ recode_species <- function(df, species_code) {
 }       
 
 ## ... Recode salinity codes to full names 
+# used in Drexler 2009 and Holmquist synthesis
+
 recode_salinity <- function(df, salinity_class) {
   output_df <- df %>%
     mutate(salinity_class = recode_factor(salinity_class,
@@ -404,212 +362,16 @@ assignSalinityClass <- function(x) {
   # polyhaline = 18-30 ppt.; mixoeuhaline = 30-40 ppt.; saline = 30-50 ppt.; brine = >50 ppt.
   
   # nested ifelse statement to assign salinity class from given salinity
-  sal_class <- ifelse(x < 0.5, "fresh",
-                      ifelse(x > 50, "brine", 
-                             ifelse(between(x, 0.5, 5), "oligohaline", 
-                                    ifelse(between(x, 5, 18), "mesohaline", 
-                                           ifelse(between(x, 18, 30), "polyhaline", 
-                                                  ifelse(between(x, 30, 40), "mixoeuhaline", 
-                                                         ifelse(between(x, 40, 50), "saline", 
-                                                                "other salinity class")))))))
+  sal_class <- case_when(x <= 0.5 ~ "fresh",
+                         x >= 50 ~ "brine", 
+                         between(x, 0.5, 5) ~ "oligohaline", 
+                         between(x, 5, 18) ~ "mesohaline", 
+                         between(x, 18, 30) ~ "polyhaline", 
+                         between(x, 30, 40) ~ "mixoeuhaline", 
+                         between(x, 40, 50) ~ "saline", 
+                         is.na(x) ~ NA_character_,
+                         TRUE ~ "other salinity class")
   return(sal_class)
-}
-
-## Customized cr_cn function ##############
-
-# Pulled from ropenscri/crossref
-# https://github.com/ropensci/rcrossref
-
-# Required functions from rcrossref for cr_cn (and therefore cr_ccrcn)
-`cr_agency` <- function(dois = NULL, .progress="none", ...) {
-  foo <- function(x, y, ...){
-    cr_GET(
-      endpoint = sprintf("works/%s/agency", x),
-      args = list(),
-      parse = TRUE, ...)
-  }
-  if (length(dois) > 1) {
-    res <- llply(dois, foo, y = .progress, ...)
-    res <- lapply(res, "[[", "message")
-    names(res) <- dois
-    res
-  } else {
-    foo(dois, ...)$message
-  }
-}
-
-GET_agency_id <- function(x, ...) {
-  if (is.null(x)) {
-    stop("no doi for doi agency check provided", call. = FALSE)
-  }
-  cr_agency(x)$agency$id
-}
-
-assert <- function(x, y) {
-  if (!is.null(x)) {
-    if (!inherits(x, y)) {
-      stop(deparse(substitute(x)), " must be of class ",
-           paste0(y, collapse = ", "), call. = FALSE)
-    }
-  }
-}
-
-rcrossref_ua <- function() {
-  versions <- c(paste0("r-curl/", utils::packageVersion("curl")),
-                paste0("crul/", utils::packageVersion("crul")),
-                sprintf("rOpenSci(rcrossref/%s)", 
-                        utils::packageVersion("rcrossref")),
-                get_email())
-  paste0(versions, collapse = " ")
-}
-
-get_email <- function() {
-  email <- Sys.getenv("crossref_email")
-  if (identical(email, "")) {
-    NULL
-  } else {
-    paste0("(mailto:", val_email(email), ")")
-  }
-}
-
-warn_status <- function(x) {
-  if (x$status_code > 202) {
-    mssg <- x$parse("UTF-8")
-    if (!is.character(mssg)) {
-      mssg <- if (x$status_code == 406) {
-        "(406) - probably bad format type"
-      } else {
-        x$status_http()$message
-      }
-    } else {
-      mssg <- paste(sprintf("(%s)", x$status_code), "-", mssg)
-    }
-    # warning(
-    #   sprintf(
-    #     "%s w/ %s",
-    #     gsub("%2F", "/", crul::url_parse(x$url)$path),
-    #     mssg
-    #   ),
-    #   call. = FALSE
-    # )
-  }
-}
-
-# Supported content types
-# See http://www.crosscite.org/cn/
-supported_cn_types <- list(
-  crossref = c("rdf-xml", "turtle", "citeproc-json", "citeproc-json-ish",
-               "text", "ris", "bibtex", "crossref-xml", "bibentry",
-               "crossref-tdm"),
-  datacite = c("rdf-xml", "turtle", "datacite-xml", "citeproc-json-ish", "text",
-               "ris", "bibtex", "bibentry"),
-  medra = c("rdf-xml", "turtle", "citeproc-json-ish", "ris", "bibtex",
-            "bibentry", "onix-xml")
-)
-
-cr_ccrcn <- function (dois, format = "bibtex", style = "apa", locale = "en-US", 
-          raw = FALSE, .progress = "none", url = NULL, ...) 
-{
-
-  format <- match.arg(format, c("rdf-xml", "turtle", "citeproc-json", 
-                                "citeproc-json-ish", "text", "ris", "bibtex", "crossref-xml", 
-                                "datacite-xml", "bibentry", "crossref-tdm", "onix-xml"))
-  cn <- function(doi, ...) {
-    agency_id <- suppressWarnings(GET_agency_id(doi))
-    if (is.null(agency_id)) {
-      warning(doi, " agency not found - proceeding with 'crossref' ...",
-              "cr_ccrcn failed to parse BibTex citation from this DOI. Please manually generate BibTex citation for this DOI.",
-              
-              call. = FALSE)
-      agency_id <- "crossref"
-    }
-    assert(url, "character")
-    if (is.null(url)) 
-      url <- "https://doi.org"
-    args <- list()
-    if (grepl("citation.crosscite.org", url)) {
-      args <- cr_compact(list(doi = doi, lang = locale, 
-                              style = style))
-    }
-    else {
-      url <- file.path(url, doi)
-    }
-    if (!format %in% supported_cn_types[[agency_id]]) {
-      stop(paste0("Format '", format, "' for '", doi, "' is not supported by the DOI registration agency: '", 
-                  agency_id, "'.\nTry one of the following formats: ", 
-                  paste0(supported_cn_types[[agency_id]], collapse = ", ")))
-    }
-    pick <- c(`rdf-xml` = "application/rdf+xml", turtle = "text/turtle", 
-              `citeproc-json` = "transform/application/vnd.citationstyles.csl+json", 
-              `citeproc-json-ish` = "application/vnd.citationstyles.csl+json", 
-              text = "text/x-bibliography", ris = "application/x-research-info-systems", 
-              bibtex = "application/x-bibtex", `crossref-xml` = "application/vnd.crossref.unixref+xml", 
-              `datacite-xml` = "application/vnd.datacite.datacite+xml", 
-              bibentry = "application/x-bibtex", `crossref-tdm` = "application/vnd.crossref.unixsd+xml", 
-              `onix-xml` = "application/vnd.medra.onixdoi+xml")
-    type <- pick[[format]]
-    if (format == "citeproc-json") {
-      cli <- crul::HttpClient$new(url = file.path("https://api.crossref.org/works", 
-                                                  doi, type), headers = list(`User-Agent` = rcrossref_ua(), 
-                                                                             `X-USER-AGENT` = rcrossref_ua()))
-      response <- cli$get(...)
-    }
-    else {
-      if (format == "text") {
-        type <- paste(type, "; style = ", style, "; locale = ", 
-                      locale, sep = "")
-      }
-      cli <- crul::HttpClient$new(url = url, opts = list(followlocation = 1), 
-                                  headers = list(`User-Agent` = rcrossref_ua(), 
-                                                 `X-USER-AGENT` = rcrossref_ua(), Accept = type))
-      response <- cli$get(query = args, ...)
-    }
-    warn_status(response)
-    if (response$status_code < 202) {
-      select <- c(`rdf-xml` = "text/xml", turtle = "text/plain", 
-                  `citeproc-json` = "application/json", `citeproc-json-ish` = "application/json", 
-                  text = "text/plain", ris = "text/plain", bibtex = "text/plain", 
-                  `crossref-xml` = "text/xml", `datacite-xml` = "text/xml", 
-                  bibentry = "text/plain", `crossref-tdm` = "text/xml", 
-                  `onix-xml` = "text/xml")
-      parser <- select[[format]]
-      if (raw) {
-        response$parse("UTF-8")
-      }
-      else {
-        out <- response$parse("UTF-8")
-        if (format == "text") {
-          out <- gsub("\n", "", out)
-        }
-        if (format == "bibentry") {
-          out <- parse_bibtex(out)
-        }
-        if (parser == "application/json") {
-          out <- jsonlite::fromJSON(out)
-        }
-        if (parser == "text/xml") {
-          out <- xml2::read_xml(out)
-        }
-        out
-      }
-    }
-  }
-  if (length(dois) > 1) {
-    # library(plyr, warn.conflicts = FALSE, quietly = TRUE)
-    # library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
-    lapply(dois, function(z, ...) {
-      out <- try(cn(z, ...), silent = TRUE)
-      if ("try-error" %in% class(out)) {
-        warning(paste0("Failure in resolving '", z, "'. See error detail in results."),
-                call. = FALSE)
-        out <- list(doi = z, error = out[[1]])
-      }
-      return(out)
-    }, .progress = .progress)
-  }
-  else {
-    cn(dois, ...)
-  }
 }
 
 ## Resolve Taxonomy ####

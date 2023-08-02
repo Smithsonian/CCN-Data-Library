@@ -59,35 +59,71 @@ cores <- core_plot %>%
             salinity, protection_status, protection_notes, ecosystem_health, ecotype,
             inundation_notes, plot_notes, contains("_carbon")))
 
+# plot summary
 plots <- core_plot %>%
   rename(plant_count = tree_count,
-         ecosystem_type = ecotype) %>% 
-  select(-c(core_id, section_n, max_depth, pH, ORP, salinity,
-            protection_status, protection_notes, inundation_notes, 
-            # retain biomass and carbon calculations?
-            contains("_carbon"), transect_id))
+         ecosystem_type = ecotype,
+         plot_center_latitude = latitude,
+         plot_center_longitude = longitude,
+         max_soil_depth_reporting = max_depth,
+         plot_total_carbon = total_ecosystem_carbon,
+         plot_vegetation_carbon = plot_biomass_carbon) %>% 
+  mutate(plot_shape = "circle",
+         coordinates_obscured_flag = "not obscured",
+         field_or_manipulation_code = "field",
+         salinity_class = assignSalinityClass(salinity),
+         plant_plot_detail_present = TRUE,
+         soil_core_present = TRUE) %>% 
+  select(study_id, site_id, plot_id, year, month, day, everything()) %>% 
+  select(-c(core_id, section_n, pH, ORP, 
+            # protection_status, protection_notes, 
+            inundation_notes,
+            plot_sediment_carbon_1m, total_ecosystem_carbon_1m,
+            transect_id))
 
-## ... Depthseries ####
+# some of these would go into to plant_plot_detail table, and merge
+# some info from the biomass allometry table as well
 
-depthseries <- depthseries_raw %>% 
-  mutate(method_id = "single set of methods",
-         fraction_organic_matter = soil_organic_matter/100,
-         fraction_carbon = soil_organic_carbon/100) %>% 
-  select(-c(transect_id, plot_id, contains("carbon_density"), contains("carbon_stock"), contains("soil_"))) %>% 
-  select(study_id, site_id, method_id, everything())
 
-# depthseries <- reorderColumns("depthseries", depthseries)
+## ... Plot Detail ####
 
-## ... Biomass ####
+plot_detail <- biomass_raw %>% 
+  drop_na(plot_radius) %>% 
+  # using count instead of distinct to tally tree observations
+  count(study_id, site_id, transect_id, plot_id, plot_radius, plot_density, name = "tree_count") %>% 
+  mutate(subplot_id = str_c(transect_id, plot_id, plot_radius, sep = "_"),
+         plant_mass_flag = "modeled")
 
-biomass <- biomass_raw %>% 
+## ... Plant Allometry ####
+
+plant <- biomass_raw %>% 
   rename(basal_width = diameter_base,
          height = tree_height,
-         debris_count = debris_number) %>% 
+         debris_count = debris_number,
+         plant_organic_matter_above_kg = biomass_aboveground, # kg
+         plant_organic_matter_above = biomass_aboveground_scaled, # MgC ha-1
+         plant_organic_carbon_above = biomass_aboveground_carbon, # MgC ha-1
+         plant_organic_matter_below_kg = biomass_belowground, # kg
+         plant_organic_matter_below = biomass_belowground_scaled, # MgC ha-1
+         plant_organic_carbon_below = biomass_belowground_carbon, # MgC ha-1
+         plant_organic_matter_total = biomass_total, # MgC ha-1
+         plant_organic_carbon_total = biomass_total_carbon) %>% # MgC ha-1
+  separate_wider_delim(species_code, names = c("genus", "species"), delim = " ") %>% 
   mutate(plot_id = str_c(site_id, transect_id, plot_id, sep = "_"),
-         plot_area = pi*(plot_radius^2)) %>% 
-  select(-c(transect_id, contains("_scaled")))
+         plot_area = pi*(plot_radius^2),
+         # plant_mass_unit = "kilogram",
+         diameter_flag = case_when(!is.na(diameter_qmd) ~ "QMD",
+                                   !is.na(diameter_dbh) ~ "DBH"),
+         diameter = coalesce(diameter_dbh, diameter_qmd),
+         diameter_unit = ifelse(!is.na(diameter), "centimeter", NA),
+         canopy_width_unit = ifelse(!is.na(canopy_width), "centimeter", NA),
+         carbon_conversion_factor = case_when(biomass_flag == "debris" ~ 0.5,
+                                              # Using an aboveground carbon conversion factor of 0.48
+                                              # Using a belowground carbon conversion factor of 0.39
+                                              T ~ NA_real_)) %>% 
+  select(-c(transect_id, diameter_dbh, diameter_qmd))
 
+names(plant)
 # which attributes to drop/retain?
 # add? plot shape is circle
 
@@ -111,6 +147,19 @@ sort(unique(species$species_code))
 #   distinct()
 # unique impacts at the site and transect level
 # this is more related to the aboveground
+
+## ... Depthseries ####
+
+depthseries <- depthseries_raw %>% 
+  mutate(method_id = "single set of methods",
+         fraction_organic_matter = soil_organic_matter/100,
+         fraction_carbon = soil_organic_carbon/100) %>% 
+  select(-c(transect_id, plot_id, contains("carbon_density"), contains("carbon_stock"), contains("soil_"))) %>% 
+  select(study_id, site_id, method_id, everything())
+
+# depthseries <- reorderColumns("depthseries", depthseries)
+
+
 
 ## 2. QAQC ####
 
@@ -167,11 +216,11 @@ study_citation <- bind_rows(release_bib, pub_bib) %>%
   remove_rownames() %>% 
   select(study_id, bibliography_id, bibtype, everything())
   
-Morrissette_bib <- study_citation %>% select(-study_id, -publication_type) %>%   
-                  column_to_rownames("bibliography_id")
+# Morrissette_bib <- study_citation %>% select(-study_id, -publication_type) %>%   
+#                   column_to_rownames("bibliography_id")
 
 write_csv(study_citation, "data/primary_studies/Morrissette_et_al_2023/derivative/Morrissette_et_al_2023_study_citations.csv")
-WriteBib(as.BibEntry(Morrissette_bib), "data/primary_studies/Morrissette_et_al_2023/derivative/Morrissette_et_al_2023.bib")
+# WriteBib(as.BibEntry(Morrissette_bib), "data/primary_studies/Morrissette_et_al_2023/derivative/Morrissette_et_al_2023.bib")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/
