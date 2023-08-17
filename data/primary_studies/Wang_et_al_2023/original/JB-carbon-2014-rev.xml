@@ -1,0 +1,404 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Hongqing Wang</origin>
+        <origin>Gregg Snedden</origin>
+        <origin>Ellen Hartig</origin>
+        <origin>Qin Chen</origin>
+        <pubdate>20230104</pubdate>
+        <title>Soil property and geochronology (137Cs and 210Pb) data (2014) in salt marsh soils of Jamaica Bay Estuary, New York City</title>
+        <geoform>spreadsheet</geoform>
+        <onlink>https://doi.org/10.5066/P9XQBYXU</onlink>
+        <lworkcit>
+          <citeinfo>
+            <origin>Hongqing Wang</origin>
+            <origin>Gregg A. Snedden</origin>
+            <origin>Ellen K. Hartig</origin>
+            <origin>Qin Chen</origin>
+            <pubdate>20230517</pubdate>
+            <title>Spatial Variability in Vertical Accretion and Carbon Sequestration in Salt Marsh Soils of an Urban Estuary</title>
+            <geoform>publication</geoform>
+            <serinfo>
+              <sername>Wetlands</sername>
+              <issue>vol. 43, issue 5</issue>
+            </serinfo>
+            <pubinfo>
+              <pubplace>n/a</pubplace>
+              <publish>Springer Science and Business Media LLC</publish>
+            </pubinfo>
+            <onlink>https://doi.org/10.1007/s13157-023-01699-y</onlink>
+          </citeinfo>
+        </lworkcit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>This dataset contains soil property and geochronology (Cesium-137 and lead-210 dating) data from soil cores collected in August 2014 in salt marshes of Jamaica Bay Estuary, New York City.</abstract>
+      <purpose>The soil property (bulk density, organic matter content, total organic carbon, total nitrogen) and Cesium-137 and Lead-210 dating data were used to determine the spatial variability in marsh vertical accretion rate and soil organic carbon sequestration rates in salt marshes across Jamaica Bay Estuary. The results can be used for evaluation of salt marsh resilience and carbon budget under future climate change and sea level rise.</purpose>
+      <supplinf>Author ORCIDs: Wang, H.(0000-0002-2977-7732);Snedden, G.(0000-0001-7821-3709)</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>20140818</begdate>
+          <enddate>20140822</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <descgeog>JAMAICA BAY</descgeog>
+      <bounding>
+        <westbc>-73.9819</westbc>
+        <eastbc>-73.7128</eastbc>
+        <northbc>40.6890</northbc>
+        <southbc>40.5227</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>oceans</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS</themekt>
+        <themekey>salt marsh</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:637270fed34ed907bf6c69e3</themekey>
+      </theme>
+      <place>
+        <placekt>Common geographic areas</placekt>
+        <placekey>United States</placekey>
+        <placekey>New York City</placekey>
+        <placekey>Jamaica Bay</placekey>
+      </place>
+    </keywords>
+    <accconst>None.  Please see 'Distribution Info' for details.</accconst>
+    <useconst>None.  Users are advised to read the dataset's metadata thoroughly to understand appropriate use and data limitations.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Hongqing Wang</cntper>
+          <cntorg>U.S. Geological Survey, Southeast Region</cntorg>
+        </cntperp>
+        <cntpos>Research Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>Louisiana State University</address>
+          <city>Baton Rouge</city>
+          <state>LA</state>
+          <postal>70803</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>225-578-7482</cntvoice>
+        <cntfax>225-578-7927</cntfax>
+        <cntemail>wangh@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>New York City Department of Parks &amp; Recreation, Louisiana State University, Northeastern University</datacred>
+    <native>Excel</native>
+    <crossref>
+      <citeinfo>
+        <origin>Oliver Heiri</origin>
+        <origin>André F. Lotter</origin>
+        <origin>Gerry Lemcke</origin>
+        <pubdate>2001</pubdate>
+        <title>Loss on ignition as a method for estimating organic and carbonate content in sediments: Reproducibility and comparability of results</title>
+        <geoform>publication</geoform>
+        <serinfo>
+          <sername>Journal of Paleolimnology</sername>
+          <issue>vol. 25, issue 1</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>n/a</pubplace>
+          <publish>Springer Science and Business Media LLC</publish>
+        </pubinfo>
+        <othercit>ppg. 101-110</othercit>
+        <onlink>https://doi.org/10.1023/A:1008119611481</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>James E. Smith</origin>
+        <origin>Samuel J. Bentley</origin>
+        <origin>Gregg A. Snedden</origin>
+        <origin>Crawford White</origin>
+        <pubdate>20151202</pubdate>
+        <title>What Role do Hurricanes Play in Sediment Delivery to Subsiding River Deltas?</title>
+        <geoform>publication</geoform>
+        <serinfo>
+          <sername>Scientific Reports</sername>
+          <issue>vol. 5, issue 1</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>n/a</pubplace>
+          <publish>Springer Science and Business Media LLC</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.1038/srep17582</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>Laboratory analyses were conducted using standard soil analysis method and geochronological dating method; therefore, the quality and accuracy of the data are within the reported range for these methods.</attraccr>
+    </attracc>
+    <logic>Yes, the values of soil properties and geochronological data were within the expected ranges for this urban estuary.</logic>
+    <complete>This dataset provides soil properties and geochronological data for salt marshes across the entire Jamaica Bay Estuary, New York City.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>N/A</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>N/A</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>Soil property data (bulk density, organic matter content, total organic carbon, total nitrogen) were obtained using standard soil analysis method in Heiri et al. (2001). Cesium-137 and Lead-210 dating was conducted following the method described in Smith et al. (2015).</procdesc>
+        <procdate>20141015</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>JB-soil-property-rev.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Site</attrlabl>
+        <attrdef>sampling location</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Little Egg, Yellow Bar, Black Bank, Big Egg, Spring Creek, Duck Point, Fresh Creek, Four Sparrow,  Ruffle Bar, Stony Creek, JoCo, East High</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth</attrlabl>
+        <attrdef>core depth</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2</rdommin>
+            <rdommax>54</rdommax>
+            <attrunit>cm</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Bulk Density</attrlabl>
+        <attrdef>bulk density</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.04</rdommin>
+            <rdommax>1.51</rdommax>
+            <attrunit>g/cm^3</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>LOI</attrlabl>
+        <attrdef>organic matter content</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.94</rdommin>
+            <rdommax>69.65</rdommax>
+            <attrunit>%</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>TOC</attrlabl>
+        <attrdef>total organic carbon</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>no data</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.16</rdommin>
+            <rdommax>30.74</rdommax>
+            <attrunit>%</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>N</attrlabl>
+        <attrdef>total nitrogen</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>no data</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.12</rdommin>
+            <rdommax>1.98</rdommax>
+            <attrunit>%</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>JB-Cs-Pb-rev.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Site</attrlabl>
+        <attrdef>sampling location</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Little Egg, Yellow Bar, Black Bank, Big Egg, Spring Creek, Duck Point, Fresh Creek, Four Sparrow,  Ruffle Bar, Stony Creek, JoCo, East High</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Depth</attrlabl>
+        <attrdef>core depth</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2</rdommin>
+            <rdommax>52</rdommax>
+            <attrunit>cm</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Cs-137 Activity</attrlabl>
+        <attrdef>Cs-137 inventory</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>no data</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>4.0</rdommax>
+            <attrunit>dpm/g</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Cs Error</attrlabl>
+        <attrdef>error in Cs-137 inventory</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>0.36</rdommax>
+            <attrunit>dpm/g</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Pbxs-210 Activity</attrlabl>
+        <attrdef>excess Pb-210 inventory</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>24.59</rdommax>
+            <attrunit>dpm/g</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Pbxs Error</attrlabl>
+        <attrdef>error in excess Pb-210 inventory</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>0.89</rdommax>
+            <attrunit>dpm/g</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey - ScienceBase</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data for other purposes, nor on all computer systems, nor shall the act of distribution constitute any such warranty.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Digital Data</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/P9XQBYXU</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20230104</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Hongqing Wang</cntper>
+          <cntorg>U.S. Geological Survey, Southeast Region</cntorg>
+        </cntperp>
+        <cntpos>Research Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>Louisiana State University</address>
+          <city>Baton Rouge</city>
+          <state>LA</state>
+          <postal>70803</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>225-578-7482</cntvoice>
+        <cntfax>225-578-7927</cntfax>
+        <cntemail>wangh@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001.1-1999</metstdv>
+  </metainfo>
+</metadata>
