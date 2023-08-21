@@ -73,7 +73,7 @@ depthseries <- dt1 %>%
          fraction_carbon = C.percent.) %>%
   mutate(fraction_carbon = as.numeric(fraction_carbon)) %>%
   mutate(fraction_carbon = ifelse(is.nan(fraction_carbon)==TRUE, NA, fraction_carbon), 
-         pb214_activity = ifelse(is.nan(pb214_activity)==TRUE, NA, fraction_carbon)) %>%
+         pb214_activity = ifelse(is.nan(pb214_activity)==TRUE, NA, pb214_activity)) %>%
   mutate(fraction_carbon = fraction_carbon / 100,
          cs137_unit = "microbecquerelPerGram", # metadata indicates microbecquerelPerGram, not millibecquerelPerGram
          pb210_unit = "becquerelPerGram", 
