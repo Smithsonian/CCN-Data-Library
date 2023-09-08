@@ -28,4 +28,4 @@ Things to know:
 
 -   Data is licensed under CCBY 4.0
 
-Templates for data entry can be downloaded from the [CCRCN Data Templates](https://drive.google.com/drive/folders/14N-7l1s151Qmp4AqQOWtIeMtc3efsYZT?usp=sharing) folder on Google Drive.
+Templates for data entry can be downloaded from the [CCN Data Templates](https://drive.google.com/drive/folders/14N-7l1s151Qmp4AqQOWtIeMtc3efsYZT?usp=sharing) folder on Google Drive.
