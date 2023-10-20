@@ -1,6 +1,6 @@
 # Script automates the creation of the CCRCN synthesis
 # Scans data/primary_studies directory and reads in curated data
-# Contact: lonnemanM@si.edu
+# Contact: wolfejax@si.edu
 
 # RUN SCRIPT WITH A CLEAN R SESSION #
 # if you experience an error, restart Rstudio and try again # 
@@ -196,99 +196,7 @@ bib_file <- ccrcn_synthesis$study_citations %>%
 # https://stackoverflow.com/questions/17291287/how-to-identify-delete-non-utf-8-characters-in-r
 # mutate_at(vars(names(citations)), function(x){iconv(x, "latin1", "UTF-8",sub='')}) %>% 
 
-## 4. Read in previous synthesis & compare #################
-
-# # this needs to be reworked ***
-# 
-# # List will hold the previous synthesis
-# archived_synthesis <- vector("list", length(tables))
-# names(archived_synthesis) <- tables
-# 
-# synthesis_directory <- "./data/CCRCN_synthesis/original/"
-# 
-# # Get file names of previous synthesis
-# archived_filepaths <- list.files("data/CCRCN_synthesis/archive", pattern = ".csv", full.names = T)
-# # archived_filepaths <- dir("./data/CCRCN_synthesis/archive/")
-# 
-# # Read in data 
-# for(file in archived_filepaths){
-#   
-#   # Extract table type from file name
-#   table_type <- tables[which(str_detect(file, tables))]
-#   
-#   # create list of archived data
-#   archived_synthesis[[table_type]] <- read_csv(file, col_types = cols(.default = "c"))
-# }
-# 
-# # The forward change log list tracks which values are new to the synthesis
-# change_log_df <- vector("list", length(tables))
-# names(change_log_df) <- tables
-# 
-# # Create object to save errors to 
-# change_log_errors <- setNames(data.frame(matrix(ncol = 3, nrow = 0)), c("error_message", "change_type", "table"))
-# 
-# for(table in tables){
-#   # Skip sites for now - geography assignment script needs to be modified
-#   if(table == "sites"){next()}
-#   
-#   forward <- NULL
-#   backward <- NULL
-#   
-#   # Use tryCatch to keep loop running if there's an error and record
-#   tryCatch(
-#     # Get "forward" changes - New data to the synthesis
-#     forward <- setdiff(ccrcn_synthesis[[table]], archived_synthesis[[table]]) %>%
-#       mutate(change_type = "forward"), 
-#     # Record any errors
-#     error = function(e){
-#       change_log_errors[nrow(change_log_errors) + 1,] <<- c(unlist(e[1]), "forward", table)
-#     }
-#   )
-#   tryCatch(
-#     # Get "backward" changes - Data that's been removed from the synthesis
-#     backward <- setdiff(archived_synthesis[[table]], ccrcn_synthesis[[table]]) %>%
-#       mutate(change_type = "backward"),
-#     # Record any errors
-#     error = function(e){
-#       change_log_errors[nrow(change_log_errors) + 1,] <<- c(unlist(e[1]), "backward", table)
-#     }
-#   )
-#   
-#   # If there's an error, no results will exist for that table
-#   if(!is.null(forward)){
-#     if(is.null(backward)){
-#       change_log_df[[table]] <- forward 
-#     } else change_log_df[[table]] <- bind_rows(forward, backward)
-#   } else if(is.null(forward) & !is.null(backward)){
-#     change_log_df[[table]] <- backward
-#   }
-#   
-# }
-# 
-# # 
-# # forward <- setdiff(ccrcn_synthesis[["depthseries"]], archived_synthesis[["depthseries"]]) %>%
-# #   mutate(change_type = "forward")
-# 
-# ## Format change log results 
-# #change_log_results <- setNames(data.frame(matrix(ncol = 3, nrow = 0)), c("table", "change_types", "study_id"))
-# change_log_results <- tibble(table = NA_character_,
-#                              change_types = NA_character_,
-#                              study_id = NA_character_,
-#                              .rows=0)
-# 
-# for(table_type in names(change_log_df)){
-#   if(!is.null(change_log_df[[table_type]])){
-#     change_summary <- change_log_df[[table_type]] %>%
-#       group_by(study_id) %>%
-#       summarize(change_types = paste(unique(change_type), collapse = ", "), table = table_type) %>%
-#       select(table, study_id, change_types)
-# 
-#     change_log_results <- change_log_results %>%
-#       bind_rows(change_log_results, change_summary)
-#   }
-# }
-
-## 5. QA/QC #############
+## 4. QA/QC #############
 
 # Reorder columns 
 ccrcn_synthesis <- reorderColumns(tables, ccrcn_synthesis)
@@ -322,9 +230,7 @@ qa_numeric_results <- testNumericVariables()
 #   # Test variable names to make sure they are in database structure
 #   bind_rows(testVariableNames(tables, ccrcn_synthesis)) 
 
-## 5.5 Synthesis Post-processing ####
-
-## 6. Write new synthesis ###########
+## 5. Synthesis Post-processing ###########
 if(join_status == TRUE){
   
   # run post-processing on the cores table
@@ -334,29 +240,30 @@ if(join_status == TRUE){
   source("scripts/3_post_processing/4_max_depths.R")
   source("scripts/3_post_processing/5_core_attributes.R")
   source("scripts/3_post_processing/6_database_citation.R")
-  
-  # write table of table information to synthesis resources folder
-  # for archival and comparison with the next synthesis
-  
-  # Write new synthesis data
-  # to derivative folder (eventually, get rid of the derivative folder, just write to CCRCN_synthesis)
-  write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis/CCRCN_cores.csv")
-  write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis/CCRCN_depthseries.csv")
-  write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis/CCRCN_sites.csv")
-  write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis/CCRCN_impacts.csv")
-  write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis/CCRCN_methods.csv")
-  write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/CCRCN_species.csv")
-  write_csv(ccrcn_synthesis$study_citations %>% select(-keywords, -abstract), 
-            "./data/CCRCN_synthesis/CCRCN_study_citations.csv")
-  
-  WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/CCRCN_bibliography.bib") # some encoding funny business here
 }
+
+## 6. Synthesis Metrics & Change Log ####
+
+# dev branch synthesis will be compared with the version of the synthesis on the main branch
+synthesis_log <- readr::read_csv("docs/synthesis_resources/synthesis_log.csv") 
+
+synth_diff <- anti_join(ccrcn_synthesis$cores %>% 
+                          select(study_id, site_id, core_id), 
+                        synthesis_log) %>% 
+  mutate(version = "v1.1.0",
+         date = format(Sys.time(), "%Y-%m-%d")) %>% 
+  select(date, version, everything())
+
+# stash results in additive list, documenting version, and date
+
+write_csv(synth_diff, "docs/synthesis_resources/synthesis_1_1_0.csv")
+
+## 7. Write RMarkdown report #########
 
 # Record summary of warnings 
 warning_summary <- summary(warnings())
 
-## 7. Write RMarkdown report #########
-
+# read in current guidance
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
 
 # get date to paste to file name
@@ -374,3 +281,20 @@ rmarkdown::render(input = "./scripts/2_generate_synthesis/synthesis_report.Rmd",
 
 # rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results", "file_paths", "warning_summary", "join_status"))])
 
+## 8. Write new synthesis ###########
+
+if(join_status == TRUE){
+  
+  # Write new synthesis data
+  # to derivative folder (eventually, get rid of the derivative folder, just write to CCRCN_synthesis)
+  write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis/CCRCN_cores.csv")
+  write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis/CCRCN_depthseries.csv")
+  write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis/CCRCN_sites.csv")
+  write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis/CCRCN_impacts.csv")
+  write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis/CCRCN_methods.csv")
+  write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/CCRCN_species.csv")
+  write_csv(ccrcn_synthesis$study_citations %>% select(-keywords, -abstract), 
+            "./data/CCRCN_synthesis/CCRCN_study_citations.csv")
+  
+  WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/CCRCN_bibliography.bib") # some encoding funny business here
+}

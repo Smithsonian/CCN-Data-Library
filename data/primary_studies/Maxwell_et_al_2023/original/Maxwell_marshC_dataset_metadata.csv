@@ -1,0 +1,39 @@
+﻿Variable name,Units,Descriptor,Type
+Source,,Study from which the data was extracted,Character
+Original_source,,"If the source study was a review, the original study of the data ",Character
+Data_type,,"Core-level, site-level, or from a review",Character
+Site,,The name of the site where core(s) were taken,Character
+Core,,Core ID ,Character
+Plot,,"If site-level data, identifier of the site",Character
+Site_name,,Unique ID per plot or core ,Character
+Soil_type,,"Soil type (i.e., peat, sand, silt, mud) when specified",Character
+Latitude,Decimal degrees,Geographic coordinate of sample location in WGS84 (N - S) ,Numeric
+Longitude,Decimal degrees,Geographic coordinate of sample location in WGS84 (E - W) ,Numeric
+accuracy_flag,,"Accuracy of geographic coordinate (direct from dataset, averaged, or estimated using Google Earth) ",Character
+Country,,The name of the country where the soil cores were taken ,Character
+Admin_unit,,"Administrative unit below country level (Nation, State, Emirate)",Character
+Year_collected,,"The year of the collection. If cores were taken over several years, the year the collection started. ",Integer
+Year_collected_end,,"If cores were taken over several years, the last year collected",Integer
+U_depth_m,Metres,Upper depth of soil core,Numeric
+L_depth_m,Metres,Lower depth of soil core,Numeric
+Method,,"Method used to measure organic carbon (%). Elemental analysis (EA), loss-on-ignition (LOI), Walkley Black ",Character
+Conv_factor,,Conversion factor used to convert soil organic matter measured via LOI to organic carbon,Character
+OC_perc,%,Soil organic carbon measurement,Numeric
+BD_g_cm3,g cm-3,Dry bulk density measurement,Numeric
+SOM_perc,% ,Soil organic matter measurement,Numeric
+N_perc,%,"Nitrogen (%), if measured alongside C in a CN analyser. ",Numeric
+Time_replicate,,"Time replicate for soil sampled more than once a year (summer, winter, month-specific) ",Character
+Treatment,,"Site-specific information (control, invaded, univaded, grazed, ungrazed, historic-breach, managed realignment, post-fire) ",Character
+n_cores,,"Number of cores in site-level or review measurements, when data available",Integer
+SOM_perc_mean,% ,Mean of soil organic matter measured (data not at core-level),Numeric
+SOM_perc_sd,% ,Standard deviation of the mean of soil organic matter measured ,Numeric
+OC_perc_mean,% ,Mean of soil organic carbon measured (data not at core-level),Numeric
+OC_perc_sd,% ,Standard deviation of the mean of soil organic matter measured ,Numeric
+OC_perc_se,% ,Standard error of the mean of soil organic matter measured,Numeric
+BD_g_cm3_mean,g cm-3,Mean of dry bulk density measured (data not at core-level),Numeric
+BD_g_cm3_sd,g cm-3,Standard deviation of the mean of dry bulk density measured ,Numeric
+BD_g_cm3_se,g cm-3,Standard error of the mean of dry bulk density measured ,Numeric
+OC_from_SOM_our_eq,%,"Soil organic carbon estimated from soil organic matter using our equation (Figure 4, Table S1). ",Numeric
+OC_obs_est,,"Method of OC measurement: “Observed”, “Estimated (study equation)” - OC from LOI with regional eq. (see Conv_factor column), “Estimated (our equation)” - OC from Loi with eq. 3",Character
+OC_perc_final,%,"Coalesce of all columns of OC_perc (OC_perc, OC_perc_mean, and OC_from_SOM_our_eq) ",Numeric
+Notes,,"Varying sample-specific notes (i.e., flagged outliers)",Character

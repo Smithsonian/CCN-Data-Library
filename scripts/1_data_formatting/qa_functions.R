@@ -103,10 +103,10 @@ testNumericCols <- function(df) {
   to_check <- names(df)[names(df) %in% unique(numeric_attributes$attribute_name)]
   testing_data <- df[, to_check]
   
-  library(skimr)
+  # library(skimr)
   
   # list of functions to run on numeric attributes
-  funs <- sfl(
+  funs <- skimr::sfl(
     min = function(x) min(x, na.rm=TRUE), 
     max = function(x) max(x, na.rm=TRUE), 
     median = function(x) median(x, na.rm=TRUE),
@@ -121,7 +121,7 @@ testNumericCols <- function(df) {
   )
   
   # Set skimr to run with our custom list of functions
-  my_skim <- skim_with(numeric = funs, append = TRUE)
+  my_skim <- skimr::skim_with(numeric = funs, append = TRUE)
   
   # run skim and format results
   results <- testing_data %>% my_skim() %>% 
