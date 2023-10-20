@@ -104,13 +104,13 @@ library(RefManageR)
 
 costa_datapub <- as.data.frame(GetBibEntryWithDOI("10.25573/serc.21295716")) %>% 
   mutate(study_id = "Costa_et_al_2023",
-         bibliography_id = "Costa_et_al_2023", 
+         bibliography_id = "Costa_et_al_2023_data", 
          publication_type = "primary dataset") %>% 
   select(-keywords)
 
 costa_bib <- as.data.frame(ReadBib("data/primary_studies/Costa_et_al_2023/original/costa_et_al_2023_associated_publication.bib")) %>% 
   mutate(study_id = "Costa_et_al_2023",
-         bibliography_id = "Costa_et_al_2022", 
+         bibliography_id = "Costa_et_al_2022_article", 
          publication_type = "associated source") %>% 
   select(-abstract)
 

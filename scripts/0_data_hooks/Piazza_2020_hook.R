@@ -38,14 +38,16 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 id <- "Piazza_et_al_2020"
 
 # sites
-sites <- raw_sites %>%
-  mutate(salinity_class = recode(salinity_class, "intermediate" = "brackish"))
+# this is a redundant with the cores table
+# sites <- raw_sites %>%
+#   mutate(salinity_class = recode(salinity_class, "intermediate" = "brackish"))
 # sites <- reorderColumns("sites", sites)
 
 # depthseries
 # uncontrolled: fraction_nitrogen
 depthseries <- raw_depthseries %>% select(-fraction_nitrogen) %>% 
-  mutate(method_id = "single set of methods")
+  mutate(method_id = "single set of methods",
+         cs137_unit = ifelse(!is.na(cs137_activity), "becquerelsPerKilogram", NA))
 
 # isolate cores missing from core table...Jim says there should be 45...WTH
 # I believe Sarai sent more depthseries information for the publication but the core-level wasn't updated with the new ones
@@ -56,14 +58,22 @@ missing_cores <- raw_depthseries %>%
   mutate(crms_id = gsub("_H", "", site_id)) %>% 
   left_join(crms_coords, by = c("crms_id" = "CRMS Site")) %>% 
   rename(core_latitude = Latitude, core_longitude = Longitude) %>% 
-  mutate(core_position_notes = "coordinates obtained at the site-level from the CRMS network website.") %>% 
+  mutate(core_position_method = "other low resolution", 
+         core_position_notes = "coordinates obtained at the site-level from the CRMS network website.",
+         salinity_class = "fresh",
+         salinity_method = "measurement", 
+         vegetation_class = "emergent", 
+         vegetation_method = "measurement",
+         core_length_flag = "core depth limited by length of corer") %>% 
   select(-crms_id)
 # any other information for these cores to add?
 
 # cores
 cores <- raw_cores %>%
-  mutate(salinity_class = recode(salinity_class, "intermediate" = "brackish")) %>% 
-  bind_rows(missing_cores) %>% 
+  bind_rows(missing_cores) %>%
+  mutate(salinity_class = recode(salinity_class, "intermediate" = "brackish"),
+         core_year = 2007,
+         core_notes = "core sampling year approximate, sites where surveyed between Spring 2006 and Fall 2007") %>% 
   arrange(site_id, core_id)
 # cores <- reorderColumns("cores", cores)
 
@@ -75,11 +85,21 @@ species <- raw_species %>%
 # methods
 methods <- raw_methods %>%
   mutate(method_id = "single set of methods",
-         fraction_carbon_type = "total carbon")
+         carbonates_removed = FALSE,
+         carbonate_removal_method = "carbonates not removed",
+         fraction_carbon_type = "total carbon",
+         fraction_carbon_method = "EA") %>% 
+  reorderColumns("methods",.)
 
 # impacts
-impacts <- raw_impacts
-# should we include impacts? storm and wind isn't directly anthropogenic
+
+impacts <- raw_impacts %>% 
+  bind_rows(
+    missing_cores %>% 
+      select(study_id, site_id, core_id) %>% 
+      filter(site_id %in% c("CRMS0605", "CRMS0605_H", "CRMS1277", "CRMS1277_H")) %>% 
+      mutate(impact_class = "storm or wind")
+  )
 
 # Update Tables ###########
 source("./scripts/1_data_formatting/versioning_functions.R")
@@ -102,24 +122,27 @@ source("./scripts/1_data_formatting/qa_functions.R")
 testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
+testConditional(table_names)
 
-test_unique_cores(cores)
-test_unique_coords(cores)
-test_core_relationships(cores, depthseries)
-fraction_not_percent(depthseries)
+testUniqueCores(cores)
+testUniqueCoords(cores)
+
+fractionNotPercent(depthseries)
 results <- test_numeric_vars(depthseries)
 
+testIDs(cores, depthseries, by = "core")
+testIDs(cores, depthseries, by = "site")
 
 ## ... Map sampling points ####
 library(leaflet)
 
 leaflet(cores) %>% 
   addTiles() %>%
-  addProviderTiles(options = )
+  # addProviderTiles(options = ) %>% 
   addCircles(lng = ~longitude, lat = ~latitude, label = ~core_id)
 
 ## Write derivative data ####
-write_csv(sites, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_sites.csv")
+write_csv(impacts, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_impacts.csv")
 write_csv(cores, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_cores.csv")
 write_csv(species, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_species.csv")
 write_csv(methods, "./data/primary_studies/Piazza_2020/derivative/Piazza_et_al_2020_methods.csv")
