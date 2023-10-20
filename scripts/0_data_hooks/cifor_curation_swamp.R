@@ -386,12 +386,12 @@ bib_file <- study_citations %>%
 
 
 # Write curated data ####
-write_csv(cores, "./data/primary_studies/CIFOR/derivative/cifor_swamp_cores.csv")
-write_csv(depthseries, "./data/primary_studies/CIFOR/derivative/cifor_swamp_depthseries.csv")
-write_csv(impacts, "./data/primary_studies/CIFOR/derivative/cifor_swamp_impacts.csv")
-write_csv(plant, "./data/primary_studies/CIFOR/derivative/cifor_swamp_plant.csv")
-write_csv(plot, "./data/primary_studies/CIFOR/derivative/cifor_swamp_plot.csv")
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/CIFOR/derivative/cifor_swamp_study_citations.bib")
-write_csv(study_citation, "./data/primary_studies/CIFOR/derivative/cifor_swamp_study_citations.csv")
+write_csv(cores, "./data/primary_studies/CIFOR/derivative_SWAMP/cifor_swamp_cores.csv")
+write_csv(depthseries, "./data/primary_studies/CIFOR/derivative_SWAMP/cifor_swamp_depthseries.csv")
+write_csv(impacts, "./data/primary_studies/CIFOR/derivative_SWAMP/cifor_swamp_impacts.csv")
+write_csv(plant, "./data/primary_studies/CIFOR/derivative_SWAMP/cifor_swamp_plant.csv")
+write_csv(plot, "./data/primary_studies/CIFOR/derivative_SWAMP/cifor_swamp_plot.csv")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/CIFOR/derivative_SWAMP/cifor_swamp_study_citations.bib")
+write_csv(study_citations, "./data/primary_studies/CIFOR/derivative_SWAMP/cifor_swamp_study_citations.csv")
 
 
