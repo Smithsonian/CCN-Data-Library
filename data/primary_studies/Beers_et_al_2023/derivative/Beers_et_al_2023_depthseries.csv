@@ -1,0 +1,949 @@
+study_id,site_id,core_id,method_id,depth_min,depth_max,dry_bulk_density,fraction_organic_matter,fraction_carbon,depth_interval_notes
+Beers_et_al_2023,Anchor_River,AR-1,gouge auger used,0,5,0.2939492470045647,0.12383141286455256,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-1,gouge auger used,5,10,0.40173764136721063,0.17369088172383784,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-1,gouge auger used,10,15,0.4898803927027467,0.1223473015189055,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-1,gouge auger used,15,20,0.8752291553949353,0.07177240187607989,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-1,gouge auger used,20,25,1.382654052833122,0.04999290161640286,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-1,gouge auger used,25,30,1.5280528226166523,0.04173436948074884,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-1,gouge auger used,35,40,1.6058999963230078,0.03170485027043696,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-1,gouge auger used,50,55,1.3933698581206369,0.03113664526303958,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-2,gouge auger used,0,5,0.342380484627547,0.15209520511286673,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-2,gouge auger used,5,10,0.33817820804420795,0.1500370096225025,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-2,gouge auger used,10,15,0.6707883996154919,0.15495867768595065,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-2,gouge auger used,15,20,0.9211390270679142,0.08075312691682034,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-2,gouge auger used,20,25,1.112972953097341,0.06806722689075584,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-2,gouge auger used,25,30,1.228850729882914,0.04974540734824218,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-3,gouge auger used,0,5,0.8361479831698824,0.08542671064873573,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-3,gouge auger used,5,10,0.7355034589989126,0.08887672495750588,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-3,gouge auger used,10,15,0.4732814001985576,0.14694511344910718,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-3,gouge auger used,15,20,0.5430391914819853,0.11835138595701997,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-3,gouge auger used,20,25,0.7009397341009492,0.10416968993373037,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-3,gouge auger used,25,30,0.6277150646362667,0.15885154061624646,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-3,gouge auger used,37,42,0.6795081235259203,0.12119601328903667,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-3,gouge auger used,53,58,0.7044066122822039,0.15435783115202065,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-3,gouge auger used,80,85,1.4849794876374278,0.05597273259839083,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-4,gouge auger used,0,5,0.4142394142026443,0.09269080009222969,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-4,gouge auger used,5,10,0.31800728044418064,0.17422077038246916,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-4,gouge auger used,10,15,0.5355801505465587,0.1361582428105456,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-4,gouge auger used,15,20,0.6559753746592216,0.12316542288557232,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-4,gouge auger used,20,25,0.533899239913223,0.1724957949074878,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-4,gouge auger used,25,30,0.4858882299485746,0.21019407695923745,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-4,gouge auger used,37,42,1.04374044638683,0.07828040742959815,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-4,gouge auger used,51,56,1.7692634985003126,0.02927322978706862,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-5,gouge auger used,0,5,0.2717822380274514,0.14012170643897154,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-5,gouge auger used,5,10,0.5156193367756983,0.16675324675324665,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-5,gouge auger used,10,15,0.7260483366863999,0.1315781991868767,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-5,gouge auger used,15,20,0.9687298093742284,0.07685556372607197,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-5,gouge auger used,20,25,1.2306366974308331,0.05319017647784725,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-5,gouge auger used,25,30,1.3784517762497832,0.04867918585882428,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-6,gouge auger used,0,5,0.35561765586506483,0.12221379390827372,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-6,gouge auger used,5,10,0.6923250671051043,0.10514205439968978,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-6,gouge auger used,10,15,0.8255372347969513,0.08730117066512662,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-6,gouge auger used,15,20,0.9153608967658228,0.09044214438737291,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-6,gouge auger used,20,25,0.8614666995845,0.09620764309518642,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-6,gouge auger used,25,30,0.8866803590845341,0.09160305343511412,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-6,gouge auger used,37,42,0.7348731175114118,0.14759088537136894,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-6,gouge auger used,49,54,1.0839772446723013,0.06943768257059425,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-7,gouge auger used,0,5,0.4294726668172482,0.19144275296009777,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-7,gouge auger used,5,10,0.5612140377049267,0.13959576020254916,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-7,gouge auger used,10,15,0.6915896687030199,0.11465756003119223,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-7,gouge auger used,15,20,0.6476758784071271,0.13786397697513436,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-7,gouge auger used,20,25,0.8134556896198517,0.11046163069544392,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-7,gouge auger used,25,30,0.5502881185882452,0.17912058978409673,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-7,gouge auger used,37,42,0.5967232748341414,0.17007421420256083,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Anchor_River,AR-7,gouge auger used,54,59,1.5154459928666355,0.04549167772899019,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-1,gouge auger used,0,5,0.9567533211117124,0.07013853054419887,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-1,gouge auger used,5,10,1.24565983621627,0.05660477594496259,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-1,gouge auger used,10,15,1.252698649493363,0.04849921011058469,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-1,gouge auger used,15,20,1.2483913159954407,0.04915132881270261,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-1,gouge auger used,20,25,1.2087848591974704,0.06419673366158195,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-1,gouge auger used,25,30,1.21088599748914,0.06237104845020944,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-1,gouge auger used,37,42,1.305437220614268,0.05835856573705168,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-1,gouge auger used,57,62,1.0016126236388565,0.143382352941176,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-1,gouge auger used,69,74,1.4783609020186688,0.06813593539703927,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-2,gouge auger used,0,5,0.3827223398276017,0.188617793268956,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-2,gouge auger used,5,10,0.7960162417989948,0.13139297492540414,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-2,gouge auger used,10,15,0.8063118194281752,0.20100596125186243,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-2,gouge auger used,15,20,0.7957010710552441,0.2177514792899409,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-2,gouge auger used,20,25,0.8034752827344215,0.21161070673867083,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-2,gouge auger used,25,30,0.6089098769258247,0.2152925980006738,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-2,gouge auger used,37,42,0.5956727056883067,0.24280668601381297,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-3,gouge auger used,0,5,0.3625514122275743,0.2475597852611024,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-3,gouge auger used,5,10,0.5468212404069905,0.17496916724757344,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-3,gouge auger used,10,15,0.47569770923397753,0.15194094438080644,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-3,gouge auger used,15,20,0.9810214683804952,0.10655438237550716,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-3,gouge auger used,20,25,0.7279393611489026,0.1559665610315816,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-3,gouge auger used,25,30,0.860626244267832,0.15311662428699027,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-3,gouge auger used,37,42,1.0346004948180678,0.1094543515061571,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-3,gouge auger used,72,77,0.7630283706197832,0.1437384167328566,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-4,gouge auger used,0,5,0.8650386346803381,0.10434954527481202,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-4,gouge auger used,5,10,1.0839772446723013,0.10709909183998952,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-4,gouge auger used,10,15,1.4388595021352817,0.07416009078673048,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-4,gouge auger used,15,20,1.5706008730229604,0.05686831809154599,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-4,gouge auger used,20,25,1.6018027766542524,0.02859084510460676,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-4,gouge auger used,25,30,1.513660025318717,0.05147723574295688,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-4,gouge auger used,37,42,1.23809573836626,0.0606365522152389,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-4,gouge auger used,72,77,1.39557605332689,0.07053514034711783,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-5,gouge auger used,0,5,1.320565416314288,0.06892627672053128,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-5,gouge auger used,5,10,1.4162722654998343,0.06529154010854951,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-5,gouge auger used,10,15,1.6524402094834876,0.03536572077891752,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-5,gouge auger used,15,20,1.573227295887547,0.0678699159943441,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-5,gouge auger used,20,25,1.597285329327163,0.07639785938365057,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-5,gouge auger used,25,30,1.5695503038771257,0.0621282962408828,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-5,gouge auger used,54,59,1.6675684051835082,0.04170423460733222,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-6,gouge auger used,0,5,1.196598257105787,0.16779861949765648,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-6,gouge auger used,5,10,1.4529371286894674,0.04807399688298307,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-6,gouge auger used,10,15,1.6767083567522705,0.03577393983621138,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-6,gouge auger used,15,20,1.563667116660451,0.02686850429281517,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-6,gouge auger used,20,25,1.31699348121845,0.25366277278202654,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-6,gouge auger used,25,30,1.1726452805807548,0.24406452552618155,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-6,gouge auger used,33,38,1.3765607517872809,0.12625205393116806,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-6,gouge auger used,44,49,1.5640873443187848,0.06771424517593613,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-6,gouge auger used,62,67,1.6218686473396964,0.16758614014711548,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-7,gouge auger used,0,5,0.2657288586091516,0.29669573916033587,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-7,gouge auger used,5,10,0.5009817568667826,0.19615872649671215,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-7,gouge auger used,10,15,0.6336654882782748,0.1916764361078546,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-7,gouge auger used,15,20,1.030973930126646,0.08835095691689206,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-7,gouge auger used,20,25,0.885466951721095,0.10294181738940957,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-7,gouge auger used,25,30,0.6851486292699069,0.15873084958217237,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-7,gouge auger used,37,42,1.2479668860605235,0.06768307845331306,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-7,gouge auger used,59,62,0.640981651809868,0.06267057013844118,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-7,gouge auger used,72,77,1.298150473018758,0.13997650743931056,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-7,gouge auger used,95,100,0.3196430166042454,0.3990910566466488,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-8,gouge auger used,0,5,0.7426651888660682,0.100150212369211,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-8,gouge auger used,5,10,0.9989746445136652,0.0588406250698631,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-8,gouge auger used,10,15,1.181911300447017,0.05272633110557662,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-8,gouge auger used,15,20,1.3333371854202014,0.04154789436884908,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-8,gouge auger used,20,25,1.464848481664942,0.04508877582805525,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-8,gouge auger used,25,30,1.596855646546517,0.05544254941845292,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-8,gouge auger used,37,42,1.2133884531945185,0.07782375623060274,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-8,gouge auger used,47,52,0.5715484863925032,0.20152205177372948,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Beluga_Marsh,BM-8,gouge auger used,61,66,1.1061263939739354,0.11838429201806884,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Carrie_Bow_Cay,CBC-1,piston corer used,1,3,0.5286666666666665,0.04744172190362756,0.01890774701795288,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Carrie_Bow_Cay,CBC-1,piston corer used,5,7,1.2302857142857144,0.04553154007724083,0.02572009578857068,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Carrie_Bow_Cay,CBC-1,piston corer used,9,11,1.2254285714285715,0.04134880441053845,0.02888263938442096,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Carrie_Bow_Cay,CBC-1,piston corer used,13,15,1.2091428571428569,0.03724613241439911,0.02888263938442096,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Carrie_Bow_Cay,CBC-1,piston corer used,17,19,1.3082857142857145,0.03291950340408501,0.03279832154863303,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Carrie_Bow_Cay,CBC-1,piston corer used,21,23,1.3582857142857143,0.0345527080938523,0.02335453339688333,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Carrie_Bow_Cay,CBC-1,piston corer used,25,27,1.2671428571428571,0.03290766208251366,0.02992890482567144,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Carrie_Bow_Cay,CBC-1,piston corer used,29,31,1.167714285714286,0.03013038881710397,0.02162748204041609,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Carrie_Bow_Cay,CBC-1,piston corer used,37,39,1.2637142857142858,0.03510022977577031,0.02318746213668895,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,0,5,0.5591128994132571,0.21588415971917468,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,5,10,0.6572360576342234,0.16272922517759728,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,10,15,0.5780231440382827,0.18242466068553032,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,15,20,0.5035377915985985,0.16362359550561537,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,20,25,0.6426331465071203,0.1527848748083823,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,25,30,0.6984183681509458,0.12730931644233295,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,37,42,0.8401401459240544,0.1031492649087546,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,72,77,0.6187852268966714,0.11774268462610096,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,122,127,0.7048268399405379,0.12564147938417908,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,172,177,0.6237229018820947,0.1452762923351142,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,217,222,0.6985234250655292,0.1249173826834099,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,257,262,0.7013599617592832,0.11620008887196068,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,272,277,0.8146113156802699,0.1179053504634899,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,320,325,0.7453788089697594,0.11543832428239038,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Camp,CC-1,gouge auger used,345,350,0.6488315044675453,0.13771469710994494,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,China_Poot,CP-1,gouge auger used,0,5,0.6323375688779397,0.11392315826577364,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-1,gouge auger used,5,10,1.2441890394121016,0.06363566071290502,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-1,gouge auger used,10,15,1.6907859833064562,0.04519706098898658,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-1,gouge auger used,15,20,1.563877230489618,0.04797340463289401,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-2,gouge auger used,0,5,0.7966465832864955,0.10583056153394647,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-2,gouge auger used,5,10,0.7719582083593787,0.14092127218486147,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-2,gouge auger used,10,15,0.8420311703865568,0.11212664141700476,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-2,gouge auger used,15,20,0.8353075278532144,0.06273924452897425,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-3,gouge auger used,0,5,0.33460627294836975,0.2086127584104639,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-3,gouge auger used,5,10,0.5472414680653245,0.1873174436265922,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-3,gouge auger used,10,15,0.7916038513864886,0.11095402016228158,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-3,gouge auger used,15,20,1.310374895599691,0.04549084752260176,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-3,gouge auger used,20,25,1.8251537770587216,0.02121972588093802,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-4,gouge auger used,0,5,0.4636161640568778,0.2870672486122295,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-4,gouge auger used,5,10,0.7526277360760192,0.11284358549336032,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-4,gouge auger used,10,15,1.6583233967001625,0.03790146169124154,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-5,gouge auger used,0,5,0.770277297726043,0.12807374705492117,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-5,gouge auger used,5,10,0.9183024903741602,0.13033141210374646,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-5,gouge auger used,10,15,1.1063543674785814,0.0729040320505751,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-6,gouge auger used,0,5,0.8111444374990152,0.10192529155110036,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-6,gouge auger used,5,10,0.941204897753358,0.07309365356731237,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-6,gouge auger used,10,15,0.6828699447925914,0.1261576127452717,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-7,gouge auger used,0,5,0.7500013132114324,0.1254854184116352,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-7,gouge auger used,5,10,0.9417301823262754,0.07761187193697591,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-7,gouge auger used,10,15,1.261733544147542,0.0715536750959359,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-8,gouge auger used,0,5,0.7227915723343122,0.13106366608963255,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-8,gouge auger used,5,10,1.2057382086745494,0.06225813600640959,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-8,gouge auger used,10,15,1.3097445541121902,0.06338131609870715,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-8,gouge auger used,15,19,1.0201026406055482,0.07256578718670646,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-8,gouge auger used,22,27,1.5393989693916676,0.0507079702040553,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-9,gouge auger used,0,5,0.7110251979009629,0.04760732918031837,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-9,gouge auger used,5,10,1.1548906620161472,0.06103472939680527,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-9,gouge auger used,10,15,1.1818902890641003,0.06795824735038933,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,China_Poot,CP-9,gouge auger used,15,20,1.277912308993397,0.05363511659807944,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Coon_Island,CI-1,gouge auger used,0,5,0.5813849653049539,0.1694173122263388,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-1,gouge auger used,5,10,0.7444332967385081,0.1297446980953667,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-1,gouge auger used,10,15,0.7205853771280591,0.11789432839681796,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-1,gouge auger used,15,20,0.7187994095801401,0.12466565879753434,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-1,gouge auger used,20,25,0.7698570700677092,0.13906495136491928,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-1,gouge auger used,25,30,0.7768958833448021,0.11246465085925664,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-1,gouge auger used,38,43,0.8180781938615246,0.09821882951653883,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-1,gouge auger used,68,73,0.7283595888072364,0.1009922265057199,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-1,gouge auger used,123,128,0.8433969102761422,0.08813089295618372,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-1,gouge auger used,173,178,0.6949514899696911,0.094205412907703,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-1,gouge auger used,223,228,0.7019903032467839,0.0942524598032156,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-1,gouge auger used,260,265,0.7365540281447475,0.0954555182992074,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-1,gouge auger used,323,328,0.7196398648968079,0.0954777333517169,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-2,gouge auger used,0,5,0.14834036339186757,0.4097498578737914,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-2,gouge auger used,5,10,0.25360739180451014,0.23645303830692077,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-2,gouge auger used,10,15,0.27808565290245996,0.23896595208070587,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-2,gouge auger used,15,20,0.31086341025250436,0.2570454545454543,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-2,gouge auger used,20,25,0.29457958849206556,0.2574731328456604,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-2,gouge auger used,25,30,0.3706407946505019,0.1917106369962519,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-2,gouge auger used,38,43,0.5704590461882725,0.1300024703557311,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-2,gouge auger used,73,78,0.6994689372967805,0.10447761194029773,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-2,gouge auger used,123,128,0.6364347885466952,0.10079893475366215,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-2,gouge auger used,165,170,0.7697520131531257,0.07386363636363741,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-2,gouge auger used,223,228,0.7758453141989674,0.07854894318692911,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-2,gouge auger used,255,260,0.7796273631239724,0.07373720968003875,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-3,gouge auger used,0,5,0.5730854690528594,0.1944514501891558,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-3,gouge auger used,5,10,0.7236320276509799,0.12952534191473328,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-3,gouge auger used,10,15,0.8768050091136874,0.09183335541131284,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-3,gouge auger used,15,20,0.8639880655345035,0.09042236763831107,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-3,gouge auger used,20,25,0.9258665882241705,NA,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-3,gouge auger used,25,30,0.8770151229428542,0.07677589093518265,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-3,gouge auger used,37,42,0.8209147305552784,0.08533021624781661,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-3,gouge auger used,72,77,0.7039863846238701,0.08892742135248993,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-3,gouge auger used,122,127,0.7714329237864612,0.07180539273153488,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-3,gouge auger used,153,158,0.6665861230321527,0.07616879705831124,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-3,gouge auger used,222,227,0.7588260940364443,0.08256561793847177,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-3,gouge auger used,255,260,0.6556602039154712,0.08247997899435487,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-4,gouge auger used,0,5,0.6426331465071203,0.1536043393842266,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-4,gouge auger used,5,10,0.8730229601886822,0.10292937399678503,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-4,gouge auger used,10,15,0.8099888114385968,0.10454915438183957,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-4,gouge auger used,15,20,0.6247734710279294,0.10338213023725332,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-4,gouge auger used,20,25,0.7651295089114528,0.115627189908904,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-4,gouge auger used,25,30,0.7260483366863999,0.10781159513544836,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-4,gouge auger used,37,42,0.7918139652156555,0.0916383832150514,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-4,gouge auger used,72,77,0.5658365419465996,0.13875029698266217,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-4,gouge auger used,122,127,0.6473607076633766,0.1091916558018259,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-4,gouge auger used,172,177,0.8222804704448636,0.09050154104791082,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-4,gouge auger used,222,227,0.7679660456052066,0.07569882516349366,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-4,gouge auger used,272,277,0.6797182373550872,0.07411867292280847,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-5,gouge auger used,0,5,0.33092928093794816,0.1947693770803612,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-5,gouge auger used,5,10,0.3757885834650922,0.16428660126660857,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-5,gouge auger used,10,15,0.4074107147547184,0.1502887139107614,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-5,gouge auger used,15,20,0.4043640642317975,0.1720569210866752,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-5,gouge auger used,20,25,0.47338645711314103,0.12304274998179354,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-5,gouge auger used,25,30,0.5587977286695068,0.114179034231747,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-5,gouge auger used,37,42,0.5072147836090202,0.14148404459822975,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-5,gouge auger used,72,77,0.4227490242839059,0.14095111026398535,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-5,gouge auger used,122,127,0.5774978594653654,0.08416868302799897,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-5,gouge auger used,172,177,0.7136516207655499,0.07320163566204023,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-5,gouge auger used,222,227,0.6438938294821219,0.07326266195524136,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-6,gouge auger used,0,5,0.303299312402494,0.25673174015482925,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-6,gouge auger used,5,10,0.4427098380547662,0.21122162326322985,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-6,gouge auger used,10,15,0.4036286658297133,0.22435594732147648,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-6,gouge auger used,15,20,0.4332547157422533,0.16893632683106274,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-6,gouge auger used,20,25,0.5821203637070382,0.11162945684771754,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-6,gouge auger used,25,30,0.5045883607444334,0.13947667044923545,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-6,gouge auger used,37,42,0.6130070965945801,0.12842388863942125,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-6,gouge auger used,72,77,0.4899854496173302,0.1364708443702605,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-6,gouge auger used,122,127,0.6142677795695818,0.09640641239646015,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-6,gouge auger used,172,177,0.762292972217699,0.07151702786377531,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Coon_Island,CI-6,gouge auger used,220,225,0.686546936803013,0.07704367301232141,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,GCREW,GC-1,gouge auger used,75,80,0.07299999999999997,0.8164012738853511,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,GCREW,GC-1,gouge auger used,120,125,0.08240000000000001,0.8163145539906088,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,GCREW,GC-1,gouge auger used,179,184,0.0964,0.7495859556144406,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,GCREW,GC-1,gouge auger used,220,225,0.10380000000000005,0.8175663637983261,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,GCREW,GC-1,gouge auger used,279,284,0.08740000000000002,0.8095955790002507,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,GCREW,GC-1,gouge auger used,320,325,0.07859999999999999,0.8244145668239691,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,GCREW,GC-1,gouge auger used,379,384,0.0782,0.8147936870127394,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,GCREW,GC-1,gouge auger used,420,425,0.0832,0.8195198878570157,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,GCREW,GC-1,gouge auger used,475,480,0.09580000000000004,0.6744315030504714,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,GCREW,GC-1,gouge auger used,520,525,0.14920000000000008,0.6885092639809605,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,GCREW,GC-1,gouge auger used,555,560,0.22160000000000005,0.46116843820311854,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,GCREW,GC-1,gouge auger used,583,588,1.4595999999999998,0.03489705369160988,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Indian_River_Lagoon,IRL-1,gouge auger used,0,5,0.4906157911048311,0.1275976262974243,0.06088918209075927,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-1,gouge auger used,5,10,0.9127344739012362,0.10973851051672104,0.05054139614105225,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-1,gouge auger used,10,15,0.9789203300888256,0.06901134853286957,0.02518542766571045,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-1,gouge auger used,15,20,1.1606687923182386,0.04063736775395116,0.02222553491592407,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-1,gouge auger used,20,25,1.1759020449328426,0.03992214353749913,0.02941963911056518,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-1,gouge auger used,25,30,1.408392996906074,0.0297470659085183,0.02176293611526489,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-1,gouge auger used,37,42,1.3031259684934315,0.02465888911367369,0.0218432354927063,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-2,gouge auger used,0,5,0.20664695098569652,0.3604949729311675,0.16350711822509767,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-2,gouge auger used,5,10,0.2538175056336771,0.30276981852913004,0.13622328758239746,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-2,gouge auger used,10,15,0.4382974476422602,0.18001363094223904,0.07896852016448974,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-2,gouge auger used,15,20,0.5904198599591328,0.12525780789628746,0.05736526012420654,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-2,gouge auger used,20,25,0.822385527359447,0.07465701935726331,0.03229235410690308,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-2,gouge auger used,25,30,0.9767141348825726,0.07193261497793434,0.03653293371200562,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-2,gouge auger used,37,42,1.1330388237827844,0.04151456153159781,0.01312470078468322,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-2,gouge auger used,50,55,1.3300205386268011,0.02652487470969304,0.01558465838432312,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-3,gouge auger used,0,5,0.20318007280444184,0.45888405223585305,0.24552156448364257,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-3,gouge auger used,5,10,0.26180183114202116,0.3909922113105313,0.1899131202697754,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-3,gouge auger used,10,15,0.31706176821292936,0.34660075057736706,0.16613428115844728,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-3,gouge auger used,15,20,0.3080268735587504,0.30907255803521305,0.15293895721435546,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-3,gouge auger used,20,25,0.4628807656547935,0.1874764156178552,0.09064230918884278,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-3,gouge auger used,25,30,0.415500097177646,0.28017672288690393,0.12211369514465333,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-3,gouge auger used,37,42,0.7251028244551487,0.10378696933318791,0.04172364234924317,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-3,gouge auger used,54,59,1.36595000341435,0.02404660579267007,0.00805903494358062,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-4,gouge auger used,0,5,0.3925976897984483,0.26831528348873496,0.12306638717651368,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-4,gouge auger used,5,10,0.3919673483109475,0.22957036138182071,0.11694462776184082,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-4,gouge auger used,10,15,0.6291858614404354,0.1094443559217869,0.04406699180603027,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-4,gouge auger used,15,20,0.9479285402867004,0.06031712020569986,0.03671025991439819,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-4,gouge auger used,20,25,1.214457932584978,0.03890412243080462,0.01218520879745483,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-4,gouge auger used,25,30,1.2699279834850532,0.03673798950343126,0.01836504936218262,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-4,gouge auger used,37,42,1.4997925125936975,0.0215601932982845,0.02590313196182251,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-4,gouge auger used,51,56,1.67366170622935,0.01755749169242997,0.01438344955444335,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-5,gouge auger used,0,5,0.37873017707342954,0.2567253975075205,0.15054369926452638,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-5,gouge auger used,5,10,0.4120332189963913,0.2263644497464957,0.11106572151184084,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-5,gouge auger used,10,15,0.6307617151591874,0.14263421509652427,0.05106495857238769,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-5,gouge auger used,15,20,0.6091199907549916,0.10072385266889944,0.03368036270141601,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-5,gouge auger used,20,25,1.033549925672233,0.0556909449236048,0.0223318600654602,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-5,gouge auger used,25,30,1.2979781796788412,0.03580407104046721,0.02283353805541992,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-5,gouge auger used,37,42,1.6313237696522092,0.0175749295822163,0.0161862576007843,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-5,gouge auger used,50,55,1.553476595945854,0.0190849974989418,0.01440459489822387,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-6,gouge auger used,0,5,0.2723075226003688,0.3897218543046358,0.19010698318481445,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-6,gouge auger used,5,10,0.43157380510891774,0.22331064726485697,0.08662750244140625,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-6,gouge auger used,10,15,0.8743887000782675,0.07921149201768948,0.03834017038345336,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-6,gouge auger used,15,20,1.1122375546952563,0.03945018561252134,0.01643867373466491,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-6,gouge auger used,20,25,1.3774012071039488,0.02178568647301584,0.0089923495054245,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-6,gouge auger used,25,30,1.4197391436810891,0.02852097808145596,0.01765921235084533,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-6,gouge auger used,37,42,1.7487774001565346,0.02041303379367393,0.01756630063056945,fraction C determined by elemental analyzer
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-1,piston corer used,2,4,1.5354285714285714,0.01183998249979452,0.00489368950792739,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-1,piston corer used,6,8,1.6276315789473683,0.00617049276209988,0.00320091259937813,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-1,piston corer used,10,12,1.5558823529411765,0.01212409366456698,0.00512140859816208,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-1,piston corer used,14,16,1.6354285714285717,0.00854304635761598,0.00555205443486176,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-1,piston corer used,22,24,1.5533333333333337,0.01311033335245857,0.00513531735692175,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-1,piston corer used,26,28,1.4,0.02054123553541906,0.00509195081186675,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-1,piston corer used,30,32,1.4114285714285713,0.02196323147043516,0.00601026795530325,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-1,piston corer used,34,36,1.4380555555555554,0.01994767822105949,0.0032695916317223,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-1,piston corer used,38,40,1.5064864864864864,0.01705182858424961,0.00282935943054559,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-1,piston corer used,42,44,1.5054761904761906,0.02034974035772923,0.00394230429753399,macro organic matter; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-1,piston corer used,46,48,1.5352,0.02167303883182031,0.00506582129015139,macro organic matter; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-2,piston corer used,3,5,1.625,0.00843622977222189,0.00320014144657736,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-2,piston corer used,7,9,1.57030303030303,0.0098962315674497,0.00430851772648756,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-2,piston corer used,11,13,1.6259375,0.0111922141119223,0.00443696853714267,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-2,piston corer used,15,17,1.6832352941176467,0.00926563114431709,0.00320264242434009,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-2,piston corer used,19,21,1.6071875000000002,0.00826010544815502,0.00268575007403809,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-2,piston corer used,23,25,1.6583783783783783,0.01284607589971587,0.00402324407512472,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-2,piston corer used,27,29,1.4844117647058823,0.01063829787234058,0.00254055899805686,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-2,piston corer used,31,33,1.5922727272727273,0.00534547152194209,0.00165532392412806,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-2,piston corer used,35,37,1.521111111111111,0.00529260132726408,0.00161788747862866,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-2,piston corer used,39,41,1.6233333333333335,0.0055411895086814,0.00184095162485451,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-2,piston corer used,43,45,1.61,0.00585855501698399,0.00134234130224241,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-2,piston corer used,47,49,1.6294594594594591,0.00874732588542893,0.00329533248103609,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-2,piston corer used,51,53,1.561081081081081,0.00998110920010028,0.00271300485172228,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,0,2,1.5248387096774192,0.00600879778694812,0.00286163890545017,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,4,6,1.5557499999999995,0.00507891202149102,0.00112814061461336,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,8,10,1.5406976744186047,0.00333134776182052,9.968195233724909e-4,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,12,14,1.4893617021276595,0.00467819958991072,0.00131736421630676,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,16,18,1.448409090909091,0.00561591787761625,0.00169139608740806,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,20,22,1.5311627906976746,0.00927087972146873,0.00363991890286468,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,24,26,1.4780851063829787,0.00695749232629488,0.00185636460771533,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,28,30,1.556216216216216,0.00560956578586683,0.00182798041684746,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,32,34,1.406122448979592,0.00609720577098543,0.00142255025352855,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,36,38,1.4136363636363638,0.00812230274407609,0.00210978419134835,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,40,42,1.4049999999999998,0.00871332139412947,0.00273199505053961,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,44,46,1.5930000000000002,0.00896928302028385,0.00355934141306193,peaty sand; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,48,50,1.4809756097560975,0.02038261217948771,0.00516065223225058,peaty sand; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,52,54,1.4435135135135135,0.02968843618933491,0.00792314027364693,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,56,58,1.446153846153846,0.03269999420726505,0.00630311244094394,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,60,62,1.3503333333333336,0.03103656405857976,0.00604154963944883,clay; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,64,66,1.3523529411764703,0.03789576509797211,0.0071456552473102,macro organic matter; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,68,70,1.3092592592592591,0.03157311669128528,0.00736104224509995,macro organic matter; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Indian_River_Lagoon,IRL-S-3,piston corer used,72,74,1.3870588235294117,0.03477100748368848,0.00913626289865175,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla Cristobal,CR-D-4,gouge auger used,0,5,0.1947755196377638,0.6673693086003332,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-4,gouge auger used,5,10,0.20969360150861732,0.6954869358669837,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-4,gouge auger used,10,15,0.1642039574939724,0.6918402777777782,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-4,gouge auger used,15,20,0.14634428201478156,0.6801112656467276,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-4,gouge auger used,20,25,0.14539876978353028,0.6830508474576256,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-4,gouge auger used,25,30,0.13310711077726362,0.6769633507853411,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-4,gouge auger used,37,42,0.1058973699001434,0.5778478517934539,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-4,gouge auger used,72,77,0.21253013820237115,0.5659816786333252,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-4,gouge auger used,100,105,0.17597033192732164,0.5827154180516495,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-4,gouge auger used,111,116,0.5033276777694318,0.13909057118076962,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-5,gouge auger used,0,5,0.18878727550650565,0.703417412530509,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-5,gouge auger used,5,10,0.18626590955650224,0.7314095449500593,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-5,gouge auger used,10,15,0.1650444128106402,0.7496303597831496,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-5,gouge auger used,15,20,0.1252278421835029,0.6722737819025529,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-5,gouge auger used,20,25,0.14707968041686584,0.6746384872080068,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-5,gouge auger used,25,30,0.14445325755227895,0.6702269692923856,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-5,gouge auger used,37,42,0.17470964895231997,0.6176329659798787,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-5,gouge auger used,72,77,0.20769752013153123,0.6066815144766118,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-5,gouge auger used,77,82,0.2622220588003551,0.39337225274725113,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-6,gouge auger used,0,5,0.15579940432729433,0.6839712012125762,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-6,gouge auger used,5,10,0.131216086314761,0.7642276422764257,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-6,gouge auger used,10,15,0.16378372983563846,0.7373684210526352,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-6,gouge auger used,15,20,0.13709927353143567,0.7002442002442051,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-6,gouge auger used,20,25,0.14224706234602597,0.712384025816865,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-6,gouge auger used,25,30,0.1274340373897559,0.6926658905704252,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-6,gouge auger used,37,42,0.15117690008562135,0.6811642689862829,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-6,gouge auger used,72,77,0.185110283496084,0.6636225266362251,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-6,gouge auger used,122,127,0.16189270537313588,0.6000834028356962,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-6,gouge auger used,165,170,0.16336350217730458,0.5780688443415057,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-6,gouge auger used,222,227,0.1928844951752612,0.611650485436894,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-6,gouge auger used,252,257,0.21347565043362243,0.6205334675390038,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-D-6,gouge auger used,262,267,0.47033980659022023,0.15788345268213266,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-1,gouge auger used,0,5,0.1579005426189638,0.683383685800601,0.3362847137451172,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-1,gouge auger used,5,10,0.16966691705231307,0.6936856247201134,0.32375747680664063,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-1,gouge auger used,10,15,0.17166299842939917,0.7107266435986155,0.3608864974975586,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-1,gouge auger used,15,20,0.19172886911484296,0.7197580645161248,0.3555930709838867,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-1,gouge auger used,20,25,0.19750699941693417,0.7217348927875255,0.3613324737548828,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-1,gouge auger used,25,30,0.1761804457564886,0.7023490930716599,0.3569650650024414,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-1,gouge auger used,37,42,0.13667904587310178,0.6600580270793047,0.3058432006835938,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-1,gouge auger used,72,77,0.15264769688979007,0.6749555950266422,0.32199928283691404,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-1,gouge auger used,122,127,0.1609471931418846,0.6075030254134772,0.2927557945251465,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-1,gouge auger used,162,167,0.1816434053148293,0.5987980769230772,0.30213361740112304,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-2,gouge auger used,0,5,0.12606829750017076,0.7058096415327528,0.34782169342041014,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-2,gouge auger used,5,10,0.15958145325229944,0.7031346035648458,0.34956504821777346,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-2,gouge auger used,10,15,0.1580055995335473,0.6973749380881642,0.33511909484863284,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-2,gouge auger used,15,20,0.14119649320019123,0.686483103879848,0.3381410217285156,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla Cristobal,CR-F-2,gouge auger used,20,25,0.17849169787732508,0.6985507246376853,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-2,gouge auger used,25,30,0.19761205633151763,0.7222946544980422,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-2,gouge auger used,37,42,0.1849001696669171,0.6969212059143578,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-2,gouge auger used,72,77,0.1447684282960294,0.6866549088771331,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-2,gouge auger used,122,127,0.20181433291485665,0.579365079365081,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-2,gouge auger used,154,159,0.13279194003351316,0.5902964959568691,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-3,gouge auger used,0,5,0.18290408828983096,0.6804201050262556,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-3,gouge auger used,5,10,0.16977197396689658,0.7080554130323219,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-3,gouge auger used,10,15,0.18847210476275525,0.7120761451516915,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-3,gouge auger used,15,20,0.19151875528567608,0.7140825035561894,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-3,gouge auger used,20,25,0.2086430323627826,0.6927239927841249,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-3,gouge auger used,25,30,0.1857406249835849,0.704426106526628,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-3,gouge auger used,37,42,0.16462418515230628,0.6853552440792617,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-3,gouge auger used,72,77,0.16031685165438375,0.6786570743405305,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-3,gouge auger used,122,127,0.14592405435644765,0.61858059914408,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla Cristobal,CR-F-3,gouge auger used,172,177,0.17271356757523387,0.6213183730715321,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Colon,STRI-1,piston corer used,4,6,1.071212121212121,0.04378546194197684,0.00976227607937373,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-1,piston corer used,8,10,0.9691891891891892,0.04822469528351937,0.01509096302048649,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-1,piston corer used,12,14,1.028684210526316,0.04985986133648069,0.01129240766776534,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-1,piston corer used,16,18,0.9329729729729728,0.05240249210548844,0.01485962495733028,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-1,piston corer used,20,22,0.8929729729729732,0.0503150658774105,0.01070907724843761,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-1,piston corer used,24,26,0.8845945945945947,0.04288563829787278,0.00708394222278544,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-1,piston corer used,28,30,0.9525714285714286,0.03620539599651882,0.01107675741941026,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-1,piston corer used,32,34,0.8516666666666668,0.03696303696303791,0.00943350934839392,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,1,3,1.1136,0.05502559329920879,0.0180099728435846,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,5,7,0.9971428571428572,0.04187664986800892,0.01588071192944386,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,9,11,0.976153846153846,0.03995840760546695,0.01214413131267915,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,13,15,1.0942105263157895,0.05365853658536642,0.01578796051769707,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,17,19,1.2860000000000005,0.03567237737620302,0.01213311905089855,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,21,23,1.07375,0.03965267727930548,0.00650280030522432,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,25,27,1.4805,0.03592896644110924,0.01149592625313954,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,33,35,1.2976923076923077,0.03378016085790868,0.00938801956688108,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,37,39,0.8546666666666667,0.03487332339791685,0.00938801956688108,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,41,43,0.9609090909090908,0.04252873563218321,0.00813109756338184,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,45,47,0.905,0.03716389792772745,0.00943996098703426,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,49,51,0.8302857142857144,0.04040812203252766,0.01397262621701436,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,53,55,0.9242424242424244,0.03578868650178953,0.01735124580014893,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,57,59,1.0923076923076924,0.03642839796000969,0.02169112831650886,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,61,63,0.9990909090909088,0.03899879458271271,0.01247687850194238,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,65,67,1.008,0.03300632621252369,0.00654339320982931,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,69,71,1.2691666666666668,0.04057732480850894,0.01081029607380788,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,73,75,1.107878787878788,0.04086853434828733,0.01221559712033966,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-2,piston corer used,77,79,1.2566666666666666,0.03808033385498199,0.00825395965675671,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-3,piston corer used,0,2,0.8689999999999998,0.05328206536665766,0.01495021879525671,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-3,piston corer used,3,5,1.0372727272727271,0.05808864486353177,0.01435697822930508,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-3,piston corer used,7,9,0.7702702702702702,0.05052748473070578,0.01437720296648994,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-3,piston corer used,11,13,1.0141666666666669,0.04417046888651636,0.01483012981431462,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-3,piston corer used,15,17,1.05375,0.03438573412263299,0.0114951429000803,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-3,piston corer used,19,21,0.969,0.04054731041392704,0.01616766207965719,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-3,piston corer used,23,25,0.9717948717948718,0.03787585137604545,0.01484980548442722,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-3,piston corer used,27,29,0.8307692307692309,0.03029406543991462,0.02984626653610435,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-3,piston corer used,31,33,0.9430769230769231,0.03398482409749371,0.00314581719550021,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Colon,STRI-3,piston corer used,35,37,0.7739999999999999,0.03226675648366475,0.0060593280978539,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-D-4,gouge auger used,0,5,0.18006755159607718,0.517774343122097,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-4,gouge auger used,5,10,0.20654189407111304,0.5810882197570063,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-4,gouge auger used,10,15,0.17775629947524074,0.655764075067024,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-4,gouge auger used,15,20,0.2165223009565432,0.6152046783625751,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-4,gouge auger used,20,25,0.191518755285676,0.5377957299480811,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-4,gouge auger used,25,30,0.234802204094068,0.46991576413959746,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-4,gouge auger used,37,42,0.4432351226276835,0.23343195266272376,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-4,gouge auger used,53,58,0.49135118950691536,0.21769704072663593,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-4,gouge auger used,72,77,0.5761321195757801,0.15764457354106062,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-4,gouge auger used,82,87,0.699363880382197,0.12888514160885992,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-4,gouge auger used,90,95,0.8690307974345102,0.10124098430207848,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-5,gouge auger used,0,5,0.2214599759419666,0.4846386845521471,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-5,gouge auger used,5,10,0.19918791005026976,0.5153508771929856,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-5,gouge auger used,10,15,0.20465086960861048,0.5786551511412634,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-5,gouge auger used,15,20,0.21105934139820243,0.5873758036236164,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-5,gouge auger used,20,25,0.1943552919794299,0.5417754569190559,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-5,gouge auger used,25,30,0.1989777962211028,0.4963406520292715,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-5,gouge auger used,37,42,0.32620171978169177,0.3081664098613198,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-5,gouge auger used,72,77,0.8114596082427655,0.1100597768756184,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-5,gouge auger used,106,111,0.39406848660261695,0.19963724304715924,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-5,gouge auger used,122,127,1.0399583974618252,0.08461879779709178,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-6,gouge auger used,0,5,0.2018143329148566,0.5564663023679396,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-6,gouge auger used,5,10,0.17838664096274157,0.575729068673565,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-6,gouge auger used,10,15,0.1801726085106607,0.6597222222222303,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-6,gouge auger used,15,20,0.19225415368776033,0.6257753273604301,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-6,gouge auger used,20,25,0.1776512425606572,0.5878499106611149,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-6,gouge auger used,25,30,0.185110283496084,0.5138888888888951,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-6,gouge auger used,37,42,0.23459209026490105,0.4670008354218833,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-6,gouge auger used,72,77,0.4560520662068676,0.22501735479818916,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-7,gouge auger used,0,5,0.2223004312586344,0.5521885521885401,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-7,gouge auger used,5,10,0.2394247083357409,0.5696855048474814,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-7,gouge auger used,10,15,0.2292341876211438,0.5838279569892468,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-7,gouge auger used,15,20,0.3007779464524906,0.41506395366843185,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-7,gouge auger used,20,25,0.26757996144411234,0.4265486725663696,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-7,gouge auger used,25,30,0.33345064688795156,0.3540229885057398,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-7,gouge auger used,37,42,0.4444958056026852,0.22614890741157848,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-D-7,gouge auger used,72,77,0.3274624027566934,0.3182795698924734,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-1,gouge auger used,0,5,0.10390128852305738,0.5933490442524227,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-1,gouge auger used,5,10,0.18321925903358144,0.6387096774193558,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-1,gouge auger used,10,15,0.1968766579294333,0.7143652561247158,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-1,gouge auger used,15,20,0.1839546574356658,0.6587881392350697,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-1,gouge auger used,20,25,0.17691584415857292,0.6213114754098301,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-1,gouge auger used,25,30,0.1596865101668829,0.631144155307719,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-1,gouge auger used,37,42,0.16798600641897748,0.5280561122244547,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-1,gouge auger used,72,77,0.19414517815026297,0.5835572272971483,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-1,gouge auger used,122,127,0.2789261082191277,0.46426185704742273,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-1,gouge auger used,172,177,0.24930005830658764,0.4869069224786086,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-1,gouge auger used,222,227,0.2494051152211711,0.387968441814597,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-1,gouge auger used,272,277,0.25539335935242924,0.4730792498487635,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-1,gouge auger used,322,327,0.5770776318070315,0.1670860857712065,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,0,5,0.1212356794293308,0.6829366680112903,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,5,10,0.18616085264191876,0.6628552760535745,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,10,15,0.1735540228919017,0.648083623693375,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,15,20,0.18269397446066413,0.696543866312194,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,20,25,0.1701922016252305,0.7104316546762528,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,25,30,0.17250345374606696,0.6548316251830263,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,37,42,0.15790054261896386,0.6332426920462244,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,72,77,0.2415258466274104,0.43606775157754496,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,122,127,0.21893860999196316,0.4662090813094016,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,172,177,0.1813282345710789,0.4738668074515416,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,215,220,0.18763164944608743,0.4432478891753882,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,272,277,0.22923418762114375,0.478711588300633,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,321,326,0.17008714471064698,0.5154880187025083,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,372,377,0.24478261097949813,0.438450129773828,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-2,gouge auger used,410,415,0.5589027855840901,0.1565048736821158,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,0,5,0.1395155825668556,0.6220238095238143,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,5,10,0.16472924206688974,0.6633540372670835,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,10,15,0.1458189974418641,0.6759717314487667,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,15,20,0.18563556806900144,0.6943510423671895,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,20,25,0.16987703088148004,0.7115474520804178,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,25,30,0.15443366443770912,0.6653620352250462,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,37,42,0.1631533883481376,0.6220071319409024,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,69,74,0.1546437782668761,0.5529212531752796,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,122,127,0.19004795848150735,0.48474100347299337,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,159,164,0.2108492275690355,0.5430163706025697,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,222,227,0.2214599759419666,0.4663104089219332,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,265,270,0.19467046272318023,0.5032863849765266,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,322,327,0.2055963818398618,0.5353458158196397,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-F-3,gouge auger used,372,377,0.4320990896818352,0.18953959780034563,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,1,3,0.6321739130434784,0.08730305838739635,0.03297501170535753,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,5,7,0.5033980901897568,0.16586009678838684,0.0730948117227217,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,9,11,0.5024324324324323,0.12883737267298845,0.0537851284551001,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,13,15,0.4587500000000001,0.13896613773924438,0.06014794898037069,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,17,19,0.5340740740740741,0.13904012905827806,0.06143473579701367,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,21,23,0.5060606060606061,0.10904533110507572,0.04813380099946633,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,25,27,0.5735714285714286,0.07361758827448364,0.03060756943846952,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,29,31,0.44549999999999984,0.12919545903257576,0.05510881710381967,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,33,35,0.8923529411764705,0.04819645404524135,0.01214888797944253,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,37,39,0.6463157894736843,0.08366615463389625,0.0153091293067362,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,41,43,0.616,0.09408535063638648,0.02905643044727121,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,45,47,0.6142424242424241,0.07748505645339848,0.02823298386511952,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,49,51,0.6586666666666667,0.06622447922064492,0.02228260048486593,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,53,55,0.7524242424242423,0.0600787057280278,0.01826860655870911,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,57,59,0.8648387096774193,0.04979521448588073,0.0181852268931112,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,61,63,0.75125,0.03763717421124892,0.01839871996551232,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,65,67,0.7991304347826087,0.04982354162341649,0.01608146215291912,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,69,71,0.7532432432432432,0.06646071637304912,0.02370050421220524,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,73,75,0.7621052631578948,0.0392657836347737,0.00635738648203192,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,77,79,1.020625,0.04010314778587919,0.02329271822706733,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,81,83,0.9672727272727272,0.04546341463414553,0.01709314594547917,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,85,87,0.8589189189189189,0.03806055960137962,0.01905412370960299,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,89,91,1.1012,0.03724928366762128,0.00803164823690586,peat; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-1,piston corer used,93,95,1.0739999999999998,0.04469570496281773,0.01945774877029776,piece of stem in sample; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-2,piston corer used,0,2,0.6208333333333332,0.07559055118110332,0.04369570253000001,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-2,piston corer used,3,5,0.8072727272727275,0.0990797003126666,0.04274273872,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-2,piston corer used,7,9,0.42962962962962953,0.15293062688513867,0.06347015377000001,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-2,piston corer used,11,13,0.3474285714285713,0.1749965767492771,0.06809451099,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-2,piston corer used,15,17,0.5442857142857143,0.1063341493268026,0.06911585808,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-2,piston corer used,23,25,0.632857142857143,0.06237504998000917,0.03797785759000001,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-2,piston corer used,27,29,0.7975999999999999,0.04012823347335903,0.01962757587,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-2,piston corer used,35,37,0.8018181818181819,0.04163378058405793,0.01546370983999999,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,3,5,0.27085714285714274,0.3798619824341285,0.153300534493,mangrove peat; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,7,9,0.2487878787878788,0.3474605158504716,0.13108377931,mangrove peat; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,11,13,0.24676470588235305,0.37529445020258106,0.13165031196000002,mangrove peat; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,15,17,0.1922857142857143,0.3668359618640286,0.13262916560000002,mangrove peat; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,19,21,0.22864864864864876,0.32146246162433706,0.12268770221,mangrove peat; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,23,25,0.21638888888888885,0.39264791377845354,0.16059954642999996,mangrove peat; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,27,29,0.1908108108108108,0.4110014761867768,0.17697859422900003,mangrove peat; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,31,33,0.2414285714285714,0.305813763861709,0.13189699653,mangrove peat; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,35,37,0.2025,0.3384117797259334,0.13970394138,mangrove peat; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,39,41,0.4499999999999999,0.0917351039664515,0.04322854996,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,43,45,0.59,0.05276289418790188,0.03085458041,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,51,53,0.8616666666666666,0.04856830383774095,0.01815123796,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,55,57,0.88275,0.03239294247380957,0.02250728369,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Popa,PO-S-3,piston corer used,59,61,0.7,0.05760966875559546,0.03335105181,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Isla_Solarte,SOL-D-4,gouge auger used,0,5,0.20517615418152785,0.6621480709071963,0.3276806640625,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-4,gouge auger used,5,10,0.20486098343777745,0.6701913393756271,0.32702854156494143,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-4,gouge auger used,10,15,0.21746781318779448,0.6766766766766771,0.3236081314086914,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-4,gouge auger used,15,20,0.20244467440235753,0.6975414522584391,0.3426803970336914,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-4,gouge auger used,20,25,0.21095428448361905,0.6865573770491767,0.33043708801269533,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-4,gouge auger used,25,30,0.20738234938778088,0.7146042363433603,0.33838726043701173,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-4,gouge auger used,37,42,0.16746072184606012,0.7135537959944007,0.31478296279907225,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-5,gouge auger used,0,5,0.15695503038771255,0.6947565543071217,0.34751808166503906,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-5,gouge auger used,5,10,0.1842698281794162,0.7640449438202253,0.33347358703613283,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-5,gouge auger used,10,15,0.2084329185336156,0.7385159010600767,0.3108352470397949,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-5,gouge auger used,15,20,0.2251369679523882,0.7345945945945827,0.3535182571411133,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-5,gouge auger used,20,25,0.22849878921905947,0.7262794709603262,0.3674013900756836,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-5,gouge auger used,25,30,0.1972968855877672,0.7510813999213467,0.3705721664428711,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-5,gouge auger used,37,42,0.1543286075231257,0.7124243834341479,0.35832950592041013,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-5,gouge auger used,57,62,0.15779548570438032,0.6908060453400539,0.32097694396972654,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-5,gouge auger used,77,82,0.1839546574356658,0.6943078004216378,0.3218027496337891,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-6,gouge auger used,0,5,0.18437488509399969,0.7023021128981385,0.3575528335571289,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-6,gouge auger used,5,10,0.23038981368156203,0.7099678456591774,0.3454528045654297,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-6,gouge auger used,10,15,0.20538626801069476,0.6721771678103539,0.32907920837402344,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-6,gouge auger used,15,20,0.1927794382606777,0.7234420311297872,0.35941368103027344,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-6,gouge auger used,20,25,0.18815693401900477,0.7291944917791183,0.3761309051513672,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-6,gouge auger used,25,30,0.17891192553565893,0.7190527448869614,0.3571385192871094,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-D-6,gouge auger used,37,42,0.15075667242728752,0.7193732193732147,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Isla_Solarte,SOL-D-6,gouge auger used,72,77,0.16672532344397575,0.6294675419401986,0.3806965637207031,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-1,gouge auger used,0,5,0.1730287383189843,0.6715919923736918,0.3355377578735352,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-1,gouge auger used,5,10,0.16010673782521684,0.6896680343155555,0.3445485687255859,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-1,gouge auger used,10,15,0.14455831446686246,0.6762295081967268,0.34047321319580076,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-1,gouge auger used,15,20,0.14518865595436328,0.6813778256189427,0.348641471862793,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-1,gouge auger used,20,25,0.1406712086272738,0.6906697638404946,0.3499912261962891,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-1,gouge auger used,25,30,0.19572103186901507,0.7040477770404814,0.35225765228271483,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-1,gouge auger used,37,42,0.19530080421068113,0.72327320721513,0.37126693725585935,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-1,gouge auger used,72,77,0.182904088289831,0.6535455861070909,0.33256298065185547,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-1,gouge auger used,99,104,0.7634485982781172,0.07787174066243838,0.03462194644115576,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-2,gouge auger used,0,5,0.16535958355439062,0.7000607164541568,0.3509693145751953,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-2,gouge auger used,5,10,0.14350774532102764,0.7041146555709665,0.3560159683227539,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-2,gouge auger used,10,15,0.15317298146270744,0.6798561151079194,0.33616424560546876,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-2,gouge auger used,15,20,0.16388878675022195,0.6926952141057926,0.34366569519042967,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-2,gouge auger used,20,25,0.1916238122002595,0.7216564833672743,0.3682417678833008,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-2,gouge auger used,25,30,0.2062267233273626,0.7349452554744531,0.3711910629272461,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-2,gouge auger used,37,42,0.18384960052108223,0.7221783741120724,0.3664933776855469,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-2,gouge auger used,72,77,0.18332431594816495,0.38397402141478026,0.18792102966473612,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-3,gouge auger used,0,5,0.13499813523976611,0.6532498509242672,0.3253889846801758,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-3,gouge auger used,5,10,0.1546437782668761,0.7000000000000046,0.3435064315795898,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-3,gouge auger used,10,15,0.15632468890021164,0.689732142857142,0.33756324768066404,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-3,gouge auger used,15,20,0.14403302989394504,0.6763255240443891,0.33074394226074216,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-3,gouge auger used,20,25,0.16052696548355072,0.7037037037037064,0.3418330383300781,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-3,gouge auger used,25,30,0.1654646404689741,0.6903765690376542,0.3418330383300781,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-3,gouge auger used,37,42,0.2055963818398618,0.7377877596855734,0.3830418014526367,fraction C determined by elemental analyzer
+Beers_et_al_2023,Isla_Solarte,SOL-F-3,gouge auger used,65,70,0.1842698281794162,0.6448445171849427,0.31574995040893555,fraction C determined by elemental analyzer
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,0,2,1.3693333333333335,0.021251193887297,0.0047861379695035,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,4,6,1.569333333333333,0.02551371171033559,0.00479017188385189,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,8,10,1.0333333333333334,0.0481743717895323,0.0102348153080259,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,12,14,1.2834615384615389,0.02482884967698425,0.0052956822755276,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,16,18,1.4446153846153846,0.02675432428631707,0.00522026848875926,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,20,22,1.3456,0.02101002313029964,0.00519016811081303,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,24,26,1.316551724137931,0.0226740947075205,0.00523319734850052,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,28,30,1.6255999999999995,0.02443314618924802,0.00489383283425405,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,32,34,1.6054545454545457,0.02200815637744331,0.00514165457606188,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,36,38,1.2828,0.03236947496050161,0.00557460601192623,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,40,42,1.531904761904762,0.02118028157315437,0.00485354152557548,pebbles & shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,44,46,1.364074074074074,0.02637205987170322,0.00614163525529997,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,48,50,1.3260714285714283,0.02667452261710245,0.00599576508240683,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,52,54,1.3178571428571428,0.0309739794700405,0.00634974010357191,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,60,62,1.3482352941176472,0.02739965706687273,0.00528441223915842,pebbles & shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,64,66,1.1981481481481482,0.03742509598478671,0.00905232834154412,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,68,70,1.535,0.03210053614725186,0.00649131068460728,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,72,74,1.3608695652173914,0.0331450940127064,0.00938773019714082,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,76,78,1.3474999999999997,0.03653003153118604,0.00747789825254849,pebbles & shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-1,piston corer used,80,82,1.374,0.03093376654144247,0.0070846188168964,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-2,piston corer used,4,6,1.0792857142857144,0.03612310852034141,0.00699686998661614,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-2,piston corer used,8,10,1.27,0.03171318575553461,0.00651616063076801,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-2,piston corer used,12,14,1.2684615384615383,0.02846765485422588,0.00581493649799956,pebbles; fraction C determined by elemental analyzer 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-2,piston corer used,16,18,1.348148148148148,0.02803495435792525,0.00643088448473814,pebbles; fraction C determined by elemental analyzer 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-2,piston corer used,20,22,1.32962962962963,0.02630958694243163,0.00623131836728624,pebbles; fraction C determined by elemental analyzer 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-2,piston corer used,24,26,1.3525925925925923,0.03200778992335739,0.00617779632459086,pebbles; fraction C determined by elemental analyzer 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-2,piston corer used,28,30,1.8883333333333336,0.03462857818784028,0.00873686415763697,pebbles; fraction C determined by elemental analyzer 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-2,piston corer used,40,42,1.066,0.02942103303062385,0.0059936736526026,pebbles; fraction C determined by elemental analyzer 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-2,piston corer used,52,54,1.5159999999999998,0.02912785366089165,0.00615522129723116,pebbles & shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,3,5,1.3372727272727274,0.03383579217447011,0.00716978462914756,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,7,9,1.364615384615384,0.03180684652006346,0.0071211086034412,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,11,13,1.1588,0.03282158294827821,0.00722696136521309,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,19,21,1.2580645161290325,0.02966961978589936,0.00562995370916455,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,23,25,1.2906666666666666,0.0272390739819873,0.00488510091285558,shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,27,29,1.1753333333333331,0.0318917612949985,0.00643723609076696,pebbles; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,31,33,1.238076923076923,0.02889186562655937,0.0058743461819134,pebbles & shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,35,37,1.1504,0.03423209939797605,0.00659435790585728,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,39,41,1.1328000000000005,0.02426173263080503,0.00570322382236985,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,43,45,1.4320000000000002,0.03228111025851345,0.00675073674881914,pebbles & shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,47,49,1.4360000000000002,0.02701799342655042,0.00471275312673091,pebbles & shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,55,57,1.3652000000000002,0.02743282554975073,0.00712749842967423,pebbles & shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,63,65,1.4128,0.02768042768042752,0.00540176159081488,pebbles & shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,71,73,1.3207999999999998,0.02737142857142971,0.00674187167957638,pebbles & shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Pt_Molate,PM-3,piston corer used,79,81,1.5100000000000002,0.01914813418771293,0.00474411798641085,pebbles & shells; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Rush_Ranch,RR-1,gouge auger used,0,5,0.305715621437914,0.19301513387660169,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-1,gouge auger used,5,10,0.5444049313715705,0.16184754036800575,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-1,gouge auger used,10,15,0.5022771086235969,0.13704372500967396,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-1,gouge auger used,15,20,0.40415395040263064,0.1744262295081967,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-1,gouge auger used,20,25,0.5947271934570554,0.13378517754530703,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-1,gouge auger used,25,30,0.5255997436611285,0.20452458468987467,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-1,gouge auger used,35,40,0.6967374575176103,0.177170621787198,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-1,gouge auger used,73,78,0.7440130690801742,0.11071428571428456,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-1,gouge auger used,125,130,0.5506032893319956,0.1668375431074659,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-1,gouge auger used,170,175,0.7051420106842883,0.12140350877192996,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-1,gouge auger used,225,230,0.7029358154780352,0.13284384225266793,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-1,gouge auger used,270,275,0.7907633960698209,0.09121663951885615,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,0,5,0.15600951815646125,0.5917848055252627,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,5,10,0.2531871641461762,0.4673360897814526,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,10,15,0.3329253623150342,0.3691549882059108,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,15,20,0.30729147515666616,0.41244856639017746,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,20,25,0.31506568683584335,0.352448556388579,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,25,30,0.3623412983984073,0.2950386628884287,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,38,43,0.31212409322750606,0.3842686292548293,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,73,78,0.17397425055023563,0.4698613406135499,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,123,128,0.21463127649404065,0.4589002036659881,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,173,178,0.32966859796294645,0.359654650869675,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,215,220,0.1704023154543974,0.7049351009925726,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,238,243,0.22366617114821952,0.5500804334942009,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,260,265,0.15138701391478834,0.6921384395813512,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,305,310,0.3216842724546023,0.3402695672735871,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,323,328,0.3408046309087948,0.2851716581446309,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-2,gouge auger used,358,363,0.21410599192112328,0.4711636828644492,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-3,gouge auger used,0,5,0.4841022624006556,0.14882000704473447,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-3,gouge auger used,5,10,0.6969475713467772,0.10741635850100456,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-3,gouge auger used,10,15,0.6794030666113368,0.10787846902538469,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-3,gouge auger used,15,20,0.6612282203883955,0.11319111885067625,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-3,gouge auger used,20,25,0.536105435119476,0.1413780556382517,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-3,gouge auger used,25,30,0.5142535968861132,0.13704396632366747,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-3,gouge auger used,37,42,0.7427523861051726,0.1374622356495433,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-3,gouge auger used,72,77,0.628870690696685,0.11647597254004637,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-3,gouge auger used,122,127,0.4643515624589622,0.15788450320824568,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-3,gouge auger used,172,177,0.4166557232380642,0.20864958641841477,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-3,gouge auger used,222,227,0.5306424755611353,0.14652602614079416,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-3,gouge auger used,272,277,0.5201367841027877,0.21570437506993417,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,0,5,0.20307501588985835,0.4535164223418053,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,5,10,0.29846669433165424,0.2800384615384623,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,10,15,0.4293676099026648,0.2056330249896448,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,15,20,0.3881852993859423,0.25667722951561844,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,20,25,0.5118372878506932,0.18448235690061404,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,25,30,0.5922058275070519,0.1565398645127669,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,37,42,0.28522952309413624,0.3200108478253497,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,72,77,0.28827617361705704,0.2874118529632405,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,122,127,0.4056247472067993,0.21501049685094495,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,172,177,0.37746949409842784,0.2259082154479642,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,222,227,0.3888156408734432,0.24013599076759928,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,272,277,0.2229307727461352,0.5307746727980189,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,322,327,0.22776339081697508,0.5540448674371184,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,367,372,0.26884064441911404,0.45621565934065766,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,422,427,0.3299837687066969,0.3497062663185374,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,447,452,0.2920582225420622,0.4248772504091656,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-4,gouge auger used,472,477,0.3159061421525111,0.4061578171091472,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-5,gouge auger used,0,5,0.4463868300651879,0.22221891554074183,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-5,gouge auger used,5,10,0.4220136258818215,0.20041841004184227,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-5,gouge auger used,10,15,0.3740026159171731,0.2683522231909335,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-5,gouge auger used,15,20,0.4975495474673404,0.19410777549878913,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-5,gouge auger used,20,25,0.6522983826488,0.15365544110268248,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-5,gouge auger used,25,30,0.6411623497029516,0.16270783847981046,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-5,gouge auger used,37,42,0.48767419749649377,0.20893173322841063,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-5,gouge auger used,72,77,0.29016719807955965,0.35510401548137477,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-5,gouge auger used,122,127,0.3330304192296177,0.2955292570677191,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-5,gouge auger used,172,177,0.34311588302963136,0.3167509378567914,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-5,gouge auger used,222,227,0.2597006928503517,0.4863541186073745,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-5,gouge auger used,260,265,0.2286038461336429,0.51213066617728,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-6,gouge auger used,0,5,0.36538794892132814,0.29343319979097776,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-6,gouge auger used,5,10,0.658496740609225,0.1797082389615449,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-6,gouge auger used,10,15,0.7973819816885799,0.1607108733040341,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-6,gouge auger used,15,20,0.5795989977570349,0.2042832028128494,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-6,gouge auger used,20,25,0.5389419718132298,0.2123694207027537,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-6,gouge auger used,25,30,0.4943978400298362,0.2033931230978436,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-6,gouge auger used,37,42,0.3791504047317635,0.35408667032364427,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-6,gouge auger used,72,77,0.2399499929086583,0.4930948238364503,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-6,gouge auger used,122,127,0.3103381256795869,0.4492316863160684,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Rush_Ranch,RR-6,gouge auger used,172,177,1.9248527889984404,0.03163208076275937,NA,fraction carbon determined using equation in Callaway et al. 2012
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,1,3,0.8339999999999999,0.04481148512091511,0.01483961105,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,5,7,0.7613333333333333,0.0446683140087425,0.03006065368999999,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,8,10,0.6308000000000001,NA,0.01625495911,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,12,14,0.6469999999999999,0.0522264445094022,0.02804263115,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,16,18,0.7336666666666666,0.04041720990873567,0.01754785537999999,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,20,22,0.6896969696969697,0.04467792615867908,0.01872564316,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,24,26,0.7121212121212122,0.04937539531941821,0.03795541763,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,28,30,0.7285714285714285,0.03972219603406567,0.01979575157,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,32,34,0.6742857142857143,0.04194630872483133,0.01460381508,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,36,38,0.6717142857142857,0.04120246632617944,0.03205901623,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,40,42,0.7294285714285713,0.03811602720174692,0.03338310719,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,44,46,0.7274999999999999,0.03573164803111205,0.04238312720999999,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,48,50,0.6657894736842106,0.05190342707297334,0.03558409691,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,52,54,0.8005405405405406,0.03619122876333454,0.03581476688,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,56,58,0.6955555555555556,0.03719554898451522,0.02542119503,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,60,62,0.7456756756756757,0.03076499219395726,0.02054361343,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-1,piston corer used,64,66,0.7525714285714286,0.03370199425237345,0.02054361343,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,0,2,0.6289999999999999,0.05666906052098986,0.02289293602364816,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,3,5,0.6403333333333335,0.04831460674157347,0.02034193474523149,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,7,9,0.6693333333333334,0.04227877784674754,0.01809996267690087,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,11,13,0.627,0.04799183117767294,0.01368070791658707,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,15,17,0.5843333333333333,0.04924118353532018,0.01410795195027979,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,19,21,0.6483333333333333,0.0487804878048781,0.01637345151203435,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,23,25,0.6786666666666666,0.04428644305573252,0.01392361273313719,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,27,29,0.7334285714285714,0.03188219514921216,0.00975709439549779,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,31,33,0.7400000000000001,0.02884074747808808,0.00903396532794589,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,35,37,0.71725,0.03741716502343657,0.01244230275164136,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,39,41,0.7595238095238095,0.03355068168346147,0.00976678051747859,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,43,45,0.7246341463414634,0.03293715528625857,0.01137525383968448,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,47,49,0.6781395348837208,0.02979985174203147,0.0143747865692433,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,51,53,0.7568181818181817,0.02756784610099603,0.00693145826566414,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,55,57,0.8132558139534883,0.02724665391969342,0.00597929228788116,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,59,61,0.748,0.03293198309544669,0.0101635473689511,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-2,piston corer used,63,65,0.7273076923076923,0.06320339259500941,0.02423089665157977,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,3,3,0.543,0.07808263745797736,0.03416250228499999,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,5,5,0.6446666666666668,0.06789305479772353,0.0445090294,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,9,9,0.47499999999999987,0.07398360744721379,0.0101421356,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,13,15,0.5897619047619048,0.05398101978446188,0.03060947416999999,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,17,19,0.6046874999999999,0.04626677852348939,0.013546357115,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,21,23,0.6153333333333333,0.04632456745132737,0.01517807963499999,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,25,27,0.5476666666666665,0.10475976144930768,0.03771553039999999,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,29,31,0.6003333333333334,0.06557377049180493,0.00620873449999999,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,33,35,0.6050000000000001,0.05739406520942691,0.0170590114,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,37,39,0.4795999999999999,0.13513737173121454,0.04538608549999999,peaty sand; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,41,43,0.5684615384615384,0.09945890234475592,0.05695379255999999,peaty sand; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,45,47,0.5367741935483871,0.07838418564675595,0.03031756400000001,peaty sand; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,49,51,0.522,0.08797588478285265,0.0227637767,peaty sand; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-3,piston corer used,53,55,0.46600000000000014,0.08832175307322351,0.02861667629999999,peaty sand; fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-4,piston corer used,3,5,0.6852000000000001,0.06598310073103547,0.02111569147192385,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-4,piston corer used,7,9,0.6295999999999999,0.08026666666666671,0.03060096580759719,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-4,piston corer used,11,13,0.6526666666666667,0.06158395474415059,0.01893061376224883,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-4,piston corer used,15,17,0.5754285714285715,0.0462836297309616,0.01376324701896248,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-4,piston corer used,19,21,0.7126666666666668,0.04080604534005007,0.01975038168112016,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,3,5,0.621764705882353,0.05718226182898416,0.01471331265532732,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,7,9,0.5696000000000001,0.04796077024279262,0.01215084259682004,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,11,13,0.46,0.06043278394438897,0.01731181425502441,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,15,17,0.5834782608695651,0.05573240098105714,0.0145657741777744,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,19,21,0.5975757575757576,0.03812843261512396,0.00749531766257263,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,23,25,0.6257142857142857,0.0337703918280224,0.01004683459526591,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,27,29,0.6628125,0.04135242776035927,0.00802568860826177,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,31,33,0.5868000000000001,0.05767966181306005,0.01521517183994618,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,35,37,0.6583333333333333,0.04436934481630985,0.00744965122243291,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,39,41,0.6249999999999999,0.04211449879359567,0.0084074710591579,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,43,45,0.8229032258064517,0.04142117479021462,0.01297810952422011,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,47,49,0.6732352941176472,0.03702781237028022,0.00664637485645107,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,51,53,0.6297222222222222,0.0331125827814557,0.00468988993309965,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,55,57,0.671764705882353,0.03481012658227835,0.01007790767693784,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,59,61,0.6560606060606061,0.03737447629181379,0.00877723533517274,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-5,piston corer used,63,65,0.6766666666666667,0.04848484848484876,0.05365902178215261,fraction C determined by elemental analyzer; 2 samples run per depth: original sample & sample after LOI occurred; OC determined by differencing values
+Beers_et_al_2023,Twin_Cays,TC-DA-4,gouge auger used,0,5,0.16148298340626033,0.7471067295327896,0.3798170471191406,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DA-4,gouge auger used,5,10,0.18437488509399969,0.7856148491879323,0.3967585372924805,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DA-4,gouge auger used,10,15,0.21358070734820592,0.7323081751137633,0.3686838531494141,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DA-4,gouge auger used,15,20,0.2080126908752817,0.7507424692405602,0.37011013031005857,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DA-4,gouge auger used,20,25,0.18017260851066064,0.7376712328767131,0.3608589172363281,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DA-4,gouge auger used,25,30,0.13541836289810005,0.6840024330900254,0.3379923248291016,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DA-4,gouge auger used,37,42,0.1036911746938904,0.5876613157066412,0.2723595809936523,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DA-4,gouge auger used,72,77,0.10264060554805568,0.5165449076063597,0.22403207778930664,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DA-4,gouge auger used,122,127,0.17029725853981392,0.6575231293621168,0.32550071716308593,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DA-4,gouge auger used,172,177,0.1450835990397798,0.5882077678989229,0.2730453109741211,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DA-4,gouge auger used,222,227,0.1306908017418437,0.5645645645645633,0.26630693435668945,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DA-4,gouge auger used,272,277,0.5324284431090545,0.08522597450075345,0.03830502028972234,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DA-4,gouge auger used,325,330,0.9793405577471596,0.05474021592442619,0.02303744753711188,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,0,5,0.18080294999816152,0.7375910553955619,0.368915901184082,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,5,10,0.18689625104400312,0.7293820353778989,0.3546963119506836,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,10,15,0.19340977974817855,0.6938972576284275,0.33662067413330077,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,15,20,0.17964732393774327,0.6960651289009505,0.3380627822875977,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,20,25,0.1728186244898174,0.6817583574624877,0.33325244903564455,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,25,30,0.18920750316483953,0.6949979099902467,0.3356304931640625,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,37,42,0.2097986584232008,0.707627118644067,0.32235992431640625,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,72,77,0.1222862485751656,0.5626902449630387,0.26302406311035154,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,122,127,0.14214200543144245,0.5597660818713449,0.27294559478759767,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,172,177,0.12155085017308132,0.5315256452139785,0.24079614639282224,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,222,227,0.135628476727267,0.5547387244188352,0.2534032821655273,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,283,288,0.1295351756814254,0.562426383981154,0.23759078979492188,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,307,312,0.19361989357734552,0.6435254491017972,0.32825416564941406,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DB-5,gouge auger used,327,332,0.14340268840644418,0.5451050743208652,0.22897998809814457,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DC-6,gouge auger used,0,5,0.16283821760438716,0.7122483221476512,0.36174854278564456,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DC-6,gouge auger used,5,10,0.20664695098569652,0.7214962849090432,0.3425889587402344,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DC-6,gouge auger used,10,15,0.18500522658150048,0.6955576687950009,0.3419782257080078,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DC-6,gouge auger used,15,20,0.16451912823772283,0.660900183710963,0.32612369537353514,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DC-6,gouge auger used,20,25,0.1640989005793889,0.640394088669949,0.31053955078125,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DC-6,gouge auger used,25,30,0.16451912823772277,0.6303398519081064,0.3077310752868652,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DC-6,gouge auger used,37,42,0.1482353064772841,0.6121297602256681,0.2957369041442871,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DC-6,gouge auger used,72,77,0.16462418515230626,0.6027044430135265,0.291505298614502,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DC-6,gouge auger used,122,127,0.11818902890641006,0.5612368024132722,0.24955011367797852,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DC-6,gouge auger used,161,166,0.14792013573353366,0.600348172096492,0.2773186492919922,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DC-6,gouge auger used,189,194,0.1573752580460465,0.6155648099947932,0.2778916931152344,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,0,5,0.1396206394814391,0.6701944376076767,0.32703285217285155,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,5,10,0.1581106564481308,0.7068610634648326,0.3451402282714844,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,10,15,0.13447285066684875,0.6898326898326881,0.33548431396484374,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,15,20,0.11136032945848412,0.6944755505785777,0.34406169891357424,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,20,25,0.0940259385522106,0.6537890044576472,0.29680179595947265,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,25,30,0.09917372736680094,0.6597093791281411,0.3145439910888672,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,37,42,0.06093301045841586,0.6151869158878484,0.28489654541015624,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,72,77,0.10778839436264596,0.6589436481445115,0.31834936141967773,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,122,127,0.140040867139773,0.6333095067905637,0.30804990768432616,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,172,177,0.15632468890021173,0.6626804123711335,0.3616504669189453,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,222,227,0.3025639140004097,0.8360024638127495,NA,wood
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,237,242,0.15821571336271428,0.655855855855855,0.31694725036621096,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,272,277,0.13857007033560434,0.6008705114254612,0.3330973052978516,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,348,353,0.1692466893939792,0.6560918405135195,0.3404899215698242,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-DD-7,gouge auger used,448,453,0.13048068791267672,0.5908776779543901,0.2776140594482422,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FA-1,gouge auger used,0,5,0.1534881522064578,0.6972010178117036,0.34496852874755857,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FA-1,gouge auger used,5,10,0.1792270962794094,0.6959028831562957,0.35602054595947263,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FA-1,gouge auger used,10,15,0.16693543727314278,0.6905742670220487,0.3367189407348633,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FA-1,gouge auger used,15,20,0.1645191282377228,0.6766294562477485,0.33565128326416016,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FA-1,gouge auger used,20,25,0.16556969738355756,0.7179199401421615,0.34576763153076173,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FA-1,gouge auger used,25,30,0.13636387512935133,0.6739469578783148,0.31316877365112306,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FA-1,gouge auger used,37,42,0.09097928802928988,0.6325513196480952,0.2857768440246582,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FA-1,gouge auger used,72,77,0.1623129330314698,0.6799310668964443,0.35121349334716795,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FA-1,gouge auger used,122,127,0.13783467193351998,0.5995168184352342,0.3033098602294922,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FA-1,gouge auger used,172,177,0.1305857448272602,0.6190544618479662,0.30505765914916994,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FB-2,gouge auger used,0,5,0.14781507881895015,0.6992637341891638,0.35846729278564454,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FB-2,gouge auger used,5,10,0.16935174630856265,0.7239496266577514,0.3704932785034179,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FB-2,gouge auger used,10,15,0.15811065644813074,0.7176631831420258,0.36350440979003906,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FB-2,gouge auger used,15,20,0.1883670478481717,0.7022935779816526,0.35868167877197266,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FB-2,gouge auger used,20,25,0.12848460653559066,0.6716447630426139,0.33408512115478517,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FB-2,gouge auger used,25,30,0.11041481722723284,0.6628657487091247,0.31080907821655274,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FB-2,gouge auger used,37,42,0.1004344103418027,0.606496519721579,0.27729293823242185,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FB-2,gouge auger used,72,77,0.1673556649314766,0.6841297255805053,0.34143863677978514,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FB-2,gouge auger used,122,127,0.18931256007942307,0.7153148345784421,0.3686001968383789,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FB-2,gouge auger used,172,177,0.12795932196267323,0.5643962226240687,0.28130720138549803,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FC-3,gouge auger used,0,5,0.107368166704312,0.6720749542961618,0.3337394332885742,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FC-3,gouge auger used,5,10,0.15916122559396553,0.6909644344761289,0.34536067962646483,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FC-3,gouge auger used,10,15,0.14529371286894674,0.6623968736430739,0.3310311508178711,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FC-3,gouge auger used,15,20,0.1373093873606026,0.6688014638609336,0.3274873733520508,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FC-3,gouge auger used,20,25,0.09686247524596447,0.5977134690961035,0.28169563293457034,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FC-3,gouge auger used,25,30,0.09444616621054457,0.604855161158711,0.2870630645751953,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FC-3,gouge auger used,37,42,0.15811065644813074,0.6469898930716272,0.3096399688720703,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FC-3,gouge auger used,72,77,0.1819585760585797,0.6829991281604175,0.3562936782836914,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FC-3,gouge auger used,122,127,0.13132114322934452,0.6278278753361802,0.30894588470458983,fraction C determined by elemental analyzer
+Beers_et_al_2023,Twin_Cays,TC-FC-3,gouge auger used,172,177,0.13825489959185389,0.5464884845038388,0.26874580383300783,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-1,gouge auger used,0,5,0.5730854690528594,0.12726593160156868,0.04860353946685791,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-1,gouge auger used,5,10,0.5562763627195033,0.1673980172273685,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-1,gouge auger used,10,15,0.5675174525799351,0.1507752628764927,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-1,gouge auger used,15,20,0.5674123956653517,0.132503513350734,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-1,gouge auger used,20,25,0.6744653916259132,0.10847975553857966,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-1,gouge auger used,25,30,0.7590362078656112,0.0954972785749602,0.03735272169113159,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-1,gouge auger used,37,42,0.7732188913343804,0.1020839625490772,0.03570579767227173,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-1,gouge auger used,72,77,0.8461283900553124,0.07439490445859731,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-1,gouge auger used,122,127,1.0909110010348106,0.05644254553631699,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-1,gouge auger used,172,177,1.0656973415347766,0.05557130705982082,0.01951674342155456,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-1,gouge auger used,205,210,1.0130638273284551,0.04796320630749119,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-2,gouge auger used,0,5,1.6123084681126,0.01004838109415677,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-2,gouge auger used,5,10,1.7697887830732302,0.00851788756388697,0.00713777720928192,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-2,gouge auger used,10,15,1.677023527496021,0.01276261535440962,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-2,gouge auger used,15,20,1.870328250329616,0.00847812434582258,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-2,gouge auger used,20,25,1.920860626244268,0.00791615564723069,7.317172735929489e-4,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-2,gouge auger used,25,30,1.905417259800497,0.00575625248114399,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-2,gouge auger used,37,42,1.9683463516359991,0.01584342963653165,0.00680428504943847,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-2,gouge auger used,72,77,1.8656006891733596,0.01950912523599672,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-3,gouge auger used,0,5,1.2792780488829825,0.03514897579143263,0.02377200365066528,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-3,gouge auger used,5,10,1.370257336912272,0.03017751479289849,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-3,gouge auger used,10,15,1.480462040310338,0.02188920693719466,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-3,gouge auger used,15,20,1.7358553996627673,0.01768562280835436,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-3,gouge auger used,20,25,1.84595504614625,0.01607445008460353,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-3,gouge auger used,25,30,1.980953181386016,0.01829814459372833,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-3,gouge auger used,37,42,2.0962006166840887,0.01825643928672782,0.00543810784816741,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-3,gouge auger used,72,77,2.119733365550787,0.01731535396873818,7.215950638055802e-4,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-3,gouge auger used,95,100,1.9194948863546824,0.01864828209764992,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-4,gouge auger used,0,5,0.5746613227716115,0.12472931038331916,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-4,gouge auger used,5,10,0.6992588234676136,0.12568027210884045,0.04604184150695801,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-4,gouge auger used,10,15,1.2195006644849848,0.05292556905460193,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-4,gouge auger used,15,20,1.4433769494623714,0.04226840436773667,0.01271719813346862,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-4,gouge auger used,20,25,1.4749990807519973,0.04871447902571198,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-4,gouge auger used,25,30,1.7237738544856676,0.03558409998264529,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-4,gouge auger used,37,42,1.626070923923035,0.03123740427246969,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-4,gouge auger used,55,60,2.155452716509169,0.02108367926589605,0.00158170670270919,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-5,gouge auger used,0,5,0.5142535968861132,0.15211378901620964,0.05678366184234619,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-5,gouge auger used,5,10,0.5325335000236379,0.193617021276598,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-5,gouge auger used,10,15,0.5342144106569735,0.1693699313786679,0.06172464370727539,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-5,gouge auger used,15,20,0.5074248974381871,0.15782907049282435,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-5,gouge auger used,20,25,0.663119244850898,0.1259111994698484,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-5,gouge auger used,25,30,0.5687781355549368,0.15438210487715262,0.06290348052978516,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-5,gouge auger used,34,39,0.5970384455778919,0.11252268602541324,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-6,gouge auger used,0,5,0.4606745704485404,0.20847932725998616,0.08262207984924316,fraction C determined by elemental analyzer
+Beers_et_al_2023,Wachapreague,VA-6,gouge auger used,5,10,0.4614099688506249,0.20237638942123956,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-6,gouge auger used,10,15,0.5101563772173575,0.15735323784547006,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-6,gouge auger used,15,20,0.5303273048173848,0.12746925083861435,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-6,gouge auger used,20,25,0.6162638609466679,0.13946172666900655,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-6,gouge auger used,25,30,0.5704590461882725,0.1293216221267089,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377
+Beers_et_al_2023,Wachapreague,VA-6,gouge auger used,33,38,0.5402026547882316,0.11569245694882165,NA,fraction C determined by equation based on relationship with LOI: (LOI*50.081)-0.4377

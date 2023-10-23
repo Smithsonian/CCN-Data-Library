@@ -1,7 +1,12 @@
 lat_long,n,core_ids,study_ids,num_studies
+"-0.29881, -90.83328",2,"Galapagos-Puerto Nuevo (PN)-I-1, Galapagos-Puerto Nuevo (PN)-I-2",Costa_et_al_2023,1
+"-0.378029, -91.259406",2,"Galapagos-Urvina (U)-I-1, Galapagos-Urvina (U)-I-2",Costa_et_al_2023,1
+"-0.625645, -90.9348",3,"Galapagos-Carthago Grande (CG)-I-1, Galapagos-Carthago Grande (CG)-I-2, Galapagos-Carthago Grande (CG)-I-3",Costa_et_al_2023,1
 "-0.637209, -47.561023",3,"S0L2MG1, S0L2MG2, S0L2MG3",Rovai_et_al_2022,1
 "-0.667411, -48.0314",3,"S0L1MG1, S0L1MG2, S0L1MG3",Rovai_et_al_2022,1
+"-0.674428, -91.212892",3,"Galapagos-Baleado (B)-I-1, Galapagos-Baleado (B)-I-2, Galapagos-Baleado (B)-I-3",Costa_et_al_2023,1
 "-0.700967, -47.11727",3,"S0L3MG1, S0L3MG2, S0L3MG3",Rovai_et_al_2022,1
+"-0.755101, -90.422644",2,"Galapagos-Poza de Parroquiano (PP)-I-1, Galapagos-Poza de Parroquiano (PP)-I-2",Costa_et_al_2023,1
 "-13.454386, -38.89258",3,"S13L2MG1, S13L2MG2, S13L2MG3",Rovai_et_al_2022,1
 "-13.473796, -38.906864",3,"S13L3MG1, S13L3MG2, S13L3MG3",Rovai_et_al_2022,1
 "-13.493223, -38.911237",3,"S13L1MG1, S13L1MG2, S13L1MG3",Rovai_et_al_2022,1
@@ -149,6 +154,39 @@ lat_long,n,core_ids,study_ids,num_studies
 "10.2, 104.6",4,"M1581, M1582, M1583, M1584",Bukoski_et_al_2017,1
 "10.280598, 99.162639",2,"M0732, M0733",Alongi_et_al_2001,1
 "10.373296, 99.217642",2,"M0734, M0735",Alongi_et_al_2001,1
+"10.548303, 103.815646",2,"Prey_Nob_162_496, Prey_Nob_162_497",PreyNob_Soil,1
+"10.556258, 103.807839",4,"Prey_Nob_161_491, Prey_Nob_161_492, Prey_Nob_161_493, Prey_Nob_161_494",PreyNob_Soil,1
+"10.556471, 103.725894",2,"Prey_Nob_164_504, Prey_Nob_164_505",PreyNob_Soil,1
+"10.582601, 103.890377",4,"Prey_Nob_163_499, Prey_Nob_163_500, Prey_Nob_163_501, Prey_Nob_163_502",PreyNob_Soil,1
+"10.610373, 103.853048",3,"Prey_Nob_159_482, Prey_Nob_159_483, Prey_Nob_159_484",PreyNob_Soil,1
+"10.611117, 103.91754",4,"Prey_Nob_160_486, Prey_Nob_160_487, Prey_Nob_160_488, Prey_Nob_160_489",PreyNob_Soil,1
+"11.443549, 103.089884",3,"Koh_Kohng_154_458, Koh_Kohng_154_459, Koh_Kohng_154_460",KohKong_Soil,1
+"11.450235, 103.05928",4,"Koh_Kohng_152_448, Koh_Kohng_152_449, Koh_Kohng_152_450, Koh_Kohng_152_451",KohKong_Soil,1
+"11.45125, 103.08417",4,"Koh_Kohng_146_420, Koh_Kohng_146_421, Koh_Kohng_146_422, Koh_Kohng_146_423",KohKong_Soil,1
+"11.45311, 103.01886",4,"Koh_Kohng_158_477, Koh_Kohng_158_478, Koh_Kohng_158_479, Koh_Kohng_158_480",KohKong_Soil,1
+"11.465207, 103.063751",2,"Koh_Kohng_144_412, Koh_Kohng_144_413",KohKong_Soil,1
+"11.47413, 103.005023",4,"Koh_Kohng_150_440, Koh_Kohng_150_441, Koh_Kohng_150_442, Koh_Kohng_150_443",KohKong_Soil,1
+"11.474705, 103.06221",2,"Koh_Kohng_151_445, Koh_Kohng_151_446",KohKong_Soil,1
+"11.47701, 103.037855",4,"Koh_Kohng_156_467, Koh_Kohng_156_468, Koh_Kohng_156_469, Koh_Kohng_156_470",KohKong_Soil,1
+"11.489822, 103.007744",2,"Koh_Kohng_157_472, Koh_Kohng_157_474",KohKong_Soil,1
+"11.501393, 103.061579",4,"Koh_Kohng_149_435, Koh_Kohng_149_436, Koh_Kohng_149_437, Koh_Kohng_149_438",KohKong_Soil,1
+"11.503951, 103.030594",4,"Koh_Kohng_141_397, Koh_Kohng_141_398, Koh_Kohng_141_399, Koh_Kohng_141_400",KohKong_Soil,1
+"11.505435, 103.005609",4,"Koh_Kohng_143_407, Koh_Kohng_143_408, Koh_Kohng_143_409, Koh_Kohng_143_410",KohKong_Soil,1
+"11.505435380306, 103.005609328041",2,"Koh_Kohng_143_406, Prey_Nob_159_481","KohKong_Soil, PreyNob_Soil",2
+"11.516553, 102.987284",4,"Koh_Kohng_136_374, Koh_Kohng_136_375, Koh_Kohng_136_376, Koh_Kohng_136_377",KohKong_Soil,1
+"11.516983, 102.988069",4,"Koh_Kohng_137_379, Koh_Kohng_137_380, Koh_Kohng_137_381, Koh_Kohng_137_382",KohKong_Soil,1
+"11.518077, 102.989381",4,"Koh_Kohng_138_384, Koh_Kohng_138_385, Koh_Kohng_138_386, Koh_Kohng_138_387",KohKong_Soil,1
+"11.518577, 102.989735",4,"Koh_Kohng_139_389, Koh_Kohng_139_390, Koh_Kohng_139_391, Koh_Kohng_139_392",KohKong_Soil,1
+"11.529631, 102.981939",4,"Koh_Kohng_148_430, Koh_Kohng_148_431, Koh_Kohng_148_432, Koh_Kohng_148_433",KohKong_Soil,1
+"11.555027, 103.009027",4,"Koh_Kohng_147_425, Koh_Kohng_147_426, Koh_Kohng_147_427, Koh_Kohng_147_428",KohKong_Soil,1
+"11.555432, 102.978784",4,"Koh_Kohng_142_402, Koh_Kohng_142_403, Koh_Kohng_142_404, Koh_Kohng_142_405",KohKong_Soil,1
+"11.557254, 103.041488",2,"Koh_Kohng_132_360, Koh_Kohng_132_361",KohKong_Soil,1
+"11.557275, 103.032504",4,"Koh_Kohng_145_415, Koh_Kohng_145_416, Koh_Kohng_145_417, Koh_Kohng_145_418",KohKong_Soil,1
+"11.558581, 103.04113",4,"Koh_Kohng_134_366, Koh_Kohng_134_367, Koh_Kohng_134_368, Koh_Kohng_134_369",KohKong_Soil,1
+"11.559437, 103.040739",3,"Koh_Kohng_135_370, Koh_Kohng_135_371, Koh_Kohng_135_372",KohKong_Soil,1
+"11.560174, 102.997826",3,"Koh_Kohng_131_356, Koh_Kohng_131_357, Koh_Kohng_131_358",KohKong_Soil,1
+"11.582732, 103.031859",2,"Koh_Kohng_140_394, Koh_Kohng_140_395",KohKong_Soil,1
+"11.583369, 103.037813",4,"Koh_Kohng_155_462, Koh_Kohng_155_463, Koh_Kohng_155_464, Koh_Kohng_155_465",KohKong_Soil,1
 "13.189806, -88.331444",3,"N13L1MG1, N13L1MG2, N13L1MG3",Rovai_et_al_2022,1
 "13.219111, -88.460333",3,"N13L3MG1, N13L3MG2, N13L3MG3",Rovai_et_al_2022,1
 "13.256417, -88.788167",3,"N13L2MG1, N13L2MG2, N13L2MG3",Rovai_et_al_2022,1
@@ -179,6 +217,9 @@ lat_long,n,core_ids,study_ids,num_studies
 "22.493027, 114.029298",3,"M0260, M0261, M0262",Liu_et_al_2014,1
 "22.5317972, 113.9850889",2,"M0480, M0481",Mao_et_al_2011,1
 "24.15131667, 52.0476",3,"Jazirat_seagrass_1, Jazirat_seagrass_2, Jazirat_seagrass_3",Campbell_et_al_2015,1
+"24.15199, -110.360199",3,"Baja-Mogote III-3, Baja-Mogote III-4, Baja-Mogote III-5",Costa_et_al_2023,1
+"24.15225, -110.359018",2,"Baja-Mogote III-1, Baja-Mogote III-2",Costa_et_al_2023,1
+"24.157271, -110.348574",5,"Baja-Mogote V-1, Baja-Mogote V-2, Baja-Mogote V-3, Baja-Mogote V-4, Baja-Mogote V-5",Costa_et_al_2023,1
 "24.19905, 52.45295",3,"Halat_Idai_seagrass_1, Halat_Idai_seagrass_2, Halat_Idai_seagrass_3",Campbell_et_al_2015,1
 "24.20513, 53.61585",2,"Abu_al_Abyad_seagrass_1, Abu_al_Abyad_seagrass_2",Campbell_et_al_2015,1
 "24.21152, 51.87123",2,"Umm_al_Hatam_seagrass_1, Umm_al_Hatam_seagrass_2",Campbell_et_al_2015,1
@@ -187,11 +228,16 @@ lat_long,n,core_ids,study_ids,num_studies
 "24.24782, 51.69347",2,"Dahwat_an_Nahklah_seagrass_1, Dahwat_an_Nahklah_seagrass_2",Campbell_et_al_2015,1
 "24.24944444, -110.3127778",7,"M0420, M0421, M0422, M0423, M0424, M0425, M0426",Ezcurra_et_al_2016,1
 "24.25276667, 51.66758333",2,"Ras_Muhayjij_seagrass_1, Ras_Muhayjij_seagrass_2",Campbell_et_al_2015,1
+"24.260017, -110.311117",2,"Baja-Bahia Falsa-1, Baja-Bahia Falsa-2",Costa_et_al_2023,1
+"24.260067, -110.310383",2,"Baja-Bahia Falsa-H1, Baja-Bahia Falsa-H2",Costa_et_al_2023,1
 "24.27702, 53.34829",3,"Marawah_seagrass_1, Marawah_seagrass_2, Marawah_seagrass_3",Campbell_et_al_2015,1
 "24.301111111111112, -110.32666666666667",2,"M0418, M0419",Ezcurra_et_al_2016,1
+"24.302136, -110.327094",2,"Baja-El Merito I (EMI)-1, Baja-El Merito I (EMI)-2",Costa_et_al_2023,1
 "24.30582, 54.00273",2,"Al_Dabiya_2_seagrass_1, Al_Dabiya_2_seagrass_2",Campbell_et_al_2015,1
 "24.31826, 54.05725",2,"Al_Dabiya_3_seagrass_1, Al_Dabiya_3_seagrass_2",Campbell_et_al_2015,1
+"24.424383, -110.347983",3,"Baja-San Gabriel I-1, Baja-San Gabriel I-2, Baja-San Gabriel I-3",Costa_et_al_2023,1
 "24.43277777777778, -110.34694444444445",2,"M0427, M0428",Ezcurra_et_al_2016,1
+"24.437228, -110.362722",4,"Baja-El Tope-1, Baja-El Tope-2, Baja-El Tope-3, Baja-El Tope-4",Costa_et_al_2023,1
 "24.54534, 53.11234",2,"Bu_Tinah_SE_seagrass_1, Bu_Tinah_SE_seagrass_2",Campbell_et_al_2015,1
 "24.54852, 53.03997",2,"Bu_Tinah_3_seagrass_1, Bu_Tinah_3_seagrass_2",Campbell_et_al_2015,1
 "24.57855, 53.079",2,"Bu_Tinah_2_seagrass_1, Bu_Tinah_2_seagrass_2",Campbell_et_al_2015,1
@@ -235,7 +281,10 @@ lat_long,n,core_ids,study_ids,num_studies
 "26.020741, -81.734164",3,"RB1-C1, RB1-C2, RB1-C3",Rovai_et_al_2022,1
 "26.19522377, -97.32745012",2,"NWCA11-2527-5714, NWCA11-2527-5715",Nahlik_and_Fennessy_2016,1
 "26.47816, -82.150279",3,"SB-C1, SB-C2, SB-C3",Rovai_et_al_2022,1
+"26.562129, -111.772379",2,"Baja-El Mangle I-1, Baja-El Mangle I-2",Costa_et_al_2023,1
 "26.621, -77.828",2,"Koch_and_Madden_2001_1, Koch_and_Madden_2001_2",Koch_and_Madden_2001,1
+"26.650388, -111.851133",2,"Baja-Buenaventura-1, Baja-Buenaventura-2",Costa_et_al_2023,1
+"26.763001, -111.892168",2,"Baja-Santispac-2, Baja-Santispac-3",Costa_et_al_2023,1
 "26.780431, 55.654955",3,"QM161_1, QM161_2, QM161_3",Hamzeh_and_lahijani_2022,1
 "26.780613, 55.657387",3,"QM162_1, QM162_2, QM162_3",Hamzeh_and_lahijani_2022,1
 "26.786517, 55.710425",3,"QM172_1, QM172_2, QM172_3",Hamzeh_and_lahijani_2022,1
@@ -268,6 +317,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "26.905029, 55.580728",3,"KM12_1, KM12_2, KM12_3",Hamzeh_and_lahijani_2022,1
 "26.906689, 55.581132",3,"KM11_1, KM11_2, KM11_3",Hamzeh_and_lahijani_2022,1
 "26.907927, 55.577003",3,"KM13_1, KM13_2, KM13_3",Hamzeh_and_lahijani_2022,1
+"27.223676, -112.212642",2,"Baja-San Lucas-2, Baja-San Lucas-3",Costa_et_al_2023,1
 "27.580827, -82.563715",2,"FL_HHMA, FL_HHMB",Okeefe-Suttles_et_al_2021_FL,1
 "27.742156, -82.4676",2,"FL_EGSA, FL_EGSB",Okeefe-Suttles_et_al_2021_FL,1
 "27.993991, -82.586612",2,"FL_RCRA, FL_RCRB",Okeefe-Suttles_et_al_2021_FL,1
@@ -285,12 +335,12 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.171218, -90.761293",3,"CRMS0345_1, CRMS0345_2, CRMS0345_3",CRMS_Database,1
 "29.171219, -90.824389",3,"CRMS0421_1, CRMS0421_2, CRMS0421_3",CRMS_Database,1
 "29.193062, -90.169942",3,"CRMS0164_1, CRMS0164_2, CRMS0164_3",CRMS_Database,1
-"29.19392, -90.16984",4,"0164_1, 0164_2, CRMS0164_Piazza_1, CRMS0164_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.19392, -90.16984",2,"0164_1, 0164_2",Piazza_et_al_2020,1
 "29.207497, -90.948878",3,"CRMS0383_1, CRMS0383_2, CRMS0383_3",CRMS_Database,1
 "29.214753, -89.229211",3,"CRMS4448_1, CRMS4448_2, CRMS4448_3",CRMS_Database,1
 "29.214755, -89.416714",3,"CRMS0163_1, CRMS0163_2, CRMS0163_3",CRMS_Database,1
 "29.21476, -90.791755",3,"CRMS0311_1, CRMS0311_2, CRMS0311_3",CRMS_Database,1
-"29.22375, -90.11115",4,"0164_H_1, 0164_H_2, CRMS0164_H_Piazza_1, CRMS0164_H_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.22375, -90.11115",2,"0164_H_1, 0164_H_2",Piazza_et_al_2020,1
 "29.228696, -89.187346",3,"CRMS2627_1, CRMS2627_2, CRMS2627_3",CRMS_Database,1
 "29.229271, -89.260462",3,"CRMS2634_1, CRMS2634_2, CRMS2634_3",CRMS_Database,1
 "29.229272, -91.010792",3,"CRMS0377_1, CRMS0377_2, CRMS0377_3",CRMS_Database,1
@@ -301,10 +351,10 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.251045, -91.198019",3,"CRMS0309_1, CRMS0309_2, CRMS0309_3",CRMS_Database,1
 "29.251048, -90.823006",3,"CRMS0307_1, CRMS0307_2, CRMS0307_3",CRMS_Database,1
 "29.258304, -90.948011",3,"CRMS4455_1, CRMS4455_2, CRMS4455_3",CRMS_Database,1
-"29.261217, -91.09475",6,"0326_H_1, 0326_H_2, 0326_H_3, CRMS0326_H_Piazza_1, CRMS0326_H_Piazza_2, CRMS0326_H_Piazza_3","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.261217, -91.09475",3,"0326_H_1, 0326_H_2, 0326_H_3",Piazza_et_al_2020,1
 "29.272819, -91.073015",3,"CRMS0326_1, CRMS0326_2, CRMS0326_3",CRMS_Database,1
 "29.272863, -90.387717",3,"CRMS0335_1, CRMS0335_2, CRMS0335_3",CRMS_Database,1
-"29.273717, -91.07405",4,"0326_1, 0326_2, CRMS0326_Piazza_1, CRMS0326_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.273717, -91.07405",2,"0326_1, 0326_2",Piazza_et_al_2020,1
 "29.287399, -90.137924",3,"CRMS0175_1, CRMS0175_2, CRMS0175_3",CRMS_Database,1
 "29.287475, -90.046981",3,"CRMS0178_1, CRMS0178_2, CRMS0178_3",CRMS_Database,1
 "29.294589, -89.166708",3,"CRMS0161_1, CRMS0161_2, CRMS0161_3",CRMS_Database,1
@@ -361,7 +411,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.417983, -90.91676",3,"CRMS0296_1, CRMS0296_2, CRMS0296_3",CRMS_Database,1
 "29.417983, -90.94801",3,"CRMS0294_1, CRMS0294_2, CRMS0294_3",CRMS_Database,1
 "29.417989, -89.697975",3,"CRMS0272_1, CRMS0272_2, CRMS0272_3",CRMS_Database,1
-"29.41928, -90.94902",4,"0294_1, 0294_2, CRMS0294_Piazza_1, CRMS0294_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.41928, -90.94902",2,"0294_1, 0294_2",Piazza_et_al_2020,1
 "29.42524, -91.073014",3,"CRMS0371_1, CRMS0371_2, CRMS0371_3",CRMS_Database,1
 "29.432502, -90.854257",3,"CRMS0382_1, CRMS0382_2, CRMS0382_3",CRMS_Database,1
 "29.432504, -90.354245",3,"CRMS0386_1, CRMS0386_2, CRMS0386_3",CRMS_Database,1
@@ -369,7 +419,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.4417, -89.9013",3,"2_1, 2_2, 2_3",Chambers_et_al_2019,1
 "29.443585, -89.899836",2,"Marsh_4_1, Marsh_4_2",White_et_al_2020,1
 "29.4436, -89.8998",3,"1_1, 1_2, 1_3",Chambers_et_al_2019,1
-"29.44597, -90.95681",4,"0294_H_1, 0294_H_2, CRMS0294_H_Piazza_1, CRMS0294_H_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.44597, -90.95681",2,"0294_H_1, 0294_H_2",Piazza_et_al_2020,1
 "29.44657, -89.90633",3,"Estuary_1, Estuary_2, Estuary_3",White_et_al_2020,1
 "29.446688, -89.905857",3,"Marsh_3_1, Marsh_3_2, Marsh_3_3",White_et_al_2020,1
 "29.44679, -89.905927",3,"Marsh_2_1, Marsh_2_2, Marsh_2_3",White_et_al_2020,1
@@ -393,7 +443,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.490566, -89.791727",3,"CRMS0209_1, CRMS0209_2, CRMS0209_3",CRMS_Database,1
 "29.490566, -91.323022",3,"CRMS0463_1, CRMS0463_2, CRMS0463_3",CRMS_Database,1
 "29.490568, -90.510499",3,"CRMS0400_1, CRMS0400_2, CRMS0400_3",CRMS_Database,1
-"29.49233, -90.36175",4,"0312_H_1, 0312_H_2, CRMS0312_H_Piazza_1, CRMS0312_H_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.49233, -90.36175",2,"0312_H_1, 0312_H_2",Piazza_et_al_2020,1
 "29.497822, -90.94801",3,"CRMS0411_1, CRMS0411_2, CRMS0411_3",CRMS_Database,1
 "29.497823, -91.823033",3,"CRMS0522_1, CRMS0522_2, CRMS0522_3",CRMS_Database,1
 "29.497825, -89.916735",3,"CRMS0224_1, CRMS0224_2, CRMS0224_3",CRMS_Database,1
@@ -404,7 +454,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.497827, -89.760476",3,"CRMS0282_1, CRMS0282_2, CRMS0282_3",CRMS_Database,1
 "29.497827, -90.447998",3,"CRMS2825_1, CRMS2825_2, CRMS2825_3",CRMS_Database,1
 "29.501111, -91.480833",3,"W16-1, W16-2, W16-3",McClellan_et_al_2021,1
-"29.50504, -90.38535",4,"0312_1, 0312_2, CRMS0312_Piazza_1, CRMS0312_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.50504, -90.38535",2,"0312_1, 0312_2",Piazza_et_al_2020,1
 "29.50508, -91.041763",3,"CRMS2785_1, CRMS2785_2, CRMS2785_3",CRMS_Database,1
 "29.505082, -91.229269",3,"CRMS0301_1, CRMS0301_2, CRMS0301_3",CRMS_Database,1
 "29.505085, -90.385496",3,"CRMS0312_1, CRMS0312_2, CRMS0312_3",CRMS_Database,1
@@ -447,7 +497,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.584921, -91.885535",3,"CRMS0520_1, CRMS0520_2, CRMS0520_3",CRMS_Database,1
 "29.584925, -92.229294",3,"CRMS0507_1, CRMS0507_2, CRMS0507_3",CRMS_Database,1
 "29.584925, -92.260545",3,"CRMS0536_1, CRMS0536_2, CRMS0536_3",CRMS_Database,1
-"29.590083, -89.613383",4,"0147_H_1, 0147_H_2, CRMS0147_H_Piazza_1, CRMS0147_H_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.590083, -89.613383",2,"0147_H_1, 0147_H_2",Piazza_et_al_2020,1
 "29.592188, -92.479302",3,"CRMS0576_1, CRMS0576_2, CRMS0576_3",CRMS_Database,1
 "29.599437000000002, -91.541776",3,"CRMS0489_1, CRMS0489_2, CRMS0489_3",CRMS_Database,1
 "29.599438, -91.916786",3,"CRMS0529_1, CRMS0529_2, CRMS0529_3",CRMS_Database,1
@@ -457,9 +507,9 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.606701, -92.323048",3,"CRMS0580_1, CRMS0580_2, CRMS0580_3",CRMS_Database,1
 "29.606704, -92.635555",3,"CRMS0610_1, CRMS0610_2, CRMS0610_3",CRMS_Database,1
 "29.606705, -92.666806",3,"CRMS0599_1, CRMS0599_2, CRMS0599_3",CRMS_Database,1
-"29.606707, -92.635553",4,"0610_1, 0610_2, CRMS0610_Piazza_1, CRMS0610_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.606707, -92.635553",2,"0610_1, 0610_2",Piazza_et_al_2020,1
 "29.613953, -91.322781",3,"CRMS4938_1, CRMS4938_2, CRMS4938_3",CRMS_Database,1
-"29.615303, -92.614936",4,"0610_H_1, 0610_H_2, CRMS0610_H_Piazza_1, CRMS0610_H_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.615303, -92.614936",2,"0610_H_1, 0610_H_2",Piazza_et_al_2020,1
 "29.616212, -92.041126",3,"CRMS0541_1, CRMS0541_2, CRMS0541_3",CRMS_Database,1
 "29.621209, -91.039661",3,"CRMS5035_1, CRMS5035_2, CRMS5035_3",CRMS_Database,1
 "29.621215, -89.791725",3,"CRMS0136_1, CRMS0136_2, CRMS0136_3",CRMS_Database,1
@@ -483,9 +533,9 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.664762, -89.604219",3,"CRMS0147_1, CRMS0147_2, CRMS0147_3",CRMS_Database,1
 "29.664762, -89.885481",3,"CRMS0132_1, CRMS0132_2, CRMS0132_3",CRMS_Database,1
 "29.66477, -92.729306",3,"CRMS0581_1, CRMS0581_2, CRMS0581_3",CRMS_Database,1
-"29.664771000000002, -92.823058",3,"CRMS0589_1, CRMS0589_2, CRMS0589_3",CRMS_Database,1
+"29.664770999999998, -92.823058",3,"CRMS0589_1, CRMS0589_2, CRMS0589_3",CRMS_Database,1
 "29.664772, -91.447022",3,"CRMS4782_1, CRMS4782_2, CRMS4782_3",CRMS_Database,1
-"29.665667, -89.604183",4,"0147_1, 0147_2, CRMS0147_Piazza_1, CRMS0147_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.665667, -89.604183",2,"0147_1, 0147_2",Piazza_et_al_2020,1
 "29.67202, -90.135489",3,"CRMS4245_1, CRMS4245_2, CRMS4245_3",CRMS_Database,1
 "29.672031, -92.666805",3,"CRMS0608_1, CRMS0608_2, CRMS0608_3",CRMS_Database,1
 "29.679275, -91.510525",3,"CRMS0490_1, CRMS0490_2, CRMS0490_3",CRMS_Database,1
@@ -494,11 +544,11 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.686537, -91.573027",3,"CRMS0544_1, CRMS0544_2, CRMS0544_3",CRMS_Database,1
 "29.686541, -89.760473",3,"CRMS0135_1, CRMS0135_2, CRMS0135_3",CRMS_Database,1
 "29.686541, -92.260545",3,"CRMS0619_1, CRMS0619_2, CRMS0619_3",CRMS_Database,1
-"29.68655, -89.760467",4,"0135_1, 0135_2, CRMS0135_Piazza_1, CRMS0135_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.68655, -89.760467",2,"0135_1, 0135_2",Piazza_et_al_2020,1
 "29.692516, -89.885524",3,"CRMS0131_1, CRMS0131_2, CRMS0131_3",CRMS_Database,1
 "29.693791, -89.822975",3,"CRMS0121_1, CRMS0121_2, CRMS0121_3",CRMS_Database,1
 "29.701051, -91.541776",3,"CRMS0551_1, CRMS0551_2, CRMS0551_3",CRMS_Database,1
-"29.705633, -89.718467",4,"0135_H_1, 0135_H_2, CRMS0135_H_Piazza_1, CRMS0135_H_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.705633, -89.718467",2,"0135_H_1, 0135_H_2",Piazza_et_al_2020,1
 "29.708308, -91.541776",3,"CRMS0488_1, CRMS0488_2, CRMS0488_3",CRMS_Database,1
 "29.708309, -91.854284",3,"CRMS0527_1, CRMS0527_2, CRMS0527_3",CRMS_Database,1
 "29.708312, -92.291796",3,"CRMS0571_1, CRMS0571_2, CRMS0571_3",CRMS_Database,1
@@ -520,25 +570,28 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.773647, -93.510571",3,"CRMS0680_1, CRMS0680_2, CRMS0680_3",CRMS_Database,1
 "29.780891, -89.916731",3,"CRMS0115_1, CRMS0115_2, CRMS0115_3",CRMS_Database,1
 "29.780903, -93.698074",3,"CRMS1838_1, CRMS1838_2, CRMS1838_3",CRMS_Database,1
+"29.79541, -90.60425",4,"0268_1, 0268_2, 0268_H_1, 0268_H_2",Piazza_et_al_2020,1
 "29.795411, -92.135541",3,"CRMS0552_1, CRMS0552_2, CRMS0552_3",CRMS_Database,1
 "29.795418, -92.854309",3,"CRMS0584_1, CRMS0584_2, CRMS0584_3",CRMS_Database,1
 "29.79542, -92.91681",3,"CRMS0587_1, CRMS0587_2, CRMS0587_3",CRMS_Database,1
 "29.795421, -93.416819",3,"CRMS0655_1, CRMS0655_2, CRMS0655_3",CRMS_Database,1
+"29.80267, -90.32299",4,"0219_1, 0219_2, 0219_H_1, 0219_H_2",Piazza_et_al_2020,1
 "29.809923, -89.916732",3,"CRMS0117_1, CRMS0117_2, CRMS0117_3",CRMS_Database,1
 "29.809923, -92.041788",3,"CRMS1650_1, CRMS1650_2, CRMS1650_3",CRMS_Database,1
 "29.809934, -92.979312",3,"CRMS0622_1, CRMS0622_2, CRMS0622_3",CRMS_Database,1
 "29.817194, -93.823078",3,"CRMS0684_1, CRMS0684_2, CRMS0684_3",CRMS_Database,1
 "29.824436, -89.572966",3,"CRMS4557_1, CRMS4557_2, CRMS4557_3",CRMS_Database,1
 "29.82444, -91.948035",3,"CRMS0532_1, CRMS0532_2, CRMS0532_3",CRMS_Database,1
+"29.82445, -92.4793",4,"1277_1, 1277_2, 1277_H_1, 1277_H_2",Piazza_et_al_2020,1
 "29.824453, -93.573072",3,"CRMS0682_1, CRMS0682_2, CRMS0682_3",CRMS_Database,1
 "29.831698, -89.947982",3,"CRMS0128_1, CRMS0128_2, CRMS0128_3",CRMS_Database,1
 "29.831698, -91.854284",3,"CRMS0549_1, CRMS0549_2, CRMS0549_3",CRMS_Database,1
-"29.8317, -89.947983",4,"0128_1, 0128_2, CRMS0128_Piazza_1, CRMS0128_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.8317, -89.947983",2,"0128_1, 0128_2",Piazza_et_al_2020,1
 "29.831711, -93.291817",3,"CRMS0644_1, CRMS0644_2, CRMS0644_3",CRMS_Database,1
 "29.831712, -93.41682",3,"CRMS0672_1, CRMS0672_2, CRMS0672_3",CRMS_Database,1
-"29.831714, -93.416818",4,"0672_1, 0672_2, CRMS0672_Piazza_1, CRMS0672_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
-"29.833426, -93.409073",4,"0672_H_1, 0672_H_2, CRMS0672_H_Piazza_1, CRMS0672_H_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
-"29.835167, -89.930067",4,"0128_H_1, 0128_H_2, CRMS0128_H_Piazza_1, CRMS0128_H_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.831714, -93.416818",2,"0672_1, 0672_2",Piazza_et_al_2020,1
+"29.833426, -93.409073",2,"0672_H_1, 0672_H_2",Piazza_et_al_2020,1
+"29.835167, -89.930067",2,"0128_H_1, 0128_H_2",Piazza_et_al_2020,1
 "29.838956, -89.666719",3,"CRMS3800_1, CRMS3800_2, CRMS3800_3",CRMS_Database,1
 "29.838956, -89.822974",3,"CRMS4355_1, CRMS4355_2, CRMS4355_3",CRMS_Database,1
 "29.838967, -93.166816",3,"CRMS0648_1, CRMS0648_2, CRMS0648_3",CRMS_Database,1
@@ -554,18 +607,19 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.853485, -93.229316",3,"CRMS1738_1, CRMS1738_2, CRMS1738_3",CRMS_Database,1
 "29.853486, -93.541822",3,"CRMS0677_1, CRMS0677_2, CRMS0677_3",CRMS_Database,1
 "29.860735, -89.666718",3,"CRMS4548_1, CRMS4548_2, CRMS4548_3",CRMS_Database,1
+"29.86074, -92.91682",4,"0605_1, 0605_2, 0605_H_1, 0605_H_2",Piazza_et_al_2020,1
 "29.867997, -93.010565",3,"CRMS1409_1, CRMS1409_2, CRMS1409_3",CRMS_Database,1
 "29.868, -85.366",4,"Lewis_et_al_2007_10, Lewis_et_al_2007_11, Lewis_et_al_2007_23, Lewis_et_al_2007_24",Lewis_et_al_2007,1
 "29.868002, -93.479321",3,"CRMS0642_1, CRMS0642_2, CRMS0642_3",CRMS_Database,1
 "29.868002, -93.510571",3,"CRMS0638_1, CRMS0638_2, CRMS0638_3",CRMS_Database,1
 "29.874734, -89.378759",3,"CRMS1024_1, CRMS1024_2, CRMS1024_3",CRMS_Database,1
-"29.87525, -93.698083",4,"2156_1, 2156_2, CRMS2156_Piazza_1, CRMS2156_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.87525, -93.698083",2,"2156_1, 2156_2",Piazza_et_al_2020,1
 "29.875257, -93.698076",3,"CRMS2156_1, CRMS2156_2, CRMS2156_3",CRMS_Database,1
 "29.875258, -93.166816",3,"CRMS2418_1, CRMS2418_2, CRMS2418_3",CRMS_Database,1
 "29.875261, -93.573073",3,"CRMS1205_1, CRMS1205_2, CRMS1205_3",CRMS_Database,1
 "29.882515, -93.729327",3,"CRMS0669_1, CRMS0669_2, CRMS0669_3",CRMS_Database,1
 "29.882516, -93.510571",3,"CRMS2334_1, CRMS2334_2, CRMS2334_3",CRMS_Database,1
-"29.882517, -93.729333",4,"0669_1, 0669_2, CRMS0669_Piazza_1, CRMS0669_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.882517, -93.729333",2,"0669_1, 0669_2",Piazza_et_al_2020,1
 "29.889762, -91.979286",3,"CRMS0511_1, CRMS0511_2, CRMS0511_3",CRMS_Database,1
 "29.889774, -93.479321",3,"CRMS0639_1, CRMS0639_2, CRMS0639_3",CRMS_Database,1
 "29.889774, -93.666826",3,"CRMS0683_1, CRMS0683_2, CRMS0683_3",CRMS_Database,1
@@ -583,12 +637,12 @@ lat_long,n,core_ids,study_ids,num_studies
 "29.937778, -93.400833",3,"S06-1, S06-2, S06-3",McClellan_et_al_2021,1
 "29.940583, -93.354319",3,"CRMS0687_1, CRMS0687_2, CRMS0687_3",CRMS_Database,1
 "29.944167, -93.439167",3,"S50-4B, S50-5B, S50-6B",McClellan_et_al_2021,1
-"29.945952, -93.524266",4,"0651_H_1, 0651_H_2, CRMS0651_H_Piazza_1, CRMS0651_H_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.945952, -93.524266",2,"0651_H_1, 0651_H_2",Piazza_et_al_2020,1
 "29.946667, -93.410833",3,"S01-1, S01-2, S01-3",McClellan_et_al_2021,1
 "29.955055, -89.415928",3,"CRMS0108_1, CRMS0108_2, CRMS0108_3",CRMS_Database,1
 "29.96036, -93.40959",3,"CRMS6301_1, CRMS6301_2, CRMS6301_3",CRMS_Database,1
 "29.961667, -93.413056",3,"S14-1, S14-2, S14-3",McClellan_et_al_2021,1
-"29.96235, -93.510567",4,"0651_1, 0651_2, CRMS0651_Piazza_1, CRMS0651_Piazza_2","Piazza_et_al_2020, Piazza_et_al_2011",2
+"29.96235, -93.510567",2,"0651_1, 0651_2",Piazza_et_al_2020,1
 "29.962356, -93.510572",3,"CRMS0651_1, CRMS0651_2, CRMS0651_3",CRMS_Database,1
 "29.962356, -93.698078",3,"CRMS0665_1, CRMS0665_2, CRMS0665_3",CRMS_Database,1
 "29.984129, -93.698079",3,"CRMS2166_1, CRMS2166_2, CRMS2166_3",CRMS_Database,1
@@ -699,10 +753,6 @@ lat_long,n,core_ids,study_ids,num_studies
 "36.5431, -6.2444",5,"Mateo_and_Serrano_unpublished_10, Mateo_and_Serrano_unpublished_11, Mateo_and_Serrano_unpublished_12, Mateo_and_Serrano_unpublished_13, Mateo_and_Serrano_unpublished_14",Mateo_and_Serrano_unpublished,1
 "37.15, 126.2833",3,"Lee_et_al_2005_1, Lee_et_al_2005_2, Lee_et_al_2005_3",Lee_et_al_2005,1
 "37.21261111111111, -76.39611111",3,"Buzzelli_1998_1, Buzzelli_1998_2, Buzzelli_1998_3",Buzzelli_1998,1
-"37.262120711587954, -75.81515220407812",2,SB152_C2,"McGlathery_et_al_2018, McGlathery_et_al_2014",2
-"37.26733763627613, -75.82683671599045",2,2B,"McGlathery_et_al_2018, McGlathery_et_al_2014",2
-"37.26989796372399, -75.82419167313394",2,SB_B5_C2,"McGlathery_et_al_2018, McGlathery_et_al_2014",2
-"37.27156674257067, -75.81227678039454",2,T1_9,"McGlathery_et_al_2018, McGlathery_et_al_2014",2
 "37.39, 23.58",7,"Apostolaki_unpublished_1, Apostolaki_unpublished_2, Apostolaki_unpublished_3, Apostolaki_unpublished_4, Apostolaki_unpublished_5, Apostolaki_unpublished_6, Apostolaki_unpublished_7",Apostolaki_unpublished,1
 "37.3945, 23.58",2,"Holmer_et_al_2007_7, Holmer_et_al_2007_8",Holmer_et_al_2007,1
 "37.454314, -75.828382",2,"bee, lsp",Nuttle_1996,1
@@ -844,6 +894,8 @@ lat_long,n,core_ids,study_ids,num_studies
 "6.028306, 80.250135",16,"M0140, M0141, M0142, M0143, M0144, M0145, M0146, M0147, M0148, M0149, M0150, M0151, M0152, M0153, M0154, M0155",Bouillon_et_al_2003,1
 "7.50765, 99.3033",13,"Povidisa_and_Delefosse_unpublished_1, Povidisa_and_Delefosse_unpublished_10, Povidisa_and_Delefosse_unpublished_11, Povidisa_and_Delefosse_unpublished_12, Povidisa_and_Delefosse_unpublished_13, Povidisa_and_Delefosse_unpublished_2, Povidisa_and_Delefosse_unpublished_3, Povidisa_and_Delefosse_unpublished_4, Povidisa_and_Delefosse_unpublished_5, Povidisa_and_Delefosse_unpublished_6, Povidisa_and_Delefosse_unpublished_7, Povidisa_and_Delefosse_unpublished_8, Povidisa_and_Delefosse_unpublished_9",Povidisa_and_Delefosse_unpublished,1
 "7.515981, 79.812103",22,"M0156, M0157, M0158, M0159, M0160, M0161, M0162, M0163, M0164, M0165, M0166, M0167, M0168, M0169, M0170, M0171, M0665, M0666, M0667, M0668, M0669, M0670","Bouillon_et_al_2003, Bouillon_et_al_2004_FEMS",2
+"7.767689, -81.574967",2,"PanamaPacific-VE LI-1, PanamaPacific-VE LI-2",Costa_et_al_2023,1
+"7.850317, -81.577513",2,"PanamaPacific-VE RN-1, PanamaPacific-VE RN-2",Costa_et_al_2023,1
 "8, 98.9",2,"M1538, M1539",Bukoski_et_al_2017,1
 "8, 99",6,"M1532, M1533, M1540, M1541, M1544, M1545",Bukoski_et_al_2017,1
 "8.05, 98.4167",2,"Kristensen_et_al_2000_1, Kristensen_et_al_2000_2",Kristensen_et_al_2000,1
@@ -851,8 +903,25 @@ lat_long,n,core_ids,study_ids,num_studies
 "8.276765, -82.34989",3,"CQ2-C1, CQ2-C2, CQ2-C3",Rovai_et_al_2022,1
 "8.307105, -82.281247",3,"CQ1-C1, CQ1-C2, CQ1-C3",Rovai_et_al_2022,1
 "8.317855, -82.440367",3,"CQ3-C1, CQ3-C2, CQ3-C3",Rovai_et_al_2022,1
+"8.384288, -78.856239",2,"PanamaPacific-LP V-1, PanamaPacific-LP V-2",Costa_et_al_2023,1
+"8.388987, -78.850368",2,"PanamaPacific-LP I-1, PanamaPacific-LP I-2",Costa_et_al_2023,1
 "8.4, 100.2",12,"M1546, M1547, M1552, M1553, M1554, M1555, M1556, M1557, M1558, M1559, M1562, M1563",Bukoski_et_al_2017,1
+"8.492014, -79.058637",2,"PanamaPacific-LP BA-1, PanamaPacific-LP BA-2",Costa_et_al_2023,1
 "8.5, 100.2",8,"M1548, M1549, M1550, M1551, M1560, M1561, M1564, M1565",Bukoski_et_al_2017,1
+"8.52024, -79.043952",2,"PanamaPacific-LP II-1, PanamaPacific-LP II-2",Costa_et_al_2023,1
+"9.338067, -82.247967",2,"PanamaCaribbean-Bocas Town (BT)-1, PanamaCaribbean-Bocas Town (BT)-2",Costa_et_al_2023,1
+"9.348858, -82.258059",2,"PanamaCaribbean-Station Forest South (SFS)-1, PanamaCaribbean-Station Forest South (SFS)-2",Costa_et_al_2023,1
+"9.352424, -82.265553",2,"PanamaCaribbean-B-1, PanamaCaribbean-B-2",Costa_et_al_2023,1
+"9.352483, -82.258933",3,"PanamaCaribbean-Station Forest (SF)-1, PanamaCaribbean-Station Forest (SF)-2, PanamaCaribbean-Station Forest (SF)-3",Costa_et_al_2023,1
+"9.360361, -82.263336",2,"PanamaCaribbean-A-1, PanamaCaribbean-A-2",Costa_et_al_2023,1
+"9.364202, -82.272277",2,"PanamaCaribbean-C-1, PanamaCaribbean-C-2",Costa_et_al_2023,1
+"9.365721, -82.272677",2,"PanamaCaribbean-D-1, PanamaCaribbean-D-2",Costa_et_al_2023,1
+"9.373817, -82.290659",2,"PanamaCaribbean-E-1, PanamaCaribbean-E-2",Costa_et_al_2023,1
+"9.375275, -82.29635",2,"PanamaCaribbean-F-1, PanamaCaribbean-F-2",Costa_et_al_2023,1
+"9.378227, -82.292822",2,"PanamaCaribbean-G-1, PanamaCaribbean-G-2",Costa_et_al_2023,1
+"9.38576, -82.30151",6,"PanamaCaribbean-H-1, PanamaCaribbean-H-2, PanamaCaribbean-H-4, PanamaCaribbean-H-5, PanamaCaribbean-H-6, PanamaCaribbean-H-7",Costa_et_al_2023,1
+"9.396002, -82.309144",2,"PanamaCaribbean-BDS-1, PanamaCaribbean-BDS-2",Costa_et_al_2023,1
+"9.404239, -82.317044",2,"PanamaCaribbean-BD-1, PanamaCaribbean-BD-2",Costa_et_al_2023,1
 "9.5, 138.1",12,"M1416, M1417, M1418, M1419, M1420, M1421, M1471, M1472, M1473, M1474, M1475, M1476",Donato_et_al_2011,1
 "9.588138, -82.59752",3,"N10L2MG1, N10L2MG2, N10L2MG3",Rovai_et_al_2022,1
 "9.588788, -82.59588",3,"N10L3MG1, N10L3MG2, N10L3MG3",Rovai_et_al_2022,1
@@ -862,4 +931,4 @@ lat_long,n,core_ids,study_ids,num_studies
 "9.824509, -84.914033",3,"N11L1MG1, N11L1MG2, N11L1MG3",Rovai_et_al_2022,1
 "9.826671, -84.917696",3,"N11L2MG1, N11L2MG2, N11L2MG3",Rovai_et_al_2022,1
 "9.827158, -84.920191",3,"N11L3MG1, N11L3MG2, N11L3MG3",Rovai_et_al_2022,1
-"NA, NA",109,"Waccasassa_Bay_Mangrove_replicate, Grant's Beach_C_W7, Pt Carron_B_40, Wells_A_1, Wells_A_2, SB1, SS1, Bu_Tinah_Shamal_mangrove_2, M0537, M0538, M0539, M0541, M0542, M0638, M0639, M0640, M0641, M0642, M0643, M0644, M0645, M0646, NE_B, SP_B, 15CCT02_GB174S, 15CCT02_GB173S, 14CCT01_GB30S_2, 15CCT02_GB101G, 15CCT02_GB102G, 15CCT02_GB103G, 15CCT02_GB104G, 15CCT02_GB105G, 15CCT02_GB106G, 15CCT02_GB107G, 15CCT02_GB108G, 15CCT02_GB109G, 15CCT02_GB110G, 15CCT02_GB111G, 15CCT02_GB112G, 15CCT02_GB113G, 15CCT02_GB114G, 15CCT02_GB115G, 15CCT02_GB144G, 15CCT02_GB151G, 15CCT02_GB152G, 15CCT02_GB158G, 15CCT02_GB159G, 15CCT02_GB161G, 15CCT02_GB162G, 15CCT02_GB163G, 15CCT02_GB165G, 16CCT04_GB300G, 16CCT04_GB301G, 16CCT04_GB302G, 16CCT04_GB303G, 16CCT04_GB304G, 16CCT04_GB305G, 16CCT04_GB306G, 16CCT04_GB307G, 16CCT04_GB308G, 16CCT04_GB309G, 16CCT04_GB310G, 16CCT04_GB311G, 16CCT04_GB312G, 16CCT04_GB313G, 16CCT04_GB314G, 16CCT04_GB315G, 16CCT04_GB316G, 16CCT04_GB317G, 16CCT04_GB318G, 16CCT04_GB319G, 16CCT04_GB320G, 16CCT07_GB301M, 16CCT07_GB302M, 16CCT07_GB303M, 16CCT07_GB304M, 16CCT07_GB305M, 16CCT07_GB306M, 16CCT07_GB307M, 16CCT07_GB308M, 14CCT01_GB56D, 14CCT01_GB56M, 14CCT01_GB56R, 16CCT03_GB242M, 16CCT03_GB241M, 16CCT03_GB243M, 16CCT03_GB200G, 16CCT03_GB200G_2, 16CCT03_GB200G_3, 16CCT03_GB233G_2, 16CCT03_GB237G_2, 16CCT03_GB238G_2, 16CCT03_GB240G_2, 16CCT03_GB241G_2, 16CCT03_GB242G_2, 16CCT03_GB243G_2, 16CCT03_GB243G_3, 16CCT03_GB254G_3, 16CCT03_GB254G_4, 16CCT03_GB256G_2, 16CCT03_GB265G_2, 16CCT03_GB282S_2, 16CCT03_GB289S_2, 16CCT03_GB232M_2, 14CCT01_GB53M_2, COL-BLI-TS-2, Copertino_unpublished_1, Coastal_EDU_Field_2, SM10","Vaughn_et_al_2020, van_Ardenne_et_al_2018, Thom_1992, Schile-Beers_and_Megonigal_2017, Nsombo_et_al_2016, Eid_and_Shaltout_2016_Egypt, Eid_et_al_2016_Saudi_Arabia, Poppe_et_al_2019, Marot_et_al_2020, Kauffman_et_al_2020, Copertino_unpublished, Drexler_et_al_2013, Belshe_et_al_2019",13
+"NA, NA",123,"Big_Egg, Black_Bank, Duck_Point, East_High, Fresh_Creek, JoCo, Little_Egg, Ruffle_Bar, Spring_Creek, Yellow_Bar, Stony_Creek, Four_Sparrow, Waccasassa_Bay_Mangrove_replicate, Grant's Beach_C_W7, Pt Carron_B_40, Wells_A_1, Wells_A_2, SB1, SS1, Bu_Tinah_Shamal_mangrove_2, M0537, M0538, M0539, M0541, M0542, M0638, M0639, M0640, M0641, M0642, M0643, M0644, M0645, M0646, NE_B, SP_B, 15CCT02_GB174S, 15CCT02_GB173S, 14CCT01_GB30S_2, 15CCT02_GB101G, 15CCT02_GB102G, 15CCT02_GB103G, 15CCT02_GB104G, 15CCT02_GB105G, 15CCT02_GB106G, 15CCT02_GB107G, 15CCT02_GB108G, 15CCT02_GB109G, 15CCT02_GB110G, 15CCT02_GB111G, 15CCT02_GB112G, 15CCT02_GB113G, 15CCT02_GB114G, 15CCT02_GB115G, 15CCT02_GB144G, 15CCT02_GB151G, 15CCT02_GB152G, 15CCT02_GB158G, 15CCT02_GB159G, 15CCT02_GB161G, 15CCT02_GB162G, 15CCT02_GB163G, 15CCT02_GB165G, 16CCT04_GB300G, 16CCT04_GB301G, 16CCT04_GB302G, 16CCT04_GB303G, 16CCT04_GB304G, 16CCT04_GB305G, 16CCT04_GB306G, 16CCT04_GB307G, 16CCT04_GB308G, 16CCT04_GB309G, 16CCT04_GB310G, 16CCT04_GB311G, 16CCT04_GB312G, 16CCT04_GB313G, 16CCT04_GB314G, 16CCT04_GB315G, 16CCT04_GB316G, 16CCT04_GB317G, 16CCT04_GB318G, 16CCT04_GB319G, 16CCT04_GB320G, 16CCT07_GB301M, 16CCT07_GB302M, 16CCT07_GB303M, 16CCT07_GB304M, 16CCT07_GB305M, 16CCT07_GB306M, 16CCT07_GB307M, 16CCT07_GB308M, 14CCT01_GB56D, 14CCT01_GB56M, 14CCT01_GB56R, 16CCT03_GB242M, 16CCT03_GB241M, 16CCT03_GB243M, 16CCT03_GB200G, 16CCT03_GB200G_2, 16CCT03_GB200G_3, 16CCT03_GB233G_2, 16CCT03_GB237G_2, 16CCT03_GB238G_2, 16CCT03_GB240G_2, 16CCT03_GB241G_2, 16CCT03_GB242G_2, 16CCT03_GB243G_2, 16CCT03_GB243G_3, 16CCT03_GB254G_3, 16CCT03_GB254G_4, 16CCT03_GB256G_2, 16CCT03_GB265G_2, 16CCT03_GB282S_2, 16CCT03_GB289S_2, 16CCT03_GB232M_2, 14CCT01_GB53M_2, COL-BLI-TS-2, Copertino_unpublished_1, Coastal_EDU_Field_2, Antisana_Ecological_Reserve_111_322, Chingaza_114_335, SM10","Wang_et_al_2023, Vaughn_et_al_2020, van_Ardenne_et_al_2018, Thom_1992, Schile-Beers_and_Megonigal_2017, Nsombo_et_al_2016, Eid_and_Shaltout_2016_Egypt, Eid_et_al_2016_Saudi_Arabia, Poppe_et_al_2019, Marot_et_al_2020, Kauffman_et_al_2020, Copertino_unpublished, Drexler_et_al_2013, AntisanaEcologicalReserve_Soil, Chingaza_Soil, Belshe_et_al_2019",16
