@@ -7,6 +7,7 @@ library(readxl)
 library(parzer)
 library(leaflet)
 library(lubridate)
+library(RefManageR)
 
 
 #helper functions
@@ -26,7 +27,9 @@ cifor_veg <- synthCIFOR(data_type = "vegetation")
 #additional geographic coordinate sheets 
 geo_brazil <- read_xlsx("data/primary_studies/CIFOR/original/Kauffman_2019_BocaGrande_soil/Geographic Coordinate for SWAMP dataset-Mangrove soil carbon-Brazil-2017.xlsx",2)
 
-
+geo_brazil <- geo_brazil %>% rename(latitude = Latitude,
+                                    longitude = Longitude,
+                                    `Site ID` = Site) %>% select(-No)
 
 ## 1. Methods ####
 
@@ -43,61 +46,21 @@ methods <- data.frame(study_id = NA, #### TO FIX
                       carbon_measured_or_modeled = "measured",
                       fraction_carbon_method = c("EA", "local regression"),
                       fraction_carbon_type = "total carbon", 
-                      carbonates_removed = "FALSE")
+                      carbonates_removed = "FALSE",
+                      carbonate_removal_method = "none specified")
 
 
 ## 2. Cores ####
 
 #read in site level coords not included in raw data 
 missing_coords <- read_xlsx("./data/primary_studies/CIFOR/missing_site_level_coords.xlsx")
-
-
-## Assign study id to each dataset - grouped by publication or dataset title if none applicable
-cifor_veg <- cifor_veg %>% mutate(study_id = case_when(`Site ID` == "BHI" ~ "Bhomia_et_al_2016",
-                                                `Site ID` == "BAO"|`Site ID` == "DIA"|`Site ID` == "MOU"| `Site ID` == "SAN" |
-                                                  `Site ID` == "DJI"|`Site ID` == "FAM"|`Site ID` == "CAS"|`Site ID`== "JAR"|
-                                                  `Site ID`== "SIM" |`Site ID` == "SIM-D"|`Site ID` == "SOU"| `Site ID`== "SOU-D"|
-                                                  `Site ID` == "MWA"| `Site ID` == "MWA-S"| `Site ID`== "NDO"| `Site ID` == "PAG"|
-                                                  `Site ID` == "BRM10"|`Site ID` == "MRM8"| `Site ID`== "MRT7"|`Site ID`== "MRT9"|
-                                                  `Site ID`== "NCM1"| `Site ID`== "NCM4" |`Site ID` == "NCM5"| `Site ID`== "NCT2"|
-                                                  `Site ID`== "NCT3" | `Site ID` == "NCT6" ~ "Kauffman_and_Bhomia_2017",
-                                                `Site ID` == "BAR"|`Site ID`== "BOC"|`Site ID` == "CAE" |`Site ID` == "CAET" |
-                                                  `Site ID`== "FURO" |`Site ID` == "FUR"|`Site ID`== "MAN"|`Site ID` == "SAL"|
-                                                  `Site ID`== "MAR" ~ "Kauffman_et_al_2018",
-                                                `Site ID` == "Bintuni"|`Site ID`== "BUN"|`Site ID`== "CIL"|`Site ID` == "KBR"|
-                                                  `Site ID` == "SEM"|`Site ID` == "TAN" ~ "Murdiyarso_et_al_2015",
-                                                `Site ID` == "CA_"| `Site ID` == "CAN" ~ "Vien_et_al_2016",
-                                                `Site ID` == "TIM" |`Site ID` == "DEM" ~ "Ardhani_et_al_2020",
-                                                `Site ID` == "Arguni, Kaimana"| `Site ID`== "Buruway, Kaimana"|`Site ID` == "Etna, Kaimana"|
-                                                  `Site ID`== "Kaimana City" ~"SWAMP Dataset-Mangrove soil carbon-West Papua-2019",
-                                               TRUE ~ filename))
-
-cifor_soil <- cifor_soil %>%  mutate(study_id = case_when(`Site ID` == "BHI" ~ "Bhomia_et_al_2016",
-                                                            `Site ID` == "BAO"|`Site ID` == "DIA"|`Site ID` == "MOU"| `Site ID` == "SAN" |
-                                                              `Site ID` == "DJI"|`Site ID` == "FAM"|`Site ID` == "CAS"|`Site ID`== "JAR"|
-                                                              `Site ID`== "SIM" |`Site ID` == "SIM-D"|`Site ID` == "SOU"| `Site ID`== "SOU-D"|
-                                                              `Site ID` == "MWA"| `Site ID` == "MWA-S"| `Site ID`== "NDO"| `Site ID` == "PAG"|
-                                                              `Site ID` == "BRM10"|`Site ID` == "MRM8"| `Site ID`== "MRT7"|`Site ID`== "MRT9"|
-                                                              `Site ID`== "NCM1"| `Site ID`== "NCM4" |`Site ID` == "NCM5"| `Site ID`== "NCT2"|
-                                                              `Site ID`== "NCT3" | `Site ID` == "NCT6" ~ "Kauffman_and_Bhomia_2017",
-                                                            `Site ID` == "BAR"|`Site ID`== "BOC"|`Site ID` == "CAE" |`Site ID` == "CAET" |
-                                                              `Site ID`== "FURO" |`Site ID` == "FUR"|`Site ID`== "MAN"|`Site ID` == "SAL"|
-                                                              `Site ID`== "MAR" ~ "Kauffman_et_al_2018",
-                                                            `Site ID` == "Bintuni"|`Site ID`== "BUN"|`Site ID`== "CIL"|`Site ID` == "KBR"|
-                                                              `Site ID` == "SEM"|`Site ID` == "TAN" ~ "Murdiyarso_et_al_2015",
-                                                            `Site ID` == "CA_"| `Site ID` == "CAN" ~ "Vien_et_al_2016",
-                                                            `Site ID` == "TIM" |`Site ID` == "DEM" ~ "Ardhani_et_al_2020",
-                                                            `Site ID` == "Arguni, Kaimana"| `Site ID`== "Buruway, Kaimana"|`Site ID` == "Etna, Kaimana"|
-                                                              `Site ID`== "Kaimana City" ~"SWAMP Dataset-Mangrove soil carbon-West Papua-2019",
-                                                            TRUE ~ filename))
-
-#exclude datasets that only have biomass from cores table 
+                                       
+#subset out sites that have ONLY biomass -- these are not included in cores table 
 veg <- cifor_veg %>% filter(`Site ID` %in% c("BHI", "ACA", "BAO", "BOC", "BAR", "BOC", "CAE","CIL","DIA", "FAM", "FUR", "MAN",
-                                             "MANG", "MAR", "MOU", "SAL", "SAN", "BUN", "KBR", "TAN", "CA_", "SEM", "TEM"))
+                                             "MANG", "MAR", "MOU", "SAL", "SAN", "BUN", "KBR", "TAN", "CA_", "SEM", "TEM")) %>% distinct()
 
-
-#separate all lat long by site - make big table 
-latlong.biomass <- veg %>% select(`Site ID`, Plot, `Sub-plot`, Latitude, Longitude) %>%
+#separate all lat long by site - big table
+latlong.biomass <- veg %>% select(`Site ID`, Plot, `Sub-plot`, Latitude, Longitude, filename) %>%
   mutate(Plot = case_when(Plot == "Barreto" ~ "Rio Barreto", 
                           Plot == "Boca Grande" ~ "Boca grande",
                           Plot == "Furo do Chato" ~ "Furo de Chato",
@@ -112,8 +75,8 @@ latlong.biomass <- veg %>% select(`Site ID`, Plot, `Sub-plot`, Latitude, Longitu
                           TRUE ~ Plot),
          core_id = paste(`Site ID`, Plot, `Sub-plot`, sep = "_")) %>% drop_na()
   
-latlong.soil <- cifor_soil %>% select(`Site ID`, Plot, `Sub-plot`, Latitude, Longitude) %>% 
-  mutate(core_id = paste(`Site ID`, Plot, `Sub-plot`, sep = "_")) 
+latlong.soil <- cifor_soil %>% select(`Site ID`, Plot, `Sub-plot`, Latitude, Longitude, filename) %>% 
+  mutate(core_id = paste(`Site ID`, Plot, `Sub-plot`, sep = "_")) %>% drop_na() 
 
 
 latlong.full <- rbind(latlong.soil, latlong.biomass) %>% 
@@ -122,7 +85,7 @@ latlong.full <- rbind(latlong.soil, latlong.biomass) %>%
                        site_id = `Site ID`) %>% distinct() %>%
                 select(-Plot, -`Sub-plot`) %>% 
                 left_join(missing_coords) %>% distinct()
-               
+
 
 #function to join veg and soil dataframes
 #plotPositionCores <- function(veg, soil){
@@ -139,15 +102,13 @@ latlong.full <- rbind(latlong.soil, latlong.biomass) %>%
 
 
 formatCores <- function(soil){
-  soil %>% mutate(core_id = paste(`Site ID`, Plot, `Sub-plot`, sep = "_"), #create core id 
-         year = str_sub(filename, -4)) %>% 
-    rename(latitude = Latitude, 
-           longitude = Longitude,
-           site_id = `Site ID`) %>% 
-    select(-Plot, -`Sub-plot`) %>% distinct()
+  soil %>% mutate(core_id = paste(`Site ID`, Plot, `Sub-plot`, sep = "_")) %>% #pull year from study id? 
+              rename(latitude = Latitude, 
+                     longitude = Longitude,
+                     site_id = `Site ID`) %>% 
+              select(-Plot, -`Sub-plot`) %>% distinct()
 }
 
-  
 
 #curate core table 
 cifor_cores <- formatCores(cifor_soil) %>% 
@@ -157,12 +118,15 @@ cifor_cores <- formatCores(cifor_soil) %>%
          longitude = case_when(site_id == "DEM" ~ "110.54598333",
                                site_id == "TIM" ~ "110.50518611",
                                TRUE ~ longitude)) %>% 
-      select(study_id, site_id, core_id, latitude, longitude) %>% distinct()
+      select(filename,site_id, core_id, latitude, longitude) %>% distinct()
 
-join_cores <- left_join(cifor_cores, latlong.full, by = c("core_id", "site_id")) %>% 
+join_cores <- left_join(cifor_cores, latlong.full, by = c("core_id", "site_id", "filename")) %>% 
+  left_join(missing_coords) %>% 
    mutate(latitude = case_when(is.na(latitude.x) ~ latitude.y, TRUE ~ latitude.x),
          longitude = case_when(is.na(longitude.x) ~ longitude.y, TRUE ~ longitude.x)) %>% 
-  select(-ends_with('.x'), -ends_with('.y')) %>% distinct()
+  select(-ends_with('.x'), -ends_with('.y')) %>% distinct() %>% left_join(geo_brazil)
+
+
 
 
 #Convert and standardize all coords to lat lon
@@ -177,7 +141,7 @@ subset_1 <- join_cores[grepl("°", join_cores$latitude),] %>%
 
 out_1 <- join_cores[!grepl("°", join_cores$latitude),]
 
-cores1 <- rbind(subset_1, out_1)
+cores1 <- rbind(subset_1, out_1) %>% fill()
 
 
 #convert other format to lat lon and replace 
@@ -197,13 +161,11 @@ cores <- cores2 %>% mutate(latitude = as.numeric(latitude),
                           # position_notes = case_when(is.na(latitude) ~ "position at site level",  
                                                      # TRUE ~ "position at subplot level"),
                            habitat = "mangrove",
-                           core_length_flag = "not specified") %>%
-                    fill(salinity) %>% 
-                    mutate(salinity_class = case_when(salinity > 34 ~ "saline",
-                                                      salinity < 35 ~ "estuarine",
-                                                      TRUE ~ salinity),
-                           salinity_method = "measurement") %>% 
-                    select(-salinity) %>% distinct()
+                           core_length_flag = "not specified") %>% 
+                    rename(study_id = filename) %>% distinct()
+
+cores <- reorderColumns("cores", cores) %>% select(-`Site ID`, -`Sub-Plot`)
+
 
 
 
@@ -215,7 +177,8 @@ cifor_depthseries <- cifor_soil %>% mutate(core_id = paste(`Site ID`, Plot, `Sub
                                     method_id = "SWAMP") %>%  
               separate(`Depth interval (cm)`, c("depth_min", "depth_max"), sep = "-") %>% 
               rename(dry_bulk_density = `Bulk density (g/cm3)`,
-                     site_id = `Site ID`) %>% 
+                     site_id = `Site ID`,
+                     study_id = filename) %>% 
               select(study_id, core_id, method_id, site_id, fraction_carbon, dry_bulk_density, depth_min, depth_max)
 
 depthseries <- reorderColumns("depthseries", cifor_depthseries) %>% distinct()
@@ -223,29 +186,32 @@ depthseries <- reorderColumns("depthseries", cifor_depthseries) %>% distinct()
 
 ## 4. Species #####
 
-#species information comes from tree biomass measurments - should this be included??
+#species information comes from tree biomass measurements? not currently including within sediment tables 
 
 
 ## 5. Biomass #####
-#curate plot and plant table - structure based on current CCN biomass data structure unified
+#curate plot and plant table - structure based on current draft biomass structure 7/24
 
-plot <- cifor_veg %>% select(study_id, `Site ID`, `Data collection date (dd/mm/yyyy)`, Plot, Latitude, Longitude, 
-                             `AGC summed per plot (MgC/ha)`, `BGC summed per plot (MgC/ha)`) %>% 
+plot_summary <- cifor_veg %>% select(-filename) %>% 
             mutate(position_method = "other low resolution",
                    position_notes = "plot level position",
-                   harvest_or_allometry = "allometry") %>% 
+                   harvest_or_allometry = "allometry",
+                   plot_id = paste0(Plot, `Sub-plot`),
+                   plot_shape = "circular",
+                   plot_radius = 3.5,
+                   plant_plot_detail_present = "yes",
+                   coordinate_obscured_flag = "no obscuring",
+                   field_or_manipulation_code = "field") %>% 
+             #'soil_core_present' --> if matching study id in 'cores'
             rename(site_id = `Site ID`,
-                   plot_id = Plot,
-                   latitude = Latitude,
-                   longitude = Longitude,
-                   plot_sediment_carbon = `BGC summed per plot (MgC/ha)`,
-                   plot_biomass_carbon = `AGC summed per plot (MgC/ha)`) %>% distinct()
+                   year = `Data collection date (dd/mm/yyyy)`,
+                   plot_area = `Sub-plot area (ha)`,
+                   aboveground_biomass = `AGB summed per plot (Mg/ha)`,
+                   belowground_biomass = `BGB summed per plot (Mg/ha)`) %>% distinct()
 
 
-plant <- cifor_veg %>% select(filename, `Site ID`, `Data collection date (dd/mm/yyyy)`, Latitude, Longitude,
-                              Plot,`Sub-plot`, `Species name (scientific)`, `Species name (local)`,
-                              `DBH (cm)`, `Status (live/1/2/3)`, `wood density (g/cm3)`,`AGB (Mg/ha)`, `BGB (Mg/ha)`, `source for allometry`,
-                              `Sub-plot design`) %>%
+
+plant <- cifor_veg %>% select(-filename) %>%
                     rename(site_id = `Site ID`,
                            latitude = Latitude,
                            longitude = Longitude,
@@ -255,7 +221,8 @@ plant <- cifor_veg %>% select(filename, `Site ID`, `Data collection date (dd/mm/
                            biomass_aboveground = `AGB (Mg/ha)`,
                            biomass_belowground = `BGB (Mg/ha)`,
                            plot_radius = `Sub-plot design`) %>% #divide diameter by 2 - how to handle the square plots??
-            mutate(year = year(`Data collection date (dd/mm/yyyy)`))
+          #  mutate(year = year(`Data collection date (dd/mm/yyyy)`))
+
 
 ## 2. QAQC ####
 
@@ -292,25 +259,39 @@ test_numeric_vars(depthseries) ##testNumericCols producing error message
 
 # write data to final folder
 
-write_csv(methods, "data/primary_studies/CIFOR/derivative/Author_et_al_YYYY_methods.csv")
-write_csv(sites, "data/primary_studies/CIFOR/derivative/Author_et_al_YYYY_sites.csv")
-write_csv(cores, "data/primary_studies/CIFOR/derivative/Author_et_al_YYYY_cores.csv")
-write_csv(depthseries, "data/primary_studies/CIFOR/derivative/Author_et_al_YYYY_depthseries.csv")
+write_csv(methods, "data/primary_studies/CIFOR/derivative_ALT/cifor_alt_methods.csv")
+#write_csv(sites, "data/primary_studies/CIFOR/derivative/Author_et_al_YYYY_sites.csv")
+write_csv(cores, "data/primary_studies/CIFOR/derivative_ALT/cifor_alt_cores.csv")
+write_csv(depthseries, "data/primary_studies/CIFOR/derivative_ALT/cifor_alt_depthseries.csv")
 #write_csv(species, "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_species.csv")
 #write_csv(impacts, "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_impacts.csv")
-write_csv(plot, "data/primary_studies/CIFOR/derivative/Author_et_al_YYYY_plot.csv")
-write_csv(plant, "data/primary_studies/CIFOR/derivative/Author_et_al_YYYY_plant.csv")
+#write_csv(plot, "data/primary_studies/CIFOR/derivative/Author_et_al_YYYY_plot.csv")
+#write_csv(plant, "data/primary_studies/CIFOR/derivative/Author_et_al_YYYY_plant.csv")
 
 
+## Citations 
+#import DOIs
+
+soil_citations <- read_xlsx("./data/primary_studies/CIFOR/SWAMP_bib.xlsx") %>% rename(doi = DOI) 
+
+soil_bib_raw <- data_frame()
+for (i in soil_citations$doi) {
+  temp_df <- as.data.frame(GetBibEntryWithDOI(i))
+  soil_bib_raw <- rbind(soil_bib_raw, temp_df) %>% distinct()
+}
+
+soil_bib <- soil_bib_raw %>% 
+  mutate(study_id = title,
+         bibliography_id = paste(study_id, "data", sep = "_"),
+         publication_type = "primary dataset")
+
+#write bib
+bib_file <- soil_bib %>%
+  remove_rownames() %>% 
+  select(-c(study_id, publication_type)) %>% 
+  column_to_rownames("bibliography_id")
 
 
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/CIFOR/derivative_ALT/cifor_alt_study_citations.bib")
 
-
-
-
-
-
-
-
-
-
+write_csv(bib_file, "./data/primary_studies/CIFOR/derivative_ALT/cifor_alt_study_citations.csv")
