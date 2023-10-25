@@ -56,10 +56,29 @@ cores_set_up <- cores_raw %>%
          position_method = "RTK",
          elevation_accuracy = "0.025",
          position_accuracy = "0.01",
-         c14_age_se = na_if(c14_age_se, 'n/a'),
-         c14_age = na_if(c14_age, 'n/a'),
-         c14_material = ifelse(is.na(c14_age), "NA", "plant fragment"))
+         #c14_age_se = na_if(c14_age_se, 'n/a'),
+         #c14_age = na_if(c14_age, 'n/a'),
+         #c14_material = ifelse(is.na(c14_age), "NA", "plant fragment")
+         )
   
+# C14 age table
+c14_table <- cores_raw %>% 
+  fill(Site, `Core Number`) %>% 
+  separate(col = 'Site', c(NA, 'site_id'), sep = '; ') %>% 
+  rename(core_id = `Core Number`,
+         c14_age = 'Radiocarbon Age (yr BP)',
+         c14_age_se = 'Age Error') %>% 
+  unite(col = core_id, site_id : core_id, sep = '_', remove = FALSE) %>% 
+  distinct(core_id, .keep_all = TRUE) %>% 
+  mutate(c14_age_se = na_if(c14_age_se, 'n/a'),
+         c14_age = na_if(c14_age, 'n/a'),
+          c14_material = ifelse(is.na(c14_age), "NA", "plant fragment"),
+         core_id = str_replace_all(string = core_id, pattern = '-', replacement = '_'),
+         site_id = str_replace_all(string = site_id, pattern = '-', replacement = '_')) %>%
+  filter(!is.na(c14_age)) %>% 
+  separate(col = "Collection Interval (cm)", into = c("depth_min", "depth_max"), sep = "-") 
+  
+
 ## Species #### START HERE
 species_set_up <- species_raw[-c(23:25), ] %>% # eliminating metadata rows
   separate(col = "Site Name; \nCore #", into = "site_id", sep = ";", remove = FALSE) %>% 
@@ -105,7 +124,7 @@ cores <- full_join(cores_set_up, species_set_up) %>%
   rename(elevation = elevation_cores)
 
 # Adding c14 age from 'cores' to 'depthseries'  
-depthseries <- full_join(depthseries_set_up, cores_set_up) %>% 
+depthseries <- full_join(depthseries_set_up, c14_table) %>% 
   select(c(study_id, site_id, core_id, method_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter, 
            fraction_carbon, c14_age, c14_age_se, c14_material))
     
