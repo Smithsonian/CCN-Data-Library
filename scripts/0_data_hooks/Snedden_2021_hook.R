@@ -120,7 +120,9 @@ depthseries <- depthseries %>% rename(depth_code = "Depth Interval Code") %>%
                                                             depth_code == 27 ~ 52, depth_code == 27 ~ 54,
                                                             depth_code == 28 ~ 56, depth_code == 29 ~ 58),
                                       depth_max = depth_min + 2) %>% 
-                                   select(-depth_code)
+                                   select(-depth_code) %>% 
+                                  mutate(cs137_activity = ifelse(cs137_activity == ".", NA, cs137_activity),
+                                         cs137_activity_se = ifelse(cs137_activity_se == ".", NA, cs137_activity_se))
       
 #reorder columns 
 depthseries <- reorderColumns("depthseries", depthseries)
