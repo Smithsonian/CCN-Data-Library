@@ -8,8 +8,8 @@ library(tidyverse)
 library(leaflet)
 
 ## Read in the data
-date_raw <- read.csv("data/primary_studies/Wang_et_al_2023/original/JB-Cs-Pb-rev.csv")
-soil_raw <- read.csv("data/primary_studies/Wang_et_al_2023/original/JB-soil-property-rev.csv")
+date_raw <- read.csv("data/primary_studies/Wang_et_al_2023/original/JB-Cs-Pb-rev.csv", na = "no data")
+soil_raw <- read.csv("data/primary_studies/Wang_et_al_2023/original/JB-soil-property-rev.csv", na = "no data")
 
 # Link to database guidance:
 # https://smithsonian.github.io/CCN-Community-Resources/soil_carbon_guidance.html
@@ -134,12 +134,12 @@ bib_file <- study_citation %>%
 
 
 ## 5. Write curated data ####
-write_csv(cores, "data/primary_studies/Wang_et_al_2023/final/Wang_et_al_2023_cores.csv") 
-write_csv(depthseries, "data/primary_studies/Wang_et_al_2023/final/Wang_et_al_2023_depthseries.csv")
-write_csv(sites, "data/primary_studies/Wang_et_al_2023/final/Wang_et_al_2023_sites.csv")
-write_csv(methods, "data/primary_studies/Wang_et_al_2023/final/Wang_et_al_2023_methods.csv")
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Wang_et_al_2023/final/Wang_et_al_2023_study_citations.bib")
-write_csv(study_citation, "data/primary_studies/Wang_et_al_2023/final/Wang_et_al_2023_study_citations.csv")
+write_csv(cores, "data/primary_studies/Wang_et_al_2023/derivative/Wang_et_al_2023_cores.csv") 
+write_csv(depthseries, "data/primary_studies/Wang_et_al_2023/derivative/Wang_et_al_2023_depthseries.csv")
+write_csv(sites, "data/primary_studies/Wang_et_al_2023/derivative/Wang_et_al_2023_sites.csv")
+write_csv(methods, "data/primary_studies/Wang_et_al_2023/derivative/Wang_et_al_2023_methods.csv")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Wang_et_al_2023/derivative/Wang_et_al_2023_study_citations.bib")
+write_csv(study_citation, "data/primary_studies/Wang_et_al_2023/derivative/Wang_et_al_2023_study_citations.csv")
 
 
                       
