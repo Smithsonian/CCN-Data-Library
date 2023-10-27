@@ -70,7 +70,9 @@ c14_table <- cores_raw %>%
          c14_age_se = 'Age Error') %>% 
   unite(col = core_id, site_id : core_id, sep = '_', remove = FALSE) %>% 
   distinct(core_id, .keep_all = TRUE) %>% 
-  mutate(c14_age_se = na_if(c14_age_se, 'n/a'),
+  mutate(study_id = "Rodriguez_et_al_2022",
+         method_id = "single set of methods",
+         c14_age_se = na_if(c14_age_se, 'n/a'),
          c14_age = na_if(c14_age, 'n/a'),
           c14_material = ifelse(is.na(c14_age), "NA", "plant fragment"),
          core_id = str_replace_all(string = core_id, pattern = '-', replacement = '_'),
