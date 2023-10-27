@@ -1,5 +1,29 @@
 study_id,site_id,core_id,impact_class
+Vincent_1993,Webhannet,NA,natural
+Vincent_1993,Drakes Island,NA,tidally restricted
+Vincent_1993,Little River,NA,natural
 Thom_1992,Elk_River_Prev_Diked,ED1,tidally restored
+Senger_et_al_2020,Pedro,Pe01,natural
+Senger_et_al_2020,Pedro,Pe02,natural
+Senger_et_al_2020,Pedro,Pe03,natural
+Senger_et_al_2020,Pedro,Pe04,natural
+Senger_et_al_2020,Pedro,Pe05,natural
+Senger_et_al_2020,Coco,Co02,natural
+Senger_et_al_2020,Awa_di_Lodo,Aw01,degraded
+Senger_et_al_2020,Awa_di_Lodo,Aw02,degraded
+Senger_et_al_2020,Awa_di_Lodo,Aw03,degraded
+Senger_et_al_2020,Awa_di_Lodo,Aw04,degraded
+Senger_et_al_2020,Awa_di_Lodo,Aw05,degraded
+Senger_et_al_2020,Isla_Yuwana,IY01,degraded
+Senger_et_al_2020,Isla_Yuwana,IY02,degraded
+Senger_et_al_2020,Isla_Yuwana,IY03,degraded
+Senger_et_al_2020,Isla_Yuwana,IY04,degraded
+Senger_et_al_2020,Isla_Yuwana,IY05,degraded
+Senger_et_al_2020,Isla_di_Chico,IC01,degraded
+Senger_et_al_2020,Isla_di_Chico,IC02,degraded
+Senger_et_al_2020,Isla_di_Chico,IC03,degraded
+Senger_et_al_2020,Isla_di_Chico,IC04,degraded
+Senger_et_al_2020,Isla_di_Chico,IC05,degraded
 Poppe_and_Rybczyk_2019,Stillaguamish_R1,25A,tidally restored
 Poppe_and_Rybczyk_2019,Stillaguamish_R1,25B,tidally restored
 Poppe_and_Rybczyk_2019,Stillaguamish_R2,26A,tidally restored
@@ -38,6 +62,35 @@ Poppe_et_al_2019,Snohomish_WDFW_Forest,WF_A,tidally restored
 Poppe_et_al_2019,Snohomish_WDFW_Forest,WF_B,tidally restored
 Poppe_et_al_2019,Snohomish_WDFW_Forest,WF_A,tidally restored
 Poppe_et_al_2019,Snohomish_WDFW_Forest,WF_B,tidally restored
+Piazza_et_al_2020,CRMS0128_H,0128_H_1,storm or wind
+Piazza_et_al_2020,CRMS0128_H,0128_H_2,storm or wind
+Piazza_et_al_2020,CRMS0135_H,0135_H_1,storm or wind
+Piazza_et_al_2020,CRMS0135_H,0135_H_2,storm or wind
+Piazza_et_al_2020,CRMS0147_H,0147_H_1,storm or wind
+Piazza_et_al_2020,CRMS0147_H,0147_H_2,storm or wind
+Piazza_et_al_2020,CRMS0164_H,0164_H_1,storm or wind
+Piazza_et_al_2020,CRMS0164_H,0164_H_2,storm or wind
+Piazza_et_al_2020,CRMS0294_H,0294_H_1,storm or wind
+Piazza_et_al_2020,CRMS0294_H,0294_H_2,storm or wind
+Piazza_et_al_2020,CRMS0312_H,0312_H_1,storm or wind
+Piazza_et_al_2020,CRMS0312_H,0312_H_2,storm or wind
+Piazza_et_al_2020,CRMS0326_H,0326_H_1,storm or wind
+Piazza_et_al_2020,CRMS0326_H,0326_H_2,storm or wind
+Piazza_et_al_2020,CRMS0326_H,0326_H_3,storm or wind
+Piazza_et_al_2020,CRMS0610_H,0610_H_1,storm or wind
+Piazza_et_al_2020,CRMS0610_H,0610_H_2,storm or wind
+Piazza_et_al_2020,CRMS0651_H,0651_H_1,storm or wind
+Piazza_et_al_2020,CRMS0651_H,0651_H_2,storm or wind
+Piazza_et_al_2020,CRMS0672_H,0672_H_1,storm or wind
+Piazza_et_al_2020,CRMS0672_H,0672_H_2,storm or wind
+Piazza_et_al_2020,CRMS0605,0605_1,storm or wind
+Piazza_et_al_2020,CRMS0605,0605_2,storm or wind
+Piazza_et_al_2020,CRMS1277,1277_1,storm or wind
+Piazza_et_al_2020,CRMS1277,1277_2,storm or wind
+Piazza_et_al_2020,CRMS0605_H,0605_H_1,storm or wind
+Piazza_et_al_2020,CRMS0605_H,0605_H_2,storm or wind
+Piazza_et_al_2020,CRMS1277_H,1277_H_1,storm or wind
+Piazza_et_al_2020,CRMS1277_H,1277_H_2,storm or wind
 Peck_et_al_2020,Youngs Bay,WY01S,diked and drained
 Peck_et_al_2020,Youngs Bay,WY03S,diked and drained
 Peck_et_al_2020,Youngs Bay,WY04S,diked and drained
@@ -314,6 +367,21 @@ McClellan_et_al_2021,W16,NA,sediment added
 McClellan_et_al_2021,W29,NA,sediment added
 McClellan_et_al_2021,W41,NA,sediment added
 McClellan_et_al_2021,W60,NA,sediment added
+Lafratta_et_al_2018,False bay,1Rs,natural
+Lafratta_et_al_2018,False bay,2Rs,natural
+Lafratta_et_al_2018,False bay,3Rs,natural
+Lafratta_et_al_2018,False bay,1Rc,restored
+Lafratta_et_al_2018,False bay,2Rc,restored
+Lafratta_et_al_2018,False bay,3Rc,restored
+Lafratta_et_al_2018,False bay,4Rc,restored
+Lafratta_et_al_2018,False bay,5Rc,restored
+Lafratta_et_al_2018,False bay,6Rc,restored
+Lafratta_et_al_2018,False bay,1B,disturbed
+Lafratta_et_al_2018,False bay,2B,disturbed
+Lafratta_et_al_2018,False bay,3B,disturbed
+Kusumaningtyas_et_al_2018,Berau,NA,natural
+Kusumaningtyas_et_al_2018,Kongsi_Island,NA,natural
+Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon,NA,sediment added
 Krauss_et_al_2018,Savannah_River_low,savannah_low_1,tidally restored
 Krauss_et_al_2018,Savannah_River_mid,savannah_mid_2,tidally restored
 Krauss_et_al_2018,Savannah_River_mid,savannah_mid_1,tidally restored
@@ -328,27 +396,6 @@ Breithaupt_et_al_2017,NA,TTI2,natural
 Breithaupt_et_al_2017,NA,TTI3,natural
 Breithaupt_et_al_2017,NA,TTI4,natural
 Breithaupt_et_al_2017,NA,TTI5,natural
-Breithaupt_et_al_2017,NA,WSC11,NA
-Breithaupt_et_al_2017,NA,WSC12,NA
-Breithaupt_et_al_2017,NA,WSC13_2,NA
-Breithaupt_et_al_2017,NA,WSC07,NA
-Breithaupt_et_al_2017,NA,WSC08A,NA
-Breithaupt_et_al_2017,NA,WSC08B,NA
-Breithaupt_et_al_2017,NA,WSC09,NA
-Breithaupt_et_al_2017,NA,WSC10_1,NA
-Breithaupt_et_al_2017,NA,WSC01,NA
-Breithaupt_et_al_2017,NA,WSC02A,NA
-Breithaupt_et_al_2017,NA,WSC02B,NA
-Breithaupt_et_al_2017,NA,WSC03,NA
-Breithaupt_et_al_2017,NA,WSC04_1,NA
-Breithaupt_et_al_2017,NA,WSC05,NA
-Breithaupt_et_al_2017,NA,WSC06_2,NA
-Cochran_et_al_1998,NA,Alley_Pond,NA
-Cochran_et_al_1998,NA,Caumsett_Park,NA
-Cochran_et_al_1998,NA,Flax_Pond,NA
-Cochran_et_al_1998,NA,Goose_Creek,NA
-Cochran_et_al_1998,NA,Hunter_Island,NA
-Cochran_et_al_1998,NA,Shelter_Island,NA
 Noe_et_al_2013,NA,S1AL,natural
 Noe_et_al_2013,NA,S1AU,natural
 Noe_et_al_2013,NA,S1BL,natural
@@ -379,879 +426,6 @@ Noe_et_al_2013,NA,W3C,salt impacted
 Noe_et_al_2013,NA,W4A,natural
 Noe_et_al_2013,NA,W4B,natural
 Noe_et_al_2013,NA,W4C,natural
-CRMS_Database,NA,CRMS0658_1,NA
-CRMS_Database,NA,CRMS0658_2,NA
-CRMS_Database,NA,CRMS0658_3,NA
-CRMS_Database,NA,CRMS0697_1,NA
-CRMS_Database,NA,CRMS0697_2,NA
-CRMS_Database,NA,CRMS0697_3,NA
-CRMS_Database,NA,CRMS0581_1,NA
-CRMS_Database,NA,CRMS0581_2,NA
-CRMS_Database,NA,CRMS0581_3,NA
-CRMS_Database,NA,CRMS0584_1,NA
-CRMS_Database,NA,CRMS0584_2,NA
-CRMS_Database,NA,CRMS0584_3,NA
-CRMS_Database,NA,CRMS0587_1,NA
-CRMS_Database,NA,CRMS0587_2,NA
-CRMS_Database,NA,CRMS0587_3,NA
-CRMS_Database,NA,CRMS0588_1,NA
-CRMS_Database,NA,CRMS0588_2,NA
-CRMS_Database,NA,CRMS0588_3,NA
-CRMS_Database,NA,CRMS0589_1,NA
-CRMS_Database,NA,CRMS0589_2,NA
-CRMS_Database,NA,CRMS0589_3,NA
-CRMS_Database,NA,CRMS0599_1,NA
-CRMS_Database,NA,CRMS0599_2,NA
-CRMS_Database,NA,CRMS0599_3,NA
-CRMS_Database,NA,CRMS0608_1,NA
-CRMS_Database,NA,CRMS0608_2,NA
-CRMS_Database,NA,CRMS0608_3,NA
-CRMS_Database,NA,CRMS0610_1,NA
-CRMS_Database,NA,CRMS0610_2,NA
-CRMS_Database,NA,CRMS0610_3,NA
-CRMS_Database,NA,CRMS0614_1,NA
-CRMS_Database,NA,CRMS0614_2,NA
-CRMS_Database,NA,CRMS0614_3,NA
-CRMS_Database,NA,CRMS0615_1,NA
-CRMS_Database,NA,CRMS0615_2,NA
-CRMS_Database,NA,CRMS0615_3,NA
-CRMS_Database,NA,CRMS0622_1,NA
-CRMS_Database,NA,CRMS0622_2,NA
-CRMS_Database,NA,CRMS0622_3,NA
-CRMS_Database,NA,CRMS0635_1,NA
-CRMS_Database,NA,CRMS0635_2,NA
-CRMS_Database,NA,CRMS0635_3,NA
-CRMS_Database,NA,CRMS0638_1,NA
-CRMS_Database,NA,CRMS0638_2,NA
-CRMS_Database,NA,CRMS0638_3,NA
-CRMS_Database,NA,CRMS0639_1,NA
-CRMS_Database,NA,CRMS0639_2,NA
-CRMS_Database,NA,CRMS0639_3,NA
-CRMS_Database,NA,CRMS0641_1,NA
-CRMS_Database,NA,CRMS0641_2,NA
-CRMS_Database,NA,CRMS0641_3,NA
-CRMS_Database,NA,CRMS0642_1,NA
-CRMS_Database,NA,CRMS0642_2,NA
-CRMS_Database,NA,CRMS0642_3,NA
-CRMS_Database,NA,CRMS0644_1,NA
-CRMS_Database,NA,CRMS0644_2,NA
-CRMS_Database,NA,CRMS0644_3,NA
-CRMS_Database,NA,CRMS0645_1,NA
-CRMS_Database,NA,CRMS0645_2,NA
-CRMS_Database,NA,CRMS0645_3,NA
-CRMS_Database,NA,CRMS0647_1,NA
-CRMS_Database,NA,CRMS0647_2,NA
-CRMS_Database,NA,CRMS0647_3,NA
-CRMS_Database,NA,CRMS0648_1,NA
-CRMS_Database,NA,CRMS0648_2,NA
-CRMS_Database,NA,CRMS0648_3,NA
-CRMS_Database,NA,CRMS0650_1,NA
-CRMS_Database,NA,CRMS0650_2,NA
-CRMS_Database,NA,CRMS0650_3,NA
-CRMS_Database,NA,CRMS0651_1,NA
-CRMS_Database,NA,CRMS0651_2,NA
-CRMS_Database,NA,CRMS0651_3,NA
-CRMS_Database,NA,CRMS0655_1,NA
-CRMS_Database,NA,CRMS0655_2,NA
-CRMS_Database,NA,CRMS0655_3,NA
-CRMS_Database,NA,CRMS0656_1,NA
-CRMS_Database,NA,CRMS0656_2,NA
-CRMS_Database,NA,CRMS0656_3,NA
-CRMS_Database,NA,CRMS0660_1,NA
-CRMS_Database,NA,CRMS0660_2,NA
-CRMS_Database,NA,CRMS0660_3,NA
-CRMS_Database,NA,CRMS0661_1,NA
-CRMS_Database,NA,CRMS0661_2,NA
-CRMS_Database,NA,CRMS0661_3,NA
-CRMS_Database,NA,CRMS0662_1,NA
-CRMS_Database,NA,CRMS0662_2,NA
-CRMS_Database,NA,CRMS0662_3,NA
-CRMS_Database,NA,CRMS0663_1,NA
-CRMS_Database,NA,CRMS0663_2,NA
-CRMS_Database,NA,CRMS0663_3,NA
-CRMS_Database,NA,CRMS0665_1,NA
-CRMS_Database,NA,CRMS0665_2,NA
-CRMS_Database,NA,CRMS0665_3,NA
-CRMS_Database,NA,CRMS0669_1,NA
-CRMS_Database,NA,CRMS0669_2,NA
-CRMS_Database,NA,CRMS0669_3,NA
-CRMS_Database,NA,CRMS0672_1,NA
-CRMS_Database,NA,CRMS0672_2,NA
-CRMS_Database,NA,CRMS0672_3,NA
-CRMS_Database,NA,CRMS0677_1,NA
-CRMS_Database,NA,CRMS0677_2,NA
-CRMS_Database,NA,CRMS0677_3,NA
-CRMS_Database,NA,CRMS0680_1,NA
-CRMS_Database,NA,CRMS0680_2,NA
-CRMS_Database,NA,CRMS0680_3,NA
-CRMS_Database,NA,CRMS0682_1,NA
-CRMS_Database,NA,CRMS0682_2,NA
-CRMS_Database,NA,CRMS0682_3,NA
-CRMS_Database,NA,CRMS0683_1,NA
-CRMS_Database,NA,CRMS0683_2,NA
-CRMS_Database,NA,CRMS0683_3,NA
-CRMS_Database,NA,CRMS0684_1,NA
-CRMS_Database,NA,CRMS0684_2,NA
-CRMS_Database,NA,CRMS0684_3,NA
-CRMS_Database,NA,CRMS0685_1,NA
-CRMS_Database,NA,CRMS0685_2,NA
-CRMS_Database,NA,CRMS0685_3,NA
-CRMS_Database,NA,CRMS0687_1,NA
-CRMS_Database,NA,CRMS0687_2,NA
-CRMS_Database,NA,CRMS0687_3,NA
-CRMS_Database,NA,CRMS1205_1,NA
-CRMS_Database,NA,CRMS1205_2,NA
-CRMS_Database,NA,CRMS1205_3,NA
-CRMS_Database,NA,CRMS1409_1,NA
-CRMS_Database,NA,CRMS1409_2,NA
-CRMS_Database,NA,CRMS1409_3,NA
-CRMS_Database,NA,CRMS1738_1,NA
-CRMS_Database,NA,CRMS1738_2,NA
-CRMS_Database,NA,CRMS1738_3,NA
-CRMS_Database,NA,CRMS1743_1,NA
-CRMS_Database,NA,CRMS1743_2,NA
-CRMS_Database,NA,CRMS1743_3,NA
-CRMS_Database,NA,CRMS1838_1,NA
-CRMS_Database,NA,CRMS1838_2,NA
-CRMS_Database,NA,CRMS1838_3,NA
-CRMS_Database,NA,CRMS1858_1,NA
-CRMS_Database,NA,CRMS1858_2,NA
-CRMS_Database,NA,CRMS1858_3,NA
-CRMS_Database,NA,CRMS2154_1,NA
-CRMS_Database,NA,CRMS2154_2,NA
-CRMS_Database,NA,CRMS2154_3,NA
-CRMS_Database,NA,CRMS2156_1,NA
-CRMS_Database,NA,CRMS2156_2,NA
-CRMS_Database,NA,CRMS2156_3,NA
-CRMS_Database,NA,CRMS2166_1,NA
-CRMS_Database,NA,CRMS2166_2,NA
-CRMS_Database,NA,CRMS2166_3,NA
-CRMS_Database,NA,CRMS2189_1,NA
-CRMS_Database,NA,CRMS2189_2,NA
-CRMS_Database,NA,CRMS2189_3,NA
-CRMS_Database,NA,CRMS2219_1,NA
-CRMS_Database,NA,CRMS2219_2,NA
-CRMS_Database,NA,CRMS2219_3,NA
-CRMS_Database,NA,CRMS2334_1,NA
-CRMS_Database,NA,CRMS2334_2,NA
-CRMS_Database,NA,CRMS2334_3,NA
-CRMS_Database,NA,CRMS2418_1,NA
-CRMS_Database,NA,CRMS2418_2,NA
-CRMS_Database,NA,CRMS2418_3,NA
-CRMS_Database,NA,CRMS6301_1,NA
-CRMS_Database,NA,CRMS6301_2,NA
-CRMS_Database,NA,CRMS6301_3,NA
-CRMS_Database,NA,CRMS0498_1,NA
-CRMS_Database,NA,CRMS0498_2,NA
-CRMS_Database,NA,CRMS0498_3,NA
-CRMS_Database,NA,CRMS0499_1,NA
-CRMS_Database,NA,CRMS0499_2,NA
-CRMS_Database,NA,CRMS0499_3,NA
-CRMS_Database,NA,CRMS0504_1,NA
-CRMS_Database,NA,CRMS0504_2,NA
-CRMS_Database,NA,CRMS0504_3,NA
-CRMS_Database,NA,CRMS0511_1,NA
-CRMS_Database,NA,CRMS0511_2,NA
-CRMS_Database,NA,CRMS0511_3,NA
-CRMS_Database,NA,CRMS0514_1,NA
-CRMS_Database,NA,CRMS0514_2,NA
-CRMS_Database,NA,CRMS0514_3,NA
-CRMS_Database,NA,CRMS0520_1,NA
-CRMS_Database,NA,CRMS0520_2,NA
-CRMS_Database,NA,CRMS0520_3,NA
-CRMS_Database,NA,CRMS0522_1,NA
-CRMS_Database,NA,CRMS0522_2,NA
-CRMS_Database,NA,CRMS0522_3,NA
-CRMS_Database,NA,CRMS0523_1,NA
-CRMS_Database,NA,CRMS0523_2,NA
-CRMS_Database,NA,CRMS0523_3,NA
-CRMS_Database,NA,CRMS0524_1,NA
-CRMS_Database,NA,CRMS0524_2,NA
-CRMS_Database,NA,CRMS0524_3,NA
-CRMS_Database,NA,CRMS0529_1,NA
-CRMS_Database,NA,CRMS0529_2,NA
-CRMS_Database,NA,CRMS0529_3,NA
-CRMS_Database,NA,CRMS0530_1,NA
-CRMS_Database,NA,CRMS0530_2,NA
-CRMS_Database,NA,CRMS0530_3,NA
-CRMS_Database,NA,CRMS0531_1,NA
-CRMS_Database,NA,CRMS0531_2,NA
-CRMS_Database,NA,CRMS0531_3,NA
-CRMS_Database,NA,CRMS0532_1,NA
-CRMS_Database,NA,CRMS0532_2,NA
-CRMS_Database,NA,CRMS0532_3,NA
-CRMS_Database,NA,CRMS0549_1,NA
-CRMS_Database,NA,CRMS0549_2,NA
-CRMS_Database,NA,CRMS0549_3,NA
-CRMS_Database,NA,CRMS0220_1,NA
-CRMS_Database,NA,CRMS0220_2,NA
-CRMS_Database,NA,CRMS0220_3,NA
-CRMS_Database,NA,CRMS0225_1,NA
-CRMS_Database,NA,CRMS0225_2,NA
-CRMS_Database,NA,CRMS0225_3,NA
-CRMS_Database,NA,CRMS0232_1,NA
-CRMS_Database,NA,CRMS0232_2,NA
-CRMS_Database,NA,CRMS0232_3,NA
-CRMS_Database,NA,CRMS0248_1,NA
-CRMS_Database,NA,CRMS0248_2,NA
-CRMS_Database,NA,CRMS0248_3,NA
-CRMS_Database,NA,CRMS0251_1,NA
-CRMS_Database,NA,CRMS0251_2,NA
-CRMS_Database,NA,CRMS0251_3,NA
-CRMS_Database,NA,CRMS0253_1,NA
-CRMS_Database,NA,CRMS0253_2,NA
-CRMS_Database,NA,CRMS0253_3,NA
-CRMS_Database,NA,CRMS0261_1,NA
-CRMS_Database,NA,CRMS0261_2,NA
-CRMS_Database,NA,CRMS0261_3,NA
-CRMS_Database,NA,CRMS3565_1,NA
-CRMS_Database,NA,CRMS3565_2,NA
-CRMS_Database,NA,CRMS3565_3,NA
-CRMS_Database,NA,CRMS3985_1,NA
-CRMS_Database,NA,CRMS3985_2,NA
-CRMS_Database,NA,CRMS3985_3,NA
-CRMS_Database,NA,CRMS4103_1,NA
-CRMS_Database,NA,CRMS4103_2,NA
-CRMS_Database,NA,CRMS4103_3,NA
-CRMS_Database,NA,CRMS4218_1,NA
-CRMS_Database,NA,CRMS4218_2,NA
-CRMS_Database,NA,CRMS4218_3,NA
-CRMS_Database,NA,CRMS4245_1,NA
-CRMS_Database,NA,CRMS4245_2,NA
-CRMS_Database,NA,CRMS4245_3,NA
-CRMS_Database,NA,CRMS4690_1,NA
-CRMS_Database,NA,CRMS4690_2,NA
-CRMS_Database,NA,CRMS4690_3,NA
-CRMS_Database,NA,CRMS0164_1,NA
-CRMS_Database,NA,CRMS0164_2,NA
-CRMS_Database,NA,CRMS0164_3,NA
-CRMS_Database,NA,CRMS0175_1,NA
-CRMS_Database,NA,CRMS0175_2,NA
-CRMS_Database,NA,CRMS0175_3,NA
-CRMS_Database,NA,CRMS0178_1,NA
-CRMS_Database,NA,CRMS0178_2,NA
-CRMS_Database,NA,CRMS0178_3,NA
-CRMS_Database,NA,CRMS0190_1,NA
-CRMS_Database,NA,CRMS0190_2,NA
-CRMS_Database,NA,CRMS0190_3,NA
-CRMS_Database,NA,CRMS0292_1,NA
-CRMS_Database,NA,CRMS0292_2,NA
-CRMS_Database,NA,CRMS0292_3,NA
-CRMS_Database,NA,CRMS0310_1,NA
-CRMS_Database,NA,CRMS0310_2,NA
-CRMS_Database,NA,CRMS0310_3,NA
-CRMS_Database,NA,CRMS0312_1,NA
-CRMS_Database,NA,CRMS0312_2,NA
-CRMS_Database,NA,CRMS0312_3,NA
-CRMS_Database,NA,CRMS0318_1,NA
-CRMS_Database,NA,CRMS0318_2,NA
-CRMS_Database,NA,CRMS0318_3,NA
-CRMS_Database,NA,CRMS0319_1,NA
-CRMS_Database,NA,CRMS0319_2,NA
-CRMS_Database,NA,CRMS0319_3,NA
-CRMS_Database,NA,CRMS0335_1,NA
-CRMS_Database,NA,CRMS0335_2,NA
-CRMS_Database,NA,CRMS0335_3,NA
-CRMS_Database,NA,CRMS0337_1,NA
-CRMS_Database,NA,CRMS0337_2,NA
-CRMS_Database,NA,CRMS0337_3,NA
-CRMS_Database,NA,CRMS0386_1,NA
-CRMS_Database,NA,CRMS0386_2,NA
-CRMS_Database,NA,CRMS0386_3,NA
-CRMS_Database,NA,CRMS0387_1,NA
-CRMS_Database,NA,CRMS0387_2,NA
-CRMS_Database,NA,CRMS0387_3,NA
-CRMS_Database,NA,CRMS0397_1,NA
-CRMS_Database,NA,CRMS0397_2,NA
-CRMS_Database,NA,CRMS0397_3,NA
-CRMS_Database,NA,CRMS0400_1,NA
-CRMS_Database,NA,CRMS0400_2,NA
-CRMS_Database,NA,CRMS0400_3,NA
-CRMS_Database,NA,CRMS0416_1,NA
-CRMS_Database,NA,CRMS0416_2,NA
-CRMS_Database,NA,CRMS0416_3,NA
-CRMS_Database,NA,CRMS0978_1,NA
-CRMS_Database,NA,CRMS0978_2,NA
-CRMS_Database,NA,CRMS0978_3,NA
-CRMS_Database,NA,CRMS2825_1,NA
-CRMS_Database,NA,CRMS2825_2,NA
-CRMS_Database,NA,CRMS2825_3,NA
-CRMS_Database,NA,CRMS6303_1,NA
-CRMS_Database,NA,CRMS6303_2,NA
-CRMS_Database,NA,CRMS6303_3,NA
-CRMS_Database,NA,CRMS0002_1,NA
-CRMS_Database,NA,CRMS0002_2,NA
-CRMS_Database,NA,CRMS0002_3,NA
-CRMS_Database,NA,CRMS3626_1,NA
-CRMS_Database,NA,CRMS3626_2,NA
-CRMS_Database,NA,CRMS3626_3,NA
-CRMS_Database,NA,CRMS3650_1,NA
-CRMS_Database,NA,CRMS3650_2,NA
-CRMS_Database,NA,CRMS3650_3,NA
-CRMS_Database,NA,CRMS3784_1,NA
-CRMS_Database,NA,CRMS3784_2,NA
-CRMS_Database,NA,CRMS3784_3,NA
-CRMS_Database,NA,CRMS4107_1,NA
-CRMS_Database,NA,CRMS4107_2,NA
-CRMS_Database,NA,CRMS4107_3,NA
-CRMS_Database,NA,CRMS0114_1,NA
-CRMS_Database,NA,CRMS0114_2,NA
-CRMS_Database,NA,CRMS0114_3,NA
-CRMS_Database,NA,CRMS0115_1,NA
-CRMS_Database,NA,CRMS0115_2,NA
-CRMS_Database,NA,CRMS0115_3,NA
-CRMS_Database,NA,CRMS0117_1,NA
-CRMS_Database,NA,CRMS0117_2,NA
-CRMS_Database,NA,CRMS0117_3,NA
-CRMS_Database,NA,CRMS0118_1,NA
-CRMS_Database,NA,CRMS0118_2,NA
-CRMS_Database,NA,CRMS0118_3,NA
-CRMS_Database,NA,CRMS0119_1,NA
-CRMS_Database,NA,CRMS0119_2,NA
-CRMS_Database,NA,CRMS0119_3,NA
-CRMS_Database,NA,CRMS0121_1,NA
-CRMS_Database,NA,CRMS0121_2,NA
-CRMS_Database,NA,CRMS0121_3,NA
-CRMS_Database,NA,CRMS0125_1,NA
-CRMS_Database,NA,CRMS0125_2,NA
-CRMS_Database,NA,CRMS0125_3,NA
-CRMS_Database,NA,CRMS0128_1,NA
-CRMS_Database,NA,CRMS0128_2,NA
-CRMS_Database,NA,CRMS0128_3,NA
-CRMS_Database,NA,CRMS0129_1,NA
-CRMS_Database,NA,CRMS0129_2,NA
-CRMS_Database,NA,CRMS0129_3,NA
-CRMS_Database,NA,CRMS0131_1,NA
-CRMS_Database,NA,CRMS0131_2,NA
-CRMS_Database,NA,CRMS0131_3,NA
-CRMS_Database,NA,CRMS0132_1,NA
-CRMS_Database,NA,CRMS0132_2,NA
-CRMS_Database,NA,CRMS0132_3,NA
-CRMS_Database,NA,CRMS0135_1,NA
-CRMS_Database,NA,CRMS0135_2,NA
-CRMS_Database,NA,CRMS0135_3,NA
-CRMS_Database,NA,CRMS0136_1,NA
-CRMS_Database,NA,CRMS0136_2,NA
-CRMS_Database,NA,CRMS0136_3,NA
-CRMS_Database,NA,CRMS0139_1,NA
-CRMS_Database,NA,CRMS0139_2,NA
-CRMS_Database,NA,CRMS0139_3,NA
-CRMS_Database,NA,CRMS0146_1,NA
-CRMS_Database,NA,CRMS0146_2,NA
-CRMS_Database,NA,CRMS0146_3,NA
-CRMS_Database,NA,CRMS0147_1,NA
-CRMS_Database,NA,CRMS0147_2,NA
-CRMS_Database,NA,CRMS0147_3,NA
-CRMS_Database,NA,CRMS0148_1,NA
-CRMS_Database,NA,CRMS0148_2,NA
-CRMS_Database,NA,CRMS0148_3,NA
-CRMS_Database,NA,CRMS0154_1,NA
-CRMS_Database,NA,CRMS0154_2,NA
-CRMS_Database,NA,CRMS0154_3,NA
-CRMS_Database,NA,CRMS0156_1,NA
-CRMS_Database,NA,CRMS0156_2,NA
-CRMS_Database,NA,CRMS0156_3,NA
-CRMS_Database,NA,CRMS0157_1,NA
-CRMS_Database,NA,CRMS0157_2,NA
-CRMS_Database,NA,CRMS0157_3,NA
-CRMS_Database,NA,CRMS0159_1,NA
-CRMS_Database,NA,CRMS0159_2,NA
-CRMS_Database,NA,CRMS0159_3,NA
-CRMS_Database,NA,CRMS0161_1,NA
-CRMS_Database,NA,CRMS0161_2,NA
-CRMS_Database,NA,CRMS0161_3,NA
-CRMS_Database,NA,CRMS0162_1,NA
-CRMS_Database,NA,CRMS0162_2,NA
-CRMS_Database,NA,CRMS0162_3,NA
-CRMS_Database,NA,CRMS0163_1,NA
-CRMS_Database,NA,CRMS0163_2,NA
-CRMS_Database,NA,CRMS0163_3,NA
-CRMS_Database,NA,CRMS0171_1,NA
-CRMS_Database,NA,CRMS0171_2,NA
-CRMS_Database,NA,CRMS0171_3,NA
-CRMS_Database,NA,CRMS0172_1,NA
-CRMS_Database,NA,CRMS0172_2,NA
-CRMS_Database,NA,CRMS0172_3,NA
-CRMS_Database,NA,CRMS0173_1,NA
-CRMS_Database,NA,CRMS0173_2,NA
-CRMS_Database,NA,CRMS0173_3,NA
-CRMS_Database,NA,CRMS0174_1,NA
-CRMS_Database,NA,CRMS0174_2,NA
-CRMS_Database,NA,CRMS0174_3,NA
-CRMS_Database,NA,CRMS0176_1,NA
-CRMS_Database,NA,CRMS0176_2,NA
-CRMS_Database,NA,CRMS0176_3,NA
-CRMS_Database,NA,CRMS0179_1,NA
-CRMS_Database,NA,CRMS0179_2,NA
-CRMS_Database,NA,CRMS0179_3,NA
-CRMS_Database,NA,CRMS0181_1,NA
-CRMS_Database,NA,CRMS0181_2,NA
-CRMS_Database,NA,CRMS0181_3,NA
-CRMS_Database,NA,CRMS0209_1,NA
-CRMS_Database,NA,CRMS0209_2,NA
-CRMS_Database,NA,CRMS0209_3,NA
-CRMS_Database,NA,CRMS0224_1,NA
-CRMS_Database,NA,CRMS0224_2,NA
-CRMS_Database,NA,CRMS0224_3,NA
-CRMS_Database,NA,CRMS0226_1,NA
-CRMS_Database,NA,CRMS0226_2,NA
-CRMS_Database,NA,CRMS0226_3,NA
-CRMS_Database,NA,CRMS0237_1,NA
-CRMS_Database,NA,CRMS0237_2,NA
-CRMS_Database,NA,CRMS0237_3,NA
-CRMS_Database,NA,CRMS0258_1,NA
-CRMS_Database,NA,CRMS0258_2,NA
-CRMS_Database,NA,CRMS0258_3,NA
-CRMS_Database,NA,CRMS0260_1,NA
-CRMS_Database,NA,CRMS0260_2,NA
-CRMS_Database,NA,CRMS0260_3,NA
-CRMS_Database,NA,CRMS0263_1,NA
-CRMS_Database,NA,CRMS0263_2,NA
-CRMS_Database,NA,CRMS0263_3,NA
-CRMS_Database,NA,CRMS0272_1,NA
-CRMS_Database,NA,CRMS0272_2,NA
-CRMS_Database,NA,CRMS0272_3,NA
-CRMS_Database,NA,CRMS0276_1,NA
-CRMS_Database,NA,CRMS0276_2,NA
-CRMS_Database,NA,CRMS0276_3,NA
-CRMS_Database,NA,CRMS0282_1,NA
-CRMS_Database,NA,CRMS0282_2,NA
-CRMS_Database,NA,CRMS0282_3,NA
-CRMS_Database,NA,CRMS0287_1,NA
-CRMS_Database,NA,CRMS0287_2,NA
-CRMS_Database,NA,CRMS0287_3,NA
-CRMS_Database,NA,CRMS2608_1,NA
-CRMS_Database,NA,CRMS2608_2,NA
-CRMS_Database,NA,CRMS2608_3,NA
-CRMS_Database,NA,CRMS2614_1,NA
-CRMS_Database,NA,CRMS2614_2,NA
-CRMS_Database,NA,CRMS2614_3,NA
-CRMS_Database,NA,CRMS2627_1,NA
-CRMS_Database,NA,CRMS2627_2,NA
-CRMS_Database,NA,CRMS2627_3,NA
-CRMS_Database,NA,CRMS2634_1,NA
-CRMS_Database,NA,CRMS2634_2,NA
-CRMS_Database,NA,CRMS2634_3,NA
-CRMS_Database,NA,CRMS3601_1,NA
-CRMS_Database,NA,CRMS3601_2,NA
-CRMS_Database,NA,CRMS3601_3,NA
-CRMS_Database,NA,CRMS3617_1,NA
-CRMS_Database,NA,CRMS3617_2,NA
-CRMS_Database,NA,CRMS3617_3,NA
-CRMS_Database,NA,CRMS3680_1,NA
-CRMS_Database,NA,CRMS3680_2,NA
-CRMS_Database,NA,CRMS3680_3,NA
-CRMS_Database,NA,CRMS4448_1,NA
-CRMS_Database,NA,CRMS4448_2,NA
-CRMS_Database,NA,CRMS4448_3,NA
-CRMS_Database,NA,CRMS4529_1,NA
-CRMS_Database,NA,CRMS4529_2,NA
-CRMS_Database,NA,CRMS4529_3,NA
-CRMS_Database,NA,CRMS4626_1,NA
-CRMS_Database,NA,CRMS4626_2,NA
-CRMS_Database,NA,CRMS4626_3,NA
-CRMS_Database,NA,CRMS0003_1,NA
-CRMS_Database,NA,CRMS0003_2,NA
-CRMS_Database,NA,CRMS0003_3,NA
-CRMS_Database,NA,CRMS0108_1,NA
-CRMS_Database,NA,CRMS0108_2,NA
-CRMS_Database,NA,CRMS0108_3,NA
-CRMS_Database,NA,CRMS0120_1,NA
-CRMS_Database,NA,CRMS0120_2,NA
-CRMS_Database,NA,CRMS0120_3,NA
-CRMS_Database,NA,CRMS1024_1,NA
-CRMS_Database,NA,CRMS1024_2,NA
-CRMS_Database,NA,CRMS1024_3,NA
-CRMS_Database,NA,CRMS1069_1,NA
-CRMS_Database,NA,CRMS1069_2,NA
-CRMS_Database,NA,CRMS1069_3,NA
-CRMS_Database,NA,CRMS3639_1,NA
-CRMS_Database,NA,CRMS3639_2,NA
-CRMS_Database,NA,CRMS3639_3,NA
-CRMS_Database,NA,CRMS3641_1,NA
-CRMS_Database,NA,CRMS3641_2,NA
-CRMS_Database,NA,CRMS3641_3,NA
-CRMS_Database,NA,CRMS3800_1,NA
-CRMS_Database,NA,CRMS3800_2,NA
-CRMS_Database,NA,CRMS3800_3,NA
-CRMS_Database,NA,CRMS4355_1,NA
-CRMS_Database,NA,CRMS4355_2,NA
-CRMS_Database,NA,CRMS4355_3,NA
-CRMS_Database,NA,CRMS4548_1,NA
-CRMS_Database,NA,CRMS4548_2,NA
-CRMS_Database,NA,CRMS4548_3,NA
-CRMS_Database,NA,CRMS4551_1,NA
-CRMS_Database,NA,CRMS4551_2,NA
-CRMS_Database,NA,CRMS4551_3,NA
-CRMS_Database,NA,CRMS4557_1,NA
-CRMS_Database,NA,CRMS4557_2,NA
-CRMS_Database,NA,CRMS4557_3,NA
-CRMS_Database,NA,CRMS4572_1,NA
-CRMS_Database,NA,CRMS4572_2,NA
-CRMS_Database,NA,CRMS4572_3,NA
-CRMS_Database,NA,CRMS4596_1,NA
-CRMS_Database,NA,CRMS4596_2,NA
-CRMS_Database,NA,CRMS4596_3,NA
-CRMS_Database,NA,CRMS2830_1,NA
-CRMS_Database,NA,CRMS2830_2,NA
-CRMS_Database,NA,CRMS2830_3,NA
-CRMS_Database,NA,CRMS6299_1,NA
-CRMS_Database,NA,CRMS6299_2,NA
-CRMS_Database,NA,CRMS6299_3,NA
-CRMS_Database,NA,CRMS0033_1,NA
-CRMS_Database,NA,CRMS0033_2,NA
-CRMS_Database,NA,CRMS0033_3,NA
-CRMS_Database,NA,CRMS0461_1,NA
-CRMS_Database,NA,CRMS0461_2,NA
-CRMS_Database,NA,CRMS0461_3,NA
-CRMS_Database,NA,CRMS0463_1,NA
-CRMS_Database,NA,CRMS0463_2,NA
-CRMS_Database,NA,CRMS0463_3,NA
-CRMS_Database,NA,CRMS0464_1,NA
-CRMS_Database,NA,CRMS0464_2,NA
-CRMS_Database,NA,CRMS0464_3,NA
-CRMS_Database,NA,CRMS0465_1,NA
-CRMS_Database,NA,CRMS0465_2,NA
-CRMS_Database,NA,CRMS0465_3,NA
-CRMS_Database,NA,CRMS0479_1,NA
-CRMS_Database,NA,CRMS0479_2,NA
-CRMS_Database,NA,CRMS0479_3,NA
-CRMS_Database,NA,CRMS0482_1,NA
-CRMS_Database,NA,CRMS0482_2,NA
-CRMS_Database,NA,CRMS0482_3,NA
-CRMS_Database,NA,CRMS0488_1,NA
-CRMS_Database,NA,CRMS0488_2,NA
-CRMS_Database,NA,CRMS0488_3,NA
-CRMS_Database,NA,CRMS0489_1,NA
-CRMS_Database,NA,CRMS0489_2,NA
-CRMS_Database,NA,CRMS0489_3,NA
-CRMS_Database,NA,CRMS0490_1,NA
-CRMS_Database,NA,CRMS0490_2,NA
-CRMS_Database,NA,CRMS0490_3,NA
-CRMS_Database,NA,CRMS0493_1,NA
-CRMS_Database,NA,CRMS0493_2,NA
-CRMS_Database,NA,CRMS0493_3,NA
-CRMS_Database,NA,CRMS0494_1,NA
-CRMS_Database,NA,CRMS0494_2,NA
-CRMS_Database,NA,CRMS0494_3,NA
-CRMS_Database,NA,CRMS0496_1,NA
-CRMS_Database,NA,CRMS0496_2,NA
-CRMS_Database,NA,CRMS0496_3,NA
-CRMS_Database,NA,CRMS0517_1,NA
-CRMS_Database,NA,CRMS0517_2,NA
-CRMS_Database,NA,CRMS0517_3,NA
-CRMS_Database,NA,CRMS0527_1,NA
-CRMS_Database,NA,CRMS0527_2,NA
-CRMS_Database,NA,CRMS0527_3,NA
-CRMS_Database,NA,CRMS0543_1,NA
-CRMS_Database,NA,CRMS0543_2,NA
-CRMS_Database,NA,CRMS0543_3,NA
-CRMS_Database,NA,CRMS0544_1,NA
-CRMS_Database,NA,CRMS0544_2,NA
-CRMS_Database,NA,CRMS0544_3,NA
-CRMS_Database,NA,CRMS0545_1,NA
-CRMS_Database,NA,CRMS0545_2,NA
-CRMS_Database,NA,CRMS0545_3,NA
-CRMS_Database,NA,CRMS0550_1,NA
-CRMS_Database,NA,CRMS0550_2,NA
-CRMS_Database,NA,CRMS0550_3,NA
-CRMS_Database,NA,CRMS0551_1,NA
-CRMS_Database,NA,CRMS0551_2,NA
-CRMS_Database,NA,CRMS0551_3,NA
-CRMS_Database,NA,CRMS2568_1,NA
-CRMS_Database,NA,CRMS2568_2,NA
-CRMS_Database,NA,CRMS2568_3,NA
-CRMS_Database,NA,CRMS4014_1,NA
-CRMS_Database,NA,CRMS4014_2,NA
-CRMS_Database,NA,CRMS4014_3,NA
-CRMS_Database,NA,CRMS4016_1,NA
-CRMS_Database,NA,CRMS4016_2,NA
-CRMS_Database,NA,CRMS4016_3,NA
-CRMS_Database,NA,CRMS4779_1,NA
-CRMS_Database,NA,CRMS4779_2,NA
-CRMS_Database,NA,CRMS4779_3,NA
-CRMS_Database,NA,CRMS4782_1,NA
-CRMS_Database,NA,CRMS4782_2,NA
-CRMS_Database,NA,CRMS4782_3,NA
-CRMS_Database,NA,CRMS4808_1,NA
-CRMS_Database,NA,CRMS4808_2,NA
-CRMS_Database,NA,CRMS4808_3,NA
-CRMS_Database,NA,CRMS4809_1,NA
-CRMS_Database,NA,CRMS4809_2,NA
-CRMS_Database,NA,CRMS4809_3,NA
-CRMS_Database,NA,CRMS4900_1,NA
-CRMS_Database,NA,CRMS4900_2,NA
-CRMS_Database,NA,CRMS4900_3,NA
-CRMS_Database,NA,CRMS4938_1,NA
-CRMS_Database,NA,CRMS4938_2,NA
-CRMS_Database,NA,CRMS4938_3,NA
-CRMS_Database,NA,CRMS5003_1,NA
-CRMS_Database,NA,CRMS5003_2,NA
-CRMS_Database,NA,CRMS5003_3,NA
-CRMS_Database,NA,CRMS6008_1,NA
-CRMS_Database,NA,CRMS6008_2,NA
-CRMS_Database,NA,CRMS6008_3,NA
-CRMS_Database,NA,CRMS6038_1,NA
-CRMS_Database,NA,CRMS6038_2,NA
-CRMS_Database,NA,CRMS6038_3,NA
-CRMS_Database,NA,CRMS6042_1,NA
-CRMS_Database,NA,CRMS6042_2,NA
-CRMS_Database,NA,CRMS6042_3,NA
-CRMS_Database,NA,CRMS0006_1,NA
-CRMS_Database,NA,CRMS0006_2,NA
-CRMS_Database,NA,CRMS0006_3,NA
-CRMS_Database,NA,CRMS0035_1,NA
-CRMS_Database,NA,CRMS0035_2,NA
-CRMS_Database,NA,CRMS0035_3,NA
-CRMS_Database,NA,CRMS2854_1,NA
-CRMS_Database,NA,CRMS2854_2,NA
-CRMS_Database,NA,CRMS2854_3,NA
-CRMS_Database,NA,CRMS3667_1,NA
-CRMS_Database,NA,CRMS3667_2,NA
-CRMS_Database,NA,CRMS3667_3,NA
-CRMS_Database,NA,CRMS4094_1,NA
-CRMS_Database,NA,CRMS4094_2,NA
-CRMS_Database,NA,CRMS4094_3,NA
-CRMS_Database,NA,CRMS4110_1,NA
-CRMS_Database,NA,CRMS4110_2,NA
-CRMS_Database,NA,CRMS4110_3,NA
-CRMS_Database,NA,CRMS4406_1,NA
-CRMS_Database,NA,CRMS4406_2,NA
-CRMS_Database,NA,CRMS4406_3,NA
-CRMS_Database,NA,CRMS4407_1,NA
-CRMS_Database,NA,CRMS4407_2,NA
-CRMS_Database,NA,CRMS4407_3,NA
-CRMS_Database,NA,CRMS0030_1,NA
-CRMS_Database,NA,CRMS0030_2,NA
-CRMS_Database,NA,CRMS0030_3,NA
-CRMS_Database,NA,CRMS0034_1,NA
-CRMS_Database,NA,CRMS0034_2,NA
-CRMS_Database,NA,CRMS0034_3,NA
-CRMS_Database,NA,CRMS0103_1,NA
-CRMS_Database,NA,CRMS0103_2,NA
-CRMS_Database,NA,CRMS0103_3,NA
-CRMS_Database,NA,CRMS6209_1,NA
-CRMS_Database,NA,CRMS6209_2,NA
-CRMS_Database,NA,CRMS6209_3,NA
-CRMS_Database,NA,CRMS0290_1,NA
-CRMS_Database,NA,CRMS0290_2,NA
-CRMS_Database,NA,CRMS0290_3,NA
-CRMS_Database,NA,CRMS0293_1,NA
-CRMS_Database,NA,CRMS0293_2,NA
-CRMS_Database,NA,CRMS0293_3,NA
-CRMS_Database,NA,CRMS0294_1,NA
-CRMS_Database,NA,CRMS0294_2,NA
-CRMS_Database,NA,CRMS0294_3,NA
-CRMS_Database,NA,CRMS0296_1,NA
-CRMS_Database,NA,CRMS0296_2,NA
-CRMS_Database,NA,CRMS0296_3,NA
-CRMS_Database,NA,CRMS0301_1,NA
-CRMS_Database,NA,CRMS0301_2,NA
-CRMS_Database,NA,CRMS0301_3,NA
-CRMS_Database,NA,CRMS0302_1,NA
-CRMS_Database,NA,CRMS0302_2,NA
-CRMS_Database,NA,CRMS0302_3,NA
-CRMS_Database,NA,CRMS0303_1,NA
-CRMS_Database,NA,CRMS0303_2,NA
-CRMS_Database,NA,CRMS0303_3,NA
-CRMS_Database,NA,CRMS0305_1,NA
-CRMS_Database,NA,CRMS0305_2,NA
-CRMS_Database,NA,CRMS0305_3,NA
-CRMS_Database,NA,CRMS0307_1,NA
-CRMS_Database,NA,CRMS0307_2,NA
-CRMS_Database,NA,CRMS0307_3,NA
-CRMS_Database,NA,CRMS0309_1,NA
-CRMS_Database,NA,CRMS0309_2,NA
-CRMS_Database,NA,CRMS0309_3,NA
-CRMS_Database,NA,CRMS0311_1,NA
-CRMS_Database,NA,CRMS0311_2,NA
-CRMS_Database,NA,CRMS0311_3,NA
-CRMS_Database,NA,CRMS0315_1,NA
-CRMS_Database,NA,CRMS0315_2,NA
-CRMS_Database,NA,CRMS0315_3,NA
-CRMS_Database,NA,CRMS0322_1,NA
-CRMS_Database,NA,CRMS0322_2,NA
-CRMS_Database,NA,CRMS0322_3,NA
-CRMS_Database,NA,CRMS0326_1,NA
-CRMS_Database,NA,CRMS0326_2,NA
-CRMS_Database,NA,CRMS0326_3,NA
-CRMS_Database,NA,CRMS0327_1,NA
-CRMS_Database,NA,CRMS0327_2,NA
-CRMS_Database,NA,CRMS0327_3,NA
-CRMS_Database,NA,CRMS0329_1,NA
-CRMS_Database,NA,CRMS0329_2,NA
-CRMS_Database,NA,CRMS0329_3,NA
-CRMS_Database,NA,CRMS0332_1,NA
-CRMS_Database,NA,CRMS0332_2,NA
-CRMS_Database,NA,CRMS0332_3,NA
-CRMS_Database,NA,CRMS0336_1,NA
-CRMS_Database,NA,CRMS0336_2,NA
-CRMS_Database,NA,CRMS0336_3,NA
-CRMS_Database,NA,CRMS0338_1,NA
-CRMS_Database,NA,CRMS0338_2,NA
-CRMS_Database,NA,CRMS0338_3,NA
-CRMS_Database,NA,CRMS0341_1,NA
-CRMS_Database,NA,CRMS0341_2,NA
-CRMS_Database,NA,CRMS0341_3,NA
-CRMS_Database,NA,CRMS0345_1,NA
-CRMS_Database,NA,CRMS0345_2,NA
-CRMS_Database,NA,CRMS0345_3,NA
-CRMS_Database,NA,CRMS0347_1,NA
-CRMS_Database,NA,CRMS0347_2,NA
-CRMS_Database,NA,CRMS0347_3,NA
-CRMS_Database,NA,CRMS0354_1,NA
-CRMS_Database,NA,CRMS0354_2,NA
-CRMS_Database,NA,CRMS0354_3,NA
-CRMS_Database,NA,CRMS0355_1,NA
-CRMS_Database,NA,CRMS0355_2,NA
-CRMS_Database,NA,CRMS0355_3,NA
-CRMS_Database,NA,CRMS0369_1,NA
-CRMS_Database,NA,CRMS0369_2,NA
-CRMS_Database,NA,CRMS0369_3,NA
-CRMS_Database,NA,CRMS0371_1,NA
-CRMS_Database,NA,CRMS0371_2,NA
-CRMS_Database,NA,CRMS0371_3,NA
-CRMS_Database,NA,CRMS0374_1,NA
-CRMS_Database,NA,CRMS0374_2,NA
-CRMS_Database,NA,CRMS0374_3,NA
-CRMS_Database,NA,CRMS0376_1,NA
-CRMS_Database,NA,CRMS0376_2,NA
-CRMS_Database,NA,CRMS0376_3,NA
-CRMS_Database,NA,CRMS0377_1,NA
-CRMS_Database,NA,CRMS0377_2,NA
-CRMS_Database,NA,CRMS0377_3,NA
-CRMS_Database,NA,CRMS0381_1,NA
-CRMS_Database,NA,CRMS0381_2,NA
-CRMS_Database,NA,CRMS0381_3,NA
-CRMS_Database,NA,CRMS0382_1,NA
-CRMS_Database,NA,CRMS0382_2,NA
-CRMS_Database,NA,CRMS0382_3,NA
-CRMS_Database,NA,CRMS0383_1,NA
-CRMS_Database,NA,CRMS0383_2,NA
-CRMS_Database,NA,CRMS0383_3,NA
-CRMS_Database,NA,CRMS0385_1,NA
-CRMS_Database,NA,CRMS0385_2,NA
-CRMS_Database,NA,CRMS0385_3,NA
-CRMS_Database,NA,CRMS0390_1,NA
-CRMS_Database,NA,CRMS0390_2,NA
-CRMS_Database,NA,CRMS0390_3,NA
-CRMS_Database,NA,CRMS0392_1,NA
-CRMS_Database,NA,CRMS0392_2,NA
-CRMS_Database,NA,CRMS0392_3,NA
-CRMS_Database,NA,CRMS0394_1,NA
-CRMS_Database,NA,CRMS0394_2,NA
-CRMS_Database,NA,CRMS0394_3,NA
-CRMS_Database,NA,CRMS0395_1,NA
-CRMS_Database,NA,CRMS0395_2,NA
-CRMS_Database,NA,CRMS0395_3,NA
-CRMS_Database,NA,CRMS0396_1,NA
-CRMS_Database,NA,CRMS0396_2,NA
-CRMS_Database,NA,CRMS0396_3,NA
-CRMS_Database,NA,CRMS0398_1,NA
-CRMS_Database,NA,CRMS0398_2,NA
-CRMS_Database,NA,CRMS0398_3,NA
-CRMS_Database,NA,CRMS0399_1,NA
-CRMS_Database,NA,CRMS0399_2,NA
-CRMS_Database,NA,CRMS0399_3,NA
-CRMS_Database,NA,CRMS0409_1,NA
-CRMS_Database,NA,CRMS0409_2,NA
-CRMS_Database,NA,CRMS0409_3,NA
-CRMS_Database,NA,CRMS0411_1,NA
-CRMS_Database,NA,CRMS0411_2,NA
-CRMS_Database,NA,CRMS0411_3,NA
-CRMS_Database,NA,CRMS0421_1,NA
-CRMS_Database,NA,CRMS0421_2,NA
-CRMS_Database,NA,CRMS0421_3,NA
-CRMS_Database,NA,CRMS0434_1,NA
-CRMS_Database,NA,CRMS0434_2,NA
-CRMS_Database,NA,CRMS0434_3,NA
-CRMS_Database,NA,CRMS2785_1,NA
-CRMS_Database,NA,CRMS2785_2,NA
-CRMS_Database,NA,CRMS2785_3,NA
-CRMS_Database,NA,CRMS2862_1,NA
-CRMS_Database,NA,CRMS2862_2,NA
-CRMS_Database,NA,CRMS2862_3,NA
-CRMS_Database,NA,CRMS2881_1,NA
-CRMS_Database,NA,CRMS2881_2,NA
-CRMS_Database,NA,CRMS2881_3,NA
-CRMS_Database,NA,CRMS2887_1,NA
-CRMS_Database,NA,CRMS2887_2,NA
-CRMS_Database,NA,CRMS2887_3,NA
-CRMS_Database,NA,CRMS3296_1,NA
-CRMS_Database,NA,CRMS3296_2,NA
-CRMS_Database,NA,CRMS3296_3,NA
-CRMS_Database,NA,CRMS4045_1,NA
-CRMS_Database,NA,CRMS4045_2,NA
-CRMS_Database,NA,CRMS4045_3,NA
-CRMS_Database,NA,CRMS4455_1,NA
-CRMS_Database,NA,CRMS4455_2,NA
-CRMS_Database,NA,CRMS4455_3,NA
-CRMS_Database,NA,CRMS5035_1,NA
-CRMS_Database,NA,CRMS5035_2,NA
-CRMS_Database,NA,CRMS5035_3,NA
-CRMS_Database,NA,CRMS0501_1,NA
-CRMS_Database,NA,CRMS0501_2,NA
-CRMS_Database,NA,CRMS0501_3,NA
-CRMS_Database,NA,CRMS0507_1,NA
-CRMS_Database,NA,CRMS0507_2,NA
-CRMS_Database,NA,CRMS0507_3,NA
-CRMS_Database,NA,CRMS0508_1,NA
-CRMS_Database,NA,CRMS0508_2,NA
-CRMS_Database,NA,CRMS0508_3,NA
-CRMS_Database,NA,CRMS0535_1,NA
-CRMS_Database,NA,CRMS0535_2,NA
-CRMS_Database,NA,CRMS0535_3,NA
-CRMS_Database,NA,CRMS0536_1,NA
-CRMS_Database,NA,CRMS0536_2,NA
-CRMS_Database,NA,CRMS0536_3,NA
-CRMS_Database,NA,CRMS0541_1,NA
-CRMS_Database,NA,CRMS0541_2,NA
-CRMS_Database,NA,CRMS0541_3,NA
-CRMS_Database,NA,CRMS0552_1,NA
-CRMS_Database,NA,CRMS0552_2,NA
-CRMS_Database,NA,CRMS0552_3,NA
-CRMS_Database,NA,CRMS0571_1,NA
-CRMS_Database,NA,CRMS0571_2,NA
-CRMS_Database,NA,CRMS0571_3,NA
-CRMS_Database,NA,CRMS0576_1,NA
-CRMS_Database,NA,CRMS0576_2,NA
-CRMS_Database,NA,CRMS0576_3,NA
-CRMS_Database,NA,CRMS0580_1,NA
-CRMS_Database,NA,CRMS0580_2,NA
-CRMS_Database,NA,CRMS0580_3,NA
-CRMS_Database,NA,CRMS0600_1,NA
-CRMS_Database,NA,CRMS0600_2,NA
-CRMS_Database,NA,CRMS0600_3,NA
-CRMS_Database,NA,CRMS0609_1,NA
-CRMS_Database,NA,CRMS0609_2,NA
-CRMS_Database,NA,CRMS0609_3,NA
-CRMS_Database,NA,CRMS0616_1,NA
-CRMS_Database,NA,CRMS0616_2,NA
-CRMS_Database,NA,CRMS0616_3,NA
-CRMS_Database,NA,CRMS0618_1,NA
-CRMS_Database,NA,CRMS0618_2,NA
-CRMS_Database,NA,CRMS0618_3,NA
-CRMS_Database,NA,CRMS0619_1,NA
-CRMS_Database,NA,CRMS0619_2,NA
-CRMS_Database,NA,CRMS0619_3,NA
-CRMS_Database,NA,CRMS0623_1,NA
-CRMS_Database,NA,CRMS0623_2,NA
-CRMS_Database,NA,CRMS0623_3,NA
-CRMS_Database,NA,CRMS0632_1,NA
-CRMS_Database,NA,CRMS0632_2,NA
-CRMS_Database,NA,CRMS0632_3,NA
-CRMS_Database,NA,CRMS0633_1,NA
-CRMS_Database,NA,CRMS0633_2,NA
-CRMS_Database,NA,CRMS0633_3,NA
-CRMS_Database,NA,CRMS1650_1,NA
-CRMS_Database,NA,CRMS1650_2,NA
-CRMS_Database,NA,CRMS1650_3,NA
-CRMS_Database,NA,CRMS1965_1,NA
-CRMS_Database,NA,CRMS1965_2,NA
-CRMS_Database,NA,CRMS1965_3,NA
-CRMS_Database,NA,CRMS2041_1,NA
-CRMS_Database,NA,CRMS2041_2,NA
-CRMS_Database,NA,CRMS2041_3,NA
 Drake_et_al_2015,NA,FM01,restoring
 Drake_et_al_2015,NA,FM01,managed
 Drake_et_al_2015,NA,FM02,restoring
@@ -1272,16 +446,6 @@ Drake_et_al_2015,NA,FM09,restoring
 Drake_et_al_2015,NA,FM09,managed
 Drake_et_al_2015,NA,FM10,restoring
 Drake_et_al_2015,NA,FM10,managed
-Drake_et_al_2015,NA,FU01,NA
-Drake_et_al_2015,NA,FU02,NA
-Drake_et_al_2015,NA,FU03,NA
-Drake_et_al_2015,NA,FU04,NA
-Drake_et_al_2015,NA,FU05,NA
-Drake_et_al_2015,NA,FU06,NA
-Drake_et_al_2015,NA,FU07,NA
-Drake_et_al_2015,NA,FU08,NA
-Drake_et_al_2015,NA,FU09,NA
-Drake_et_al_2015,NA,FU10,NA
 Drake_et_al_2015,NA,PRM01,restoring
 Drake_et_al_2015,NA,PRM01,managed
 Drake_et_al_2015,NA,PRM02,restoring
@@ -1332,16 +496,6 @@ Drake_et_al_2015,NA,RCM09,restoring
 Drake_et_al_2015,NA,RCM09,managed
 Drake_et_al_2015,NA,RCM10,restoring
 Drake_et_al_2015,NA,RCM10,managed
-Drake_et_al_2015,NA,RCU01,NA
-Drake_et_al_2015,NA,RCU02,NA
-Drake_et_al_2015,NA,RCU03,NA
-Drake_et_al_2015,NA,RCU04,NA
-Drake_et_al_2015,NA,RCU05,NA
-Drake_et_al_2015,NA,RCU06,NA
-Drake_et_al_2015,NA,RCU07,NA
-Drake_et_al_2015,NA,RCU08,NA
-Drake_et_al_2015,NA,RCU09,NA
-Drake_et_al_2015,NA,RCU10,NA
 Drake_et_al_2015,NA,WM01,restoring
 Drake_et_al_2015,NA,WM01,managed
 Drake_et_al_2015,NA,WM02,restoring
@@ -1376,22 +530,6 @@ Elsey_Quirk_et_al_2011,NA,Juncus_roemerianus_core,natural
 Elsey_Quirk_et_al_2011,NA,Juncus_roemerianus_core,ditched
 Elsey_Quirk_et_al_2011,NA,Spartina_alterniflora_core,natural
 Elsey_Quirk_et_al_2011,NA,Spartina_alterniflora_core,ditched
-Hill_and_Anisfled_2015,NA,EBD,NA
-Hill_and_Anisfled_2015,NA,CIC,NA
-Hill_and_Anisfled_2015,NA,GF,NA
-Hill_and_Anisfled_2015,NA,GPE,NA
-Hill_and_Anisfled_2015,NA,AND,NA
-Hill_and_Anisfled_2015,NA,HV1,NA
-Hill_and_Anisfled_2015,NA,HV2,NA
-Hill_and_Anisfled_2015,NA,HV4,NA
-Hill_and_Anisfled_2015,NA,MC,NA
-Hill_and_Anisfled_2015,NA,OC,NA
-Hill_and_Anisfled_2015,NA,PBA,NA
-Hill_and_Anisfled_2015,NA,PBB,NA
-Hill_and_Anisfled_2015,NA,SMC,NA
-Hill_and_Anisfled_2015,NA,SWD,NA
-Hill_and_Anisfled_2015,NA,SPR,NA
-Hill_and_Anisfled_2015,NA,VCR,NA
 Kulawardhana_et_al_2015,NA,Kulawardhana_PM_01,natural
 Kulawardhana_et_al_2015,NA,Kulawardhana_PM_02,natural
 Kulawardhana_et_al_2015,NA,Kulawardhana_PM_03,natural
@@ -1445,122 +583,6 @@ Kulawardhana_et_al_2015,NA,Kulawardhana_PM_50,natural
 Kulawardhana_et_al_2015,NA,Kulawardhana_PM_51,natural
 Kulawardhana_et_al_2015,NA,Kulawardhana_PM_52,natural
 Kulawardhana_et_al_2015,NA,Kulawardhana_PM_53,natural
-Merrill_1999,NA,Choptank_River_1,NA
-Merrill_1999,NA,Choptank_River_2,NA
-Merrill_1999,NA,Choptank_River_3,NA
-Merrill_1999,NA,Tivoli_North_1,NA
-Merrill_1999,NA,Tivoli_North_2,NA
-Merrill_1999,NA,Tivoli_North_3,NA
-Merrill_1999,NA,Tivoli_North_4_subtidal,NA
-Merrill_1999,NA,Tivoli_South_1_subtidal,NA
-Merrill_1999,NA,Tivoli_South_2_fringe_marsh,NA
-Merrill_1999,NA,Monie_Bay_1,NA
-Merrill_1999,NA,Monie_Bay_3,NA
-Merrill_1999,NA,Monie_Bay_4,NA
-Merrill_1999,NA,Monie_Bay_5,NA
-Merrill_1999,NA,Monie_Bay_6,NA
-Merrill_1999,NA,Monie_Bay_7,NA
-Merrill_1999,NA,Otter_Point_Creek_1,NA
-Merrill_1999,NA,Otter_Point_Creek_2,NA
-Merrill_1999,NA,Otter_Point_Creek_3,NA
-Merrill_1999,NA,Jug_Bay_1,NA
-Merrill_1999,NA,Jug_Bay_3,NA
-Merrill_1999,NA,Patuxent_River_01,NA
-Merrill_1999,NA,Patuxent_River_02,NA
-Merrill_1999,NA,Patuxent_River_03,NA
-Merrill_1999,NA,Patuxent_River_04,NA
-Merrill_1999,NA,Patuxent_River_05,NA
-Merrill_1999,NA,Patuxent_River_06,NA
-Merrill_1999,NA,Patuxent_River_07,NA
-Merrill_1999,NA,Patuxent_River_08,NA
-Merrill_1999,NA,Patuxent_River_09,NA
-Merrill_1999,NA,Patuxent_River_11,NA
-Merrill_1999,NA,Patuxent_River_12,NA
-Merrill_1999,NA,Transect_A_11m,NA
-Merrill_1999,NA,Transect_A_30m,NA
-Merrill_1999,NA,Transect_A_50m_1,NA
-Merrill_1999,NA,Transect_A_50m_2,NA
-Merrill_1999,NA,Transect_B_11m,NA
-Merrill_1999,NA,Transect_B_2m,NA
-Merrill_1999,NA,Transect_B_30m,NA
-Merrill_1999,NA,Transect_B_60m,NA
-Merrill_1999,NA,Transect_C_0m,NA
-Merrill_1999,NA,Transect_C_30m,NA
-Merrill_1999,NA,Transect_C_60m,NA
-Merrill_1999,NA,Transect_C_90m,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_01,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_02,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_03,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_04,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_05,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_06,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_07,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_08,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_09,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_10,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_11,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_12,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_13,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_14,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_15,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_16,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_17,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_18,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_19,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_20,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_21,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_22,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_23,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_24,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_25,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_26,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_27,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_28,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_29,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_30,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_31,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_32,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_33,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_34,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_35,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_36,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_37,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_38,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_39,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_40,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_41,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_42,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_43,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_44,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_45,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_46,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_47,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_48,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_49,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_50,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_51,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_52,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_53,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_54,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_55,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_56,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_57,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_58,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_59,NA
-Neubauer_2002,NA,Sweet_Hall_marsh_dissertation_60,NA
-Nuttle_1988,NA,bee,NA
-Nuttle_1988,NA,dis,NA
-Nuttle_1988,NA,jun,NA
-Nuttle_1988,NA,juna,NA
-Nuttle_1988,NA,junb,NA
-Nuttle_1988,NA,lsc,NA
-Nuttle_1988,NA,lsp,NA
-Nuttle_1988,NA,pan,NA
-Nuttle_1988,NA,pat,NA
-Nuttle_1988,NA,pc,NA
-Nuttle_1988,NA,rm,NA
-Nuttle_1988,NA,sal,NA
-Nuttle_1988,NA,ssp,NA
 Nyman_et_al_1993,NA,barre1,canalled
 Nyman_et_al_1993,NA,barre2,canalled
 Nyman_et_al_1993,NA,bgoat1,canalled
@@ -1591,10 +613,6 @@ Nyman_et_al_1993,NA,ups1,canalled
 Nyman_et_al_1993,NA,ups2,canalled
 Nyman_et_al_1993,NA,wmadbay1,canalled
 Nyman_et_al_1993,NA,wmadbay2,canalled
-Orson_1990,NA,WC1A_15,NA
-Orson_1990,NA,WC1A_30,NA
-Orson_1990,NA,WC1A_45,NA
-Orson_1990,NA,WC2A_15,NA
 Pastore_et_al_2017,NA,CH01,natural
 Pastore_et_al_2017,NA,CH02,natural
 Pastore_et_al_2017,NA,CH03,natural
@@ -1615,51 +633,6 @@ Pastore_et_al_2017,NA,CH17,natural
 Pastore_et_al_2017,NA,CH18,natural
 Pastore_et_al_2017,NA,CH19,natural
 Pastore_et_al_2017,NA,CH20,natural
-Piazza_et_al_2011,NA,CRMS0164_H_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0164_H_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0164_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0164_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0128_H_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0128_H_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0128_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0128_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0135_H_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0135_H_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0135_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0135_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0147_H_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0147_H_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0147_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0147_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0651_H_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0651_H_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0651_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0651_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0672_H_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0672_H_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0672_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0672_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0610_H_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0610_H_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0610_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0610_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0669_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0669_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS2156_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS2156_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0294_H_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0294_H_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0294_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0294_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0312_H_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0312_H_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0312_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0312_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0326_H_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0326_H_Piazza_2,NA
-Piazza_et_al_2011,NA,CRMS0326_H_Piazza_3,NA
-Piazza_et_al_2011,NA,CRMS0326_Piazza_1,NA
-Piazza_et_al_2011,NA,CRMS0326_Piazza_2,NA
 Radabaugh_et_al_2017,NA,BISH,restoring
 Radabaugh_et_al_2017,NA,CERF_Marsh,restoring
 Radabaugh_et_al_2017,NA,EGS,restoring
@@ -1705,6 +678,564 @@ Drexler_et_al_2013,Wardlaw_Shallow_Managed,Wardlaw_Shallow_Managed_2,managed imp
 Drexler_et_al_2009,NA,BACHI,natural
 Drexler_et_al_2009,NA,FW,natural
 Drexler_et_al_2009,NA,TT,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_1,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_2,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_3,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_4,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_5,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_6,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_7,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_8,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_9,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_10,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_11,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_12,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_13,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_14,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_15,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_16,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_17,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_18,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_19,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_20,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_21,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_22,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_23,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_24,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_25,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_26,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_27,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_28,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_29,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_30,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_31,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_32,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_33,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_34,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_35,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_36,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_37,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_38,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_39,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_40,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_41,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_42,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_43,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_44,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_45,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_46,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_47,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_48,natural
+Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_49,natural
+Curtis_et_al_2022,MMF,MMF1,natural
+Curtis_et_al_2022,MMF,MMF2,natural
+Curtis_et_al_2022,MRF,MRF1,natural
+Curtis_et_al_2022,MRF,MRF2,natural
+Curtis_et_al_2022,JNF,JNF1,natural
+Curtis_et_al_2022,JSF,JSF2,natural
+Curtis_et_al_2022,HSF,HSF1,natural
+Curtis_et_al_2022,HSF,HSF2,natural
+Curtis_et_al_2022,WMF,WMF1,natural
+Curtis_et_al_2022,WMF,WMF2,natural
+Costa_et_al_2023,Galapagos-Carthago Grande (CG)-I,Galapagos-Carthago Grande (CG)-I-1,natural
+Costa_et_al_2023,Galapagos-Carthago Grande (CG)-I,Galapagos-Carthago Grande (CG)-I-2,natural
+Costa_et_al_2023,Galapagos-Carthago Grande (CG)-I,Galapagos-Carthago Grande (CG)-I-3,natural
+Costa_et_al_2023,Galapagos-Carthago Grande (CG)-II,Galapagos-Carthago Grande (CG)-II-1,natural
+Costa_et_al_2023,Galapagos-Carthago Chica (CC)-I,Galapagos-Carthago Chica (CC)-I-1,natural
+Costa_et_al_2023,Galapagos-Carthago Chica (CC)-II,Galapagos-Carthago Chica (CC)-II-1,natural
+Costa_et_al_2023,Galapagos-Carthago Chica (CC)-III,Galapagos-Carthago Chica (CC)-III-1,natural
+Costa_et_al_2023,Galapagos-Norte (N)-I,Galapagos-Norte (N)-I-1,natural
+Costa_et_al_2023,Galapagos-Norte (N)-III,Galapagos-Norte (N)-III-1,natural
+Costa_et_al_2023,Galapagos-Norte (N)-IV,Galapagos-Norte (N)-IV-1,natural
+Costa_et_al_2023,Galapagos-Poza de Patillos (PP)-I,Galapagos-Poza de Patillos (PP)-I-1,natural
+Costa_et_al_2023,Galapagos-Poza de Patillos (PP)-II,Galapagos-Poza de Patillos (PP)-II-1,natural
+Costa_et_al_2023,Galapagos-Punta Mangle (PM)-I,Galapagos-Punta Mangle (PM)-I-1,natural
+Costa_et_al_2023,Galapagos-Urvina (U)-I,Galapagos-Urvina (U)-I-1,natural
+Costa_et_al_2023,Galapagos-Urvina (U)-I,Galapagos-Urvina (U)-I-2,natural
+Costa_et_al_2023,Galapagos-Canones (CAN)-I,Galapagos-Cañones (CAN)-I-1,natural
+Costa_et_al_2023,Galapagos-Elizabeth (E)-I,Galapagos-Elizabeth (E)-I-1,natural
+Costa_et_al_2023,Galapagos-Baleado (B)-I,Galapagos-Baleado (B)-I-1,natural
+Costa_et_al_2023,Galapagos-Baleado (B)-I,Galapagos-Baleado (B)-I-2,natural
+Costa_et_al_2023,Galapagos-Baleado (B)-I,Galapagos-Baleado (B)-I-3,natural
+Costa_et_al_2023,Galapagos-Punta Morena (PM)-II,Galapagos-Punta Morena (PM)-II-1,natural
+Costa_et_al_2023,Galapagos-Poza de Parroquiano (PP)-I,Galapagos-Poza de Parroquiano (PP)-I-1,natural
+Costa_et_al_2023,Galapagos-Poza de Parroquiano (PP)-I,Galapagos-Poza de Parroquiano (PP)-I-2,natural
+Costa_et_al_2023,Galapagos-Laguna Azul (LA)-I,Galapagos-Laguna Azul (LA)-I-1,natural
+Costa_et_al_2023,Galapagos-Puerto Nuevo (PN)-I,Galapagos-Puerto Nuevo (PN)-I-1,natural
+Costa_et_al_2023,Galapagos-Puerto Nuevo (PN)-I,Galapagos-Puerto Nuevo (PN)-I-2,natural
+Costa_et_al_2023,Galapagos-Sarten (S)-I,Galapagos-Sarten (S)-I-1,natural
+Costa_et_al_2023,Galapagos-Tortuga Negra (TN)-I,Galapagos-Tortuga Negra (TN)-I-1,natural
+Costa_et_al_2023,Galapagos-Tortuga Negra (TN)-IV,Galapagos-Tortuga Negra (TN)-IV-1,natural
+Costa_et_al_2023,Galapagos-Itabaca (I)-I,Galapagos-Itabaca (I)-I-1,natural
+Costa_et_al_2023,Galapagos-Puerto Grande (PG)-I,Galapagos-Puerto Grande (PG)-I-1,natural
+Costa_et_al_2023,Galapagos-Puerto Grande (PG)-II,Galapagos-Puerto Grande (PG)-II-1,natural
+Costa_et_al_2023,Galapagos-Poza Sardina (PS)-I,Galapagos-Poza Sardina (PS)-I-1,natural
+Costa_et_al_2023,Galapagos-Baronesa (B)-I,Galapagos-Baronesa (B)-I-1,natural
+Costa_et_al_2023,Galapagos-Roca Fuerte (RF)-I,Galapagos-Roca Fuerte (RF)-I-1,natural
+Costa_et_al_2023,Galapagos-Garrapatero (G)-I,Galapagos-Garrapatero (G)-I-1,natural
+Costa_et_al_2023,Baja-Mogote V,Baja-Mogote V-1,natural
+Costa_et_al_2023,Baja-Mogote V,Baja-Mogote V-2,natural
+Costa_et_al_2023,Baja-Mogote V,Baja-Mogote V-3,natural
+Costa_et_al_2023,Baja-Mogote V,Baja-Mogote V-4,natural
+Costa_et_al_2023,Baja-Mogote V,Baja-Mogote V-5,natural
+Costa_et_al_2023,Baja-Mogote III,Baja-Mogote III-1,natural
+Costa_et_al_2023,Baja-Mogote III,Baja-Mogote III-2,natural
+Costa_et_al_2023,Baja-Mogote III,Baja-Mogote III-3,natural
+Costa_et_al_2023,Baja-Mogote III,Baja-Mogote III-4,natural
+Costa_et_al_2023,Baja-Mogote III,Baja-Mogote III-5,natural
+Costa_et_al_2023,Baja-Bahia Falsa,Baja-Bahia Falsa-1,natural
+Costa_et_al_2023,Baja-Bahia Falsa,Baja-Bahia Falsa-2,natural
+Costa_et_al_2023,Baja-Bahia Falsa,Baja-Bahia Falsa-H1,natural
+Costa_et_al_2023,Baja-Bahia Falsa,Baja-Bahia Falsa-H2,natural
+Costa_et_al_2023,Baja-El Merito I (EMI),Baja-El Merito I (EMI)-1,natural
+Costa_et_al_2023,Baja-El Merito I (EMI),Baja-El Merito I (EMI)-2,natural
+Costa_et_al_2023,Baja-El Merito I (EMI),Baja-El Merito I (EMI)-I,natural
+Costa_et_al_2023,Baja-San Jose,Baja-San Jose-1,natural
+Costa_et_al_2023,Baja-San Jose,Baja-San Jose-2,natural
+Costa_et_al_2023,Baja-San Jose,Baja-San Jose-3,natural
+Costa_et_al_2023,Baja-San Jose,Baja-San Jose-I,natural
+Costa_et_al_2023,Baja-San Jose,Baja-San Jose-II,natural
+Costa_et_al_2023,Baja-Erizoso,Baja-Erizoso-1,natural
+Costa_et_al_2023,Baja-El Tope,Baja-El Tope-1,natural
+Costa_et_al_2023,Baja-El Tope,Baja-El Tope-2,natural
+Costa_et_al_2023,Baja-El Tope,Baja-El Tope-3,natural
+Costa_et_al_2023,Baja-El Tope,Baja-El Tope-4,natural
+Costa_et_al_2023,Baja-San Gabriel I,Baja-San Gabriel I-1,natural
+Costa_et_al_2023,Baja-San Gabriel I,Baja-San Gabriel I-2,natural
+Costa_et_al_2023,Baja-San Gabriel I,Baja-San Gabriel I-3,natural
+Costa_et_al_2023,Baja-San Lucas,Baja-San Lucas-1,natural
+Costa_et_al_2023,Baja-San Lucas,Baja-San Lucas-2,natural
+Costa_et_al_2023,Baja-San Lucas,Baja-San Lucas-3,natural
+Costa_et_al_2023,Baja-Santispac,Baja-Santispac-1,natural
+Costa_et_al_2023,Baja-Santispac,Baja-Santispac-2,natural
+Costa_et_al_2023,Baja-Santispac,Baja-Santispac-3,natural
+Costa_et_al_2023,Baja-El Requeson,Baja-El Requeson-1,natural
+Costa_et_al_2023,Baja-El Mangle I,Baja-El Mangle I-1,natural
+Costa_et_al_2023,Baja-El Mangle I,Baja-El Mangle I-2,natural
+Costa_et_al_2023,Baja-Buenaventura,Baja-Buenaventura-1,natural
+Costa_et_al_2023,Baja-Buenaventura,Baja-Buenaventura-2,natural
+Costa_et_al_2023,Baja-Buenaventura,Baja-Buenaventura-4,natural
+Costa_et_al_2023,Baja-Santa Barbara II,Baja-Santa Barbara II-1,natural
+Costa_et_al_2023,Baja-Santa Barbara II,Baja-Santa Barbara II-2,natural
+Costa_et_al_2023,Baja-Santa Barbara II,Baja-Santa Barbara II-3,natural
+Costa_et_al_2023,Baja-San Gabriel II (SGII),Baja-San Gabriel II (SGII)-I,natural
+Costa_et_al_2023,Baja-Bahia Magdalena,Baja-Bahia Magdalena-I,natural
+Costa_et_al_2023,Baja-Bahia Magdalena,Baja-Bahia Magdalena-II,natural
+Costa_et_al_2023,Baja-Bahia Magdalena,Baja-Bahia Magdalena-III,natural
+Costa_et_al_2023,Baja-Punta Abreojos,Baja-Punta Abreojos-I,natural
+Costa_et_al_2023,Baja-Campo Rene,Baja-Campo Rene-I,natural
+Costa_et_al_2023,Baja-La Mona,Baja-La Mona-I,natural
+Costa_et_al_2023,Baja-Las Animas,Baja-Las Animas-I,natural
+Costa_et_al_2023,Baja-Isla Coronado,Baja-Isla Coronado-I,natural
+Costa_et_al_2023,PanamaCaribbean-Bocas Town (BT),PanamaCaribbean-Bocas Town (BT)-1,natural
+Costa_et_al_2023,PanamaCaribbean-Bocas Town (BT),PanamaCaribbean-Bocas Town (BT)-2,natural
+Costa_et_al_2023,PanamaCaribbean-Station Forest (SF),PanamaCaribbean-Station Forest (SF)-1,natural
+Costa_et_al_2023,PanamaCaribbean-Station Forest (SF),PanamaCaribbean-Station Forest (SF)-2,natural
+Costa_et_al_2023,PanamaCaribbean-Station Forest (SF),PanamaCaribbean-Station Forest (SF)-3,natural
+Costa_et_al_2023,PanamaCaribbean-Station Forest South (SFS),PanamaCaribbean-Station Forest South (SFS)-1,natural
+Costa_et_al_2023,PanamaCaribbean-Station Forest South (SFS),PanamaCaribbean-Station Forest South (SFS)-2,natural
+Costa_et_al_2023,PanamaCaribbean-A,PanamaCaribbean-A-1,natural
+Costa_et_al_2023,PanamaCaribbean-A,PanamaCaribbean-A-2,natural
+Costa_et_al_2023,PanamaCaribbean-B,PanamaCaribbean-B-1,natural
+Costa_et_al_2023,PanamaCaribbean-B,PanamaCaribbean-B-2,natural
+Costa_et_al_2023,PanamaCaribbean-C,PanamaCaribbean-C-1,natural
+Costa_et_al_2023,PanamaCaribbean-C,PanamaCaribbean-C-2,natural
+Costa_et_al_2023,PanamaCaribbean-D,PanamaCaribbean-D-1,natural
+Costa_et_al_2023,PanamaCaribbean-D,PanamaCaribbean-D-2,natural
+Costa_et_al_2023,PanamaCaribbean-E,PanamaCaribbean-E-1,natural
+Costa_et_al_2023,PanamaCaribbean-E,PanamaCaribbean-E-2,natural
+Costa_et_al_2023,PanamaCaribbean-F,PanamaCaribbean-F-1,natural
+Costa_et_al_2023,PanamaCaribbean-F,PanamaCaribbean-F-2,natural
+Costa_et_al_2023,PanamaCaribbean-G,PanamaCaribbean-G-1,natural
+Costa_et_al_2023,PanamaCaribbean-G,PanamaCaribbean-G-2,natural
+Costa_et_al_2023,PanamaCaribbean-H,PanamaCaribbean-H-1,natural
+Costa_et_al_2023,PanamaCaribbean-H,PanamaCaribbean-H-2,natural
+Costa_et_al_2023,PanamaCaribbean-H,PanamaCaribbean-H-4,natural
+Costa_et_al_2023,PanamaCaribbean-H,PanamaCaribbean-H-5,natural
+Costa_et_al_2023,PanamaCaribbean-H,PanamaCaribbean-H-6,natural
+Costa_et_al_2023,PanamaCaribbean-H,PanamaCaribbean-H-7,natural
+Costa_et_al_2023,PanamaCaribbean-BA,PanamaCaribbean-BA-4,natural
+Costa_et_al_2023,PanamaCaribbean-BDS,PanamaCaribbean-BDS-1,natural
+Costa_et_al_2023,PanamaCaribbean-BDS,PanamaCaribbean-BDS-2,natural
+Costa_et_al_2023,PanamaCaribbean-BD,PanamaCaribbean-BD-1,natural
+Costa_et_al_2023,PanamaCaribbean-BD,PanamaCaribbean-BD-2,natural
+Costa_et_al_2023,PanamaCaribbean-SI,PanamaCaribbean-SI-1,natural
+Costa_et_al_2023,PanamaCaribbean-SM,PanamaCaribbean-SM-1,natural
+Costa_et_al_2023,PanamaCaribbean-Ga,PanamaCaribbean-Ga-1,natural
+Costa_et_al_2023,PanamaCaribbean-Ga,PanamaCaribbean-Ga-2,natural
+Costa_et_al_2023,PanamaPacific-LP VI,PanamaPacific-LP VI-1,natural
+Costa_et_al_2023,PanamaPacific-LP II,PanamaPacific-LP II-1,natural
+Costa_et_al_2023,PanamaPacific-LP II,PanamaPacific-LP II-2,natural
+Costa_et_al_2023,PanamaPacific-LP MM,PanamaPacific-LP MM-1,natural
+Costa_et_al_2023,PanamaPacific-LP IX,PanamaPacific-LP IX-1,natural
+Costa_et_al_2023,PanamaPacific-LP I,PanamaPacific-LP I-1,natural
+Costa_et_al_2023,PanamaPacific-LP I,PanamaPacific-LP I-2,natural
+Costa_et_al_2023,PanamaPacific-LP V,PanamaPacific-LP V-1,natural
+Costa_et_al_2023,PanamaPacific-LP V,PanamaPacific-LP V-2,natural
+Costa_et_al_2023,PanamaPacific-LP BA,PanamaPacific-LP BA-1,natural
+Costa_et_al_2023,PanamaPacific-LP BA,PanamaPacific-LP BA-2,natural
+Costa_et_al_2023,PanamaPacific-VE RN,PanamaPacific-VE RN-1,natural
+Costa_et_al_2023,PanamaPacific-VE RN,PanamaPacific-VE RN-2,natural
+Costa_et_al_2023,PanamaPacific-VE LI,PanamaPacific-VE LI-1,natural
+Costa_et_al_2023,PanamaPacific-VE LI,PanamaPacific-VE LI-2,natural
+Costa_et_al_2023,PanamaPacific-VE I,PanamaPacific-VE I-1,natural
+Costa_et_al_2023,PanamaPacific-VE V,PanamaPacific-VE V-1,natural
+Costa_et_al_2023,PanamaPacific-VE II,PanamaPacific-VE II-1,natural
+Costa_et_al_2023,PanamaPacific-VE VII,PanamaPacific-VE VII-1,natural
+KRE_Soil,Krabi_River_Estuary_178,Krabi_River_Estuary_178_563,Intact
+KRE_Soil,Krabi_River_Estuary_178,Krabi_River_Estuary_178_564,Intact
+KRE_Soil,Krabi_River_Estuary_178,Krabi_River_Estuary_178_565,Intact
+KRE_Soil,Krabi_River_Estuary_178,Krabi_River_Estuary_178_566,Intact
+KRE_Soil,Krabi_River_Estuary_179,Krabi_River_Estuary_179_568,Intact
+KRE_Soil,Krabi_River_Estuary_179,Krabi_River_Estuary_179_569,Intact
+KRE_Soil,Krabi_River_Estuary_179,Krabi_River_Estuary_179_570,Intact
+KRE_Soil,Krabi_River_Estuary_179,Krabi_River_Estuary_179_571,Intact
+KRE_Soil,Krabi_River_Estuary_180,Krabi_River_Estuary_180_573,Intact
+KRE_Soil,Krabi_River_Estuary_180,Krabi_River_Estuary_180_574,Intact
+KRE_Soil,Krabi_River_Estuary_180,Krabi_River_Estuary_180_575,Intact
+KRE_Soil,Krabi_River_Estuary_180,Krabi_River_Estuary_180_576,Intact
+KRE_Soil,Krabi_River_Estuary_181,Krabi_River_Estuary_181_578,Intact
+KRE_Soil,Krabi_River_Estuary_181,Krabi_River_Estuary_181_579,Intact
+KRE_Soil,Krabi_River_Estuary_181,Krabi_River_Estuary_181_580,Intact
+KRE_Soil,Krabi_River_Estuary_181,Krabi_River_Estuary_181_581,Intact
+KRE_Soil,Krabi_River_Estuary_182,Krabi_River_Estuary_182_583,Intact
+KRE_Soil,Krabi_River_Estuary_182,Krabi_River_Estuary_182_584,Intact
+KRE_Soil,Krabi_River_Estuary_182,Krabi_River_Estuary_182_586,Intact
+KRE_Soil,Krabi_River_Estuary_182,Krabi_River_Estuary_182_587,Intact
+KRE_Soil,Krabi_River_Estuary_183,Krabi_River_Estuary_183_588,Intact
+KRE_Soil,Krabi_River_Estuary_183,Krabi_River_Estuary_183_589,Intact
+KRE_Soil,Krabi_River_Estuary_183,Krabi_River_Estuary_183_590,Intact
+KRE_Soil,Krabi_River_Estuary_183,Krabi_River_Estuary_183_591,Intact
+KRE_Soil,Krabi_River_Estuary_184,Krabi_River_Estuary_184_593,Intact
+KRE_Soil,Krabi_River_Estuary_184,Krabi_River_Estuary_184_594,Intact
+KRE_Soil,Krabi_River_Estuary_184,Krabi_River_Estuary_184_596,Intact
+KRE_Soil,Krabi_River_Estuary_184,Krabi_River_Estuary_184_597,Intact
+PPM_Soil,Pak_Panang_Mangrove_185,Pak_Panang_Mangrove_185_599,Intact
+PPM_Soil,Pak_Panang_Mangrove_185,Pak_Panang_Mangrove_185_600,Intact
+PPM_Soil,Pak_Panang_Mangrove_185,Pak_Panang_Mangrove_185_601,Degraded
+PPM_Soil,Pak_Panang_Mangrove_185,Pak_Panang_Mangrove_185_602,Degraded
+PPM_Soil,Pak_Panang_Mangrove_186,Pak_Panang_Mangrove_186_603,Degraded
+PPM_Soil,Pak_Panang_Mangrove_186,Pak_Panang_Mangrove_186_605,Intact
+PPM_Soil,Pak_Panang_Mangrove_186,Pak_Panang_Mangrove_186_606,Intact
+PPM_Soil,Pak_Panang_Mangrove_186,Pak_Panang_Mangrove_186_607,Intact
+PPM_Soil,Pak_Panang_Mangrove_187,Pak_Panang_Mangrove_187_609,Degraded
+PPM_Soil,Pak_Panang_Mangrove_187,Pak_Panang_Mangrove_187_610,Degraded
+PPM_Soil,Pak_Panang_Mangrove_187,Pak_Panang_Mangrove_187_611,Degraded
+PPM_Soil,Pak_Panang_Mangrove_187,Pak_Panang_Mangrove_187_612,Degraded
+PPM_Soil,Pak_Panang_Mangrove_188,Pak_Panang_Mangrove_188_613,Intact
+PPM_Soil,Pak_Panang_Mangrove_188,Pak_Panang_Mangrove_188_614,Intact
+PPM_Soil,Pak_Panang_Mangrove_188,Pak_Panang_Mangrove_188_615,Intact
+PPM_Soil,Pak_Panang_Mangrove_188,Pak_Panang_Mangrove_188_617,Intact
+PPM_Soil,Pak_Panang_Mangrove_189,Pak_Panang_Mangrove_189_618,Intact
+PPM_Soil,Pak_Panang_Mangrove_189,Pak_Panang_Mangrove_189_620,Intact
+PPM_Soil,Pak_Panang_Mangrove_189,Pak_Panang_Mangrove_189_621,Intact
+PPM_Soil,Pak_Panang_Mangrove_189,Pak_Panang_Mangrove_189_622,Intact
+PPM_Soil,Pak_Panang_Mangrove_190,Pak_Panang_Mangrove_190_623,Intact
+PPM_Soil,Pak_Panang_Mangrove_190,Pak_Panang_Mangrove_190_624,Intact
+PPM_Soil,Pak_Panang_Mangrove_190,Pak_Panang_Mangrove_190_626,Intact
+PPM_Soil,Pak_Panang_Mangrove_190,Pak_Panang_Mangrove_190_627,Intact
+PPM_Soil,Pak_Panang_Mangrove_191,Pak_Panang_Mangrove_191_628,Intact
+PPM_Soil,Pak_Panang_Mangrove_191,Pak_Panang_Mangrove_191_629,Intact
+PPM_Soil,Pak_Panang_Mangrove_191,Pak_Panang_Mangrove_191_630,Intact
+PPM_Soil,Pak_Panang_Mangrove_191,Pak_Panang_Mangrove_191_631,Intact
+PPM_Soil,Pak_Panang_Mangrove_192,Pak_Panang_Mangrove_192_634,Intact
+PPM_Soil,Pak_Panang_Mangrove_192,Pak_Panang_Mangrove_192_635,Intact
+PPM_Soil,Pak_Panang_Mangrove_192,Pak_Panang_Mangrove_192_636,Intact
+PPM_Soil,Pak_Panang_Mangrove_192,Pak_Panang_Mangrove_192_637,Intact
+PPM_Soil,Pak_Panang_Mangrove_193,Pak_Panang_Mangrove_193_638,Intact
+PPM_Soil,Pak_Panang_Mangrove_193,Pak_Panang_Mangrove_193_639,Intact
+PPM_Soil,Pak_Panang_Mangrove_193,Pak_Panang_Mangrove_193_641,Intact
+PPM_Soil,Pak_Panang_Mangrove_193,Pak_Panang_Mangrove_193_642,Intact
+PPM_Soil,Pak_Panang_Mangrove_194,Pak_Panang_Mangrove_194_643,Intact
+PPM_Soil,Pak_Panang_Mangrove_194,Pak_Panang_Mangrove_194_644,Intact
+PPM_Soil,Pak_Panang_Mangrove_194,Pak_Panang_Mangrove_194_645,Intact
+PPM_Soil,Pak_Panang_Mangrove_194,Pak_Panang_Mangrove_194_646,Intact
+AntisanaEcologicalReserve_Soil,Antisana_Ecological_Reserve_108,Antisana_Ecological_Reserve_108_319,NA
+AntisanaEcologicalReserve_Soil,Antisana_Ecological_Reserve_109,Antisana_Ecological_Reserve_109_320,NA
+AntisanaEcologicalReserve_Soil,Antisana_Ecological_Reserve_110,Antisana_Ecological_Reserve_110_321,NA
+AntisanaEcologicalReserve_Soil,Antisana_Ecological_Reserve_111,Antisana_Ecological_Reserve_111_322,NA
+CayambeCocaNationalPark_Soil,Cayambe_Coca_National_Park_102,Cayambe_Coca_National_Park_102_313,NA
+CayambeCocaNationalPark_Soil,Cayambe_Coca_National_Park_103,Cayambe_Coca_National_Park_103_314,NA
+CayambeCocaNationalPark_Soil,Cayambe_Coca_National_Park_104,Cayambe_Coca_National_Park_104_315,NA
+CayambeCocaNationalPark_Soil,Cayambe_Coca_National_Park_105,Cayambe_Coca_National_Park_105_316,NA
+CayambeCocaNationalPark_Soil,Cayambe_Coca_National_Park_106,Cayambe_Coca_National_Park_106_317,NA
+CayambeCocaNationalPark_Soil,Cayambe_Coca_National_Park_107,Cayambe_Coca_National_Park_107_318,NA
+Chingaza_Soil,Chingaza_114,Chingaza_114_335,NA
+Chingaza_Soil,Chingaza_115,Chingaza_115_336,NA
+Chingaza_Soil,Chingaza_116,Chingaza_116_337,NA
+Chingaza_Soil,Chingaza_117,Chingaza_117_338,NA
+LosNevados_Soil,Los_Nevados_118,Los_Nevados_118_339,NA
+LosNevados_Soil,Los_Nevados_119,Los_Nevados_119_340,NA
+LosNevados_Soil,Los_Nevados_120,Los_Nevados_120_341,NA
+Paramo_de_Guerrero_Soil,Paramo_de_Guerrero_121,Paramo_de_Guerrero_121_342,NA
+Paramo_de_Guerrero_Soil,Paramo_de_Guerrero_122,Paramo_de_Guerrero_122_343,NA
+Pastoruri_Soil,Pastoruri_123,Pastoruri_123_344,NA
+PeruKahuish_Soil,Peru_Kahuish_124,Peru_Kahuish_124_345,NA
+PeruKahuish_Soil,Peru_Kahuish_125,Peru_Kahuish_125_346,NA
+PeruKahuish_Soil,Peru_Kahuish_126,Peru_Kahuish_126_347,NA
+PeruKahuish_Soil,Peru_Kahuish_127,Peru_Kahuish_127_348,NA
+Quilcayhuanca_Soil,Quilcayhuanca_128,Quilcayhuanca_128_349,NA
+Quilcayhuanca_Soil,Quilcayhuanca_129,Quilcayhuanca_129_350,NA
+Sajama_Soil,Sajama_112,Sajama_112_333,NA
+Tuni_Soil,Tuni_113,Tuni_113_334,NA
+Catanauan_Soil,Catanauan_213,Catanauan_213_711,Plantation
+Catanauan_Soil,Catanauan_214,Catanauan_214_712,Plantation
+Catanauan_Soil,Catanauan_215,Catanauan_215_713,Plantation
+Catanauan_Soil,Catanauan_216,Catanauan_216_714,Plantation
+Catanauan_Soil,Catanauan_217,Catanauan_217_715,Plantation
+Catanauan_Soil,Catanauan_218,Catanauan_218_716,Plantation
+Catanauan_Soil,Catanauan_219,Catanauan_219_717,Plantation
+Catanauan_Soil,Catanauan_220,Catanauan_220_718,Plantation
+PRE_Soil,Palian_River_Estuary_195,Palian_River_Estuary_195_648,Degraded
+PRE_Soil,Palian_River_Estuary_195,Palian_River_Estuary_195_649,Degraded
+PRE_Soil,Palian_River_Estuary_195,Palian_River_Estuary_195_650,Degraded
+PRE_Soil,Palian_River_Estuary_195,Palian_River_Estuary_195_651,Degraded
+PRE_Soil,Palian_River_Estuary_196,Palian_River_Estuary_196_652,Degraded
+PRE_Soil,Palian_River_Estuary_196,Palian_River_Estuary_196_653,Degraded
+PRE_Soil,Palian_River_Estuary_196,Palian_River_Estuary_196_654,Degraded
+PRE_Soil,Palian_River_Estuary_197,Palian_River_Estuary_197_655,Restoration
+PRE_Soil,Palian_River_Estuary_197,Palian_River_Estuary_197_656,Restoration
+PRE_Soil,Palian_River_Estuary_198,Palian_River_Estuary_198_658,Restoration
+PRE_Soil,Palian_River_Estuary_198,Palian_River_Estuary_198_659,Restoration
+PRE_Soil,Palian_River_Estuary_198,Palian_River_Estuary_198_660,Restoration
+PRE_Soil,Palian_River_Estuary_198,Palian_River_Estuary_198_661,Restoration
+PRE_Soil,Palian_River_Estuary_199,Palian_River_Estuary_199_663,NA
+PRE_Soil,Palian_River_Estuary_199,Palian_River_Estuary_199_664,NA
+PRE_Soil,Palian_River_Estuary_199,Palian_River_Estuary_199_665,NA
+PRE_Soil,Palian_River_Estuary_200,Palian_River_Estuary_200_667,Restoration
+PRE_Soil,Palian_River_Estuary_200,Palian_River_Estuary_200_668,Restoration
+PRE_Soil,Palian_River_Estuary_200,Palian_River_Estuary_200_669,Restoration
+PRE_Soil,Palian_River_Estuary_200,Palian_River_Estuary_200_670,Restoration
+PRE_Soil,Palian_River_Estuary_201,Palian_River_Estuary_201_671,Intact
+PRE_Soil,Palian_River_Estuary_201,Palian_River_Estuary_201_672,Intact
+PRE_Soil,Palian_River_Estuary_201,Palian_River_Estuary_201_673,Intact
+PRE_Soil,Palian_River_Estuary_201,Palian_River_Estuary_201_674,Intact
+PRE_Soil,Palian_River_Estuary_201,Palian_River_Estuary_201_675,Intact
+PRE_Soil,Palian_River_Estuary_201,Palian_River_Estuary_201_676,Intact
+PRE_Soil,Palian_River_Estuary_202,Palian_River_Estuary_202_677,Restoration
+PRE_Soil,Palian_River_Estuary_202,Palian_River_Estuary_202_678,Restoration
+PRE_Soil,Palian_River_Estuary_202,Palian_River_Estuary_202_679,Restoration
+PRE_Soil,Palian_River_Estuary_202,Palian_River_Estuary_202_680,Restoration
+PRE_Soil,Palian_River_Estuary_203,Palian_River_Estuary_203_681,NA
+PRE_Soil,Palian_River_Estuary_203,Palian_River_Estuary_203_682,NA
+PRE_Soil,Palian_River_Estuary_203,Palian_River_Estuary_203_683,NA
+PRE_Soil,Palian_River_Estuary_203,Palian_River_Estuary_203_684,NA
+PRE_Soil,Palian_River_Estuary_204,Palian_River_Estuary_204_685,Intact
+PRE_Soil,Palian_River_Estuary_204,Palian_River_Estuary_204_686,Intact
+PRE_Soil,Palian_River_Estuary_204,Palian_River_Estuary_204_687,Intact
+PRE_Soil,Palian_River_Estuary_204,Palian_River_Estuary_204_688,Intact
+PRE_Soil,Palian_River_Estuary_204,Palian_River_Estuary_204_689,Intact
+PRE_Soil,Palian_River_Estuary_204,Palian_River_Estuary_204_690,Intact
+PRE_Soil,Palian_River_Estuary_205,Palian_River_Estuary_205_691,Intact
+PRE_Soil,Palian_River_Estuary_205,Palian_River_Estuary_205_692,Intact
+PRE_Soil,Palian_River_Estuary_205,Palian_River_Estuary_205_693,Intact
+PRE_Soil,Palian_River_Estuary_205,Palian_River_Estuary_205_694,Intact
+PRE_Soil,Palian_River_Estuary_205,Palian_River_Estuary_205_695,Intact
+PRE_Soil,Palian_River_Estuary_205,Palian_River_Estuary_205_696,Intact
+PRE_Soil,Palian_River_Estuary_206,Palian_River_Estuary_206_697,NA
+PRE_Soil,Palian_River_Estuary_206,Palian_River_Estuary_206_698,NA
+PRE_Soil,Palian_River_Estuary_206,Palian_River_Estuary_206_699,NA
+PRE_Soil,Palian_River_Estuary_206,Palian_River_Estuary_206_700,NA
+PRE_Soil,Palian_River_Estuary_206,Palian_River_Estuary_206_701,NA
+PRE_Soil,Palian_River_Estuary_206,Palian_River_Estuary_206_702,NA
+PRE_Soil,Palian_River_Estuary_207,Palian_River_Estuary_207_703,Restoration
+PRE_Soil,Palian_River_Estuary_207,Palian_River_Estuary_207_704,Restoration
+PRE_Soil,Palian_River_Estuary_207,Palian_River_Estuary_207_705,Restoration
+KohKong_Soil,Koh_Kohng_131,Koh_Kohng_131_355,Intact
+KohKong_Soil,Koh_Kohng_131,Koh_Kohng_131_356,Intact
+KohKong_Soil,Koh_Kohng_131,Koh_Kohng_131_357,Intact
+KohKong_Soil,Koh_Kohng_131,Koh_Kohng_131_358,Intact
+KohKong_Soil,Koh_Kohng_132,Koh_Kohng_132_359,Intact
+KohKong_Soil,Koh_Kohng_132,Koh_Kohng_132_360,Intact
+KohKong_Soil,Koh_Kohng_132,Koh_Kohng_132_361,Intact
+KohKong_Soil,Koh_Kohng_133,Koh_Kohng_133_362,Intact
+KohKong_Soil,Koh_Kohng_133,Koh_Kohng_133_364,Intact
+KohKong_Soil,Koh_Kohng_134,Koh_Kohng_134_365,Intact
+KohKong_Soil,Koh_Kohng_134,Koh_Kohng_134_366,Intact
+KohKong_Soil,Koh_Kohng_134,Koh_Kohng_134_367,Intact
+KohKong_Soil,Koh_Kohng_134,Koh_Kohng_134_368,Intact
+KohKong_Soil,Koh_Kohng_134,Koh_Kohng_134_369,Intact
+KohKong_Soil,Koh_Kohng_135,Koh_Kohng_135_370,Intact
+KohKong_Soil,Koh_Kohng_135,Koh_Kohng_135_371,Intact
+KohKong_Soil,Koh_Kohng_135,Koh_Kohng_135_372,Intact
+KohKong_Soil,Koh_Kohng_136,Koh_Kohng_136_373,Intact
+KohKong_Soil,Koh_Kohng_136,Koh_Kohng_136_374,Intact
+KohKong_Soil,Koh_Kohng_136,Koh_Kohng_136_375,Intact
+KohKong_Soil,Koh_Kohng_136,Koh_Kohng_136_376,Intact
+KohKong_Soil,Koh_Kohng_136,Koh_Kohng_136_377,Intact
+KohKong_Soil,Koh_Kohng_137,Koh_Kohng_137_378,Intact
+KohKong_Soil,Koh_Kohng_137,Koh_Kohng_137_379,Intact
+KohKong_Soil,Koh_Kohng_137,Koh_Kohng_137_380,Intact
+KohKong_Soil,Koh_Kohng_137,Koh_Kohng_137_381,Intact
+KohKong_Soil,Koh_Kohng_137,Koh_Kohng_137_382,Intact
+KohKong_Soil,Koh_Kohng_138,Koh_Kohng_138_383,Intact
+KohKong_Soil,Koh_Kohng_138,Koh_Kohng_138_384,Intact
+KohKong_Soil,Koh_Kohng_138,Koh_Kohng_138_385,Intact
+KohKong_Soil,Koh_Kohng_138,Koh_Kohng_138_386,Intact
+KohKong_Soil,Koh_Kohng_138,Koh_Kohng_138_387,Intact
+KohKong_Soil,Koh_Kohng_139,Koh_Kohng_139_388,Intact
+KohKong_Soil,Koh_Kohng_139,Koh_Kohng_139_389,Intact
+KohKong_Soil,Koh_Kohng_139,Koh_Kohng_139_390,Intact
+KohKong_Soil,Koh_Kohng_139,Koh_Kohng_139_391,Intact
+KohKong_Soil,Koh_Kohng_139,Koh_Kohng_139_392,Intact
+KohKong_Soil,Koh_Kohng_140,Koh_Kohng_140_393,Intact
+KohKong_Soil,Koh_Kohng_140,Koh_Kohng_140_394,Intact
+KohKong_Soil,Koh_Kohng_140,Koh_Kohng_140_395,Intact
+KohKong_Soil,Koh_Kohng_141,Koh_Kohng_141_396,Degraded
+KohKong_Soil,Koh_Kohng_141,Koh_Kohng_141_397,Degraded
+KohKong_Soil,Koh_Kohng_141,Koh_Kohng_141_398,Degraded
+KohKong_Soil,Koh_Kohng_141,Koh_Kohng_141_399,Degraded
+KohKong_Soil,Koh_Kohng_141,Koh_Kohng_141_400,Degraded
+KohKong_Soil,Koh_Kohng_142,Koh_Kohng_142_401,Intact
+KohKong_Soil,Koh_Kohng_142,Koh_Kohng_142_402,Intact
+KohKong_Soil,Koh_Kohng_142,Koh_Kohng_142_403,Intact
+KohKong_Soil,Koh_Kohng_142,Koh_Kohng_142_404,Intact
+KohKong_Soil,Koh_Kohng_142,Koh_Kohng_142_405,Intact
+KohKong_Soil,Koh_Kohng_143,Koh_Kohng_143_406,Intact
+KohKong_Soil,Koh_Kohng_143,Koh_Kohng_143_407,Intact
+KohKong_Soil,Koh_Kohng_143,Koh_Kohng_143_408,Intact
+KohKong_Soil,Koh_Kohng_143,Koh_Kohng_143_409,Intact
+KohKong_Soil,Koh_Kohng_143,Koh_Kohng_143_410,Intact
+KohKong_Soil,Koh_Kohng_144,Koh_Kohng_144_411,Intact
+KohKong_Soil,Koh_Kohng_144,Koh_Kohng_144_412,Intact
+KohKong_Soil,Koh_Kohng_144,Koh_Kohng_144_413,Intact
+KohKong_Soil,Koh_Kohng_145,Koh_Kohng_145_414,Intact
+KohKong_Soil,Koh_Kohng_145,Koh_Kohng_145_415,Intact
+KohKong_Soil,Koh_Kohng_145,Koh_Kohng_145_416,Intact
+KohKong_Soil,Koh_Kohng_145,Koh_Kohng_145_417,Intact
+KohKong_Soil,Koh_Kohng_145,Koh_Kohng_145_418,Intact
+KohKong_Soil,Koh_Kohng_146,Koh_Kohng_146_419,Intact
+KohKong_Soil,Koh_Kohng_146,Koh_Kohng_146_420,Intact
+KohKong_Soil,Koh_Kohng_146,Koh_Kohng_146_421,Intact
+KohKong_Soil,Koh_Kohng_146,Koh_Kohng_146_422,Intact
+KohKong_Soil,Koh_Kohng_146,Koh_Kohng_146_423,Intact
+KohKong_Soil,Koh_Kohng_147,Koh_Kohng_147_424,Intact
+KohKong_Soil,Koh_Kohng_147,Koh_Kohng_147_425,Intact
+KohKong_Soil,Koh_Kohng_147,Koh_Kohng_147_426,Intact
+KohKong_Soil,Koh_Kohng_147,Koh_Kohng_147_427,Intact
+KohKong_Soil,Koh_Kohng_147,Koh_Kohng_147_428,Intact
+KohKong_Soil,Koh_Kohng_148,Koh_Kohng_148_429,Intact
+KohKong_Soil,Koh_Kohng_148,Koh_Kohng_148_430,Intact
+KohKong_Soil,Koh_Kohng_148,Koh_Kohng_148_431,Intact
+KohKong_Soil,Koh_Kohng_148,Koh_Kohng_148_432,Intact
+KohKong_Soil,Koh_Kohng_148,Koh_Kohng_148_433,Intact
+KohKong_Soil,Koh_Kohng_149,Koh_Kohng_149_434,NA
+KohKong_Soil,Koh_Kohng_149,Koh_Kohng_149_435,NA
+KohKong_Soil,Koh_Kohng_149,Koh_Kohng_149_436,NA
+KohKong_Soil,Koh_Kohng_149,Koh_Kohng_149_437,NA
+KohKong_Soil,Koh_Kohng_149,Koh_Kohng_149_438,NA
+KohKong_Soil,Koh_Kohng_150,Koh_Kohng_150_439,NA
+KohKong_Soil,Koh_Kohng_150,Koh_Kohng_150_440,NA
+KohKong_Soil,Koh_Kohng_150,Koh_Kohng_150_441,NA
+KohKong_Soil,Koh_Kohng_150,Koh_Kohng_150_442,NA
+KohKong_Soil,Koh_Kohng_150,Koh_Kohng_150_443,NA
+KohKong_Soil,Koh_Kohng_151,Koh_Kohng_151_444,NA
+KohKong_Soil,Koh_Kohng_151,Koh_Kohng_151_445,NA
+KohKong_Soil,Koh_Kohng_151,Koh_Kohng_151_446,NA
+KohKong_Soil,Koh_Kohng_152,Koh_Kohng_152_447,NA
+KohKong_Soil,Koh_Kohng_152,Koh_Kohng_152_448,NA
+KohKong_Soil,Koh_Kohng_152,Koh_Kohng_152_449,NA
+KohKong_Soil,Koh_Kohng_152,Koh_Kohng_152_450,NA
+KohKong_Soil,Koh_Kohng_152,Koh_Kohng_152_451,NA
+KohKong_Soil,Koh_Kohng_153,Koh_Kohng_153_454,Intact
+KohKong_Soil,Koh_Kohng_154,Koh_Kohng_154_457,NA
+KohKong_Soil,Koh_Kohng_154,Koh_Kohng_154_458,NA
+KohKong_Soil,Koh_Kohng_154,Koh_Kohng_154_459,NA
+KohKong_Soil,Koh_Kohng_154,Koh_Kohng_154_460,NA
+KohKong_Soil,Koh_Kohng_155,Koh_Kohng_155_461,NA
+KohKong_Soil,Koh_Kohng_155,Koh_Kohng_155_462,NA
+KohKong_Soil,Koh_Kohng_155,Koh_Kohng_155_463,NA
+KohKong_Soil,Koh_Kohng_155,Koh_Kohng_155_464,NA
+KohKong_Soil,Koh_Kohng_155,Koh_Kohng_155_465,NA
+KohKong_Soil,Koh_Kohng_156,Koh_Kohng_156_466,NA
+KohKong_Soil,Koh_Kohng_156,Koh_Kohng_156_467,NA
+KohKong_Soil,Koh_Kohng_156,Koh_Kohng_156_468,NA
+KohKong_Soil,Koh_Kohng_156,Koh_Kohng_156_469,NA
+KohKong_Soil,Koh_Kohng_156,Koh_Kohng_156_470,NA
+KohKong_Soil,Koh_Kohng_157,Koh_Kohng_157_471,NA
+KohKong_Soil,Koh_Kohng_157,Koh_Kohng_157_472,NA
+KohKong_Soil,Koh_Kohng_157,Koh_Kohng_157_474,NA
+KohKong_Soil,Koh_Kohng_158,Koh_Kohng_158_476,NA
+KohKong_Soil,Koh_Kohng_158,Koh_Kohng_158_477,NA
+KohKong_Soil,Koh_Kohng_158,Koh_Kohng_158_478,NA
+KohKong_Soil,Koh_Kohng_158,Koh_Kohng_158_479,NA
+KohKong_Soil,Koh_Kohng_158,Koh_Kohng_158_480,NA
+PreyNob_Soil,Prey_Nob_159,Prey_Nob_159_481,Degraded
+PreyNob_Soil,Prey_Nob_159,Prey_Nob_159_482,Intact
+PreyNob_Soil,Prey_Nob_159,Prey_Nob_159_483,NA
+PreyNob_Soil,Prey_Nob_159,Prey_Nob_159_484,NA
+PreyNob_Soil,Prey_Nob_160,Prey_Nob_160_485,Intact
+PreyNob_Soil,Prey_Nob_160,Prey_Nob_160_486,Intact
+PreyNob_Soil,Prey_Nob_160,Prey_Nob_160_487,Intact
+PreyNob_Soil,Prey_Nob_160,Prey_Nob_160_488,Intact
+PreyNob_Soil,Prey_Nob_160,Prey_Nob_160_489,Intact
+PreyNob_Soil,Prey_Nob_161,Prey_Nob_161_490,Degraded
+PreyNob_Soil,Prey_Nob_161,Prey_Nob_161_491,Degraded
+PreyNob_Soil,Prey_Nob_161,Prey_Nob_161_492,Degraded
+PreyNob_Soil,Prey_Nob_161,Prey_Nob_161_493,Degraded
+PreyNob_Soil,Prey_Nob_161,Prey_Nob_161_494,Degraded
+PreyNob_Soil,Prey_Nob_162,Prey_Nob_162_495,Intact
+PreyNob_Soil,Prey_Nob_162,Prey_Nob_162_496,Intact
+PreyNob_Soil,Prey_Nob_162,Prey_Nob_162_497,Intact
+PreyNob_Soil,Prey_Nob_163,Prey_Nob_163_498,Intact
+PreyNob_Soil,Prey_Nob_163,Prey_Nob_163_499,Intact
+PreyNob_Soil,Prey_Nob_163,Prey_Nob_163_500,Intact
+PreyNob_Soil,Prey_Nob_163,Prey_Nob_163_501,Intact
+PreyNob_Soil,Prey_Nob_163,Prey_Nob_163_502,Intact
+PreyNob_Soil,Prey_Nob_164,Prey_Nob_164_503,NA
+PreyNob_Soil,Prey_Nob_164,Prey_Nob_164_504,NA
+PreyNob_Soil,Prey_Nob_164,Prey_Nob_164_505,NA
+PreyNob_Soil,Prey_Nob_165,Prey_Nob_165_506,NA
+PreyNob_Soil,Prey_Nob_165,Prey_Nob_165_507,NA
+RufijiRiverDelta_Soil,Rufiji_River_Delta_1,Rufiji_River_Delta_1_1,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_2,Rufiji_River_Delta_2_2,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_3,Rufiji_River_Delta_3_3,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_4,Rufiji_River_Delta_4_4,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_5,Rufiji_River_Delta_5_5,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_6,Rufiji_River_Delta_6_6,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_7,Rufiji_River_Delta_7_7,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_8,Rufiji_River_Delta_8_8,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_9,Rufiji_River_Delta_9_9,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_10,Rufiji_River_Delta_10_10,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_11,Rufiji_River_Delta_11_11,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_12,Rufiji_River_Delta_12_12,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_13,Rufiji_River_Delta_13_13,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_14,Rufiji_River_Delta_14_14,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_15,Rufiji_River_Delta_15_15,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_16,Rufiji_River_Delta_16_16,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_17,Rufiji_River_Delta_17_17,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_18,Rufiji_River_Delta_18_18,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_19,Rufiji_River_Delta_19_19,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_20,Rufiji_River_Delta_20_20,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_21,Rufiji_River_Delta_21_21,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_22,Rufiji_River_Delta_22_22,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_23,Rufiji_River_Delta_23_23,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_24,Rufiji_River_Delta_24_24,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_25,Rufiji_River_Delta_25_25,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_26,Rufiji_River_Delta_26_26,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_27,Rufiji_River_Delta_27_27,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_28,Rufiji_River_Delta_28_28,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_29,Rufiji_River_Delta_29_29,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_30,Rufiji_River_Delta_30_30,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_31,Rufiji_River_Delta_31_31,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_32,Rufiji_River_Delta_32_32,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_33,Rufiji_River_Delta_33_33,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_34,Rufiji_River_Delta_34_34,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_35,Rufiji_River_Delta_35_35,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_36,Rufiji_River_Delta_36_36,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_37,Rufiji_River_Delta_37_37,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_38,Rufiji_River_Delta_38_38,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_39,Rufiji_River_Delta_39_39,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_40,Rufiji_River_Delta_40_40,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_41,Rufiji_River_Delta_41_41,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_42,Rufiji_River_Delta_42_42,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_43,Rufiji_River_Delta_43_43,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_44,Rufiji_River_Delta_44_44,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_45,Rufiji_River_Delta_45_45,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_46,Rufiji_River_Delta_46_46,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_47,Rufiji_River_Delta_47_47,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_48,Rufiji_River_Delta_48_48,Intact
+RufijiRiverDelta_Soil,Rufiji_River_Delta_49,Rufiji_River_Delta_49_49,Intact
 Carlin_et_al_2021,ELM1812,ELM1812-MFA1,tidally restored
 Carlin_et_al_2021,ELM1812,ELM1812-MFA1,revegetated
 Carlin_et_al_2021,ELM1812,ELM1812-PWA1,tidally restored
