@@ -34,8 +34,8 @@ depth_raw <- full_join(date_raw, soil_raw, by = c("Site", "Depth")) %>%
          fraction_carbon = gsub("no data", NA, fraction_carbon),
          fraction_carbon = as.numeric(fraction_carbon)/100,
          fraction_organic_matter = as.numeric(fraction_organic_matter)/100,
-         cs137_unit = "dpm/g",
-         pb210_unit = "dpm/g",
+         cs137_unit = "disintegrationsPerMinutePerGram",
+         pb210_unit = "disintegrationsPerMinutePerGram",
          habitat = "marsh")
 
 depthseries <- depth_raw %>% 
@@ -44,11 +44,12 @@ depthseries <- depth_raw %>%
            cs137_unit, excess_pb210_activity, excess_pb210_activity_se, pb210_unit))
 
 cores <- depth_raw %>% 
-  mutate(position_method = "other low resolution",
+  mutate(year = 2014, month = 8,
+    position_method = "other low resolution",
          position_notes = "site bounding box in site table",
          salinity_class = "estuarine",
          salinity_method = "field observation") %>% 
-  select(c(study_id, site_id, core_id, position_method, position_notes, salinity_class, salinity_method,
+  select(c(study_id, site_id, core_id, year, month, position_method, position_notes, salinity_class, salinity_method,
            habitat)) %>% 
   distinct()
   
