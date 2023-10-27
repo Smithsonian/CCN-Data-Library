@@ -193,16 +193,16 @@ Krauss_depthseries <- depthseries_DBD_raw %>%
   
   # Each core represents differente veg/salinity/etc. spectra, so each core will
   #   be a distinct site
-  mutate(site_id = recode(core_id, "turkey_creek_1" = "Waccamaw_River_Turkey_creek_high",
-                          "turkey_creek_2" = "Waccamaw_River_Turkey_creek_low",
-                          "butler_island_1" = "Waccamaw_River_Butler_island",
-                          "richmond_island_1" = "Waccamaw_River_Richmond_island",
-                          "savannah_mid_1" = "Savannah_River_mid",
-                          "savannah_low_1" = "Savannah_River_low",
-                          "savannah_mid_2" = "Savannah_River_mid",
-                          "savannah_high_1" = "Savannah_River_high"
-  )) %>%
-  
+  # mutate(site_id = recode(core_id, "turkey_creek_1" = "Waccamaw_River_Turkey_creek_high",
+  #                         "turkey_creek_2" = "Waccamaw_River_Turkey_creek_low",
+  #                         "butler_island_1" = "Waccamaw_River_Butler_island",
+  #                         "richmond_island_1" = "Waccamaw_River_Richmond_island",
+  #                         "savannah_mid_1" = "Savannah_River_mid",
+  #                         "savannah_low_1" = "Savannah_River_low",
+  #                         "savannah_mid_2" = "Savannah_River_mid",
+  #                         "savannah_high_1" = "Savannah_River_high"
+  # )) %>%
+  # 
   # Some c14 ages yielded post-modern dates. set to NA and add a note
   mutate(c14_notes = ifelse(c14_age == ">Modern", "c14 age yielded greater than modern day", NA)) %>%
   mutate(c14_age = ifelse(c14_age == ">Modern", NA, c14_age)) %>%
@@ -367,7 +367,9 @@ cores <- depthseries %>%
                                     core_id == "savannah_mid_1" ~ -81.14,
                                     core_id == "savannah_low_1" ~ -81.14, 
                                     core_id == "savannah_mid_2" ~ -81.15,
-                                    core_id == "savannah_high_1" ~ -81.155)) %>%
+                                    core_id == "savannah_high_1" ~ -81.155),
+         year = case_when(site_id == "Waccamaw"~2011,
+                          site_id == "Savannah"~2012)) %>%
   
   # Designate salinity class. Note that both the "oligohaline", "salty", and 
   #   "fresh tidal" sites are all classified as oligohaline according to CCRCN standards.
@@ -392,10 +394,10 @@ cores <- depthseries %>%
 
 ## ....3C. Site-level data #############
 
-sites <- cores %>%
-  distinct(study_id, site_id, salinity_class, vegetation_class, vegetation_method,
-         inundation_class)
-                                
+# sites <- cores %>%
+#   distinct(study_id, site_id, salinity_class, vegetation_class, vegetation_method,
+#          inundation_class)
+#                                 
                               
 ## ....3D. Impact data #################
 
@@ -501,7 +503,7 @@ updated <- updateTables(table_names)
 
 # save listed tables to objects
 
-sites <- updated$sites
+# sites <- updated$sites
 impacts <- updated$impacts
 methods <- updated$methods
 depthseries <- updated$depthseries
@@ -526,7 +528,7 @@ numeric_test_results <- test_numeric_vars(depthseries)
 # Reorder tables according to CCRCN guidance
 cores <- reorderColumns("cores", cores)
 depthseries <- reorderColumns("depthseries", depthseries)
-sites <- reorderColumns("sites", sites)
+# sites <- reorderColumns("sites", sites)
 impacts <- reorderColumns("impacts", impacts)
 species <- reorderColumns("species", species)
 
@@ -534,7 +536,7 @@ species <- reorderColumns("species", species)
 ## 5. Write data ######################
 write_csv(depthseries, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_depthseries.csv")
 write_csv(cores, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_cores.csv")
-write_csv(sites, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
+# write_csv(sites, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_sites.csv")
 write_csv(impacts, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_impacts.csv")
 write_csv(species, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_species.csv")
 write_csv(methods, "data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_methods.csv")
