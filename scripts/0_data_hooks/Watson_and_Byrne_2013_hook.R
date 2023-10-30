@@ -73,6 +73,9 @@ depthseries <- age_depth_data %>%
   mutate(method_id = "single set of methods") %>% 
   ungroup()
 
+### Cores 
+cores <- cores %>% 
+  mutate(year = 2005) # This was confirmed by email with EBW
 
 #### create lookup table to match site_id from cores table to depthseries 
 lookupdf <- data.frame(cores[c("site_id", "core_id")])
