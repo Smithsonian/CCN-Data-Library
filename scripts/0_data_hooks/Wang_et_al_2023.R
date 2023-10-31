@@ -6,6 +6,10 @@
 ## Libraries
 library(tidyverse)
 library(leaflet)
+library(RefManageR)
+
+source("scripts/1_data_formatting/curation_functions.R") 
+source("scripts/1_data_formatting/qa_functions.R") 
 
 ## Read in the data
 date_raw <- read.csv("data/primary_studies/Wang_et_al_2023/original/JB-Cs-Pb-rev.csv", na = "no data")
@@ -44,30 +48,50 @@ depthseries <- depth_raw %>%
            cs137_unit, excess_pb210_activity, excess_pb210_activity_se, pb210_unit))
 
 cores <- depth_raw %>% 
-  mutate(year = 2014, month = 8,
-    position_method = "other low resolution",
-         position_notes = "site bounding box in site table",
+  mutate(year = 2014, 
+         month = 8,
+         day = 18,
+         position_method = "other low resolution",
+         position_notes = "digitized from a map in a figure",
          salinity_class = "estuarine",
-         salinity_method = "field observation") %>% 
-  select(c(study_id, site_id, core_id, year, month, position_method, position_notes, salinity_class, salinity_method,
-           habitat)) %>% 
-  distinct()
-  
-sites <- depth_raw %>% 
-  mutate(site_latitude_max = 40.6890,
-         site_latitude_min = 40.5227,
-         site_longitude_max = -73.9819,
-         site_longitude_min = -73.7128,
-         site_description = "Jamaica Bay estuary") %>% 
-  select(c(study_id, site_id, site_description, site_latitude_max, site_latitude_min, 
-           site_longitude_max, site_longitude_min)) %>% 
+         salinity_method = "field observation",
+         latitude = case_when(core_id == "Big_Egg" ~ "40.596851",
+                              core_id == "Black_Bank" ~ "40.623210",
+                              core_id == "Duck_Point" ~ "40.620355",
+                              core_id == "East_High" ~ "40.619627",
+                              core_id == "Fresh_Creek" ~ "40.646731",
+                              core_id == "JoCo" ~ "40.613475",
+                              core_id == "Little_Egg" ~ "40.592847",
+                              core_id == "Ruffle_Bar" ~ "40.597558",
+                              core_id == "Spring_Creek" ~ "40.659556",
+                              core_id == "Yellow_Bar" ~ "40.605774",
+                              core_id == "Stony_Creek" ~ "40.609352",
+                              core_id == "Four_Sparrow" ~ "40.602661",
+                              T ~ NA_character_),
+         longitude = case_when(core_id == "Big_Egg" ~ "-73.832581",
+                               core_id == "Black_Bank" ~ "-73.828947",
+                               core_id == "Duck_Point" ~ "-73.855223",
+                               core_id == "East_High" ~ "-73.804371",
+                               core_id == "Fresh_Creek" ~ "-73.888732",
+                               core_id == "JoCo" ~ "-73.798225",
+                               core_id == "Little_Egg" ~ "-73.835624",
+                               core_id == "Ruffle_Bar" ~ "-73.859548",
+                               core_id == "Spring_Creek" ~ "-73.856117",
+                               core_id == "Yellow_Bar" ~ "-73.841028",
+                               core_id == "Stony_Creek" ~ "-73.851277",
+                               core_id == "Four_Sparrow" ~ "-73.903494",
+                               T ~ NA_character_),
+         latitude = as.numeric(latitude),
+         longitude = as.numeric(longitude)) %>%
+  select(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method, position_notes, 
+         salinity_class, salinity_method, habitat) %>% 
   distinct()
   
 methods <- data.frame(study_id = "Wang_et_al_2023",
                       method_id = "single set of methods",
                       coring_method = "push core",
                       roots_flag = "roots and rhizomes separated",
-                      sediment_sieved_flag = "sediment sieved",
+                      sediment_sieved_flag = "sediment not sieved",
                       compaction_flag = "not specified",
                       dry_bulk_density_temperature = 60,
                       dry_bulk_density_sample_volume = 39.23,
@@ -86,13 +110,13 @@ methods <- data.frame(study_id = "Wang_et_al_2023",
 
 ## QAQC ####
 
-# ## Mapping
-# leaflet(cores) %>%
-#   addTiles() %>% 
-#   addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
+## Mapping
+leaflet(cores) %>%
+  addTiles() %>%
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
 
 ## Table testing
-table_names <- c("cores", "depthseries", "sites", "methods")
+table_names <- c("cores", "depthseries", "methods")
 
 # Check col and varnames
 testTableCols(table_names)
@@ -112,7 +136,7 @@ testIDs(cores, depthseries, by = "site")
 
 # test numeric attribute ranges
 fractionNotPercent(depthseries)
-# testNumericCols(depthseries)
+testNumericCols(depthseries)
 
 
 ## 4. Bibliography ####
@@ -137,7 +161,6 @@ bib_file <- study_citation %>%
 ## 5. Write curated data ####
 write_csv(cores, "data/primary_studies/Wang_et_al_2023/derivative/Wang_et_al_2023_cores.csv") 
 write_csv(depthseries, "data/primary_studies/Wang_et_al_2023/derivative/Wang_et_al_2023_depthseries.csv")
-write_csv(sites, "data/primary_studies/Wang_et_al_2023/derivative/Wang_et_al_2023_sites.csv")
 write_csv(methods, "data/primary_studies/Wang_et_al_2023/derivative/Wang_et_al_2023_methods.csv")
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Wang_et_al_2023/derivative/Wang_et_al_2023_study_citations.bib")
 write_csv(study_citation, "data/primary_studies/Wang_et_al_2023/derivative/Wang_et_al_2023_study_citations.csv")
