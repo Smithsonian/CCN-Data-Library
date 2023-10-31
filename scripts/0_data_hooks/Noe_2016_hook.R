@@ -69,7 +69,9 @@ cores <- cores_raw %>%
   select(study_id, site_id, core_id, core_latitude, core_longitude, core_elevation, 
          salinity_class, vegetation_class, core_length_flag) %>%
   select_if(function(x) {!all(is.na(x))}) %>%
-  mutate(salinity_class = recode(salinity_class, "freshwater" = "fresh"))
+  mutate(salinity_class = recode(salinity_class, "freshwater" = "fresh"),
+         year = 2011,
+         month = 11)
 
 ## Curate species and impact data ###########
 species <- species_raw %>%
