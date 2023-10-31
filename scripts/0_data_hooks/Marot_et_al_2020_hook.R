@@ -595,6 +595,11 @@ bib_file <- study_citation %>%
   select(-c(study_id, publication_type)) %>% 
   column_to_rownames("bibliography_id")
 
+# JH: I want to overwrite the site_id
+# These are all grand bay and the sites don't seem to represent any type of unique gradient or sampling locations within
+cores <- mutate(cores, site_id = "Grand Bay")
+depthseries <- mutate(depthseries, site_id = "Grand Bay")
+species <- mutate(species, site_id = "Grand Bay")
 
 ## Step 12: Write curated data ####
 write_csv(cores, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_cores.csv") 

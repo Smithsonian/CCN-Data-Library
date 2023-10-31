@@ -1,13 +1,13 @@
-study_id,site_id,core_id,year,month,position_method,position_notes,salinity_class,salinity_method,habitat
-Wang_et_al_2023,Big_Egg,Big_Egg,2014,8,other low resolution,site bounding box in site table,estuarine,field observation,marsh
-Wang_et_al_2023,Black_Bank,Black_Bank,2014,8,other low resolution,site bounding box in site table,estuarine,field observation,marsh
-Wang_et_al_2023,Duck_Point,Duck_Point,2014,8,other low resolution,site bounding box in site table,estuarine,field observation,marsh
-Wang_et_al_2023,East_High,East_High,2014,8,other low resolution,site bounding box in site table,estuarine,field observation,marsh
-Wang_et_al_2023,Fresh_Creek,Fresh_Creek,2014,8,other low resolution,site bounding box in site table,estuarine,field observation,marsh
-Wang_et_al_2023,JoCo,JoCo,2014,8,other low resolution,site bounding box in site table,estuarine,field observation,marsh
-Wang_et_al_2023,Little_Egg,Little_Egg,2014,8,other low resolution,site bounding box in site table,estuarine,field observation,marsh
-Wang_et_al_2023,Ruffle_Bar,Ruffle_Bar,2014,8,other low resolution,site bounding box in site table,estuarine,field observation,marsh
-Wang_et_al_2023,Spring_Creek,Spring_Creek,2014,8,other low resolution,site bounding box in site table,estuarine,field observation,marsh
-Wang_et_al_2023,Yellow_Bar,Yellow_Bar,2014,8,other low resolution,site bounding box in site table,estuarine,field observation,marsh
-Wang_et_al_2023,Stony_Creek,Stony_Creek,2014,8,other low resolution,site bounding box in site table,estuarine,field observation,marsh
-Wang_et_al_2023,Four_Sparrow,Four_Sparrow,2014,8,other low resolution,site bounding box in site table,estuarine,field observation,marsh
+study_id,site_id,core_id,year,month,day,latitude,longitude,position_method,position_notes,salinity_class,salinity_method,habitat
+Wang_et_al_2023,Big_Egg,Big_Egg,2014,8,18,40.596851,-73.832581,other low resolution,digitized from a map in a figure,estuarine,field observation,marsh
+Wang_et_al_2023,Black_Bank,Black_Bank,2014,8,18,40.62321,-73.828947,other low resolution,digitized from a map in a figure,estuarine,field observation,marsh
+Wang_et_al_2023,Duck_Point,Duck_Point,2014,8,18,40.620355000000004,-73.855223,other low resolution,digitized from a map in a figure,estuarine,field observation,marsh
+Wang_et_al_2023,East_High,East_High,2014,8,18,40.619627,-73.804371,other low resolution,digitized from a map in a figure,estuarine,field observation,marsh
+Wang_et_al_2023,Fresh_Creek,Fresh_Creek,2014,8,18,40.646731,-73.888732,other low resolution,digitized from a map in a figure,estuarine,field observation,marsh
+Wang_et_al_2023,JoCo,JoCo,2014,8,18,40.613475,-73.798225,other low resolution,digitized from a map in a figure,estuarine,field observation,marsh
+Wang_et_al_2023,Little_Egg,Little_Egg,2014,8,18,40.592847,-73.835624,other low resolution,digitized from a map in a figure,estuarine,field observation,marsh
+Wang_et_al_2023,Ruffle_Bar,Ruffle_Bar,2014,8,18,40.597558,-73.859548,other low resolution,digitized from a map in a figure,estuarine,field observation,marsh
+Wang_et_al_2023,Spring_Creek,Spring_Creek,2014,8,18,40.659556,-73.856117,other low resolution,digitized from a map in a figure,estuarine,field observation,marsh
+Wang_et_al_2023,Yellow_Bar,Yellow_Bar,2014,8,18,40.605774,-73.841028,other low resolution,digitized from a map in a figure,estuarine,field observation,marsh
+Wang_et_al_2023,Stony_Creek,Stony_Creek,2014,8,18,40.609352,-73.851277,other low resolution,digitized from a map in a figure,estuarine,field observation,marsh
+Wang_et_al_2023,Four_Sparrow,Four_Sparrow,2014,8,18,40.602661,-73.903494,other low resolution,digitized from a map in a figure,estuarine,field observation,marsh
