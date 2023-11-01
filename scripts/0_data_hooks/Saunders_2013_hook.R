@@ -47,7 +47,7 @@ depth_raw <- raw_data %>%
          age = ifelse(grepl("-", age), "NA", age),
          cs137_activity = ifelse(grepl("-", cs137_activity), "NA", cs137_activity),
          cs137_unit = "picoCuriesPerGram",
-         pb210_unit = "numberPerGramPerMinute") 
+         pb210_unit = "disintegrationsPerMinutePerGram") 
 
 depthseries <- depth_raw %>% 
   select(study_id, site_id, core_id, method_id, depth_min, depth_max, dry_bulk_density, 

@@ -31,8 +31,8 @@ depthseries <- raw_depthseries %>%
          method_id = "single set of methods") %>%
   # Modify carbon stock variables: 
   mutate(fraction_carbon = percent_carbon / 100,
-         pb210_unit = ifelse(!is.na(total_pb210_activity), "distintegrationsPerMinutePerGram", NA),
-         ra226_unit = ifelse(!is.na(ra226_activity), "distintegrationsPerMinutePerGram", NA)) %>%
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
+         ra226_unit = ifelse(!is.na(ra226_activity), "disintegrationsPerMinutePerGram", NA)) %>%
   select(study_id, site_id, core_id, method_id, depth_min, depth_max,
          dry_bulk_density, fraction_carbon, 
          total_pb210_activity, total_pb210_activity_sd,  

@@ -75,10 +75,10 @@ depthseries <- dt1 %>%
   mutate(fraction_carbon = ifelse(is.nan(fraction_carbon)==TRUE, NA, fraction_carbon), 
          pb214_activity = ifelse(is.nan(pb214_activity)==TRUE, NA, pb214_activity)) %>%
   mutate(fraction_carbon = fraction_carbon / 100,
-         cs137_unit = "microbecquerelPerGram", # metadata indicates microbecquerelPerGram, not millibecquerelPerGram
-         pb210_unit = "becquerelPerGram", 
-         pb214_unit = ifelse(is.na(pb214_activity) == FALSE, "becquerelPerGram", NA),  
-         bi214_unit = "becquerelPerGram") %>%
+         cs137_unit = "microbecquerelsPerGram", # metadata indicates microbecquerelPerGram, not millibecquerelPerGram
+         pb210_unit = "becquerelsPerGram", 
+         pb214_unit = ifelse(is.na(pb214_activity) == FALSE, "becquerelsPerGram", NA),  
+         bi214_unit = "becquerelsPerGram") %>%
   # create unique core IDs
   mutate(core_id = paste("Giblin2018", gsub(" ", "_", core_id), sep=""),
          study_id = "Giblin_and_Forbrich_2018",

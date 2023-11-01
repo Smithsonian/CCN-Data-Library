@@ -170,11 +170,14 @@ df_alpha <- alpha_raw %>%
 #                                "depth_min", "depth_max")) %>% 
   rename(core_id = "Core ID",
          total_pb210_activity = "Total Pb-210 \r\n(dpm/g)",
-         total_pb210_activity_se = "Total Pb-210 Error \r\n(+/- dpm/g)") %>% 
+         total_pb210_activity_se = "Total Pb-210 Error \r\n(+/- dpm/g)",
+         ) %>% 
   filter(!grepl("=", core_id)) %>% 
   separate(core_id, into = c("site_id", "core_id"), sep = "-", remove = T) %>% 
   mutate(method_id = "alpha spectroscopy",
-         site_id = gsub("166CCT03", "16CCT03", site_id)) 
+         site_id = gsub("166CCT03", "16CCT03", site_id)) %>% 
+  mutate(pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA))
+
 
 
 ## Step 3: GammaSpectroscopy ####
@@ -218,11 +221,11 @@ df_gamma <- full_join(gamma_raw, gamma_raw_be, by = c("Core ID" = "Sample/Core I
          ra226_activity_se = "Ra-226 Error \r\n(+/- dpm/g)",
          be7_activity = "Be-7 \r\n(dpm/g)",
          be7_activity_se = "Be-7 Error \r\n(+/- dpm/g)") %>% 
-  mutate(cs137_unit = "dpm/g",
-         pb210_unit = "dpm/g",
+  mutate(cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA),
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
          method_id = "gamma spectroscopy",
-         ra226_unit = "dpm/g",
-         be7_unit = "dpm/g") %>% 
+         ra226_unit = ifelse(!is.na(ra226_activity), "disintegrationsPerMinutePerGram", NA),
+         be7_unit =  ifelse(!is.na(be7_activity), "disintegrationsPerMinutePerGram", NA)) %>% 
   separate("Depth\r\n (cm)", into = c("depth_min", "depth_max"), sep = "-") %>% 
   filter(!grepl("=|[*]", core_id)) %>%
   filter(!grepl("Top", depth_min)) %>% 
@@ -484,9 +487,9 @@ df_radio <- full_join(radio_14, radio_16, by = c("site_id", "core_id", "c14_mate
 
 ## Step 6: Make the Depthseries table ####
 depth_joins <- c("depth_min", "depth_max", "site_id", "core_id")
-depthseries_raw <- full_join(df_sediment, df_gamma, by = depth_joins) %>% 
-  full_join(df_radio, by = depth_joins) %>% 
-  full_join(df_alpha, by = c(depth_joins, "total_pb210_activity", "total_pb210_activity_se", "method_id")) %>% 
+depthseries_raw <- bind_rows(df_sediment, df_gamma) %>% 
+  bind_rows(df_radio) %>% 
+  bind_rows(df_alpha) %>% 
   mutate(study_id = "Marot_et_al_2020",
          core_id = gsub("GB232M[(]A[)]", "GB232M", core_id), # Resolve duplicate naming conventions
          core_id = gsub("GB232M[(]B[)]", "GB232M_2", core_id),
@@ -525,7 +528,7 @@ cores <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "mont
                                    ifelse(grepl("R", core_id), "core depth represents deposit depth",
                                           ifelse(grepl("V", core_id), "core depth represents deposit depth", 
                                                  "core depth limited by length of corer")))) %>%
-  full_join(depthseries_raw, by = c("study_id", "site_id", "core_id")) %>% # Add 19 core IDs from depthseries data (this will only add their IDs and no cores-table related data)
+  bind_rows(depthseries_raw) %>% # Add 19 core IDs from depthseries data (this will only add their IDs and no cores-table related data)
   mutate(inundation_class = ifelse(grepl("G", substr(core_id, nchar(core_id) - 2, nchar(core_id))), "low", NA),
          inundation_method = "field observation") %>% 
   select(c(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method,
