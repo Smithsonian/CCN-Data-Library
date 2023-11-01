@@ -122,12 +122,11 @@ bib_file <- study_citation %>%
 
 
 ## 5. Write curated data ####
-write_csv(cores, "./data/primary_studies/Saunders_2013/final/Saunders_2013_cores.csv") 
-write_csv(depthseries, "./data/primary_studies/Saunders_2013/final/Saunders_2013_depthseries.csv")
-write_csv(methods, "./data/primary_studies/Saunders_2013/final/Saunders_2013_methods.csv")
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Saunders_2013/final/Saunders_2013_study_citations.bib")
-write_csv(study_citation, "./data/primary_studies/Saunders_2013/final/Saunders_2013_study_citations.csv")
-
+write_csv(cores, "data/primary_studies/Saunders_2013/derivative/Saunders_2013_cores.csv") 
+write_csv(depthseries, "data/primary_studies/Saunders_2013/derivative/Saunders_2013_depthseries.csv")
+write_csv(methods, "data/primary_studies/Saunders_2013/derivative/Saunders_2013_methods.csv")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Saunders_2013/derivative/Saunders_2013_study_citations.bib")
+write_csv(study_citation, "data/primary_studies/Saunders_2013/derivative/Saunders_2013_study_citations.csv")
 
 
 

@@ -95,8 +95,8 @@ cores <- reorderColumns("cores", cores)
 
 depthseries <- data_raw %>% mutate(study_id = id,
                                    method_id = "single set of methods") %>% 
-                                   mutate(cs137_unit = "disintegrationsPerminutePerGram",
-                                          pb210_unit = "disintegrationsPerminutePerGram",
+                                   mutate(cs137_unit = "disintegrationsPerMinutePerGram",
+                                          pb210_unit = "disintegrationsPerMinutePerGram",
                                           fraction_organic_matter = `Percent Organic Matter`/100,
                                           fraction_carbon = `Percent TC`/100) %>% 
                                   rename(site_id = `Site ID`,

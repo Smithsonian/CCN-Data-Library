@@ -94,8 +94,8 @@ depthseries <- data_raw %>% rename("site_id" = `Site ID`) %>%
                                    method_id = "single set of methods",
                                    core_id = paste("Breton", site_id, sep = "_"),
                                    site_id = "Breton_Sound_Basin") %>% 
-                                   mutate(cs137_unit = "disintegrationsPerminutePerGram",
-                                          fraction_organic_matter = `Loss on Ignition`/100,
+                                   mutate(cs137_unit = "disintegrationsPerMinutePerGram",
+                                          fraction_organic_matter = `Loss on Ignition`,
                                           fraction_carbon = `Percent TC`/100) %>% 
                                   rename(dry_bulk_density = `Bulk Density`,
                                          cs137_activity = `137Cs`,

@@ -536,12 +536,20 @@ cores <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "mont
            habitat, inundation_class, inundation_method, core_length_flag)) %>% 
   distinct()
 
+cores <- cores %>% 
+  group_by(study_id, site_id, core_id) %>% 
+  summarise_all("first") %>% 
+  ungroup() %>% 
+  mutate(year = ifelse(is.na(year), 2000 + as.numeric(substr(core_id, 1,2)), year)) %>% 
+  filter(core_id %in% unique(depthseries$core_id))
+
 
 ## Step 8: Make the Species table ####
 species <- full_join(df_field, df_site, by = c("site_id", "core_id")) %>% 
   mutate(core_id = paste(site_id, core_id, sep = "_"),
          study_id = "Marot_et_al_2022") %>% 
-  select(c(study_id, site_id, core_id, species_code, code_type, habitat))
+  select(c(study_id, site_id, core_id, species_code, code_type, habitat)) %>% 
+  filter(core_id %in% depthseries$core_id)
 
 
 ## Step 9: Make the Methods table ####
