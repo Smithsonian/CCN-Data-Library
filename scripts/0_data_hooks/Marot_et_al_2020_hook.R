@@ -537,9 +537,11 @@ cores <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "mont
   distinct()
 
 cores <- cores %>% 
+  # We have redundant entries despite using distinct above
   group_by(study_id, site_id, core_id) %>% 
   summarise_all("first") %>% 
   ungroup() %>% 
+  # For a few we have no year values, but it seems core ID have a year numbering component we can use  
   mutate(year = ifelse(is.na(year), 2000 + as.numeric(substr(core_id, 1,2)), year)) %>% 
   filter(core_id %in% unique(depthseries$core_id))
 

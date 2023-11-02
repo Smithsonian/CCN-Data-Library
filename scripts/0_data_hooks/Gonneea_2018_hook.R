@@ -58,7 +58,8 @@ source("./scripts/1_data_formatting/qa_functions.R")
 
 # Import data file into R
 Gonneea_2018 <- read_csv("./data/primary_studies/Gonneea_2018/original/Waquoit_Core_data_release.csv", 
-                         col_names = TRUE)
+                         col_names = TRUE,
+                         na = c("", "NA", "-99999"))
 
 # Change column names to values of first row
 # Why? Because the top 2 rows were both dedicated to column headers
@@ -68,7 +69,7 @@ Gonneea_2018 <- Gonneea_2018 %>% slice(2:561)
 
 # Curate data: 
 Gonneea_2018_clean <- Gonneea_2018 %>%
-  na_if(-99999) %>% # Changes all "-99999" values to "NA"
+  # na_if(-99999) %>% # Changes all "-99999" values to "NA"
   rename(core_id = "ID",
          core_date = "Date", 
          depth = "Depth",
@@ -112,7 +113,7 @@ Gonneea_2018_final <- Gonneea_2018_clean %>%
 
 # Provide units and notes for dating techniques 
 # Gonneea_2018 <- Gonneea_2018 %>%
-  mutate(pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
+  mutate(pb210_unit = ifelse(!is.na(total_pb210_activity)|!is.na(excess_pb210_activity), "disintegrationsPerMinutePerGram", NA),
          cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA),
          be7_unit = ifelse(!is.na(be7_activity), "disintegrationsPerMinutePerGram", NA),
          ra226_unit = ifelse(!is.na(ra226_activity), "disintegrationsPerMinutePerGram", NA)) %>%
@@ -265,6 +266,7 @@ test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
+(results)
 
 ## Export files ##############################
   
