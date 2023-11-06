@@ -27,6 +27,26 @@ depth_raw <- read.csv("./data/primary_studies/Turck_2014/original/GEL-GCES-1402_
 
 
 ## 2. Organize tables ####
+depthseries <- depth_raw %>% 
+  filter(grepl("MT", Name)) %>% 
+  rename(core_id = Name,
+         depth_min = Distance_Below_Ground_Surface,
+         fraction_organic_matter = Percent_Organic_Matter,
+         fraction_carbon = Total_Carbon) %>% 
+  mutate(study_id = "Turck_2014",
+         depth_max = as.numeric(depth_min) + 10,
+         site_id = core_id,
+         method_id = "single set of methods",
+         sample_id = ifelse(grepl("extra", Distance_Above_MLLW), paste(core_id, "_2", sep = ""), core_id),
+         fraction_organic_matter = as.numeric(fraction_organic_matter)/100,
+         fraction_carbon = as.numeric(fraction_carbon)/100,
+         compaction_notes = "Compaction measured at the entire-core level") %>% 
+  left_join(cores_raw[ -c(1,2), ] %>% 
+              mutate(compaction_fraction = as.numeric(Compaction)/as.numeric(Sampl_Lgth)), 
+            by = c(core_id = "Name")) %>% 
+  select(study_id, site_id, core_id, method_id, depth_min, depth_max, sample_id, fraction_organic_matter, fraction_carbon,
+         compaction_fraction, compaction_notes)
+
 cores <- cores_raw[ , -1] %>% 
   filter(grepl("MT", Name)) %>% 
   rename(core_id = Name,
@@ -48,6 +68,7 @@ cores <- cores_raw[ , -1] %>%
          habitat = "marsh",
          core_length_flag = "core depth represents deposit depth",
          year = 2009) %>% 
+  filter(core_id %in% depthseries$core_id) %>% # remove core IDs without corresponding depthseries data
   UTM_to_DD() %>% 
   select(study_id, site_id, core_id, year, latitude, longitude, position_accuracy, 
          position_method, elevation, elevation_datum, elevation_accuracy, elevation_method, 
@@ -62,26 +83,6 @@ species <- cores_raw %>%
          code_type = "Genus",
          habitat = "marsh") %>% 
   select(study_id, site_id, core_id, species_code, code_type, habitat)
-
-depthseries <- depth_raw %>% 
-  filter(grepl("MT", Name)) %>% 
-  rename(core_id = Name,
-         depth_min = Distance_Below_Ground_Surface,
-         fraction_organic_matter = Percent_Organic_Matter,
-         fraction_carbon = Total_Carbon) %>% 
-  mutate(study_id = "Turck_2014",
-         depth_max = as.numeric(depth_min) + 10,
-         site_id = core_id,
-         method_id = "single set of methods",
-         sample_id = ifelse(grepl("extra", Distance_Above_MLLW), paste(core_id, "_2", sep = ""), core_id),
-         fraction_organic_matter = as.numeric(fraction_organic_matter)/100,
-         fraction_carbon = as.numeric(fraction_carbon)/100,
-         compaction_notes = "Compaction measured at the entire-core level") %>% 
-  left_join(cores_raw[ -c(1,2), ] %>% 
-              mutate(compaction_fraction = as.numeric(Compaction)/as.numeric(Sampl_Lgth)), 
-            by = c(core_id = "Name")) %>% 
-  select(study_id, site_id, core_id, method_id, depth_min, depth_max, sample_id, fraction_organic_matter, fraction_carbon,
-         compaction_fraction, compaction_notes)
 
 methods <- data.frame(study_id = "Turck_2014",
                       method_id = "single set of methods",
@@ -148,12 +149,12 @@ bib_file <- study_citation %>%
 
 
 ## 5. Write curated data ####
-write_csv(cores, "./data/primary_studies/Turck_2014/final/Turck_2014_cores.csv") 
-write_csv(species, "./data/primary_studies/Turck_2014/final/Turck_2014_species.csv") 
-write_csv(depthseries, "./data/primary_studies/Turck_2014/final/Turck_2014_depthseries.csv")
-write_csv(methods, "./data/primary_studies/Turck_2014/final/Turck_2014_methods.csv")
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Turck_2014/final/Turck_2014_study_citations.bib")
-write_csv(study_citation, "./data/primary_studies/Turck_2014/final/Turck_2014_study_citations.csv")
+write_csv(cores, "./data/primary_studies/Turck_2014/derivative/Turck_2014_cores.csv") 
+write_csv(species, "./data/primary_studies/Turck_2014/derivative/Turck_2014_species.csv") 
+write_csv(depthseries, "./data/primary_studies/Turck_2014/derivative/Turck_2014_depthseries.csv")
+write_csv(methods, "./data/primary_studies/Turck_2014/derivative/Turck_2014_methods.csv")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Turck_2014/derivative/Turck_2014_study_citations.bib")
+write_csv(study_citation, "./data/primary_studies/Turck_2014/derivative/Turck_2014_study_citations.csv")
 
 
 

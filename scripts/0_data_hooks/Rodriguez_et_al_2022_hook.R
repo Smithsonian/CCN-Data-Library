@@ -81,7 +81,7 @@ c14_table <- cores_raw %>%
   separate(col = "Collection Interval (cm)", into = c("depth_min", "depth_max"), sep = "-") 
   
 
-## Species #### START HERE
+## Species #### 
 species_set_up <- species_raw[-c(23:25), ] %>% # eliminating metadata rows
   separate(col = "Site Name; \nCore #", into = "site_id", sep = ";", remove = FALSE) %>% 
   rename(species_code = 'Species',
@@ -128,7 +128,8 @@ cores <- full_join(cores_set_up, species_set_up) %>%
 # Adding c14 age from 'cores' to 'depthseries'  
 depthseries <- full_join(depthseries_set_up, c14_table) %>% 
   select(c(study_id, site_id, core_id, method_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter, 
-           fraction_carbon, c14_age, c14_age_se, c14_material))
+           c14_age, c14_age_se, c14_material))
+# don't include (modeled) fraction_carbon  
     
 # Trimming species data
 species <- select(species_set_up, c(study_id, site_id, core_id, species_code, code_type, habitat))

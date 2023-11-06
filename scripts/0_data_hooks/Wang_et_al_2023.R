@@ -105,7 +105,7 @@ methods <- data.frame(study_id = "Wang_et_al_2023",
                       fraction_carbon_type = "organic carbon",
                       cs137_counting_method = "gamma",
                       pb210_counting_method = "gamma",
-                      excess_pb210_model = "CRS and CFCS")
+                      excess_pb210_model = "CRS")
 
 
 ## QAQC ####

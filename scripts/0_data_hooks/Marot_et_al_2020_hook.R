@@ -514,7 +514,7 @@ depthseries <- depthseries_raw %>%
 
 
 ## Step 7: Make the Cores table ####
-cores <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "month", "day", "salinity_class")) %>% 
+core_raw <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "month", "day", "salinity_class")) %>% 
   mutate(core_id = paste(site_id, core_id, sep = "_"),
          elevation_accuracy = .014,
          latitude = as.numeric(latitude),
@@ -536,21 +536,53 @@ cores <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "mont
            habitat, inundation_class, inundation_method, core_length_flag)) %>% 
   distinct()
 
-cores <- cores %>% 
+cores <- core_raw %>% 
   # We have redundant entries despite using distinct above
   group_by(study_id, site_id, core_id) %>% 
   summarise_all("first") %>% 
   ungroup() %>% 
   # For a few we have no year values, but it seems core ID have a year numbering component we can use  
   mutate(year = ifelse(is.na(year), 2000 + as.numeric(substr(core_id, 1,2)), year)) %>% 
-  filter(core_id %in% unique(depthseries$core_id))
+
+  # fill in core metadata for replicate samples
+  mutate(core_split = core_id) %>% 
+  separate(core_split, into = c("core_1", "core_2"), sep = "_") %>% # remove duplicate core_id tags: "_2"
+  mutate(core_id_flag = paste(core_1, substr(core_2, 1, nchar(core_2) - 1), sep = "_")) %>% # remove core_type tags: D,M,R,S,V,G
+  group_by(core_id_flag) %>% 
+  fill(year, month, day, latitude, longitude, position_method, elevation, elevation_datum, elevation_accuracy, 
+       elevation_method, salinity_class, salinity_method, habitat, inundation_class, inundation_method, .direction = "downup") %>% 
+  ungroup() %>% 
+  
+  # remove duplicate cores without associated depthseries data
+  # 16CCT03_GB266 = 16CCT03_GB255
+  # 14CCT01_GB67 = 14CCT01_GB37
+  # 14CCT01_GB70 = 14CCT01_GB62
+  filter(!grepl("16CCT03_GB266|14CCT01_GB67|14CCT01_GB70", core_id)) %>% 
+  # remove all other core IDs without depthseries data
+  filter(core_id %in% depthseries$core_id) %>%  
+
+  select(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method,
+         elevation, elevation_datum, elevation_accuracy, elevation_method, salinity_class, salinity_method, 
+         habitat, inundation_class, inundation_method, core_length_flag)
 
 
 ## Step 8: Make the Species table ####
 species <- full_join(df_field, df_site, by = c("site_id", "core_id")) %>% 
+  
+  # fill in species data for replicate core IDs
   mutate(core_id = paste(site_id, core_id, sep = "_"),
+         core_split = core_id,
          study_id = "Marot_et_al_2022") %>% 
-  select(c(study_id, site_id, core_id, species_code, code_type, habitat)) %>% 
+  
+  # fill in species data for associated cores
+  separate(core_split, into = c("core_1", "core_2"), sep = "_") %>% # remove duplicate core_id tags: "_2"
+  mutate(core_id_flag = paste(core_1, substr(core_2, 1, nchar(core_2) - 1), sep = "_")) %>% # remove core_type tags: D,M,R,S,V,G
+  group_by(core_id_flag) %>% 
+  fill(species_code, code_type, habitat) %>% 
+  ungroup() %>%
+  select(study_id, site_id, core_id, species_code, code_type, habitat) %>% 
+  distinct() %>% 
+  drop_na(code_type) %>% 
   filter(core_id %in% depthseries$core_id)
 
 
@@ -621,6 +653,13 @@ write_csv(species, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al
 write_csv(methods, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_methods.csv")
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_study_citations.bib")
 write_csv(study_citation, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_study_citations.csv")
+
+
+
+
+
+
+
 
 
 
