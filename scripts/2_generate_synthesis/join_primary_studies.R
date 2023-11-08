@@ -189,7 +189,7 @@ bib_file <- ccrcn_synthesis$study_citations %>%
   select(-c(study_id, publication_type, keywords, 
             # issn, `article-number`,
             abstract)) %>%
-  distinct() %>%
+  distinct() %>% drop_na(bibliography_id) %>% 
   column_to_rownames("bibliography_id")
 
 # find and fix encoding issues
@@ -245,18 +245,18 @@ if(join_status == TRUE){
 ## 6. Synthesis Metrics & Change Log ####
 
 # dev branch synthesis will be compared with the version of the synthesis on the main branch
-synthesis_log <- readr::read_csv("docs/synthesis_resources/synthesis_log.csv") 
-
-synth_diff <- anti_join(ccrcn_synthesis$cores %>% 
-                          select(study_id, site_id, core_id), 
-                        synthesis_log) %>% 
-  mutate(version = "v1.1.0",
-         date = format(Sys.time(), "%Y-%m-%d")) %>% 
-  select(date, version, everything())
+# synthesis_log <- readr::read_csv("docs/synthesis_resources/synthesis_log.csv") 
+# 
+# synth_diff <- anti_join(ccrcn_synthesis$cores %>% 
+#                           select(study_id, site_id, core_id), 
+#                         synthesis_log) %>% 
+#   mutate(version = "v1.1.0",
+#          date = format(Sys.time(), "%Y-%m-%d")) %>% 
+#   select(date, version, everything())
 
 # stash results in additive list, documenting version, and date
 
-write_csv(synth_diff, "docs/synthesis_resources/synthesis_1_1_0.csv")
+# write_csv(synth_diff, "docs/synthesis_resources/synthesis_1_1_0.csv")
 
 ## 7. Write RMarkdown report #########
 
@@ -287,14 +287,14 @@ if(join_status == TRUE){
   
   # Write new synthesis data
   # to derivative folder (eventually, get rid of the derivative folder, just write to CCRCN_synthesis)
-  write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis/CCRCN_cores.csv")
-  write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis/CCRCN_depthseries.csv")
-  write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis/CCRCN_sites.csv")
-  write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis/CCRCN_impacts.csv")
-  write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis/CCRCN_methods.csv")
-  write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/CCRCN_species.csv")
+  write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis/CCN_cores.csv")
+  write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis/CCN_depthseries.csv")
+  write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis/CCN_sites.csv")
+  write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis/CCN_impacts.csv")
+  write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis/CCN_methods.csv")
+  write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/CCN_species.csv")
   write_csv(ccrcn_synthesis$study_citations %>% select(-keywords, -abstract), 
-            "./data/CCRCN_synthesis/CCRCN_study_citations.csv")
+            "./data/CCRCN_synthesis/CCN_study_citations.csv")
   
   WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/CCRCN_bibliography.bib") # some encoding funny business here
 }
