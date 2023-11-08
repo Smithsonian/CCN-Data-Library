@@ -102,7 +102,7 @@ SWAMP_veg_converter <- function(swamp_type) {
   
   tree_table <- full_join(subplot_table, swamp_type$Tree %>% # join plot and subplot data to Tree and Sapling tables separately
                             mutate(plant_id = paste(ID, "tree", sep = "_")), # distinguish between tree and sapling plant IDs
-                          by = c("filename", "SUBPID")) %>% 
+                          by = c("filename", "SUBPID")) %>% # there are 11 SUBPIDs in subplot_table not found in Tree table
     full_join(swamp_type$TreeBiomass %>% # add plant-specific biomass data
                 mutate(above_or_belowground = case_when(COMPID %in% c(1, 2, 3, 5) ~ "aboveground",
                                                         COMPID == 7 ~ "belowground",
@@ -114,21 +114,21 @@ SWAMP_veg_converter <- function(swamp_type) {
            subp_BGC = TREE_BGC,
            subp_BA = TREE_BA) 
                 
-  sap_table <- right_join(subplot_table, swamp_type$Sapling %>% # repeat the same as above for sapling data
+  sap_table <- full_join(subplot_table, swamp_type$Sapling %>% # repeat the same as above for sapling data
                             mutate(plant_id = paste(ID, "sapling", sep = "_")), 
-                          by = c("filename", "SUBPID")) %>% 
+                          by = c("filename", "SUBPID")) %>% # there are 239 SUBPIDs in subplot_table not found in Sapling table
     full_join(swamp_type$SaplingBiomass %>% 
                 mutate(above_or_belowground = case_when(COMPID %in% c(1, 2, 3, 5) ~ "aboveground",
                                                         COMPID == 7 ~ "belowground",
                                                         T ~ NA_character_),
-                       plant_id = paste(SAPID, "sap", sep = "_")),
+                       plant_id = paste(SAPID, "sapling", sep = "_")),
               by = c("filename", "plant_id")) %>% 
     full_join(swamp_type$SaplingSubp_C, by = c("filename", "SUBPID")) %>% 
     rename(subp_AGC = SAP_AGC,
            subp_BGC = SAP_BGC,
            subp_BA = SAP_BA)
   
-  veg_table <- full_join(tree_table, sap_table) %>% 
+  veg_table <- full_join(tree_table, sap_table) %>% # 5 instances of SUBPIDs that have neither tree nor sapling data but do have subplot data
 
   ## 3. Conform table to database structure 
     # get look up table values and define terms
@@ -160,6 +160,8 @@ SWAMP_veg_converter <- function(swamp_type) {
                                  NA ~ NA_character_,
                                  T ~ "Genus species"),
            allometric_eq_formula = geteq[EQID, "allometric_eq_formula"],
+           allometric_eq_formula = case_when(allometric_eq_formula == "NA" ~ NA_character_,
+                                             T ~ allometric_eq_formula),
            output_unit = geteq[EQID, "output_unit"],
            parameter_names = geteq[EQID, "parameter_names"],
            R2 = geteq[EQID, "R2"],
@@ -249,15 +251,17 @@ plant_plot_detail <- SWAMP_veg_converter(swamp_veg) %>%
   distinct()
 
 plant <- SWAMP_veg_converter(swamp_veg) %>% 
-  select(c(study_id, site_id, plot_id, plant_id, year, month, day, genus, species, alive_or_dead, n_plants, height, height_unit,
+  select(c(study_id, site_id, plot_id, plant_id, year, month, day, genus, species, alive_or_dead, above_or_belowground, n_plants, height, height_unit,
            diameter, diameter_method, diameter_unit, diameter_2, diameter_2_method, diameter_2_unit, diameter_3, diameter_3_method, 
            diameter_3_unit,wood_density, wood_density_unit, wood_density_source, plant_mass_organic_matter, plant_mass_organic_matter_unit, 
            carbon_conversion_factor, carbon_conversion_factor_source, plant_mass_organic_carbon, plant_mass_organic_carbon_unit, 
-           allometric_eq_id, allometric_eq_id_present))
+           allometric_eq_id, allometric_eq_id_present)) %>% 
+  drop_na(plant_id)
           
 allometric_eq <- SWAMP_veg_converter(swamp_veg) %>% 
   select(c(study_id, location_description, allometric_eq_id, allometric_eq_formula, genus, species, output_unit, parameter_names, 
            R2, RSE, diameter_max, diameter_min)) %>% 
+  drop_na(allometric_eq_formula) %>% 
   distinct()
 
 

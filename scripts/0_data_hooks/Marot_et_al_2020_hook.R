@@ -305,8 +305,12 @@ field_wo_cores <- wide_result %>%
          year = year(as_full_date),
          month = month(as_full_date),
          day = day(as_full_date),
-         latitude = coalesce(`Latitude (DD)`, Latitude),
-         longitude = coalesce(`Longitude (DD)`, Longitude),
+         latitude_field = coalesce(`Latitude (DD)`, Latitude),
+         longitude_field = coalesce(`Longitude (DD)`, Longitude),
+         latitude_field = case_when(latitude_field == "" ~ NA_character_, 
+                                    T ~ latitude_field),
+         longitude_field = case_when(longitude_field == "" ~ NA_character_, 
+                                     T ~ longitude_field),
          Salinity = as.numeric(Salinity),
          salinity_class = case_when(Salinity < 5 ~ 'oligohaline',
                                     Salinity < 18 ~ "mesohaline",
@@ -517,6 +521,12 @@ depthseries <- depthseries_raw %>%
 core_raw <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "month", "day", "salinity_class")) %>% 
   mutate(core_id = paste(site_id, core_id, sep = "_"),
          elevation_accuracy = .014,
+         latitude = ifelse(!is.na(latitude_field), latitude_field,
+                           ifelse(is.na(latitude_field) & !is.na(latitude_wgs84), latitude_wgs84,
+                                  ifelse(is.na(latitude_field) & is.na(latitude_wgs84) & !is.na(latitude_nad83), latitude_nad83, NA_character_))),
+         longitude = ifelse(!is.na(longitude_field), longitude_field,
+                            ifelse(is.na(longitude_field) & !is.na(longitude_wgs84), longitude_wgs84,
+                                   ifelse(is.na(longitude_field) & is.na(longitude_wgs84) & !is.na(longitude_nad83), longitude_nad83, NA_character_))),
          latitude = as.numeric(latitude),
          longitude = as.numeric(longitude),
          study_id = "Marot_et_al_2020",
@@ -535,6 +545,7 @@ core_raw <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "m
            elevation, elevation_datum, elevation_accuracy, elevation_method, salinity_class, salinity_method, 
            habitat, inundation_class, inundation_method, core_length_flag)) %>% 
   distinct()
+
 
 cores <- core_raw %>% 
   # We have redundant entries despite using distinct above
@@ -653,13 +664,6 @@ write_csv(species, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al
 write_csv(methods, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_methods.csv")
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_study_citations.bib")
 write_csv(study_citation, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_study_citations.csv")
-
-
-
-
-
-
-
 
 
 

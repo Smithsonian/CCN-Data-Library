@@ -1,25 +1,19 @@
 study_id,location_description,allometric_eq_id,allometric_eq_formula,genus,species,output_unit,parameter_names,R2,RSE,diameter_max,diameter_min
-KRE_Veg,Non specific,41,"NA",Rhizophora,apiculata,"NA","NA",NA,NA,NA,NA
 KRE_Veg,Malaysia,5,0.00698*DBH^2.61,Rhizophora,apiculata,kg,DBH - diameter at breast height (cm),0.99,NA,77,15
 KRE_Veg,Malaysia,38,0.235*DBH^2.42,Excoecaria,agallocha,kg,DBH - diameter at breast height (cm),0.98,NA,28,NA
 KRE_Veg,Indonesia,20,0.1832*DBH^2.21,Excoecaria,agallocha,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 KRE_Veg,"Southeast Sulawesi, Indonesia",36,1.184 * DBH^2.384,Bruguiera,cylindrica,kg,DBH - diameter at breast height (cm),0.98,NA,NA,NA
 KRE_Veg,Indonesia,20,0.1832*DBH^2.21,Bruguiera,cylindrica,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KRE_Veg,Non specific,42,"NA",Xylocarpus,moluccensis,"NA","NA",NA,NA,NA,NA
 KRE_Veg,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,moluccensis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 KRE_Veg,Northern Australia,34,10^(-0.7749 + 2.4167 * Log10(DBH)),Avicennia,alba,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.993,1.17,21,2
 KRE_Veg,Bangladesh,35,Exp(1)^(-1.9737 + 1.0996 * Log(DBH^2)),Avicennia,alba,kg,"DBH - diameter at breast height (cm), Exp - exponential function, Log - natural logarithm",0.9953,NA,NA,NA
-KRE_Veg,Non specific,42,"NA",Xylocarpus,granatum,"NA","NA",NA,NA,NA,NA
 KRE_Veg,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 KRE_Veg,Southern Thailand,37,DBH * 2.8929,Bruguiera,parviflora,kg,DBH represents the number of NYFR fronds. 2.8929 is a mean dry-weight mass per frond,NA,NA,NA,NA
 KRE_Veg,Indonesia,20,0.1832*DBH^2.21,Bruguiera,parviflora,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 KRE_Veg,Northern Australia,34,10^(-0.7749 + 2.4167 * Log10(DBH)),Avicennia,marina,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.993,1.17,21,2
 KRE_Veg,Bangladesh,35,Exp(1)^(-1.9737 + 1.0996 * Log(DBH^2)),Avicennia,marina,kg,"DBH - diameter at breast height (cm), Exp - exponential function, Log - natural logarithm",0.9953,NA,NA,NA
-KRE_Veg,NA,43,NA,Xylocarpus,moluccensis,NA,NA,NA,NA,NA,NA
 KRE_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Xylocarpus,moluccensis,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KRE_Veg,Non specific,41,"NA",Rhizophora,mucronata,"NA","NA",NA,NA,NA,NA
 KRE_Veg,Malaysia,5,0.00698*DBH^2.61,Rhizophora,mucronata,kg,DBH - diameter at breast height (cm),0.99,NA,77,15
-KRE_Veg,NA,43,NA,Avicennia,alba,NA,NA,NA,NA,NA,NA
 KRE_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Avicennia,alba,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
 KRE_Veg,"Southeast Sulawesi, Indonesia",36,1.184 * DBH^2.384,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),0.98,NA,NA,NA
 KRE_Veg,Indonesia,20,0.1832*DBH^2.21,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
@@ -30,7 +24,6 @@ KRE_Veg,Indonesia,23,0.1848*DBH^2.3524,Scyphiphora,hydrophyllacea,kg,DBH - diame
 KRE_Veg,Indonesia,20,0.1832*DBH^2.21,Scyphiphora,hydrophyllacea,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 KRE_Veg,Northern Australia,34,10^(-0.7749 + 2.4167 * Log10(DBH)),Avicennia,officinalis,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.993,1.17,21,2
 KRE_Veg,Bangladesh,35,Exp(1)^(-1.9737 + 1.0996 * Log(DBH^2)),Avicennia,officinalis,kg,"DBH - diameter at breast height (cm), Exp - exponential function, Log - natural logarithm",0.9953,NA,NA,NA
-PPM_Veg,Non specific,41,"NA",Rhizophora,apiculata,"NA","NA",NA,NA,NA,NA
 PPM_Veg,Malaysia,5,0.00698*DBH^2.61,Rhizophora,apiculata,kg,DBH - diameter at breast height (cm),0.99,NA,77,15
 PPM_Veg,Southern Thailand,37,DBH * 2.8929,Bruguiera,sexangula,kg,DBH represents the number of NYFR fronds. 2.8929 is a mean dry-weight mass per frond,NA,NA,NA,NA
 PPM_Veg,Indonesia,20,0.1832*DBH^2.21,Bruguiera,sexangula,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
@@ -39,51 +32,22 @@ PPM_Veg,Bangladesh,35,Exp(1)^(-1.9737 + 1.0996 * Log(DBH^2)),Avicennia,alba,kg,"
 PPM_Veg,"Southeast Sulawesi, Indonesia",36,1.184 * DBH^2.384,Bruguiera,cylindrica,kg,DBH - diameter at breast height (cm),0.98,NA,NA,NA
 PPM_Veg,Indonesia,20,0.1832*DBH^2.21,Bruguiera,cylindrica,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PPM_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Bruguiera,cylindrica,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PPM_Veg,NA,43,NA,Bruguiera,cylindrica,NA,NA,NA,NA,NA,NA
-PPM_Veg,NA,43,NA,Bruguiera,sexangula,NA,NA,NA,NA,NA,NA
-PPM_Veg,NA,43,NA,Rhizophora,apiculata,NA,NA,NA,NA,NA,NA
 PPM_Veg,Northern Australia,34,10^(-0.7749 + 2.4167 * Log10(DBH)),Avicennia,officinalis,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.993,1.17,21,2
 PPM_Veg,Bangladesh,35,Exp(1)^(-1.9737 + 1.0996 * Log(DBH^2)),Avicennia,officinalis,kg,"DBH - diameter at breast height (cm), Exp - exponential function, Log - natural logarithm",0.9953,NA,NA,NA
 PPM_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Avicennia,officinalis,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
 PPM_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Avicennia,alba,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
 PPM_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Bruguiera,sexangula,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PPM_Veg,Non specific,42,"NA",Xylocarpus,moluccensis,"NA","NA",NA,NA,NA,NA
 PPM_Veg,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,moluccensis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PPM_Veg,NA,43,NA,Avicennia,officinalis,NA,NA,NA,NA,NA,NA
 PPM_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Rhizophora,apiculata,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
 PPM_Veg,Northern Australia,39,10^(-1.0844 + 2.5883 * Log10(DBH)),Lumnitzera,racemosa,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.994,1.13,17,3
 PPM_Veg,Indonesia,20,0.1832*DBH^2.21,Lumnitzera,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PPM_Veg,NA,43,NA,Avicennia,alba,NA,NA,NA,NA,NA,NA
-PPM_Veg,Non specific,42,"NA",Xylocarpus,granatum,"NA","NA",NA,NA,NA,NA
 PPM_Veg,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PPM_Veg,NA,43,NA,Lumnitzera,racemosa,NA,NA,NA,NA,NA,NA
 PPM_Veg,Indonesia,23,0.1848*DBH^2.3524,Sonneratia,ovata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PPM_Veg,Indonesia,20,0.1832*DBH^2.21,Sonneratia,ovata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PPM_Veg,NA,43,NA,Xylocarpus,moluccensis,NA,NA,NA,NA,NA,NA
-Catanauan_Veg,Micronesia,6,0.3841*DBH^2.101*Sg,Sonneratia,alba,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.92,NA,323,NA
-Catanauan_Veg,Australia,2,0.0679*DBH^1.4914,Sonneratia,alba,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-Catanauan_Veg,Indonesia,20,0.1832*DBH^2.21,Sonneratia,alba,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-Catanauan_Veg,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Catanauan_Veg,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,Rhizophora,apiculata,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
-Catanauan_Veg,Indonesia,20,0.1832*DBH^2.21,Rhizophora,apiculata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-Catanauan_Veg,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,Rhizophora,stylosa,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
-Catanauan_Veg,Indonesia,20,0.1832*DBH^2.21,Rhizophora,stylosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-Catanauan_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Rhizophora,stylosa,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-Catanauan_Veg,Indonesia,23,0.1848*DBH^2.3524,Lumnitzera,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-Catanauan_Veg,Indonesia,20,0.1832*DBH^2.21,Lumnitzera,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-Catanauan_Veg,Micronesia,1,0.0754*DBH^2.505*Sg,Bruguiera,gymnorrhiza,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,NA,132,NA
-Catanauan_Veg,Australia,2,0.0679*DBH^1.4914,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-Catanauan_Veg,Thailand,10,0.0188*((DBH^2)*(DDBH/((0.025*DBH)+0.583)))^0.909,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),NA,NA,33,NA
-Catanauan_Veg,Tanzania,25,0.19633*DBH^2.08791*𝐻^0.29654,Avicennia,marina,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
-Catanauan_Veg,Australia,9,1.28*DBH^1.17,Avicennia,marina,kg,DBH - diameter at breast height (cm),0.8,NA,35,NA
-Catanauan_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Lumnitzera,racemosa,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PRE_Veg,Non specific,41,"NA",Rhizophora,apiculata,"NA","NA",NA,NA,NA,NA
 PRE_Veg,Malaysia,5,0.00698*DBH^2.61,Rhizophora,apiculata,kg,DBH - diameter at breast height (cm),0.99,NA,77,15
-PRE_Veg,Non specific,42,"NA",Xylocarpus,granatum,"NA","NA",NA,NA,NA,NA
 PRE_Veg,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Xylocarpus,granatum,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
 PRE_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Rhizophora,apiculata,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PRE_Veg,Non specific,42,"NA",Xylocarpus,moluccensis,"NA","NA",NA,NA,NA,NA
 PRE_Veg,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,moluccensis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Indonesia,23,0.1848*DBH^2.3524,Sonneratia,caseolaris,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Indonesia,20,0.1832*DBH^2.21,Sonneratia,caseolaris,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
@@ -96,28 +60,20 @@ PRE_Veg,Indonesia,20,0.1832*DBH^2.21,Bruguiera,gymnorrhiza,kg,DBH - diameter at 
 PRE_Veg,Indonesia,23,0.1848*DBH^2.3524,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Indonesia,20,0.1832*DBH^2.21,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Bruguiera,gymnorrhiza,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PRE_Veg,Non specific,42,"NA",Xylocarpus,NA,"NA","NA",NA,NA,NA,NA
 PRE_Veg,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Indonesia,23,0.1848*DBH^2.3524,Intsia,bijuga,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Indonesia,20,0.1832*DBH^2.21,Intsia,bijuga,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Indonesia,23,0.1848*DBH^2.3524,Calamus,erinaceus,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Indonesia,20,0.1832*DBH^2.21,Calamus,erinaceus,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Non specific,40,0.1*Sg*((Pi * HGT) / 12 * (DBASE^2 + DBH^2 + (DBASE * DBH))),Phoenix,paludosa,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m), DBASE - diameter at base (cm)",NA,NA,NA,NA
-PRE_Veg,NA,1001,NA,Phoenix,paludosa,NA,NA,NA,NA,NA,NA
-PRE_Veg,NA,1000,NA,Diospyros,maritima,NA,NA,NA,NA,NA,NA
-PRE_Veg,NA,1001,NA,Diospyros,maritima,NA,NA,NA,NA,NA,NA
-PRE_Veg,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 PRE_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Avicennia,officinalis,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
 PRE_Veg,Indonesia,23,0.1848*DBH^2.3524,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Indonesia,20,0.1832*DBH^2.21,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Non specific,40,0.1*Sg*((Pi * HGT) / 12 * (DBASE^2 + DBH^2 + (DBASE * DBH))),Nypa,fruticans,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m), DBASE - diameter at base (cm)",NA,NA,NA,NA
-PRE_Veg,NA,1001,NA,Nypa,fruticans,NA,NA,NA,NA,NA,NA
 PRE_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),NA,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
 PRE_Veg,Indonesia,23,0.1848*DBH^2.3524,Sonneratia,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Indonesia,20,0.1832*DBH^2.21,Sonneratia,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Non specific,40,0.1*Sg*((Pi * HGT) / 12 * (DBASE^2 + DBH^2 + (DBASE * DBH))),Myrmecodia,tuberosa,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m), DBASE - diameter at base (cm)",NA,NA,NA,NA
-PRE_Veg,NA,1001,NA,Myrmecodia,tuberosa,NA,NA,NA,NA,NA,NA
-PRE_Veg,Non specific,41,"NA",Rhizophora,mucronata,"NA","NA",NA,NA,NA,NA
 PRE_Veg,Malaysia,5,0.00698*DBH^2.61,Rhizophora,mucronata,kg,DBH - diameter at breast height (cm),0.99,NA,77,15
 PRE_Veg,Northern Australia,34,10^(-0.7749 + 2.4167 * Log10(DBH)),Avicennia,alba,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.993,1.17,21,2
 PRE_Veg,Bangladesh,35,Exp(1)^(-1.9737 + 1.0996 * Log(DBH^2)),Avicennia,alba,kg,"DBH - diameter at breast height (cm), Exp - exponential function, Log - natural logarithm",0.9953,NA,NA,NA
@@ -137,142 +93,6 @@ PRE_Veg,Indonesia,20,0.1832*DBH^2.21,Heritiera,sylvatica,kg,DBH - diameter at br
 PRE_Veg,Indonesia,23,0.1848*DBH^2.3524,Cynometra,ramiflora,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Indonesia,20,0.1832*DBH^2.21,Cynometra,ramiflora,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 PRE_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Xylocarpus,moluccensis,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,Rhizophora,apiculata,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Rhizophora,apiculata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Rhizophora,apiculata,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,Rhizophora,NA,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Rhizophora,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Rhizophora,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Micronesia,1,0.0754*DBH^2.505*Sg,Bruguiera,gymnorrhiza,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,NA,132,NA
-KohKong_Veg,Australia,2,0.0679*DBH^1.4914,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-KohKong_Veg,Thailand,10,0.0188*((DBH^2)*(DDBH/((0.025*DBH)+0.583)))^0.909,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),NA,NA,33,NA
-KohKong_Veg,Indonesia,23,0.1848*DBH^2.3524,Ceriops,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Ceriops,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Ceriops,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Indonesia,21,0.043*DBH^2.63,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,21,0.043*DBH^2.63,Xylocarpus,moluccensis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,moluccensis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,23,0.1848*DBH^2.3524,Lumnitzera,littorea,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Lumnitzera,littorea,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Lumnitzera,littorea,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Indonesia,23,0.1848*DBH^2.3524,Lumnitzera,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Lumnitzera,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,21,0.043*DBH^2.63,Xylocarpus,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Micronesia,1,0.0754*DBH^2.505*Sg,Bruguiera,sexangula,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,NA,132,NA
-KohKong_Veg,Australia,2,0.0679*DBH^1.4914,Bruguiera,sexangula,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-KohKong_Veg,Thailand,10,0.0188*((DBH^2)*(DDBH/((0.025*DBH)+0.583)))^0.909,Bruguiera,sexangula,kg,DBH - diameter at breast height (cm),NA,NA,33,NA
-KohKong_Veg,Tanzania,25,0.19633*DBH^2.08791*𝐻^0.29654,Avicennia,officinalis,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
-KohKong_Veg,Australia,9,1.28*DBH^1.17,Avicennia,officinalis,kg,DBH - diameter at breast height (cm),0.8,NA,35,NA
-KohKong_Veg,Micronesia,1,0.0754*DBH^2.505*Sg,Bruguiera,NA,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,NA,132,NA
-KohKong_Veg,Australia,2,0.0679*DBH^1.4914,Bruguiera,NA,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-KohKong_Veg,Thailand,10,0.0188*((DBH^2)*(DDBH/((0.025*DBH)+0.583)))^0.909,Bruguiera,NA,kg,DBH - diameter at breast height (cm),NA,NA,33,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Xylocarpus,granatum,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,Rhizophora,mucronata,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Rhizophora,mucronata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Rhizophora,mucronata,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Tanzania,25,0.19633*DBH^2.08791*𝐻^0.29654,Avicennia,alba,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
-KohKong_Veg,Australia,9,1.28*DBH^1.17,Avicennia,alba,kg,DBH - diameter at breast height (cm),0.8,NA,35,NA
-KohKong_Veg,Indonesia,23,0.1848*DBH^2.3524,Excoecaria,agallocha,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Excoecaria,agallocha,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),NA,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,23,0.1848*DBH^2.3524,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,23,0.1848*DBH^2.3524,Intsia,bijuga,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Intsia,bijuga,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Intsia,bijuga,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Micronesia,1,0.0754*DBH^2.505*Sg,Bruguiera,cylindrica,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,NA,132,NA
-KohKong_Veg,Australia,2,0.0679*DBH^1.4914,Bruguiera,cylindrica,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-KohKong_Veg,Thailand,10,0.0188*((DBH^2)*(DDBH/((0.025*DBH)+0.583)))^0.909,Bruguiera,cylindrica,kg,DBH - diameter at breast height (cm),NA,NA,33,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Bruguiera,cylindrica,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Heritiera,littoralis,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Heritiera,littoralis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,23,0.1848*DBH^2.3524,Heritiera,littoralis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Lumnitzera,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Indonesia,23,0.1848*DBH^2.3524,Scyphiphora,hydrophyllacea,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Scyphiphora,hydrophyllacea,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Scyphiphora,hydrophyllacea,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Indonesia,23,0.1848*DBH^2.3524,Hibiscus,tiliaceus,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Hibiscus,tiliaceus,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Hibiscus,tiliaceus,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Indonesia,23,0.1848*DBH^2.3524,Heritiera,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Heritiera,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Xylocarpus,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Micronesia,6,0.3841*DBH^2.101*Sg,Sonneratia,alba,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.92,NA,323,NA
-KohKong_Veg,Australia,2,0.0679*DBH^1.4914,Sonneratia,alba,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Sonneratia,alba,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Excoecaria,agallocha,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Indonesia,23,0.1848*DBH^2.3524,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Avicennia,alba,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-KohKong_Veg,Indonesia,23,0.1848*DBH^2.3524,Lumnitzera,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Lumnitzera,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Micronesia,6,0.3841*DBH^2.101*Sg,Sonneratia,ovata,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.92,NA,323,NA
-KohKong_Veg,Australia,2,0.0679*DBH^1.4914,Sonneratia,ovata,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Sonneratia,ovata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-KohKong_Veg,Indonesia,23,0.1848*DBH^2.3524,Ceriops,decandra,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Indonesia,20,0.1832*DBH^2.21,Ceriops,decandra,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Ceriops,decandra,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PreyNob_Veg,Indonesia,23,0.1848*DBH^2.3524,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,23,0.1848*DBH^2.3524,Ceriops,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Ceriops,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),NA,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PreyNob_Veg,Indonesia,23,0.1848*DBH^2.3524,Excoecaria,agallocha,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Excoecaria,agallocha,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,23,0.1848*DBH^2.3524,Lumnitzera,littorea,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Lumnitzera,littorea,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,23,0.1848*DBH^2.3524,Ceriops,decandra,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Ceriops,decandra,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Ceriops,tagal,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,23,0.1848*DBH^2.3524,Lumnitzera,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Lumnitzera,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Lumnitzera,racemosa,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PreyNob_Veg,Micronesia,1,0.0754*DBH^2.505*Sg,Bruguiera,cylindrica,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,NA,132,NA
-PreyNob_Veg,Australia,2,0.0679*DBH^1.4914,Bruguiera,cylindrica,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-PreyNob_Veg,Thailand,10,0.0188*((DBH^2)*(DDBH/((0.025*DBH)+0.583)))^0.909,Bruguiera,cylindrica,kg,DBH - diameter at breast height (cm),NA,NA,33,NA
-PreyNob_Veg,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,Rhizophora,apiculata,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Rhizophora,apiculata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,23,0.1848*DBH^2.3524,Excoecaria,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Excoecaria,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Rhizophora,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Rhizophora,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Rhizophora,apiculata,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PreyNob_Veg,Indonesia,23,0.1848*DBH^2.3524,Lumnitzera,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Lumnitzera,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Micronesia,6,0.3841*DBH^2.101*Sg,Sonneratia,alba,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.92,NA,323,NA
-PreyNob_Veg,Australia,2,0.0679*DBH^1.4914,Sonneratia,alba,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Sonneratia,alba,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Tanzania,25,0.19633*DBH^2.08791*𝐻^0.29654,Aviciennia,species,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
-PreyNob_Veg,Australia,9,1.28*DBH^1.17,Aviciennia,species,kg,DBH - diameter at breast height (cm),0.8,NA,35,NA
-PreyNob_Veg,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,Rhizophora,NA,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
-PreyNob_Veg,Indonesia,21,0.043*DBH^2.63,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Lumnitzera,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PreyNob_Veg,Indonesia,23,0.1848*DBH^2.3524,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Micronesia,6,0.3841*DBH^2.101*Sg,Sonneratia,species,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.92,NA,323,NA
-PreyNob_Veg,Australia,2,0.0679*DBH^1.4914,Sonneratia,species,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Sonneratia,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,23,0.1848*DBH^2.3524,Heritiera,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Heritiera,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Aviciennia,species,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PreyNob_Veg,Tanzania,25,0.19633*DBH^2.08791*𝐻^0.29654,Avicennia,marina,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
-PreyNob_Veg,Australia,9,1.28*DBH^1.17,Avicennia,marina,kg,DBH - diameter at breast height (cm),0.8,NA,35,NA
-PreyNob_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Bruguiera,cylindrica,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PreyNob_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Excoecaria,agallocha,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PreyNob_Veg,Indonesia,23,0.1848*DBH^2.3524,Intsia,bijuga,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Intsia,bijuga,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Micronesia,6,0.3841*DBH^2.101*Sg,Sonneratia,ovata,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.92,NA,323,NA
-PreyNob_Veg,Australia,2,0.0679*DBH^1.4914,Sonneratia,ovata,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Sonneratia,ovata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PreyNob_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Lumnitzera,littorea,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PreyNob_Veg,Tanzania,25,0.19633*DBH^2.08791*𝐻^0.29654,Avicennia,alba,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
-PreyNob_Veg,Australia,9,1.28*DBH^1.17,Avicennia,alba,kg,DBH - diameter at breast height (cm),0.8,NA,35,NA
-PreyNob_Veg,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,Rhizophora,mucronata,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
-PreyNob_Veg,Indonesia,20,0.1832*DBH^2.21,Rhizophora,mucronata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 RufijiRiverDelta_Veg,Tanzania,28,1.4204*DBH^1.68979,Avicennia,marina,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 RufijiRiverDelta_Veg,Tanzania,29,0.19633*DBH^2.04113*H^0.29654,Avicennia,marina,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
 RufijiRiverDelta_Veg,Northern Australia,32,10^(0.106 + 1.171 * Log10(DBH)),Sonneratia,alba,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.8,NA,NA,NA
@@ -281,7 +101,6 @@ RufijiRiverDelta_Veg,Tanzania,30,1.4204*DBH^1.65760,Rhizophora,mucronata,kg,DBH 
 RufijiRiverDelta_Veg,Northern Australia,31,10^(-0.511 + 2.113 * Log10(DBH)),Rhizophora,mucronata,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.97,NA,NA,NA
 RufijiRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 RufijiRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-RufijiRiverDelta_Veg,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 RufijiRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 RufijiRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 RufijiRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Heritiera,littoralis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
@@ -292,149 +111,3 @@ RufijiRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Mangrove,NA,kg,DBH - diamete
 RufijiRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,Mangrove,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 RufijiRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Laguncularia,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
 RufijiRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,Laguncularia,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Rhizophora,mucronata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,Rhizophora,mucronata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Avicennia,marina,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,Avicennia,marina,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Mangrove,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,Mangrove,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Sonneratia,alba,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,Sonneratia,alba,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Heritiera,littoralis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,Heritiera,littoralis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,Laguncularia,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,Laguncularia,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-KRE_Veg,NA,NA,NA,Rhizophora,apiculata,NA,NA,NA,NA,NA,NA
-KRE_Veg,NA,NA,NA,Bruguiera,cylindrica,NA,NA,NA,NA,NA,NA
-KRE_Veg,NA,NA,NA,Avicennia,alba,NA,NA,NA,NA,NA,NA
-KRE_Veg,NA,NA,NA,Xylocarpus,moluccensis,NA,NA,NA,NA,NA,NA
-KRE_Veg,NA,NA,NA,Xylocarpus,granatum,NA,NA,NA,NA,NA,NA
-KRE_Veg,NA,NA,NA,Excoecaria,agallocha,NA,NA,NA,NA,NA,NA
-KRE_Veg,NA,NA,NA,Avicennia,marina,NA,NA,NA,NA,NA,NA
-PPM_Veg,NA,NA,NA,Bruguiera,sexangula,NA,NA,NA,NA,NA,NA
-PPM_Veg,NA,NA,NA,Bruguiera,cylindrica,NA,NA,NA,NA,NA,NA
-PPM_Veg,NA,NA,NA,Rhizophora,apiculata,NA,NA,NA,NA,NA,NA
-PPM_Veg,NA,NA,NA,Lumnitzera,racemosa,NA,NA,NA,NA,NA,NA
-PPM_Veg,NA,NA,NA,Avicennia,alba,NA,NA,NA,NA,NA,NA
-PPM_Veg,NA,NA,NA,Xylocarpus,moluccensis,NA,NA,NA,NA,NA,NA
-Catanauan_Veg,NA,NA,NA,Rhizophora,stylosa,NA,NA,NA,NA,NA,NA
-Catanauan_Veg,NA,NA,NA,Rhizophora,apiculata,NA,NA,NA,NA,NA,NA
-Catanauan_Veg,NA,NA,NA,Lumnitzera,racemosa,NA,NA,NA,NA,NA,NA
-PRE_Veg,NA,NA,NA,Rhizophora,apiculata,NA,NA,NA,NA,NA,NA
-PRE_Veg,NA,NA,NA,Excoecaria,agallocha,NA,NA,NA,NA,NA,NA
-PRE_Veg,NA,NA,NA,Xylocarpus,moluccensis,NA,NA,NA,NA,NA,NA
-PRE_Veg,NA,NA,NA,Bruguiera,gymnorrhiza,NA,NA,NA,NA,NA,NA
-PRE_Veg,NA,NA,NA,Cynometra,ramiflora,NA,NA,NA,NA,NA,NA
-PRE_Veg,NA,NA,NA,Heritiera,sylvatica,NA,NA,NA,NA,NA,NA
-PRE_Veg,NA,NA,NA,Calamus,erinaceus,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Rhizophora,apiculata,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Xylocarpus,granatum,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Ceriops,NA,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Avicennia,officinalis,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Bruguiera,gymnorrhiza,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Lumnitzera,littorea,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Xylocarpus,NA,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Bruguiera,cylindrica,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Intsia,bijuga,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Scyphiphora,hydrophyllacea,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Heritiera,littoralis,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Ceriops,decandra,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Lumnitzera,NA,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Weinmannia,blumei,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Excoecaria,agallocha,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Avicennia,alba,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Lumnitzera,racemosa,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Aegiceras,floridum,NA,NA,NA,NA,NA,NA
-KohKong_Veg,NA,NA,NA,Rhizophora,mucronata,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Ceriops,NA,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Ceriops,decandra,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Ceriops,tagal,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Lumnitzera,racemosa,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Excoecaria,agallocha,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Bruguiera,cylindrica,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Rhizophora,apiculata,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Lumnitzera,NA,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Aviciennia,species,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Excoecaria,species,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Rhizophora,NA,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Bruguiera,NA,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Sonneratia,species,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Lumnitzera,littorea,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Dehaasia,triandra,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Avicennia,alba,NA,NA,NA,NA,NA,NA
-PreyNob_Veg,NA,NA,NA,Sonneratia,ovata,NA,NA,NA,NA,NA,NA
-RufijiRiverDelta_Veg,NA,NA,NA,Ceriops,tagal,NA,NA,NA,NA,NA,NA
-RufijiRiverDelta_Veg,NA,NA,NA,Xylocarpus,granatum,NA,NA,NA,NA,NA,NA
-RufijiRiverDelta_Veg,NA,NA,NA,Bruguiera,gymnorrhiza,NA,NA,NA,NA,NA,NA
-RufijiRiverDelta_Veg,NA,NA,NA,Rhizophora,mucronata,NA,NA,NA,NA,NA,NA
-RufijiRiverDelta_Veg,NA,NA,NA,Avicennia,marina,NA,NA,NA,NA,NA,NA
-RufijiRiverDelta_Veg,NA,NA,NA,Mangrove,NA,NA,NA,NA,NA,NA,NA
-RufijiRiverDelta_Veg,NA,NA,NA,Laguncularia,racemosa,NA,NA,NA,NA,NA,NA
-RufijiRiverDelta_Veg,NA,NA,NA,Heritiera,littoralis,NA,NA,NA,NA,NA,NA
-ZambeziRiverDelta_Veg,NA,NA,NA,Ceriops,tagal,NA,NA,NA,NA,NA,NA
-ZambeziRiverDelta_Veg,NA,NA,NA,Rhizophora,mucronata,NA,NA,NA,NA,NA,NA
-ZambeziRiverDelta_Veg,NA,NA,NA,Xylocarpus,granatum,NA,NA,NA,NA,NA,NA
-ZambeziRiverDelta_Veg,NA,NA,NA,Bruguiera,gymnorrhiza,NA,NA,NA,NA,NA,NA
-ZambeziRiverDelta_Veg,NA,NA,NA,Avicennia,marina,NA,NA,NA,NA,NA,NA
-ZambeziRiverDelta_Veg,NA,NA,NA,Sonneratia,alba,NA,NA,NA,NA,NA,NA
-ZambeziRiverDelta_Veg,NA,NA,NA,Heritiera,littoralis,NA,NA,NA,NA,NA,NA
-ZambeziRiverDelta_Veg,NA,NA,NA,Laguncularia,racemosa,NA,NA,NA,NA,NA,NA
-KRE_Veg,Non specific,41,"NA",NA,NA,"NA","NA",NA,NA,NA,NA
-KRE_Veg,Malaysia,5,0.00698*DBH^2.61,NA,NA,kg,DBH - diameter at breast height (cm),0.99,NA,77,15
-KRE_Veg,"Southeast Sulawesi, Indonesia",36,1.184 * DBH^2.384,NA,NA,kg,DBH - diameter at breast height (cm),0.98,NA,NA,NA
-KRE_Veg,Indonesia,20,0.1832*DBH^2.21,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KRE_Veg,Northern Australia,34,10^(-0.7749 + 2.4167 * Log10(DBH)),NA,NA,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.993,1.17,21,2
-KRE_Veg,Bangladesh,35,Exp(1)^(-1.9737 + 1.0996 * Log(DBH^2)),NA,NA,kg,"DBH - diameter at breast height (cm), Exp - exponential function, Log - natural logarithm",0.9953,NA,NA,NA
-KRE_Veg,Non specific,42,"NA",NA,NA,"NA","NA",NA,NA,NA,NA
-KRE_Veg,Malaysia,38,0.235*DBH^2.42,NA,NA,kg,DBH - diameter at breast height (cm),0.98,NA,28,NA
-PPM_Veg,Southern Thailand,37,DBH * 2.8929,NA,NA,kg,DBH represents the number of NYFR fronds. 2.8929 is a mean dry-weight mass per frond,NA,NA,NA,NA
-PPM_Veg,Indonesia,20,0.1832*DBH^2.21,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-PPM_Veg,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),NA,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
-PPM_Veg,"Southeast Sulawesi, Indonesia",36,1.184 * DBH^2.384,NA,NA,kg,DBH - diameter at breast height (cm),0.98,NA,NA,NA
-PPM_Veg,Non specific,41,"NA",NA,NA,"NA","NA",NA,NA,NA,NA
-PPM_Veg,Malaysia,5,0.00698*DBH^2.61,NA,NA,kg,DBH - diameter at breast height (cm),0.99,NA,77,15
-PPM_Veg,NA,43,NA,NA,NA,NA,NA,NA,NA,NA,NA
-PPM_Veg,Northern Australia,39,10^(-1.0844 + 2.5883 * Log10(DBH)),NA,NA,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.994,1.13,17,3
-PPM_Veg,Bangladesh,35,Exp(1)^(-1.9737 + 1.0996 * Log(DBH^2)),NA,NA,kg,"DBH - diameter at breast height (cm), Exp - exponential function, Log - natural logarithm",0.9953,NA,NA,NA
-PPM_Veg,Non specific,42,"NA",NA,NA,"NA","NA",NA,NA,NA,NA
-Catanauan_Veg,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,NA,NA,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
-Catanauan_Veg,Indonesia,20,0.1832*DBH^2.21,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-Catanauan_Veg,Indonesia,23,0.1848*DBH^2.3524,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-Catanauan_Veg,NA,1000,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Catanauan_Veg,NA,1001,NA,NA,NA,NA,NA,NA,NA,NA,NA
-PRE_Veg,Non specific,41,"NA",NA,NA,"NA","NA",NA,NA,NA,NA
-PRE_Veg,Malaysia,5,0.00698*DBH^2.61,NA,NA,kg,DBH - diameter at breast height (cm),0.99,NA,77,15
-PRE_Veg,Malaysia,38,0.235*DBH^2.42,NA,NA,kg,DBH - diameter at breast height (cm),0.98,NA,28,NA
-PRE_Veg,Non specific,42,"NA",NA,NA,"NA","NA",NA,NA,NA,NA
-PRE_Veg,"Southeast Sulawesi, Indonesia",36,1.184 * DBH^2.384,NA,NA,kg,DBH - diameter at breast height (cm),0.98,NA,NA,NA
-PRE_Veg,NA,1000,NA,NA,NA,NA,NA,NA,NA,NA,NA
-PRE_Veg,NA,1001,NA,NA,NA,NA,NA,NA,NA,NA,NA
-KohKong_Veg,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,NA,NA,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
-KohKong_Veg,Indonesia,21,0.043*DBH^2.63,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KohKong_Veg,Tanzania,25,0.19633*DBH^2.08791*𝐻^0.29654,NA,NA,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
-KohKong_Veg,Australia,9,1.28*DBH^1.17,NA,NA,kg,DBH - diameter at breast height (cm),0.8,NA,35,NA
-KohKong_Veg,Micronesia,1,0.0754*DBH^2.505*Sg,NA,NA,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,NA,132,NA
-KohKong_Veg,Australia,2,0.0679*DBH^1.4914,NA,NA,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-KohKong_Veg,Thailand,10,0.0188*((DBH^2)*(DDBH/((0.025*DBH)+0.583)))^0.909,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,33,NA
-PreyNob_Veg,Micronesia,1,0.0754*DBH^2.505*Sg,NA,NA,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,NA,132,NA
-PreyNob_Veg,Australia,2,0.0679*DBH^1.4914,NA,NA,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
-PreyNob_Veg,Thailand,10,0.0188*((DBH^2)*(DDBH/((0.025*DBH)+0.583)))^0.909,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,33,NA
-PreyNob_Veg,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,NA,NA,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
-PreyNob_Veg,Tanzania,25,0.19633*DBH^2.08791*𝐻^0.29654,NA,NA,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
-PreyNob_Veg,Australia,9,1.28*DBH^1.17,NA,NA,kg,DBH - diameter at breast height (cm),0.8,NA,35,NA
-PreyNob_Veg,Micronesia,6,0.3841*DBH^2.101*Sg,NA,NA,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.92,NA,323,NA
-RufijiRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-RufijiRiverDelta_Veg,Tanzania,30,1.4204*DBH^1.65760,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-RufijiRiverDelta_Veg,Tanzania,28,1.4204*DBH^1.68979,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,23,0.1848*DBH^2.3524,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-ZambeziRiverDelta_Veg,Indonesia,20,0.1832*DBH^2.21,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
-KRE_Veg,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-PPM_Veg,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
