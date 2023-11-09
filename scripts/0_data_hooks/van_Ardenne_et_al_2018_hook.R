@@ -81,7 +81,6 @@ cores <- data_raw %>% select(Site, Transect, Flag) %>%
                       mutate(study_id = id,
                              core_id = paste(Site, Transect, sep = "_"),
                              core_id = paste(core_id, Flag, sep = "_")) %>% 
-                           #   %>% 
                      rename(site_id = Site) %>% distinct()
 
 
@@ -164,8 +163,10 @@ latlong <- bind_rows(grants_beach, point_carron, wells_int, wells_spit)
 cores <- left_join(cores, latlong) %>% distinct()
 
 #add additional variables
-cores <- cores %>% mutate(position_method = "other high resolution",
-                          position_notes = "Lecia Viva differential GPS",
+cores <- cores %>% mutate(position_method = case_when(is.na(latitude) ~ "other low resolution",
+                                                      TRUE ~ "other high resolution"),
+                          position_notes = case_when(is.na(latitude) ~ "position at site level",
+                                                     TRUE ~ "Lecia Viva differential GPS"),
                           year = "2015",
                           core_length_flag = "core depth represents deposit depth",
                           salinity_class = "estuarine",
@@ -175,8 +176,15 @@ cores <- cores %>% mutate(position_method = "other high resolution",
                           habitat = "marsh",
                           inundation_class = "low",
                           inundation_method = "field observation",
-                          latitude = case_when(core_id == "Grant's Beach_A_O10X2" ~ 46.17301, TRUE ~ latitude),
+                          latitude = case_when(core_id == "Grant's Beach_A_O10X2" ~ 46.17301, 
+                                               site_id == "Wells"& is.na(latitude) ~ 43.3,
+                                               site_id == "Grant's Beach"& is.na(latitude) ~ 46.166667,
+                                               site_id == "Pt Carron"& is.na(latitude) ~ 47.65,
+                                               TRUE ~ latitude),
                           longitude = case_when(core_id == "Grant's Beach_A_O10X2" ~ -64.04982,
+                                                site_id == "Wells"& is.na(longitude) ~ 70.566667,
+                                                site_id == "Pt Carron"& is.na(longitude) ~ 65.6,
+                                                site_id == "Grant's Beach"& is.na(longitude) ~ 64.05,
                                                 TRUE ~ longitude)) %>% select(-Transect, -Flag)
                         
 cores <- reorderColumns("cores", cores)

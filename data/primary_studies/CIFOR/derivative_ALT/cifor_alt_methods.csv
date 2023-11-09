@@ -1,3 +1,65 @@
 study_id,method_id,coring_method,roots_flag,sediment_sieved_flag,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_flag,carbon_measured_or_modeled,fraction_carbon_method,fraction_carbon_type,carbonates_removed,carbonate_removal_method
-NA,SWAMP,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
-NA,SWAMP,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,local regression,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Barreto-2017-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Boca Grande-2017-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Caetano-2017-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Furo de Chato-2017-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Furo Grande-2017-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Mangue Sul-2017-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Mauripe-2017-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Salina-2017-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Berahan kulon-2019,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Timbulsloko-2019,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Bhitakarnika-2013-India,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Acarau Boca-2016-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Baouth-2014-Senegal,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Caete-2017-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Diamniadio-2014-Senegal,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Djirnda-2014-Senegal,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Fambine-2014-Senegal,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Mangizal Cauassu-2016-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Manguinho-2016-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Mounde-2014-Senegal,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Porto Ceu Mangrove-2016-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Porto Ceu Shrimp-2016-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Sang-2014-Senegal,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Case Shell-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Jardin Du Elephant-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Lac Simba Deux-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Lac Simba-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Lac Sounga Deux-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Lac Sounga-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Mwana Mouele South-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Mwana Mouele-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Ndougou-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Paga-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-BRM10-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-MRM8-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-MRT7-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-MRT9-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-NCM1-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-NCM4-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-NCM5-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-NCT2-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-NCT3-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-NCT6-2014,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Marisma High-2017-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Marisma Low-2017-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Marisma Medium-2017-Brazil,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Bunaken-2011,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Cilacap-2011,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Kubu Raya-2011-Indonesia,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Sembilang-2011-Indonesia,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Tanjung Puting-2009-Indonesia,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Teminabuan-2011-Indonesia,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Timika-2011-Indonesia,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Arguni Bay-West Papua-2015-Indonesia,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Bintuni Bay-West Papua-2018-Indonesia,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Buruway-West Papua-2016-Indonesia,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Etna Bay-West Papua-2017-Indonesia,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-Kaimana City-West Papua-2017-Indonesia,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified
+SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CIFOR,gouge auger,roots and rhizomes included,sediment not sieved,not specified,60,to constant mass,measured,EA,total carbon,FALSE,none specified

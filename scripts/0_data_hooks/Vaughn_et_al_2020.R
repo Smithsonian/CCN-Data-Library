@@ -34,7 +34,10 @@ cores <- cores_raw %>%
          core_date = as_date(core_date)) %>%
   mutate(core_year = year(core_date), 
          core_month = month(core_date),
-         core_day = day(core_date)) %>%
+         core_day = day(core_date),
+         core_latitude = ifelse(is.na(core_latitude), 29.07750, core_latitude),
+         core_longitude = ifelse(is.na(core_longitude), -82.81583, core_longitude),
+         core_position_method = ifelse(is.na(core_position_method), "other low resolution", core_position_method)) %>%
   select(-core_date)
 
 depthseries <- depthseries_raw %>%
