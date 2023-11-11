@@ -287,14 +287,14 @@ if(join_status == TRUE){
   
   # Write new synthesis data
   # to derivative folder (eventually, get rid of the derivative folder, just write to CCRCN_synthesis)
-  write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis/CCN_cores.csv")
-  write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis/CCN_depthseries.csv")
-  write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis/CCN_sites.csv")
-  write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis/CCN_impacts.csv")
-  write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis/CCN_methods.csv")
-  write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/CCN_species.csv")
+  write_csv(ccrcn_synthesis$cores, "./data/CCRCN_synthesis/CCRCN_cores.csv")
+  write_csv(ccrcn_synthesis$depthseries, "./data/CCRCN_synthesis/CCRCN_depthseries.csv")
+  write_csv(ccrcn_synthesis$sites, "./data/CCRCN_synthesis/CCRCN_sites.csv")
+  write_csv(ccrcn_synthesis$impacts, "./data/CCRCN_synthesis/CCRCN_impacts.csv")
+  write_csv(ccrcn_synthesis$methods, "./data/CCRCN_synthesis/CCRCN_methods.csv")
+  write_csv(ccrcn_synthesis$species, "./data/CCRCN_synthesis/CCRCN_species.csv")
   write_csv(ccrcn_synthesis$study_citations %>% select(-keywords, -abstract), 
-            "./data/CCRCN_synthesis/CCN_study_citations.csv")
+            "./data/CCRCN_synthesis/CCRCN_study_citations.csv")
   
   WriteBib(as.BibEntry(bib_file), "data/CCRCN_synthesis/CCRCN_bibliography.bib") # some encoding funny business here
 }

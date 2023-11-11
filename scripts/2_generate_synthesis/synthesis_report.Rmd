@@ -65,7 +65,7 @@ pal <- colorFactor(viridis_pal(option = "H")(length(habs)), domain = habs)
 
 leaflet(map_cores, width = "100%") %>%
   addTiles() %>%
-  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 1,
+  addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), radius = 1,
                    label = ~paste0(study_id, "; ", habitat), color = ~pal(habitat)) %>%
   addLegend(pal = pal, values = ~habitat)
 
