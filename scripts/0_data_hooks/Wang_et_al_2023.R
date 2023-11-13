@@ -81,10 +81,28 @@ cores <- depth_raw %>%
                                core_id == "Stony_Creek" ~ "-73.851277",
                                core_id == "Four_Sparrow" ~ "-73.903494",
                                T ~ NA_character_),
+         
+         # manually add elevation cited in paper (source: https://link.springer.com/article/10.1007/s13157-023-01699-y)
+         elevation = case_when(core_id == "Big_Egg" ~ ".68",
+                               core_id == "Black_Bank" ~ ".31",
+                               core_id == "Duck_Point" ~ ".02",
+                               core_id == "East_High" ~ ".79",
+                               core_id == "Fresh_Creek" ~ ".86",
+                               core_id == "JoCo" ~ ".81",
+                               core_id == "Little_Egg" ~ ".55",
+                               core_id == "Ruffle_Bar" ~ ".67",
+                               core_id == "Spring_Creek" ~ ".89",
+                               core_id == "Yellow_Bar" ~ ".4",
+                               core_id == "Stony_Creek" ~ ".59",
+                               core_id == "Four_Sparrow" ~ ".82",
+                               T ~ NA_character_),
+         
+         elevation = as.numeric(elevation),
          latitude = as.numeric(latitude),
-         longitude = as.numeric(longitude)) %>%
+         longitude = as.numeric(longitude),
+         elevation_datum = "NAVD88") %>%
   select(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method, position_notes, 
-         salinity_class, salinity_method, habitat) %>% 
+         elevation, elevation_datum, salinity_class, salinity_method, habitat) %>% 
   distinct()
   
 methods <- data.frame(study_id = "Wang_et_al_2023",
