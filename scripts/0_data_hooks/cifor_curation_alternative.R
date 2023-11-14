@@ -42,19 +42,28 @@ geo_brazil <- geo_brazil %>% rename(latitude = Latitude,
                                                         Site == "Sa˜o Caetano" ~ "CAE",
                                                         Site == 'Salina' ~ "SAL",
                                                         TRUE ~ "MAR"),
-                                    core_id = case_when(site_id == "FUR" ~ paste(site_id, "Furo do Chato", `Sub-Plot`, sep = "_"),
-                                                        site_id == "SAL" ~ paste(site_id, "Salino", `Sub-Plot`, sep = "_"),
-                                                        Site == "Marisma low" ~ paste(site_id, "Marisma Low", `Sub-Plot`, sep = "_"),
-                                                        Site == "Marisma medium" ~ paste(site_id, "Marisma Medium", `Sub-Plot`, sep = "_"),
-                                                        Site == "Marisma high" ~ paste(site_id, "Marisma High", `Sub-Plot`, sep = "_"),
-                                                        TRUE ~ paste(site_id, Site, `Sub-Plot`, sep = "_"))) %>% 
-                                      select(-`Sub-Plot`) %>% distinct()
-
+                                    Site = case_when(Site == "Marisma high" ~ "Marisma High",
+                                                     Site == "Marisma medium" ~ "Marisma Medium",
+                                                     Site == "Marisma low" ~ "Marisma Low",
+                                                     TRUE ~ Site)) %>% distinct()
 
 
 ##  Cores ####
+
+#create core id 
+cifor_soil <- cifor_soil %>% 
+  mutate(subsite_code = paste(`Site ID`, Plot, `Sub-plot`, sep = "_")) %>% 
+  group_by(`Site ID`, Plot, `Sub-plot`, `Depth interval (cm)`, Latitude, Longitude) %>% 
+  mutate(core_replicate = 1:n()) %>% 
+  ungroup() %>% 
+  mutate(core_id = paste(`Site ID`, Plot, `Sub-plot`, core_replicate, sep = "_"))
+
+
+
 #get any missing plot level position data from vegetation table 
-latlong.biomass <- cifor_veg %>% select(`Site ID`, Plot, `Sub-plot`, Latitude, Longitude, filename) %>%
+latlong.biomass <- cifor_veg %>% 
+  select(`Site ID`, Plot, `Sub-plot`, Latitude, Longitude, filename) %>%
+  filter(`Site ID` != "FUR") %>% filter(`Site ID` != "FURO") %>% 
   mutate(Plot = case_when(Plot == "Barreto" ~ "Rio Barreto", 
                           Plot == "Boca Grande" ~ "Boca grande",
                           Plot == "Furo do Chato" ~ "Furo de Chato",
@@ -70,15 +79,9 @@ latlong.biomass <- cifor_veg %>% select(`Site ID`, Plot, `Sub-plot`, Latitude, L
                           TRUE ~ Plot)) %>% drop_na() %>%
   select(`Site ID`, Plot, `Sub-plot`, Latitude, Longitude)
   
-#start cores table with position data pulled from soils table
+#start cores table with position data pulled from soils table// create core id 
 latlong.soil <- cifor_soil %>% 
-  select(`Site ID`, Plot, `Sub-plot`, Latitude, Longitude, filename, `Depth interval (cm)`) %>% 
-  mutate(subsite_code = paste(`Site ID`, Plot, `Sub-plot`, sep = "_")) %>% 
-  group_by(`Site ID`, Plot, `Sub-plot`, `Depth interval (cm)`) %>% 
-  mutate(core_replicate = 1:n()) %>% 
-  ungroup() %>% 
-  mutate(core_id = paste(`Site ID`, Plot, `Sub-plot`, sep = "_")) %>% 
-  select(-core_replicate, -subsite_code)
+  select(`Site ID`, Plot, `Sub-plot`, Latitude, Longitude, filename, `Depth interval (cm)`, core_id)
 
 
 #join to fill in position data from veg
@@ -88,7 +91,7 @@ latlong.full <- left_join(latlong.soil, latlong.biomass, by = c("Site ID", "Plot
                 rename(latitude = Latitude, 
                        longitude = Longitude,
                        site_id = `Site ID`) %>% 
-                select(-Plot, -`Sub-plot`, -Latitude.x, -Latitude.y, -Longitude.x, -Longitude.y) %>% distinct()
+                select(-Latitude.x, -Latitude.y, -Longitude.x, -Longitude.y) %>% distinct()
 
 
 
@@ -105,11 +108,15 @@ latlong.full <- left_join(latlong.soil, latlong.biomass, by = c("Site ID", "Plot
 cifor_cores <- latlong.full %>% 
   mutate(latitude = case_when(site_id == "DEM" ~ "6.75938056",
                               site_id == "TIM" ~ "6.90485278",
+                              site_id == "DJI" ~ "13.97611667",
+                              site_id == "FURO" ~ "S00 50.480",
                               TRUE ~ latitude),
          longitude = case_when(site_id == "DEM" ~ "110.54598333",
                                site_id == "TIM" ~ "110.50518611",
+                               site_id == "DJI" ~ "-16.61556667",
+                               site_id == "FURO" ~ "W046 38.316",
                                TRUE ~ longitude)) %>% 
-      select(filename, site_id, core_id, latitude, longitude) %>% distinct()
+      select(filename, site_id,latitude, longitude, Plot, `Sub-plot`, `Depth interval (cm)`, core_id) %>% distinct()
 
 
 
@@ -139,23 +146,35 @@ cores2 <- rbind(subset_2, out_2) %>% distinct()
 
 
 #format cores table and add remaining site level position maunally 
-cores_format <- cores2 %>% mutate(latitude = as.numeric(latitude),
-                           longitude = as.numeric(longitude),
-                           position_method = "other low resolution",
-                           position_notes = case_when(is.na(latitude) ~ "position at site level",  
-                                                     TRUE ~ "position at subplot level"),
-                           habitat = "mangrove",
-                           core_length_flag = "not specified") %>% 
-                    rename(study_id = filename) %>% distinct()
+cores_format <- cores2 %>% 
+  mutate(latitude = as.numeric(latitude),
+         longitude = as.numeric(longitude),
+         position_method = "other low resolution",
+         position_notes = case_when(is.na(latitude) ~ "position at site level", 
+                                    site_id == "DEM"|site_id == "TIM"|site_id == "FURO"|site_id == "DJI" ~ "position at site level",
+                        TRUE ~ "position at subplot level"),
+         habitat = "mangrove",
+         core_length_flag = "not specified") %>%
+  rename(study_id = filename) %>% 
+  select(-Plot, -`Sub-plot`, -`Depth interval (cm)`) %>% distinct()
 
-##add brazil position data 
+##add brazil position data and create matching core_id to merge 
 geo_brazil_filter <- geo_brazil %>% 
- filter(site_id == "MAR"|site_id == "CAET") %>% 
-  filter(!Site == "Maruipe") %>% 
+  filter(!Site == "Maruipe") %>% filter(!site_id == "BAR") %>% filter(!site_id == "CAE") %>% 
+  filter(!site_id == "BOC") %>% filter(!site_id == "FURO") %>% filter(!site_id == "FURO") %>% 
+  filter(!site_id == "MAN") %>% filter(!site_id == "SAL") %>% 
+  mutate(subsite_code = paste(site_id, Site,`Sub-Plot`, sep = "_")) %>% 
+  group_by(site_id, Site, `Sub-Plot`, latitude, longitude) %>% 
+  mutate(core_replicate = 1:n()) %>% 
+  ungroup() %>% 
+  mutate(core_id = case_when(site_id == "CAET" ~ paste(site_id, "Caete",`Sub-Plot`, core_replicate, sep = "_"),
+                             site_id == "MAR" ~ paste(site_id, Site,`Sub-Plot`, core_replicate, sep = "_"),
+                             site_id == "FUR" ~ paste(site_id, "Furo de Chato",`Sub-Plot`, core_replicate, sep = "_"))) %>% 
   select(site_id, core_id, latitude, longitude) %>% distinct()
 
 
-cores_join <- left_join(cores_format, geo_brazil_filter, by = c("core_id", "site_id")) %>% 
+
+cores_join <- left_join(cores_format, geo_brazil_filter, by = c("site_id", "core_id")) %>% 
   mutate(latitude = if_else(is.na(latitude.x), latitude.y, latitude.x),
          longitude = if_else(is.na(longitude.x), longitude.y, longitude.x)) %>% 
   select(-latitude.x, -latitude.y, -longitude.x, -longitude.y)
@@ -185,7 +204,8 @@ cores <- cores_join %>%
                               TRUE ~ longitude)) %>% 
   left_join(missing_site_position, by = "site_id") %>% 
   mutate(latitude = if_else(is.na(latitude.x), latitude.y, latitude.x),
-         longitude = if_else(is.na(longitude.x), longitude.y, longitude.x)) %>% 
+         longitude = if_else(is.na(longitude.x), longitude.y, longitude.x),
+         core_id = str_remove_all(core_id, "_NA")) %>% 
   select(-latitude.x, -latitude.y, -longitude.x, -longitude.y) %>% distinct()
 
 cores <- reorderColumns("cores", cores) 
@@ -237,14 +257,15 @@ depthseries <- depthseries_join %>%
   group_by(`Site ID`, Plot, `Sub-plot`, `Depth interval (cm)`) %>% 
   mutate(core_replicate = 1:n()) %>% 
   ungroup() %>% 
-  mutate(core_id = paste(`Site ID`, Plot, `Sub-plot`, sep = "_"),
+  mutate(core_id = paste(`Site ID`, Plot,`Sub-plot`, core_replicate, sep = "_"),
          fraction_carbon = as.numeric(`Carbon content (%)`),
          fraction_carbon = fraction_carbon/100,
          method_id = "CIFOR",
          dry_bulk_density = as.numeric(`Bulk density (g/cm3)`),
          depth_interval_notes = ifelse(`Depth interval (cm)` == ">100", "depth interval categorized as >100", depth_interval_notes),
          depth_min = ifelse(`Site ID` == "Arguni, Kaimana" & is.na(depth_min), 100, depth_min),
-         depth_max = ifelse(`Site ID` == "Arguni, Kaimana" & is.na(depth_max), 300, depth_max)) %>% 
+         depth_max = ifelse(`Site ID` == "Arguni, Kaimana" & is.na(depth_max), 300, depth_max),
+         core_id = str_remove_all(core_id, "_NA")) %>% 
   rename(site_id = `Site ID`,
          study_id = filename) %>% 
     select(study_id, core_id, method_id, site_id, fraction_carbon, dry_bulk_density, 
@@ -317,7 +338,7 @@ methods <- cores %>% select(study_id) %>% distinct() %>%
 ## Mapping
 leaflet(cores) %>%
   addTiles() %>% 
-  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~ core_id)
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~ site_id)
 
 ## Table testing
 table_names <- c("methods", "cores", "depthseries")

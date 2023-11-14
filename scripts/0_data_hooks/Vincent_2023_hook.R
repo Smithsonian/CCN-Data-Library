@@ -23,17 +23,17 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 
 
 #load in data 
-methods_raw <- read_csv("data/primary_studies/Vincent_2023/original/Vincent_2023_materials_and_methods.csv")
-cores_raw <- read_csv("data/primary_studies/Vincent_2023/original/Vincent_2023_cores.csv")
-depthseries_raw <- read_csv("data/primary_studies/Vincent_2023/original/Vincent_2023_depthseries.csv")
-impacts_raw <- read_csv("data/primary_studies/Vincent_2023/original/Vincent_2023_impacts.csv")
-sites_raw <- read_csv("data/primary_studies/Vincent_2023/original/Vincent_2023_sites.csv")
-species_raw <- read_csv("data/primary_studies/Vincent_2023/original/Vincent_2023_species.csv")
+methods_raw <- read_csv("data/primary_studies/Vincent_2023/original/Vincent_and_Dionne_2023_materials_and_methods.csv")
+cores_raw <- read_csv("data/primary_studies/Vincent_2023/original/Vincent_and_Dionne_2023_cores.csv")
+depthseries_raw <- read_csv("data/primary_studies/Vincent_2023/original/Vincent_and_Dionne_2023_depthseries.csv")
+impacts_raw <- read_csv("data/primary_studies/Vincent_2023/original/Vincent_and_Dionne_2023_impacts.csv")
+sites_raw <- read_csv("data/primary_studies/Vincent_2023/original/Vincent_and_Dionne_2023_sites.csv")
+species_raw <- read_csv("data/primary_studies/Vincent_2023/original/Vincent_and_Dionne_2023_species.csv")
   
   
 ## 1. Curation ####
 
-id <- "Vincent_2023"
+id <- "Vincent_and_Dionne_2023"
 
 
 ## ... Methods ####
@@ -100,12 +100,12 @@ test_numeric_vars(depthseries) ##testNumericCols producing error message
 ## 3. Write Curated Data ####
 
 # write data to final folder
-write_csv(methods, "data/primary_studies/Vincent_2023/derivative/Vincent_2023_methods.csv")
-write_csv(sites, "data/primary_studies/Vincent_2023/derivative/Vincent_2023_sites.csv")
-write_csv(cores, "data/primary_studies/Vincent_2023/derivative/Vinvent_2023_cores.csv")
-write_csv(depthseries, "data/primary_studies/Vincent_2023/derivative/Vincent_2023_depthseries.csv")
-write_csv(species, "data/primary_studies/Vincent_2023/derivative/Vincent_2023_species.csv")
-write_csv(impacts, "data/primary_studies/Vincent_2023/derivative/Vincent_2023_impacts.csv")
+write_csv(methods, "data/primary_studies/Vincent_2023/derivative/Vincent_and_Dionne_2023_methods.csv")
+write_csv(sites, "data/primary_studies/Vincent_2023/derivative/Vincent_and_Dionne_2023_sites.csv")
+write_csv(cores, "data/primary_studies/Vincent_2023/derivative/Vincent_and_Dionne_2023_cores.csv")
+write_csv(depthseries, "data/primary_studies/Vincent_2023/derivative/Vincent_and_Dionne_2023_depthseries.csv")
+write_csv(species, "data/primary_studies/Vincent_2023/derivative/Vincent_and_Dionne_2023_species.csv")
+write_csv(impacts, "data/primary_studies/Vincent_2023/derivative/Vincent_and_Dionne_2023_impacts.csv")
 
 ## 4. Bibliography ####
 
@@ -128,17 +128,17 @@ write_csv(impacts, "data/primary_studies/Vincent_2023/derivative/Vincent_2023_im
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
 
 study_citation <- data.frame(study_id = id, 
-                             bibliography_id = "Vincent_2023",
+                             bibliography_id = id,
                              publication_type = "primary dataset",
                              bibtype = "Misc", 
                              title = "Dataset: Sediment Carbon Content from three Maine Salt Marshes 1993",
-                             author = "Robert Vincent",
-                             doi = "https://doi.org/10.25573/serc.23960793.v1",
-                             url = "https://smithsonian.figshare.com/articles/dataset/Dataset_Sediment_Carbon_Content_from_three_Maine_Salt_Marshes_1993/23960793/1",
+                             author = "Robert Vincent, Michele Dionne",
+                             doi = "https://doi.org/10.25573/serc.23960793.v2",
+                             url = "https://smithsonian.figshare.com/articles/dataset/Dataset_Sediment_Carbon_Content_from_three_Maine_Salt_Marshes_1993/23960793/2",
                              year = "2023")
 
-WriteBib(as.BibEntry(study_citation), "data/primary_studies/Vincent_2023/derivative/Vincent_2023.bib")
-write_csv(study_citation, "data/primary_studies/Vincent_2023/derivative/Vincent_2023_study_citation.csv")
+WriteBib(as.BibEntry(study_citation), "data/primary_studies/Vincent_2023/derivative/Vincent_and_Dionne_2023.bib")
+write_csv(study_citation, "data/primary_studies/Vincent_2023/derivative/Vincent_and_Dionne_2023_study_citation.csv")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/

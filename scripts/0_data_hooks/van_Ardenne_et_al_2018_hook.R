@@ -182,9 +182,9 @@ cores <- cores %>% mutate(position_method = case_when(is.na(latitude) ~ "other l
                                                site_id == "Pt Carron"& is.na(latitude) ~ 47.65,
                                                TRUE ~ latitude),
                           longitude = case_when(core_id == "Grant's Beach_A_O10X2" ~ -64.04982,
-                                                site_id == "Wells"& is.na(longitude) ~ 70.566667,
-                                                site_id == "Pt Carron"& is.na(longitude) ~ 65.6,
-                                                site_id == "Grant's Beach"& is.na(longitude) ~ 64.05,
+                                                site_id == "Wells"& is.na(longitude) ~ -70.566667,
+                                                site_id == "Pt Carron"& is.na(longitude) ~ -65.6,
+                                                site_id == "Grant's Beach"& is.na(longitude) ~ -64.05,
                                                 TRUE ~ longitude)) %>% select(-Transect, -Flag)
                         
 cores <- reorderColumns("cores", cores)

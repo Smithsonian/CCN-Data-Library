@@ -16,6 +16,13 @@
       </individualName>
       <role>author</role>
     </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Michele</givenName>
+        <surName>Dionne</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
     <pubDate>2023</pubDate>
     <abstract>Sediment cores were collected from three salt marshes in Wells, Maine during the summer of 1993. The purpose was to characterize soil bulk density and carbon content in a tidally restricted marsh (Drakes Island) associated with tidal restoration, compared with two reference marshes (Webhannet and Little River).</abstract>
     <keywordSet>
@@ -69,10 +76,10 @@
       <electronicMailAddress>rvincent@mit.edu</electronicMailAddress>
     </contact>
     <dataTable>
-      <entityName>Vincent_2023_methods</entityName>
+      <entityName>Vincent_and_Dionne_2023_methods</entityName>
       <entityDescription>methods information for study</entityDescription>
       <physical>
-        <objectName>Vincent_2023_methods.csv</objectName>
+        <objectName>Vincent_and_Dionne_2023_methods.csv</objectName>
         <dataFormat>
           <textFormat>
             <recordDelimiter>&#13;
@@ -373,10 +380,10 @@
       </attributeList>
     </dataTable>
     <dataTable>
-      <entityName>Vincent_2023_cores</entityName>
+      <entityName>Vincent_and_Dionne_2023_cores</entityName>
       <entityDescription>cores information for study</entityDescription>
       <physical>
-        <objectName>Vincent_2023_cores.csv</objectName>
+        <objectName>Vincent_and_Dionne_2023_cores.csv</objectName>
         <dataFormat>
           <textFormat>
             <recordDelimiter>&#13;
@@ -744,10 +751,10 @@
       </attributeList>
     </dataTable>
     <dataTable>
-      <entityName>Vincent_2023_depthseries</entityName>
+      <entityName>Vincent_and_Dionne_2023_depthseries</entityName>
       <entityDescription>depthseries information for study</entityDescription>
       <physical>
-        <objectName>Vincent_2023_depthseries.csv</objectName>
+        <objectName>Vincent_and_Dionne_2023_depthseries.csv</objectName>
         <dataFormat>
           <textFormat>
             <recordDelimiter>&#13;
@@ -893,10 +900,10 @@
       </attributeList>
     </dataTable>
     <dataTable>
-      <entityName>Vincent_2023_sites</entityName>
+      <entityName>Vincent_and_Dionne_2023_sites</entityName>
       <entityDescription>sites information for study</entityDescription>
       <physical>
-        <objectName>Vincent_2023_sites.csv</objectName>
+        <objectName>Vincent_and_Dionne_2023_sites.csv</objectName>
         <dataFormat>
           <textFormat>
             <recordDelimiter>&#13;
@@ -1170,10 +1177,10 @@
       </attributeList>
     </dataTable>
     <dataTable>
-      <entityName>Vincent_2023_species</entityName>
+      <entityName>Vincent_and_Dionne_2023_species</entityName>
       <entityDescription>species information for study</entityDescription>
       <physical>
-        <objectName>Vincent_2023_species.csv</objectName>
+        <objectName>Vincent_and_Dionne_2023_species.csv</objectName>
         <dataFormat>
           <textFormat>
             <recordDelimiter>&#13;
@@ -1279,10 +1286,10 @@
       </attributeList>
     </dataTable>
     <dataTable>
-      <entityName>Vincent_2023_impacts</entityName>
+      <entityName>Vincent_and_Dionne_2023_impacts</entityName>
       <entityDescription>impacts information for study</entityDescription>
       <physical>
-        <objectName>Vincent_2023_impacts.csv</objectName>
+        <objectName>Vincent_and_Dionne_2023_impacts.csv</objectName>
         <dataFormat>
           <textFormat>
             <recordDelimiter>&#13;
