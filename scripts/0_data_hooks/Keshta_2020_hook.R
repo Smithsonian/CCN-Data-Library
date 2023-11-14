@@ -34,7 +34,7 @@ depthseries <- depthseries_raw %>%
   mutate(method_id = ifelse(study_id == "Keshta_et_al_2020_a", 
                             "wetland cores", "upland cores")) %>%
   mutate(study_id = id) %>%
-  select(-c(total_carbon_stock, soil_moisture)) %>%
+  select(-c(total_carbon_stock, soil_moisture, fraction_carbon)) %>%
   reorderColumns("depthseries", .)
 
 # methods (no change)

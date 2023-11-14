@@ -43,7 +43,15 @@ sites <- sites_raw
 # peat_depth, peat_depth_notes, core_length, pH, porewater_salinity
 cores <- cores_raw %>%
   mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
-         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK")) %>%
+         core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK"),
+         # patch in missing Blind Slough coords for one core
+         core_latitude = ifelse(core_id == "COL-BLI-TS-2", 46.1922, core_latitude),
+         core_longitude = ifelse(core_id == "COL-BLI-TS-2", -123.5798, core_longitude),
+         core_position_method = ifelse(core_id == "COL-BLI-TS-2", "other low resolution", core_position_method),
+         core_position_notes = ifelse(core_id == "COL-BLI-TS-2", "site-level coordinates from associated publication", core_position_notes),
+         habitat = case_when(vegetation_class == "emergent" ~ "marsh",
+                             vegetation_class == "seagrass" ~ "seagrass",
+                             vegetation_class == "forested" ~ "swamp")) %>%
   select(-c(peat_depth, peat_depth_notes, core_length, pH, porewater_salinity))
 
 # depthseries
@@ -130,7 +138,8 @@ testRequired(table_names)
 
 test_unique_cores(cores)
 test_unique_coords(cores)
-test_core_relationships(cores, depthseries)
+testIDs(cores, depthseries, by = "core")
+
 fraction_not_percent(depthseries)
 test_depthseries <- test_numeric_vars(depthseries)
 

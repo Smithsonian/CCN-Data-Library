@@ -103,10 +103,10 @@ if(!(plyr::empty(pnts))){
     bind_rows(already_assigned)
   
   # merge with core table
-  core_geography <- left_join(ccrcn_synthesis$cores, assigned_geography) %>% 
+  core_geography <- left_join(ccrcn_synthesis$cores, unique(assigned_geography)) %>% # SHOULDN'T NEED TO UNIQUE
     # SPOT FIX
-    mutate(longitude = case_when(study_id == "van_Ardenne_et_al_2018" & longitude > 0 ~ longitude * -1,
-                                 T ~ longitude))
+    mutate(longitude = case_when(study_id == "van_Ardenne_et_al_2018" & as.numeric(longitude) > 0 ~ as.numeric(longitude) * -1,
+                                 T ~ as.numeric(longitude)))
   
   # Investigate NA cases in geography assignment
   # length(which(is.na(core_geography$country))) # country has 23 NA b/c lat/lon is NA
