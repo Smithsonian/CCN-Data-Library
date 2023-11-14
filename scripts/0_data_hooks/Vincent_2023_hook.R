@@ -49,7 +49,10 @@ sites <- sites_raw
 
 ## ... Cores ####
 
-cores <- cores_raw
+cores <- cores_raw %>% 
+  # Quick fix to formatting of month
+  mutate(month = as.numeric(8))
+
 cores <- reorderColumns("cores", cores)
 
 ## ... Depthseries ####
