@@ -40,7 +40,8 @@ depthseries <- depthseries_raw %>%
                              NA, "disintegrationsPerMinutePerGram"),
          bi214_unit = ifelse(is.na(bi214_activity), NA, "disintegrationsPerMinutePerGram"),
          pb214_unit = ifelse(is.na(pb214_activity_295keV) & is.na(pb214_activity_352keV), 
-                             NA, "disintegrationsPerMinutePerGram")) %>%
+                             NA, "disintegrationsPerMinutePerGram"),
+         total_pb210_activity_se = total_pb210_activity_se * total_pb210_activity) %>%
   mutate(method_id = "single set of methods") %>%
   # average pb214
   mutate(pb214_activity = (pb214_activity_352keV + pb214_activity_295keV)/2,

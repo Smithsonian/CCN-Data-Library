@@ -1,7 +1,7 @@
 study_id,site_id,core_id,impact_class
-Vincent_1993,Webhannet,NA,natural
-Vincent_1993,Drakes Island,NA,tidally restricted
-Vincent_1993,Little River,NA,natural
+Vincent_and_Dionne_2023,Webhannet,NA,natural
+Vincent_and_Dionne_2023,Drakes Island,NA,tidally restricted
+Vincent_and_Dionne_2023,Little River,NA,natural
 Thom_1992,Elk_River_Prev_Diked,ED1,tidally restored
 Senger_et_al_2020,Pedro,Pe01,natural
 Senger_et_al_2020,Pedro,Pe02,natural
@@ -382,14 +382,14 @@ Lafratta_et_al_2018,False bay,3B,disturbed
 Kusumaningtyas_et_al_2018,Berau,NA,natural
 Kusumaningtyas_et_al_2018,Kongsi_Island,NA,natural
 Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon,NA,sediment added
-Krauss_et_al_2018,Savannah,savannah_low_1,tidally restored
-Krauss_et_al_2018,Savannah,savannah_mid_2,tidally restored
-Krauss_et_al_2018,Savannah,savannah_mid_1,tidally restored
-Krauss_et_al_2018,Savannah,savannah_high_1,tidally restored
-Krauss_et_al_2018,Waccamaw,butler_island_1,tidally restored
-Krauss_et_al_2018,Waccamaw,turkey_creek_1,tidally restored
-Krauss_et_al_2018,Waccamaw,turkey_creek_2,tidally restored
-Krauss_et_al_2018,Waccamaw,richmond_island_1,tidally restored
+Krauss_et_al_2018,Savannah,savannah_low_1,natural
+Krauss_et_al_2018,Savannah,savannah_mid_2,natural
+Krauss_et_al_2018,Savannah,savannah_mid_1,natural
+Krauss_et_al_2018,Savannah,savannah_high_1,natural
+Krauss_et_al_2018,Waccamaw,butler_island_1,natural
+Krauss_et_al_2018,Waccamaw,turkey_creek_1,natural
+Krauss_et_al_2018,Waccamaw,turkey_creek_2,natural
+Krauss_et_al_2018,Waccamaw,richmond_island_1,natural
 Kemp_et_al_2020,Barnegat_Bay,BB1B,ditched
 Breithaupt_et_al_2017,NA,TTI1,natural
 Breithaupt_et_al_2017,NA,TTI2,natural
@@ -882,6 +882,72 @@ Costa_et_al_2023,PanamaPacific-VE I,PanamaPacific-VE I-1,natural
 Costa_et_al_2023,PanamaPacific-VE V,PanamaPacific-VE V-1,natural
 Costa_et_al_2023,PanamaPacific-VE II,PanamaPacific-VE II-1,natural
 Costa_et_al_2023,PanamaPacific-VE VII,PanamaPacific-VE VII-1,natural
+Cifuentes_et_al_2023_Panama,Batipa,Batipa_1,natural
+Cifuentes_et_al_2023_Panama,Batipa,Batipa_2,natural
+Cifuentes_et_al_2023_Panama,Batipa,Batipa_3,natural
+Cifuentes_et_al_2023_Panama,Batipa,Batipa_4,natural
+Cifuentes_et_al_2023_Panama,Batipa,Batipa_5,natural
+Cifuentes_et_al_2023_Panama,Batipa,Batipa_6,natural
+Cifuentes_et_al_2023_Panama,Boca Ternero,Boca Ternero_1,agro-industrial deforestation
+Cifuentes_et_al_2023_Panama,Boca Ternero,Boca Ternero_2,agro-industrial deforestation
+Cifuentes_et_al_2023_Panama,Boca Ternero,Boca Ternero_3,agro-industrial deforestation
+Cifuentes_et_al_2023_Panama,Boca Ternero,Boca Ternero_4,agro-industrial deforestation
+Cifuentes_et_al_2023_Panama,Boca del R’o,Boca del R’o_1,firewood extraction
+Cifuentes_et_al_2023_Panama,Boca del R’o,Boca del R’o_2,firewood extraction
+Cifuentes_et_al_2023_Panama,Boca del R’o,Boca del R’o_3,firewood extraction
+Cifuentes_et_al_2023_Panama,Boca del R’o,Boca del R’o_4,firewood extraction
+Cifuentes_et_al_2023_Panama,Boca del R’o,Boca del R’o_5,firewood extraction
+Cifuentes_et_al_2023_Panama,Boca del R’o,Boca del R’o_6,firewood extraction
+Cifuentes_et_al_2023_Panama,Calle Larga,Calle Larga_1,agro-industrial deforestation
+Cifuentes_et_al_2023_Panama,Calle Larga,Calle Larga_2,agro-industrial deforestation
+Cifuentes_et_al_2023_Panama,Calle Larga,Calle Larga_3,agro-industrial deforestation
+Cifuentes_et_al_2023_Panama,Calle Larga,Calle Larga_4,agro-industrial deforestation
+Cifuentes_et_al_2023_Panama,El Represo,El Represo_1,bark extraction
+Cifuentes_et_al_2023_Panama,El Represo,El Represo_2,bark extraction
+Cifuentes_et_al_2023_Panama,El Represo,El Represo_3,bark extraction
+Cifuentes_et_al_2023_Panama,El Represo,El Represo_4,bark extraction
+Cifuentes_et_al_2023_Panama,El Represo,El Represo_5,bark extraction
+Cifuentes_et_al_2023_Panama,El Represo,El Represo_6,bark extraction
+Cifuentes_et_al_2023_Panama,El R’o,El R’o_1,bark extraction
+Cifuentes_et_al_2023_Panama,El R’o,El R’o_2,bark extraction
+Cifuentes_et_al_2023_Panama,El R’o,El R’o_3,bark extraction
+Cifuentes_et_al_2023_Panama,El R’o,El R’o_4,bark extraction
+Cifuentes_et_al_2023_Panama,El R’o,El R’o_5,bark extraction
+Cifuentes_et_al_2023_Panama,El R’o,El R’o_6,bark extraction
+Cifuentes_et_al_2023_Panama,Isla Mono,Isla Mono_1,natural
+Cifuentes_et_al_2023_Panama,Isla Mono,Isla Mono_2,natural
+Cifuentes_et_al_2023_Panama,Isla Mono,Isla Mono_3,natural
+Cifuentes_et_al_2023_Panama,Isla Mono,Isla Mono_4,natural
+Cifuentes_et_al_2023_Panama,Isla Mono,Isla Mono_5,natural
+Cifuentes_et_al_2023_Panama,Isla Mono,Isla Mono_6,natural
+Cifuentes_et_al_2023_Panama,La Yeguada,La Yeguada_1,agro-industrial deforestation
+Cifuentes_et_al_2023_Panama,La Yeguada,La Yeguada_2,agro-industrial deforestation
+Cifuentes_et_al_2023_Panama,La Yeguada,La Yeguada_3,agro-industrial deforestation
+Cifuentes_et_al_2023_Panama,La Yeguada,La Yeguada_4,agro-industrial deforestation
+Cifuentes_et_al_2023_Panama,Las Matita,Las Matita_1,firewood extraction
+Cifuentes_et_al_2023_Panama,Las Matita,Las Matita_2,firewood extraction
+Cifuentes_et_al_2023_Panama,Las Matita,Las Matita_3,firewood extraction
+Cifuentes_et_al_2023_Panama,Las Matita,Las Matita_4,firewood extraction
+Cifuentes_et_al_2023_Panama,Las Matita,Las Matita_5,firewood extraction
+Cifuentes_et_al_2023_Panama,Las Matita,Las Matita_6,firewood extraction
+Cifuentes_et_al_2023_Panama,Limones,Limones_1,natural
+Cifuentes_et_al_2023_Panama,Limones,Limones_2,natural
+Cifuentes_et_al_2023_Panama,Limones,Limones_3,natural
+Cifuentes_et_al_2023_Panama,Limones,Limones_4,natural
+Cifuentes_et_al_2023_Panama,Limones,Limones_5,natural
+Cifuentes_et_al_2023_Panama,Limones,Limones_6,natural
+Cifuentes_et_al_2023_Panama,Los Algarrobos,Los Algarrobos_1,firewood extraction
+Cifuentes_et_al_2023_Panama,Los Algarrobos,Los Algarrobos_2,firewood extraction
+Cifuentes_et_al_2023_Panama,Los Algarrobos,Los Algarrobos_3,firewood extraction
+Cifuentes_et_al_2023_Panama,Los Algarrobos,Los Algarrobos_4,firewood extraction
+Cifuentes_et_al_2023_Panama,Los Algarrobos,Los Algarrobos_5,firewood extraction
+Cifuentes_et_al_2023_Panama,Los Algarrobos,Los Algarrobos_6,firewood extraction
+Cifuentes_et_al_2023_Panama,Resbaloso,Resbaloso_1,bark extraction
+Cifuentes_et_al_2023_Panama,Resbaloso,Resbaloso_2,bark extraction
+Cifuentes_et_al_2023_Panama,Resbaloso,Resbaloso_3,bark extraction
+Cifuentes_et_al_2023_Panama,Resbaloso,Resbaloso_4,bark extraction
+Cifuentes_et_al_2023_Panama,Resbaloso,Resbaloso_5,bark extraction
+Cifuentes_et_al_2023_Panama,Resbaloso,Resbaloso_6,bark extraction
 KRE_Soil,Krabi_River_Estuary_178,Krabi_River_Estuary_178_563,Intact
 KRE_Soil,Krabi_River_Estuary_178,Krabi_River_Estuary_178_564,Intact
 KRE_Soil,Krabi_River_Estuary_178,Krabi_River_Estuary_178_565,Intact
@@ -1407,39 +1473,39 @@ Arias-Ortiz_et_al_2021,US-MyB,Typha M2,impounded
 Arias-Ortiz_et_al_2021,US-Tw1,Typha W1,impounded
 Arias-Ortiz_et_al_2021,US-Tw1,Typha W2,impounded
 Arias-Ortiz_et_al_2021,US-Tw1,Typha W3,impounded
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1983-1,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1983-2,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1983-3,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1983-4,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1983-5,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1983-6,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1996-1,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1996-2,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1996-3,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1996-4,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1996-5,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,1996-6,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C1-1,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C1-2,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C1-3,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C1-4,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C1-5,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C1-6,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C3-1,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C3-2,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C3-3,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C3-4,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C3-5,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C3-6,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C2-1,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C2-2,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C2-3,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C2-4,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C2-5,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C2-6,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C4-1,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C4-2,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C4-3,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C5-1,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C5-2,tidally restored
-Abbott_et_al_2019,Sabine_National_Wildlife_Refuge,C5-3,tidally restored
+Abbott_et_al_2019,1983,1983-1,tidally restored
+Abbott_et_al_2019,1983,1983-2,tidally restored
+Abbott_et_al_2019,1983,1983-3,tidally restored
+Abbott_et_al_2019,1983,1983-4,tidally restored
+Abbott_et_al_2019,1983,1983-5,tidally restored
+Abbott_et_al_2019,1983,1983-6,tidally restored
+Abbott_et_al_2019,1996,1996-1,tidally restored
+Abbott_et_al_2019,1996,1996-2,tidally restored
+Abbott_et_al_2019,1996,1996-3,tidally restored
+Abbott_et_al_2019,1996,1996-4,tidally restored
+Abbott_et_al_2019,1996,1996-5,tidally restored
+Abbott_et_al_2019,1996,1996-6,tidally restored
+Abbott_et_al_2019,C1,C1-1,tidally restored
+Abbott_et_al_2019,C1,C1-2,tidally restored
+Abbott_et_al_2019,C1,C1-3,tidally restored
+Abbott_et_al_2019,C1,C1-4,tidally restored
+Abbott_et_al_2019,C1,C1-5,tidally restored
+Abbott_et_al_2019,C1,C1-6,tidally restored
+Abbott_et_al_2019,C3,C3-1,tidally restored
+Abbott_et_al_2019,C3,C3-2,tidally restored
+Abbott_et_al_2019,C3,C3-3,tidally restored
+Abbott_et_al_2019,C3,C3-4,tidally restored
+Abbott_et_al_2019,C3,C3-5,tidally restored
+Abbott_et_al_2019,C3,C3-6,tidally restored
+Abbott_et_al_2019,C2,C2-1,tidally restored
+Abbott_et_al_2019,C2,C2-2,tidally restored
+Abbott_et_al_2019,C2,C2-3,tidally restored
+Abbott_et_al_2019,C2,C2-4,tidally restored
+Abbott_et_al_2019,C2,C2-5,tidally restored
+Abbott_et_al_2019,C2,C2-6,tidally restored
+Abbott_et_al_2019,C4,C4-1,tidally restored
+Abbott_et_al_2019,C4,C4-2,tidally restored
+Abbott_et_al_2019,C4,C4-3,tidally restored
+Abbott_et_al_2019,C5,C5-1,tidally restored
+Abbott_et_al_2019,C5,C5-2,tidally restored
+Abbott_et_al_2019,C5,C5-3,tidally restored

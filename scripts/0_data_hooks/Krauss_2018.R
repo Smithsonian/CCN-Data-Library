@@ -403,7 +403,7 @@ cores <- depthseries %>%
 
 impacts <- cores %>% 
   select(study_id, site_id, core_id) %>% 
-  mutate(impact_class = "tidally restored")
+  mutate(impact_class = "natural")
 
 # ## ....3E. Materials and Methods #############
 # 
@@ -431,7 +431,9 @@ methods <- raw_methods %>%
 ## ....3F. Species data ##############
 species <- species_edited %>%
   mutate(study_id = id) %>%
-  select(-common_name)
+  select(-common_name) %>% 
+  mutate(site_id = ifelse(str_detect(site_id, "Savannah"), "Savannah", site_id),
+         site_id = ifelse(str_detect(site_id, "Waccamaw"), "Waccamaw", site_id))
 
 
 ## ....3H. Study citations ################
@@ -497,7 +499,7 @@ if(!file.exists("data/primary_studies/Krauss_2018/derivative/Krauss_et_al_2018_s
 # Update Tables ###########
 source("./scripts/1_data_formatting/versioning_functions.R")
 
-table_names <- c("sites", "methods", "cores", "depthseries", "impacts", "species")
+table_names <- c("methods", "cores", "depthseries", "impacts", "species")
 
 updated <- updateTables(table_names)
 

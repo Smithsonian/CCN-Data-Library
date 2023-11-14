@@ -1,7 +1,7 @@
 study_id,site_id,site_description,site_latitude_max,site_latitude_min,site_longitude_max,site_longitude_min,salinity_class,salinity_method,salinity_notes,vegetation_class,vegetation_method,vegetation_notes,inundation_class,inundation_method,inundation_notes
-Vincent-1993,Webhannet,"Salt marsh highmarsh habitat,  back barrier marsh, located in Wells, Maine",43.31940078735352,43.29133987426758,-70.57196807861328,-70.57562255859375,estuarine,field observation,Hand-held Refractometer,emergent,measurement,Visual estimation using 1 m plots,high,field observation,"Vegetation community, field observations of tidal inundation, tide charts"
-Vincent-1993,Drakes Island,"Salt marsh highmarsh habitat,  back barrier marsh, located in Wells, Maine",43.33057403564453,43.32879257202149,-70.54712677001953,-70.63771057128906,estuarine,field observation,Hand-held Refractometer,emergent,measurement,Visual estimation using 1 m plots,high,field observation,"Vegetation community, field observations of tidal inundation, tide charts"
-Vincent-1993,Little River,"Salt marsh highmarsh habitat,  back barrier marsh, located in Wells, Maine",43.34575653076172,43.33320999145508,-70.53801727294922,-70.54401397705078,estuarine,field observation,Hand-held Refractometer,emergent,measurement,Visual estimation using 1 m plots,high,field observation,"Vegetation community, field observations of tidal inundation, tide charts"
+Vincent_and_Dionne_2023,Webhannet,"Salt marsh highmarsh habitat,  back barrier marsh, located in Wells, Maine",43.31940078735352,43.29133987426758,-70.57196807861328,-70.57562255859375,estuarine,field observation,Hand-held Refractometer,emergent,measurement,Visual estimation using 1 m plots,high,field observation,"Vegetation community, field observations of tidal inundation, tide charts"
+Vincent_and_Dionne_2023,Drakes Island,"Salt marsh highmarsh habitat,  back barrier marsh, located in Wells, Maine",43.33057403564453,43.32879257202149,-70.54712677001953,-70.63771057128906,estuarine,field observation,Hand-held Refractometer,emergent,measurement,Visual estimation using 1 m plots,high,field observation,"Vegetation community, field observations of tidal inundation, tide charts"
+Vincent_and_Dionne_2023,Little River,"Salt marsh highmarsh habitat,  back barrier marsh, located in Wells, Maine",43.34575653076172,43.33320999145508,-70.53801727294922,-70.54401397705078,estuarine,field observation,Hand-held Refractometer,emergent,measurement,Visual estimation using 1 m plots,high,field observation,"Vegetation community, field observations of tidal inundation, tide charts"
 Trettin_et_al_2017,1001,NA,-18.831799,-18.831799,36.240201,36.240201,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Trettin_et_al_2017,1079,NA,-18.840148,-18.840148,36.264355,36.264355,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Trettin_et_al_2017,1113,NA,-18.845148,-18.845148,36.213549,36.213549,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -487,14 +487,6 @@ Nahlik_and_Fennessy_2016,NWCA11-4706,San Pablo Bay; California,NA,NA,NA,NA,estua
 Nahlik_and_Fennessy_2016,NWCA11-4713,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,NA,emergent,field observation,NA,NA,NA,NA
 Nahlik_and_Fennessy_2016,NWCA11-4716,McGrath Lake-Frontal Pacific Ocean; California,NA,NA,NA,NA,estuarine,field observation,NA,emergent,field observation,NA,NA,NA,NA
 Nahlik_and_Fennessy_2016,NWCA11-4721,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,NA,emergent,field observation,NA,NA,NA,NA
-Krauss_et_al_2018,Savannah_River_low,NA,NA,NA,NA,NA,oligohaline,NA,NA,emergent,measurement,NA,low,NA,NA
-Krauss_et_al_2018,Savannah_River_mid,NA,NA,NA,NA,NA,oligohaline,NA,NA,forested,measurement,NA,mid,NA,NA
-Krauss_et_al_2018,Savannah_River_mid,NA,NA,NA,NA,NA,oligohaline,NA,NA,emergent,measurement,NA,low,NA,NA
-Krauss_et_al_2018,Savannah_River_high,NA,NA,NA,NA,NA,fresh,NA,NA,forested,measurement,NA,high,NA,NA
-Krauss_et_al_2018,Waccamaw_River_Butler_island,NA,NA,NA,NA,NA,oligohaline,NA,NA,forested to emergent,measurement,NA,mid,NA,NA
-Krauss_et_al_2018,Waccamaw_River_Turkey_creek_high,NA,NA,NA,NA,NA,oligohaline,NA,NA,emergent,measurement,NA,low,NA,NA
-Krauss_et_al_2018,Waccamaw_River_Turkey_creek_low,NA,NA,NA,NA,NA,oligohaline,NA,NA,forested to emergent,measurement,NA,low,NA,NA
-Krauss_et_al_2018,Waccamaw_River_Richmond_island,NA,NA,NA,NA,NA,fresh,NA,NA,forested,measurement,NA,high,NA,NA
 Kauffman_et_al_2020,Barview Eelgrass,Coos Bay Estuary,43.3459,43.3454,-124.3182,-124.3189,NA,NA,NA,seagrass,NA,NA,NA,NA,NA
 Kauffman_et_al_2020,Blind Slough Swamp,Lower Columbia River Estuary,46.1924,46.1919,-123.579,-123.5807,NA,NA,NA,forested,NA,NA,NA,NA,NA
 Kauffman_et_al_2020,Chehalis Flood Plain,Grays Harbor Estuary,46.9419,46.9411,-123.7209,-123.7215,NA,NA,NA,forested,NA,NA,NA,NA,NA
