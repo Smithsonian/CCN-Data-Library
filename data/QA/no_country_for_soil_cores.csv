@@ -1,359 +1,65 @@
-study_id,site_id,core_id
-Vaughn_et_al_2020,Waccasassa_Bay,Waccasassa_Bay_Mangrove_replicate
-van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_C_W7
-van_Ardenne_et_al_2018,Pt Carron,Pt Carron_B_40
-van_Ardenne_et_al_2018,Wells,Wells_A_1
-van_Ardenne_et_al_2018,Wells,Wells_A_2
-Thom_1992,NA,SB1
-Thom_1992,South_Slough,SS1
-Schile-Beers_and_Megonigal_2017,Bu Tinah Shamal,Bu_Tinah_Shamal_mangrove_2
-Nsombo_et_al_2016,ENN16 Tran1Well1,M0537
-Nsombo_et_al_2016,ENN16 Tran1Well2,M0538
-Nsombo_et_al_2016,ENN16 Tran1Well3,M0539
-Nsombo_et_al_2016,ENN16 Tran2Well2,M0541
-Nsombo_et_al_2016,ENN16 Tran2Well3,M0542
-Eid_and_Shaltout_2016_Egypt,EME16 Egypt Station 1,M0638
-Eid_and_Shaltout_2016_Egypt,EME16 Egypt Station 2,M0639
-Eid_and_Shaltout_2016_Egypt,EME16 Egypt Station 3,M0640
-Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 1 Seaward,M0641
-Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 1 Landward,M0642
-Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 2 Seaward,M0643
-Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 2 Landward,M0644
-Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 3 Seaward,M0645
-Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 3 Landward,M0646
-Poppe_et_al_2019,Snohomish_North_Ebey,NE_B
-Poppe_et_al_2019,Snohomish_Spencer_Island,SP_B
-Marot_et_al_2020,Grand Bay,16CCT03_GB200G
-Marot_et_al_2020,Grand Bay,16CCT03_GB200G_2
-Marot_et_al_2020,Grand Bay,16CCT03_GB200G_3
-Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-2
-Copertino_unpublished,NA,Copertino_unpublished_1
-Drexler_et_al_2013,Coastal_EDU_Field,Coastal_EDU_Field_2
-AntisanaEcologicalReserve_Soil,Antisana_Ecological_Reserve_111,Antisana_Ecological_Reserve_111_322
-Chingaza_Soil,Chingaza_114,Chingaza_114_335
-SWAMP Data-Soil carbon-Bhitakarnika-2013-India,BHI,BHI_BK7A_1
-SWAMP Data-Soil carbon-Bhitakarnika-2013-India,BHI,BHI_BK7A_2
-SWAMP Data-Soil carbon-Bhitakarnika-2013-India,BHI,BHI_BK7A_3
-SWAMP Data-Soil carbon-Bhitakarnika-2013-India,BHI,BHI_BK7A_4
-SWAMP Data-Soil carbon-Bhitakarnika-2013-India,BHI,BHI_BK7A_5
-SWAMP Data-Soil carbon-Bhitakarnika-2013-India,BHI,BHI_BK7A_6
-SWAMP Data-Soil carbon-Bhitakarnika-2013-India,BHI,BHI_BK08_1
-SWAMP Data-Soil carbon-Bhitakarnika-2013-India,BHI,BHI_BK08_2
-SWAMP Data-Soil carbon-Bhitakarnika-2013-India,BHI,BHI_BK08_3
-SWAMP Data-Soil carbon-Bhitakarnika-2013-India,BHI,BHI_BK08_4
-SWAMP Data-Soil carbon-Bhitakarnika-2013-India,BHI,BHI_BK08_5
-SWAMP Data-Soil carbon-Bhitakarnika-2013-India,BHI,BHI_BK08_6
-SWAMP Data-Soil carbon-Caete-2017-Brazil,CAET,CAET_Caete_1
-SWAMP Data-Soil carbon-Caete-2017-Brazil,CAET,CAET_Caete_2
-SWAMP Data-Soil carbon-Caete-2017-Brazil,CAET,CAET_Caete_3
-SWAMP Data-Soil carbon-Caete-2017-Brazil,CAET,CAET_Caete_4
-SWAMP Data-Soil carbon-Caete-2017-Brazil,CAET,CAET_Caete_5
-SWAMP Data-Soil carbon-Caete-2017-Brazil,CAET,CAET_Caete_6
-SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_1
-SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_2
-SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_3
-SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_4
-SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_5
-SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_6
-SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_OS,CAU_OS_Cauassu Oeste Shrimp_1
-SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_1
-SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_2
-SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_3
-SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_4
-SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_5
-SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_6
-SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_1
-SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_2
-SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_3
-SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_4
-SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_5
-SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_6
-SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_1
-SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_2
-SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_3
-SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_4
-SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_5
-SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_6
-SWAMP Data-Soil carbon-Djirnda-2014-Senegal,DJI,DJI_Djirnda_1
-SWAMP Data-Soil carbon-Djirnda-2014-Senegal,DJI,DJI_Djirnda_2
-SWAMP Data-Soil carbon-Djirnda-2014-Senegal,DJI,DJI_Djirnda_3
-SWAMP Data-Soil carbon-Djirnda-2014-Senegal,DJI,DJI_Djirnda_4
-SWAMP Data-Soil carbon-Djirnda-2014-Senegal,DJI,DJI_Djirnda_5
-SWAMP Data-Soil carbon-Djirnda-2014-Senegal,DJI,DJI_Djirnda_6
-SWAMP Data-Soil carbon-Furo Grande-2017-Brazil,FURO,FURO_Furo Grande_1
-SWAMP Data-Soil carbon-Furo Grande-2017-Brazil,FURO,FURO_Furo Grande_2
-SWAMP Data-Soil carbon-Furo Grande-2017-Brazil,FURO,FURO_Furo Grande_3
-SWAMP Data-Soil carbon-Furo Grande-2017-Brazil,FURO,FURO_Furo Grande_4
-SWAMP Data-Soil carbon-Furo Grande-2017-Brazil,FURO,FURO_Furo Grande_5
-SWAMP Data-Soil carbon-Furo Grande-2017-Brazil,FURO,FURO_Furo Grande_6
-SWAMP Data-Soil carbon-Mangizal Cauassu-2016-Brazil,MAN_C,MAN_C_Mangizal Cauassu_1
-SWAMP Data-Soil carbon-Mangizal Cauassu-2016-Brazil,MAN_C,MAN_C_Mangizal Cauassu_2
-SWAMP Data-Soil carbon-Mangizal Cauassu-2016-Brazil,MAN_C,MAN_C_Mangizal Cauassu_3
-SWAMP Data-Soil carbon-Mangizal Cauassu-2016-Brazil,MAN_C,MAN_C_Mangizal Cauassu_4
-SWAMP Data-Soil carbon-Mangizal Cauassu-2016-Brazil,MAN_C,MAN_C_Mangizal Cauassu_5
-SWAMP Data-Soil carbon-Mangizal Cauassu-2016-Brazil,MAN_C,MAN_C_Mangizal Cauassu_6
-SWAMP Data-Soil carbon-Manguinho-2016-Brazil,MANG,MANG_Manguinho_1
-SWAMP Data-Soil carbon-Manguinho-2016-Brazil,MANG,MANG_Manguinho_2
-SWAMP Data-Soil carbon-Manguinho-2016-Brazil,MANG,MANG_Manguinho_3
-SWAMP Data-Soil carbon-Manguinho-2016-Brazil,MANG,MANG_Manguinho_4
-SWAMP Data-Soil carbon-Manguinho-2016-Brazil,MANG,MANG_Manguinho_5
-SWAMP Data-Soil carbon-Manguinho-2016-Brazil,MANG,MANG_Manguinho_6
-SWAMP Data-Soil carbon-Porto Ceu Mangrove-2016-Brazil,POR_C,POR_C_Porto Ceu Mangrove_1
-SWAMP Data-Soil carbon-Porto Ceu Mangrove-2016-Brazil,POR_C,POR_C_Porto Ceu Mangrove_2
-SWAMP Data-Soil carbon-Porto Ceu Mangrove-2016-Brazil,POR_C,POR_C_Porto Ceu Mangrove_3
-SWAMP Data-Soil carbon-Porto Ceu Mangrove-2016-Brazil,POR_C,POR_C_Porto Ceu Mangrove_4
-SWAMP Data-Soil carbon-Porto Ceu Mangrove-2016-Brazil,POR_C,POR_C_Porto Ceu Mangrove_5
-SWAMP Data-Soil carbon-Porto Ceu Mangrove-2016-Brazil,POR_C,POR_C_Porto Ceu Mangrove_6
-SWAMP Data-Soil carbon-Porto Ceu Shrimp-2016-Brazil,POR_CT,POR_CT_Porto Ceu Shrimp_1
-SWAMP Data-Soil carbon-Porto Ceu Shrimp-2016-Brazil,POR_CT,POR_CT_Porto Ceu Shrimp_2
-SWAMP Data-Soil carbon-Porto Ceu Shrimp-2016-Brazil,POR_CT,POR_CT_Porto Ceu Shrimp_3
-SWAMP Data-Soil carbon-Porto Ceu Shrimp-2016-Brazil,POR_CT,POR_CT_Porto Ceu Shrimp_4
-SWAMP Data-Soil carbon-Porto Ceu Shrimp-2016-Brazil,POR_CT,POR_CT_Porto Ceu Shrimp_5
-SWAMP Data-Soil carbon-Porto Ceu Shrimp-2016-Brazil,POR_CT,POR_CT_Porto Ceu Shrimp_6
-SWAMP Data-Soil carbon-Case Shell-2014,CAS,CAS_1_NA
-SWAMP Data-Soil carbon-Case Shell-2014,CAS,CAS_2_NA
-SWAMP Data-Soil carbon-Case Shell-2014,CAS,CAS_3_NA
-SWAMP Data-Soil carbon-Case Shell-2014,CAS,CAS_4_NA
-SWAMP Data-Soil carbon-Case Shell-2014,CAS,CAS_5_NA
-SWAMP Data-Soil carbon-Case Shell-2014,CAS,CAS_6_NA
-SWAMP Data-Soil carbon-Jardin Du Elephant-2014,JAR,JAR_1_NA
-SWAMP Data-Soil carbon-Jardin Du Elephant-2014,JAR,JAR_2_NA
-SWAMP Data-Soil carbon-Jardin Du Elephant-2014,JAR,JAR_3_NA
-SWAMP Data-Soil carbon-Jardin Du Elephant-2014,JAR,JAR_4_NA
-SWAMP Data-Soil carbon-Jardin Du Elephant-2014,JAR,JAR_5_NA
-SWAMP Data-Soil carbon-Jardin Du Elephant-2014,JAR,JAR_6_NA
-SWAMP Data-Soil carbon-Lac Simba Deux-2014,SIM-D,SIM-D_1_NA
-SWAMP Data-Soil carbon-Lac Simba Deux-2014,SIM-D,SIM-D_2_NA
-SWAMP Data-Soil carbon-Lac Simba Deux-2014,SIM-D,SIM-D_3_NA
-SWAMP Data-Soil carbon-Lac Simba Deux-2014,SIM-D,SIM-D_4_NA
-SWAMP Data-Soil carbon-Lac Simba Deux-2014,SIM-D,SIM-D_5_NA
-SWAMP Data-Soil carbon-Lac Simba Deux-2014,SIM-D,SIM-D_6_NA
-SWAMP Data-Soil carbon-Lac Simba-2014,SIM,SIM_1_NA
-SWAMP Data-Soil carbon-Lac Simba-2014,SIM,SIM_2_NA
-SWAMP Data-Soil carbon-Lac Simba-2014,SIM,SIM_3_NA
-SWAMP Data-Soil carbon-Lac Simba-2014,SIM,SIM_4_NA
-SWAMP Data-Soil carbon-Lac Simba-2014,SIM,SIM_5_NA
-SWAMP Data-Soil carbon-Lac Simba-2014,SIM,SIM_6_NA
-SWAMP Data-Soil carbon-Lac Sounga Deux-2014,SOU-D,SOU-D_1_NA
-SWAMP Data-Soil carbon-Lac Sounga Deux-2014,SOU-D,SOU-D_2_NA
-SWAMP Data-Soil carbon-Lac Sounga Deux-2014,SOU-D,SOU-D_3_NA
-SWAMP Data-Soil carbon-Lac Sounga Deux-2014,SOU-D,SOU-D_4_NA
-SWAMP Data-Soil carbon-Lac Sounga Deux-2014,SOU-D,SOU-D_5_NA
-SWAMP Data-Soil carbon-Lac Sounga Deux-2014,SOU-D,SOU-D_6_NA
-SWAMP Data-Soil carbon-Lac Sounga-2014,SOU,SOU_1_NA
-SWAMP Data-Soil carbon-Lac Sounga-2014,SOU,SOU_2_NA
-SWAMP Data-Soil carbon-Lac Sounga-2014,SOU,SOU_3_NA
-SWAMP Data-Soil carbon-Lac Sounga-2014,SOU,SOU_4_NA
-SWAMP Data-Soil carbon-Lac Sounga-2014,SOU,SOU_5_NA
-SWAMP Data-Soil carbon-Lac Sounga-2014,SOU,SOU_6_NA
-SWAMP Data-Soil carbon-Mwana Mouele South-2014,MWA-S,MWA-S_1_NA
-SWAMP Data-Soil carbon-Mwana Mouele South-2014,MWA-S,MWA-S_2_NA
-SWAMP Data-Soil carbon-Mwana Mouele South-2014,MWA-S,MWA-S_3_NA
-SWAMP Data-Soil carbon-Mwana Mouele South-2014,MWA-S,MWA-S_4_NA
-SWAMP Data-Soil carbon-Mwana Mouele South-2014,MWA-S,MWA-S_5_NA
-SWAMP Data-Soil carbon-Mwana Mouele South-2014,MWA-S,MWA-S_6_NA
-SWAMP Data-Soil carbon-Mwana Mouele-2014,MWA,MWA_1_NA
-SWAMP Data-Soil carbon-Mwana Mouele-2014,MWA,MWA_2_NA
-SWAMP Data-Soil carbon-Mwana Mouele-2014,MWA,MWA_3_NA
-SWAMP Data-Soil carbon-Mwana Mouele-2014,MWA,MWA_4_NA
-SWAMP Data-Soil carbon-Mwana Mouele-2014,MWA,MWA_5_NA
-SWAMP Data-Soil carbon-Mwana Mouele-2014,MWA,MWA_6_NA
-SWAMP Data-Soil carbon-Ndougou-2014,NDO,NDO_1_NA
-SWAMP Data-Soil carbon-Ndougou-2014,NDO,NDO_2_NA
-SWAMP Data-Soil carbon-Ndougou-2014,NDO,NDO_3_NA
-SWAMP Data-Soil carbon-Ndougou-2014,NDO,NDO_4_NA
-SWAMP Data-Soil carbon-Ndougou-2014,NDO,NDO_5_NA
-SWAMP Data-Soil carbon-Ndougou-2014,NDO,NDO_6_NA
-SWAMP Data-Soil carbon-Paga-2014,PAG,PAG_1_NA
-SWAMP Data-Soil carbon-Paga-2014,PAG,PAG_2_NA
-SWAMP Data-Soil carbon-Paga-2014,PAG,PAG_3_NA
-SWAMP Data-Soil carbon-Paga-2014,PAG,PAG_4_NA
-SWAMP Data-Soil carbon-Paga-2014,PAG,PAG_5_NA
-SWAMP Data-Soil carbon-Paga-2014,PAG,PAG_6_NA
-SWAMP Data-Soil carbon-BRM10-2014,BRM10,BRM10_1_NA
-SWAMP Data-Soil carbon-BRM10-2014,BRM10,BRM10_2_NA
-SWAMP Data-Soil carbon-BRM10-2014,BRM10,BRM10_3_NA
-SWAMP Data-Soil carbon-BRM10-2014,BRM10,BRM10_4_NA
-SWAMP Data-Soil carbon-BRM10-2014,BRM10,BRM10_5_NA
-SWAMP Data-Soil carbon-BRM10-2014,BRM10,BRM10_6_NA
-SWAMP Data-Soil carbon-MRM8-2014,MRM8,MRM8_1_NA
-SWAMP Data-Soil carbon-MRM8-2014,MRM8,MRM8_2_NA
-SWAMP Data-Soil carbon-MRM8-2014,MRM8,MRM8_3_NA
-SWAMP Data-Soil carbon-MRM8-2014,MRM8,MRM8_4_NA
-SWAMP Data-Soil carbon-MRM8-2014,MRM8,MRM8_5_NA
-SWAMP Data-Soil carbon-MRM8-2014,MRM8,MRM8_6_NA
-SWAMP Data-Soil carbon-MRT7-2014,MRT7,MRT7_1_NA
-SWAMP Data-Soil carbon-MRT7-2014,MRT7,MRT7_2_NA
-SWAMP Data-Soil carbon-MRT7-2014,MRT7,MRT7_3_NA
-SWAMP Data-Soil carbon-MRT7-2014,MRT7,MRT7_4_NA
-SWAMP Data-Soil carbon-MRT7-2014,MRT7,MRT7_5_NA
-SWAMP Data-Soil carbon-MRT7-2014,MRT7,MRT7_6_NA
-SWAMP Data-Soil carbon-MRT9-2014,MRT9,MRT9_1_NA
-SWAMP Data-Soil carbon-MRT9-2014,MRT9,MRT9_2_NA
-SWAMP Data-Soil carbon-MRT9-2014,MRT9,MRT9_3_NA
-SWAMP Data-Soil carbon-MRT9-2014,MRT9,MRT9_4_NA
-SWAMP Data-Soil carbon-MRT9-2014,MRT9,MRT9_5_NA
-SWAMP Data-Soil carbon-MRT9-2014,MRT9,MRT9_6_NA
-SWAMP Data-Soil carbon-NCM1-2014,NCM1,NCM1_1_NA
-SWAMP Data-Soil carbon-NCM1-2014,NCM1,NCM1_2_NA
-SWAMP Data-Soil carbon-NCM1-2014,NCM1,NCM1_3_NA
-SWAMP Data-Soil carbon-NCM1-2014,NCM1,NCM1_4_NA
-SWAMP Data-Soil carbon-NCM1-2014,NCM1,NCM1_5_NA
-SWAMP Data-Soil carbon-NCM1-2014,NCM1,NCM1_6_NA
-SWAMP Data-Soil carbon-NCM4-2014,NCM4,NCM4_1_NA
-SWAMP Data-Soil carbon-NCM4-2014,NCM4,NCM4_2_NA
-SWAMP Data-Soil carbon-NCM4-2014,NCM4,NCM4_3_NA
-SWAMP Data-Soil carbon-NCM4-2014,NCM4,NCM4_4_NA
-SWAMP Data-Soil carbon-NCM4-2014,NCM4,NCM4_5_NA
-SWAMP Data-Soil carbon-NCM4-2014,NCM4,NCM4_6_NA
-SWAMP Data-Soil carbon-NCM5-2014,NCM5,NCM5_1_NA
-SWAMP Data-Soil carbon-NCM5-2014,NCM5,NCM5_2_NA
-SWAMP Data-Soil carbon-NCM5-2014,NCM5,NCM5_3_NA
-SWAMP Data-Soil carbon-NCM5-2014,NCM5,NCM5_4_NA
-SWAMP Data-Soil carbon-NCM5-2014,NCM5,NCM5_5_NA
-SWAMP Data-Soil carbon-NCM5-2014,NCM5,NCM5_6_NA
-SWAMP Data-Soil carbon-NCT2-2014,NCT2,NCT2_1_NA
-SWAMP Data-Soil carbon-NCT2-2014,NCT2,NCT2_2_NA
-SWAMP Data-Soil carbon-NCT2-2014,NCT2,NCT2_3_NA
-SWAMP Data-Soil carbon-NCT2-2014,NCT2,NCT2_4_NA
-SWAMP Data-Soil carbon-NCT2-2014,NCT2,NCT2_5_NA
-SWAMP Data-Soil carbon-NCT2-2014,NCT2,NCT2_6_NA
-SWAMP Data-Soil carbon-NCT3-2014,NCT3,NCT3_1_NA
-SWAMP Data-Soil carbon-NCT3-2014,NCT3,NCT3_2_NA
-SWAMP Data-Soil carbon-NCT3-2014,NCT3,NCT3_3_NA
-SWAMP Data-Soil carbon-NCT3-2014,NCT3,NCT3_4_NA
-SWAMP Data-Soil carbon-NCT3-2014,NCT3,NCT3_5_NA
-SWAMP Data-Soil carbon-NCT3-2014,NCT3,NCT3_6_NA
-SWAMP Data-Soil carbon-NCT6-2014,NCT6,NCT6_1_NA
-SWAMP Data-Soil carbon-NCT6-2014,NCT6,NCT6_2_NA
-SWAMP Data-Soil carbon-NCT6-2014,NCT6,NCT6_3_NA
-SWAMP Data-Soil carbon-NCT6-2014,NCT6,NCT6_4_NA
-SWAMP Data-Soil carbon-NCT6-2014,NCT6,NCT6_5_NA
-SWAMP Data-Soil carbon-NCT6-2014,NCT6,NCT6_6_NA
-SWAMP Data-Soil carbon-Marisma High-2017-Brazil,MAR,MAR_Marisma High_1
-SWAMP Data-Soil carbon-Marisma High-2017-Brazil,MAR,MAR_Marisma High_2
-SWAMP Data-Soil carbon-Marisma High-2017-Brazil,MAR,MAR_Marisma High_3
-SWAMP Data-Soil carbon-Marisma High-2017-Brazil,MAR,MAR_Marisma High_4
-SWAMP Data-Soil carbon-Marisma High-2017-Brazil,MAR,MAR_Marisma High_5
-SWAMP Data-Soil carbon-Marisma High-2017-Brazil,MAR,MAR_Marisma High_6
-SWAMP Data-Soil carbon-Marisma Low-2017-Brazil,MAR,MAR_Marisma Low_1
-SWAMP Data-Soil carbon-Marisma Low-2017-Brazil,MAR,MAR_Marisma Low_2
-SWAMP Data-Soil carbon-Marisma Low-2017-Brazil,MAR,MAR_Marisma Low_3
-SWAMP Data-Soil carbon-Marisma Low-2017-Brazil,MAR,MAR_Marisma Low_4
-SWAMP Data-Soil carbon-Marisma Low-2017-Brazil,MAR,MAR_Marisma Low_5
-SWAMP Data-Soil carbon-Marisma Low-2017-Brazil,MAR,MAR_Marisma Low_6
-SWAMP Data-Soil carbon-Marisma Medium-2017-Brazil,MAR,MAR_Marisma Medium_1
-SWAMP Data-Soil carbon-Marisma Medium-2017-Brazil,MAR,MAR_Marisma Medium_2
-SWAMP Data-Soil carbon-Marisma Medium-2017-Brazil,MAR,MAR_Marisma Medium_3
-SWAMP Data-Soil carbon-Marisma Medium-2017-Brazil,MAR,MAR_Marisma Medium_4
-SWAMP Data-Soil carbon-Marisma Medium-2017-Brazil,MAR,MAR_Marisma Medium_5
-SWAMP Data-Soil carbon-Marisma Medium-2017-Brazil,MAR,MAR_Marisma Medium_6
-SWAMP Data-Soil carbon-Bunaken-2011,BUN,BUN_Bunaken 6_1
-SWAMP Data-Soil carbon-Bunaken-2011,BUN,BUN_Bunaken 6_2
-SWAMP Data-Soil carbon-Bunaken-2011,BUN,BUN_Bunaken 6_3
-SWAMP Data-Soil carbon-Bunaken-2011,BUN,BUN_Bunaken 6_4
-SWAMP Data-Soil carbon-Bunaken-2011,BUN,BUN_Bunaken 6_5
-SWAMP Data-Soil carbon-Bunaken-2011,BUN,BUN_Bunaken 6_6
-SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 1_1
-SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 1_2
-SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 1_3
-SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 1_4
-SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 1_5
-SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 1_6
-SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 2_1
-SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 2_2
-SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 2_3
-SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 2_4
-SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 2_5
-SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 2_6
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J18_P1
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J18_P2
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J18_P3
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J18_P4
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J18_P5
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J18_P6
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J19_P1
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J19_P2
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J19_P3
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J19_P4
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J19_P5
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J19_P6
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J20_P1
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J20_P2
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J20_P3
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J20_P4
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J20_P5
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__J20_P6
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R18_P1
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R18_P2
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R18_P3
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R18_P4
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R18_P5
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R18_P6
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R19_P1
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R19_P2
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R19_P3
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R19_P4
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R19_P5
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R19_P6
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R20_P1
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R20_P2
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R20_P3
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R20_P4
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R20_P5
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__R20_P6
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S18_P1
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S18_P2
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S18_P3
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S18_P4
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S18_P5
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S18_P6
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S19_P1
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S19_P2
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S19_P3
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S19_P4
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S19_P5
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S19_P6
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S20_P1
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S20_P2
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S20_P3
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S20_P4
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S20_P5
-SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam,CA_,CA__S20_P6
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_J13_P1
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_J13_P2
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_J13_P3
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_J13_P4
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_J13_P5
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_J13_P6
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_J14_P1
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_J14_P2
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_J14_P3
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_J14_P4
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_J14_P5
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_J14_P6
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_R13_P1
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_R13_P2
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_R13_P3
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_R13_P4
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_R13_P5
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_R13_P6
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_R14_P1
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_R14_P2
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_R14_P3
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_R14_P4
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_R14_P5
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_R14_P6
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_S13_P1
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_S13_P2
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_S13_P3
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_S13_P4
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_S13_P5
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_S13_P6
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_S14_P1
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_S14_P2
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_S14_P3
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_S14_P4
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_S14_P5
-SWAMP Data-Soil carbon-CanGio-2012-Vietnam,CAN,CAN_S14_P6
-Belshe_et_al_2019,SM,SM10
+study_id,site_id,core_id,latitude,longitude
+Thom_1992,NA,SB1,NA,NA
+Thom_1992,South_Slough,SS1,NA,NA
+Schile-Beers_and_Megonigal_2017,Bu Tinah Shamal,Bu_Tinah_Shamal_mangrove_2,NA,NA
+Nsombo_et_al_2016,ENN16 Tran1Well1,M0537,NA,NA
+Nsombo_et_al_2016,ENN16 Tran1Well2,M0538,NA,NA
+Nsombo_et_al_2016,ENN16 Tran1Well3,M0539,NA,NA
+Nsombo_et_al_2016,ENN16 Tran2Well2,M0541,NA,NA
+Nsombo_et_al_2016,ENN16 Tran2Well3,M0542,NA,NA
+Eid_and_Shaltout_2016_Egypt,EME16 Egypt Station 1,M0638,NA,NA
+Eid_and_Shaltout_2016_Egypt,EME16 Egypt Station 2,M0639,NA,NA
+Eid_and_Shaltout_2016_Egypt,EME16 Egypt Station 3,M0640,NA,NA
+Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 1 Seaward,M0641,NA,NA
+Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 1 Landward,M0642,NA,NA
+Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 2 Seaward,M0643,NA,NA
+Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 2 Landward,M0644,NA,NA
+Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 3 Seaward,M0645,NA,NA
+Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 3 Landward,M0646,NA,NA
+Poppe_et_al_2019,Snohomish_North_Ebey,NE_B,NA,NA
+Poppe_et_al_2019,Snohomish_Spencer_Island,SP_B,NA,NA
+Marot_et_al_2020,Grand Bay,16CCT03_GB200G,NA,NA
+Marot_et_al_2020,Grand Bay,16CCT03_GB200G_2,NA,NA
+Marot_et_al_2020,Grand Bay,16CCT03_GB200G_3,NA,NA
+Copertino_unpublished,NA,Copertino_unpublished_1,NA,NA
+Drexler_et_al_2013,Coastal_EDU_Field,Coastal_EDU_Field_2,NA,NA
+AntisanaEcologicalReserve_Soil,Antisana_Ecological_Reserve_111,Antisana_Ecological_Reserve_111_322,NA,NA
+Chingaza_Soil,Chingaza_114,Chingaza_114_335,NA,NA
+SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_1_1,NA,NA
+SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_2_1,NA,NA
+SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_3_1,NA,NA
+SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_4_1,NA,NA
+SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_5_1,NA,NA
+SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_6_1,NA,NA
+SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_OS,CAU_OS_Cauassu Oeste Shrimp_1_1,NA,NA
+SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_1_1,NA,NA
+SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_2_1,NA,NA
+SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_3_1,NA,NA
+SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_4_1,NA,NA
+SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_5_1,NA,NA
+SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_6_1,NA,NA
+SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_1_1,NA,NA
+SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_2_1,NA,NA
+SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_3_1,NA,NA
+SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_4_1,NA,NA
+SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_5_1,NA,NA
+SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_6_1,NA,NA
+SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_1_1,NA,NA
+SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_2_1,NA,NA
+SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_3_1,NA,NA
+SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_4_1,NA,NA
+SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_5_1,NA,NA
+SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_6_1,NA,NA
+SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 1_1_1,NA,NA
+SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 1_2_1,NA,NA
+SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 1_3_1,NA,NA
+SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 1_4_1,NA,NA
+SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 1_5_1,NA,NA
+SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 1_6_1,NA,NA
+SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 2_1_1,NA,NA
+SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 2_2_1,NA,NA
+SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 2_3_1,NA,NA
+SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 2_4_1,NA,NA
+SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 2_5_1,NA,NA
+SWAMP Data-Soil carbon-Cilacap-2011,CIL,CIL_Cilacap 2_6_1,NA,NA
+Belshe_et_al_2019,SM,SM10,NA,NA

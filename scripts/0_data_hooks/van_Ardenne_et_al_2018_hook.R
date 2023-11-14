@@ -81,7 +81,7 @@ cores <- data_raw %>% select(Site, Transect, Flag) %>%
                       mutate(study_id = id,
                              core_id = paste(Site, Transect, sep = "_"),
                              core_id = paste(core_id, Flag, sep = "_")) %>% 
-                     rename(site_id = Site) %>% distinct()
+                     rename(site_id = Site) %>% distinct() 
 
 
 ##function for extracting coords from shp files
@@ -185,7 +185,10 @@ cores <- cores %>% mutate(position_method = case_when(is.na(latitude) ~ "other l
                                                 site_id == "Wells"& is.na(longitude) ~ -70.566667,
                                                 site_id == "Pt Carron"& is.na(longitude) ~ -65.6,
                                                 site_id == "Grant's Beach"& is.na(longitude) ~ -64.05,
-                                                TRUE ~ longitude)) %>% select(-Transect, -Flag)
+                                                TRUE ~ longitude)) %>% select(-Transect, -Flag) %>% 
+  # Next line fixes and error with the lat-lons
+  mutate(longitude = case_when(study_id == "van_Ardenne_et_al_2018" & longitude > 0 ~ longitude * -1,
+                               T ~ longitude))
                         
 cores <- reorderColumns("cores", cores)
 
