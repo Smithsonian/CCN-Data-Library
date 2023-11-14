@@ -57,7 +57,8 @@ cores <- depthseries %>%
          core_length_flag = "core depth limited by length of corer") %>%
   mutate(core_year = year(core_date), 
          core_month = month(core_date),
-         core_day = day(core_date)) %>%
+         core_day = day(core_date),
+         habitat = "marsh") %>%
   select_if(function(x) {!all(is.na(x))}) %>%
   select(-c(core_date, `Wetland type`, Sample))
 

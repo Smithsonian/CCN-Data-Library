@@ -577,6 +577,10 @@ cores <- core_raw %>%
          habitat, inundation_class, inundation_method, core_length_flag)
 
 
+##RC edit --> adding habitat for synthesis update
+cores <- cores %>% 
+  mutate(habitat = "marsh")
+
 ## Step 8: Make the Species table ####
 species <- full_join(df_field, df_site, by = c("site_id", "core_id")) %>% 
   

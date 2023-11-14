@@ -390,7 +390,11 @@ cores <- depthseries %>%
   # select(study_id, site_id, core_id, core_latitude, core_longitude, salinity_class,
   #        vegetation_class, vegetation_method, inundation_class)
 
-
+## RC edit, adding `habitat` coding for snythesis update 
+cores <- cores %>% 
+  mutate(habitat = case_when(vegetation_class == "emergent" ~ "marsh",
+                             vegetation_class == "forested" ~ "upland",
+                             TRUE ~ "scrub/shrub"))
 
 ## ....3C. Site-level data #############
 
