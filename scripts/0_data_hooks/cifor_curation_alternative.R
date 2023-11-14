@@ -208,6 +208,22 @@ cores <- cores_join %>%
          core_id = str_remove_all(core_id, "_NA")) %>% 
   select(-latitude.x, -latitude.y, -longitude.x, -longitude.y) %>% distinct()
 
+
+##add year 
+cores <- cores %>% 
+  mutate(year = case_when(endsWith(study_id, "2017-Brazil") ~ 2017,
+                          endsWith(study_id, "2019") ~ 2019,
+                          endsWith(study_id, "2014")| endsWith(study_id, "Senegal") ~ 2014,
+                          endsWith(study_id, "India") ~ 2013,
+                          endsWith(study_id, "2011")|endsWith(study_id, "2011-Indonesia") ~ 2011,
+                          endsWith(study_id, "Vietnam") ~ 2012,
+                          endsWith(study_id, "2016-Brazil") ~ 2016,
+                          endsWith(study_id, "2017-Indonesia") ~ 2017,
+                          endsWith(study_id, "2016-Indonesia") ~ 2016,
+                          endsWith(study_id, "2015-Indonesia") ~ 2015,
+                          endsWith(study_id, "2018-Indonesia") ~ 2018,
+                          site_id == "TAN" ~ 2009))
+
 cores <- reorderColumns("cores", cores) 
 
 

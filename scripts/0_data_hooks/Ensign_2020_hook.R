@@ -30,6 +30,11 @@ cores <- raw_cores %>%
   rename(year = core_year, latitude = core_latitude, longitude = core_longitude,
          position_method = core_position_method)
 
+##RC edit --> adding habitat for synthesis update
+cores <- raw_cores %>% 
+  mutate(habitat = case_when(vegetation_class == "emergent" ~ "marsh",
+                             vegetation_class == "forested" ~ "upland"))
+
 # depthseries (no change)
 depthseries <- raw_depthseries %>%
   mutate(method_id = "single set of studies")

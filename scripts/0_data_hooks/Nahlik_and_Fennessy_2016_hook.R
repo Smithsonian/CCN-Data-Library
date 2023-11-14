@@ -126,9 +126,12 @@ cores <- soil_marine %>%
   mutate(core_year = year(core_date),
          core_month = month(core_date),
          core_day = day(core_date),
-         core_length_flag = "not specified") %>%
+         core_length_flag = "not specified",
+         habitat = case_when(vegetation_class == "emergent" ~ "marsh",
+                             vegetation_class == "scrub shrub" ~ "scrub/shrub",
+                             vegetation_class == "forested to shrub" ~ "upland")) %>%
   select(study_id, site_id, core_id, core_year, core_month, core_day, core_latitude, core_longitude,
-         salinity_class, salinity_method, vegetation_class, vegetation_method, core_length_flag) %>%
+         salinity_class, salinity_method, vegetation_class, vegetation_method, core_length_flag, habitat) %>%
   distinct()
 
 ## Depthseries

@@ -1,13 +1,13 @@
-core_id,site_id,core_notes,latitude,longitude,study_id,core_length_flag,year,month,day
-AS14,Animal_Slough,Animal Slough North Core 14,47.09662,-122.69857,Drexler_et_al_2019,core depth limited by length of corer,2017,4,10
-AS15,Animal_Slough,Animal Slough North Core 15,47.09661,-122.69878,Drexler_et_al_2019,core depth limited by length of corer,2017,4,10
-AS16,Animal_Slough,Animal Slough North Core 16,47.09662,-122.699,Drexler_et_al_2019,core depth limited by length of corer,2017,4,10
-AS7,Animal_Slough,Animal Slough South Core 7E,47.09329,-122.70051,Drexler_et_al_2019,core depth limited by length of corer,2015,7,22
-AS8,Animal_Slough,Animal Slough South Core 8M,47.09333,-122.70072,Drexler_et_al_2019,core depth limited by length of corer,2015,7,22
-AS9,Animal_Slough,Animal Slough South Core 9W,47.09337,-122.70092,Drexler_et_al_2019,core depth limited by length of corer,2015,7,22
-SG10,Six_Gill_Slough,Six Gill Slough South 10E,47.08907,-122.70853,Drexler_et_al_2019,core depth limited by length of corer,2015,7,23
-SG11,Six_Gill_Slough,Six Gill Slough South 11M,47.08911,-122.70872,Drexler_et_al_2019,core depth limited by length of corer,2015,7,23
-SG12,Six_Gill_Slough,Six Gill Slough South 12W,47.08904,-122.70891,Drexler_et_al_2019,core depth limited by length of corer,2015,7,23
-SG4,Six_Gill_Slough,Six Gill Slough North 4E,47.09291,-122.70657,Drexler_et_al_2019,core depth limited by length of corer,2015,7,22
-SG5,Six_Gill_Slough,Six Gill Slough North 5M,47.0929,-122.70676,Drexler_et_al_2019,core depth limited by length of corer,2015,7,22
-SG6,Six_Gill_Slough,Six Gill Slough North 6W,47.09288,-122.70704,Drexler_et_al_2019,core depth limited by length of corer,2015,7,22
+core_id,site_id,core_notes,latitude,longitude,study_id,core_length_flag,year,month,day,habitat
+AS14,Animal_Slough,Animal Slough North Core 14,47.09662,-122.69857,Drexler_et_al_2019,core depth limited by length of corer,2017,4,10,marsh
+AS15,Animal_Slough,Animal Slough North Core 15,47.09661,-122.69878,Drexler_et_al_2019,core depth limited by length of corer,2017,4,10,marsh
+AS16,Animal_Slough,Animal Slough North Core 16,47.09662,-122.699,Drexler_et_al_2019,core depth limited by length of corer,2017,4,10,marsh
+AS7,Animal_Slough,Animal Slough South Core 7E,47.09329,-122.70051,Drexler_et_al_2019,core depth limited by length of corer,2015,7,22,marsh
+AS8,Animal_Slough,Animal Slough South Core 8M,47.09333,-122.70072,Drexler_et_al_2019,core depth limited by length of corer,2015,7,22,marsh
+AS9,Animal_Slough,Animal Slough South Core 9W,47.09337,-122.70092,Drexler_et_al_2019,core depth limited by length of corer,2015,7,22,marsh
+SG10,Six_Gill_Slough,Six Gill Slough South 10E,47.08907,-122.70853,Drexler_et_al_2019,core depth limited by length of corer,2015,7,23,marsh
+SG11,Six_Gill_Slough,Six Gill Slough South 11M,47.08911,-122.70872,Drexler_et_al_2019,core depth limited by length of corer,2015,7,23,marsh
+SG12,Six_Gill_Slough,Six Gill Slough South 12W,47.08904,-122.70891,Drexler_et_al_2019,core depth limited by length of corer,2015,7,23,marsh
+SG4,Six_Gill_Slough,Six Gill Slough North 4E,47.09291,-122.70657,Drexler_et_al_2019,core depth limited by length of corer,2015,7,22,marsh
+SG5,Six_Gill_Slough,Six Gill Slough North 5M,47.0929,-122.70676,Drexler_et_al_2019,core depth limited by length of corer,2015,7,22,marsh
+SG6,Six_Gill_Slough,Six Gill Slough North 6W,47.09288,-122.70704,Drexler_et_al_2019,core depth limited by length of corer,2015,7,22,marsh

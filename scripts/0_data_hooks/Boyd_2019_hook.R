@@ -53,6 +53,11 @@ cores <- cores_raw %>%
   # mutate(study_id = id) %>%
   rename(core_year = core_date)
 
+## RC edit --> adding habitat for synthesis update 
+cores <- cores %>% 
+  mutate(habitat = "marsh")
+
+
 impacts <- impacts_raw %>%
   # mutate(study_id = id) %>% 
   mutate(core_id = ifelse(study_id == "Unger_et_al_2016", paste0(core_id, "U"), core_id))

@@ -207,10 +207,17 @@ depthseries <- data_raw %>% select(Site, Transect, Flag, Corer, `upper depth (cm
                                    depth_max = `lower depth (cm)`,
                                    dry_bulk_density = `Bulk Density (g/cc)`,
                                    fraction_organic_matter = 'Organic matter proportion') %>% 
-                            select(-Transect, -Corer, -Flag, - 'Organic Carbon Craft (%)')
+                            select(-Transect, -Corer, -Flag, -fraction_carbon, -`Organic Carbon Craft (%)`)
       
 #reorder columns 
 depthseries <- reorderColumns("depthseries", depthseries)
+
+
+#visualize dbd and fraction carbon --> all carbon is modeled, remove from library
+ggplot(depthseries, aes(x= fraction_organic_matter, y =fraction_carbon))+
+  geom_point()
+
+
 
 
 ## ... Species ####
