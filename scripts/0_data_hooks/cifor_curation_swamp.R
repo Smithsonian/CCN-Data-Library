@@ -175,7 +175,6 @@ SWAMP_veg_converter <- function(swamp_type) {
            plot_shape = "circular",
            site_id = paste(site_name, PLOTID, sep = "_"),
            plot_id = paste(site_id, SUBPID, sep = "_"),
-           study_id = substr(filename, 1, nchar(filename) - 11),
            plant_plot_detail_present = "yes",
            detailed_plot_notes = "sapling plot area is nested within the total plot and is 12.57m2",
            allometric_eq_present = "yes",
@@ -199,7 +198,18 @@ SWAMP_veg_converter <- function(swamp_type) {
            plant_mass_organic_carbon_unit = "kilograms",
            allometric_eq_id = EQID,
            allometric_eq_id_present = case_when(!is.na(EQID) ~ "yes",
-                                                      T ~ "no")) %>% 
+                                                      T ~ "no"),
+           
+           # assign study_ids based on bibliography structure
+           study_id = case_when(grepl("KRE", filename) ~ "Bukoski_et_al_2020",
+                                grepl("PPM", filename) ~ "Bukoski_et_al_2020",
+                                grepl("Catanauan", filename) ~ "MacKenzie_et_al_2021",
+                                grepl("PRE", filename) ~ "Bukoski_et_al_2020",
+                                grepl("Koh", filename) ~ "Sharma_et_al_2021",
+                                grepl("Prey", filename) ~ "Sharma_et_al_2021",
+                                grepl("Rufiji", filename) ~ "Trettin_et_al_2020",
+                                grepl("Zambezi", filename) ~ "Trettin_et_al_2020",
+                                T ~ filename)) %>% 
     
     # group for plot level C summary and species count
     group_by(plot_id) %>% 
@@ -326,7 +336,16 @@ SWAMP_soil_converter <- function(swamp_type) { # use synthSWAMP() output here
            geomorphic_id = getgeo[GEOID],
            site_id = paste(site_name, PLOTID, sep = "_"),
            core_id = paste(site_id, SUBPID, sep = "_"),
-           study_id = substr(filename, 1, nchar(filename) - 11)) %>% 
+           
+           # assign study_ids based on bibliography structure
+           study_id = case_when(grepl("KRE", filename) ~ "Bukoski_et_al_2020",
+                                grepl("PPM", filename) ~ "Bukoski_et_al_2020",
+                                grepl("Catanauan", filename) ~ "MacKenzie_et_al_2021",
+                                grepl("PRE", filename) ~ "Bukoski_et_al_2020",
+                                grepl("Koh", filename) ~ "Sharma_et_al_2021",
+                                grepl("Prey", filename) ~ "Sharma_et_al_2021",
+                                grepl("Rufiji", filename) ~ "Trettin_et_al_2020",
+                                T ~ filename)) %>% 
     separate(col = "latitude", into = c("latitude", "position_method"), sep = "_") %>% 
     separate(col = "longitude", into = "longitude", sep = "_") %>% 
     mutate(latitude = as.numeric(latitude),
@@ -342,17 +361,21 @@ SWAMP_soil_converter <- function(swamp_type) { # use synthSWAMP() output here
 
 
 ## Soil Tables #### 
-depthseries <- SWAMP_soil_converter(swamp_soil) %>% 
-  select(c(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon))
-
 cores <- SWAMP_soil_converter(swamp_soil) %>% 
   select(c(study_id, site_id, core_id, year, month, day, latitude, longitude, position_accuracy, 
            position_method, elevation, habitat, geomorphic_id)) %>% 
-  distinct()
+  distinct() %>% 
+  filter(habitat != "peatland") # remove inland cores
+
+depthseries <- SWAMP_soil_converter(swamp_soil) %>% 
+  select(c(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon)) %>%
+  filter(study_id %in% cores$study_id)
 
 impacts <- SWAMP_soil_converter(swamp_soil) %>% 
   select(c(study_id, site_id, core_id, impact_class)) %>% 
-  distinct()
+  distinct() %>% 
+  filter(study_id %in% cores$study_id)
+
 
 
 ## Bibliography ####
@@ -366,7 +389,8 @@ soil_doi_list <- c("10.17528/CIFOR/DATA.00262", "10.17528/CIFOR/DATA.00265",
                    "10.17528/CIFOR/DATA.00231", "10.17528/CIFOR/DATA.00230",
                    "10.17528/CIFOR/DATA.00229", "10.17528/CIFOR/DATA.00228",
                    "10.17528/CIFOR/DATA.00227", "10.17528/CIFOR/DATA.00226",
-                   "10.17528/CIFOR/DATA.00225", "10.17528/CIFOR/DATA.00221")
+                   "10.17528/CIFOR/DATA.00225", "10.17528/CIFOR/DATA.00221",
+                   "10.17528/CIFOR/DATA.00238")
 
 soil_bib_raw <- data.frame()
 for (i in soil_doi_list) {
@@ -397,6 +421,7 @@ soil_bib <- soil_bib_raw %>%
                                      grepl("Rufiji", title) & grepl("Soil", title) ~ "Trettin_et_al_2020_rufiji",
                                      grepl("Krabi", title) & grepl("Soil", title) ~ "Bukoski_et_al_2020_krabi",
                                      grepl("Pak", title) & grepl("Soil", title) ~ "Bukoski_et_al_2020_pak",
+                                     grepl("Palian", title) & grepl("Soil", title) ~ "Bukoski_et_al_2020_palian",
                                      T ~ NA_character_),
          bibliography_id = case_when(!is.na(bibliography_id) ~ paste(bibliography_id, "data", "soil", sep = "_"),
                                      is.na(bibliography_id) ~ paste(study_id, "data", "soil", sep = "_"),
@@ -445,7 +470,8 @@ study_citations <- full_join(veg_bib, soil_bib) %>%
                               study_id == "MacKenzie_et_al_2020" ~ "Bukoski_et_al_2020",
                               study_id == "MacKenzie_et_al_2020" ~ "Bukoski_et_al_2020",
                               T ~ study_id)) %>% 
-  select(study_id, bibliography_id, publication_type, bibtype, title, author, doi, url, year)
+  select(study_id, bibliography_id, publication_type, bibtype, title, author, doi, url, year) %>% 
+  filter(study_id %in% cores$study_id)
 
 bib_file <- study_citations %>%
   remove_rownames() %>% 
