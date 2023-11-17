@@ -365,7 +365,10 @@ cores <- SWAMP_soil_converter(swamp_soil) %>%
   select(c(study_id, site_id, core_id, year, month, day, latitude, longitude, position_accuracy, 
            position_method, elevation, habitat, geomorphic_id)) %>% 
   distinct() %>% 
-  filter(habitat != "peatland") # remove inland cores
+  filter(habitat != "peatland") %>% # remove inland cores
+  mutate(position_notes = case_when(position_method == "subplot" ~ "position at subplot level",
+                                    position_method == "plot" ~ "posiiton at plot level"),
+         position_method = "other low resolution") # recode plot and subplot as "other low resolution"
 
 depthseries <- SWAMP_soil_converter(swamp_soil) %>% 
   select(c(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon)) %>%
@@ -374,7 +377,12 @@ depthseries <- SWAMP_soil_converter(swamp_soil) %>%
 impacts <- SWAMP_soil_converter(swamp_soil) %>% 
   select(c(study_id, site_id, core_id, impact_class)) %>% 
   distinct() %>% 
-  filter(study_id %in% cores$study_id)
+  filter(study_id %in% cores$study_id) %>% 
+  mutate(impact_class = case_when(impact_class == "Restoration" ~ "restored",
+                                  impact_class == "Intact" ~ "natural",
+                                  impact_class == "Plantation" ~ "farmed",
+                                  #impact_class == "Degraded" ~ ??
+                                  TRUE ~ impact_class)) #merging vocab with controlled impact classes
 
 
 
