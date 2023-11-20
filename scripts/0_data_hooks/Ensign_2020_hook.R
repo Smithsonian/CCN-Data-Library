@@ -28,10 +28,10 @@ id <- "Ensign_et_al_2020"
 # cores
 cores <- raw_cores %>%
   rename(year = core_year, latitude = core_latitude, longitude = core_longitude,
-         position_method = core_position_method)
+         position_method = core_position_method) %>% 
 
 ##RC edit --> adding habitat for synthesis update
-cores <- raw_cores %>% 
+# cores <- raw_cores %>% 
   mutate(habitat = case_when(vegetation_class == "emergent" ~ "marsh",
                              vegetation_class == "forested" ~ "swamp"))
 

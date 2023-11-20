@@ -341,7 +341,7 @@ recode_salinity <- function(df, salinity_class) {
     mutate(salinity_class = recode_factor(salinity_class,
                                           "Bra" = "brackish",
                                           "Bra Fre" = "brackish to fresh", 
-                                          "Bra Sal" = "bracish to saline",
+                                          "Bra Sal" = "brackish to saline",
                                           "Del" = "deltaic", 
                                           "Est" = "estuarine", 
                                           "Fre" = "fresh", 

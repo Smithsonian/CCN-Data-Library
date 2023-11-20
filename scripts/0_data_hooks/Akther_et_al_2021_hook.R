@@ -166,7 +166,8 @@ write_csv(depthseries, "data/primary_studies/Akther_et_al_2021/derivative/Akther
 # 
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
 
-study_citation <- data.frame(bibliography_id = "Akther_et_al_2021",
+study_citation <- data.frame(study_id = id,
+                             bibliography_id = "Akther_et_al_2021_article",
                              title = "Fractionation of Organic Carbon and Stock Measurement in the Sundarbans Mangrove Soils of Bangladesh",
                              author = "Sayada Momotaz Akther, Md Mahfuz Islam, Md Faruque Hossain, Zakia Parveen",
                              bibtype = "Article", 
@@ -174,11 +175,11 @@ study_citation <- data.frame(bibliography_id = "Akther_et_al_2021",
                              doi = "https://doi.org/10.4236/ajcc.2021.104028",
                              url = "https://www.scirp.org/journal/paperinformation.aspx?paperid=114407",
                              journal = "American Journal of Climate Change",
-                             year = "2021") %>% 
-                  column_to_rownames("bibliography_id")
+                             year = "2021")
+                  
 
 #write bib           
-WriteBib(as.BibEntry(study_citation), "data/primary_studies/Akther_et_al_2021/derivative/Akther_et_al_2021.bib")
+WriteBib(as.BibEntry(study_citation %>% column_to_rownames("bibliography_id")), "data/primary_studies/Akther_et_al_2021/derivative/Akther_et_al_2021.bib")
 write_csv(study_citation, "data/primary_studies/Akther_et_al_2021/derivative/Akther_et_al_2021_study_citations.csv")
 
 # link to bibtex guide

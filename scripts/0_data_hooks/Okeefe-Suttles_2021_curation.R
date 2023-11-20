@@ -204,7 +204,8 @@ ma2_cores <- suttle_cores %>%
 # bind cores back together
 cores <- bind_rows(fl_cores, ri_cores, ma1_cores, ma2_cores) %>% 
   reorderColumns('cores', .) %>% 
-  select(-Status)
+  select(-Status) %>% 
+  mutate(vegetation_class = ifelse(habitat == "scrub/shrub", "scrub shrub", vegetation_class))
 
 ## ... Impacts ####
 
