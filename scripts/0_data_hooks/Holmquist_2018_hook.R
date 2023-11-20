@@ -80,7 +80,15 @@ cores <- raw_cores %>%
          salinity_class = "salinity_code",
          core_position_notes= "position_code") %>%
   # recode core position notes 
-  mutate(core_position_notes = recode(core_position_notes, 
+  mutate(core_position_method = recode(core_position_notes, 
+                                       "a" = "other high resolution",
+                                       "a1" = "other moderate resolution", 
+                                       "a2" = "other low resolution",
+                                       "b" = "other low resolution", 
+                                       "c" = "other low resolution", 
+                                       "c1" = "other moderate resolution", 
+                                       "c2" = "other low resolution"), 
+         core_position_notes = recode(core_position_notes, 
                                       "a" = "latitude and longitude were likely from a high quality source",
                                       "a1" = "latitude and longitude from handheld GPS or better", 
                                       "a2" = "latitude and longitude were likely high quality but may refer to a general area rather than individual core location",
@@ -113,8 +121,13 @@ cores <- raw_cores %>%
                                            TRUE ~ NA_character_),
          core_elevation_notes = case_when(study_id == "Hill_and_Anisfeld_2015" & !is.na(core_elevation) ~ "Topcon GPT-3200 total station", 
                                           TRUE ~ NA_character_),
-         core_elevation_accuracy = case_when(study_id == "Hill_and_Anisfeld_2015" & !is.na(core_elevation) ~ 0.002, TRUE ~ NA_real_)) %>% 
+         core_elevation_accuracy = case_when(study_id == "Hill_and_Anisfeld_2015" & !is.na(core_elevation) ~ 0.002, TRUE ~ NA_real_),
+         inundation_notes = ifelse(inundation_class %in% c("high", "low"), NA, inundation_class),
+         inundation_class = ifelse(inundation_class %in% c("high", "low", "med"), inundation_class, NA)) %>%  
   full_join(Elsey_Quirk_dated_cores %>% select(-c(study_id)))
+
+# need to make a lookup for the site_id to join with the depthseries
+site_lookup <- distinct(cores, study_id, site_id, core_id)
 
 ## ... Depthseries ####
 
@@ -132,7 +145,8 @@ depthseries_carbon <- raw_depthseries %>%
                                      study_id == "Elsey_Quirk_et_al_2011" ~ NA,
                                      TRUE ~ fraction_carbon)) %>%
   filter(!(study_id %in% removed_studies)) %>% 
-  full_join(Elsey_Quirk_cs137 %>% select(-c(study_id)))
+  full_join(Elsey_Quirk_cs137 %>% select(-c(study_id))) %>% 
+  select(-site_id) %>% full_join(site_lookup)
 
 
 # add site ID to final depthseries table
@@ -273,7 +287,7 @@ source("./scripts/1_data_formatting/qa_functions.R")
 # Check col and varnames
 testTableCols(table_names) 
 testTableVars(table_names) # quite a few uncontrolled variables
-testRequired(table_names) # core year and position method
+testRequired(table_names) 
 testConditional(table_names)
 
 test_unique_cores(cores)

@@ -111,8 +111,16 @@ results <- test_numeric_vars(depthseries)
 
 ## 3. Study Citations ####
 
+library(RefManageR)
 
+cifuentes_bib <- as.data.frame(GetBibEntryWithDOI("10.25573/serc.24294928")) %>% 
+  mutate(bibliography_id = "Cifuentes_et_al_2023_Panama_data", 
+         study_id = "Cifuentes_et_al_2023_Panama", 
+         publication_type = "primary dataset") %>% 
+  remove_rownames() %>% 
+  select(study_id, bibliography_id, publication_type, everything())
 
+write_csv(cifuentes_bib, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_et_al_2023_Panama_study_citations.csv") 
 
 ## 4. Write files ####
 

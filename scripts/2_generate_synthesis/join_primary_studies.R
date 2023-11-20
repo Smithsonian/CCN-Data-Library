@@ -189,7 +189,7 @@ bib_file <- ccrcn_synthesis$study_citations %>%
   select(-c(study_id, publication_type, keywords, 
             # issn, `article-number`,
             abstract)) %>%
-  distinct() %>% drop_na(bibliography_id) %>% 
+  distinct() %>% drop_na(bibliography_id) %>% distinct() %>% 
   column_to_rownames("bibliography_id")
 
 # find and fix encoding issues

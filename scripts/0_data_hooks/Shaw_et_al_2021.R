@@ -133,14 +133,14 @@ write_csv(species, "data/primary_studies/Shaw_et_al_2023/derivative/Shaw_et_al_2
 
 library(RefManageR)
 
-Shaw_datapub <- as.data.frame(GetBibEntryWithDOI("10.25573/serc.24526066.v1")) %>% 
-  mutate(study_id = "Shaw_et_al_2021",
-         bibliography_id = "Shaw_et_al_2021_data", 
+Shaw_datapub <- as.data.frame(GetBibEntryWithDOI("10.25573/serc.24526066")) %>% 
+  mutate(study_id = "Shaw_et_al_2020",
+         bibliography_id = "Shaw_et_al_2020_data", 
          publication_type = "primary dataset") %>% 
   select(-keywords)
 
 Shaw_bib <- as.data.frame(ReadBib("data/primary_studies/Shaw_et_al_2023/original/shaw_et_al_2023_associated_publication.bib")) %>% 
-  mutate(study_id = "Shaw_et_al_2021",
+  mutate(study_id = "Shaw_et_al_2020",
          bibliography_id = "Christie_et_al_2021_article", 
          publication_type = "associated source")
 

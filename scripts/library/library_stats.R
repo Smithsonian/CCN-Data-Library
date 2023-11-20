@@ -10,8 +10,8 @@ library(tidyverse)
 library(RColorBrewer)
 
 # read in synthesis data
-cores <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", guess_max = 7000)
-ds <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max = 55000)
+cores <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", col_types = cols())
+ds <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max = 80000)
 impacts <- read_csv("data/CCRCN_synthesis/CCRCN_impacts.csv", guess_max = 2000)
 
 

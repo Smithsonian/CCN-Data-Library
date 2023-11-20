@@ -200,17 +200,18 @@ write_csv(depthseries, "data/primary_studies/Snedden_2018/derivative/Snedden_201
 # 
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
 
-study_citation <- data.frame(bibliography_id = "Snedden 2018",
+study_citation <- data.frame(study_id = id,
+                             bibliography_id = "Snedden_2018_article",
+                             publication_type = "primary dataset",
                              title = "Dataset: Soil properties, soil radioisotope activity, and end-of-season belowground biomass across Barataria basin wetlands (2016)",
                              author = "Gregg A. Snedden",
                              bibtype = "Misc", 
                              doi = "https://doi.org/10.5066/F7BK1BJ8",
                              url = "https://www.sciencebase.gov/catalog/item/5a4eae82e4b0d05ee8c6649c",
-                             year = "2018") %>% 
-                  column_to_rownames("bibliography_id")
+                             year = "2018") 
 
-WriteBib(as.BibEntry(study_citation), "data/primary_studies/Snedden_2018/derivative/Snedden_2018.bib")
-write_csv(study_citation, "data/primary_studies/Snedden_2018/derivative/Snedden_et_al_2018_study_citation.csv")
+WriteBib(as.BibEntry(study_citation %>% column_to_rownames("bibliography_id")), "data/primary_studies/Snedden_2018/derivative/Snedden_2018.bib")
+write_csv(study_citation, "data/primary_studies/Snedden_2018/derivative/Snedden_et_al_2018_study_citations.csv")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/

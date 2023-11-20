@@ -200,42 +200,46 @@ write_csv(species, "data/primary_studies/Howard_and_Fourqurean_2020/derivative/H
 ####Create bibtex citation for dataset and associated article 
 
 #citation for primary dataset
-study_citation_data <- data.frame(bibliography_id = "Howard_and_Fourqurean_2020",
-           title = "Organic and inorganic data for soil cores from Brazil and Florida Bay seagrasses to support Howard et al 2018, CO2 released by carbonate sediment production in some coastal areas may offset the benefits of seagrass “Blue Carbon” storage",
-           author = "Jason L. Howard and James W. Fourqurean",
-           bibtype = "Misc",
-           doi = "DOI: 10.1002/lno.10621",
-           url = "https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-fce.1228.2", 
-           journal = "Limnology and Oceanography",
-           publication_type = "primary dataset", ###if article -- "associated source"
-           year = "2020") %>% 
-  column_to_rownames("bibliography_id")
+study_citation_data <- data.frame(study_id = "Howard_and_Fourqurean_2020",
+                                  bibliography_id = "Howard_and_Fourqurean_2020_data",
+                                  title = "Organic and inorganic data for soil cores from Brazil and Florida Bay seagrasses to support Howard et al 2018, CO2 released by carbonate sediment production in some coastal areas may offset the benefits of seagrass “Blue Carbon” storage",
+                                  author = "Jason L. Howard and James W. Fourqurean",
+                                  bibtype = "Misc",
+                                  doi = "DOI: 10.1002/lno.10621",
+                                  url = "https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-fce.1228.2", 
+                                  journal = "Limnology and Oceanography",
+                                  publication_type = "primary dataset", ###if article -- "associated source"
+                                  year = "2020")
+  # column_to_rownames("bibliography_id")
 
 #citation for associated article
-study_citation_article <- data.frame(bibliography_id = "Howard_et_al_2018",
-                                    title = "CO2 released by carbonate sediment production in some coastal areas may offset the benefits of seagrass “Blue Carbon” storage",
-                                    author = "Howard, J.L., Creed, J.C., Aguiar, M.V.P. and Fourqurean, J.W.",
-                                    bibtype = "Article",
-                                    doi = "DOI: 10.1002/lno.10621",
-                                    url = "https://aslopubs.onlinelibrary.wiley.com/doi/10.1002/lno.10621",
-                                    journal = "Limnology and Oceanography",
-                                    publication_type = "associated source",
-                                    year = "2018") %>% 
-                column_to_rownames("bibliography_id")
+study_citation_article <- data.frame(study_id = "Howard_and_Fourqurean_2020",
+                                     bibliography_id = "Howard_et_al_2018_article",
+                                     title = "CO2 released by carbonate sediment production in some coastal areas may offset the benefits of seagrass “Blue Carbon” storage",
+                                     author = "Howard, J.L., Creed, J.C., Aguiar, M.V.P. and Fourqurean, J.W.",
+                                     bibtype = "Article",
+                                     doi = "DOI: 10.1002/lno.10621",
+                                     url = "https://aslopubs.onlinelibrary.wiley.com/doi/10.1002/lno.10621",
+                                     journal = "Limnology and Oceanography",
+                                     publication_type = "associated source",
+                                     year = "2018") 
+  # column_to_rownames("bibliography_id")
+
 #merge               
 study_citations <- bind_rows(study_citation_data, study_citation_article) %>%
-                  mutate(study_id = id,
-                  bibliography_id = c("Howard_and_Fourqurean_2020_dataset", "Howard_et_al_2018_paper"),
-                         publication_type = c("primary dataset", "associated source")) %>%
-                  remove_rownames() %>% 
+                  # mutate(study_id = id,
+                  # bibliography_id = c("Howard_and_Fourqurean_2020_dataset", "Howard_et_al_2018_paper"),
+                  #        publication_type = c("primary dataset", "associated source")) %>%
+                  # remove_rownames() %>% 
                   select(study_id, bibliography_id, publication_type, bibtype, everything())
-                
+
+write_csv(study_citations, "./data/primary_studies/Howard_and_Fourqurean_2020/derivative/Howard_and_Fourqurean_2020_study_citations.csv")
+
 #Write to joined .bib file 
 bib_file <- study_citations %>%
-           select(-study_id, -publication_type) %>%
-           column_to_rownames("bibliography_id")                
+  select(-study_id, -publication_type) %>%
+  column_to_rownames("bibliography_id")                
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Howard_and_Fourqurean_2020/derivative/Howard_and_Fourqurean_2020.bib")
-write_csv(study_citations, "./data/primary_studies/Howard_and_Fourqurean_2020/derivative/Howard_and_Fourqurean_2020_citations.csv")
 
 
                 

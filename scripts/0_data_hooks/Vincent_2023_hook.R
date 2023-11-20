@@ -131,7 +131,7 @@ write_csv(impacts, "data/primary_studies/Vincent_2023/derivative/Vincent_and_Dio
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
 
 study_citation <- data.frame(study_id = id, 
-                             bibliography_id = id,
+                             bibliography_id = "Vincent_and_Dionne_2023_data",
                              publication_type = "primary dataset",
                              bibtype = "Misc", 
                              title = "Dataset: Sediment Carbon Content from three Maine Salt Marshes 1993",
@@ -141,7 +141,7 @@ study_citation <- data.frame(study_id = id,
                              year = "2023")
 
 WriteBib(as.BibEntry(study_citation), "data/primary_studies/Vincent_2023/derivative/Vincent_and_Dionne_2023.bib")
-write_csv(study_citation, "data/primary_studies/Vincent_2023/derivative/Vincent_and_Dionne_2023_study_citation.csv")
+write_csv(study_citation, "data/primary_studies/Vincent_2023/derivative/Vincent_and_Dionne_2023_study_citations.csv")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/
