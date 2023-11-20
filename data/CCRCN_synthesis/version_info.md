@@ -22,17 +22,23 @@ This synthesis update contains changes to the CCN Data Library, including new da
 
 #### Updated Attributes 
 
-- geomorphic_id: Located in CCN_cores.csv
+geomorphic_id: Located in CCN_cores.csv
 
 
 #### Updated Variables
 
+Located in CCN_sites.csv: "unvegetated", under vegetation_class attribute
+Located in CCN_cores.csv: "unvegetated", under vegetation_class attribute
+Located in CCN_depthseries.csv: "dredge horizon", under marker_type attribute 
+Located in CCN_impacts.csv: "degraded", under impact_class
+Located in CCN_impacts.csv: "hurricane", under impact_class
+
 
 #### New Datasets
 
-This update adds 108 new studies and  new cores to the CCN Data Library, bringing the total number of cores to 10226, with 417 unique studies. 
+This update adds 94 new studies and 3,498 new cores to the CCN Data Library, bringing the total number of cores to 10198, with 401 unique studies. 
 
-Aktker et al 2021
+Akther et al 2021
 Beers et al 2023
 Cifuentes et al 2023
 Costa et al 2023
@@ -50,7 +56,7 @@ McGlathery et al 2018
 Morrissette et al 2023
 Piazza et al 2020
 Rovai et al 2022
-Saunders 2023
+Saunders 2013
 Senger et al 2020
 Shaw et al 2021
 Snedden et al 2018
@@ -132,6 +138,32 @@ MacKenzie et al 2021
 Bukoski et al 2020
 Trettin et al 2020
 Hribljan et al 2020
+
+
+
+### Corrections and Additions to datasets included in previous update, V1.0.0
+
+1. Abbott et al 2019: corrected site names to match with associated paper.
+2. Boyd et al 2019: assigned habitat to cores. 
+3. Buffington et al 2020: corrected depth increments for Cs137 activity. 
+4. Carlin 2021: assigned habitats to cores.
+5. Drexler et al 2009: added year of core collection. 
+6. Drexler et al 2013: corrections to Pb210 and Cs137 units. 
+7. Drexler 2019: assigned habitats to cores. 
+8. Ensign et al 2020: assigned habitats to sites, added positional data for cores
+9. Gonneea et al 2018: corrected Pb210 unit. 
+10. Johnson et al 2007: added month and year of core collection. 
+11. Kauffman et al 2020: dropped modeled fraction carbon values from depthseries data, assigned habitat to cores.
+12. Keshta et al 2020: dropped modeled fraction carbon values from depthseries data.
+13. Krauss et al 2018: assigned habitats to cores, added year of core collection, changed impact class from "restoring" to "natural", corrected site names to match with associated paper.
+14. Nahlik and Fenessey 2016: assigned habitats to cores.
+15. Noe et al 2016: corrected Pb210 unit, added month and year of core collection. 
+16. Messerschmidt and Kirwan 2020: corrected an error in Pb210 standard error.
+17. Okeefe-Suttles et al 2021: Correction in Pb2130 activity values. 
+18. Vaughn et al 2020: added missing core position data. 
+19. Watson and Bryne 2013: added year of core collection and added missing site names.  
+20. Weston et al 2020: Updated to Weston et al 2023, revised data. 
+
 
 
 ### About the CCN

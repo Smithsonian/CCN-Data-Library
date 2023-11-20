@@ -381,7 +381,7 @@ impacts <- SWAMP_soil_converter(swamp_soil) %>%
   mutate(impact_class = case_when(impact_class == "Restoration" ~ "restored",
                                   impact_class == "Intact" ~ "natural",
                                   impact_class == "Plantation" ~ "farmed",
-                                  #impact_class == "Degraded" ~ ??
+                                  impact_class == "Degraded" ~ "degraded",
                                   TRUE ~ impact_class)) #merging vocab with controlled impact classes
 
 
