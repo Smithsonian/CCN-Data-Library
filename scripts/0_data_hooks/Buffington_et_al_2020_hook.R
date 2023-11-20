@@ -41,7 +41,11 @@ cores <- cores_raw %>%
 depthseries <- depthseries_raw %>%
   mutate(cs137_unit = ifelse(!is.na(cs137_activity), "becquerelsPerKilogram", NA),
          method_id = "single set of methods") %>% 
-  select(-fraction_carbon) # modeled
+  select(-fraction_carbon) %>% # modeled
+  mutate(depth_min = ifelse(!is.na(cs137_activity), depth_min - 2, depth_min), # This is a temporary patch ...
+         depth_max = ifelse(!is.na(cs137_activity), depth_max - 2, depth_max))
+depthseries$depth_max[is.na(depthseries$depth_max)] <- 50 # ... it needs to be fixed in the original dataset
+
 
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
