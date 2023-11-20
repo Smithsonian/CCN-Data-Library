@@ -18,7 +18,7 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 ## Read in data
 raw_FL <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/FL/Data_TampaBay_Cores.csv")
 fl_coreinfo <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermediate/FL_coreinfo.csv")
-raw_RI <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/RI/Data_RhodeIsland_Cores.csv")
+raw_RI <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermediate/Data_RhodeIsland_Cores_handEdit.csv")
 raw_MA1 <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/MA_Cape/Data_RestoredMarshes_Cores.csv")
 raw_MA2 <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/MA_Wellfleet/Data_HerringRiver_Cores.csv")
 raw_methods <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermediate/OkeefeSuttle_2021_material_and_methods.csv")

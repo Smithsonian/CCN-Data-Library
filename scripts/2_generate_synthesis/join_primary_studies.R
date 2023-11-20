@@ -189,7 +189,18 @@ bib_file <- ccrcn_synthesis$study_citations %>%
   select(-c(study_id, publication_type, keywords, 
             # issn, `article-number`,
             abstract)) %>%
-  distinct() %>% drop_na(bibliography_id) %>% distinct() %>% 
+  distinct_all() %>% drop_na(bibliography_id) %>% distinct_all()
+
+bib_file_redundancy_checks <- bib_file %>% 
+  group_by(bibliography_id) %>% 
+  summarise(n = n()) %>% 
+  arrange(-n)
+
+if (first(bib_file_redundancy_checks$n)>1) {
+  stop("There are duplicate bibliography_id's")
+}
+
+bib_file <- bib_file %>% 
   column_to_rownames("bibliography_id")
 
 # find and fix encoding issues

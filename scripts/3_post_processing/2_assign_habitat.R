@@ -55,8 +55,8 @@ cores_sal_veg_habitat <- cores2 %>%
 # classify core habitat by species
 cores_species_habitat <- species2 %>% 
   mutate(habitat = factor(habitat, levels = rev(c("unvegetated", "algal mat", "seagrass", "marsh", "scrub/shrub", "swamp", "mangrove")))) %>% 
-  arrange(study_id, core_id, habitat) %>% 
-  group_by(study_id, core_id) %>% 
+  arrange(study_id, site_id, core_id, habitat) %>% 
+  group_by(study_id, site_id, core_id) %>% 
   summarise(habitat4 = first(habitat)) %>% 
   mutate(habitat4 = as.character(habitat4))
 
@@ -96,9 +96,9 @@ na_habitat_comparison <- filter(habitat_comparison, is.na(habitat1) &
 # there are some species described that haven't been associated with a habitat in our species-habitat table
 
 habitat_final <- habitat_comparison %>% 
-  select(study_id, core_id, habitat1:habitat6) %>%
+  select(study_id, site_id, core_id, habitat1:habitat6) %>%
   gather(key="habitat_assignment_method",
-         value = "habitat", -c(study_id, core_id)) %>% 
+         value = "habitat", -c(study_id, site_id, core_id)) %>% 
   arrange(study_id, core_id, habitat_assignment_method) %>% 
   filter(complete.cases(.)) %>% 
   group_by(study_id, core_id) %>% 
