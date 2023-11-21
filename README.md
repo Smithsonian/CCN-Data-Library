@@ -25,7 +25,7 @@ Below are some additional resources related to CCN data archival:
 
 **Recommended Citation**
 
-Coastal Carbon Network (2023). Database: Coastal Carbon Library (Version 1.0.0). Smithsonian Environmental Research Center. Dataset. https://doi.org/10.25573/serc.21565671. Accessed (YYYY-MM-DD).
+Coastal Carbon Network (2023). Database: Coastal Carbon Library (Version 1.1.0). Smithsonian Environmental Research Center. Dataset. https://doi.org/10.25573/serc.21565671. Accessed (YYYY-MM-DD).
 
 We refer to users as anyone using either data we curate, or synthesis products we create. Data that is curated, but not created, by the Network, should not be attributed to the Network. Users should cite all dataset DOIs and credit the datasets’ original authors. All synthesis products created by the Network and associated collaborators will be listed under a Creative Commons With Attribution license. The Network should be acknowledged and cited appropriately if users utilize any of the data structures, tools, or scripts developed by Network and associated collaborators. We will develop additional tools to assist users in generating lists of citations, but users will be ultimately responsible for correctly citing all data used. See the [CCN Principles and Governance](https://serc.si.edu/coastalcarbon/principles-and-governance) for more information.
 
