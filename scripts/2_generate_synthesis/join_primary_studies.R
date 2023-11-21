@@ -254,6 +254,7 @@ if(join_status == TRUE){
   source("scripts/3_post_processing/4_max_depths.R")
   source("scripts/3_post_processing/5_core_attributes.R")
   source("scripts/3_post_processing/6_database_citation.R")
+  source("scripts/3_post_processing/7_resolve_taxonomy.R")
 }
 
 ## 6. Synthesis Metrics & Change Log ####
