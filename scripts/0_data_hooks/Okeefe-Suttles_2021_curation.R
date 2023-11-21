@@ -18,7 +18,7 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 ## Read in data
 raw_FL <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/FL/Data_TampaBay_Cores.csv")
 fl_coreinfo <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermediate/FL_coreinfo.csv")
-raw_RI <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermediate/Data_RhodeIsland_Cores_handEdit.csv")
+raw_RI <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermediate/Data_RhodeIsland_Cores_Revision_112123.csv")
 raw_MA1 <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/MA_Cape/Data_RestoredMarshes_Cores.csv")
 raw_MA2 <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/original/MA_Wellfleet/Data_HerringRiver_Cores.csv")
 raw_methods <- read_csv("data/primary_studies/Okeefe-Suttles_et_al_2021/intermediate/OkeefeSuttle_2021_material_and_methods.csv")
@@ -45,11 +45,7 @@ MA1 <- raw_MA1 %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_Cape",
 MA2 <- raw_MA2 %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_Wellfleet",
                           core_id = paste0("MA_", ID))
 RI <- raw_RI %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_RI",
-                        core_id = paste0("RI_", ID),
-                        `210Pb` = NA,  # this is a temporary patch ... 
-                        `210Pb_e` = NA,
-                        `226Ra`=NA,
-                        `226Ra_e` = NA) # .. needs to be fixed in original data source
+                        core_id = paste0("RI_", ID)) # .. needs to be fixed in original data source
   
 
 # bind all the depthseries together

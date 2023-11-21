@@ -28,7 +28,7 @@ cifor_veg <- synthCIFOR(data_type = "vegetation")
 #additional geographic coordinate sheets 
 geo_brazil <- read_xlsx("data/primary_studies/CIFOR/original/Kauffman_2019_BocaGrande_soil/Geographic Coordinate for SWAMP dataset-Mangrove soil carbon-Brazil-2017.xlsx",2)
 
-geo_brazil <- geo_brazil %>% rename(latitude = Latitude,
+geo_brazil <- geo_brazil %>% dplyr::rename(latitude = Latitude,
                                     longitude = Longitude) %>% select(-No) %>% 
                              mutate(latitude = parse_lat(latitude),
                                     longitude = parse_lon(longitude),

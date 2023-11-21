@@ -33,5 +33,10 @@ readMeFile <- readLines("data/CCN_synthesis/README.md")
 readMeFile<-str_replace(readMeFile, past_version_code, new_version_code)
 writeLines(readMeFile, "data/CCN_synthesis/README.md")
 
+readMeFile2 <- readLines("README.md")
+readMeFile2<-str_replace(readMeFile2, past_version_code, new_version_code)
+writeLines(readMeFile2, "README.md")
+
+
 # clear workspace of unnecessary variables
 rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results", "join_status", "file_paths"))])
