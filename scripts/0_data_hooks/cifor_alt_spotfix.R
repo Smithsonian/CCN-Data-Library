@@ -100,4 +100,4 @@ cifor_alt_study_citations <- soil_bibs %>%
 
 
 # write citations
-# write_csv(cifor_alt_study_citations, "./data/primary_studies/CIFOR/derivative_ALT/cifor_alt_study_citations.csv")
+write_csv(cifor_alt_study_citations, "./data/primary_studies/CIFOR/derivative_ALT/cifor_alt_study_citations.csv")
