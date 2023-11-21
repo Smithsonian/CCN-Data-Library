@@ -232,6 +232,10 @@ studies_to_remove <- "Breithaupt_et_al_2014"
 
 depthseries <- internatl_depthseries_data %>%
   filter(!(study_id %in% studies_to_remove)) %>%
+  
+  # remove Cifuentes_Unpublished cores from Panama (since published)
+  filter(!core_id %in% c("M0778", "M0779", "M0780", "M0781", "M0782", "M0783", "M0784", "M0785", "M0786", "M0787", "M0788", "M0789")) %>% 
+  
   mutate(method_id = "single set of methods",
          # discard modeled values
          fraction_carbon = ifelse(OC_measured_or_modeled == "modeled", NA, fraction_carbon),
@@ -250,7 +254,11 @@ ids <- depthseries %>% distinct(study_id, site_id, core_id)
 
 cores <- internatl_core_data %>%
   filter(!(study_id %in% studies_to_remove)) %>% 
-  mutate(core_year = year(core_date), 
+
+  # remove Cifuentes_Unpublished cores from Panama (since published)
+  filter(!core_id %in% c("M0778", "M0779", "M0780", "M0781", "M0782", "M0783", "M0784", "M0785", "M0786", "M0787", "M0788", "M0789")) %>% 
+
+    mutate(core_year = year(core_date), 
          core_month = month(core_date),
          core_day = day(core_date)) %>% select(-core_date) %>%
   # some site ids were NA so I'm joining them from the depthseries table
@@ -260,6 +268,10 @@ cores <- internatl_core_data %>%
 
 species <- internatl_species_data %>%
   filter(!(study_id %in% studies_to_remove)) %>%
+
+  # remove Cifuentes_Unpublished cores from Panama (since published)
+  filter(!core_id %in% c("M0778", "M0779", "M0780", "M0781", "M0782", "M0783", "M0784", "M0785", "M0786", "M0787", "M0788", "M0789")) %>% 
+
   drop_na(species_code) %>% 
   mutate(species_code = trimws(species_code),
          species_code = strsplit(species_code, split = "; ")) %>% 
