@@ -1,0 +1,11 @@
+"ID","PROTOCOL","PLT_DESIGNID","SUBP_CNT","TREE_SAMP","TREE_DBH","SAP_SAMP","SAP_DBH","UNDERSTORY","WD_TRANS_CNT","TRANS_LEN","1HR_TRANS","10HR_TRANS","100HR_TRANS","1000HR_TRANS","CITID","NOTES"
+1,"Mangrove Transect",2,6,"7 m radius",">=5 cm","2 m radius","<5 cm","30x60 cm rectangle",4.00,"12 m","10-12 m","7-10 m","2-7 m","0-12 m",96,"Suggested protocols, see plot and subplot tables for specifics."
+2,"Mangrove Cluster",1,5,"10 m radius",">=10 cm","3 m radius","<10",,4.00,"10 m",,,,,96,"Suggested protocols, see plot and subplot tables for specifics."
+3,"Dwarf Magrove Transect",2,6,"2 m half radius",,,,,4.00,"12 m","10-12 m","7-10 m","2-7 m","0-12 m",96,"Suggested protocols, see plot and subplot tables for specifics."
+4,"Peatland Transect",2,6,"10 m radius",">=5 cm","2 m radius","<5 cm",,4.00,"12 m",,,"7-12 m","0-12 m",101,"Suggested protocols, see plot and subplot tables for specifics."
+5,"Mangrove Cluster 2",1,5,"7 m radius",">=10 cm","2 m radius","<10",,4.00,"10 m","10-12 m","7-10 m","2-7 m","0-12 m",96,"Suggested protocols, see plot and subplot tables for specifics."
+6,"East Africa Mangrove Carbon Stock Inventory",3,1,"11.3 m radius",">=5 cm","2 m radius","<5 cm",,4.00,"12 m","10-12 m","7-10 m","2-7 m","0-12 m",176,
+7,"East Africa Mangrove Carbon Stock Inventory",1,5,"7 m radius",">=5 cm","2 m radius","<5 cm","50x50 cm rectangle",4.00,"12 m","10-12 m","7-10 m","2-7 m","0-12 m",176,
+8,"East Africa Mangrove Carbon Stock Inventory",1,6,"7 m radius",">=5 cm","2 m radius","<5 cm","50x50 cm rectangle",4.00,"12 m","10-12 m","7-10 m","2-7 m","0-12 m",176,
+9,"Mangrove Single Subplot",3,1,"7 m radius",">=5 cm","2 m radius","<5 cm","30x60 cm rectangle",4.00,"12 m","10-12 m","7-10 m","2-7 m","0-12 m",96,"Similar to PROTOID 1 with single subplot. Suggested protocols, see plot and subplot tables for specifics."
+100,"Not Defined",,,,,,,,,,,,,,,

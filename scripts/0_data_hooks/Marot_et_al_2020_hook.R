@@ -170,11 +170,14 @@ df_alpha <- alpha_raw %>%
 #                                "depth_min", "depth_max")) %>% 
   rename(core_id = "Core ID",
          total_pb210_activity = "Total Pb-210 \r\n(dpm/g)",
-         total_pb210_activity_se = "Total Pb-210 Error \r\n(+/- dpm/g)") %>% 
+         total_pb210_activity_se = "Total Pb-210 Error \r\n(+/- dpm/g)",
+         ) %>% 
   filter(!grepl("=", core_id)) %>% 
   separate(core_id, into = c("site_id", "core_id"), sep = "-", remove = T) %>% 
   mutate(method_id = "alpha spectroscopy",
-         site_id = gsub("166CCT03", "16CCT03", site_id)) 
+         site_id = gsub("166CCT03", "16CCT03", site_id)) %>% 
+  mutate(pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA))
+
 
 
 ## Step 3: GammaSpectroscopy ####
@@ -218,11 +221,11 @@ df_gamma <- full_join(gamma_raw, gamma_raw_be, by = c("Core ID" = "Sample/Core I
          ra226_activity_se = "Ra-226 Error \r\n(+/- dpm/g)",
          be7_activity = "Be-7 \r\n(dpm/g)",
          be7_activity_se = "Be-7 Error \r\n(+/- dpm/g)") %>% 
-  mutate(cs137_unit = "dpm/g",
-         pb210_unit = "dpm/g",
+  mutate(cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA),
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
          method_id = "gamma spectroscopy",
-         ra226_unit = "dpm/g",
-         be7_unit = "dpm/g") %>% 
+         ra226_unit = ifelse(!is.na(ra226_activity), "disintegrationsPerMinutePerGram", NA),
+         be7_unit =  ifelse(!is.na(be7_activity), "disintegrationsPerMinutePerGram", NA)) %>% 
   separate("Depth\r\n (cm)", into = c("depth_min", "depth_max"), sep = "-") %>% 
   filter(!grepl("=|[*]", core_id)) %>%
   filter(!grepl("Top", depth_min)) %>% 
@@ -302,8 +305,12 @@ field_wo_cores <- wide_result %>%
          year = year(as_full_date),
          month = month(as_full_date),
          day = day(as_full_date),
-         latitude = coalesce(`Latitude (DD)`, Latitude),
-         longitude = coalesce(`Longitude (DD)`, Longitude),
+         latitude_field = coalesce(`Latitude (DD)`, Latitude),
+         longitude_field = coalesce(`Longitude (DD)`, Longitude),
+         latitude_field = case_when(latitude_field == "" ~ NA_character_, 
+                                    T ~ latitude_field),
+         longitude_field = case_when(longitude_field == "" ~ NA_character_, 
+                                     T ~ longitude_field),
          Salinity = as.numeric(Salinity),
          salinity_class = case_when(Salinity < 5 ~ 'oligohaline',
                                     Salinity < 18 ~ "mesohaline",
@@ -484,9 +491,9 @@ df_radio <- full_join(radio_14, radio_16, by = c("site_id", "core_id", "c14_mate
 
 ## Step 6: Make the Depthseries table ####
 depth_joins <- c("depth_min", "depth_max", "site_id", "core_id")
-depthseries_raw <- full_join(df_sediment, df_gamma, by = depth_joins) %>% 
-  full_join(df_radio, by = depth_joins) %>% 
-  full_join(df_alpha, by = c(depth_joins, "total_pb210_activity", "total_pb210_activity_se", "method_id")) %>% 
+depthseries_raw <- bind_rows(df_sediment, df_gamma) %>% 
+  bind_rows(df_radio) %>% 
+  bind_rows(df_alpha) %>% 
   mutate(study_id = "Marot_et_al_2020",
          core_id = gsub("GB232M[(]A[)]", "GB232M", core_id), # Resolve duplicate naming conventions
          core_id = gsub("GB232M[(]B[)]", "GB232M_2", core_id),
@@ -511,9 +518,15 @@ depthseries <- depthseries_raw %>%
 
 
 ## Step 7: Make the Cores table ####
-cores <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "month", "day", "salinity_class")) %>% 
+core_raw <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "month", "day", "salinity_class")) %>% 
   mutate(core_id = paste(site_id, core_id, sep = "_"),
          elevation_accuracy = .014,
+         latitude = ifelse(!is.na(latitude_field), latitude_field,
+                           ifelse(is.na(latitude_field) & !is.na(latitude_wgs84), latitude_wgs84,
+                                  ifelse(is.na(latitude_field) & is.na(latitude_wgs84) & !is.na(latitude_nad83), latitude_nad83, NA_character_))),
+         longitude = ifelse(!is.na(longitude_field), longitude_field,
+                            ifelse(is.na(longitude_field) & !is.na(longitude_wgs84), longitude_wgs84,
+                                   ifelse(is.na(longitude_field) & is.na(longitude_wgs84) & !is.na(longitude_nad83), longitude_nad83, NA_character_))),
          latitude = as.numeric(latitude),
          longitude = as.numeric(longitude),
          study_id = "Marot_et_al_2020",
@@ -525,7 +538,7 @@ cores <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "mont
                                    ifelse(grepl("R", core_id), "core depth represents deposit depth",
                                           ifelse(grepl("V", core_id), "core depth represents deposit depth", 
                                                  "core depth limited by length of corer")))) %>%
-  full_join(depthseries_raw, by = c("study_id", "site_id", "core_id")) %>% # Add 19 core IDs from depthseries data (this will only add their IDs and no cores-table related data)
+  bind_rows(depthseries_raw) %>% # Add 19 core IDs from depthseries data (this will only add their IDs and no cores-table related data)
   mutate(inundation_class = ifelse(grepl("G", substr(core_id, nchar(core_id) - 2, nchar(core_id))), "low", NA),
          inundation_method = "field observation") %>% 
   select(c(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method,
@@ -534,11 +547,59 @@ cores <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "mont
   distinct()
 
 
+cores <- core_raw %>% 
+  # We have redundant entries despite using distinct above
+  group_by(study_id, site_id, core_id) %>% 
+  summarise_all("first") %>% 
+  ungroup() %>% 
+  # For a few we have no year values, but it seems core ID have a year numbering component we can use  
+  mutate(year = ifelse(is.na(year), 2000 + as.numeric(substr(core_id, 1,2)), year)) %>% 
+
+  # fill in core metadata for replicate samples
+  mutate(core_split = core_id) %>% 
+  separate(core_split, into = c("core_1", "core_2"), sep = "_") %>% # remove duplicate core_id tags: "_2"
+  mutate(core_id_flag = paste(core_1, substr(core_2, 1, nchar(core_2) - 1), sep = "_")) %>% # remove core_type tags: D,M,R,S,V,G
+  group_by(core_id_flag) %>% 
+  fill(year, month, day, latitude, longitude, position_method, elevation, elevation_datum, elevation_accuracy, 
+       elevation_method, salinity_class, salinity_method, habitat, inundation_class, inundation_method, .direction = "downup") %>% 
+  ungroup() %>% 
+  
+  # remove duplicate cores without associated depthseries data
+  # 16CCT03_GB266 = 16CCT03_GB255
+  # 14CCT01_GB67 = 14CCT01_GB37
+  # 14CCT01_GB70 = 14CCT01_GB62
+  filter(!grepl("16CCT03_GB266|14CCT01_GB67|14CCT01_GB70", core_id)) %>% 
+  # remove all other core IDs without depthseries data
+  filter(core_id %in% depthseries$core_id) %>%  
+
+  select(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method,
+         elevation, elevation_datum, elevation_accuracy, elevation_method, salinity_class, salinity_method, 
+         habitat, inundation_class, inundation_method, core_length_flag)
+
+
+##RC edit --> adding habitat for synthesis update
+##JH Reverse ----> not all of these cores are marshes. some are bay bottom.
+#cores <- cores %>% 
+#  mutate(habitat = "marsh")
+
 ## Step 8: Make the Species table ####
 species <- full_join(df_field, df_site, by = c("site_id", "core_id")) %>% 
+  
+  # fill in species data for replicate core IDs
   mutate(core_id = paste(site_id, core_id, sep = "_"),
+         core_split = core_id,
          study_id = "Marot_et_al_2022") %>% 
-  select(c(study_id, site_id, core_id, species_code, code_type, habitat))
+  
+  # fill in species data for associated cores
+  separate(core_split, into = c("core_1", "core_2"), sep = "_") %>% # remove duplicate core_id tags: "_2"
+  mutate(core_id_flag = paste(core_1, substr(core_2, 1, nchar(core_2) - 1), sep = "_")) %>% # remove core_type tags: D,M,R,S,V,G
+  group_by(core_id_flag) %>% 
+  fill(species_code, code_type, habitat) %>% 
+  ungroup() %>%
+  select(study_id, site_id, core_id, species_code, code_type, habitat) %>% 
+  distinct() %>% 
+  drop_na(code_type) %>% 
+  filter(core_id %in% depthseries$core_id)
 
 
 ## Step 9: Make the Methods table ####
@@ -546,12 +607,22 @@ methods <- read_excel("data/primary_studies/Marot_et_al_2020/original/Marot_et_a
   select(where(notAllNA))
 
 
+# JH: I want to overwrite the site_id
+# These are all grand bay and the sites don't seem to represent any type of unique gradient or sampling locations within
+cores <- mutate(cores, site_id = "Grand Bay")
+depthseries <- mutate(depthseries, site_id = "Grand Bay")
+species <- mutate(species, site_id = "Grand Bay")
+
 ## Step 10: QAQC ####
 
+core_vis <- cores %>% 
+  filter(complete.cases(latitude, longitude)) %>% 
+  filter(core_id %in% species$core_id)
+
 ## Mapping
-leaflet(cores) %>%
+leaflet(core_vis) %>%
   addTiles() %>% 
-  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3)
 
 ## Table testing
 table_names <- c("cores", "depthseries", "methods", "species")
@@ -594,6 +665,7 @@ bib_file <- study_citation %>%
   remove_rownames() %>% 
   select(-c(study_id, publication_type)) %>% 
   column_to_rownames("bibliography_id")
+
 
 
 ## Step 12: Write curated data ####

@@ -51,6 +51,11 @@ depthseries <- carbon_stocks_raw %>%
   select(study_id, site_id, core_id, depth_min, depth_max, sample_id,
          everything())
   
+## Add extra info for cores
+cores <- cores %>% 
+  mutate(year = 2002,
+         month = 5)
+
 ## Generate citation ##############
 
 if(!file.exists("data/primary_studies/Johnson_2007/derivative/Johnson_et_al_2007_study_citations.csv")){

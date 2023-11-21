@@ -167,3 +167,11 @@ dates_qual_code,B1,Dating information present and complete.
 elevation_qual_code,A3,"Elevation data present but of low quality, dating info present."
 elevation_qual_code,A2,"Elevation data is high quality, and dating info present but incomplete."
 elevation_qual_code,A1,"Elevation data is high quality, and dating info is complete."
+vegetation_class,unvegetated,Unvegetated.
+marker_type,dredge horizon,Sediment analysis was used to tie the horizon to the timing of a dredging event.
+impact_class,degraded,"Some method of degradation has occurred, possibly unspecified."
+impact_class,hurricane,Site impacted or disturbed by hurricane.
+vegetation_class,unvegetated,Unvegetated.
+marker_type,dredge horizon,Sediment analysis was used to tie the horizon to the timing of a dredging event.
+impact_class,degraded,"Some method of degradation has occurred, possibly unspecified."
+impact_class,hurricane,Site impacted or disturbed by hurricane.

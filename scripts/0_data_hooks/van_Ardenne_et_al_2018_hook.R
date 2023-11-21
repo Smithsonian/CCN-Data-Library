@@ -81,8 +81,7 @@ cores <- data_raw %>% select(Site, Transect, Flag) %>%
                       mutate(study_id = id,
                              core_id = paste(Site, Transect, sep = "_"),
                              core_id = paste(core_id, Flag, sep = "_")) %>% 
-                           #   %>% 
-                     rename(site_id = Site) %>% distinct()
+                     rename(site_id = Site) %>% distinct() 
 
 
 ##function for extracting coords from shp files
@@ -164,8 +163,10 @@ latlong <- bind_rows(grants_beach, point_carron, wells_int, wells_spit)
 cores <- left_join(cores, latlong) %>% distinct()
 
 #add additional variables
-cores <- cores %>% mutate(position_method = "other high resolution",
-                          position_notes = "Lecia Viva differential GPS",
+cores <- cores %>% mutate(position_method = case_when(is.na(latitude) ~ "other low resolution",
+                                                      TRUE ~ "other high resolution"),
+                          position_notes = case_when(is.na(latitude) ~ "position at site level",
+                                                     TRUE ~ "Lecia Viva differential GPS"),
                           year = "2015",
                           core_length_flag = "core depth represents deposit depth",
                           salinity_class = "estuarine",
@@ -175,9 +176,19 @@ cores <- cores %>% mutate(position_method = "other high resolution",
                           habitat = "marsh",
                           inundation_class = "low",
                           inundation_method = "field observation",
-                          latitude = case_when(core_id == "Grant's Beach_A_O10X2" ~ 46.17301, TRUE ~ latitude),
+                          latitude = case_when(core_id == "Grant's Beach_A_O10X2" ~ 46.17301, 
+                                               site_id == "Wells"& is.na(latitude) ~ 43.3,
+                                               site_id == "Grant's Beach"& is.na(latitude) ~ 46.166667,
+                                               site_id == "Pt Carron"& is.na(latitude) ~ 47.65,
+                                               TRUE ~ latitude),
                           longitude = case_when(core_id == "Grant's Beach_A_O10X2" ~ -64.04982,
-                                                TRUE ~ longitude)) %>% select(-Transect, -Flag)
+                                                site_id == "Wells"& is.na(longitude) ~ -70.566667,
+                                                site_id == "Pt Carron"& is.na(longitude) ~ -65.6,
+                                                site_id == "Grant's Beach"& is.na(longitude) ~ -64.05,
+                                                TRUE ~ longitude)) %>% select(-Transect, -Flag) %>% 
+  # Next line fixes and error with the lat-lons
+  mutate(longitude = case_when(study_id == "van_Ardenne_et_al_2018" & longitude > 0 ~ longitude * -1,
+                               T ~ longitude))
                         
 cores <- reorderColumns("cores", cores)
 
@@ -196,10 +207,17 @@ depthseries <- data_raw %>% select(Site, Transect, Flag, Corer, `upper depth (cm
                                    depth_max = `lower depth (cm)`,
                                    dry_bulk_density = `Bulk Density (g/cc)`,
                                    fraction_organic_matter = 'Organic matter proportion') %>% 
-                            select(-Transect, -Corer, -Flag, - 'Organic Carbon Craft (%)')
+                            select(-Transect, -Corer, -Flag, -fraction_carbon, -`Organic Carbon Craft (%)`)
       
 #reorder columns 
 depthseries <- reorderColumns("depthseries", depthseries)
+
+
+#visualize dbd and fraction carbon --> all carbon is modeled, remove from library
+ggplot(depthseries, aes(x= fraction_organic_matter, y =fraction_carbon))+
+  geom_point()
+
+
 
 
 ## ... Species ####
@@ -312,12 +330,16 @@ study_citation_article <- data.frame(bibliography_id = "van_Ardenne_et_al_2018_a
 #merge and write bib             
 study_citations <- bind_rows(study_citation, study_citation_article) %>%
   mutate(study_id = id,
-         bibliography_id = c("van_Ardenne_et_al_2018", "van_Ardenne_et_al_2018"),
+         bibliography_id = c("van_Ardenne_et_al_2018_dataset", "van_Ardenne_et_al_2018_article"),
          publication_type = c("primary dataset", "associated source")) %>%
   remove_rownames() %>% 
   select(study_id, bibliography_id, publication_type, bibtype, everything())
 
-WriteBib(as.BibEntry(study_citations), "data/primary_studies/van_Ardenne_et_al_2018/derivative/van_Ardenne_et_al_2018.bib")
+# create bib
+van_arden_bib <- study_citations %>% select(-study_id, -publication_type) %>%   
+  column_to_rownames("bibliography_id")
+
+WriteBib(as.BibEntry(van_arden_bib), "data/primary_studies/van_Ardenne_et_al_2018/derivative/van_Ardenne_et_al_2018.bib")
 write_csv(study_citations, "data/primary_studies/van_Ardenne_et_al_2018/derivative/van_Ardenne_et_al_2018_study_citations.csv")
 
 # link to bibtex guide

@@ -98,7 +98,8 @@ core_elevations_navd88 <- data.frame(core_id = c("BACHI", "FW", "TT"),
                                      core_elevation_datum = rep("NAVD88", 3))
 
 cores <- cores_raw %>%
-  mutate(core_position_notes = recode(position_code, 
+  mutate(year = 2005,
+    core_position_notes = recode(position_code, 
                                       "a" = "latitude and longitude were likely from a high quality source",
                                       "a1" = "latitude and longitude from handheld GPS or better", 
                                       "a2" = "latitude and longitude were likely high quality but may refer to a general area rather than individual core location",
@@ -115,7 +116,7 @@ cores <- cores_raw %>%
   mutate(core_elevation_accuracy = 0.075,
          core_elevation_method = "RTK",
          core_position_method = "RTK") %>% 
-  select(study_id, site_id, core_id, core_latitude, core_longitude, core_position_method, core_position_notes, core_elevation, core_elevation_datum, 
+  select(study_id, site_id, core_id, core_latitude, core_longitude, year, core_position_method, core_position_notes, core_elevation, core_elevation_datum, 
          core_elevation_accuracy, core_elevation_method,
          salinity_class, vegetation_class, core_length_flag)
 

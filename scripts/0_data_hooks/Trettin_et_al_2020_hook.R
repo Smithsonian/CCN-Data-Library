@@ -36,8 +36,9 @@ depthseries <- soils_raw %>%
          dry_bulk_density = Db..g.cm3.) %>% 
   separate(Depth..cm., into = c("depth_min", "depth_max"), sep = "-") %>% 
   mutate(study_id = "Trettin_et_al_2020",
+         method_id = "single set of methods",
          site_id = core_id) %>% 
-  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density)
+  select(study_id, method_id, site_id, core_id, depth_min, depth_max, dry_bulk_density)
   
 cores <- plots_raw %>% 
   rename(core_id = plot.ID) %>% 
@@ -129,12 +130,12 @@ bib_file <- study_citation %>%
 
 
 ## 5. Write curated data ####
-write_csv(cores, "./data/primary_studies/Trettin_et_al_2020/final/trettin_et_al_2020_cores.csv") 
-write_csv(depthseries, "./data/primary_studies/Trettin_et_al_2020/final/trettin_et_al_2020_depthseries.csv")
-write_csv(species, "./data/primary_studies/Trettin_et_al_2020/final/trettin_et_al_2020_species.csv")
-write_csv(methods, "./data/primary_studies/Trettin_et_al_2020/final/trettin_et_al_2020_methods.csv")
-WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Trettin_et_al_2020/final/trettin_et_al_2020_study_citation.bib")
-write_csv(study_citation, "./data/primary_studies/Trettin_et_al_2020/final/trettin_et_al_2020_study_citation.csv")
+write_csv(cores, "./data/primary_studies/Trettin_et_al_2020/derivative/trettin_et_al_2020_cores.csv") 
+write_csv(depthseries, "./data/primary_studies/Trettin_et_al_2020/derivative/trettin_et_al_2020_depthseries.csv")
+write_csv(species, "./data/primary_studies/Trettin_et_al_2020/derivative/trettin_et_al_2020_species.csv")
+write_csv(methods, "./data/primary_studies/Trettin_et_al_2020/derivative/trettin_et_al_2020_methods.csv")
+WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Trettin_et_al_2020/derivative/trettin_et_al_2020_study_citation.bib")
+write_csv(study_citation, "./data/primary_studies/Trettin_et_al_2020/derivative/trettin_et_al_2020_study_citation.csv")
 
 
 

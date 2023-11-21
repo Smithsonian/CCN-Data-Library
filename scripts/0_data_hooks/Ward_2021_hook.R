@@ -18,8 +18,12 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 ## Read in data
 ward_ea <- read_csv("data/primary_studies/Ward_2021/original/PublishedEAData.csv")
 # ward_cores <- read_csv("data/primary_studies/Ward_2021/original/PublishedCoreData.csv")
-ward_cores_updated <- read_csv("data/primary_studies/Ward_2021/original/JaxineData.csv")
+#ward_cores_updated <- read_csv("data/primary_studies/Ward_2021/original/JaxineData.csv")
 raw_methods <- read_xlsx("data/primary_studies/Ward_2021/intermediate/Ward_2021_methods.xlsx", sheet = 2)
+
+## add edited cores table, fixed fill series error in csv
+ward_cores_updated <- read_csv("data/primary_studies/Ward_2021/intermediate/JaxineData_edited.csv")
+
 
 # read in database guidance for easy reference
 guidance <- read_csv("docs/ccrcn_database_structure.csv")
@@ -122,24 +126,34 @@ ggplot(soil_data) +
 depthseries <- soil_data %>% 
   select(-c(contains("%"), contains("_EA"), CoreIndexNum, fraction_carbon_modeled,
             `OC (kg/m3)`, latitude, longitude, habitat)) %>%
+  mutate(method_id = "single set of methods") %>% 
   reorderColumns("depthseries", .)
 
 ## ... Core-Level ####
+## Mapping
+
+soil_data2 <- soil_data %>% mutate(longitude= as.numeric(longitude),
+                                   latitude=as.numeric(latitude))
+leaflet(soil_data2) %>%
+  addTiles() %>% 
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
+
+bad_lat_longs <- c("Elkhorn Slough 86",
+                   "Elkhorn Slough 83",
+                   "Elkhorn Slough 84",
+                   "Elkhorn Slough 85",
+                   "Elkhorn Slough 87",
+                   "Elkhorn Slough 88",
+                   "Elkhorn Slough 89",
+                   "Tomales Bay 80",
+                   "Tomales Bay 81",
+                   "Tomales Bay 82")
 
 # total of 82 sediment cores, 30 discussed previously in O'Donnell 2017
 cores <- soil_data %>% 
   # lat/lon causing expansion due to excel dragging...
-  mutate(longitude = case_when(core_id == "Elkhorn Slough 86" ~ "-121.101", # "Elkhorn Slough_Pan_67"
-                               core_id == "Elkhorn Slough 83" ~ "-121.77", # "Elkhorn Slough_Salt Marsh_64"
-                               core_id == "Elkhorn Slough 84" ~ "-121.84", #"Elkhorn Slough_Salt Marsh_65"
-                               core_id == "Elkhorn Slough 85" ~ "-121.92", # "Elkhorn Slough_Salt Marsh_66"
-                               core_id == "Elkhorn Slough 87" ~ "-121.111", # "Elkhorn Slough_Salt Marsh_68"
-                               core_id == "Elkhorn Slough 88" ~ "-121.123", # "Elkhorn Slough_Salt Marsh_69"
-                               core_id == "Elkhorn Slough 89" ~ "-121.131", # "Elkhorn Slough_Salt Marsh_70"
-                               core_id == "Tomales Bay 80" ~ "-122.926", # "Tomales Bay_Salt Marsh_61"
-                               core_id == "Tomales Bay 81" ~ "-122.934", # "Tomales Bay_Salt Marsh_62"
-                               core_id == "Tomales Bay 82" ~ "-122.946", # "Tomales Bay_Salt Marsh_63"
-                               TRUE ~ longitude)) %>%
+ # mutate(latitude = ifelse(core_id %in% bad_lat_longs, NA, as.numeric(latitude)),
+  #       longitude = ifelse(core_id %in% bad_lat_longs, NA, as.numeric(longitude))) %>%
   distinct(study_id, site_id, core_id, latitude, longitude, habitat) %>% 
   mutate(vegetation_class = case_when(habitat == "Seagrass" ~ "seagrass",
                                       habitat == "Salt Marsh" ~ "emergent",

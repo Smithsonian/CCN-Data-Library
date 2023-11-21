@@ -52,7 +52,7 @@ depthseries <- depthseries_raw %>%
                    "W2" = "Richmond_Island", 
                    "W3" = "Turkey_Creek",
                    "W4" = "Turkey_Creek")) %>%
-  mutate(pb210_unit = ifelse(is.na(total_pb210_activity) == FALSE, "disintegrations_per_minute_per_gram", NA),
+  mutate(pb210_unit = ifelse(is.na(total_pb210_activity) == FALSE, "disintegrationsPerMinutePerGram", NA),
          fraction_carbon = fraction_carbon / 100) %>% #, 
          #age = ifelse(is.na(total_pb210_activity) == TRUE, NA, age),
          #age_sd = ifelse(is.na(total_pb210_activity) == TRUE, NA, age_sd)) %>%
@@ -69,7 +69,9 @@ cores <- cores_raw %>%
   select(study_id, site_id, core_id, core_latitude, core_longitude, core_elevation, 
          salinity_class, vegetation_class, core_length_flag) %>%
   select_if(function(x) {!all(is.na(x))}) %>%
-  mutate(salinity_class = recode(salinity_class, "freshwater" = "fresh"))
+  mutate(salinity_class = recode(salinity_class, "freshwater" = "fresh"),
+         year = 2011,
+         month = 11)
 
 ## Curate species and impact data ###########
 species <- species_raw %>%

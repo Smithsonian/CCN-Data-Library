@@ -1,0 +1,2091 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="2cf98792-7cb7-4d1e-ab2e-6ef751fe5fa5" system="uuid" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <dataset>
+    <title>Dataset: Sediment depth and accretion shape belowground mangrove carbon stocks across a range of 
+         climatic and geologic settings</title>
+    <creator>
+      <individualName>
+        <givenName>Matthew</givenName>
+        <surName>T. Costa</surName>
+      </individualName>
+      <electronicMailAddress>mtcosta@ucsd.edu</electronicMailAddress>
+    </creator>
+    <associatedParty>
+      <individualName>
+        <givenName>Matthew</givenName>
+        <surName>T. Costa</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Exequiel</givenName>
+        <surName>Ezcurra</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Paula</givenName>
+        <surName>Ezcurra</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Pelayo</givenName>
+        <surName>Salinas-de-León</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Benjamin</givenName>
+        <surName>Turner</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>James</givenName>
+        <surName>Leichter</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Octavio</givenName>
+        <surName>Aburto-Oropeza</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <pubDate>2023</pubDate>
+    <abstract>We assessed the limits of mangrove sedimentary carbon storage by sampling sediments in diverse mangrove environments across four geographic areas: the volcanic Galapagos, the arid Baja Peninsula, and the geologically and climatically distinct Caribbean and Pacific coasts of Panama.  At 80 sites across these areas, we quantified the organic carbon density, sampled with depth, of entire sediment columns.  Most sites were cored in several locations, generally across an intertidal transect.  Sediment depth, bulk density, and organic carbon density were measured with depth in each core.  Some cores also had one or more sample depth radiocarbon dated, allowing for estimates of long-term accretion rates.  Depth-integrated carbon stocks are highly variable, from &lt; 17 to &gt; 1700 MgCorg ha-1.</abstract>
+    <keywordSet>
+      <keyword>mangrove</keyword>
+      <keyword>blue carbon</keyword>
+      <keyword>carbon density</keyword>
+      <keyword>sediment depth</keyword>
+      <keyword>climate</keyword>
+    </keywordSet>
+    <intellectualRights>This dataset is listed under a Creative Commons BY 4.0 and can be used with attribution. https://creativecommons.org/licenses/by/4.0/</intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-Bahia Falsa</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-110.311117</westBoundingCoordinate>
+          <eastBoundingCoordinate>-110.310383</eastBoundingCoordinate>
+          <northBoundingCoordinate>24.260067</northBoundingCoordinate>
+          <southBoundingCoordinate>24.260017</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-Bahia Magdalena</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-112.080372</westBoundingCoordinate>
+          <eastBoundingCoordinate>-111.994095</eastBoundingCoordinate>
+          <northBoundingCoordinate>25.234729</northBoundingCoordinate>
+          <southBoundingCoordinate>24.840668</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-Buenaventura</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-111.851133</westBoundingCoordinate>
+          <eastBoundingCoordinate>-111.85113</eastBoundingCoordinate>
+          <northBoundingCoordinate>26.650388</northBoundingCoordinate>
+          <southBoundingCoordinate>26.65038</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-Campo Rene</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-113.478855</westBoundingCoordinate>
+          <eastBoundingCoordinate>-113.478855</eastBoundingCoordinate>
+          <northBoundingCoordinate>26.806639</northBoundingCoordinate>
+          <southBoundingCoordinate>26.806639</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-El Mangle I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-111.772379</westBoundingCoordinate>
+          <eastBoundingCoordinate>-111.772379</eastBoundingCoordinate>
+          <northBoundingCoordinate>26.562129</northBoundingCoordinate>
+          <southBoundingCoordinate>26.562129</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-El Merito I (EMI)</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-110.327094</westBoundingCoordinate>
+          <eastBoundingCoordinate>-110.326783</eastBoundingCoordinate>
+          <northBoundingCoordinate>24.302136</northBoundingCoordinate>
+          <southBoundingCoordinate>24.300967</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-El Requeson</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-111.837545</westBoundingCoordinate>
+          <eastBoundingCoordinate>-111.837545</eastBoundingCoordinate>
+          <northBoundingCoordinate>26.63983</northBoundingCoordinate>
+          <southBoundingCoordinate>26.63983</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-El Tope</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-110.362722</westBoundingCoordinate>
+          <eastBoundingCoordinate>-110.362722</eastBoundingCoordinate>
+          <northBoundingCoordinate>24.437228</northBoundingCoordinate>
+          <southBoundingCoordinate>24.437228</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-Erizoso</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-110.371319</westBoundingCoordinate>
+          <eastBoundingCoordinate>-110.371319</eastBoundingCoordinate>
+          <northBoundingCoordinate>24.441508</northBoundingCoordinate>
+          <southBoundingCoordinate>24.441508</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-Isla Coronado</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-113.502264</westBoundingCoordinate>
+          <eastBoundingCoordinate>-113.502264</eastBoundingCoordinate>
+          <northBoundingCoordinate>29.046057</northBoundingCoordinate>
+          <southBoundingCoordinate>29.046057</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-La Mona</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-113.484296</westBoundingCoordinate>
+          <eastBoundingCoordinate>-113.484296</eastBoundingCoordinate>
+          <northBoundingCoordinate>28.888607</northBoundingCoordinate>
+          <southBoundingCoordinate>28.888607</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-Las Animas</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-113.365294</westBoundingCoordinate>
+          <eastBoundingCoordinate>-113.365294</eastBoundingCoordinate>
+          <northBoundingCoordinate>28.820237</northBoundingCoordinate>
+          <southBoundingCoordinate>28.820237</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-Mogote III</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-110.360199</westBoundingCoordinate>
+          <eastBoundingCoordinate>-110.359018</eastBoundingCoordinate>
+          <northBoundingCoordinate>24.15225</northBoundingCoordinate>
+          <southBoundingCoordinate>24.15199</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-Mogote V</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-110.348574</westBoundingCoordinate>
+          <eastBoundingCoordinate>-110.348574</eastBoundingCoordinate>
+          <northBoundingCoordinate>24.157271</northBoundingCoordinate>
+          <southBoundingCoordinate>24.157271</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-Punta Abreojos</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-113.658578</westBoundingCoordinate>
+          <eastBoundingCoordinate>-113.658578</eastBoundingCoordinate>
+          <northBoundingCoordinate>26.775105</northBoundingCoordinate>
+          <southBoundingCoordinate>26.775105</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-San Gabriel I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-110.347983</westBoundingCoordinate>
+          <eastBoundingCoordinate>-110.347983</eastBoundingCoordinate>
+          <northBoundingCoordinate>24.424383</northBoundingCoordinate>
+          <southBoundingCoordinate>24.424383</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-San Gabriel II (SGII)</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-110.347221</westBoundingCoordinate>
+          <eastBoundingCoordinate>-110.347221</eastBoundingCoordinate>
+          <northBoundingCoordinate>24.432316</northBoundingCoordinate>
+          <southBoundingCoordinate>24.432316</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-San Jose</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-110.568921</westBoundingCoordinate>
+          <eastBoundingCoordinate>-110.564153</eastBoundingCoordinate>
+          <northBoundingCoordinate>24.880033</northBoundingCoordinate>
+          <southBoundingCoordinate>24.876802</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-San Jose (SJ)</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-110.575333</westBoundingCoordinate>
+          <eastBoundingCoordinate>-110.566783</eastBoundingCoordinate>
+          <northBoundingCoordinate>24.880417</northBoundingCoordinate>
+          <southBoundingCoordinate>24.869417</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-San Lucas</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-112.212871</westBoundingCoordinate>
+          <eastBoundingCoordinate>-112.212642</eastBoundingCoordinate>
+          <northBoundingCoordinate>27.223676</northBoundingCoordinate>
+          <southBoundingCoordinate>27.223576</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-Santa Barbara II</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-111.876619</westBoundingCoordinate>
+          <eastBoundingCoordinate>-111.875824</eastBoundingCoordinate>
+          <northBoundingCoordinate>26.698754</northBoundingCoordinate>
+          <southBoundingCoordinate>26.698026</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Baja-Santispac</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-111.892333</westBoundingCoordinate>
+          <eastBoundingCoordinate>-111.892168</eastBoundingCoordinate>
+          <northBoundingCoordinate>26.763001</northBoundingCoordinate>
+          <southBoundingCoordinate>26.761737</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Baleado (B)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-91.212892</westBoundingCoordinate>
+          <eastBoundingCoordinate>-91.212892</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.674428</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.674428</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Baronesa (B)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.43971</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.43971</eastBoundingCoordinate>
+          <northBoundingCoordinate>-1.2278</northBoundingCoordinate>
+          <southBoundingCoordinate>-1.2278</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Canones (CAN)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-91.277699</westBoundingCoordinate>
+          <eastBoundingCoordinate>-91.277699</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.359674</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.359674</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Carthago Chica (CC)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.863225</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.863225</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.658014</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.658014</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Carthago Chica (CC)-II</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.868574</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.868574</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.653216</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.653216</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Carthago Chica (CC)-III</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.865779</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.865779</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.653009</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.653009</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Carthago Grande (CG)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.9348</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.9348</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.625645</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.625645</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Carthago Grande (CG)-II</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.920109</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.920109</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.629</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.629</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Elizabeth (E)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-91.069653</westBoundingCoordinate>
+          <eastBoundingCoordinate>-91.069653</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.594091</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.594091</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Garrapatero (G)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.22486</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.22486</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.7029</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.7029</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Itabaca (I)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.27592</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.27592</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.48753</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.48753</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Laguna Azul (LA)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.67218</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.67218</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.3477</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.3477</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Norte (N)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-91.345364</westBoundingCoordinate>
+          <eastBoundingCoordinate>-91.345364</eastBoundingCoordinate>
+          <northBoundingCoordinate>0.161576</northBoundingCoordinate>
+          <southBoundingCoordinate>0.161576</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Norte (N)-III</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-91.361832</westBoundingCoordinate>
+          <eastBoundingCoordinate>-91.361832</eastBoundingCoordinate>
+          <northBoundingCoordinate>0.160178</northBoundingCoordinate>
+          <southBoundingCoordinate>0.160178</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Norte (N)-IV</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-91.365055</westBoundingCoordinate>
+          <eastBoundingCoordinate>-91.365055</eastBoundingCoordinate>
+          <northBoundingCoordinate>0.155076</northBoundingCoordinate>
+          <southBoundingCoordinate>0.155076</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Poza de Parroquiano (PP)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.422644</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.422644</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.755101</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.755101</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Poza de Patillos (PP)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-91.388415</westBoundingCoordinate>
+          <eastBoundingCoordinate>-91.388415</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.343705</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.343705</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Poza de Patillos (PP)-II</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-91.38498</westBoundingCoordinate>
+          <eastBoundingCoordinate>-91.38498</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.35876</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.35876</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Poza Sardina (PS)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-89.38912</westBoundingCoordinate>
+          <eastBoundingCoordinate>-89.38912</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.71721</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.71721</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Puerto Grande (PG)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-89.4687</westBoundingCoordinate>
+          <eastBoundingCoordinate>-89.4687</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.79937</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.79937</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Puerto Grande (PG)-II</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-89.47043</westBoundingCoordinate>
+          <eastBoundingCoordinate>-89.47043</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.80345</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.80345</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Puerto Nuevo (PN)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.83328</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.83328</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.29881</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.29881</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Punta Mangle (PM)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-91.388506</westBoundingCoordinate>
+          <eastBoundingCoordinate>-91.388506</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.453435</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.453435</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Punta Morena (PM)-II</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-91.329592</westBoundingCoordinate>
+          <eastBoundingCoordinate>-91.329592</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.713764</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.713764</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Roca Fuerte (RF)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.19537</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.19537</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.68642</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.68642</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Sarten (S)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.624115</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.624115</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.209875</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.209875</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Tortuga Negra (TN)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.33227</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.33227</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.50186</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.50186</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Tortuga Negra (TN)-IV</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-90.328072</westBoundingCoordinate>
+          <eastBoundingCoordinate>-90.328072</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.500392</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.500392</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Galapagos-Urvina (U)-I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-91.259406</westBoundingCoordinate>
+          <eastBoundingCoordinate>-91.259406</eastBoundingCoordinate>
+          <northBoundingCoordinate>-0.378029</northBoundingCoordinate>
+          <southBoundingCoordinate>-0.378029</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-A</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.263336</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.263336</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.360361</northBoundingCoordinate>
+          <southBoundingCoordinate>9.360361</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-B</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.265553</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.265553</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.352424</northBoundingCoordinate>
+          <southBoundingCoordinate>9.352424</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-BA</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.254996</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.254996</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.336382</northBoundingCoordinate>
+          <southBoundingCoordinate>9.336382</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-BD</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.317044</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.317044</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.404239</northBoundingCoordinate>
+          <southBoundingCoordinate>9.404239</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-BDS</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.309144</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.309144</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.396002</northBoundingCoordinate>
+          <southBoundingCoordinate>9.396002</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-Bocas Town (BT)</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.247967</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.247967</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.338067</northBoundingCoordinate>
+          <southBoundingCoordinate>9.338067</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-C</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.272277</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.272277</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.364202</northBoundingCoordinate>
+          <southBoundingCoordinate>9.364202</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-D</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.272677</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.272677</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.365721</northBoundingCoordinate>
+          <southBoundingCoordinate>9.365721</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-E</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.290659</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.290659</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.373817</northBoundingCoordinate>
+          <southBoundingCoordinate>9.373817</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-F</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.29635</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.29635</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.375275</northBoundingCoordinate>
+          <southBoundingCoordinate>9.375275</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-G</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.292822</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.292822</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.378227</northBoundingCoordinate>
+          <southBoundingCoordinate>9.378227</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-Ga</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-79.864212</westBoundingCoordinate>
+          <eastBoundingCoordinate>-79.861313</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.401327</northBoundingCoordinate>
+          <southBoundingCoordinate>9.401213</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-H</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.30151</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.30151</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.38576</northBoundingCoordinate>
+          <southBoundingCoordinate>9.38576</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-SI</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.190943</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.190943</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.301049</northBoundingCoordinate>
+          <southBoundingCoordinate>9.301049</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-SM</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.193265</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.193265</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.308605</northBoundingCoordinate>
+          <southBoundingCoordinate>9.308605</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-Station Forest (SF)</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.258933</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.258933</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.352483</northBoundingCoordinate>
+          <southBoundingCoordinate>9.352483</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaCaribbean-Station Forest South (SFS)</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.258059</westBoundingCoordinate>
+          <eastBoundingCoordinate>-82.258059</eastBoundingCoordinate>
+          <northBoundingCoordinate>9.348858</northBoundingCoordinate>
+          <southBoundingCoordinate>9.348858</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaPacific-LP BA</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-79.058637</westBoundingCoordinate>
+          <eastBoundingCoordinate>-79.058637</eastBoundingCoordinate>
+          <northBoundingCoordinate>8.492014</northBoundingCoordinate>
+          <southBoundingCoordinate>8.492014</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaPacific-LP I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-78.850368</westBoundingCoordinate>
+          <eastBoundingCoordinate>-78.850368</eastBoundingCoordinate>
+          <northBoundingCoordinate>8.388987</northBoundingCoordinate>
+          <southBoundingCoordinate>8.388987</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaPacific-LP II</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-79.043952</westBoundingCoordinate>
+          <eastBoundingCoordinate>-79.043952</eastBoundingCoordinate>
+          <northBoundingCoordinate>8.52024</northBoundingCoordinate>
+          <southBoundingCoordinate>8.52024</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaPacific-LP IX</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-79.032638</westBoundingCoordinate>
+          <eastBoundingCoordinate>-79.032638</eastBoundingCoordinate>
+          <northBoundingCoordinate>8.508646</northBoundingCoordinate>
+          <southBoundingCoordinate>8.508646</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaPacific-LP MM</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-79.020434</westBoundingCoordinate>
+          <eastBoundingCoordinate>-79.020434</eastBoundingCoordinate>
+          <northBoundingCoordinate>8.569326</northBoundingCoordinate>
+          <southBoundingCoordinate>8.569326</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaPacific-LP V</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-78.856239</westBoundingCoordinate>
+          <eastBoundingCoordinate>-78.856239</eastBoundingCoordinate>
+          <northBoundingCoordinate>8.384288</northBoundingCoordinate>
+          <southBoundingCoordinate>8.384288</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaPacific-LP VI</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-79.09321</westBoundingCoordinate>
+          <eastBoundingCoordinate>-79.09321</eastBoundingCoordinate>
+          <northBoundingCoordinate>8.400511</northBoundingCoordinate>
+          <southBoundingCoordinate>8.400511</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaPacific-VE I</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-81.20336</westBoundingCoordinate>
+          <eastBoundingCoordinate>-81.20336</eastBoundingCoordinate>
+          <northBoundingCoordinate>7.902698</northBoundingCoordinate>
+          <southBoundingCoordinate>7.902698</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaPacific-VE II</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-81.098322</westBoundingCoordinate>
+          <eastBoundingCoordinate>-81.098322</eastBoundingCoordinate>
+          <northBoundingCoordinate>7.855364</northBoundingCoordinate>
+          <southBoundingCoordinate>7.855364</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaPacific-VE LI</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-81.574967</westBoundingCoordinate>
+          <eastBoundingCoordinate>-81.574967</eastBoundingCoordinate>
+          <northBoundingCoordinate>7.767689</northBoundingCoordinate>
+          <southBoundingCoordinate>7.767689</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaPacific-VE RN</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-81.577513</westBoundingCoordinate>
+          <eastBoundingCoordinate>-81.577513</eastBoundingCoordinate>
+          <northBoundingCoordinate>7.850317</northBoundingCoordinate>
+          <southBoundingCoordinate>7.850317</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaPacific-VE V</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-81.17739</westBoundingCoordinate>
+          <eastBoundingCoordinate>-81.17739</eastBoundingCoordinate>
+          <northBoundingCoordinate>7.865241</northBoundingCoordinate>
+          <southBoundingCoordinate>7.865241</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PanamaPacific-VE VII</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-81.189785</westBoundingCoordinate>
+          <eastBoundingCoordinate>-81.189785</eastBoundingCoordinate>
+          <northBoundingCoordinate>7.747559</northBoundingCoordinate>
+          <southBoundingCoordinate>7.747559</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2015</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2017</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Rhizophora mangle</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Avicennia germinans</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Laguncularia racemosa</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Batis maritima</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Acrostichum aureum</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Pelliciera rhizophorae</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <contact>
+      <individualName>
+        <givenName>Matthew</givenName>
+        <surName>T. Costa</surName>
+      </individualName>
+      <electronicMailAddress>mtcosta@ucsd.edu</electronicMailAddress>
+    </contact>
+    <dataTable>
+      <entityName>Costa_et_al_2023_methods</entityName>
+      <entityDescription>methods information for study</entityDescription>
+      <physical>
+        <objectName>Costa_et_al_2023_methods.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>method_id</attributeName>
+          <attributeDefinition>Unique identification code used to distinguish cores or sampling intervals that were collected or processed using different methods.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>coring_method</attributeName>
+          <attributeDefinition>Code indicating what type of device was used to collect soil depth profiles.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>russian corer</code>
+                    <definition>A half cylinder coring device with the coring section sealed off by a fin attached to a rotating pivot point</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>roots_flag</attributeName>
+          <attributeDefinition>Code indicating whether live roots were included or excluded from carbon assessments.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>roots and rhizomes included</code>
+                    <definition>Roots and rhizomes were included in dry bulk density and or organic matter and carbon measurements</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sediment_sieved_flag</attributeName>
+          <attributeDefinition>Code indicating whether or not sediment was sieved prior to carbon measurements.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>sediment sieved</code>
+                    <definition>Sediment was sieved prior to analysis for organics</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sediment_sieve_size</attributeName>
+          <attributeDefinition>If sediment was sieved, the size of sieve used.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>millimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>compaction_flag</attributeName>
+          <attributeDefinition>Code indicating how the authors qualified or quantified compaction of the core.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>corer limits compaction</code>
+                    <definition>Authors specified that the coring device's design minimized compaction</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_temperature</attributeName>
+          <attributeDefinition>Temperature at which samples were dried to measure dry bulk density. This can include either samples that were freeze dried or oven dried.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_flag</attributeName>
+          <attributeDefinition>Any notable codes regarding how the authors quantified dry bulk density.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>modeled</code>
+                    <definition>Bulk density was not measured, but was modeled from loss on ignition and assumptions about the particle densities of organic and inorganic matter</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>to constant mass</code>
+                    <definition>Bulk density methodology did not specify drying temperature or length, only that samples were dried to a constant mass</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>loss_on_ignition_temperature</attributeName>
+          <attributeDefinition>Temperature at which samples were combusted to estimate fraction organic matter.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>loss_on_ignition_sample_volume</attributeName>
+          <attributeDefinition>Sample volume used for loss on ignition, if held constant.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeterCubed</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>carbon_measured_or_modeled</attributeName>
+          <attributeDefinition>Code indicating whether fraction carbon was measured or estimated as a function of organic matter.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>measured</code>
+                    <definition>Fraction carbon was measured as opposed to modeled</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>modeled</code>
+                    <definition>Fraction carbon was modeled as opposed to measured.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>carbonates_removed</attributeName>
+          <attributeDefinition>Whether or not carbonates were removed prior to calculating fraction organic carbon.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>FALSE</code>
+                    <definition>Carbonates were not removed before measuring organic carbon</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>TRUE</code>
+                    <definition>Carbonates were removed before measuring organic carbon.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>carbonate_removal_method</attributeName>
+          <attributeDefinition>The method used to remove carbonates prior to measuring fraction carbon.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>acid fumigation</code>
+                    <definition>Carbonates were removed by fumigating with concentrated acid</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>low carbonate soil</code>
+                    <definition>Organic carbon fraction was measured without removing carbonates assuming carbonate content of the soil type was minimal</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon_method</attributeName>
+          <attributeDefinition>Code indicating the method for which fraction carbon was measured or modeled (Note: regression based models are permitted, but the use of the Bemmelen factor [0.58 gOC gOM-1] is discouraged).</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>EA</code>
+                    <definition>Each sample presented was measured using Elemental Analysis</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>local regression</code>
+                    <definition>A regression model fit using a subset of measurements was used to predict fraction carbon as a function of fraction organic matter</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon_type</attributeName>
+          <attributeDefinition>Code indicating whether fraction_carbon refers to organic or total carbon.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>organic carbon</code>
+                    <definition>Author specified that fraction carbon measurements were of organic carbon</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>carbon_profile_notes</attributeName>
+          <attributeDefinition>Any other submitter defined notes describing methodologies for determining dry bulk density, organic matter fraction, and carbon fraction.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>c14_counting_method</attributeName>
+          <attributeDefinition>Code indicating the method used for determining radiocarbon activity.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>AMS</code>
+                    <definition>Accelerator mass spectroscopy used</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dating_notes</attributeName>
+          <attributeDefinition>Any submitter defined notes elaborating on the process of dating the core not yet made clear by the coding.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>age_depth_model_reference</attributeName>
+          <attributeDefinition>Code indicating the reference or 0 year of the age depth model.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>core collection date</code>
+                    <definition>Year zero is set as the core's collection year.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>age_depth_model_notes</attributeName>
+          <attributeDefinition>Any submitter defined notes on how the age depth model was created.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Costa_et_al_2023_cores</entityName>
+      <entityDescription>cores information for study</entityDescription>
+      <physical>
+        <objectName>Costa_et_al_2023_cores.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>salinity_class</attributeName>
+          <attributeDefinition>Code based on submitter field observation or measurement indicating average annual salinity (Note: Palustrine and freshwater should only include tidal wetlands, or wetlands that are potentially/formerly tidal but artificially freshened due to artificial tidal restrictions).</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>saline</code>
+                    <definition>30-50 ppt.</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>mixoeuhaline</code>
+                    <definition>30-40 ppt.</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>polyhaline</code>
+                    <definition>18-30 ppt.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>salinity_method</attributeName>
+          <attributeDefinition>Indicate whether salinity_class was determined using a field observation or a measurement.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>field observation</code>
+                    <definition>Salinity inferred by field observation such as vegetation</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vegetation_class</attributeName>
+          <attributeDefinition>Code based on submitter field observations or measurement indicating dominant wetland vegetation type.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>scrub shrub</code>
+                    <definition>Describes wetlands dominated by woody vegetation &lt; or equal to 5 meters in height</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>forested</code>
+                    <definition>Describes wetlands dominated by woody vegetation &gt; 5 meters in height</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>forested to shrub</code>
+                    <definition>Dominated by forested to scrub/shrub biomass</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vegetation_method</attributeName>
+          <attributeDefinition>Indicate whether vegetation_class was determined using a field observation or a measurement.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>field observation</code>
+                    <definition>Vegetation inferred by field observation</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>inundation_class</attributeName>
+          <attributeDefinition>Code based on submitter field observation or measurement indicating how often the coring location is inundated.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>high</code>
+                    <definition>Study-specific definition of an elevation relatively high in the tidal frame, typically defined by vegetation type</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>mid</code>
+                    <definition>Study-specific definition of an elevation in the relative middle of the tidal frame, typically defined by vegetation type</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>low</code>
+                    <definition>Study-specific definition of an elevation in relatively low in the tidal frame, typically defined by vegetation type</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>inundation_method</attributeName>
+          <attributeDefinition>Indicate whether inundation_class was determined using a field observation or a measurement.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>field observation</code>
+                    <definition>Inundation inferred by field observation such as vegetation</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>year</attributeName>
+          <attributeDefinition>Year of core collection.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>month</attributeName>
+          <attributeDefinition>Numeric month of year of core collection.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>nominalMonth</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>day</attributeName>
+          <attributeDefinition>Numeric day of month of core collection.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalDay</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>latitude</attributeName>
+          <attributeDefinition>Positional latitude of the core in decimal degree WGS84.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>longitude</attributeName>
+          <attributeDefinition>Positional longitude of the core in decimal degree WGS84.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>position_method</attributeName>
+          <attributeDefinition>Code indicating how latitude and longitude were determined.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>handheld</code>
+                    <definition>Conventional Commercially available hand-held GPS</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>habitat</attributeName>
+          <attributeDefinition>Habitat classification of the sampled location based on description or dominate vegetation.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>mangrove</code>
+                    <definition>Tropical and dominated by specialized shrubs or trees.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_length_flag</attributeName>
+          <attributeDefinition>Indicated whether or not the coring team believes they recovered a full sediment profile, down to bedrock, or other non-marsh interface.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>core depth limited by length of corer</code>
+                    <definition>The total depth of the core was limited by the length of the coring device</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>core depth represents deposit depth</code>
+                    <definition>Authors report that the depth of the core represents the depth of the wetland soil deposit</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Costa_et_al_2023_depthseries</entityName>
+      <entityDescription>depthseries information for study</entityDescription>
+      <physical>
+        <objectName>Costa_et_al_2023_depthseries.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>method_id</attributeName>
+          <attributeDefinition>Unique identification code used to distinguish cores or sampling intervals that were collected or processed using different methods.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_min</attributeName>
+          <attributeDefinition>Minimum depth of a sampling increment.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_max</attributeName>
+          <attributeDefinition>Maximum depth of a sampling increment.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>representative_depth_min</attributeName>
+          <attributeDefinition>Minimum depth of a soil horizon of which the sample is representative.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>representative_depth_max</attributeName>
+          <attributeDefinition>Maximum depth of a soil horizon of which the sample is representative.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sample_id</attributeName>
+          <attributeDefinition>Sample identification unique to the core. This should be used in the case that there are relevant lab specific sample codes, or in the case that there are multiple replicate samples.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density</attributeName>
+          <attributeDefinition>Dry mass per unit volume of a soil sample. This does not include ash free bulk density.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gramsPerCubicCentimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_organic_matter</attributeName>
+          <attributeDefinition>Mass of organic matter relative to sample dry mass. Ash free bulk density should not be used here but should be expressed as a loss on ignition fraction.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon</attributeName>
+          <attributeDefinition>Mass of carbon relative to sample dry mass.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>compaction_notes</attributeName>
+          <attributeDefinition>Any submitter generated notes on compaction.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>c14_age</attributeName>
+          <attributeDefinition>Radiocarbon age as estimated from AMS measurements.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>radiocarbonYear</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>c14_age_se</attributeName>
+          <attributeDefinition>Estimated uncertainty in c14_age.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>radiocarbonYear</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>c14_material</attributeName>
+          <attributeDefinition>Description of the material selected for radiocarbon (14C) dating.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>c14_notes</attributeName>
+          <attributeDefinition>Any relevant submitter generated notes on 14C dating process.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>delta_c13</attributeName>
+          <attributeDefinition>The isotopic signature of 13C. This is oftentimes measured along with c14_age and can be useful for analyzing carbon lability and provenance.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>permil</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>age</attributeName>
+          <attributeDefinition>Most likely, median, or mean age of the depth interval from submitter generated age depth model.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>age_min</attributeName>
+          <attributeDefinition>Minimum age of the depth interval from submitter generated age depth model.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>age_max</attributeName>
+          <attributeDefinition>Maximum age of the depth interval from submitter generated age depth model.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>age_se</attributeName>
+          <attributeDefinition>Standard error of age estimate from submitter generated age depth model.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_interval_notes</attributeName>
+          <attributeDefinition>Any other submitter generated notes specific to the depth interval.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Costa_et_al_2023_impacts</entityName>
+      <entityDescription>impacts information for study</entityDescription>
+      <physical>
+        <objectName>Costa_et_al_2023_impacts.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>impact_class</attributeName>
+          <attributeDefinition>Code indicating any major anthropogenic impacts historically and currently affecting the coring location.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>natural</code>
+                    <definition>No disturbance or management has occurred.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Costa_et_al_2023_species</entityName>
+      <entityDescription>species information for study</entityDescription>
+      <physical>
+        <objectName>Costa_et_al_2023_species.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>habitat</attributeName>
+          <attributeDefinition>Habitat classification of the sampled location based on description or dominate vegetation.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>mangrove</code>
+                    <definition>Tropical and dominated by specialized shrubs or trees.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>species_code</attributeName>
+          <attributeDefinition>Code associated with a species or a vegetation assemblage.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>code_type</attributeName>
+          <attributeDefinition>Defines whether the code refers to a description, or level of plant taxonomy.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Genus species</code>
+                    <definition>Refers to taxonomic Genus and species.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="radiocarbonYear" multiplierToSI="1" name="radiocarbonYear" unitType="time">
+          <description>one radiocarbon year</description>
+        </unit>
+        <unit id="nominalMonth" multiplierToSI="2628000" name="nominalMonth" parentSI="second" unitType="time">
+          <description>one month excluding leap seconds and leap days, 2628000 seconds</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>

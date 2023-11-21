@@ -1,0 +1,199 @@
+study_id,location_description,allometric_eq_id,allometric_eq_formula,genus,species,output_unit,parameter_names,R2,RSE,diameter_max,diameter_min
+Bukoski_et_al_2020,Malaysia,5,0.00698*DBH^2.61,Rhizophora,apiculata,kg,DBH - diameter at breast height (cm),0.99,NA,77,15
+Bukoski_et_al_2020,Malaysia,38,0.235*DBH^2.42,Excoecaria,agallocha,kg,DBH - diameter at breast height (cm),0.98,NA,28,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Excoecaria,agallocha,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,"Southeast Sulawesi, Indonesia",36,1.184 * DBH^2.384,Bruguiera,cylindrica,kg,DBH - diameter at breast height (cm),0.98,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Bruguiera,cylindrica,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,moluccensis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Northern Australia,34,10^(-0.7749 + 2.4167 * Log10(DBH)),Avicennia,alba,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.993,1.17,21,2
+Bukoski_et_al_2020,Bangladesh,35,Exp(1)^(-1.9737 + 1.0996 * Log(DBH^2)),Avicennia,alba,kg,"DBH - diameter at breast height (cm), Exp - exponential function, Log - natural logarithm",0.9953,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Southern Thailand,37,DBH * 2.8929,Bruguiera,parviflora,kg,DBH represents the number of NYFR fronds. 2.8929 is a mean dry-weight mass per frond,NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Bruguiera,parviflora,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Northern Australia,34,10^(-0.7749 + 2.4167 * Log10(DBH)),Avicennia,marina,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.993,1.17,21,2
+Bukoski_et_al_2020,Bangladesh,35,Exp(1)^(-1.9737 + 1.0996 * Log(DBH^2)),Avicennia,marina,kg,"DBH - diameter at breast height (cm), Exp - exponential function, Log - natural logarithm",0.9953,NA,NA,NA
+Bukoski_et_al_2020,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Xylocarpus,moluccensis,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Bukoski_et_al_2020,Malaysia,5,0.00698*DBH^2.61,Rhizophora,mucronata,kg,DBH - diameter at breast height (cm),0.99,NA,77,15
+Bukoski_et_al_2020,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Avicennia,alba,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Bukoski_et_al_2020,"Southeast Sulawesi, Indonesia",36,1.184 * DBH^2.384,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),0.98,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Xylocarpus,granatum,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Bukoski_et_al_2020,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Rhizophora,apiculata,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Bukoski_et_al_2020,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Excoecaria,agallocha,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Scyphiphora,hydrophyllacea,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Scyphiphora,hydrophyllacea,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Northern Australia,34,10^(-0.7749 + 2.4167 * Log10(DBH)),Avicennia,officinalis,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.993,1.17,21,2
+Bukoski_et_al_2020,Bangladesh,35,Exp(1)^(-1.9737 + 1.0996 * Log(DBH^2)),Avicennia,officinalis,kg,"DBH - diameter at breast height (cm), Exp - exponential function, Log - natural logarithm",0.9953,NA,NA,NA
+Bukoski_et_al_2020,Southern Thailand,37,DBH * 2.8929,Bruguiera,sexangula,kg,DBH represents the number of NYFR fronds. 2.8929 is a mean dry-weight mass per frond,NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Bruguiera,sexangula,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Bruguiera,cylindrica,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Bukoski_et_al_2020,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Avicennia,officinalis,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Bukoski_et_al_2020,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Bruguiera,sexangula,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Bukoski_et_al_2020,Northern Australia,39,10^(-1.0844 + 2.5883 * Log10(DBH)),Lumnitzera,racemosa,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.994,1.13,17,3
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Lumnitzera,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Sonneratia,ovata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Sonneratia,ovata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+MacKenzie_et_al_2021,Micronesia,6,0.3841*DBH^2.101*Sg,Sonneratia,alba,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.92,NA,323,NA
+MacKenzie_et_al_2021,Australia,2,0.0679*DBH^1.4914,Sonneratia,alba,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
+MacKenzie_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Sonneratia,alba,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+MacKenzie_et_al_2021,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,Rhizophora,apiculata,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
+MacKenzie_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Rhizophora,apiculata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+MacKenzie_et_al_2021,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,Rhizophora,stylosa,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
+MacKenzie_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Rhizophora,stylosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+MacKenzie_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Rhizophora,stylosa,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+MacKenzie_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Lumnitzera,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+MacKenzie_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Lumnitzera,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+MacKenzie_et_al_2021,Micronesia,1,0.0754*DBH^2.505*Sg,Bruguiera,gymnorrhiza,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,NA,132,NA
+MacKenzie_et_al_2021,Australia,2,0.0679*DBH^1.4914,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
+MacKenzie_et_al_2021,Thailand,10,0.0188*((DBH^2)*(DDBH/((0.025*DBH)+0.583)))^0.909,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),NA,NA,33,NA
+MacKenzie_et_al_2021,Tanzania,25,0.19633*DBH^2.08791*𝐻^0.29654,Avicennia,marina,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
+MacKenzie_et_al_2021,Australia,9,1.28*DBH^1.17,Avicennia,marina,kg,DBH - diameter at breast height (cm),0.8,NA,35,NA
+MacKenzie_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Lumnitzera,racemosa,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Sonneratia,caseolaris,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Sonneratia,caseolaris,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Bruguiera,gymnorrhiza,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Intsia,bijuga,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Intsia,bijuga,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Calamus,erinaceus,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Calamus,erinaceus,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Non specific,40,0.1*Sg*((Pi * HGT) / 12 * (DBASE^2 + DBH^2 + (DBASE * DBH))),Phoenix,paludosa,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m), DBASE - diameter at base (cm)",NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Non specific,40,0.1*Sg*((Pi * HGT) / 12 * (DBASE^2 + DBH^2 + (DBASE * DBH))),Nypa,fruticans,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m), DBASE - diameter at base (cm)",NA,NA,NA,NA
+Bukoski_et_al_2020,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),NA,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Sonneratia,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Sonneratia,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Non specific,40,0.1*Sg*((Pi * HGT) / 12 * (DBASE^2 + DBH^2 + (DBASE * DBH))),Myrmecodia,tuberosa,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m), DBASE - diameter at base (cm)",NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Heritiera,littoralis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Heritiera,littoralis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Ceriops,tagal,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Pongamia,pinnata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Pongamia,pinnata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Maniltoa,psilogyne,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Maniltoa,psilogyne,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Heritiera,sylvatica,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Heritiera,sylvatica,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Cynometra,ramiflora,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Bukoski_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Cynometra,ramiflora,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,Rhizophora,apiculata,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Rhizophora,apiculata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Rhizophora,apiculata,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,Rhizophora,NA,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Rhizophora,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Rhizophora,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Micronesia,1,0.0754*DBH^2.505*Sg,Bruguiera,gymnorrhiza,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,NA,132,NA
+Sharma_et_al_2021,Australia,2,0.0679*DBH^1.4914,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
+Sharma_et_al_2021,Thailand,10,0.0188*((DBH^2)*(DDBH/((0.025*DBH)+0.583)))^0.909,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),NA,NA,33,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Ceriops,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Ceriops,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Ceriops,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,21,0.043*DBH^2.63,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,21,0.043*DBH^2.63,Xylocarpus,moluccensis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,moluccensis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Lumnitzera,littorea,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Lumnitzera,littorea,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Lumnitzera,littorea,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Lumnitzera,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Lumnitzera,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,21,0.043*DBH^2.63,Xylocarpus,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Micronesia,1,0.0754*DBH^2.505*Sg,Bruguiera,sexangula,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,NA,132,NA
+Sharma_et_al_2021,Australia,2,0.0679*DBH^1.4914,Bruguiera,sexangula,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
+Sharma_et_al_2021,Thailand,10,0.0188*((DBH^2)*(DDBH/((0.025*DBH)+0.583)))^0.909,Bruguiera,sexangula,kg,DBH - diameter at breast height (cm),NA,NA,33,NA
+Sharma_et_al_2021,Tanzania,25,0.19633*DBH^2.08791*𝐻^0.29654,Avicennia,officinalis,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Australia,9,1.28*DBH^1.17,Avicennia,officinalis,kg,DBH - diameter at breast height (cm),0.8,NA,35,NA
+Sharma_et_al_2021,Micronesia,1,0.0754*DBH^2.505*Sg,Bruguiera,NA,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,NA,132,NA
+Sharma_et_al_2021,Australia,2,0.0679*DBH^1.4914,Bruguiera,NA,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
+Sharma_et_al_2021,Thailand,10,0.0188*((DBH^2)*(DDBH/((0.025*DBH)+0.583)))^0.909,Bruguiera,NA,kg,DBH - diameter at breast height (cm),NA,NA,33,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Xylocarpus,granatum,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Thailand/Indonesia,22,0.251*Sg*DBH^2.46,Rhizophora,mucronata,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Rhizophora,mucronata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Rhizophora,mucronata,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Tanzania,25,0.19633*DBH^2.08791*𝐻^0.29654,Avicennia,alba,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Australia,9,1.28*DBH^1.17,Avicennia,alba,kg,DBH - diameter at breast height (cm),0.8,NA,35,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Excoecaria,agallocha,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Excoecaria,agallocha,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),NA,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,NA,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Intsia,bijuga,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Intsia,bijuga,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Intsia,bijuga,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Micronesia,1,0.0754*DBH^2.505*Sg,Bruguiera,cylindrica,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.91,NA,132,NA
+Sharma_et_al_2021,Australia,2,0.0679*DBH^1.4914,Bruguiera,cylindrica,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
+Sharma_et_al_2021,Thailand,10,0.0188*((DBH^2)*(DDBH/((0.025*DBH)+0.583)))^0.909,Bruguiera,cylindrica,kg,DBH - diameter at breast height (cm),NA,NA,33,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Bruguiera,cylindrica,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Heritiera,littoralis,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Heritiera,littoralis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Heritiera,littoralis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Lumnitzera,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Scyphiphora,hydrophyllacea,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Scyphiphora,hydrophyllacea,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Scyphiphora,hydrophyllacea,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Hibiscus,tiliaceus,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Hibiscus,tiliaceus,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Hibiscus,tiliaceus,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Heritiera,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Heritiera,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Xylocarpus,NA,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Micronesia,6,0.3841*DBH^2.101*Sg,Sonneratia,alba,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.92,NA,323,NA
+Sharma_et_al_2021,Australia,2,0.0679*DBH^1.4914,Sonneratia,alba,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Sonneratia,alba,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Excoecaria,agallocha,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Avicennia,alba,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Lumnitzera,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Lumnitzera,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Micronesia,6,0.3841*DBH^2.101*Sg,Sonneratia,ovata,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.92,NA,323,NA
+Sharma_et_al_2021,Australia,2,0.0679*DBH^1.4914,Sonneratia,ovata,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Sonneratia,ovata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Ceriops,decandra,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Ceriops,decandra,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Ceriops,decandra,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Ceriops,tagal,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Lumnitzera,racemosa,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Excoecaria,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Excoecaria,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Tanzania,25,0.19633*DBH^2.08791*𝐻^0.29654,Aviciennia,species,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Australia,9,1.28*DBH^1.17,Aviciennia,species,kg,DBH - diameter at breast height (cm),0.8,NA,35,NA
+Sharma_et_al_2021,Micronesia,6,0.3841*DBH^2.101*Sg,Sonneratia,species,kg,"DBH - diameter at breast height (cm), Sg - specific gravity wood (g/cm3)",0.92,NA,323,NA
+Sharma_et_al_2021,Australia,2,0.0679*DBH^1.4914,Sonneratia,species,kg,DBH - diameter at breast height (cm),0.854,1.57,24,2
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Sonneratia,species,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Non specific,11,0.1*(Sg*(Pi*(DBH*0.5)^2*HGT)),Aviciennia,species,kg,"Sg - specific gravity wood (g/cm3), Pi  - mathematical constant (3.14159265359), DBH - diameter at breast height (cm), HGT - height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Tanzania,25,0.19633*DBH^2.08791*𝐻^0.29654,Avicennia,marina,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
+Sharma_et_al_2021,Australia,9,1.28*DBH^1.17,Avicennia,marina,kg,DBH - diameter at breast height (cm),0.8,NA,35,NA
+Trettin_et_al_2020,Tanzania,28,1.4204*DBH^1.68979,Avicennia,marina,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Tanzania,29,0.19633*DBH^2.04113*H^0.29654,Avicennia,marina,kg,"DBH - diameter at breast height (cm), H - total tree height (m)",NA,NA,NA,NA
+Trettin_et_al_2020,Northern Australia,32,10^(0.106 + 1.171 * Log10(DBH)),Sonneratia,alba,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.8,NA,NA,NA
+Trettin_et_al_2020,Northern Australia,33,10^(-0.7309 + 2.3055 * Log10(DBH)),Sonneratia,alba,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.989,1.19,24,2
+Trettin_et_al_2020,Tanzania,30,1.4204*DBH^1.65760,Rhizophora,mucronata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Northern Australia,31,10^(-0.511 + 2.113 * Log10(DBH)),Rhizophora,mucronata,kg,"DBH - diameter at breast height (cm), Log10 - logarithm to the base 10",0.97,NA,NA,NA
+Trettin_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Ceriops,tagal,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Xylocarpus,granatum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Heritiera,littoralis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Heritiera,littoralis,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Bruguiera,gymnorrhiza,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Mangrove,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Mangrove,NA,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Laguncularia,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Laguncularia,racemosa,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Rhizophora,mucronata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Rhizophora,mucronata,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Avicennia,marina,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Avicennia,marina,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,23,0.1848*DBH^2.3524,Sonneratia,alba,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Trettin_et_al_2020,Indonesia,20,0.1832*DBH^2.21,Sonneratia,alba,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Weinmannia,blumei,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Weinmannia,blumei,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Aegiceras,floridum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Aegiceras,floridum,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,23,0.1848*DBH^2.3524,Dehaasia,triandra,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA
+Sharma_et_al_2021,Indonesia,20,0.1832*DBH^2.21,Dehaasia,triandra,kg,DBH - diameter at breast height (cm),NA,NA,NA,NA

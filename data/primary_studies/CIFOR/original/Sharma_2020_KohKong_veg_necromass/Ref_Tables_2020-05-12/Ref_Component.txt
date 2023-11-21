@@ -1,0 +1,22 @@
+"ID","COMP_BIOGRPID","COMP","COMPONENT_DESCR"
+1,1,"Aboveground total","Above-ground total including leaf, stem, branch and above-ground root where applicable."
+2,1,"Live wood","Live wood above-ground: including stem and branch"
+3,1,"Stem","Heartwood, sapwood and bark"
+4,1,"Branch",
+5,1,"Leaf","Foliage attached to tree"
+6,1,"Aboveground root","Stilt roots from the ground to the lower bole (stem)"
+7,2,"Belowground root",
+8,3,"1hr","Fine pieces: < 0.6 cm"
+9,3,"10hr","Small pieces: 0.6 - 2.5 cm"
+10,3,"100hr","Medium pieces: 2.5 - 7.6 cm"
+11,3,"FWD","Fine woody debris: 0 - 7.6 cm (1, 10 & 100hr)"
+12,4,"1000hr_R","Rotten large wood: > 7.6 cm"
+13,4,"1000hr_S","Solid large wood: > 7.6 cm"
+14,4,"CWD","Large wood: > 7.6 cm (1000hr rotten or solid)"
+15,5,"Understory","All understory and surface organic material, including shrubs, grasses, forbs, and litter"
+16,5,"Shrubs",
+17,5,"Grass",
+18,5,"Forbes",
+19,5,"Litter",
+20,1,"Wood","Stem, branch, live and dead wood"
+100,100,"All components",

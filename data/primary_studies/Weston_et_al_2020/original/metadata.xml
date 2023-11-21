@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1" packageId="ba6d492d-a60b-4929-960b-a616f24c7767" system="uuid" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1/ eml.xsd">
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="ba6d492d-a60b-4929-960b-a616f24c7767" system="uuid" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
   <dataset>
     <title>Recent Acceleration of Coastal Wetland Accretion Along the U.S. East Coast</title>
     <creator>
@@ -79,8 +79,8 @@
       </individualName>
       <role>author</role>
     </associatedParty>
-    <pubDate>2020</pubDate>
-    <abstract>The long-term stability of coastal wetlands is determined by interactions among sea level, plant primary production, sediment supply, and wetland vertical accretion. Here, we examine rates of vertical accretion and carbon sequestration in nine tidal wetland systems along the U.S. East Coast from Maine to Georgia. We show that rates of vertical accretion have accelerated over the past century by between 0.010 and 0.083 mm yr-2, at roughly the same pace as the acceleration of global SLR. Wetland accretion has accelerated more rapidly in coastal systems with greater relative RSLR, higher watershed sediment availability, and lower temperatures.  These findings suggest that the biogeomorphic feedback processes that control accretion in these tidal wetlands have responded to accelerating RSLR, and that changes to RSLR, watershed sediment supply, and temperature interact to determine wetland vulnerability across broad geographic scales. Acceleration in coastal wetland accretion provides further evidence of widespread response in Earth's biological systems to human-induced climate change.</abstract>
+    <pubDate>2023</pubDate>
+    <abstract>This dataset includes salt marsh soil Pb-210, Cs-137, Bi-214, and Pb-214 radionuclide activities, bulk density, and loss on ignition measurements for soil cores collected at nine sites along the U.S. East Coast. Soil cores were collected in the following coastal salt marsh estuaries: Kennebec (ME), Plum Island (MA), Connecticut (CT), Delaware (NJ/DE), York (VA), James (VA), Cape Fear (NC), Edisto (SC), and Altamaha (GA). The data were used to determine rates of salt marsh vertical accretion and the change in accretion over time using the constant rate of supply model for Pb-210 activities.</abstract>
     <keywordSet>
       <keyword>accretion</keyword>
       <keyword>carbon sequestration</keyword>
@@ -94,361 +94,82 @@
       <geographicCoverage>
         <geographicDescription>Altamaha</geographicDescription>
         <boundingCoordinates>
-          <westBoundingCoordinate>-81.374943</westBoundingCoordinate>
-          <eastBoundingCoordinate>-81.337743</eastBoundingCoordinate>
-          <northBoundingCoordinate>31.3402487</northBoundingCoordinate>
-          <southBoundingCoordinate>31.3076723</southBoundingCoordinate>
+          <westBoundingCoordinate>-81.371843</westBoundingCoordinate>
+          <eastBoundingCoordinate>-81.340843</eastBoundingCoordinate>
+          <northBoundingCoordinate>31.337534</northBoundingCoordinate>
+          <southBoundingCoordinate>31.310387</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
       <geographicCoverage>
         <geographicDescription>Cape Fear</geographicDescription>
         <boundingCoordinates>
-          <westBoundingCoordinate>-77.97627</westBoundingCoordinate>
-          <eastBoundingCoordinate>-77.96943</eastBoundingCoordinate>
-          <northBoundingCoordinate>33.95633</northBoundingCoordinate>
-          <southBoundingCoordinate>33.90557</southBoundingCoordinate>
+          <westBoundingCoordinate>-77.9757</westBoundingCoordinate>
+          <eastBoundingCoordinate>-77.97</eastBoundingCoordinate>
+          <northBoundingCoordinate>33.9521</northBoundingCoordinate>
+          <southBoundingCoordinate>33.9098</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
       <geographicCoverage>
         <geographicDescription>Connecticut</geographicDescription>
         <boundingCoordinates>
-          <westBoundingCoordinate>-72.35864901</westBoundingCoordinate>
-          <eastBoundingCoordinate>-72.33794769</eastBoundingCoordinate>
-          <northBoundingCoordinate>41.30092653</northBoundingCoordinate>
-          <southBoundingCoordinate>41.29268217</southBoundingCoordinate>
+          <westBoundingCoordinate>-72.3569239</westBoundingCoordinate>
+          <eastBoundingCoordinate>-72.3396728</eastBoundingCoordinate>
+          <northBoundingCoordinate>41.3002395</northBoundingCoordinate>
+          <southBoundingCoordinate>41.2933692</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
       <geographicCoverage>
         <geographicDescription>Delaware</geographicDescription>
         <boundingCoordinates>
-          <westBoundingCoordinate>-75.461568131</westBoundingCoordinate>
-          <eastBoundingCoordinate>-74.802239159</eastBoundingCoordinate>
-          <northBoundingCoordinate>39.2482488</northBoundingCoordinate>
-          <southBoundingCoordinate>39.1688592</southBoundingCoordinate>
+          <westBoundingCoordinate>-75.40662405</westBoundingCoordinate>
+          <eastBoundingCoordinate>-74.85718324</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.241633</northBoundingCoordinate>
+          <southBoundingCoordinate>39.175475</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
       <geographicCoverage>
         <geographicDescription>Edisto</geographicDescription>
         <boundingCoordinates>
-          <westBoundingCoordinate>-80.428201181985</westBoundingCoordinate>
-          <eastBoundingCoordinate>-80.3646133971308</eastBoundingCoordinate>
-          <northBoundingCoordinate>32.5528584</northBoundingCoordinate>
-          <southBoundingCoordinate>32.5089816</southBoundingCoordinate>
+          <westBoundingCoordinate>-80.4229021999138</westBoundingCoordinate>
+          <eastBoundingCoordinate>-80.369912379202</eastBoundingCoordinate>
+          <northBoundingCoordinate>32.549202</northBoundingCoordinate>
+          <southBoundingCoordinate>32.512638</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
       <geographicCoverage>
         <geographicDescription>James</geographicDescription>
         <boundingCoordinates>
-          <westBoundingCoordinate>-76.494523579</westBoundingCoordinate>
-          <eastBoundingCoordinate>-76.490288191</eastBoundingCoordinate>
-          <northBoundingCoordinate>36.963811</northBoundingCoordinate>
-          <southBoundingCoordinate>36.957931</southBoundingCoordinate>
+          <westBoundingCoordinate>-76.49417063</westBoundingCoordinate>
+          <eastBoundingCoordinate>-76.49064114</eastBoundingCoordinate>
+          <northBoundingCoordinate>36.963321</northBoundingCoordinate>
+          <southBoundingCoordinate>36.958421</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
       <geographicCoverage>
         <geographicDescription>Kennebec</geographicDescription>
         <boundingCoordinates>
-          <westBoundingCoordinate>-69.807450543</westBoundingCoordinate>
-          <eastBoundingCoordinate>-69.767302467</eastBoundingCoordinate>
-          <northBoundingCoordinate>43.7655793</northBoundingCoordinate>
-          <southBoundingCoordinate>43.7385397</southBoundingCoordinate>
+          <westBoundingCoordinate>-69.80410487</westBoundingCoordinate>
+          <eastBoundingCoordinate>-69.77064814</eastBoundingCoordinate>
+          <northBoundingCoordinate>43.763326</northBoundingCoordinate>
+          <southBoundingCoordinate>43.740793</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
       <geographicCoverage>
         <geographicDescription>Plum Island Sound</geographicDescription>
         <boundingCoordinates>
-          <westBoundingCoordinate>-70.8476999</westBoundingCoordinate>
-          <eastBoundingCoordinate>-70.7978291</eastBoundingCoordinate>
-          <northBoundingCoordinate>42.74050935</northBoundingCoordinate>
-          <southBoundingCoordinate>42.73212435</southBoundingCoordinate>
+          <westBoundingCoordinate>-70.843544</westBoundingCoordinate>
+          <eastBoundingCoordinate>-70.801985</eastBoundingCoordinate>
+          <northBoundingCoordinate>42.7398106</northBoundingCoordinate>
+          <southBoundingCoordinate>42.7328231</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
       <geographicCoverage>
         <geographicDescription>York</geographicDescription>
         <boundingCoordinates>
-          <westBoundingCoordinate>-76.57058796</westBoundingCoordinate>
-          <eastBoundingCoordinate>-76.38684492</eastBoundingCoordinate>
-          <northBoundingCoordinate>37.3058455</northBoundingCoordinate>
-          <southBoundingCoordinate>37.2140635</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>KEN_1</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-69.77064814</westBoundingCoordinate>
-          <eastBoundingCoordinate>-69.77064814</eastBoundingCoordinate>
-          <northBoundingCoordinate>43.763326</northBoundingCoordinate>
-          <southBoundingCoordinate>43.763326</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>KEN_7</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-69.80410487</westBoundingCoordinate>
-          <eastBoundingCoordinate>-69.80410487</eastBoundingCoordinate>
-          <northBoundingCoordinate>43.742535</northBoundingCoordinate>
-          <southBoundingCoordinate>43.742535</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>KEN_8</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-69.80330684</westBoundingCoordinate>
-          <eastBoundingCoordinate>-69.80330684</eastBoundingCoordinate>
-          <northBoundingCoordinate>43.740793</northBoundingCoordinate>
-          <southBoundingCoordinate>43.740793</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>PIE_1</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-70.843544</westBoundingCoordinate>
-          <eastBoundingCoordinate>-70.843544</eastBoundingCoordinate>
-          <northBoundingCoordinate>42.7364795</northBoundingCoordinate>
-          <southBoundingCoordinate>42.7364795</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>PIE_2</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-70.8420865</westBoundingCoordinate>
-          <eastBoundingCoordinate>-70.8420865</eastBoundingCoordinate>
-          <northBoundingCoordinate>42.734807</northBoundingCoordinate>
-          <southBoundingCoordinate>42.734807</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>PIE_7</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-70.801985</westBoundingCoordinate>
-          <eastBoundingCoordinate>-70.801985</eastBoundingCoordinate>
-          <northBoundingCoordinate>42.7398106</northBoundingCoordinate>
-          <southBoundingCoordinate>42.7398106</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>PIE_8</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-70.819291</westBoundingCoordinate>
-          <eastBoundingCoordinate>-70.819291</eastBoundingCoordinate>
-          <northBoundingCoordinate>42.7328231</northBoundingCoordinate>
-          <southBoundingCoordinate>42.7328231</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>CON_1</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-72.3565551</westBoundingCoordinate>
-          <eastBoundingCoordinate>-72.3565551</eastBoundingCoordinate>
-          <northBoundingCoordinate>41.3001588</northBoundingCoordinate>
-          <southBoundingCoordinate>41.3001588</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>CON_2</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-72.3569239</westBoundingCoordinate>
-          <eastBoundingCoordinate>-72.3569239</eastBoundingCoordinate>
-          <northBoundingCoordinate>41.3002395</northBoundingCoordinate>
-          <southBoundingCoordinate>41.3002395</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>CON_8</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-72.3396728</westBoundingCoordinate>
-          <eastBoundingCoordinate>-72.3396728</eastBoundingCoordinate>
-          <northBoundingCoordinate>41.2933692</northBoundingCoordinate>
-          <southBoundingCoordinate>41.2933692</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>DEL_3</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-75.1599044</westBoundingCoordinate>
-          <eastBoundingCoordinate>-75.1599044</eastBoundingCoordinate>
-          <northBoundingCoordinate>39.241633</northBoundingCoordinate>
-          <southBoundingCoordinate>39.241633</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>DEL_5</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-74.85718324</westBoundingCoordinate>
-          <eastBoundingCoordinate>-74.85718324</eastBoundingCoordinate>
-          <northBoundingCoordinate>39.175475</northBoundingCoordinate>
-          <southBoundingCoordinate>39.175475</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>DEL_9</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-75.40662405</westBoundingCoordinate>
-          <eastBoundingCoordinate>-75.40662405</eastBoundingCoordinate>
-          <northBoundingCoordinate>39.207431</northBoundingCoordinate>
-          <southBoundingCoordinate>39.207431</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>YRK_2</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-76.40676992</westBoundingCoordinate>
-          <eastBoundingCoordinate>-76.40676992</eastBoundingCoordinate>
-          <northBoundingCoordinate>37.222046</northBoundingCoordinate>
-          <southBoundingCoordinate>37.222046</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>YRK_3</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-76.40215684</westBoundingCoordinate>
-          <eastBoundingCoordinate>-76.40215684</eastBoundingCoordinate>
-          <northBoundingCoordinate>37.221712</northBoundingCoordinate>
-          <southBoundingCoordinate>37.221712</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>YRK_5</geographicDescription>
-        <boundingCoordinates>
           <westBoundingCoordinate>-76.55527604</westBoundingCoordinate>
-          <eastBoundingCoordinate>-76.55527604</eastBoundingCoordinate>
+          <eastBoundingCoordinate>-76.40215684</eastBoundingCoordinate>
           <northBoundingCoordinate>37.298197</northBoundingCoordinate>
-          <southBoundingCoordinate>37.298197</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>JMS_2</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-76.49417063</westBoundingCoordinate>
-          <eastBoundingCoordinate>-76.49417063</eastBoundingCoordinate>
-          <northBoundingCoordinate>36.963321</northBoundingCoordinate>
-          <southBoundingCoordinate>36.963321</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>JMS_3</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-76.49183393</westBoundingCoordinate>
-          <eastBoundingCoordinate>-76.49183393</eastBoundingCoordinate>
-          <northBoundingCoordinate>36.960703</northBoundingCoordinate>
-          <southBoundingCoordinate>36.960703</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>JMS_4</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-76.49064114</westBoundingCoordinate>
-          <eastBoundingCoordinate>-76.49064114</eastBoundingCoordinate>
-          <northBoundingCoordinate>36.958421</northBoundingCoordinate>
-          <southBoundingCoordinate>36.958421</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>CPF_2</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-77.9757</westBoundingCoordinate>
-          <eastBoundingCoordinate>-77.9757</eastBoundingCoordinate>
-          <northBoundingCoordinate>33.9521</northBoundingCoordinate>
-          <southBoundingCoordinate>33.9521</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>CPF_4</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-77.9731</westBoundingCoordinate>
-          <eastBoundingCoordinate>-77.9731</eastBoundingCoordinate>
-          <northBoundingCoordinate>33.9205</northBoundingCoordinate>
-          <southBoundingCoordinate>33.9205</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>CPF_6</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-77.9733</westBoundingCoordinate>
-          <eastBoundingCoordinate>-77.9733</eastBoundingCoordinate>
-          <northBoundingCoordinate>33.911</northBoundingCoordinate>
-          <southBoundingCoordinate>33.911</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>CPF_7</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-77.97</westBoundingCoordinate>
-          <eastBoundingCoordinate>-77.97</eastBoundingCoordinate>
-          <northBoundingCoordinate>33.9098</northBoundingCoordinate>
-          <southBoundingCoordinate>33.9098</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>EDS_1</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-80.369912379202</westBoundingCoordinate>
-          <eastBoundingCoordinate>-80.369912379202</eastBoundingCoordinate>
-          <northBoundingCoordinate>32.512638</northBoundingCoordinate>
-          <southBoundingCoordinate>32.512638</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>EDS_5</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-80.3780401675841</westBoundingCoordinate>
-          <eastBoundingCoordinate>-80.3780401675841</eastBoundingCoordinate>
-          <northBoundingCoordinate>32.539472</northBoundingCoordinate>
-          <southBoundingCoordinate>32.539472</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>EDS_9</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-80.4149930687957</westBoundingCoordinate>
-          <eastBoundingCoordinate>-80.4149930687957</eastBoundingCoordinate>
-          <northBoundingCoordinate>32.539344</northBoundingCoordinate>
-          <southBoundingCoordinate>32.539344</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>EDS_10</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-80.4229021999138</westBoundingCoordinate>
-          <eastBoundingCoordinate>-80.4229021999138</eastBoundingCoordinate>
-          <northBoundingCoordinate>32.549202</northBoundingCoordinate>
-          <southBoundingCoordinate>32.549202</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>ALT_3</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-81.340843</westBoundingCoordinate>
-          <eastBoundingCoordinate>-81.340843</eastBoundingCoordinate>
-          <northBoundingCoordinate>31.310387</northBoundingCoordinate>
-          <southBoundingCoordinate>31.310387</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>ALT_5</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-81.371843</westBoundingCoordinate>
-          <eastBoundingCoordinate>-81.371843</eastBoundingCoordinate>
-          <northBoundingCoordinate>31.328405</northBoundingCoordinate>
-          <southBoundingCoordinate>31.328405</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>ALT_6</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-81.348718</westBoundingCoordinate>
-          <eastBoundingCoordinate>-81.348718</eastBoundingCoordinate>
-          <northBoundingCoordinate>31.322869</northBoundingCoordinate>
-          <southBoundingCoordinate>31.322869</southBoundingCoordinate>
-        </boundingCoordinates>
-      </geographicCoverage>
-      <geographicCoverage>
-        <geographicDescription>ALT_9</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>-81.367691</westBoundingCoordinate>
-          <eastBoundingCoordinate>-81.367691</eastBoundingCoordinate>
-          <northBoundingCoordinate>31.337534</northBoundingCoordinate>
-          <southBoundingCoordinate>31.337534</southBoundingCoordinate>
+          <southBoundingCoordinate>37.221712</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
       <temporalCoverage>
@@ -484,10 +205,10 @@
       <electronicMailAddress>nathaniel.weston@villanova.edu</electronicMailAddress>
     </contact>
     <dataTable>
-      <entityName>Weston_et_al_2020_methods</entityName>
+      <entityName>Weston_et_al_2023_methods</entityName>
       <entityDescription>methods information for study</entityDescription>
       <physical>
-        <objectName>Weston_et_al_2020_methods.csv</objectName>
+        <objectName>Weston_et_al_2023_methods.csv</objectName>
         <dataFormat>
           <textFormat>
             <recordDelimiter>&#13;
@@ -502,7 +223,7 @@
       <attributeList>
         <attribute>
           <attributeName>study_id</attributeName>
-          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
@@ -693,10 +414,10 @@
       </attributeList>
     </dataTable>
     <dataTable>
-      <entityName>Weston_et_al_2020_cores</entityName>
+      <entityName>Weston_et_al_2023_cores</entityName>
       <entityDescription>cores information for study</entityDescription>
       <physical>
-        <objectName>Weston_et_al_2020_cores.csv</objectName>
+        <objectName>Weston_et_al_2023_cores.csv</objectName>
         <dataFormat>
           <textFormat>
             <recordDelimiter>&#13;
@@ -711,7 +432,7 @@
       <attributeList>
         <attribute>
           <attributeName>study_id</attributeName>
-          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
@@ -752,8 +473,8 @@
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>core_year</attributeName>
-          <attributeDefinition>Year of core collection</attributeDefinition>
+          <attributeName>year</attributeName>
+          <attributeDefinition>Year of core collection.</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
             <ratio>
@@ -761,14 +482,14 @@
                 <standardUnit>nominalYear</standardUnit>
               </unit>
               <numericDomain>
-                <numberType>real</numberType>
+                <numberType>integer</numberType>
               </numericDomain>
             </ratio>
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>core_month</attributeName>
-          <attributeDefinition>Month of core collection</attributeDefinition>
+          <attributeName>month</attributeName>
+          <attributeDefinition>Numeric month of year of core collection.</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
             <ratio>
@@ -776,14 +497,14 @@
                 <customUnit>nominalMonth</customUnit>
               </unit>
               <numericDomain>
-                <numberType>real</numberType>
+                <numberType>integer</numberType>
               </numericDomain>
             </ratio>
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>core_day</attributeName>
-          <attributeDefinition>Day of core collection</attributeDefinition>
+          <attributeName>day</attributeName>
+          <attributeDefinition>Numeric day of month of core collection.</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
             <ratio>
@@ -791,13 +512,13 @@
                 <standardUnit>nominalDay</standardUnit>
               </unit>
               <numericDomain>
-                <numberType>real</numberType>
+                <numberType>integer</numberType>
               </numericDomain>
             </ratio>
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>core_latitude</attributeName>
+          <attributeName>latitude</attributeName>
           <attributeDefinition>Positional latitude of the core in decimal degree WGS84.</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
@@ -812,7 +533,7 @@
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>core_longitude</attributeName>
+          <attributeName>longitude</attributeName>
           <attributeDefinition>Positional longitude of the core in decimal degree WGS84.</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
@@ -827,7 +548,7 @@
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>core_elevation</attributeName>
+          <attributeName>elevation</attributeName>
           <attributeDefinition>Surface elevation of the core relative to defined datum.</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
@@ -842,8 +563,8 @@
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>core_elevation_datum</attributeName>
-          <attributeDefinition>The datum relative to which the core elevation was measured against (For a complete list of datum names and aliases please refer to the ISO Geodedic Registry https://iso.registry.bespire.eu/register/geodetic/VerticalDatum).</attributeDefinition>
+          <attributeName>elevation_datum</attributeName>
+          <attributeDefinition>The datum relative to which the core elevation was measured against (For a complete list of datum names and aliases please refer to the ISO Geodedic Registry_https://iso.registry.bespire.eu/register/geodetic/VerticalDatum).</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
@@ -859,7 +580,7 @@
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>core_elevation_method</attributeName>
+          <attributeName>elevation_method</attributeName>
           <attributeDefinition>Code indicating how elevation was determined</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
@@ -867,8 +588,8 @@
               <nonNumericDomain>
                 <enumeratedDomain>
                   <codeDefinition>
-                    <code>RTK-GPS</code>
-                    <definition>Real-time kinematic global position system (GPS)</definition>
+                    <code>RTK</code>
+                    <definition>Real-time kinematic GPS</definition>
                   </codeDefinition>
                 </enumeratedDomain>
               </nonNumericDomain>
@@ -876,8 +597,8 @@
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>core_elevation_notes</attributeName>
-          <attributeDefinition>Any relevant submitter generated notes on how elevation was determined</attributeDefinition>
+          <attributeName>elevation_notes</attributeName>
+          <attributeDefinition>Any relevant submitter generated notes on how elevation was determined.</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
@@ -892,10 +613,10 @@
       </attributeList>
     </dataTable>
     <dataTable>
-      <entityName>Weston_et_al_2020_depthseries</entityName>
+      <entityName>Weston_et_al_2023_depthseries</entityName>
       <entityDescription>depthseries information for study</entityDescription>
       <physical>
-        <objectName>Weston_et_al_2020_depthseries.csv</objectName>
+        <objectName>Weston_et_al_2023_depthseries.csv</objectName>
         <dataFormat>
           <textFormat>
             <recordDelimiter>&#13;
@@ -910,7 +631,7 @@
       <attributeList>
         <attribute>
           <attributeName>study_id</attributeName>
-          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores. See worksCited.bib for more detail.</attributeDefinition>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
@@ -1071,6 +792,50 @@
           </measurementScale>
         </attribute>
         <attribute>
+          <attributeName>pb214_activity</attributeName>
+          <attributeDefinition>Radioactivity counts per unit dry weight for 214 Pb.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>microcuriesPerGram</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pb214_activity_se</attributeName>
+          <attributeDefinition>Estimated uncertainty in pb214_activity.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>microcuriesPerGram</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_interval_notes</attributeName>
+          <attributeDefinition>Any other submitter generated notes specific to the depth interval.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
           <attributeName>bi214_activity</attributeName>
           <attributeDefinition>Radioactivity counts per unit dry weight for radiobismuth (214Bi).</attributeDefinition>
           <storageType>float</storageType>
@@ -1100,9 +865,28 @@
             </ratio>
           </measurementScale>
         </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Weston_et_al_2023_species</entityName>
+      <entityDescription>species information for study</entityDescription>
+      <physical>
+        <objectName>Weston_et_al_2023_species.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
         <attribute>
-          <attributeName>depth_interval_notes</attributeName>
-          <attributeDefinition>Any other submitter generated notes specific to the depth interval.</attributeDefinition>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
@@ -1110,6 +894,65 @@
                 <textDomain>
                   <definition>Free text</definition>
                 </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>species_code</attributeName>
+          <attributeDefinition>Code associated with a species or a vegetation assemblage.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>code_type</attributeName>
+          <attributeDefinition>Defines whether the code refers to a description, or level of plant taxonomy.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Genus species</code>
+                    <definition>Refers to taxonomic Genus and species.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
               </nonNumericDomain>
             </nominal>
           </measurementScale>

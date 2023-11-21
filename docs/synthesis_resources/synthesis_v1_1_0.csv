@@ -1,0 +1,993 @@
+date,version,study_id,site_id,core_id
+2023-09-25,v1.1.0,Weston_et_al_2023,Kennebec,KEN_1
+2023-09-25,v1.1.0,Weston_et_al_2023,Kennebec,KEN_7
+2023-09-25,v1.1.0,Weston_et_al_2023,Kennebec,KEN_8
+2023-09-25,v1.1.0,Weston_et_al_2023,Plum Island Sound,PIE_1
+2023-09-25,v1.1.0,Weston_et_al_2023,Plum Island Sound,PIE_2
+2023-09-25,v1.1.0,Weston_et_al_2023,Plum Island Sound,PIE_7
+2023-09-25,v1.1.0,Weston_et_al_2023,Plum Island Sound,PIE_8
+2023-09-25,v1.1.0,Weston_et_al_2023,Connecticut,CON_1
+2023-09-25,v1.1.0,Weston_et_al_2023,Connecticut,CON_2
+2023-09-25,v1.1.0,Weston_et_al_2023,Connecticut,CON_8
+2023-09-25,v1.1.0,Weston_et_al_2023,Delaware,DEL_3
+2023-09-25,v1.1.0,Weston_et_al_2023,Delaware,DEL_5
+2023-09-25,v1.1.0,Weston_et_al_2023,Delaware,DEL_9
+2023-09-25,v1.1.0,Weston_et_al_2023,York,YRK_2
+2023-09-25,v1.1.0,Weston_et_al_2023,York,YRK_3
+2023-09-25,v1.1.0,Weston_et_al_2023,York,YRK_5
+2023-09-25,v1.1.0,Weston_et_al_2023,James,JMS_2
+2023-09-25,v1.1.0,Weston_et_al_2023,James,JMS_3
+2023-09-25,v1.1.0,Weston_et_al_2023,James,JMS_4
+2023-09-25,v1.1.0,Weston_et_al_2023,Cape Fear,CPF_2
+2023-09-25,v1.1.0,Weston_et_al_2023,Cape Fear,CPF_4
+2023-09-25,v1.1.0,Weston_et_al_2023,Cape Fear,CPF_6
+2023-09-25,v1.1.0,Weston_et_al_2023,Cape Fear,CPF_7
+2023-09-25,v1.1.0,Weston_et_al_2023,Edisto,EDS_1
+2023-09-25,v1.1.0,Weston_et_al_2023,Edisto,EDS_5
+2023-09-25,v1.1.0,Weston_et_al_2023,Edisto,EDS_9
+2023-09-25,v1.1.0,Weston_et_al_2023,Edisto,EDS_10
+2023-09-25,v1.1.0,Weston_et_al_2023,Altamaha,ALT_3
+2023-09-25,v1.1.0,Weston_et_al_2023,Altamaha,ALT_5
+2023-09-25,v1.1.0,Weston_et_al_2023,Altamaha,ALT_6
+2023-09-25,v1.1.0,Weston_et_al_2023,Altamaha,ALT_9
+2023-09-25,v1.1.0,Wang_et_al_2023,Big_Egg,Big_Egg
+2023-09-25,v1.1.0,Wang_et_al_2023,Black_Bank,Black_Bank
+2023-09-25,v1.1.0,Wang_et_al_2023,Duck_Point,Duck_Point
+2023-09-25,v1.1.0,Wang_et_al_2023,East_High,East_High
+2023-09-25,v1.1.0,Wang_et_al_2023,Fresh_Creek,Fresh_Creek
+2023-09-25,v1.1.0,Wang_et_al_2023,JoCo,JoCo
+2023-09-25,v1.1.0,Wang_et_al_2023,Little_Egg,Little_Egg
+2023-09-25,v1.1.0,Wang_et_al_2023,Ruffle_Bar,Ruffle_Bar
+2023-09-25,v1.1.0,Wang_et_al_2023,Spring_Creek,Spring_Creek
+2023-09-25,v1.1.0,Wang_et_al_2023,Yellow_Bar,Yellow_Bar
+2023-09-25,v1.1.0,Wang_et_al_2023,Stony_Creek,Stony_Creek
+2023-09-25,v1.1.0,Wang_et_al_2023,Four_Sparrow,Four_Sparrow
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_A_O10
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_A_O10X1
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_A_O10X2
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_A_O33
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_A_O5
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_B_O31
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_B_W22
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_B_W4
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_C_W34
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_C_W5
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_C_W7
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_D_O14
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_D_O18
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_D_O6
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_E_W11
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_E_W30
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_E_W32
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_F_W18
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_F_W9
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_G_O12
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_G_W28
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Grant's Beach,Grant's Beach_G_W35
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Pt Carron,Pt Carron_A_11
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Pt Carron,Pt Carron_A_17
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Pt Carron,Pt Carron_A_20
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Pt Carron,Pt Carron_A_21
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Pt Carron,Pt Carron_A_24
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Pt Carron,Pt Carron_A_5
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Pt Carron,Pt Carron_B_30
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Pt Carron,Pt Carron_B_32
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Pt Carron,Pt Carron_B_33
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Pt Carron,Pt Carron_B_35
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Pt Carron,Pt Carron_B_40
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_A_1
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_A_10
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_A_12
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_A_13
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_A_17X-3
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_A_2
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_A_3
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_A_4
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_A_5
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_A_7
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_A_8
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_A_9
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells spit,Wells spit_B_11
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells spit,Wells spit_B_6
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_C_14
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_C_15
+2023-09-25,v1.1.0,van_Ardenne_et_al_2018,Wells,Wells_C_16
+2023-09-25,v1.1.0,Turck_2014,MT01,MT01
+2023-09-25,v1.1.0,Turck_2014,MT02,MT02
+2023-09-25,v1.1.0,Turck_2014,MT03,MT03
+2023-09-25,v1.1.0,Turck_2014,MT04,MT04
+2023-09-25,v1.1.0,Turck_2014,MT05,MT05
+2023-09-25,v1.1.0,Turck_2014,MT06,MT06
+2023-09-25,v1.1.0,Trettin_et_al_2020,102,102
+2023-09-25,v1.1.0,Trettin_et_al_2020,107,107
+2023-09-25,v1.1.0,Trettin_et_al_2020,109,109
+2023-09-25,v1.1.0,Trettin_et_al_2020,110,110
+2023-09-25,v1.1.0,Trettin_et_al_2020,111,111
+2023-09-25,v1.1.0,Trettin_et_al_2020,112,112
+2023-09-25,v1.1.0,Trettin_et_al_2020,301,301
+2023-09-25,v1.1.0,Trettin_et_al_2020,302,302
+2023-09-25,v1.1.0,Trettin_et_al_2020,303,303
+2023-09-25,v1.1.0,Trettin_et_al_2020,305,305
+2023-09-25,v1.1.0,Trettin_et_al_2020,306,306
+2023-09-25,v1.1.0,Trettin_et_al_2020,307,307
+2023-09-25,v1.1.0,Trettin_et_al_2020,308,308
+2023-09-25,v1.1.0,Trettin_et_al_2020,901,901
+2023-09-25,v1.1.0,Trettin_et_al_2020,902,902
+2023-09-25,v1.1.0,Trettin_et_al_2020,904,904
+2023-09-25,v1.1.0,Trettin_et_al_2020,905,905
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_1
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_2
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_3
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_4
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_5
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_6
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_7
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_8
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_9
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_10
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_11
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_12
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_13
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_14
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_15
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_16
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_17
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_18
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_19
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_20
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_21
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_22
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_23
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_24
+2023-09-25,v1.1.0,Snedden_2021,Breton_Sound,Breton_25
+2023-09-25,v1.1.0,Snedden_2018,171,171_1
+2023-09-25,v1.1.0,Snedden_2018,172,172_1
+2023-09-25,v1.1.0,Snedden_2018,173,173_1
+2023-09-25,v1.1.0,Snedden_2018,175,175_1
+2023-09-25,v1.1.0,Snedden_2018,189,189_1
+2023-09-25,v1.1.0,Snedden_2018,192,192_1
+2023-09-25,v1.1.0,Snedden_2018,209,209_1
+2023-09-25,v1.1.0,Snedden_2018,211,211_1
+2023-09-25,v1.1.0,Snedden_2018,224,224_1
+2023-09-25,v1.1.0,Snedden_2018,225,225_1
+2023-09-25,v1.1.0,Snedden_2018,237,237_1
+2023-09-25,v1.1.0,Snedden_2018,253,253_1
+2023-09-25,v1.1.0,Snedden_2018,261,261_1
+2023-09-25,v1.1.0,Snedden_2018,273,273_1
+2023-09-25,v1.1.0,Snedden_2018,287,287_1
+2023-09-25,v1.1.0,Snedden_2018,3054,3054_1
+2023-09-25,v1.1.0,Snedden_2018,3166,3166_1
+2023-09-25,v1.1.0,Snedden_2018,3169,3169_1
+2023-09-25,v1.1.0,Snedden_2018,3565,3565_1
+2023-09-25,v1.1.0,Snedden_2018,3617,3617_1
+2023-09-25,v1.1.0,Snedden_2018,3985,3985_1
+2023-09-25,v1.1.0,Snedden_2018,4218,4218_1
+2023-09-25,v1.1.0,Snedden_2018,4245,4245_1
+2023-09-25,v1.1.0,Snedden_2018,4529,4529_1
+2023-09-25,v1.1.0,Snedden_2018,4690,4690_1
+2023-09-25,v1.1.0,Senger_et_al_2020,Pedro,Pe01
+2023-09-25,v1.1.0,Senger_et_al_2020,Pedro,Pe02
+2023-09-25,v1.1.0,Senger_et_al_2020,Pedro,Pe03
+2023-09-25,v1.1.0,Senger_et_al_2020,Pedro,Pe04
+2023-09-25,v1.1.0,Senger_et_al_2020,Pedro,Pe05
+2023-09-25,v1.1.0,Senger_et_al_2020,Coco,Co02
+2023-09-25,v1.1.0,Senger_et_al_2020,Awa_di_Lodo,Aw01
+2023-09-25,v1.1.0,Senger_et_al_2020,Awa_di_Lodo,Aw02
+2023-09-25,v1.1.0,Senger_et_al_2020,Awa_di_Lodo,Aw03
+2023-09-25,v1.1.0,Senger_et_al_2020,Awa_di_Lodo,Aw04
+2023-09-25,v1.1.0,Senger_et_al_2020,Awa_di_Lodo,Aw05
+2023-09-25,v1.1.0,Senger_et_al_2020,Isla_Yuwana,IY01
+2023-09-25,v1.1.0,Senger_et_al_2020,Isla_Yuwana,IY02
+2023-09-25,v1.1.0,Senger_et_al_2020,Isla_Yuwana,IY03
+2023-09-25,v1.1.0,Senger_et_al_2020,Isla_Yuwana,IY04
+2023-09-25,v1.1.0,Senger_et_al_2020,Isla_Yuwana,IY05
+2023-09-25,v1.1.0,Senger_et_al_2020,Isla_di_Chico,IC01
+2023-09-25,v1.1.0,Senger_et_al_2020,Isla_di_Chico,IC02
+2023-09-25,v1.1.0,Senger_et_al_2020,Isla_di_Chico,IC03
+2023-09-25,v1.1.0,Senger_et_al_2020,Isla_di_Chico,IC04
+2023-09-25,v1.1.0,Senger_et_al_2020,Isla_di_Chico,IC05
+2023-09-25,v1.1.0,Saunders_2013,SRS3,SRS3_C0010
+2023-09-25,v1.1.0,Saunders_2013,SRS4,SRS4_C0012
+2023-09-25,v1.1.0,Saunders_2013,SRS3,SRS3_C0016
+2023-09-25,v1.1.0,Saunders_2013,NE_SRS1,NE_SRS1_C0050
+2023-09-25,v1.1.0,Saunders_2013,NE_SRS1,NE_SRS1_C0053
+2023-09-25,v1.1.0,Rovai_et_al_2022,SC1,S25L1MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,SC1,S25L1MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,SC1,S25L1MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,SC2,S25L2MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,SC2,S25L2MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,SC2,S25L2MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,SC3,S25L3MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,SC3,S25L3MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,SC3,S25L3MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,BA1,S10L1MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,BA1,S10L1MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,BA1,S10L1MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,BA2,S10L2MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,BA2,S10L2MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,BA2,S10L2MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,BA3,S10L3MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,BA3,S10L3MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,BA3,S10L3MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,PA1,S0L1MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,PA1,S0L1MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,PA1,S0L1MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,PA2,S0L2MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,PA2,S0L2MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,PA2,S0L2MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,PA3,S0L3MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,PA3,S0L3MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,PA3,S0L3MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,LG1,N10L1MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,LG1,N10L1MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,LG1,N10L1MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,LG2,N10L2MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,LG2,N10L2MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,LG2,N10L2MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,LG3,N10L3MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,LG3,N10L3MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,LG3,N10L3MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,GN1,N11L1MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,GN1,N11L1MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,GN1,N11L1MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,GN2,N11L2MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,GN2,N11L2MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,GN2,N11L2MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,GN3,N11L3MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,GN3,N11L3MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,GN3,N11L3MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,SB1,SB-C1
+2023-09-25,v1.1.0,Rovai_et_al_2022,SB1,SB-C2
+2023-09-25,v1.1.0,Rovai_et_al_2022,SB1,SB-C3
+2023-09-25,v1.1.0,Rovai_et_al_2022,RB12,RB1-C1
+2023-09-25,v1.1.0,Rovai_et_al_2022,RB12,RB1-C2
+2023-09-25,v1.1.0,Rovai_et_al_2022,RB12,RB1-C3
+2023-09-25,v1.1.0,Rovai_et_al_2022,RB23,RB2-C1
+2023-09-25,v1.1.0,Rovai_et_al_2022,RB23,RB2-C2
+2023-09-25,v1.1.0,Rovai_et_al_2022,RB23,RB2-C3
+2023-09-25,v1.1.0,Rovai_et_al_2022,SRS61,SRS6-C1
+2023-09-25,v1.1.0,Rovai_et_al_2022,SRS61,SRS6-C2
+2023-09-25,v1.1.0,Rovai_et_al_2022,SRS61,SRS6-C3
+2023-09-25,v1.1.0,Rovai_et_al_2022,NR2,NR-C1
+2023-09-25,v1.1.0,Rovai_et_al_2022,NR2,NR-C2
+2023-09-25,v1.1.0,Rovai_et_al_2022,NR2,NR-C3
+2023-09-25,v1.1.0,Rovai_et_al_2022,CB3,CB-C1
+2023-09-25,v1.1.0,Rovai_et_al_2022,CB3,CB-C2
+2023-09-25,v1.1.0,Rovai_et_al_2022,CB3,CB-C3
+2023-09-25,v1.1.0,Rovai_et_al_2022,TS71,TS7-C1
+2023-09-25,v1.1.0,Rovai_et_al_2022,TS71,TS7-C2
+2023-09-25,v1.1.0,Rovai_et_al_2022,TS71,TS7-C3
+2023-09-25,v1.1.0,Rovai_et_al_2022,TS82,TS8-C1
+2023-09-25,v1.1.0,Rovai_et_al_2022,TS82,TS8-C2
+2023-09-25,v1.1.0,Rovai_et_al_2022,TS82,TS8-C3
+2023-09-25,v1.1.0,Rovai_et_al_2022,TC3,TC-C1
+2023-09-25,v1.1.0,Rovai_et_al_2022,TC3,TC-C2
+2023-09-25,v1.1.0,Rovai_et_al_2022,TC3,TC-C3
+2023-09-25,v1.1.0,Rovai_et_al_2022,GP1,S13L1MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,GP1,S13L1MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,GP1,S13L1MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,GP2,S13L2MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,GP2,S13L2MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,GP2,S13L2MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,GP3,S13L3MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,GP3,S13L3MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,GP3,S13L3MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,SP1,S23L1MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,SP1,S23L1MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,SP1,S23L1MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,SP2,S23L2MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,SP2,S23L2MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,SP2,S23L2MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,SP3,S23L3MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,SP3,S23L3MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,SP3,S23L3MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,ES1,N13L1MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,ES1,N13L1MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,ES1,N13L1MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,ES2,N13L2MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,ES2,N13L2MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,ES2,N13L2MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,ES3,N13L3MG1
+2023-09-25,v1.1.0,Rovai_et_al_2022,ES3,N13L3MG2
+2023-09-25,v1.1.0,Rovai_et_al_2022,ES3,N13L3MG3
+2023-09-25,v1.1.0,Rovai_et_al_2022,CQ1,CQ1-C1
+2023-09-25,v1.1.0,Rovai_et_al_2022,CQ1,CQ1-C2
+2023-09-25,v1.1.0,Rovai_et_al_2022,CQ1,CQ1-C3
+2023-09-25,v1.1.0,Rovai_et_al_2022,CQ2,CQ2-C1
+2023-09-25,v1.1.0,Rovai_et_al_2022,CQ2,CQ2-C2
+2023-09-25,v1.1.0,Rovai_et_al_2022,CQ2,CQ2-C3
+2023-09-25,v1.1.0,Rovai_et_al_2022,CQ3,CQ3-C1
+2023-09-25,v1.1.0,Rovai_et_al_2022,CQ3,CQ3-C2
+2023-09-25,v1.1.0,Rovai_et_al_2022,CQ3,CQ3-C3
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0128,0128_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0128,0128_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0128_H,0128_H_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0128_H,0128_H_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0135,0135_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0135,0135_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0135_H,0135_H_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0135_H,0135_H_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0147,0147_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0147,0147_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0147_H,0147_H_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0147_H,0147_H_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0164,0164_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0164,0164_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0164_H,0164_H_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0164_H,0164_H_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0294,0294_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0294,0294_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0294_H,0294_H_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0294_H,0294_H_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0312,0312_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0312,0312_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0312_H,0312_H_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0312_H,0312_H_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0326,0326_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0326,0326_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0326_H,0326_H_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0326_H,0326_H_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0326_H,0326_H_3
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0610,0610_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0610,0610_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0610_H,0610_H_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0610_H,0610_H_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0651,0651_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0651,0651_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0651_H,0651_H_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0651_H,0651_H_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0669,0669_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0669,0669_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0672,0672_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0672,0672_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0672_H,0672_H_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS0672_H,0672_H_2
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS2156,2156_1
+2023-09-25,v1.1.0,Piazza_et_al_2020,CRMS2156,2156_2
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Hicks Caye,Hicks Caye_1_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Hicks Caye,Hicks Caye_1_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Hicks Caye,Hicks Caye_1_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Hicks Caye,Hicks Caye_1_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Hicks Caye,Hicks Caye_1_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Hicks Caye,Hicks Caye_1_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Drowned Caye,Drowned Caye_1_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Drowned Caye,Drowned Caye_1_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Drowned Caye,Drowned Caye_1_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Drowned Caye,Drowned Caye_1_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Drowned Caye,Drowned Caye_1_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Drowned Caye,Drowned Caye_1_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Drowned Caye,Drowned Caye_2_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Drowned Caye,Drowned Caye_2_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Drowned Caye,Drowned Caye_2_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Drowned Caye,Drowned Caye_2_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Drowned Caye,Drowned Caye_2_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Drowned Caye,Drowned Caye_2_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Shipstern Lagoon,Shipstern Lagoon_1_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Shipstern Lagoon,Shipstern Lagoon_1_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Shipstern Lagoon,Shipstern Lagoon_1_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Shipstern Lagoon,Shipstern Lagoon_1_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Shipstern Lagoon,Shipstern Lagoon_1_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Shipstern Lagoon,Shipstern Lagoon_1_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Shipstern Lagoon,Shipstern Lagoon_2_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Shipstern Lagoon,Shipstern Lagoon_2_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Shipstern Lagoon,Shipstern Lagoon_2_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Shipstern Lagoon,Shipstern Lagoon_2_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Shipstern Lagoon,Shipstern Lagoon_2_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Shipstern Lagoon,Shipstern Lagoon_2_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,New River,New River_1_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,New River,New River_1_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,New River,New River_1_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,New River,New River_1_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,New River,New River_1_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,New River,New River_1_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,New River,New River_2_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,New River,New River_2_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,New River,New River_2_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Gra Gra Lagoon,Gra Gra Lagoon_1_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Gra Gra Lagoon,Gra Gra Lagoon_1_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Gra Gra Lagoon,Gra Gra Lagoon_1_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Gra Gra Lagoon,Gra Gra Lagoon_1_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Gra Gra Lagoon,Gra Gra Lagoon_1_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Gra Gra Lagoon,Gra Gra Lagoon_1_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Gra Gra Lagoon,Gra Gra Lagoon_2_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Gra Gra Lagoon,Gra Gra Lagoon_2_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Gra Gra Lagoon,Gra Gra Lagoon_2_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Gra Gra Lagoon,Gra Gra Lagoon_2_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Gra Gra Lagoon,Gra Gra Lagoon_2_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Gra Gra Lagoon,Gra Gra Lagoon_2_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_1_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_1_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_1_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_1_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_1_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_1_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_2_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_2_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_2_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_2_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_2_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_2_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Big Creek,Big Creek_1_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Big Creek,Big Creek_1_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Big Creek,Big Creek_1_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Big Creek,Big Creek_1_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Big Creek,Big Creek_1_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Big Creek,Big Creek_1_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Big Creek,Big Creek_2_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Big Creek,Big Creek_2_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Big Creek,Big Creek_2_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Big Creek,Big Creek_2_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Big Creek,Big Creek_2_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Big Creek,Big Creek_2_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Payne's Creek,Payne's Creek_1_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Payne's Creek,Payne's Creek_1_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Payne's Creek,Payne's Creek_1_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Payne's Creek,Payne's Creek_1_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Payne's Creek,Payne's Creek_1_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Payne's Creek,Payne's Creek_1_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Payne's Creek,Payne's Creek_2_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Payne's Creek,Payne's Creek_2_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Payne's Creek,Payne's Creek_2_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Payne's Creek,Payne's Creek_2_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Payne's Creek,Payne's Creek_2_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Payne's Creek,Payne's Creek_2_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Frenchman Caye,Frenchman Caye_1_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Frenchman Caye,Frenchman Caye_1_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Frenchman Caye,Frenchman Caye_1_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Frenchman Caye,Frenchman Caye_1_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Frenchman Caye,Frenchman Caye_1_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Frenchman Caye,Frenchman Caye_1_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Frenchman Caye,Frenchman Caye_2_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Frenchman Caye,Frenchman Caye_2_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Frenchman Caye,Frenchman Caye_2_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Frenchman Caye,Frenchman Caye_2_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Frenchman Caye,Frenchman Caye_2_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Frenchman Caye,Frenchman Caye_2_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Turneffe Atoll,Turneffe Atoll_1_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Turneffe Atoll,Turneffe Atoll_1_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Turneffe Atoll,Turneffe Atoll_1_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Turneffe Atoll,Turneffe Atoll_1_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Turneffe Atoll,Turneffe Atoll_1_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Turneffe Atoll,Turneffe Atoll_1_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Turneffe Atoll,Turneffe Atoll_2_1_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Turneffe Atoll,Turneffe Atoll_2_2_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Turneffe Atoll,Turneffe Atoll_2_3_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Turneffe Atoll,Turneffe Atoll_2_4_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Turneffe Atoll,Turneffe Atoll_2_5_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Turneffe Atoll,Turneffe Atoll_2_6_mangrove
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_S_1_seagrass
+2023-09-25,v1.1.0,Morrissette_et_al_2023,Channel Caye,Channel Caye_S_2_seagrass
+2023-09-25,v1.1.0,McGlathery_et_al_2018,SouthBay,SB152_C2
+2023-09-25,v1.1.0,McGlathery_et_al_2018,SouthBay,SB_B5_C2
+2023-09-25,v1.1.0,McGlathery_et_al_2018,ManAndBoyChannel,T1_9
+2023-09-25,v1.1.0,McGlathery_et_al_2018,ManAndBoyChannel,2B
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB266V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB265G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB264V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB263G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB262V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB261V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB260G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB259V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB258G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB257V_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB257V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB256G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB255V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB254G_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB253G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB252G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB251G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB250G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB254G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB245G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB244G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB240G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB239G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB238G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB237G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB236G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB235G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB234G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB233G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB232G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB231G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB230G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB289S
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB288S
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB287S
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB286S
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB285S
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB284S
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB283S
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB282S
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB281S
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB280S
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB34M
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB174S
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB173S
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB172S
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB171S
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB170S
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB148G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB147G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB121G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB120G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB119G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB118G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB117G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB116G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB96S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB68S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB67G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB65G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB64D
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB63G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB70G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB61G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB60D
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB59G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB58G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB57S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB56S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB55S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB54S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB53D
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB52G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB51G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB50S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB49S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB48G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB47G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB46G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB45G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB44G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB43G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB42S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB41G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB40G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB39D
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB38S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB37G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB36D
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB35G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB33S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB32G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB30S
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB243G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB241G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB242G
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB62G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB265V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB263V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB260V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB258V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB256V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB254V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB253V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB252V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB251V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB250V
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB254M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB245M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB244M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB240M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB239M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB238M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB237M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB236M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB235M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB234M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB233M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB232M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB231M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB230M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB34R
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB34S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB64M
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB64R
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB64S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB60M
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB60R
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB60S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB53M
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB53R
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB53S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB39M
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB39R
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB39S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB36M
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB36R
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB36S
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB30S_2
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB101G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB102G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB103G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB104G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB105G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB106G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB107G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB108G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB109G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB110G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB111G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB112G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB113G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB114G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB115G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB144G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB151G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB152G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB158G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB159G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB161G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB162G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB163G
+2023-09-25,v1.1.0,Marot_et_al_2020,15CCT02,15CCT02_GB165G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB300G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB301G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB302G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB303G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB304G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB305G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB306G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB307G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB308G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB309G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB310G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB311G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB312G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB313G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB314G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB315G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB316G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB317G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB318G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB319G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT04,16CCT04_GB320G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT07,16CCT07_GB301M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT07,16CCT07_GB302M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT07,16CCT07_GB303M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT07,16CCT07_GB304M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT07,16CCT07_GB305M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT07,16CCT07_GB306M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT07,16CCT07_GB307M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT07,16CCT07_GB308M
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB56D
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB56M
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB56R
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB242M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB241M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB243M
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB200G
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB200G_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB200G_3
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB233G_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB237G_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB238G_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB240G_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB241G_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB242G_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB243G_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB243G_3
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB254G_3
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB254G_4
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB256G_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB265G_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB282S_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB289S_2
+2023-09-25,v1.1.0,Marot_et_al_2020,16CCT03,16CCT03_GB232M_2
+2023-09-25,v1.1.0,Marot_et_al_2020,14CCT01,14CCT01_GB53M_2
+2023-09-25,v1.1.0,Lafratta_et_al_2018,False bay,1Rs
+2023-09-25,v1.1.0,Lafratta_et_al_2018,False bay,2Rs
+2023-09-25,v1.1.0,Lafratta_et_al_2018,False bay,3Rs
+2023-09-25,v1.1.0,Lafratta_et_al_2018,False bay,1Rc
+2023-09-25,v1.1.0,Lafratta_et_al_2018,False bay,2Rc
+2023-09-25,v1.1.0,Lafratta_et_al_2018,False bay,3Rc
+2023-09-25,v1.1.0,Lafratta_et_al_2018,False bay,4Rc
+2023-09-25,v1.1.0,Lafratta_et_al_2018,False bay,5Rc
+2023-09-25,v1.1.0,Lafratta_et_al_2018,False bay,6Rc
+2023-09-25,v1.1.0,Lafratta_et_al_2018,False bay,1B
+2023-09-25,v1.1.0,Lafratta_et_al_2018,False bay,2B
+2023-09-25,v1.1.0,Lafratta_et_al_2018,False bay,3B
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Berau,B1
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Berau,B2
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Berau,B3
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Berau,B4
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Kongsi_Island,K1
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Kongsi_Island,K2
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon_Central,C24
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon_Central,C26
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon_Central,C41
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon_Central,C42
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon_Central,C43
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon_Central,C45
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon_Central,C49
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon_East,E16
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon_East,E40
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon_East,E44
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon_East,E46
+2023-09-25,v1.1.0,Kusumaningtyas_et_al_2018,Segara_Anakan_Lagoon_East,E47
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Urca,Urca _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Urca,Urca _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Urca,Urca _ 3
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Arraial do Cabo,Arraial do Cabo _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Arraial do Cabo,Arraial do Cabo _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Ilha do Japones - site 1,Ilha do Japones - site 1 _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Ilha do Japones - site 1,Ilha do Japones - site 1 _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Ilha do Japones - site 2,Ilha do Japones - site 2 _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Ilha do Japones - site 2,Ilha do Japones - site 2 _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Praia dos Ossos,Praia dos Ossos _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Praia dos Ossos,Praia dos Ossos _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Praia da Ferradura,Praia da Ferradura _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Praia da Ferradura,Praia da Ferradura _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Manguinhos,Manguinhos _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Manguinhos,Manguinhos _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Ilha Grande - site 1,Ilha Grande - site 1 _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Ilha Grande - site 1,Ilha Grande - site 1 _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Ilha Grande - site 2,Ilha Grande - site 2 _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Ilha Grande - site 2,Ilha Grande - site 2 _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Bracui - site 1,Bracui - site 1 _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Bracui - site 1,Bracui - site 1 _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Bracui - site 2,Bracui - site 2 _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Bracui - site 2,Bracui - site 2 _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Santa Cruz,Santa Cruz _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Santa Cruz,Santa Cruz _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Santa Cruz,Santa Cruz _ 3
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Vitoria,Vitoria _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Vitoria,Vitoria _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Vila Velha,Vila Velha _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Vila Velha,Vila Velha _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Bob Allen Keys,bob _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Bob Allen Keys,bob _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Russell Bank,rb _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Russell Bank,rb _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Nine Mile Bank,nm _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Nine Mile Bank,nm _ 2
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Trout Cove,tc _ 1
+2023-09-25,v1.1.0,Howard_and_Fourqurean_2020,Trout Cove,tc _ 2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM11,KM11_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM11,KM11_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM11,KM11_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM12,KM12_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM12,KM12_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM12,KM12_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM13,KM13_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM13,KM13_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM13,KM13_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM21,KM21_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM21,KM21_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM21,KM21_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM22,KM22_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM22,KM22_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM22,KM22_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM31,KM31_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM31,KM31_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM31,KM31_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM32,KM32_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM32,KM32_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM32,KM32_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM33,KM33_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM33,KM33_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,KM33,KM33_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM41,QM41_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM41,QM41_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM41,QM41_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM42,QM42_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM42,QM42_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM42,QM42_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM43,QM43_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM43,QM43_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM43,QM43_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM51,QM51_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM51,QM51_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM51,QM51_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM52,QM52_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM52,QM52_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM52,QM52_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM61,QM61_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM61,QM61_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM61,QM61_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM62,QM62_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM62,QM62_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM62,QM62_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM71,QM71_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM71,QM71_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM71,QM71_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM72,QM72_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM72,QM72_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM72,QM72_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM81,QM81_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM81,QM81_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM81,QM81_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM91,QM91_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM91,QM91_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM91,QM91_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM92,QM92_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM92,QM92_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM92,QM92_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM102,QM102_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM102,QM102_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM102,QM102_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM111,QM111_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM111,QM111_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM111,QM111_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM112,QM112_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM112,QM112_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM112,QM112_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM121,QM121_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM121,QM121_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM121,QM121_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM131,QM131_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM131,QM131_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM131,QM131_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM132,QM132_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM132,QM132_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM132,QM132_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM141,QM141_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM141,QM141_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM141,QM141_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM151,QM151_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM151,QM151_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM151,QM151_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM161,QM161_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM161,QM161_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM161,QM161_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM162,QM162_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM162,QM162_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM162,QM162_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM171,QM171_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM171,QM171_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM171,QM171_3
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM172,QM172_1
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM172,QM172_2
+2023-09-25,v1.1.0,Hamzeh_and_lahijani_2022,QM172,QM172_3
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ1,THQ1
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ2,THQ2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ3,THQ3
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ4,THQ4
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ5,THQ5
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ6,THQ6
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ7,THQ7
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ8,THQ8
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ9,THQ9
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ10,THQ10
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THZQ11,THZQ11
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THZQ12,THZQ12
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THZQ13,THZQ13
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THZQ14,THZQ14
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THZQ15,THZQ15
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ1_2,THQ1_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ2_2,THQ2_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ3_2,THQ3_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ4_2,THQ4_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,THQ5_2,THQ5_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ1,EAQ1
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ2,EAQ2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ3,EAQ3
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ4,EAQ4
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ5,EAQ5
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ6,EAQ6
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ7,EAQ7
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ8,EAQ8
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ9,EAQ9
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ10,EAQ10
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ11,EAQ11
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ12,EAQ12
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ13,EAQ13
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ14,EAQ14
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ15,EAQ15
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ1_2,EAQ1_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ2_2,EAQ2_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ3_2,EAQ3_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ4_2,EAQ4_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,EAQ5_2,EAQ5_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ1,TCQ1
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ2,TCQ2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ3,TCQ3
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ4,TCQ4
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ5,TCQ5
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ6,TCQ6
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ7,TCQ7
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ8,TCQ8
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ9,TCQ9
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ10,TCQ10
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ11,TCQ11
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ12,TCQ12
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ13,TCQ13
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ14,TCQ14
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ15,TCQ15
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ1_2,TCQ1_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ2_2,TCQ2_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ3_2,TCQ3_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ4_2,TCQ4_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,TCQ5_2,TCQ5_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ1,SIQ1
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ2,SIQ2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ3,SIQ3
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ4,SIQ4
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ5,SIQ5
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ6,SIQ6
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ7,SIQ7
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ8,SIQ8
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ9,SIQ9
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ10,SIQ10
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ11,SIQ11
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ12,SIQ12
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ13,SIQ13
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ14,SIQ14
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ15,SIQ15
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ1_2,SIQ1_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ2_2,SIQ2_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ3_2,SIQ3_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ4_2,SIQ4_2
+2023-09-25,v1.1.0,Githaiga_et_al_2017,SIQ5_2,SIQ5_2
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_1
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_2
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_3
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_4
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_5
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_6
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_7
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_8
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_9
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_10
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_11
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_12
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_13
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_14
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_15
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_16
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_17
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_18
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_19
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_20
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_21
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_22
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_23
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_24
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_25
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_26
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_27
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_28
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_29
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_30
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_31
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_32
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_33
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_34
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_35
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_36
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_37
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_38
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_39
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_40
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_41
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_42
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_43
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_44
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_45
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_46
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_47
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_48
+2023-09-25,v1.1.0,Dai_et_al_2022,Rufiji_River_Delta,Rufiji_River_Delta_49
+2023-09-25,v1.1.0,Curtis_et_al_2022,MMF,MMF1
+2023-09-25,v1.1.0,Curtis_et_al_2022,MMF,MMF2
+2023-09-25,v1.1.0,Curtis_et_al_2022,MRF,MRF1
+2023-09-25,v1.1.0,Curtis_et_al_2022,MRF,MRF2
+2023-09-25,v1.1.0,Curtis_et_al_2022,JNF,JNF1
+2023-09-25,v1.1.0,Curtis_et_al_2022,JSF,JSF2
+2023-09-25,v1.1.0,Curtis_et_al_2022,HSF,HSF1
+2023-09-25,v1.1.0,Curtis_et_al_2022,HSF,HSF2
+2023-09-25,v1.1.0,Curtis_et_al_2022,WMF,WMF1
+2023-09-25,v1.1.0,Curtis_et_al_2022,WMF,WMF2
+2023-09-25,v1.1.0,Akther_et_al_2021,Sundarbans,S1
+2023-09-25,v1.1.0,Akther_et_al_2021,Sundarbans,S2
+2023-09-25,v1.1.0,Akther_et_al_2021,Sundarbans,S3
+2023-09-25,v1.1.0,Akther_et_al_2021,Sundarbans,S4
+2023-09-25,v1.1.0,Akther_et_al_2021,Sundarbans,S5
+2023-09-25,v1.1.0,Akther_et_al_2021,Sundarbans,S6
+2023-09-25,v1.1.0,Akther_et_al_2021,Sundarbans,S7
+2023-09-25,v1.1.0,Akther_et_al_2021,Sundarbans,S8
+2023-09-25,v1.1.0,Akther_et_al_2021,Sundarbans,S9
+2023-09-25,v1.1.0,Akther_et_al_2021,Sundarbans,S10

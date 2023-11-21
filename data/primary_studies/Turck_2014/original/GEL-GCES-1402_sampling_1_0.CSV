@@ -1,0 +1,13 @@
+"Data set title: John A. Turck. 2014. Vibracore and Tree Stump Data from the Marsh Near Mary Hammock, McIntosh County, GA. Georgia Coastal Ecosystems LTER Data Catalog (data set GEL-GCES-1402; http://gce-lter.marsci.uga.edu/public/app/dataset_details.asp?accession=GEL-GCES-1402)",,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Type","Name","East_NAD83","Flag_East_NAD83","Nrth_NAD83","Flag_Nrth_NAD83","Extraction","Vegetation","Elv_NAVD88","Flag_Elv_NAVD88","Elev_MLLW","Flag_Elev_MLLW","Marsh_Thic","Flag_Marsh_Thic","Sand_Elev","Flag_Sand_Elev","Sand_Thick","Flag_Sand_Thick","Clay_Elev","Flag_Clay_Elev","Clay_Thick","Flag_Clay_Thick","Sampl_Lgth","Flag_Sampl_Lgth","Removed","Flag_Removed","Compaction","Flag_Compaction"
+"none","none","meters","none","meters","none","none","none","centimeters","none","centimeters","none","centimeters","none","centimeters","none","centimeters","none","centimeters","none","centimeters","none","centimeters","none","centimeters","none","centimeters","none"
+"text","text","data","code","data","code","logical","text","data","code","data","code","data","code","data","code","data","code","data","code","data","code","data","code","data","code","data","code"
+"Vibracore","MT01",472066.840,"",3479335.478,"","Yes","Salicornia",83.2,"",210.9,"","31","","179","","132","",47.4,"","> 45","",186.8,"",19.5,"",2.5,""
+"Vibracore","MT02",472064.150,"",3479388.403,"","Yes","Spartina",95.1,"",222.8,"","48-63","","159-174","","116-131","",43.4,"","> 22","",170.8,"",26.0,"",3.0,""
+"Vibracore","MT03",472065.236,"",3479451.127,"","Yes","Short Spartina",104.7,"",232.4,"","68-81","","151-164","","90-103","",61.4,"","> 40","",178.8,"",22.0,"",9.0,""
+"Vibracore","MT04",472058.686,"",3479516.973,"","Yes","Medium Spartina",97.1,"",224.8,"","78-100","","124-146","","120-142","",4.4,"","> 45","",225.3,"",22.0,"",16.5,""
+"Vibracore","MT05",472062.975,"",3479576.612,"","Yes","Short Spartina",80.3,"",208.0,"","105","","103","","93","",10.4,"","> 34","",184.3,"",29.0,"",18.5,""
+"Vibracore","MT06",472060.789,"",3479620.448,"","Yes","Spartina",64.0,"",191.7,"","103","","88","","88","",0.0,"","> 42","",190.3,"",25.0,"",19.5,""
+"Tree Stump","Stump1",472030.000,"",3479469.000,"","No","Spartina",,"",,"","","","","","","",,"","","",,"",,"",,""
+"Tree Stump","Stump2",472113.682,"",3479432.993,"","Yes","Spartina",63.9,"",191.6,"","","","65-60","","","",23.0,"","","",,"",,"",,""

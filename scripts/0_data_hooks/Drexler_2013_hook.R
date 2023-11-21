@@ -65,22 +65,22 @@ species <- core_data %>%
 
 # original depthseries curation
 # there was radioisotope information present...where did it go?
-# depthseries <- raw_depthseries %>%
+depthseries <- raw_depthseries %>%
 #   mutate(site_id = gsub(" ", "_", site_id)) %>%
 #   mutate(study_id = study_id_value,
 #          core_id = paste(site_id, `core_number`, sep = "_")) %>%
-#   mutate(fraction_carbon = organic_carbon_percent / 100,
-#          pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrations per minute per gram", NA), 
-#          cs137_unit = ifelse(!is.na(cs137_unit), "picoCuries per gram", NA)) %>% 
-#   select(study_id, site_id, core_id, depth_min, depth_max,
-#          dry_bulk_density, fraction_carbon, 
-#          cs137_activity, cs137_activity_sd, cs137_unit,
-#          total_pb210_activity, total_pb210_activity_sd, excess_pb210_activity, excess_pb210_activity_sd, pb210_unit,
-#          age, age_sd, cs137_peak_present, depth_interval_notes) 
+  mutate(#fraction_carbon = organic_carbon_percent / 100,
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
+         cs137_unit = ifelse(!is.na(cs137_unit), "picoCuriesPerGram", NA)) %>%
+  select(study_id, site_id, core_id, depth_min, depth_max,
+         dry_bulk_density, fraction_carbon,
+         cs137_activity, cs137_activity_sd, cs137_unit,
+         total_pb210_activity, total_pb210_activity_sd, excess_pb210_activity, excess_pb210_activity_sd, pb210_unit,
+         age, age_sd, cs137_peak_present, depth_interval_notes)
 
 # depthseries curation with recycled derivative table
 # we couldn't find the original CSV that was extracted from the supplementary material
-depthseries <- raw_depthseries %>%
+depthseries <- depthseries %>%
   mutate(method_id = "single set of methods")
 
 # .... core data #####

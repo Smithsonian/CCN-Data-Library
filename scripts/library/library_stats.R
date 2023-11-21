@@ -87,7 +87,7 @@ ggsave("data/library_metrics/figures/maxdepth_dist.jpg", width = 6, height = 6)
 # studies w a lot of unidentified habitats: Schile-Beers_and_Megonigal_2017, Osland_et_al_2016, Drexler_et_al_2019
 us_habitats <- us_cores %>% 
   mutate(habitat = recode(habitat, 
-                          "scrub shrub" = "scrub/shrub",
+                          # "scrub shrub" = "scrub/shrub",
                           "mudflat" = "unvegetated")) %>% 
   group_by(habitat) %>%
   tally() %>%

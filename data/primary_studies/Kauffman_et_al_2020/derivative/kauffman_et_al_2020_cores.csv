@@ -1,169 +1,169 @@
-study_id,site_id,core_id,year,latitude,longitude,position_method,position_notes,elevation,elevation_datum,elevation_method,elevation_notes,salinity_class,salinity_method,salinity_notes,vegetation_class
-Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-1,2017,46.1924,-123.5807,RTK,NA,2.54,NAVD88,RTK,NA,NA,NA,NA,forested
-Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-2,2017,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,forested
-Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-3,2017,46.1923,-123.5802,RTK,NA,2.607,NAVD88,RTK,NA,NA,NA,NA,forested
-Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-4,2017,46.1922,-123.5794,RTK,NA,2.789,NAVD88,RTK,NA,NA,NA,NA,forested
-Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-5,2017,46.1921,-123.5792,RTK,NA,2.756,NAVD88,RTK,NA,NA,NA,NA,forested
-Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-6,2017,46.1919,-123.579,RTK,NA,2.71,NAVD88,RTK,NA,NA,NA,NA,forested
-Kauffman_et_al_2020,Secret River High Marsh,COL-SEC-HM-1,2017,46.3048,-123.6924,RTK,NA,2.102,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent
-Kauffman_et_al_2020,Secret River High Marsh,COL-SEC-HM-2,2017,46.305,-123.6924,RTK,NA,2.082,NAVD88,RTK,NA,NA,NA,NA,emergent
-Kauffman_et_al_2020,Secret River High Marsh,COL-SEC-HM-3,2017,46.3051,-123.6924,RTK,NA,2.074,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent
-Kauffman_et_al_2020,Secret River High Marsh,COL-SEC-HM-4,2017,46.3053,-123.6924,RTK,NA,2.085,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent
-Kauffman_et_al_2020,Secret River High Marsh,COL-SEC-HM-5,2017,46.3055,-123.6924,RTK,NA,1.939,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent
-Kauffman_et_al_2020,Secret River High Marsh,COL-SEC-HM-6,2017,46.3057,-123.6924,RTK,NA,2.061,NAVD88,RTK,NA,NA,NA,NA,emergent
-Kauffman_et_al_2020,Secret River Low Marsh,COL-SEC-LM-1,2017,46.3051,-123.695,RTK,NA,1.28,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent
-Kauffman_et_al_2020,Secret River Low Marsh,COL-SEC-LM-2,2017,46.3053,-123.695,RTK,NA,1.196,NAVD88,RTK,NA,NA,NA,NA,emergent
-Kauffman_et_al_2020,Secret River Low Marsh,COL-SEC-LM-3,2017,46.3054,-123.695,RTK,NA,1.327,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent
-Kauffman_et_al_2020,Secret River Low Marsh,COL-SEC-LM-4,2017,46.3056,-123.6951,RTK,NA,1.381,NAVD88,RTK,NA,NA,NA,NA,emergent
-Kauffman_et_al_2020,Secret River Low Marsh,COL-SEC-LM-5,2017,46.3058,-123.6951,RTK,NA,1.209,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent
-Kauffman_et_al_2020,Secret River Low Marsh,COL-SEC-LM-6,2017,46.306,-123.6951,RTK,NA,1.33,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent
-Kauffman_et_al_2020,Secret River Swamp,COL-SEC-TS-1,2017,46.3071,-123.691,other high resolution,GIS used to determine core position,2.856,NAVD88,other high resolution,leveling used to determine core position,fresh,measurement,refractometer,forested
-Kauffman_et_al_2020,Secret River Swamp,COL-SEC-TS-2,2017,46.307,-123.6907,other high resolution,GIS used to determine core position,2.946,NAVD88,other high resolution,leveling used to determine core position,fresh,measurement,refractometer,forested
-Kauffman_et_al_2020,Secret River Swamp,COL-SEC-TS-3,2017,46.3069,-123.6905,other high resolution,GIS used to determine core position,2.926,NAVD88,other high resolution,leveling used to determine core position,fresh,measurement,refractometer,forested
-Kauffman_et_al_2020,Secret River Swamp,COL-SEC-TS-4,2017,46.3065,-123.6898,RTK,NA,3.142,NAVD88,RTK,NA,NA,NA,NA,forested
-Kauffman_et_al_2020,Secret River Swamp,COL-SEC-TS-5,2017,46.3065,-123.6895,RTK,NA,2.97,NAVD88,RTK,NA,fresh,measurement,refractometer,forested
-Kauffman_et_al_2020,Secret River Swamp,COL-SEC-TS-6,2017,46.3064,-123.6893,RTK,NA,2.931,NAVD88,RTK,NA,fresh,measurement,refractometer,forested
-Kauffman_et_al_2020,Barview Eelgrass,COO-BAR-SG-1,2017,43.3456,-124.3188,RTK,NA,-0.242,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Barview Eelgrass,COO-BAR-SG-2,2017,43.3457,-124.3187,RTK,NA,-0.344,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Barview Eelgrass,COO-BAR-SG-3,2017,43.3458,-124.3185,RTK,NA,-0.486,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Barview Eelgrass,COO-BAR-SG-4,2017,43.3459,-124.3183,RTK,NA,-0.517,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Barview Eelgrass,COO-BAR-SG-5,2017,43.3458,-124.3182,RTK,NA,-0.454,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Barview Eelgrass,COO-BAR-SG-6,2017,43.3454,-124.3189,RTK,NA,-0.619,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Danger Point High Marsh,COO-DAN-HM-1,2017,43.2836,-124.3235,handheld,NA,2.129,NAVD88,other high resolution,leveling used to determine core position,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Danger Point High Marsh,COO-DAN-HM-2,2017,43.2834,-124.3234,handheld,NA,2.16,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Danger Point High Marsh,COO-DAN-HM-3,2017,43.2833,-124.3233,handheld,NA,2.121,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Danger Point High Marsh,COO-DAN-HM-4,2017,43.2831,-124.3232,handheld,NA,2.137,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Danger Point High Marsh,COO-DAN-HM-5,2017,43.283,-124.3231,handheld,NA,1.934,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Danger Point High Marsh,COO-DAN-HM-6,2017,43.2828,-124.323,handheld,NA,1.925,NAVD88,other high resolution,leveling used to determine core position,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Hampel High Marsh,COO-HAM-HM-1,2017,43.3196,-124.3313,RTK,NA,2.296,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Hampel High Marsh,COO-HAM-HM-2,2017,43.3195,-124.3315,RTK,NA,2.113,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Hampel High Marsh,COO-HAM-HM-3,2017,43.3194,-124.3317,RTK,NA,2.007,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Hampel High Marsh,COO-HAM-HM-4,2017,43.3194,-124.332,RTK,NA,2.142,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Hampel High Marsh,COO-HAM-HM-5,2017,43.3193,-124.3322,RTK,NA,2.103,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Hampel High Marsh,COO-HAM-HM-6,2017,43.3192,-124.3324,RTK,NA,2.033,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Hidden Creek Low Marsh,COO-HID-LM-1,2017,43.2936,-124.3233,handheld,NA,1.731,NAVD88,other high resolution,leveling used to determine core position,mixoeuhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Hidden Creek Low Marsh,COO-HID-LM-2,2017,43.2935,-124.3234,handheld,NA,1.855,NAVD88,other high resolution,leveling used to determine core position,mixoeuhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Hidden Creek Low Marsh,COO-HID-LM-3,2017,43.2933,-124.3235,handheld,NA,1.785,NAVD88,other high resolution,leveling used to determine core position,mixoeuhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Hidden Creek Low Marsh,COO-HID-LM-4,2017,43.2931,-124.3236,handheld,NA,1.869,NAVD88,other high resolution,leveling used to determine core position,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Hidden Creek Low Marsh,COO-HID-LM-5,2017,43.293,-124.3237,handheld,NA,1.659,NAVD88,other high resolution,leveling used to determine core position,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Hidden Creek Low Marsh,COO-HID-LM-6,2017,43.2928,-124.3238,handheld,NA,1.661,NAVD88,other high resolution,leveling used to determine core position,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Metcalf High Marsh,COO-MET-HM-1,2017,43.3359,-124.3281,RTK,NA,2.208,NAVD88,RTK,NA,oligohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Metcalf High Marsh,COO-MET-HM-2,2017,43.3357,-124.3282,RTK,NA,2.247,NAVD88,RTK,NA,oligohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Metcalf High Marsh,COO-MET-HM-3,2017,43.3355,-124.3282,RTK,NA,2.214,NAVD88,RTK,NA,oligohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Metcalf High Marsh,COO-MET-HM-4,2017,43.3354,-124.3283,RTK,NA,2,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Metcalf High Marsh,COO-MET-HM-5,2017,43.3352,-124.3284,RTK,NA,2.075,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Metcalf High Marsh,COO-MET-HM-6,2017,43.3351,-124.3284,RTK,NA,2.035,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Metcalf Low Marsh,COO-MET-LM-1,2017,43.3345,-124.328,RTK,NA,2.033,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Metcalf Low Marsh,COO-MET-LM-2,2017,43.3347,-124.3279,RTK,NA,2.077,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Metcalf Low Marsh,COO-MET-LM-3,2017,43.3349,-124.3279,RTK,NA,2.041,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Metcalf Low Marsh,COO-MET-LM-4,2017,43.3351,-124.3278,RTK,NA,2.035,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Metcalf Low Marsh,COO-MET-LM-5,2017,43.3353,-124.3278,RTK,NA,2.019,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Metcalf Low Marsh,COO-MET-LM-6,2017,43.3354,-124.3277,RTK,NA,2.021,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Millicoma High Marsh,COO-MIL-HM-1,2017,43.3682,-124.185,RTK,NA,2.162,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Millicoma High Marsh,COO-MIL-HM-2,2017,43.3684,-124.185,RTK,NA,2.169,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Millicoma High Marsh,COO-MIL-HM-3,2017,43.3686,-124.1849,RTK,NA,2.16,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Millicoma High Marsh,COO-MIL-HM-4,2017,43.3687,-124.1849,RTK,NA,2.178,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Millicoma High Marsh,COO-MIL-HM-5,2017,43.3689,-124.1849,RTK,NA,2.143,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Millicoma High Marsh,COO-MIL-HM-6,2017,43.3691,-124.1849,RTK,NA,2.171,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Valino Island Eelgrass,COO-VAL-SG-1,2017,43.3141,-124.3193,RTK,NA,-0.26,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Valino Island Eelgrass,COO-VAL-SG-2,2017,43.3139,-124.3192,RTK,NA,0.167,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Valino Island Eelgrass,COO-VAL-SG-3,2017,43.3138,-124.3191,RTK,NA,0.653,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Valino Island Eelgrass,COO-VAL-SG-4,2017,43.3136,-124.3191,RTK,NA,0.485,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Valino Island Eelgrass,COO-VAL-SG-5,2017,43.3135,-124.319,RTK,NA,0.32,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Valino Island Eelgrass,COO-VAL-SG-6,2017,43.3133,-124.3189,RTK,NA,0.28,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Chehalis Flood Plain,GRA-CHE-TS-1,2018,46.9411,-123.7209,RTK,NA,2.73,NAVD88,RTK,NA,oligohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Chehalis Flood Plain,GRA-CHE-TS-2,2018,46.9413,-123.721,RTK,NA,2.757,NAVD88,RTK,NA,oligohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Chehalis Flood Plain,GRA-CHE-TS-3,2018,46.9415,-123.7211,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Chehalis Flood Plain,GRA-CHE-TS-4,2018,46.9415,-123.7213,RTK,NA,2.696,NAVD88,RTK,NA,oligohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Chehalis Flood Plain,GRA-CHE-TS-5,2018,46.9418,-123.7213,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Chehalis Flood Plain,GRA-CHE-TS-6,2018,46.9419,-123.7215,handheld,NA,NA,NA,NA,NA,mesohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,John's Marsh,GRA-JOH-HM-1,2018,46.8915,-123.9876,RTK,NA,2.793,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,John's Marsh,GRA-JOH-HM-2,2018,46.8914,-123.9874,RTK,NA,2.557,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,John's Marsh,GRA-JOH-HM-3,2018,46.8912,-123.9873,RTK,NA,2.625,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,John's Marsh,GRA-JOH-HM-4,2018,46.8911,-123.9871,RTK,NA,2.697,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,John's Marsh,GRA-JOH-HM-5,2018,46.891,-123.9869,handheld,NA,NA,NA,NA,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,John's Marsh,GRA-JOH-HM-6,2018,46.8908,-123.9868,RTK,NA,2.701,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,John's Swamp,GRA-JOH-TS-1,2018,46.8807,-123.9587,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,John's Swamp,GRA-JOH-TS-2,2018,46.8808,-123.9586,handheld,NA,NA,NA,NA,NA,mesohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,John's Swamp,GRA-JOH-TS-3,2018,46.881,-123.9585,handheld,NA,2.946,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,John's Swamp,GRA-JOH-TS-4,2018,46.881100000000004,-123.9584,handheld,NA,2.73,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,John's Swamp,GRA-JOH-TS-5,2018,46.8813,-123.9583,handheld,NA,2.851,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,John's Swamp,GRA-JOH-TS-6,2018,46.8806,-123.9588,handheld,NA,NA,NA,NA,NA,mesohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Humboldt Eelgrass,HUM-SHB-SG-1,2018,40.7172,-124.227,RTK,NA,-0.31,NAVD88,RTK,NA,saline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Humboldt Eelgrass,HUM-SHB-SG-2,2018,40.7172,-124.2268,RTK,NA,-0.325,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Humboldt Eelgrass,HUM-SHB-SG-3,2018,40.7172,-124.2265,RTK,NA,-0.308,NAVD88,RTK,NA,saline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Humboldt Eelgrass,HUM-SHB-SG-4,2018,40.7173,-124.2264,RTK,NA,-0.298,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Humboldt Eelgrass,HUM-SHB-SG-5,2018,40.7172,-124.2261,RTK,NA,-0.21,NAVD88,RTK,NA,saline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Humboldt Eelgrass,HUM-SHB-SG-6,2018,40.7172,-124.2259,RTK,NA,-0.27,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Mad River Marsh,HUM-MAD-HM-1,2018,40.8865,-124.1406,RTK,NA,2.089,NAVD88,RTK,NA,saline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Mad River Marsh,HUM-MAD-HM-2,2018,40.8863,-124.1406,RTK,NA,1.989,NAVD88,RTK,NA,saline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Mad River Marsh,HUM-MAD-HM-3,2018,40.8862,-124.1406,RTK,NA,1.947,NAVD88,RTK,NA,saline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Mad River Marsh,HUM-MAD-HM-4,2018,40.886,-124.1406,RTK,NA,1.995,NAVD88,RTK,NA,saline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Mad River Marsh,HUM-MAD-HM-5,2018,40.8858,-124.1406,RTK,NA,1.989,NAVD88,RTK,NA,saline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Mad River Marsh,HUM-MAD-HM-6,2018,40.8856,-124.1406,RTK,NA,1.963,NAVD88,RTK,NA,saline,measurement,refractometer,emergent
-Kauffman_et_al_2020,South Bay,HUM-SHB-LM-1,2018,40.704,-124.2166,RTK,NA,1.818,NAVD88,RTK,NA,brine,measurement,refractometer,emergent
-Kauffman_et_al_2020,South Bay,HUM-SHB-LM-2,2018,40.7041,-124.2164,RTK,NA,1.813,NAVD88,RTK,NA,saline,measurement,refractometer,emergent
-Kauffman_et_al_2020,South Bay,HUM-SHB-LM-3,2018,40.7042,-124.2162,RTK,NA,1.867,NAVD88,RTK,NA,brine,measurement,refractometer,emergent
-Kauffman_et_al_2020,South Bay,HUM-SHB-LM-4,2018,40.7043,-124.211,RTK,NA,1.887,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,South Bay,HUM-SHB-LM-5,2018,40.7044,-124.2159,RTK,NA,1.866,NAVD88,RTK,NA,saline,measurement,refractometer,emergent
-Kauffman_et_al_2020,South Bay,HUM-SHB-LM-6,2018,40.7045,-124.2156,RTK,NA,1.816,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Coal Creek Swamp,NEH-COA-TS-1,2018,45.7446,-123.8574,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Coal Creek Swamp,NEH-COA-TS-2,2018,45.7444,-123.8573,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Coal Creek Swamp,NEH-COA-TS-3,2018,45.7442,-123.8572,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Coal Creek Swamp,NEH-COA-TS-4,2018,45.7441,-123.8571,handheld,NA,NA,NA,NA,NA,mesohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Coal Creek Swamp,NEH-COA-TS-5,2018,45.7439,-123.857,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Coal Creek Swamp,NEH-COA-TS-6,2018,45.7437,-123.8569,handheld,NA,2.794,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Padilla lower transect,PAD-LOW-SG-1,2017,48.5492,-122.5317,handheld,NA,-0.275,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Padilla lower transect,PAD-LOW-SG-2,2017,48.5492,-122.5319,handheld,NA,-0.287,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Padilla lower transect,PAD-LOW-SG-3,2017,48.5492,-122.5323,handheld,NA,-0.29,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Padilla lower transect,PAD-LOW-SG-4,2017,48.5492,-122.5325,handheld,NA,-0.296,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Padilla lower transect,PAD-LOW-SG-5,2017,48.5492,-122.5327,handheld,NA,-0.288,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Padilla lower transect,PAD-LOW-SG-6,2017,48.5493,-122.5331,handheld,NA,-0.274,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Padilla upper Transect,PAD-UPR-SG-1,2017,48.5478,-122.5098,handheld,NA,0.277,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Padilla upper Transect,PAD-UPR-SG-2,2017,48.5479,-122.51,handheld,NA,0.264,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Padilla upper Transect,PAD-UPR-SG-3,2017,48.5479,-122.5102,handheld,NA,0.232,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Padilla upper Transect,PAD-UPR-SG-4,2017,48.5479,-122.5105,handheld,NA,0.246,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Padilla upper Transect,PAD-UPR-SG-5,2017,48.5479,-122.5108,handheld,NA,0.232,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Padilla upper Transect,PAD-UPR-SG-6,2017,48.5479,-122.511,handheld,NA,0.195,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Delta Island Marsh,SKA-DEL-LM-1,2017,48.3526,-122.4633,RTK,NA,1.904,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Delta Island Marsh,SKA-DEL-LM-2,2017,48.3527,-122.4635,RTK,NA,1.854,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Delta Island Marsh,SKA-DEL-LM-3,2017,48.3528,-122.4637,RTK,NA,1.918,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Delta Island Marsh,SKA-DEL-LM-4,2017,48.3529,-122.4639,RTK,NA,2.017,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Delta Island Marsh,SKA-DEL-LM-5,2017,48.353,-122.4642,RTK,NA,2.064,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Delta Island Marsh,SKA-DEL-LM-6,2017,48.3531,-122.4643,RTK,NA,2.007,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Fir Island Marsh,SKA-FIR-HM-1,2017,48.3318,-122.4177,RTK,NA,2.019,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Fir Island Marsh,SKA-FIR-HM-2,2017,48.3319,-122.4176,RTK,NA,2.364,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Fir Island Marsh,SKA-FIR-HM-3,2017,48.3321,-122.4174,RTK,NA,2.432,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Fir Island Marsh,SKA-FIR-HM-4,2017,48.3323,-122.4173,RTK,NA,2.476,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Fir Island Marsh,SKA-FIR-HM-5,2017,48.3324,-122.4172,RTK,NA,2.543,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Fir Island Marsh,SKA-FIR-HM-6,2017,48.3326,-122.417,RTK,NA,2.698,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Skagit Wildlife Marsh,SKA-WIL-HM-1,2017,48.3217,-122.3952,RTK,NA,2.37,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Skagit Wildlife Marsh,SKA-WIL-HM-2,2017,48.3217,-122.3949,RTK,NA,NA,NA,NA,NA,mesohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Skagit Wildlife Marsh,SKA-WIL-HM-3,2017,48.3218,-122.3947,RTK,NA,2.551,NAVD88,RTK,NA,oligohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Skagit Wildlife Marsh,SKA-WIL-HM-4,2017,48.3218,-122.3944,RTK,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Skagit Wildlife Marsh,SKA-WIL-HM-5,2017,48.3219,-122.3942,RTK,NA,2.416,NAVD88,RTK,NA,oligohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Skagit Wildlife Marsh,SKA-WIL-HM-6,2017,48.3219,-122.3939,RTK,NA,2.382,NAVD88,RTK,NA,oligohaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Otter Island Swamp,SNO-OTT-TS-1,2018,48.0132,-122.1508,RTK,NA,2.757,NAVD88,RTK,NA,mesohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Otter Island Swamp,SNO-OTT-TS-2,2018,48.0133,-122.1506,RTK,NA,2.512,NAVD88,RTK,NA,mesohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Otter Island Swamp,SNO-OTT-TS-3,2018,48.0133,-122.1503,RTK,NA,2.484,NAVD88,RTK,NA,mesohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Otter Island Swamp,SNO-OTT-TS-4,2018,48.0135,-122.1501,RTK,NA,2.464,NAVD88,RTK,NA,mesohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Otter Island Swamp,SNO-OTT-TS-5,2018,48.0135,-122.1499,RTK,NA,2.538,NAVD88,RTK,NA,mesohaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Otter Island Swamp,SNO-OTT-TS-6,2018,48.0135,-122.1496,RTK,NA,2.432,NAVD88,RTK,NA,polyhaline,measurement,refractometer,forested
-Kauffman_et_al_2020,Criteser's Marsh,YAQ-CRI-HM-1,2018,44.5899,-123.9464,RTK,NA,2.613,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Criteser's Marsh,YAQ-CRI-HM-2,2018,44.5898,-123.9466,RTK,NA,2.44,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Criteser's Marsh,YAQ-CRI-HM-3,2018,44.5898,-123.9468,RTK,NA,2.495,NAVD88,RTK,NA,NA,NA,NA,emergent
-Kauffman_et_al_2020,Criteser's Marsh,YAQ-CRI-HM-4,2018,44.5897,-123.9471,RTK,NA,2.516,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Criteser's Marsh,YAQ-CRI-HM-5,2018,44.5897,-123.9473,RTK,NA,2.484,NAVD88,RTK,NA,NA,NA,NA,emergent
-Kauffman_et_al_2020,Criteser's Marsh,YAQ-CRI-HM-6,2018,44.5896,-123.9476,RTK,NA,2.491,NAVD88,RTK,NA,NA,NA,NA,emergent
-Kauffman_et_al_2020,Poole Slough,YAQ-POO-LM-1,2018,44.5784,-124.0136,RTK,NA,2.23,NAVD88,RTK,NA,NA,NA,NA,emergent
-Kauffman_et_al_2020,Poole Slough,YAQ-POO-LM-2,2018,44.5784,-124.0139,handheld,NA,NA,NA,NA,NA,mixoeuhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Poole Slough,YAQ-POO-LM-3,2018,44.5783,-124.0141,handheld,NA,NA,NA,NA,NA,NA,NA,NA,emergent
-Kauffman_et_al_2020,Poole Slough,YAQ-POO-LM-4,2018,44.5782,-124.0143,RTK,NA,1.982,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,emergent
-Kauffman_et_al_2020,Poole Slough,YAQ-POO-LM-5,2018,44.5781,-124.0145,RTK,NA,2.212,NAVD88,RTK,NA,NA,NA,NA,emergent
-Kauffman_et_al_2020,Poole Slough,YAQ-POO-LM-6,2018,44.5781,-124.0147,RTK,NA,1.986,NAVD88,RTK,NA,NA,NA,NA,emergent
-Kauffman_et_al_2020,Sally's Bend,YAQ-SAL-SG-1,2017,44.6253,-124.0207,RTK,NA,-0.232,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Sally's Bend,YAQ-SAL-SG-2,2017,44.6253,-124.0208,RTK,NA,-0.239,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Sally's Bend,YAQ-SAL-SG-3,2017,44.6254,-124.021,RTK,NA,-0.201,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Sally's Bend,YAQ-SAL-SG-4,2017,44.6254,-124.0213,RTK,NA,-0.164,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Sally's Bend,YAQ-SAL-SG-5,2017,44.6255,-124.0215,RTK,NA,-0.2,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
-Kauffman_et_al_2020,Sally's Bend,YAQ-SAL-SG-6,2017,44.6256,-124.0218,RTK,NA,-0.186,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass
+study_id,site_id,core_id,year,latitude,longitude,position_method,position_notes,elevation,elevation_datum,elevation_method,elevation_notes,salinity_class,salinity_method,salinity_notes,vegetation_class,habitat
+Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-1,2017,46.1924,-123.5807,RTK,NA,2.54,NAVD88,RTK,NA,NA,NA,NA,forested,swamp
+Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-2,2017,46.1922,-123.5798,other low resolution,site-level coordinates from associated publication,NA,NA,NA,NA,NA,NA,NA,forested,swamp
+Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-3,2017,46.1923,-123.5802,RTK,NA,2.607,NAVD88,RTK,NA,NA,NA,NA,forested,swamp
+Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-4,2017,46.1922,-123.5794,RTK,NA,2.789,NAVD88,RTK,NA,NA,NA,NA,forested,swamp
+Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-5,2017,46.1921,-123.5792,RTK,NA,2.756,NAVD88,RTK,NA,NA,NA,NA,forested,swamp
+Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-6,2017,46.1919,-123.579,RTK,NA,2.71,NAVD88,RTK,NA,NA,NA,NA,forested,swamp
+Kauffman_et_al_2020,Secret River High Marsh,COL-SEC-HM-1,2017,46.3048,-123.6924,RTK,NA,2.102,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Secret River High Marsh,COL-SEC-HM-2,2017,46.305,-123.6924,RTK,NA,2.082,NAVD88,RTK,NA,NA,NA,NA,emergent,marsh
+Kauffman_et_al_2020,Secret River High Marsh,COL-SEC-HM-3,2017,46.3051,-123.6924,RTK,NA,2.074,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Secret River High Marsh,COL-SEC-HM-4,2017,46.3053,-123.6924,RTK,NA,2.085,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Secret River High Marsh,COL-SEC-HM-5,2017,46.3055,-123.6924,RTK,NA,1.939,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Secret River High Marsh,COL-SEC-HM-6,2017,46.3057,-123.6924,RTK,NA,2.061,NAVD88,RTK,NA,NA,NA,NA,emergent,marsh
+Kauffman_et_al_2020,Secret River Low Marsh,COL-SEC-LM-1,2017,46.3051,-123.695,RTK,NA,1.28,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Secret River Low Marsh,COL-SEC-LM-2,2017,46.3053,-123.695,RTK,NA,1.196,NAVD88,RTK,NA,NA,NA,NA,emergent,marsh
+Kauffman_et_al_2020,Secret River Low Marsh,COL-SEC-LM-3,2017,46.3054,-123.695,RTK,NA,1.327,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Secret River Low Marsh,COL-SEC-LM-4,2017,46.3056,-123.6951,RTK,NA,1.381,NAVD88,RTK,NA,NA,NA,NA,emergent,marsh
+Kauffman_et_al_2020,Secret River Low Marsh,COL-SEC-LM-5,2017,46.3058,-123.6951,RTK,NA,1.209,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Secret River Low Marsh,COL-SEC-LM-6,2017,46.306,-123.6951,RTK,NA,1.33,NAVD88,RTK,NA,fresh,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Secret River Swamp,COL-SEC-TS-1,2017,46.3071,-123.691,other high resolution,GIS used to determine core position,2.856,NAVD88,other high resolution,leveling used to determine core position,fresh,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Secret River Swamp,COL-SEC-TS-2,2017,46.307,-123.6907,other high resolution,GIS used to determine core position,2.946,NAVD88,other high resolution,leveling used to determine core position,fresh,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Secret River Swamp,COL-SEC-TS-3,2017,46.3069,-123.6905,other high resolution,GIS used to determine core position,2.926,NAVD88,other high resolution,leveling used to determine core position,fresh,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Secret River Swamp,COL-SEC-TS-4,2017,46.3065,-123.6898,RTK,NA,3.142,NAVD88,RTK,NA,NA,NA,NA,forested,swamp
+Kauffman_et_al_2020,Secret River Swamp,COL-SEC-TS-5,2017,46.3065,-123.6895,RTK,NA,2.97,NAVD88,RTK,NA,fresh,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Secret River Swamp,COL-SEC-TS-6,2017,46.3064,-123.6893,RTK,NA,2.931,NAVD88,RTK,NA,fresh,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Barview Eelgrass,COO-BAR-SG-1,2017,43.3456,-124.3188,RTK,NA,-0.242,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Barview Eelgrass,COO-BAR-SG-2,2017,43.3457,-124.3187,RTK,NA,-0.344,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Barview Eelgrass,COO-BAR-SG-3,2017,43.3458,-124.3185,RTK,NA,-0.486,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Barview Eelgrass,COO-BAR-SG-4,2017,43.3459,-124.3183,RTK,NA,-0.517,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Barview Eelgrass,COO-BAR-SG-5,2017,43.3458,-124.3182,RTK,NA,-0.454,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Barview Eelgrass,COO-BAR-SG-6,2017,43.3454,-124.3189,RTK,NA,-0.619,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Danger Point High Marsh,COO-DAN-HM-1,2017,43.2836,-124.3235,handheld,NA,2.129,NAVD88,other high resolution,leveling used to determine core position,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Danger Point High Marsh,COO-DAN-HM-2,2017,43.2834,-124.3234,handheld,NA,2.16,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Danger Point High Marsh,COO-DAN-HM-3,2017,43.2833,-124.3233,handheld,NA,2.121,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Danger Point High Marsh,COO-DAN-HM-4,2017,43.2831,-124.3232,handheld,NA,2.137,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Danger Point High Marsh,COO-DAN-HM-5,2017,43.283,-124.3231,handheld,NA,1.934,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Danger Point High Marsh,COO-DAN-HM-6,2017,43.2828,-124.323,handheld,NA,1.925,NAVD88,other high resolution,leveling used to determine core position,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Hampel High Marsh,COO-HAM-HM-1,2017,43.3196,-124.3313,RTK,NA,2.296,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Hampel High Marsh,COO-HAM-HM-2,2017,43.3195,-124.3315,RTK,NA,2.113,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Hampel High Marsh,COO-HAM-HM-3,2017,43.3194,-124.3317,RTK,NA,2.007,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Hampel High Marsh,COO-HAM-HM-4,2017,43.3194,-124.332,RTK,NA,2.142,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Hampel High Marsh,COO-HAM-HM-5,2017,43.3193,-124.3322,RTK,NA,2.103,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Hampel High Marsh,COO-HAM-HM-6,2017,43.3192,-124.3324,RTK,NA,2.033,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Hidden Creek Low Marsh,COO-HID-LM-1,2017,43.2936,-124.3233,handheld,NA,1.731,NAVD88,other high resolution,leveling used to determine core position,mixoeuhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Hidden Creek Low Marsh,COO-HID-LM-2,2017,43.2935,-124.3234,handheld,NA,1.855,NAVD88,other high resolution,leveling used to determine core position,mixoeuhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Hidden Creek Low Marsh,COO-HID-LM-3,2017,43.2933,-124.3235,handheld,NA,1.785,NAVD88,other high resolution,leveling used to determine core position,mixoeuhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Hidden Creek Low Marsh,COO-HID-LM-4,2017,43.2931,-124.3236,handheld,NA,1.869,NAVD88,other high resolution,leveling used to determine core position,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Hidden Creek Low Marsh,COO-HID-LM-5,2017,43.293,-124.3237,handheld,NA,1.659,NAVD88,other high resolution,leveling used to determine core position,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Hidden Creek Low Marsh,COO-HID-LM-6,2017,43.2928,-124.3238,handheld,NA,1.661,NAVD88,other high resolution,leveling used to determine core position,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Metcalf High Marsh,COO-MET-HM-1,2017,43.3359,-124.3281,RTK,NA,2.208,NAVD88,RTK,NA,oligohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Metcalf High Marsh,COO-MET-HM-2,2017,43.3357,-124.3282,RTK,NA,2.247,NAVD88,RTK,NA,oligohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Metcalf High Marsh,COO-MET-HM-3,2017,43.3355,-124.3282,RTK,NA,2.214,NAVD88,RTK,NA,oligohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Metcalf High Marsh,COO-MET-HM-4,2017,43.3354,-124.3283,RTK,NA,2,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Metcalf High Marsh,COO-MET-HM-5,2017,43.3352,-124.3284,RTK,NA,2.075,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Metcalf High Marsh,COO-MET-HM-6,2017,43.3351,-124.3284,RTK,NA,2.035,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Metcalf Low Marsh,COO-MET-LM-1,2017,43.3345,-124.328,RTK,NA,2.033,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Metcalf Low Marsh,COO-MET-LM-2,2017,43.3347,-124.3279,RTK,NA,2.077,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Metcalf Low Marsh,COO-MET-LM-3,2017,43.3349,-124.3279,RTK,NA,2.041,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Metcalf Low Marsh,COO-MET-LM-4,2017,43.3351,-124.3278,RTK,NA,2.035,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Metcalf Low Marsh,COO-MET-LM-5,2017,43.3353,-124.3278,RTK,NA,2.019,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Metcalf Low Marsh,COO-MET-LM-6,2017,43.3354,-124.3277,RTK,NA,2.021,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Millicoma High Marsh,COO-MIL-HM-1,2017,43.3682,-124.185,RTK,NA,2.162,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Millicoma High Marsh,COO-MIL-HM-2,2017,43.3684,-124.185,RTK,NA,2.169,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Millicoma High Marsh,COO-MIL-HM-3,2017,43.3686,-124.1849,RTK,NA,2.16,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Millicoma High Marsh,COO-MIL-HM-4,2017,43.3687,-124.1849,RTK,NA,2.178,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Millicoma High Marsh,COO-MIL-HM-5,2017,43.3689,-124.1849,RTK,NA,2.143,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Millicoma High Marsh,COO-MIL-HM-6,2017,43.3691,-124.1849,RTK,NA,2.171,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Valino Island Eelgrass,COO-VAL-SG-1,2017,43.3141,-124.3193,RTK,NA,-0.26,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Valino Island Eelgrass,COO-VAL-SG-2,2017,43.3139,-124.3192,RTK,NA,0.167,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Valino Island Eelgrass,COO-VAL-SG-3,2017,43.3138,-124.3191,RTK,NA,0.653,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Valino Island Eelgrass,COO-VAL-SG-4,2017,43.3136,-124.3191,RTK,NA,0.485,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Valino Island Eelgrass,COO-VAL-SG-5,2017,43.3135,-124.319,RTK,NA,0.32,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Valino Island Eelgrass,COO-VAL-SG-6,2017,43.3133,-124.3189,RTK,NA,0.28,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Chehalis Flood Plain,GRA-CHE-TS-1,2018,46.9411,-123.7209,RTK,NA,2.73,NAVD88,RTK,NA,oligohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Chehalis Flood Plain,GRA-CHE-TS-2,2018,46.9413,-123.721,RTK,NA,2.757,NAVD88,RTK,NA,oligohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Chehalis Flood Plain,GRA-CHE-TS-3,2018,46.9415,-123.7211,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Chehalis Flood Plain,GRA-CHE-TS-4,2018,46.9415,-123.7213,RTK,NA,2.696,NAVD88,RTK,NA,oligohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Chehalis Flood Plain,GRA-CHE-TS-5,2018,46.9418,-123.7213,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Chehalis Flood Plain,GRA-CHE-TS-6,2018,46.9419,-123.7215,handheld,NA,NA,NA,NA,NA,mesohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,John's Marsh,GRA-JOH-HM-1,2018,46.8915,-123.9876,RTK,NA,2.793,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,John's Marsh,GRA-JOH-HM-2,2018,46.8914,-123.9874,RTK,NA,2.557,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,John's Marsh,GRA-JOH-HM-3,2018,46.8912,-123.9873,RTK,NA,2.625,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,John's Marsh,GRA-JOH-HM-4,2018,46.8911,-123.9871,RTK,NA,2.697,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,John's Marsh,GRA-JOH-HM-5,2018,46.891,-123.9869,handheld,NA,NA,NA,NA,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,John's Marsh,GRA-JOH-HM-6,2018,46.8908,-123.9868,RTK,NA,2.701,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,John's Swamp,GRA-JOH-TS-1,2018,46.8807,-123.9587,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,John's Swamp,GRA-JOH-TS-2,2018,46.8808,-123.9586,handheld,NA,NA,NA,NA,NA,mesohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,John's Swamp,GRA-JOH-TS-3,2018,46.881,-123.9585,handheld,NA,2.946,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,John's Swamp,GRA-JOH-TS-4,2018,46.881100000000004,-123.9584,handheld,NA,2.73,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,John's Swamp,GRA-JOH-TS-5,2018,46.8813,-123.9583,handheld,NA,2.851,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,John's Swamp,GRA-JOH-TS-6,2018,46.8806,-123.9588,handheld,NA,NA,NA,NA,NA,mesohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Humboldt Eelgrass,HUM-SHB-SG-1,2018,40.7172,-124.227,RTK,NA,-0.31,NAVD88,RTK,NA,saline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Humboldt Eelgrass,HUM-SHB-SG-2,2018,40.7172,-124.2268,RTK,NA,-0.325,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Humboldt Eelgrass,HUM-SHB-SG-3,2018,40.7172,-124.2265,RTK,NA,-0.308,NAVD88,RTK,NA,saline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Humboldt Eelgrass,HUM-SHB-SG-4,2018,40.7173,-124.2264,RTK,NA,-0.298,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Humboldt Eelgrass,HUM-SHB-SG-5,2018,40.7172,-124.2261,RTK,NA,-0.21,NAVD88,RTK,NA,saline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Humboldt Eelgrass,HUM-SHB-SG-6,2018,40.7172,-124.2259,RTK,NA,-0.27,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Mad River Marsh,HUM-MAD-HM-1,2018,40.8865,-124.1406,RTK,NA,2.089,NAVD88,RTK,NA,saline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Mad River Marsh,HUM-MAD-HM-2,2018,40.8863,-124.1406,RTK,NA,1.989,NAVD88,RTK,NA,saline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Mad River Marsh,HUM-MAD-HM-3,2018,40.8862,-124.1406,RTK,NA,1.947,NAVD88,RTK,NA,saline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Mad River Marsh,HUM-MAD-HM-4,2018,40.886,-124.1406,RTK,NA,1.995,NAVD88,RTK,NA,saline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Mad River Marsh,HUM-MAD-HM-5,2018,40.8858,-124.1406,RTK,NA,1.989,NAVD88,RTK,NA,saline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Mad River Marsh,HUM-MAD-HM-6,2018,40.8856,-124.1406,RTK,NA,1.963,NAVD88,RTK,NA,saline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,South Bay,HUM-SHB-LM-1,2018,40.704,-124.2166,RTK,NA,1.818,NAVD88,RTK,NA,brine,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,South Bay,HUM-SHB-LM-2,2018,40.7041,-124.2164,RTK,NA,1.813,NAVD88,RTK,NA,saline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,South Bay,HUM-SHB-LM-3,2018,40.7042,-124.2162,RTK,NA,1.867,NAVD88,RTK,NA,brine,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,South Bay,HUM-SHB-LM-4,2018,40.7043,-124.211,RTK,NA,1.887,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,South Bay,HUM-SHB-LM-5,2018,40.7044,-124.2159,RTK,NA,1.866,NAVD88,RTK,NA,saline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,South Bay,HUM-SHB-LM-6,2018,40.7045,-124.2156,RTK,NA,1.816,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Coal Creek Swamp,NEH-COA-TS-1,2018,45.7446,-123.8574,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Coal Creek Swamp,NEH-COA-TS-2,2018,45.7444,-123.8573,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Coal Creek Swamp,NEH-COA-TS-3,2018,45.7442,-123.8572,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Coal Creek Swamp,NEH-COA-TS-4,2018,45.7441,-123.8571,handheld,NA,NA,NA,NA,NA,mesohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Coal Creek Swamp,NEH-COA-TS-5,2018,45.7439,-123.857,handheld,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Coal Creek Swamp,NEH-COA-TS-6,2018,45.7437,-123.8569,handheld,NA,2.794,NAVD88,other high resolution,leveling used to determine core position,mesohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Padilla lower transect,PAD-LOW-SG-1,2017,48.5492,-122.5317,handheld,NA,-0.275,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Padilla lower transect,PAD-LOW-SG-2,2017,48.5492,-122.5319,handheld,NA,-0.287,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Padilla lower transect,PAD-LOW-SG-3,2017,48.5492,-122.5323,handheld,NA,-0.29,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Padilla lower transect,PAD-LOW-SG-4,2017,48.5492,-122.5325,handheld,NA,-0.296,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Padilla lower transect,PAD-LOW-SG-5,2017,48.5492,-122.5327,handheld,NA,-0.288,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Padilla lower transect,PAD-LOW-SG-6,2017,48.5493,-122.5331,handheld,NA,-0.274,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Padilla upper Transect,PAD-UPR-SG-1,2017,48.5478,-122.5098,handheld,NA,0.277,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Padilla upper Transect,PAD-UPR-SG-2,2017,48.5479,-122.51,handheld,NA,0.264,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Padilla upper Transect,PAD-UPR-SG-3,2017,48.5479,-122.5102,handheld,NA,0.232,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Padilla upper Transect,PAD-UPR-SG-4,2017,48.5479,-122.5105,handheld,NA,0.246,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Padilla upper Transect,PAD-UPR-SG-5,2017,48.5479,-122.5108,handheld,NA,0.232,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Padilla upper Transect,PAD-UPR-SG-6,2017,48.5479,-122.511,handheld,NA,0.195,NAVD88,RTK,NA,polyhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Delta Island Marsh,SKA-DEL-LM-1,2017,48.3526,-122.4633,RTK,NA,1.904,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Delta Island Marsh,SKA-DEL-LM-2,2017,48.3527,-122.4635,RTK,NA,1.854,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Delta Island Marsh,SKA-DEL-LM-3,2017,48.3528,-122.4637,RTK,NA,1.918,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Delta Island Marsh,SKA-DEL-LM-4,2017,48.3529,-122.4639,RTK,NA,2.017,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Delta Island Marsh,SKA-DEL-LM-5,2017,48.353,-122.4642,RTK,NA,2.064,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Delta Island Marsh,SKA-DEL-LM-6,2017,48.3531,-122.4643,RTK,NA,2.007,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Fir Island Marsh,SKA-FIR-HM-1,2017,48.3318,-122.4177,RTK,NA,2.019,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Fir Island Marsh,SKA-FIR-HM-2,2017,48.3319,-122.4176,RTK,NA,2.364,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Fir Island Marsh,SKA-FIR-HM-3,2017,48.3321,-122.4174,RTK,NA,2.432,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Fir Island Marsh,SKA-FIR-HM-4,2017,48.3323,-122.4173,RTK,NA,2.476,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Fir Island Marsh,SKA-FIR-HM-5,2017,48.3324,-122.4172,RTK,NA,2.543,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Fir Island Marsh,SKA-FIR-HM-6,2017,48.3326,-122.417,RTK,NA,2.698,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Skagit Wildlife Marsh,SKA-WIL-HM-1,2017,48.3217,-122.3952,RTK,NA,2.37,NAVD88,RTK,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Skagit Wildlife Marsh,SKA-WIL-HM-2,2017,48.3217,-122.3949,RTK,NA,NA,NA,NA,NA,mesohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Skagit Wildlife Marsh,SKA-WIL-HM-3,2017,48.3218,-122.3947,RTK,NA,2.551,NAVD88,RTK,NA,oligohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Skagit Wildlife Marsh,SKA-WIL-HM-4,2017,48.3218,-122.3944,RTK,NA,NA,NA,NA,NA,oligohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Skagit Wildlife Marsh,SKA-WIL-HM-5,2017,48.3219,-122.3942,RTK,NA,2.416,NAVD88,RTK,NA,oligohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Skagit Wildlife Marsh,SKA-WIL-HM-6,2017,48.3219,-122.3939,RTK,NA,2.382,NAVD88,RTK,NA,oligohaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Otter Island Swamp,SNO-OTT-TS-1,2018,48.0132,-122.1508,RTK,NA,2.757,NAVD88,RTK,NA,mesohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Otter Island Swamp,SNO-OTT-TS-2,2018,48.0133,-122.1506,RTK,NA,2.512,NAVD88,RTK,NA,mesohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Otter Island Swamp,SNO-OTT-TS-3,2018,48.0133,-122.1503,RTK,NA,2.484,NAVD88,RTK,NA,mesohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Otter Island Swamp,SNO-OTT-TS-4,2018,48.0135,-122.1501,RTK,NA,2.464,NAVD88,RTK,NA,mesohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Otter Island Swamp,SNO-OTT-TS-5,2018,48.0135,-122.1499,RTK,NA,2.538,NAVD88,RTK,NA,mesohaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Otter Island Swamp,SNO-OTT-TS-6,2018,48.0135,-122.1496,RTK,NA,2.432,NAVD88,RTK,NA,polyhaline,measurement,refractometer,forested,swamp
+Kauffman_et_al_2020,Criteser's Marsh,YAQ-CRI-HM-1,2018,44.5899,-123.9464,RTK,NA,2.613,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Criteser's Marsh,YAQ-CRI-HM-2,2018,44.5898,-123.9466,RTK,NA,2.44,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Criteser's Marsh,YAQ-CRI-HM-3,2018,44.5898,-123.9468,RTK,NA,2.495,NAVD88,RTK,NA,NA,NA,NA,emergent,marsh
+Kauffman_et_al_2020,Criteser's Marsh,YAQ-CRI-HM-4,2018,44.5897,-123.9471,RTK,NA,2.516,NAVD88,RTK,NA,polyhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Criteser's Marsh,YAQ-CRI-HM-5,2018,44.5897,-123.9473,RTK,NA,2.484,NAVD88,RTK,NA,NA,NA,NA,emergent,marsh
+Kauffman_et_al_2020,Criteser's Marsh,YAQ-CRI-HM-6,2018,44.5896,-123.9476,RTK,NA,2.491,NAVD88,RTK,NA,NA,NA,NA,emergent,marsh
+Kauffman_et_al_2020,Poole Slough,YAQ-POO-LM-1,2018,44.5784,-124.0136,RTK,NA,2.23,NAVD88,RTK,NA,NA,NA,NA,emergent,marsh
+Kauffman_et_al_2020,Poole Slough,YAQ-POO-LM-2,2018,44.5784,-124.0139,handheld,NA,NA,NA,NA,NA,mixoeuhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Poole Slough,YAQ-POO-LM-3,2018,44.5783,-124.0141,handheld,NA,NA,NA,NA,NA,NA,NA,NA,emergent,marsh
+Kauffman_et_al_2020,Poole Slough,YAQ-POO-LM-4,2018,44.5782,-124.0143,RTK,NA,1.982,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,emergent,marsh
+Kauffman_et_al_2020,Poole Slough,YAQ-POO-LM-5,2018,44.5781,-124.0145,RTK,NA,2.212,NAVD88,RTK,NA,NA,NA,NA,emergent,marsh
+Kauffman_et_al_2020,Poole Slough,YAQ-POO-LM-6,2018,44.5781,-124.0147,RTK,NA,1.986,NAVD88,RTK,NA,NA,NA,NA,emergent,marsh
+Kauffman_et_al_2020,Sally's Bend,YAQ-SAL-SG-1,2017,44.6253,-124.0207,RTK,NA,-0.232,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Sally's Bend,YAQ-SAL-SG-2,2017,44.6253,-124.0208,RTK,NA,-0.239,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Sally's Bend,YAQ-SAL-SG-3,2017,44.6254,-124.021,RTK,NA,-0.201,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Sally's Bend,YAQ-SAL-SG-4,2017,44.6254,-124.0213,RTK,NA,-0.164,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Sally's Bend,YAQ-SAL-SG-5,2017,44.6255,-124.0215,RTK,NA,-0.2,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass
+Kauffman_et_al_2020,Sally's Bend,YAQ-SAL-SG-6,2017,44.6256,-124.0218,RTK,NA,-0.186,NAVD88,RTK,NA,mixoeuhaline,measurement,refractometer,seagrass,seagrass

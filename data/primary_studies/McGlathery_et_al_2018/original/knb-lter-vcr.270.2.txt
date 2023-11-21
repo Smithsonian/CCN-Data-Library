@@ -1,0 +1,209 @@
+Dataset title:  Lead 210 profiles in sediment cores in South Bay, Virginia
+
+Dataset ID:  VCR18266
+Dataset Creator
+
+	Name:		Dr. Karen McGlathery
+	
+	Address:
+			Department of Environmental Sciences, Clark Hall, University of Virginia
+			Charlottesville, VA 22903  
+	
+	Phone:		434-924-0558
+	Email:		kjm4k@virginia.edu
+
+	Name:		Jill Greiner
+	
+	Address:
+			291 McCormick Road
+			Charlottesville, VA 22904-4123  USA
+	
+	Email:		jtg3pm@Virginia.EDU
+
+	Name:		 John  Gunnell
+
+	Name:		Brent  McKee
+
+	Name:		Matthew Oreska
+	Email:		mpo4zx@virginia.edu
+
+	Name:		Molly Bost
+
+
+Metadata Provider
+
+	Organization:	Virginia Coast Reserve Long-Term Ecological Research Project
+	
+	Address:
+			Department of Environmental Sciences, University of Virginia, 291 McCormick Road, PO Box 400123
+			Charlottesville, VA 22904-4123  USA
+	
+	Phone:		434-924-7761
+	URL:		http://www.vcrlter.virginia.edu
+
+
+Dataset Abstract
+
+	 This dataset includes 210Pb (dpm g) and bulk carbon (mg/ml) data from four 20-cm sediment cores collected in South Bay, Virginia. Two of the cores were collected in 2011, one from within the restored Zostera marina (eelgrass) meadow and one from a nearby bare site. The other two cores were collected in 2014 from a different meadow site and a different bare site. Both meadow cores were collected within original restoration seed plots. The SB-5 bare core was collected north of the restored meadow. The 2-bare core was collected west of the meadow, near Man and Boy Channel. 210Pb and carbon profiles from the meadow sites were used to establish meadow carbon accumulation rates in 2011 and 2014, respectively. Bare areas in this system appear to be non-depositional. Excess 210Pb was not observed in the profiles from the two bare cores. 
+
+
+Dataset Keywords
+
+	Organic Matter
+	System State/Condition
+	lead
+	isotopes
+	carbon burial
+	seagrass
+	sedimentation
+	lagoon
+
+
+Intellectual Rights
+
+
+
+Geographic Coverage
+
+
+	Bounding Coordinates
+
+		Geographic description:	SOUTHBAY - South Bay, Northampton County, VA
+		West bounding coordinate:	-75.81389
+		East bounding coordinate:	-75.81389
+		North bounding coordinate:	37.265
+		South bounding coordinate:	37.265
+	
+
+
+
+Temporal Coverage
+
+	Start Date:  2011-07-01
+	End Date:  2014-06-17
+
+Maintenance
+
+	Data are updated as needed
+
+
+Dataset Contact
+
+
+
+Methods
+
+
+
+	Method Step 
+
+		Description 
+
+			 The four 20-cm cores were collected using pvc cores and divided into 1-cm stratigraphic intervals. Individual sediment samples were dried to a constant weight at 60 degrees C, homogenized, and stored in scintillation vials prior to 210Pb analysis at the University of North Carolina Department of Marine Sciences. The bulk carbon data presented in this dataset was determined at the University of Virginia using a Carlo Erba NA 2500 Element Analyzer. Organic carbon was determined by subtracting the inorganic carbon fraction, which was determined by element analysis of samples ashed in a muffle furnace at 500 degrees C for 6 hrs. The following core-dating methods are from Oreska et al. (2017): 210Pb activities were determined via isotope-dilution alpha spectrometry for the 210Pb granddaughter isotope 210Po, which are in secular equilibrium with each other (Flynn 1968; Matthews et al. 2007). Supported 210Pb was formed by in situ production of 210Pb within sediment grains from the decay of 222Rn. Unsupported 210Pb was the activity supplied from the atmosphere that adsorbs to particles that then settle into the seagrass sediments, excess 210Pb that was used to quantify sedimentation rates (Appleby and Oldfield 1983). We noted that excess 210Pb activities decreased in a non-exponential manner, so a constant rate of supply (CRS) model was applied to profiles within each core, which allows for variable sedimentation overtime(Sanchez-Cabeza and Ruiz-Fernandez 2012).Carbon accumulation rates were calculated by multiplying the sedimentation rate (cm yr21) for each sediment interval by its bulk Corg value. 
+
+
+Data Table
+
+	Entity Name:  VCR18266_1
+	Entity Description:  Lead 210 profiles in sediment cores in South Bay, Virginia
+	Object Name:  210Pb_Dataset_VCR.csv
+
+
+
+Data Format
+
+	Number of Header Lines:  1
+	Attribute Orientation:  column
+	Field Delimiter:  ,
+
+
+
+Attributes
+
+	Attribute Name:  CORE
+	Attribute Label:  Core ID
+	Attribute Definition:  CORE - Core ID
+	Storage Type:  string
+	Measurement Scale: 
+		Core ID
+	Missing Value Code: 
+
+
+	Attribute Name:  DATE_COLLECTED
+	Attribute Label:  Date Collected
+	Attribute Definition:  DATE_COLLECTED - Date Collected
+	Storage Type:  string
+	Measurement Scale: 
+	Missing Value Code: 
+
+
+	Attribute Name:  UTMY
+	Attribute Label:  Map Coordiate North UTM zone 18N
+	Attribute Definition:  UTMY - Map Coordiate North UTM zone 18N
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  meter
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  UTMX
+	Attribute Label:  Map Coordinate East UTM zone 18N
+	Attribute Definition:  UTMX - Map Coordinate East UTM zone 18N
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  meter
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  CORE_TOP
+	Attribute Label:  Core Segment Top Depth Below Surface
+	Attribute Definition:  CORE_TOP - Core Segment Top Depth Below Surface
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  centimeter
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  CORE_BOTTOM
+	Attribute Label:  Core Segment Bottom Depth Below Surface
+	Attribute Definition:  CORE_BOTTOM - Core Segment Bottom Depth Below Surface
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  centimeter
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  MIDPOINT_DEPTH
+	Attribute Label:  Depth of Midpoint of Core Segment
+	Attribute Definition:  MIDPOINT_DEPTH - Depth of Midpoint of Core Segment
+	Storage Type:  float
+	Measurement Scale: 
+		Units  centimeter
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  LEAD_210
+	Attribute Label:  210Pb
+	Attribute Definition:  LEAD_210 - 210Pb
+	Storage Type:  float
+	Measurement Scale: 
+		Units  disintegrationsPerMinutePerGram
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  C
+	Attribute Label:  Carbon
+	Attribute Definition:  C - Carbon
+	Storage Type:  float
+	Measurement Scale: 
+		Units  milligramPerCentimeterCubed
+		Number Type:  real
+	Missing Value Code: 
+
+

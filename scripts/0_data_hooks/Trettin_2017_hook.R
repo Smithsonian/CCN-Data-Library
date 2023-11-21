@@ -42,7 +42,12 @@ depthseries <- raw_depthseries %>%
   mutate(depth_min = ifelse(is.na(depth_max==TRUE),100,depth_min)) %>%
   mutate(depth_min = as.numeric(depth_min), 
          depth_max = as.numeric(depth_max)) %>%
-  arrange(study_id, site_id, core_id, depth_min)
+  arrange(study_id, site_id, core_id, depth_min) %>% 
+  # Jaxine Edits
+  # there are two intervals where the depth_max < depth_min
+  mutate(depth_max = case_when(core_id == "9008_2" & depth_min == 190 ~ 195,
+                               core_id == "9018_4" & depth_min == 177 ~ 182,
+                               T ~ depth_max))
 
 ## ... Core-level ###########
 # We'll scale up to the core-level from the depthseries
@@ -81,6 +86,11 @@ cores <- depthseries %>%
   mutate(core_length_flag = "not specified") %>% 
   rename(core_latitude = Lati, core_longitude = Long) %>%
   select(study_id, site_id, core_id, core_latitude, core_longitude, core_length_flag)
+
+library(leaflet)
+leaflet(cores) %>% 
+  addTiles() %>% 
+  addCircleMarkers(lng = ~core_longitude, lat = ~core_latitude, radius = 2)
 
 ## ... Site-level ##########
 sites <- cores %>%
@@ -147,11 +157,11 @@ testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
 
-test_unique_cores(cores)
-test_unique_coords(cores)
-test_core_relationships(cores, depthseries)
-fraction_not_percent(depthseries)
-results <- test_numeric_vars(depthseries)
+testUniqueCores(cores)
+testUniqueCoords(cores)
+testIDs(cores, depthseries, "core")
+fractionNotPercent(depthseries)
+results <- testNumericCols(depthseries)
 
 ## 6. Write data ##############
 write_csv(sites, "./data/primary_studies/Trettin_2017/derivative/Trettin_et_al_2017_sites.csv")

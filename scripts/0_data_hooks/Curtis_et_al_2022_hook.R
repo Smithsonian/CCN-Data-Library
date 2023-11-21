@@ -38,15 +38,15 @@ depthseries <- depthseries_raw %>%
          sample_id = gsub("-", "_", `Sample ID`),
          depth_min = `Section Bottom Depth (cm)` - 10,
          method_id = 'single set of methods',
-         marker_type = "artificial horizon",
-         marker_date = '2013',
-         method_id = "single set of methods",
+         #marker_type = "artificial horizon",
+         # marker_date = '2013',
          compaction_notes = "little to no compaction because once corer is inserted, the core is rotated 180 degrees, and a sample is collected adjacent to where it was driven into the ground") %>% 
   rename(depth_max = `Section Bottom Depth (cm)`,
          dry_bulk_density = `Dry Bulk Density (g cm-3)`,
          fraction_carbon = `Fraction OC`) %>% 
-  select(c(study_id, site_id, core_id, method_id, depth_min, depth_max, sample_id, dry_bulk_density, fraction_carbon, 
-           marker_type, marker_date))
+  select(c(study_id, site_id, core_id, method_id, depth_min, depth_max, sample_id, dry_bulk_density, fraction_carbon 
+           #marker_type, marker_date
+           ))
 
 ## Cores
 cores <- cores_raw %>% 

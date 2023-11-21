@@ -31,8 +31,8 @@ depthseries <- raw_depthseries %>%
          method_id = "single set of methods") %>%
   # Modify carbon stock variables: 
   mutate(fraction_carbon = percent_carbon / 100,
-         pb210_unit = ifelse(!is.na(total_pb210_activity), "distintegrationsPerMinutePerGram", NA),
-         ra226_unit = ifelse(!is.na(ra226_activity), "distintegrationsPerMinutePerGram", NA)) %>%
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
+         ra226_unit = ifelse(!is.na(ra226_activity), "disintegrationsPerMinutePerGram", NA)) %>%
   select(study_id, site_id, core_id, method_id, depth_min, depth_max,
          dry_bulk_density, fraction_carbon, 
          total_pb210_activity, total_pb210_activity_sd,  
@@ -57,7 +57,8 @@ cores <- depthseries %>%
          core_length_flag = "core depth limited by length of corer") %>%
   mutate(core_year = year(core_date), 
          core_month = month(core_date),
-         core_day = day(core_date)) %>%
+         core_day = day(core_date),
+         habitat = "marsh") %>%
   select_if(function(x) {!all(is.na(x))}) %>%
   select(-c(core_date, `Wetland type`, Sample))
 

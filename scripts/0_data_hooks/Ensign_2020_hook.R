@@ -28,7 +28,12 @@ id <- "Ensign_et_al_2020"
 # cores
 cores <- raw_cores %>%
   rename(year = core_year, latitude = core_latitude, longitude = core_longitude,
-         position_method = core_position_method)
+         position_method = core_position_method) %>% 
+
+##RC edit --> adding habitat for synthesis update
+# cores <- raw_cores %>% 
+  mutate(habitat = case_when(vegetation_class == "emergent" ~ "marsh",
+                             vegetation_class == "forested" ~ "swamp"))
 
 # depthseries (no change)
 depthseries <- raw_depthseries %>%
@@ -79,8 +84,18 @@ if(!file.exists("./data/primary_studies/Ensign_et_al_2020/derivative/Ensign_et_a
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
+source("./scripts/1_data_formatting/versioning_functions.R")
 
 table_names <- c("methods", "cores", "depthseries")
+
+# Update Tables ###########
+
+updated <- updateTables(table_names)
+
+# save listed tables to objects
+methods <- updated$methods
+depthseries <- updated$depthseries
+cores <- updated$cores
 
 # Check col and varnames
 testTableCols(table_names)

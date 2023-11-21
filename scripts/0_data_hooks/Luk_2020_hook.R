@@ -10,6 +10,7 @@
 
 # Bulk Soil Properties: https://www.bco-dmo.org/dataset/827298
 # metadata: http://dmoserv3.bco-dmo.org/jg/info/BCO-DMO/Benthic_PP_at_TIDE/Bulk_soil_properties%7Bdir=dmoserv3.whoi.edu/jg/dir/BCO-DMO/Benthic_PP_at_TIDE/,data=dmoserv3.bco-dmo.org:80/jg/serv/BCO-DMO/Benthic_PP_at_TIDE/bulk_soil_properties.html0%7D?
+# Other metadata: https://darchive.mblwhoilibrary.org/server/api/core/bitstreams/a133eaae-879f-564f-90ea-0f905235ceca/content
 
 # Associated Pub Citation:
 # Luk, S.Y., Todd-Brown, K. Gonneea, M.E., McNichol, A.P., Sanderman, J., Gosselin, K., Spivak, A.C., 2020, Soil organic carbon development and turnover in natural and disturbed salt marsh environments: 

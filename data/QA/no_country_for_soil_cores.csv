@@ -1,25 +1,63 @@
-study_id,site_id,core_id,longitude,latitude,country,admin_division
-Vaughn_et_al_2020,Waccasassa_Bay,Waccasassa_Bay_Mangrove_replicate,NA,NA,NA,NA
-Thom_1992,NA,SB1,NA,NA,NA,NA
-Thom_1992,South_Slough,SS1,NA,NA,NA,NA
-Schile-Beers_and_Megonigal_2017,Bu Tinah Shamal,Bu_Tinah_Shamal_mangrove_2,NA,NA,NA,NA
-Nsombo_et_al_2016,ENN16 Tran1Well1,M0537,NA,NA,NA,NA
-Nsombo_et_al_2016,ENN16 Tran1Well2,M0538,NA,NA,NA,NA
-Nsombo_et_al_2016,ENN16 Tran1Well3,M0539,NA,NA,NA,NA
-Nsombo_et_al_2016,ENN16 Tran2Well2,M0541,NA,NA,NA,NA
-Nsombo_et_al_2016,ENN16 Tran2Well3,M0542,NA,NA,NA,NA
-Eid_and_Shaltout_2016_Egypt,EME16 Egypt Station 1,M0638,NA,NA,NA,NA
-Eid_and_Shaltout_2016_Egypt,EME16 Egypt Station 2,M0639,NA,NA,NA,NA
-Eid_and_Shaltout_2016_Egypt,EME16 Egypt Station 3,M0640,NA,NA,NA,NA
-Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 1 Seaward,M0641,NA,NA,NA,NA
-Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 1 Landward,M0642,NA,NA,NA,NA
-Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 2 Seaward,M0643,NA,NA,NA,NA
-Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 2 Landward,M0644,NA,NA,NA,NA
-Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 3 Seaward,M0645,NA,NA,NA,NA
-Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 3 Landward,M0646,NA,NA,NA,NA
-Poppe_et_al_2019,Snohomish_North_Ebey,NE_B,NA,NA,NA,NA
-Poppe_et_al_2019,Snohomish_Spencer_Island,SP_B,NA,NA,NA,NA
-Kauffman_et_al_2020,Blind Slough Swamp,COL-BLI-TS-2,NA,NA,NA,NA
-Copertino_unpublished,NA,Copertino_unpublished_1,NA,NA,NA,NA
-Drexler_et_al_2013,Coastal_EDU_Field,Coastal_EDU_Field_2,NA,NA,NA,NA
-Belshe_et_al_2019,SM,SM10,NA,NA,NA,NA
+study_id,site_id,core_id,latitude,longitude
+Thom_1992,NA,SB1,NA,NA
+Thom_1992,South_Slough,SS1,NA,NA
+Schile-Beers_and_Megonigal_2017,Bu Tinah Shamal,Bu_Tinah_Shamal_mangrove_2,NA,NA
+Nsombo_et_al_2016,ENN16 Tran1Well1,M0537,NA,NA
+Nsombo_et_al_2016,ENN16 Tran1Well2,M0538,NA,NA
+Nsombo_et_al_2016,ENN16 Tran1Well3,M0539,NA,NA
+Nsombo_et_al_2016,ENN16 Tran2Well2,M0541,NA,NA
+Nsombo_et_al_2016,ENN16 Tran2Well3,M0542,NA,NA
+Eid_and_Shaltout_2016_Egypt,EME16 Egypt Station 1,M0638,NA,NA
+Eid_and_Shaltout_2016_Egypt,EME16 Egypt Station 2,M0639,NA,NA
+Eid_and_Shaltout_2016_Egypt,EME16 Egypt Station 3,M0640,NA,NA
+Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 1 Seaward,M0641,NA,NA
+Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 1 Landward,M0642,NA,NA
+Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 2 Seaward,M0643,NA,NA
+Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 2 Landward,M0644,NA,NA
+Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 3 Seaward,M0645,NA,NA
+Eid_et_al_2016_Saudi_Arabia,EME16 Saudi Arabia Station 3 Landward,M0646,NA,NA
+Poppe_et_al_2019,Snohomish_North_Ebey,NE_B,NA,NA
+Poppe_et_al_2019,Snohomish_Spencer_Island,SP_B,NA,NA
+Marot_et_al_2020,Grand Bay,16CCT03_GB200G,NA,NA
+Marot_et_al_2020,Grand Bay,16CCT03_GB200G_2,NA,NA
+Marot_et_al_2020,Grand Bay,16CCT03_GB200G_3,NA,NA
+Copertino_unpublished,NA,Copertino_unpublished_1,NA,NA
+Drexler_et_al_2013,Coastal_EDU_Field,Coastal_EDU_Field_2,NA,NA
+SWAMP_Data_Soil_carbon_Cauassu_Leste_Shrimp_2016_Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_1_1,NA,NA
+SWAMP_Data_Soil_carbon_Cauassu_Leste_Shrimp_2016_Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_2_1,NA,NA
+SWAMP_Data_Soil_carbon_Cauassu_Leste_Shrimp_2016_Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_3_1,NA,NA
+SWAMP_Data_Soil_carbon_Cauassu_Leste_Shrimp_2016_Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_4_1,NA,NA
+SWAMP_Data_Soil_carbon_Cauassu_Leste_Shrimp_2016_Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_5_1,NA,NA
+SWAMP_Data_Soil_carbon_Cauassu_Leste_Shrimp_2016_Brazil,CAU_LS,CAU_LS_Cauassu Leste Shrimp_6_1,NA,NA
+SWAMP_Data_Soil_carbon_Cauassu_Oeste_Shrimp_2016_Brazil,CAU_OS,CAU_OS_Cauassu Oeste Shrimp_1_1,NA,NA
+SWAMP_Data_Soil_carbon_Cauassu_Oeste_Shrimp_2016_Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_1_1,NA,NA
+SWAMP_Data_Soil_carbon_Cauassu_Oeste_Shrimp_2016_Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_2_1,NA,NA
+SWAMP_Data_Soil_carbon_Cauassu_Oeste_Shrimp_2016_Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_3_1,NA,NA
+SWAMP_Data_Soil_carbon_Cauassu_Oeste_Shrimp_2016_Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_4_1,NA,NA
+SWAMP_Data_Soil_carbon_Cauassu_Oeste_Shrimp_2016_Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_5_1,NA,NA
+SWAMP_Data_Soil_carbon_Cauassu_Oeste_Shrimp_2016_Brazil,CAU_LS,CAU_LS_Cauassu Oeste Shrimp_6_1,NA,NA
+SWAMP_Data_Soil_carbon_Cumbe_Leste_Camaro_2016_Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_1_1,NA,NA
+SWAMP_Data_Soil_carbon_Cumbe_Leste_Camaro_2016_Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_2_1,NA,NA
+SWAMP_Data_Soil_carbon_Cumbe_Leste_Camaro_2016_Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_3_1,NA,NA
+SWAMP_Data_Soil_carbon_Cumbe_Leste_Camaro_2016_Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_4_1,NA,NA
+SWAMP_Data_Soil_carbon_Cumbe_Leste_Camaro_2016_Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_5_1,NA,NA
+SWAMP_Data_Soil_carbon_Cumbe_Leste_Camaro_2016_Brazil,CUM_LC,CUM_LC_Cumbe Leste Camaro_6_1,NA,NA
+SWAMP_Data_Soil_carbon_Cumbe_norte_Camarao_2016_Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_1_1,NA,NA
+SWAMP_Data_Soil_carbon_Cumbe_norte_Camarao_2016_Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_2_1,NA,NA
+SWAMP_Data_Soil_carbon_Cumbe_norte_Camarao_2016_Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_3_1,NA,NA
+SWAMP_Data_Soil_carbon_Cumbe_norte_Camarao_2016_Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_4_1,NA,NA
+SWAMP_Data_Soil_carbon_Cumbe_norte_Camarao_2016_Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_5_1,NA,NA
+SWAMP_Data_Soil_carbon_Cumbe_norte_Camarao_2016_Brazil,CUM_NC,CUM_NC_Cumbe Norte Camarao_6_1,NA,NA
+SWAMP_Data_Soil_carbon_Cilacap_2011,CIL,CIL_Cilacap 1_1_1,NA,NA
+SWAMP_Data_Soil_carbon_Cilacap_2011,CIL,CIL_Cilacap 1_2_1,NA,NA
+SWAMP_Data_Soil_carbon_Cilacap_2011,CIL,CIL_Cilacap 1_3_1,NA,NA
+SWAMP_Data_Soil_carbon_Cilacap_2011,CIL,CIL_Cilacap 1_4_1,NA,NA
+SWAMP_Data_Soil_carbon_Cilacap_2011,CIL,CIL_Cilacap 1_5_1,NA,NA
+SWAMP_Data_Soil_carbon_Cilacap_2011,CIL,CIL_Cilacap 1_6_1,NA,NA
+SWAMP_Data_Soil_carbon_Cilacap_2011,CIL,CIL_Cilacap 2_1_1,NA,NA
+SWAMP_Data_Soil_carbon_Cilacap_2011,CIL,CIL_Cilacap 2_2_1,NA,NA
+SWAMP_Data_Soil_carbon_Cilacap_2011,CIL,CIL_Cilacap 2_3_1,NA,NA
+SWAMP_Data_Soil_carbon_Cilacap_2011,CIL,CIL_Cilacap 2_4_1,NA,NA
+SWAMP_Data_Soil_carbon_Cilacap_2011,CIL,CIL_Cilacap 2_5_1,NA,NA
+SWAMP_Data_Soil_carbon_Cilacap_2011,CIL,CIL_Cilacap 2_6_1,NA,NA
+Belshe_et_al_2019,SM,SM10,NA,NA

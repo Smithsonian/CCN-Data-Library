@@ -1,0 +1,66 @@
+"ID","SPP","SCIENTIFIC_NAME","PHYLUM","CLASS","ORDER","FAMILY","GENUS","CITID"
+1,"AVAL","Avicennia alba","Tracheophyta","Magnoliopsida","Lamiales","Avicenniaceae","Avicennia",42
+2,"AVGE","Avicennia germinans","Tracheophyta","Magnoliopsida","Lamiales","Avicenniaceae","Avicennia",52
+3,"AVMA","Avicennia marina","Tracheophyta","Magnoliopsida","Lamiales","Avicenniaceae","Avicennia",46
+4,"AVOF","Avicennia officinalis ","Tracheophyta","Magnoliopsida","Lamiales","Avicenniaceae","Avicennia",43
+5,"BRGY","Bruguiera gymnorrhiza","Tracheophyta","Magnoliopsida","Rhizophorales","Rhizophoraceae","Bruguiera",44
+6,"BRPA","Bruguiera parviflora","Tracheophyta","Magnoliopsida","Rhizophorales","Rhizophoraceae","Bruguiera",47
+7,"BR_SPP","Bruguiera spp.","Tracheophyta","Magnoliopsida","Rhizophorales","Rhizophoraceae","Bruguiera",1000
+8,"CEAU","Ceriops australis ","Tracheophyta","Magnoliopsida","Rhizophorales","Rhizophoraceae","Ceriops",49
+9,"CEDE","Ceriops decandra","Tracheophyta","Magnoliopsida","Rhizophorales","Rhizophoraceae","Ceriops",45
+10,"CETA","Ceriops tagal","Tracheophyta","Magnoliopsida","Rhizophorales","Rhizophoraceae","Ceriops",48
+11,"COBU","Cotylelobium burckii","Tracheophyta","Magnoliopsida","Theales","Dipterocarpaceae","Cotylelobium",9
+12,"ELGU","Elaeis guineensis","Spermatophyta","Monocotyledonae","Arecales","Arecaceae","Elaeis",20
+13,"EXAG","Excoecaria agallocha ","Tracheophyta","Magnoliopsida","Malpighiales ","Euphorbiaceae","Excoecaria",53
+14,"HEFO","Heritiera fomes","Tracheophyta","Magnoliopsida","Malvales ","Malvaceae","Heritiera",92
+15,"LARA","Laguncularia racemosa","Tracheophyta","Magnoliopsida","Myrtales","Combretaceae","Laguncularia",54
+16,"RHAP","Rhizophora apiculata ","Tracheophyta","Magnoliopsida","Rhizophorales","Rhizophoraceae","Rhizophora",41
+17,"RHMA","Rhizophora mangle","Tracheophyta","Magnoliopsida","Rhizophorales","Rhizophoraceae","Rhizophora",58
+18,"RH_SPP","Rhizophora spp.","Tracheophyta","Magnoliopsida","Rhizophorales","Rhizophoraceae","Rhizophora",1000
+19,"RHST","Rhizophora stylosa","Tracheophyta","Magnoliopsida","Rhizophorales","Rhizophoraceae","Rhizophora",57
+20,"SOAL","Sonneratia alba","Tracheophyta","Magnoliopsida","Myrtales","Lythraceae","Sonneratia",93
+21,"SOAP","Sonneratia apetala","Tracheophyta","Magnoliopsida","Myrtales","Lythraceae","Sonneratia",94
+22,"XYGR","Xylocarpus granatum","Tracheophyta","Magnoliopsida","Sapindales ","Meliaceae","Xylocarpus",55
+23,"XYME","Xylocarpus mekongensis","Tracheophyta","Magnoliopsida","Sapindales ","Meliaceae","Xylocarpus",56
+24,"MANGROVE_SPP","Mangrove spp.","Tracheophyta","Magnoliopsida",,,,1000
+25,"SPP","All species",,,,,,1000
+26,"BRSE","Bruguiera sexangula","Tracheophyta","Magnoliopsida","Malpighiales ","Rhizophroaceae","Bruguiera",161
+27,"LULI","Lumnitzera littorea","Tracheophyta","Magnoliopsida","Myrtales","Combretaceae","Lumnitzera",161
+28,"NYFR","Nypa fruticans",,,"Arecales","Arecaceae","Nypa",161
+29,"RHMU","Rhizophora mucronata","Tracheophyta","Magnoliopsida","Rhizophorales","Rhizophoraceae","Rhizophora",161
+30,"XYMO","Xylocarpus moluccensis","Tracheophyta","Magnoliopsida","Sapindales ","Meliaceae","Xylocarpus",161
+31,"CE_SPP","Ceriops spp.","Tracheophyta","Magnoliopsida","Malpighiales ","Rhizophroaceae","Ceriops",1000
+32,"LU_SPP","Lumnitzera spp.","Tracheophyta","Magnoliopsida","Myrtales","Combretaceae","Lumnitzera",1000
+33,"XY_SPP","Xylocarpus spp.","Tracheophyta","Magnoliopsida","Sapindales ","Meliaceae","Xylocarpus",1000
+34,"ACIL","Acanthus ilicifolius",,,,"Acanthaceae","Acanthus",172
+35,"PHPA","Phoenix paludosa",,,,,,1000
+36,"HELI","Heritiera littoralis",,,,,,1000
+37,"ACAU","Acrostichum aureum",,,,"Pteridaceae","Acrostichum",172
+38,"INBI","Intsia bijuga",,,,"Leguminosaecae","Intsia",172
+39,"BRCY","Bruguiera cylindrica",,,,"Rhixophoraceae","Bruguiera",172
+40,"SOOV","Sonneratia ovata",,,,"Sonneratiaceae","Sonneratia",172
+41,"HITI","Hibiscus tiliaceus",,,,"Malvacea","Hibiscus",172
+42,"SCHY","Scyphiphora hydrophyllacea",,,,,,1000
+43,"LURA","Lumnitzera racemosa",,,,"Combretaceae","Lumnitzera",172
+44,"MELE","Melaleuca leucadendra",,,,,,1000
+45,"AC_SPP","Acrostichum species",,,,,,1000
+46,"AV_SPP","Aviciennia species",,,,,,1000
+47,"SO_SPP","Sonneratia species",,,,,,1000
+48,"EX_SPP","Excoecaria species",,,,,,1000
+49,"HE_SPP","Heritiera species",,,,,,1000
+50,"ENAC","Enahalus acoroides",,,,,"Enahalus",1000
+51,"SOCA","Sonneratia caseolaris","Tracheophyta","Magnoliopsida","Myrtales","Lythraceae","Sonneratia",178
+52,"BRCA","Bruguiera caryophylloides","Tracheophyta","Magnoliopsida",,,"Bruguiera",1000
+53,"CEZI","Ceriops zippeliana","Tracheophyta","Magnoliopsida","Rhizophorales","Rhizophoraceae","Ceriops",1000
+54,"DETR","Dehaasia triandra","Tracheophyta","	Magnoliopsida","	Laurales","Lauraceae","Dehaasia",180
+55,"AEFL","Aegiceras floridum",,,,"Myrsinaceae","Aegiceras",159
+57,"FIOB","Finlaysonia obovata","Tracheophyta","Magnoliopsida","Gentianales","Apocynaceae","Finlaysonia",180
+58,"WEBL","Weinmannia blumei",,,,"Weinmannia","Cunoniaceae",159
+59,"ACEB","Acanthus ebracteatus","Tracheophyta","Magnoliopsida","Scrophulariales","Acanthaceae","Acanthus",181
+60,"DIMA","Diospyros maritima","Tracheophyta","Magnoliopsida","Ericales","Ebenaceae","Diospyros",182
+61,"CYRA","Cynometra ramiflora","Tracheophyta","Magnoliopsida","Fabales","Fabaceae","Cynometra",183
+62,"POPI","Pongamia pinnata","Tracheophyta","Tracheophyta","Fabales","Fabaceae","Pongamia",184
+63,"MAPS","Maniltoa psilogyne",,,,"Leguminosae","Maniltoa",159
+64,"HESY","Heritiera sylvatica",,,,"Sterculiaceae","Heritiera",159
+65,"CAER","Calamus erinaceus",,,,,"Calamus",1000
+66,"MYTU","Myrmecodia tuberosa",,,,,"Myrmecodia",1000

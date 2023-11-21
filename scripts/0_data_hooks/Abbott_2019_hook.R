@@ -43,17 +43,39 @@ cores <- cores_raw %>%
          core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK"),
          core_elevation_datum = "NAVD88") %>%
   select(study_id, site_id, core_id, core_year, core_month, core_day, core_longitude, core_latitude, core_position_method,
-         core_elevation, core_elevation_datum, core_elevation_method, salinity_class, vegetation_class)
+         core_elevation, core_elevation_datum, core_elevation_method, salinity_class, vegetation_class) %>% 
+  separate(core_id, sep = "-", into = c("site_id", "core_id")) %>% 
+  mutate(core_id = paste0(site_id, "-", core_id))
+
+# Change site names
+
 
 depthseries <- depthseries_raw %>%
   mutate(method_id = "single set of methods") %>%
-  select(-fraction_nitrogen)
+  select(-fraction_nitrogen) %>% 
+  separate(core_id, sep = "-", into = c("site_id", "core_id")) %>% 
+  mutate(core_id = paste0(site_id, "-", core_id))
+
+
+# Change site names
+
 
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%
-  select(-c(genus, species))
+  select(-c(genus, species)) %>% 
+  separate(core_id, sep = "-", into = c("site_id", "core_id")) %>% 
+  mutate(core_id = paste0(site_id, "-", core_id))
 
-impacts <- impacts_raw
+
+# Change site names
+
+impacts <- impacts_raw %>% 
+  separate(core_id, sep = "-", into = c("site_id", "core_id")) %>% 
+  mutate(core_id = paste0(site_id, "-", core_id))
+
+
+# Change site names
+
 
 methods <- methods_raw %>% mutate(method_id = "single set of methods")
 

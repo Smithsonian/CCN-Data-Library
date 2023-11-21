@@ -12,23 +12,24 @@ depthseries2 <- ccrcn_synthesis$depthseries
 species2 <- ccrcn_synthesis$species
 
 # read in our taxa database with associated habitat
-# spref <- read_csv("docs/versioning/species-habitat-classification-JH-20200824.csv")
+spref <- read_csv("docs/versioning/species-habitat-classification-JH-20200824.csv")
 
-# synthspecies <- species2 %>% 
-#   select(-habitat, -code_type) %>% 
-#   left_join(spref)
+synthspecies <- species2 %>% 
+  select(-habitat) %>% 
+  left_join(spref) %>% 
+  select(-species_code, -code_type, -notes, -recode_as)
 
 # Habitat specific species are now ASSIGNED IN THE HOOK SCRIPTS
 # First classify habitat according to the big habitat-specific syntheses
-# sanderman <- read_csv("docs/post_processing/habitat_assignment/Sanderman_2018_cores.csv") %>% 
-#   select(study_id, core_id) %>% 
-#   mutate(habitat2 = "mangrove")
-# 
-# forquean <- read_csv("docs/post_processing/habitat_assignment/Fourqurean_2012_cores.csv") %>% 
-#   select(study_id, core_id) %>% 
-#   mutate(habitat2 = "seagrass")
-# 
-# two_big_syntheses <- bind_rows(sanderman, forquean)
+sanderman <- read_csv("docs/post_processing/habitat_assignment/Sanderman_2018_cores.csv") %>% 
+ select(study_id, site_id, core_id) %>% 
+ mutate(habitat2 = "mangrove")
+ 
+forquean <- read_csv("docs/post_processing/habitat_assignment/Fourqurean_2012_cores.csv") %>%
+ select(study_id, site_id, core_id) %>%
+ mutate(habitat2 = "seagrass")
+ 
+two_big_syntheses <- bind_rows(sanderman, forquean)
 
 # classify core habitat by salinity and vegetation 
 cores_sal_veg_habitat <- cores2 %>% 
@@ -38,7 +39,7 @@ cores_sal_veg_habitat <- cores2 %>%
   mutate(habitat3 = case_when(vegetation_class == "emergent" ~ "marsh",
                               vegetation_class == "seagrass"~ "seagrass",
                               vegetation_class %in% c("mudflat", "unvegetated") ~ "unvegetated",
-                              vegetation_class == "scrub shrub" ~ "scrub shrub", 
+                              vegetation_class %in% c("scrub shrub", "scrub/shrub") ~ "scrub/shrub", 
                               TRUE ~ NA_character_),
         # Kind of junk classification, but best we can do if none is better
         habitat7 = ifelse(vegetation_class %in% c("forested", "forested to shrub", "forested to emergent") &
@@ -54,18 +55,18 @@ cores_sal_veg_habitat <- cores2 %>%
 
 # classify core habitat by species
 cores_species_habitat <- species2 %>% 
-  mutate(habitat = factor(habitat, levels = rev(c("unvegetated", "algal mat", "seagrass", "marsh", "scrub shrub", "swamp", "mangrove")))) %>% 
-  arrange(study_id, core_id, habitat) %>% 
+  mutate(habitat = factor(habitat, levels = rev(c("unvegetated", "algal mat", "seagrass", "marsh", "scrub/shrub", "swamp", "mangrove")))) %>% 
+  arrange(study_id, site_id, core_id, habitat) %>% 
   group_by(study_id, core_id) %>% 
   summarise(habitat4 = first(habitat)) %>% 
   mutate(habitat4 = as.character(habitat4))
 
 # conditional assignment of habitat based on pattern matching in core ID
 habitat_cases <- cores2 %>% select(study_id, site_id, core_id) %>% 
-  mutate(habitat6 = case_when(grepl("mangrove", site_id) | grepl("mangrove", core_id) ~ "mangrove",
-                              grepl("swamp", site_id) | grepl("swamp", core_id) | grepl("forest", site_id) | grepl("forest", core_id) ~ "swamp",
-                              grepl("marsh", site_id) | grepl("marsh", core_id) ~ "marsh",
-                              grepl("seagrass", site_id) |  grepl("seagrass", core_id) ~ "seagrass",
+  mutate(habitat6 = case_when(grepl("mangrove", site_id, ignore.case = T) | grepl("mangrove", core_id, ignore.case = T) ~ "mangrove",
+                              grepl("swamp", site_id, ignore.case = T) | grepl("swamp", core_id, ignore.case = T) | grepl("forest", site_id, ignore.case = T) | grepl("forest", core_id, ignore.case = T) ~ "swamp",
+                              grepl("marsh", site_id, ignore.case = T) | grepl("marsh", core_id, ignore.case = T) ~ "marsh",
+                              grepl("seagrass", site_id, ignore.case = T) |  grepl("seagrass", core_id, ignore.case = T) ~ "seagrass",
                               TRUE ~ NA_character_)) 
 
 # manually classify the cores from certain studies
@@ -77,31 +78,31 @@ study_habitat_ids_manual <- cores2 %>% select(study_id, site_id, core_id) %>%
 
 # compare all the classification methods
 habitat_comparison <- cores_sal_veg_habitat %>% # veg and sal defined habitat
-  # full_join(two_big_syntheses) %>% # synthesis studies
+  full_join(two_big_syntheses) %>% # synthesis studies
   left_join(cores_species_habitat) %>% # species defined habitat
   left_join(study_habitat_ids_manual) %>% # manual classifications
   left_join(habitat_cases) %>% # fuzzy matching
   select(study_id, site_id, core_id, vegetation_class, salinity_class, 
          habitat1, 
-         # habitat2, # assigned in hook scripts now
+         habitat2,
          habitat3, habitat4, habitat5, habitat6, habitat7)
 
 
 # investigate the NA habitats left over
 na_habitat_comparison <- filter(habitat_comparison, is.na(habitat1) & 
-                                  # is.na(habitat2) & 
+                                  is.na(habitat2) & 
                                   is.na(habitat3) & 
                                   is.na(habitat4) & is.na(habitat5) & is.na(habitat6) & is.na(habitat7))
 # Seems pretty reasonable to leave these NA's
 # there are some species described that haven't been associated with a habitat in our species-habitat table
 
 habitat_final <- habitat_comparison %>% 
-  select(study_id, core_id, habitat1:habitat6) %>%
+  select(study_id, site_id, core_id, habitat1:habitat7) %>%
   gather(key="habitat_assignment_method",
-         value = "habitat", -c(study_id, core_id)) %>% 
-  arrange(study_id, core_id, habitat_assignment_method) %>% 
-  filter(complete.cases(.)) %>% 
-  group_by(study_id, core_id) %>% 
+         value = "habitat", -c(study_id, site_id, core_id)) %>% 
+  arrange(study_id, site_id, core_id, habitat_assignment_method) %>% 
+  filter(complete.cases(habitat)) %>% 
+  group_by(study_id, site_id, core_id) %>% 
   summarise(habitat = first(habitat),
             habitat_assignment_method = first(habitat_assignment_method)) %>% 
   mutate(habitat_assignment_method = recode(habitat_assignment_method, 
