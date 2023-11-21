@@ -17,7 +17,8 @@ library(RefManageR)
 
 db_citation <- as.data.frame(GetBibEntryWithDOI("10.25573/serc.21565671")) %>% 
   mutate(bibliography_id = "Coastal_Carbon_Data_Library",
-         publication_type = "database") %>% 
+         publication_type = "database",
+         title = str_replace(title, past_version_code, new_version_code)) %>% 
   remove_rownames()
 
 # convert to bib file table
@@ -27,6 +28,10 @@ db_bib <- db_citation %>% select(-publication_type) %>%
 # add to synthesis
 ccrcn_synthesis$study_citations <- bind_rows(ccrcn_synthesis$study_citations, db_citation)
 bib_file <- bind_rows(bib_file, db_bib)
+
+readMeFile <- readLines("data/CCN_synthesis/README.md")
+readMeFile<-str_replace(readMeFile, past_version_code, new_version_code)
+writeLines(readMeFile, "data/CCN_synthesis/README.md")
 
 # clear workspace of unnecessary variables
 rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results", "join_status", "file_paths"))])

@@ -578,8 +578,9 @@ cores <- core_raw %>%
 
 
 ##RC edit --> adding habitat for synthesis update
-cores <- cores %>% 
-  mutate(habitat = "marsh")
+##JH Reverse ----> not all of these cores are marshes. some are bay bottom.
+#cores <- cores %>% 
+#  mutate(habitat = "marsh")
 
 ## Step 8: Make the Species table ####
 species <- full_join(df_field, df_site, by = c("site_id", "core_id")) %>% 
@@ -614,10 +615,14 @@ species <- mutate(species, site_id = "Grand Bay")
 
 ## Step 10: QAQC ####
 
+core_vis <- cores %>% 
+  filter(complete.cases(latitude, longitude)) %>% 
+  filter(core_id %in% species$core_id)
+
 ## Mapping
-leaflet(cores) %>%
+leaflet(core_vis) %>%
   addTiles() %>% 
-  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3)
 
 ## Table testing
 table_names <- c("cores", "depthseries", "methods", "species")

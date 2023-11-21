@@ -46,8 +46,10 @@ MA2 <- raw_MA2 %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_Wellfleet",
                           core_id = paste0("MA_", ID))
 RI <- raw_RI %>% mutate(study_id = "Okeefe-Suttles_et_al_2021_RI",
                         core_id = paste0("RI_", ID),
-                        `210Pb` = `210Pbex`+`226Ra`,  # this is a temporary patch ... 
-                        `210Pb_e` = sqrt(`210Pbex_e`^2+`226Ra_e`)) # .. needs to be fixed in original data source
+                        `210Pb` = NA,  # this is a temporary patch ... 
+                        `210Pb_e` = NA,
+                        `226Ra`=NA,
+                        `226Ra_e` = NA) # .. needs to be fixed in original data source
   
 
 # bind all the depthseries together
