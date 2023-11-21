@@ -16,7 +16,7 @@ The downloaded data is provided as-is and are meant for academic use. There is n
 
 The maintainers of the Coastal Carbon Library do not require, nor expect, offers of co-authorship in exchange for serving this data, only when we make substantial new contributions to a work in line with [CRediT taxonomy](https://credit.niso.org/) of roles for collaborations. If you benefit from downloading this synthesized data, please credit the [current version](https://doi.org/10.25573/serc.21565671) of the Data Library with the date downloaded, in your papers or derivative products. The following citation is recommended for the database:
  
- Coastal Carbon Network (2023). Database: Coastal Carbon Library (Version 1.0.0). Smithsonian Environmental Research Center. Dataset. https://doi.org/10.25573/serc.21565671. Accessed (YYYY-MM-DD).
+ Coastal Carbon Network (2023). Database: Coastal Carbon Library (Version 1.1.0). Smithsonian Environmental Research Center. Dataset. https://doi.org/10.25573/serc.21565671. Accessed (YYYY-MM-DD).
  
 ### Synthesis Contents
 

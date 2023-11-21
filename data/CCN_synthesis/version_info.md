@@ -38,33 +38,33 @@ Located in CCN_impacts.csv: "hurricane", under impact_class
 
 This update adds 94 new studies and 3,498 new cores to the CCN Data Library, bringing the total number of cores to 10198, with 401 unique studies. 
 
-Akther et al 2021  
-Beers et al 2023  
-Cifuentes et al 2023  
-Costa et al 2023  
-Curtis et al 2022  
-Dai et al 2022  
-Giblin 2018  
-Githaiga et al 2017  
-Hamzeh and Lahijani 2022  
-Howard and Fourqurean 2020  
-Kusumaningtyas et al 2018  
-Lafratta et al 2018  
-Marot et al 2020  
-McClellan et al 2021  
-Morrissette et al 2023  
-Piazza et al 2020  
-Rodriguez_et_al_2022  
-Rovai et al 2022  
-Saunders 2013  
-Senger et al 2020  
-Shaw et al 2021  
-Snedden et al 2018  
-Snedden et al 2021  
-Turck et al 2014  
-van Ardenne et al 2018  
-Vincent and Dionne 2023  
-Wang et al 2023  
+Akther et al 2021
+Beers et al 2023
+Cifuentes et al 2023
+Costa et al 2023
+Curtis et al 2022
+Dai et al 2022
+Giblin 2018
+Githaiga et al 2017 
+Hamzeh and Lahijani 2022
+Howard and Fourqurean 2020
+Kusumaningtyas et al 2018
+Lafratta et al 2018
+Marot et al 2020
+McClellan et al 2021
+Morrissette et al 2023
+Piazza et al 2020
+Rodriguez_et_al_2022
+Rovai et al 2022
+Saunders 2013
+Senger et al 2020
+Shaw et al 2021
+Snedden et al 2018
+Snedden et al 2021
+Turck et al 2014
+van Ardenne et al 2018
+Vincent and Dionne 2023
+Wang et al 2023 
 
 ## Datasets included from the CIFOR (Center for International Forestry Research) SWAMP Project:
 SWAMP Data-Soil carbon-Barreto-2017-Brazil                  
