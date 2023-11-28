@@ -171,7 +171,8 @@ ri_cores <- suttle_cores %>%
   select(-Year_restored) %>% 
   mutate(core_length_flag = "core depth limited by length of corer",
          position_method = "handheld",
-         position_accuracy = 3)
+         position_accuracy = 3,
+         year = 2016)
 
 ma1_cores <- suttle_cores %>% 
   filter(study_id == "Okeefe-Suttles_et_al_2021_Cape") %>% 
