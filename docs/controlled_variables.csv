@@ -47,6 +47,7 @@ carbonate_removal_method,acid fumigation,Carbonates were removed by fumigating w
 carbonate_removal_method,low carbonate soil,Organic carbon fraction was measured without removing carbonates assuming carbonate content of the soil type was minimal
 carbonate_removal_method,carbonates not removed,Carbonates were not removed and low carbonate soil was not specified
 carbonate_removal_method,none specified,Carbonate removal methodology was not specified.
+carbonate_removal_method,total carbon difference after LOI,Samples were run twice in the elemental analyzer - once with original sample and once with sample after LOI occurred. Pre and post-LOI values were differenced to determine organic carbon.
 fraction_carbon_method,Craft regression,"Used regression model from Craft et al., 1991, Estuaries, to predict fraction carbon as a function of fraction organic matter"
 fraction_carbon_method,EA,Each sample presented was measured using Elemental Analysis
 fraction_carbon_method,Fourqurean regression,"Used regression model from Fourqurean et al., 2012, Nature Geoscience, to predict fraction carbon as a function of fraction organic matter"
@@ -94,6 +95,7 @@ vegetation_class,forested,Describes wetlands dominated by woody vegetation > 5 m
 vegetation_class,forested to shrub,Dominated by forested to scrub/shrub biomass
 vegetation_class,forested to emergent,Dominated by forest and underlying marsh
 vegetation_class,seagrass,Describes tidal or subtidal communities dominated by rooted vascular plants.
+vegetation_class,unvegetated,Unvegetated.
 vegetation_method,field observation,Vegetation inferred by field observation
 vegetation_method,measurement,Vegetation measured by counts or plots.
 inundation_class,high,"Study-specific definition of an elevation relatively high in the tidal frame, typically defined by vegetation type"
@@ -132,9 +134,10 @@ marker_type,artificial horizon,"Horizon was added to the surface artificially by
 marker_type,pollen,"Pollen analysis was used to tie horizon to the timing of vegetation change such as the arrival of invasives, or the beginning of local agriculture"
 marker_type,pollution,Chemical analysis was used to tie the horizon to the timing of a pollution event
 marker_type,tsunami,Sediment analysis was used to tie the horizon to the timing of a tsunami event.
+marker_type,dredge horizon,Sediment analysis was used to tie the horizon to the timing of a dredging event.
 impact_class,tidally restricted,Tidal flow is muted or blocked by built structures
 impact_class,impounded,"Water level is raised artificially by a tidal restriction, resulting in ponding of water on the wetland and or upland surface"
-impact_class,salt impacted,TBD.
+impact_class,salt impacted,Site or sampling location is impacted by salt water intrusion.
 impact_class,natural,No disturbance or management has occurred.
 impact_class,managed impounded,"Wetland is impounded seasonally, and other times natural or semi natural hydrology occurs"
 impact_class,ditched,Tidal hydrology is altered because artificial ditches have been cut to promote tidal flooding and drainage
@@ -147,13 +150,19 @@ impact_class,invasive plants removed,Natural plant communities have been restore
 impact_class,invasive herbivores removed,Tidal wetland vegetation has been managed by the removal of invasive herbivores
 impact_class,sediment added,Elevation has been managed by artificially adding sediment to the site using techniques such as thin layering or sediment diversion
 impact_class,wetlands built,Constructed wetland using sediments such as dredge spoils or other sediment source.
+impact_class,degraded,"Some method of degradation has occurred, possibly unspecified."
+impact_class,storm or wind,"Impact from major storms, including extreme precipitation and unusually high-wind events"
+impact_class,bark extraction,Woody vegetation felled for the extraction of bark.
+impact_class,firewood extraction,Woody vegetation felled for the extraction of firewood.
+impact_class,agro-industrial deforestation,Sites that were deforested and transformed into oil palm or rice crops.
+impact_class,disturbed,Sampling location has experienced anthropogenic or environmental disturbance.
 habitat,mangrove,Tropical and dominated by specialized shrubs or trees.
 habitat,swamp,Predominantly freshwater and dominated by trees.
 habitat,scrub/shrub,Wetland dominated by shrubs.
 habitat,marsh,"Wetland dominated by emergent vegetation, gramminoids or forbs."
 habitat,seagrass,Intertidal to subtidal and dominated by specialized predominantly submerged grasses.
 habitat,algal mat,Dominated by algae.
-habitat,unvegetated,Unvegetated.
+habitat,unvegetated,"Unvegetated, tidally influenced habitat."
 habitat,mudflat,Describes unvegetated areas exposed and flooded by the tides.
 habitat,upland,Predominately above sea level and dominated by trees.
 code_type,description,Cover description not related to plant taxonomy.
@@ -167,11 +176,3 @@ dates_qual_code,B1,Dating information present and complete.
 elevation_qual_code,A3,"Elevation data present but of low quality, dating info present."
 elevation_qual_code,A2,"Elevation data is high quality, and dating info present but incomplete."
 elevation_qual_code,A1,"Elevation data is high quality, and dating info is complete."
-vegetation_class,unvegetated,Unvegetated.
-marker_type,dredge horizon,Sediment analysis was used to tie the horizon to the timing of a dredging event.
-impact_class,degraded,"Some method of degradation has occurred, possibly unspecified."
-impact_class,hurricane,Site impacted or disturbed by hurricane.
-vegetation_class,unvegetated,Unvegetated.
-marker_type,dredge horizon,Sediment analysis was used to tie the horizon to the timing of a dredging event.
-impact_class,degraded,"Some method of degradation has occurred, possibly unspecified."
-impact_class,hurricane,Site impacted or disturbed by hurricane.

@@ -10,9 +10,9 @@ library(reactable)
 library(reactablefmtr)
 
 # load controlled variables for table nesting
-variables <- read_csv("docs/controlled_variables.csv", col_types = cols()) %>% 
+variables <- read_csv("docs/controlled_variables.csv", col_types = cols())
   # remove vars that are undefined/obsolete
-  filter(!(variable_name %in% c("mass accumulation", "accretion", "salt impacted")))
+  # filter(!(variable_name %in% c("mass accumulation", "accretion")))
 
 # create shortened version of variables to display
 vars_collapse <- variables %>% 
@@ -85,7 +85,7 @@ renderTable <- function(tabletype){
 }
 
 # render the html document
-rmarkdown::render(input = "./scripts/generate_table.Rmd",
+rmarkdown::render(input = "scripts/housekeeping/generate_table.Rmd",
                   # output_format = "html_document",
                   output_file = "ccrcn_database_structure.html",
                   output_dir = "./docs")
