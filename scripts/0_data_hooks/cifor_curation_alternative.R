@@ -46,18 +46,85 @@ geo_brazil <- geo_brazil %>% dplyr::rename(latitude = Latitude,
                                                      Site == "Marisma medium" ~ "Marisma Medium",
                                                      Site == "Marisma low" ~ "Marisma Low",
                                                      TRUE ~ Site)) %>% distinct()
+## Depthseries ####
+
+
+#create depth min and max columns based on formatting of Depth Interval column
+cifor_depthseries <- cifor_soil %>%  
+  filter(grepl("-",`Depth interval (cm)`)) %>% 
+  separate(`Depth interval (cm)`, c("depth_min", "depth_max"), sep = "-", remove = FALSE) %>% 
+  mutate(depth_max = str_remove_all(depth_max, "\\*|\\ |\\(|\\)")) %>% 
+  mutate(depth_min = as.numeric(depth_min),
+         depth_max = as.numeric(depth_max),
+         depth_interval_notes = NA)
+
+cifor_depthseries3 <- cifor_soil %>% 
+  filter(!is.na(`Collected sample depth range (cm)`)) %>% 
+  separate(`Collected sample depth range (cm)`, c("depth_min", "depth_max"), sep = "-", remove = FALSE) %>% 
+  mutate(depth_interval_notes = ifelse(is.na(depth_min), "Reported depth interval categorized as depth_max", NA),
+         depth_min = case_when(depth_min == "270" ~100, 
+                               depth_min == "125" ~ 100,
+                               depth_min == "170" ~ 100,
+                               TRUE ~ as.numeric(depth_min)),
+         depth_max = case_when(`Collected sample depth range (cm)` == "270" ~ 270, 
+                               `Collected sample depth range (cm)` == "125" ~ 125,
+                               `Collected sample depth range (cm)` == "170" ~ 170,
+                               TRUE ~ as.numeric(depth_max))) %>% 
+  drop_na(depth_min) #remove 1 row of "woody debris" data, no core or depth interval
+
+
+cifor_depthseries2 <- cifor_soil %>% 
+  filter(!grepl("-",`Depth interval (cm)`)) %>% filter(is.na(`Collected sample depth range (cm)`)) %>% 
+  mutate(`Depth interval (cm)` = str_remove_all(`Depth interval (cm)`, ">"),
+         depth_interval_notes = "Recorded depth interval categorized as depth_max", 
+         depth_max = as.numeric(`Depth interval (cm)`),
+         depth_min = case_when(depth_max == 100 ~ 50,
+                               depth_max == 300 ~ 100,
+                               depth_max == 270 ~ 100,
+                               TRUE ~ depth_max - 50))
+
+#join
+depthseries_join <- rbind(cifor_depthseries, cifor_depthseries2, cifor_depthseries3) 
+
+#create core id and curate 
+depthseries_core_id <- depthseries_join %>% 
+  mutate(subsite_code = paste(`Site ID`, Plot, `Sub-plot`, sep = "_")) %>% 
+  group_by(`Site ID`, Plot, `Sub-plot`, depth_min) %>% 
+  mutate(n_depths = n(),
+         core_replicate = 1:n()) %>% 
+  ungroup() %>% 
+  mutate(core_id = paste(`Site ID`, Plot,`Sub-plot`, core_replicate, sep = "_"),
+         fraction_carbon = as.numeric(`Carbon content (%)`),
+         fraction_carbon = fraction_carbon/100,
+         method_id = "CIFOR",
+         dry_bulk_density = as.numeric(`Bulk density (g/cm3)`),
+         depth_interval_notes = ifelse(`Depth interval (cm)` == ">100", "depth interval categorized as >100", depth_interval_notes),
+         depth_min = ifelse(`Site ID` == "Arguni, Kaimana" & is.na(depth_min), 100, depth_min),
+         depth_max = ifelse(`Site ID` == "Arguni, Kaimana" & is.na(depth_max), 300, depth_max),
+         core_id = str_remove_all(core_id, "_NA")) %>%
+  rename(study_id = filename) %>%
+  select(study_id, core_id, method_id, `Site ID`, fraction_carbon, dry_bulk_density, 
+         depth_min, depth_max, depth_interval_notes, Plot, `Sub-plot`) 
+
+
+depthseries <- depthseries_core_id %>% 
+  mutate(depth_min = ifelse(depth_min == 1183, 183, depth_min),
+         depth_max = ifelse(depth_max == 1233, 233, depth_max),
+         site_id = `Site ID`) %>% 
+  select(-Plot, -`Sub-plot`, -`Site ID`)
+
+
+
+depthseries <- reorderColumns("depthseries", depthseries)
 
 
 ##  Cores ####
 
-#create core id 
-cifor_soil <- cifor_soil %>% 
-  mutate(subsite_code = paste(`Site ID`, Plot, `Sub-plot`, sep = "_")) %>% 
-  group_by(`Site ID`, Plot, `Sub-plot`, `Depth interval (cm)`, Latitude, Longitude) %>% 
-  mutate(core_replicate = 1:n()) %>% 
-  ungroup() %>% 
-  mutate(core_id = paste(`Site ID`, Plot, `Sub-plot`, core_replicate, sep = "_"))
-
+#join core id by site, plot, subplot 
+core_id <- depthseries_core_id %>% 
+  select(core_id, Plot, `Sub-plot`, `Site ID`) %>% distinct()
+  
+cifor_soil <- left_join(cifor_soil, core_id, by = c("Site ID", "Plot", "Sub-plot"))
 
 
 #get any missing plot level position data from vegetation table 
@@ -81,7 +148,7 @@ latlong.biomass <- cifor_veg %>%
   
 #start cores table with position data pulled from soils table// create core id 
 latlong.soil <- cifor_soil %>% 
-  select(`Site ID`, Plot, `Sub-plot`, Latitude, Longitude, filename, `Depth interval (cm)`, core_id)
+  select(`Site ID`, Plot, `Sub-plot`, Latitude, Longitude, filename, core_id) %>% distinct()
 
 
 #join to fill in position data from veg
@@ -106,8 +173,8 @@ latlong.full <- left_join(latlong.soil, latlong.biomass, by = c("Site ID", "Plot
 
 
 cifor_cores <- latlong.full %>% 
-  mutate(latitude = case_when(site_id == "DEM" ~ "6.75938056",
-                              site_id == "TIM" ~ "6.90485278",
+  mutate(latitude = case_when(site_id == "DEM" ~ "-6.75938056",
+                              site_id == "TIM" ~ "-6.90485278",
                               site_id == "DJI" ~ "13.97611667",
                               site_id == "FURO" ~ "S00 50.480",
                               TRUE ~ latitude),
@@ -116,7 +183,7 @@ cifor_cores <- latlong.full %>%
                                site_id == "DJI" ~ "-16.61556667",
                                site_id == "FURO" ~ "W046 38.316",
                                TRUE ~ longitude)) %>% 
-      select(filename, site_id,latitude, longitude, Plot, `Sub-plot`, `Depth interval (cm)`, core_id) %>% distinct()
+      select(filename, site_id,latitude, longitude, Plot, `Sub-plot`, core_id) %>% distinct()
 
 
 
@@ -156,7 +223,7 @@ cores_format <- cores2 %>%
          habitat = "mangrove",
          core_length_flag = "not specified") %>%
   rename(study_id = filename) %>% 
-  select(-Plot, -`Sub-plot`, -`Depth interval (cm)`) %>% distinct()
+  select(-Plot, -`Sub-plot`) %>% distinct()
 
 ##add brazil position data and create matching core_id to merge 
 geo_brazil_filter <- geo_brazil %>% 
@@ -226,70 +293,6 @@ cores <- cores %>%
 
 cores <- reorderColumns("cores", cores) 
 
-
-
-##  Depthseries ####
-
-#create depth min and max columns based on formatting of Depth Interval column
-cifor_depthseries <- cifor_soil %>%  
-  filter(grepl("-",`Depth interval (cm)`)) %>% 
-  separate(`Depth interval (cm)`, c("depth_min", "depth_max"), sep = "-", remove = FALSE) %>% 
-  mutate(depth_max = str_remove_all(depth_max, "\\*|\\ |\\(|\\)")) %>% 
-  mutate(depth_min = as.numeric(depth_min),
-         depth_max = as.numeric(depth_max),
-         depth_interval_notes = NA)
-
-cifor_depthseries3 <- cifor_soil %>% 
-  filter(!is.na(`Collected sample depth range (cm)`)) %>% 
-  separate(`Collected sample depth range (cm)`, c("depth_min", "depth_max"), sep = "-", remove = FALSE) %>% 
-  mutate(depth_interval_notes = ifelse(is.na(depth_min), "Reported depth interval categorized as depth_max", NA),
-         depth_min = case_when(depth_min == "270" ~100, 
-                               depth_min == "125" ~ 100,
-                               depth_min == "170" ~ 100,
-                               TRUE ~ as.numeric(depth_min)),
-         depth_max = case_when(`Collected sample depth range (cm)` == "270" ~ 270, 
-                               `Collected sample depth range (cm)` == "125" ~ 125,
-                               `Collected sample depth range (cm)` == "170" ~ 170,
-                               TRUE ~ as.numeric(depth_max))) %>% 
-  drop_na(depth_min) #remove 1 row of "woody debris" data, no core or depth interval
-
-
-cifor_depthseries2 <- cifor_soil %>% 
-  filter(!grepl("-",`Depth interval (cm)`)) %>% filter(is.na(`Collected sample depth range (cm)`)) %>% 
-  mutate(`Depth interval (cm)` = str_remove_all(`Depth interval (cm)`, ">"),
-         depth_interval_notes = "Recorded depth interval categorized as depth_max", 
-         depth_max = as.numeric(`Depth interval (cm)`),
-         depth_min = case_when(depth_max == 100 ~ 50,
-                               depth_max == 300 ~ 100,
-                               depth_max == 270 ~ 100,
-                               TRUE ~ depth_max - 50))
-
-#join
-depthseries_join <- rbind(cifor_depthseries, cifor_depthseries2, cifor_depthseries3) 
-
-#create core id and curate 
-depthseries <- depthseries_join %>% 
-  mutate(subsite_code = paste(`Site ID`, Plot, `Sub-plot`, sep = "_")) %>% 
-  group_by(`Site ID`, Plot, `Sub-plot`, `Depth interval (cm)`) %>% 
-  mutate(core_replicate = 1:n()) %>% 
-  ungroup() %>% 
-  mutate(core_id = paste(`Site ID`, Plot,`Sub-plot`, core_replicate, sep = "_"),
-         fraction_carbon = as.numeric(`Carbon content (%)`),
-         fraction_carbon = fraction_carbon/100,
-         method_id = "CIFOR",
-         dry_bulk_density = as.numeric(`Bulk density (g/cm3)`),
-         depth_interval_notes = ifelse(`Depth interval (cm)` == ">100", "depth interval categorized as >100", depth_interval_notes),
-         depth_min = ifelse(`Site ID` == "Arguni, Kaimana" & is.na(depth_min), 100, depth_min),
-         depth_max = ifelse(`Site ID` == "Arguni, Kaimana" & is.na(depth_max), 300, depth_max),
-         core_id = str_remove_all(core_id, "_NA")) %>% 
-  rename(site_id = `Site ID`,
-         study_id = filename) %>% 
-    select(study_id, core_id, method_id, site_id, fraction_carbon, dry_bulk_density, 
-         depth_min, depth_max, depth_interval_notes) 
-
-depthseries <- reorderColumns("depthseries", depthseries)
-
-
 ##  Species #####
 
 #species information comes from tree biomass measurements? 
@@ -355,6 +358,12 @@ methods <- cores %>% select(study_id) %>% distinct() %>%
 leaflet(cores) %>%
   addTiles() %>% 
   addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~ site_id)
+
+#check BHI core locations 
+BHI <- cores %>% filter(cores$site_id == "BHI")
+leaflet(BHI) %>% 
+  addTiles() %>% 
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~ core_id)
 
 ## Table testing
 table_names <- c("methods", "cores", "depthseries")
