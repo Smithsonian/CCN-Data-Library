@@ -5,8 +5,8 @@
 # RUN SCRIPT WITH A CLEAN R SESSION #
 # if you experience an error, restart Rstudio and try again # 
 
-past_version_code <- "1.0.0"
-new_version_code <- "1.1.0"
+past_version_code <- "1.1.0"
+new_version_code <- "1.1.1"
 
 ## 1. Synthesis background and description ###############
 
