@@ -259,7 +259,7 @@ cores <- cores_join %>%
                               site_id == "CAN" ~ 10.48330,
                               site_id == "POR_C" ~ -4.53835,
                               site_id == "POR_CT" ~ -4.539933333,
-                              is.na(latitude) & site_id == "BHI" ~ 20.48278,
+                              is.na(latitude)|core_id == "BHI_BK1A_1_1" & site_id == "BHI" ~ 20.48278,
                               TRUE ~ latitude),
          longitude = case_when(site_id == "BUN" ~ 124.803806,
                               site_id == "MANG" ~ -37.78628333,
@@ -267,12 +267,13 @@ cores <- cores_join %>%
                               site_id == "CAN" ~ 106.94244,
                               site_id == "POR_C" ~ -37.78106667,
                               site_id == "POR_CT" ~ -37.78308333,
-                              is.na(longitude) & site_id == "BHI" ~ 86.69051,
+                              is.na(longitude)|core_id == "BHI_BK1A_1_1" & site_id == "BHI" ~ 86.69051,
                               TRUE ~ longitude)) %>% 
   left_join(missing_site_position, by = "site_id") %>% 
   mutate(latitude = if_else(is.na(latitude.x), latitude.y, latitude.x),
          longitude = if_else(is.na(longitude.x), longitude.y, longitude.x),
-         core_id = str_remove_all(core_id, "_NA")) %>% 
+         core_id = str_remove_all(core_id, "_NA"),
+         position_notes = ifelse(core_id == "BHI_BK1A_1_1", "position at site level", position_notes)) %>% 
   select(-latitude.x, -latitude.y, -longitude.x, -longitude.y) %>% distinct()
 
 
