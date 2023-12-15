@@ -5,7 +5,7 @@ _An open-source database featuring carbon data from tidal wetlands around the wo
 
 The Coastal Carbon Network (CCN) is a consortium of biogeochemists, ecologists, pedologists, and coastal land managers with the goal of **accelerating the pace of discovery in coastal wetland carbon science by providing our community with access to data, analysis tools, and synthesis opportunities.** We have accomplished this goal by growing iteratively with community feedback, facilitating the sharing of open data and analysis products, offering training in data management and analytics, and leading topical working groups aimed at quantitatively reducing uncertainty in coastal greenhouse gas emissions and storage.
 
-This repository contains the workflows and products of the effort the CCN has conducted to synthesize coastal carbon data from tidal wetland habitats around the world. The current version is CCN Data Library Version 1.0.0.
+This repository contains the workflows and products of the effort the CCN has conducted to synthesize coastal carbon data from tidal wetland habitats around the world. The current version is CCN Data Library Version 1.1.1.
 
 <img src="https://github.com/Smithsonian/CCN-Data-Library/blob/main/docs/images/spectrum_of_users.PNG?raw=true" alt="user spectrum" width=700 height=380>
 
