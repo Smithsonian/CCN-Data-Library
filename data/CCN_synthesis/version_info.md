@@ -1,19 +1,33 @@
-## Versioning Information for the Coastal Carbon Network Synthesis Version 1.1.1
+## Coastal Carbon Network Data Library Versioning Documentation
+
+This versioning document tracks the changes made to the CCN Data Library, including additions of new data or corrections to previously synthesized datasets.
 
 ***
 
-This folder contains the data synthesis that is prepared and maintained by the COASTAL CARBON NETWORK (CCN) hosted at the SMITHSONIAN INSTITUTION. If you wish to explore or query this synthesis for a particular subset of data, we encourage you to use the [Coastal Carbon Atlas](https://shiny.si.edu/coastal_carbon_atlas/), a map interface we developed to interface with this synthesis in a more user-friendly fashion.
+### Synthesis Version 1.1.1
 
-### Synthesis Version 1.1.1 Contents
+#### Version 1.1.1 Contents
 
-This synthesis is comprised of this README file, a .bib file containing BibTex formatted citations for studies included in the download, and several comma separated value (.csv) spreadsheets linked by common attributes study_id, site_id, and core_id. The data tables present in each download may vary depending on available information for the selected sediment profiles. No data values are represented using 'NA'. Please refer to the "CCN_data_dictionary.csv" file or our online [CCN Database Structure](https://smithsonian.github.io/CCN-Community-Resources/soil_carbon_guidance.html) for detail on attribute and variable definitions and descriptions. 
+This database contains tidal wetland soil carbon profiles and associated metadata. The data itself is housed in separate comma separated value (.csv) spreadsheets linked by common identifier attributes (study_id, site_id, and core_id).
 
-### Version Updates 1.1.1
+*Data Tables*
 
-This synthesis update contains changes to the CCN Data Library, including corrections and additions to previous datasets. These updates are listed below. 
+- CCN_methods.csv - Contains information on materials and methods broken down by study 
+- CCN_sites.csv - Contains positional and descriptive information of the coring sites.
+- CCN_cores.csv - Contains positional and descriptive information on core locations.
+- CCN_depthseries.csv - Contains raw depth-series information for all cores.
+- CCN_species.csv - Contains information on the dominant plant species at coring locations.
+- CCN_impacts.csv - Contains information on the anthropogenic impacts at site or coring locations.
 
+*Metadata Tables*
 
-### Corrections and Additions to datasets included in previous update, V1.1.0
+- CCN_database_structure.html - Is a simplified, visual and interactive version of metadata.xml for display purposes.
+- CCN_study_citations.csv - Contains bibliographic information for publications and associated sources, which can be related to the database tables via study_id.
+- CCN_bibliography.bib - Contains bibliographic information for publications and sources associated with this database.
+
+#### Version 1.1.1 Updates
+
+*Corrections and Additions to previously synthesized datasets*
 
 1. OKeefe-Suttles et al 2021: added year of sampling to _cores.csv
 2. Updates in datasets collected from the CIFOR SWAMP project. Updates include corrected core_id values and core position data fixes. 
@@ -81,13 +95,18 @@ SWAMP Data-Soil carbon-Buruway-West Papua-2016-Indonesia
 SWAMP Data-Soil carbon-Etna Bay-West Papua-2017-Indonesia    
 SWAMP Data-Soil carbon-Kaimana City-West Papua-2017-Indonesia
 SWAMP Data-Soil carbon-CanGio-2012-Vietnam  
+3. Removal of modeled fraction carbon values in Drexler et al 2009
+4. Corrected a typo to include 5 cores that were previously dropped from the Fourqurean synthesis (Copertino unpublished study)
+5. Corrected the vegetation class for Turck 2014 (changed from seagrass to emergent)
+6. Added site-level coordinates for three studies in the Sanderman synthesis (Nsombo et al 2016, Eid and Staltout 2016 Egypt, and Eid et al 2016 Saudi Arabia). Also added associated publications for Eid and Staltout 2016 Egypt and Eid et al 2016 Saudi Arabia.
+7. Resolved a post-processing bug that prevented taxa resolution of the synthesis species table.
+8. Standardized activity units for several studies
+ 
+***
 
+### Synthesis Version 1.1.0
 
-
-
-## Synthesis Update Version 1.1.0
-
-### Synthesis Version 1.1.0 Contents
+#### Version 1.1.0 Contents
 
 This synthesis is comprised of this README file, a .bib file containing BibTex formatted citations for studies included in the download, and several comma separated value (.csv) spreadsheets linked by common attributes study_id, site_id, and core_id. The data tables present in each download may vary depending on available information for the selected sediment profiles. No data values are represented using 'NA'. Please refer to the "CCN_data_dictionary.csv" file or our online [CCN Database Structure](https://smithsonian.github.io/CCN-Community-Resources/soil_carbon_guidance.html) for detail on attribute and variable definitions and descriptions. 
 
@@ -98,26 +117,25 @@ This synthesis is comprised of this README file, a .bib file containing BibTex f
 - CCN_impacts: Classification of anthropogenic or other impacts at the site or sampling location where data was collected. Included if present for the downloaded data.
 - CCN_species: Identification of dominant plant species present at locations of coring. Included if present for the downloaded data.
 
-### Version Updates 1.1.0
+#### Version 1.1.0 Updates
 
 This synthesis update contains changes to the CCN Data Library, including new datasets and added categorical variables. These additions help to better represent a wide variety of data types and to describe coring locations across coastal ecosystems. 
 
+**Database Structure**
 
-#### Updated Attributes 1.1.0
+*Updated Attributes 1.1.0:*
 
-geomorphic_id: Located in CCN_cores.csv
+- geomorphic_id: Located in CCN_cores.csv
 
+*Updated Variables 1.1.0*
 
-#### Updated Variables 1.1.0
+- Located in CCN_sites.csv: "unvegetated", under vegetation_class attribute
+- Located in CCN_cores.csv: "unvegetated", under vegetation_class attribute
+- Located in CCN_depthseries.csv: "dredge horizon", under marker_type attribute 
+- Located in CCN_impacts.csv: "degraded", under impact_class
+- Located in CCN_impacts.csv: "hurricane", under impact_class
 
-Located in CCN_sites.csv: "unvegetated", under vegetation_class attribute
-Located in CCN_cores.csv: "unvegetated", under vegetation_class attribute
-Located in CCN_depthseries.csv: "dredge horizon", under marker_type attribute 
-Located in CCN_impacts.csv: "degraded", under impact_class
-Located in CCN_impacts.csv: "hurricane", under impact_class
-
-
-#### New Datasets 1.1.0
+**New Datasets 1.1.0**
 
 This update adds 94 new studies and 3,498 new cores to the CCN Data Library, bringing the total number of cores to 10198, with 401 unique studies. 
 
@@ -149,7 +167,8 @@ van Ardenne et al 2018
 Vincent and Dionne 2023  
 Wang et al 2023  
 
-## Datasets included from the CIFOR (Center for International Forestry Research) SWAMP Project:
+*Datasets included from the CIFOR (Center for International Forestry Research) SWAMP Project:*
+
 SWAMP Data-Soil carbon-Barreto-2017-Brazil                  
 SWAMP Data-Soil carbon-Boca Grande-2017-Brazil              
 SWAMP Data-Soil carbon-Caetano-2017-Brazil                   
@@ -220,9 +239,7 @@ Bukoski et al 2020
 Trettin et al 2020
 Hribljan et al 2020
 
-
-
-### Corrections and Additions to datasets included in previous update, V1.0.0
+**Corrections and Additions to datasets included in previous update (V1.0.0)**
 
 1. Abbott et al 2019: corrected site names to match with associated paper.
 2. Boyd et al 2019: assigned habitat to cores. 
@@ -245,7 +262,41 @@ Hribljan et al 2020
 19. Watson and Bryne 2013: added year of core collection and added missing site names.  
 20. Weston et al 2020: Updated to Weston et al 2023, revised data. 
 
+***
 
+### Synthesis Version 1.0.0
+
+*Note: This database was initialized in 2018, however, this release marks the official adoption of semantic versioning for the CCN Data Library.*
+
+#### Major New Features
+
+- Added features and metrics to increase database utility for end users
+- Internal database and ingestion workflow restructuring
+- Updated database documentation and instructions for contribution
+
+**Database Structure Updates**
+
+- Updates and additions to controlled attributes and variables
+- Standardization of bibliography IDs and publication type assignment
+
+**Hook Script Updates**
+
+- Reviewed and updated all hook scripts in accordance with revised database guidance #65 
+- Updated and standardized QAQC for data ingestion
+
+**Synthesis Post-Processing**
+
+Developed workflows to provide the following additional information for every soil core in the synthesis:
+
+- Assign geography to the resolution of country and administrative division 
+- Assign habitat type if not defined in the original hook script
+- Assign quality codes based on utility and completeness of the information present for each profile
+
+**Other Updates**
+
+- Creation of a CCN taxonomic database
+
+***
 
 ### About the CCN
 

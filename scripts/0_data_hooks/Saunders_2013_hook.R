@@ -46,7 +46,7 @@ depth_raw <- raw_data %>%
                           ifelse(habitat == "slough", "swamp", "NA")),
          age = ifelse(grepl("-", age), "NA", age),
          cs137_activity = ifelse(grepl("-", cs137_activity), "NA", cs137_activity),
-         cs137_unit = "picoCuriesPerGram",
+         cs137_unit = "picocuriesPerGram",
          pb210_unit = "disintegrationsPerMinutePerGram") 
 
 depthseries <- depth_raw %>% 

@@ -1,13 +1,13 @@
-## CCRCN Data Library
+## CCN Data Library
 ## Jaxine Wolfe, wolfejax@si.edu
 
 # Investigate vegetation classes and associated habitats in the CCN cores table
 
 library(tidyverse)
 
-synth_cores <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", guess_max = 7000)
-synth_species <- read_csv("data/CCRCN_synthesis/CCRCN_species.csv", guess_max = 7000)
-synth_ds <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max = 50000)
+synth_cores <- read_csv("data/CCN_synthesis/CCN_cores.csv", guess_max = 11000)
+synth_species <- read_csv("data/CCN_synthesis/CCN_species.csv", guess_max = 7000)
+synth_ds <- read_csv("data/CCN_synthesis/CCN_depthseries.csv", guess_max = 70000)
 
 # look at differences in the assignment of vegetation and habitat
 mangrove <- synth_cores %>%
@@ -15,7 +15,7 @@ mangrove <- synth_cores %>%
   distinct(study_id, vegetation_class, habitat)
 
 veghab <- synth_cores %>%
-  distinct(study_id, vegetation_class, habitat) %>% 
+  distinct(vegetation_class, habitat) %>% 
   arrange(habitat)
 
 # which species were not assigned a habitat
@@ -71,6 +71,14 @@ synth_cores %>% filter(study_id == 'Duncan_et_al_2016') %>%
 
 ## MISC
 
-ds <- read_csv("data/CCRCN_synthesis/derivative/CCRCN_depthseries.csv", guess_max = 60000)
+ds <- read_csv("data/CCN_synthesis/derivative/CCN_depthseries.csv", guess_max = 60000)
 c14 <- ds %>% select(contains("_id"), depth_min, depth_max, contains("c14"), delta_c13) %>% drop_na(c14_age, delta_c13)
+
+## Check activities data units
+
+# View(
+synth_ds %>% select(study_id, contains("_unit")) %>% distinct() %>% 
+  pivot_longer(-study_id, names_to = "activity", values_to = "unit", values_drop_na = T) %>% 
+  distinct(unit) %>% arrange(unit) %>% pull(unit)
+# )
 

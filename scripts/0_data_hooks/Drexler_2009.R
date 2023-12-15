@@ -38,10 +38,8 @@ methods_raw <- read_csv("./data/primary_studies/Drexler_2009/original/Drexler_et
 
 methods <- methods_raw %>%
   select_if(function(x) {!all(is.na(x))}) %>%
-  select(-publication_type, -fraction_carbon_flag) %>%
-  mutate(fraction_carbon_type = "total carbon",
-         method_id = "single set of methods",
-         carbon_profile_notes = "fraction carbon extrapolated from subset of samples")
+  select(-c(publication_type, fraction_carbon_flag, fraction_carbon_type)) %>%
+  mutate(method_id = "single set of methods")
 
 ## ... depthseries ##################
 # There are multiple dated cores that do not have carbon stock data from the clearinghouse
@@ -82,7 +80,8 @@ depthseries <- age_depthseries %>%
   group_by(core_id) %>%
   arrange(core_id, depth_min, sample_id, .by_group = TRUE) %>%
   # Following attribute should only be in methods table
-  select(-c(age_depth_model_reference, fraction_carbon_type, min_elevation_meters, site_id)) %>%
+  # remove fraction carbon because its modeled
+  select(-c(age_depth_model_reference, fraction_carbon_type, fraction_carbon, min_elevation_meters, site_id)) %>%
   ungroup()
 
 # adding in site_id from cores_raw

@@ -73,7 +73,7 @@ if(length(taxa_index) > 0){
 final_species <- left_join(ccrcn_synthesis$species, taxa_db) %>%
   # make corrections to misspelled species codes
   # some spot fixes
-  mutate(species_code = case_when(species_code == "Unidentified forb" ~ "Forb",
+  mutate(species_code = case_when(species_code %in% c("Unidentified forb", "Forb spp.") ~ "Forb",
                                   species_code == "Unidentified grass" ~ "Graminoid",
                                   species_code %in% c("Amphibolis australis", "Avicennia corniculatum", "Schoenoplectus montevidensis") ~ species_code,
                                   # cut off score is 75% match (most are 98%)
@@ -81,6 +81,11 @@ final_species <- left_join(ccrcn_synthesis$species, taxa_db) %>%
                                   !is.na(resolved_taxa) & score >= 0.75 ~ resolved_taxa, 
                                   species_code == "Thassia hemprichii" ~ "Thalassia hemprichii",
                                   T ~ species_code)) %>%
+  mutate(code_type = case_when(species_code %in% c("Graminoid", "Forb") ~ "description", 
+                               is.na(code_type) & grepl(" ", species_code) ~ "Genus species",
+                               T ~ "Genus")) %>% 
+  # spot fix for Turck
+  filter(!(species_code %in% c("None", "text"))) %>% 
   select(-c(resolved_taxa, data_source, score))
 
 # investigate some unresolved cases

@@ -1,8 +1,25 @@
 ## Welcome to the CCN Data Library Synthesis!
 
-***
+This Data Library synthesis is curated and maintained by the COASTAL CARBON NETWORK (CCN) hosted at the SMITHSONIAN INSTITUTION. If you wish to explore or query this synthesis for a particular subset of data, we encourage you to use the [Coastal Carbon Atlas](https://shiny.si.edu/coastal_carbon_atlas/), a map interface we developed to interface with this synthesis in a more user-friendly fashion.
 
-This folder contains the data synthesis that is prepared and maintained by the COASTAL CARBON NETWORK (CCN) hosted at the SMITHSONIAN INSTITUTION. If you wish to explore or query this synthesis for a particular subset of data, we encourage you to use the [Coastal Carbon Atlas](https://shiny.si.edu/coastal_carbon_atlas/), a map interface we developed to interface with this synthesis in a more user-friendly fashion.
+### Data Library Contents
+
+This database contains tidal wetland soil carbon profiles and associated metadata. The data itself is housed in separate comma separated value (.csv) spreadsheets linked by common identifier attributes (study_id, site_id, and core_id).
+
+CCN_database_structure.html - Is a simplified, visual and interactive version of metadata.xml for display purposes.
+
+CCN_methods.csv - Contains information on materials and methods broken down by study 
+CCN_sites.csv - Contains positional and descriptive information of the coring sites.
+CCN_cores.csv - Contains positional and descriptive information on core locations.
+CCN_depthseries.csv - Contains raw depth-series information for all cores.
+CCN_species.csv - Contains information on the dominant plant species at coring locations.
+CCN_impacts.csv - Contains information on the anthropogenic impacts at site or coring locations.
+
+CCN_study_citations.csv - Contains bibliographic information for publications and associated sources, which can be related to the database tables via study_id.
+
+CCN_bibliography.bib - Contains bibliographic information for publications and sources associated with this database.
+
+***
 
 ### Your Responsability as a Data User
  
@@ -32,3 +49,9 @@ This synthesis is comprised of this README file, a .bib file containing BibTex f
 ### About the CCN
 
 The [Coastal Carbon Network](https://serc.si.edu/coastalcarbon) seeks to accelerate the pace of discovery in coastal wetland carbon science by providing our community with access to data, analysis tools, and synthesis opportunities. Our activities include bringing data libraries online, creating open source analysis and modeling tools, providing training and outreach opportunities, hosting data synthesis workshops targeted at strategically reducing uncertainty in coastal carbon science issues, and to create a community of practice. For more information please contact: CoastalCarbon@si.edu. Thank you for your interest in the Coastal Carbon Data Library and Atlas.
+
+*Contacts:*
+
+ - Resource Email: CoastalCarbon@si.edu
+ - Network Director: James Holmquist, holmquistj@si.edu
+ - Database Manager: Jaxine Wolfe, wolfejax@si.edu

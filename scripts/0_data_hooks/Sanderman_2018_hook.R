@@ -252,19 +252,54 @@ depthseries %>%
 
 ids <- depthseries %>% distinct(study_id, site_id, core_id)
 
+## ... Cores ####
+
 cores <- internatl_core_data %>%
   filter(!(study_id %in% studies_to_remove)) %>% 
-
+  
   # remove Cifuentes_Unpublished cores from Panama (since published)
   filter(!core_id %in% c("M0778", "M0779", "M0780", "M0781", "M0782", "M0783", "M0784", "M0785", "M0786", "M0787", "M0788", "M0789")) %>% 
-
-    mutate(core_year = year(core_date), 
+  
+  mutate(core_year = year(core_date), 
          core_month = month(core_date),
          core_day = day(core_date)) %>% select(-core_date) %>%
   # some site ids were NA so I'm joining them from the depthseries table
-  select(-site_id) %>% left_join(ids) %>% 
+  select(-site_id) %>% left_join(ids) %>%
   rename(habitat = vegetation_notes) %>% 
+  
+  # try to fill in some NA coords at the site-level so these cores show up in the Atlas
+  mutate(core_position_notes = case_when(study_id == "Nsombo_et_al_2016" & is.na(core_latitude) ~ "approximate",
+                                         study_id %in% c("Eid_and_Shaltout_2016_Egypt", "Eid_et_al_2016_Saudi_Arabia") ~ "estimated from GE",
+                                         T ~ core_position_notes),
+         core_position_method = case_when(core_position_notes %in% c("exact", "Exact") ~ "other high resolution",
+                                          core_position_notes %in% c("estimated from GE", "approximate", "fuzzy (by request)") ~ "other low resolution",
+                                          T ~ NA),
+         core_latitude = case_when(study_id == "Nsombo_et_al_2016" & is.na(core_latitude) ~ 4.457111,
+                                   site_id == "EME16 Egypt Station 1" ~ parzer::parse_lat("27°37'54N"),
+                                   site_id == "EME16 Egypt Station 2" ~ parse_lat("27°29'24N"),
+                                   site_id == "EME16 Egypt Station 3" ~ parse_lat("27°21'27N"),
+                                   grepl("EME16 Saudi Arabia Station 1", site_id) ~ parse_lat("17°48'07N"),
+                                   grepl("EME16 Saudi Arabia Station 2", site_id) ~ parse_lat("17°48'28N"),
+                                   grepl("EME16 Saudi Arabia Station 3", site_id) ~ parse_lat("17°59'53N"),
+                                   T ~ core_latitude),
+         core_longitude = case_when(study_id == "Nsombo_et_al_2016" & is.na(core_longitude) ~ 8.902583,
+                                    site_id == "EME16 Egypt Station 1" ~ parse_lon("33°31'01E"),
+                                    site_id == "EME16 Egypt Station 2" ~ parse_lon("33°37'39E"),
+                                    site_id == "EME16 Egypt Station 3" ~ parse_lon("33°41'05E"),
+                                    grepl("EME16 Saudi Arabia Station 1", site_id) ~ parse_lon("41°53'29E"),
+                                    grepl("EME16 Saudi Arabia Station 2", site_id) ~ parse_lon("41°51'56E"),
+                                    grepl("EME16 Saudi Arabia Station 3", site_id) ~ parse_lon("41°40'14E"),
+                                    T ~ core_longitude)) %>%
   reorderColumns("cores", .)
+ 
+# visual map check
+cores %>% 
+  leaflet() %>% 
+  addTiles() %>% 
+  addCircleMarkers(lat = ~core_latitude, lng = ~core_longitude, 
+                   radius = 2, label = ~study_id)
+
+## ... Species ####
 
 species <- internatl_species_data %>%
   filter(!(study_id %in% studies_to_remove)) %>%
@@ -328,6 +363,20 @@ Kristensen_citation <- Kristensen_bib %>%
   select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
   remove_rownames()
 
+Eid_egypt_bib <- as.data.frame(GetBibEntryWithDOI("10.1016/j.rsma.2015.05.006")) %>% 
+  mutate(bibliography_id = "Eid_and_Shaltout_2016_article",
+         study_id = "Eid_and_Shaltout_2016_Egypt",
+         publication_type = "synthesis source") %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
+  remove_rownames()
+
+Eid_saudi_bib <- as.data.frame(GetBibEntryWithDOI("10.1007/s12210-016-0542-6")) %>% 
+  mutate(bibliography_id = "Eid_et_al_2016_article",
+         study_id = "Eid_et_al_2016_Saudi_Arabia",
+         publication_type = "synthesis source") %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
+  remove_rownames()
+
 # bring in all primary associated articles
 primary_sources <- read_csv("data/primary_studies/Sanderman_2018/intermediate/Sanderman_2018_study_citations.csv") %>% 
   # filter(key != "Sanderman_2017") %>% 
@@ -338,7 +387,7 @@ primary_sources <- read_csv("data/primary_studies/Sanderman_2018/intermediate/Sa
                                      TRUE ~ paste0(bibliography_id, "_article"))) %>% 
   filter(bibliography_id != "Kristensen_et_al_2000_article") %>% 
   mutate_all(as.character) %>% 
-  bind_rows(Kristensen_citation)
+  bind_rows(Kristensen_citation, Eid_egypt_bib, Eid_saudi_bib)
 
 # there should be two entries per study: 
 # one for the primary study associated with the Study ID
