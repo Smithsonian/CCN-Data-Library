@@ -46,7 +46,8 @@ resolveTaxa <- function(taxa) {
 taxa_db <- read_csv("docs/ccn_taxa_database.csv")
 
 # pull all species from the synthesis and identify which ones have not been resolved yet
-taxa <- sort(unique(ccrcn_synthesis$species$species_code))
+taxa <- ccrcn_synthesis$species %>% filter(code_type != "description") %>% distinct(species_code) %>% pull(species_code)
+  # sort(unique(ccrcn_synthesis$species$species_code))
 
 taxa_index <- which(!(taxa %in% taxa_db$species_code))
 
@@ -55,17 +56,18 @@ if(length(taxa_index) > 0){
   
   taxa_resolved <- resolveTaxa(taxa[taxa_index])
   
-  clean_resolved <- taxa_resolved %>% 
-    rename(species_code = user_supplied_name,
-           resolved_taxa = matched_name2,
-           data_source = data_source_title) %>% 
-    select(species_code, resolved_taxa, data_source, score)
-  
-  # add entries to the taxa database
-  taxa_db <- bind_rows(taxa_db, clean_resolved) %>% arrange(species_code)
-  write_csv(taxa_db, "docs/ccn_taxa_database.csv")
-  
-  } else {
+  if(!is_empty(taxa_resolved)){
+    clean_resolved <- taxa_resolved %>% 
+      rename(species_code = user_supplied_name,
+             resolved_taxa = matched_name2,
+             data_source = data_source_title) %>% 
+      select(species_code, resolved_taxa, data_source, score)
+    
+    # add entries to the taxa database
+    taxa_db <- bind_rows(taxa_db, clean_resolved) %>% arrange(species_code)
+    write_csv(taxa_db, "docs/ccn_taxa_database.csv")
+  }
+} else {
   print("No new taxa.")
 }
 
@@ -84,8 +86,6 @@ final_species <- left_join(ccrcn_synthesis$species, taxa_db) %>%
   mutate(code_type = case_when(species_code %in% c("Graminoid", "Forb") ~ "description", 
                                is.na(code_type) & grepl(" ", species_code) ~ "Genus species",
                                T ~ "Genus")) %>% 
-  # spot fix for Turck
-  filter(!(species_code %in% c("None", "text"))) %>% 
   select(-c(resolved_taxa, data_source, score))
 
 # investigate some unresolved cases
