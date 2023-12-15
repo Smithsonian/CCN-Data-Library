@@ -1,8 +1,91 @@
-## Versioning Information for the Coastal Carbon Network Synthesis Version 1.1.0 
+## Versioning Information for the Coastal Carbon Network Synthesis Version 1.1.1
 
 ***
 
 This folder contains the data synthesis that is prepared and maintained by the COASTAL CARBON NETWORK (CCN) hosted at the SMITHSONIAN INSTITUTION. If you wish to explore or query this synthesis for a particular subset of data, we encourage you to use the [Coastal Carbon Atlas](https://shiny.si.edu/coastal_carbon_atlas/), a map interface we developed to interface with this synthesis in a more user-friendly fashion.
+
+### Synthesis Version 1.1.1 Contents
+
+This synthesis is comprised of this README file, a .bib file containing BibTex formatted citations for studies included in the download, and several comma separated value (.csv) spreadsheets linked by common attributes study_id, site_id, and core_id. The data tables present in each download may vary depending on available information for the selected sediment profiles. No data values are represented using 'NA'. Please refer to the "CCN_data_dictionary.csv" file or our online [CCN Database Structure](https://smithsonian.github.io/CCN-Community-Resources/soil_carbon_guidance.html) for detail on attribute and variable definitions and descriptions. 
+
+### Version Updates 1.1.1
+
+This synthesis update contains changes to the CCN Data Library, including corrections and additions to previous datasets. These updates are listed below. 
+
+
+### Corrections and Additions to datasets included in previous update, V1.1.0
+
+1. OKeefe-Suttles et al 2021: added year of sampling to _cores.csv
+2. Updates in datasets collected from the CIFOR SWAMP project. Updates include corrected core_id values and core position data fixes. 
+SWAMP Data-Soil carbon-Barreto-2017-Brazil                  
+SWAMP Data-Soil carbon-Boca Grande-2017-Brazil              
+SWAMP Data-Soil carbon-Caetano-2017-Brazil                   
+SWAMP Data-Soil carbon-Furo Grande-2017-Brazil              
+SWAMP Data-Soil carbon-Mangue Sul-2017-Brazil               
+SWAMP Data-Soil carbon-Mauripe-2017-Brazil                  
+SWAMP Data-Soil carbon-Salina-2017-Brazil                    
+SWAMP Data-Soil carbon-Berahan kulon-2019                    
+SWAMP Data-Soil carbon-Timbulsloko-2019                     
+SWAMP Data-Soil carbon-Bhitakarnika-2013-India              
+SWAMP Data-Soil carbon-Acarau Boca-2016-Brazil              
+SWAMP Data-Soil carbon-Baouth-2014-Senegal                   
+SWAMP Data-Soil carbon-Caete-2017-Brazil                    
+SWAMP Data-Soil carbon-Cauassu Leste Shrimp-2016-Brazil     
+SWAMP Data-Soil carbon-Cauassu Oeste Shrimp-2016-Brazil      
+SWAMP Data-Soil carbon-Cumbe Leste Camaro-2016-Brazil        
+SWAMP Data-Soil carbon-Cumbe norte Camarao-2016-Brazil      
+SWAMP Data-Soil carbon-Diamniadio-2014-Senegal              
+SWAMP Data-Soil carbon-Djirnda-2014-Senegal                  
+SWAMP Data-Soil carbon-Fambine-2014-Senegal                  
+SWAMP Data-Soil carbon-Furo de Chato-2017-Brazil            
+SWAMP Data-Soil carbon-Mangizal Cauassu-2016-Brazil          
+SWAMP Data-Soil carbon-Manguinho-2016-Brazil                 
+SWAMP Data-Soil carbon-Mounde-2014-Senegal                   
+SWAMP Data-Soil carbon-Porto Ceu Mangrove-2016-Brazil       
+SWAMP Data-Soil carbon-Porto Ceu Shrimp-2016-Brazil         
+SWAMP Data-Soil carbon-Sang-2014-Senegal                    
+SWAMP Data-Soil carbon-Case Shell-2014                       
+SWAMP Data-Soil carbon-Jardin Du Elephant-2014              
+SWAMP Data-Soil carbon-Lac Simba Deux-2014                  
+SWAMP Data-Soil carbon-Lac Simba-2014                       
+SWAMP Data-Soil carbon-Lac Sounga Deux-2014                
+SWAMP Data-Soil carbon-Lac Sounga-2014                
+SWAMP Data-Soil carbon-Mwana Mouele South-2014               
+SWAMP Data-Soil carbon-Mwana Mouele-2014                     
+SWAMP Data-Soil carbon-Ndougou-2014                          
+SWAMP Data-Soil carbon-Paga-2014                             
+SWAMP Data-Soil carbon-BRM10-2014                            
+SWAMP Data-Soil carbon-MRM8-2014                             
+SWAMP Data-Soil carbon-MRT7-2014                             
+SWAMP Data-Soil carbon-MRT9-2014                             
+SWAMP Data-Soil carbon-NCM1-2014                             
+SWAMP Data-Soil carbon-NCM4-2014                             
+SWAMP Data-Soil carbon-NCM5-2014                             
+SWAMP Data-Soil carbon-NCT2-2014                             
+SWAMP Data-Soil carbon-NCT3-2014                             
+SWAMP Data-Soil carbon-NCT6-2014                             
+SWAMP Data-Soil carbon-Marisma High-2017-Brazil            
+SWAMP Data-Soil carbon-Marisma Low-2017-Brazil            
+SWAMP Data-Soil carbon-Marisma Medium-2017-Brazil          
+SWAMP Data-Soil carbon-Bunaken-2011                          
+SWAMP Data-Soil carbon-Cilacap-2011                         
+SWAMP Data-Soil carbon-Kubu Raya-2011-Indonesia             
+SWAMP Data-Soil carbon-Sembilang-2011-Indonesia             
+SWAMP Data-Soil carbon-Tanjung Puting-2009-Indonesia      
+SWAMP Data-Soil carbon-Teminabuan-2011-Indonesia             
+SWAMP Data-Soil carbon-Timika-2011-Indonesia                 
+SWAMP Data-Soil carbon-Ca Mau-2012-Vietnam                  
+SWAMP Data-Soil carbon-Arguni Bay-West Papua-2015-Indonesia  
+SWAMP Data-Soil carbon-Bintuni Bay-West Papua-2018-Indonesia 
+SWAMP Data-Soil carbon-Buruway-West Papua-2016-Indonesia    
+SWAMP Data-Soil carbon-Etna Bay-West Papua-2017-Indonesia    
+SWAMP Data-Soil carbon-Kaimana City-West Papua-2017-Indonesia
+SWAMP Data-Soil carbon-CanGio-2012-Vietnam  
+
+
+
+
+## Synthesis Update Version 1.1.0
 
 ### Synthesis Version 1.1.0 Contents
 
@@ -15,17 +98,17 @@ This synthesis is comprised of this README file, a .bib file containing BibTex f
 - CCN_impacts: Classification of anthropogenic or other impacts at the site or sampling location where data was collected. Included if present for the downloaded data.
 - CCN_species: Identification of dominant plant species present at locations of coring. Included if present for the downloaded data.
 
-### Version Updates
+### Version Updates 1.1.0
 
 This synthesis update contains changes to the CCN Data Library, including new datasets and added categorical variables. These additions help to better represent a wide variety of data types and to describe coring locations across coastal ecosystems. 
 
 
-#### Updated Attributes 
+#### Updated Attributes 1.1.0
 
 geomorphic_id: Located in CCN_cores.csv
 
 
-#### Updated Variables
+#### Updated Variables 1.1.0
 
 Located in CCN_sites.csv: "unvegetated", under vegetation_class attribute
 Located in CCN_cores.csv: "unvegetated", under vegetation_class attribute
@@ -34,7 +117,7 @@ Located in CCN_impacts.csv: "degraded", under impact_class
 Located in CCN_impacts.csv: "hurricane", under impact_class
 
 
-#### New Datasets
+#### New Datasets 1.1.0
 
 This update adds 94 new studies and 3,498 new cores to the CCN Data Library, bringing the total number of cores to 10198, with 401 unique studies. 
 
