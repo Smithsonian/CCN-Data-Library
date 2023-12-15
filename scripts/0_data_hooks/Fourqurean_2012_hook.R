@@ -39,7 +39,8 @@ Fourqurean <- Fourqurean_raw %>%
   mutate(vegetation_class = tolower(vegetation_class)) %>%
   # Standardize ontology for vegetation_class
   mutate(vegetation_class = ifelse(vegetation_class != "seagrass", 
-                                   "unvegetated", vegetation_class)) %>%
+                                   "unvegetated", vegetation_class),
+         reference = recode(reference, "M. Copertino, unpubliished data" = "M. Copertino, unpublished data")) %>%
   # Join to the manual-compiled study list
   full_join(study_doi_manual) %>%
   select(-doi, -url, -reference, -bibliography_id, 
@@ -218,9 +219,8 @@ synthesis_depthseries <- Fourqurean %>%
 #   filter(min_greater == TRUE | no_min == TRUE | no_max == TRUE)
 
 # Join site_ids from core_data
-depthseries <- core_data %>%
-  select(core_id, site_id) %>%
-  right_join(synthesis_depthseries, by = "core_id") %>%
+depthseries <- left_join(synthesis_depthseries, 
+                         core_data %>% select(core_id, site_id)) %>%
   mutate(method_id = "single set of methods")
 
 ## ....3e. Materials and Methods data ##############
@@ -412,11 +412,12 @@ testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
 
-test_unique_cores(cores)
+testUniqueCores(cores)
 test_unique_coords(cores)
-test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
+
+testIDs(cores, depthseries, by = "core")
 
 # # Test column names 
 # test_colnames("core_level", core_data)

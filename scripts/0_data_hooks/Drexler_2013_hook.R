@@ -71,7 +71,7 @@ depthseries <- raw_depthseries %>%
 #          core_id = paste(site_id, `core_number`, sep = "_")) %>%
   mutate(#fraction_carbon = organic_carbon_percent / 100,
          pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
-         cs137_unit = ifelse(!is.na(cs137_unit), "picoCuriesPerGram", NA)) %>%
+         cs137_unit = ifelse(!is.na(cs137_unit), "picocuriesPerGram", NA)) %>%
   select(study_id, site_id, core_id, depth_min, depth_max,
          dry_bulk_density, fraction_carbon,
          cs137_activity, cs137_activity_sd, cs137_unit,

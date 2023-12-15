@@ -588,7 +588,7 @@ species <- full_join(df_field, df_site, by = c("site_id", "core_id")) %>%
   # fill in species data for replicate core IDs
   mutate(core_id = paste(site_id, core_id, sep = "_"),
          core_split = core_id,
-         study_id = "Marot_et_al_2022") %>% 
+         study_id = "Marot_et_al_2020") %>% 
   
   # fill in species data for associated cores
   separate(core_split, into = c("core_1", "core_2"), sep = "_") %>% # remove duplicate core_id tags: "_2"
@@ -604,7 +604,7 @@ species <- full_join(df_field, df_site, by = c("site_id", "core_id")) %>%
 
 ## Step 9: Make the Methods table ####
 methods <- read_excel("data/primary_studies/Marot_et_al_2020/original/Marot_et_al_2020_methods.xlsx", sheet = 2, na = "NA") %>% 
-  select(where(notAllNA))
+  select_if(function(x) {!all(is.na(x))})
 
 
 # JH: I want to overwrite the site_id
@@ -616,8 +616,8 @@ species <- mutate(species, site_id = "Grand Bay")
 ## Step 10: QAQC ####
 
 core_vis <- cores %>% 
-  filter(complete.cases(latitude, longitude)) %>% 
-  filter(core_id %in% species$core_id)
+  filter(complete.cases(latitude, longitude))
+  # filter(core_id %in% species$core_id)
 
 ## Mapping
 leaflet(core_vis) %>%
@@ -641,7 +641,7 @@ testUniqueCoords(cores)
 
 # test relational structure of data tables
 testIDs(cores, depthseries, by = "site")
-testIDs(cores, depthseries, by = "site")
+testIDs(cores, depthseries, by = "core")
 
 # test numeric attribute ranges
 fractionNotPercent(depthseries)

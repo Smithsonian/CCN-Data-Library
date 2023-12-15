@@ -46,7 +46,8 @@ resolveTaxa <- function(taxa) {
 taxa_db <- read_csv("docs/ccn_taxa_database.csv")
 
 # pull all species from the synthesis and identify which ones have not been resolved yet
-taxa <- sort(unique(ccrcn_synthesis$species$species_code))
+taxa <- ccrcn_synthesis$species %>% filter(code_type != "description") %>% distinct(species_code) %>% pull(species_code)
+  # sort(unique(ccrcn_synthesis$species$species_code))
 
 taxa_index <- which(!(taxa %in% taxa_db$species_code))
 
@@ -55,17 +56,18 @@ if(length(taxa_index) > 0){
   
   taxa_resolved <- resolveTaxa(taxa[taxa_index])
   
-  clean_resolved <- taxa_resolved %>% 
-    rename(species_code = user_supplied_name,
-           resolved_taxa = matched_name2,
-           data_source = data_source_title) %>% 
-    select(species_code, resolved_taxa, data_source, score)
-  
-  # add entries to the taxa database
-  taxa_db <- bind_rows(taxa_db, clean_resolved) %>% arrange(species_code)
-  write_csv(taxa_db, "docs/ccn_taxa_database.csv")
-  
-  } else {
+  if(!is_empty(taxa_resolved)){
+    clean_resolved <- taxa_resolved %>% 
+      rename(species_code = user_supplied_name,
+             resolved_taxa = matched_name2,
+             data_source = data_source_title) %>% 
+      select(species_code, resolved_taxa, data_source, score)
+    
+    # add entries to the taxa database
+    taxa_db <- bind_rows(taxa_db, clean_resolved) %>% arrange(species_code)
+    write_csv(taxa_db, "docs/ccn_taxa_database.csv")
+  }
+} else {
   print("No new taxa.")
 }
 
@@ -73,7 +75,7 @@ if(length(taxa_index) > 0){
 final_species <- left_join(ccrcn_synthesis$species, taxa_db) %>%
   # make corrections to misspelled species codes
   # some spot fixes
-  mutate(species_code = case_when(species_code == "Unidentified forb" ~ "Forb",
+  mutate(species_code = case_when(species_code %in% c("Unidentified forb", "Forb spp.") ~ "Forb",
                                   species_code == "Unidentified grass" ~ "Graminoid",
                                   species_code %in% c("Amphibolis australis", "Avicennia corniculatum", "Schoenoplectus montevidensis") ~ species_code,
                                   # cut off score is 75% match (most are 98%)
@@ -81,6 +83,9 @@ final_species <- left_join(ccrcn_synthesis$species, taxa_db) %>%
                                   !is.na(resolved_taxa) & score >= 0.75 ~ resolved_taxa, 
                                   species_code == "Thassia hemprichii" ~ "Thalassia hemprichii",
                                   T ~ species_code)) %>%
+  mutate(code_type = case_when(species_code %in% c("Graminoid", "Forb") ~ "description", 
+                               is.na(code_type) & grepl(" ", species_code) ~ "Genus species",
+                               T ~ "Genus")) %>% 
   select(-c(resolved_taxa, data_source, score))
 
 # investigate some unresolved cases

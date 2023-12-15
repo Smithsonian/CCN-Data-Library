@@ -63,7 +63,7 @@ cores <- cores_raw[ , -1] %>%
          elevation_datum = "NAVD88",
          elevation_accuracy = .2,
          zone = 17,
-         vegetation_class = "seagrass",
+         vegetation_class = "emergent",
          vegetation_method = "field observation",
          habitat = "marsh",
          core_length_flag = "core depth represents deposit depth",
@@ -82,6 +82,7 @@ species <- cores_raw %>%
          species_code = gsub("Short |Medium ", "", species_code),
          code_type = "Genus",
          habitat = "marsh") %>% 
+  filter(core_id %in% unique(cores$core_id)) %>% 
   select(study_id, site_id, core_id, species_code, code_type, habitat)
 
 methods <- data.frame(study_id = "Turck_2014",
