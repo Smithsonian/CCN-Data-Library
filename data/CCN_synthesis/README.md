@@ -2,26 +2,9 @@
 
 This Data Library synthesis is curated and maintained by the COASTAL CARBON NETWORK (CCN) hosted at the SMITHSONIAN INSTITUTION. If you wish to explore or query this synthesis for a particular subset of data, we encourage you to use the [Coastal Carbon Atlas](https://shiny.si.edu/coastal_carbon_atlas/), a map interface we developed to interface with this synthesis in a more user-friendly fashion.
 
-### Data Library Contents
-
-This database contains tidal wetland soil carbon profiles and associated metadata. The data itself is housed in separate comma separated value (.csv) spreadsheets linked by common identifier attributes (study_id, site_id, and core_id).
-
-CCN_database_structure.html - Is a simplified, visual and interactive version of metadata.xml for display purposes.
-
-CCN_methods.csv - Contains information on materials and methods broken down by study 
-CCN_sites.csv - Contains positional and descriptive information of the coring sites.
-CCN_cores.csv - Contains positional and descriptive information on core locations.
-CCN_depthseries.csv - Contains raw depth-series information for all cores.
-CCN_species.csv - Contains information on the dominant plant species at coring locations.
-CCN_impacts.csv - Contains information on the anthropogenic impacts at site or coring locations.
-
-CCN_study_citations.csv - Contains bibliographic information for publications and associated sources, which can be related to the database tables via study_id.
-
-CCN_bibliography.bib - Contains bibliographic information for publications and sources associated with this database.
-
 ***
 
-### Your Responsability as a Data User
+### Your Responsibility as a Data User
  
 The data in this synthesis is curated and provided by the CCN but is not solely attributable to the CCN. Each data source should be credited to the original data contributor(s) and should be cited appropriately in subsequent studies (see CCN_bibliography.bib). While we provide a bibliography file, you are responsible for accurately citing any sources you use. See the CCN [Data Use Policy](https://serc.si.edu/coastalcarbon/principles-and-governance#data-use-policy) for more information. 
 
@@ -37,7 +20,7 @@ The maintainers of the Coastal Carbon Library do not require, nor expect, offers
  
 ### Synthesis Contents
 
-This synthesis is comprised of this README file, a .bib file containing BibTex formatted citations for studies included in the download, and several comma separated value (.csv) spreadsheets linked by common attributes study_id, site_id, and core_id. The data tables present in each download may vary depending on available information for the selected sediment profiles. No data values are represented using 'NA'. Please refer to the "CCN_data_dictionary.csv" file or our online [CCN Database Structure](https://smithsonian.github.io/CCN-Community-Resources/soil_carbon_guidance.html) for detail on attribute and variable definitions and descriptions. 
+This synthesis is comprised of this README file, a .bib file containing BibTex formatted citations for studies included in the download, and several comma separated value (.csv) spreadsheets linked by common attributes study_id, site_id, and core_id. The data tables present in each download may vary depending on available information for the selected sediment profiles. No data values are represented using 'NA'. Please refer to our online [CCN Database Structure](https://smithsonian.github.io/CCN-Community-Resources/soil_carbon_guidance.html) for detail on attribute and variable definitions and descriptions. 
 
 - CCN_methods: Contains descriptions of methods and materials used during collection and processing of samples in the field and lab. Included if present for the downloaded data.
 - CCN_sites: Contains positional and descriptive information associated with each sampling site.
