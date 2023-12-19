@@ -25,95 +25,7 @@ metadat <- read_csv("data/primary_studies/Maxwell_et_al_2023/original/Maxwell_ma
 # link to database guidance for easy reference:
 # https://smithsonian.github.io/CCRCN-Community-Resources/soil_carbon_guidance.html
 
-# attributes
-# [1] "Source"             "Original_source"    "Data_type"          "Site"               "Core"              
-# [6] "Plot"               "Site_name"          "Soil_type"          "Latitude"           "Longitude"         
-# [11] "accuracy_flag"      "Country"            "Admin_unit"         "Year_collected"     "Year_collected_end"
-# [16] "U_depth_m"          "L_depth_m"          "Method"             "Conv_factor"        "OC_perc"           
-# [21] "BD_g_cm3"           "SOM_perc"           "N_perc"             "Time_replicate"     "Treatment"         
-# [26] "n_cores"            "SOM_perc_mean"      "SOM_perc_sd"        "OC_perc_mean"       "OC_perc_sd"        
-# [31] "OC_perc_se"         "BD_g_cm3_mean"      "BD_g_cm3_sd"        "BD_g_cm3_se"        "OC_from_SOM_our_eq"
-# [36] "OC_obs_est"         "OC_perc_final"      "Notes"
-
-# FXN for overlapping columns and coalescing
-# unique(is.na(dat_raw %>% select(OC_obs_est, Notes)))
-
 ## 1. Curation ####
-
-# this study ID must match the name of the dataset folder
-# include this id in a study_id column for every curated table
-# id <- "Author_et_al_year"
-# if there are only two authors: Author_and_Author_year
-# "year" will be exchanged with "unpublished" in some cases
-
-dat_raw %>% 
-  drop_na(SOM_perc, OC_perc) %>% 
-  ggplot(aes(SOM_perc, OC_perc, col = Method)) + 
-  geom_point(pch = 1) +
-  facet_wrap(~Method)
-
-# dat_raw %>% mutate(id = paste(Original_source, Site, Site_name, Core, Plot))
-
-# drop studies that we've already synthesized
-to_remove <- c("Adame_et_al_2013", "Adame_et_al_2015", "Burden_et_al_2018")
-# some of these original studies have radioisotope dating that wasn't synthesized for this meta analysis 
-
-# curate core depthseries data
-dat <- dat_raw %>% 
-  rename(dry_bulk_density = BD_g_cm3,
-         depth_min = U_depth_m, 
-         depth_max = L_depth_m,
-         method_id = Method,
-         position_notes = accuracy_flag) %>% 
-  mutate(OC_perc = ifelse(is.na(Conv_factor), OC_perc, NA),
-         fraction_organic_matter = SOM_perc/100,
-         fraction_carbon = OC_perc/100,
-         Notes = coalesce(OC_obs_est, Notes),
-         core_id = coalesce(Core, Plot),
-         study_id = gsub(" ", "_", Original_source),
-         dropcol = ifelse(is.na(SOM_perc) & is.na(OC_perc) & is.na(dry_bulk_density), TRUE, FALSE)) %>% 
-  # add_count(Core) %>%
-  select(-OC_obs_est) %>% 
-  select(study_id, Site_name, core_id, depth_min, depth_max, everything()) %>% 
-  arrange(study_id, Site_name, core_id, depth_min)
-
-## Sources
-
-# compare to our data library bib
-sources <- dat_raw %>% 
-  distinct(Source, Original_source) %>% 
-  rename(study_id = Original_source) %>% 
-  mutate(synthesis_source = ifelse(Source != study_id, gsub(" ", "_", Source), NA),
-         study_id = gsub(" ", "_", study_id)) %>% 
-  arrange(study_id) %>% 
-  select(-Source)
-
-# write_csv(sources, "data_releases/maxwell_et_al_2023/maxwell_marsh_synthesis_sources.csv")
-
-
-## ... Methods ####
-
-unique(dat_raw$Method)
-
-# [1] "combined LOI EA"                      "EA"                                  
-# [3] "LOI"                                  "Wilson (1973)"                       
-# [5] "SOM by Suguio (1973)"                 "Tyurin (1951)"                       
-# [7] NA                                     "MIR predicted"                       
-# [9] "CF-IRMS"                              "Walkley Black"                       
-# [11] "oxidation with potassium dichromate"  "MIR absorbance spectra"              
-# [13] "Walkley-Black wet oxidation"          "Tyurin spectrophotometry"            
-# [15] "Walkley–Black wet combustion"         "wet oxidation redox titration method"
-
-unique(dat_raw$Conv_factor)
-unique(dat_raw$accuracy_flag)
-
-methods <- dat %>% 
-  distinct(study_id, method_id, Conv_factor, Country) %>% 
-  add_count(study_id)
-
-# organic carbon
-
-## ... Sites ####
 
 # Site-level observations, we'll have to cut these out
 # but maybe we can track down the original data later
@@ -121,23 +33,77 @@ site_level <- dat_raw %>%
   filter(Data_type == "Site-level") %>% 
   select_if(~!all(is.na(.)))
 
-# curate site-level data
-# sites <- orig_sites
+# Some cores from Miller 2022 and Smeaton 2022 are duplicates
+duplicate_cores <- c("SF-18-01","SF-18-02","SF-18-03","SF-18-04","SF-18-05","SF-18-06","SF-18-07","SF-18-08","SF-18-09","SF-18-10","SF-18-11","SF-18-12","SF-18-13",
+                     "SF-18-14","SF-18-15","SF-18-16","SF-18-17","SF-18-18","SF-18-19","SF-18-20","SF-18-21","SF-18-22","SF-18-23","SF-18-24","SF-18-25","SF-18-26",
+                     "SF-18-27","SF-18-28","SF-18-29","SF-18-30","SF-18-31","SF-18-32","SF-18-33","Wig 1","Wig 10","Wig 2","Wig 3","Wig 4","Wig 5",
+                     "Wig 6","Wig 7","Wig 8","Wig 9")
 
-# reorder the columns based on the database guidance
-# sites <- reorderColumns("site-level", sites)
+# curate table that will become the core and depthseries tables
+dat <- dat_raw %>% 
+  rename(dry_bulk_density = BD_g_cm3,
+         depth_min = U_depth_m, 
+         depth_max = L_depth_m,
+         depth_interval_notes = Soil_type,
+         method_id = Method,
+         position_notes = accuracy_flag,
+         year = Year_collected,
+         latitude = Latitude,
+         longitude = Longitude) %>% 
+  # remove site-level soils data
+  filter(Data_type != "Site-level") %>% 
+
+  # remove observations that contain averages from multiple cores
+  filter(is.na(n_cores)) %>% 
+  
+  mutate(site_id = coalesce(Site, Site_name),
+         OC_perc = ifelse(is.na(Conv_factor), OC_perc, NA),
+         fraction_organic_matter = SOM_perc/100,
+         fraction_carbon = OC_perc/100,
+         Notes = coalesce(OC_obs_est, Notes),
+         study_id = gsub(" ", "_", Original_source),
+         study_id = recode(study_id, 
+                           "Kauffman_et_al_2020" = "Kauffman_et_al_2020_Brazil",
+                           "Serrano_unpublished" = "Serrano_unpublished_Australia",
+                           "UNPUBLISHED" = "Copertino_unpublished"),
+         depth_min = ifelse(study_id != "Russell_et_al_submitted", depth_min*100, depth_min), 
+         depth_max = ifelse(study_id != "Russell_et_al_submitted", depth_max*100, depth_max)) %>% 
+
+  # fix the core ID
+  mutate(core_id = coalesce(Core, Plot),
+         core_id_num = as.numeric(core_id), # this will coerce some things to NA
+         core_id = case_when(!is.na(core_id_num) ~ Site_name,
+                             study_id %in% c("Beasy_and_Ellison_2013", "Conrad_et_al_2019") ~ Site_name,
+                             grepl("Burgh", core_id) ~ paste(core_id, word(Source, 4, 4)),
+                             is.na(core_id) ~ site_id,
+                             site_id %in% c("Nadia's Landing", "Cape Missiessy") ~ str_sub(core_id, end = -3), 
+                             grepl("FL-N", core_id) ~ "FL-N",
+                             grepl("NF-N", core_id) ~ "NF-N",
+                             core_id == "Salmi allpool vähe orgaanikat" ~ "Salmi managed",
+                             T ~ core_id)) %>%
+  # remove duplicate cores
+  filter(!(study_id == "Miller_et_al_2022" & core_id %in% duplicate_cores)) %>% 
+  # one of the coords is wrong
+  mutate(latitude = ifelse(core_id == "RMN97_NB", 41.84336, latitude),
+         longitude = ifelse(core_id == "RMN97_NB", -69.95326, longitude)) %>% 
+  select(-c(OC_obs_est, N_perc, SOM_perc, OC_perc)) %>% 
+  select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter, fraction_carbon,
+         everything()) %>% 
+  arrange(study_id, site_id, core_id, depth_min) %>% 
+  # remove duplicate studies
+  filter(!(study_id %in% c("Ward_et_al_2021", "Burden_et_al_2018"))) %>%
+  # drop rows where there are no original measurements of DBD, LOI, or OC
+  mutate(droprow = ifelse(is.na(fraction_organic_matter) & is.na(fraction_carbon) & is.na(dry_bulk_density), T, F)) %>%
+  filter(droprow == F) %>%
+  select_if(~!all(is.na(.)))
 
 ## ... Cores ####
 
 # curate core-level data
 cores <- dat %>%
-  rename(latitude = Latitude,
-         longitude = Longitude) %>% 
-  select(-c(OC_perc, SOM_perc, N_perc, SOM_perc_mean, depth_min, depth_max, dry_bulk_density,
-            fraction_organic_matter, fraction_carbon,
-            SOM_perc_sd, OC_perc_mean, OC_perc_sd, OC_perc_se, BD_g_cm3_mean, BD_g_cm3_sd,
-            BD_g_cm3_se, OC_perc_final, OC_from_SOM_our_eq)) %>% 
-  distinct()
+  distinct(study_id, site_id, core_id, latitude, longitude, year, position_notes)
+  # add_count(core_id) %>% filter(n > 1)
+# unique(cores$position_notes)
 
 # reorder the columns based on the database guidance
 # cores <- reorderColumns("core-level", cores)
@@ -145,28 +111,104 @@ cores <- dat %>%
 ## ... Depthseries ####
 
 depthseries <- dat %>% 
-  filter(is.na(n_cores)) %>% 
-  filter(dropcol == FALSE) %>% 
-  select_if(~!all(is.na(.)))
-  # select(-c(OC_perc, SOM_perc, N_perc, Latitude, Longitude, Year_collected, SOM_perc_mean, 
-  #           SOM_perc_sd, OC_perc_mean, OC_perc_sd, OC_perc_se, BD_g_cm3_mean, BD_g_cm3_sd,
-  #           BD_g_cm3_se, OC_perc_final, OC_from_SOM_our_eq))
+  add_count(core_id) %>% mutate(one_interval = ifelse(n == 1, T, F)) %>%
+  # filter(one_interval == T)
+  rename(organic_carbon_model = Conv_factor) %>% 
+  mutate(quality_flag = ifelse(grepl("Outlier", Notes), Notes, NA)) %>% 
+
+  select(-c(Source, Original_source, position_notes, Country, Admin_unit, Core, Plot, Data_type,
+            latitude, longitude, Site, Site_name, year, Time_replicate, Treatment, core_id_num,
+            contains("_sd"), OC_perc_final, n, one_interval, droprow, OC_from_SOM_our_eq, Notes))
+
+# View(depthseries %>% filter(is.na(fraction_organic_matter) & is.na(dry_bulk_density) & is.na(fraction_carbon)))
+
+
+depthseries %>% 
+  drop_na(fraction_organic_matter, fraction_carbon) %>% 
+  ggplot(aes(fraction_organic_matter, fraction_carbon, col = quality_flag)) + 
+  geom_point(pch = 1)
+# there's OC outliers => leave in or out?
+
+depthseries %>% 
+  drop_na(dry_bulk_density, fraction_organic_matter) %>% 
+  ggplot(aes(dry_bulk_density, fraction_organic_matter)) + 
+  geom_point(pch = 1)
+
+depthseries %>% 
+  drop_na(dry_bulk_density, fraction_carbon) %>% 
+  # filter(fraction_carbon < 1) %>% 
+  ggplot(aes(dry_bulk_density, fraction_carbon, col = Notes)) + 
+  geom_point(pch = 1)
+# there an OC outliers => leave in or out?
+
+depthseries %>% 
+  drop_na(fraction_carbon, OC_from_SOM_our_eq) %>% 
+  ggplot(aes(fraction_carbon, OC_from_SOM_our_eq)) + 
+  geom_point(pch = 1)
+
+## ... Methods ####
+
+unique(dat$method_id)
+# [1] "Wilson (1973)"                       "EA"                                  NA                                   
+# [4] "LOI"                                 "Tyurin (1951)"                       "MIR predicted"                      
+# [7] "SOM by Suguio (1973)"                "oxidation with potassium dichromate" "Tyurin spectrophotometry" 
+
+methods <- dat %>% 
+  distinct(study_id, method_id) %>% 
+  rename(fraction_carbon_method = method_id) %>% 
+  arrange(study_id)
+
+# organic carbon?
 
 ## ... Impacts ####
 
 impacts <- dat %>% 
   drop_na(Treatment) %>% 
-  distinct(study_id, Site_name, core_id, Treatment)
+  distinct(study_id, site_id, core_id, Treatment)
+
+## ...Check Duplicates
+
+ccn_bib <- read_csv("data/CCN_synthesis/CCN_study_citations.csv")
+
+maxwell_studies <- dat %>% distinct(Original_source, Country, Admin_unit) %>% 
+  rename(country = Country) %>% 
+  mutate(country = recode(country, 
+                          "UK" = "United Kingdom",
+                          "SouthAfrica" = "South Africa"),
+         first_name = word(Original_source))
+
+# read in ccn cores to make sure there's no duplicates
+ccn_cores <- read_csv("data/CCN_synthesis/CCN_cores.csv", guess_max = 10000) 
+ccn_studies <- ccn_cores %>% 
+  distinct(study_id, country, admin_division, habitat) %>% 
+  filter(country %in% unique(maxwell_studies$country)) %>% 
+  mutate(study_id = gsub("_", " ", study_id),
+         first_name = word(study_id))
+
+find_dups <- left_join(maxwell_studies, ccn_studies, multiple = "all") %>% drop_na(study_id)
+
+# "Adame_et_al_2013", "Adame_et_al_2015", "Yando_et_al_2016", are all in the Atlas, but only the mangrove data
+# this synthesis supplies the marsh data from these studies
+# Copertino_unpublished is the same but for seagrass
 
 ## 2. QAQC ####
 
 ## ... Map Core Locations ####
 library(leaflet)
 
-leaflet(cores) %>%
+cores %>%
+  filter(study_id  == "Copertino_unpublished") %>%
+  leaflet() %>%
   addTiles() %>% 
   addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
-                   radius = 2, label = ~Source)
+                   radius = 2, label = ~study_id)
+
+ccn_cores %>%
+  filter(study_id  == "Copertino_unpublished") %>%
+  leaflet() %>%
+  addTiles() %>% 
+  addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
+                   radius = 2, label = ~study_id)
 
 ## ... Standard QA Tests ####
 table_names <- c("methods", "cores", "depthseries", "impacts") # add other tables if present
@@ -178,8 +220,8 @@ testTableCols(table_names)
 testTableVars(table_names)
 
 # test uniqueness
-test_unique_cores(cores)
-test_unique_coords(cores)
+testUniqueCores(cores)
+testUniqueCoords(cores)
 
 # test relational databases
 testIDs(cores, depthseries, by = "site")
@@ -196,14 +238,33 @@ fraction_not_percent(depthseries)
 
 # write data to final folder
 write_csv(methods, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_methods.csv")
-write_csv(sites, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_sites.csv")
+# write_csv(sites, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_sites.csv")
 write_csv(cores, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_cores.csv")
 write_csv(depthseries, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_depthseries.csv")
-write_csv(species, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_species.csv")
-write_csv(impacts, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_impacts.csv")
+# write_csv(species, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_species.csv")
+# write_csv(impacts, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_impacts.csv")
 
 ## 4. Bibliography ####
 library(RefManageR)
+
+# read in bib file
+bib <- as.data.frame(ReadBib("data/primary_studies/Maxwell_et_al_2023/original/SaltmarshC_refs.bib"))
+
+# compare to our data library bib
+sources <- dat %>% 
+  filter(Data_type != "Site-level") %>% 
+  distinct(Source, Original_source) %>% 
+  rename(study_id = Original_source) %>% 
+  mutate(synthesis_source = ifelse(Source != study_id, gsub(" ", "_", Source), NA),
+         study_id = gsub(" ", "_", study_id)) %>% 
+  arrange(study_id) %>% 
+  filter(!(study_id %in% to_remove)) %>% 
+  select(-Source)
+# need to match these up
+
+maxwell_synth <- as.data.frame(GetBibEntryWithDOI("10.1038/s41597-023-02633-x"))
+# write_csv(sources, "data_releases/maxwell_et_al_2023/maxwell_marsh_synthesis_sources.csv")
+
 
 # There are three ways to approach this:
 # 1) download the article citation directly to the data release folder
