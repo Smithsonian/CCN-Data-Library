@@ -372,7 +372,17 @@ cores <- SWAMP_soil_converter(swamp_soil) %>%
 
 depthseries <- SWAMP_soil_converter(swamp_soil) %>% 
   select(c(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_carbon)) %>%
-  filter(study_id %in% cores$study_id)
+  filter(study_id %in% cores$study_id) %>% 
+  
+  # fix instances of switched depth_min and depth_max in original data
+  mutate(depth_max = case_when(core_id == "Catanauan_216_714" & depth_min == 49 ~ 49,
+                               core_id == "Koh_Kohng_138_384" & depth_min == 191 ~ 191,
+                               core_id == "Koh_Kohng_138_386" & depth_min == 184 ~ 184,
+                               T ~ depth_max),
+         depth_min = case_when(core_id == "Catanauan_216_714" & depth_max == 49 ~ 48,
+                               core_id == "Koh_Kohng_138_384" & depth_max == 191 ~ 181,
+                               core_id == "Koh_Kohng_138_386" & depth_max == 184 ~ 156,
+                               T ~ depth_min))
 
 impacts <- SWAMP_soil_converter(swamp_soil) %>% 
   select(c(study_id, site_id, core_id, impact_class)) %>% 
@@ -434,7 +444,6 @@ soil_bib <- soil_bib_raw %>%
          bibliography_id = case_when(!is.na(bibliography_id) ~ paste(bibliography_id, "data", "soil", sep = "_"),
                                      is.na(bibliography_id) ~ paste(study_id, "data", "soil", sep = "_"),
                                      T ~ NA_character_),
-         title = substr(title, 9, nchar(title)),
          publication_type = "primary dataset") 
 
 veg_doi_list <- c("10.17528/CIFOR/DATA.00261", "10.17528/CIFOR/DATA.00255",
@@ -467,11 +476,10 @@ veg_bib <- veg_bib_raw %>%
          bibliography_id = case_when(!is.na(bibliography_id) ~ paste(bibliography_id, "data", "biomass", sep = "_"),
                                      is.na(bibliography_id) ~ paste(study_id, "data", "biomass", sep = "_"),
                                      T ~ NA_character_),
-         title = substr(title, 9, nchar(title)),
          publication_type = "primary dataset") 
 
 study_citations <- full_join(veg_bib, soil_bib) %>% 
-  mutate(title = gsub("[{][\\]textendash[}]", "-", title),
+  mutate(author = gsub("[{]|[}]", "", author),
          # these four datasets share a single associated publication
          study_id = case_when(study_id == "Bukoski_2020" ~ "Bukoski_et_al_2020", 
                               study_id == "Bukoski_and_Elwin_2020" ~ "Bukoski_et_al_2020",

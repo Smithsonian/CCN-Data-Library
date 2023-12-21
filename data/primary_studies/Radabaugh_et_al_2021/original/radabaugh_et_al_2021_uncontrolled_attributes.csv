@@ -1,0 +1,5 @@
+attribute_name,attribute_definition,data_type,units,study_id
+ecological_condition_flag,"Author defined site description to distinguish between 'stressed' and 'reference' locations as follows. 
+                                      Stressed sites were identified by adventitious root growth on A. germinans or L. racemosa trees, standing water at low tide, 
+                                      and/or evidence of defoliation. Reference sites had minimal to no adventitious roots, no standing water, and were 60–700 m from 
+                                      each stressed site.",factor,dimensionless,Radabaugh_et_al_2021

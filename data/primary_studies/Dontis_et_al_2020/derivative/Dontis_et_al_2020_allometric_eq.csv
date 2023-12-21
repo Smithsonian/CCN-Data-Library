@@ -1,0 +1,14 @@
+study_id,location_description,allometric_eq_formula,genus,species,alive_or_dead,above_or_belowground,output_unit,R2,height_max,height_min,input_parameter,source
+Dontis_et_al_2020,"Tampa Bay, Florida, USA",ln(b)=2.0813ln(ht)-6.4251,Cyperus,esculentus,alive,aboveground,g,0.86,129,14,b = biomass (g); ht = height (cm),Dontis et al 2020
+Dontis_et_al_2020,"Tampa Bay, Florida, USA",ln(b)=0.8651ln(ht)-4.4539,Cyperus,rotundus,alive,aboveground,g,0.53,28,1.5,b = biomass (g); ht = height (cm),Dontis et al 2020
+Dontis_et_al_2020,"Tampa Bay, Florida, USA",ln(b)=1.8048ln(ht)-6.1295,Dichanthelium,species,alive,aboveground,g,0.71,14,2.5,b = biomass (g); ht = height (cm),Dontis et al 2020
+Dontis_et_al_2020,"Tampa Bay, Florida, USA",ln(b)=1.2539ln(ht)-5.6389,Distichlis,species,alive,aboveground,g,0.79,36,6,b = biomass (g); ht = height (cm),Dontis et al 2020
+Dontis_et_al_2020,"Tampa Bay, Florida, USA",ln(b)=1.1238ln(ht)-5.1012,Panicum,species,alive,aboveground,g,0.64,39,6,b = biomass (g); ht = height (cm),Dontis et al 2020
+Dontis_et_al_2020,"Tampa Bay, Florida, USA",b=0.3008e^0.0768(ht),Avicennia,germinans,alive,aboveground,g,0.86,47,5,b = biomass (g); ht = height (cm),Dontis et al 2020
+Dontis_et_al_2020,"Tampa Bay, Florida, USA",b=0.0007(ht)-810-5,Schinus,terebinthifolia,alive,aboveground,g,0.37,7.5,3.5,b = biomass (g); ht = height (cm),Dontis et al 2020
+Dontis_et_al_2020,"Tampa Bay, Florida, USA",ln(b)=2.0325ln(ht)-7.1049,Schinus,dulcis,alive,aboveground,g,0.82,74.5,12,b = biomass (g); ht = height (cm),Dontis et al 2020
+Dontis_et_al_2020,"Tampa Bay, Florida, USA",b=0.0041(ht)-0.0773,Schinus,angustifolia,alive,aboveground,g,0.76,152,6,b = biomass (g); ht = height (cm),Dontis et al 2020
+Dontis_et_al_2020,"Tampa Bay, Florida, USA",ln(b)=1.928ln(ht)-7.8901,Schinus,bakeri,alive,aboveground,g,0.89,89,21,b = biomass (g); ht = height (cm),Dontis et al 2020
+Dontis_et_al_2020,"Tampa Bay, Florida, USA",ln(b)=2.3682ln(ht)-7.8355,Schinus,linearis,alive,aboveground,g,0.81,91,12,b = biomass (g); ht = height (cm),Dontis et al 2020
+Dontis_et_al_2020,"Tampa Bay, Florida, USA",ln(b)=1.4639ln(ht)-6.5292,Triglochin,striata,alive,aboveground,g,0.68,23,4,b = biomass (g); ht = height (cm),Dontis et al 2020
+Dontis_et_al_2020,"Tampa Bay, Florida, USA",ln(b)=1.6325ln(ht)-6.9224,Vigna,luteola,alive,aboveground,g,0.89,202,16,b = biomass (g); ht = height (cm),Dontis et al 2020

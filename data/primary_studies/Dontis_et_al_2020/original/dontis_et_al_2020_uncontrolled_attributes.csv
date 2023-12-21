@@ -1,0 +1,3 @@
+attribute_name,attribute_definition,data_type,units,study_id
+input_parameter,list of equation variable definitions and units AND/OR specification of what portion of the plant the input variable applies to,character,dimensionless,Dontis_et_al_2020
+source,study ID from which the allometric equation was taken,character,dimensionless,Dontis_et_al_2020

@@ -1,4 +1,4 @@
-study_id,site_id,core_id,year,latitude,longitude,position_accuracy,position_method,elevation,elevation_datum,elevation_accuracy,elevation_method,vegetation_class,vegetation_method,habitat,core_length_flag
-Turck_2014,MT01,MT01,2009,31.448403985041388,-81.29398182204032,0.1,RTK,0.8320000000000001,NAVD88,0.2,RTK,emergent,field observation,marsh,core depth represents deposit depth
-Turck_2014,MT03,MT03,2009,31.449447386580694,-81.29400196163697,0.1,RTK,1.047,NAVD88,0.2,RTK,emergent,field observation,marsh,core depth represents deposit depth
-Turck_2014,MT06,MT06,2009,31.450974973431773,-81.29405353582573,0.1,RTK,0.64,NAVD88,0.2,RTK,emergent,field observation,marsh,core depth represents deposit depth
+study_id,site_id,core_id,year,latitude,longitude,position_accuracy,position_method,elevation,elevation_datum,elevation_accuracy,elevation_method,habitat,core_length_flag
+Turck_2014,MT01,MT01,2009,31.448403985041388,-81.29398182204032,0.1,RTK,0.8320000000000001,NAVD88,0.2,RTK,marsh,core depth represents deposit depth
+Turck_2014,MT03,MT03,2009,31.449447386580694,-81.29400196163697,0.1,RTK,1.047,NAVD88,0.2,RTK,marsh,core depth represents deposit depth
+Turck_2014,MT06,MT06,2009,31.450974973431773,-81.29405353582573,0.1,RTK,0.64,NAVD88,0.2,RTK,marsh,core depth represents deposit depth

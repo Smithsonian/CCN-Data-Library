@@ -529,10 +529,10 @@ core_raw <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "m
                                    ifelse(is.na(longitude_field) & is.na(longitude_wgs84) & !is.na(longitude_nad83), longitude_nad83, NA_character_))),
          latitude = as.numeric(latitude),
          longitude = as.numeric(longitude),
+         position_method = "assign below",
          study_id = "Marot_et_al_2020",
          elevation_datum = "NAVD88",
          elevation_method = "other high resolution",
-         position_method = "other high resolution",
          salinity_method = "measurement",
          core_length_flag = ifelse(grepl("M", core_id), "core depth represents deposit depth", 
                                    ifelse(grepl("R", core_id), "core depth represents deposit depth",
@@ -540,8 +540,18 @@ core_raw <- full_join(df_field, df_site, by = c("site_id", "core_id", "year", "m
                                                  "core depth limited by length of corer")))) %>%
   bind_rows(depthseries_raw) %>% # Add 19 core IDs from depthseries data (this will only add their IDs and no cores-table related data)
   mutate(inundation_class = ifelse(grepl("G", substr(core_id, nchar(core_id) - 2, nchar(core_id))), "low", NA),
-         inundation_method = "field observation") %>% 
-  select(c(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method,
+         inundation_method = "field observation",
+         
+         # assign nearest core position to missing lat/long data in core_id 16CCT03_GB200G, 16CCT03_GB200G_2, 16CCT03_GB200G_3
+         latitude = case_when(grepl("16CCT03_GB200", core_id) ~ 30.38188,
+                              T ~ latitude),
+         longitude = case_when(grepl("16CCT03_GB200", core_id) ~ -88.41036,
+                               T ~ longitude),
+         position_method = case_when(grepl("16CCT03_GB200", core_id) ~ "other low resolution",
+                                     T ~"other high resolution"),
+         position_notes = case_when(grepl("16CCT03_GB200", core_id) ~ "nearest core position used",
+                                    T ~ NA_character_)) %>% 
+  select(c(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method, position_notes,
            elevation, elevation_datum, elevation_accuracy, elevation_method, salinity_class, salinity_method, 
            habitat, inundation_class, inundation_method, core_length_flag)) %>% 
   distinct()
@@ -571,16 +581,15 @@ cores <- core_raw %>%
   filter(!grepl("16CCT03_GB266|14CCT01_GB67|14CCT01_GB70", core_id)) %>% 
   # remove all other core IDs without depthseries data
   filter(core_id %in% depthseries$core_id) %>%  
+  
+  # manually add habitat classification based on map position
+  mutate(habitat = case_when(grepl("16CCT07", core_id) ~ "marsh",
+                             T ~ habitat)) %>%
 
-  select(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method,
+  select(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method, position_notes,
          elevation, elevation_datum, elevation_accuracy, elevation_method, salinity_class, salinity_method, 
          habitat, inundation_class, inundation_method, core_length_flag)
 
-
-##RC edit --> adding habitat for synthesis update
-##JH Reverse ----> not all of these cores are marshes. some are bay bottom.
-#cores <- cores %>% 
-#  mutate(habitat = "marsh")
 
 ## Step 8: Make the Species table ####
 species <- full_join(df_field, df_site, by = c("site_id", "core_id")) %>% 
@@ -620,9 +629,10 @@ core_vis <- cores %>%
   # filter(core_id %in% species$core_id)
 
 ## Mapping
-leaflet(core_vis) %>%
+leaflet(cores %>% 
+          filter(!is.na(habitat))) %>%
   addTiles() %>% 
-  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3)
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
 
 ## Table testing
 table_names <- c("cores", "depthseries", "methods", "species")

@@ -1,0 +1,3 @@
+study_id,method_id,coring_method,roots_flag,sediment_sieved_flag,compaction_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_sample_volume,loss_on_ignition_temperature,loss_on_ignition_time,carbon_measured_or_modeled,carbonates_removed,fraction_carbon_method,fraction_carbon_type
+Radabaugh_et_al_2018,LOI methods,russian corer,roots and rhizomes included,sediment not sieved,corer limits compaction,105,24,1.131,550,3,modeled,FALSE,local regression,NA
+Radabaugh_et_al_2018,EA methods,russian corer,roots and rhizomes included,sediment not sieved,corer limits compaction,105,24,1.131,550,3,measured,TRUE,EA,organic carbon
