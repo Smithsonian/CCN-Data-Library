@@ -1,0 +1,190 @@
+Dataset title:  Upper Phillips Creek soil organic content and bulk density April, 2017
+
+Dataset ID:  VCR17260
+Dataset Creator
+
+	Name:		Orencio Vinent
+	Phone:		979.458.9309
+	Email:		oduranvinent@tamu.edu
+
+	Name:		Matthew Kirwan
+	
+	Address:
+			Virginia Institute of Marine Science
+			Glouchester Point, VA   USA
+	
+	Email:		kirwan@vims.edu
+
+
+Metadata Provider
+
+	Organization:	Virginia Coast Reserve Long-Term Ecological Research Project
+	
+	Address:
+			Department of Environmental Sciences, University of Virginia, 291 McCormick Road, PO Box 400123
+			Charlottesville, VA 22904-4123  USA
+	
+	Phone:		434-924-7761
+	URL:		http://www.vcrlter.virginia.edu
+
+
+Dataset Abstract
+
+	 Soil samples were taken in Phillips Creek Marsh (near Nassawadox, VA) and organic fraction and bulk density determined. 
+
+
+Dataset Keywords
+
+	Organic Matter
+	soil bulk density
+	organic matter
+	salt marshes
+
+
+Intellectual Rights
+
+
+
+Geographic Coverage
+
+
+	Bounding Coordinates
+
+		Geographic description:	PHCKMARSH - Phillips Creek Marsh
+		West bounding coordinate:	-75.83398818969727
+		East bounding coordinate:	-75.83398818969727
+		North bounding coordinate:	37.46025691791979
+		South bounding coordinate:	37.46025691791979
+	
+
+
+
+Temporal Coverage
+
+
+Maintenance
+
+	Data are updated as needed
+
+
+Dataset Contact
+
+
+
+Methods
+
+
+
+	Method Step 
+
+		Description 
+
+			 Methods: surface samples collected manually with a PVC cylinder 2.5cm diameter and 10cm depth. Organic matter content determined by LOI at 550 degrees. Approximate site elevation calculated using a public LiDAR from 2015 (only shown for reference) 
+
+
+Data Table
+
+	Entity Name:  VCR17260_1
+	Entity Description:  Upper Phillips Creek soil organic content and bulk density April, 2017
+	Object Name:  PhilCrk_soil_data_summary2a.csv
+
+
+
+Data Format
+
+	Number of Header Lines:  1
+	Attribute Orientation:  column
+	Field Delimiter:  ,
+
+
+
+Attributes
+
+	Attribute Name:  TRANSECT
+	Attribute Label:  Transect Identifier
+	Attribute Definition:  TRANSECT - Transect Identifier
+	Storage Type:  string
+	Measurement Scale: 
+		Transect Identifier
+	Missing Value Code: 
+
+
+	Attribute Name:  POINT
+	Attribute Label:  Point Number
+	Attribute Definition:  POINT - Point Number
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  none
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  REPLICATE
+	Attribute Label:  Replicate
+	Attribute Definition:  REPLICATE - Replicate
+	Storage Type:  string
+	Measurement Scale: 
+		Replicate
+	Missing Value Code: 
+
+
+	Attribute Name:  LATITUDE
+	Attribute Label:  Latitude
+	Attribute Definition:  LATITUDE - Latitude
+	Storage Type:  float
+	Measurement Scale: 
+		Units  degree
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  LONGITUDE
+	Attribute Label:  Longitude
+	Attribute Definition:  LONGITUDE - Longitude
+	Storage Type:  float
+	Measurement Scale: 
+		Units  degree
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  CHANNELDISTANCE
+	Attribute Label:   Approximate distance to first point close to channel
+	Attribute Definition:  CHANNELDISTANCE -  Approximate distance to first point close to channel
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  meter
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  ELEVATION_MSL
+	Attribute Label:   Approximate elevation relative to MSL
+	Attribute Definition:  ELEVATION_MSL -  Approximate elevation relative to MSL
+	Storage Type:  float
+	Measurement Scale: 
+		Units  meter
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  ORGANIC_FRAC
+	Attribute Label:  Organic fraction
+	Attribute Definition:  ORGANIC_FRAC - Organic fraction
+	Storage Type:  float
+	Measurement Scale: 
+		Units  none
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  BULK_DENSITY
+	Attribute Label:  Bulk density
+	Attribute Definition:  BULK_DENSITY - Bulk density
+	Storage Type:  float
+	Measurement Scale: 
+		Units  gramPerMeterCubed
+		Number Type:  real
+	Missing Value Code: 
+
+

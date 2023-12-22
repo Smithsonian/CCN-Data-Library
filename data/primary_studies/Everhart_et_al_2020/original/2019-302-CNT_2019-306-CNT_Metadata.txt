@@ -1,0 +1,529 @@
+Metadata:
+  Identification_Information:
+    Citation:
+      Citation_Information:
+        Originator: Cheyenne S. Everhart
+        Originator: Christopher G. Smith
+        Originator: Alisha M. Ellis
+        Originator: Marci E. Marot
+        Originator: Daniel J. Coleman
+        Originator: Glenn R. Guntenspergen
+        Originator: Matthew L. Kirwan
+        Publication_Date: 20200817
+        Title: Sediment Radiochemical Data from Georgia, Massachusetts and Virginia Coastal Marshes
+        Geospatial_Data_Presentation_Form: Multimedia presentation
+        Series_Information:
+          Series_Name: U.S. Geological Survey Data Release
+          Issue_Identification: doi:10.5066/P926MS6T
+        Publication_Information:
+          Publication_Place: St. Petersburg, FL
+          Publisher: U.S. Geological Survey
+        Online_Linkage: https://doi.org/10.5066/P926MS6T
+    Description:
+      Abstract:
+        This data release is an archive of sedimentary laboratory analytical data produced by scientists from the U.S. Geological Survey St. Petersburg Coastal and Marine Science Center (USGS SPCMSC) for sediment cores and surface samples collected from coastal marshes in Georgia (GA), Virginia (VA), and Massachusetts (MA). Collaborators from USGS Patuxent Wildlife Research Center (PWRC) and the Virginia Institute of Marine Science (VIMS) collected these samples in South Altamaha, GA, Mockhorn Island, VA, Goodwin Island, VA and Laws Point, Plum Island Estuary, MA during a period spanning 2015 to 2019. This work provides the USGS and VIMS with the necessary data needed to assess the emergence rates (chronology and sedimentation rates) of coastal marshes at these locations.
+        This publication includes data for marsh sediment cores and surface samples collected by collaborators at the USGS PWRC and VIMS from 2015-2019. Data products include site locations, loss on ignition and radiochemical data (alpha and gamma spectrometry), and Federal Geographic Data Committee (FGDC) metadata.
+      Purpose: Dissemination of laboratory analytical data from surficial sediment samples and from serrated push cores from marshes in Georgia, Virginia and Massachusetts.
+      Supplemental_Information: To ensure that SPCMSC data management protocols were followed, these contracted datasets were assigned USGS field activity numbers (FAN), 2019-302-FA and 2019-306-FA. Additional survey and data details are available at https://cmgds.marine.usgs.gov/fan_info.php?fan=2019-302-CNT and https://cmgds.marine.usgs.gov/fan_info.php?fan=2019-306-CNT.
+    Time_Period_of_Content:
+      Time_Period_Information:
+        Range_of_Dates/Times:
+          Beginning_Date: 20151218
+          Ending_Date: 20200713
+      Currentness_Reference: ground condition
+    Status:
+      Progress: Complete
+      Maintenance_and_Update_Frequency: None planned
+    Spatial_Domain:
+      Bounding_Coordinates:
+        West_Bounding_Coordinate: -81.40483
+        East_Bounding_Coordinate: -70.84168
+        North_Bounding_Coordinate: 42.73210
+        South_Bounding_Coordinate: 31.30486
+    Keywords:
+      Theme:
+        Theme_Keyword_Thesaurus: ISO 19115 Topic Category
+        Theme_Keyword: geoscientificInformation
+        Theme_Keyword: location
+      Theme:
+        Theme_Keyword_Thesaurus: USGS Thesaurus
+        Theme_Keyword: geology
+        Theme_Keyword: unconsolidated deposits
+        Theme_Keyword: push coring
+        Theme_Keyword: grab sampling
+        Theme_Keyword: core analysis
+        Theme_Keyword: isotopic analysis
+      Theme:
+        Theme_Keyword_Thesaurus: None
+        Theme_Keyword: estuaries
+        Theme_Keyword: marshes
+        Theme_Keyword: sediment
+        Theme_Keyword: loss on ignition
+        Theme_Keyword: radiochemistry
+        Theme_Keyword: gamma spectroscopy
+        Theme_Keyword: alpha spectroscopy
+        Theme_Keyword: U.S. Geological Survey
+        Theme_Keyword: USGS
+        Theme_Keyword: St. Petersburg Coastal and Marine Science Center
+      Place:
+        Place_Keyword_Thesaurus: Geographic Names Information System (GNIS)
+        Place_Keyword: Georgia
+        Place_Keyword: Massachusetts
+        Place_Keyword: Virginia
+        Place_Keyword: South Altamaha River
+        Place_Keyword: Laws Point
+        Place_Keyword: Mockhorn Island
+        Place_Keyword: Goodwin Island
+    Access_Constraints: None
+    Use_Constraints: The U.S. Geological Survey requests that it be acknowledged as the originator of this dataset in any future products or research derived from these data.
+    Point_of_Contact:
+      Contact_Information:
+        Contact_Organization_Primary:
+          Contact_Organization: U.S. Geological Survey
+          Contact_Person: Christopher G. Smith
+        Contact_Position: Geologist
+        Contact_Address:
+          Address_Type: Mailing and physical
+          Address: 600 4th Street South
+          City: St. Petersburg
+          State_or_Province: FL
+          Postal_Code: 33701
+          Country: USA
+        Contact_Voice_Telephone: 727-502-8000
+        Contact_Electronic_Mail_Address: cgsmith@usgs.gov
+    Data_Set_Credit: U.S. Geological Survey, Coastal and Marine Hazards and Resources Program, St. Petersburg Coastal and Marine Science Center, Patuxent Wildlife Research Center (PWRC) and Virginia Institute of Marine Science (VIMS). The authors would like to acknowledge Joseph Vargas for his assistance with laboratory sample analysis.
+    Native_Data_Set_Environment: Microsoft Windows 7 Enterprise Service Pack 1; Microsoft Excel Version 2016
+    Cross_Reference:
+      Citation_Information:
+        Originator: Cutshall, N.H., Larsen, I.L., and Olsen, C.R.
+        Publication_Date: 1983
+        Title: Direct analysis of 210Pb in sediment samples: self-absorption corrections
+        Series_Information:
+          Series_Name: Nuclear Instruments and Methods in Physics Research
+          Issue_Identification: Volume 206, Issues 1-2
+        Other_Citation_Details: Pages 309-312
+        Online_Linkage: https://doi.org/10.1016/0167-5087(83)91273-5
+    Cross_Reference:
+      Citation_Information:
+        Originator: Cutshall, N.H. and Larsen, I.L.
+        Publication_Date: 1986
+        Title: Calibration of a portable intrinsic Ge gamma-ray detector using point sources and testing for field applications
+        Series_Information:
+          Series_Name: Health Physics
+          Issue_Identification: Volume 51
+        Other_Citation_Details: Pages 53-59
+        Online_Linkage: https://doi.org/10.1097/00004032-198607000-00004
+    Cross_Reference:
+      Citation_Information:
+        Originator: Flynn, W.W.
+        Publication_Date: 1968
+        Title: The determination of low levels of polonium-210 in environmental materials
+        Series_Information:
+          Series_Name: Analytica Chimica Acta
+          Issue_Identification: Volume 43
+        Other_Citation_Details: Pages 221-227
+        Online_Linkage: https://doi.org/10.1016/S0003-2670(00)89210-7
+    Cross_Reference:
+      Citation_Information:
+        Originator: Martin, E.A., and Rice, C.A.
+        Publication_Date: 1981
+        Title: Sampling and analyzing sediment cores for 210Pb geochronology
+        Series_Information:
+          Series_Name: U.S. Geological Survey Open-File Report
+          Issue_Identification: 81-983
+        Online_Linkage: https://doi.org/10.3133/ofr81983
+  Data_Quality_Information:
+    Attribute_Accuracy:
+      Attribute_Accuracy_Report: All loss on ignition, alpha spectrometry, and gamma spectrometry data reported were validated in a secondary data review process by a subject matter expert. Counting errors for the gamma spectrometry derived radioisotope activities are reported for all samples analyzed. For each core, the critical level for gamma spectrometry of the radioisotopes measured is reported. Replicate radioisotopic analyses by alpha spectrometry are reported for quality assurance. Replicate analyses for loss on ignition analysis of sample GW.B are not reported for quality assurance, due to the limited amount of sample material available.
+    Logical_Consistency_Report: No formal logical accuracy tests were conducted on these datasets.
+    Completeness_Report: This dataset is considered complete for the information presented, as described in the abstract section. Users are advised to read the rest of the metadata record carefully for additional details.
+    Lineage:
+      Process_Step:
+        Process_Description: Scientists from VIMS and USGS PWRC collected 8 sediment push cores and 25 surficial sediment grabs from various marsh environments in Georgia, Virginia and Massachusetts between 2015 and 2019. The serrated marsh push cores collected were ES.A, ES.B (Mockhorn Island, VA), GW.B, GWLD.A (Goodwin Island, VA), PI.A, PI.B (Laws Point, Plum Island Estuary, MA), SA.A, and SA.B (South Altamaha, GA). The two sets of surficial sediment grabs were SA S1 through SA S10 (South Altamaha, GA) and GSS1 through GSS15 (Goodwin Island, VA). These samples were sent to the USGS SPCMSC for radiochemical and loss on ignition analysis of the sediments. The USGS Field Activity Numbers (FANs) 2019-302-CNT and 2019-306-CNT were assigned to these contract samples (ES.A, ES.B, PI.B, and GW.B) per the USGS SPCMSC data management requirements. The other cores and surficial sediment grabs were submitted for analysis before USGS SPCMSC data management required FANs to be assigned to contract samples.
+        Process_Date: 2019
+        Source_Produced_Citation_Abbreviation: SiteInformation.zip
+        Process_Contact:
+          Contact_Information:
+            Contact_Organization_Primary:
+              Contact_Organization: U.S. Geological Survey St. Petersburg Coastal and Marine Science Center
+              Contact_Person: Christopher G. Smith
+            Contact_Position: Geologist
+            Contact_Address:
+              Address_Type: Mailing and physical
+              Address: 600 4th Street South
+              City: St. Petersburg
+              State_or_Province: FL
+              Postal_Code: 33701
+              Country: U.S.
+            Contact_Voice_Telephone: (727) 502-8000
+            Contact_Electronic_Mail_Address: cgsmith@usgs.gov
+      Process_Step:
+        Process_Description: The organic matter content for marsh push core GW.B was determined by loss on ignition (LOI), a mass loss technique. The sediment depth intervals submitted by VIMS scientists for analysis were pre-dried and ground. Approximately 1-5 grams (g) of sediment for each sample depth interval was added to a pre-weighed porcelain crucible. The mass of the sediment and crucible was recorded. The samples were then placed inside a laboratory muffle furnace with stabilizing temperature control. To remove hygroscopic water absorbed to sediment particles, the furnace was heated to 110 degrees Celsius (°C) for a minimum of 6 hours. Then the furnace temperature was lowered to 60 °C and the sediments were reweighed. Sediments were placed in the muffle furnace again and heated to 550 °C and held at that temperature for 6 hours. The furnace was again lowered to 110 °C and held at this temperature until the sediments could be reweighed. This step prevents absorption of additional moisture, which can impact the measurement. The mass lost during the 6-hour heating time in comparison to the 110 °C dried mass is used as a metric for organic matter content. The loss on ignition data is reported as a ratio of organic matter mass (g) to post-110 °C dry sediment mass (g). The limited amount of material for core GW.B did not allow for replicate analyses of the core intervals for quality assurance. A comma-separated values data file containing the tabular data in plain text is included in the download file.
+        Process_Date: 2020
+        Source_Produced_Citation_Abbreviation: LossOnIgnition.zip
+        Process_Contact:
+          Contact_Information:
+            Contact_Organization_Primary:
+              Contact_Organization: U.S. Geological Survey St. Petersburg Coastal and Marine Science Center
+              Contact_Person: Christopher G. Smith
+            Contact_Position: Geologist
+            Contact_Address:
+              Address_Type: Mailing and physical
+              Address: 600 4th Street South
+              City: St. Petersburg
+              State_or_Province: FL
+              Postal_Code: 33701
+              Country: U.S.
+            Contact_Voice_Telephone: (727) 502-8000
+            Contact_Electronic_Mail_Address: cgsmith@usgs.gov
+      Process_Step:
+        Process_Description: Total Lead-210 (Pb-210) activity was measured by alpha spectrometry for 25 surficial sediment grab samples (SA S1-SA S10 and GSS1-GSS15) and 8 marsh push cores (ES.A, ES.B, GW.B, PI.A, PI.B, SA.A, SA.B, and GWDL.A). Polonium-210 (Po-210, half-life = 138 days) is assumed to be in secular equilibrium with its parent Pb-210 (half-life = 22.3 years), allowing for the determination of the total Pb-210 activity in environmental sediments by directly measuring the activity of Po-210 through alpha particle decay. The USGS SPCMSC radioisotope laboratory uses a method that was originally developed by Martin and Rice (1981) to chemically separate Po-210 from sediments. This method utilizes polonium’s affinity to autoplate to silver planchets in order to isolate Po-210 for alpha counting (Flynn, 1968). To separate the Po-210, between 1.99 and 5   grams of dried, ground sediment sample was leached with 10 milliliters (mL) 16 Normality (N) nitric acid and a Po-209 tracer was added. The solution digested overnight and was then dried on a hotplate. The dried solution was washed with 5 mL of 8 N hydrochloric acid, followed by three washings with 30% hydrogen peroxide to break down organics. After two additional washings with 5 mL of 8 N hydrochloric acid, 5 mL of 8 N hydrochloric acid was added and once the sample dissolved completely the solution was brought to 50 mL by adding deionized water. Three reagents are added to buffer the pH of the solution during the deposition of Po-210 to the silver planchets. Both 20% hydroxylamine hydrochloride and 25% sodium citrate were added to reduce the inference of oxidants, such as Fe+3 and Cr+6 (Martin and Rice, 1981). A 2.2% weight by volume  solution of bismuth nitrate was added to help prevent the deposition of Bismuth-212 (Martin and Rice, 1981). A calibrated handheld pH meter was used to monitor the pH of the solution. Ammonium hydroxide was added dropwise while mixing to achieve a pH of 1.85 to 1.95. The Po-210 was autoplated onto the 1.9-centimeter diameter sterling silver planchets as the solution was heated and stirred on a hotplate for 2 hours. All planchets had one side covered with tape to ensure Po-210 plating only occurred on one side. The planchets were removed from solution to be rinsed with deionized water and dried. The planchets were counted in low-level alpha spectrometers coupled to a pulse-height analyzer for 24 hours. Samples with low Po-210 activity were counted for 48 hours. The total Pb-210 activity and counting error are reported in the Excel spreadsheet. A comma-separated values data file containing the tabular data in plain text is included in the download file.
+        Process_Date: 2019
+        Source_Produced_Citation_Abbreviation: AlphaSpectrometry.zip
+        Process_Contact:
+          Contact_Information:
+            Contact_Organization_Primary:
+              Contact_Organization: U.S. Geological Survey St. Petersburg Coastal and Marine Science Center
+              Contact_Person: Cheyenne S. Everhart
+            Contact_Position: Researcher I
+            Contact_Address:
+              Address_Type: Mailing and physical
+              Address: 600 4th Street South
+              City: St. Petersburg
+              State_or_Province: FL
+              Postal_Code: 33701
+              Country: U.S.
+            Contact_Voice_Telephone: (727) 502-8000
+            Contact_Electronic_Mail_Address: ceverhart@contractor.usgs.gov
+      Process_Step:
+        Process_Description: Six dried, ground sediment push cores (ES.A, ES.B, GW.B, PI.B, SA.A, and GWLD.A) submitted by VIMS were analyzed for the detection of radionuclides by standard gamma-ray spectrometry (Cutshall and Larsen, 1986) at the USGS SPCMSC radioisotope lab. Selected depth intervals from each core were analyzed based on the results of alpha spectrometry. A total of 56 depth intervals were analyzed for radioisotopic activities. Analyzed sediments (5-50 g) from cores ES.A, ES.B, PI.B, SA.A, and GWLD.A were sealed in Teflon-taped, airtight polypropylene containers. Analyzed sediments (4.6 mL) from core GW.B were packed and sealed with epoxy in polypropylene graduated test tubes. The chosen sediment sample weights and volumes, for GW.B, and counting container geometries were matched to pre-determined calibration standards. Once sealed, the sediment samples remained for a minimum of 3 weeks before being analyzed to allow for Radium-226 (Ra-226) to come into secular equilibrium with its daughter isotopes Pb-214 and Bismuth-214 (Bi-214). Each sample sealed in a Teflon-taped, airtight polypropylene container was then counted for 24-72 hours on a 50-millimeter (mm) diameter planar-style, low energy, high-purity germanium, gamma-ray spectrometer. The GW.B samples sealed with epoxy in a test tube were counted for 24-72 hours on a 16x44-mm well-style, low energy, high-purity germanium, gamma-ray spectrometer. The USGS SPCMSC radioisotope lab gamma detectors measure the following anthropogenic and naturally-occurring radioisotopes, including their corresponding photopeak energies in kiloelectron volts (keV): Pb-210 (46.5 keV), Thorium-234 (Th-234, 63.3 keV), Pb-214 (295.7 and 352.5 keV; proxies for Ra-226), Bi-214 (609.3 keV; proxy for Ra-226), Cesium-137 (Cs-137, 661.6 keV), and Potassium-40 (K-40, 1460.8 keV). The sample counts were corrected for photopeak intensity, self-absorption and detector efficiency. Gamma detector efficiency was determined using International Atomic Energy Agency RGU-1 reference material. Sample specific self-absorption correction was determined using a Uranium-238 sealed source (Cutshall and others, 1983). The activities for Pb-210, Cs-137, and K-40 were decay corrected to the field collection date. The activities of Pb-210, Th-234, Cs-137, and K-40 were corrected for nuclide decay during the counting period. Radioisotope activities and counting error for all samples are reported in the Excel spreadsheet with the results for each core on separate tabs. The critical level is reported for each core. The critical level for Ra-226 is reported as the highest critical level amongst the 3 proxies (295.7 keV, 352.5 keV and 609.3 keV); therefore, the most conservative critical level for Ra-226 is provided. A comma-separated values data file containing the tabular data in plain text is included in the download file.
+        Process_Date: 2020
+        Source_Produced_Citation_Abbreviation: GammaSpectrometry.zip
+        Process_Contact:
+          Contact_Information:
+            Contact_Organization_Primary:
+              Contact_Organization: U.S. Geological Survey St. Petersburg Coastal and Marine Science Center
+              Contact_Person: Marci E. Marot
+            Contact_Position: Geologist
+            Contact_Address:
+              Address_Type: Maling and physical
+              Address: 600 4th Street South
+              City: St. Petersburg
+              State_or_Province: FL
+              Postal_Code: 33701
+              Country: U.S.
+            Contact_Voice_Telephone: (727) 502-8000
+            Contact_Electronic_Mail_Address: mmarot@usgs.gov
+  Entity_and_Attribute_Information:
+    Detailed_Description:
+      Entity_Type:
+        Entity_Type_Label: SiteInformation.xlsx, SiteInformation.csv
+        Entity_Type_Definition: Microsoft Excel workbook (.xlsx) and comma-separated values text file (.csv) defining the site locations of the surficial sediment samples and marsh cores collected by VIMS and USGS PWRC from 2015 through 2019.
+        Entity_Type_Definition_Source: USGS
+      Attribute:
+        Attribute_Label: Site ID
+        Attribute_Definition: Site identifier assigned by the VIMS and USGS PWRC scientists
+        Attribute_Definition_Source: VIMS and USGS PWRC
+        Attribute_Domain_Values:
+          Unrepresentable_Domain: Character string
+      Attribute:
+        Attribute_Label: Date Collected
+        Attribute_Definition: Calendar date of field sample collected by the VIMS and USGS PWRC scientists
+        Attribute_Definition_Source: VIMS and USGS PWRC
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 12/18/2015
+            Range_Domain_Maximum: 12/01/2017
+            Attribute_Units_of_Measure: mm/dd/yyyy
+            Attribute_Measurement_Resolution: 1
+      Attribute:
+        Attribute_Label: Site Location
+        Attribute_Definition: City, park, island name and state within the United States where the site is located
+        Attribute_Definition_Source: VIMS and USGS PWRC
+        Attribute_Domain_Values:
+          Unrepresentable_Domain: Character string
+      Attribute:
+        Attribute_Label: Type of Samples
+        Attribute_Definition: Description of sample type based on field collection methods used by the VIMS and USGS PWRC scientists.
+        Attribute_Definition_Source: VIMS and USGS PWRC
+        Attribute_Domain_Values:
+          Unrepresentable_Domain: Character string
+      Attribute:
+        Attribute_Label: Latitude
+        Attribute_Definition: Latitude of site location, in decimal degrees.
+        Attribute_Definition_Source: VIMS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 31.30486
+            Range_Domain_Maximum: 42.73210
+            Attribute_Units_of_Measure: Decimal degree
+            Attribute_Measurement_Resolution: 0.00001
+      Attribute:
+        Attribute_Label: Longitude
+        Attribute_Definition: Longitude of site location, in decimal degrees.
+        Attribute_Definition_Source: VIMS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: -81.40483
+            Range_Domain_Maximum: -70.84168
+            Attribute_Units_of_Measure: Decimal degree
+            Attribute_Measurement_Resolution: 0.00001
+    Detailed_Description:
+      Entity_Type:
+        Entity_Type_Label: LossOnIgnition.xlsx, LossOnIgnition.csv
+        Entity_Type_Definition: Microsoft Excel workbook (.xlsx) and comma-separated values text file (.csv) reporting loss on ignition data for the marsh core GW.B collected by VIMS and USGS PWRC in August 2019 (USGS FAN 2019-306-CNT).
+        Entity_Type_Definition_Source: USGS
+      Attribute:
+        Attribute_Label: Core ID
+        Attribute_Definition: Core identifier assigned by VIMS and USGS PWRC scientists
+        Attribute_Definition_Source: VIMS and USGS PWRC
+        Attribute_Domain_Values:
+          Unrepresentable_Domain: Character String
+      Attribute:
+        Attribute_Label: Sample ID
+        Attribute_Definition: Sample identifier assigned by VIMS and USGS PWRC scientists
+        Attribute_Definition_Source: VIMS and USGS PWRC
+        Attribute_Domain_Values:
+          Unrepresentable_Domain: Character String
+      Attribute:
+        Attribute_Label: Depth (cm)
+        Attribute_Definition: Depth interval measured below the top of the core, in centimeters
+        Attribute_Definition_Source: VIMS and USGS PWRC
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 1-2
+            Range_Domain_Maximum: 59-60
+            Attribute_Units_of_Measure: Centimeters
+            Attribute_Measurement_Resolution: 0.1
+      Attribute:
+        Attribute_Label: Loss On Ignition (gOM/gdry)
+        Attribute_Definition: The ratio of the mass of organic matter combusted at 550 degrees Celsius to the pre-combusted mass of dry sediment
+        Attribute_Definition_Source: USGS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 0.011
+            Range_Domain_Maximum: 0.208
+            Attribute_Units_of_Measure: Grams of organic matter per grams of dry sediment
+            Attribute_Measurement_Resolution: 0.001
+    Detailed_Description:
+      Entity_Type:
+        Entity_Type_Label: GammaSpectrometry.xlsx, GammaSpectrometry.csv
+        Entity_Type_Definition: Microsoft Excel workbook (.xlsx) and comma-separated values text file (.csv) listing gamma spectrometry radiochemistry results for the ES.A, ES.B, PI.B, GW.B, SA.A, and GWLD.A marsh cores collected by VIMS and USGS PWRC (USGS FANs 2019-302-CNT and 2019-306-CNT). The results for each marsh core are provided on separate tabs within the Excel file.
+        Entity_Type_Definition_Source: USGS
+      Attribute:
+        Attribute_Label: Core ID
+        Attribute_Definition: Core identifier assigned by VIMS and USGS PWRC scientists
+        Attribute_Definition_Source: VIMS and USGS PWRC
+        Attribute_Domain_Values:
+          Unrepresentable_Domain: Character String
+      Attribute:
+        Attribute_Label: Depth (cm)
+        Attribute_Definition: Depth interval measured below the top of the core, in centimeters.
+        Attribute_Definition_Source: VIMS and USGS PWRC
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 2-3
+            Range_Domain_Maximum: 71-72
+            Attribute_Units_of_Measure: Centimeters
+            Attribute_Measurement_Resolution: 0.1
+      Attribute:
+        Attribute_Label: Cs-137 (dpm/g)
+        Attribute_Definition: Cesium-137 specific activity, measured in disintegrations per minute per gram of dry sediment decay-corrected to the date of field collection
+        Attribute_Definition_Source: USGS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: Not detected
+            Range_Domain_Maximum: 0.95
+            Attribute_Units_of_Measure: Disintegrations per minute per gram
+            Attribute_Measurement_Resolution: 0.01
+      Attribute:
+        Attribute_Label: Cs-137 Error (+/- dpm/g)
+        Attribute_Definition: Cesium-137 specific activity counting error, measured in disintegrations per minute per gram of dry sediment
+        Attribute_Definition_Source: USGS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: No reported value
+            Range_Domain_Maximum: 0.95
+            Attribute_Units_of_Measure: Disintegrations per minute per gram
+            Attribute_Measurement_Resolution: 0.01
+      Attribute:
+        Attribute_Label: Pb-210 (dpm/g)
+        Attribute_Definition: Lead-210 specific activity, measured in disintegrations per minute per gram of dry sediment decay-corrected to the date of field collection
+        Attribute_Definition_Source: USGS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 0.93
+            Range_Domain_Maximum: 9.37
+            Attribute_Units_of_Measure: Disintegrations per minute per gram
+            Attribute_Measurement_Resolution: 0.01
+      Attribute:
+        Attribute_Label: Pb-210 Error (+/- dpm/g)
+        Attribute_Definition: Lead-210 specific activity counting error, measured in disintegrations per minute per gram of dry sediment
+        Attribute_Definition_Source: USGS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 0.21
+            Range_Domain_Maximum: 0.70
+            Attribute_Units_of_Measure: Disintegrations per minute per gram
+            Attribute_Measurement_Resolution: 0.01
+      Attribute:
+        Attribute_Label: Ra-226 (dpm/g)
+        Attribute_Definition: Radium-226 specific activity, measured in disintegrations per minute per gram of dry sediment
+        Attribute_Definition_Source: USGS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 1.00
+            Range_Domain_Maximum: 2.29
+            Attribute_Units_of_Measure: Disintegrations per minute per gram
+            Attribute_Measurement_Resolution: 0.01
+      Attribute:
+        Attribute_Label: Ra-226 Error (+/- dpm/g)
+        Attribute_Definition: Radium-226 specific activity counting error, measured in disintegrations per minute per gram of dry sediment
+        Attribute_Definition_Source: USGS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 0.06
+            Range_Domain_Maximum: 0.20
+            Attribute_Units_of_Measure: Disintegrations per minute per gram
+            Attribute_Measurement_Resolution: 0.01
+      Attribute:
+        Attribute_Label: Th-234 (dpm/g)
+        Attribute_Definition: Thorium-234 specific activity, measured in disintegrations per minute per gram of dry sediment
+        Attribute_Definition_Source: USGS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 1.50
+            Range_Domain_Maximum: 7.17
+            Attribute_Units_of_Measure: Disintegrations per minute per gram
+            Attribute_Measurement_Resolution: 0.01
+      Attribute:
+        Attribute_Label: Th-234 Error (+/- dpm/g)
+        Attribute_Definition: Thorium-234 specific activity counting error, measured in disintegrations per minute per gram of dry sediment
+        Attribute_Definition_Source: USGS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 0.21
+            Range_Domain_Maximum: 0.68
+            Attribute_Units_of_Measure: Disintegrations per minute per gram
+            Attribute_Measurement_Resolution: 0.01
+      Attribute:
+        Attribute_Label: K-40 (dpm/g)
+        Attribute_Definition: Potassium-40 specific activity, measured in disintegrations per minute per gram of dry sediment decay-corrected to the date of field collection
+        Attribute_Definition_Source: USGS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 14.69
+            Range_Domain_Maximum: 51.15
+            Attribute_Units_of_Measure: Disintegrations per minute per gram
+            Attribute_Measurement_Resolution: 0.01
+      Attribute:
+        Attribute_Label: K-40 Error (+/- dpm/g)
+        Attribute_Definition: Potassium-40 specific activity counting error, measured in disintegrations per minute per gram of dry sediment
+        Attribute_Definition_Source: USGS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 0.96
+            Range_Domain_Maximum: 2.92
+            Attribute_Units_of_Measure: Disintegrations per minute per gram
+            Attribute_Measurement_Resolution: 0.01
+    Detailed_Description:
+      Entity_Type:
+        Entity_Type_Label: AlphaSpectrometry.xlsx, AlphaSpectrometry.csv
+        Entity_Type_Definition: Microsoft Excel workbook (.xlsx) and comma-separated values text file (.csv) listing total Pb-210 activities and counting errors for the marsh cores ES.A, ES.B, GW.B, PI.A, PI.B, SA.A, and SA.B and for the sediment surface grabs (SA S1-SA S10 and GSS1-GSS15) collected by VIMS and USGS PWRC (USGS FANs 2019-302-CNT and 2019-306-CNT). The results for each marsh core and surface grab groups are provided on separate tabs within the Excel file.
+        Entity_Type_Definition_Source: USGS
+      Attribute:
+        Attribute_Label: Core ID/Sample ID
+        Attribute_Definition: Core or sample identifier assigned by VIMS and USGS PWRC scientists
+        Attribute_Definition_Source: VIMS and USGS PWRC
+        Attribute_Domain_Values:
+          Unrepresentable_Domain: Character String
+      Attribute:
+        Attribute_Label: Depth (cm)
+        Attribute_Definition: Depth interval measured below the top of the core, in centimeters
+        Attribute_Definition_Source: VIMS and USGS PWRC
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 1-2
+            Range_Domain_Maximum: 71-72
+            Attribute_Units_of_Measure: Centimeters
+            Attribute_Measurement_Resolution: 0.1
+      Attribute:
+        Attribute_Label: Total Pb-210 (dpm/g)
+        Attribute_Definition: Total Pb-210 specific activity, measured in disintegrations per minute per gram of dry sediment
+        Attribute_Definition_Source: USGS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 0.13
+            Range_Domain_Maximum: 6.81
+            Attribute_Units_of_Measure: Disintegrations per minute per gram
+            Attribute_Measurement_Resolution: 0.01
+      Attribute:
+        Attribute_Label: Total Pb-210 Error (+/- dpm/g)
+        Attribute_Definition: Total Pb-210 specific activity counting error, measured in disintegrations per minute per gram of dry sediment
+        Attribute_Definition_Source: USGS
+        Attribute_Domain_Values:
+          Range_Domain:
+            Range_Domain_Minimum: 0.000
+            Range_Domain_Maximum: 0.360
+            Attribute_Units_of_Measure: Disintegrations per minute per gram
+            Attribute_Measurement_Resolution: 0.001
+  Distribution_Information:
+    Distributor:
+      Contact_Information:
+        Contact_Organization_Primary:
+          Contact_Organization: U.S. Geological Survey, St. Petersburg Coastal and Marine Science Center
+          Contact_Person: Christopher G. Smith
+        Contact_Position: Geologist
+        Contact_Address:
+          Address_Type: Mailing and physical
+          Address: 600 4th Street South
+          City: St. Petersburg
+          State_or_Province: FL
+          Postal_Code: 33701
+          Country: USA
+        Contact_Voice_Telephone: 727-502-8000
+        Contact_Electronic_Mail_Address: cgsmith@usgs.gov
+    Resource_Description: SiteInformation.xlsx, SiteInformation.csv, LossOnIgnition.xlsx, LossOnIgnition.csv, GammaSpectrometry.xlsx, GammaSpectrometry.csv, AlphaSpectrometry.xlsx, AlphaSpectrometry.csv
+    Distribution_Liability: This publication was prepared by an agency of the United States Government. Although these data have been processed successfully on a computer system at the U.S. Geological Survey, no warranty expressed or implied is made regarding the display or utility of the data on any other system, or for general or scientific purposes, nor shall the act of distribution imply any such warranty. The U.S. Geological Survey shall not be held liable for improper or incorrect use of the data described and (or) contained herein. Reference herein to any specific commercial product, process, or service by trade name, trademark, manufacturer, or otherwise does not constitute or imply its endorsement, recommendation, or favoring by the United States Government or any agency thereof.
+    Standard_Order_Process:
+      Digital_Form:
+        Digital_Transfer_Information:
+          Format_Name: Compressed (zip) archive
+          Format_Version_Date: 2020
+          Format_Information_Content: These zip archives include Microsoft Excel spreadsheets, comma-separated values text files, and accompanying metadata for sediment radiochemical data from surficial sediments and cores collected from multiple Georgia, Virginia and Massachusetts marshes from 2015 to 2019 (USGS FANs 2019-302-CNT and 2019-306-CNT).
+          File_Decompression_Technique: Unzip
+        Digital_Transfer_Option:
+          Online_Option:
+            Computer_Contact_Information:
+              Network_Address:
+                Network_Resource_Name: https://coastal.er.usgs.gov/data-release/doi-10.5066/P926MS6T/data/SiteInformation.zip
+                Network_Resource_Name: https://coastal.er.usgs.gov/data-release/doi-10.5066/P926MS6T/data/LossOnIgnition.zip
+                Network_Resource_Name: https://coastal.er.usgs.gov/data-release/doi-10.5066/P926MS6T/data/AlphaSpectrometry.zip
+                Network_Resource_Name: https://coastal.er.usgs.gov/data-release/doi-10.5066/P926MS6T/data/GammaSpectrometry.zip
+      Fees: None, if obtained online
+    Technical_Prerequisites: The data tables were created in Microsoft Excel 2016 and can be opened using Microsoft Excel 2007 or higher; these data may also be viewed using the free Microsoft Excel Viewer (http://office.microsoft.com/). The data tables are also provided as comma-separated values text files (.csv). The .csv data files contain the tabular data in plain text and may be viewed with a standard text editor.
+  Metadata_Reference_Information:
+    Metadata_Date: 20200807
+    Metadata_Contact:
+      Contact_Information:
+        Contact_Organization_Primary:
+          Contact_Organization: U.S. Geological Survey
+          Contact_Person: Cheyenne S. Everhart
+        Contact_Position: Geologist
+        Contact_Address:
+          Address_Type: Mailing and physical
+          Address: 600 4th Street South
+          City: St. Petersburg
+          State_or_Province: FL
+          Postal_Code: 33701
+          Country: USA
+        Contact_Voice_Telephone: 727-502-8000
+        Contact_Electronic_Mail_Address: ceverhart@contractor.usgs.gov
+    Metadata_Standard_Name: Content Standard for Digital Geospatial Metadata
+    Metadata_Standard_Version: FGDC-STD-001-1998
+    Metadata_Access_Constraints: None
+    Metadata_Use_Constraints: Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution.
+    Metadata_Security_Information:
+      Metadata_Security_Classification_System: None
+      Metadata_Security_Classification: Unclassified
+      Metadata_Security_Handling_Description: None

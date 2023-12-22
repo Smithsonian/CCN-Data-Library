@@ -1,0 +1,267 @@
+Dataset title:  Levee Soil Characteristics of Gloucester County, VA
+
+Dataset ID:  VCR21339
+Dataset Creator
+
+	Name:		Tyler Messerschmidt
+	Email:		tcmesserschmidt@vims.edu
+
+	Name:		Matthew Kirwan
+	
+	Address:
+			Virginia Institute of Marine Science
+			Glouchester Point, VA   USA
+	
+	Email:		kirwan@vims.edu
+
+	Name:		Emily Hall
+
+
+Metadata Provider
+
+	Organization:	Virginia Coast Reserve Long-Term Ecological Research Project
+	
+	Address:
+			Department of Environmental Sciences, University of Virginia, 291 McCormick Road, PO Box 400123
+			Charlottesville, VA 22904-4123  USA
+	
+	Phone:		434-924-7761
+	URL:		http://www.vcrlter.virginia.edu
+
+
+Dataset Abstract
+
+	 This dataset consists of soil and vegetation characteristics from transects across man-made levees in Gloucester County VA. 
+	Table 1 provides data on specific locations, species composition, flood tolerance, organic matter depth and salinity.
+	Table 2 provides information regarding percent organic matter for depth slices out of soil cores.
+
+
+Dataset Keywords
+
+	Organic Matter
+	System State/Condition
+	cores
+	floods
+	salt marshes
+	soil organic matter
+	vegetation
+
+
+Intellectual Rights
+
+
+
+Geographic Coverage
+
+
+	Bounding Coordinates
+
+		Geographic description:	GLOUCESTERCO - Gloucester County, VA
+		West bounding coordinate:	-76
+		East bounding coordinate:	-75.3
+		North bounding coordinate:	38
+		South bounding coordinate:	37
+	
+
+
+
+Temporal Coverage
+
+	Start Date:  2020-06-01
+	End Date:  2020-09-30
+
+Maintenance
+
+	Data are updated as needed
+
+
+Dataset Contact
+
+
+
+
+
+Data Table
+
+	Entity Name:  VCR21339_1
+	Entity Description:  Levee Soil Characteristics of Gloucester County, VA
+	Object Name:  Levee_Transects.csv
+
+
+
+Data Format
+
+	Number of Header Lines:  1
+	Attribute Orientation:  column
+	Field Delimiter:  ,
+	Number of Records:  323
+
+
+
+Attributes
+
+	Attribute Name:  SITE
+	Attribute Label:  Location of the levees
+	Attribute Definition:  SITE - Location of the levees
+	Storage Type:  string
+	Measurement Scale: 
+		BF= Belvin Farm 
+		CSL= Captain Sinclair (Landward)
+		CSS= Captain Sinclair (Seaward)
+		EP= Eagle Point Plantation
+		KC= Kings Creek
+	Missing Value Code: 
+
+
+	Attribute Name:  Point_ID
+	Attribute Label:  Individual points sample along levees.  100s represent Transect 1, 200s Transect 2 etc
+	Attribute Definition:  Point_ID - Individual points sample along levees.  100s represent Transect 1, 200s Transect 2 etc
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  none
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  Location
+	Attribute Label:  Either SW (seaward side of levee) or LW landward side of Levee
+	Attribute Definition:  Location - Either SW (seaward side of levee) or LW landward side of Levee
+	Storage Type:  string
+	Measurement Scale: 
+		LW= landward side of levee
+		SW= seaward side of levee
+	Missing Value Code: 
+
+
+	Attribute Name:  Latitude
+	Attribute Label:  Latitude from Real-time Kinematic GPS
+	Attribute Definition:  Latitude - Latitude from Real-time Kinematic GPS
+	Storage Type:  float
+	Measurement Scale: 
+		Units  degree
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  Longitude
+	Attribute Label:  Longitude from Real-time Kinematic GPS
+	Attribute Definition:  Longitude - Longitude from Real-time Kinematic GPS
+	Storage Type:  float
+	Measurement Scale: 
+		Units  degree
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  Elevation
+	Attribute Label:  Elevation relative to NAVD88 datum
+	Attribute Definition:  Elevation - Elevation relative to NAVD88 datum
+	Storage Type:  float
+	Measurement Scale: 
+		Units  meter
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  Veg_species
+	Attribute Label:  Dominant vegetation species (>50% cover) at each sampling location
+	Attribute Definition:  Veg_species - Dominant vegetation species (>50% cover) at each sampling location
+	Storage Type:  string
+	Measurement Scale: 
+		alt= Spartina alterniflora
+		bare= Bare earth
+		dist= Distichlis spicata
+		junc= Juncus roemerianus
+		pat= Spartina patens
+		pond= pond of varying depth
+		sal= Salicornia virginica
+		sht.alt= shortform Spartina alterniflora
+		upland= misc upland grasses
+	Missing Value Code: 
+
+
+	Attribute Name:  Flood_Tolerance
+	Attribute Label:  Flood tolerance score assigned to each species
+	Attribute Definition:  Flood_Tolerance - Flood tolerance score assigned to each species
+	Storage Type:  float
+	Measurement Scale: 
+		0= Least Flood tolerant (upland grasses)
+		1= Low flood tolerant succulents (Salicornia virginica)
+		2= High marsh species (Spartina patens and Distichlis spicata)
+		3= Most flood tolerant (S. alterniflora)
+	Missing Value Code: 
+
+
+	Attribute Name:  OM_Depth
+	Attribute Label:  Depth from top of core to parent material
+	Attribute Definition:  OM_Depth - Depth from top of core to parent material
+	Storage Type:  float
+	Measurement Scale: 
+		Units  meter
+		Number Type:  real
+	Missing Value Code: BLANK  (missing)
+
+
+	Attribute Name:  salinity
+	Attribute Label:  Salinity
+	Attribute Definition:  salinity - Salinity
+	Storage Type:  float
+	Measurement Scale: 
+		Units  partPerThousand
+		Number Type:  real
+	Missing Value Code: BLANK  (missing)
+
+
+	Attribute Name:  Site
+	Attribute Label:  Location of the levees
+	Attribute Definition:  Site - Location of the levees
+	Storage Type:  string
+	Measurement Scale: 
+		BF= Belvin Farm 
+		CSL= Captain Sinclair (Landward
+		CSS= Captain Sinclair (Seaward)
+		EP= Eagle Point Plantation
+		KC= Kings Creek
+	Missing Value Code: 
+
+
+	Attribute Name:  Point_ID
+	Attribute Label:  Individual points sample along levees.  100s represent Transect 1, 200s Transect 2 etc
+	Attribute Definition:  Point_ID - Individual points sample along levees.  100s represent Transect 1, 200s Transect 2 etc
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  none
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  Core_Top
+	Attribute Label:  Depth in core of top of section
+	Attribute Definition:  Core_Top - Depth in core of top of section
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  centimeter
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  Core_Bot
+	Attribute Label:  Depth of bottom of section
+	Attribute Definition:  Core_Bot - Depth of bottom of section
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  centimeter
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  org_matter_percent
+	Attribute Label:  Percent organic matter of each section
+	Attribute Definition:  org_matter_percent - Percent organic matter of each section
+	Storage Type:  float
+	Measurement Scale: 
+		Units  percent
+		Number Type:  real
+	Missing Value Code: 
+
+

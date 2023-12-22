@@ -1,0 +1,129 @@
+#,"Gillen, M.N., Messerschmidt, T., Kirwan, M.L. 2000. Shear Stress, Biomass,"
+#,"Bulk Density, Organic Matter on the Bank of the York River, VA 2018. Virginia"
+#,"Coast Reserve Long-Term Ecological Research Project Data Publication"
+#,"knb-lter-vcr.314.2"
+#,"(http://www.vcrlter.virginia.edu/cgi-bin/showDataset.cgi?docid=knb-lter-vcr.314)"
+#,
+#,This dataset is distributed by the Virginia Coast Reserve Long-Term Ecological
+#,Research Project and use is subject to the VCR/LTER Data Access Policy
+#,(http://www.vcrlter.virginia.edu/data/docs/IMPolicy_VCRLTER06.pdf). Data users
+#,working on scientific papers are encouraged to contact the data authors
+#,regarding availability of updated data and/or possible collaborations.
+#,
+#,Full metadata descriptions are available at:
+#,http://www.vcrlter.virginia.edu/cgi-bin/showDataset.cgi?docid=knb-lter-vcr.3
+#,For additional information about the data contact: Matthew Kirwan
+#,(kirwan@vims.edu)
+#,
+#,Collection and/or distribution of this data was supported by National Science
+#,Foundation grants BSR-8702333-06; DEB-9211772; DEB-9411974; DEB-0080381,
+#,DEB-0621014, DEB-1237733 and DEB-1832221. VCR/LTER:
+#,http://www.vcrlter.virginia.edu
+#,# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Site,Code,Point,Latitude,Longitude,Elevation
+Goodwin,Edge,100,37.22125713,-76.40316643,0.0285
+Goodwin,Edge,101,37.2212707,-76.40317393,0.178
+Goodwin,Edge,102,37.22128538,-76.40317851,0.1319
+Goodwin,Edge,103,37.22126806,-76.40317176,0.1589
+Goodwin,1m,104,37.22126417,-76.4031854,0.3161
+Goodwin,1m,105,37.22127814,-76.40319076,0.3438
+Goodwin,1m,106,37.22126012,-76.40318229,0.3281
+Goodwin,1m,107,37.22125413,-76.40318188,0.3031
+Goodwin,Transect,108,37.22125588,-76.40317591,0.2358
+Goodwin,Transect,109,37.22125133,-76.4032103,0.3278
+Goodwin,Transect,110,37.22124363,-76.40324487,0.3276
+Goodwin,Transect,111,37.22123829,-76.40327966,0.2989
+Goodwin,Transect,112,37.22123284,-76.40331335,0.3106
+Goodwin,Transect,113,37.22122807,-76.40334035,0.3066
+Goodwin,Interior,114,37.22124348,-76.40334489,0.323
+Goodwin,Interior,115,37.2212557,-76.40335049,0.3309
+Goodwin,Interior,116,37.22121719,-76.40333248,0.31
+Goodwin,Interior,117,37.2212033,-76.40332732,0.309
+Catlett,Edge,100,37.29646759,-76.55360068,0.165
+Catlett,Edge,101,37.29647451,-76.55359212,0.177
+Catlett,Edge,102,37.29648217,-76.55358511,0.152
+Catlett,Edge,103,37.29648876,-76.55357481,0.13
+Catlett,1m,104,37.2964845,-76.55356857,0.221
+Catlett,1m,105,37.29647624,-76.5535762,0.223
+Catlett,1m,106,37.29646716,-76.55358347,0.244
+Catlett,1m,107,37.29646037,-76.55359066,0.25
+Catlett,Transect,117,37.29632159,-76.55361101,-0.188
+Catlett,Transect,118,37.29632031,-76.55359467,-0.007
+Catlett,Transect,119,37.29631796,-76.55357013,0.238
+Catlett,Transect,120,37.29631792,-76.55353954,0.23
+Catlett,Transect,121,37.29631242,-76.55351435,0.263
+Catlett,Transect,122,37.29630493,-76.55347953,0.268
+Catlett,Transect,123,37.29630149,-76.55345195,0.29
+Catlett,Interior,130,37.29630686,-76.55343916,0.265
+Catlett,Interior,131,37.29629587,-76.55344586,0.285
+Catlett,Interior,132,37.29628327,-76.55344797,0.271
+Catlett,Interior,133,37.29627588,-76.55346616,0.258
+Catlett,Interior,134,37.29628812,-76.55346534,0.261
+Taskinas,Interior,100,37.41542606,-76.71542059,0.4683
+Taskinas,Interior,101,37.4154282,-76.7154314,0.4739
+Taskinas,Interior,102,37.41542931,-76.71543899,0.4625
+Taskinas,Interior,103,37.41543291,-76.71544932,0.4739
+Taskinas,Interior,104,37.41543622,-76.71546402,0.4739
+Taskinas,Transect,105,37.41545963,-76.71543156,0.4912
+Taskinas,Transect,106,37.41544359,-76.71543623,0.4842
+Taskinas,Transect,107,37.41542693,-76.71544067,0.4646
+Taskinas,Transect,108,37.41540419,-76.71544991,0.4606
+Taskinas,Transect,109,37.41537585,-76.71545842,0.4655
+Taskinas,Transect,110,37.41535066,-76.71546597,0.4596
+Taskinas,Transect,111,37.4153224,-76.71547107,0.4413
+Taskinas,Transect,112,37.4153047,-76.71547464,0.3673
+Taskinas,Transect,113,37.41529228,-76.71547651,0.3168
+Taskinas,Transect,114,37.41528396,-76.71547557,0.1519
+Taskinas,Edge,115,37.41529052,-76.71547312,0.3259
+Taskinas,Edge,116,37.4152938,-76.71546502,0.2917
+Taskinas,Edge,117,37.41529523,-76.71545416,0.3246
+Taskinas,Edge,118,37.41529712,-76.71545194,0.3298
+Taskinas,Edge,119,37.41530318,-76.71545333,0.3615
+SweetHall,Edge,100,37.56586577,-76.88387885,0.0113
+SweetHall,Edge,101,37.56588019,-76.88387767,0.246
+SweetHall,Edge,102,37.56588649,-76.88387919,0.1393
+SweetHall,Edge,103,37.56584712,-76.88388343,0.1784
+SweetHall,Edge,104,37.56583837,-76.88389399,0.0563
+SweetHall,1m,105,37.56584411,-76.8839038,0.215
+SweetHall,1m,106,37.56585303,-76.88389768,0.32
+SweetHall,1m,107,37.56586661,-76.88388804,0.2867
+SweetHall,Transect,108,37.56584237,-76.88388556,-0.0451
+SweetHall,Transect,109,37.56584761,-76.88390088,0.2914
+SweetHall,Transect,110,37.56584937,-76.88391386,0.308
+SweetHall,Transect,111,37.56585063,-76.88393026,0.3192
+SweetHall,Transect,112,37.56585382,-76.88394563,0.3144
+SweetHall,Transect,113,37.56585772,-76.88395936,0.2828
+SweetHall,Transect,114,37.56585977,-76.88397554,0.2438
+SweetHall,Transect,115,37.56586485,-76.88399218,0.2676
+SweetHall,Transect,116,37.56586743,-76.88400274,0.2946
+SweetHall,Interior,117,37.56586672,-76.88400316,0.2873
+SweetHall,Interior,118,37.56587444,-76.88399857,0.2768
+SweetHall,Interior,119,37.56587982,-76.8839996,0.2558
+SweetHall,Interior,120,37.56586512,-76.88400797,0.2549
+SweetHall,Interior,121,37.56586107,-76.88401078,0.2638
+Pamunkey,Interior,100,37.57145352,-77.02035864,0.135
+Pamunkey,Interior,101,37.57145131,-77.02035476,0.176
+Pamunkey,Interior,102,37.57145136,-77.02035467,0.177
+Pamunkey,Interior,103,37.57144947,-77.02035654,0.195
+Pamunkey,Interior,104,37.57145002,-77.02035628,0.188
+Pamunkey,Interior,105,37.5714526,-77.02035926,0.163
+Pamunkey,Transect,106,37.57145317,-77.02035922,0.15
+Pamunkey,Transect,107,37.57146827,-77.02035521,0.071
+Pamunkey,Transect,108,37.57148104,-77.02035619,0.031
+Pamunkey,Transect,109,37.57149999,-77.02036127,-0.059
+Pamunkey,Transect,110,37.57151054,-77.02036056,-0.047
+Pamunkey,Transect,111,37.57152315,-77.02036239,-0.055
+Pamunkey,Transect,112,37.57153371,-77.02036776,-0.039
+Pamunkey,Transect,113,37.57154655,-77.02036907,-0.031
+Pamunkey,Transect,114,37.571547,-77.02037583,-0.14
+Pamunkey,Transect,115,37.57155728,-77.02037402,-0.065
+Pamunkey,Edge,116,37.57157125,-77.02037822,0.062
+Pamunkey,Edge,117,37.57157642,-77.02038199,0.053
+Pamunkey,Edge,118,37.5715763,-77.02036724,0.076
+Pamunkey,Edge,119,37.57157053,-77.02035652,0.079
+Pamunkey,Edge,120,37.57156571,-77.02034998,0.039
+Pamunkey,Edge,121,37.57156544,-77.02034968,0.032
+Pamunkey,Transect,122,37.57158156,-77.02036789,0.058
+Pamunkey,Transect,123,37.57159272,-77.02035629,-0.01
+Pamunkey,Transect,124,37.57160685,-77.02034849,-0.038
+Pamunkey,Transect,125,37.57161579,-77.02034191,-0.072
