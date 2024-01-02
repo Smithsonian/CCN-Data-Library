@@ -49,7 +49,8 @@ dat <- dat_raw %>%
          position_notes = accuracy_flag,
          year = Year_collected,
          latitude = Latitude,
-         longitude = Longitude) %>% 
+         longitude = Longitude,
+         impact_class = Treatment) %>% 
   # remove site-level soils data
   filter(Data_type != "Site-level") %>% 
 
@@ -101,7 +102,10 @@ dat <- dat_raw %>%
 
 # curate core-level data
 cores <- dat %>%
-  distinct(study_id, site_id, core_id, latitude, longitude, year, position_notes)
+  distinct(study_id, site_id, core_id, latitude, longitude, year, position_notes) %>% 
+  mutate(vegetation_class = "emergent",
+         habitat = "marsh",
+         position_method = ifelse(grepl("estimated|averaged", position_notes), "other low resolution", NA))
   # add_count(core_id) %>% filter(n > 1)
 # unique(cores$position_notes)
 
@@ -115,7 +119,7 @@ depthseries <- dat %>%
   # filter(one_interval == T)
   rename(organic_carbon_model = Conv_factor) %>% 
   mutate(quality_flag = ifelse(grepl("Outlier", Notes), Notes, NA)) %>% 
-
+  select(contains("_id"), everything()) %>% 
   select(-c(Source, Original_source, position_notes, Country, Admin_unit, Core, Plot, Data_type,
             latitude, longitude, Site, Site_name, year, Time_replicate, Treatment, core_id_num,
             contains("_sd"), OC_perc_final, n, one_interval, droprow, OC_from_SOM_our_eq, Notes))
@@ -131,20 +135,23 @@ depthseries %>%
 
 depthseries %>% 
   drop_na(dry_bulk_density, fraction_organic_matter) %>% 
-  ggplot(aes(dry_bulk_density, fraction_organic_matter)) + 
-  geom_point(pch = 1)
+  ggplot(aes(dry_bulk_density, fraction_organic_matter, col = quality_flag)) + 
+  geom_point(pch = 1) +
+  facet_wrap(~quality_flag)
 
 depthseries %>% 
   drop_na(dry_bulk_density, fraction_carbon) %>% 
   # filter(fraction_carbon < 1) %>% 
-  ggplot(aes(dry_bulk_density, fraction_carbon, col = Notes)) + 
-  geom_point(pch = 1)
+  ggplot(aes(dry_bulk_density, fraction_carbon, col = quality_flag)) + 
+  geom_point(alpha = 0.5) +
+  facet_wrap(~quality_flag) +
+  theme(legend.position = "bottom")
 # there an OC outliers => leave in or out?
 
-depthseries %>% 
-  drop_na(fraction_carbon, OC_from_SOM_our_eq) %>% 
-  ggplot(aes(fraction_carbon, OC_from_SOM_our_eq)) + 
-  geom_point(pch = 1)
+# depthseries %>% 
+#   drop_na(fraction_carbon, OC_from_SOM_our_eq) %>% 
+#   ggplot(aes(fraction_carbon, OC_from_SOM_our_eq)) + 
+#   geom_point(pch = 1)
 
 ## ... Methods ####
 
@@ -156,15 +163,20 @@ unique(dat$method_id)
 methods <- dat %>% 
   distinct(study_id, method_id) %>% 
   rename(fraction_carbon_method = method_id) %>% 
-  arrange(study_id)
+  arrange(study_id) %>% add_count(study_id)
 
+# Martins_et_al_2022 fraction carbon method is EA (there are some intervals that only have LOI)
+# check out de_los_Santos_et_al_2022 more (part a and b)
 # organic carbon?
 
 ## ... Impacts ####
 
 impacts <- dat %>% 
-  drop_na(Treatment) %>% 
-  distinct(study_id, site_id, core_id, Treatment)
+  drop_na(impact_class) %>% 
+  mutate(impact_class = tolower(impact_class)) %>% 
+  distinct(study_id, site_id, core_id, impact_class)
+
+unique(impacts$impact_class)
 
 ## ...Check Duplicates
 
@@ -196,8 +208,10 @@ find_dups <- left_join(maxwell_studies, ccn_studies, multiple = "all") %>% drop_
 ## ... Map Core Locations ####
 library(leaflet)
 
-cores %>%
-  filter(study_id  == "Copertino_unpublished") %>%
+dat %>%
+  distinct(study_id, site_id, core_id, latitude, longitude, Country) %>% 
+# cores %>%
+  filter(Country == "China") %>% filter(study_id != "Xia_et_al_2022") %>% 
   leaflet() %>%
   addTiles() %>% 
   addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
