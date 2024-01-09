@@ -34,8 +34,21 @@ species <- agb %>%
   rename(site_id = Site,
          species_code = Species_Name) %>% 
   mutate(study_id = "Gillen_et_al_2018",
-         code_type = case_when(grepl("[.]", species_code) ~ "Genus species",
-                               T ~ "Genus"),
+         species_code = case_when(species_code == "S. alterniflora" ~ "Spartina alterniflora",
+                                  species_code == "D. spicata" ~ "Distichlis spicata",
+                                  species_code == "S. patens" ~ "Spartina patens",
+                                  species_code == "Z. aquatica" ~ "Zizania aquatica",
+                                  species_code == "P. virginica" ~ "Plantago virginica",
+                                  species_code == "S. cynosauroides" ~ "Sporobolus cynosuroides",
+                                  species_code == "S. americanus" ~ "Schoenoplectus americanus",
+                                  species_code == "B. laevis" ~ "Bidens laevis",
+                                  species_code == "Polygnum" ~ "Polygonum species",
+                                  species_code == "Polygonum" ~ "Polygonum species",
+                                  species_code == "Scirpus" ~ "Scirpus species",
+                                  species_code == "Peltandra" ~ "Peltandra species",
+                                  T ~ species_code),
+         code_type = case_when(grepl("species", species_code) ~ "Genus",
+                               T ~ "Genus species"),
          core_id = gsub("-", "_", SampleID),
          habitat = "marsh") %>% 
   filter(!species_code %in% c("Woody Stalk?", "Wild Rice")) %>% 
