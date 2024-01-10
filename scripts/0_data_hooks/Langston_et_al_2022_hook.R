@@ -38,9 +38,9 @@ bib_file <- study_citations %>%
 
 
 ## Write files ####
-write.csv(cores, "./data/primary_studies/Langston_et_al_2022/derivative/langston_et_al_2022_cores.csv")
-write.csv(depthseries, "./data/primary_studies/Langston_et_al_2022/derivative/langston_et_al_2022_depthseries.csv")
-write.csv(methods, "./data/primary_studies/Langston_et_al_2022/derivative/langston_et_al_2022_methods.csv")
-write.csv(species, "./data/primary_studies/Langston_et_al_2022/derivative/langston_et_al_2022_species.csv")
-write.csv(study_citations, "./data/primary_studies/Langston_et_al_2022/derivative/langston_et_al_2022_study_citations.csv")
+write_csv(cores, "./data/primary_studies/Langston_et_al_2022/derivative/langston_et_al_2022_cores.csv")
+write_csv(depthseries, "./data/primary_studies/Langston_et_al_2022/derivative/langston_et_al_2022_depthseries.csv")
+write_csv(methods, "./data/primary_studies/Langston_et_al_2022/derivative/langston_et_al_2022_methods.csv")
+write_csv(species, "./data/primary_studies/Langston_et_al_2022/derivative/langston_et_al_2022_species.csv")
+write_csv(study_citations, "./data/primary_studies/Langston_et_al_2022/derivative/langston_et_al_2022_study_citations.csv")
 WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Langston_et_al_2022/derivative/langston_et_al_2022_study_citations.bib")

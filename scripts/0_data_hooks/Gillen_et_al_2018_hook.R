@@ -17,7 +17,6 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 
 ## Notes:
 # AGB data present
-# cores - core_id problem with position data
 
 ## Read in data ####
 agb <- read_csv("./data/primary_studies/Gillen_et_al_2018/original/MGillen_AboveGroundBiomass.csv", skip = 22)
