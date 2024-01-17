@@ -121,7 +121,7 @@ depthseries <- dat %>%
   mutate(quality_flag = ifelse(grepl("Outlier", Notes), Notes, NA)) %>% 
   select(contains("_id"), everything()) %>% 
   select(-c(Source, Original_source, position_notes, Country, Admin_unit, Core, Plot, Data_type,
-            latitude, longitude, Site, Site_name, year, Time_replicate, Treatment, core_id_num,
+            latitude, longitude, Site, Site_name, year, Time_replicate, impact_class, core_id_num,
             contains("_sd"), OC_perc_final, n, one_interval, droprow, OC_from_SOM_our_eq, Notes))
 
 # View(depthseries %>% filter(is.na(fraction_organic_matter) & is.na(dry_bulk_density) & is.na(fraction_carbon)))
@@ -211,18 +211,19 @@ library(leaflet)
 dat %>%
   distinct(study_id, site_id, core_id, latitude, longitude, Country) %>% 
 # cores %>%
-  filter(Country == "China") %>% filter(study_id != "Xia_et_al_2022") %>% 
+  filter(study_id == "Roman_et_al_1997") %>% 
+  # filter(Country == "China") %>% filter(study_id != "Xia_et_al_2022") %>% 
   leaflet() %>%
   addTiles() %>% 
   addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
-                   radius = 2, label = ~study_id)
+                   radius = 2, label = ~site_id)
 
-ccn_cores %>%
-  filter(study_id  == "Copertino_unpublished") %>%
-  leaflet() %>%
-  addTiles() %>% 
-  addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
-                   radius = 2, label = ~study_id)
+# ccn_cores %>%
+#   filter(study_id  == "Copertino_unpublished") %>%
+#   leaflet() %>%
+#   addTiles() %>% 
+#   addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
+#                    radius = 2, label = ~study_id)
 
 ## ... Standard QA Tests ####
 table_names <- c("methods", "cores", "depthseries", "impacts") # add other tables if present
@@ -262,22 +263,16 @@ write_csv(depthseries, "data_releases/path_to_data_release_folder/Author_et_al_Y
 library(RefManageR)
 
 # read in bib file
-bib <- as.data.frame(ReadBib("data/primary_studies/Maxwell_et_al_2023/original/SaltmarshC_refs.bib"))
+bib <- as.data.frame(ReadBib("data/primary_studies/Maxwell_et_al_2023/original/core-level.bib")) %>% 
+  rownames_to_column("bib_key")
 
 # compare to our data library bib
-sources <- dat %>% 
-  filter(Data_type != "Site-level") %>% 
-  distinct(Source, Original_source) %>% 
-  rename(study_id = Original_source) %>% 
-  mutate(synthesis_source = ifelse(Source != study_id, gsub(" ", "_", Source), NA),
-         study_id = gsub(" ", "_", study_id)) %>% 
-  arrange(study_id) %>% 
-  filter(!(study_id %in% to_remove)) %>% 
-  select(-Source)
-# need to match these up
+sources <- dat %>% distinct(study_id, Source) 
+write_csv(sources, "data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_marsh_synthesis_sources.csv")
 
 maxwell_synth <- as.data.frame(GetBibEntryWithDOI("10.1038/s41597-023-02633-x"))
-# write_csv(sources, "data_releases/maxwell_et_al_2023/maxwell_marsh_synthesis_sources.csv")
+
+
 
 
 # There are three ways to approach this:
