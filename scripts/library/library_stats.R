@@ -180,3 +180,21 @@ us_impacts %>%
 # theme(axis.text.x = element_text(angle = 45, hjust=1))
 ggsave("data/library_metrics/figures/cores_per_habitat.jpg", width = 6, height = 6)
 
+
+### Compare Versions ####
+
+library(tidyverse)
+
+v1_studies <- read_csv("https://ndownloader.figshare.com/files/42289539", guess_max = 7000) %>% distinct(study_id) %>% pull(study_id)
+v1_cores <- read_csv("https://ndownloader.figshare.com/files/43694076", guess_max = 11000) %>% filter(study_id %in% v1_studies) %>% count(country)
+
+v2_cores <- read_csv("https://ndownloader.figshare.com/files/43694076", guess_max = 11000) %>% count(country, name = "n2")
+
+diff <- full_join(v1_cores, v2_cores) %>% 
+  mutate(n = ifelse(is.na(n), 0, n),
+         ndiff = n2 - n) %>% 
+  filter(ndiff > 0)
+
+
+v2 <- read_csv("https://ndownloader.figshare.com/files/43694076", guess_max = 11000) %>% filter(!(study_id %in% v1_studies))
+
