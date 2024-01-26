@@ -120,26 +120,18 @@ fraction_not_percent(depthseries)
 ## 3. Write Curated Data ####
 
 # write data to final folder
-write_csv(methods, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_methods.csv")
-# write_csv(sites, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_sites.csv")
-write_csv(cores, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_cores.csv")
-write_csv(depthseries, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_depthseries.csv")
-# write_csv(species, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_species.csv")
-# write_csv(impacts, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_impacts.csv")
+write_csv(methods, "data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_methods.csv")
+# write_csv(sites, "data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_sites.csv")
+write_csv(cores, "data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_cores.csv")
+write_csv(depthseries, "data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_depthseries.csv")
+write_csv(species, "data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_species.csv")
+write_csv(impacts, "data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_impacts.csv")
 
 ## 4. Bibliography ####
 library(RefManageR)
 
 # read in bib file
-bib <- as.data.frame(ReadBib("data/primary_studies/Maxwell_et_al_2023/original/core-level.bib")) %>% 
-  rownames_to_column("bib_key")
-
-# compare to our data library bib
-sources <- dat %>% distinct(study_id, Source) 
-write_csv(sources, "data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_marsh_synthesis_sources.csv")
-
-maxwell_synth <- as.data.frame(GetBibEntryWithDOI("10.1038/s41597-023-02633-x"))
-
+bib <- as.data.frame(GetBibEntryWithDOI("10.1029/TC009i001p00001"))
 
 
 
@@ -159,7 +151,7 @@ maxwell_synth <- as.data.frame(GetBibEntryWithDOI("10.1038/s41597-023-02633-x"))
 #                              year = "2020") %>% 
 #     column_to_rownames("bibliography_id")
 # 
-# WriteBib(as.BibEntry(study_citation), "data_releases/path_to_data_release_folder/Author_et_al_YYYY_associated_publications.bib")
+# WriteBib(as.BibEntry(study_citation), "data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_associated_publications.bib")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/

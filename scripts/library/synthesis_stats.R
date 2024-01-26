@@ -74,4 +74,39 @@ leaflet(map_cores) %>%
                    label = ~paste0(study_id, "; ", habitat), color = ~pal(habitat)) %>%
   addLegend(pal = pal, values = ~habitat)
 
+## US only ####
 
+cores <- read_csv("https://ndownloader.figshare.com/files/43251309", guess_max = 11000)  %>% 
+  # isolate CONUS cores
+  rename(state = admin_division) %>%
+  filter(country == "United States") %>%
+  filter(state != "Puerto Rico" & state != "Hawaii" & state != "Alaska") %>%
+  # standardize habitat classes to align with mapping products used in habitat metric
+  mutate(habitat = recode(habitat, 
+                          "mudflat" = "unvegetated",
+                          # grouping seagrass, kelp, and algal mats together (because the mapping products don't distinguish these)
+                          # "seagrass" = "EAB",
+                          "algal mat" = "other",
+                          "upland" = "other"))
+
+
+# plot
+cores %>% 
+  group_by(habitat) %>%
+  tally() %>%
+  ungroup() %>%
+  mutate(percent = 100*(n/sum(n))) %>% 
+  mutate(habitat = fct_reorder(habitat, percent)) %>% 
+  filter(!is.na(habitat)) %>% 
+  ggplot(aes(habitat, percent, fill = percent)) + 
+  geom_col(fill = "darkgreen") + 
+  coord_flip() + 
+  # scale_color_brewer(palette = "BuGn") +
+  xlab("Habitat Type") + ylab("Proportion of Cores (%)") +
+  geom_text(aes(label = paste0(round(percent, 1), "%")), size = 3.5, hjust = -0.2) +
+  ylim(0, 80) +
+  # theme_classic() +
+  theme_classic(base_size = 20)  
+# theme(axis.text.x = element_text(angle = 45, hjust=1))
+
+ggsave("data/library_metrics/figures/ccn_US_habitat_proportions.jpg", width = 6, height = 6)

@@ -66,7 +66,10 @@ dat <- dat_raw %>%
          study_id = recode(study_id, 
                            "Kauffman_et_al_2020" = "Kauffman_et_al_2020_Brazil",
                            "Serrano_unpublished" = "Serrano_unpublished_Australia",
-                           "UNPUBLISHED" = "Copertino_unpublished"),
+                           "UNPUBLISHED" = "Copertino_unpublished",
+                           "Smeaton_unpublished_Essex" = "Smeaton_et_al_2023",
+                           "Russell_et_al_submitted" = "Russell_et_al_2023",
+                           "Mazarrasa_et_al_in_prep" = "Mazarrasa_et_al_2023"),
          depth_min = ifelse(study_id != "Russell_et_al_submitted", depth_min*100, depth_min), 
          depth_max = ifelse(study_id != "Russell_et_al_submitted", depth_max*100, depth_max)) %>% 
 
@@ -211,12 +214,12 @@ library(leaflet)
 dat %>%
   distinct(study_id, site_id, core_id, latitude, longitude, Country) %>% 
 # cores %>%
-  filter(study_id == "Roman_et_al_1997") %>% 
+  filter(grepl("Smeaton", study_id)) %>% 
   # filter(Country == "China") %>% filter(study_id != "Xia_et_al_2022") %>% 
   leaflet() %>%
   addTiles() %>% 
   addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
-                   radius = 2, label = ~site_id)
+                   radius = 2, label = ~study_id)
 
 # ccn_cores %>%
 #   filter(study_id  == "Copertino_unpublished") %>%
@@ -252,12 +255,11 @@ fraction_not_percent(depthseries)
 ## 3. Write Curated Data ####
 
 # write data to final folder
-write_csv(methods, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_methods.csv")
-# write_csv(sites, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_sites.csv")
-write_csv(cores, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_cores.csv")
-write_csv(depthseries, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_depthseries.csv")
-# write_csv(species, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_species.csv")
-# write_csv(impacts, "data_releases/path_to_data_release_folder/Author_et_al_YYYY_impacts.csv")
+# write_csv(methods, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_methods.csv")
+write_csv(cores, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_cores.csv")
+write_csv(depthseries, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_depthseries.csv")
+# write_csv(species, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_species.csv")
+write_csv(impacts, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_impacts.csv")
 
 ## 4. Bibliography ####
 library(RefManageR)
@@ -265,20 +267,16 @@ library(RefManageR)
 # read in bib file
 bib <- as.data.frame(ReadBib("data/primary_studies/Maxwell_et_al_2023/original/core-level.bib")) %>% 
   rownames_to_column("bib_key")
+write_excel_csv(bib, "data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_study_citations.csv")
 
 # compare to our data library bib
-sources <- dat %>% distinct(study_id, Source) 
-write_csv(sources, "data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_marsh_synthesis_sources.csv")
+# sources <- dat %>% distinct(study_id, Source) 
+# write_csv(sources, "data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_marsh_synthesis_sources.csv")
 
 maxwell_synth <- as.data.frame(GetBibEntryWithDOI("10.1038/s41597-023-02633-x"))
 
-
-
-
-# There are three ways to approach this:
-# 1) download the article citation directly to the data release folder
-# 2) create the study citation in the curation script and output it to the data release folder
-# 3) create a study_citation table in the metadata folder, read it in and output bib file to data release folder
+# study_citations <- 
+# write_csv(study_citations, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_study_citations.csv")
 
 # example study citation creation:
 # study_citation <- data.frame(bibliography_id = "Spera_et_al_2020",
@@ -291,7 +289,5 @@ maxwell_synth <- as.data.frame(GetBibEntryWithDOI("10.1038/s41597-023-02633-x"))
 #                              year = "2020") %>% 
 #     column_to_rownames("bibliography_id")
 # 
-# WriteBib(as.BibEntry(study_citation), "data_releases/path_to_data_release_folder/Author_et_al_YYYY_associated_publications.bib")
-
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/
