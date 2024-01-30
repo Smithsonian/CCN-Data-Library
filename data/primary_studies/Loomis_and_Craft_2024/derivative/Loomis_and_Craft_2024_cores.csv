@@ -1,0 +1,37 @@
+study_id,site_id,core_id,year,month,latitude,longitude,position_method,salinity_class,salinity_method,salinity_notes,vegetation_class,vegetation_method,habitat,inundation_class,inundation_method,core_length_flag
+Loomis_and_Craft_2024,Sat,Sat_Salt_L1,2005,7,30.9794,-81.54998,handheld,saline,measurement,> 15 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Sat,Sat_Salt_P1,2005,7,30.9794,-81.54998,handheld,saline,measurement,> 15 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Sat,Sat_Salt_L2,2005,7,30.99,-81.5439,handheld,saline,measurement,> 15 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Sat,Sat_Salt_P2,2005,7,30.99,-81.5439,handheld,saline,measurement,> 15 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Sat,Sat_Brack_L1,2005,7,30.99,-81.6052,handheld,brackish,measurement,0.5-15 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Sat,Sat_Brack_P1,2005,7,30.99,-81.6052,handheld,brackish,measurement,0.5-15 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Sat,Sat_Brack_L2,2005,7,30.9985,-81.6169,handheld,brackish,measurement,0.5-15 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Sat,Sat_Brack_P2,2005,7,30.9985,-81.6169,handheld,brackish,measurement,0.5-15 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Sat,Sat_Fresh_L1,2005,7,30.9716,-81.7463,handheld,fresh,measurement,< 0.5 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Sat,Sat_Fresh_P1,2005,7,30.9716,-81.7463,handheld,fresh,measurement,< 0.5 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Sat,Sat_Fresh_L2,2005,7,30.9716,-81.7493,handheld,fresh,measurement,< 0.5 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Sat,Sat_Fresh_P2,2005,7,30.9716,-81.7493,handheld,fresh,measurement,< 0.5 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Oge,Oge_Salt_L1,2005,7,31.8601,-81.1289,handheld,saline,measurement,> 15 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Oge,Oge_Salt_P1,2005,7,31.8601,-81.1289,handheld,saline,measurement,> 15 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Oge,Oge_Salt_L2,2005,7,31.8596,-81.1343,handheld,saline,measurement,> 15 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Oge,Oge_Salt_P2,2005,7,31.8596,-81.1343,handheld,saline,measurement,> 15 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Oge,Oge_Brack_L1,2005,7,31.9053,-81.1843,handheld,brackish,measurement,0.5-15 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Oge,Oge_Brack_P1,2005,7,31.9053,-81.1843,handheld,brackish,measurement,0.5-15 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Oge,Oge_Brack_L2,2005,7,31.9033,-81.1898,handheld,brackish,measurement,0.5-15 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Oge,Oge_Brack_P2,2005,7,31.9033,-81.1898,handheld,brackish,measurement,0.5-15 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Oge,Oge_Fresh_L1,2005,7,31.9181,-81.2639,handheld,fresh,measurement,< 0.5 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Oge,Oge_Fresh_P1,2005,7,31.9181,-81.2639,handheld,fresh,measurement,< 0.5 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Oge,Oge_Fresh_L2,2005,7,31.92255,-81.2547333333333,handheld,fresh,measurement,< 0.5 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Oge,Oge_Fresh_P2,2005,7,31.92255,-81.2547333333333,handheld,fresh,measurement,< 0.5 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Alt,Alt_Salt_L1,2005,7,31.3500666666666,-81.33335,handheld,saline,measurement,> 15 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Alt,Alt_Salt_P1,2005,7,31.3500666666666,-81.33335,handheld,saline,measurement,> 15 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Alt,Alt_Salt_L2,2005,7,31.3835666666666,-81.2675,handheld,saline,measurement,> 15 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Alt,Alt_Salt_P2,2005,7,31.3835666666666,-81.2675,handheld,saline,measurement,> 15 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Alt,Alt_Brack_L1,2005,7,31.3005,-81.4009,handheld,brackish,measurement,0.5-15 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Alt,Alt_Brack_P1,2005,7,31.3005,-81.4009,handheld,brackish,measurement,0.5-15 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Alt,Alt_Brack_L2,2005,7,31.308,-81.4096833333333,handheld,brackish,measurement,0.5-15 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Alt,Alt_Brack_P2,2005,7,31.308,-81.4096833333333,handheld,brackish,measurement,0.5-15 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Alt,Alt_Fresh_L1,2005,7,31.335,-81.4787666666666,handheld,fresh,measurement,< 0.5 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Alt,Alt_Fresh_P1,2005,7,31.335,-81.4787666666666,handheld,fresh,measurement,< 0.5 ppt,emergent,measurement,marsh,back,field observation,not specified
+Loomis_and_Craft_2024,Alt,Alt_Fresh_L2,2005,7,31.3381666666666,-81.479,handheld,fresh,measurement,< 0.5 ppt,emergent,measurement,marsh,levee,field observation,not specified
+Loomis_and_Craft_2024,Alt,Alt_Fresh_P2,2005,7,31.3381666666666,-81.479,handheld,fresh,measurement,< 0.5 ppt,emergent,measurement,marsh,back,field observation,not specified
