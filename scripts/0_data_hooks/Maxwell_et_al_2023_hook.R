@@ -69,7 +69,11 @@ dat <- dat_raw %>%
                            "UNPUBLISHED" = "Copertino_unpublished",
                            "Smeaton_unpublished_Essex" = "Smeaton_et_al_2023",
                            "Russell_et_al_submitted" = "Russell_et_al_2023",
-                           "Mazarrasa_et_al_in_prep" = "Mazarrasa_et_al_2023"),
+                           "Mazarrasa_et_al_in_prep" = "Mazarrasa_et_al_2023",
+                           "de_los_Santos_et_al_2022_(a)" = "de_los_Santos_et_al_2022",
+                           "de_los_Santos_et_al_2022_(b)" = "de_los_Santos_et_al_2023",
+                           "Pagès_et_al_(in_preparation)" = "Pagès_et_al_unpublished",
+                           "Neto_&_Lana_1997" = "Neto_and_Lana_1997"),
          depth_min = ifelse(study_id != "Russell_et_al_submitted", depth_min*100, depth_min), 
          depth_max = ifelse(study_id != "Russell_et_al_submitted", depth_max*100, depth_max)) %>% 
 
@@ -214,7 +218,8 @@ library(leaflet)
 dat %>%
   distinct(study_id, site_id, core_id, latitude, longitude, Country) %>% 
 # cores %>%
-  filter(grepl("Smeaton", study_id)) %>% 
+  filter(study_id == "Gao_et_al_2016") %>%
+  # filter(grepl("de_los_Santos", study_id)) %>%
   # filter(Country == "China") %>% filter(study_id != "Xia_et_al_2022") %>% 
   leaflet() %>%
   addTiles() %>% 
@@ -265,29 +270,77 @@ write_csv(impacts, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_e
 library(RefManageR)
 
 # read in bib file
-bib <- as.data.frame(ReadBib("data/primary_studies/Maxwell_et_al_2023/original/core-level.bib")) %>% 
-  rownames_to_column("bib_key")
-write_excel_csv(bib, "data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_study_citations.csv")
+# bib <- as.data.frame(ReadBib("data/primary_studies/Maxwell_et_al_2023/original/core-level.bib")) %>% 
+#   rownames_to_column("bib_key")
+# write_excel_csv(bib, "data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_study_citations.csv")
 
 # compare to our data library bib
-# sources <- dat %>% distinct(study_id, Source) 
+sources <- dat %>% distinct(study_id, Source)
 # write_csv(sources, "data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_marsh_synthesis_sources.csv")
 
-maxwell_synth <- as.data.frame(GetBibEntryWithDOI("10.1038/s41597-023-02633-x"))
+study_dois <- read_csv("data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_study_citations.csv") %>% 
+  bind_rows(read_xlsx("data/primary_studies/Maxwell_et_al_2023/intermediate/missing_maxwell_studies.xlsx")) %>% 
+  drop_na(study_id) %>% 
+  filter(study_id != "Markewich_et_al_1998") %>% 
+  select(study_id, doi)
 
-# study_citations <- 
-# write_csv(study_citations, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_study_citations.csv")
+missing_citations <- unique(dat$study_id)[!(unique(dat$study_id) %in% study_dois$study_id)]
+missing_citations
 
-# example study citation creation:
-# study_citation <- data.frame(bibliography_id = "Spera_et_al_2020",
-#                              title = "Spatial and temporal changes to a hydrologically-reconnected coastal wetland: Implications for restoration",
-#                              author = "Alina C. Spera and John R. White and Ron Corstanje",
-#                              bibtype = "Article",
-#                              doi = "10.1016/j.ecss.2020.106728",
-#                              url = "https://doi.org/10.1016/j.ecss.2020.106728", 
-#                              journal = "Estuarine, Coastal and Shelf Science",
-#                              year = "2020") %>% 
-#     column_to_rownames("bibliography_id")
-# 
+# resolve the following:
+# Copertino synthesis (synthesis and original pubs need citations, otherwise it'll just be the Maxwell)
+# "Adaime_1978", "Azevedo_2015-UNPUBLISHED",  "Copertino_unpublished", "Lacerda_et_al_1997", "Neto_&_Lana_1997", "Newton_2017"  
+# "Rios_et_al_2018", "Payne_et_al_2019", "Zanin_2003"
+
+# Xia et al 2022 synthesis: "Gao_et_al_2016", "Liu_et_al_2017" (RESOLVED)
+
+# Fu et al 2021 synthsis: "Wan_et_al_2017", "Wang_et_al_2017", "Loh_et_al_2018", "Lu_et_al_2019"              
+
+# solo unpublished: "Pagès_et_al_(in_preparation)", "Serrano_unpublished_Australia" 
+
+synthesis_bib <- data.frame()
+
+for (i in 1:nrow(study_dois)) {
+  temp_df <- as.data.frame(GetBibEntryWithDOI(study_dois$doi[i])) %>% 
+    remove_rownames() %>% 
+    mutate(study_id = study_dois$study_id[i])
+  
+  synthesis_bib <- bind_rows(synthesis_bib, temp_df)
+}
+
+# Markewich_et_al_1998 citation needs to be manually created
+markewich_citation <- data.frame(study_id = "Markewich_et_al_1998",
+                                 bibliography_id = "Markewich_et_al_1998_report",
+                                 publication_type = "associated source",
+                                 title = "Detailed Descriptions for Sampling, Sample Preparation and Analyses of Cores from St. Bernard Parish, Louisiana",
+                                 author = "Markewich, Helaine Walsh and Britsch, Louis D. and Buell, Gary R. and Dillon, Douglas L. and Fraticelli, Carmen M. and Fries, Terry L. and McGeehin, John P. and Pracht, Jodi B. and Robbins, John A. and Wrenn, John H.",
+                                 bibtype = "Misc",
+                                 issn = "2331-1258",
+                                 number = "98-429",
+                                 doi = "10.3133/ofr98429",
+                                 url = "https://pubs.er.usgs.gov/publication/ofr98429",
+                                 publisher = "U.S. Geological Survey",
+                                 year = "1998")
+# is this a tech report or other bib type?
+
+# create an expanded table which assigns Maxwell 2023 as a synthesis source for all the studies
+maxwell_synth <- data.frame(study_id = unique(dat$study_id)) %>% 
+  bind_cols(as.data.frame(GetBibEntryWithDOI("10.1038/s41597-023-02633-x")) %>% remove_rownames()) %>% 
+  mutate(bibliography_id = "Maxwell_et_al_2023_synthesis",
+         publication_type = "synthesis source")
+
+# combine all citations 
+synthesis_citations <- synthesis_bib %>% 
+  mutate(bibliography_id = ifelse(bibtype == "Misc", paste0(study_id, "_data"),
+                                  paste0(study_id, "_article")),
+         publication_type = ifelse(bibtype == "Article", "associated source", "primary dataset")) %>% 
+  bind_rows(markewich_citation) %>% 
+  bind_rows(maxwell_synth) %>% 
+  arrange(study_id) %>% 
+  select(-c(editor, language, keywords, copyright)) %>% 
+  select(study_id, bibliography_id, publication_type, everything())
+
+# write_excel_csv(synthesis_citations, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_study_citations.csv")
+
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/
