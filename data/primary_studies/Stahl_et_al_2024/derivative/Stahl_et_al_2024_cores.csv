@@ -1,0 +1,3 @@
+study_id,site_id,core_id,year,month,day,core_notes,latitude,longitude,position_method,salinity_class,salinity_method,vegetation_class,vegetation_method,habitat,inundation_class,inundation_method,core_length_flag,pb210_cic_accretion_rate
+Stahl_et_al_2024,GCE11,GCE11_TFL,2016,5,26,L,31.3852,-81.5209,handheld,fresh,field observation,forested,measurement,swamp,levee,field observation,not specified,4
+Stahl_et_al_2024,GCE11,GCE11_TFP,2016,5,26,P,31.3852,-81.5209,handheld,fresh,field observation,forested,measurement,swamp,back,field observation,not specified,0.2
