@@ -61,7 +61,7 @@ Elsey_Quirk_cs137 <- read_csv("data/primary_studies/Elsey-Quirk_et_al_2011/inter
 removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001", "Noe_et_al_2016", "Johnson_et_al_2007", "Watson_and_Byrne_2013",
                      "Boyd_and_Sommerfield_2016", "Unger_et_al_2016", "Boyd_2012", "Boyd_et_al_2017", "Callaway_et_al_2012", "Piazza_et_al_2011",
                      "Gerlach_et_al_2017", "Craft_2007", "Crooks_et_al_2014", "Crooks_et_al_2013", "Breithaupt_et_al_2014", "Kemp_et_al_2012", 
-                     "Ensign_et_al_2015", "Radabaugh_et_al_2018")
+                     "Ensign_et_al_2015", "Radabaugh_et_al_2018", "Drake_et_al_2015")
 
 ## 3. Data Curation #################
 
@@ -109,14 +109,10 @@ cores <- raw_cores %>%
   mutate(site_id = ifelse(grepl("CRMS", core_id) == TRUE, 
                           gsub("_.*", "", core_id), site_id)) %>% 
   # Jaxine updates
-  mutate(core_year = case_when(study_id == "Drake_et_al_2015" ~ 2012,
-                               study_id == "Elsey_Quirk_et_al_2011" ~ 2008,
+  mutate(core_year = case_when(study_id == "Elsey_Quirk_et_al_2011" ~ 2008,
                                study_id == "Noe_et_al_2013" ~ 2010,
                                study_id == "Radabaugh_et_al_2018" ~ 2015,
                                          TRUE ~ NA_real_),
-         core_month = case_when(study_id == "Drake_et_al_2015" ~ 6,
-                                         TRUE ~ NA_real_),
-         core_elevation_datum = ifelse(study_id == "Drake_et_al_2015" & !is.na(core_elevation), "NAVD88", NA_character_),
          core_elevation_method = case_when(study_id == "Hill_and_Anisfeld_2015" & !is.na(core_elevation) ~ "other high resolution",
                                            TRUE ~ NA_character_),
          core_elevation_notes = case_when(study_id == "Hill_and_Anisfeld_2015" & !is.na(core_elevation) ~ "Topcon GPT-3200 total station", 
@@ -128,6 +124,8 @@ cores <- raw_cores %>%
 
 # need to make a lookup for the site_id to join with the depthseries
 site_lookup <- distinct(cores, study_id, site_id, core_id)
+
+#rose updates 2/9, removed Drake_et_al_2015 cores, now published under Drake_et_al_2024
 
 ## ... Depthseries ####
 
@@ -227,13 +225,13 @@ methods <- raw_methods %>%
          compaction_flag = ifelse(study_id == "CRMS_Database", "compaction quantified", compaction_flag)) %>% 
   # Jaxine updates
   rename(carbon_profile_notes = fraction_carbon_flag) %>% 
-  mutate(sediment_sieved_flag = case_when(study_id %in% c("Drake_et_al_2015", "Elsey_Quirk_et_al_2011", "Noe_et_al_2013") ~ "sediment sieved",
+  mutate(sediment_sieved_flag = case_when(study_id %in% c("Elsey_Quirk_et_al_2011", "Noe_et_al_2013") ~ "sediment sieved",
                                           study_id == "Radabaugh_et_al_2018" ~ "sediment not sieved",
                                           TRUE ~ NA_character_),
-         sediment_sieve_size = case_when(study_id %in% c("Drake_et_al_2015", "Noe_et_al_2013") ~ 2,
+         sediment_sieve_size = case_when(study_id %in% c("Noe_et_al_2013") ~ 2,
                                          study_id == "Elsey_Quirk_et_al_2011" ~ 0.42,
                                          TRUE ~ NA_real_),
-         fraction_carbon_method = case_when(study_id %in% c("Drake_et_al_2015", "Hill_and_Anisfeld_2015", "Noe_et_al_2013") ~ "EA",
+         fraction_carbon_method = case_when(study_id %in% c("Hill_and_Anisfeld_2015", "Noe_et_al_2013") ~ "EA",
                                             study_id == "Elsey_Quirk_et_al_2011" ~ "Craft regression",
                                             TRUE ~ NA_character_),
          fraction_carbon_type = ifelse(study_id == "Radabaugh_et_al_2018", "total carbon", fraction_carbon_type),
@@ -365,7 +363,7 @@ rmarkdown::render(input = "./scripts/1_data_formatting/qaqc_report.Rmd",
 # 
 # primary_no_dois <- as.data.frame(list(c(crms, merrill, nuttle)))
 # 
-# primary_no_dois <- primary_no_dois %>%
+# primary_no_dois <- primary_no_dois %>% 
 #   rownames_to_column("key") %>%
 #   mutate(study_id = key, 
 #          bibliography_id = key, 
