@@ -25,10 +25,10 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 
 ## Step 1: Setting up the datasets ####
 
-cores_raw <- read_xlsx("./data/primary_studies/Rodriguez_et_al_2022/original/Supplementary_Data.xlsx", sheet = 1)
-depthseries_raw <- read_xlsx("./data/primary_studies/Rodriguez_et_al_2022/original/Supplementary_Data.xlsx", sheet = 2)
-species_raw <- read_csv("./data/primary_studies/Rodriguez_et_al_2022/intermediate/Table_1.csv", skip = 1) # this is the converted .csv file (.../Rodriguez_et_al_2022/intermediate) made from the original .docx (.../Rodriguez_et_al_2022/original)
-methods_raw <- read_csv("./data/primary_studies/Rodriguez_et_al_2022/intermediate/Methods.csv")
+cores_raw <- read_xlsx("./data/primary_studies/Miller_et_al_2022/original/Supplementary_Data.xlsx", sheet = 1)
+depthseries_raw <- read_xlsx("./data/primary_studies/Miller_et_al_2022/original/Supplementary_Data.xlsx", sheet = 2)
+species_raw <- read_csv("./data/primary_studies/Miller_et_al_2022/intermediate/Table_1.csv", skip = 1) # this is the converted .csv file (.../Miller_et_al_2022/intermediate) made from the original .docx (.../Miller_et_al_2022/original)
+methods_raw <- read_csv("./data/primary_studies/Miller_et_al_2022/intermediate/Methods.csv")
 
 ## Cores
 cores_set_up <- cores_raw %>% 
@@ -42,7 +42,7 @@ cores_set_up <- cores_raw %>%
   distinct(core_id, .keep_all = TRUE) %>% # this removes all of the duplicate rows due to multiple calibrated age ranges per core ID
   mutate(core_id = str_replace_all(string = core_id, pattern = '-', replacement = '_'),
          site_id = str_replace_all(string = site_id, pattern = '-', replacement = '_'),
-         study_id = "Rodriguez_et_al_2022",
+         study_id = "Miller_et_al_2022",
          elevation_datum = "NAVD88",
          elevation_method = 'RTK',
          salinity_method = 'field observation',
@@ -70,7 +70,7 @@ c14_table <- cores_raw %>%
          c14_age_se = 'Age Error') %>% 
   unite(col = core_id, site_id : core_id, sep = '_', remove = FALSE) %>% 
   distinct(core_id, .keep_all = TRUE) %>% 
-  mutate(study_id = "Rodriguez_et_al_2022",
+  mutate(study_id = "Miller_et_al_2022",
          method_id = "single set of methods",
          c14_age_se = na_if(c14_age_se, 'n/a'),
          c14_age = na_if(c14_age, 'n/a'),
@@ -89,7 +89,7 @@ species_set_up <- species_raw[-c(23:25), ] %>% # eliminating metadata rows
          easting = Easting,
          northing = Northing,
          year = "Sampling\nYear (CE)") %>% 
-  mutate(study_id = "Rodriguez_et_al_2022",
+  mutate(study_id = "Miller_et_al_2022",
          code_type = 'Genus',
          species_code = paste(species_code, "", sep = ' sp.'),
          habitat = 'marsh',
@@ -106,7 +106,7 @@ depthseries_set_up <- depthseries_raw %>%
   separate(col = "Interval", into = c("depth_min", "depth_max"), sep = "-") %>% 
   rename(core_id = "Core Name",
          dry_bulk_density = `Dry Bulk Density (g cm-3)`) %>% 
-  mutate(study_id = "Rodriguez_et_al_2022", 
+  mutate(study_id = "Miller_et_al_2022", 
          fraction_organic_matter = `LOI (%)`/100,
          fraction_carbon = `Carbon (%)`/100,
          method_id = "single set of methods") %>% 
@@ -175,16 +175,16 @@ testNumericCols(depthseries)
 
 ## Step 4: Writing Curated Data ####
 
-write_csv(cores, "data/primary_studies/Rodriguez_et_al_2022/derivative/Rodriguez_et_al_2022_cores.csv") 
-write_csv(depthseries, "data/primary_studies/Rodriguez_et_al_2022/derivative/Rodriguez_et_al_2022_depthseries.csv")
-write_csv(species, "data/primary_studies/Rodriguez_et_al_2022/derivative/Rodriguez_et_al_2022_species.csv")
-write_csv(methods, "data/primary_studies/Rodriguez_et_al_2022/derivative/Rodriguez_et_al_2022_methods.csv")
+write_csv(cores, "data/primary_studies/Miller_et_al_2022/derivative/Miller_et_al_2022_cores.csv") 
+write_csv(depthseries, "data/primary_studies/Miller_et_al_2022/derivative/Miller_et_al_2022_depthseries.csv")
+write_csv(species, "data/primary_studies/Miller_et_al_2022/derivative/Miller_et_al_2022_species.csv")
+write_csv(methods, "data/primary_studies/Miller_et_al_2022/derivative/Miller_et_al_2022_methods.csv")
 
 
 ## Step 5: Bibliography ####
 
-citation_article <- data.frame(study_id = "Rodriguez_et_al_2022",
-                              bibliography_id = "Rodriguez_et_al_2022_article",
+citation_article <- data.frame(study_id = "Miller_et_al_2022",
+                              bibliography_id = "Miller_et_al_2022_article",
                               title = "Carbon accumulation rates are highest at young and expanding salt marsh edges",
                               author = "Carson B. Miller, Antonio B. Rodriguez, Molly C. Bost, Brent A. McKee and Nathan D. McTigue ",
                               doi = "10.1038/s43247-022-00501-x",
@@ -196,10 +196,10 @@ citation_article <- data.frame(study_id = "Rodriguez_et_al_2022",
                               month = "aug",
                               day = '2')
 
-citation_data <- data.frame(study_id = "Rodriguez_et_al_2022",
-         bibliography_id = "Rodriguez_et_al_2022_data",
+citation_data <- data.frame(study_id = "Miller_et_al_2022",
+         bibliography_id = "Miller_et_al_2022_data",
          title = "Salt marsh radiocarbon and loss on Ignition data",
-         author = "Rodriguez, Antonio; Miller, Carson; Bost, Molly",
+         author = "Miller, Carson; Rodriguez, Antonio; Bost, Molly",
          publication_type = "primary dataset",
          doi = "10.6084/m9.figshare.20137649.v2",
          url = 'https://doi.org/10.6084/m9.figshare.20137649.v2',
@@ -215,5 +215,5 @@ bib_file <- study_citations %>%
   select(-c(study_id, publication_type)) %>% 
   column_to_rownames("bibliography_id")
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Rodriguez_et_al_2022/derivative/Rodriguez_et_al_2022_study_citations.bib")
-write_csv(study_citations, "data/primary_studies/Rodriguez_et_al_2022/derivative/Rodriguez_et_al_2022_study_citations.csv")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Miller_et_al_2022/derivative/Miller_et_al_2022_study_citations.bib")
+write_csv(study_citations, "data/primary_studies/Miller_et_al_2022/derivative/Miller_et_al_2022_study_citations.csv")

@@ -55,10 +55,14 @@ treedata <- raw_treedata %>%
          plot_radius = case_when(plot_shape == "circle" ~ sqrt(plot_area/pi),
                                  T ~ NA),
          field_or_manipulation_code = "field",
+         
+         # correct for longitude entry error and remove sites listed off the coast until author provides corrected positions
          longitude = case_when(longitude > 0 & site_id %in% c("south_america_Columbia", "south_america_tropical_Pacific_Colombia_Ecuador", "central_america_Honduras") ~ -longitude,
+                               site_id == "south_america_tropical_Pacific_Colombia_Ecuador" & longitude < -79 ~ NA,
                                T ~ longitude),
-         latitude = case_when(site_id == "south_america_tropical_Pacific_Colombia_Ecuador" & latitude < 5 ~ 5.76477,
+         latitude = case_when(site_id == "south_america_tropical_Pacific_Colombia_Ecuador" & longitude < -79 ~ NA,
                               T ~ latitude),
+         
          plot_center_latitude = latitude,
          plot_center_longitude = longitude,
          plant_plot_detail_present = "yes",
@@ -81,41 +85,25 @@ treedata <- raw_treedata %>%
 
 tree_summary <- treedata %>% 
   group_by(site_id) %>% 
-  summarise(mean_height = mean(height, na.rm = TRUE),
-            mean_height_se = sd(mean_height, na.rm = TRUE),
-            height_se = sd(height, na.rm = TRUE),
-            height_min = min(height, na.rm = TRUE),
-            height_max = max(height, na.rm = TRUE),
-            height_n = n(),
-            diameter_se = sd(diameter, na.rm = TRUE),
-            dominant_species = getmode(species_counter)) 
+  summarise(dominant_species = getmode(species_counter)) 
 
 ## ... Plot Summary ####
 plot_summary <- full_join(treedata, tree_summary) %>% 
-  mutate(mean_height_upper_CI = mean_height + mean_height_se,
-         mean_height_lower_CI = mean_height - mean_height_se) %>% 
   select(study_id, site_id, plot_id, plot_area, plot_shape, plot_center_latitude, plot_center_longitude,
-         plot_radius, year, month, day, field_or_manipulation_code, habitat, dominant_species, mean_height, mean_height_se, 
-         mean_height_upper_CI, mean_height_lower_CI, plant_plot_detail_present, soil_core_present) %>% 
+         plot_radius, year, month, day, field_or_manipulation_code, habitat, dominant_species, plant_plot_detail_present, soil_core_present) %>% 
   distinct()
 
 ## ... Plant-Plot Detail ####
-plant_plot_detail <- full_join(treedata, tree_summary) %>% 
-  mutate(mean_height_upper_CI = mean_height + mean_height_se,
-         mean_height_lower_CI = mean_height - mean_height_se,
-         position_accuracy = case_when(site_id == "south_america_tropical_Pacific_Colombia_Ecuador" & latitude < 5 ~ "Author noted that these positions were inaccurate",
-                                       T ~ NA_character_)) %>%
-  select(study_id, site_id, plot_id, plot_area, # area_unit, 
-         longitude, latitude, position_accuracy, year, month, day, harvest_or_allometry,
-         genus, species, alive_or_dead, above_or_belowground, height, height_n, height_min, height_max, height_se,
+plant_plot_detail <- treedata %>% 
+  select(study_id, site_id, plot_id, plot_area, 
+         longitude, latitude, year, month, day, harvest_or_allometry,
+         genus, species, alive_or_dead, above_or_belowground, 
          allometric_eq_present, plant_measurements_present)
          
 ## ... Plant ####
-plant <- full_join(treedata, tree_summary) %>% 
+plant <- treedata %>% 
   select(study_id, site_id, plot_id, plant_id, year, month, day, genus, species, alive_or_dead, above_or_belowground,
-         n_plants, height, height_se, height_unit, height_method, 
-         diameter, diameter_se, diameter_method # diameter_unit
-         )
+         diameter, diameter_method, diameter_unit)
 
 study_citations <- data.frame(study_id = id, 
                              bibliography_id = "Simard_et_al_2019_data",
