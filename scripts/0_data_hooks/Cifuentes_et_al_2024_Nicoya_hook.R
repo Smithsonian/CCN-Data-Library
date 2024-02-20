@@ -65,8 +65,14 @@ impacts <- raw_plots %>%
          impact_class = land_use_class) %>% 
   mutate(impact_class = case_when(impact_class == "shrimp pond" ~ "farmed", #check impact classes 
                                   impact_class == "low disturbance" ~ "natural",
-                                  impact_class == "salt pond" ~ "agro-industrial deforestation")) %>% 
-  select(- land_use_status)
+                                  impact_class == "salt pond" ~ "agro-industrial deforestation"),
+         impact_class2 = case_when(startsWith(core_id, "Buenaventura_Camaronera") ~ "agro-industrial deforestation",
+                                   startsWith(core_id, "Isla Chira_Camaronera") ~ "agro-industrial deforestation",
+                                   startsWith(core_id, "Jicaral_Camaronera") ~ "agro-industrial deforestation",
+                                   startsWith(core_id, "Lepanto_Camaronera") ~ "agro-industrial deforestation")) %>%
+  pivot_longer(cols = c(impact_class, impact_class2), values_to = "impact_class") %>% 
+  select(- land_use_status, -name) %>% 
+  filter(!is.na(impact_class))
 
 
 ## 2. QAQC ####
