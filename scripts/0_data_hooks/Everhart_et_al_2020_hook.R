@@ -114,7 +114,11 @@ depth_raw <- full_join(alpha_joiner, alpha_push_joiner) %>%
                              grepl("GW|GSS", core_id) ~ "Goodwin_Island",
                              grepl("PI", core_id) ~ "Plum_Island_Estuary",
                              grepl("SA", core_id) ~ "South_Altamaha",
-                             T ~ NA_character_))
+                             T ~ NA_character_),
+         depth_min = case_when(grepl("Surface Sample", method_id) ~ 0,
+                               T ~ as.numeric(depth_min)),
+         depth_max = case_when(grepl("Surface Sample", method_id) ~ 10,
+                               T ~ as.numeric(depth_max)))
 
 depthseries <- depth_raw %>% 
   select(study_id, site_id, core_id, method_id, depth_min, depth_max, fraction_organic_matter, cs137_activity,

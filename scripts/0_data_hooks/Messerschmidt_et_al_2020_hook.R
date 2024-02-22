@@ -21,6 +21,22 @@ positions <- read_csv("./data/primary_studies/Messerschmidt_et_al_2020/original/
 FOM <- read_csv("./data/primary_studies/Messerschmidt_et_al_2020/original/Levee_Cores.csv") 
 
 ## Curate ####
+depthseries <- FOM %>% 
+  rename(depth_min = Core_Top,
+         depth_max = Core_Bot) %>% 
+  mutate(fraction_organic_matter = org_matter_percent/100,
+         study_id = "Messerschmidt_et_al_2020",
+         method_id = "single set of methods",
+         site_id = case_when(Site == "BF" ~ "Belvin_Farm",
+                             Site == "CSL" ~ "Captain_Sinclair_Landward",
+                             Site == "CSS" ~ "Captain_Sinclair_Seaward",
+                             Site == "EP" ~ "Eagle_Point_Plantation",
+                             Site == "KC" ~ "Kings_Creek",
+                             T ~ NA_character_),
+         core_id = paste(Site, Point_ID, sep = "_")) %>% 
+  select(study_id, site_id, core_id, method_id, depth_min, depth_max, fraction_organic_matter)
+
+
 cores_raw <- positions %>% 
   rename(latitude = Latitude,
          longitude = Longitude,
@@ -71,31 +87,18 @@ cores_raw <- positions %>%
          position_notes = case_when(core_id == "BF_116" ~ "approximate coordinate chosen based on mapping pattern", 
                                     core_id == "BF_418" ~ "approximate coordinate chosen based on mapping pattern", 
                                     core_id == "EP_214" ~ "approximate coordinate chosen based on mapping pattern", 
-                                    T ~ NA_character_))
+                                    T ~ NA_character_)) %>% 
+  filter(core_id %in% unique(depthseries$core_id))
+  
 
 cores <- cores_raw %>% 
   select(study_id, site_id, core_id, latitude, longitude, position_method, position_notes, elevation, elevation_datum,
-         salinity_class, salinity_method, habitat) %>% 
-  distinct()
+         salinity_class, salinity_method, habitat)
 
-depthseries <- FOM %>% 
-  rename(depth_min = Core_Top,
-         depth_max = Core_Bot) %>% 
-  mutate(fraction_organic_matter = org_matter_percent/100,
-         study_id = "Messerschmidt_et_al_2020",
-         method_id = "single set of methods",
-         site_id = case_when(Site == "BF" ~ "Belvin_Farm",
-                             Site == "CSL" ~ "Captain_Sinclair_Landward",
-                             Site == "CSS" ~ "Captain_Sinclair_Seaward",
-                             Site == "EP" ~ "Eagle_Point_Plantation",
-                             Site == "KC" ~ "Kings_Creek",
-                             T ~ NA_character_),
-         core_id = paste(Site, Point_ID, sep = "_")) %>% 
-  select(study_id, site_id, core_id, method_id, depth_min, depth_max, fraction_organic_matter)
+
 
 species <- cores_raw %>% 
-  select(study_id, site_id, core_id, species_code, code_type, habitat) %>% 
-  drop_na(species_code)
+  select(study_id, site_id, core_id, species_code, code_type, habitat)
 
 study_citations <- data.frame(study_id = "Messerschmidt_et_al_2020", 
                               bibliography_id = "Messerschmidt_et_al_2020_data",

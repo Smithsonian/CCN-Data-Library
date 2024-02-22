@@ -1,3 +1,2 @@
-study_id,method_id,coring_method
-Smith_and_Kirwan_2021,russian corer,russian corer
-Smith_and_Kirwan_2021,other shallow corer,other shallow corer
+study_id,method_id,coring_method,dry_bulk_density_temperature,dry_bulk_density_time,cs137_counting_method,pb210_counting_method,excess_pb210_model
+Smith_and_Kirwan_2021,single set of methods,russian corer,60,48,gamma,gamma,CIC
