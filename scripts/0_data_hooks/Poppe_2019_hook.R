@@ -91,7 +91,8 @@ species <- species_raw %>%
 impacts <- impacts_raw %>%
   mutate(core_id = ifelse(nchar(as.character(core_id)) == 1 | nchar(as.character(core_id)) == 2, paste(site_id, core_id, sep="_"), core_id)) %>%
   select(-estuary_id) %>% 
-  left_join(id_lookup) %>% select(-site_id) %>% rename(site_id = new_site) %>% select(study_id, site_id, everything())
+  left_join(id_lookup) %>% select(-site_id) %>% rename(site_id = new_site) %>% select(study_id, site_id, everything()) %>% 
+  distinct() #removing duplicates
 
 methods <- methods_raw %>%
   mutate(method_id = "single set of methods") %>%

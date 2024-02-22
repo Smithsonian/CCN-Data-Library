@@ -34,6 +34,10 @@ cores_raw <- read_csv("./data/primary_studies/Thom_2019/original/thom_2019_cores
 cores <- cores_raw %>%
   mutate(core_length_flag = "core depth limited by length of corer")
 
+#RC update, classifying habitat
+cores <- cores %>% 
+  mutate(habitat = "marsh")
+
 depthseries <- depthseries_raw %>%
   mutate(cs137_unit = "countsPerGramDryWeightPerHour",
          method_id = "single set of methods")
