@@ -1,0 +1,280 @@
+﻿Source,Site,Core,Habitat_type,Latitude,Longitude,accuracy_flag,Country,Year_collected,U_depth_m,L_depth_m,Method,OC_perc,BD_reported_g_cm3,SOM_perc,Conv_factor
+Santos et al. 2019,Ria Formosa,Sp1a,Saltmarsh,36.983,-7.888,direct from dataset,Portugal,2014,0.00,0.05,EA,1.564,0.800,7.090,NA
+Santos et al. 2019,Ria Formosa,Sp1b,Saltmarsh,36.983,-7.888,direct from dataset,Portugal,2014,0.00,0.05,EA,2.220,0.802,7.980,NA
+Santos et al. 2019,Ria Formosa,Sp1c,Saltmarsh,36.983,-7.888,direct from dataset,Portugal,2014,0.00,0.05,EA,1.197,0.910,6.010,NA
+Santos et al. 2019,Ria Formosa,Sp1d,Saltmarsh,36.983,-7.888,direct from dataset,Portugal,2014,0.00,0.05,EA,3.627,0.624,10.650,NA
+Santos et al. 2019,Ria Formosa,Sp2a,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2014,0.00,0.05,EA,2.943,0.564,11.920,NA
+Santos et al. 2019,Ria Formosa,Sp2b,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2014,0.00,0.05,EA,2.426,0.636,9.940,NA
+Santos et al. 2019,Ria Formosa,Sp2c,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2014,0.00,0.05,EA,2.106,0.615,9.630,NA
+Santos et al. 2019,Ria Formosa,Sp2d,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2014,0.00,0.05,EA,2.333,0.689,10.320,NA
+Santos et al. 2019,Ria Formosa,Sp3a,Saltmarsh,36.999,-7.879,direct from dataset,Portugal,2014,0.00,0.05,EA,2.671,0.580,10.310,NA
+Santos et al. 2019,Ria Formosa,Sp3b,Saltmarsh,36.999,-7.879,direct from dataset,Portugal,2014,0.00,0.05,EA,2.575,0.648,10.490,NA
+Santos et al. 2019,Ria Formosa,Sp3c,Saltmarsh,36.999,-7.879,direct from dataset,Portugal,2014,0.00,0.05,EA,2.476,0.608,11.730,NA
+Santos et al. 2019,Ria Formosa,Sp3d,Saltmarsh,36.999,-7.879,direct from dataset,Portugal,2014,0.00,0.05,EA,2.634,0.621,10.010,NA
+Santos et al. 2019,Ria Formosa,Sp4a,Saltmarsh,37.002,-7.881,direct from dataset,Portugal,2014,0.00,0.05,EA,2.552,0.650,10.510,NA
+Santos et al. 2019,Ria Formosa,Sp4b,Saltmarsh,37.002,-7.881,direct from dataset,Portugal,2014,0.00,0.05,EA,2.550,0.678,10.190,NA
+Santos et al. 2019,Ria Formosa,Sp4c,Saltmarsh,37.002,-7.881,direct from dataset,Portugal,2014,0.00,0.05,EA,2.396,0.628,10.430,NA
+Santos et al. 2019,Ria Formosa,Sp4d,Saltmarsh,37.002,-7.881,direct from dataset,Portugal,2014,0.00,0.05,EA,2.771,0.628,10.670,NA
+de los Santos et al. 2022 (a),Ria Formosa,Sm1_5,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.380,0.501,7.885,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm1_10,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,0.486,0.935,1.779,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm2_5,Saltmarsh,37.002,-7.882,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.173,0.703,7.219,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm2_10,Saltmarsh,37.002,-7.882,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.090,0.695,6.951,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm2_12,Saltmarsh,37.002,-7.882,direct from dataset,Portugal,2017,0.00,0.05,LOI,1.318,0.733,4.463,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_5,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,1.910,0.787,6.369,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_10,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.164,0.584,7.189,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_15,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,1.990,0.636,6.628,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_20,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,1.934,0.530,6.449,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_25,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,1.929,0.724,6.432,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm4_8,Saltmarsh,37.002,-7.881,direct from dataset,Portugal,2017,0.00,0.05,LOI,1.907,0.714,6.360,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm4_12,Saltmarsh,37.002,-7.881,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.106,0.772,7.003,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm4_15,Saltmarsh,37.002,-7.881,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.161,0.635,7.178,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm1_5,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,1.504,0.710,5.062,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm1_10,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,0.899,0.868,3.109,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm2_5,Saltmarsh,37.002,-7.882,direct from dataset,Portugal,2017,0.00,0.05,LOI,1.815,0.636,6.064,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm2_10,Saltmarsh,37.002,-7.882,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.153,0.672,7.152,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm2_12,Saltmarsh,37.002,-7.882,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.121,0.772,7.050,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_5,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,1.882,0.569,6.280,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_10,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.112,0.650,7.021,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_15,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.130,0.540,7.080,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_20,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.003,0.634,6.671,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_25,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.192,0.518,7.279,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm4_8,Saltmarsh,37.002,-7.881,direct from dataset,Portugal,2017,0.00,0.05,LOI,1.979,0.773,6.593,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm4_12,Saltmarsh,37.002,-7.881,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.347,0.661,7.779,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm4_15,Saltmarsh,37.002,-7.881,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.124,0.668,7.059,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm1_5,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.030,0.522,6.757,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm1_10,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,0.509,1.293,1.853,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm2_5,Saltmarsh,37.002,-7.882,direct from dataset,Portugal,2017,0.00,0.05,LOI,1.498,0.822,5.042,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm2_10,Saltmarsh,37.002,-7.882,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.168,0.490,7.201,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm2_12,Saltmarsh,37.002,-7.882,direct from dataset,Portugal,2017,0.00,0.05,LOI,1.877,0.754,6.264,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_5,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.027,0.668,6.748,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_10,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.276,0.486,7.551,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_15,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.346,0.466,7.776,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_20,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.253,0.517,7.474,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm3_25,Saltmarsh,36.988,-7.875,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.148,0.673,7.136,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm4_8,Saltmarsh,37.002,-7.881,direct from dataset,Portugal,2017,0.00,0.05,LOI,1.928,0.759,6.428,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm4_12,Saltmarsh,37.002,-7.881,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.264,0.636,7.510,OC = -0.066 + 0.3102*OM
+de los Santos et al. 2022 (a),Ria Formosa,Sm4_15,Saltmarsh,37.002,-7.881,direct from dataset,Portugal,2017,0.00,0.05,LOI,2.217,0.681,7.361,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.00,0.02,EA,3.349,0.431,8.489,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.02,0.05,LOI,NA,0.658,5.513,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.05,0.07,EA,4.216,0.410,10.334,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.07,0.10,LOI,NA,0.450,7.809,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.10,0.12,EA,2.855,0.403,11.905,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.12,0.15,LOI,NA,0.785,2.607,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.15,0.17,EA,0.361,0.966,1.425,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.17,0.19,LOI,NA,0.833,1.259,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.19,0.22,EA,0.283,1.141,1.274,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.22,0.24,LOI,NA,1.160,0.545,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.24,0.27,EA,0.204,1.167,0.857,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.27,0.29,LOI,NA,1.145,0.180,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.29,0.32,EA,0.137,1.134,0.754,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.32,0.34,LOI,NA,1.127,0.577,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.34,0.36,EA,0.114,1.082,0.674,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.36,0.39,LOI,NA,1.117,0.251,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.39,0.41,EA,0.065,1.059,0.555,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.41,0.44,LOI,NA,1.114,0.366,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.44,0.46,EA,0.091,1.145,0.698,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.46,0.48,LOI,NA,1.136,0.241,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.48,0.51,EA,0.028,1.175,0.297,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.51,0.53,LOI,NA,1.131,0.328,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.53,0.56,EA,0.039,1.028,0.384,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.56,0.58,LOI,NA,1.038,0.292,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.58,0.61,EA,0.019,1.200,0.352,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.61,0.63,LOI,NA,1.079,0.233,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.63,0.65,LOI,NA,1.224,0.218,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.65,0.68,LOI,NA,1.020,0.260,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.68,0.70,LOI,NA,1.125,0.277,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.70,0.73,EA,0.027,1.098,0.551,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.73,0.75,LOI,NA,1.080,0.269,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.75,0.78,LOI,NA,0.803,0.243,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.78,0.80,LOI,NA,1.199,0.187,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.80,0.82,LOI,NA,1.058,0.160,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.82,0.85,EA,0.028,1.160,0.378,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.85,0.87,LOI,NA,1.088,0.146,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.87,0.90,LOI,NA,1.104,0.377,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.90,0.92,LOI,NA,1.030,1.314,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.92,0.95,LOI,NA,1.125,0.720,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.95,0.97,LOI,NA,1.151,0.451,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.97,0.99,EA,0.173,1.220,0.417,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,0.99,1.02,LOI,NA,1.179,0.405,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.02,1.04,LOI,NA,1.152,0.412,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.04,1.07,EA,0.189,1.173,0.956,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.07,1.09,LOI,NA,1.093,0.263,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.09,1.12,LOI,NA,1.248,0.677,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.12,1.14,LOI,NA,1.155,0.667,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.14,1.16,EA,0.430,1.163,1.294,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.16,1.19,LOI,NA,1.128,0.855,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.19,1.21,LOI,NA,1.086,0.794,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.21,1.24,LOI,NA,1.067,0.877,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.24,1.26,LOI,NA,1.133,1.212,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.26,1.28,LOI,NA,1.143,1.009,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.28,1.31,EA,0.432,1.203,1.489,
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.31,1.33,LOI,NA,1.098,0.846,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM1,Saltmarsh,36.984,-7.889,direct from dataset,Portugal,2017,1.33,1.36,LOI,NA,1.031,1.801,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.00,0.03,EA,3.698,0.355,11.392,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.03,0.05,LOI,NA,0.666,4.377,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.05,0.08,EA,3.207,0.350,9.619,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.08,0.10,LOI,NA,0.493,8.554,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.10,0.13,EA,1.285,0.674,4.012,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.13,0.15,LOI,NA,0.998,0.581,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.15,0.18,EA,0.187,1.036,0.833,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.18,0.20,LOI,NA,0.989,0.463,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.20,0.23,EA,0.069,0.997,0.547,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.23,0.25,LOI,NA,1.076,0.376,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.25,0.28,EA,0.128,1.135,0.667,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.28,0.30,LOI,NA,1.165,0.278,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.30,0.33,EA,0.089,1.177,0.480,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.33,0.36,LOI,NA,1.071,0.191,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.36,0.38,EA,0.049,1.051,0.429,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.38,0.41,LOI,NA,1.077,0.142,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.41,0.43,EA,0.029,1.077,0.361,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.43,0.46,LOI,NA,1.014,0.131,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.46,0.48,EA,0.048,1.027,0.307,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.48,0.51,LOI,NA,1.097,0.171,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.51,0.53,EA,0.039,1.050,0.354,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.53,0.56,LOI,NA,0.940,0.139,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.56,0.58,EA,0.019,1.073,0.276,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.58,0.61,LOI,NA,1.041,0.037,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.61,0.64,EA,0.049,1.020,0.308,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.64,0.66,LOI,NA,1.073,0.537,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.66,0.69,LOI,NA,0.913,2.717,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.69,0.71,EA,0.553,1.229,1.396,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.71,0.74,LOI,NA,0.930,2.271,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.74,0.76,LOI,NA,0.962,1.599,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.76,0.79,LOI,NA,0.916,2.050,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.79,0.81,LOI,NA,0.778,2.898,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.81,0.84,LOI,NA,0.823,3.156,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.84,0.86,LOI,NA,0.792,3.895,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.86,0.89,LOI,NA,0.817,3.570,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.89,0.91,EA,2.408,0.822,4.742,
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.91,0.94,LOI,NA,0.702,5.505,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.94,0.97,LOI,NA,0.894,2.685,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.97,0.99,LOI,NA,0.676,6.221,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,0.99,1.02,LOI,NA,0.705,5.748,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,1.02,1.04,LOI,NA,0.763,5.881,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM2,Saltmarsh,36.988,-7.876,direct from dataset,Portugal,2017,1.04,1.07,EA,3.004,0.765,7.342,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.00,0.03,EA,2.532,0.485,8.007,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.03,0.06,LOI,NA,0.535,4.928,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.06,0.09,EA,2.043,0.492,6.697,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.09,0.11,LOI,NA,0.511,5.735,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.11,0.14,EA,1.683,0.613,4.987,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.14,0.17,LOI,NA,0.517,6.218,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.17,0.20,EA,1.605,0.512,5.266,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.20,0.23,LOI,NA,0.709,3.677,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.23,0.26,EA,1.068,0.797,3.541,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.26,0.29,LOI,NA,0.762,2.906,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.29,0.31,EA,0.974,0.739,3.977,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.31,0.34,LOI,NA,0.698,3.689,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.34,0.37,EA,1.401,0.694,4.204,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.37,0.40,LOI,NA,0.758,3.861,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.40,0.43,EA,1.356,0.694,4.542,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.43,0.46,LOI,NA,0.543,6.947,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.46,0.49,EA,2.196,0.561,5.861,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.49,0.51,LOI,NA,0.566,5.874,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.51,0.54,EA,1.745,0.545,7.061,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.54,0.57,LOI,NA,0.499,4.947,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.57,0.60,EA,1.728,0.629,6.163,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.60,0.63,LOI,NA,0.806,4.083,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.63,0.66,EA,1.661,0.775,5.677,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.66,0.69,LOI,NA,0.651,4.890,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.69,0.71,EA,1.689,0.671,5.585,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.71,0.74,LOI,NA,0.688,5.072,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.74,0.77,LOI,NA,0.650,2.850,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.77,0.80,LOI,NA,0.822,3.240,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.80,0.83,LOI,NA,0.763,3.620,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.83,0.86,LOI,NA,0.756,3.409,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.86,0.89,LOI,NA,0.865,3.252,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.89,0.91,LOI,NA,0.905,1.773,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.91,0.94,LOI,NA,0.879,2.483,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.94,0.97,LOI,NA,0.949,1.628,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,0.97,1.00,EA,0.693,0.938,2.159,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.00,1.03,LOI,NA,0.955,0.987,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.03,1.06,LOI,NA,1.000,0.769,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.06,1.09,EA,0.512,1.191,1.928,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.09,1.11,LOI,NA,0.738,0.644,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.11,1.14,LOI,NA,0.680,1.379,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.14,1.17,LOI,NA,0.539,0.552,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.17,1.20,LOI,NA,1.045,0.530,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.20,1.23,LOI,NA,0.903,0.545,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.23,1.26,LOI,NA,0.676,0.481,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.26,1.29,LOI,NA,0.962,0.792,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.29,1.31,LOI,NA,0.927,0.571,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.31,1.34,EA,0.269,0.996,0.995,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.34,1.37,LOI,NA,0.978,0.296,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.37,1.40,LOI,NA,0.910,0.345,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.40,1.43,EA,0.123,0.938,0.705,
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.43,1.46,LOI,NA,1.029,0.479,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.46,1.49,LOI,NA,0.658,0.146,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.49,1.51,LOI,NA,NA,NA,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.51,1.54,LOI,NA,0.877,1.335,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM3,Saltmarsh,36.997,-7.880,direct from dataset,Portugal,2017,1.54,1.57,EA,0.086,0.926,0.569,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.00,0.04,EA,2.683,0.476,9.361,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.04,0.07,LOI,NA,0.409,6.426,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.07,0.11,EA,2.327,0.397,8.128,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.11,0.14,LOI,NA,0.369,6.220,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.14,0.18,EA,2.460,0.339,8.079,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.18,0.21,LOI,NA,0.382,6.177,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.21,0.25,EA,2.757,0.378,9.346,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.25,0.28,LOI,NA,0.327,8.266,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.28,0.32,EA,2.466,0.450,8.158,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.32,0.36,LOI,NA,0.464,6.143,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.36,0.39,EA,2.337,0.463,7.231,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.39,0.43,LOI,NA,0.435,5.456,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.43,0.46,EA,2.209,0.462,8.165,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.46,0.50,LOI,NA,0.473,5.708,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.50,0.53,EA,2.174,0.501,7.519,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.53,0.57,LOI,NA,0.476,6.292,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.57,0.60,EA,1.909,0.480,6.951,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.60,0.64,LOI,NA,0.498,4.814,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.64,0.68,EA,1.814,0.500,5.655,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.68,0.71,LOI,NA,0.678,3.177,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.71,0.75,EA,1.394,0.585,3.094,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.75,0.78,LOI,NA,0.817,1.650,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.78,0.82,EA,1.208,0.554,1.940,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.82,0.85,LOI,NA,0.568,2.579,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.85,0.89,EA,2.532,0.505,5.355,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.89,0.92,LOI,NA,0.482,6.413,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.92,0.96,LOI,NA,0.440,6.413,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,0.96,1.00,LOI,NA,0.454,6.197,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.00,1.03,LOI,NA,0.576,5.185,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.03,1.07,LOI,NA,0.429,5.756,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.07,1.10,LOI,NA,0.531,4.371,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.10,1.14,LOI,NA,0.465,4.563,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.14,1.17,EA,2.010,0.503,4.764,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.17,1.21,LOI,NA,0.528,5.391,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.21,1.24,LOI,NA,0.529,3.623,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.24,1.28,LOI,NA,0.536,3.434,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.28,1.32,LOI,NA,0.719,2.227,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.32,1.35,LOI,NA,0.765,1.565,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.35,1.39,LOI,NA,0.620,1.846,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.39,1.42,LOI,NA,0.704,1.764,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.42,1.46,EA,0.990,0.747,2.742,
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.46,1.49,LOI,NA,0.765,1.475,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.49,1.53,LOI,NA,0.713,0.611,OC = -0.066 + 0.3102*OM
+Martins et al. 2022,Ria Formosa,SM4,Saltmarsh,37.003,-7.884,direct from dataset,Portugal,2017,1.53,1.56,EA,0.390,0.610,2.240,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.00,0.03,EA,2.63,0.540,6.320,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.03,0.06,EA,3.3,0.450,7.200,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.06,0.09,EA,3.18,0.600,7.410,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.09,0.12,EA,2.64,0.580,5.980,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.12,0.15,EA,5.64,0.280,12.970,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.15,0.18,EA,4.99,0.350,11.310,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.18,0.20,EA,3.49,0.410,8.130,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.20,0.23,EA,1.72,0.520,4.050,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.23,0.26,LOI,NA,0.570,5.210,OC (% dw) = 0.461 x OM - 0.266
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.26,0.29,EA,1.78,0.580,4.340,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.29,0.32,LOI,NA,0.560,6.060,OC (% dw) = 0.461 x OM - 0.266
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.32,0.35,EA,1.91,0.490,4.440,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.35,0.38,LOI,NA,0.700,2.310,OC (% dw) = 0.461 x OM - 0.266
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.38,0.41,EA,0.72,0.890,3.710,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.41,0.44,LOI,NA,1.030,2.040,OC (% dw) = 0.461 x OM - 0.266
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.44,0.47,EA,0.34,1.060,1.520,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.47,0.50,EA,0.12,1.390,0.730,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.50,0.52,LOI,NA,1.380,0.020,OC (% dw) = 0.461 x OM - 0.266
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.52,0.55,EA,0.08,1.300,0.170,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.55,0.58,LOI,NA,1.040,0.570,OC (% dw) = 0.461 x OM - 0.266
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.58,0.61,EA,0.08,1.010,0.290,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.61,0.64,LOI,NA,1.010,0.590,OC (% dw) = 0.461 x OM - 0.266
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.64,0.67,LOI,NA,NA,0.720,OC (% dw) = 0.461 x OM - 0.266
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.67,0.70,EA,0.07,0.990,0.420,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.70,0.73,EA,0.12,1.260,0.970,
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.73,0.76,LOI,NA,1.550,2.520,OC (% dw) = 0.461 x OM - 0.266
+de los Santos et al. 2022 (b),Santibáñez,SM,Saltmarsh,36.467,-6.251,direct from dataset,Spain,2018,0.76,0.79,EA,0.17,1.490,1.990,

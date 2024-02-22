@@ -1,0 +1,11 @@
+﻿Source,Site,Core,Habitat_type,Latitude_DMS,lat_deg,lat_min,lat_sec,Latitude,Longitude_DMS,long_deg,long_min,long_sec,Longitude,accuracy_flag,Country,Year_collected,U_depth_m,L_depth_m,Method,OC_perc_mean,OC_perc_sd,BD_reported_g_cm3,SOM_perc,Conv_factor,Vegetation
+Gispert et al 2020,La Pletera,15,Saltmarsh,"42º01'50""",42,1,50,42.03055556,"3º11'27""",3,11,27,3.190833333,direct from dataset,SPAIN,2015,0,0.05,Walkley Black,4.01,0.25,1.34,0.71,"SOM/1,724",A.fruticosum
+Gispert et al 2020,La Pletera,15,Saltmarsh,"42º01'52""",42,1,52,42.03111111,"3º11'23""",3,11,23,3.189722222,direct from dataset,SPAIN,2015,0.05,0.2,Walkley Black,1.49,0.07,1.25,2.56,"SOM/1,724",A.fruticosum
+Gispert et al 2020,La Pletera,15,Saltmarsh,"42º01'48""",42,1,48,42.03,"3º11'22""",3,11,22,3.189444444,direct from dataset,SPAIN,2015,0.2,0.4,Walkley Black,0.602,0.16,1.37,0.43,"SOM/1,724",A.fruticosum
+Gispert et al 2020,La Pletera,15,Saltmarsh,"42º01'59""",42,1,59,42.03305556,"3º11'29""",3,11,29,3.191388889,direct from dataset,SPAIN,2015,0,0.05,Walkley Black,0.44,0.09,1.3,1.02,"SOM/1,724",S. patula
+Gispert et al 2020,La Pletera,15,Saltmarsh,"42º02'00""",42,2,0,42.03333333,"3º11'32""",3,11,32,3.192222222,direct from dataset,SPAIN,2015,0.05,0.2,Walkley Black,0.37,0.28,1.34,1.4,"SOM/1,724",S. patula
+Gispert et al 2020,La Pletera,15,Saltmarsh,"42º02'07""",42,2,7,42.03527778,"3º11'31""",3,11,31,3.191944444,direct from dataset,SPAIN,2015,0.2,0.4,Walkley Black,0.196,0.14,1.4,0.39,"SOM/1,724",S. patula
+Gispert et al 2021,La Pletera,15,Saltmarsh,"42º01'50""",42,1,50,42.03055556,"3º11'34""",3,11,34,3.192777778,direct from dataset,SPAIN,2018,0,0.05,Walkley Black,1.71,0.58,1.27,2.74,"SOM/1,724",S. fruticosa
+Gispert et al 2021,La Pletera,15,Saltmarsh,"42º01'42""",42,1,42,42.02833333,"3º11'37""",3,11,37,3.193611111,direct from dataset,SPAIN,2018,0.05,0.2,Walkley Black,0.66,0.23,1.34,1.15,"SOM/1,724",S. fruticosa
+Gispert et al 2021,La Pletera,15,Saltmarsh,"42º02'00""",42,2,0,42.03333333,"3º11'32""",3,11,32,3.192222222,direct from dataset,SPAIN,2018,0,0.05,Walkley Black,0.59,0.17,1.31,1.02,"SOM/1,724",S. patula
+Gispert et al 2021,La Pletera,15,Saltmarsh,"42º02'07""",42,2,7,42.03527778,"3º11'31""",3,11,31,3.191944444,direct from dataset,SPAIN,2018,0.05,0.2,Walkley Black,0.32,0.11,1.35,0.55,"SOM/1,724",S. patula

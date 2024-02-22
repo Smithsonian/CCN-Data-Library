@@ -1,0 +1,64 @@
+month,day,Source,Site_name,Site,Core,Habitat_type,Latitude,Longitude,accuracy_flag,accuracy_code,Country,Year_collected,U_depth_m,L_depth_m,Method,OC_perc,N_perc,BD_reported_g_cm3,DOI
+5,24,Bulmer et al 2020,RHB 10,pauanui,10,saltmarsh,-37.030115,175.850659,direct from dataset,1,New Zealand,2016,0,0.02,EA,14.393600000000001,0.45,0.6,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 11,pauanui,11,saltmarsh,-37.030126,175.850538,direct from dataset,1,New Zealand,2016,0,0.02,EA,2.0552400000000004,0.23,0.74,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 12,pauanui,12,saltmarsh,-37.030039,175.850463,direct from dataset,1,New Zealand,2016,0,0.02,EA,5.61904,0.63,0.32,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 10,pauanui,10,saltmarsh,-37.030115,175.850659,direct from dataset,1,New Zealand,2016,0.02,0.1,EA,1.9600980000000003,0.19,0.79,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 11,pauanui,11,saltmarsh,-37.030126,175.850538,direct from dataset,1,New Zealand,2016,0.02,0.1,EA,1.2899179999999997,0.11,0.88,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 12,pauanui,12,saltmarsh,-37.030039,175.850463,direct from dataset,1,New Zealand,2016,0.02,0.1,EA,4.430104000000001,0.29,0.48,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 10,pauanui,10,saltmarsh,-37.030115,175.850659,direct from dataset,1,New Zealand,2016,0.1,0.2,EA,0.79001,0.06,1.21,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 11,pauanui,11,saltmarsh,-37.030126,175.850538,direct from dataset,1,New Zealand,2016,0.1,0.2,EA,0.553806,0.03,1.36,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 12,pauanui,12,saltmarsh,-37.030039,175.850463,direct from dataset,1,New Zealand,2016,0.1,0.2,EA,1.099221,0.06,1.05,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 10,pauanui,10,saltmarsh,-37.030115,175.850659,direct from dataset,1,New Zealand,2016,0.2,0.3,EA,0.581277,0.05,1.31,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 11,pauanui,11,saltmarsh,-37.030126,175.850538,direct from dataset,1,New Zealand,2016,0.2,0.3,EA,0.48303300000000005,0.04,1.24,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 12,pauanui,12,saltmarsh,-37.030039,175.850463,direct from dataset,1,New Zealand,2016,0.2,0.3,EA,1.007001,0.06,0.97,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 10,pauanui,10,saltmarsh,-37.030115,175.850659,direct from dataset,1,New Zealand,2016,0.3,0.4,EA,0.473164,0.04,1.83,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 11,pauanui,11,saltmarsh,-37.030126,175.850538,direct from dataset,1,New Zealand,2016,0.3,0.4,EA,0.49763799999999997,0.05,0.98,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 12,pauanui,12,saltmarsh,-37.030039,175.850463,direct from dataset,1,New Zealand,2016,0.3,0.4,EA,0.383426,0.02,1.38,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 10,pauanui,10,saltmarsh,-37.030115,175.850659,direct from dataset,1,New Zealand,2016,0.4,0.5,EA,0.107355,0.03,1.84,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 11,pauanui,11,saltmarsh,-37.030126,175.850538,direct from dataset,1,New Zealand,2016,0.4,0.5,EA,0.23576000000000005,0.06,1.21,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 12,pauanui,12,saltmarsh,-37.030039,175.850463,direct from dataset,1,New Zealand,2016,0.4,0.5,EA,0.12209,0.03,1.38,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 10,pauanui,10,saltmarsh,-37.030115,175.850659,direct from dataset,1,New Zealand,2016,0.9,1,EA,0.337008,0.02,1.11,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 11,pauanui,11,saltmarsh,-37.030126,175.850538,direct from dataset,1,New Zealand,2016,0.9,1,EA,0.272816,0.02,1.14,https://doi.org/10.3389/fmars.2020.00380
+5,24,Bulmer et al 2020,RHB 12,pauanui,12,saltmarsh,-37.030039,175.850463,direct from dataset,1,New Zealand,2016,0.9,1,EA,0.369984,0.02,1.12,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 31,tairua mid,31,saltmarsh,-37.021096,175.84111,direct from dataset,1,New Zealand,2016,0,0.02,EA,7.888800000000001,0.51,0.65,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 32,tairua mid,32,saltmarsh,-37.02132,175.841643,direct from dataset,1,New Zealand,2016,0,0.02,EA,8.788400000000001,0.7,0.61,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 33,tairua mid,33,saltmarsh,-37.021554,175.842077,direct from dataset,1,New Zealand,2016,0,0.02,EA,1.37016,0.11,0.47,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 31,tairua mid,31,saltmarsh,-37.021096,175.84111,direct from dataset,1,New Zealand,2016,0.02,0.1,EA,4.419948,0.27,0.58,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 32,tairua mid,32,saltmarsh,-37.02132,175.841643,direct from dataset,1,New Zealand,2016,0.02,0.1,EA,7.958000000000001,0.45,0.41,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 33,tairua mid,33,saltmarsh,-37.021554,175.842077,direct from dataset,1,New Zealand,2016,0.02,0.1,EA,8.234800000000002,0.47,0.36,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 31,tairua mid,31,saltmarsh,-37.021096,175.84111,direct from dataset,1,New Zealand,2016,0.1,0.2,EA,5.185637999999999,0.26,0.56,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 32,tairua mid,32,saltmarsh,-37.02132,175.841643,direct from dataset,1,New Zealand,2016,0.1,0.2,EA,3.5326109999999997,0.17,0.48,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 33,tairua mid,33,saltmarsh,-37.021554,175.842077,direct from dataset,1,New Zealand,2016,0.1,0.2,EA,11.80004,0.47,0.3,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 31,tairua mid,31,saltmarsh,-37.021096,175.84111,direct from dataset,1,New Zealand,2016,0.2,0.3,EA,1.7356440000000002,0.07,0.93,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 32,tairua mid,32,saltmarsh,-37.02132,175.841643,direct from dataset,1,New Zealand,2016,0.2,0.3,EA,1.229989,0.06,0.82,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 33,tairua mid,33,saltmarsh,-37.021554,175.842077,direct from dataset,1,New Zealand,2016,0.2,0.3,EA,0.9824400000000001,0.06,0.71,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 31,tairua mid,31,saltmarsh,-37.021096,175.84111,direct from dataset,1,New Zealand,2016,0.3,0.4,EA,0.375268,0.03,1.08,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 32,tairua mid,32,saltmarsh,-37.02132,175.841643,direct from dataset,1,New Zealand,2016,0.3,0.4,EA,0.293688,0.02,1.03,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 33,tairua mid,33,saltmarsh,-37.021554,175.842077,direct from dataset,1,New Zealand,2016,0.3,0.4,EA,0.68,0.03,0.91,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 31,tairua mid,31,saltmarsh,-37.021096,175.84111,direct from dataset,1,New Zealand,2016,0.4,0.5,EA,0.599925,0.03,1.08,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 32,tairua mid,32,saltmarsh,-37.02132,175.841643,direct from dataset,1,New Zealand,2016,0.4,0.5,EA,0.28628000000000003,0.02,1.03,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 33,tairua mid,33,saltmarsh,-37.021554,175.842077,direct from dataset,1,New Zealand,2016,0.4,0.5,EA,0.08420000000000001,0.02,0.89,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 31,tairua mid,31,saltmarsh,-37.021096,175.84111,direct from dataset,1,New Zealand,2016,0.9,1,EA,0.28084,0.02,1.29,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 32,tairua mid,32,saltmarsh,-37.02132,175.841643,direct from dataset,1,New Zealand,2016,0.9,1,EA,0.13,0.02,1.31,https://doi.org/10.3389/fmars.2020.00380
+6,20,Bulmer et al 2020,RHB 33,tairua mid,33,saltmarsh,-37.021554,175.842077,direct from dataset,1,New Zealand,2016,0.9,1,EA,0.569704,0.04,1.12,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 1,tairua upper,1,saltmarsh,-37.028766,175.830954,direct from dataset,1,New Zealand,2016,0,0.02,EA,4.98932,0.6,0.69,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 2,tairua upper,2,saltmarsh,-37.029026,175.83192,direct from dataset,1,New Zealand,2016,0,0.02,EA,4.435720000000001,0.49,0.37,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 3,tairua upper,3,saltmarsh,-37.029176,175.832715,direct from dataset,1,New Zealand,2016,0,0.02,EA,6.324880000000001,0.62,0.44,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 1,tairua upper,1,saltmarsh,-37.028766,175.830954,direct from dataset,1,New Zealand,2016,0.02,0.1,EA,2.7900060000000004,0.13,0.62,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 2,tairua upper,2,saltmarsh,-37.029026,175.83192,direct from dataset,1,New Zealand,2016,0.02,0.1,EA,7.07018,0.47,0.33,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 3,tairua upper,3,saltmarsh,-37.029176,175.832715,direct from dataset,1,New Zealand,2016,0.02,0.1,EA,3.539952,0.26,0.59,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 1,tairua upper,1,saltmarsh,-37.028766,175.830954,direct from dataset,1,New Zealand,2016,0.1,0.2,EA,0.771972,0.05,1,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 2,tairua upper,2,saltmarsh,-37.029026,175.83192,direct from dataset,1,New Zealand,2016,0.1,0.2,EA,1.51038,0.11,0.6,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 3,tairua upper,3,saltmarsh,-37.029176,175.832715,direct from dataset,1,New Zealand,2016,0.1,0.2,EA,1.09083,0.05,0.96,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 1,tairua upper,1,saltmarsh,-37.028766,175.830954,direct from dataset,1,New Zealand,2016,0.2,0.3,EA,0.39,0.02,0.95,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 2,tairua upper,2,saltmarsh,-37.029026,175.83192,direct from dataset,1,New Zealand,2016,0.2,0.3,EA,0.957879,0.07,0.84,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 3,tairua upper,3,saltmarsh,-37.029176,175.832715,direct from dataset,1,New Zealand,2016,0.2,0.3,EA,0.8678220000000001,0.07,0.97,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 1,tairua upper,1,saltmarsh,-37.028766,175.830954,direct from dataset,1,New Zealand,2016,0.3,0.4,EA,0.73422,0.03,0.88,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 2,tairua upper,2,saltmarsh,-37.029026,175.83192,direct from dataset,1,New Zealand,2016,0.3,0.4,EA,0.61185,0.05,0.8,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 3,tairua upper,3,saltmarsh,-37.029176,175.832715,direct from dataset,1,New Zealand,2016,0.3,0.4,EA,0.589992,0.03,1.15,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 1,tairua upper,1,saltmarsh,-37.028766,175.830954,direct from dataset,1,New Zealand,2016,0.4,0.5,EA,0.22734000000000004,0.04,0.87,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 2,tairua upper,2,saltmarsh,-37.029026,175.83192,direct from dataset,1,New Zealand,2016,0.4,0.5,EA,0.12840500000000002,0.04,1.15,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 3,tairua upper,3,saltmarsh,-37.029176,175.832715,direct from dataset,1,New Zealand,2016,0.4,0.5,EA,0.05473000000000001,0.02,1.45,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 1,tairua upper,1,saltmarsh,-37.028766,175.830954,direct from dataset,1,New Zealand,2016,0.9,1,EA,0.513536,0.02,1.07,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 2,tairua upper,2,saltmarsh,-37.029026,175.83192,direct from dataset,1,New Zealand,2016,0.9,1,EA,0.629993,0.03,0.97,https://doi.org/10.3389/fmars.2020.00380
+5,23,Bulmer et al 2020,RHB 3,tairua upper,3,saltmarsh,-37.029176,175.832715,direct from dataset,1,New Zealand,2016,0.9,1,EA,0.505512,0.02,1.13,https://doi.org/10.3389/fmars.2020.00380

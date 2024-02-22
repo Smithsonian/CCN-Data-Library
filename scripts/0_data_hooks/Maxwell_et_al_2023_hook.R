@@ -1,7 +1,7 @@
 ## CCRNC Data Release Formatting ########
 
-## Soil core data curation script for <insert dataset name>
-## contact: Your Name, your email
+## Soil core data curation script for Maxwell et al 2023
+## contact: Jaxine Wolfe; wolfejax@si.edu
 
 ## Notes about the dataset 
 ## Link to associated publication(s) for easy access
@@ -22,12 +22,35 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 dat_raw <- read_csv("data/primary_studies/Maxwell_et_al_2023/original/Maxwell_marshC_dataset.csv")
 metadat <- read_csv("data/primary_studies/Maxwell_et_al_2023/original/Maxwell_marshC_dataset_metadata.csv")
 
+# read in some original data that I revised in Tania's script
+dat_human <- read_csv("data/primary_studies/Maxwell_et_al_2023/03_data_format/data/exported/Human et al 2022.csv") %>% 
+  rename(BD_g_cm3 = BD_reported_g_cm3, Original_source = Source) %>%
+  mutate(Data_type = "Core-level")
+
+dat_ford <- read_csv("data/primary_studies/Maxwell_et_al_2023/03_data_format/data/exported/Ford et al 2016.csv") %>% 
+  mutate(Data_type = "Core-level") %>% rename(Original_source = Source) %>% 
+  select(-BD_reported_g_cm3)
+  
+dat_miller <- read_csv("data/primary_studies/Maxwell_et_al_2023/03_data_format/data/exported/Miller et al 2022.csv") %>%
+  rename(BD_g_cm3 = BD_reported_g_cm3, Original_source = Source) %>%
+  mutate(Data_type = "Core-level")
+
+dat_kumar <- read_csv("data/primary_studies/Maxwell_et_al_2023/03_data_format/data/exported/Kumar et al 2020.csv") %>%
+  rename(Original_source = Source) %>%
+  mutate(Data_type = "Core-level")
+
+dat_knysna <- read_csv("data/primary_studies/Maxwell_et_al_2023/03_data_format/data/exported/Raw et al 2020.csv") %>%
+  rename(BD_g_cm3 = BD_reported_g_cm3, Original_source = Source) %>%
+  mutate(Data_type = "Core-level")
+
+# nrow(dat_raw %>% filter(Source == "Miller et al 2022"))
+
 # link to database guidance for easy reference:
 # https://smithsonian.github.io/CCRCN-Community-Resources/soil_carbon_guidance.html
 
 ## 1. Curation ####
 
-# Site-level observations, we'll have to cut these out
+# Site-level observations, we'll have to cut these out since they're averaged
 # but maybe we can track down the original data later
 site_level <- dat_raw %>% 
   filter(Data_type == "Site-level") %>% 
@@ -40,7 +63,20 @@ duplicate_cores <- c("SF-18-01","SF-18-02","SF-18-03","SF-18-04","SF-18-05","SF-
                      "Wig 6","Wig 7","Wig 8","Wig 9")
 
 # curate table that will become the core and depthseries tables
-dat <- dat_raw %>% 
+
+dat_revised <- dat_raw %>% 
+  filter(!(Original_source %in% c("Human et al 2022", "Ford et al 2016", "Miller et al 2022", "Kumar et al 2020", 
+                                  "Raw et al 2020"))) %>% 
+  bind_rows(dat_human) %>% 
+  bind_rows(dat_ford) %>% 
+  bind_rows(dat_miller) %>% 
+  bind_rows(dat_kumar) %>% 
+  bind_rows(dat_knysna) %>% 
+  # remove duplicate studies
+  filter(!(Source %in% c("Ward et al 2021", "Burden et al 2018")))
+
+# 16432 rows currently 
+dat <- dat_revised %>% 
   rename(dry_bulk_density = BD_g_cm3,
          depth_min = U_depth_m, 
          depth_max = L_depth_m,
@@ -65,7 +101,8 @@ dat <- dat_raw %>%
          study_id = gsub(" ", "_", Original_source),
          study_id = recode(study_id, 
                            "Kauffman_et_al_2020" = "Kauffman_et_al_2020_Brazil",
-                           "Serrano_unpublished" = "Serrano_unpublished_Australia",
+                           "Serrano_unpublished" = "Serrano_AUS_unpublished",
+                           "Azevedo_2015-UNPUBLISHED" = "Azevedo_2015_unpublished",
                            "UNPUBLISHED" = "Copertino_unpublished",
                            "Smeaton_unpublished_Essex" = "Smeaton_et_al_2023",
                            "Russell_et_al_submitted" = "Russell_et_al_2023",
@@ -74,8 +111,8 @@ dat <- dat_raw %>%
                            "de_los_Santos_et_al_2022_(b)" = "de_los_Santos_et_al_2023",
                            "Pagès_et_al_(in_preparation)" = "Pagès_et_al_unpublished",
                            "Neto_&_Lana_1997" = "Neto_and_Lana_1997"),
-         depth_min = ifelse(study_id != "Russell_et_al_submitted", depth_min*100, depth_min), 
-         depth_max = ifelse(study_id != "Russell_et_al_submitted", depth_max*100, depth_max)) %>% 
+         depth_min = case_when(study_id == "Russell_et_al_2023" ~ depth_min, T ~ depth_min*100), 
+         depth_max = case_when(study_id == "Russell_et_al_2023" ~ depth_max, T ~ depth_max*100)) %>% 
 
   # fix the core ID
   mutate(core_id = coalesce(Core, Plot),
@@ -88,9 +125,10 @@ dat <- dat_raw %>%
                              grepl("FL-N", core_id) ~ "FL-N",
                              grepl("NF-N", core_id) ~ "NF-N",
                              core_id == "Salmi allpool vähe orgaanikat" ~ "Salmi managed",
-                             T ~ core_id)) %>%
-  # remove duplicate cores
-  filter(!(study_id == "Miller_et_al_2022" & core_id %in% duplicate_cores)) %>% 
+                             T ~ core_id),
+         drop_duplicates = case_when(study_id == "Smeaton_et_al_2022a" & core_id %in% duplicate_cores ~ "drop", T ~ "keep")) %>% 
+  # remove duplicate cores (going to keep all the Miller cores and drop the duplicates from Smeaton et al 2022a)
+  filter(drop_duplicates == "keep") %>% 
   # one of the coords is wrong
   mutate(latitude = ifelse(core_id == "RMN97_NB", 41.84336, latitude),
          longitude = ifelse(core_id == "RMN97_NB", -69.95326, longitude)) %>% 
@@ -98,8 +136,6 @@ dat <- dat_raw %>%
   select(study_id, site_id, core_id, depth_min, depth_max, dry_bulk_density, fraction_organic_matter, fraction_carbon,
          everything()) %>% 
   arrange(study_id, site_id, core_id, depth_min) %>% 
-  # remove duplicate studies
-  filter(!(study_id %in% c("Ward_et_al_2021", "Burden_et_al_2018"))) %>%
   # drop rows where there are no original measurements of DBD, LOI, or OC
   mutate(droprow = ifelse(is.na(fraction_organic_matter) & is.na(fraction_carbon) & is.na(dry_bulk_density), T, F)) %>%
   filter(droprow == F) %>%
@@ -109,10 +145,20 @@ dat <- dat_raw %>%
 
 # curate core-level data
 cores <- dat %>%
-  distinct(study_id, site_id, core_id, latitude, longitude, year, position_notes) %>% 
-  mutate(vegetation_class = "emergent",
-         habitat = "marsh",
-         position_method = ifelse(grepl("estimated|averaged", position_notes), "other low resolution", NA))
+  distinct(study_id, site_id, core_id, latitude, longitude, year, position_notes, Core_type, Marsh_type, Marsh_zone, Habitat_type) %>%  # month, day?
+  mutate(habitat = case_when(grepl("marsh", Habitat_type) ~ "marsh",
+                             grepl("Mud", site_id) | Habitat_type == "Mudflat" ~ "mudflat",
+                             T ~ "marsh"),
+         vegetation_class = case_when(habitat == "marsh" ~ "emergent", T ~ NA),
+         inundation_class = case_when(Marsh_zone == "High" ~ "high",
+                                      Marsh_zone %in% c("Low-Mid", "Low_Mid") ~ "mid",
+                                      T ~ NA),
+         inundation_notes = Marsh_type,
+         salinity_class = case_when(Marsh_type == "Estuarine" ~ "estuarine"),
+         position_method = ifelse(grepl("estimated|averaged", position_notes), "other low resolution", NA),
+         core_notes = case_when(Core_type == "Narrow" ~ "30mm core diameter",
+                                Core_type == "Wide" ~ "60mm core diameter", T ~ NA)) %>% 
+    select(-c(Core_type, Marsh_type, Marsh_zone, Habitat_type))
   # add_count(core_id) %>% filter(n > 1)
 # unique(cores$position_notes)
 
@@ -121,37 +167,50 @@ cores <- dat %>%
 
 ## ... Depthseries ####
 
+# 31 studies with no DBD (but OM or OC is present)
+# tricky for stock calculations later, but I suppose we include these for now
+no_dbd <- dat %>% group_by(study_id) %>% summarize(dbd_sum = sum(dry_bulk_density, na.rm = T)) %>% 
+  filter(dbd_sum == 0) %>% 
+  distinct(study_id) %>% pull(study_id)
+
 depthseries <- dat %>% 
   add_count(core_id) %>% mutate(one_interval = ifelse(n == 1, T, F)) %>%
   # filter(one_interval == T)
   rename(organic_carbon_model = Conv_factor) %>% 
-  mutate(quality_flag = ifelse(grepl("Outlier", Notes), Notes, NA)) %>% 
+  mutate(depth_interval_notes = case_when(grepl("Outlier", Notes) & is.na(depth_interval_notes) ~ Notes,
+                                          grepl("Outlier", Notes) & !is.na(depth_interval_notes) ~ paste0(depth_interval_notes, "; ", Notes),
+                                          study_id == "Ford_et_al_2016" ~ "bulk density measured but not provided in original dataset",
+                                  T ~ depth_interval_notes)) %>% 
   select(contains("_id"), everything()) %>% 
   select(-c(Source, Original_source, position_notes, Country, Admin_unit, Core, Plot, Data_type,
             latitude, longitude, Site, Site_name, year, Time_replicate, impact_class, core_id_num,
-            contains("_sd"), OC_perc_final, n, one_interval, droprow, OC_from_SOM_our_eq, Notes))
+            contains("_sd"), OC_perc_final, n, one_interval, droprow, OC_from_SOM_our_eq, Notes, Species, Subsite, Season, 
+            Core_type, Marsh_type, Marsh_zone, Habitat_type, DOI)) %>% 
+  # filter(study_id %in% no_dbd)
+  add_count(study_id, site_id, core_id, depth_min, depth_max) %>% filter(n >1)
 
-# View(depthseries %>% filter(is.na(fraction_organic_matter) & is.na(dry_bulk_density) & is.na(fraction_carbon)))
+depthseries %>% distinct(study_id) %>% pull(study_id)
+# studies with cores that have multiple observations per depth increment
+#  "Kumar_et_al_2020" "Miller_et_al_2022" "Smeaton_et_al_2022b" "Smeaton_et_al_2023" "Van_de_Broek_et_al_2018"  "de_los_Santos_et_al_2022"
 
-
-depthseries %>% 
+dat %>% 
   drop_na(fraction_organic_matter, fraction_carbon) %>% 
-  ggplot(aes(fraction_organic_matter, fraction_carbon, col = quality_flag)) + 
+  ggplot(aes(fraction_organic_matter, fraction_carbon, col = Notes)) + 
   geom_point(pch = 1)
 # there's OC outliers => leave in or out?
 
-depthseries %>% 
+dat %>% 
   drop_na(dry_bulk_density, fraction_organic_matter) %>% 
-  ggplot(aes(dry_bulk_density, fraction_organic_matter, col = quality_flag)) + 
+  ggplot(aes(dry_bulk_density, fraction_organic_matter, col = Notes)) + 
   geom_point(pch = 1) +
-  facet_wrap(~quality_flag)
+  facet_wrap(~Notes)
 
-depthseries %>% 
+dat %>% 
   drop_na(dry_bulk_density, fraction_carbon) %>% 
   # filter(fraction_carbon < 1) %>% 
-  ggplot(aes(dry_bulk_density, fraction_carbon, col = quality_flag)) + 
+  ggplot(aes(dry_bulk_density, fraction_carbon, col = Notes)) + 
   geom_point(alpha = 0.5) +
-  facet_wrap(~quality_flag) +
+  facet_wrap(~Notes) +
   theme(legend.position = "bottom")
 # there an OC outliers => leave in or out?
 
@@ -168,14 +227,14 @@ unique(dat$method_id)
 # [7] "SOM by Suguio (1973)"                "oxidation with potassium dichromate" "Tyurin spectrophotometry" 
 
 methods <- dat %>% 
-  distinct(study_id, method_id) %>% 
+  distinct(study_id, method_id, Conv_factor) %>% 
   rename(fraction_carbon_method = method_id) %>% 
-  arrange(study_id) %>% add_count(study_id)
+  arrange(study_id) %>% add_count(study_id, fraction_carbon_method)
 
 # Martins_et_al_2022 fraction carbon method is EA (there are some intervals that only have LOI)
 # check out de_los_Santos_et_al_2022 more (part a and b)
 # organic carbon?
-
+ 
 ## ... Impacts ####
 
 impacts <- dat %>% 
@@ -281,7 +340,7 @@ sources <- dat %>% distinct(study_id, Source)
 study_dois <- read_csv("data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_study_citations.csv") %>% 
   bind_rows(read_xlsx("data/primary_studies/Maxwell_et_al_2023/intermediate/missing_maxwell_studies.xlsx")) %>% 
   drop_na(study_id) %>% 
-  filter(study_id != "Markewich_et_al_1998") %>% 
+  filter(!(study_id %in% c("Markewich_et_al_1998", "Xia_et_al_2022", "Fu_et_al_2021"))) %>% 
   select(study_id, doi)
 
 missing_citations <- unique(dat$study_id)[!(unique(dat$study_id) %in% study_dois$study_id)]
@@ -292,11 +351,11 @@ missing_citations
 # "Adaime_1978", "Azevedo_2015-UNPUBLISHED",  "Copertino_unpublished", "Lacerda_et_al_1997", "Neto_&_Lana_1997", "Newton_2017"  
 # "Rios_et_al_2018", "Payne_et_al_2019", "Zanin_2003"
 
+# solo unpublished: "Pagès_et_al_unpublished", "Serrano_unpublished_Australia" 
+
 # Xia et al 2022 synthesis: "Gao_et_al_2016", "Liu_et_al_2017" (RESOLVED)
 
-# Fu et al 2021 synthsis: "Wan_et_al_2017", "Wang_et_al_2017", "Loh_et_al_2018", "Lu_et_al_2019"              
-
-# solo unpublished: "Pagès_et_al_(in_preparation)", "Serrano_unpublished_Australia" 
+# Fu et al 2021 synthesis: "Wan_et_al_2017", "Wang_et_al_2017", "Loh_et_al_2018", "Lu_et_al_2019"              
 
 synthesis_bib <- data.frame()
 
@@ -329,6 +388,17 @@ maxwell_synth <- data.frame(study_id = unique(dat$study_id)) %>%
   mutate(bibliography_id = "Maxwell_et_al_2023_synthesis",
          publication_type = "synthesis source")
 
+# Fu et al 2021 synthesis
+fu_synth <- data.frame(study_id = c("Wan_et_al_2017", "Wang_et_al_2017", "Loh_et_al_2018", "Lu_et_al_2019")) %>% 
+  bind_cols(as.data.frame(GetBibEntryWithDOI("10.1111/gcb.15348")) %>% remove_rownames()) %>% 
+  mutate(bibliography_id = "Fu_et_al_2021_synthesis",
+         publication_type = "associated source")
+
+xia_synth <- data.frame(study_id = c("Gao_et_al_2016", "Liu_et_al_2017", "Xia_et_al_2022")) %>% 
+  bind_cols(as.data.frame(GetBibEntryWithDOI("10.1111/gcb.16325")) %>% remove_rownames()) %>% 
+  mutate(bibliography_id = "Xia_et_al_2022_synthesis",
+         publication_type = "associated source")
+
 # combine all citations 
 synthesis_citations <- synthesis_bib %>% 
   mutate(bibliography_id = ifelse(bibtype == "Misc", paste0(study_id, "_data"),
@@ -336,11 +406,23 @@ synthesis_citations <- synthesis_bib %>%
          publication_type = ifelse(bibtype == "Article", "associated source", "primary dataset")) %>% 
   bind_rows(markewich_citation) %>% 
   bind_rows(maxwell_synth) %>% 
+  bind_rows(fu_synth) %>% 
+  bind_rows(xia_synth) %>% 
   arrange(study_id) %>% 
   select(-c(editor, language, keywords, copyright)) %>% 
   select(study_id, bibliography_id, publication_type, everything())
 
-# write_excel_csv(synthesis_citations, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_study_citations.csv")
+# unique(dat$study_id)[!(unique(dat$study_id) %in% unique(synthesis_citations$study_id))]
+
+write_excel_csv(synthesis_citations, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_study_citations.csv")
+
+# Write .bib file
+# bib_file <- synthesis_citations %>%
+#   select(-study_id, -publication_type) %>%
+#   distinct() %>%
+#   column_to_rownames("bibliography_id")
+
+# as.BibEntry(bib_file)
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/
