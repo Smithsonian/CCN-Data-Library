@@ -413,7 +413,7 @@ testConditional <- function(table_names, database_structure_doc = "docs/ccrcn_da
 writeDataVizReport <- function(study_id){
   
   # generate data contributor report
-  rmarkdown::render(input = "./scripts/data_visualization_report.Rmd",
+  rmarkdown::render(input = "./scripts/1_data_formatting/data_visualization_report.Rmd",
                     # output_format = "html_document",
                     output_file = paste0(study_id, "_dataviz_report"),
                     output_dir = "./docs/dataviz_reports/")

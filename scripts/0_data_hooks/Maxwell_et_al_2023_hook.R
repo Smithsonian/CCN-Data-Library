@@ -23,6 +23,7 @@ dat_raw <- read_csv("data/primary_studies/Maxwell_et_al_2023/original/Maxwell_ma
 metadat <- read_csv("data/primary_studies/Maxwell_et_al_2023/original/Maxwell_marshC_dataset_metadata.csv")
 
 # read in some original data that I revised in Tania's script
+# some cols were dropped that would be relevant for the CCN database
 dat_human <- read_csv("data/primary_studies/Maxwell_et_al_2023/03_data_format/data/exported/Human et al 2022.csv") %>% 
   rename(BD_g_cm3 = BD_reported_g_cm3, Original_source = Source) %>%
   mutate(Data_type = "Core-level")
@@ -114,7 +115,7 @@ dat <- dat_revised %>%
          depth_min = case_when(study_id == "Russell_et_al_2023" ~ depth_min, T ~ depth_min*100), 
          depth_max = case_when(study_id == "Russell_et_al_2023" ~ depth_max, T ~ depth_max*100)) %>% 
 
-  # fix the core ID
+  # create unique core IDs
   mutate(core_id = coalesce(Core, Plot),
          core_id_num = as.numeric(core_id), # this will coerce some things to NA
          core_id = case_when(!is.na(core_id_num) ~ Site_name,
@@ -129,6 +130,16 @@ dat <- dat_revised %>%
          drop_duplicates = case_when(study_id == "Smeaton_et_al_2022a" & core_id %in% duplicate_cores ~ "drop", T ~ "keep")) %>% 
   # remove duplicate cores (going to keep all the Miller cores and drop the duplicates from Smeaton et al 2022a)
   filter(drop_duplicates == "keep") %>% 
+  
+  # create unique core IDs for some surface samples
+  add_count(core_id, depth_min, depth_max) %>%
+  group_by(core_id) %>%
+  mutate(replicate_id = case_when(study_id == "de_los_Santos_et_al_2022" ~ seq_along(core_id), T ~ NA),
+         core_id = case_when(study_id == "de_los_Santos_et_al_2022" & n > 1 ~ paste(core_id, replicate_id, sep = "_"),
+                             T ~ core_id)) %>%
+  select(-n) %>%
+  ungroup() %>%
+  
   # one of the coords is wrong
   mutate(latitude = ifelse(core_id == "RMN97_NB", 41.84336, latitude),
          longitude = ifelse(core_id == "RMN97_NB", -69.95326, longitude)) %>% 
@@ -161,11 +172,19 @@ cores <- dat %>%
     select(-c(Core_type, Marsh_type, Marsh_zone, Habitat_type))
   # add_count(core_id) %>% filter(n > 1)
 # unique(cores$position_notes)
+core_count <- cores %>% count(study_id)
 
 # reorder the columns based on the database guidance
 # cores <- reorderColumns("core-level", cores)
 
 ## ... Depthseries ####
+
+# santos_2022 <- dat %>% 
+#   # filter(study_id == "de_los_Santos_et_al_2022") %>% 
+#   add_count(core_id, depth_min, depth_max) %>% 
+#   # filter(n > 1) %>% 
+#   group_by(core_id) %>% 
+#   mutate(replicate_id = seq_along(core_id))
 
 # 31 studies with no DBD (but OM or OC is present)
 # tricky for stock calculations later, but I suppose we include these for now
@@ -174,24 +193,29 @@ no_dbd <- dat %>% group_by(study_id) %>% summarize(dbd_sum = sum(dry_bulk_densit
   distinct(study_id) %>% pull(study_id)
 
 depthseries <- dat %>% 
-  add_count(core_id) %>% mutate(one_interval = ifelse(n == 1, T, F)) %>%
+  # add_count(core_id) %>% mutate(one_interval = ifelse(n == 1, T, F)) %>%
   # filter(one_interval == T)
-  rename(organic_carbon_model = Conv_factor) %>% 
+  # rename(organic_carbon_model = Conv_factor) %>% 
   mutate(depth_interval_notes = case_when(grepl("Outlier", Notes) & is.na(depth_interval_notes) ~ Notes,
                                           grepl("Outlier", Notes) & !is.na(depth_interval_notes) ~ paste0(depth_interval_notes, "; ", Notes),
                                           study_id == "Ford_et_al_2016" ~ "bulk density measured but not provided in original dataset",
+                                          study_id == "Kumar_et_al_2020" & Carbonate_removed == "no"  ~ "carbonates not removed",
+                                          study_id == "Kumar_et_al_2020" & Carbonate_removed == "yes"  ~ "carbonates removed",
+                                          study_id == "Sammul_et_al_2012" ~ paste0(depth_interval_notes, "; carbon content determined via oxidation with potassium dichromate"),
+                                          impact_class == "Post-fires, input of black carbon" ~ impact_class,
                                   T ~ depth_interval_notes)) %>% 
   select(contains("_id"), everything()) %>% 
-  select(-c(Source, Original_source, position_notes, Country, Admin_unit, Core, Plot, Data_type,
-            latitude, longitude, Site, Site_name, year, Time_replicate, impact_class, core_id_num,
-            contains("_sd"), OC_perc_final, n, one_interval, droprow, OC_from_SOM_our_eq, Notes, Species, Subsite, Season, 
-            Core_type, Marsh_type, Marsh_zone, Habitat_type, DOI)) %>% 
+  select(-c(Source, Original_source, position_notes, Country, Admin_unit, Core, Plot, Data_type, Conv_factor,
+            latitude, longitude, Site, Site_name, year, Time_replicate, impact_class, core_id_num, replicate_id,
+            contains("_sd"), OC_perc_final, droprow, OC_from_SOM_our_eq, Notes, Species, Subsite, Season, 
+            Core_type, Marsh_type, Marsh_zone, Habitat_type, DOI, accuracy_code, drop_duplicates, State, Carbonate_removed))
   # filter(study_id %in% no_dbd)
-  add_count(study_id, site_id, core_id, depth_min, depth_max) %>% filter(n >1)
+  # add_count(study_id, site_id, core_id, depth_min, depth_max) %>% filter(n > 1)
 
 depthseries %>% distinct(study_id) %>% pull(study_id)
-# studies with cores that have multiple observations per depth increment
-#  "Kumar_et_al_2020" "Miller_et_al_2022" "Smeaton_et_al_2022b" "Smeaton_et_al_2023" "Van_de_Broek_et_al_2018"  "de_los_Santos_et_al_2022"
+
+# studies with cores that have some cases of multiple observations per depth increment
+#  "Kumar_et_al_2020" "Smeaton_et_al_2022b" "Smeaton_et_al_2023" "Van_de_Broek_et_al_2018"
 
 dat %>% 
   drop_na(fraction_organic_matter, fraction_carbon) %>% 
@@ -222,9 +246,8 @@ dat %>%
 ## ... Methods ####
 
 unique(dat$method_id)
-# [1] "Wilson (1973)"                       "EA"                                  NA                                   
-# [4] "LOI"                                 "Tyurin (1951)"                       "MIR predicted"                      
-# [7] "SOM by Suguio (1973)"                "oxidation with potassium dichromate" "Tyurin spectrophotometry" 
+# "Wilson (1973)" "EA" "LOI"  "MIR predicted" "combined LOI EA"            
+# "oxidation with potassium dichromate" "Tyurin spectrophotometry" 
 
 methods <- dat %>% 
   distinct(study_id, method_id, Conv_factor) %>% 
@@ -238,11 +261,25 @@ methods <- dat %>%
 ## ... Impacts ####
 
 impacts <- dat %>% 
-  drop_na(impact_class) %>% 
-  mutate(impact_class = tolower(impact_class)) %>% 
+  # mutate(impact_class = case_when(grepl("impounded", core_id) ~ "impounded",
+  #                                 grepl("managed", core_id) ~ "managed",
+  #                                 grepl("restored", core_id) ~ "restored",
+  #                                 T ~ tolower(impact_class))) %>% 
+  filter(grepl("managed|restored|impounded|Grazed", core_id) | !is.na(impact_class)) %>% 
+  # drop_na(impact_class) %>% 
+  # mutate(impact_class = tolower(impact_class)) %>% 
   distinct(study_id, site_id, core_id, impact_class)
 
 unique(impacts$impact_class)
+
+
+## ... Species ####
+
+species <- dat %>% 
+  drop_na(Species) %>% 
+  distinct(study_id, site_id, core_id, Species) %>% 
+  rename(species_code = Species) %>% 
+  mutate(code_type = case_when(grepl(" ", species_code) ~ "Genus species", T ~ "Genus"))
 
 ## ...Check Duplicates
 
@@ -322,7 +359,7 @@ fraction_not_percent(depthseries)
 # write_csv(methods, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_methods.csv")
 write_csv(cores, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_cores.csv")
 write_csv(depthseries, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_depthseries.csv")
-# write_csv(species, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_species.csv")
+write_csv(species, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_species.csv")
 write_csv(impacts, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_impacts.csv")
 
 ## 4. Bibliography ####
