@@ -111,7 +111,14 @@ fractionNotPercent(depthseries)
       #testNumericCols(depthseries)
 test_numeric_vars(depthseries) ##testNumericCols producing error message 
 
-## 3. Write Curated Data ####
+
+
+
+### 3. Write Data vis report ####
+writeDataVizReport(id)
+  #no carbon depth profiles, function quits 
+
+## 4. Write Curated Data ####
 
 # write data to final folder
 write_csv(methods, "data/primary_studies/Palinkas_and_Engelhardt_2024/derivative/Palinkas_and_Engelhardt_2024_materials_and_methods.csv")

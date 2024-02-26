@@ -54,7 +54,8 @@ cores <- reorderColumns("cores", cores)
 ## ... Depthseries ####
 
 depthseries <- depthseries_raw %>% 
-  select(-P, -fraction_nitrogen)
+  select(-P, -fraction_nitrogen) %>% 
+  mutate(pb210_unit = ifelse(is.na(total_pb210_activity), NA, "disintegrationsPerMinutePerGram"))
 
 depthseries <- reorderColumns("depthseries", depthseries)
 
@@ -98,7 +99,10 @@ fractionNotPercent(depthseries)
       #testNumericCols(depthseries)
 test_numeric_vars(depthseries) ##testNumericCols producing error message 
 
-## 3. Write Curated Data ####
+## 3. Write datavis report ####
+writeDataVizReport(id)
+
+## 4. Write Curated Data ####
 
 # write data to final folder
 write_csv(methods, "data/primary_studies/Loomis_and_Craft_2024/derivative/Loomis_and_Craft_2024_materials_and_methods.csv")

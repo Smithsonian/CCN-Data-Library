@@ -101,7 +101,14 @@ fractionNotPercent(depthseries)
       #testNumericCols(depthseries)
 test_numeric_vars(depthseries) ##testNumericCols producing error message 
 
-## 3. Write Curated Data ####
+
+## 3. Write data vis report ####
+writeDataVizReport(id)
+# error message -> Quitting from lines 152-192 [210Pb depth profiles] (data_visualization_report.Rmd)
+#Error in `if (...) NULL`:
+ # ! the condition has length > 1
+
+## 4. Write Curated Data ####
 
 # write data to final folder
 write_csv(methods, "data/primary_studies/Craft_2024/derivative/Craft_2024_materials_and_methods.csv")

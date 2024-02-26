@@ -100,7 +100,11 @@ fractionNotPercent(depthseries)
       #testNumericCols(depthseries)
 test_numeric_vars(depthseries) ##testNumericCols producing error message 
 
-## 3. Write Curated Data ####
+## 3. Write data vis report ####
+writeDataVizReport(id)
+# same error in pb210 depth profiles 
+
+## 4. Write Curated Data ####
 
 # write data to final folder
 write_csv(methods, "data/primary_studies/Stahl_et_al_2024/derivative/Stahl_et_al_2024_materials_and_methods.csv")

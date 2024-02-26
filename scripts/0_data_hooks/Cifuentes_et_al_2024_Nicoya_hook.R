@@ -23,6 +23,8 @@ raw_debris <- read_csv("data/primary_studies/Cifuentes_et_al_2024_Nicoya/origina
 
 ## 1. Curation ####
 
+id <- "Cifuentes_et_al_2024_Nicoya"
+
 ## ... Methods ####
 
 # curate materials and methods
@@ -53,6 +55,7 @@ cores <- raw_plots %>%
   select(study_id, site_id, plot_id, year, latitude, longitude, position_method, habitat) %>% 
   rename(core_id = plot_id) ## 1 core/sediment sample per plot 
 
+cores <- reorderColumns("cores", cores)
 
 ## missing lat long for site 
     # Buenaventura_Camaronera_4_x
@@ -74,6 +77,7 @@ impacts <- raw_plots %>%
   select(- land_use_status, -name) %>% 
   filter(!is.na(impact_class))
 
+impacts <- reorderColumns("impacts", impacts)
 
 ## 2. QAQC ####
 
@@ -99,7 +103,12 @@ test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
 
-## 3. Study Citations ####
+
+## 3. Write datavis report ####
+writeDataVizReport(id)
+    #getting error in Pb210 depth profiles? this dataset does not have pb210 activities 
+
+## 4. Study Citations ####
 
 library(RefManageR)
 

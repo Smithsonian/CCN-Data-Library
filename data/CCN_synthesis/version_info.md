@@ -4,9 +4,9 @@ This versioning document tracks the changes made to the CCN Data Library, includ
 
 ***
 
-### Synthesis Version 1.1.2
+### Synthesis Version 1.2.0
 
-#### Version 1.1.2 Contents 
+#### Version 1.2.0 Contents 
 
 This database contains tidal wetland soil carbon profiles and associated metadata. The data itself is housed in separate comma separated value (.csv) spreadsheets linked by common identifier attributes (study_id, site_id, and core_id).
 
@@ -25,15 +25,15 @@ This database contains tidal wetland soil carbon profiles and associated metadat
 - CCN_study_citations.csv - Contains bibliographic information for publications and associated sources, which can be related to the database tables via study_id.
 - CCN_bibliography.bib - Contains bibliographic information for publications and sources associated with this database.
 
-#### Version 1.1.2 Updates
+#### Version 1.2.0 Updates
 
-*New Datasets 1.1.2*
+*New Datasets 1.2.0*
 
 This update adds N new studies and N new cores to the CCN Data Library, bringing the total number of cores to N, with 401+N  unique studies. 
 
 Brown et al 2024 
 Craft 2024
-Cifuentes et al 2024, Nicoya
+Cifuentes et al 2024 (Nicoya)
 Darienzo and Peterson 1990
 Dontis et al 2023
 Drake et al 2024
@@ -41,15 +41,18 @@ Everhart et al 2020
 Gillen et al 2018
 Langston et al 2022
 Loomis and Craft 2024
+Machite and Adams 2024
+Maxwell et al 2023
 Messerschmidt et al 2020
 Morgan et al 2024 
 Palinkas and Cornwell 2024
 Palinkas and Engelhardt 2024
-Radaubaugh et al 2017
-Radaubaugh et al 2018
-Radaubaugh et al 2021
-Radaubaugh et al 2023
+Radabaugh et al 2017
+Radabaugh et al 2018
+Radabaugh et al 2021
+Radabaugh et al 2023
 Schieder and Kirwan 2019
+Smith and Kirwan 2021
 Stahl et al 2024 
 Vinent and Kirwan 2017
 
@@ -58,10 +61,10 @@ Vinent and Kirwan 2017
 
 1. Fourqurean et al 2012: Adding site-level position data in _cores.csv
 2. Holmquist et al 2018: Removed Drake et al 2015 and Radaubaugh et al 2018 data, now represented in Drake et al 2024 and Radaubaugh et al 2018
-3. Poppe_and_Rybczyk_2019: Removed duplicate impact classes in _impacts.csv 
+3. Poppe and Rybczyk 2019: Removed duplicate impact classes in _impacts.csv 
 4. Marot et al 2020: Resolved position and updated habitat classification in _cores.csv
-5. Miller et al 2022: Updated study_id. Originally represented as Rodriguez et al 2022
-6. Turck_2014: Resolved error with vegetation_class <-- CHECK
+5. Miller et al 2022: Updated study_id in all associated .csv files. Study originally represented as Rodriguez et al 2022
+6. Turck 2014: Resolved error with vegetation_class in _cores.csv
 
 
 
