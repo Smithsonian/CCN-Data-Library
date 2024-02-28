@@ -108,7 +108,7 @@ dat <- dat_revised %>%
                            "Azevedo_2015-UNPUBLISHED" = "Azevedo_2015_unpublished",
                            "UNPUBLISHED" = "Copertino_unpublished",
                            "Miller_et_al_2022" = "Miller_et_al_2022_Scotland",
-                           "Yando_et_al_2016" = "Yando_et_al_2016_mangrove",
+                           "Yando_et_al_2016" = "Yando_et_al_2016_marsh",
                            "Smeaton_unpublished_Essex" = "Smeaton_et_al_2023",
                            "Russell_et_al_submitted" = "Russell_et_al_2023",
                            "Mazarrasa_et_al_in_prep" = "Mazarrasa_et_al_2023",
@@ -130,6 +130,7 @@ dat <- dat_revised %>%
                              grepl("FL-N", core_id) ~ "FL-N",
                              grepl("NF-N", core_id) ~ "NF-N",
                              core_id == "Salmi allpool vähe orgaanikat" ~ "Salmi managed",
+                             !is.na(Core_type) ~ paste(Core, Core_type, sep = " "),
                              T ~ core_id),
          drop_duplicates = case_when(study_id == "Smeaton_et_al_2022a" & core_id %in% duplicate_cores ~ "drop", T ~ "keep")) %>% 
   # remove duplicate cores (going to keep all the Miller cores and drop the duplicates from Smeaton et al 2022a)
@@ -172,7 +173,9 @@ cores <- dat %>%
          salinity_class = case_when(Marsh_type == "Estuarine" ~ "estuarine"),
          position_method = ifelse(grepl("estimated|averaged", position_notes), "other low resolution", NA),
          core_notes = case_when(Core_type == "Narrow" ~ "30mm core diameter",
-                                Core_type == "Wide" ~ "60mm core diameter", T ~ impact_class)) %>% 
+                                Core_type == "Wide" ~ "60mm core diameter", 
+                                study_id == "Wollenberg_et_al_2018" ~ "managed realignment",
+                                T ~ tolower(impact_class))) %>% 
     select(-c(Core_type, Marsh_type, Marsh_zone, Habitat_type, impact_class))
   # add_count(core_id) %>% filter(n > 1)
 # unique(cores$position_notes)
@@ -207,16 +210,22 @@ depthseries <- dat %>%
                                           study_id == "Kumar_et_al_2020" & Carbonate_removed == "yes"  ~ "carbonates removed",
                                           study_id == "Sammul_et_al_2012" ~ paste0(depth_interval_notes, "; carbon content determined via oxidation with potassium dichromate"),
                                           impact_class == "Post-fires, input of black carbon" ~ impact_class,
-                                  T ~ depth_interval_notes)) %>% 
+                                  T ~ depth_interval_notes),
+         method_id = "single set of methods") %>% 
   select(contains("_id"), everything()) %>% 
   select(-c(Source, Original_source, position_notes, Country, Admin_unit, Core, Plot, Data_type, Conv_factor,
             latitude, longitude, Site, Site_name, year, Time_replicate, impact_class, core_id_num, replicate_id,
             contains("_sd"), OC_perc_final, droprow, OC_from_SOM_our_eq, Notes, Species, Subsite, Season, 
             Core_type, Marsh_type, Marsh_zone, Habitat_type, DOI, accuracy_code, drop_duplicates, State, Carbonate_removed))
   # filter(study_id %in% no_dbd)
-  # add_count(study_id, site_id, core_id, depth_min, depth_max) %>% filter(n > 1)
 
-depthseries %>% distinct(study_id) %>% pull(study_id)
+dup_interval <- depthseries %>% 
+  add_count(study_id, site_id, core_id, depth_min, depth_max) %>% filter(n > 1)
+
+surface_samples <- depthseries %>% 
+  add_count(core_id) %>% 
+  # mutate(one_interval = ifelse(n == 1, T, F)) %>%
+  filter(n == 1) %>% filter(depth_max < 50)
 
 # studies with cores that have some cases of multiple observations per depth increment
 #  "Kumar_et_al_2020" "Smeaton_et_al_2022b" "Smeaton_et_al_2023" "Van_de_Broek_et_al_2018"
@@ -278,6 +287,7 @@ impacts <- dat %>%
                                   grepl("managed", core_id) ~ "managed",
                                   grepl("restored", core_id) ~ "restored",
                                   impact_class %in% c("Historic-Breach", "Managed Realignment") ~ "tidally restored",
+                                  study_id == "Wollenberg_et_al_2018" ~ "tidally restored",
                                   T ~ tolower(impact_class))) %>%
   filter(grepl("managed|restored|impounded", core_id) | !is.na(impact_class)) %>% 
   filter(!(study_id %in% c("Gallagher_et_al_2021", "Graversen_et_al_2022"))) %>% 
@@ -330,7 +340,7 @@ library(leaflet)
 dat %>%
   distinct(study_id, site_id, core_id, latitude, longitude, Country) %>% 
 # cores %>%
-  filter(study_id == "Human_et_al_2022") %>%
+  filter(study_id == "Miller_et_al_2022_Scotland") %>%
   # filter(grepl("de_los_Santos", study_id)) %>%
   # filter(Country == "China") %>% filter(study_id != "Xia_et_al_2022") %>% 
   leaflet() %>%
@@ -364,10 +374,11 @@ testIDs(cores, depthseries, by = "core")
 
 # test numerical values and ranges
 # this function requires library(skimr)
-test_depth <- test_numeric_vars(depthseries, study_uncontrolled = NULL)
-test_cores <- test_numeric_vars(cores, study_uncontrolled = NULL)
-test_methods <- test_numeric_vars(methods, study_uncontrolled = NULL)
-fraction_not_percent(depthseries)
+test_depth <- testNumericCols(depthseries)
+test_cores <- testNumericCols(cores)
+test_methods <- testNumericCols(methods)
+
+fractionNotPercent(depthseries)
 
 ## 3. Write Curated Data ####
 
@@ -387,7 +398,7 @@ library(RefManageR)
 # write_excel_csv(bib, "data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_study_citations.csv")
 
 # compare to our data library bib
-sources <- dat %>% distinct(study_id, Source)
+# sources <- dat %>% distinct(study_id, Source)
 # write_csv(sources, "data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_marsh_synthesis_sources.csv")
 
 study_dois <- read_csv("data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_study_citations.csv") %>% 
@@ -434,6 +445,7 @@ markewich_citation <- data.frame(study_id = "Markewich_et_al_1998",
                                  publisher = "U.S. Geological Survey",
                                  year = "1998")
 # is this a tech report or other bib type?
+
 
 # create an expanded table which assigns Maxwell 2023 as a synthesis source for all the studies
 maxwell_synth <- data.frame(study_id = unique(dat$study_id)) %>% 
