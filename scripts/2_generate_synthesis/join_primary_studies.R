@@ -5,8 +5,8 @@
 # RUN SCRIPT WITH A CLEAN R SESSION #
 # if you experience an error, restart Rstudio and try again # 
 
-past_version_code <- "1.1.0"
-new_version_code <- "1.1.1"
+past_version_code <- "1.1.1"
+new_version_code <- "1.2.0"
 
 ## 1. Synthesis background and description ###############
 
@@ -71,46 +71,7 @@ trackers <- c(
 file_paths <- vector("list", length(c(tables, trackers)))
 names(file_paths) <- c(tables, trackers)
 
-## old version of assembling files
-# for(folderName in dir(directory)){
-#   # derivative_directory <- paste0(directory,folderName,"/derivative")
-#   # If the derivative folder exists and has one or more files, the following will not return 0
-#   if(length(derivative_directory) != 0) {
-#     for(fileName in dir(derivative_directory)) {
-#       # Extract the table type and file extension from each file
-#       file_type <- strsplit(fileName, split = "\\d\\d\\d\\d")[[1]][2]
-#       
-#       # Create the full file path 
-#       file_path <- paste0(derivative_directory,"/",fileName)
-# 
-#       # First check if the file extension is csv
-#       if(grepl(".csv", file_type)){
-#         
-#         # Remove csv and underscore from file type to get table type
-#         table_type <- gsub("_", "", gsub(".csv", "", file_type))
-#         
-#         # Second check the table type and add to the corresponding list of studies 
-#         if(table_type %in% tables){
-#           file_paths[[table_type]][length(file_paths[[table_type]]) + 1] <- file_path
-#           
-#           # Need to add a method to track csv files that do not get added to table-list  
-#         } else {
-#           file_paths$unknown_csv[length(file_paths$unknown_csv) + 1] <- file_path
-#         }
-#         
-#         # .bib files will the other main file type in derivative files 
-#       } else if(grepl(".bib", file_type)){
-#         file_paths$bibs[length(file_paths$bibs) + 1] <- file_path
-#         
-#         # Record what non-.bib or -.csv files are in the derivative folder 
-#       } else {
-#         file_paths$unknown_filetypes[length(file_paths$unknown_filetypes) + 1] <- file_path
-#         
-#       }
-#     }
-#   }
-# }
-
+# organize filenames into their designated list
 for(folderName in final_dirs){
   
   # Case: if the final folder contains files

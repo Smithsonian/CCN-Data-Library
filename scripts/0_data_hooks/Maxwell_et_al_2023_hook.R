@@ -24,9 +24,11 @@ metadat <- read_csv("data/primary_studies/Maxwell_et_al_2023/original/Maxwell_ma
 
 # read in some original data that I revised in Tania's script
 # some cols were dropped that would be relevant for the CCN database
-dat_human <- read_csv("data/primary_studies/Maxwell_et_al_2023/03_data_format/data/exported/Human et al 2022.csv") %>% 
-  rename(BD_g_cm3 = BD_reported_g_cm3, Original_source = Source) %>%
-  mutate(Data_type = "Core-level")
+
+# Human et al 2022 is included in the Anesu and Machite hook
+# dat_human <- read_csv("data/primary_studies/Maxwell_et_al_2023/03_data_format/data/exported/Human et al 2022.csv") %>% 
+#   rename(BD_g_cm3 = BD_reported_g_cm3, Original_source = Source) %>%
+#   mutate(Data_type = "Core-level")
 
 dat_ford <- read_csv("data/primary_studies/Maxwell_et_al_2023/03_data_format/data/exported/Ford et al 2016.csv") %>% 
   mutate(Data_type = "Core-level") %>% rename(Original_source = Source) %>% 
@@ -68,7 +70,7 @@ duplicate_cores <- c("SF-18-01","SF-18-02","SF-18-03","SF-18-04","SF-18-05","SF-
 dat_revised <- dat_raw %>% 
   filter(!(Original_source %in% c("Human et al 2022", "Ford et al 2016", "Miller et al 2022", "Kumar et al 2020", 
                                   "Raw et al 2020"))) %>% 
-  bind_rows(dat_human) %>% 
+  # bind_rows(dat_human) %>% # included in a different hook
   bind_rows(dat_ford) %>% 
   bind_rows(dat_miller) %>% 
   bind_rows(dat_kumar) %>% 
@@ -105,6 +107,8 @@ dat <- dat_revised %>%
                            "Serrano_unpublished" = "Serrano_AUS_unpublished",
                            "Azevedo_2015-UNPUBLISHED" = "Azevedo_2015_unpublished",
                            "UNPUBLISHED" = "Copertino_unpublished",
+                           "Miller_et_al_2022" = "Miller_et_al_2022_Scotland",
+                           "Yando_et_al_2016" = "Yando_et_al_2016_mangrove",
                            "Smeaton_unpublished_Essex" = "Smeaton_et_al_2023",
                            "Russell_et_al_submitted" = "Russell_et_al_2023",
                            "Mazarrasa_et_al_in_prep" = "Mazarrasa_et_al_2023",
@@ -156,7 +160,7 @@ dat <- dat_revised %>%
 
 # curate core-level data
 cores <- dat %>%
-  distinct(study_id, site_id, core_id, latitude, longitude, year, position_notes, Core_type, Marsh_type, Marsh_zone, Habitat_type) %>%  # month, day?
+  distinct(study_id, site_id, core_id, latitude, longitude, year, position_notes, Core_type, Marsh_type, Marsh_zone, Habitat_type, impact_class) %>%  # month, day?
   mutate(habitat = case_when(grepl("marsh", Habitat_type) ~ "marsh",
                              grepl("Mud", site_id) | Habitat_type == "Mudflat" ~ "mudflat",
                              T ~ "marsh"),
@@ -168,8 +172,8 @@ cores <- dat %>%
          salinity_class = case_when(Marsh_type == "Estuarine" ~ "estuarine"),
          position_method = ifelse(grepl("estimated|averaged", position_notes), "other low resolution", NA),
          core_notes = case_when(Core_type == "Narrow" ~ "30mm core diameter",
-                                Core_type == "Wide" ~ "60mm core diameter", T ~ NA)) %>% 
-    select(-c(Core_type, Marsh_type, Marsh_zone, Habitat_type))
+                                Core_type == "Wide" ~ "60mm core diameter", T ~ impact_class)) %>% 
+    select(-c(Core_type, Marsh_type, Marsh_zone, Habitat_type, impact_class))
   # add_count(core_id) %>% filter(n > 1)
 # unique(cores$position_notes)
 core_count <- cores %>% count(study_id)
@@ -251,8 +255,17 @@ unique(dat$method_id)
 
 methods <- dat %>% 
   distinct(study_id, method_id, Conv_factor) %>% 
-  rename(fraction_carbon_method = method_id) %>% 
-  arrange(study_id) %>% add_count(study_id, fraction_carbon_method)
+  rename(fraction_carbon_notes = method_id,
+         carbon_profile_notes = Conv_factor) %>% 
+  filter(!(study_id == "Kohfeld_et_al_2022" & is.na(carbon_profile_notes))) %>% 
+  mutate(method_id = "single set of methods",
+         fraction_carbon_method = case_when(fraction_carbon_notes == "EA" ~ "measured",
+                                            fraction_carbon_notes == "LOI" ~ "modeled", 
+                                            grepl("oxidation", fraction_carbon_notes) ~ "wet oxidation",
+                                            T ~ fraction_carbon_notes)) %>% 
+  
+  select(study_id, method_id, everything()) %>% 
+  arrange(study_id) 
 
 # Martins_et_al_2022 fraction carbon method is EA (there are some intervals that only have LOI)
 # check out de_los_Santos_et_al_2022 more (part a and b)
@@ -261,11 +274,13 @@ methods <- dat %>%
 ## ... Impacts ####
 
 impacts <- dat %>% 
-  # mutate(impact_class = case_when(grepl("impounded", core_id) ~ "impounded",
-  #                                 grepl("managed", core_id) ~ "managed",
-  #                                 grepl("restored", core_id) ~ "restored",
-  #                                 T ~ tolower(impact_class))) %>% 
-  filter(grepl("managed|restored|impounded|Grazed", core_id) | !is.na(impact_class)) %>% 
+  mutate(impact_class = case_when(grepl("impounded", core_id) ~ "impounded",
+                                  grepl("managed", core_id) ~ "managed",
+                                  grepl("restored", core_id) ~ "restored",
+                                  impact_class %in% c("Historic-Breach", "Managed Realignment") ~ "tidally restored",
+                                  T ~ tolower(impact_class))) %>%
+  filter(grepl("managed|restored|impounded", core_id) | !is.na(impact_class)) %>% 
+  filter(!(study_id %in% c("Gallagher_et_al_2021", "Graversen_et_al_2022"))) %>% 
   # drop_na(impact_class) %>% 
   # mutate(impact_class = tolower(impact_class)) %>% 
   distinct(study_id, site_id, core_id, impact_class)
@@ -280,6 +295,7 @@ species <- dat %>%
   distinct(study_id, site_id, core_id, Species) %>% 
   rename(species_code = Species) %>% 
   mutate(code_type = case_when(grepl(" ", species_code) ~ "Genus species", T ~ "Genus"))
+
 
 ## ...Check Duplicates
 
@@ -314,7 +330,7 @@ library(leaflet)
 dat %>%
   distinct(study_id, site_id, core_id, latitude, longitude, Country) %>% 
 # cores %>%
-  filter(study_id == "Gao_et_al_2016") %>%
+  filter(study_id == "Human_et_al_2022") %>%
   # filter(grepl("de_los_Santos", study_id)) %>%
   # filter(Country == "China") %>% filter(study_id != "Xia_et_al_2022") %>% 
   leaflet() %>%
@@ -357,10 +373,10 @@ fraction_not_percent(depthseries)
 
 # write data to final folder
 # write_csv(methods, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_methods.csv")
-write_csv(cores, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_cores.csv")
-write_csv(depthseries, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_depthseries.csv")
-write_csv(species, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_species.csv")
-write_csv(impacts, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_impacts.csv")
+write_excel_csv(cores, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_cores.csv")
+write_excel_csv(depthseries, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_depthseries.csv")
+write_excel_csv(species, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_species.csv")
+write_excel_csv(impacts, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_impacts.csv")
 
 ## 4. Bibliography ####
 library(RefManageR)
@@ -377,7 +393,7 @@ sources <- dat %>% distinct(study_id, Source)
 study_dois <- read_csv("data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_study_citations.csv") %>% 
   bind_rows(read_xlsx("data/primary_studies/Maxwell_et_al_2023/intermediate/missing_maxwell_studies.xlsx")) %>% 
   drop_na(study_id) %>% 
-  filter(!(study_id %in% c("Markewich_et_al_1998", "Xia_et_al_2022", "Fu_et_al_2021"))) %>% 
+  filter(!(study_id %in% c("Markewich_et_al_1998", "Xia_et_al_2022", "Fu_et_al_2021", "Human_et_al_2022"))) %>% 
   select(study_id, doi)
 
 missing_citations <- unique(dat$study_id)[!(unique(dat$study_id) %in% study_dois$study_id)]
@@ -463,3 +479,16 @@ write_excel_csv(synthesis_citations, "data/primary_studies/Maxwell_et_al_2023/de
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/
+
+## 
+
+# studies <- unique(cores$study_id)
+# 
+# for (i in studies) {
+#   cores <- cores_master %>% filter(study_id == i)
+#   depthseries <- depths_master %>% filter(study_id == i)
+#   
+#   writeDataVizReport(i)
+# }
+
+

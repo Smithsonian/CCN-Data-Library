@@ -1,5 +1,5 @@
 ---
-title: "CCRCN Synthesis Report"
+title: "CCN Synthesis Report"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   html_document:
@@ -9,8 +9,29 @@ output:
     highlight: tango
 ---
   
+```{r setup, include=FALSE}
+# this sets the working directory to start where the R project is located
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+# no warnings or messages
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+# define custom options for data tables
+custom_opts <- list(searching = TRUE,
+                    paging = FALSE,
+                    info = FALSE,
+                    scrollY = 300,
+                    scrollX = 300,
+                    scrollCollapse = TRUE,
+                    fixedColumns = list(leftColumns = 2))
+
+# load libraries
+library(leaflet)
+library(DT)
+```
+  
 ## Introduction 
-The CCRCN clearinghouse provides a synthesized and curated set of coastal carbon data that promotes the sharing of open data, novel analyses, and collaboration opportunities. The synthesis is created by curating and merging publicly available data through an automated script. This report documents the success or failure of the automated synthesis process, documents changes, conducts QA/QC tests, and provides visualizations and summaries of data within the clearinghouse. 
+The CCN clearinghouse provides a synthesized and curated set of coastal carbon data that promotes the sharing of open data, novel analyses, and collaboration opportunities. The synthesis is created by curating and merging publicly available data through an automated script. This report documents the success or failure of the automated synthesis process, documents changes, conducts QA/QC tests, and provides visualizations and summaries of data within the clearinghouse. 
 
 ***
 
@@ -51,8 +72,7 @@ library(viridis)
 
 # filter core table as needed for investigation
 map_cores <- ccrcn_synthesis$cores %>%
-  mutate(habitat = case_when(habitat == "scrub shrub" ~ "scrub/shrub",
-                             habitat == "mudflat" ~ "unvegetated", 
+  mutate(habitat = case_when(habitat == "mudflat" ~ "unvegetated", 
                              TRUE ~ habitat)) %>% 
   # current habitats: "algal mat", "mangrove", "marsh", "mudflat", "scrub shrub", "seagrass", "swamp", "unvegetated", "upland"
   # filter(habitat == "mangrove") %>% 
@@ -84,18 +104,35 @@ knitr::kable(habitat_smry)
 
 ***
 
+**Missing Values**
+```{r}
+missing_country <- read_csv("data/QA/no_country_for_soil_cores.csv") %>% 
+  mutate(latitude = ifelse(is.na(latitude), "unknown", latitude), 
+         longitude = ifelse(is.na(longitude), "unknown", longitude))
+
+datatable(missing_country,
+          # extensions = "FixedColumns",
+          options = custom_opts,
+          rownames = FALSE)
+
+```
+
+
+```{r}
+missing_habitat <- read_csv("data/QA/no_habitat_cores.csv") %>%    select_if(function(x) {!all(is.na(x))})
+
+datatable(missing_habitat,
+          # extensions = "FixedColumns",
+          options = custom_opts,
+          rownames = FALSE)
+```
+
+***
+
 ### Numeric Attributes
 
 **Summary Statistics:**
 ```{r, echo=FALSE}
-# define custom options for data tables
-custom_opts <- list(searching = TRUE,
-                    paging = FALSE,
-                    info = FALSE,
-                    scrollY = 300,
-                    scrollX = 300,
-                    scrollCollapse = TRUE,
-                    fixedColumns = list(leftColumns = 2))
 
 # data table of results 
 datatable(qa_numeric_results,

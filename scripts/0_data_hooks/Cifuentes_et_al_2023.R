@@ -125,11 +125,10 @@ write_csv(cifuentes_bib, "data/primary_studies/Cifuentes_2023_Panama/derivative/
 ## 4. Write files ####
 
 # Adjust the filepaths to output to the correct derivative folder
-write_csv(cores, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_et_al_2023_Panama_cores.csv") 
-write_csv(depthseries, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_et_al_2023_Panama_depthseries.csv")
-write_csv(methods, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_et_al_2023_Panama_methods.csv")
-write_csv(impacts, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_et_al_2023_Panama_impacts.csv")
+write_excel_csv(cores, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_et_al_2023_Panama_cores.csv") 
+write_excel_csv(depthseries, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_et_al_2023_Panama_depthseries.csv")
+write_excel_csv(methods, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_et_al_2023_Panama_methods.csv")
+write_excel_csv(impacts, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_et_al_2023_Panama_impacts.csv")
 # write_csv(species, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_species.csv")
 # write_csv(impacts, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_impacts.csv")
-
 
