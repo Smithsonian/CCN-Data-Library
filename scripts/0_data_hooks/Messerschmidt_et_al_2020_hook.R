@@ -158,11 +158,10 @@ write_csv(study_citations, "./data/primary_studies/Messerschmidt_et_al_2020/deri
 WriteBib(as.BibEntry(study_citations), "./data/primary_studies/Messerschmidt_et_al_2020/derivative/Messerschmidt_et_al_2020_study_citations.bib")
 
 
-
-
-
-
-
+## Write Data Visualization Report ####
+rmarkdown::render(input = "data/primary_studies/Messerschmidt_et_al_2020/Messerschmidt_et_al_2020_datavis.Rmd",
+                  output_file = "Messerschmidt_et_al_2020_datavis.html",
+                  output_dir = "docs/dataviz_reports/")
 
 
 

@@ -1,0 +1,82 @@
+---
+title: "Data Visualization: Vinent and Kirwan 2017"
+date: "`r Sys.Date()`"
+output: 
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: flatly
+---
+
+
+```{r, include = FALSE}
+library(tidyverse)
+library(leaflet)
+library(ggforce)
+depthseries <- read_csv("derivative/Vinent_and_Kirwan_2017_depthseries.csv")
+cores <- read_csv("derivative/Vinent_and_Kirwan_2017_cores.csv")
+sum(!is.na(cores$core_id)) 
+```
+
+
+# Core Locations
+
+```{r, echo = FALSE}
+cores %>% 
+  leaflet() %>%
+  addTiles() %>% 
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, label = ~core_id)
+```
+
+# FOM Depth Profile
+
+```{r, echo = FALSE}
+depthseries %>% 
+  drop_na(fraction_organic_matter) %>% 
+  ggplot(aes(y = fraction_organic_matter, x = depth_min)) + 
+  geom_point() + 
+  geom_line() +
+  scale_x_reverse() +
+  xlab("Depth") +
+  ylab("FOM") +
+  coord_flip() +
+  facet_wrap(.~core_id,
+             nrow = 6,
+             ncol = 6)
+```
+
+# DBD Depth Profile
+
+```{r, echo = FALSE}
+depthseries %>% 
+  drop_na(dry_bulk_density) %>% 
+  ggplot(aes(y = dry_bulk_density, x = depth_min)) + 
+  geom_point() + 
+  geom_line() +
+  scale_x_reverse() +
+  xlab("Depth") +
+  ylab("DBD") +
+  coord_flip() +
+  facet_wrap(.~core_id,
+             nrow = 6,
+             ncol = 6)
+```
+
+
+# DBD v FOM
+
+```{r, echo = FALSE}
+depthseries %>% 
+  drop_na(fraction_organic_matter, dry_bulk_density) %>% 
+  ggplot(aes(y = fraction_organic_matter, x = dry_bulk_density)) + 
+  geom_point() + 
+  xlab("DBD") + 
+  ylab("FOM") 
+```
+
+# Dry Bulk Density
+
+```{r, echo = FALSE}
+ggplot(depthseries, aes(dry_bulk_density)) + geom_density()  + xlab("Dry Bulk Density") + geom_rug() 
+```
+

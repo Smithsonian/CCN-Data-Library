@@ -143,4 +143,3 @@ write_csv(plot_summary, "./data/primary_studies/Simard_et_al_2019/derivative/Sim
 write_csv(plant, "./data/primary_studies/Simard_et_al_2019/derivative/Simard_et_al_2019_plant.csv")
 write_csv(plant_plot_detail, "./data/primary_studies/Simard_et_al_2019/derivative/Simard_et_al_2019_plant_plot_detail.csv")
 write_csv(study_citations, "./data/primary_studies/Simard_et_al_2019/derivative/Simard_et_al_2019_study_citations.csv")
-

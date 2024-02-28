@@ -197,9 +197,14 @@ fractionNotPercent(depthseries)
 testNumericCols(depthseries)
 
 ## Write files ####
-write.csv(cores, "./data/primary_studies/Everhart_et_al_2020/derivative/Everhart_et_al_2020_cores.csv")
-write.csv(depthseries, "./data/primary_studies/Everhart_et_al_2020/derivative/Everhart_et_al_2020_depthseries.csv")
-write.csv(methods, "./data/primary_studies/Everhart_et_al_2020/derivative/Everhart_et_al_2020_methods.csv")
-write.csv(study_citations, "./data/primary_studies/Everhart_et_al_2020/derivative/Everhart_et_al_2020_study_citations.csv")
-WriteBib(as.BibEntry(study_citations), "./data/primary_studies/Everhart_et_al_2020/derivative/Everhart_et_al_2020_study_citations.bib")
+write_csv(cores, "./data/primary_studies/Everhart_et_al_2020/derivative/Everhart_et_al_2020_cores.csv")
+write_csv(depthseries, "./data/primary_studies/Everhart_et_al_2020/derivative/Everhart_et_al_2020_depthseries.csv")
+write_csv(methods, "./data/primary_studies/Everhart_et_al_2020/derivative/Everhart_et_al_2020_methods.csv")
+write_csv(study_citations, "./data/primary_studies/Everhart_et_al_2020/derivative/Everhart_et_al_2020_study_citations.csv")
+
+
+## Write Data Visualization Report ####
+rmarkdown::render(input = "data/primary_studies/Everhart_et_al_2020/Everhart_et_al_2020_datavis.Rmd",
+                  output_file = "Everhart_et_al_2020_datavis.html",
+                  output_dir = "data/primary_studies/Everhart_et_al_2020")
 

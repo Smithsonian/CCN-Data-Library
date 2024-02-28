@@ -104,7 +104,10 @@ write_csv(methods, "./data/primary_studies/Vinent_and_Kirwan_2017/derivative/Vin
 write_csv(study_citations, "./data/primary_studies/Vinent_and_Kirwan_2017/derivative/Vinent_and_Kirwan_2017_study_citations.csv")
 WriteBib(as.BibEntry(study_citations), "./data/primary_studies/Vinent_and_Kirwan_2017/derivative/Vinent_and_Kirwan_2017_study_citations.bib")
 
-
+## Write Data Visualization Report ####
+rmarkdown::render(input = "data/primary_studies/Vinent_and_Kirwan_2017/Vinent_and_Kirwan_2017_datavis.Rmd",
+                  output_file = "Vinent_and_Kirwan_2017_datavis.html",
+                  output_dir = "docs/dataviz_reports/")
 
 
 

@@ -205,3 +205,9 @@ write_csv(methods, "./data/primary_studies/Gillen_et_al_2018/derivative/Gillen_e
 write_csv(study_citations, "./data/primary_studies/Gillen_et_al_2018/derivative/Gillen_et_al_2018_study_citations.csv")
 write_csv(plot_summary, "./data/primary_studies/Gillen_et_al_2018/derivative/Gillen_et_al_2018_plot_summary.csv")
 write_csv(plant_plot_detail, "./data/primary_studies/Gillen_et_al_2018/derivative/Gillen_et_al_2018_plant_plot_detail.csv")
+
+
+## Write Data Visualization Report ####
+rmarkdown::render(input = "data/primary_studies/Gillen_et_al_2018/Gillen_et_al_2018_datavis.Rmd",
+                  output_file = "Gillen_et_al_2018_datavis.html",
+                  output_dir = "data/primary_studies/Gillen_et_al_2018")
