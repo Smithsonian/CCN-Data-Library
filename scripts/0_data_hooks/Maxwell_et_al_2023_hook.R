@@ -108,7 +108,7 @@ dat <- dat_revised %>%
                            "Azevedo_2015-UNPUBLISHED" = "Azevedo_2015_unpublished",
                            "UNPUBLISHED" = "Copertino_unpublished",
                            "Miller_et_al_2022" = "Miller_et_al_2022_Scotland",
-                           "Yando_et_al_2016" = "Yando_et_al_2016_marsh",
+                           # "Yando_et_al_2016" = "Yando_et_al_2016_marsh",
                            "Smeaton_unpublished_Essex" = "Smeaton_et_al_2023",
                            "Russell_et_al_submitted" = "Russell_et_al_2023",
                            "Mazarrasa_et_al_in_prep" = "Mazarrasa_et_al_2023",
@@ -404,7 +404,10 @@ library(RefManageR)
 study_dois <- read_csv("data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_study_citations.csv") %>% 
   bind_rows(read_xlsx("data/primary_studies/Maxwell_et_al_2023/intermediate/missing_maxwell_studies.xlsx")) %>% 
   drop_na(study_id) %>% 
-  filter(!(study_id %in% c("Markewich_et_al_1998", "Xia_et_al_2022", "Fu_et_al_2021", "Human_et_al_2022"))) %>% 
+  filter(!(study_id %in% c("Markewich_et_al_1998", "Xia_et_al_2022", "Fu_et_al_2021", "Human_et_al_2022",
+                           # remove studies that have already partially been included via the Sanderman synthesis
+                           # because they share a study ID, they will share the citation once synthesized
+                           "Yando_et_al_2016", "Adame_et_al_2015", "Adame_et_al_2013"))) %>% 
   select(study_id, doi)
 
 missing_citations <- unique(dat$study_id)[!(unique(dat$study_id) %in% study_dois$study_id)]

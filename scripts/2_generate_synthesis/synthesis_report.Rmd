@@ -58,6 +58,52 @@ datatable(qa_results, options = list(pageLength = table_length,
 
 ```
 
+### QAQC Result Breakdown
+
+Cases where a core ID is present in the core-level table but not the depthseries.
+
+```{r}
+core_results <- anti_join(ccrcn_synthesis$cores, ccrcn_synthesis$depthseries, by="core_id") %>% 
+  distinct(study_id, site_id, core_id)
+
+datatable(core_results,
+          options = list(searching = TRUE,
+                         paging = FALSE,
+                         info = FALSE,
+                         scrollY = 300,
+                         scrollX = 300,
+                         scrollCollapse = TRUE))
+
+```
+
+Cases where a core ID is present in the depthseries table but not the core-level table.
+
+```{r}
+
+depthseries_results <- anti_join(ccrcn_synthesis$depthseries, ccrcn_synthesis$cores, by="core_id") %>%
+  distinct(study_id, site_id, core_id)
+
+datatable(depthseries_results)
+
+```
+
+Attribute Names
+
+```{r}
+
+# database_structure <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols())
+# 
+# # Extract column names for that table and subset to all columns that aren't in the controlled or uncontrolled attribute tables
+# column_names <- colnames(ccrcn_synthesis$cores)
+# valid_columns <- filter(database_structure, table == "cores")$attribute_name
+# non_matching_columns <- subset(column_names, !(column_names %in% valid_columns))
+#     
+# cores_uncontrolled <- ccrcn_synthesis$cores %>% 
+#   select(study_id, non_matching_columns)
+
+```
+
+
 ***
 ## Database Overview
 
@@ -119,7 +165,8 @@ datatable(missing_country,
 
 
 ```{r}
-missing_habitat <- read_csv("data/QA/no_habitat_cores.csv") %>%    select_if(function(x) {!all(is.na(x))})
+missing_habitat <- read_csv("data/QA/no_habitat_cores.csv") %>%    
+  select_if(function(x) {!all(is.na(x))})
 
 datatable(missing_habitat,
           # extensions = "FixedColumns",
