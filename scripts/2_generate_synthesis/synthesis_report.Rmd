@@ -9,6 +9,15 @@ output:
     highlight: tango
 ---
   
+<style>
+.vscroll-plot {
+    width: 900px;
+    height: 800px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+</style>
+  
 ```{r setup, include=FALSE}
 # this sets the working directory to start where the R project is located
 knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
@@ -33,10 +42,6 @@ library(DT)
 ## Introduction 
 The CCN clearinghouse provides a synthesized and curated set of coastal carbon data that promotes the sharing of open data, novel analyses, and collaboration opportunities. The synthesis is created by curating and merging publicly available data through an automated script. This report documents the success or failure of the automated synthesis process, documents changes, conducts QA/QC tests, and provides visualizations and summaries of data within the clearinghouse. 
 
-**Database Overview**
-
-Currently, this synthesis contains `r length(unique(ccrcn_synthesis$depthseries$study_id))` studies with soil carbon associated observations across `r length(unique(ccrcn_synthesis$depthseries$site_id))` sites and `r length(unique(ccrcn_synthesis$depthseries$core_id))` cores from around the world. Observations represent a `r max(as.numeric(ccrcn_synthesis$cores$year), na.rm = T) - min(as.numeric(ccrcn_synthesis$cores$year), na.rm = T)` year timespan, from `r min(as.numeric(ccrcn_synthesis$cores$year), na.rm = T)` to `r max(as.numeric(ccrcn_synthesis$cores$year), na.rm = T)`.
-
 ***
 
 **Report date: `r formated_date`**
@@ -47,7 +52,39 @@ Currently, this synthesis contains `r length(unique(ccrcn_synthesis$depthseries$
 
 ***
 
+**Database Overview**
+
+Currently, this synthesis contains `r length(unique(ccrcn_synthesis$depthseries$study_id))` studies with soil carbon associated observations across `r length(unique(ccrcn_synthesis$depthseries$site_id))` sites and `r length(unique(ccrcn_synthesis$depthseries$core_id))` cores from around the world. Observations represent a `r max(as.numeric(ccrcn_synthesis$cores$year), na.rm = T) - min(as.numeric(ccrcn_synthesis$cores$year), na.rm = T)` year timespan, from `r min(as.numeric(ccrcn_synthesis$cores$year), na.rm = T)` to `r max(as.numeric(ccrcn_synthesis$cores$year), na.rm = T)`.
+
+```{r, echo=FALSE}
+
+library(leaflet)
+library(viridis)
+
+# filter core table as needed for investigation
+map_cores <- ccrcn_synthesis$cores %>%
+  mutate(habitat = case_when(habitat == "mudflat" ~ "unvegetated", 
+                             TRUE ~ habitat)) %>% 
+  # current habitats: "algal mat", "mangrove", "marsh", "mudflat", "scrub shrub", "seagrass", "swamp", "unvegetated", "upland"
+  # filter(habitat == "mangrove") %>% 
+  drop_na(longitude) 
+
+habs <- unique(map_cores$habitat)
+
+# pal <- colorFactor(palette = 'Dark2', domain = map_cores$habitat)
+pal <- colorFactor(viridis_pal(option = "H")(length(habs)), domain = habs)
+
+leaflet(map_cores, width = "100%") %>%
+  addTiles() %>%
+  addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), radius = 1,
+                   label = ~paste0(study_id, "; ", habitat), color = ~pal(habitat)) %>%
+  addLegend(pal = pal, values = ~habitat)
+
+```
+
 ## QA/QC Test Results
+
+### Overview 
 
 ```{r, echo=FALSE}
 
@@ -76,7 +113,8 @@ datatable(core_results,
                          info = FALSE,
                          scrollY = 300,
                          scrollX = 300,
-                         scrollCollapse = TRUE))
+                         scrollCollapse = TRUE),
+          rownames = FALSE)
 
 ```
 
@@ -87,7 +125,14 @@ Cases where a core ID is present in the depthseries table but not the core-level
 depthseries_results <- anti_join(ccrcn_synthesis$depthseries, ccrcn_synthesis$cores, by="core_id") %>%
   distinct(study_id, site_id, core_id)
 
-datatable(depthseries_results)
+datatable(depthseries_results,
+                    options = list(searching = TRUE,
+                         paging = FALSE,
+                         info = FALSE,
+                         scrollY = 300,
+                         scrollX = 300,
+                         scrollCollapse = TRUE),
+          rownames = FALSE)
 
 ```
 
@@ -121,7 +166,9 @@ ds_uncontrolled <- ccrcn_synthesis$depthseries %>%
   mutate(table = "depthseries") %>% select(table, everything())
 
 join_uncontrolled_attributes <- bind_rows(methods_uncontrolled, cores_uncontrolled, ds_uncontrolled) %>% 
-  mutate(value = case_when(grepl("[...]", attribute_name) ~ "row_number_id", T ~ value)) %>% 
+  mutate(value = case_when(grepl("[...]", attribute_name) ~ "row number index", # highlight row number index columns with a flag
+                           grepl("([0-9]+).*$", value) ~ "numeric value", # replace numeric values with a flag
+                           T ~ value)) %>% 
   distinct() %>% arrange(study_id)
 
 ```
@@ -140,94 +187,13 @@ datatable(join_uncontrolled_attributes,
                          info = FALSE,
                          scrollY = 300,
                          scrollX = 300,
-                         scrollCollapse = TRUE))
+                         scrollCollapse = TRUE),
+          rownames = FALSE)
 ```
 
 ### Uncontrolled Variables
 
 **COMING SOON**
-
-***
-
-
-### Mapping 
-
-```{r, echo=FALSE}
-
-library(leaflet)
-library(viridis)
-
-# filter core table as needed for investigation
-map_cores <- ccrcn_synthesis$cores %>%
-  mutate(habitat = case_when(habitat == "mudflat" ~ "unvegetated", 
-                             TRUE ~ habitat)) %>% 
-  # current habitats: "algal mat", "mangrove", "marsh", "mudflat", "scrub shrub", "seagrass", "swamp", "unvegetated", "upland"
-  # filter(habitat == "mangrove") %>% 
-  drop_na(longitude) 
-
-habs <- unique(map_cores$habitat)
-
-# pal <- colorFactor(palette = 'Dark2', domain = map_cores$habitat)
-pal <- colorFactor(viridis_pal(option = "H")(length(habs)), domain = habs)
-
-leaflet(map_cores, width = "100%") %>%
-  addTiles() %>%
-  addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), radius = 1,
-                   label = ~paste0(study_id, "; ", habitat), color = ~pal(habitat)) %>%
-  addLegend(pal = pal, values = ~habitat)
-
-```
-
-**Habitat Core Counts**
-```{r, echo=FALSE}
-habitat_smry <- map_cores %>% 
-  count(habitat) %>% 
-  mutate(pct = round(100*(n/sum(n)), 2),
-         habitat = ifelse(is.na(habitat), "unknown", habitat)) %>% 
-  arrange(desc(pct))
-
-knitr::kable(habitat_smry)
-```
-
-***
-
-**Missing Values**
-
-```{r, echo=FALSE}
-
-# country
-missing_country <- read_csv("data/QA/no_country_for_soil_cores.csv") %>% 
-  mutate(latitude = ifelse(is.na(latitude), "unknown", latitude), 
-         longitude = ifelse(is.na(longitude), "unknown", longitude))
-
-# habitat
-missing_habitat <- read_csv("data/QA/no_habitat_cores.csv") %>%    
-  select_if(function(x) {!all(is.na(x))})
-
-```
-
-
-The following table shows which cores are currently not assigned any country. This may be because the latitude and longitude are undefined.
-
-```{r, echo=FALSE}
-
-datatable(missing_country,
-          # extensions = "FixedColumns",
-          options = custom_opts,
-          rownames = FALSE)
-
-```
-
-
-The following table shows which cores are currently not assigned any habitat:
-
-```{r, echo=FALSE}
-
-datatable(missing_habitat,
-          # extensions = "FixedColumns",
-          options = custom_opts,
-          rownames = FALSE)
-```
 
 ***
 
@@ -244,11 +210,93 @@ datatable(qa_numeric_results,
 
 ```
 
+### Bibliography
+
+```{r, echo=FALSE}
+no_citations <- ccrcn_synthesis$cores %>%
+  filter(!(study_id %in% unique(ccrcn_synthesis$study_citations$study_id)))
+
+# If data was removed, print a warning statement
+if (nrow(no_citations) > 0) {
+  print("The following studies do not have citation information present.")
+  print(unique(no_citations$study_id))
+}
+```
+
+
+```{r, echo=FALSE}
+
+bib_file_redundancy_checks <- bib_file %>% 
+  group_by(bibliography_id) %>% 
+  summarise(n = n()) %>% 
+  filter(n > 1)
+
+if(nrow(bib_file_redundancy_checks) != 0){
+  print("There are duplicate bibliography IDs. Please see the following table:")
+  print(bib_file_redundancy_checks)
+}
+
+```
+
 ***
 
-### Core-level Report
+### Check Post-Processing 
 
-**COMING SOON**
+**Habitat Assignments**
+
+```{r, echo=FALSE}
+habitat_smry <- map_cores %>% 
+  count(habitat) %>% 
+  mutate(pct = round(100*(n/sum(n)), 2),
+         habitat = ifelse(is.na(habitat), "unknown", habitat)) %>% 
+  arrange(desc(pct))
+
+knitr::kable(habitat_smry)
+```
+
+The following table shows which cores are currently not assigned any habitat:
+
+```{r, echo=FALSE}
+
+# habitat
+missing_habitat <- read_csv("data/QA/no_habitat_cores.csv") %>%    
+  select_if(function(x) {!all(is.na(x))})
+
+datatable(missing_habitat,
+          # extensions = "FixedColumns",
+          options = list(searching = TRUE,
+                         paging = FALSE,
+                         info = FALSE,
+                         scrollY = 300,
+                         scrollX = 300,
+                         scrollCollapse = TRUE),
+          rownames = FALSE)
+```
+
+**Geography Assignments**
+
+The following table shows which cores are currently not assigned any country. This may be because the latitude and longitude are undefined.
+
+```{r, echo=FALSE}
+
+# country
+missing_country <- read_csv("data/QA/no_country_for_soil_cores.csv") %>% 
+  mutate(latitude = ifelse(is.na(latitude), "unknown", latitude), 
+         longitude = ifelse(is.na(longitude), "unknown", longitude))
+
+datatable(missing_country,
+          # extensions = "FixedColumns",
+          options = list(searching = TRUE,
+                         paging = FALSE,
+                         info = FALSE,
+                         scrollY = 300,
+                         scrollX = 300,
+                         scrollCollapse = TRUE),
+          rownames = FALSE)
+
+```
+
+**MORE COMING SOON**
 
 ***
 
@@ -284,7 +332,9 @@ depth_check <- ccrcn_synthesis$depthseries %>%
 
 ```
 
-Instances of multiple observations for the same interval within a unique core (and unique method ID) were found in the following `r length(unique(dup_interval$study_id))` studies: `r sort(unique(dup_interval$study_id))`
+Instances of multiple observations for the same interval within a unique core (and unique method ID) were found in the following `r length(unique(dup_interval$study_id))` studies: 
+
+`r sort(unique(dup_interval$study_id))`
 
 There are `r nrow(one_interval %>% filter(sample_type == "surface sample"))` single-interval surface samples (max depth < 20cm) and `r nrow(one_interval %>% filter(sample_type == "subsurface sample"))` single-interval subsurface samples. There are also `r nrow(one_interval %>% filter(sample_type == "single large interval"))` large single-interval samples (ex. one representative (?) sample for 0-100cm depth).
 
@@ -292,7 +342,9 @@ The following `r length(unique(depth_check$study_id))` studies had at least one 
 
 **Numeric Data Distributions**
 
-```{r, echo=FALSE, fig.width=12, fig.height=12, warning=FALSE}
+<div class="vscroll-plot">
+
+```{r, echo=FALSE, warning=FALSE, fig.width=12, fig.height=25}
 
 ds_numcols <- database_structure %>% filter(table == "depthseries" & data_type == "numeric") %>% 
   distinct(attribute_name) %>% pull(attribute_name)
@@ -302,7 +354,7 @@ ccrcn_synthesis$depthseries %>%
   mutate(across(everything(), as.numeric)) %>%
   gather() %>%
   ggplot(aes(value)) +
-  facet_wrap(~key, scales = "free") +
+  facet_wrap(~key, scales = "free", ncol = 4) +
   geom_density() + geom_rug()
 # 
 # # density plot
@@ -316,7 +368,7 @@ ccrcn_synthesis$depthseries %>%
 #   geom_density()
 #   # geom_rug()
 ```
-
+</div>
 
 ```{r, echo=FALSE, fig.width=12, fig.height=12, warning=FALSE}
 
@@ -339,7 +391,10 @@ ccrcn_synthesis$depthseries %>%
 
 ```
 
-```{r OM-C, echo=FALSE, fig.width=12, fig.height=20, warning=FALSE}
+**Relationship between organic matter (LOI) and carbon content**
+
+<div class="vscroll-plot">
+```{r OM-C, echo=FALSE, fig.width=12, fig.height=30, warning=FALSE}
 
 ccrcn_synthesis$depthseries %>% 
   drop_na(fraction_organic_matter, fraction_carbon) %>% 
@@ -348,10 +403,12 @@ ccrcn_synthesis$depthseries %>%
   # filter(study_id %in% c("Drexler_et_al_2009", "van_Ardenne_et_al_2018", "Ceron-Breton_et_al_2011",
                          # "Keshta_et_al_2020", "Rodriguez_et_al_2022", "Hamzeh_and_lahijani_2022")) %>%
   ggplot(aes(as.numeric(fraction_organic_matter), as.numeric(fraction_carbon))) + 
-  geom_point() + 
-  facet_wrap(~study_id, scales = "free")
+  geom_point(alpha = 0.5, col = "darkgreen") + 
+  xlab("Fraction Organic Matter") + ylab("Fraction Carbon") +
+  facet_wrap(~study_id, scales = "free", ncol = 4)
 
 ```
+</div>
 
 ***
 
@@ -385,7 +442,7 @@ The following files were found in the derivative folders. They either do not mat
 ```{r, echo=FALSE}
 
 if(!is.null(file_paths$unknown_csv)){
-  paste(unique(file_paths$unknown_csv), collapse = ", ")
+  print(unique(file_paths$unknown_csv))
 }else {
   "No unknown csv files found in derivative folders"
 }
@@ -397,7 +454,7 @@ if(!is.null(file_paths$unknown_csv)){
 ```{r, echo=FALSE}
 
 if(!is.null(file_paths$unknown_filetypes)){
-  paste(file_paths$unknown_filetypes, collapse = ", ")
+  print(file_paths$unknown_filetypes)
 } else {
   "No non-csv or -bib files found in derivative folders"
 }
