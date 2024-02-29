@@ -214,27 +214,27 @@ if(join_status == TRUE){
   source("scripts/3_post_processing/2_assign_habitat.R")
   source("scripts/3_post_processing/3_assign_data_tiers.R")
   source("scripts/3_post_processing/4_max_depths.R")
-  source("scripts/3_post_processing/5_core_attributes.R")
+  # source("scripts/3_post_processing/5_core_attributes.R")
   source("scripts/3_post_processing/7_resolve_taxonomy.R")
 }
 
 ## 6. Synthesis Metrics & Change Log ####
 
 # dev branch synthesis will be compared with the version of the synthesis on the main branch
-synthesis_log <- readr::read_csv("docs/synthesis_resources/synthesis_log.csv")
-
-synth_diff <- anti_join(ccrcn_synthesis$cores %>%
-                          select(study_id, site_id, core_id),
-                        synthesis_log) %>%
-  mutate(version = new_version_code,
-         date = format(Sys.time(), "%Y-%m-%d")) %>%
-  select(date, version, everything())
-
-# stash results in additive list, documenting version, and date
-synthesis_log_filemame <- paste0("docs/synthesis_resources/synthesis_", 
-                                 str_replace_all(new_version_code, "\\.", "_"), 
-                                 ".csv") 
-write_csv(synth_diff, synthesis_log_filemame)
+# synthesis_log <- readr::read_csv("docs/synthesis_resources/synthesis_log.csv")
+# 
+# synth_diff <- anti_join(ccrcn_synthesis$cores %>%
+#                           select(study_id, site_id, core_id),
+#                         synthesis_log) %>%
+#   mutate(version = new_version_code,
+#          date = format(Sys.time(), "%Y-%m-%d")) %>%
+#   select(date, version, everything())
+# 
+# # stash results in additive list, documenting version, and date
+# synthesis_log_filemame <- paste0("docs/synthesis_resources/synthesis_", 
+#                                  str_replace_all(new_version_code, "\\.", "_"), 
+#                                  ".csv") 
+# write_csv(synth_diff, synthesis_log_filemame)
 
 ## 7. Write RMarkdown report #########
 
