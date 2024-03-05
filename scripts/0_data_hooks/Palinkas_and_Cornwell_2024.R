@@ -133,7 +133,8 @@ write_csv(depthseries, "data/primary_studies/Palinkas_and_Cornwell_2024/derivati
 #     column_to_rownames("bibliography_id")
 # 
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
-paper_citation <- dataset_citation <- data.frame(bibliography_id = "Palinkas_and_Cornwell_2012",
+paper_citation <- dataset_citation <- data.frame(study_id = "Palinkas_and_Cornwell_2024",
+                                                 bibliography_id = "Palinkas_and_Cornwell_2012",
                                                  publication_type = "article",
                                                  bibtype = "Article", 
                                                  title = "A Preliminary Sediment Budget for the Corsica River (MD): Improved Estimates of Nitrogen Burial and Implications for Restoration",
@@ -145,7 +146,8 @@ paper_citation <- dataset_citation <- data.frame(bibliography_id = "Palinkas_and
 
 
 
-dataset_citation <- data.frame(bibliography_id = id,
+dataset_citation <- data.frame(study_id = "Palinkas_and_Cornwell_2024",
+                               bibliography_id = id,
                              publication_type = "primary dataset",
                              bibtype = "Misc", 
                              title = "Dataset: A Preliminary Sediment Budget for the Corsica River (MD): Improved Estimates of Nitrogen Burial and Implications for Restoration",

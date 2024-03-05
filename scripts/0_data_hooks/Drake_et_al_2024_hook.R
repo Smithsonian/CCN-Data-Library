@@ -38,7 +38,7 @@ id <- "Drake_et_al_2024"
 methods <- methods_raw 
 methods <- reorderColumns("methods", methods)
 
-    ## missing carobonates_removed?
+    ## missing carbonates_removed?
 
 
 ## ... Sites ####
@@ -130,31 +130,33 @@ write_csv(depthseries, "data/primary_studies/Drake_et_al_2024/derivative/Drake_e
 #     column_to_rownames("bibliography_id")
 # 
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
-paper_citation <- dataset_citation <- data.frame(bibliography_id = "Craft_2012",
+paper_citation <- dataset_citation <- data.frame(study_id = id,
+                                                 bibliography_id = "Drake_et_al_2015",
                                                  publication_type = "article",
                                                  bibtype = "Article", 
-                                                 title = "Tidal freshwater forest accretion does not keep pace with sea level rise",
-                                                 author = "Christopher Craft",
-                                                 doi = "",
-                                                 url = "https://doi.org/10.1016/j.ecoleng.2018.03.002",
-                                                 journal = "Ecological Engineering",
-                                                 year = "2012")
+                                                 title = "Carbon Sequestration in Tidal Salt Marshes of Northeast United States",
+                                                 author = " Katherine Drake, Holly Halifax, Susan, C. Adamowicz, Christopher Craft",
+                                                 doi = "https://doi.org/10.1007/s00267-015-0568-z",
+                                                 url = "https://doi.org/10.1007/s00267-015-0568-z",
+                                                 journal = "Environmental Management",
+                                                 year = "2015")
 
 
 
-dataset_citation <- data.frame(bibliography_id = "Craft_2024",
-                             publication_type = "primary dataset",
-                             bibtype = "Misc", 
-                             title = "Dataset: Tidal freshwater forest accretion does not keep pace with sea level rise",
-                             author = "Christopher Craft",
-                             doi = "10.25573/serc.24895293",
-                             url = "https://doi.org/10.25573/serc.24895293",
-                             year = "2024")
+dataset_citation <- data.frame(study_id = id,
+                               bibliography_id = "Drake_et_al_2024",
+                               publication_type = "primary dataset",
+                               bibtype = "Misc", 
+                               title = "Dataset: Carbon Sequestration in Tidal Salt Marshes of Northeast United States",
+                               author = " Katherine Drake, Holly Halifax, Susan, C. Adamowicz, Christopher Craft",
+                               doi = "10.25573/serc.24518770",
+                               url = "https://doi.org/10.25573/serc.24518770.v1",
+                               year = "2024")
 
 study_citations <- full_join(dataset_citation, paper_citation)
 
-WriteBib(as.BibEntry(study_citations), "data/primary_studies/Craft_2024/derivative/Craft_2024.bib")
-write_csv(study_citations, "data/primary_studies/Craft_2024/derivative/Craft_2024_associated_publication.csv")
+WriteBib(as.BibEntry(study_citations), "data/primary_studies/Drake_et_al_2024/derivative/Drake_et_et_al_2024.bib")
+write_csv(study_citations, "data/primary_studies/Drake_et_al_2024/derivative/Drake_et_al_2024_study_citations.csv")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/

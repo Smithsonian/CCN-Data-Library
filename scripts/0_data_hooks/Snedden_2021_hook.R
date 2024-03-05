@@ -127,12 +127,20 @@ depthseries <- depthseries %>% rename(depth_code = "Depth Interval Code") %>%
 #reorder columns 
 depthseries <- reorderColumns("depthseries", depthseries)
 
+# finding and removing modelded carbon values 
+depthseries_slope <- depthseries %>% 
+  mutate(slope = )
+
+ggplot() +
+  geom_point(depthseries, mapping = aes(x = fraction_organic_matter, y = fraction_carbon))
+
+
+
 ## ... Sites ####
 
 ## ... Species ####
 
 ## ... Impacts ####
-
 
 ## 2. QAQC ####
 
