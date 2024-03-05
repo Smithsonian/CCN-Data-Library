@@ -8,7 +8,7 @@ library(RefManageR)
 
 ## Read files ####
 cores <- read.csv("data/primary_studies/Smith_and_Kirwan_2021/original/smith_and_kirwan_2021_cores.csv") %>% 
-  rename(salinity_class = salinity)
+  select(-salinity)
 depthseries <- read.csv("data/primary_studies/Smith_and_Kirwan_2021/original/smith_and_kirwan_2021_depthseries.csv")
 methods <- read.csv("data/primary_studies/Smith_and_Kirwan_2021/original/smith_and_kirwan_2021_methods.csv")
 study_citations <- read.csv("data/primary_studies/Smith_and_Kirwan_2021/original/smith_and_kirwan_2021_associated_publications.csv") %>% 

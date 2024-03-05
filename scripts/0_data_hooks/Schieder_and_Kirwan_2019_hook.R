@@ -17,7 +17,7 @@ depthseries <- read.csv("data/primary_studies/Schieder_and_Kirwan_2019/original/
          total_pb210_activity_se = pb210_activity_se_46.5keV) %>% 
   mutate(ra226_activity = (pb214_activity_295keV + pb214_activity_351.9keV + bi214_activity_609keV)/3,
          ra226_activity_se = sqrt(pb214_activity_295keV^2 + pb214_activity_351.9keV^2 + bi214_activity_609keV^2)/3,
-         ra226_unit = "DPM/g") %>% 
+         ra226_unit = "disintegrationsPerMinutePerGram") %>% 
     select(study_id, site_id, core_id, method_id, depth_min, depth_max, sample_id, dry_bulk_density, fraction_organic_matter,
            cs137_activity, cs137_activity_se, cs137_unit, total_pb210_activity, total_pb210_activity_se, pb210_unit,
            ra226_activity, ra226_activity_se, ra226_unit)

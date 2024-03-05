@@ -10,6 +10,10 @@ library(RefManageR)
 species <- read.csv("data/primary_studies/Langston_et_al_2022/original/langston_et_al_2022_species.csv")
 cores <- read.csv("data/primary_studies/Langston_et_al_2022/original/langston_et_al_2022_cores.csv")
 depthseries <- read.csv("data/primary_studies/Langston_et_al_2022/original/langston_et_al_2022_depthseries.csv") %>% 
+  mutate(cs137_unit = "disintegrationsPerMinutePerGram",
+         pb210_unit = "disintegrationsPerMinutePerGram",
+         pb214_unit = "disintegrationsPerMinutePerGram",
+         bi214_unit = "disintegrationsPerMinutePerGram") %>% 
   select(!fraction_carbon)
 methods <- read.csv("data/primary_studies/Langston_et_al_2022/original/langston_et_al_2022_methods.csv")
 study_citations <- read.csv("data/primary_studies/Langston_et_al_2022/original/langston_et_al_2022_associated_publications.csv") %>% 

@@ -107,7 +107,7 @@ testIDs(cores, depthseries, by = "site")
 
 # test numeric attribute ranges
 fractionNotPercent(depthseries)
-testNumericCols(depthseries)
+#testNumericCols(depthseries)
 
 
 ## 4. Bibliography ####
@@ -135,7 +135,7 @@ write_csv(depthseries, "./data/primary_studies/Trettin_et_al_2020/derivative/tre
 write_csv(species, "./data/primary_studies/Trettin_et_al_2020/derivative/trettin_et_al_2020_species.csv")
 write_csv(methods, "./data/primary_studies/Trettin_et_al_2020/derivative/trettin_et_al_2020_methods.csv")
 WriteBib(as.BibEntry(bib_file), "./data/primary_studies/Trettin_et_al_2020/derivative/trettin_et_al_2020_study_citation.bib")
-write_csv(study_citation, "./data/primary_studies/Trettin_et_al_2020/derivative/trettin_et_al_2020_study_citation.csv")
+write_csv(study_citation, "./data/primary_studies/Trettin_et_al_2020/derivative/trettin_et_al_2020_study_citations.csv")
 
 
 

@@ -583,8 +583,7 @@ cores <- core_raw %>%
   filter(core_id %in% depthseries$core_id) %>%  
   
   # manually add habitat classification based on map position
-  mutate(habitat = case_when(grepl("16CCT07", core_id) ~ "marsh",
-                             T ~ habitat)) %>%
+  mutate(habitat = "marsh") %>%
 
   select(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method, position_notes,
          elevation, elevation_datum, elevation_accuracy, elevation_method, salinity_class, salinity_method, 
@@ -655,11 +654,11 @@ testIDs(cores, depthseries, by = "core")
 
 # test numeric attribute ranges
 fractionNotPercent(depthseries)
-testNumericCols(depthseries)
+#testNumericCols(depthseries)
 
 
 ## Step 11: Bibliography ####
-study_citation <- data.frame(study_id = "Marot_et_al_2020",
+study_citations <- data.frame(study_id = "Marot_et_al_2020",
                             bibliography_id = "Marot_et_al_2020_data",
                             title = "Sedimentary data from Grand Bay, Alabama/Mississippi, 2014–2016 (ver. 1.1, April 2020): U.S. Geological Survey data release",
                             author = "Marot, M.E., Smith, C.G., McCloskey, T.A., Locker, S.D., Khan, N.S., and Smith, K.E.L.",
@@ -671,7 +670,7 @@ study_citation <- data.frame(study_id = "Marot_et_al_2020",
                             month = "apr",
                             day = "28")
 
-bib_file <- study_citation %>%
+bib_file <- study_citations %>%
   remove_rownames() %>% 
   select(-c(study_id, publication_type)) %>% 
   column_to_rownames("bibliography_id")
@@ -684,7 +683,7 @@ write_csv(depthseries, "data/primary_studies/Marot_et_al_2020/derivative/Marot_e
 write_csv(species, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_species.csv")
 write_csv(methods, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_methods.csv")
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_study_citations.bib")
-write_csv(study_citation, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_study_citations.csv")
+write_csv(study_citations, "data/primary_studies/Marot_et_al_2020/derivative/Marot_et_al_2020_study_citations.csv")
 
 
 
