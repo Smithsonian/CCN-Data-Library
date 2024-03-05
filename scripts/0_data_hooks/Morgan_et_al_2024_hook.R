@@ -32,7 +32,7 @@ study_citations <- read.csv("data/primary_studies/Morgan_et_al_2024/original/mor
 ## Write files ####
 write_csv(methods, "data/primary_studies/Morgan_et_al_2024/derivative/morgan_et_al_2024_methods.csv")
 write_csv(depthseries, "data/primary_studies/Morgan_et_al_2024/derivative/morgan_et_al_2024_depthseries.csv")
-write_csv(site, "data/primary_studies/Morgan_et_al_2024/derivative/morgan_et_al_2024_site.csv")
+write_csv(site, "data/primary_studies/Morgan_et_al_2024/derivative/morgan_et_al_2024_sites.csv")
 write_csv(cores, "data/primary_studies/Morgan_et_al_2024/derivative/morgan_et_al_2024_cores.csv")
 write_csv(study_citations, "data/primary_studies/Morgan_et_al_2024/derivative/morgan_et_al_2024_study_citations.csv")
 write_csv(plot_summary, "data/primary_studies/Morgan_et_al_2024/derivative/morgan_et_al_2024_plot_summary.csv")

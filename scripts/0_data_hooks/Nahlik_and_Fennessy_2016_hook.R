@@ -100,6 +100,13 @@ sites <- site_marine %>%
          vegetation_class, vegetation_method) %>%
   distinct()
 
+
+#renaming salinity class to fit guidance 
+  # "palustrine" -> "palustrine C-CAP", in the current guidance, there is no controlled variable for "palustrine"
+#sites <- sites %>% 
+ # mutate(salinity_class = ifelse(salinity_class == "palustrine", "palustrine C-CAP", salinity_class))
+
+
 ## Soil chemistry ----
 
 soil_marine <- soilchem %>%
@@ -130,6 +137,10 @@ cores <- soil_marine %>%
   select(study_id, site_id, core_id, core_year, core_month, core_day, core_latitude, core_longitude,
          salinity_class, salinity_method, vegetation_class, vegetation_method, core_length_flag) %>%
   distinct()
+
+#updating salinity class palustrine to fit current guidance
+#cores <- cores %>% 
+  #mutate(salinity_class = ifelse(salinity_class == "palustrine", "palustrine C-CAP", salinity_class))
 
 ## Depthseries
 
