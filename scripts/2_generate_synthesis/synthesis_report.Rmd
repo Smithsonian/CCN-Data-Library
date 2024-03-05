@@ -82,9 +82,9 @@ leaflet(map_cores, width = "100%") %>%
 
 ```
 
-## QA/QC Test Results
+## QA/QC
 
-### Overview 
+### Test Results Overview 
 
 ```{r, echo=FALSE}
 
@@ -140,32 +140,47 @@ datatable(depthseries_results,
 
 ```{r, echo=FALSE}
 
-database_structure <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols())
+# database_structure <- read_csv("docs/ccrcn_database_structure.csv", col_types = cols())
 
 # Extract column names for that table and subset to all columns that aren't in the controlled or uncontrolled attribute tables
 core_cols <- filter(database_structure, table == "cores")$attribute_name
 ds_cols <- filter(database_structure, table == "depthseries")$attribute_name
 methods_cols <- filter(database_structure, table == "methods")$attribute_name
 
-methods_uncontrolled <- ccrcn_synthesis$methods %>%
+join_uncontrolled_attributes <- data.frame()
+
+if(!all(names(ccrcn_synthesis$methods) %in% methods_cols)){
+  methods_uncontrolled <- ccrcn_synthesis$methods %>%
   select(study_id | !any_of(methods_cols)) %>% 
   pivot_longer(-study_id, names_to = "attribute_name", values_to = "value") %>% 
   drop_na(value) %>% distinct() %>% 
   mutate(table = "methods") %>% select(table, everything())
+  
+  join_uncontrolled_attributes <- bind_rows(join_uncontrolled_attributes, methods_uncontrolled)
+}
 
+if(!all(names(ccrcn_synthesis$cores) %in% core_cols)){
 cores_uncontrolled <- ccrcn_synthesis$cores %>%
   select(study_id | !any_of(core_cols)) %>% 
   pivot_longer(-study_id, names_to = "attribute_name", values_to = "value") %>% 
   drop_na(value) %>% distinct() %>% 
-    mutate(table = "cores") %>% select(table, everything())
+  mutate(table = "cores") %>% select(table, everything())
 
+  join_uncontrolled_attributes <- bind_rows(join_uncontrolled_attributes, cores_uncontrolled)
+
+}
+
+if(!all(names(ccrcn_synthesis$depthseries) %in% ds_cols)){
 ds_uncontrolled <- ccrcn_synthesis$depthseries %>%
   select(study_id | !any_of(ds_cols)) %>% 
   pivot_longer(-study_id, names_to = "attribute_name", values_to = "value") %>% 
   drop_na(value) %>% distinct() %>% 
   mutate(table = "depthseries") %>% select(table, everything())
 
-join_uncontrolled_attributes <- bind_rows(methods_uncontrolled, cores_uncontrolled, ds_uncontrolled) %>% 
+  join_uncontrolled_attributes <- bind_rows(join_uncontrolled_attributes, ds_uncontrolled)
+}
+
+join_uncontrolled_attributes <- join_uncontrolled_attributes %>% 
   mutate(value = case_when(grepl("[...]", attribute_name) ~ "row number index", # highlight row number index columns with a flag
                            grepl("([0-9]+).*$", value) ~ "numeric value", # replace numeric values with a flag
                            T ~ value)) %>% 
@@ -226,7 +241,12 @@ if (nrow(no_citations) > 0) {
 
 ```{r, echo=FALSE}
 
-bib_file_redundancy_checks <- bib_file %>% 
+bib_file_redundancy_checks <- ccrcn_synthesis$study_citations %>%
+  select(-c(study_id, publication_type, keywords,
+  #           # issn, `article-number`,
+            abstract)) %>%
+  drop_na(bibliography_id) %>% distinct_all() %>% 
+
   group_by(bibliography_id) %>% 
   summarise(n = n()) %>% 
   filter(n > 1)
@@ -240,11 +260,11 @@ if(nrow(bib_file_redundancy_checks) != 0){
 
 ***
 
-### Check Post-Processing 
+## Stats and Visualization 
 
-**Habitat Assignments**
+### Habitats
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, eval=FALSE}
 habitat_smry <- map_cores %>% 
   count(habitat) %>% 
   mutate(pct = round(100*(n/sum(n)), 2),
@@ -254,12 +274,34 @@ habitat_smry <- map_cores %>%
 knitr::kable(habitat_smry)
 ```
 
+```{r, echo=FALSE}
+ccrcn_synthesis$cores %>% 
+  mutate(habitat = ifelse(is.na(habitat), "unknown", habitat)) %>%
+  group_by(habitat) %>%
+  tally() %>%
+  ungroup() %>%
+  mutate(percent = 100*(n/sum(n))) %>% 
+  mutate(habitat = fct_reorder(habitat, percent)) %>% 
+  # filter(!is.na(habitat)) %>% 
+  ggplot(aes(habitat, percent, fill = percent)) + 
+  geom_col(fill = "darkgreen") + 
+  # scale_color_brewer(palette = "BuGn") +
+  xlab("Habitat Type") + ylab("Proportion of Samples (%)") +
+    geom_text(aes(label = n), size = 2.75, hjust = -0.2) +
+
+  # geom_text(aes(label = paste0(round(percent, 1), "%")), size = 2.75, hjust = -0.2) +
+  # ylim(0, 50) +
+  coord_flip() +
+  theme_bw() # base_size = 17
+```
+
 The following table shows which cores are currently not assigned any habitat:
 
 ```{r, echo=FALSE}
 
 # habitat
-missing_habitat <- read_csv("data/QA/no_habitat_cores.csv") %>%    
+missing_habitat <- ccrcn_synthesis$cores %>% 
+  filter(is.na(habitat)) %>% 
   select_if(function(x) {!all(is.na(x))})
 
 datatable(missing_habitat,
@@ -273,14 +315,16 @@ datatable(missing_habitat,
           rownames = FALSE)
 ```
 
-**Geography Assignments**
+### Geography
 
 The following table shows which cores are currently not assigned any country. This may be because the latitude and longitude are undefined.
 
 ```{r, echo=FALSE}
 
 # country
-missing_country <- read_csv("data/QA/no_country_for_soil_cores.csv") %>% 
+missing_country <- ccrcn_synthesis$cores %>% 
+    filter(is.na(country)) %>%
+  select(study_id, site_id, core_id, latitude, longitude) %>% 
   mutate(latitude = ifelse(is.na(latitude), "unknown", latitude), 
          longitude = ifelse(is.na(longitude), "unknown", longitude))
 
@@ -296,13 +340,18 @@ datatable(missing_country,
 
 ```
 
-**MORE COMING SOON**
-
 ***
 
-### Depthseries Visualization
+### Depthseries
 
 **Depth Interval Checks**
+
+```{r, echo=FALSE, fig.width=12, fig.height=12}
+ggplot(ccrcn_synthesis$cores, aes(max_depth, col = habitat)) + geom_density() + geom_rug() +
+  facet_wrap(~habitat, scales = "free", ncol = 3) +
+  theme(legend.position = "none") +
+  ggtitle("Distribution of Max Sampling Depths by Habitat")
+```
 
 ```{r, echo=FALSE}
 # Isolate instances of multiple observations for the same interval within a unique core

@@ -54,6 +54,13 @@ Trettin_et_al_2017,9023,NA,-18.88562,-18.88562,36.152977,36.152977,NA,NA,NA,NA,N
 Trettin_et_al_2017,9024,NA,-18.823362,-18.823362,36.211684,36.211684,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Trettin_et_al_2017,9025,NA,-18.851282,-18.851282,36.278995,36.278995,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Trettin_et_al_2017,9027,NA,-18.860388,-18.860388,36.166532,36.166532,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Stevens_et_al_2024,PI,NA,NA,NA,NA,NA,estuarine,field observation,NA,emergent,field observation,"""Along the water’s edge, the marsh vegetation was mostly low-growing grasses (some spartina sp.) and various wildflower species. This floral composition was consistent in the sampling area,",low,measurement,"Along transect, elevation ranged from sea level to ~35cm."
+Stevens_et_al_2024,BAY,NA,NA,NA,NA,NA,estuarine,field observation,NA,emergent,field observation,NA,NA,measurement,NA
+Stevens_et_al_2024,CB,NA,NA,NA,NA,NA,estuarine,field observation,NA,emergent,field observation,This marsh was dominated throughout by broadleaf cattail (Typha latifolia).,mid,measurement,"Elevations in this marsh range from sea level to 0.5m, with a general upward slope from water’s edge to 30m inland, where its highest point is found."
+Stevens_et_al_2024,RB,NA,NA,NA,NA,NA,estuarine,field observation,NA,emergent,field observation,"The general elevation trend of this marsh was sloping downward from the berm, gently to the woodland edge, and quickly to the water’s edge. At the water’s edge, vegetation was mostly Spartina sp. (mostly S. alterniflora) which continued inland for about 100m, where Juncus sp. began to mix with Spartina. On the other side of a narrow (~10m) transition zone, Juncus sp. became dominant and remained so all the way to the woodland edge of the marsh.",mid,measurement,"Elevation in the marsh ranges from sea level to 0.8 m, with the highest point occurring at a berm about 20 m inland, and in natural levees builtu paround the tidal creek."
+Stevens_et_al_2024,PG,NA,NA,NA,NA,NA,estuarine,field observation,NA,forested to shrub,field observation,"Vegetation in this marsh was mostly Spartina sp. along the water’s edge, and transitioned to more Juncus sp. about 100m inland. Juncus dominated until it was replaced by upland woody plants at ~190m inland.",mid,measurement,"Elevation in the marsh ranges from sea level to ~0.5 m. Along the water’s edge, the marsh hosts a berm of about 0.4m high. Along transect, the marsh then descends into a trough, finding its deepest point (elevation ~0m) about 60m inland. From that low point, the profile rises steadily back up to ~0.5m at the upland edge of the transect, about 125m inland."
+Stevens_et_al_2024,FORT,NA,NA,NA,NA,NA,estuarine,field observation,NA,emergent,field observation,"The marsh hosts Spartina sp. from the water’s edge to about 30m inland, and the rest of the marsh up to the upland edge is dominated by Juncus sp.",low,measurement,"elevation ranged from ~0.7m to ~1.5m, rising consistently from the water’s edge to the upland, except for a small (1.1m) berm located 15m from the creek bank."
+Stevens_et_al_2024,BRAD,NA,NA,NA,NA,NA,estuarine,field observation,NA,emergent,field observation,"Vegetation in this marsh was difficult to identify. Much of the area was a non-vegetated mud flat. Where vegetation was present, it appeared to be dead marsh grass stems (probably S. alterniflora), broken off at a height of about 6cm.",low,measurement,"the marsh surface was fairly level, ranging in elevation from 1.0 to about 1.1m. The highest point in the marsh, though, was the small berm about 7m inland from the water’s edge, which was about 1.2 m above sea level."
 Smith_et_al_2015,09WCC01,Rockefeller Wildlife Refuge,29.641306999999998,29.583503,-92.57195999999999,-92.65164,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Campbell_et_al_2015,Abu al Abyad,NA,24.20513,24.20513,53.61585,53.61585,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Schile-Beers_and_Megonigal_2017,Abu al Abyad 10 yr,NA,24.204041800000002,24.2036722,53.8002018,53.8000602,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -131,6 +138,8 @@ Sanborn_and_Coxson_2020,BC17-28,"Skeena Estuary, British Columbia",NA,NA,NA,NA,N
 Sanborn_and_Coxson_2020,BC17-29,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,NA,field observation,"AchMill, AngLuc, PotAns, CarLyn, ConGme, DesCes, FriCam, HorBra, LigHul, MaiDil, PlaMac, SymSub, TriMar",high,field observation,visual estimate of the tidal zone
 Sanborn_and_Coxson_2020,BC17-30,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,NA,field observation,CarLyn,low,field observation,visual estimate of the tidal zone
 Sanborn_and_Coxson_2020,BC17-31,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,NA,field observation,"CarLyn, DesCes",low,field observation,visual estimate of the tidal zone
+Palinkas_and_Engelhardt_2024,Dyke Marsh Wildlife Preserve,Potomac River Estuary ; history,38.773542,38.755924,-77.045531,-77.053514,fresh,NA,NA,emergent,NA,NA,NA,NA,NA
+Palinkas_and_Cornwell_2024,Corsica River,NA,39.0928986988065,39.0462,-76.0644,-76.1481285095215,brackish,NA,Salinity data from the Maryland Department of Natural Resources: http://www.eyesonthebay.net,NA,NA,NA,NA,NA,NA
 Osland_et_al_2016,Galveston_Bay,NA,29.209952862,29.064102558,-94.94326064799999,-95.266709872,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Osland_et_al_2016,Grand_Bay,NA,30.409232979000002,30.356935311,-88.395872932,-88.446796468,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Osland_et_al_2016,Lake_Pontchartrain,NA,30.284774709,30.239866521,-89.833513739,-89.999191271,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -487,6 +496,16 @@ Nahlik_and_Fennessy_2016,NWCA11-4706,San Pablo Bay; California,NA,NA,NA,NA,estua
 Nahlik_and_Fennessy_2016,NWCA11-4713,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,NA,emergent,field observation,NA,NA,NA,NA
 Nahlik_and_Fennessy_2016,NWCA11-4716,McGrath Lake-Frontal Pacific Ocean; California,NA,NA,NA,NA,estuarine,field observation,NA,emergent,field observation,NA,NA,NA,NA
 Nahlik_and_Fennessy_2016,NWCA11-4721,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,NA,emergent,field observation,NA,NA,NA,NA
+Morgan_et_al_2024,Saco_River,"Saco River, Biddeford, ME",43.460436,NA,-70.386058,NA,saline,NA,NA,NA,NA,NA,NA,NA,NA
+Morgan_et_al_2024,Biddeford_Pool_Fringing,"Biddeford Pool, Biddeford, ME",43.449944,NA,-70.363794,NA,polyhaline,NA,NA,NA,NA,NA,NA,NA,NA
+Morgan_et_al_2024,York_River,"York River, York, ME",43.13665,NA,-70.653556,NA,polyhaline,NA,NA,NA,NA,NA,NA,NA,NA
+Morgan_et_al_2024,Inner_Cutts_Cove,"Inner Cutts Cove, Portsmouth, NH",43.08555555555556,NA,-70.76638888888888,NA,polyhaline,NA,NA,NA,NA,NA,NA,NA,NA
+Morgan_et_al_2024,Little_Harbor,"Little Harbor, Rye, NH",43.05583333333333,NA,-70.73138888888889,NA,saline,NA,NA,NA,NA,NA,NA,NA,NA
+Morgan_et_al_2024,Biddeford_Pool_Meadow,"Biddeford Pool, Biddeford, ME",43.45416666666667,NA,-70.37472222222222,NA,estuarine,NA,NA,NA,NA,NA,NA,NA,NA
+Morgan_et_al_2024,Mousam_River,"Mousam River, Kennebunk, ME",43.346944444444446,NA,-70.51083333333334,NA,saline,NA,NA,NA,NA,NA,NA,NA,NA
+Morgan_et_al_2024,Little_River,"Little River, Wells, ME",43.34,NA,-70.54416666666667,NA,saline,NA,NA,NA,NA,NA,NA,NA,NA
+Morgan_et_al_2024,Drakes_Island,"Drake's Island, Wells, ME",43.32694444444445,NA,-70.56277777777777,NA,saline,NA,NA,NA,NA,NA,NA,NA,NA
+Morgan_et_al_2024,Seavey_Creek,"Seavey Creek, Rye, NH",43.04805555555556,NA,-70.72361111111111,NA,saline,NA,NA,NA,NA,NA,NA,NA,NA
 Kauffman_et_al_2020,Barview Eelgrass,Coos Bay Estuary,43.3459,43.3454,-124.3182,-124.3189,NA,NA,NA,seagrass,NA,NA,NA,NA,NA
 Kauffman_et_al_2020,Blind Slough Swamp,Lower Columbia River Estuary,46.1924,46.1919,-123.579,-123.5807,NA,NA,NA,forested,NA,NA,NA,NA,NA
 Kauffman_et_al_2020,Chehalis Flood Plain,Grays Harbor Estuary,46.9419,46.9411,-123.7209,-123.7215,NA,NA,NA,forested,NA,NA,NA,NA,NA
@@ -554,11 +573,11 @@ Gonneea_et_al_2004,Chelem_Lagoon,NA,21.2746,21.2746,-89.6863,-89.6863,NA,NA,NA,s
 Lewis_et_al_2007,Choctwhatchee_Bay,NA,30.416,30.416,-86.573,-86.573,NA,NA,NA,seagrass,NA,NA,NA,NA,NA
 Mateo_et_al_1997,Culip,NA,42.322,42.322,3.309,3.309,NA,NA,NA,seagrass,NA,NA,NA,NA,NA
 Holmer_et_al_2007,Cyprus,NA,34.4015,34.4015,33.0358,33.0358,NA,NA,NA,unvegetated,NA,NA,NA,NA,NA
-Vichkovitten_et_al_2005,Denmark,NA,55.28,55.28,11.05,11.05,NA,NA,NA,seagrass,NA,NA,NA,NA,NA
+Vichkovitten_et_al_2005,Denmark,NA,55.5166217,54.9171653,11.2477103,9.2751827,NA,NA,NA,seagrass,NA,NA,NA,NA,NA
 Yamamuro_et_al_1993,Dravuni_Is,NA,-18.75,-18.75,178.5,178.5,NA,NA,NA,unvegetated,NA,NA,NA,NA,NA
 Yamamuro_et_al_1993,Dravuni_Is._Fiji,NA,-18.75,-18.75,178.5,178.5,NA,NA,NA,seagrass,NA,NA,NA,NA,NA
 Koch_and_Madden_2001,Eastern_Grand_Bahama,NA,26.621,26.621,-77.828,-77.828,NA,NA,NA,seagrass,NA,NA,NA,NA,NA
-Pedersen_et_al_1997,Ebro_Delta,NA,40.6,40.6,0.716666667,0.716666667,NA,NA,NA,seagrass,NA,NA,NA,NA,NA
+Barron_et_al_2004,Ebro_Delta,NA,40.6,40.6,0.716666667,0.716666667,NA,NA,NA,seagrass,NA,NA,NA,NA,NA
 Mateo_et_al_1997,El_Campello,NA,38.423,38.423,-0.384,-0.384,NA,NA,NA,seagrass,NA,NA,NA,NA,NA
 Kamp-Nielsen_et_al_2002,El_Nido,NA,11.197983333333335,11.028183333333333,119.42575,119.38075,NA,NA,NA,seagrass,NA,NA,NA,NA,NA
 Mellors_et_al_2002,Ellie_Pt,NA,-16.8773,-16.8773,145.7853,145.7853,NA,NA,NA,seagrass,NA,NA,NA,NA,NA

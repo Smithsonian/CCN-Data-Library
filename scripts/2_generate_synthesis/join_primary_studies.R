@@ -242,7 +242,7 @@ if(join_status == TRUE){
 warning_summary <- summary(warnings())
 
 # read in current guidance
-guidance <- read_csv("docs/ccrcn_database_structure.csv")
+database_structure <- read_csv("docs/ccrcn_database_structure.csv")
 
 # get date to paste to file name
 url_date <- format(Sys.time(), "%Y%m%d %H%M")
