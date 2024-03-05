@@ -27,9 +27,9 @@ study_citations <- data.frame(study_id = "Brown_et_al_2024",
         
 
 ## Write files ####
-write.csv(cores, "./data/primary_studies/Brown_et_al_2024/derivative/Brown_et_al_2024_cores.csv")
-write.csv(depthseries, "./data/primary_studies/Brown_et_al_2024/derivative/Brown_et_al_2024_depthseries.csv")
-write.csv(methods, "./data/primary_studies/Brown_et_al_2024/derivative/Brown_et_al_2024_methods.csv")
-write.csv(species, "./data/primary_studies/Brown_et_al_2024/derivative/Brown_et_al_2024_species.csv")
-write.csv(study_citations, "./data/primary_studies/Brown_et_al_2024/derivative/Brown_et_al_2024_study_citations.csv")
+write_csv(cores, "./data/primary_studies/Brown_et_al_2024/derivative/Brown_et_al_2024_cores.csv")
+write_csv(depthseries, "./data/primary_studies/Brown_et_al_2024/derivative/Brown_et_al_2024_depthseries.csv")
+write_csv(methods, "./data/primary_studies/Brown_et_al_2024/derivative/Brown_et_al_2024_methods.csv")
+write_csv(species, "./data/primary_studies/Brown_et_al_2024/derivative/Brown_et_al_2024_species.csv")
+write_csv(study_citations, "./data/primary_studies/Brown_et_al_2024/derivative/Brown_et_al_2024_study_citations.csv")
 

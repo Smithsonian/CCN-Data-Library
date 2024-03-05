@@ -62,7 +62,7 @@ species <- agb %>%
          core_id = gsub("-", "_", SampleID),
          habitat = "marsh") %>% 
   filter(!species_code %in% c("Woody Stalk?", "Wild Rice")) %>% 
-  # filter(core_id %in% unique(depthseries$core_id)) %>% # keep cores not in depthseries table for AGB reference
+  filter(core_id %in% unique(depthseries$core_id)) %>% # remove cores not in depthseries table 
   select(study_id, site_id, core_id, species_code, code_type, habitat)
 
 cores <- gps %>% 
@@ -85,7 +85,7 @@ cores <- gps %>%
                                     site_id ==  "Pamunkey" ~ "fresh",
                                     T ~ NA_character_),
          habitat = "marsh") %>% 
-  # filter(core_id %in% unique(depthseries$core_id)) %>% # keep cores not in depthseries table for AGB reference
+  filter(core_id %in% unique(depthseries$core_id)) %>% # remove cores not in depthseries table
   select(study_id, site_id, core_id, latitude, longitude, position_method, 
          position_notes, elevation, elevation_method, elevation_notes, salinity_class, habitat) 
 

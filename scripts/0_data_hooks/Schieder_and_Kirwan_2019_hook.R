@@ -40,7 +40,7 @@ study_citations <- read.csv("data/primary_studies/Schieder_and_Kirwan_2019/origi
           copyright = "Creative Commons Attribution 4.0 International")
 
 ## Write files ####
-write.csv(cores, "./data/primary_studies/Schieder_and_Kirwan_2019/derivative/Schieder_and_Kirwan_2019_cores.csv")
-write.csv(depthseries, "./data/primary_studies/Schieder_and_Kirwan_2019/derivative/Schieder_and_Kirwan_2019_depthseries.csv")
-write.csv(methods, "./data/primary_studies/Schieder_and_Kirwan_2019/derivative/Schieder_and_Kirwan_2019_methods.csv")
-write.csv(study_citations, "./data/primary_studies/Schieder_and_Kirwan_2019/derivative/Schieder_and_Kirwan_2019_study_citations.csv")
+write_csv(cores, "./data/primary_studies/Schieder_and_Kirwan_2019/derivative/Schieder_and_Kirwan_2019_cores.csv")
+write_csv(depthseries, "./data/primary_studies/Schieder_and_Kirwan_2019/derivative/Schieder_and_Kirwan_2019_depthseries.csv")
+write_csv(methods, "./data/primary_studies/Schieder_and_Kirwan_2019/derivative/Schieder_and_Kirwan_2019_methods.csv")
+write_csv(study_citations, "./data/primary_studies/Schieder_and_Kirwan_2019/derivative/Schieder_and_Kirwan_2019_study_citations.csv")

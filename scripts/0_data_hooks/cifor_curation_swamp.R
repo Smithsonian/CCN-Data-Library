@@ -363,7 +363,7 @@ SWAMP_soil_converter <- function(swamp_type) { # use synthSWAMP() output here
 ## Soil Tables #### 
 cores <- SWAMP_soil_converter(swamp_soil) %>% 
   select(c(study_id, site_id, core_id, year, month, day, latitude, longitude, position_accuracy, 
-           position_method, elevation, habitat, geomorphic_id)) %>% 
+           position_method, elevation, habitat)) %>% 
   distinct() %>% 
   filter(habitat != "peatland") %>% # remove inland cores
   mutate(position_notes = case_when(position_method == "subplot" ~ "position at subplot level",
