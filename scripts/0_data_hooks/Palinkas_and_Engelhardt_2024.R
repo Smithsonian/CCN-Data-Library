@@ -147,7 +147,8 @@ write_csv(species, "data/primary_studies/Palinkas_and_Engelhardt_2024/derivative
 #     column_to_rownames("bibliography_id")
 # 
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
-paper_citation <- dataset_citation <- data.frame(bibliography_id = "Palinkas_and_Engelhardt_2015",
+paper_citation <- dataset_citation <- data.frame(study_id = "Palinkas_and_Engelhardt_2024",
+                                                 bibliography_id = "Palinkas_and_Engelhardt_2015",
                                                  publication_type = "article",
                                                  bibtype = "Article", 
                                                  title = "Spatial and temporal patterns of modern (~100 yr) sedimentation in a tidal freshwater marsh: Implications for future sustainability",
@@ -159,7 +160,8 @@ paper_citation <- dataset_citation <- data.frame(bibliography_id = "Palinkas_and
 
 
 
-dataset_citation <- data.frame(bibliography_id = id,
+dataset_citation <- data.frame(study_id = "Palinkas_and_Engelhardt_2024",
+                               bibliography_id = "Palinkas_and_Engelhardt_2024",
                              publication_type = "primary dataset",
                              bibtype = "Misc", 
                              title = "Dataset: Spatial and temporal patterns of modern (~100 yr) sedimentation in a tidal freshwater marsh: Implications for future sustainability",
@@ -171,7 +173,7 @@ dataset_citation <- data.frame(bibliography_id = id,
 study_citations <- full_join(dataset_citation, paper_citation)
 
 WriteBib(as.BibEntry(study_citations), "data/primary_studies/Palinkas_and_Engelhardt_2024/derivative/Palinkas_and_Engelhardt_2024.bib")
-write_csv(study_citations, "data/primary_studies/Palinkas_and_Engelhardt_2024/derivative/Palinkas_and_Engelhardt_2024_associated_publication.csv")
+write_csv(study_citations, "data/primary_studies/Palinkas_and_Engelhardt_2024/derivative/Palinkas_and_Engelhardt_2024_study_citations.csv")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/

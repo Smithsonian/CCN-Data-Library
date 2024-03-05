@@ -29,6 +29,13 @@ study_citations <- read.csv("data/primary_studies/Morgan_et_al_2024/original/mor
           copyright = "Creative Commons Attribution 4.0 International")
 
 
+## adding study_id to depthseries //RC
+depthseries <- depthseries %>% 
+  mutate(study_id = "Morgan_et_al_2024")
+
+source("scripts/1_data_formatting/qa_functions.R") 
+depthseries <- reorderColumns("depthseries", depthseries)
+
 ## Write files ####
 write_csv(methods, "data/primary_studies/Morgan_et_al_2024/derivative/morgan_et_al_2024_methods.csv")
 write_csv(depthseries, "data/primary_studies/Morgan_et_al_2024/derivative/morgan_et_al_2024_depthseries.csv")

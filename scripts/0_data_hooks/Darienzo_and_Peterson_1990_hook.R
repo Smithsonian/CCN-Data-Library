@@ -6,6 +6,11 @@
 library(tidyverse)
 library(RefManageR)
 
+# load in helper functions
+source("scripts/1_data_formatting/curation_functions.R") # For curation
+source("scripts/1_data_formatting/qa_functions.R") # For QAQC
+
+
 ## Read files ####
 cores <- read.csv("data/primary_studies/Darienzo_and_Peterson_1990/original/darienzo_and_peterson_1990_cores.csv")
 depthseries <- read.csv("data/primary_studies/Darienzo_and_Peterson_1990/original/darienzo_and_peterson_1990_depthseries.csv")
@@ -30,10 +35,55 @@ study_citations <- read.csv("data/primary_studies/Darienzo_and_Peterson_1990/ori
           copyright = "Creative Commons Attribution 4.0 International")
 
 
+## Resolve issues flagged in synthesis QAQC// RC
+
+methods <- methods %>% 
+  mutate(coring_method = "gouge auger")
+
+cores <- cores %>% 
+  select(-core_position_method, -core_date) #already coded in position_method 
+  
+cores <- reorderColumns("cores", cores)
+
+
+## Visualize cores
+library(leaflet)
+leaflet(cores) %>%
+  addTiles() %>% 
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
+
+
+## Run QAQC functions 
+  ## Table testing
+table_names <- c("methods", "cores", "depthseries", "impacts", "species")
+
+# Check col and varnames
+testTableCols(table_names)
+testTableVars(table_names)
+
+# test required and conditional attributes
+testRequired(table_names)
+testConditional(table_names)
+
+# test uniqueness
+testUniqueCores(cores)
+testUniqueCoords(cores)
+
+# test relational structure of data tables
+testIDs(cores, depthseries, by = "site")
+testIDs(cores, depthseries, by = "core")
+
+# test numeric attribute ranges
+fractionNotPercent(depthseries)
+#testNumericCols(depthseries)
+test_numeric_vars(depthseries) ##testNumericCols producing error message 
+
+
+
 ## Write files ####
-write.csv(cores, "./data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_cores.csv")
-write.csv(depthseries, "./data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_depthseries.csv")
-write.csv(methods, "./data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_methods.csv")
-write.csv(study_citations, "./data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_study_citations.csv")
-write.csv(impacts, "./data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_impacts.csv")
-write.csv(species, "./data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_species.csv")
+write_csv(cores, "./data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_cores.csv")
+write_csv(depthseries, "./data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_depthseries.csv")
+write_csv(methods, "./data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_methods.csv")
+write_csv(study_citations, "./data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_study_citations.csv")
+write_csv(impacts, "./data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_impacts.csv")
+write_csv(species, "./data/primary_studies/Darienzo_and_Peterson_1990/derivative/Darienzo_and_Peterson_1990_species.csv")
