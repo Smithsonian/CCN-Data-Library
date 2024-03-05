@@ -39,7 +39,7 @@ methods <-  methods_raw %>%
          carbonates_removed = TRUE,
          method_id = "single set of methods",
          carbon_profile_notes = paste("Samples dried over 36-48hrs for DBD.", carbon_profile_notes)) %>% 
-  select(-dry_bulk_density_time_min, -dry_bulk_density_time_max)
+  select(-dry_bulk_density_time_min, -dry_bulk_density_time_max, -ground_or_sieved_flag)
 
 #reorder columns 
 methods <- reorderColumns("methods", methods)

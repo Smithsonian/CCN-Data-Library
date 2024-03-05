@@ -122,8 +122,9 @@ depth_raw <- full_join(alpha_joiner, alpha_push_joiner) %>%
 
 depthseries <- depth_raw %>% 
   select(study_id, site_id, core_id, method_id, depth_min, depth_max, fraction_organic_matter, cs137_activity,
-         cs137_activity_se, total_pb210_activity, total_pb210_activity_se, ra226_activity, ra226_activity_se,
-         th234_activity, th234_activity_se, k40_activity, k40_activity_se)
+         cs137_activity_se, total_pb210_activity, total_pb210_activity_se,
+         # th234_activity, th234_activity_se, k40_activity, k40_activity_se,
+         ra226_activity, ra226_activity_se)
 
 cores <- depth_raw %>% 
   mutate(habitat = "marsh") %>% 

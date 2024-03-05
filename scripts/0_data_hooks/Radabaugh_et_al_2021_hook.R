@@ -7,7 +7,8 @@ library(tidyverse)
 library(RefManageR)
 
 
-cores <- read.csv("data/primary_studies/Radabaugh_et_al_2021/original/radabaugh_et_al_2021_cores.csv")
+cores <- read.csv("data/primary_studies/Radabaugh_et_al_2021/original/radabaugh_et_al_2021_cores.csv") %>% 
+  select(-ecological_condition_flag)
 depthseries <- read.csv("data/primary_studies/Radabaugh_et_al_2021/original/radabaugh_et_al_2021_depthseries.csv")
 methods <- read.csv("data/primary_studies/Radabaugh_et_al_2021/original/radabaugh_et_al_2021_methods.csv")
 impacts <- read.csv("data/primary_studies/Radabaugh_et_al_2021/original/radabaugh_et_al_2021_impacts.csv")
