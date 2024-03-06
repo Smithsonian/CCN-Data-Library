@@ -130,7 +130,8 @@ write_csv(depthseries, "data/primary_studies/Stahl_et_al_2024/derivative/Stahl_e
 #     column_to_rownames("bibliography_id")
 # 
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
-paper_citation <- dataset_citation <- data.frame(bibliography_id = "Stahl_et_al_2018",
+paper_citation <- dataset_citation <- data.frame(study_id = id,
+                                                 bibliography_id = "Stahl_et_al_2018",
                                                  publication_type = "article",
                                                  bibtype = "Article", 
                                                  title = "Tidal freshwater forests: Sentinels for climate change",
@@ -142,19 +143,20 @@ paper_citation <- dataset_citation <- data.frame(bibliography_id = "Stahl_et_al_
 
 
 
-dataset_citation <- data.frame(bibliography_id = "Stahl_et_al_2024",
-                             publication_type = "primary dataset",
-                             bibtype = "Misc", 
-                             title = "Dataset: Tidal freshwater forests: Sentinels for climate change",
-                             author = "McKenna Stahl, Sarah Widney and Christopher Craft",
-                             doi = "10.25573/serc.24886155",
-                             url = "https://doi.org/10.25573/serc.24886155",
-                             year = "2024")
+dataset_citation <- data.frame(study_id = id,
+                               bibliography_id = "Stahl_et_al_2024",
+                               publication_type = "primary dataset",
+                               bibtype = "Misc", 
+                               title = "Dataset: Tidal freshwater forests: Sentinels for climate change",
+                               author = "McKenna Stahl, Sarah Widney and Christopher Craft",
+                               doi = "10.25573/serc.24886155",
+                               url = "https://doi.org/10.25573/serc.24886155",
+                               year = "2024")
 
 study_citations <- full_join(dataset_citation, paper_citation)
 
 WriteBib(as.BibEntry(study_citations), "data/primary_studies/Stahl_et_al_2024/derivative/Stahl_et_al_2024.bib")
-write_csv(study_citations, "data/primary_studies/Stahl_et_al_2024/derivative/Stahl_et_al_2024_associated_publication.csv")
+write_csv(study_citations, "data/primary_studies/Stahl_et_al_2024/derivative/Stahl_et_al_2024_study_citations.csv")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/

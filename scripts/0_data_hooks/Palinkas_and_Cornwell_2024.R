@@ -133,7 +133,7 @@ write_csv(depthseries, "data/primary_studies/Palinkas_and_Cornwell_2024/derivati
 #     column_to_rownames("bibliography_id")
 # 
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
-paper_citation <- dataset_citation <- data.frame(study_id = "Palinkas_and_Cornwell_2024",
+paper_citation <- data.frame(study_id = "Palinkas_and_Cornwell_2024",
                                                  bibliography_id = "Palinkas_and_Cornwell_2012",
                                                  publication_type = "article",
                                                  bibtype = "Article", 
@@ -148,18 +148,18 @@ paper_citation <- dataset_citation <- data.frame(study_id = "Palinkas_and_Cornwe
 
 dataset_citation <- data.frame(study_id = "Palinkas_and_Cornwell_2024",
                                bibliography_id = id,
-                             publication_type = "primary dataset",
-                             bibtype = "Misc", 
-                             title = "Dataset: A Preliminary Sediment Budget for the Corsica River (MD): Improved Estimates of Nitrogen Burial and Implications for Restoration",
-                             author = "Cindy M. Palinkas, Jeffrey Cornwell",
-                             doi = "10.25573/serc.24467977",
-                             url = "https://doi.org/10.25573/serc.24467977",
-                             year = "2024")
+                               publication_type = "primary dataset",
+                               bibtype = "Misc", 
+                               title = "Dataset: A Preliminary Sediment Budget for the Corsica River (MD): Improved Estimates of Nitrogen Burial and Implications for Restoration",
+                               author = "Cindy M. Palinkas, Jeffrey Cornwell",
+                               doi = "10.25573/serc.24467977",
+                               url = "https://doi.org/10.25573/serc.24467977",
+                               year = "2024")
 
 study_citations <- full_join(dataset_citation, paper_citation)
 
 WriteBib(as.BibEntry(study_citations), "data/primary_studies/Palinkas_and_Cornwell_2024/derivative/Palinkas_and_Cornwell_2024.bib")
-write_csv(study_citations, "data/primary_studies/Palinkas_and_Cornwell_2024/derivative/Palinkas_and_Cornwell_2024_associated_publication.csv")
+write_csv(study_citations, "data/primary_studies/Palinkas_and_Cornwell_2024/derivative/Palinkas_and_Cornwell_2024_study_citations.csv")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/

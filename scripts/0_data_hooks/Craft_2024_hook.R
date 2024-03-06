@@ -134,7 +134,8 @@ write_csv(depthseries, "data/primary_studies/Craft_2024/derivative/Craft_2024_de
 #     column_to_rownames("bibliography_id")
 # 
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
-paper_citation <- dataset_citation <- data.frame(bibliography_id = "Craft_2012",
+paper_citation <- dataset_citation <- data.frame(study_id = "Craft_2024",
+                                                 bibliography_id = "Craft_2012",
                                                  publication_type = "article",
                                                  bibtype = "Article", 
                                                  title = "Tidal freshwater forest accretion does not keep pace with sea level rise",
@@ -146,7 +147,8 @@ paper_citation <- dataset_citation <- data.frame(bibliography_id = "Craft_2012",
 
 
 
-dataset_citation <- data.frame(bibliography_id = "Craft_2024",
+dataset_citation <- data.frame(study_id = "Craft_2024",
+                               bibliography_id = "Craft_2024",
                              publication_type = "primary dataset",
                              bibtype = "Misc", 
                              title = "Dataset: Tidal freshwater forest accretion does not keep pace with sea level rise",
@@ -158,7 +160,7 @@ dataset_citation <- data.frame(bibliography_id = "Craft_2024",
 study_citations <- full_join(dataset_citation, paper_citation)
 
 WriteBib(as.BibEntry(study_citations), "data/primary_studies/Craft_2024/derivative/Craft_2024.bib")
-write_csv(study_citations, "data/primary_studies/Craft_2024/derivative/Craft_2024_associated_publication.csv")
+write_csv(study_citations, "data/primary_studies/Craft_2024/derivative/Craft_2024_study_citations.csv")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/
