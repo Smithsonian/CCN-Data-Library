@@ -52,7 +52,7 @@ guess_max <- 15000
 # write_csv(library_beginnings, "data/library_metrics/growth_metrics.csv")
 
 # read in table documenting figshare pubs with IDs
-versions <- read_csv("docs/synthesis_history.csv")
+versions <- read_csv("docs/synthesis_resources/synthesis_history.csv")
 core_versions <- versions %>% filter(table == "cores")
 
 # read in current version
@@ -61,9 +61,9 @@ current_cores <- read_csv("data/CCN_synthesis/CCN_cores.csv", guess_max = guess_
 current_version <- "1.2.0"
 
 # loop through versions and harvest relevant information
-if(file.exists("data/library_metrics/core_synthesis_history.csv")){
+if(file.exists("docs/synthesis_resources/core_synthesis_history.csv")){
   
-  synthesis_history <- read_csv("data/library_metrics/core_synthesis_history.csv")
+  synthesis_history <- read_csv("docs/synthesis_resources/core_synthesis_history.csv")
 
   } else {
   
@@ -89,14 +89,18 @@ if(file.exists("data/library_metrics/core_synthesis_history.csv")){
     # compile history of synthesis in core IDs
     synthesis_history <- bind_rows(synthesis_history, temp_df)
   }
-  write_csv(synthesis_history, "data/library_metrics/core_synthesis_history.csv")
+  write_csv(synthesis_history, "docs/synthesis_resources/core_synthesis_history.csv")
 }
 
 ## summary stats from this table
 synthesis_history_trim <- synthesis_history %>% 
   # drop some unneccessary versions (some where the core count reduced??)
   filter(version != "1.1.0") %>%  # this overestimated the core count (V1.1.1 corrected this)
-  filter(!(lubridate::year(as.Date(date)) %in% c(2021)))
+  filter(!(lubridate::year(as.Date(date)) %in% c(2021))) %>% 
+  # add current core version info
+  bind_rows(current_cores %>% 
+              select(study_id, core_id) %>% 
+              mutate(version = current_version, date = Sys.Date()))
   
 # plot library growth
 growth_fig <- synthesis_history_trim %>% 
@@ -106,15 +110,15 @@ growth_fig <- synthesis_history_trim %>%
   add_row(date = as.Date("2018-06-01"),
           version = "first",
           total_cores = 1535) %>%
-  add_row(date = Sys.Date(),
-          version = current_version,
-          total_cores = nrow(current_cores)) %>% 
+  # add_row(date = Sys.Date(),
+  #         version = current_version,
+  #         total_cores = nrow(current_cores)) %>% 
   ggplot() +
   geom_line(aes(date, total_cores)) +
   geom_point(aes(date, total_cores)) +
   xlab("Date") + ylab("Sediment Sample Count") +
   theme_bw()
-ggsave(growth_fig, filename = "./data/library_metrics/figures/library_growth.jpg")
+ggsave(growth_fig, filename = "docs/quarterly_reports/v120/library_growth.jpg")
 
 ggplotly(growth_fig)
 ```
@@ -132,6 +136,8 @@ ggplotly(growth_fig)
 # work with the documentation of what cores were included in each version
 
 habitat_change <- data.frame()
+quality_change <- data.frame()
+sampling_depths <- data.frame()
   
 for(v in unique(synthesis_history_trim$version)){
   
@@ -146,29 +152,37 @@ for(v in unique(synthesis_history_trim$version)){
   # subset_df <- left_join(temp_version, current_cores)
   subset_df <- current_cores %>% filter(study_id %in% unique(temp_version$study_id) | core_id %in% unique(temp_version$core_id))
   
-  # growth_metrics <- growth_metrics %>% 
-  #   add_row(date = as.Date(core_versions$date[i], format = "%m/%d/%y"),
-  #                       version = core_versions$version[i],
-  #           #             total_cores = nrow(temp_table),
-  #           #             study_ids = length(unique(temp_table$study_id)),
-  #     dated_cores = nrow(subset_df %>% drop_na(dates_qual_code)))
+  # extract habitat information
+  habitat_change <- habitat_change %>% 
+    bind_rows(
+      subset_df %>% count(country, habitat) %>% 
+        mutate(version = v,
+               date = unique(temp_version$date))
+    )
   
-  # extract the desired information
-  temp_habitat_count <- subset_df %>% count(country, habitat) %>% 
-    mutate(version = v,
-           date = unique(temp_version$date))
+  # extract quality tier information 
+  quality_change <- quality_change %>%
+    bind_rows(data.frame(date = unique(temp_version$date),
+                         version = v,
+                         total_cores = nrow(subset_df),
+                         stock_cores = nrow(subset_df %>% drop_na(stocks_qual_code)),
+                         dated_cores = nrow(subset_df %>% drop_na(dates_qual_code)),
+                         elevation_cores = nrow(subset_df %>% drop_na(elevation_qual_code))))
   
-  habitat_change <- bind_rows(habitat_change, temp_habitat_count)
-  
-# redundant with the metrics we've already developed?
-    # dated_count <- subset_df %>% drop_na(dates_qual_code) %>%
-  #   count(country, admin_division, habitat)
+  # harvest max sampling depths
+  sampling_depths <- sampling_depths %>% 
+    bind_rows(
+      subset_df %>% select(country, habitat, max_depth) %>% 
+        mutate(date = unique(temp_version$date),
+               version = v)
+    )
 }
 
-# add most recent update to the table
-current_habitat_change <- current_cores %>% count(country, habitat) %>% 
-    mutate(version = current_version, date = Sys.Date())
-habitat_change <- bind_rows(habitat_change, current_habitat_change)
+```
+
+Change in Habitat Representativeness
+
+```{r}
 
 # habitat change through time
 hab_fig <- habitat_change %>% 
@@ -188,7 +202,63 @@ hab_fig <- habitat_change %>%
 
 ggplotly(hab_fig)
 
-ggsave(plot = hab_plot, filename = "data/library_metrics/figures/library_growth_habitat.jpg")
+ggsave(plot = hab_plot, filename = "docs/quarterly_reports/v120/library_growth_habitat.jpg")
+
+```
+
+
+Change in Data Quality Tier
+
+```{r}
+# conver to Long format for plotting
+quality_change_long <- quality_change %>% 
+  pivot_longer(cols = -c("date", "version"), names_to = "group", values_to = "core_n") %>% 
+  mutate(group = str_to_title(gsub("_", " ", group)),
+         # specify the order
+         group = factor(group, levels = c("Total Cores", "Stock Cores", "Dated Cores", "Elevation Cores")))
+  
+# Plot 
+quality_growth_fig <- ggplot(quality_change_long, aes(x=date, y = core_n, fill = group)) + 
+    geom_area() +
+  xlab("Date") + ylab("Core Count") +
+  theme_bw()
+
+ggplotly(quality_growth_fig)
+
+ggsave(quality_growth_fig, filename = "docs/quarterly_reports/v120/library_growth_tier.jpg")
+```
+
+Change in Sampling Depth across habitat
+
+```{r}
+simple_depths <- sampling_depths %>% 
+  mutate(
+    depth_flag = case_when(max_depth < 20  ~ "<20cm",
+                           max_depth > 20 & max_depth <= 100 ~ "20-100cm",
+                                max_depth > 100 ~ ">100cm",
+                                T ~ "unknown"),
+         # depth_flag = case_when(max_depth < 20 ~ "<20cm",
+         #                        max_depth <= 100 ~ "20-100cm",
+         #                        max_depth > 100 & max_depth <= 200 ~ "100-200cm",
+         #                        max_depth > 200 & max_depth <= 300 ~ "200-300cm",
+         #                        max_depth > 300 ~ ">300cm",
+         #                         T ~ "unknown"),
+         habitat = case_when(is.na(habitat) ~ "unknown", 
+                             habitat == "mudflat" ~ "unvegetated",
+                             T ~ habitat)) %>% 
+  count(date, version, habitat, depth_flag)
+
+depth_fig <- simple_depths %>% 
+  filter(!(habitat %in% c("unknown", "upland", "algal mat"))) %>% 
+  ggplot(aes(x=date, y = n, col = depth_flag)) + 
+    geom_line() + geom_point() +
+    facet_wrap(~habitat, scales = "free_y") +
+  xlab("Date") + ylab("Core Count") +
+  theme_bw()
+  
+ggplotly(depth_fig)
+
+ggsave(depth_fig, filename = "docs/quarterly_reports/v120/library_growth_sampling_depth.jpg")
 
 ```
 
@@ -228,15 +298,6 @@ ggplot(habitat_smry) +
 ```
 </div>
 
-```{r}
-# growth_metrics %>% 
-#   filter(version != "1.1.0") %>% # this overestimated the core count (V1.1.1 was the correction)
-#   ggplot() +
-#   geom_line(aes(date, total_cores)) +
-#   geom_point(aes(date, total_cores)) +
-#   geom_line(aes(date, dated_cores), col = "blue") +
-#   geom_point(aes(date, dated_cores), col = "blue")
-```
 
 
 ## Current Stats (Global)
@@ -388,11 +449,19 @@ ggplotly(map_country_cores + theme(legend.position = "none"), tooltip = "text")
 Habitat
 
 ```{r fig.width=12, fig.height=12}
-habitat_smry %>%
-  filter(version == current_version) %>% 
-  # filter(date == max(unique(synthesis_history_trim$date))) %>%  # isolate stats for most recent version
+habitat_change %>%
+    filter(version == current_version) %>% 
+    filter(!is.na(country)) %>% filter(!is.na(habitat)) %>% 
+  # group and tally the unvegetated category
+  mutate(habitat = recode(habitat, 
+                          "mudflat" = "unvegetated",
+                          "upland" = "other", 
+                          "algal mat" = "other")) %>%
+  group_by(date, version, country, habitat) %>%
+  summarise(core_count = sum(n)) %>%
+  ungroup() %>% 
   mutate(country = recode(country, "Democratic Republic of the Congo" = "DRC")) %>% 
-  # filter(country != 'United States') %>% 
+  
   ggplot(aes(core_count, country, 
              size = core_count,
              color = habitat)) + 
@@ -447,4 +516,33 @@ contributors_us <- new %>%
 datatable(contributors_us)
 ```
 
-### Blue Carbon Data Report Card
+### State of the Data
+
+**Habitat Representation**
+
+```{r}
+
+current_cores %>% 
+  filter(country == "United States") %>% 
+  group_by(habitat) %>%
+  tally() %>%
+  ungroup() %>%
+  mutate(percent = 100*(n/sum(n))) %>% 
+  mutate(habitat = fct_reorder(habitat, percent)) %>% 
+  filter(!is.na(habitat)) %>% 
+  ggplot(aes(habitat, percent, fill = percent)) + 
+  geom_col(fill = "darkgreen") + 
+  coord_flip() + 
+  # scale_color_brewer(palette = "BuGn") +
+  xlab("Habitat Type") + ylab("Proportion of Cores (%)") +
+  geom_text(aes(label = paste0("n=", n)), size = 3.5, hjust = -0.2) +
+  # geom_text(aes(label = paste0(round(percent, 1), "%")), size = 3.5, hjust = -0.2) +
+  ylim(0, 80) +
+  # theme_classic() +
+  theme_classic() +
+  ggtitle("Habitat Sampling Proportions (US)")
+
+ggsave("docs/quarterly_reports/v120/US_habitat_pct_barplot.jpg", width = 6, height = 6)
+```
+
+**Blue Carbon Report Card**

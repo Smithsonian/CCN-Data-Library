@@ -353,6 +353,8 @@ ggplot(ccrcn_synthesis$cores, aes(max_depth, col = habitat)) + geom_density() + 
   ggtitle("Distribution of Max Sampling Depths by Habitat")
 ```
 
+**The following studies have cores with NA max depth: `r ccrcn_synthesis$cores %>% filter(is.na(max_depth)) %>% distinct(study_id) %>%  pull(study_id)`**
+
 ```{r, echo=FALSE}
 # Isolate instances of multiple observations for the same interval within a unique core
 dup_interval <- ccrcn_synthesis$depthseries %>% 
