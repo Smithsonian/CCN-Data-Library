@@ -87,8 +87,16 @@ updated <- updateTables(table_names)
 # save listed tables to objects
 methods <- updated$methods
 depthseries <- updated$depthseries
-cores <- updated$cores
 sites <- updated$sites
+cores <- updated$cores %>% 
+  # add core SM10 position as a site level replicate of core SM05
+  mutate(latitude = case_when(core_id == "SM10" ~ 39.1501,
+                              T ~ latitude),
+         longitude = case_when(core_id == "SM10" ~ 2.94919,
+                               T ~ longitude),
+         position_notes = case_when(core_id == "SM10" ~ "site level replicate of core SM05's position",
+                                    T ~ NA_character_))  
+
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")

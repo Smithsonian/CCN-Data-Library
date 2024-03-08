@@ -42,6 +42,17 @@ methods <- methods_raw %>%
          excess_pb210_rate = "mass accumulation")
   # select(-sediment_sieved_flag) # not confirmed in the paper whether sediment was sieved, just that large plant matter was removed
 
+
+
+depthseries <- depthseries_raw %>%
+  select(-fraction_carbon_modeled, -dry_bulk_density_modeled) %>%
+  rename(fraction_carbon = fraction_carbon_measured,
+         dry_bulk_density = dry_bulk_density_measured) %>%
+  mutate(method_id = "single set of methods",
+         pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
+         pb214_unit = ifelse(!is.na(pb214_activity), "disintegrationsPerMinutePerGram", NA), 
+         cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA))
+
 cores <- cores_raw %>%
   mutate(core_date = as.Date(core_date, format = "%m/%d/%y"),
          core_notes = ifelse(!is.na(core_notes),
@@ -53,16 +64,9 @@ cores <- cores_raw %>%
   mutate(core_position_method = recode(core_position_method, "RTK-GPS" = "RTK"),
          core_elevation_method = recode(core_elevation_method, "RTK-GPS" = "RTK")) %>%
   select(-abbreviated_core_id, -core_date) %>%
-  select(study_id, site_id, core_id, core_year, everything())
-
-depthseries <- depthseries_raw %>%
-  select(-fraction_carbon_modeled, -dry_bulk_density_modeled) %>%
-  rename(fraction_carbon = fraction_carbon_measured,
-         dry_bulk_density = dry_bulk_density_measured) %>%
-  mutate(method_id = "single set of methods",
-         pb210_unit = ifelse(!is.na(total_pb210_activity), "disintegrationsPerMinutePerGram", NA),
-         pb214_unit = ifelse(!is.na(pb214_activity), "disintegrationsPerMinutePerGram", NA), 
-         cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA))
+  select(study_id, site_id, core_id, core_year, everything()) %>% 
+  # remove cores not in depthseries
+  filter(core_id %in% depthseries$core_id)
 
 species <- species_raw %>%
   mutate(species_code = paste(genus, species, sep=" ")) %>%

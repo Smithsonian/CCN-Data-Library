@@ -128,9 +128,20 @@ updated <- updateTables(table_names)
 impacts <- updated$impacts
 methods <- updated$methods
 depthseries <- updated$depthseries
-cores <- updated$cores
 species <- updated$species
-
+cores <- updated$cores %>% 
+  # add core NE_B position as a site level replicate of core NE_A 
+  mutate(latitude = case_when(core_id == "NE_B" ~ 48.0352,
+                              core_id == "SP_B" ~ 47.9902,
+                              T ~ latitude),
+         longitude = case_when(core_id == "NE_B" ~ -122.1626,
+                               core_id == "SP_B" ~ -122.1611,
+                               T ~ longitude),
+         position_notes = case_when(core_id == "NE_B" ~ "site level replicate of core NE_A's position",
+                                    core_id == "NE_B" ~ "site level replicate of core SP_A's position",
+                                    T ~ position_notes))
+  
+  
 ## QA/QC ###############
 
 # Check col and varnames

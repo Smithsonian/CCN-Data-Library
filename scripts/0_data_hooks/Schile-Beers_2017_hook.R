@@ -319,8 +319,17 @@ updated <- updateTables(table_names)
 
 # methods <- updated$methods
 depthseries <- updated$depthseries
-cores <- updated$cores
 sites <- updated$sites
+cores <- updated$cores %>% 
+  # add core Bu_Tinah_Shamal_mangrove_2 position as a site level replicate of core Bu_Tinah_Shamal_mangrove_1
+  mutate(latitude = case_when(core_id == "Bu_Tinah_Shamal_mangrove_2" ~ 24.631528,
+                              T ~ latitude),
+         longitude = case_when(core_id == "Bu_Tinah_Shamal_mangrove_2" ~ 53.051491,
+                               T ~ longitude),
+         position_notes = case_when(core_id == "Bu_Tinah_Shamal_mangrove_2" ~ "site level replicate of core Bu_Tinah_Shamal_mangrove_1's position",
+                                    T ~ position_notes))
+
+
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")
