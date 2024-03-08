@@ -126,7 +126,7 @@ depthseries_results <- anti_join(ccrcn_synthesis$depthseries, ccrcn_synthesis$co
   distinct(study_id, site_id, core_id)
 
 datatable(depthseries_results,
-                    options = list(searching = TRUE,
+          options = list(searching = TRUE,
                          paging = FALSE,
                          info = FALSE,
                          scrollY = 300,
