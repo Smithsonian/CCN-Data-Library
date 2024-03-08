@@ -78,6 +78,11 @@ methods <- methods_raw %>%
          carbonates_removed = FALSE,
          fraction_carbon_type = "total carbon")
 
+##Edits, removing uncontrolled attribute, recoding this into dating_notes column // RC
+methods <- methods %>% 
+  select(-pb210_background_assumption) %>% 
+  mutate(dating_notes = "supported 210Pb was estimated from the activity of 214Pb")
+
 ## Create citation info  
 
 if(!file.exists("data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_study_citations.csv")){

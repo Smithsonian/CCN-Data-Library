@@ -92,6 +92,12 @@ fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
 
 
+#check depth min depth max relationship 
+depthseries_check <- depthseries %>% 
+  mutate(depth_check = depth_max-depth_min)
+print(unique(depthseries_check$depth_check))
+
+
 ## 3. Write datavis report ####
 writeDataVizReport(id)
 
@@ -102,16 +108,41 @@ library(RefManageR)
 synthesis_bib <- as.data.frame(GetBibEntryWithDOI("https://doi.org/10.25573/serc.24394426.v1")) %>% 
   mutate(bibliography_id = "Machite_et_al_2024", 
          study_id = "Machite_et_al_2024", 
-         publication_type = "primary dataset",
-         year = as.numeric(year)) %>% 
+         publication_type = "primary dataset") %>% 
   remove_rownames() %>% 
   select(study_id, bibliography_id, publication_type, everything())
 
 #associated publications citations, table pulled from data release 
 citations
 
+
+human_et_al_2022 <- data.frame(study_id = "Human_et_al_2022",
+                               bibliography_id = "Human_et_al_2022",
+                               publication_type = "primary source",
+                               bibtype = "Article",
+                               title = "Blue carbon and nutrient stocks in salt marsh and seagrass from an urban African estuary",
+                               author = "Lucienne R.D. Human, Jessica Els, Johan Wasserman, Janine B. Adams",
+                               doi = "http://dx.doi.org/10.1016/j.scitotenv.2022.156955",
+                               url = "http://dx.doi.org/10.1016/j.scitotenv.2022.156955",
+                               journal = "Science of the Total Environment",
+                               year = "2022")
+
+mbense_2019 <- data.frame(study_id = "Mbense_2019",
+                          bibliography_id = "Mbense_2019",
+                          publication_type = "primary source",
+                          bibtype = "Misc",
+                          title = "",
+                          author = "",
+                          doi = "",
+                          url = "",
+                          journal = "Standard Theses",
+                          year = "2019")
+
 #join primary dataset and assoc pubs, write study_citations.csv
-study_citations <- full_join(synthesis_bib, citations)
+study_citations <- rbind(citations, human_et_al_2022, mbense_2019) %>% 
+  full_join(synthesis_bib) %>% 
+  mutate(publication_type = ifelse(publication_type == "primary source", "associated source", publication_type))
+
 write_csv(study_citations, "data/primary_studies/Machite_et_al_2024/derivative/Machite_et_al_2024_study_citations.csv") 
 
 ## 4. Write files ####
