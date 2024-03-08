@@ -439,6 +439,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "24.54852, 53.03997",2,"Bu_Tinah_3_seagrass_1, Bu_Tinah_3_seagrass_2",Campbell_et_al_2015,1
 "24.57855, 53.079",2,"Bu_Tinah_2_seagrass_1, Bu_Tinah_2_seagrass_2",Campbell_et_al_2015,1
 "24.59310717, -81.66270992",2,"NWCA11-1233-3921, NWCA11-1233-5378",Nahlik_and_Fennessy_2016,1
+"24.631528, 53.051491",2,"Bu_Tinah_Shamal_mangrove_1, Bu_Tinah_Shamal_mangrove_2",Schile-Beers_and_Megonigal_2017,1
 "24.64498, 54.50703",2,"Ghurab_NN_seagrass_1, Ghurab_NN_seagrass_2",Campbell_et_al_2015,1
 "24.65578, 54.53673",2,"Ghurab_NE_seagrass_1, Ghurab_NE_seagrass_2",Campbell_et_al_2015,1
 "24.674, -81.242",2,"Lewis_et_al_2007_12, Lewis_et_al_2007_25",Lewis_et_al_2007,1
@@ -461,7 +462,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "25.2148, -80.5404",4,"tc _ 1, tc _ 2, Fourqurean_unpublished_7, Fourqurean_unpublished_8","Howard_and_Fourqurean_2020, Fourqurean_unpublished",2
 "25.214869, -80.531304",3,"TS8-C1, TS8-C2, TS8-C3",Rovai_et_al_2022,1
 "25.299336, -80.955321",3,"NR-C1, NR-C2, NR-C3",Rovai_et_al_2022,1
-"25.363925000000002, -81.07849444444444",2,"SH3-1, SH3-3",Breithaupt_et_al_2014,1
+"25.363925, -81.07849444444444",2,"SH3-1, SH3-3",Breithaupt_et_al_2014,1
 "25.364747, -81.07154",3,"SRS6-C1, SRS6-C2, SRS6-C3",Rovai_et_al_2022,1
 "25.410175, -80.963883",2,"WSC02A, WSC02B",Breithaupt_et_al_2017,1
 "25.42345, -81.060336",3,"WSC08A, WSC08B, WSC8A","Breithaupt_et_al_2017, Breithaupt_et_al_2020",2
@@ -1191,9 +1192,11 @@ lat_long,n,core_ids,study_ids,num_studies
 "47.37584, -70.05553",6,"LP1-1, LP1-2, LP1-3, LP2-1, LP2-2, LP2-3",Gu_et_al_2020,1
 "47.3759, -70.05544",6,"LP3-1, LP3-2, LP3-3, SP1-1, SP1-2, SP1-3",Gu_et_al_2020,1
 "47.975, -122.1799",2,"WW_A, WW_B",Poppe_et_al_2019,1
+"47.9902, -122.1611",2,"SP_A, SP_B",Poppe_et_al_2019,1
 "48.0035999999999, -122.1616",2,"SS_A, SS_B",Poppe_et_al_2019,1
 "48.0307, -122.1784",2,"US_A, US_B",Poppe_et_al_2019,1
 "48.0313999999999, -122.154799999999",2,"HP_A, HP_B",Poppe_et_al_2019,1
+"48.0352, -122.1626",2,"NE_A, NE_B",Poppe_et_al_2019,1
 "48.0382, -122.1634",2,"MA_A, MA_B",Poppe_et_al_2019,1
 "48.0394999999999, -122.1573",2,"QW_A, QW_B",Poppe_et_al_2019,1
 "48.198480000000004, -122.3645",2,"28A, 28B",Poppe_and_Rybczyk_2019,1
@@ -1429,4 +1432,4 @@ lat_long,n,core_ids,study_ids,num_studies
 "9.96677907531132, -85.10665234760737",3,"Jicaral_Camaronera_10_1, Jicaral_Camaronera_10_2, Jicaral_Camaronera_10_3",Cifuentes_et_al_2024_Nicoya,1
 "9.96894954420873, -85.05045723911242",3,"Lepanto_Camaronera_7_1, Lepanto_Camaronera_7_2, Lepanto_Camaronera_7_3",Cifuentes_et_al_2024_Nicoya,1
 "9.968966354089195, -85.04798593204679",3,"Lepanto_Camaronera_8_1, Lepanto_Camaronera_8_2, Lepanto_Camaronera_8_3",Cifuentes_et_al_2024_Nicoya,1
-"NA, NA",13,"SB1, SS1, Bu_Tinah_Shamal_mangrove_2, NE_B, SP_B, Coastal_EDU_Field_2, Buenaventura_Camaronera_4_1, Buenaventura_Camaronera_4_2, Buenaventura_Camaronera_4_3, Buenaventura_Camaronera_5_1, Buenaventura_Camaronera_5_2, Buenaventura_Camaronera_5_3, SM10","Thom_1992, Schile-Beers_and_Megonigal_2017, Poppe_et_al_2019, Drexler_et_al_2013, Cifuentes_et_al_2024_Nicoya, Belshe_et_al_2019",6
+"NA, NA",9,"SB1, SS1, Coastal_EDU_Field_2, Buenaventura_Camaronera_4_1, Buenaventura_Camaronera_4_2, Buenaventura_Camaronera_4_3, Buenaventura_Camaronera_5_1, Buenaventura_Camaronera_5_2, Buenaventura_Camaronera_5_3","Thom_1992, Drexler_et_al_2013, Cifuentes_et_al_2024_Nicoya",3

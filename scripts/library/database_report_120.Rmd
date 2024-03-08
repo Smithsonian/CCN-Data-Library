@@ -208,7 +208,37 @@ New cores: `r nrow(new %>% distinct(study_id, core_id))`
 New dated cores: `r nrow(new %>% drop_na(dates_qual_code))`
 
 
-<!-- ### Contributions: -->
+```{r fig.height=6, fig.width=10}
+# stats_orig %>%
+  # mutate(new_total = `Cores Available prior to project` + `New Cores (hook or publish)`,
+  #        `Target Country` = recode(`Target Country`, "Federated States of Micronesia" = "Micronesia"),
+  #        `Target Country` = fct_reorder(`Target Country`, new_total)) %>%
+  # filter(new_total != 0) %>%
+
+# synth_comparison <- bind_rows(left_join(previous, current_cores) %>% count(country) %>% mutate(version = previous_version),
+#                         current_cores %>% count(country) %>% mutate(version = current_version))
+
+synth_comparison <- full_join(left_join(previous, current_cores) %>% count(country, name = "previous_n"),
+                              current_cores %>% count(country, name = "current_n")) %>% 
+  mutate(previous_n = case_when(is.na(previous_n) ~ 0, T ~ previous_n), 
+         change = current_n - previous_n) %>% 
+  filter(change > 0) %>% 
+      mutate(country = fct_reorder(country, previous_n)) %>% 
+
+  filter(!is.na(country))
+  
+synth_comparison %>% select(-change) %>% 
+  pivot_longer(-country, names_to = "version", values_to = "n") %>% 
+  ggplot() +
+  geom_point(aes(n, country, col = version), alpha = 0.7, size = 2) +
+  geom_segment(data = synth_comparison, aes(y = country, yend = country, x = previous_n, xend = current_n), 
+               colour = "black", arrow = arrow(length = unit(0.1, "cm"))) +
+  ggbreak::scale_x_break(c(1800, 4500)) +
+  xlab("Change in Data Representation") + ylab("Country") +
+  theme_bw(base_size = 15)
+
+ggsave("docs/quarterly_reports/v120/country_data_progress.jpg")
+```
 
 ```{r eval=FALSE}
 # top contributors 

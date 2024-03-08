@@ -4,6 +4,8 @@ cores <- ccrcn_synthesis$cores
 depthseries <- ccrcn_synthesis$depthseries
 
 max_depths <- depthseries %>% 
+  mutate(depth_min = case_when(is.na(depth_min) ~ representative_depth_min, T ~ depth_min),
+         depth_max = case_when(is.na(depth_max) ~ representative_depth_max, T ~ depth_max)) %>% 
   filter(complete.cases(depth_max)) %>% 
   mutate(depth_max = as.numeric(depth_max)) %>% 
   group_by(study_id, core_id) %>% 

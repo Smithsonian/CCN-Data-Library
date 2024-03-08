@@ -214,7 +214,7 @@ if(join_status == TRUE){
   source("scripts/3_post_processing/2_assign_habitat.R")
   source("scripts/3_post_processing/3_assign_data_tiers.R")
   source("scripts/3_post_processing/4_max_depths.R")
-  # source("scripts/3_post_processing/5_core_attributes.R")
+  source("scripts/3_post_processing/5_core_attributes.R")
   source("scripts/3_post_processing/7_resolve_taxonomy.R")
 }
 

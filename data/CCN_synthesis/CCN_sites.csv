@@ -96,8 +96,8 @@ Schile-Beers_and_Megonigal_2017,Kalba West,NA,25.00956,25.00956,56.35998,56.3599
 Campbell_et_al_2015,Marawah,NA,24.27702,24.27702,53.34829,53.34829,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Schile-Beers_and_Megonigal_2017,Marawah Island,NA,24.282847800000003,24.280858199999997,53.3140163,53.3131607,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Schile-Beers_and_Megonigal_2017,Rafiq Island,NA,24.1514929,24.1511701,54.0775456,54.0766864,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Schile-Beers_and_Megonigal_2017,Ras al Kaimah,NA,25.77278,25.77278,55.94654,55.94654,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Campbell_et_al_2015,Ras Muhayjij,NA,24.25276667,24.25276667,51.66758333,51.66758333,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Ras al Kaimah,NA,25.77278,25.77278,55.94654,55.94654,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Schile-Beers_and_Megonigal_2017,Sabkha Moon,NA,24.12422406532245,24.12329344860705,54.04969287238734,54.04938240373926,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Schile-Beers_and_Megonigal_2017,Salaam,NA,24.450547,24.450307000000002,54.4104337,54.4093813,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Campbell_et_al_2015,Sila peninsula,NA,24.23258,24.23258,51.79963,51.79963,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -506,6 +506,116 @@ Morgan_et_al_2024,Mousam_River,"Mousam River, Kennebunk, ME",43.346944444444446,
 Morgan_et_al_2024,Little_River,"Little River, Wells, ME",43.34,NA,-70.54416666666667,NA,saline,NA,NA,NA,NA,NA,NA,NA,NA
 Morgan_et_al_2024,Drakes_Island,"Drake's Island, Wells, ME",43.32694444444445,NA,-70.56277777777777,NA,saline,NA,NA,NA,NA,NA,NA,NA,NA
 Morgan_et_al_2024,Seavey_Creek,"Seavey Creek, Rye, NH",43.04805555555556,NA,-70.72361111111111,NA,saline,NA,NA,NA,NA,NA,NA,NA,NA
+Adams_and_Human_2016,St Lucia,"KZN, Subtropical, Estuarine Lake",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Bekker_2015,Knysna,"Western Cape, Warm Temperate, Estuarine Bay, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Bekker_2015,Knysna,"Western Cape, Warm Temperate, Estuarine Bay, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Bekker_2015,Knysna,"Western Cape, Warm Temperate, Estuarine Bay, Submerged",NA,NA,NA,NA,NA,NA,NA,seagrass,field observation,NA,NA,field observation,NA
+Bezuidenhout_et_al_2011,Seekoei,"Western Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Bezuidenhout_et_al_2011,Kromme,"Warm Temperate, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Bezuidenhout_et_al_2011,Kromme,Warm Temperate,NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Bezuidenhout_et_al_2011,Mngazi,"Subtropical, Large Temporarily Closed, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Bezuidenhout_et_al_2011,Kromme,"Warm Temperate, Submerged",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Brown_and_Rajkaran_2020,Berg,"Western Cape, Cool Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,low,field observation,NA
+Brown_and_Rajkaran_2020,Heuningnes,"Western Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,low,field observation,NA
+Brown_and_Rajkaran_2020,Kwelera,"Eastern Cape, Warm Temperate, Predominantly Open",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,low,field observation,NA
+Brown_and_Rajkaran_2020,Kwelera,"Eastern Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,low,field observation,NA
+Brown_and_Rajkaran_2020,Langebaan,"Western Cape, Cool Temperate, Estuarine Lagoon, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,low,field observation,NA
+Brown_and_Rajkaran_2020,Nahoon,"Eastern Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,low,field observation,NA
+Brown_and_Rajkaran_2020,Olifants,"Western Cape, Cool Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,low,field observation,NA
+Brown_and_Rajkaran_2020,Nahoon,"EC, Warm temperate, Predominantly Open, Neap",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Brown_and_Rajkaran_2020,Kobonqaba,"Eastern Cape, Warm temperate, Predominantly Open, Submerged",NA,NA,NA,NA,NA,NA,NA,seagrass,field observation,NA,NA,field observation,NA
+Els_2017,Knysna,"Western Cape, Warm Temperate, Estuarine Lake, Submerged",NA,NA,NA,NA,NA,NA,NA,seagrass,field observation,NA,NA,field observation,NA
+Els_2019,Swartkops,"Eastern Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,seagrass,field observation,NA,NA,field observation,NA
+Els_2019,Swartkops,"Eastern Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Els_2019,Swartkops,"Eastern Cape, Warm Temperate, Predominantly Open, Submerged",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Geldenhyus_et_al_2016,Nahoon,"EC, Warm temperate, Predominantly Open, Neap",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Geldenhyus_et_al_2016,Nahoon,"EC, Warm temperate, Predominantly Open, Spring",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Hoppe-Speer_et_al_2013,Nxaxo,Warm Temperate,NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Hoppe-Speer_et_al_2013,St Lucia,"KZN, Subtropical, Estuarine Lake",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Human_et_al_2022,Swartkops Estuary,Eastern Cape,NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Johnson_et_al_2020,Nxaxo,"Eastern Cape, Warm Temperate, Large Temporarily Closed",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Lemley_2018,Gamtoos,"Eastern Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Lemley_2018,Kariega,"Eastern Cape, Warm Temperate, Predominantly Open, Submerged",NA,NA,NA,NA,NA,NA,NA,seagrass,field observation,NA,NA,field observation,NA
+Matabane_2018,Swartkops,"Eastern Cape, Warm Temperate, Predominantly Open, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Matabane_2018,Swartkops,"Eastern Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Mbense_et_al_2016,Kobonqaba,"Eastern Cape, Warm temperate, Predominantly Open",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Mbense_et_al_2016,Kobonqaba,"Eastern Cape, Warm temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Mbense_et_al_2016,Kobonqaba,"Warm temperate, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Mbense_et_al_2016,Nxaxo,Warm Temperate,NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Mbense_et_al_2016,Nxaxo,Warm Temperate,NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Mbense_et_al_2016,St Lucia,"KZN, Subtropical, Estuarine Lake",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Mbense_2019,Nxaxo,"Eastern Cape, Warm Temperate, Large Temporarily Closed, Intertidal",NA,NA,NA,NA,NA,NA,NA,seagrass,field observation,NA,NA,field observation,NA
+Mbense_2019,Nxaxo,"Eastern Cape, Warm Temperate, Large Temporarily Closed, Submerged",NA,NA,NA,NA,NA,NA,NA,seagrass,field observation,NA,NA,field observation,NA
+Mbense_2019,Nxaxo,"Eastern Cape, Warm Temperate, Large Temporarily Closed, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Naidoo_2014,Duiwenhoks,"Warm Temperate, Predominantly Open, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Peer_et_al_2018,Mntafufu,"Eastern Cape, Warm Temp, Predominantly Open",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Peer_et_al_2018,Durban Bay,"KwaZulu Natal, Subtropical, Estuarine Bay",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Peer_et_al_2018,Kosi,"KwaZulu Natal, Tropical, Estuarine Lake",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Peer_et_al_2018,Mfolozi,"KwaZulu Natal, Subtropical, Large Fluvially Dominated",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Peer_et_al_2018,Mhlathuze,"KwaZulu Natal, Subtropical, Predominantly Open",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Peer_et_al_2018,Mlalazi,"KwaZulu Natal, Subtropical, Estuarine Bay",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Peer_et_al_2018,Mlalazi,"KwaZulu Natal, Subtropical, Predominantly Open",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Peer_et_al_2018,Nahoon,"Eastern Cape, Warm Temperate, Predominantly Open",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Peer_et_al_2018,Richards Bay,"KwaZulu Natal, Subtropical, Estuarine Bay",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Peer_et_al_2018,St Lucia,"KwaZulu Natal, Subtropical, Estuarine Lake",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Peer_et_al_2018,Umngeni,"KwaZulu Natal, Subtropical",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Peer_et_al_2018,Mngazana,"Eastern Cape, Subtropical, Predominantly Open",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Peer_et_al_2018,Nxaxo,"Eastern Cape, Warm Temperate, Large Temporarily Closed",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Rajkaran_and_Adams_2011,Mngazana,"EC, Subtropical, Predominantly Open, Submerged",NA,NA,NA,NA,NA,NA,NA,seagrass,field observation,NA,NA,field observation,NA
+Rajkaran_and_Adams_2011,Mngazana,"EC, Subtropical, Predominantly Open",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Rajkaran_and_Adams_2011,Nxaxo,"EC, Warm Temperate, Large Temporarily Closed",NA,NA,NA,NA,NA,NA,NA,NA,field observation,NA,NA,field observation,NA
+Rajkaran_and_Adams_2011,Kosi Bay,"KZN, Tropical, Estuarine Lake",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Rajkaran_and_Adams_2011,Mhlathuze,"KZN, Subtropical, Predominantly Open",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Rajkaran_and_Adams_2011,St Lucia,"KZN, Subtropical, Estuarine Lake",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Rajkaran_and_Adams_2011,Nxaxo,Warm Temperate,NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Rajkaran_and_Adams_2011,Richards Bay,"KZN, Subtropical, Estuarine Lake",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Rajkaran_and_Adams_2011,Nxaxo,"Eastern Cape, Warm Temperate, Predominantly Open",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Rautenbach_2015,St Lucia,"KZN, Subtropical, Estuarine Lake",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Raw_et_al_2019,Nahoon,"Eastern Cape, Warm Temperate, Predominantly Open, Neap",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Raw_et_al_2019,Nahoon,"Eastern Cape, Warm Temperate, Predominantly Open, Neap",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Raw_et_al_2019,Nxaxo,"Eastern Cape, Warm Temperate, Large Temporarily Closed",NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Raw_et_al_2019,Nxaxo,"Eastern Cape, Warm Temperate, Large Temporarily Closed, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Knysna,"Eastern Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Knysna,"Western Cape, Warm Temperate, Estuarine Bay, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Knysna,"Western Cape, Warm Temperate, Estuarine Bay, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Knysna,"Western Cape, Warm Temperate, Estuarine Bay, Submerged",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Kromme,"Eastern Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Kromme,"Eastern Cape, Warm Temperate, Predominantly Open, Submerged",NA,NA,NA,NA,NA,NA,NA,seagrass,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Kromme,"Western Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,seagrass,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Swartkops,"Eastern Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Swartkops,"Eastern Cape, Warm Temperate, Predominantly Open, Submerged",NA,NA,NA,NA,NA,NA,NA,seagrass,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Swartkops,"Eastern Cape, Warm Temperate, Predominantly Open",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Kabeljous,"Eastern Cape, Warm Temperate, Large Temporarily Closed, Supratidal Fringe",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Kabeljous,"Eastern Cape, Warm Temperate, Large Temporarily Closed, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Berg,"Western Cape, Cool Temperate, Predominantly Open, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,low,field observation,NA
+Veldkornet_2016_PhD,Berg,"Western Cape, Cool Temperate, Predominantly Open, Supra, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Berg,"Western Cape, Cool Temperate, Predominantly Open, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Berg,"Western Cape, Cool Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Keurbooms,"Western Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Keurbooms,"Western Cape, Warm Temperate, Predominantly Open, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Keurbooms,"Western Cape, Warm Temperate, Predominantly Open, Submerged",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Kromme,"Warm Temperate, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Kromme,"Warm Temperate, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Goukou,"Eastern Cape, Warm Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Goukou,"Eastern Cape, Warm Temperate, Predominantly Open, Supratidal/Fringe",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Gouritz,"Eastern Cape, Warm Temperate, Predominantly Open",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Great Brak,"Western Cape, Warm Temperate, Estuarine Bay, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Great Brak,"Western Cape, Warm Temperate, Estuarine Bay, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Kleinmond,"Western Cape, Cool Temperate, Estuarine Lake, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Uilkraals,"Western Cape, Cool Temperate, Predominantly Open, Supra, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Uilkraals,"Western Cape, Cool Temperate, Predominantly Open, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Uilkraals,"Western Cape, Cool Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Verlorenvlei,"Western Cape, Cool Temperate, Estuarine Lake, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_2016_PhD,Verlorenvlei,"Western Cape, Cool Temperate, Estuarine Lake, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_et_al_2016,Orange,"Western Cape, Cool Temperate, Large Fluvially Dominated, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_et_al_2016,Orange,"Western Cape, Cool Temperate, Large Fluvially Dominated, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_et_al_2016,Olifants,"Western Cape, Cool Temperate, Predominantly Open, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Veldkornet_et_al_2016,Olifants,"Western Cape, Cool Temperate, Predominantly Open, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Verle_2013,Mbashe,Warm Temperate,NA,NA,NA,NA,NA,NA,NA,forested,field observation,NA,NA,field observation,NA
+Vromans_2010,East Kleinemonde,"Eastern Cape, Warm Temperate, Large Temporarily Closed, Submerged",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Vromans_2010,East Kleinemonde,"Eastern Cape, Warm Temperate, Large Temporarily Closed, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Vromans_2010,East Kleinemonde,"Eastern Cape, Warm Temperate, Large Temporarily Closed, Intertidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
+Wooldridge_et_al_2016,Groen,"Western Cape, Cool Temperate, Arid Predominantly Closed, Supratidal",NA,NA,NA,NA,NA,NA,NA,emergent,field observation,NA,NA,field observation,NA
 Kauffman_et_al_2020,Barview Eelgrass,Coos Bay Estuary,43.3459,43.3454,-124.3182,-124.3189,NA,NA,NA,seagrass,NA,NA,NA,NA,NA
 Kauffman_et_al_2020,Blind Slough Swamp,Lower Columbia River Estuary,46.1924,46.1919,-123.579,-123.5807,NA,NA,NA,forested,NA,NA,NA,NA,NA
 Kauffman_et_al_2020,Chehalis Flood Plain,Grays Harbor Estuary,46.9419,46.9411,-123.7209,-123.7215,NA,NA,NA,forested,NA,NA,NA,NA,NA
@@ -698,13 +808,13 @@ Doughty_et_al_2016,KCSC-20C,NA,28.581994899999998,28.579332100000002,-80.6701826
 Doughty_et_al_2016,MIPineIsland,NA,28.4908287,28.4902083,-80.7228217,-80.7234853,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Doughty_et_al_2016,MIT-9N,NA,28.7098023,28.7090787,-80.7380332,-80.7390388,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Doughty_et_al_2016,MIT-9S,NA,28.708249600000002,28.707894399999997,-80.73795059999999,-80.7382314,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Callaway_et_al_2019,Brown_Island,Tidal brackish wetland in San Francisco Bay estuary,38.038935099999996,38.035741900000005,-121.85758399999999,-121.86944000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Callaway_et_al_2019,China_Camp,"Saline, natural wetland in San Francisco Bay estuary",38.016055099999996,38.0079299,-122.48365720000001,-122.50177479999999,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Callaway_et_al_2019,Brown_Island,Tidal brackish wetland in San Francisco Bay estuary,38.0389351,38.035741900000005,-121.857584,-121.86944,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Callaway_et_al_2019,China_Camp,"Saline, natural wetland in San Francisco Bay estuary",38.0160551,38.0079299,-122.4836572,-122.5017748,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Callaway_et_al_2019,Cogswell,Restored salt marsh in San Francisco Bay estuary,37.6417974,37.6320126,-122.1479458,-122.1519442,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Callaway_et_al_2019,Coon_Island,"Saline, natural wetland in San Francisco Bay estuary",38.1998057,38.1853373,-122.3185862,-122.3263358,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Callaway_et_al_2019,Muzzi,Restored salt marsh in San Francisco Bay estuary,37.9298808,37.9261392,-122.5030651,-122.5096279,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Callaway_et_al_2019,Petaluma_River,"Saline, natural wetland in San Francisco Bay estuary",38.1818061,38.1566769,-122.5419045,-122.5555665,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Callaway_et_al_2019,Rush_Ranch,Tidal brackish wetland in San Francisco Bay estuary,38.2037069,38.1882521,-122.00915529999999,-122.0421757,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Callaway_et_al_2019,Rush_Ranch,Tidal brackish wetland in San Francisco Bay estuary,38.2037069,38.1882521,-122.0091553,-122.0421757,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Callaway_et_al_2019,Whale's_Tail,"Saline, 100 year old wetland in San Francisco Bay estuary",37.6016588,37.5864812,-122.1414779,-122.1459311,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Belshe_et_al_2019,EP,"Es Port Bay is located on the island of Cabrera, which is the largest island in the Cabrera Archipelage, located a few kilometers south of Mallorca (Balearic Islands, western Mediterranean). A soil core was collected at 5 m water depth within a Posidonia oceanica meadow",39.14496,39.14496,2.93326,2.93326,NA,NA,NA,NA,NA,NA,NA,NA,site is subtidal and fully submerged
 Belshe_et_al_2019,SM,"Santa Maria Bay is located on the island of Cabrera, which is the largest island in the Cabrera Archipelage, located a few kilometers south of Mallorca (Balearic Islands, western Mediterranean). Soil cores were collected at 5, 10, 15 and 25 m water depth within a Posidonia oceanica meadow",39.15364,39.1498,2.9495410000000004,2.9453289999999996,NA,NA,NA,NA,NA,NA,NA,NA,site is subtidal and fully submerged
