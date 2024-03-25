@@ -129,7 +129,9 @@ if("fraction_carbon" %in% ds_cols){
 This produces the plot with a special css class
 <div class="superbigimage">
 ```{r plot_it, fig.width=12}
-plot_c_profiles
+if("fraction_carbon" %in% ds_cols){
+  plot_c_profiles
+}
 ```
 </div>
 
@@ -150,36 +152,60 @@ depthseries %>% drop_na(dry_bulk_density) %>%
 
 ``` {r 210Pb depth profiles, fig.height=12, fig.width=12}
 
-if(c("ra226_activity", "total_pb210_activity", "excess_pb210_activity") %in% ds_cols){ # make this better
+
+if(any(c("ra226_activity", "total_pb210_activity", 
+         "excess_pb210_activity", "pb214_activity", 
+         "bi214_activity") %in% ds_cols)){ # make this better
   # total_pb210_activity_se may need to be calculated:
 # pbsubset <- depthseries %>% 
 #   drop_na(excess_pb210_activity, ra226_activity) %>% 
 #   mutate(total_pb210_activity_se = excess_pb210_activity + ra226_activity)
 # though it may already exist for some datasets
 
-pbdata_se <- depthseries %>%
+possible_ses <-c("ra226_activity_se", "total_pb210_activity_se", 
+         "excess_pb210_activity_se", "pb214_activity_se", 
+         "bi214_activity_se") 
+
+ses_there <- F
+if (any(possible_ses%in%names(depthseries))) {
+  ses_there <- T
+  ses_in_dataset <- possible_ses[which(possible_ses%in%names(depthseries))]
+}
+
+possible_radioisotopes <-c("ra226_activity", "total_pb210_activity", 
+         "excess_pb210_activity", "pb214_activity", 
+         "bi214_activity") 
+
+radioisotoopes_in_dataset <- possible_radioisotopes[which(possible_radioisotopes%in%names(depthseries))]
+
+if (ses_there) {
+  
+  pbdata_se <- depthseries %>%
   # mutate(ra226_activity_se = NA,
   #        total_pb210_activity_se = NA) %>% 
   select(core_id, depth_min,
-         ra226_activity_se, total_pb210_activity_se, excess_pb210_activity_se) %>%
-  rename(ra226_activity = ra226_activity_se, 
-         total_210Pb_activity = total_pb210_activity_se,
-         excess_pb210_activity = excess_pb210_activity_se) %>%
+         ses_in_dataset)
+
+names(pbdata_se) <- str_remove_all(names(pbdata_se), "_se")
+
+pbdata_se <- pbdata_se %>% 
   gather(key="element", value="radioactivity_se", -core_id, -depth_min) %>% 
   drop_na(radioactivity_se)
+}
 
 pbdata <- depthseries %>%
-  select(core_id, depth_min, total_pb210_activity,
-         ra226_activity, excess_pb210_activity) %>%
+  select(core_id, depth_min, radioisotoopes_in_dataset) %>%
   gather(key="element", value="radioactivity", -core_id, -depth_min) %>% 
-  drop_na(radioactivity) %>% 
-  left_join(pbdata_se)
+  drop_na(radioactivity)
 
-ggplot(pbdata, aes(x = depth_min, y = radioactivity, color = element)) +
+if (ses_there) {
+  pbdata <- pbdata %>% 
+    left_join(pbdata_se)
+}
+
+pb_fig <- ggplot(pbdata, aes(x = depth_min, y = radioactivity, color = element)) +
   geom_line() +
   geom_point(size = 2, pch=21, fill="white") +
-  geom_segment(aes(x = depth_min, y = radioactivity - radioactivity_se,
-                   xend = depth_min, yend = radioactivity + radioactivity_se)) +
   facet_wrap(~core_id) +
   xlab("Max Depth (cm)") + 
   ylab(expression(paste("Radioactivity (dpm g"^"-1",")",sep=""))) +
@@ -188,6 +214,13 @@ ggplot(pbdata, aes(x = depth_min, y = radioactivity, color = element)) +
   theme_bw(base_size = 15) +
   theme(legend.position="bottom") +
   ggtitle("Pb-210 Depth Profiles")
+
+if (ses_there) {
+  pb_fig <- pb_fig +   geom_segment(aes(x = depth_min, y = radioactivity - radioactivity_se,
+                   xend = depth_min, yend = radioactivity + radioactivity_se))
+}
+
+(pb_fig)
 }
 ```
 
