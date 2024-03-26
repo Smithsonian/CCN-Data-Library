@@ -61,7 +61,7 @@ Elsey_Quirk_cs137 <- read_csv("data/primary_studies/Elsey-Quirk_et_al_2011/inter
 removed_studies <- c("Gonneea_et_al_2018", "Drexler_et_al_2009", "Weis_et_al_2001", "Noe_et_al_2016", "Johnson_et_al_2007", "Watson_and_Byrne_2013",
                      "Boyd_and_Sommerfield_2016", "Unger_et_al_2016", "Boyd_2012", "Boyd_et_al_2017", "Callaway_et_al_2012", "Piazza_et_al_2011",
                      "Gerlach_et_al_2017", "Craft_2007", "Crooks_et_al_2014", "Crooks_et_al_2013", "Breithaupt_et_al_2014", "Kemp_et_al_2012", 
-                     "Ensign_et_al_2015", "Radabaugh_et_al_2018", "Drake_et_al_2015")
+                     "Ensign_et_al_2015", "Radabaugh_et_al_2017", "Drake_et_al_2015")
 
 ## 3. Data Curation #################
 
@@ -181,7 +181,9 @@ impacts <- raw_impacts %>%
   # The Crooks study ID should be 2014, not 2013. 
   recode_impact(impact_class = impact_class)%>%
   drop_na(impact_class) %>% 
-  filter(!(study_id %in% removed_studies))
+  filter(!(study_id %in% removed_studies)) %>% 
+  left_join(site_lookup) %>% 
+  select(study_id, site_id, core_id, impact_class)
   
 ## ... Species ####
 species <- raw_species %>%
@@ -192,7 +194,9 @@ species <- raw_species %>%
                                   "Hill_and_Anisfled_2015" = "Hill_and_Anisfeld_2015")) %>%
   filter(!(study_id %in% removed_studies)) %>%
   recode_species(species_code = species_code) %>%
-  drop_na(species_code)
+  drop_na(species_code) %>% 
+  left_join(site_lookup) %>% 
+  select(study_id, site_id, core_id, species_code)
 
 ## ... Methods ####
 
