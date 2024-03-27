@@ -25,6 +25,7 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 #load in data 
 methods_raw <- read_csv("data/primary_studies/Drake_et_al_2024/original/Drake_et_al_2024_methods.csv")
 cores_raw <- read_csv("data/primary_studies/Drake_et_al_2024/original/Drake_et_al_2024_cores.csv")
+cores_update <- read_csv("data/primary_studies/Drake_et_al_2024/original/Drake_et_al_2024_UPDATED_cores.csv")
 depthseries_raw <- read_csv("data/primary_studies/Drake_et_al_2024/original/Drake_et_al_2024_depthseries.csv")
 
   
@@ -48,14 +49,14 @@ methods <- reorderColumns("methods", methods)
 
 ## ... Cores ####
 
-cores <- cores_raw
+cores <- cores_update
 cores <- reorderColumns("cores", cores)
 
 
 ## ... Depthseries ####
 
 depthseries <- depthseries_raw %>% 
-  select(-fraction_nitrogen)
+  select(-fraction_nitrogen) 
 
 depthseries <- reorderColumns("depthseries", depthseries)
 
