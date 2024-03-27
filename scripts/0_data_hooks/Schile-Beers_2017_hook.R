@@ -194,7 +194,12 @@ cores <- core_data %>%
   # need to deal with sabkha and microbial mat later
   mutate(habitat = case_when(grepl("mangrove", vegetation_notes) ~ "mangrove",
                              vegetation_notes == "salt marsh" ~ "marsh",
-                             vegetation_notes == "seagrass" ~ "seagrass"))
+                             vegetation_notes == "seagrass" ~ "seagrass")) %>% 
+  #rose edits, add sabkha and microbial mat 
+  mutate(habitat = case_when(grepl("sabkha", vegetation_notes) ~ "sabkha",
+                             vegetation_notes == "microbial mat" ~ "microbial mat",
+                             TRUE ~ habitat))
+  
   
 
 ## ... 3D. Site level data #############
