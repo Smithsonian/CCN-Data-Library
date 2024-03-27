@@ -132,9 +132,14 @@ updated <- updateTables(table_names)
 sites <- updated$sites
 impacts <- updated$impacts
 methods <- updated$methods
-depthseries <- updated$depthseries
 cores <- updated$cores
 species <- updated$species
+
+depthseries <- updated$depthseries %>% 
+  
+  # one replicate taken without changing ID. corrected here with sample ID creation.
+  mutate(sample_id = case_when(core_id == "China_Camp_A_Low" & depth_min == 2 & fraction_carbon < 0.03 ~ "China_Camp_A_Low_2",
+                    T ~ NA))
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")

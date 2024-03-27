@@ -122,7 +122,8 @@ depthseries <- depthseries %>% mutate(depth_min = if_else(is.na(depth_min), 90, 
                                                             TRUE ~ depth_max))
 
 #reorder columns 
-depthseries <- reorderColumns("depthseries", depthseries)
+depthseries <- reorderColumns("depthseries", depthseries) %>% 
+  distinct()
 
 
 ## ... Species ####

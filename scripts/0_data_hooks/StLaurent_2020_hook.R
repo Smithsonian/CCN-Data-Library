@@ -31,7 +31,10 @@ depthseries <- depthseries_raw %>%
   rename(fraction_carbon = fraction_carbon_measured) %>%
   mutate(method_id = "single set of methods") %>% 
   select(-c(fraction_carbon_modeled, fraction_carbonate, 
-            fraction_nitrogen, fraction_hydrogen, fraction_sulfur, porewater_salinity))
+            fraction_nitrogen, fraction_hydrogen, fraction_sulfur, porewater_salinity)) %>% 
+  
+  # QAQC correction: sample IDs are not unique for some replicates. corrected here.
+  mutate(sample_id = make.unique(sample_id))
 
 # methods 
 methods <- methods_raw %>%
