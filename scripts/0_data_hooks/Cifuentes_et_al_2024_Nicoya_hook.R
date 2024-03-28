@@ -84,7 +84,7 @@ impacts <- reorderColumns("impacts", impacts)
 ## Mapping
 leaflet(cores) %>%
   addTiles() %>% 
-  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3)
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
           #leaflet does not like special character in some site names 
 
 #table names
@@ -119,15 +119,15 @@ cifuentes_bib <- as.data.frame(GetBibEntryWithDOI("10.25573/serc.24943866")) %>%
   remove_rownames() %>% 
   select(study_id, bibliography_id, publication_type, everything())
 
-write_csv(cifuentes_bib, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_study_citations.csv") 
+write_excel_csv(cifuentes_bib, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_study_citations.csv") 
 
 ## 4. Write files ####
 
 # Adjust the filepaths to output to the correct derivative folder
-write_csv(cores, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_cores.csv") 
-write_csv(depthseries, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_depthseries.csv")
-write_csv(methods, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_methods.csv")
-write_csv(impacts, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_impacts.csv")
+write_excel_csv(cores, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_cores.csv") 
+write_excel_csv(depthseries, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_depthseries.csv")
+write_excel_csv(methods, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_methods.csv")
+write_excel_csv(impacts, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_impacts.csv")
 # write_csv(species, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_species.csv")
 # write_csv(impacts, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_impacts.csv")
 

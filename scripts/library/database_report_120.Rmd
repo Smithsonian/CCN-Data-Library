@@ -32,7 +32,6 @@ library(plotly)
 library(DT)
 library(rnaturalearth)
 
-guess_max <- 15000
 ```
 
 ```{r}
@@ -56,8 +55,12 @@ versions <- read_csv("docs/synthesis_resources/synthesis_history.csv")
 core_versions <- versions %>% filter(table == "cores")
 
 # read in current version
+guess_max <- nrow(read_csv("data/CCN_synthesis/CCN_cores.csv"))
+
 current_cores <- read_csv("data/CCN_synthesis/CCN_cores.csv", guess_max = guess_max) %>% 
-  mutate(country = case_when(country == "Laos" ~ "Vietnam", T ~ country)) # spot fix for Bukoski et al 2017
+  mutate(country = case_when(country == "Laos" ~ "Vietnam", 
+                             country == "Russian Federation" ~ "Russia",
+                             T ~ country)) # spot fix for Bukoski et al 2017
 current_version <- "1.2.0"
 ```
 
@@ -117,8 +120,7 @@ synthesis_history_trim <- synthesis_history %>%
 ```{r}
 # Choropleth Map of Total Cores for all Countries
 
-country_cores <- current_cores %>% drop_na(country) %>% count(country, name = "core_count") %>% 
-  mutate(country = recode(country, "Russian Federation" = "Russia")) 
+country_cores <- current_cores %>% drop_na(country) %>% count(country, name = "core_count")
 
 # world with naturalearth data
 world_ne <- ne_countries(returnclass = "sf",
@@ -186,10 +188,11 @@ ggsave("docs/quarterly_reports/v120/habitat_barplot.jpg", width = 6, height = 6)
 
 ```{r}
 # isolate the most recent two versions of the synthesis
-previous_version <- core_versions %>% 
-  filter(version != "1.1.0") %>%  # this overestimated the core count (V1.1.1 was the correction)
-  arrange(desc(version)) %>% 
-  head(1) %>% pull(version)
+previous_version <- core_versions %>% filter(version == "1.0.0") %>% 
+  # filter(version != "1.1.0") %>%  # this overestimated the core count (V1.1.1 was the correction)
+  # arrange(desc(version)) %>% 
+  # head(1) %>% 
+    pull(version)
 
 # current <- synthesis_history_trim %>% filter(version == last_two[1]) %>% select(study_id, core_id)
 previous <- synthesis_history_trim %>% filter(version == previous_version) %>% select(study_id, core_id)
@@ -230,30 +233,42 @@ synth_comparison <- full_join(left_join(previous, current_cores) %>% count(count
 synth_comparison %>% select(-change) %>% 
   pivot_longer(-country, names_to = "version", values_to = "n") %>% 
   ggplot() +
-  geom_point(aes(n, country, col = version), alpha = 0.7, size = 2) +
+  geom_point(aes(n, country, col = version), alpha = 0.5, size = 2) +
+    scale_color_manual(values = c("blue", "red")) +
   geom_segment(data = synth_comparison, aes(y = country, yend = country, x = previous_n, xend = current_n), 
                colour = "black", arrow = arrow(length = unit(0.1, "cm"))) +
-  ggbreak::scale_x_break(c(1800, 4500)) +
-  xlab("Change in Data Representation") + ylab("Country") +
-  theme_bw(base_size = 15)
 
-ggsave("docs/quarterly_reports/v120/country_data_progress.jpg")
+  ggbreak::scale_x_break(c(1800, 3800)) +
+  xlab("Change in Data Representation") + ylab("Country") +
+  theme_bw(base_size = 12) + theme(legend.position = "bottom")
+
+ggsave("docs/quarterly_reports/v120/country_data_progress.jpg", width = 7, height = 7)
+
 ```
 
 ```{r eval=FALSE}
-# top contributors 
-new %>% group_by(study_id) %>% 
-  summarise(core_count = n(),
-            countries = paste(unique(country), collapse = ", "),
-            habitats = paste(unique(habitat), collapse = ", ")) %>% 
-  arrange(study_id) %>% 
-  datatable(options = list(searching = TRUE,
-                         paging = FALSE,
-                         info = FALSE,
-                         scrollY = 300,
-                         scrollX = 300,
-                         scrollCollapse = TRUE),
-          rownames = FALSE)
+
+bib <- read_csv("data/CCN_synthesis/CCN_study_citations.csv")
+
+new_bib <- bib %>%  filter(study_id %in% unique(new$study_id)) %>% 
+  select(-study_id) %>% distinct() %>% 
+  arrange(bibliography_id)
+
+write_csv(new_bib, "docs/quarterly_reports/v120/new_cores_bibliography.csv")
+
+# # top contributors 
+# new %>% group_by(study_id) %>% 
+#   summarise(core_count = n(),
+#             countries = paste(unique(country), collapse = ", "),
+#             habitats = paste(unique(habitat), collapse = ", ")) %>% 
+#   arrange(study_id) %>% 
+#   datatable(options = list(searching = TRUE,
+#                          paging = FALSE,
+#                          info = FALSE,
+#                          scrollY = 300,
+#                          scrollX = 300,
+#                          scrollCollapse = TRUE),
+#           rownames = FALSE)
 
 ```
 
@@ -265,8 +280,7 @@ new %>% group_by(study_id) %>%
 
 library(rnaturalearth)
 
-new_country <- new %>% drop_na(country) %>% count(country, name = "core_count") %>% 
-  mutate(country = recode(country, "Russian Federation" = "Russia"))
+new_country <- new %>% drop_na(country) %>% count(country, name = "core_count")
 
 # world with naturalearth data
 world_ne <- ne_countries(returnclass = "sf",
@@ -296,7 +310,7 @@ ne_map <- ggplot(data = world_ne_cores) +
 
 # Static
 print(ne_map)
-ggsave(ne_map, filename = "docs/quarterly_reports/v120/new_cores_map.jpg")
+ggsave(ne_map, filename = "docs/quarterly_reports/v120/new_cores_map_v100_to_v120.jpg")
 
 # Static Maps with maps library
 # library(maps)
@@ -317,8 +331,7 @@ new %>%
   group_by(country, habitat) %>% 
   summarize(core_count = n(),
             sources = paste(unique(study_id), collapse = ", ")) %>% 
-  mutate(country = recode(country, "Russian Federation" = "Russia"),
-         sources = gsub("_", " ", sources)) %>% 
+  mutate(sources = gsub("_", " ", sources)) %>% 
   arrange(country) %>% 
   
 datatable(rownames = FALSE)
@@ -344,10 +357,11 @@ growth_fig <- synthesis_history_trim %>%
   # add_row(date = Sys.Date(),
   #         version = current_version,
   #         total_cores = nrow(current_cores)) %>% 
-  ggplot() +
-  geom_line(aes(date, total_cores)) +
-  geom_point(aes(date, total_cores)) +
-  xlab("Date") + ylab("Sediment Sample Count") +
+  ggplot(aes(date, total_cores)) +
+  geom_line() +
+  geom_point() +
+  # geom_col() +
+  xlab("Date") + ylab("Soil Sample Count") +
   theme_bw()
 ggsave(growth_fig, filename = "docs/quarterly_reports/v120/library_growth.jpg")
 
@@ -416,12 +430,28 @@ Change in Habitat Representativeness
 
 ```{r}
 
+# "marsh" = "#607549", 
+# "upland" = "#a45458",
+# "mangrove" = "#c86f31ff",
+# "unknown" = "#777774",
+# "seagrass" = "#30b1d4",
+# "unvegetated" = "#e7c687",
+# "scrub/shrub" = "#749189",
+# "swamp" = "#6487b8",
+#  "algal mat" = "#dfc4e9"
+
+habColors <- c("#607549", "#a45458", "#c86f31ff", "#777774", "#30b1d4", "#e7c687", "#749189", "#6487b8", "#dfc4e9")
+names(habColors) <- c("marsh", "upland", "mangrove", "unknown", "seagrass", "unvegetated", "scrub/shrub",
+                           "swamp", "algal mat")
+colScale <- scale_colour_manual(name = "habitat", values = habColors)
+# https://stackoverflow.com/questions/6919025/how-to-assign-colors-to-categorical-variables-in-ggplot2-that-have-stable-mappin
+
 # habitat change through time
 hab_fig <- habitat_change %>% 
   mutate(country = case_when(is.na(country) ~ "unknown", T ~ country),
          habitat = case_when(is.na(habitat) ~ "unknown", T ~ habitat)) %>% 
   
-  # filter(!(habitat %in% c("upland", "algal mat"))) %>% 
+  filter(!(habitat %in% c("upland", "algal mat", "unknown"))) %>%
   mutate(habitat = recode(habitat, "mudflat" = "unvegetated")) %>%
   group_by(date, version, habitat) %>% 
   summarise(core_count = sum(n)) %>% 
@@ -430,11 +460,13 @@ hab_fig <- habitat_change %>%
   geom_line(aes(date, core_count, col = habitat)) +
   geom_point(aes(date, core_count, col = habitat)) + 
   theme_bw() + 
-  ggtitle("Data Library Growth Across Habitat Types")
+  ggtitle("Data Library Growth Across Habitat Types") +
+  colScale
 
 ggplotly(hab_fig) %>% layout(autosize = F, width = 800, height = 500)
 
-ggsave(plot = hab_fig, filename = "docs/quarterly_reports/v120/library_growth_habitat.jpg")
+ggsave(plot = hab_fig, filename = "docs/quarterly_reports/v120/library_growth_habitat.jpg",
+       height=6, width=10)
 
 ```
 
@@ -471,10 +503,12 @@ Change in Sampling Depth across habitat
 simple_depths <- sampling_depths %>% 
   drop_na(max_depth) %>% 
   mutate(
+    # three classes of sampling depth
     depth_flag = case_when(max_depth < 20  ~ "shallow (<20cm)",
                            max_depth >= 20 & max_depth <= 100 ~ "mid (20-100cm)",
                                 max_depth > 100 ~ "deep (>100cm)",
                                 T ~ "unknown"),
+    # other categorizations
          # depth_flag = case_when(max_depth < 20 ~ "<20cm",
          #                        max_depth <= 100 ~ "20-100cm",
          #                        max_depth > 100 & max_depth <= 200 ~ "100-200cm",
@@ -484,7 +518,11 @@ simple_depths <- sampling_depths %>%
          habitat = case_when(is.na(habitat) ~ "unknown", 
                              habitat == "mudflat" ~ "unvegetated",
                              T ~ habitat)) %>% 
-  count(date, version, habitat, depth_flag)
+  count(date, version, habitat, depth_flag) %>% 
+  # calculate the change in composition through time
+  # not as fond of that figure
+  group_by(date, version, habitat) %>% 
+  mutate(depth_flag_percent = 100*(n/sum(n)))
 
 depth_fig <- simple_depths %>% 
   filter(!(habitat %in% c("unknown", "upland", "algal mat"))) %>% 

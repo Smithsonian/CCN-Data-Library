@@ -184,10 +184,10 @@ write_csv(study_citations, "data/primary_studies/Eagle_et_al_2021/derivative/Eag
 ## 4. Write files ####
 
 # Adjust the filepaths to output to the correct derivative folder
-write_csv(cores, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_cores.csv")
-write_csv(depthseries, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_depthseries.csv")
-write_csv(methods, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_methods.csv")
-write_csv(species, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_species.csv")
-write_csv(impacts, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_impacts.csv")
+write_excel_csv(cores, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_cores.csv")
+write_excel_csv(depthseries, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_depthseries.csv")
+write_excel_csv(methods, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_methods.csv")
+write_excel_csv(species, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_species.csv")
+write_excel_csv(impacts, "data/primary_studies/Eagle_et_al_2021/derivative/Eagle_et_al_2021_impacts.csv")
 
 
