@@ -271,7 +271,7 @@ if(join_status == TRUE){
   write_csv(ccrcn_synthesis$impacts, "./data/CCN_synthesis/CCN_impacts.csv")
   write_csv(ccrcn_synthesis$methods, "./data/CCN_synthesis/CCN_methods.csv")
   write_csv(ccrcn_synthesis$species, "./data/CCN_synthesis/CCN_species.csv")
-  write_csv(ccrcn_synthesis$study_citations %>% select(-keywords, -abstract), 
+  write_excel_csv(ccrcn_synthesis$study_citations %>% select(-keywords, -abstract), 
             "./data/CCN_synthesis/CCN_study_citations.csv")
   
   WriteBib(as.BibEntry(bib_file), "data/CCN_synthesis/CCN_bibliography.bib") # some encoding funny business here

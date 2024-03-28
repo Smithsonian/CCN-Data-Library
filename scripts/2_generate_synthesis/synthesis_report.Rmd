@@ -180,12 +180,13 @@ ds_uncontrolled <- ccrcn_synthesis$depthseries %>%
   join_uncontrolled_attributes <- bind_rows(join_uncontrolled_attributes, ds_uncontrolled)
 }
 
-join_uncontrolled_attributes <- join_uncontrolled_attributes %>% 
+if(nrow(join_uncontrolled_attributes) > 0){
+  join_uncontrolled_attributes <- join_uncontrolled_attributes %>% 
   mutate(value = case_when(grepl("[...]", attribute_name) ~ "row number index", # highlight row number index columns with a flag
                            grepl("([0-9]+).*$", value) ~ "numeric value", # replace numeric values with a flag
                            T ~ value)) %>% 
   distinct() %>% arrange(study_id)
-
+}
 ```
 
 The studies with uncontrolled attributes in essential tables are the following: 
@@ -208,7 +209,37 @@ datatable(join_uncontrolled_attributes,
 
 ### Uncontrolled Variables
 
-**COMING SOON**
+```{r}
+
+uc_vars <- str_split(toString(
+  qa_results %>% 
+    filter(grepl("Undefined variables", result)) %>% 
+    mutate(result = gsub("Undefined variables: ", "", result)) %>% 
+    pull(result)), 
+  pattern = ", ")[[1]]
+
+# use this table as a hack while I work on a better solution
+uncontrolled <- read_csv("docs/resolve_uncontrolled.csv") %>% 
+  filter(variable_name %in% uc_vars) %>% 
+  filter(attribute_name != "coring_method") %>% 
+  select(-c(action, definition, notes, uncontrolled_type)) %>% 
+  bind_rows(ccrcn_synthesis$methods %>% 
+              filter(coring_method %in% uc_vars) %>% select(study_id, coring_method) %>% 
+              rename(variable_name = coring_method) %>% 
+              mutate(table_name = "methods", attribute_name = "coring_method")) %>% 
+  distinct() %>% arrange(study_id)
+# theres a few that aren't included, but it's better than nothin
+
+datatable(uncontrolled,
+                    options = list(searching = TRUE,
+                         paging = FALSE,
+                         info = FALSE,
+                         scrollY = 300,
+                         scrollX = 300,
+                         scrollCollapse = TRUE),
+          rownames = FALSE)
+```
+
 
 ***
 

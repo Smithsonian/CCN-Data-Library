@@ -329,6 +329,8 @@ lat_long,n,core_ids,study_ids,num_studies
 "10.109181036669945, -85.12796447625328",3,"Isla Chira_Salinera_2_1, Isla Chira_Salinera_2_2, Isla Chira_Salinera_2_3",Cifuentes_et_al_2024_Nicoya,1
 "10.114049557415736, -85.19073055341973",3,"Isla Chira_Camaronera_6_1, Isla Chira_Camaronera_6_2, Isla Chira_Camaronera_6_3",Cifuentes_et_al_2024_Nicoya,1
 "10.172186453095785, -85.15767652623805",3,"Buenaventura_Camaronera_2_1, Buenaventura_Camaronera_2_2, Buenaventura_Camaronera_2_3",Cifuentes_et_al_2024_Nicoya,1
+"10.175411899471, -85.13236643766851",3,"Buenaventura_Camaronera_5_1, Buenaventura_Camaronera_5_2, Buenaventura_Camaronera_5_3",Cifuentes_et_al_2024_Nicoya,1
+"10.177621759893476, -85.13118797382789",3,"Buenaventura_Camaronera_4_1, Buenaventura_Camaronera_4_2, Buenaventura_Camaronera_4_3",Cifuentes_et_al_2024_Nicoya,1
 "10.177661732303662, -85.14309627750517",3,"Buenaventura_Camaronera_1_1, Buenaventura_Camaronera_1_2, Buenaventura_Camaronera_1_3",Cifuentes_et_al_2024_Nicoya,1
 "10.178700705461656, -85.15869463068648",3,"Buenaventura_Camaronera_3_1, Buenaventura_Camaronera_3_2, Buenaventura_Camaronera_3_3",Cifuentes_et_al_2024_Nicoya,1
 "10.2, 104.6",6,"M1579, M1580, M1581, M1582, M1583, M1584",Bukoski_et_al_2017,1
@@ -1091,8 +1093,6 @@ lat_long,n,core_ids,study_ids,num_studies
 "39.4284527, -75.57379203",2,"NWCA11-1198-3914, NWCA11-1198-5373",Nahlik_and_Fennessy_2016,1
 "39.4385, -76.2828",3,"Otter_Point_Creek_1, Otter_Point_Creek_2, Otter_Point_Creek_3",Merrill_1999,1
 "39.50012, -74.41678",11,"F_M1, F_M2, F_M3, F_M4, F_M5, F_M6, F_M7, F_M8, F_M9, F_M10, F_M_A",Drake_et_al_2024,1
-"39.50012, -74.416782",10,"F_M1, F_M2, F_M3, F_M4, F_M5, F_M6, F_M7, F_M8, F_M9, F_M10",Drake_et_al_2024,1
-"39.533369, -74.416836",10,"F_U1, F_U2, F_U3, F_U4, F_U5, F_U6, F_U7, F_U8, F_U9, F_U10",Drake_et_al_2024,1
 "39.53337, -74.41684",11,"F_U1, F_U2, F_U3, F_U4, F_U5, F_U6, F_U7, F_U8, F_U9, F_U10, F_U_A",Drake_et_al_2024,1
 "39.626412, -74.257139",2,"CC1, CC1U","Boyd_et_al_2017, Unger_et_al_2016",2
 "39.629015, -74.257836",2,"CC2, CC2U","Boyd_et_al_2017, Unger_et_al_2016",2
@@ -1124,9 +1124,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "40.75454, -8.699355",2,"Figueiredo_da_Silva_et_al_2009_16, Figueiredo_da_Silva_et_al_2009_17",Figueiredo_da_Silva_et_al_2009,1
 "40.76595871, -72.88414359",2,"NWCA11-2265-4370, NWCA11-2265-4371",Nahlik_and_Fennessy_2016,1
 "40.76672, -72.88339",11,"W_U1, W_U2, W_U3, W_U4, W_U5, W_U6, W_U7, W_U8, W_U9, W_U10, W_U_A",Drake_et_al_2024,1
-"40.76672, -72.883392",10,"W_U1, W_U2, W_U3, W_U4, W_U5, W_U6, W_U7, W_U8, W_U9, W_U10",Drake_et_al_2024,1
 "40.76672, -72.88342",11,"W_M1, W_M2, W_M3, W_M4, W_M5, W_M6, W_M7, W_M8, W_M9, W_M10, W_M_A",Drake_et_al_2024,1
-"40.766722, -72.883417",10,"W_M1, W_M2, W_M3, W_M4, W_M5, W_M6, W_M7, W_M8, W_M9, W_M10",Drake_et_al_2024,1
 "40.790744, -8.661918",2,"Figueiredo_da_Silva_et_al_2009_19, Figueiredo_da_Silva_et_al_2009_20",Figueiredo_da_Silva_et_al_2009,1
 "40.80227, -124.18148",2,"Humboldt Bay 682, Humboldt Bay 687",Ward_et_al_2021,1
 "40.80414415, -72.70037024",2,"NWCA11-2269-4374, NWCA11-2269-4475",Nahlik_and_Fennessy_2016,1
@@ -1145,18 +1143,14 @@ lat_long,n,core_ids,study_ids,num_studies
 "42.293, 3.293",2,"Mateo_and_Serrano_unpublished_1, Serrano_unpublished_1","Mateo_and_Serrano_unpublished, Serrano_unpublished",2
 "42.294, 3.289",3,"Mateo_et_al_1997_10, Mateo_et_al_1997_8, Mateo_et_al_1997_9",Mateo_et_al_1997,1
 "42.75021, -70.80011",11,"PR_M1, PR_M2, PR_M3, PR_M4, PR_M5, PR_M6, PR_M7, PR_M8, PR_M9, PR_M10, PR_M_A",Drake_et_al_2024,1
-"42.750214, -70.800111",10,"PR_M1, PR_M2, PR_M3, PR_M4, PR_M5, PR_M6, PR_M7, PR_M8, PR_M9, PR_M10",Drake_et_al_2024,1
-"42.766928, -70.800174",10,"PR_U1, PR_U2, PR_U3, PR_U4, PR_U5, PR_U6, PR_U7, PR_U8, PR_U9, PR_U10",Drake_et_al_2024,1
 "42.76693, -70.80017",11,"PR_U1, PR_U2, PR_U3, PR_U4, PR_U5, PR_U6, PR_U7, PR_U8, PR_U9, PR_U10, PR_U_A",Drake_et_al_2024,1
 "43.04805555555556, -70.72361111111111",9,"SCM_Q1, SCM_Q2, SCM_Q3, SCM_Q4, SCM_Q5, SCM_Q6, SCM_Q7, SCM_Q8, SCM_Q9",Morgan_et_al_2024,1
 "43.05583333333333, -70.73138888888889",9,"LHF_Q2, LHF_Q3, LHF_Q4, LHF_Q5, LHF_Q6, LHF_Q7, LHF_Q8, LHF_Q9, LHF_Q1",Morgan_et_al_2024,1
 "43.08555555555556, -70.76638888888888",8,"ICCF_Q1, ICCF_Q2, ICCF_Q3, ICCF_Q4, ICCF_Q5, ICCF_Q6, ICCF_Q7, ICCF_Q8",Morgan_et_al_2024,1
 "43.13665, -70.653556",9,"YRF_Q1, YRF_Q2, YRF_Q3, YRF_Q4, YRF_Q5, YRF_Q6, YRF_Q7, YRF_Q8, YRF_Q9",Morgan_et_al_2024,1
 "43.25026, -70.5835",11,"RC_M1, RC_M2, RC_M3, RC_M4, RC_M5, RC_M6, RC_M7, RC_M8, RC_M9, RC_M10, RC_M_A",Drake_et_al_2024,1
-"43.250262, -70.583502",10,"RC_M1, RC_M2, RC_M3, RC_M4, RC_M5, RC_M6, RC_M7, RC_M8, RC_M9, RC_M10",Drake_et_al_2024,1
 "43.3, -70.566667",2,"Wells_A_1, Wells_A_2",van_Ardenne_et_al_2018,1
 "43.31667, -70.56675",11,"RC_U1, RC_U2, RC_U3, RC_U4, RC_U5, RC_U6, RC_U7, RC_U8, RC_U9, RC_U10, RC_U_A",Drake_et_al_2024,1
-"43.316673, -70.566752",10,"RC_U1, RC_U2, RC_U3, RC_U4, RC_U5, RC_U6, RC_U7, RC_U8, RC_U9, RC_U10",Drake_et_al_2024,1
 "43.31769943237305, -70.572540283203125",100,"Webhannet1, Webhannet2, Webhannet3, Webhannet4, Webhannet5, Webhannet6, Webhannet7, Webhannet8, Webhannet9, Webhannet10, Webhannet11, Webhannet12, Webhannet13, Webhannet14, Webhannet15, Webhannet16, Webhannet17, Webhannet18, Webhannet19, Webhannet20, Webhannet21, Webhannet22, Webhannet23, Webhannet24, Webhannet25, Webhannet26, Webhannet27, Webhannet28, Webhannet29, Webhannet30, Webhannet31, Webhannet32, Webhannet33, Webhannet34, Webhannet35, Webhannet36, Webhannet37, Webhannet38, Webhannet39, Webhannet40, Webhannet41, Webhannet42, Webhannet43, Webhannet44, Webhannet45, Webhannet46, Webhannet47, Webhannet48, Webhannet49, Webhannet50, Webhannet51, Webhannet52, Webhannet53, Webhannet54, Webhannet55, Webhannet56, Webhannet57, Webhannet58, Webhannet59, Webhannet60, Webhannet61, Webhannet62, Webhannet63, Webhannet64, Webhannet65, Webhannet66, Webhannet67, Webhannet68, Webhannet69, Webhannet70, Webhannet71, Webhannet72, Webhannet73, Webhannet74, Webhannet75, Webhannet76, Webhannet77, Webhannet78, Webhannet79, Webhannet80, Webhannet81, Webhannet82, Webhannet83, Webhannet84, Webhannet85, Webhannet86, Webhannet87, Webhannet88, Webhannet89, Webhannet90, Webhannet91, Webhannet92, Webhannet93, Webhannet94, Webhannet95, Webhannet96, Webhannet97, Webhannet98, Webhannet99, Webhannet100",Vincent_and_Dionne_2023,1
 "43.32694444444445, -70.56277777777777",9,"DIM_Q1, DIM_Q2, DIM_Q3, DIM_Q4, DIM_Q5, DIM_Q6, DIM_Q7, DIM_Q8, DIM_Q9",Morgan_et_al_2024,1
 "43.33038711547851, -70.55243682861328",100,"Drakes Island1, Drakes Island2, Drakes Island3, Drakes Island4, Drakes Island5, Drakes Island6, Drakes Island7, Drakes Island8, Drakes Island9, Drakes Island10, Drakes Island11, Drakes Island12, Drakes Island13, Drakes Island14, Drakes Island15, Drakes Island16, Drakes Island17, Drakes Island18, Drakes Island19, Drakes Island20, Drakes Island21, Drakes Island22, Drakes Island23, Drakes Island24, Drakes Island25, Drakes Island26, Drakes Island27, Drakes Island28, Drakes Island29, Drakes Island30, Drakes Island31, Drakes Island32, Drakes Island33, Drakes Island34, Drakes Island35, Drakes Island36, Drakes Island37, Drakes Island38, Drakes Island39, Drakes Island40, Drakes Island41, Drakes Island42, Drakes Island43, Drakes Island44, Drakes Island45, Drakes Island46, Drakes Island47, Drakes Island48, Drakes Island49, Drakes Island50, Drakes Island51, Drakes Island52, Drakes Island53, Drakes Island54, Drakes Island55, Drakes Island56, Drakes Island57, Drakes Island58, Drakes Island59, Drakes Island60, Drakes Island61, Drakes Island62, Drakes Island63, Drakes Island64, Drakes Island65, Drakes Island66, Drakes Island67, Drakes Island68, Drakes Island69, Drakes Island70, Drakes Island71, Drakes Island72, Drakes Island73, Drakes Island74, Drakes Island75, Drakes Island76, Drakes Island77, Drakes Island78, Drakes Island79, Drakes Island80, Drakes Island81, Drakes Island82, Drakes Island83, Drakes Island84, Drakes Island85, Drakes Island86, Drakes Island87, Drakes Island88, Drakes Island89, Drakes Island90, Drakes Island91, Drakes Island92, Drakes Island93, Drakes Island94, Drakes Island95, Drakes Island96, Drakes Island97, Drakes Island98, Drakes Island99, Drakes Island100",Vincent_and_Dionne_2023,1
@@ -1440,4 +1434,4 @@ lat_long,n,core_ids,study_ids,num_studies
 "9.96677907531132, -85.10665234760737",3,"Jicaral_Camaronera_10_1, Jicaral_Camaronera_10_2, Jicaral_Camaronera_10_3",Cifuentes_et_al_2024_Nicoya,1
 "9.96894954420873, -85.05045723911242",3,"Lepanto_Camaronera_7_1, Lepanto_Camaronera_7_2, Lepanto_Camaronera_7_3",Cifuentes_et_al_2024_Nicoya,1
 "9.968966354089195, -85.04798593204679",3,"Lepanto_Camaronera_8_1, Lepanto_Camaronera_8_2, Lepanto_Camaronera_8_3",Cifuentes_et_al_2024_Nicoya,1
-"NA, NA",9,"SB1, SS1, Coastal_EDU_Field_2, Buenaventura_Camaronera_4_1, Buenaventura_Camaronera_4_2, Buenaventura_Camaronera_4_3, Buenaventura_Camaronera_5_1, Buenaventura_Camaronera_5_2, Buenaventura_Camaronera_5_3","Thom_1992, Drexler_et_al_2013, Cifuentes_et_al_2024_Nicoya",3
+"NA, NA",3,"SB1, SS1, Coastal_EDU_Field_2","Thom_1992, Drexler_et_al_2013",2
