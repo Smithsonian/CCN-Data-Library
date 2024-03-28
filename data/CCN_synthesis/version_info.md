@@ -29,8 +29,9 @@ This database contains tidal wetland soil carbon profiles and associated metadat
 
 *New Datasets 1.2.0*
 
-This update adds 24 new studies and 8,279 new soil cores to the CCN Data Library, bringing the total number of cores to 15,026, with 425 unique studies. 
+This update adds 25 new studies and 5,164 new soil cores to the CCN Data Library, bringing the total number of cores to 14,958, with 526 unique studies. 
 
+Bost et al 2024
 Brown et al 2024 
 Craft 2024
 Cifuentes et al 2024 (Nicoya)
@@ -60,23 +61,28 @@ Vinent and Kirwan 2017
 
 *Corrections and Additions to previously synthesized datasets 1.2.0*
 
-1. Belshe et al 2019: Updated core position and position_notes for core_id = "SM10" in _cores.csv. 
+1. Belshe et al 2019: Updated core position and position_notes for core_id = "SM10" in _cores.csv. Updated and reformatted depthseries table to reflect V1.2.0 structure. 
 2. Breithaupt et al 2014: Removed 'date' attribute from depthseries table. This value is represented in 'age' and 'age_se'.
 3. Bukoski et al 2017: Corrected latitude and longitude values. 
-4. Callaway et al 2019: Removed 'pb210_background_assumption' attribute from methods table. Value recoded in 'dating_notes'.
+4. Callaway et al 2019: Removed 'pb210_background_assumption' attribute from methods table. Value recoded in 'dating_notes'. Resolved duplicate core_ids. 
 5. Cifuentes et al 2023 (Panama): Resolved encoding issue with site names.
-6. Everhart et al 2020: Removed the following uncontrolled attributes from depthseries table: th234_activity, th234_activity_se, k40_activity, k40_activity_se
-7. Fourqurean et al 2012: Added site-level position data in _cores.csv
-8. Holmquist et al 2018: Removed Drake et al 2015 and Radaubaugh et al 2018 data contained in synthesis, now represented in Drake et al 2024 and Radaugbaugh et al 2018.
-9. Peck et al 2020: Removed cores that do not contain dissaggregated depthseries data.
-10. Poppe and Rybczyk 2019: Removed duplicate impact classes in _impacts.csv 
-11. Marot et al 2020: Resolved position and updated habitat classification in _cores.csv
-12. Miller et al 2022: Updated study_id in all associated .csv files. Study originally represented as Rodriguez et al 2022
-13. Morrisette et al 2023: Removed uncontrolled attribute in methods table: 'ground_or_sieved_flag'.
-14. Schile-Beers 2017: Updated missing core positions in _cores.csv.
-15. Thom et al 2019: Addition of core "PB1" replicate in _cores.csv to represent samples present in _depthseries.csv. 
-16. Trettin et al 2020: Updated name of study citations csv file. Now named Trettin_et_al_2020_study_citations.csv
-17. Turck 2014: Resolved error with vegetation_class in _cores.csv
+6. Eagle et al 2021: Resolved accent encoding issue.
+7. Everhart et al 2020: Removed the following uncontrolled attributes from depthseries table: th234_activity, th234_activity_se, k40_activity, k40_activity_se.
+8. Fourqurean et al 2012: Added site-level position data in _cores.csv.
+9. Holmquist et al 2018: Removed Drake et al 2015 and Radaubaugh et al 2018 data contained in synthesis, now represented in Drake et al 2024 and Radaugbaugh et al 2018. Added 'site_id' to _impacts.csv and _species.csv. 
+10. Howard and Fourqurean 2020: Resolved duplicate core_ids. 
+11. Osland et al 2016: Added habitat informations in _cores.csv.
+12. Peck et al 2020: Removed cores that do not contain dissaggregated depthseries data.
+13. Poppe and Rybczyk 2019: Removed duplicate impact classes in _impacts.csv. 
+14. Marot et al 2020: Resolved position and updated habitat classification in _cores.csv. 
+15. Miller et al 2022: Updated study_id in all associated .csv files. Study originally represented as Rodriguez et al 2022.
+16. Morrisette et al 2023: Removed uncontrolled attribute in methods table: 'ground_or_sieved_flag'.
+17. Schile-Beers 2017: Updated missing core positions in _cores.csv.
+18. Snedden 2017: Removed modeled carbon values from _depthseries.csv.
+19. St Laurent 2020: Resolved duplicate core_ids.  
+20. Thom et al 2019: Addition of core "PB1" replicate in _cores.csv to represent samples present in _depthseries.csv. 
+21. Trettin et al 2020: Updated name of study citations csv file. Now named Trettin_et_al_2020_study_citations.csv.
+22. Turck 2014: Resolved error with vegetation_class in _cores.csv.
 
 
 
