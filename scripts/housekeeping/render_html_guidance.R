@@ -87,6 +87,6 @@ renderTable <- function(tabletype){
 # render the html document
 rmarkdown::render(input = "scripts/housekeeping/generate_table.Rmd",
                   # output_format = "html_document",
-                  output_file = "ccrcn_database_structure.html",
+                  output_file = "ccn_database_structure.html",
                   output_dir = "./docs")
 

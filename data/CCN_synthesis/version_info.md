@@ -27,6 +27,10 @@ This database contains tidal wetland soil carbon profiles and associated metadat
 
 #### Version 1.2.0 Updates
 
+*Changes to Database Structure*
+
+- Habitat types _sabkha_ and _microbial mat_ have been added to the database's controlled vocabulary
+
 *New Datasets 1.2.0*
 
 This update adds 26 new studies and 5,164 new soil cores to the CCN Data Library, bringing the total number of cores to 14,958, with 526 unique studies. 
