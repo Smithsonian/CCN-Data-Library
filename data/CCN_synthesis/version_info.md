@@ -29,7 +29,7 @@ This database contains tidal wetland soil carbon profiles and associated metadat
 
 *New Datasets 1.2.0*
 
-This update adds 25 new studies and 5,164 new soil cores to the CCN Data Library, bringing the total number of cores to 14,958, with 526 unique studies. 
+This update adds 26 new studies and 5,164 new soil cores to the CCN Data Library, bringing the total number of cores to 14,958, with 526 unique studies. 
 
 Bost et al 2024
 Brown et al 2024 
@@ -40,6 +40,7 @@ Dontis et al 2023
 Drake et al 2024
 Everhart et al 2020
 Gillen et al 2018
+Kemp et al 2024
 Langston et al 2022
 Loomis and Craft 2024
 Machite and Adams 2024

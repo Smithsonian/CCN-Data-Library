@@ -60,7 +60,18 @@ guess_max <- nrow(read_csv("data/CCN_synthesis/CCN_cores.csv"))
 current_cores <- read_csv("data/CCN_synthesis/CCN_cores.csv", guess_max = guess_max) %>% 
   mutate(country = case_when(country == "Laos" ~ "Vietnam", 
                              country == "Russian Federation" ~ "Russia",
-                             T ~ country)) # spot fix for Bukoski et al 2017
+                             country == "Micronesia" ~ "Federated States of Micronesia",
+                             T ~ country)) %>% # spot fix for Bukoski et al 2017
+  # assign continent and region
+  mutate(region = countrycode::countrycode(sourcevar = country,
+                            origin = "country.name",
+                            destination = "region"),
+         continent = countrycode::countrycode(sourcevar = country,
+                            origin = "country.name",
+                            destination = "continent"))
+
+# View(current_cores %>% distinct(country, region, continent))
+
 current_version <- "1.2.0"
 ```
 
@@ -399,7 +410,7 @@ for(v in unique(synthesis_history_trim$version)){
   # extract habitat information
   habitat_change <- habitat_change %>% 
     bind_rows(
-      subset_df %>% count(country, habitat) %>% 
+      subset_df %>% count(continent, region, country, habitat) %>% 
         mutate(version = v,
                date = unique(temp_version$date))
     )
@@ -416,13 +427,32 @@ for(v in unique(synthesis_history_trim$version)){
   # harvest max sampling depths
   sampling_depths <- sampling_depths %>% 
     bind_rows(
-      subset_df %>% select(country, habitat, max_depth) %>% 
+      subset_df %>% select(continent, region, country, habitat, max_depth) %>% 
         mutate(date = unique(temp_version$date),
                version = v)
     )
 }
 
 ```
+
+### Regional Representation
+
+```{r}
+region_fig <- habitat_change %>% 
+  # mutate(region = case_when(is.na(region) ~ "unknown", T ~ region)) %>% 
+  drop_na(region) %>% 
+  group_by(version, date, region) %>% 
+  summarise(core_count = sum(n)) %>% 
+  ungroup() %>% 
+  ggplot() +
+  geom_line(aes(date, core_count, col = region)) +
+  geom_point(aes(date, core_count, col = region)) + 
+  theme_bw()
+
+ggsave(plot = region_fig, filename = "docs/quarterly_reports/v120/library_growth_region.jpg",
+       height=6, width=10)
+```
+
 
 ### Habitat
 
