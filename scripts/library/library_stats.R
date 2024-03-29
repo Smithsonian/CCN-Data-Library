@@ -10,9 +10,9 @@ library(tidyverse)
 library(RColorBrewer)
 
 # read in synthesis data
-cores <- read_csv("data/CCRCN_synthesis/CCRCN_cores.csv", guess_max = 7000)
-ds <- read_csv("data/CCRCN_synthesis/CCRCN_depthseries.csv", guess_max = 55000)
-impacts <- read_csv("data/CCRCN_synthesis/CCRCN_impacts.csv", guess_max = 2000)
+cores <- read_csv("data/CCN_synthesis/CCN_cores.csv", guess_max = 10000)
+ds <- read_csv("data/CCN_synthesis/CCN_depthseries.csv", guess_max = 75000)
+impacts <- read_csv("data/CCN_synthesis/CCN_impacts.csv", guess_max = 2000)
 
 
 country_smry <- cores %>% 
@@ -39,7 +39,6 @@ cores_per_hab <- cores %>%
 
 all_habitat <- cores %>% 
   mutate(habitat = recode(habitat, 
-                          "scrub shrub" = "scrub/shrub",
                           "mudflat" = "unvegetated")) %>% 
   group_by(habitat) %>%
   tally() %>%
@@ -96,9 +95,14 @@ us_habitats <- us_cores %>%
 
 # plot
 # us_habitats %>%
-all_habitat %>%
+cores %>% 
+  mutate(habitat = ifelse(is.na(habitat), "unknown", habitat)) %>%
+  group_by(habitat) %>%
+  tally() %>%
+  ungroup() %>%
+  mutate(percent = 100*(n/sum(n))) %>% 
   mutate(habitat = fct_reorder(habitat, percent)) %>% 
-  filter(!is.na(habitat)) %>% 
+  # filter(!is.na(habitat)) %>% 
   ggplot(aes(habitat, percent, fill = percent)) + 
   geom_col(fill = "darkgreen") + 
   # scale_color_brewer(palette = "BuGn") +
@@ -179,4 +183,22 @@ us_impacts %>%
   theme_classic(base_size = 17)  
 # theme(axis.text.x = element_text(angle = 45, hjust=1))
 ggsave("data/library_metrics/figures/cores_per_habitat.jpg", width = 6, height = 6)
+
+
+### Compare Versions ####
+
+library(tidyverse)
+
+v1_studies <- read_csv("https://ndownloader.figshare.com/files/42289539", guess_max = 7000) %>% distinct(study_id) %>% pull(study_id)
+v1_cores <- read_csv("https://ndownloader.figshare.com/files/43694076", guess_max = 11000) %>% filter(study_id %in% v1_studies) %>% count(country)
+
+v2_cores <- read_csv("https://ndownloader.figshare.com/files/43694076", guess_max = 11000) %>% count(country, name = "n2")
+
+diff <- full_join(v1_cores, v2_cores) %>% 
+  mutate(n = ifelse(is.na(n), 0, n),
+         ndiff = n2 - n) %>% 
+  filter(ndiff > 0)
+
+
+v2 <- read_csv("https://ndownloader.figshare.com/files/43694076", guess_max = 11000) %>% filter(!(study_id %in% v1_studies))
 

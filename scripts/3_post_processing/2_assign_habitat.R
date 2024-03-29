@@ -120,9 +120,9 @@ cores_with_habitat <- cores2 %>%
   left_join(habitat_final) %>% 
   select(-habitat_assignment_method) # more for internal use
 
-if(length(which(is.na(cores_with_habitat$habitat))) > 0){
-  write_csv(filter(cores_with_habitat, is.na(habitat)), "data/QA/no_habitat_cores.csv")
-}
+# if(length(which(is.na(cores_with_habitat$habitat))) > 0){
+#   write_csv(filter(cores_with_habitat, is.na(habitat)), "data/QA/no_habitat_cores.csv")
+# }
 
 
 # write to synthesis

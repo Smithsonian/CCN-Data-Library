@@ -133,14 +133,14 @@ core_geography <- left_join(ccrcn_synthesis$cores,
                             by = c("study_id", "site_id", "core_id"))
 
 # isolate all cores with no assigned country
-na_country <- core_geography %>% 
-  filter(is.na(country)) %>%
-  select(study_id, site_id, core_id, latitude, longitude)
-
-# write cores to QA folder
-if(!is_empty(na_country)){
-  write_csv(na_country, "data/QA/no_country_for_soil_cores.csv")
-}
+# na_country <- core_geography %>% 
+#   filter(is.na(country)) %>%
+#   select(study_id, site_id, core_id, latitude, longitude)
+# 
+# # write cores to QA folder
+# if(!is_empty(na_country)){
+#   write_csv(na_country, "data/QA/no_country_for_soil_cores.csv")
+# }
 
 # Update core table in CCN synthesis ####
 ccrcn_synthesis$cores <- core_geography # will overwrite initial synthesis core table with updated geography

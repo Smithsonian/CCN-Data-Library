@@ -1,0 +1,335 @@
+study_id,site_id,site_description,site_latitude_max,site_latitude_min,site_longitude_max,site_longitude_min,salinity_class,salinity_method,vegetation_class,vegetation_method,vegetation_notes,inundation_class,inundation_method,inundation_notes
+Callaway_et_al_2019,Brown_Island,Tidal brackish wetland in San Francisco Bay estuary,38.038935099999996,38.035741900000005,-121.85758399999999,-121.86944000000001,NA,NA,NA,NA,NA,NA,NA,NA
+Callaway_et_al_2019,China_Camp,"Saline, natural wetland in San Francisco Bay estuary",38.016055099999996,38.0079299,-122.48365720000001,-122.50177479999999,NA,NA,NA,NA,NA,NA,NA,NA
+Callaway_et_al_2019,Cogswell,Restored salt marsh in San Francisco Bay estuary,37.6417974,37.6320126,-122.1479458,-122.1519442,NA,NA,NA,NA,NA,NA,NA,NA
+Callaway_et_al_2019,Coon_Island,"Saline, natural wetland in San Francisco Bay estuary",38.1998057,38.1853373,-122.3185862,-122.3263358,NA,NA,NA,NA,NA,NA,NA,NA
+Callaway_et_al_2019,Muzzi,Restored salt marsh in San Francisco Bay estuary,37.9298808,37.9261392,-122.5030651,-122.5096279,NA,NA,NA,NA,NA,NA,NA,NA
+Callaway_et_al_2019,Petaluma_River,"Saline, natural wetland in San Francisco Bay estuary",38.1818061,38.1566769,-122.5419045,-122.5555665,NA,NA,NA,NA,NA,NA,NA,NA
+Callaway_et_al_2019,Rush_Ranch,Tidal brackish wetland in San Francisco Bay estuary,38.2037069,38.1882521,-122.00915529999999,-122.0421757,NA,NA,NA,NA,NA,NA,NA,NA
+Callaway_et_al_2019,Whale's_Tail,"Saline, 100 year old wetland in San Francisco Bay estuary",37.6016588,37.5864812,-122.1414779,-122.1459311,NA,NA,NA,NA,NA,NA,NA,NA
+Doughty_et_al_2016,KCSC-20C,NA,28.581994899999998,28.579332100000002,-80.6701826,-80.6742794,NA,NA,NA,NA,NA,NA,NA,NA
+Doughty_et_al_2016,MIPineIsland,NA,28.4908287,28.4902083,-80.7228217,-80.7234853,NA,NA,NA,NA,NA,NA,NA,NA
+Doughty_et_al_2016,MIT-9N,NA,28.7098023,28.7090787,-80.7380332,-80.7390388,NA,NA,NA,NA,NA,NA,NA,NA
+Doughty_et_al_2016,MIT-9S,NA,28.708249600000002,28.707894399999997,-80.73795059999999,-80.7382314,NA,NA,NA,NA,NA,NA,NA,NA
+Drexler_et_al_2019,Animal_Slough,NA,47.096953,47.092957000000006,-122.698335,-122.701155,polyhaline,NA,emergent,NA,NA,NA,NA,NA
+Fell_et_al_2021,GTMNERRMiddle,We examined soil carbon storage in 2018 for a salt mangrove-marsh ecotone along the northeastern coast of Florida near St. Augustine. We established (12) 1.5m^2 PVC chamber plots with mangroves of similar size/age and (12) with only salt marsh grasses. Middle site contains an intermediate level of mangroves compared with the other sides.,29.83637222222222,29.002319444444446,-81.29475833,-81.295289,saline,measurement,emergent,field observation,NA,low,field observation,NA
+Fell_et_al_2021,GTMNERRNorthern,We examined soil carbon storage in 2018 for a salt marsh-mangrove ecotone along the northeastern coast of Florida near St. Augustine. We established (12) 1.5m^2 PVC chamber plots with mangroves of similar size/age and (12) with only salt marsh grasses. Northern contains the lowest level of mangroves with an average mangrove age around 7.3 years.,30.0120361,30.0111778,-81.343925,-81.34465,estuarine,measurement,emergent,field observation,NA,low,field observation,NA
+Giblin_and_Forbrich_2018,Nelson_Island_Creek,"Plum Island Sound Estuary, Massachusetts, USA",42.7426052,42.7422908,-70.8305103,-70.8308067,NA,NA,emergent,NA,NA,NA,NA,NA
+Kairis_and_Rybczyk_2010,Padilla_Bay,NA,48.51479,48.51479,-122.52914,-122.52914,NA,NA,seagrass,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Criteser's Marsh,Yaquina Bay Estuary,44.5899,44.5896,-123.9464,-123.9476,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Danger Point High Marsh,Coos Bay Estuary,43.2836,43.2828,-124.323,-124.3235,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Delta Island Marsh,Skagit Estuary,48.3531,48.3526,-122.4633,-122.4643,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Fir Island Marsh,Skagit Estuary,48.3326,48.3318,-122.417,-122.4177,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Hampel High Marsh,Coos Bay Estuary,43.3196,43.3192,-124.3313,-124.3324,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Hidden Creek Low Marsh,Coos Bay Estuary,43.2936,43.2928,-124.3233,-124.3238,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,John's Marsh,Grays Harbor Estuary,46.8915,46.8908,-123.9868,-123.9876,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Mad River Marsh,Humboldt Bay,40.8865,40.8856,-124.1406,-124.1406,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Metcalf High Marsh,Coos Bay Estuary,43.3359,43.3351,-124.3281,-124.3284,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Metcalf Low Marsh,Coos Bay Estuary,43.3354,43.3345,-124.3277,-124.328,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Millicoma High Marsh,Coos Bay Estuary,43.3691,43.3682,-124.1849,-124.185,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Poole Slough,Yaquina Bay Estuary,44.5784,44.5781,-124.0136,-124.0147,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Secret River High Marsh,Lower Columbia River Estuary,46.3057,46.3048,-123.6924,-123.6924,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Secret River Low Marsh,Lower Columbia River Estuary,46.306,46.3051,-123.695,-123.6951,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,Skagit Wildlife Marsh,Skagit Estuary,48.3219,48.3217,-122.3939,-122.3952,NA,NA,emergent,NA,NA,NA,NA,NA
+Kauffman_et_al_2020,South Bay,Humboldt Bay,40.7045,40.704,-124.211,-124.2166,NA,NA,emergent,NA,NA,NA,NA,NA
+Krauss_et_al_2018,Savannah_River_low,NA,NA,NA,NA,NA,oligohaline,NA,emergent,measurement,NA,low,NA,NA
+Krauss_et_al_2018,Savannah_River_mid,NA,NA,NA,NA,NA,oligohaline,NA,forested,measurement,NA,mid,NA,NA
+Krauss_et_al_2018,Savannah_River_mid,NA,NA,NA,NA,NA,oligohaline,NA,emergent,measurement,NA,low,NA,NA
+Krauss_et_al_2018,Waccamaw_River_Turkey_creek_high,NA,NA,NA,NA,NA,oligohaline,NA,emergent,measurement,NA,low,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2426,Lower Ashepoo River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1266,Indian River Lagoon; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2418,Beaufort River-Atlantic Intracoastal Waterway; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2407,North Edisto River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2434,Beaufort River-Atlantic Intracoastal Waterway; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2435,North Edisto River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-R067,Lower Yellow River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1002,Fish River-Frontal Mobile Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1105,San Francisco Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2639,Currituck Sound; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2637,Mobjack Bay-Lower Chesapeake Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2420,Bulls Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2066,Oyster Creek-Jarrett Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,forested to shrub,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2025,Neuse River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,forested to shrub,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2404,Bulls Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2412,Little River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2647,Lower York River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2634,Mobjack Bay-Lower Chesapeake Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2652,Machipongo River-Hog Island Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2427,Great Pee Dee River-Winyah Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1021,Fish River-Frontal Mobile Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1017,Fish River-Frontal Mobile Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1823,Roque Bluffs Frontal Drainages; New England,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1836,Schoodic Point-Petit-Manan Point Frontal Drainages; New England,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1010,Fish River-Frontal Mobile Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1203,Rehoboth Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2599,Matagorda Bay; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2531,East Branch Mad Island Slough-Matagorda Bay; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1222,Smyrna River-Delaware Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1210,Inland Bays; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-R127,Pt Aux Chenes Bay-Mississippi Sound; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1622,Terrebonne Bay-Frontal Gulf of Mexico; Lower Mississippi,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2588,East Branch Mad Island Slough-Matagorda Bay; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1197,Smyrna River-Delaware Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1226,Appoquinimink River-Delaware River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2443,Great Pee Dee River-Winyah Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2450,Calibogue Sound; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2454,Coosaw River-Port Royal Sound; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2458,Coosaw River-Port Royal Sound; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1202,Appoquinimink River-Delaware River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-3047,Weeki Wachi River-Double Hammock Creek Frontal; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1326,Tolomato River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1303,Crystal River-Homosassa River Frontal; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1218,Inland Bays; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1213,Delaware Bay-Deep; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2549,Salt Bayou; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2577,Salt Bayou; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1039,Bayo Sara-Mobile River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2355,Lower Siletz River-Frontal Pacific Ocean; Pacific Northwest,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2636,Metompkin Bay-Burtons Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2664,Lower Chincoteague Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,forested to shrub,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1669,Terrebonne Bay-Frontal Gulf of Mexico; Lower Mississippi,NA,NA,NA,NA,estuarine,field observation,forested to shrub,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2581,Salt Bayou; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2575,Aransas Bay; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2603,San Antonio Bay-Espiritu Santo Bay; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2565,Salt Bayou; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1198,Appoquinimink River-Delaware River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2026,Pamlico Sound-Hatteras Inlet; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-R135,Manahawkin Bay-Little Egg Harbor; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1260,Lower St. Marys River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1334,Lower St. Marys River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-4499,Naselle River-Frontal Willapa Bay; Pacific Northwest,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2721,Naselle River-Frontal Willapa Bay; Pacific Northwest,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-4522,Skagit Bay-Whidbey Basin; Pacific Northwest,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2710,Skagit Bay-Whidbey Basin; Pacific Northwest,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2608,East Matagorda Bay; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2605,Salt Bayou; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2598,Cane Bayou; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2566,Spindletop Ditch; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2537,Salt Bayou; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2030,Bogue Banks-Bogue Sound; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-6301,Naselle River-Frontal Willapa Bay; Pacific Northwest,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-4503,Naselle River-Frontal Willapa Bay; Pacific Northwest,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1418,Doboy Sound-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1417,Wilmington River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-3586,Little Choptank River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-3583,Little Choptank River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1813,Little Choptank River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1805,Little Choptank River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1803,Little Choptank River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1793,Blackwater River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1779,Little Choptank River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1776,Transquaking River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1369,Ossabaw Sound-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-3580,Honga River-Chesapeake Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-3588,Wicomico River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1180,Hammonasset River-Frontal Long Island Sound; New England,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1752,Elizabeth Islands-Marthas Vineyard; New England,NA,NA,NA,NA,estuarine,field observation,forested to shrub,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1753,North River-Frontal Massachusetts Bay; New England,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2265,Carmans River-Great South Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2269,Shinnecock Bay-Atlantic Ocean; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-R052,Upper York River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-R071,Pamlico Sound-Ocracoke Inlet; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2390,Palmer River; New England,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2382,Narragansett Bay; New England,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2529,East Matagorda Bay; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-R006,North Inlet; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2262,South Oyster Bay-Jones Inlet; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2281,Great South Bay-Fire Island Inlet; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2279,South Oyster Bay-Jones Inlet; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2273,South Oyster Bay-Jones Inlet; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-R024,North Inlet; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2179,Hampton River-Frontal Atlantic Ocean; New England,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2045,Lake Mattamuskeet-Rose Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2049,Lake Mattamuskeet-Rose Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1187,Eightmile River-Connecticut River; New England,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1184,Hammonasset River-Frontal Long Island Sound; New England,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-R080,San Antonio Bay-Espiritu Santo Bay; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-R003,Bogue Banks-Shackleford Banks; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-R007,Combahee River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-R012,Cape Fear River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2555,San Antonio Bay-Espiritu Santo Bay; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1696,Mermentau River-Frontal Gulf of Mexico; Lower Mississippi,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1278,Turtle Creek-Vassey Creek Frontal; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1291,Apalachicola Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1292,Tolomato River-Moses Creek Frontal; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1300,Lower St. Marks River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1305,Indian River Lagoon; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1342,Lower Sopchoppy River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1637,Bayou Terre Aux Boeufs-Frontal Breton Sound; Lower Mississippi,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1368,South Newport River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1370,Brunswick River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1377,Lower Satilla River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1379,Doboy Sound-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1009,Bayo Sara-Mobile River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,forested to shrub,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1035,Bayo Sara-Mobile River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1953,Ship Island Pass-Mississippi Sound; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1946,West Pascagoula River-Pascagoula River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1653,Bayou Gentilly-Bayou Terre aux Boeufs; Lower Mississippi,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1666,Old North Bayou-Starks South Canal; Lower Mississippi,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2069,Pamlico Sound-Ocracoke Inlet; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2455,Harbor River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2446,North Edisto River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2442,Lower Ashepoo River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2424,Cape Romain; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2403,North Edisto River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2068,Neuse River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2065,Lake Mattamuskeet-Rose Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-3988,Great Egg Harbor Bay-Barrier Islands; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-3989,Raritan Bay-Lower Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2222,Manahawkin Bay-Little Egg Harbor; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2220,Tuckahoe River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2215,Raritan Bay-Lower Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2207,Raritan Bay-Lower Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2205,Great Egg Harbor Bay-Barrier Islands; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2204,Lower Great Egg Harbor River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2203,Manahawkin Bay-Little Egg Harbor; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2199,Raritan Bay-Lower Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2198,Barnegat Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2197,Great Egg Harbor Bay-Barrier Islands; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2196,Tuckahoe River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2195,Raritan Bay-Lower Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2186,Great Egg Harbor Bay-Barrier Islands; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2411,Beaufort River-Atlantic Intracoastal Waterway; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2408,Bulls Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2431,Bulls Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2436,Bulls Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2447,Bulls Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,forested to shrub,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2452,Bulls Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2061,Lake Mattamuskeet-Rose Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2052,Cape Lookout Shoals-Core Banks; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1958,Pass Marianne-Mississippi Sound; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-R058,Masonboro Inlet-Mason Inlet; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2423,Stono River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,forested to shrub,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1109,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1118,Suisun Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1127,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1133,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1140,Suisun Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1207,Rehoboth Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1223,Indian River Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1248,Tolomato River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1256,Goose Creek-Dickerson Bay Frontal; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1263,Rocky Creek-Bumblebee Creek Frontal; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1777,Wicomico River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1381,Crooked River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1384,South Newport River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1388,Medway River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,forested to shrub,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1389,Wilmington River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,forested to shrub,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1393,Crooked River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1395,Sapelo River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1397,Crooked River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1400,Sapelo River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1401,Wilmington River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1404,Medway River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1408,Medway River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1409,Lower St. Marys River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1411,North Newport River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1412,Wilmington River-Atlantic Ocean; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1670,Intracoastal Waterway-Frontal Calcasieu Lake; Lower Mississippi,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1678,Intracoastal Waterway-Frontal Calcasieu Lake; Lower Mississippi,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1691,Black Lake Bayou-Starks North Canal; Lower Mississippi,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1694,Bayou Pointe Au Chien-Frontal Timbalier Bay; Lower Mississippi,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1773,Wicomico River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1778,Upper Chincoteague Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1789,Little Choptank River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1798,Upper Tangier Sound; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1801,Wicomico River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1810,Wicomico River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1816,Upper Chincoteague Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1817,Honga River-Chesapeake Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1819,Honga River-Chesapeake Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1832,Sheepscot River; New England,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1966,Pass Marianne-Mississippi Sound; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1969,Biloxi Bay-Mississippi Sound; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,forested to shrub,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-1973,Ship Island Pass-Mississippi Sound; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2038,Oyster Creek-Jarrett Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2048,Pamlico Sound-Hatteras Inlet; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2070,Currituck Sound; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2074,Croatan Sound; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2076,Pamlico Sound-Hatteras Inlet; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2077,Lake Mattamuskeet-Rose Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2079,Intracoastal Waterway-Pungo River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2081,Lake Mattamuskeet-Rose Bay; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2168,Hampton River-Frontal Atlantic Ocean; New England,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2170,Great Bay Drainages; New England,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2175,Hampton River-Frontal Atlantic Ocean; New England,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-R077,Henderson Creek-Barron River Frontal; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2527,Laguna Atascosa; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2530,Old River-Trinity River; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2535,Keller Branch-Lavaca River; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2540,Lower Oyster Creek; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2541,East Fork Double Bayou; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,forested to shrub,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2551,Keller Branch-Lavaca River; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2564,Dickinson Bayou; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2580,Halls Bayou; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2584,Lower Oyster Creek; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2589,Cedar Bayou-Frontal Galveston Bay; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2591,San Antonio Bay-Espiritu Santo Bay; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2593,East Fork Double Bayou; Texas Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2655,Metompkin Bay-Burtons Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2658,Mobjack Bay-Lower Chesapeake Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2660,Messongo Creek-Pocomoke Sound; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2673,Magothy Bay-Cobb Bay; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2908,San Francisco Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2910,Suisun Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2918,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2922,San Francisco Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2940,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2947,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-2949,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-3069,Tolomato River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-3093,Lower St. Marks River; South Atlantic Gulf,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-3568,Little Choptank River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-3581,Wicomico River; Mid Atlantic,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-4706,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-4713,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-4716,McGrath Lake-Frontal Pacific Ocean; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Nahlik_and_Fennessy_2016,NWCA11-4721,San Pablo Bay; California,NA,NA,NA,NA,estuarine,field observation,emergent,field observation,NA,NA,NA,NA
+Osland_et_al_2016,Galveston_Bay,NA,29.209952862,29.064102558,-94.94326064799999,-95.266709872,NA,NA,NA,NA,NA,NA,NA,NA
+Osland_et_al_2016,Grand_Bay,NA,30.409232979000002,30.356935311,-88.395872932,-88.446796468,NA,NA,NA,NA,NA,NA,NA,NA
+Osland_et_al_2016,Lake_Pontchartrain,NA,30.284774709,30.239866521,-89.833513739,-89.999191271,NA,NA,NA,NA,NA,NA,NA,NA
+Osland_et_al_2016,Lower_Laguna_Madre,NA,26.388685132,26.014722388,-97.16240541100001,-97.381783399,NA,NA,NA,NA,NA,NA,NA,NA
+Osland_et_al_2016,San_Antonio_Bay,NA,28.456784607000003,28.173734523,-96.35867509100001,-96.89654123899999,NA,NA,NA,NA,NA,NA,NA,NA
+Osland_et_al_2016,Tampa_Bay,NA,27.726532607,27.515973803,-82.44032639400001,-82.663222026,NA,NA,NA,NA,NA,NA,NA,NA
+Osland_et_al_2016,Ten_Thousand_Islands,NA,25.976839471,25.845753739,-81.52314862,-81.54749817999999,NA,NA,NA,NA,NA,NA,NA,NA
+Osland_et_al_2016,Upper_Laguna_Madre,NA,27.724848259999998,27.27555542,-97.12855965099999,-97.741774519,NA,NA,NA,NA,NA,NA,NA,NA
+Osland_et_al_2016,Weeks_Bay,NA,30.443171271999997,30.376521448000002,-87.81125599699999,-87.84718823300001,NA,NA,NA,NA,NA,NA,NA,NA
+Sanborn_and_Coxson_2020,BC14-22,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"PotAns, CarLyn, DesCes, FesRub, GlaMar, PlaMar, PlaMac, TriMar",high,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC14-23,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"PotAns, CarLyn, DesCes, PlaMac, PlaMar, TriMar",mid,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC14-25,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,CarLyn,low,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC14-26,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"PotAns, CarLyn, DecCes, FesRub, PlaMac, PlaMar, Trimar",mid,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC14-27,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"AngLuc, PotAns, CarLyn, ConGme, DesCes, FesRub, LigHul, PlaMac, SciMic, SymSub, TriMar",high,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC14-28,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"AngLuc, PotAns, CarLyn, CasHye, DesCes, FesRub, HorBra, LatPal, LupNoo, MaiDil, PlaMac, SymSub, TriMar",high,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC14-29,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"PotAns, CarLyn, DesCes, FesRub, GlaMar, PlaMac, SteHum, TriMar",mid,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC14-30,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,CarLyn,low,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC14-31,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"PotAns, CarLyn, DesCes, GlaMar, JunArc, PlaMac, TriMar",mid,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-08,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"AngLuc, PotAns, BroPac, CarLyn, DesCes, FesRub, GlaMar, LinHul, MaiDil, OenSar, PlaMac, PlaMar, SciMic, SymSub, TriMar",high,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-09,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"PotAns, CarLyn, DesCes, FesRub, GlaMar, HorBra, PlaMac, PlaMar, SciMic, TriMar",mid,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-10,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,CarLyn,low,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-11,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"AngLuc, PotAns, CarLyn, LigHul, MaiDil, OenSar, SciMic, SymSub",high,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-12,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"PotAns, CarLyn, DesCes, PlaMar, SteHum, TriMar",mid,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-13,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,CarLyn,low,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-14,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,CarLyn,low,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-15,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"PotAns, CarLyn, DesCes, PlaMar, SteHum, TriMar",mid,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-16,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"AngLuc, PotAns, CarLyn, ConGme, GalTri, LatPal, OenSar, SymSub, TriArc",high,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-17,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"AngLuc, PotAns, BroPac, CarLyn, CarPlu, DesCes, FesRub, GlaMar, HorBra, LigHul, MaiDil, OenSar, PlaMac, SymSub, TriMar",high,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-18,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"PotAns, CarLyn, DesCes, GlaMar, PlaMar, SteHum, TriMar",mid,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-19,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,CarLyn,low,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-20,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"AngLuc, PotAns, CarLyn, CarPlu, DesCes, FesRub, GalTri, HorBra, LatPal, LigHul, OenSar, PlaMac, RumOcc, SymSub, TriMar",high,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-21,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"AchMill, AngLuc, PotAns, BroPac, CarLyn, CarPlu, ConGme, DesCes, FesRub, HorBra, LatPal, LigHul, LupNoo, MaiDil, OenSar, PlaMac, RumOcc, SymSub, TriMar",mid,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-22,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"AngLuc, PotAns, CarLyn, CarPlu, HorBra, LatPal, LigHul, OenSar, PlaMar, RumOcc, SciMic, SteHum, SymSub, Trimar",high,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-23,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"PotAns, CarLyn, DesCes, FesRub, GlaMar, PlaMac, PlaMar, TriMar",mid,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-24,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"PotAns, CarLyn, DesCes, FesRub, GlaMar, LatPal, LupNoo, OenSar, PlaMac, PlaMar, SymSub, TriMar",high,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-25,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"PotAns, CarLyn, DesCes, FriCam, GlaMar, SteHum, TriMar",mid,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-26,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,CarLyn,low,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-27,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"CarLyn, DesCes, Trimar",low,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-28,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"PotAns, CarLyn, DesCes, HorBra, PlaMac, TriMar",mid,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-29,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"AchMill, AngLuc, PotAns, CarLyn, ConGme, DesCes, FriCam, HorBra, LigHul, MaiDil, PlaMac, SymSub, TriMar",high,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-30,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,CarLyn,low,field observation,visual estimate of the tidal zone
+Sanborn_and_Coxson_2020,BC17-31,"Skeena Estuary, British Columbia",NA,NA,NA,NA,NA,NA,NA,field observation,"CarLyn, DesCes",low,field observation,visual estimate of the tidal zone
+Schile-Beers_and_Megonigal_2017,Al Aryam,NA,24.269955200000002,24.2526848,54.2421301,54.2247289,NA,NA,NA,NA,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Eastern Mangrove,NA,24.45626187701817,24.451982374816527,54.44209644569774,54.43231109732476,NA,NA,NA,NA,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Jubail Island,NA,24.5200358,24.5188622,54.4713824,54.4692296,NA,NA,NA,NA,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Jubail Island East,NA,24.5045904,24.4972416,54.5332951,54.5318899,NA,NA,NA,NA,NA,NA,NA,NA
+Schile-Beers_and_Megonigal_2017,Marawah Island,NA,24.282847800000003,24.280858199999997,53.3140163,53.3131607,NA,NA,NA,NA,NA,NA,NA,NA
+Smith_et_al_2015,09WCC01,Rockefeller Wildlife Refuge,29.641306999999998,29.583503,-92.57195999999999,-92.65164,NA,NA,NA,NA,NA,NA,NA,NA

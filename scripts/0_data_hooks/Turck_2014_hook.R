@@ -63,7 +63,6 @@ cores <- cores_raw[ , -1] %>%
          elevation_datum = "NAVD88",
          elevation_accuracy = .2,
          zone = 17,
-         vegetation_class = "emergent",
          vegetation_method = "field observation",
          habitat = "marsh",
          core_length_flag = "core depth represents deposit depth",
@@ -72,7 +71,7 @@ cores <- cores_raw[ , -1] %>%
   UTM_to_DD() %>% 
   select(study_id, site_id, core_id, year, latitude, longitude, position_accuracy, 
          position_method, elevation, elevation_datum, elevation_accuracy, elevation_method, 
-         vegetation_class, vegetation_method, habitat, core_length_flag)
+         habitat, core_length_flag)
 
 species <- cores_raw %>% 
   rename(species_code = Vegetation,

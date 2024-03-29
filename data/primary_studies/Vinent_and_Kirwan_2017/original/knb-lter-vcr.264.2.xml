@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml packageId="knb-lter-vcr.264.2"
+  system="https://pasta.edirepository.org"
+  xmlns:ds="eml://ecoinformatics.org/dataset-2.1.0"
+  xmlns:eml="eml://ecoinformatics.org/eml-2.1.0"
+  xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.0 http://nis.lternet.edu/schemas/EML/eml-2.1.0/eml.xsd">
+  <access authSystem="https://pasta.edirepository.org/authentication"
+    order="allowFirst" system="https://pasta.edirepository.org">
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+    <allow>
+      <principal>uid=VCR,o=lter,dc=ecoinformatics,dc=org</principal>
+      <permission>all</permission>
+    </allow>
+  </access>
+  <dataset id="264" system="VCR">
+    <alternateIdentifier system="VCR">VCR17260</alternateIdentifier>
+    <alternateIdentifier system="https://doi.org">doi:10.6073/pasta/0f1cceb5f013643be08dbc5386f073ac</alternateIdentifier>
+    <title>Upper Phillips Creek soil organic content and bulk density April, 2017</title>
+    <creator>
+      <individualName>
+        <givenName>Orencio</givenName>
+        <surName>Vinent</surName>
+      </individualName>
+      <phone phonetype="voice">979.458.9309</phone>
+      <electronicMailAddress>oduranvinent@tamu.edu</electronicMailAddress>
+      <userId directory="http://www.vcrlter.virginia.edu/cgi-bin/w3e/msql/personnel/msql2/person.html?QID=">ovinent</userId>
+      <userId directory="http://orcid.org">http://orcid.org/0000-0001-8459-582X</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Matthew</givenName>
+        <surName>Kirwan</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Virginia Institute of Marine Science</deliveryPoint>
+        <city>Glouchester Point</city>
+        <administrativeArea>VA</administrativeArea>
+        <country>USA</country>
+      </address>
+      <electronicMailAddress>kirwan@vims.edu</electronicMailAddress>
+      <userId directory="http://www.vcrlter.virginia.edu/cgi-bin/w3e/msql/personnel/msql2/person.html?QID=">mkirwan</userId>
+      <userId directory="http://orcid.org">http://orcid.org/0000-0002-0658-3038</userId>
+    </creator>
+    <metadataProvider>
+      <organizationName>Virginia Coast Reserve Long-Term Ecological Research Project</organizationName>
+      <address>
+        <deliveryPoint>Department of Environmental Sciences, University of Virginia, 291 McCormick Road, PO Box 400123</deliveryPoint>
+        <city>Charlottesville</city>
+        <administrativeArea>VA</administrativeArea>
+        <postalCode>22904-4123</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">434-924-7761</phone>
+      <phone phonetype="facsimile">434-982-2137</phone>
+      <onlineUrl>http://www.vcrlter.virginia.edu</onlineUrl>
+    </metadataProvider>
+    <pubDate>2017-04-07</pubDate>
+    <abstract>
+      <para> Soil samples were taken in Phillips Creek Marsh (near Nassawadox, VA) and organic fraction and bulk density determined. </para>
+    </abstract>
+    <keywordSet>
+      <keyword keywordType="theme">Organic Matter</keyword>
+      <keywordThesaurus>LTERCoreAreas</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword keywordType="theme">soil bulk density</keyword>
+      <keyword keywordType="theme">organic matter</keyword>
+      <keyword keywordType="theme">salt marshes</keyword>
+    </keywordSet>
+    <intellectualRights>
+      <section>
+        <title>Data License</title>
+        <para>This data is released under a CC-BY Attribution license (https://creativecommons.org/licenses/by/4.0/)</para>
+        <para>The consumer of these data ("Data User" herein) has an ethical
+obligation to cite it appropriately in any publication that results
+from its use. The Data User should realize that these data may be
+actively used by others for ongoing research and that coordination may
+be necessary to prevent duplicate publication. The Data User is urged
+to contact the authors of these data if any questions about
+methodology or results occur. Where appropriate, the Data User is
+encouraged to consider collaboration or coauthorship with the
+authors. The Data User should realize that misinterpretation of data
+may occur if used out of context of the original study. While
+substantial efforts are made to ensure the accuracy of data and
+associated documentation, complete accuracy of data sets cannot be
+guaranteed. All data are made available "as is." The Data User should
+be aware, however, that data are updated periodically and it is the
+responsibility of the Data User to check for new versions of the
+data. The data authors and the repository where these data were
+obtained shall not be liable for damages resulting from any use or
+misinterpretation of the data. Thank you.
+</para>
+      </section>
+    </intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>PHCKMARSH - Phillips Creek Marsh</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-75.83398818969727</westBoundingCoordinate>
+          <eastBoundingCoordinate>-75.83398818969727</eastBoundingCoordinate>
+          <northBoundingCoordinate>37.46025691791979</northBoundingCoordinate>
+          <southBoundingCoordinate>37.46025691791979</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <singleDateTime>
+          <calendarDate>2017-04-07</calendarDate>
+        </singleDateTime>
+      </temporalCoverage>
+    </coverage>
+    <maintenance>
+      <description>
+        <para>Data are updated as needed</para>
+      </description>
+      <maintenanceUpdateFrequency>asNeeded</maintenanceUpdateFrequency>
+    </maintenance>
+    <contact>
+      <individualName>
+        <givenName>Matthew</givenName>
+        <surName>Kirwan</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Virginia Institute of Marine Science</deliveryPoint>
+        <city>Glouchester Point</city>
+        <administrativeArea>VA</administrativeArea>
+        <country>USA</country>
+      </address>
+      <electronicMailAddress>kirwan@vims.edu</electronicMailAddress>
+      <userId directory="http://www.vcrlter.virginia.edu/cgi-bin/w3e/msql/personnel/msql2/person.html?QID=">mkirwan</userId>
+      <userId directory="http://orcid.org">http://orcid.org/0000-0002-0658-3038</userId>
+    </contact>
+    <contact id="im">
+      <positionName>Information manager - Virginia Coast Reserve Long-Term Ecological Research Project</positionName>
+      <address>
+        <deliveryPoint>Department of Environmental Sciences, University of Virginia, 291 McCormick Road, PO Box 400123</deliveryPoint>
+        <city>Charlottesville</city>
+        <administrativeArea>VA</administrativeArea>
+        <postalCode>22904-4123</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">434-924-8999</phone>
+      <phone phonetype="facsimile">434-982-2137</phone>
+      <electronicMailAddress>jporter@lternet.edu</electronicMailAddress>
+      <onlineUrl>http://www.vcrlter.virginia.edu/jhp7e.html</onlineUrl>
+    </contact>
+    <publisher>
+      <organizationName>Virginia Coast Reserve Long-Term Ecological Research Project</organizationName>
+      <address>
+        <deliveryPoint>Department of Environmental Sciences, University of Virginia, 291 McCormick Road, PO Box 400123</deliveryPoint>
+        <city>Charlottesville</city>
+        <administrativeArea>VA</administrativeArea>
+        <postalCode>22904-4123</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">434-924-7761</phone>
+      <phone phonetype="facsimile">434-982-2137</phone>
+      <onlineUrl>http://www.vcrlter.virginia.edu</onlineUrl>
+    </publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <methods>
+      <methodStep>
+        <description>
+          <para> Methods: surface samples collected manually with a PVC cylinder 2.5cm diameter and 10cm depth. Organic matter content determined by LOI at 550 degrees. Approximate site elevation calculated using a public LiDAR from 2015 (only shown for reference) </para>
+        </description>
+      </methodStep>
+    </methods>
+    <dataTable>
+      <alternateIdentifier>VCR17260_1</alternateIdentifier>
+      <entityName>VCR17260_1</entityName>
+      <entityDescription>Upper Phillips Creek soil organic content and bulk density April, 2017</entityDescription>
+      <physical>
+        <objectName>PhilCrk_soil_data_summary2a.csv</objectName>
+        <size>1796</size>
+        <authentication>b1a6e39e2f20ae211bb8ebae94cf5f30</authentication>
+        <characterEncoding>ASCII</characterEncoding>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <numFooterLines>0</numFooterLines>
+            <recordDelimiter>#x0A</recordDelimiter>
+            <physicalLineDelimiter>#x0A</physicalLineDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+              <literalCharacter>\</literalCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url function="download">https://pasta.lternet.edu/package/data/eml/knb-lter-vcr/264/2/521048f5f2b5b06096335864ce7039ce</url>
+          </online>
+          <access
+            authSystem="https://pasta.edirepository.org/authentication"
+            order="allowFirst" system="https://pasta.edirepository.org">
+            <allow>
+              <principal>public</principal>
+              <permission>read</permission>
+            </allow>
+            <allow>
+              <principal>uid=VCR,o=lter,dc=ecoinformatics,dc=org</principal>
+              <permission>all</permission>
+            </allow>
+          </access>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute id="VCR17260.1.TRANSECT">
+          <attributeName>TRANSECT</attributeName>
+          <attributeLabel>Transect Identifier</attributeLabel>
+          <attributeDefinition>TRANSECT - Transect Identifier</attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Transect Identifier</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="VCR17260.1.POINT">
+          <attributeName>POINT</attributeName>
+          <attributeLabel>Point Number</attributeLabel>
+          <attributeDefinition>POINT - Point Number</attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">integer</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <customUnit>none</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+                <bounds>
+                  <minimum exclusive="false">1</minimum>
+                  <maximum exclusive="false">5</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+        </attribute>
+        <attribute id="VCR17260.1.REPLICATE">
+          <attributeName>REPLICATE</attributeName>
+          <attributeLabel>Replicate</attributeLabel>
+          <attributeDefinition>REPLICATE - Replicate</attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Replicate</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute id="VCR17260.1.LATITUDE">
+          <attributeName>LATITUDE</attributeName>
+          <attributeLabel>Latitude</attributeLabel>
+          <attributeDefinition>LATITUDE - Latitude</attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <customUnit>degree</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">37.0</minimum>
+                  <maximum exclusive="false">37.5</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+        </attribute>
+        <attribute id="VCR17260.1.LONGITUDE">
+          <attributeName>LONGITUDE</attributeName>
+          <attributeLabel>Longitude</attributeLabel>
+          <attributeDefinition>LONGITUDE - Longitude</attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <customUnit>degree</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-76.0</minimum>
+                  <maximum exclusive="false">-75.5</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+        </attribute>
+        <attribute id="VCR17260.1.CHANNELDISTANCE">
+          <attributeName>CHANNELDISTANCE</attributeName>
+          <attributeLabel> Approximate distance to first point close to channel</attributeLabel>
+          <attributeDefinition>CHANNELDISTANCE -  Approximate distance to first point close to channel</attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">integer</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <customUnit>meter</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">200</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+        </attribute>
+        <attribute id="VCR17260.1.ELEVATION_MSL">
+          <attributeName>ELEVATION_MSL</attributeName>
+          <attributeLabel> Approximate elevation relative to MSL</attributeLabel>
+          <attributeDefinition>ELEVATION_MSL -  Approximate elevation relative to MSL</attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <customUnit>meter</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.0</minimum>
+                  <maximum exclusive="false">1.0</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+        </attribute>
+        <attribute id="VCR17260.1.ORGANIC_FRAC">
+          <attributeName>ORGANIC_FRAC</attributeName>
+          <attributeLabel>Organic fraction</attributeLabel>
+          <attributeDefinition>ORGANIC_FRAC - Organic fraction</attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <customUnit>none</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">0.5</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+          <methods>
+            <methodStep>
+              <description>
+                <para> Determined using Loss on Ignition (LOI) </para>
+              </description>
+            </methodStep>
+          </methods>
+        </attribute>
+        <attribute id="VCR17260.1.BULK_DENSITY">
+          <attributeName>BULK_DENSITY</attributeName>
+          <attributeLabel>Bulk density</attributeLabel>
+          <attributeDefinition>BULK_DENSITY - Bulk density</attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <customUnit>gramPerMeterCubed</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">0.5</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <stmml:unitList>
+        <stmml:unit id="none"/>
+        <stmml:unit id="degree"/>
+        <stmml:unit id="gramPerMeterCubed"/>
+        <stmml:unit id="meter"/>
+      </stmml:unitList>
+    </metadata>
+  </additionalMetadata>
+  <additionalMetadata>
+    <metadata>
+      <localtags>
+        <system>VCRLTER</system>
+        <weight>-3</weight>
+      </localtags>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>

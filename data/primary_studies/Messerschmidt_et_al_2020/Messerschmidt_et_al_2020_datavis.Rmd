@@ -1,0 +1,45 @@
+---
+title: "Data Visualization: Messerschmidt et al 2020"
+date: "`r Sys.Date()`"
+output: 
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: flatly
+---
+
+
+```{r, include = FALSE}
+library(tidyverse)
+library(leaflet)
+library(ggforce)
+depthseries <- read_csv("derivative/Messerschmidt_et_al_2020_depthseries.csv")
+cores <- read_csv("derivative/Messerschmidt_et_al_2020_cores.csv")
+```
+
+# Core Locations
+
+```{r, echo = FALSE}
+cores %>% 
+  leaflet() %>%
+  addTiles() %>% 
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, label = ~core_id)
+```
+
+
+# FOM Depth Profile
+
+```{r, echo = FALSE}
+depthseries %>% 
+  drop_na(fraction_organic_matter) %>% 
+  ggplot(aes(y = fraction_organic_matter, x = depth_min)) + 
+  geom_point() + 
+  geom_line() +
+  scale_x_reverse() +
+  xlab("Depth") +
+  ylab("FOM") +
+  coord_flip() +
+  facet_wrap(.~core_id,
+             nrow = 6,
+             ncol = 6)
+```

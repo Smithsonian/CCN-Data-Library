@@ -78,6 +78,11 @@ methods <- methods_raw %>%
          carbonates_removed = FALSE,
          fraction_carbon_type = "total carbon")
 
+##Edits, removing uncontrolled attribute, recoding this into dating_notes column // RC
+methods <- methods %>% 
+  select(-pb210_background_assumption) %>% 
+  mutate(dating_notes = "supported 210Pb was estimated from the activity of 214Pb")
+
 ## Create citation info  
 
 if(!file.exists("data/primary_studies/Callaway_2019/derivative/Callaway_et_al_2019_study_citations.csv")){
@@ -127,9 +132,14 @@ updated <- updateTables(table_names)
 sites <- updated$sites
 impacts <- updated$impacts
 methods <- updated$methods
-depthseries <- updated$depthseries
 cores <- updated$cores
 species <- updated$species
+
+depthseries <- updated$depthseries %>% 
+  
+  # one replicate taken without changing ID. corrected here with sample ID creation.
+  mutate(sample_id = case_when(core_id == "China_Camp_A_Low" & depth_min == 2 & fraction_carbon < 0.03 ~ "China_Camp_A_Low_2",
+                    T ~ NA))
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")

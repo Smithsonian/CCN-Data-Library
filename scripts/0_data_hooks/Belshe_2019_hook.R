@@ -40,11 +40,21 @@ cores <- cores_raw %>%
   select(-core_date)
 
 depthseries <- depthseries_raw %>%
-  rename(pb210_crs_age = pb210_age, 
-         pb210_crs_age_sd = pb210_age_sd,
-         fraction_carbon = fraction_carbon_measured) %>%
-  mutate(method_id = "single set of methods") %>%
-  select(-c(depth_max_decompressed, fraction_carbon_modeled, fraction_carbon_density_measured, fraction_carbon_density_modeled))
+  rename(age = pb210_age,
+         fraction_carbon = fraction_carbon_measured) %>% 
+  mutate(age_present = ifelse(!is.na(age), "present", NA),
+         c14age_present = ifelse(!is.na(c14_age), "present", NA)) %>% 
+  group_by(age_present) %>% 
+  mutate(n_age = n(), # there are 89 values for !is.na(age)
+         age_se = pb210_age_sd / sqrt(89), # convert SD to SE: SE = SD / sqrt(n)
+         method_id = "single set of methods") %>% 
+  ungroup() %>%
+  group_by(c14age_present) %>% 
+  mutate(n_c14age = n(), # 31
+         c14_age_se = c14_age_sd / sqrt(31)) %>% 
+  ungroup() %>% 
+  select(study_id, site_id, core_id, method_id, depth_min, depth_max, dry_bulk_density, fraction_carbon, age, age_se, 
+         c14_age, c14_age_se, c14_material)
 
 methods <- methods_raw %>%
   mutate(carbon_measured_or_modeled = "measured",
@@ -86,9 +96,17 @@ updated <- updateTables(table_names)
 
 # save listed tables to objects
 methods <- updated$methods
-depthseries <- updated$depthseries
-cores <- updated$cores
+# depthseries <- updated$depthseries # corrections made and restructured depthseries table to current database format as of 3.26.24
 sites <- updated$sites
+cores <- updated$cores %>% 
+  # add core SM10 position as a site level replicate of core SM05
+  mutate(latitude = case_when(core_id == "SM10" ~ 39.1501,
+                              T ~ latitude),
+         longitude = case_when(core_id == "SM10" ~ 2.94919,
+                               T ~ longitude),
+         position_notes = case_when(core_id == "SM10" ~ "site level replicate of core SM05's position",
+                                    T ~ NA_character_))  
+
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")

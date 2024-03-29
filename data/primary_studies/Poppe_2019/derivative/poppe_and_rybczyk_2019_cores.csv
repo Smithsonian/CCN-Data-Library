@@ -4,7 +4,7 @@ Poppe_et_al_2019,Snohomish_Heron_Point,HP_B,48.0313999999999,-122.154799999999,R
 Poppe_et_al_2019,Snohomish_Marysville_Mitigation,MA_A,48.0382,-122.1634,RTK,NA,1.9525488,NAVD88,RTK,NA,estuarine,measurement,emergent,measurement,NA,NA,core depth limited by length of corer,2013,6,12
 Poppe_et_al_2019,Snohomish_Marysville_Mitigation,MA_B,48.0382,-122.1634,RTK,NA,1.9946112,NAVD88,RTK,NA,estuarine,measurement,emergent,measurement,NA,NA,core depth limited by length of corer,2013,6,12
 Poppe_et_al_2019,Snohomish_North_Ebey,NE_A,48.0352,-122.1626,RTK,NA,2.3954232,NAVD88,RTK,NA,estuarine,measurement,emergent,measurement,NA,NA,core depth limited by length of corer,2013,6,20
-Poppe_et_al_2019,Snohomish_North_Ebey,NE_B,NA,NA,NA,"No RTK, close proximity to A",NA,NA,NA,"No RTK, close proximity to A",estuarine,measurement,emergent,measurement,NA,NA,core depth limited by length of corer,2013,6,20
+Poppe_et_al_2019,Snohomish_North_Ebey,NE_B,48.0352,-122.1626,NA,site level replicate of core NE_A's position,NA,NA,NA,"No RTK, close proximity to A",estuarine,measurement,emergent,measurement,NA,NA,core depth limited by length of corer,2013,6,20
 Poppe_et_al_2019,Snohomish_Otter_Island,OI_A,48.0084999999999,-122.1483,RTK,NA,2.6093928,NAVD88,RTK,NA,riverine,measurement,forested,measurement,NA,NA,core depth limited by length of corer,2013,6,20
 Poppe_et_al_2019,Snohomish_Otter_Island,OI_B,48.0084,-122.1486,RTK,NA,2.5636728,NAVD88,RTK,NA,riverine,measurement,forested,measurement,NA,NA,core depth limited by length of corer,2013,6,20
 Poppe_et_al_2019,Snohomish_Quilceda_Marsh,QM_A,48.0444,-122.2048,RTK,NA,1.8644616,NAVD88,RTK,NA,estuarine,measurement,emergent,measurement,NA,NA,core depth limited by length of corer,2013,6,20
@@ -15,7 +15,7 @@ Poppe_et_al_2019,Snohomish_Qwuloolt,QW_B,48.0394999999999,-122.1573,RTK,NA,1.440
 Poppe_et_al_2019,Snohomish_Smith_Island_County,SN_A,48.0165999999999,-122.1636,RTK,NA,0.7839456,NAVD88,RTK,NA,estuarine,measurement,emergent,measurement,NA,NA,core depth limited by length of corer,2013,6,12
 Poppe_et_al_2019,Snohomish_Smith_Island_County,SN_B,48.0167,-122.1636,RTK,NA,0.813816,NAVD88,RTK,NA,estuarine,measurement,emergent,measurement,NA,NA,core depth limited by length of corer,2013,6,12
 Poppe_et_al_2019,Snohomish_Spencer_Island,SP_A,47.9902,-122.1611,RTK,NA,1.8845784,NAVD88,RTK,NA,estuarine,measurement,emergent,measurement,NA,NA,core depth limited by length of corer,2013,5,28
-Poppe_et_al_2019,Snohomish_Spencer_Island,SP_B,NA,NA,NA,"No RTK, close proximity to A",NA,NA,NA,"No RTK, close proximity to A",estuarine,measurement,emergent,measurement,NA,NA,core depth limited by length of corer,2013,5,28
+Poppe_et_al_2019,Snohomish_Spencer_Island,SP_B,47.9902,-122.1611,NA,"No RTK, close proximity to A",NA,NA,NA,"No RTK, close proximity to A",estuarine,measurement,emergent,measurement,NA,NA,core depth limited by length of corer,2013,5,28
 Poppe_et_al_2019,Snohomish_Smith_Island_City,SS_A,48.0035999999999,-122.1616,RTK,NA,1.7233392,NAVD88,RTK,NA,estuarine,measurement,emergent,measurement,NA,NA,core depth limited by length of corer,2013,6,12
 Poppe_et_al_2019,Snohomish_Smith_Island_City,SS_B,48.0035999999999,-122.1616,RTK,NA,1.5633192,NAVD88,RTK,NA,estuarine,measurement,emergent,measurement,NA,NA,core depth limited by length of corer,2013,6,12
 Poppe_et_al_2019,Snohomish_Union_Slough,US_A,48.0307,-122.1784,RTK,NA,0.8125968,NAVD88,RTK,NA,estuarine,measurement,unvegetated,measurement,NA,NA,core depth limited by length of corer,2013,5,13

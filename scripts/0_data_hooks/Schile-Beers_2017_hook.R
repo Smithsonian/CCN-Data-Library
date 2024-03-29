@@ -194,7 +194,12 @@ cores <- core_data %>%
   # need to deal with sabkha and microbial mat later
   mutate(habitat = case_when(grepl("mangrove", vegetation_notes) ~ "mangrove",
                              vegetation_notes == "salt marsh" ~ "marsh",
-                             vegetation_notes == "seagrass" ~ "seagrass"))
+                             vegetation_notes == "seagrass" ~ "seagrass")) %>% 
+  #rose edits, add sabkha and microbial mat 
+  mutate(habitat = case_when(grepl("sabkha", vegetation_notes) ~ "sabkha",
+                             vegetation_notes == "microbial mat" ~ "microbial mat",
+                             TRUE ~ habitat))
+  
   
 
 ## ... 3D. Site level data #############
@@ -319,8 +324,17 @@ updated <- updateTables(table_names)
 
 # methods <- updated$methods
 depthseries <- updated$depthseries
-cores <- updated$cores
 sites <- updated$sites
+cores <- updated$cores %>% 
+  # add core Bu_Tinah_Shamal_mangrove_2 position as a site level replicate of core Bu_Tinah_Shamal_mangrove_1
+  mutate(latitude = case_when(core_id == "Bu_Tinah_Shamal_mangrove_2" ~ 24.631528,
+                              T ~ latitude),
+         longitude = case_when(core_id == "Bu_Tinah_Shamal_mangrove_2" ~ 53.051491,
+                               T ~ longitude),
+         position_notes = case_when(core_id == "Bu_Tinah_Shamal_mangrove_2" ~ "site level replicate of core Bu_Tinah_Shamal_mangrove_1's position",
+                                    T ~ position_notes))
+
+
 
 ## QA/QC ###############
 source("./scripts/1_data_formatting/qa_functions.R")

@@ -63,8 +63,7 @@ depthseries <- depthseries_raw %>%
          ra226_unit = ifelse(!is.na(ra226_activity), "disintegrationsPerMinutePerGram", NA_character_)) %>%
   select(-c(cs137_MDA, total_pb210_MDA, ra226_MDA, excess_pb210_inventory,
             excess_pb210_inventory_se, fraction_total_nitrogen, fraction_total_phosphorus,
-            delta_N15, gamma_counting_sedmass, cumulative_sedmass_atdepth))
-# 'date' attribute: date at bottom of the depth interval, calculated as coring date minus sample age
+            delta_N15, gamma_counting_sedmass, cumulative_sedmass_atdepth, date))
 
 # visual check
 ggplot(depthseries, aes(fraction_organic_matter, fraction_carbon, col = core_id)) + 

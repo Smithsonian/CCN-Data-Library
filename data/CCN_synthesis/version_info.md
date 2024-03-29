@@ -4,6 +4,95 @@ This versioning document tracks the changes made to the CCN Data Library, includ
 
 ***
 
+### Synthesis Version 1.2.0
+
+#### Version 1.2.0 Contents 
+
+This database contains tidal wetland soil carbon profiles and associated metadata. The data itself is housed in separate comma separated value (.csv) spreadsheets linked by common identifier attributes (study_id, site_id, and core_id).
+
+*Data Tables*
+
+- CCN_methods.csv - Contains information on materials and methods broken down by study 
+- CCN_sites.csv - Contains positional and descriptive information of the coring sites.
+- CCN_cores.csv - Contains positional and descriptive information on core locations.
+- CCN_depthseries.csv - Contains raw depth-series information for all cores.
+- CCN_species.csv - Contains information on the dominant plant species at coring locations.
+- CCN_impacts.csv - Contains information on the anthropogenic impacts at site or coring locations.
+
+*Metadata Tables*
+
+- CCN_database_structure.html - Is a simplified, visual and interactive version of metadata.xml for display purposes.
+- CCN_study_citations.csv - Contains bibliographic information for publications and associated sources, which can be related to the database tables via study_id.
+- CCN_bibliography.bib - Contains bibliographic information for publications and sources associated with this database.
+
+#### Version 1.2.0 Updates
+
+*Changes to Database Structure*
+
+- Habitat types _sabkha_ and _microbial mat_ have been added to the database's controlled vocabulary
+
+*New Datasets 1.2.0*
+
+This update adds 26 new studies and 5,164 new soil cores to the CCN Data Library, bringing the total number of cores to 14,958, with 526 unique studies. 
+
+Bost et al 2024
+Brown et al 2024 
+Craft 2024
+Cifuentes et al 2024 (Nicoya)
+Darienzo and Peterson 1990
+Dontis et al 2023
+Drake et al 2024
+Everhart et al 2020
+Gillen et al 2018
+Kemp et al 2024
+Langston et al 2022
+Loomis and Craft 2024
+Machite and Adams 2024
+Maxwell et al 2023
+Messerschmidt et al 2020
+Morgan et al 2024 
+Palinkas and Cornwell 2024
+Palinkas and Engelhardt 2024
+Radabaugh et al 2017
+Radabaugh et al 2018
+Radabaugh et al 2021
+Radabaugh et al 2023
+Schieder and Kirwan 2019
+Smith and Kirwan 2021
+Stahl et al 2024 
+Stevens et al 2024
+Vinent and Kirwan 2017
+
+
+*Corrections and Additions to previously synthesized datasets 1.2.0*
+
+1. Belshe et al 2019: Updated core position and position_notes for core_id = "SM10" in _cores.csv. Updated and reformatted depthseries table to reflect V1.2.0 structure. 
+2. Breithaupt et al 2014: Removed 'date' attribute from depthseries table. This value is represented in 'age' and 'age_se'.
+3. Bukoski et al 2017: Corrected latitude and longitude values. 
+4. Callaway et al 2019: Removed 'pb210_background_assumption' attribute from methods table. Value recoded in 'dating_notes'. Resolved duplicate core_ids. 
+5. Cifuentes et al 2023 (Panama): Resolved encoding issue with site names.
+6. Eagle et al 2021: Resolved accent encoding issue.
+7. Everhart et al 2020: Removed the following uncontrolled attributes from depthseries table: th234_activity, th234_activity_se, k40_activity, k40_activity_se.
+8. Fourqurean et al 2012: Added site-level position data in _cores.csv.
+9. Holmquist et al 2018: Removed Drake et al 2015 and Radaubaugh et al 2018 data contained in synthesis, now represented in Drake et al 2024 and Radaugbaugh et al 2018. Added 'site_id' to _impacts.csv and _species.csv. 
+10. Howard and Fourqurean 2020: Resolved duplicate core_ids. 
+11. Osland et al 2016: Added habitat informations in _cores.csv.
+12. Peck et al 2020: Removed cores that do not contain dissaggregated depthseries data.
+13. Poppe and Rybczyk 2019: Removed duplicate impact classes in _impacts.csv. 
+14. Marot et al 2020: Resolved position and updated habitat classification in _cores.csv. 
+15. Miller et al 2022: Updated study_id in all associated .csv files. Study originally represented as Rodriguez et al 2022.
+16. Morrisette et al 2023: Removed uncontrolled attribute in methods table: 'ground_or_sieved_flag'.
+17. Schile-Beers 2017: Updated missing core positions in _cores.csv.
+18. Snedden 2017: Removed modeled carbon values from _depthseries.csv.
+19. St Laurent 2020: Resolved duplicate core_ids.  
+20. Thom et al 2019: Addition of core "PB1" replicate in _cores.csv to represent samples present in _depthseries.csv. 
+21. Trettin et al 2020: Updated name of study citations csv file. Now named Trettin_et_al_2020_study_citations.csv.
+22. Turck 2014: Resolved error with vegetation_class in _cores.csv.
+
+
+
+***
+
 ### Synthesis Version 1.1.1
 
 #### Version 1.1.1 Contents
@@ -137,7 +226,7 @@ This synthesis update contains changes to the CCN Data Library, including new da
 
 **New Datasets 1.1.0**
 
-This update adds 94 new studies and 3,498 new cores to the CCN Data Library, bringing the total number of cores to 10198, with 401 unique studies. 
+This update adds 94 new studies and 3,498 new cores to the CCN Data Library, bringing the total number of cores to 10,198, with 401 unique studies. 
 
 Akther et al 2021  
 Beers et al 2023  

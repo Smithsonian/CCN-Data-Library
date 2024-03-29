@@ -122,17 +122,27 @@ depthseries <- depthseries %>% rename(depth_code = "Depth Interval Code") %>%
                                       depth_max = depth_min + 2) %>% 
                                    select(-depth_code) %>% 
                                   mutate(cs137_activity = ifelse(cs137_activity == ".", NA, cs137_activity),
-                                         cs137_activity_se = ifelse(cs137_activity_se == ".", NA, cs137_activity_se))
+                                         cs137_activity_se = ifelse(cs137_activity_se == ".", NA, cs137_activity_se)) %>% 
+                                  select(-fraction_carbon)#removing modeled carbon
       
 #reorder columns 
 depthseries <- reorderColumns("depthseries", depthseries)
+
+
+
+# visualizing modeled carbon values
+#library(plotly)
+#p <- ggplot() +
+#  geom_point(depthseries, mapping = aes(x = fraction_organic_matter, y = fraction_carbon, col = core_id))
+#ggplotly(p)
+
+
 
 ## ... Sites ####
 
 ## ... Species ####
 
 ## ... Impacts ####
-
 
 ## 2. QAQC ####
 

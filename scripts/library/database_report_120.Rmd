@@ -1,0 +1,680 @@
+---
+title: "Quarterly Report 1.2.0 Visualization"
+author: "Coastal Carbon Network"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: spacelab
+    highlight: tango
+---
+
+<style>
+.vscroll-plot {
+    width: 900px;
+    height: 800px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+</style>
+
+```{r setup, include=FALSE}
+
+# this sets the working directory to start where the R project is located
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+# no warnings or messages
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
+
+library(tidyverse)
+library(plotly)
+library(DT)
+library(rnaturalearth)
+
+```
+
+```{r}
+### Load Necessary Data ####
+
+# library_beginnings <- tibble(
+#   date = as.Date(c("2018-06-01", "2018-07-01", "2018-08-01", "2018-09-01",
+#                    "2018-10-01", "2018-11-01", "2018-12-01", "2019-01-01",
+#                    "2019-02-01", "2019-03-01", "2019-04-01", "2019-05-01")),
+#   total_cores = c(1535, 1535, 1535, 1535, 1546, 1546, 2555, 4025, 4263, 4276,
+#                   4571, 5487),
+#   study_IDs = c(32, 32, 32, 32, 33, 33, 34, 188, 190, 192, 194, 254),
+#   # Dated cores are inclusive of WG repo-only datasets, which can't be tapped into
+#   #   from this script
+#   dated_cores = c(0, 0, 0, 0, 11, 11, 22, 22, 66, 70, 133, 150)
+# )
+# write_csv(library_beginnings, "data/library_metrics/growth_metrics.csv")
+
+# read in table documenting figshare pubs with IDs
+versions <- read_csv("docs/synthesis_resources/synthesis_history.csv")
+core_versions <- versions %>% filter(table == "cores")
+
+# read in current version
+guess_max <- nrow(read_csv("data/CCN_synthesis/CCN_cores.csv"))
+
+current_cores <- read_csv("data/CCN_synthesis/CCN_cores.csv", guess_max = guess_max) %>% 
+  mutate(country = case_when(country == "Laos" ~ "Vietnam", 
+                             country == "Russian Federation" ~ "Russia",
+                             country == "Micronesia" ~ "Federated States of Micronesia",
+                             T ~ country)) %>% # spot fix for Bukoski et al 2017
+  # assign continent and region
+  mutate(region = countrycode::countrycode(sourcevar = country,
+                            origin = "country.name",
+                            destination = "region"),
+         continent = countrycode::countrycode(sourcevar = country,
+                            origin = "country.name",
+                            destination = "continent"))
+
+# View(current_cores %>% distinct(country, region, continent))
+
+current_version <- "1.2.0"
+```
+
+```{r}
+
+## Create Synthesis Record (of Cores Table)
+
+# loop through versions and harvest relevant information
+if(file.exists("docs/synthesis_resources/core_synthesis_history.csv")){
+  
+  synthesis_history <- read_csv("docs/synthesis_resources/core_synthesis_history.csv")
+
+  } else {
+  
+  synthesis_history <- data.frame()
+  
+  for(i in 1:nrow(core_versions)){
+    
+    if(core_versions$source[i] == "github"){
+      temp_table <- read_csv(core_versions$filepath_id[i], guess_max = guess_max)
+    } else {
+      temp_table <- read_csv(paste0("https://ndownloader.figshare.com/files/", core_versions$filepath_id[i]), guess_max = guess_max)
+    }
+    
+    # assign date and version
+    temp_date <- as.Date(core_versions$date[i], format = "%m/%d/%y")
+    temp_version <- core_versions$version[i]
+    
+    temp_df <- temp_table %>%  
+      distinct(study_id, core_id) %>% 
+      mutate(date = temp_date,
+             version = temp_version)
+    
+    # compile history of synthesis in core IDs
+    synthesis_history <- bind_rows(synthesis_history, temp_df)
+  }
+  write_csv(synthesis_history, "docs/synthesis_resources/core_synthesis_history.csv")
+}
+
+# remove any unnecessary or suspicious versions
+## summary stats from this table
+synthesis_history_trim <- synthesis_history %>% 
+  # drop some unneccessary versions (some where the core count reduced??)
+  filter(version != "1.1.0") %>%  # this overestimated the core count (V1.1.1 corrected this)
+  filter(!(lubridate::year(as.Date(date)) %in% c(2021))) %>% 
+  # add current core version info
+  bind_rows(current_cores %>% 
+              select(study_id, core_id) %>% 
+              mutate(version = current_version, date = Sys.Date()))
+  
+```
+
+## Database Snapshot
+
+### Current Map
+
+```{r}
+# Choropleth Map of Total Cores for all Countries
+
+country_cores <- current_cores %>% drop_na(country) %>% count(country, name = "core_count")
+
+# world with naturalearth data
+world_ne <- ne_countries(returnclass = "sf",
+                     # type = "countries",
+                     scale = "medium") %>% 
+  rename(country = sovereignt) %>% 
+  mutate(country = recode(country, "United States of America" = "United States"))
+# names(world_ne)
+
+world_country_cores <- left_join(world_ne, country_cores)
+
+map_country_cores <- ggplot(data = world_country_cores) +
+  geom_sf(color = "white", size = 0.5, aes(fill = core_count,
+                                           text = paste("Country:", country, "\nTotal Cores:", core_count))) +
+  coord_sf(crs = "+proj=robin") +
+  theme_bw()
+
+# print(ne_map)
+ggplotly(map_country_cores + theme(legend.position = "none"), tooltip = "text") %>% 
+  layout(autosize = F, width = 800, height = 500)
+```
+
+### Current Habitat Representation
+
+```{r}
+
+current_cores %>% 
+  # group and tally the unvegetated category
+  mutate(habitat = case_when(habitat == "mudflat" ~ "unvegetated",
+                          habitat == "upland" ~ "supratidal forest",
+                          is.na(habitat) ~ "unknown", T ~ habitat)) %>%
+  group_by(habitat) %>%
+  summarise(core_count = n()) %>% 
+  ungroup() %>%
+  mutate(percent = 100*(core_count/sum(core_count))) %>% 
+  mutate(habitat = fct_reorder(habitat, percent)) %>% 
+  ggplot(aes(habitat, percent, fill = percent)) + 
+  geom_col(fill = "darkgreen") + 
+  coord_flip() + 
+  # scale_color_brewer(palette = "BuGn") +
+  xlab("Habitat Type") + ylab("Proportion of Cores (%)") +
+  geom_text(aes(label = paste0("n=", core_count)), size = 3.5, hjust = -0.2) +
+  # geom_text(aes(label = paste0(round(percent, 1), "%")), size = 3.5, hjust = -0.2) +
+  ylim(0, 70) +
+  theme_classic(base_size = 15) +
+  ggtitle("Habitat Sampling Proportions")
+
+ggsave("docs/quarterly_reports/v120/habitat_barplot.jpg", width = 6, height = 6)
+
+  # mutate(country = recode(country, "Democratic Republic of the Congo" = "DRC")) 
+  
+  # ggplot(aes(core_count, country, 
+  #            size = core_count,
+  #            color = habitat)) + 
+  # geom_point() +
+  # # ggbreak::scale_x_break(c(2000, 3500)) +
+  # theme_bw(base_size = 15) +
+  # xlab("Number of Cores") + ylab("")
+
+# ggplotly(p)
+  # print(p)
+```
+
+## What's New
+
+```{r}
+# isolate the most recent two versions of the synthesis
+previous_version <- core_versions %>% filter(version == "1.0.0") %>% 
+  # filter(version != "1.1.0") %>%  # this overestimated the core count (V1.1.1 was the correction)
+  # arrange(desc(version)) %>% 
+  # head(1) %>% 
+    pull(version)
+
+# current <- synthesis_history_trim %>% filter(version == last_two[1]) %>% select(study_id, core_id)
+previous <- synthesis_history_trim %>% filter(version == previous_version) %>% select(study_id, core_id)
+
+# create df of new cores only
+new <- anti_join(current_cores, previous)
+
+```
+
+**Stats:**
+
+New studies: `r length(unique(new$study_id))`
+
+New cores: `r nrow(new %>% distinct(study_id, core_id))`
+
+New dated cores: `r nrow(new %>% drop_na(dates_qual_code))`
+
+
+```{r fig.height=6, fig.width=10}
+# stats_orig %>%
+  # mutate(new_total = `Cores Available prior to project` + `New Cores (hook or publish)`,
+  #        `Target Country` = recode(`Target Country`, "Federated States of Micronesia" = "Micronesia"),
+  #        `Target Country` = fct_reorder(`Target Country`, new_total)) %>%
+  # filter(new_total != 0) %>%
+
+# synth_comparison <- bind_rows(left_join(previous, current_cores) %>% count(country) %>% mutate(version = previous_version),
+#                         current_cores %>% count(country) %>% mutate(version = current_version))
+
+synth_comparison <- full_join(left_join(previous, current_cores) %>% count(country, name = "previous_n"),
+                              current_cores %>% count(country, name = "current_n")) %>% 
+  mutate(previous_n = case_when(is.na(previous_n) ~ 0, T ~ previous_n), 
+         change = current_n - previous_n) %>% 
+  filter(change > 0) %>% 
+      mutate(country = fct_reorder(country, previous_n)) %>% 
+
+  filter(!is.na(country))
+  
+synth_comparison %>% select(-change) %>% 
+  pivot_longer(-country, names_to = "version", values_to = "n") %>% 
+  ggplot() +
+  geom_point(aes(n, country, col = version), alpha = 0.5, size = 2) +
+    scale_color_manual(values = c("blue", "red")) +
+  geom_segment(data = synth_comparison, aes(y = country, yend = country, x = previous_n, xend = current_n), 
+               colour = "black", arrow = arrow(length = unit(0.1, "cm"))) +
+
+  ggbreak::scale_x_break(c(1800, 3800)) +
+  xlab("Change in Data Representation") + ylab("Country") +
+  theme_bw(base_size = 12) + theme(legend.position = "bottom")
+
+ggsave("docs/quarterly_reports/v120/country_data_progress.jpg", width = 7, height = 7)
+
+```
+
+```{r eval=FALSE}
+
+bib <- read_csv("data/CCN_synthesis/CCN_study_citations.csv")
+
+new_bib <- bib %>%  filter(study_id %in% unique(new$study_id)) %>% 
+  select(-study_id) %>% distinct() %>% 
+  arrange(bibliography_id)
+
+write_csv(new_bib, "docs/quarterly_reports/v120/new_cores_bibliography.csv")
+
+# # top contributors 
+# new %>% group_by(study_id) %>% 
+#   summarise(core_count = n(),
+#             countries = paste(unique(country), collapse = ", "),
+#             habitats = paste(unique(habitat), collapse = ", ")) %>% 
+#   arrange(study_id) %>% 
+#   datatable(options = list(searching = TRUE,
+#                          paging = FALSE,
+#                          info = FALSE,
+#                          scrollY = 300,
+#                          scrollX = 300,
+#                          scrollCollapse = TRUE),
+#           rownames = FALSE)
+
+```
+
+<!-- Sediment Sampling Effort -->
+
+```{r fig.height=6, fig.width=12}
+# Choropleth Map of Countries with New Cores
+# resource: https://r-charts.com/spatial/maps-ggplot2/
+
+library(rnaturalearth)
+
+new_country <- new %>% drop_na(country) %>% count(country, name = "core_count")
+
+# world with naturalearth data
+world_ne <- ne_countries(returnclass = "sf",
+                     # type = "countries",
+                     scale = "medium") %>% 
+  rename(country = sovereignt) %>% 
+  mutate(country = recode(country, "United States of America" = "United States"))
+# names(world_ne)
+
+world_ne_cores <- left_join(world_ne, new_country) %>% 
+  arrange(desc(core_count)) %>% 
+  select(country, core_count, everything())
+
+ne_map <- ggplot(data = world_ne_cores) +
+  geom_sf(color = "white", width = 0.5, aes(fill = core_count,
+                                           text = paste("Country:", country, "\nNew Cores:", core_count))) +
+  coord_sf(crs = "+proj=robin") +
+  # coord_sf(ylim = c(-60, 80), expand = FALSE) +
+  # theme_void()
+  theme_bw()
+  # geom_point(data = data_unique, aes(x = Longitude, y = Latitude, 
+                                       # color = Source), size = 3, alpha = 0.4)+
+  # scale_size(range = c(2,8))+
+  # theme(legend.position = "bottom")+
+  # guides(col = guide_legend(ncol = 2))+
+  # guides(colour = guide_legend(override.aes = list(alpha = 1)))
+
+# Static
+print(ne_map)
+ggsave(ne_map, filename = "docs/quarterly_reports/v120/new_cores_map_v100_to_v120.jpg")
+
+# Static Maps with maps library
+# library(maps)
+# 
+# world <- map_data("world")
+# sort(names(world))
+# 
+# ggplot(data = world) +
+#   # geom_sf() +
+#     geom_polygon(data = world, aes(x = long, y = lat, group = group), fill="white", color="grey")
+
+```
+
+```{r}
+## Table to go with static plot
+new %>% 
+  drop_na(country) %>% 
+  group_by(country, habitat) %>% 
+  summarize(core_count = n(),
+            sources = paste(unique(study_id), collapse = ", ")) %>% 
+  mutate(sources = gsub("_", " ", sources)) %>% 
+  arrange(country) %>% 
+  
+datatable(rownames = FALSE)
+
+```
+
+```{r eval=FALSE}
+# Make it interactive
+ggplotly(ne_map + theme(legend.position = "none"), tooltip = "text")
+```
+
+## Library Growth
+
+```{r}
+# plot library growth
+growth_fig <- synthesis_history_trim %>% 
+  count(date, version, name = "total_cores") %>% 
+  
+  # add a row to indicate the initial synthesis
+  add_row(date = as.Date("2018-06-01"),
+          version = "first",
+          total_cores = 1535) %>%
+  # add_row(date = Sys.Date(),
+  #         version = current_version,
+  #         total_cores = nrow(current_cores)) %>% 
+  ggplot(aes(date, total_cores)) +
+  geom_line() +
+  geom_point() +
+  # geom_col() +
+  xlab("Date") + ylab("Soil Sample Count") +
+  theme_bw()
+ggsave(growth_fig, filename = "docs/quarterly_reports/v120/library_growth.jpg")
+
+ggplotly(growth_fig) %>% layout(autosize = F, width = 800, height = 500)
+```
+
+
+```{r}
+# derive more insight
+# this is taking the approach of subsetting the current version of the synthesis
+# instead of working directly with past versions 
+
+## Approach
+# The analyses should be done on the most current version of the database because 
+# we revised habitats or coordinates for existing studies, it wouldn't be reflected
+# work with the documentation of what cores were included in each version
+
+habitat_change <- data.frame()
+quality_change <- data.frame()
+sampling_depths <- data.frame()
+  
+for(v in unique(synthesis_history_trim$version)){
+  
+  # subset synthesis history to identify studies and cores for a particular version
+  temp_version <- synthesis_history_trim %>% filter(version == v) %>% 
+    # make some fixes to study IDs that should align things better
+    mutate(study_id = gsub("[.]", "", study_id),
+           study_id = case_when(grepl(" ", study_id) ~ gsub(" ", "_", study_id), T ~ study_id))
+  
+  # subset present cores table to include only the cores from this particular version iteration
+  # I am sure there might be a catch here
+  # subset_df <- left_join(temp_version, current_cores)
+  subset_df <- current_cores %>% filter(study_id %in% unique(temp_version$study_id) | core_id %in% unique(temp_version$core_id))
+  
+  # extract habitat information
+  habitat_change <- habitat_change %>% 
+    bind_rows(
+      subset_df %>% count(continent, region, country, habitat) %>% 
+        mutate(version = v,
+               date = unique(temp_version$date))
+    )
+  
+  # extract quality tier information 
+  quality_change <- quality_change %>%
+    bind_rows(data.frame(date = unique(temp_version$date),
+                         version = v,
+                         total_cores = nrow(subset_df),
+                         stock_cores = nrow(subset_df %>% drop_na(stocks_qual_code)),
+                         dated_cores = nrow(subset_df %>% drop_na(dates_qual_code)),
+                         elevation_cores = nrow(subset_df %>% drop_na(elevation_qual_code))))
+  
+  # harvest max sampling depths
+  sampling_depths <- sampling_depths %>% 
+    bind_rows(
+      subset_df %>% select(continent, region, country, habitat, max_depth) %>% 
+        mutate(date = unique(temp_version$date),
+               version = v)
+    )
+}
+
+```
+
+### Regional Representation
+
+```{r}
+region_fig <- habitat_change %>% 
+  # mutate(region = case_when(is.na(region) ~ "unknown", T ~ region)) %>% 
+  drop_na(region) %>% 
+  group_by(version, date, region) %>% 
+  summarise(core_count = sum(n)) %>% 
+  ungroup() %>% 
+  ggplot() +
+  geom_line(aes(date, core_count, col = region)) +
+  geom_point(aes(date, core_count, col = region)) + 
+  theme_bw()
+
+ggsave(plot = region_fig, filename = "docs/quarterly_reports/v120/library_growth_region.jpg",
+       height=6, width=10)
+```
+
+
+### Habitat
+
+Change in Habitat Representativeness
+
+```{r}
+
+# "marsh" = "#607549", 
+# "upland" = "#a45458",
+# "mangrove" = "#c86f31ff",
+# "unknown" = "#777774",
+# "seagrass" = "#30b1d4",
+# "unvegetated" = "#e7c687",
+# "scrub/shrub" = "#749189",
+# "swamp" = "#6487b8",
+#  "algal mat" = "#dfc4e9"
+
+habColors <- c("#607549", "#a45458", "#c86f31ff", "#777774", "#30b1d4", "#e7c687", "#749189", "#6487b8", "#dfc4e9")
+names(habColors) <- c("marsh", "upland", "mangrove", "unknown", "seagrass", "unvegetated", "scrub/shrub",
+                           "swamp", "algal mat")
+colScale <- scale_colour_manual(name = "habitat", values = habColors)
+# https://stackoverflow.com/questions/6919025/how-to-assign-colors-to-categorical-variables-in-ggplot2-that-have-stable-mappin
+
+# habitat change through time
+hab_fig <- habitat_change %>% 
+  mutate(country = case_when(is.na(country) ~ "unknown", T ~ country),
+         habitat = case_when(is.na(habitat) ~ "unknown", T ~ habitat)) %>% 
+  
+  filter(!(habitat %in% c("upland", "algal mat", "unknown"))) %>%
+  mutate(habitat = recode(habitat, "mudflat" = "unvegetated")) %>%
+  group_by(date, version, habitat) %>% 
+  summarise(core_count = sum(n)) %>% 
+  ungroup() %>% 
+  ggplot() +
+  geom_line(aes(date, core_count, col = habitat)) +
+  geom_point(aes(date, core_count, col = habitat)) + 
+  theme_bw() + 
+  ggtitle("Data Library Growth Across Habitat Types") +
+  colScale
+
+ggplotly(hab_fig) %>% layout(autosize = F, width = 800, height = 500)
+
+ggsave(plot = hab_fig, filename = "docs/quarterly_reports/v120/library_growth_habitat.jpg",
+       height=6, width=10)
+
+```
+
+### Data Use and Completeness
+
+Change in Data Quality Tier
+
+```{r fig.height=6, fig.width=10}
+# conver to Long format for plotting
+quality_change_long <- quality_change %>% 
+  pivot_longer(cols = -c("date", "version"), names_to = "group", values_to = "core_n") %>% 
+  mutate(group = str_to_title(gsub("_", " ", group)),
+         # specify the order
+         group = factor(group, levels = c("Total Cores", "Stock Cores", "Dated Cores", "Elevation Cores")))
+  
+# Plot 
+quality_growth_fig <- ggplot(quality_change_long) + 
+  geom_area(aes(x= date, y = core_n, fill = group)) +
+  xlab("Date") + ylab("Core Count") +
+  theme_bw()
+quality_growth_fig
+
+ggsave(quality_growth_fig, filename = "docs/quarterly_reports/v120/library_growth_tier.jpg")
+
+# ggplotly(quality_growth_fig) %>% layout(autosize = F, width = 800, height = 500)
+
+```
+
+### Sampling Depth
+
+Change in Sampling Depth across habitat
+
+```{r fig.height=6, fig.width=10}
+simple_depths <- sampling_depths %>% 
+  drop_na(max_depth) %>% 
+  mutate(
+    # three classes of sampling depth
+    depth_flag = case_when(max_depth < 20  ~ "shallow (<20cm)",
+                           max_depth >= 20 & max_depth <= 100 ~ "mid (20-100cm)",
+                                max_depth > 100 ~ "deep (>100cm)",
+                                T ~ "unknown"),
+    # other categorizations
+         # depth_flag = case_when(max_depth < 20 ~ "<20cm",
+         #                        max_depth <= 100 ~ "20-100cm",
+         #                        max_depth > 100 & max_depth <= 200 ~ "100-200cm",
+         #                        max_depth > 200 & max_depth <= 300 ~ "200-300cm",
+         #                        max_depth > 300 ~ ">300cm",
+         #                         T ~ "unknown"),
+         habitat = case_when(is.na(habitat) ~ "unknown", 
+                             habitat == "mudflat" ~ "unvegetated",
+                             T ~ habitat)) %>% 
+  count(date, version, habitat, depth_flag) %>% 
+  # calculate the change in composition through time
+  # not as fond of that figure
+  group_by(date, version, habitat) %>% 
+  mutate(depth_flag_percent = 100*(n/sum(n)))
+
+depth_fig <- simple_depths %>% 
+  filter(!(habitat %in% c("unknown", "upland", "algal mat"))) %>% 
+  ggplot(aes(x=date, y = n, col = depth_flag)) + 
+    geom_line() + geom_point() +
+    facet_wrap(~habitat, scales = "free_y") +
+  xlab("Date") + ylab("Core Count") +
+  theme_bw()
+  
+ggsave(depth_fig, filename = "docs/quarterly_reports/v120/library_growth_sampling_depth.jpg")
+
+ggplotly(depth_fig)
+
+```
+
+<!-- <div class="vscroll-plot"> -->
+```{r eval=FALSE}
+# Kind of busy, lets leave out
+
+# country change through time
+habitat_smry <- habitat_change %>% 
+  filter(!is.na(country)) %>% filter(!is.na(habitat)) %>% 
+  # filter(habitat != "upland") %>% 
+  # mutate(country = case_when(is.na(country) ~ "unknown", T ~ country),
+         # habitat = case_when(is.na(habitat) ~ "unknown", T ~ habitat)) %>% 
+  
+  # filter(country == "United States") %>%
+  
+  # group and tally the unvegetated category
+  mutate(habitat = recode(habitat, 
+                          "mudflat" = "unvegetated",
+                          "upland" = "other", 
+                          "algal mat" = "other")) %>%
+  group_by(date, version, country, habitat) %>%
+  summarise(core_count = sum(n)) %>%
+  ungroup()
+  
+  
+ggplot(habitat_smry) +
+  geom_line(aes(date, core_count, col = habitat)) +
+  geom_point(aes(date, core_count, col = habitat)) + 
+  facet_wrap(~country, scales = "free_y", ncol = 4) +
+  scale_y_continuous(breaks = scales::pretty_breaks()) +
+  theme_bw()
+
+# ggplotly(country_plot)
+
+```
+<!-- </div> -->
+
+## US State-Level Report
+
+### What's New
+
+```{r}
+
+# new_us_states <- new %>% filter(country == "United States") %>% 
+#   group_by(admin_division, habitat) %>% 
+#     summarize(n = n(),
+#               # collapse list of unique studies for each
+#               studies = paste(unique(study_id), collapse = ", "))
+# 
+# new_dated <- new %>% filter(!is.na(dates_qual_code)) %>% group_by(country, admin_division, habitat) %>% 
+#   summarize(n = n(),
+#             studies = paste(unique(study_id), collapse = ", ")) %>% 
+#   arrange(admin_division)
+```
+
+
+**State-Level Data Progress**
+
+```{r}
+contributors_us <- new %>% 
+  filter(country == "United States") %>% 
+  mutate(dated_core_flag = case_when(!is.na(dates_qual_code) ~ 1, T ~ 0)) %>% 
+  group_by(admin_division) %>% 
+  summarize(`total cores` = n(),
+            `dated cores` = sum(dated_core_flag),
+            habitat = paste(unique(habitat), collapse = ", "),
+            sources = paste(unique(study_id), collapse = ", ")) %>% 
+  rename(state = admin_division) %>% 
+  arrange(state)
+
+datatable(contributors_us,
+          options = list(searching = TRUE,
+                         paging = FALSE,
+                         info = FALSE,
+                         scrollY = 300,
+                         scrollX = 300,
+                         scrollCollapse = TRUE),
+          rownames = FALSE)
+```
+
+### State of the Data
+
+**Habitat Representation**
+
+```{r}
+
+current_cores %>% 
+  filter(country == "United States") %>% 
+  group_by(habitat) %>%
+  tally() %>%
+  ungroup() %>%
+  mutate(percent = 100*(n/sum(n))) %>% 
+  mutate(habitat = fct_reorder(habitat, percent)) %>% 
+  filter(!is.na(habitat)) %>% 
+  ggplot(aes(habitat, percent, fill = percent)) + 
+  geom_col(fill = "darkgreen") + 
+  coord_flip() + 
+  # scale_color_brewer(palette = "BuGn") +
+  xlab("Habitat Type") + ylab("Proportion of Cores (%)") +
+  geom_text(aes(label = paste0("n=", n)), size = 3.5, hjust = -0.2) +
+  # geom_text(aes(label = paste0(round(percent, 1), "%")), size = 3.5, hjust = -0.2) +
+  ylim(0, 80) +
+  # theme_classic() +
+  theme_classic(base_size = 15) +
+  ggtitle("Habitat Sampling Proportions (US)")
+
+ggsave("docs/quarterly_reports/v120/US_habitat_pct_barplot.jpg", width = 6, height = 6)
+```
+
+### Blue Carbon Report Card
+
+**COMING SOON**

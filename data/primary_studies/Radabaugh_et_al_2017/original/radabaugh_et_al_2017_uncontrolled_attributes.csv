@@ -1,0 +1,6 @@
+attribute_name,attribute_definition,data_type,units,study_id
+percent_C,percent carbon content,numeric,dimensionless,Radabaugh_et_al_2017
+percent_N,percent nitrogen content,numeric,dimensionless,Radabaugh_et_al_2017
+CN_ratio,ratio of carbon to nitrogen,numeric,dimensionless,Radabaugh_et_al_2017
+input_parameter,list of equation variable definitions and units AND/OR specification of what portion of the plant the input variable applies to,character,dimensionless,Radabaugh_et_al_2017
+source,study ID from which the allometric equation was taken,character,dimensionless,Radabaugh_et_al_2017

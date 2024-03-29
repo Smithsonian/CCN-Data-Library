@@ -1,0 +1,4 @@
+study_id,method_id,coring_method,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_sample_mass,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,cs137_counting_method,pb210_counting_method,ra226_assumption
+Everhart_et_al_2020,"push core, gamma spectroscopy",push core,110,6,1-5,time approximate,550,6,gamma,gamma,each sample
+Everhart_et_al_2020,"push core, alpha spectroscopy",push core,110,6,1-5,time approximate,550,6,NA,alpha,NA
+Everhart_et_al_2020,"surface sample, alpha spectroscopy",surface sample,110,6,1-5,time approximate,550,6,NA,alpha,NA

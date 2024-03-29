@@ -1,0 +1,82 @@
+#,"Gillen, M.N., Messerschmidt, T., Kirwan, M.L. 2000. Shear Stress, Biomass,"
+#,"Bulk Density, Organic Matter on the Bank of the York River, VA 2018. Virginia"
+#,"Coast Reserve Long-Term Ecological Research Project Data Publication"
+#,"knb-lter-vcr.314.2"
+#,"(http://www.vcrlter.virginia.edu/cgi-bin/showDataset.cgi?docid=knb-lter-vcr.314)"
+#,
+#,This dataset is distributed by the Virginia Coast Reserve Long-Term Ecological
+#,Research Project and use is subject to the VCR/LTER Data Access Policy
+#,(http://www.vcrlter.virginia.edu/data/docs/IMPolicy_VCRLTER06.pdf). Data users
+#,working on scientific papers are encouraged to contact the data authors
+#,regarding availability of updated data and/or possible collaborations.
+#,
+#,Full metadata descriptions are available at:
+#,http://www.vcrlter.virginia.edu/cgi-bin/showDataset.cgi?docid=knb-lter-vcr.3
+#,For additional information about the data contact: Matthew Kirwan
+#,(kirwan@vims.edu)
+#,
+#,Collection and/or distribution of this data was supported by National Science
+#,Foundation grants BSR-8702333-06; DEB-9211772; DEB-9411974; DEB-0080381,
+#,DEB-0621014, DEB-1237733 and DEB-1832221. VCR/LTER:
+#,http://www.vcrlter.virginia.edu
+#,# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Site,Location,SampleID,Species_Name,N_Stems,DryWeight
+Goodwin,Edge,GIE-1,S. alterniflora,16,48.8
+Goodwin,Edge,GIE-2,S. alterniflora,22,33.8
+Goodwin,Edge,GIE-3,S. alterniflora,36,25.3
+Goodwin,Interior,GII-1,S. alterniflora,94,22.8
+Goodwin,Interior,GII-2,S. alterniflora,78,30.3
+Goodwin,Interior,GII-3,S. alterniflora,85,33.8
+Catlett,Edge,CIE-1,S. alterniflora,25,48.9
+Catlett,Edge,CIE-2,S. alterniflora,31,39.2
+Catlett,Edge,CIE-3,S. alterniflora,26,30.6
+Catlett,Interior,CII-1,S. alterniflora,38,18.7
+Catlett,Interior,CII-2,S. alterniflora,24,31.3
+Catlett,Interior,CII-3,S. alterniflora,29,16.9
+Taskinas,Edge,TCE-1,S. alterniflora,9,94.8
+Taskinas,Edge,TCE-2,S. alterniflora,9,100.2
+Taskinas,Edge,TCE-3,S. alterniflora,7,90.1
+Taskinas,Interior,TCI-1,S. alterniflora,30,24.7
+Taskinas,Interior,TCI-1,D. spicata,5,0.8
+Taskinas,Interior,TCI-1,S. patens,20,1.2
+Taskinas,Interior,TCI-2,S. alterniflora,42,44.6
+Taskinas,Interior,TCI-2,D. spicata,1,0.01
+Taskinas,Interior,TCI-3,S. alterniflora,44,22
+Taskinas,Interior,TCI-3,D. spicata,2,0.1
+SweetHall,Edge,SHE-1,Z. aquatica,1,0.5
+SweetHall,Edge,SHE-1,Polygnum,1,1.4
+SweetHall,Edge,SHE-1,P. virginica,5,17.4
+SweetHall,Edge,SHE-2,Z. aquatica,1,16
+SweetHall,Edge,SHE-2,P. virginica,8,51.5
+SweetHall,Edge,SHE-3,P. virginica,20,76.5
+SweetHall,Interior,SHI-1,P. virginica,10,23.5
+SweetHall,Interior,SHI-2,Z. aquatica,5,70.1
+SweetHall,Interior,SHI-2,P. virginica,6,30
+SweetHall,Interior,SHI-2,S. cynosauroides,1,7.2
+SweetHall,Interior,SHI-3,S. cynosauroides,1,7.4
+SweetHall,Interior,SHI-3,P. virginica,5,17.7
+SweetHall,Interior,SHI-3,Z. aquatica,7,47.5
+Pamunkey,Edge,PE-1,P. virginica,,15.1
+Pamunkey,Edge,PE-1,Scirpus,,2.4
+Pamunkey,Edge,PE-1,S. americanus,,23
+Pamunkey,Edge,PE-2,P. virginica,,34.8
+Pamunkey,Edge,PE-2,Z. aquatica,,7.1
+Pamunkey,Edge,PE-2,Polygonum,,11.6
+Pamunkey,Edge,PE-3,P. virginica,,28.6
+Pamunkey,Edge,PE-3,Polygonum,,0.5
+Pamunkey,Edge,PE-3,Z. aquatica,,12.3
+Pamunkey,Interior,PI-1,Polygonum,,39.3
+Pamunkey,Interior,PI-1,Wild Rice,,25.6
+Pamunkey,Interior,PI-1,Peltandra,,13.7
+Pamunkey,Interior,PI-1,B. laevis,,21.6
+Pamunkey,Interior,PI-2,P. virginica,,8
+Pamunkey,Interior,PI-2,S. americanus,,1.1
+Pamunkey,Interior,PI-2,Woody Stalk?,,7.8
+Pamunkey,Interior,PI-2,Polygonum,,4.4
+Pamunkey,Interior,PI-2,Z. aquatica,,30.8
+Pamunkey,Interior,PI-2,B. laevis,,14
+Pamunkey,Interior,PI-3,Polygonum,,20.3
+Pamunkey,Interior,PI-3,S. americanus,,2.6
+Pamunkey,Interior,PI-3,P. virginica,,3.1
+Pamunkey,Interior,PI-3,Z. aquatica,,40.8
+Pamunkey,Interior,PI-3,B. laevis,,5.1

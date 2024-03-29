@@ -1,0 +1,494 @@
+Dataset title:  Shear Stress, Biomass, Bulk Density, Organic Matter on the Bank of the York River, VA 2018
+
+Dataset ID:  VCR20310
+Dataset Creator
+
+	Name:		Megan Gillen
+	Email:		mgillen@mit.edu
+
+	Name:		Tyler Messerschmidt
+	Email:		tcmesserschmidt@vims.edu
+
+	Name:		Matthew Kirwan
+	
+	Address:
+			Virginia Institute of Marine Science
+			Glouchester Point, VA   USA
+	
+	Email:		kirwan@vims.edu
+
+
+Metadata Provider
+
+	Organization:	Virginia Coast Reserve Long-Term Ecological Research Project
+	
+	Address:
+			Department of Environmental Sciences, University of Virginia, 291 McCormick Road, PO Box 400123
+			Charlottesville, VA 22904-4123  USA
+	
+	Phone:		434-924-7761
+	URL:		http://www.vcrlter.virginia.edu
+
+
+Dataset Abstract
+
+	 This dataset includes data used to assess marsh vulnerability to sea-level rise by quantifying marsh erodibility along a salinity gradient in the York River in southeastern Virginia. 
+	We measured the erodibility of marshes along a salinity gradient in the York River, a tributary of the Chesapeake Bay (Virginia, USA). We chose five marshes along the York River salinity gradient for this study. Salinity decreases upriver from 18 ppt at the Goodwin Islands to 0 ppt at the Pamunkey Indian Reservation. Within these overall sites, we chose sampling locations along tidal creeks 5-10 m wide, with marsh widths beyond 20 meters and consistent elevations across all study sites. We collected samples from both the tidal channel marsh edge and from the marsh interior. Edge sites were located between the tidal channel and any levee (1 m from edge), while interior sites were located at a measured distance of 10-12 m away from the edge site. All field work was done in July-August 2018, except for the collection of cores for belowground biomass at the Sweet Hall Marsh and Pamunkey Indian Reservation marsh edge sites (September 2018) and elevation profiles of the Pamunkey Indian Reservation (March 2020).
+	Data tables are: 1) shear strength, 2) aboveground biomass, 3) belowground biomass, 4) LOI (loss on ignition), 5) kinematic GPS data along the transects and 6) averages for each station of variables in tables 1, 3 and 4.
+
+
+Dataset Keywords
+
+	Organic Matter
+	System State/Condition
+	floodplain
+	bulk density
+	aboveground biomass
+	belowground biomass
+	soil shear strength
+	soil organic matter
+	York River, Virginia
+
+
+Intellectual Rights
+
+
+
+Geographic Coverage
+
+
+	Bounding Coordinates
+
+		Geographic description:	CATLETT_YORK_R - Catlett Islands
+		West bounding coordinate:	-76.55361
+		East bounding coordinate:	-76.55344
+		North bounding coordinate:	37.29649
+		South bounding coordinate:	37.29628
+	
+		Geographic description:	GOODWIN_YORK_R - Goodwin Islands
+		West bounding coordinate:	-76.40335
+		East bounding coordinate:	-76.40317
+		North bounding coordinate:	37.22129
+		South bounding coordinate:	37.2212
+	
+		Geographic description:	PAMUNKY_YORK_R - Pamunkey Indian Reservation
+		West bounding coordinate:	-77.02038
+		East bounding coordinate:	-77.02034
+		North bounding coordinate:	37.57162
+		South bounding coordinate:	37.57145
+	
+		Geographic description:	SWEETHALL_YORK_R - Sweet Hall Marsh
+		West bounding coordinate:	-76.88401
+		East bounding coordinate:	-76.88388
+		North bounding coordinate:	37.56589
+		South bounding coordinate:	37.56584
+	
+		Geographic description:	TASKINAS_YORK_R - Taskinas Creek
+		West bounding coordinate:	-76.71548
+		East bounding coordinate:	-76.71542
+		North bounding coordinate:	37.41546
+		South bounding coordinate:	37.41528
+	
+
+
+
+Temporal Coverage
+
+	Start Date:  2018-07-01
+	End Date:  2018-09-30
+
+Maintenance
+
+	Data are updated as needed
+
+
+Dataset Contact
+
+
+
+Methods
+
+
+
+	Method Step 
+
+		Description 
+
+			 We used a Humboldt Shear Vane to determine the shear strength of marsh soils. We used a 1 m long shear vane, with a 10 cm-long head for relatively weak marsh soils, and a 5 cm-long head to measure relatively strong marsh soils. The shear vane was turned until the marsh soil was broken, and unitless values on the shear vane were converted to kPa using the manufactures conversion formulas (10 cm head: kPa=shear vane value*10*0.0625; 5 cm head: kPa=shear vane value*10*0.5). Each shear strength profile was one meter long with measurements taken at 10 cm intervals. Ten replicate profiles were taken per marsh location at each study site for a total of 100 total soil shear strength profiles along the York River. 
+			We measured elevation profiles for all five sites using RTK GPS across a transect from the marsh edge to the interior. For each site, five ground control points were taken on the marsh edge, 1 meter in from the edge, and in the marsh interior.
+			Aboveground and belowground biomass were measured destructively. We collected standing vegetation from three replicate above-ground stem clip plots (25 cm x 25 cm) per marsh location at each study site. Samples were counted for the total number of stems, dried to a constant weight, and separated by species to calculate species richness. Three replicate belowground biomass soil cores (15 cm diameter, 50-70 cm depth) were collected at each location within sites (except for the edge site at the Pamunkey Indian Reservation - only 2 cores were taken), and used to measure belowground root and rhizome biomass. We sectioned cores into 10 cm increments and washed over a 1 mm screen sieve. Live belowground biomass was separated based on color, turgidity, and buoyancy in water. Live belowground biomass was dried to a constant weight, and used to generate belowground biomass profiles for each study site.
+			Water content, bulk density, and organic matter content were determined from two Russian peat cores (2 cm diameter, 1 m depth) collected at each sampling location per study site. Cores were sectioned into 1 cm segments for the top 50 cm, every 3 cm for the bottom 50 cm. Samples were dried to a constant weight, homogenized, and combusted for 6h at 550 degrees C to burn off organic material.
+
+
+Data Table
+
+	Entity Name:  VCR20310_1
+	Entity Description:  Shear Stress, Biomass, Bulk Density, Organic Matter on the Bank of the York River, VA 2018
+	Object Name:  MGillen_ShearStrength.csv
+
+
+
+Data Format
+
+	Number of Header Lines:  23
+	Attribute Orientation:  column
+	Field Delimiter:  ,
+	Number of Records:  1022
+
+
+
+Attributes
+
+	Attribute Name:  SITE
+	Attribute Label:  Site name
+	Attribute Definition:  SITE - Site name
+	Storage Type:  string
+	Measurement Scale: 
+		Site name
+	Missing Value Code: 
+
+
+	Attribute Name:  LOCATION
+	Attribute Label:  Location relative to bank edge
+	Attribute Definition:  LOCATION - Location relative to bank edge
+	Storage Type:  string
+	Measurement Scale: 
+		Location relative to bank edge
+	Missing Value Code: 
+
+
+	Attribute Name:  SAMPLEID
+	Attribute Label:  Sample identification
+	Attribute Definition:  SAMPLEID - Sample identification
+	Storage Type:  string
+	Measurement Scale: 
+		Sample identification
+	Missing Value Code: 
+
+
+	Attribute Name:  DEPTH
+	Attribute Label:  Sample depth below the ground surface
+	Attribute Definition:  DEPTH - Sample depth below the ground surface
+	Storage Type:  float
+	Measurement Scale: 
+		Units  centimeter
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  SHEARSTRENGTH
+	Attribute Label:  Soil shear strength
+	Attribute Definition:  SHEARSTRENGTH - Soil shear strength
+	Storage Type:  float
+	Measurement Scale: 
+		Units  kilopascal
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  SITE
+	Attribute Label:  Site name
+	Attribute Definition:  SITE - Site name
+	Storage Type:  string
+	Measurement Scale: 
+		Site name
+	Missing Value Code: 
+
+
+	Attribute Name:  LOCATION
+	Attribute Label:  Location relative to river bank
+	Attribute Definition:  LOCATION - Location relative to river bank
+	Storage Type:  string
+	Measurement Scale: 
+		Location relative to river bank
+	Missing Value Code: 
+
+
+	Attribute Name:  SAMPLEID
+	Attribute Label:  Sample identifier
+	Attribute Definition:  SAMPLEID - Sample identifier
+	Storage Type:  string
+	Measurement Scale: 
+		Sample identifier
+	Missing Value Code: 
+
+
+	Attribute Name:  SPECIES_NAME
+	Attribute Label:  Species name
+	Attribute Definition:  SPECIES_NAME - Species name
+	Storage Type:  string
+	Measurement Scale: 
+		Species name
+	Missing Value Code: 
+
+
+	Attribute Name:  N_STEMS
+	Attribute Label:  Number of stems
+	Attribute Definition:  N_STEMS - Number of stems
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  count
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  DRYWEIGHT
+	Attribute Label:  Dry weight
+	Attribute Definition:  DRYWEIGHT - Dry weight
+	Storage Type:  float
+	Measurement Scale: 
+		Units  gram
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  SITE
+	Attribute Label:  Site name
+	Attribute Definition:  SITE - Site name
+	Storage Type:  string
+	Measurement Scale: 
+		Site name
+	Missing Value Code: 
+
+
+	Attribute Name:  LOCATION
+	Attribute Label:  Location relative to river bank
+	Attribute Definition:  LOCATION - Location relative to river bank
+	Storage Type:  string
+	Measurement Scale: 
+		Location relative to river bank
+	Missing Value Code: 
+
+
+	Attribute Name:  SAMPLEID
+	Attribute Label:  Sample identifier
+	Attribute Definition:  SAMPLEID - Sample identifier
+	Storage Type:  string
+	Measurement Scale: 
+		Sample identifier
+	Missing Value Code: 
+
+
+	Attribute Name:  DEPTH
+	Attribute Label:  Depth below the soil surface
+	Attribute Definition:  DEPTH - Depth below the soil surface
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  centimeter
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  DRYWEIGHT
+	Attribute Label:  Biomass dry weight
+	Attribute Definition:  DRYWEIGHT - Biomass dry weight
+	Storage Type:  float
+	Measurement Scale: 
+		Units  gram
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  SITE
+	Attribute Label:  Site name
+	Attribute Definition:  SITE - Site name
+	Storage Type:  string
+	Measurement Scale: 
+		Site name
+	Missing Value Code: 
+
+
+	Attribute Name:  LOCATION
+	Attribute Label:  Location relative to river edge
+	Attribute Definition:  LOCATION - Location relative to river edge
+	Storage Type:  string
+	Measurement Scale: 
+		Location relative to river edge
+	Missing Value Code: 
+
+
+	Attribute Name:  DEPTH
+	Attribute Label:  Depth below surface
+	Attribute Definition:  DEPTH - Depth below surface
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  centimeter
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  WC
+	Attribute Label:  Water percent
+	Attribute Definition:  WC - Water percent
+	Storage Type:  float
+	Measurement Scale: 
+		Units  percent
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  BD
+	Attribute Label:  Bulk density
+	Attribute Definition:  BD - Bulk density
+	Storage Type:  float
+	Measurement Scale: 
+		Units  gramPerCubicCentimeter
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  OM
+	Attribute Label:  Organic matter
+	Attribute Definition:  OM - Organic matter
+	Storage Type:  float
+	Measurement Scale: 
+		Units  percent
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  SITE
+	Attribute Label:  Site name
+	Attribute Definition:  SITE - Site name
+	Storage Type:  string
+	Measurement Scale: 
+		Site name
+	Missing Value Code: 
+
+
+	Attribute Name:  CODE
+	Attribute Label:  Location code
+	Attribute Definition:  CODE - Location code
+	Storage Type:  string
+	Measurement Scale: 
+		Location code
+	Missing Value Code: 
+
+
+	Attribute Name:  POINT
+	Attribute Label:  Point number
+	Attribute Definition:  POINT - Point number
+	Storage Type:  integer
+	Measurement Scale: 
+		Units  none
+		Number Type:  integer
+	Missing Value Code: 
+
+
+	Attribute Name:  LATITUDE
+	Attribute Label:  Latitude
+	Attribute Definition:  LATITUDE - Latitude
+	Storage Type:  float
+	Measurement Scale: 
+		Units  degree
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  LONGITUDE
+	Attribute Label:  Longitude
+	Attribute Definition:  LONGITUDE - Longitude
+	Storage Type:  float
+	Measurement Scale: 
+		Units  degree
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  ELEVATION
+	Attribute Label:  Elevation relative to NAVD88
+	Attribute Definition:  ELEVATION - Elevation relative to NAVD88
+	Storage Type:  float
+	Measurement Scale: 
+		Units  meter
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  SITE
+	Attribute Label:  Site name
+	Attribute Definition:  SITE - Site name
+	Storage Type:  string
+	Measurement Scale: 
+		Site name
+	Missing Value Code: 
+
+
+	Attribute Name:  LOCATION
+	Attribute Label:  Location relative to edge of river bank
+	Attribute Definition:  LOCATION - Location relative to edge of river bank
+	Storage Type:  string
+	Measurement Scale: 
+		Location relative to edge of river bank
+	Missing Value Code: 
+
+
+	Attribute Name:  SAMPLEID
+	Attribute Label:  Aggregated sample identifier
+	Attribute Definition:  SAMPLEID - Aggregated sample identifier
+	Storage Type:  string
+	Measurement Scale: 
+		Aggregated sample identifier
+	Missing Value Code: 
+
+
+	Attribute Name:  DEPTH
+	Attribute Label:  Depth below soil surface
+	Attribute Definition:  DEPTH - Depth below soil surface
+	Storage Type:  float
+	Measurement Scale: 
+		Units  centimeter
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  SHEARSTRENGTH
+	Attribute Label:  Average shear strength
+	Attribute Definition:  SHEARSTRENGTH - Average shear strength
+	Storage Type:  float
+	Measurement Scale: 
+		Units  kilopascal
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  BGB
+	Attribute Label:  Average below-ground biomass
+	Attribute Definition:  BGB - Average below-ground biomass
+	Storage Type:  float
+	Measurement Scale: 
+		Units  gram
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  WC
+	Attribute Label:  Average percent soil water content
+	Attribute Definition:  WC - Average percent soil water content
+	Storage Type:  float
+	Measurement Scale: 
+		Units  percent
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  BD
+	Attribute Label:  Average soil bulk density
+	Attribute Definition:  BD - Average soil bulk density
+	Storage Type:  float
+	Measurement Scale: 
+		Units  gramPerCubicCentimeter
+		Number Type:  real
+	Missing Value Code: 
+
+
+	Attribute Name:  OM
+	Attribute Label:  Average percent soil organic matter
+	Attribute Definition:  OM - Average percent soil organic matter
+	Storage Type:  float
+	Measurement Scale: 
+		Units  percent
+		Number Type:  real
+	Missing Value Code: 
+
+

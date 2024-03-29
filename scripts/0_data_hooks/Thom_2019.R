@@ -34,6 +34,10 @@ cores_raw <- read_csv("./data/primary_studies/Thom_2019/original/thom_2019_cores
 cores <- cores_raw %>%
   mutate(core_length_flag = "core depth limited by length of corer")
 
+#RC update, classifying habitat
+cores <- cores %>% 
+  mutate(habitat = "marsh")
+
 depthseries <- depthseries_raw %>%
   mutate(cs137_unit = "countsPerGramDryWeightPerHour",
          method_id = "single set of methods")
@@ -84,7 +88,21 @@ updated <- updateTables(table_names)
 
 methods <- updated$methods
 depthseries <- updated$depthseries
-cores <- updated$cores
+cores <- updated$cores %>% 
+  # add core PB1 as a site level replicate of core PB3 to match depthseries table 
+  add_row(study_id = "Thom_1992",
+          site_id = "Padilla_Bay",
+          core_id = "PB1",
+          latitude = 48.50561,
+          longitude = -122.4829,
+          position_method = "other low resolution",
+          position_notes = "site level position",
+          vegetation_class = "emergent",
+          vegetation_method = "measurment",
+          year = 1991,
+          core_length_flag = "core depth limited by length of corer",
+          habitat = "marsh")
+          
 species <- updated$species
 
 ## QA/QC ###############

@@ -1,0 +1,88 @@
+---
+title: "Data Visualization: Gillen_et_al_2018"
+date: "`r Sys.Date()`"
+output: 
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: flatly
+---
+
+```{r, include = FALSE}
+library(tidyverse)
+library(leaflet)
+library(ggforce)
+depthseries <- read_csv("derivative/Gillen_et_al_2018_depthseries.csv")
+cores <- read_csv("derivative/Gillen_et_al_2018_cores.csv")
+
+names(depthseries %>% select_if(names(.) %in% c("dry_bulk_density", "fraction_organic_matter", "fraction_carbon", "total_pb210_activity", "cs137_activity", "c14_age")))
+
+# for visualizing all cores simultaneously, pick a grid size based on number of cores:
+number_of_cores <- sum(!is.na(unique(depthseries$core_id))) 
+n_row <- 5
+n_col <- 4
+
+print(number_of_cores)
+```
+
+There are `r number_of_cores` cores in this study.
+
+# Core Locations
+
+```{r, echo = FALSE}
+cores %>% 
+  leaflet() %>%
+  addTiles() %>% 
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, label = ~core_id)
+```
+
+# Dry Bulk Density
+
+```{r, echo = FALSE}
+ggplot(depthseries, aes(dry_bulk_density)) + geom_density()  + xlab("Dry Bulk Density") + geom_rug() 
+```
+
+# DBD v FOM
+
+```{r, echo = FALSE}
+depthseries %>% 
+  drop_na(fraction_organic_matter, dry_bulk_density) %>% 
+  ggplot(aes(y = fraction_organic_matter, x = dry_bulk_density)) + 
+  geom_point() + 
+  xlab("DBD") + 
+  ylab("FOM") 
+```
+
+# FOM Depth Profile
+
+```{r, echo = FALSE}
+depthseries %>% 
+  drop_na(fraction_organic_matter) %>% 
+  ggplot(aes(y = fraction_organic_matter, x = depth_min)) + 
+  geom_point() + 
+  geom_line() +
+  scale_x_reverse() +
+  xlab("Depth") +
+  ylab("FOM") +
+  coord_flip() +
+  facet_wrap(.~core_id,
+             nrow = 5,
+             ncol = 4)
+```
+
+# DBD Depth Profile
+
+```{r, echo = FALSE}
+depthseries %>% 
+  drop_na(dry_bulk_density) %>% 
+  ggplot(aes(y = dry_bulk_density, x = depth_min)) + 
+  geom_point() + 
+  geom_line() +
+  scale_x_reverse() +
+  xlab("Depth") +
+  ylab("DBD") +
+  coord_flip() +
+  facet_wrap(.~core_id,
+             nrow = n_row,
+             ncol = n_col)
+```

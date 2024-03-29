@@ -2,7 +2,6 @@ study_id,coring_method,roots_flag,compaction_flag,dry_bulk_density_temperature,d
 Breithaupt_et_al_2017,piston corer,NA,corer limits compaction,NA,NA,not specified,550,3,NA,NA,NA,NA,modeled carbon values removed from depthseries,NA,NA,NA,NA,single set of methods
 Cochran_et_al_1998,mccaffrey peat cutter,NA,NA,60,48,duplicate measurements,450,12,duplicate measurements,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
 CRMS_Database,push core,NA,compaction quantified,NA,NA,not specified,NA,NA,not specified,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods
-Drake_et_al_2015,none specified,NA,NA,105,NA,not specified,NA,NA,NA,measured,NA,none specified,NA,organic carbon,sediment sieved,2,EA,single set of methods
 Elsey_Quirk_et_al_2011,piston corer,roots and rhizomes separated,compaction quantified,60,12,time approximate,460,8,NA,modeled,TRUE,acid fumigation,modeled carbon values removed from depthseries,organic carbon,sediment sieved,0.42,Craft regression,single set of methods
 Hill_and_Anisfeld_2015,push core,NA,corer limits compaction,60,NA,not specified,550,NA,not specified,measured,TRUE,acid fumigation,NA,organic carbon,NA,NA,EA,single set of methods
 Kulawardhana_et_al_2015,other shallow corer,roots and rhizomes separated,no obvious compaction,105,48,NA,440,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods

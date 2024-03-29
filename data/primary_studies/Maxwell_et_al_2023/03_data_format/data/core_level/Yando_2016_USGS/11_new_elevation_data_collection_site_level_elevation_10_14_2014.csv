@@ -1,0 +1,47 @@
+See metadata for column descriptions and units.,,,,,,,,,,,,
+,,,,,,,,,,,,
+"Below, we've included several statements concerning the ethical use of this dataset. We've adopted the following statement regarding data archiving and sharing from Wright et al. 2004: ""The authors believe that the archiving and sharing of large datasets is important for advancing ecology as a discipline. At the same time, for data sharing to be successful and sustainable, it is imperative that all those involved in data acquisition, archiving and use do so in an ethical manner. In particular, we believe that those individuals whose time, efforts and intellect designed and created the studies are acknowledged appropriately."" Text in quotation from: Wright, I. J., P. B. Reich, M. Westoby, D. D. Ackerly, Z. Baruch, F. Bongers, J. Cavender-Bares, T. Chapin, J. H. Cornelissen, and M. Diemer. 2004. The worldwide leaf economics spectrum. Nature 428:821-827.",,,,,,,,,,,,
+"As a condition for use of this data set, users agree:",,,,,,,,,,,,
+(1) To notify the lead investigator (Michael Johannes Osland) if the dataset is to be used in any publication;,,,,,,,,,,,,
+,,,,,,,,,,,,
+"(2) To provide formal recognition that, at our discretion, may include co-authorship or acknowledgements on publications;",,,,,,,,,,,,
+,,,,,,,,,,,,
+"(3) To recognise that we may be using these data for scientific analyses, papers or publications that are currently planned or in preparation, and that such activities have precedence over any that that you might wish to prepare.",,,,,,,,,,,,
+,,,,,,,,,,,,
+State,Habitat,Typeid,Site,Northing,Easting,UTMZone,Elevation,Day,Month,Year,Lat,Long
+FL,MF,1,FLMF1,3225609,302391,17,0.419,6,3,2013,29.143663,-83.031432
+FL,MF,2,FLMF2,3225613,302342,17,0.397,6,3,2013,29.143692,-83.031936
+FL,MF,3,FLMF3,3225547,302380,17,0.424,9,3,2013,29.143102,-83.031534
+FL,MF,4,FLMF4,3225429,303231,17,0.71,7,3,2013,29.14217,-83.022769
+FL,MF,5,FLMF5,3225360,303293,17,0.776,7,3,2013,29.141558,-83.02212
+FL,MF,6,FLMF6,3225354,303231,17,0.469,7,3,2013,29.141494,-83.022756
+FL,MF,7,FLMF7,3225267,302916,17,0.472,8,3,2013,29.14066,-83.025977
+FL,MF,8,FLMF8,3225288,302986,17,0.36,8,3,2013,29.140861,-83.025261
+FL,MF,9,FLMF9,3225326,302770,17,0.408,8,3,2013,29.14117,-83.027487
+FL,SM,1,FLSM1,3225618,302359,17,0.418,6,3,2013,29.14374,-83.031762
+FL,SM,2,FLSM2,3225540,302404,17,0.409,6,3,2013,29.143043,-83.031286
+FL,SM,3,FLSM3,3225382,303213,17,0.397,7,3,2013,29.141744,-83.022946
+LA,MF,1,LAMF1,3223362,773032,15,-0.01,7,11,2012,29.111433,-90.194488
+LA,MF,2,LAMF2,3222866,772060,15,0.026,8,11,2012,29.106985,-90.204627
+LA,MF,3,LAMF3,3222921,771915,15,0.157,8,11,2012,29.105662,-90.206087
+LA,MF,4,LAMF4,3227788,769816,15,0.205,9,11,2012,29.151849,-90.226481
+LA,MF,5,LAMF5,3227312,768101,15,0.109,9,11,2012,29.147955,-90.244204
+LA,MF,6,LAMF6,3227868,768086,15,0.135,20,2,2013,29.151071,-90.244058
+LA,MF,7,LAMF7,3227848,769771,15,0.122,20,2,2013,29.150529,-90.226786
+LA,MF,8,LAMF8,3227826,769797,15,0.109,20,2,2013,29.150332,-90.226534
+LA,MF,9,LAMF9,3228112,769700,15,0.168,21,2,2013,29.152937,-90.227481
+LA,SM,1,LASM1,3222998,772374,15,-0.232,8,11,2012,29.106276,-90.201281
+LA,SM,3,LASM3,3227754,769683,15,-0.034,9,11,2012,29.151569,-90.227913
+LA,SM,4,LASM4,3227889,769596,15,0.006,21,2,2013,29.150944,-90.228611
+TX,MF,1,TXMF1,3083301,689654,14,0.199,7,1,2013,27.861049,-97.073777
+TX,MF,2,TXMF2,3083516,691408,14,0.268,8,1,2013,27.862743,-97.055931
+TX,MF,3,TXMF3,3083748,691094,14,0.247,8,1,2013,27.864883,-97.05908
+TX,MF,4,TXMF4,3084901,691728,14,0.278,8,1,2013,27.875194,-97.052461
+TX,MF,5,TXMF5,3084169,688668,14,0.244,9,1,2013,27.869025,-97.083646
+TX,MF,6,TXMF6,3084159,688608,14,0.283,9,1,2013,27.868943,-97.084257
+TX,MF,7,TXMF7,3084891,691718,14,0.243,10,1,2013,27.875105,-97.052565
+TX,MF,8,TXMF8,3084862,691722,14,0.238,10,1,2013,27.874843,-97.052529
+TX,MF,9,TXMF9,3084034,691573,14,0.218,10,1,2013,27.867394,-97.054175
+TX,SM,1,TXSM1,3083288,689867,14,0.273,7,1,2013,27.860902,-97.071617
+TX,SM,2,TXSM2,3085191,691752,14,0.298,8,1,2013,27.877805,-97.05217
+TX,SM,3,TXSM3,3085173,691778,14,0.299,10,1,2013,27.877638,-97.051912

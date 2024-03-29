@@ -1,0 +1,19 @@
+study_id,location_description,allometric_eq_formula,genus,species,alive_or_dead,above_or_belowground,output_unit,R2,height_max,height_min,input_parameter,source
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",b=0.0036(ht)-0.0093,Bacopa,monnieri,alive,aboveground,g,0.778,23.7,5.5,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",ln(b)=1.7247ln(ht)-5.3885,Batis,maritima,alive,aboveground,g,0.73,50.3,3.0,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",b=0.0121(ht)+0.0464,Blutaparon,vermiculare,alive,aboveground,g,0.723,48.9,4.4,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",ln(b)=2.1284ln(ht)-7.3802,Borrichia,frutescens,alive,aboveground,g,0.762,120.2,14.4,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",ln(b)=2.0161ln(ht)-9.5912,Fimbristylis,castanea,alive,aboveground,g,0.659,80.0,18.1,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",ln(b)=1.5244ln(ht)-4.8064,Fimbristylis,cymosa,alive,aboveground,g,0.463,37.2,14.1,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",b=0.0230(ht)-0.6384,Juncus,roemerianus,alive,aboveground,g,0.906,182.0,8.6,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",ln(b)=1.0071ln(ht)-3.9246,Limonium,carolinianum,alive,aboveground,g,0.755,83.4,6.2,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",ln(b)=1.4028ln(ht)-5.4823,Monanthochloe,littoralis,alive,aboveground,g,0.705,14.0,4.4,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",ln(b)=1.9210ln(ht)-6.6365,Paspalum,distichum,alive,aboveground,g,0.834,63.8,12.5,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",b=0.1107(ht)-0.9224,Rayjacksonia,phyllocephala,alive,aboveground,g,0.683,95.0,10.0,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",ln(b)=1.5464ln(ht)-6.3900,Schinus,virginica,alive,aboveground,g,0.935,19.5,4.9,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",b=0.0031(ht)-0.0358,Schinus,scoparium,alive,aboveground,g,0.918,98.0,11.8,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",ln(b)=1.1760ln(ht)-4.1677,Schinus,portulacastrum,alive,aboveground,g,0.779,94.2,5.9,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",ln(b)=1.2920ln(ht)-4.9600,Schinus,sempervirens,alive,aboveground,g,0.75,120.0,15.6,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",ln(b)=1.9492ln(ht)-7.6267,Schinus,alterniflora,alive,aboveground,g,0.767,82.0,17.0,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",ln(b)=2.1380ln(ht)-8.8881,Schinus,patens,alive,aboveground,g,0.679,51.2,15.5,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017
+Radabaugh_et_al_2017,"Tampa Bay, Florida, USA",ln(b)=1.2473ln(ht)-6.4324,Schinus,virginicus,alive,aboveground,g,0.553,32.3,4.8,b = biomass (g); ht = height (cm),Radabaugh_et_al_2017

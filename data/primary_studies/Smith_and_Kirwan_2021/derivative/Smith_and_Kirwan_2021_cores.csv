@@ -1,0 +1,15 @@
+study_id,site_id,core_id,latitude,longitude,position_method,elevation,elevation_datum,salinity_class,salinity_method,habitat,core_length_flag
+Smith_and_Kirwan_2021,Monie_Bay,MB_1_TZ,38.21185,-75.81241,RTK,0.4254,NAVD88,mesohaline,measurement,scrub/shrub,core depth represents deposit depth
+Smith_and_Kirwan_2021,Monie_Bay,MB_2_HM,38.21198,-75.81327,RTK,0.3134,NAVD88,mesohaline,measurement,marsh,core depth represents deposit depth
+Smith_and_Kirwan_2021,Monie_Bay,MB_3_HM,38.21198,-75.81306,RTK,0.3084,NAVD88,mesohaline,measurement,marsh,core depth represents deposit depth
+Smith_and_Kirwan_2021,Phillips_Creek,PC_2_TZ,37.463535,-75.835388,RTK,0.4797,NAVD88,mesohaline,measurement,scrub/shrub,core depth represents deposit depth
+Smith_and_Kirwan_2021,Phillips_Creek,PC_3_TZ,37.463306,-75.835188,RTK,0.48488,NAVD88,mesohaline,measurement,scrub/shrub,core depth represents deposit depth
+Smith_and_Kirwan_2021,Goodwin_Island,GI_1_HM,37.21947,-76.40525,RTK,-0.00995,NAVD88,mesohaline,measurement,marsh,core depth represents deposit depth
+Smith_and_Kirwan_2021,Goodwin_Island,GI_4_HM,37.216,-76.40742,RTK,0.214606,NAVD88,oligohaline,measurement,marsh,core depth represents deposit depth
+Smith_and_Kirwan_2021,Moneystump_Swamp,MS_2_TZ,38.43023,-76.22679,RTK,0.24033,NAVD88,oligohaline,measurement,scrub/shrub,core depth represents deposit depth
+Smith_and_Kirwan_2021,Moneystump_Swamp,MS_4_TZ,38.43059,-76.22755,RTK,0.155,NAVD88,mesohaline,measurement,scrub/shrub,core depth represents deposit depth
+Smith_and_Kirwan_2021,Moneystump_Swamp,MS_2_HM,38.42938,-76.22707,RTK,0.15,NAVD88,mesohaline,measurement,marsh,core depth represents deposit depth
+Smith_and_Kirwan_2021,Moneystump_Swamp,MS_4_HM,38.42974,-76.22843,RTK,0.1875,NAVD88,mesohaline,measurement,marsh,core depth represents deposit depth
+Smith_and_Kirwan_2021,Monie_Bay,MB_1_TZ_2,38.21185,-75.81241,RTK,0.4254,NAVD88,mesohaline,measurement,scrub/shrub,core depth represents deposit depth
+Smith_and_Kirwan_2021,Goodwin_Island,GI_1_TZ_2,37.22105,-76.40842,RTK,0.1782,NAVD88,oligohaline,measurement,scrub/shrub,core depth represents deposit depth
+Smith_and_Kirwan_2021,Goodwin_Island,GI_8_HM,37.21938,-76.405783,RTK,NA,NAVD88,NA,measurement,marsh,core depth represents deposit depth

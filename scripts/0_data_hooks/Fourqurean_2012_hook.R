@@ -13,6 +13,7 @@
 library(tidyverse)
 library(readxl)
 library(RefManageR)
+library(leaflet)
 
 source("./scripts/1_data_formatting/qa_functions.R")
 
@@ -79,7 +80,7 @@ Fourqurean <- Fourqurean %>%
                   `longitude (DD.DDDD, >0 for E,<0 for W))`))
   
 
-## ... Filtering out invalid cores/studies ############
+## ... Filtering out or manually editing invalid cores/studies ############
 # Studies without IDs
 # The following code was used to determine which cores were missing study IDs in the original dataset
 # All studies have been correctly assigned IDs in the "intermediate" folders
@@ -88,14 +89,11 @@ Fourqurean <- Fourqurean %>%
 #   group_by(coreserial) %>%
 #   summarize(n=n())
 
-# 7 cores are missing lat/long values
-# They're filtered out of the dataset for now
-
-# the offending core IDs: 
-missing_lat_long <- c("Duarte_unpublished_12", "Duarte_unpublished_15", 
-                      "Duarte_unpublished_5", "Duarte_unpublished_9",
-                      "Kamp-Nielsen_et_al_2002_1", "Kamp-Nielsen_et_al_2002_2", 
-                      "Kamp-Nielsen_et_al_2002_3")
+# manually selecting site-level positions on Google maps 
+missing_duarte <- c("Duarte_unpublished_12", "Duarte_unpublished_15", 
+                     "Duarte_unpublished_5", "Duarte_unpublished_9")
+missing_kamp <- c("Kamp-Nielsen_et_al_2002_1", "Kamp-Nielsen_et_al_2002_2", 
+                   "Kamp-Nielsen_et_al_2002_3")
 
 
 # The following studies are missing reconstructable depth series intervals 
@@ -106,25 +104,44 @@ remove_studies <- c("Furuta_et_al_2002", "Kenig_et_al_1990",
                     "Abed-Navandi_and_Dworschak_2005", "Duarte_unpublished", 
                     "Kennedy_unpublished", "Deiongh_et_al_1995", "Stoner_et_al_1998",
                     "Lo_Iacono_et_al_2008",
-                    # The following studies have incorrect lat/long values:
-                    "Holmer_et_al_2006", "Vichkovitten_and_Holmer_2005",
                     # Remove some studies that don't have depthseries data that fit into current guidance
-                    "Isaksen_and_Finster_1996", "Koepfler_et_al_1993", "Mateo_and_Romero_1997", NA)
+                    "Isaksen_and_Finster_1996", "Koepfler_et_al_1993", "Mateo_and_Romero_1997", NA,
+                    # No depthseries data
+                    "Pedersen_et_al_1997")
 
 Fourqurean <- Fourqurean %>%
-  filter(!(core_id %in% missing_lat_long)) %>%
+  rename(core_latitude = "latitude (DD.DDDD, >0 for N, <0 for S)",
+         core_longitude = "longitude (DD.DDDD, >0 for E,<0 for W))") %>%
+  
+  # insert site-level positions for cores missing lat/long 
+  mutate(core_latitude = case_when(core_id %in% missing_duarte ~ 21.939162,
+                                   core_id %in% missing_kamp ~ 16.346633,
+                                   core_id %in% c("Vichkovitten_et_al_2005_1", "Vichkovitten_et_al_2005_2") ~ 54.967120,
+                                   core_id %in% c("Vichkovitten_et_al_2005_3", "Vichkovitten_et_al_2005_4") ~ 55.466667, # 55.475912, 
+                                   T ~ core_latitude),
+         core_longitude = case_when(core_id %in% missing_duarte ~ -82.843898,
+                                    core_id %in% missing_kamp ~ 119.926502,
+                                    core_id %in% c("Vichkovitten_et_al_2005_1", "Vichkovitten_et_al_2005_2") ~ 10.541442,
+                                    core_id %in% c("Vichkovitten_et_al_2005_3", "Vichkovitten_et_al_2005_4") ~ 11.083333, # 11.077794 ,
+                                    T ~ core_longitude),
+         position_notes = case_when(core_id %in% c(missing_duarte, missing_kamp, "Vichkovitten_et_al_2005_1", 
+                                                   "Vichkovitten_et_al_2005_2", "Vichkovitten_et_al_2005_3", 
+                                                   "Vichkovitten_et_al_2005_4") ~ "site-level positions chosen in Google maps based on surrounding core coordinates",
+                                    T ~ NA_character_),
+         position_method = case_when(core_id %in% c(missing_duarte, missing_kamp, "Vichkovitten_et_al_2005_1", 
+                                                    "Vichkovitten_et_al_2005_2", "Vichkovitten_et_al_2005_3", 
+                                                    "Vichkovitten_et_al_2005_4") ~ "other low resolution",
+                                     study_id == "Holmer_et_al_2006" ~ "other low resolution", # coordinates are approximate
+                                     T ~ NA_character_),
+         site_id = case_when(core_id %in% missing_kamp ~ "Bolinao",
+                             T ~ site_id)) %>% 
   filter(!(study_id %in% remove_studies))
 
 ## ....3b. Core-level data ##############
 
 core_data <- Fourqurean %>%
-  rename(core_latitude = "latitude (DD.DDDD, >0 for N, <0 for S)",
-       core_longitude = "longitude (DD.DDDD, >0 for E,<0 for W))") %>%
-  
-  # Remove some studies that have biomass data, but not core data
-  filter(study_id != "Mateo_and_Romero_1997" & study_id != "Pedersen_et_al_1997") %>%
 
-  select(study_id, site_id, core_id, core_latitude, core_longitude, vegetation_class) %>%
+  select(study_id, site_id, core_id, core_latitude, core_longitude, position_method, position_notes, vegetation_class) %>%
   group_by(core_id) %>%
   summarise_all(first) %>% 
   rename(habitat = vegetation_class)
@@ -418,6 +435,14 @@ fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
 
 testIDs(cores, depthseries, by = "core")
+
+# Mapping check
+Fourqurean %>% 
+  filter(grepl("Vichkovitten", study_id)) %>% 
+  leaflet() %>%
+  addTiles() %>% 
+  addCircleMarkers(lng = ~as.numeric(core_longitude), lat = ~as.numeric(core_latitude), 
+                   radius = 2, label = ~core_id)
 
 # # Test column names 
 # test_colnames("core_level", core_data)

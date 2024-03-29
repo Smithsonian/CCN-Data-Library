@@ -33,8 +33,7 @@ if(!(file.exists("docs/core_attributes.csv"))){
   # Get unique ids for study, site, and core
   study_site_core <- cores %>% 
     filter(!(core_id %in% current_core_attributes$core_id)) %>%
-    select(study_id, site_id, core_id) %>% 
-    filter(study_id != "Copertino_unpublished")
+    select(study_id, site_id, core_id)
   
   update_existing_table <- TRUE
 }

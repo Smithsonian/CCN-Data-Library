@@ -166,7 +166,7 @@ Osland_2016_site_data <- Osland_2016_site_data %>%
 
 # There's an unwieldy amount of columns, so we'll select them down
 Osland_2016_core_data <- Osland_2016_veg %>%
-  select(1:13) %>%
+  select(1:13, `1hSp`) %>%
   rename(site_id = estuary, core_id = plot) %>%
   mutate(core_id = as.numeric(core_id))
 
@@ -177,11 +177,11 @@ Osland_2016_core_data <- Osland_2016_site_core_data %>%
   mutate(core_date = ymd(core_date)) %>%
   # current core IDs are not unique, so concatenate with site IDs
   mutate(core_id = tolower(paste0(site_id, "_", core_id))) %>%
-  rename(core_notes = "criteria") %>%
+  rename(core_notes = "criteria", tallest_species = `1hSp`) %>%
   mutate(core_elevation_datum = "NAVD88") %>%
   mutate(study_id = "Osland_et_al_2016") %>%
   select(study_id, site_id, core_id, core_longitude, core_latitude, core_elevation, 
-         core_date, core_notes, core_elevation_datum)
+         core_date, core_notes, core_elevation_datum, tallest_species)
 
 # There's one core without coordinates. We can estimate its location by the ID
 #   and description.
@@ -213,10 +213,10 @@ Osland_2016_depth_series_data <- depth_series_data %>%
   mutate(core_id = paste0(site_id, "_", plot)) %>%
   mutate(core_id = as.factor(tolower(core_id))) %>% # Core IDs are expressed as factor not numeric
   rename(dry_bulk_density = "bd") %>%
-  mutate(fraction_organic_matter = convert_percent_to_fraction(som)) %>%
+  mutate(fraction_organic_matter = as.numeric(som)/100) %>%
   # CCRCN does not have standards for soil moisture content yet, but this approach
   #   most closely aligns with other attributes
-  mutate(fraction_moisture_content = convert_percent_to_fraction(moist)) %>%
+  mutate(fraction_moisture_content = as.numeric(moist)/100) %>%
   
   # The legend dictates that only one soil depth interval was sampled, 01-5 cm.
   # So we'll add a single set of min and max depths for each core
@@ -370,8 +370,66 @@ updated <- updateTables(table_names)
 sites <- updated$sites
 # methods <- updated$methods
 depthseries <- updated$depthseries
-cores <- updated$cores
+
 species <- updated$species
+
+# Jaxine efforts to assign habitat 
+
+# create a lookup table from the species 
+hab_lookup <- updated$species %>% 
+  filter(habitat != 'unvegetated') %>% 
+  drop_na(habitat) %>% 
+  distinct(core_id, habitat) %>% 
+  group_by(core_id) %>% 
+  summarize(habitat = toString(habitat)) %>% 
+  rename(sp_habitat = habitat)
+
+assignHabitat <- function(df, hab_col){
+  return(df %>%
+    mutate(new_col = case_when(grepl("SPBA|JURO|SCAM|SPPA|DISP|SPAL|CLMA|SPCY|PAVA|SEHE|BAMA|MOLI|PHAU|SAGLAN|PAVI|ELCE|BOFR|SOST|emergent|succulent|mixed grass|mixed sedge|salt panne|SPSP|bunchgrass|Spartina|grass mix", !!sym(hab_col)) ~ "marsh", 
+                               grepl("AVGE|RHMA|LARA|mangrove", !!sym(hab_col)) ~ "mangrove",
+                               grepl("unvegetated|water|bare", !!sym(hab_col)) ~ "unvegetated",
+                               grepl("upland", !!sym(hab_col)) ~ "upland",
+                               grepl("wood|forest", !!sym(hab_col)) ~ "swamp",
+                               grepl("shrub|BAHA|IVFR", !!sym(hab_col)) ~ "scrub/shrub",
+                               grepl("seagrass|HAWR", !!sym(hab_col)) ~ "seagrass", 
+                               grepl("alga|ALGMAT", !!sym(hab_col)) ~ "algal mat",
+                               grepl("flat", !!sym(hab_col)) ~ "mudflat")))
+}
+
+hab_assignment <- updated$cores %>% 
+  left_join(hab_lookup) %>% select(-core_notes, core_notes) %>% 
+  separate_wider_delim(core_notes, names = c("first", "second"), delim = "/", too_few = "align_start", cols_remove = F) %>% 
+  separate_wider_delim(second, names = c("second", "dominate"), delim = "-", too_many = "merge") %>% 
+  assignHabitat(., "first") %>% rename(first_habitat = new_col) %>% 
+  assignHabitat(., "second") %>% rename(second_habitat = new_col) %>%  
+  assignHabitat(., "tallest_species") %>% rename(tallest_habitat = new_col) %>%   
+  
+  # conditionally assign habitat
+  mutate(habitat = case_when(grepl("1", dominate) ~ first_habitat,
+                             grepl("2", dominate) ~ second_habitat,
+                             grepl("mixed", dominate) & first_habitat == second_habitat ~ first_habitat,
+                             # I think beyond this could use a second opinion
+                             first_habitat %in% c("unvegetated", "mudflat") ~ second_habitat,
+                             first_habitat == tallest_habitat ~ first_habitat,
+                             is.na(first_habitat) & !is.na(tallest_habitat) ~ tallest_habitat,
+                             second_habitat == "mudflat" ~ first_habitat,
+                             tallest_habitat == "mangrove" ~ tallest_habitat,
+                             is.na(sp_habitat) ~ first_habitat,
+                             T ~ sp_habitat)) %>% 
+         # tallest_habitat = case_when(grepl()) %>% 
+  select(core_id, tallest_species, dominate, first, second, first_habitat, second_habitat, sp_habitat, tallest_habitat, habitat)
+  # filter(is.na(habitat) | grepl(",", habitat)) # uncomment to isolate and inspect the unassigned habitats 
+
+  # [1] "ACSP"   "ALGMAT" "ALPH"   "ANGLE"  "AVGE"   "BAHA"   "BAMA"   "bare"   "BBF2"   "BOFR"   "CABO"   "CLMA"   "COER"  
+  # [14] "DAEC"   "DISP"   "ELCE"   "EUAX"   "EUEX"   "EUPE"   "FICA"   "HAWR"   "HECU"   "ILDE"   "ILVO"   "IVFR"   "JURO"  
+  # [27] "JUVI"   "LARA"   "litter" "LYCA"   "MOCE"   "MOLI"   "NA"     "OPSP"   "oyster" "PAHA"   "PAHE"   "PARE"   "PASP"  
+  # [40] "PAVI"   "PHAU"   "PIEL"   "POCO"   "RAAC"   "RHMA"   "SABI"   "SADE"   "SAPA"   "SCAM"   "SCPU"   "SCRO"   "SCSC"  
+  # [53] "SCTA"   "SCTE"   "SEHE"   "SEPO"   "SOST"   "SPAL"   "SPBA"   "SPCY"   "SPPA"   "SPSP"   "SULI"   "SYSU"   "THTE"  
+  # [66] "TORA"   "VEVI"  
+
+cores <- updated$cores %>% left_join(hab_assignment %>% select(core_id, habitat)) %>% 
+  select(-tallest_species)
 
 ## QA/QC of data ################
 
@@ -392,4 +450,13 @@ write_csv(depthseries, "./data/primary_studies/Osland_2016/derivative/Osland_et_
 write_csv(sites, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_sites.csv")
 write_csv(cores, "./data/primary_studies/Osland_2016/derivative/Osland_et_al_2016_cores.csv")
 
+pal <- leaflet::colorFactor(
+  palette = "Set1",
+  domain = unique(cores$habitat))
 
+cores %>% 
+  filter(habitat == "upland") %>% 
+leaflet() %>% 
+  addTiles() %>% 
+  addCircleMarkers(lat = ~latitude, lng = ~longitude, radius = 2, label= ~core_notes, color = ~pal(habitat)) %>% 
+  addLegend(pal = pal, values = ~habitat)

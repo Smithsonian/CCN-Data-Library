@@ -1,0 +1,53 @@
+#,"Vinent, O.D., Kirwan, M.L. 2000. Upper Phillips Creek soil organic content and"
+#,"bulk density April, 2017. Virginia Coast Reserve Long-Term Ecological Research"
+#,"Project Data Publication knb-lter-vcr.264.2"
+#,"(http://www.vcrlter.virginia.edu/cgi-bin/showDataset.cgi?docid=knb-lter-vcr.264)"
+#,
+#,This dataset is distributed by the Virginia Coast Reserve Long-Term Ecological
+#,Research Project and use is subject to the VCR/LTER Data Access Policy
+#,(http://www.vcrlter.virginia.edu/data/docs/IMPolicy_VCRLTER06.pdf). Data users
+#,working on scientific papers are encouraged to contact the data authors
+#,regarding availability of updated data and/or possible collaborations.
+#,
+#,Full metadata descriptions are available at:
+#,http://www.vcrlter.virginia.edu/cgi-bin/showDataset.cgi?docid=knb-lter-vcr.2
+#,For additional information about the data contact: Matthew Kirwan
+#,(kirwan@vims.edu)
+#,
+#,Collection and/or distribution of this data was supported by National Science
+#,Foundation grants BSR-8702333-06; DEB-9211772; DEB-9411974; DEB-0080381,
+#,DEB-0621014, DEB-1237733 and DEB-1832221. VCR/LTER:
+#,http://www.vcrlter.virginia.edu
+#,# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+transect,point,replicate,latitude,longitude,channeldistance,elevation_msl,organic_frac,bulk_density
+A,1,a,37.45833333,-75.83438333,0,0.5,0.106742,0.417113
+A,1,b,37.45833333,-75.83438333,0,0.5,0.102804,0.466006
+A,1,c,37.45833333,-75.83438333,0,0.5,0.093023,0.463459
+A,2,a,37.4585,-75.83435,10,0.64,0.23494,0.387574
+A,2,b,37.4585,-75.83435,10,0.64,0.195276,0.435448
+A,2,c,37.4585,-75.83435,10,0.64,0.221169,0.442069
+A,3,a,37.4585,-75.83428333,25,0.71,0.251678,0.452255
+A,3,b,37.4585,-75.83428333,25,0.71,0.277147,0.361091
+A,3,c,37.4585,-75.83428333,25,0.71,0.242259,0.380953
+A,4,a,37.459,-75.83398333,60,0.54,0.235209,0.380444
+A,4,b,37.459,-75.83398333,60,0.54,0.247947,0.277057
+A,4,c,37.459,-75.83398333,60,0.54,0.279801,0.290299
+A,5,a,37.459,-75.83383333,85,0.8,0.471215,0.172142
+A,5,b,37.459,-75.83383333,85,0.8,0.44,0.184365
+A,6,a,37.45933333,-75.8335,130,0.94,0.070997,0.929465
+A,6,b,37.45933333,-75.8335,130,0.94,0.144361,0.743572
+B,1,a,37.453,-75.83296667,0,0.18,0.127424,0.547493
+B,1,b,37.453,-75.83296667,0,0.18,0.126739,0.500638
+B,1,c,37.453,-75.83296667,0,0.18,0.118644,0.498601
+B,2,a,37.45316667,-75.8331,15,0.41,0.196751,0.406418
+B,2,b,37.45316667,-75.8331,15,0.41,0.128508,0.428827
+B,2,c,37.45316667,-75.8331,15,0.41,0.134675,0.548002
+B,3,a,37.45333333,-75.83231667,70,0.55,0.146819,0.468043
+B,3,b,37.45333333,-75.83231667,70,0.55,0.15748,0.439013
+B,3,c,37.45333333,-75.83231667,70,0.55,0.184061,0.442069
+B,4,a,37.45383333,-75.83193333,125,0.64,0.241007,0.380444
+B,4,b,37.45383333,-75.83193333,125,0.64,0.244828,0.372805
+B,4,c,37.45383333,-75.83193333,125,0.64,0.244698,0.352433
+B,5,a,37.45416667,-75.83146667,184,0.64,0.252129,0.291827
+B,5,b,37.45416667,-75.83146667,184,0.64,0.264758,0.30354
+B,5,c,37.45416667,-75.83146667,184,0.64,0.230284,0.345303

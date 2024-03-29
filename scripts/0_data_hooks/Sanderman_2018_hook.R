@@ -10,6 +10,7 @@ library(tidyverse)
 library(readxl)
 library(lubridate)
 library(RefManageR)
+library(parzer)
 
 ## Curate Sanderman international data ############
 
@@ -276,11 +277,18 @@ cores <- internatl_core_data %>%
                                           T ~ NA),
          core_latitude = case_when(study_id == "Nsombo_et_al_2016" & is.na(core_latitude) ~ 4.457111,
                                    site_id == "EME16 Egypt Station 1" ~ parzer::parse_lat("27°37'54N"),
-                                   site_id == "EME16 Egypt Station 2" ~ parse_lat("27°29'24N"),
-                                   site_id == "EME16 Egypt Station 3" ~ parse_lat("27°21'27N"),
-                                   grepl("EME16 Saudi Arabia Station 1", site_id) ~ parse_lat("17°48'07N"),
-                                   grepl("EME16 Saudi Arabia Station 2", site_id) ~ parse_lat("17°48'28N"),
-                                   grepl("EME16 Saudi Arabia Station 3", site_id) ~ parse_lat("17°59'53N"),
+                                   site_id == "EME16 Egypt Station 2" ~ parzer::parse_lat("27°29'24N"),
+                                   site_id == "EME16 Egypt Station 3" ~ parzer::parse_lat("27°21'27N"),
+                                   grepl("EME16 Saudi Arabia Station 1", site_id) ~ parzer::parse_lat("17°48'07N"),
+                                   grepl("EME16 Saudi Arabia Station 2", site_id) ~ parzer::parse_lat("17°48'28N"),
+                                   grepl("EME16 Saudi Arabia Station 3", site_id) ~ parzer::parse_lat("17°59'53N"),
+                                   # coordinates fuzzy by request, but got shifted outside of correct country assignment. corrected with listed coordinates in paper
+                                   study_id == "Bukoski_et_al_2017" & grepl("KB", site_id) ~ 8.04,
+                                   study_id == "Bukoski_et_al_2017" & grepl("PP", site_id) ~ 8.5,
+                                   study_id == "Bukoski_et_al_2017" & grepl("HP", site_id) ~ 20.5,
+                                   study_id == "Bukoski_et_al_2017" & grepl("ND", site_id) ~ 20,
+                                   study_id == "Bukoski_et_al_2017" & grepl("QN", site_id) ~ 21.2,
+                                   grepl("KL3", site_id) ~ 10.2,
                                    T ~ core_latitude),
          core_longitude = case_when(study_id == "Nsombo_et_al_2016" & is.na(core_longitude) ~ 8.902583,
                                     site_id == "EME16 Egypt Station 1" ~ parse_lon("33°31'01E"),
@@ -289,6 +297,12 @@ cores <- internatl_core_data %>%
                                     grepl("EME16 Saudi Arabia Station 1", site_id) ~ parse_lon("41°53'29E"),
                                     grepl("EME16 Saudi Arabia Station 2", site_id) ~ parse_lon("41°51'56E"),
                                     grepl("EME16 Saudi Arabia Station 3", site_id) ~ parse_lon("41°40'14E"),
+                                    study_id == "Bukoski_et_al_2017" & grepl("KB", site_id) ~ 98.9,
+                                    study_id == "Bukoski_et_al_2017" & grepl("PP", site_id) ~ 100.2,
+                                    study_id == "Bukoski_et_al_2017" & grepl("HP", site_id) ~ 106.6,
+                                    study_id == "Bukoski_et_al_2017" & grepl("ND", site_id) ~ 106,
+                                    study_id == "Bukoski_et_al_2017" & grepl("QN", site_id) ~ 107.4,
+                                    grepl("KL3", site_id) ~ 104.6,
                                     T ~ core_longitude)) %>%
   reorderColumns("cores", .)
  
