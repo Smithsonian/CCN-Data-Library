@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="15cf85e3-c19c-464e-986a-969fbd915165" system="uuid" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <dataset>
+    <title>Dataset: Evaluation of Sediment Dynamics Using Geochemcial Tracers in the Palmico Sound Estuarine System, North Carolina</title>
+    <creator>
+      <individualName>
+        <givenName>D. Reide</givenName>
+        <surName>Corbett</surName>
+      </individualName>
+      <electronicMailAddress>corbettd@ecu.edu</electronicMailAddress>
+    </creator>
+    <associatedParty>
+      <individualName>
+        <givenName>Lancen S.</givenName>
+        <surName>Tully</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>D. Reide</givenName>
+        <surName>Corbett</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <pubDate>2024</pubDate>
+    <abstract>This dataset accompanies the thesis Tully 2004. This dataset examines the sediment dynamics in the Pamlico Sound with sediment cores from the Pamlico Sound and the surrounding marshes taken in 2002 and 2003. The cores were extruded in the field and sampled at 2 cm intervals and analyzed using different methods such as radiocarbon dating, isotopic analysis and organic matter assessment to measure carbon levels and sediment accretion or deposition rates.</abstract>
+    <keywordSet>
+      <keyword>Palmico Sound</keyword>
+      <keyword>Pb210</keyword>
+      <keyword>Carbon sequestration</keyword>
+      <keyword>Sedimentation</keyword>
+      <keyword>Wetland</keyword>
+      <keyword>Oligohaline</keyword>
+    </keywordSet>
+    <intellectualRights>This dataset is listed under a Creative Commons BY 4.0 and can be used with attribution. https://creativecommons.org/licenses/by/4.0/</intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>BUX</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-75.5179</westBoundingCoordinate>
+          <eastBoundingCoordinate>-75.5179</eastBoundingCoordinate>
+          <northBoundingCoordinate>35.2818</northBoundingCoordinate>
+          <southBoundingCoordinate>35.2818</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>CI</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-76.3196</westBoundingCoordinate>
+          <eastBoundingCoordinate>-76.3196</eastBoundingCoordinate>
+          <northBoundingCoordinate>35.00663</northBoundingCoordinate>
+          <southBoundingCoordinate>35.00663</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>NBP</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-76.109</westBoundingCoordinate>
+          <eastBoundingCoordinate>-76.109</eastBoundingCoordinate>
+          <northBoundingCoordinate>35.35794</northBoundingCoordinate>
+          <southBoundingCoordinate>35.35794</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>OCR_S1</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-75.8875</westBoundingCoordinate>
+          <eastBoundingCoordinate>-75.8875</eastBoundingCoordinate>
+          <northBoundingCoordinate>35.14484</northBoundingCoordinate>
+          <southBoundingCoordinate>35.14484</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>OCR_S2</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-75.9231</westBoundingCoordinate>
+          <eastBoundingCoordinate>-75.9231</eastBoundingCoordinate>
+          <northBoundingCoordinate>35.13136</northBoundingCoordinate>
+          <southBoundingCoordinate>35.13136</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>PPR</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-75.4707</westBoundingCoordinate>
+          <eastBoundingCoordinate>-75.4707</eastBoundingCoordinate>
+          <northBoundingCoordinate>35.7696</northBoundingCoordinate>
+          <southBoundingCoordinate>35.7696</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>S</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-76.527</westBoundingCoordinate>
+          <eastBoundingCoordinate>-75.624</eastBoundingCoordinate>
+          <northBoundingCoordinate>35.601</northBoundingCoordinate>
+          <southBoundingCoordinate>35.065</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>SAL</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-75.4768</westBoundingCoordinate>
+          <eastBoundingCoordinate>-75.4768</eastBoundingCoordinate>
+          <northBoundingCoordinate>35.53205</northBoundingCoordinate>
+          <southBoundingCoordinate>35.53205</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2002</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2003</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <contact>
+      <individualName>
+        <givenName>D. Reide</givenName>
+        <surName>Corbett</surName>
+      </individualName>
+      <electronicMailAddress>corbettd@ecu.edu</electronicMailAddress>
+    </contact>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="becquerelsPerKilogram" multiplierToSI="1" name="becquerelsPerKilogram" unitType="radionucleotideActivityPerMass">
+          <description>becquerels per kilogram</description>
+        </unit>
+        <unit id="nominalMonth" multiplierToSI="2628000" name="nominalMonth" parentSI="second" unitType="time">
+          <description>one month excluding leap seconds and leap days, 2628000 seconds</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>

@@ -1,0 +1,300 @@
+study_id,site_id,core_id,method_id,depth_min,depth_max,sample_id,dry_bulk_density,fraction_organic_matter,fraction_carbon,cs137_activity,cs137_activity_se,cs137_unit,excess_pb210_activity,excess_pb210_activity_se,total_pb210_activity,total_pb210_activity_se,pb210_unit,ra226_activity,ra226_activity_se,ra226_unit,delta_c13,be7_activity,be7_activity_se,be7_unit,depth_interval_notes
+Tully_et_al_2024,S,S_9,core,0,2,NA,2.08,0.02,NA,0.67,0.5,becquerelsPerKilogram,48.05,2.95,55.04,2.36,becquerelsPerKilogram,6.99,2.57,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,2,4,NA,2.44,0.02,NA,0.5,0.5,becquerelsPerKilogram,48.88,2.97,55.87,2.39,becquerelsPerKilogram,6.99,3.81,becquerelsPerKilogram,NA,0.67,4.67,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,4,6,NA,NA,NA,NA,0.83,0.67,becquerelsPerKilogram,42.4,2.77,49.39,2.14,becquerelsPerKilogram,6.99,3.5,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,6,8,NA,NA,NA,NA,1.83,0.67,becquerelsPerKilogram,10.23,1.97,17.22,0.88,becquerelsPerKilogram,6.99,2.16,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,8,10,NA,2.3,0.01,NA,2.83,0.33,becquerelsPerKilogram,13.25,2.01,20.24,0.97,becquerelsPerKilogram,6.99,2.23,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,10,12,NA,NA,NA,NA,1.83,0.5,becquerelsPerKilogram,16.02,2.16,23.01,1.25,becquerelsPerKilogram,6.99,2.49,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,12,14,NA,NA,NA,NA,0.67,0.33,becquerelsPerKilogram,7.49,1.92,14.48,0.78,becquerelsPerKilogram,6.99,2.07,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,14,16,NA,2.34,0.03,NA,0.5,0.33,becquerelsPerKilogram,8.02,1.94,15.01,0.82,becquerelsPerKilogram,6.99,2.11,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,16,18,NA,NA,NA,NA,0,0,becquerelsPerKilogram,4.79,1.9,11.78,0.72,becquerelsPerKilogram,6.99,2.03,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,18,20,NA,NA,NA,NA,0.5,0.5,becquerelsPerKilogram,2.93,1.88,9.93,0.68,becquerelsPerKilogram,6.99,2,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,20,22,NA,2.53,0.02,NA,0,0,becquerelsPerKilogram,0.42,1.85,7.41,0.57,becquerelsPerKilogram,6.99,1.93,becquerelsPerKilogram,NA,19.67,11.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,22,24,NA,NA,NA,NA,0,0,becquerelsPerKilogram,3.29,1.88,10.28,0.66,becquerelsPerKilogram,6.99,1.99,becquerelsPerKilogram,NA,7.33,9.33,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,24,26,NA,NA,NA,NA,1.33,0.33,becquerelsPerKilogram,2.89,1.87,9.89,0.64,becquerelsPerKilogram,6.99,1.97,becquerelsPerKilogram,NA,1.33,6.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,26,28,NA,NA,0.02,NA,0,0,becquerelsPerKilogram,0.29,1.85,7.29,0.57,becquerelsPerKilogram,6.99,1.93,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,28,30,NA,2.36,NA,NA,0,0,becquerelsPerKilogram,0,1.85,6.55,0.57,becquerelsPerKilogram,6.99,1.93,becquerelsPerKilogram,NA,1.67,7.67,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,30,32,NA,NA,NA,NA,0.33,0.5,becquerelsPerKilogram,0,1.82,5.2,0.48,becquerelsPerKilogram,6.99,1.88,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,32,34,NA,2.61,0.02,NA,0.67,0.5,becquerelsPerKilogram,0,1.84,6.19,0.54,becquerelsPerKilogram,6.99,1.91,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_9,core,34,36,NA,NA,NA,NA,0,0,becquerelsPerKilogram,0,1.84,6.99,0.55,becquerelsPerKilogram,6.99,1.92,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,0,2,NA,1.54,0.08,NA,5,0.5,becquerelsPerKilogram,141.75,6.58,150.48,6.57,becquerelsPerKilogram,8.73,9.3,becquerelsPerKilogram,NA,50.33,28.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,2,4,NA,2.52,NA,NA,6.83,0.5,becquerelsPerKilogram,122.72,5.89,131.45,5.88,becquerelsPerKilogram,8.73,8.33,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,4,6,NA,NA,0.1,NA,2,0.5,becquerelsPerKilogram,73.95,3.72,82.68,3.7,becquerelsPerKilogram,8.73,5.25,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,6,8,NA,2.42,0.06,NA,4.33,0.5,becquerelsPerKilogram,68.96,3.68,77.69,3.66,becquerelsPerKilogram,8.73,5.19,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,8,10,NA,NA,0.07,NA,4.5,0.5,becquerelsPerKilogram,44.48,2.52,53.21,2.49,becquerelsPerKilogram,8.73,3.54,becquerelsPerKilogram,NA,3.33,29.67,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,10,12,NA,NA,NA,NA,1.17,0.5,becquerelsPerKilogram,29.96,2.09,38.69,2.05,becquerelsPerKilogram,8.73,2.93,becquerelsPerKilogram,NA,11.17,28.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,12,14,NA,2.54,0.02,NA,1.33,0.5,becquerelsPerKilogram,3.83,0.99,12.56,0.91,becquerelsPerKilogram,8.73,1.34,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,14,16,NA,NA,NA,NA,0,0,becquerelsPerKilogram,2.8,0.96,11.53,0.88,becquerelsPerKilogram,8.73,1.31,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,16,18,NA,NA,NA,NA,0.33,0.5,becquerelsPerKilogram,0,0.73,6.33,0.61,becquerelsPerKilogram,8.73,0.95,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,18,20,NA,2.48,0.02,NA,0,0,becquerelsPerKilogram,0,0.74,8.26,0.63,becquerelsPerKilogram,8.73,0.97,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,20,22,NA,NA,NA,NA,0.33,0.5,becquerelsPerKilogram,0.22,0.8,8.95,0.7,becquerelsPerKilogram,8.73,1.06,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,22,24,NA,NA,NA,NA,0,0,becquerelsPerKilogram,0.06,0.78,8.79,0.67,becquerelsPerKilogram,8.73,1.03,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,24,26,NA,2.64,0.02,NA,0,0,becquerelsPerKilogram,0,0.72,8.37,0.6,becquerelsPerKilogram,8.73,0.93,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,26,28,NA,NA,NA,NA,0,0,becquerelsPerKilogram,0,0.75,8.68,0.64,becquerelsPerKilogram,8.73,0.99,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_10,core,28,30,NA,NA,0.02,NA,0,0,becquerelsPerKilogram,0.61,0.76,9.34,0.65,becquerelsPerKilogram,8.73,1,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_11,core,0,2,NA,1.1,0.07,NA,3.44,0.34,becquerelsPerKilogram,144.67,7.32,155.81,7.26,becquerelsPerKilogram,11.14,10.31,becquerelsPerKilogram,NA,46.43,22.3,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_11,core,2,4,NA,1.91,0.03,NA,1.83,0.5,becquerelsPerKilogram,38.37,2.82,49.51,2.65,becquerelsPerKilogram,11.14,3.87,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_11,core,4,6,NA,NA,NA,NA,0.5,0.33,becquerelsPerKilogram,15.97,1.84,27.11,1.58,becquerelsPerKilogram,11.14,2.42,becquerelsPerKilogram,NA,19.5,22.5,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_11,core,6,8,NA,2.37,0.02,NA,0.17,0.5,becquerelsPerKilogram,6.2,1.47,17.35,1.13,becquerelsPerKilogram,11.14,1.85,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_11,core,8,10,NA,NA,NA,NA,0.17,0.33,becquerelsPerKilogram,5.85,1.56,16.99,1.24,becquerelsPerKilogram,11.14,1.99,becquerelsPerKilogram,NA,1.5,22.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_11,core,10,12,NA,2.52,0.03,NA,1.17,0.5,becquerelsPerKilogram,6.34,1.6,17.48,1.3,becquerelsPerKilogram,11.14,2.06,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_11,core,12,14,NA,NA,NA,NA,1,0.33,becquerelsPerKilogram,6.14,1.57,17.29,1.26,becquerelsPerKilogram,11.14,2.01,becquerelsPerKilogram,NA,4.33,17.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_11,core,14,16,NA,NA,NA,NA,0.83,0.5,becquerelsPerKilogram,0.55,1.33,11.7,0.94,becquerelsPerKilogram,11.14,1.62,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_11,core,16,18,NA,2.32,0.03,NA,1,0.5,becquerelsPerKilogram,0.72,1.31,11.86,0.92,becquerelsPerKilogram,11.14,1.6,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_11,core,18,20,NA,NA,NA,NA,0,0,becquerelsPerKilogram,0,1.26,9.95,0.83,becquerelsPerKilogram,11.14,1.51,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_11,core,20,22,NA,NA,NA,NA,0.33,0.67,becquerelsPerKilogram,0.96,1.3,12.1,0.89,becquerelsPerKilogram,11.14,1.58,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_11,core,22,24,NA,2.56,0.03,NA,0,0,becquerelsPerKilogram,0.08,1.28,11.23,0.87,becquerelsPerKilogram,11.14,1.55,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_11,core,24,26,NA,NA,NA,NA,0,0,becquerelsPerKilogram,0,1.32,10.02,0.92,becquerelsPerKilogram,11.14,1.61,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,0,2,NA,-81.15,0.02,NA,0.17,0.5,becquerelsPerKilogram,26.87,4.2,35.13,1.65,becquerelsPerKilogram,8.27,4.51,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,2,4,NA,2.26,0.01,NA,1.83,0.67,becquerelsPerKilogram,21.59,4.13,29.86,1.47,becquerelsPerKilogram,8.27,4.39,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,4,6,NA,NA,0.01,NA,0,0,becquerelsPerKilogram,9.93,3.99,18.2,0.98,becquerelsPerKilogram,8.27,4.11,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,6,8,NA,2.52,0.02,NA,1.17,0.67,becquerelsPerKilogram,15.74,4.05,24.01,1.21,becquerelsPerKilogram,8.27,4.23,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,8,10,NA,NA,NA,NA,1.17,0.5,becquerelsPerKilogram,12.93,4.02,21.19,1.11,becquerelsPerKilogram,8.27,4.17,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,10,12,NA,2.49,0.01,NA,1.17,0.33,becquerelsPerKilogram,10.89,4,19.16,1.04,becquerelsPerKilogram,8.27,4.13,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,12,14,NA,NA,NA,NA,1.67,0.33,becquerelsPerKilogram,11.42,4,19.69,1.05,becquerelsPerKilogram,8.27,4.14,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,14,16,NA,NA,0.03,NA,1.17,0.33,becquerelsPerKilogram,12.59,4.02,20.86,1.13,becquerelsPerKilogram,8.27,4.18,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,16,18,NA,2.64,0.03,NA,2.5,0.5,becquerelsPerKilogram,4.81,3.94,13.08,0.76,becquerelsPerKilogram,8.27,4.01,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,18,20,NA,NA,0.02,NA,2,0.5,becquerelsPerKilogram,4.83,3.94,13.1,0.8,becquerelsPerKilogram,8.27,4.02,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,20,22,NA,NA,0.02,NA,0,0,becquerelsPerKilogram,0,3.91,7.24,0.58,becquerelsPerKilogram,8.27,3.95,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,22,24,NA,2.61,0.01,NA,1.33,0.5,becquerelsPerKilogram,0,3.91,7.56,0.58,becquerelsPerKilogram,8.27,3.95,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,24,26,NA,NA,NA,NA,0,0.17,becquerelsPerKilogram,0,3.9,4.97,0.5,becquerelsPerKilogram,8.27,3.93,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,26,28,NA,NA,NA,NA,0.17,0.33,becquerelsPerKilogram,0,3.9,5.33,0.52,becquerelsPerKilogram,8.27,3.93,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,28,30,NA,2.53,0.01,NA,0.67,0.33,becquerelsPerKilogram,0.7,3.91,8.96,0.61,becquerelsPerKilogram,8.27,3.96,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_12,core,30,32,NA,NA,NA,NA,0,0,becquerelsPerKilogram,7.28,3.96,15.55,0.89,becquerelsPerKilogram,8.27,4.06,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,0,2,NA,1.84,0.07,NA,4.33,0.67,becquerelsPerKilogram,95.68,7.69,121.39,5.82,becquerelsPerKilogram,25.7,9.64,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,2,4,NA,2.21,0.06,NA,4,0.67,becquerelsPerKilogram,101.05,7.89,126.76,6.09,becquerelsPerKilogram,25.7,9.97,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,4,6,NA,NA,NA,NA,7,0.5,becquerelsPerKilogram,101.19,7.85,126.9,6.05,becquerelsPerKilogram,25.7,9.91,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,6,8,NA,2.78,0.08,NA,7.17,0.67,becquerelsPerKilogram,69.32,6.9,95.02,4.73,becquerelsPerKilogram,25.7,8.36,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,8,10,NA,NA,NA,NA,6,0.5,becquerelsPerKilogram,87.96,7.45,113.66,5.51,becquerelsPerKilogram,25.7,9.27,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,10,12,NA,2.05,0.08,NA,4.33,0.83,becquerelsPerKilogram,53.25,6.42,78.95,4.01,becquerelsPerKilogram,25.7,7.57,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,12,14,NA,NA,NA,NA,4.33,0.67,becquerelsPerKilogram,34.38,5.94,60.08,3.18,becquerelsPerKilogram,25.7,6.73,becquerelsPerKilogram,NA,18,26.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,14,16,NA,NA,0.11,NA,5,1,becquerelsPerKilogram,31.72,5.87,57.43,3.05,becquerelsPerKilogram,25.7,6.61,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,16,18,NA,2.07,0.07,NA,2.5,0.5,becquerelsPerKilogram,14.56,5.44,40.26,2.1,becquerelsPerKilogram,25.7,5.83,becquerelsPerKilogram,NA,16.5,29.67,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,18,20,NA,NA,0.1,NA,2,0.5,becquerelsPerKilogram,4.83,5.24,30.53,1.53,becquerelsPerKilogram,25.7,5.46,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,20,22,NA,NA,NA,NA,2.33,0.33,becquerelsPerKilogram,4.75,5.23,30.46,1.5,becquerelsPerKilogram,25.7,5.44,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,22,24,NA,1.6,0.08,NA,1.83,0.33,becquerelsPerKilogram,5.21,5.25,30.92,1.55,becquerelsPerKilogram,25.7,5.47,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,24,26,NA,NA,NA,NA,1.17,0.5,becquerelsPerKilogram,0,5.15,21.68,1.15,becquerelsPerKilogram,25.7,5.27,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,26,28,NA,NA,0.1,NA,1.83,0.5,becquerelsPerKilogram,0,5.11,19.48,0.98,becquerelsPerKilogram,25.7,5.2,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,28,30,NA,1.41,NA,NA,1.17,0.5,becquerelsPerKilogram,0,5.13,22.22,1.08,becquerelsPerKilogram,25.7,5.24,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,30,32,NA,NA,0.08,NA,1.17,0.5,becquerelsPerKilogram,0,5.12,20.97,1.04,becquerelsPerKilogram,25.7,5.22,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_22,core,32,34,NA,NA,NA,NA,0.67,0.5,becquerelsPerKilogram,3.67,5.2,29.37,1.37,becquerelsPerKilogram,25.7,5.38,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_23,core,0,2,NA,1.6,0.02,NA,1.33,0.67,becquerelsPerKilogram,34.12,3.77,57.2,3.19,becquerelsPerKilogram,23.08,4.94,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_23,core,2,4,NA,2.28,0.02,NA,1,0.67,becquerelsPerKilogram,21.06,3,44.13,2.23,becquerelsPerKilogram,23.08,3.74,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_23,core,4,6,NA,NA,0.04,NA,2.5,0.33,becquerelsPerKilogram,16.88,2.9,39.96,2.1,becquerelsPerKilogram,23.08,3.58,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_23,core,6,8,NA,2.81,NA,NA,2.17,0.5,becquerelsPerKilogram,17.16,3.24,40.24,2.54,becquerelsPerKilogram,23.08,4.11,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_23,core,8,10,NA,NA,0.08,NA,1.33,0.83,becquerelsPerKilogram,13.24,2.64,36.32,1.71,becquerelsPerKilogram,23.08,3.14,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_23,core,10,12,NA,2.41,0.05,NA,1,0.67,becquerelsPerKilogram,7.29,2.54,30.36,1.55,becquerelsPerKilogram,23.08,2.97,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_23,core,12,14,NA,NA,NA,NA,2.33,0.67,becquerelsPerKilogram,5.13,2.5,28.21,1.5,becquerelsPerKilogram,23.08,2.92,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_23,core,14,16,NA,NA,0.1,NA,1,0.5,becquerelsPerKilogram,8.06,2.59,31.14,1.64,becquerelsPerKilogram,23.08,3.07,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_23,core,16,18,NA,2.34,0.06,NA,0.5,0.5,becquerelsPerKilogram,6.99,2.57,30.07,1.61,becquerelsPerKilogram,23.08,3.04,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_23,core,18,20,NA,NA,NA,NA,1.17,0.67,becquerelsPerKilogram,3.2,2.49,26.28,1.47,becquerelsPerKilogram,23.08,2.89,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_23,core,20,22,NA,NA,0.11,NA,1.17,0.5,becquerelsPerKilogram,0.01,2.38,23.09,1.28,becquerelsPerKilogram,23.08,2.7,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_23,core,22,24,NA,2.03,0.07,NA,0,0,becquerelsPerKilogram,0,2.3,21.58,1.12,becquerelsPerKilogram,23.08,2.56,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_23,core,24,26,NA,NA,NA,NA,1.33,0.5,becquerelsPerKilogram,1.49,2.43,24.56,1.37,becquerelsPerKilogram,23.08,2.79,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,0,2,NA,0.98,0.06,NA,4.5,0.83,becquerelsPerKilogram,133.12,4.1,152.39,6.7,becquerelsPerKilogram,19.27,7.86,becquerelsPerKilogram,NA,8.17,5.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,2,4,NA,2.24,0.07,NA,6.17,1,becquerelsPerKilogram,118.82,4,138.09,6.03,becquerelsPerKilogram,19.27,7.24,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,4,6,NA,NA,NA,NA,6.67,0.83,becquerelsPerKilogram,110.9,3.56,130.18,5.71,becquerelsPerKilogram,19.27,6.73,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,6,8,NA,2.22,0.06,NA,5.17,0.83,becquerelsPerKilogram,98.05,1.51,117.32,5.19,becquerelsPerKilogram,19.27,5.4,becquerelsPerKilogram,NA,3.17,6,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,8,10,NA,NA,NA,NA,6.67,1,becquerelsPerKilogram,86.26,1.81,105.54,4.99,becquerelsPerKilogram,19.27,5.31,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,10,12,NA,2.37,0.07,NA,6,0.83,becquerelsPerKilogram,81.19,1.48,100.46,4.42,becquerelsPerKilogram,19.27,4.66,becquerelsPerKilogram,NA,6.33,7,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,12,14,NA,NA,NA,NA,6.83,0.83,becquerelsPerKilogram,74.7,2.52,93.97,4.67,becquerelsPerKilogram,19.27,5.31,becquerelsPerKilogram,NA,0.67,6.5,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,14,16,NA,NA,NA,NA,6.67,1,becquerelsPerKilogram,64.35,1.67,83.63,3.8,becquerelsPerKilogram,19.27,4.15,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,16,18,NA,2.55,0.06,NA,6.67,1,becquerelsPerKilogram,55.59,1.67,74.86,3.75,becquerelsPerKilogram,19.27,4.1,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,18,20,NA,NA,NA,NA,5.67,0.67,becquerelsPerKilogram,43.34,1.58,62.61,3.28,becquerelsPerKilogram,19.27,3.64,becquerelsPerKilogram,NA,8,4.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,20,22,NA,NA,NA,NA,4.5,0.83,becquerelsPerKilogram,32.53,2.72,51.8,2.54,becquerelsPerKilogram,19.27,3.72,becquerelsPerKilogram,NA,19,16.5,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,22,24,NA,2.16,0.07,NA,2.17,0.83,becquerelsPerKilogram,32.53,4,51.8,2.54,becquerelsPerKilogram,19.27,4.74,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,24,26,NA,NA,NA,NA,0.67,0.83,becquerelsPerKilogram,14.27,1.59,33.54,1.78,becquerelsPerKilogram,19.27,2.39,becquerelsPerKilogram,NA,21.83,19.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,26,28,NA,NA,NA,NA,0.17,0.67,becquerelsPerKilogram,5.73,2.84,25.01,1.46,becquerelsPerKilogram,19.27,3.19,becquerelsPerKilogram,NA,0.67,14.67,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_24,core,28,30,NA,2.25,0.06,NA,0,0,becquerelsPerKilogram,0,5,19.27,1.15,becquerelsPerKilogram,19.27,5.13,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_27,core,0,2,NA,1.64,0.02,NA,0.33,0.33,becquerelsPerKilogram,12.28,1.72,27.02,1.27,becquerelsPerKilogram,14.73,2.14,becquerelsPerKilogram,NA,7.33,50.17,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_27,core,2,4,NA,2.56,0.02,NA,1,0.5,becquerelsPerKilogram,8.67,1.64,23.4,1.15,becquerelsPerKilogram,14.73,2,becquerelsPerKilogram,NA,15.33,95.67,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_27,core,4,6,NA,NA,NA,NA,1.5,0.33,becquerelsPerKilogram,8.98,1.67,23.71,1.2,becquerelsPerKilogram,14.73,2.05,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_27,core,6,8,NA,2.63,0.02,NA,1,0.67,becquerelsPerKilogram,4.93,1.58,19.66,1.06,becquerelsPerKilogram,14.73,1.9,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_27,core,8,10,NA,NA,NA,NA,1.17,0.33,becquerelsPerKilogram,6.28,1.59,21.01,1.08,becquerelsPerKilogram,14.73,1.92,becquerelsPerKilogram,NA,21.33,78.5,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_27,core,10,12,NA,2.61,0.03,NA,1.67,0.67,becquerelsPerKilogram,4.39,1.55,19.13,1.03,becquerelsPerKilogram,14.73,1.86,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_27,core,12,14,NA,NA,NA,NA,0.67,0.33,becquerelsPerKilogram,0,1.44,14.21,0.85,becquerelsPerKilogram,14.73,1.68,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_27,core,14,16,NA,NA,NA,NA,1,0.33,becquerelsPerKilogram,1.5,1.46,16.23,0.88,becquerelsPerKilogram,14.73,1.7,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_27,core,16,18,NA,2.63,0.02,NA,0.83,0.67,becquerelsPerKilogram,0.25,1.44,14.98,0.84,becquerelsPerKilogram,14.73,1.67,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_27,core,18,20,NA,NA,NA,NA,0,0,becquerelsPerKilogram,0,1.42,13.51,0.82,becquerelsPerKilogram,14.73,1.64,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_30,core,0,2,NA,1.42,0.06,NA,3,0.67,becquerelsPerKilogram,70.06,4.07,82.99,4.02,becquerelsPerKilogram,12.93,5.72,becquerelsPerKilogram,NA,37.5,6,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_30,core,2,4,NA,1.91,0.03,NA,2.33,0.67,becquerelsPerKilogram,52.96,3.1,65.88,3.04,becquerelsPerKilogram,12.93,4.34,becquerelsPerKilogram,NA,8.33,4.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_30,core,4,6,NA,NA,0.04,NA,0.67,0.67,becquerelsPerKilogram,53.69,3.26,66.62,3.2,becquerelsPerKilogram,12.93,4.57,becquerelsPerKilogram,NA,2.5,4.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_30,core,6,8,NA,1.79,0.05,NA,4.83,0.67,becquerelsPerKilogram,89.62,4.71,102.55,4.67,becquerelsPerKilogram,12.93,6.63,becquerelsPerKilogram,NA,1,5,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_30,core,8,10,NA,NA,0.14,NA,4.83,0.67,becquerelsPerKilogram,91.44,4.94,104.37,4.9,becquerelsPerKilogram,12.93,6.95,becquerelsPerKilogram,NA,2.83,4.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_30,core,10,12,NA,2.39,0.02,NA,7.17,0.67,becquerelsPerKilogram,69.88,3.74,82.8,3.69,becquerelsPerKilogram,12.93,5.25,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_30,core,12,14,NA,NA,0.03,NA,0.5,0.5,becquerelsPerKilogram,12.46,1.48,25.38,1.35,becquerelsPerKilogram,12.93,2,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_30,core,14,16,NA,NA,NA,NA,1.5,0.5,becquerelsPerKilogram,8.06,1.36,20.98,1.22,becquerelsPerKilogram,12.93,1.83,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_30,core,16,18,NA,2.47,0.04,NA,1.5,0.5,becquerelsPerKilogram,0.64,1.08,13.56,0.88,becquerelsPerKilogram,12.93,1.39,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_30,core,18,20,NA,NA,0.08,NA,1,0.67,becquerelsPerKilogram,0,1.06,12.33,0.86,becquerelsPerKilogram,12.93,1.37,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_30,core,20,22,NA,NA,NA,NA,0,0,becquerelsPerKilogram,0,1.06,12.88,0.86,becquerelsPerKilogram,12.93,1.36,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,0,2,NA,1.35,0.11,NA,5.17,0.83,becquerelsPerKilogram,148.88,7.49,164.26,7.44,becquerelsPerKilogram,15.38,10.55,becquerelsPerKilogram,NA,39,7.17,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,2,4,NA,1.75,NA,NA,5.5,0.83,becquerelsPerKilogram,159.98,7.81,175.36,7.75,becquerelsPerKilogram,15.38,11,becquerelsPerKilogram,NA,16.33,6.17,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,4,6,NA,1.94,0.1,NA,4.67,0.83,becquerelsPerKilogram,198.83,9.18,214.21,9.14,becquerelsPerKilogram,15.38,12.95,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,6,8,NA,NA,NA,NA,7.67,0.83,becquerelsPerKilogram,142.27,7.18,157.65,7.12,becquerelsPerKilogram,15.38,10.11,becquerelsPerKilogram,NA,1.17,5.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,8,10,NA,2.43,0.07,NA,5.33,0.83,becquerelsPerKilogram,104.23,5.54,119.6,5.47,becquerelsPerKilogram,15.38,7.78,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,10,12,NA,NA,NA,NA,6.17,0.83,becquerelsPerKilogram,101.61,5.46,116.98,5.38,becquerelsPerKilogram,15.38,7.67,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,12,14,NA,2.37,0.08,NA,9.67,0.83,becquerelsPerKilogram,88.96,4.86,104.33,4.77,becquerelsPerKilogram,15.38,6.81,becquerelsPerKilogram,NA,6.33,6.67,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,14,16,NA,NA,NA,NA,8.83,0.85,becquerelsPerKilogram,80.43,4.51,95.81,4.42,becquerelsPerKilogram,15.38,6.32,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,16,18,NA,NA,0.1,NA,10,1,becquerelsPerKilogram,82.08,4.59,97.46,4.5,becquerelsPerKilogram,15.38,6.43,becquerelsPerKilogram,NA,3.33,8.33,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,18,20,NA,2.43,NA,NA,9.67,0.83,becquerelsPerKilogram,84.45,4.71,99.82,4.62,becquerelsPerKilogram,15.38,6.59,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,20,22,NA,NA,0.09,NA,9.17,0.83,becquerelsPerKilogram,86.79,4.81,102.17,4.73,becquerelsPerKilogram,15.38,6.75,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,22,24,NA,NA,NA,NA,8.5,0.83,becquerelsPerKilogram,66.89,3.97,82.26,3.86,becquerelsPerKilogram,15.38,5.54,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,24,26,NA,1.44,0.11,NA,5.33,0.83,becquerelsPerKilogram,57.77,3.58,73.15,3.46,becquerelsPerKilogram,15.38,4.98,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,26,28,NA,NA,NA,NA,3.67,1,becquerelsPerKilogram,22.63,2.22,38.01,2.03,becquerelsPerKilogram,15.38,3.01,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,28,30,NA,NA,0.11,NA,2.5,0.67,becquerelsPerKilogram,16.82,1.89,32.19,1.66,becquerelsPerKilogram,15.38,2.51,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,30,32,NA,1.85,NA,NA,3.33,0.83,becquerelsPerKilogram,10.61,1.6,25.98,1.32,becquerelsPerKilogram,15.38,2.07,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,34,36,NA,NA,0.11,NA,2.67,0.67,becquerelsPerKilogram,13.86,1.69,29.24,1.43,becquerelsPerKilogram,15.38,2.22,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,36,38,NA,NA,NA,NA,2.5,0.67,becquerelsPerKilogram,4.72,1.41,20.09,1.08,becquerelsPerKilogram,15.38,1.77,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,40,42,NA,NA,0.09,NA,2.5,0.83,becquerelsPerKilogram,6.22,1.46,21.6,1.15,becquerelsPerKilogram,15.38,1.86,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,42,44,NA,NA,NA,NA,1.83,0.5,becquerelsPerKilogram,7.89,1.51,23.26,1.21,becquerelsPerKilogram,15.38,1.93,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,46,48,NA,NA,0.11,NA,0.67,0.5,becquerelsPerKilogram,5.97,1.46,21.35,1.15,becquerelsPerKilogram,15.38,1.86,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,48,50,NA,2.23,NA,NA,0.67,0.5,becquerelsPerKilogram,13.26,1.65,28.64,1.38,becquerelsPerKilogram,15.38,2.15,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_31,core,52,54,NA,NA,0.08,NA,0.83,0.67,becquerelsPerKilogram,0,1.28,15.38,0.9,becquerelsPerKilogram,15.38,1.56,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,0,2,NA,1.29,0.08,NA,9.33,1,becquerelsPerKilogram,155.14,8.16,171.81,8.07,becquerelsPerKilogram,16.67,11.48,becquerelsPerKilogram,NA,27.33,6.17,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,2,4,NA,1.66,0.08,NA,8.17,1,becquerelsPerKilogram,153.85,7.5,170.51,7.4,becquerelsPerKilogram,16.67,10.54,becquerelsPerKilogram,NA,6,5.17,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,4,6,NA,NA,NA,NA,8.33,0.83,becquerelsPerKilogram,155.14,8.13,171.81,8.05,becquerelsPerKilogram,16.67,11.44,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,6,8,NA,2.08,0.07,NA,8.67,1,becquerelsPerKilogram,148.59,7.84,165.26,7.75,becquerelsPerKilogram,16.67,11.02,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,8,10,NA,NA,NA,NA,9.33,1,becquerelsPerKilogram,113.87,5.81,130.54,5.69,becquerelsPerKilogram,16.67,8.13,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,10,12,NA,2.41,0.07,NA,13.67,1.33,becquerelsPerKilogram,124.52,6.21,141.18,6.1,becquerelsPerKilogram,16.67,8.71,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,12,14,NA,NA,NA,NA,12.83,1.33,becquerelsPerKilogram,94.05,4.9,110.72,4.76,becquerelsPerKilogram,16.67,6.83,becquerelsPerKilogram,NA,11.17,12,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,14,16,NA,NA,NA,NA,9.17,0.83,becquerelsPerKilogram,91.91,4.91,108.57,4.76,becquerelsPerKilogram,16.67,6.84,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,16,18,NA,1.54,0.06,NA,8.17,0.83,becquerelsPerKilogram,65.46,4.03,82.13,3.86,becquerelsPerKilogram,16.67,5.58,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,18,20,NA,NA,NA,NA,6.17,0.5,becquerelsPerKilogram,41.29,2.76,57.96,2.5,becquerelsPerKilogram,16.67,3.72,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,20,22,NA,NA,NA,NA,5,0.5,becquerelsPerKilogram,33.74,2.66,50.41,2.38,becquerelsPerKilogram,16.67,3.57,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,22,24,NA,2.03,0.07,NA,3.67,0.67,becquerelsPerKilogram,24.17,2.34,40.84,2.03,becquerelsPerKilogram,16.67,3.09,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,24,26,NA,NA,NA,NA,5.17,0.83,becquerelsPerKilogram,24.9,2.29,41.56,1.97,becquerelsPerKilogram,16.67,3.02,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_32,core,26,28,NA,NA,NA,NA,5.17,0.67,becquerelsPerKilogram,19.01,2.04,35.68,1.67,becquerelsPerKilogram,16.67,2.63,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,0,2,NA,1.48,0.03,NA,1.67,0.67,becquerelsPerKilogram,80.28,6.76,97.88,5.07,becquerelsPerKilogram,17.6,8.45,becquerelsPerKilogram,NA,15.17,5,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,2,4,NA,2.25,0.03,NA,2.67,0.5,becquerelsPerKilogram,65.38,6.21,82.98,4.3,becquerelsPerKilogram,17.6,7.55,becquerelsPerKilogram,NA,2.17,3.5,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,4,6,NA,NA,NA,NA,3.17,0.67,becquerelsPerKilogram,81.48,6.58,99.08,4.82,becquerelsPerKilogram,17.6,8.16,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,6,8,NA,2.2,0.04,NA,4,0.83,becquerelsPerKilogram,76.91,6.53,94.51,4.76,becquerelsPerKilogram,17.6,8.08,becquerelsPerKilogram,NA,6.83,5.67,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,8,10,NA,NA,NA,NA,4.33,0.67,becquerelsPerKilogram,47.27,5.57,64.87,3.33,becquerelsPerKilogram,17.6,6.49,becquerelsPerKilogram,NA,3.83,5.17,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,10,12,NA,1.72,0.05,NA,6.5,0.5,becquerelsPerKilogram,69.08,6.26,86.67,4.38,becquerelsPerKilogram,17.6,7.64,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,12,14,NA,NA,NA,NA,6.67,0.83,becquerelsPerKilogram,52.64,5.66,70.24,3.46,becquerelsPerKilogram,17.6,6.64,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,14,16,NA,NA,NA,NA,3.67,0.5,becquerelsPerKilogram,29.6,5.13,47.19,2.5,becquerelsPerKilogram,17.6,5.7,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,16,18,NA,2.51,0.05,NA,2.5,0.5,becquerelsPerKilogram,27.73,5.12,45.33,2.48,becquerelsPerKilogram,17.6,5.69,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,18,20,NA,NA,NA,NA,3.17,0.83,becquerelsPerKilogram,26.75,5.1,44.35,2.46,becquerelsPerKilogram,17.6,5.66,becquerelsPerKilogram,NA,5,15.17,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,20,22,NA,NA,NA,NA,1,0.67,becquerelsPerKilogram,11.19,4.76,28.79,1.63,becquerelsPerKilogram,17.6,5.03,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,22,24,NA,2.39,0.04,NA,0.83,0.5,becquerelsPerKilogram,6.97,4.7,24.56,1.44,becquerelsPerKilogram,17.6,4.92,becquerelsPerKilogram,NA,2,10.67,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,24,26,NA,NA,NA,NA,0.33,0.5,becquerelsPerKilogram,0,4.57,16.75,0.94,becquerelsPerKilogram,17.6,4.67,becquerelsPerKilogram,NA,2.67,11,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_41,core,26,28,NA,NA,0.05,NA,0,0,becquerelsPerKilogram,0.85,4.59,18.45,1.04,becquerelsPerKilogram,17.6,4.71,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,0,2,NA,1.25,0.09,NA,6.83,1,becquerelsPerKilogram,132.62,7.62,152.56,7.09,becquerelsPerKilogram,19.94,10.41,becquerelsPerKilogram,NA,41.17,6.67,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,2,4,NA,1.65,0.06,NA,7,0.5,becquerelsPerKilogram,158.96,8.85,178.89,8.4,becquerelsPerKilogram,19.94,12.2,becquerelsPerKilogram,NA,19,3.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,4,6,NA,NA,NA,NA,4.83,0.83,becquerelsPerKilogram,142.79,8.05,162.73,7.56,becquerelsPerKilogram,19.94,11.05,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,6,8,NA,2.5,0.07,NA,7.83,0.83,becquerelsPerKilogram,152.33,8.58,172.27,8.12,becquerelsPerKilogram,19.94,11.81,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,8,10,NA,NA,NA,NA,6.5,0.83,becquerelsPerKilogram,124.18,7.33,144.12,6.78,becquerelsPerKilogram,19.94,9.99,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,10,12,NA,1.85,0.06,NA,3.67,0.5,becquerelsPerKilogram,101.35,6.49,121.29,5.86,becquerelsPerKilogram,19.94,8.74,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,12,14,NA,NA,NA,NA,5,0.5,becquerelsPerKilogram,96.48,6.26,116.42,5.6,becquerelsPerKilogram,19.94,8.4,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,14,16,NA,NA,0.08,NA,4.33,0.67,becquerelsPerKilogram,81.69,5.66,101.63,4.93,becquerelsPerKilogram,19.94,7.5,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,16,18,NA,2.11,0.05,NA,4,0.5,becquerelsPerKilogram,64.35,5.06,84.29,4.23,becquerelsPerKilogram,19.94,6.59,becquerelsPerKilogram,NA,3,5.17,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,18,20,NA,NA,NA,NA,2.5,0.5,becquerelsPerKilogram,40.03,3.9,59.97,2.74,becquerelsPerKilogram,19.94,4.77,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,20,22,NA,NA,0.09,NA,2.67,0.67,becquerelsPerKilogram,12.71,3.22,32.65,1.62,becquerelsPerKilogram,19.94,3.61,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,22,24,NA,2.07,0.06,NA,1.17,0.5,becquerelsPerKilogram,4.22,3.04,24.16,1.23,becquerelsPerKilogram,19.94,3.28,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,24,26,NA,NA,NA,NA,1.17,0.67,becquerelsPerKilogram,2.77,3.02,22.71,1.18,becquerelsPerKilogram,19.94,3.24,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,26,28,NA,NA,NA,NA,0,0,becquerelsPerKilogram,0,2.94,16.69,0.94,becquerelsPerKilogram,19.94,3.08,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,28,30,NA,2.02,0.06,NA,1.17,0.5,becquerelsPerKilogram,1.8,3,21.74,1.13,becquerelsPerKilogram,19.94,3.2,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_42,core,30,32,NA,NA,0.08,NA,0.33,0.83,becquerelsPerKilogram,0,2.95,18.62,0.99,becquerelsPerKilogram,19.94,3.11,becquerelsPerKilogram,NA,0.5,294.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,0,2,NA,NA,NA,NA,7.33,0.83,becquerelsPerKilogram,175.22,8.38,195.33,8.3,becquerelsPerKilogram,20.11,11.79,becquerelsPerKilogram,NA,27.5,4.67,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,2,4,NA,NA,0.13,NA,8.33,0.83,becquerelsPerKilogram,213.27,10,233.38,9.93,becquerelsPerKilogram,20.11,14.1,becquerelsPerKilogram,NA,14.5,5.17,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,4,6,NA,NA,NA,NA,10,1.17,becquerelsPerKilogram,210.55,10.03,230.66,9.97,becquerelsPerKilogram,20.11,14.14,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,6,8,NA,NA,0.1,NA,8.83,1,becquerelsPerKilogram,173.08,8.52,193.19,8.44,becquerelsPerKilogram,20.11,12,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,8,10,NA,NA,0.11,NA,10.5,1.17,becquerelsPerKilogram,215.04,10.13,235.15,10.06,becquerelsPerKilogram,20.11,14.28,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,10,12,NA,NA,0.11,NA,13,1,becquerelsPerKilogram,147.82,7.32,167.93,7.23,becquerelsPerKilogram,20.11,10.29,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,12,14,NA,NA,NA,NA,10.17,1.17,becquerelsPerKilogram,129.29,6.6,149.4,6.5,becquerelsPerKilogram,20.11,9.26,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,14,16,NA,NA,0.11,NA,11.5,0.83,becquerelsPerKilogram,126.37,6.48,146.48,6.37,becquerelsPerKilogram,20.11,9.09,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,16,18,NA,NA,0.1,NA,15,1.33,becquerelsPerKilogram,111.71,5.85,131.82,5.74,becquerelsPerKilogram,20.11,8.19,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,18,20,NA,NA,0.11,NA,13.17,1.17,becquerelsPerKilogram,94.49,5.18,114.6,5.05,becquerelsPerKilogram,20.11,7.23,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,20,22,NA,NA,0.11,NA,9.33,1,becquerelsPerKilogram,79.85,4.58,99.96,4.43,becquerelsPerKilogram,20.11,6.38,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,22,24,NA,NA,0.1,NA,4,1,becquerelsPerKilogram,47.27,3.23,67.38,3.01,becquerelsPerKilogram,20.11,4.41,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,24,26,NA,NA,0.1,NA,4.33,0.83,becquerelsPerKilogram,37.57,2.84,57.68,2.59,becquerelsPerKilogram,20.11,3.84,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,26,28,NA,NA,0.09,NA,3.67,0.83,becquerelsPerKilogram,31.74,2.65,51.85,2.38,becquerelsPerKilogram,20.11,3.56,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,28,30,NA,NA,0.1,NA,2.5,1,becquerelsPerKilogram,22.8,2.33,42.91,2.01,becquerelsPerKilogram,20.11,3.08,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,30,32,NA,NA,NA,NA,3.17,0.83,becquerelsPerKilogram,18.42,2.19,38.53,1.85,becquerelsPerKilogram,20.11,2.87,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,34,34,NA,NA,0.11,NA,1.33,0.83,becquerelsPerKilogram,6.59,1.8,26.7,1.37,becquerelsPerKilogram,20.11,2.26,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,36,36,NA,NA,0.1,NA,0,0,becquerelsPerKilogram,1.05,1.68,21.16,1.21,becquerelsPerKilogram,20.11,2.07,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,40,40,NA,NA,0.09,NA,1.33,0.83,becquerelsPerKilogram,0.11,1.59,20.22,1.08,becquerelsPerKilogram,20.11,1.92,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,42,42,NA,NA,0.09,NA,0,0,becquerelsPerKilogram,0,1.55,18.88,1.02,becquerelsPerKilogram,20.11,1.86,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,46,46,NA,NA,0.08,NA,0,0,becquerelsPerKilogram,1.23,1.6,21.34,1.09,becquerelsPerKilogram,20.11,1.94,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_50,core,48,48,NA,NA,0.08,NA,0,0,becquerelsPerKilogram,0,1.55,18.96,1.02,becquerelsPerKilogram,20.11,1.86,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,0,2,NA,NA,0.09,NA,8.5,0.83,becquerelsPerKilogram,142.12,12.03,166.61,7.35,becquerelsPerKilogram,24.5,14.1,becquerelsPerKilogram,NA,14.83,5,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,2,4,NA,NA,NA,NA,4.67,0.67,becquerelsPerKilogram,34.68,9.95,59.18,2.88,becquerelsPerKilogram,24.5,10.36,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,4,6,NA,NA,0.07,NA,1.67,0.67,becquerelsPerKilogram,1.24,9.62,25.74,1.32,becquerelsPerKilogram,24.5,9.71,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,6,8,NA,NA,NA,NA,1.33,0.5,becquerelsPerKilogram,0,9.56,13.11,0.83,becquerelsPerKilogram,24.5,9.6,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,8,10,NA,NA,0.04,NA,0.67,0.67,becquerelsPerKilogram,0,9.56,11.79,0.78,becquerelsPerKilogram,24.5,9.59,becquerelsPerKilogram,NA,6.33,4,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,10,12,NA,NA,NA,NA,0.33,0.83,becquerelsPerKilogram,0,9.57,14.74,0.91,becquerelsPerKilogram,24.5,9.61,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,12,14,NA,NA,0.05,NA,2.17,0.83,becquerelsPerKilogram,0,9.57,16.13,0.96,becquerelsPerKilogram,24.5,9.62,becquerelsPerKilogram,NA,6.5,10.83,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,14,16,NA,NA,NA,NA,0,0,becquerelsPerKilogram,0,9.58,18.97,1.05,becquerelsPerKilogram,24.5,9.64,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,16,18,NA,NA,0.07,NA,0.33,1,becquerelsPerKilogram,2.76,9.63,27.25,1.39,becquerelsPerKilogram,24.5,9.73,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,18,20,NA,NA,NA,NA,0,0.83,becquerelsPerKilogram,7.34,9.66,31.83,1.58,becquerelsPerKilogram,24.5,9.78,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,20,22,NA,NA,0.08,NA,0.67,0.83,becquerelsPerKilogram,10.97,9.7,35.47,1.85,becquerelsPerKilogram,24.5,9.88,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,22,24,NA,NA,NA,NA,0.17,1,becquerelsPerKilogram,0,9.59,21.18,1.14,becquerelsPerKilogram,24.5,9.66,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,24,26,NA,NA,0.09,NA,0,0,becquerelsPerKilogram,14.84,9.73,39.33,1.97,becquerelsPerKilogram,24.5,9.92,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,26,28,NA,NA,NA,NA,0.33,0.83,becquerelsPerKilogram,6.05,9.65,30.54,1.53,becquerelsPerKilogram,24.5,9.77,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,S,S_55,core,28,30,NA,NA,0.09,NA,0.67,0.83,becquerelsPerKilogram,7.86,9.66,32.35,1.6,becquerelsPerKilogram,24.5,9.79,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,0,2,NA,NA,0,0.03,2,0.5,becquerelsPerKilogram,38.34,5.62,46.9,2.08,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,2,4,NA,NA,0,0.07,6.83,0.83,becquerelsPerKilogram,55.33,5.92,63.89,2.8,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,4,6,NA,NA,0.01,0.1,10.67,0.83,becquerelsPerKilogram,68.98,6.21,77.54,3.36,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,6,8,NA,NA,0,0.07,25.83,1,becquerelsPerKilogram,59.49,5.99,68.05,2.94,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,8,10,NA,NA,0.01,0.11,85.17,1.67,becquerelsPerKilogram,72.91,6.4,81.47,3.7,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,10,12,NA,NA,0.01,0.1,82.83,2.17,becquerelsPerKilogram,46.42,5.85,54.98,2.64,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,12,14,NA,NA,0.01,0.09,62.67,1.67,becquerelsPerKilogram,47.22,5.87,55.79,2.69,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,14,16,NA,NA,0,0.08,50.33,0.83,becquerelsPerKilogram,46.74,5.84,55.3,2.63,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0.67,0.17,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,16,18,NA,NA,0.01,0.09,44.83,0.83,becquerelsPerKilogram,52.22,5.95,60.78,2.86,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,1.33,0.17,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,18,20,NA,NA,0.01,0.09,35,1.33,becquerelsPerKilogram,52.45,5.92,61.01,2.8,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,20,22,NA,NA,0.01,0.09,31.5,1.17,becquerelsPerKilogram,43.62,5.79,52.18,2.5,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,24,26,NA,NA,0.01,0.1,22,1,becquerelsPerKilogram,59.22,6.07,67.78,3.1,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,28,30,NA,NA,0.01,0.16,12.67,1,becquerelsPerKilogram,38.3,5.68,46.86,2.24,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,2.17,1.5,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,32,34,NA,NA,0.01,0.16,8.5,0.83,becquerelsPerKilogram,25.01,5.49,33.57,1.7,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0.67,1.5,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,36,38,NA,NA,0,0.08,7.33,0.67,becquerelsPerKilogram,6.53,5.29,15.09,0.87,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,2.83,1.17,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,40,42,NA,NA,0.01,0.18,5,0.83,becquerelsPerKilogram,1.89,5.27,10.45,0.71,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,44,46,NA,NA,0.01,0.33,1.67,0.83,becquerelsPerKilogram,0,5.24,4.51,0.49,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,NBP,NBP,core,48,50,NA,NA,0.01,0.24,1.17,0.67,becquerelsPerKilogram,0,5.24,4.2,0.47,becquerelsPerKilogram,NA,NA,becquerelsPerKilogram,NA,0,0,becquerelsPerKilogram,NA
+Tully_et_al_2024,OCR_S1,G1,marsh grab,0,10,A,NA,NA,0.04,0.03,0.01,disintegrationsPerMinutePerGram,0,0.18,0.19,0.02,disintegrationsPerMinutePerGram,NA,NA,NA,-22.58,0,0,disintegrationsPerMinutePerGram,depth <10 cm
+Tully_et_al_2024,OCR_S1,G1,marsh grab,0,10,B,NA,NA,0.02,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-22.52,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,OCR_S1,G1,marsh grab,0,10,C,NA,NA,0.01,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-22.34,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,OCR_S1,G2,marsh grab,0,10,A,NA,NA,0.02,0,0,disintegrationsPerMinutePerGram,0,0.03,0.08,0.02,disintegrationsPerMinutePerGram,NA,NA,NA,-16.78,0,0,disintegrationsPerMinutePerGram,depth <10 cm
+Tully_et_al_2024,OCR_S1,G2,marsh grab,0,10,B,NA,NA,0.01,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-16.31,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,OCR_S1,G2,marsh grab,0,10,C,NA,NA,0.01,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-16.61,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,OCR_S2,G1,marsh grab,0,10,A,NA,NA,0.01,0.02,0.01,disintegrationsPerMinutePerGram,0.04,0.13,0.39,0.03,disintegrationsPerMinutePerGram,NA,NA,NA,-15.94,0,0,disintegrationsPerMinutePerGram,depth <10 cm
+Tully_et_al_2024,OCR_S2,G1,marsh grab,0,10,B,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-16.27,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,OCR_S2,G1,marsh grab,0,10,C,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-16.28,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,BUX,G1,marsh grab,0,10,A,NA,NA,0.03,0.16,0.01,disintegrationsPerMinutePerGram,0.41,0.18,1.05,0.06,disintegrationsPerMinutePerGram,NA,NA,NA,-15.88,0,0,disintegrationsPerMinutePerGram,depth <10 cm
+Tully_et_al_2024,BUX,G1,marsh grab,0,10,B,NA,NA,0.01,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-16.24,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,BUX,G1,marsh grab,0,10,C,NA,NA,0.03,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-15.95,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,BUX,G2,marsh grab,0,10,A,NA,NA,0.07,0.08,0.02,disintegrationsPerMinutePerGram,0.9,0.32,0.58,0.04,disintegrationsPerMinutePerGram,NA,NA,NA,-20.85,0.81,0.58,disintegrationsPerMinutePerGram,depth <10 cm
+Tully_et_al_2024,BUX,G2,marsh grab,0,10,B,NA,NA,0.06,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-19.84,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,BUX,G2,marsh grab,0,10,C,NA,NA,0.06,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-19.98,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,BUX,G3,marsh grab,10,NA,A,NA,NA,0.07,0.14,0.04,disintegrationsPerMinutePerGram,0.99,0.56,1.21,0.06,disintegrationsPerMinutePerGram,NA,NA,NA,-16.54,0,0,disintegrationsPerMinutePerGram,depth >10 cm
+Tully_et_al_2024,BUX,G3,marsh grab,10,NA,B,NA,NA,0.05,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-16.41,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,BUX,G3,marsh grab,10,NA,C,NA,NA,0.07,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-16.48,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,SAL,G1,marsh grab,0,10,A,NA,NA,0.07,0.16,0.02,disintegrationsPerMinutePerGram,0.89,0.32,2.07,0.1,disintegrationsPerMinutePerGram,NA,NA,NA,-23.05,0,0,disintegrationsPerMinutePerGram,depth <10 cm
+Tully_et_al_2024,SAL,G1,marsh grab,0,10,B,NA,NA,0.08,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-23.02,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,SAL,G1,marsh grab,0,10,C,NA,NA,0.07,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-23.16,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,SAL,G2,marsh grab,0,10,A,NA,NA,0.08,0.19,0.02,disintegrationsPerMinutePerGram,0.94,0.33,2.38,0.11,disintegrationsPerMinutePerGram,NA,NA,NA,-23.67,0,0,disintegrationsPerMinutePerGram,depth <10 cm
+Tully_et_al_2024,SAL,G2,marsh grab,0,10,B,NA,NA,0.07,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-24.03,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,SAL,G2,marsh grab,0,10,C,NA,NA,0.08,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-23.2,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,SAL,G3,marsh grab,10,NA,A,NA,NA,0.09,0.1,0.03,disintegrationsPerMinutePerGram,0.51,0.35,1.14,0.06,disintegrationsPerMinutePerGram,NA,NA,NA,-23.48,0,0,disintegrationsPerMinutePerGram,depth >10 cm
+Tully_et_al_2024,SAL,G3,marsh grab,10,NA,B,NA,NA,0.11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-23.64,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,SAL,G3,marsh grab,10,NA,C,NA,NA,0.11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-23.93,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,CI,G1,marsh grab,10,NA,A,NA,NA,0.14,0.08,0.02,disintegrationsPerMinutePerGram,1.5,0.29,1.74,0.08,disintegrationsPerMinutePerGram,NA,NA,NA,-25,0.05,0.45,disintegrationsPerMinutePerGram,depth >10 cm
+Tully_et_al_2024,CI,G1,marsh grab,10,NA,B,NA,NA,0.13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-24.74,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,CI,G1,marsh grab,10,NA,C,NA,NA,0.11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-24.52,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,CI,G2,marsh grab,10,NA,A,NA,NA,0.12,0.46,0.04,disintegrationsPerMinutePerGram,5.42,0.47,6.15,0.26,disintegrationsPerMinutePerGram,NA,NA,NA,-20.76,0,0,disintegrationsPerMinutePerGram,depth >10 cm
+Tully_et_al_2024,CI,G2,marsh grab,10,NA,B,NA,NA,0.11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-21.12,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,CI,G2,marsh grab,10,NA,C,NA,NA,0.13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-20.47,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,NBP,G2,marsh grab,10,NA,A,NA,NA,0.13,0.29,0.05,disintegrationsPerMinutePerGram,0.07,0.65,1.33,0.07,disintegrationsPerMinutePerGram,NA,NA,NA,-26.78,0,0,disintegrationsPerMinutePerGram,depth >10 cm
+Tully_et_al_2024,NBP,G2,marsh grab,10,NA,B,NA,NA,0.12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-26.56,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,NBP,G2,marsh grab,10,NA,C,NA,NA,0.17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-26.91,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,NBP,G3,marsh grab,0,10,A,NA,NA,0.12,0.18,0.04,disintegrationsPerMinutePerGram,3.17,0.48,4.95,0.22,disintegrationsPerMinutePerGram,NA,NA,NA,-26.04,2.74,0.88,disintegrationsPerMinutePerGram,depth <10 cm
+Tully_et_al_2024,NBP,G3,marsh grab,0,10,B,NA,NA,0.15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-25.93,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,NBP,G3,marsh grab,0,10,C,NA,NA,0.19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-26.03,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,NBP,G5,marsh grab,0,10,A,NA,NA,0.1,0.58,0.05,disintegrationsPerMinutePerGram,5.57,0.68,6.17,0.26,disintegrationsPerMinutePerGram,NA,NA,NA,-23.96,0,0,disintegrationsPerMinutePerGram,depth <10 cm
+Tully_et_al_2024,NBP,G5,marsh grab,0,10,B,NA,NA,0.09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-23.95,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,NBP,G5,marsh grab,0,10,C,NA,NA,0.13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-24.08,NA,NA,NA,depth <10 cm
+Tully_et_al_2024,PPR,G1,marsh grab,10,NA,A,NA,NA,0.48,0,0,disintegrationsPerMinutePerGram,0,0.12,0.16,0.02,disintegrationsPerMinutePerGram,NA,NA,NA,-29,0,0,disintegrationsPerMinutePerGram,depth >10 cm
+Tully_et_al_2024,PPR,G1,marsh grab,10,NA,B,NA,NA,0.46,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-28.87,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,PPR,G1,marsh grab,10,NA,C,NA,NA,0.45,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-28.7,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,PPR,G3,marsh grab,10,NA,A,NA,NA,0.45,0.04,0.04,disintegrationsPerMinutePerGram,1.29,0.47,1.52,0.08,disintegrationsPerMinutePerGram,NA,NA,NA,-27.98,0,0,disintegrationsPerMinutePerGram,depth >10 cm
+Tully_et_al_2024,PPR,G3,marsh grab,10,NA,B,NA,NA,0.43,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-27.86,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,PPR,G3,marsh grab,10,NA,C,NA,NA,0.44,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-27.8,NA,NA,NA,depth >10 cm
+Tully_et_al_2024,S,S_31,core,38,42,NA,2.55,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

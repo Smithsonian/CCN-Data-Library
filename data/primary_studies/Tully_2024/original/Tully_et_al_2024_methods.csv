@@ -1,0 +1,3 @@
+study_id,method_id,coring_method,roots_flag,sediment_sieved_flag,dry_bulk_density_temperature,dry_bulk_density_time,dry_bulk_density_flag,loss_on_ignition_temperature,loss_on_ignition_time,carbonates_removed,carbonate_removal_method,fraction_carbon_method,cs137_counting_method,pb210_counting_method,excess_pb210_rate,excess_pb210_model,ra226_assumption
+Tully_et_al_2024,core,push core,roots and rhizomes separated,sediment not sieved,60,72,time approximate,450,4,NA,NA,NA,gamma,alpha,depth,CFCS,at asymptote
+Tully_et_al_2024,marsh grab,other shallow corer,roots and rhizomes separated,sediment not sieved,60,72,time approximate,450,4,TRUE,acid fumigation,EA,gamma,alpha,depth,CFCS,at asymptote
