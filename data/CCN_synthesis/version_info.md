@@ -35,33 +35,33 @@ This database contains tidal wetland soil carbon profiles and associated metadat
 
 This update adds 26 new studies and 5,164 new soil cores to the CCN Data Library, bringing the total number of cores to 14,958, with 526 unique studies. 
 
-Bost et al 2024
-Brown et al 2024 
-Craft 2024
-Cifuentes et al 2024 (Nicoya)
-Darienzo and Peterson 1990
-Dontis et al 2023
-Drake et al 2024
-Everhart et al 2020
-Gillen et al 2018
-Kemp et al 2024
-Langston et al 2022
-Loomis and Craft 2024
-Machite and Adams 2024
-Maxwell et al 2023
-Messerschmidt et al 2020
-Morgan et al 2024 
-Palinkas and Cornwell 2024
-Palinkas and Engelhardt 2024
-Radabaugh et al 2017
-Radabaugh et al 2018
-Radabaugh et al 2021
-Radabaugh et al 2023
-Schieder and Kirwan 2019
-Smith and Kirwan 2021
-Stahl et al 2024 
-Stevens et al 2024
-Vinent and Kirwan 2017
+Bost et al 2024  
+Brown et al 2024   
+Craft 2024  
+Cifuentes et al 2024 (Nicoya)  
+Darienzo and Peterson 1990  
+Dontis et al 2023  
+Drake et al 2024  
+Everhart et al 2020  
+Gillen et al 2018  
+Kemp et al 2024  
+Langston et al 2022  
+Loomis and Craft 2024  
+Machite and Adams 2024  
+Maxwell et al 2023  
+Messerschmidt et al 2020  
+Morgan et al 2024  
+Palinkas and Cornwell 2024  
+Palinkas and Engelhardt 2024  
+Radabaugh et al 2017  
+Radabaugh et al 2018  
+Radabaugh et al 2021  
+Radabaugh et al 2023  
+Schieder and Kirwan 2019  
+Smith and Kirwan 2021  
+Stahl et al 2024  
+Stevens et al 2024  
+Vinent and Kirwan 2017  
 
 
 *Corrections and Additions to previously synthesized datasets 1.2.0*
