@@ -76,7 +76,7 @@ dat_revised <- dat_raw %>%
   bind_rows(dat_kumar) %>% 
   bind_rows(dat_knysna) %>% 
   # remove duplicate studies
-  filter(!(Source %in% c("Ward et al 2021", "Burden et al 2018")))
+  filter(!(Source %in% c("Ward et al 2021", "Burden et al 2018", "Schile et al 2016")))
 
 # 16432 rows currently 
 dat <- dat_revised %>% 
@@ -211,6 +211,13 @@ depthseries <- dat %>%
                                           study_id == "Sammul_et_al_2012" ~ paste0(depth_interval_notes, "; carbon content determined via oxidation with potassium dichromate"),
                                           impact_class == "Post-fires, input of black carbon" ~ impact_class,
                                   T ~ depth_interval_notes),
+         # spot correction for Kauffman depths
+         depth_min = case_when(study_id == "Kauffman_et_al_2020_Brazil" & depth_max == 15 ~ 0,
+                               study_id == "Kauffman_et_al_2020_Brazil" & depth_max == 30 ~ 15,
+                               study_id == "Kauffman_et_al_2020_Brazil" & depth_max == 50 ~ 30,
+                               study_id == "Kauffman_et_al_2020_Brazil" & depth_max == 100 ~ 50,
+                               study_id == "Kauffman_et_al_2020_Brazil" & depth_max == 300 ~ 100,
+                               T ~ depth_min),
          method_id = "single set of methods") %>% 
   select(contains("_id"), everything()) %>% 
   select(-c(Source, Original_source, position_notes, Country, Admin_unit, Core, Plot, Data_type, Conv_factor,
@@ -340,7 +347,8 @@ library(leaflet)
 dat %>%
   distinct(study_id, site_id, core_id, latitude, longitude, Country) %>% 
 # cores %>%
-  filter(study_id == "Miller_et_al_2022_Scotland") %>%
+  # filter(study_id == "Schile_et_al_2016") %>%
+  filter(study_id == "Raw_et_al_2020") %>% 
   # filter(grepl("de_los_Santos", study_id)) %>%
   # filter(Country == "China") %>% filter(study_id != "Xia_et_al_2022") %>% 
   leaflet() %>%
@@ -349,11 +357,11 @@ dat %>%
                    radius = 2, label = ~study_id)
 
 # ccn_cores %>%
-#   filter(study_id  == "Copertino_unpublished") %>%
+#   filter(grepl("Marisma", core_id)) %>%
 #   leaflet() %>%
-#   addTiles() %>% 
-#   addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude), 
-#                    radius = 2, label = ~study_id)
+#   addTiles() %>%
+#   addCircleMarkers(lng = ~as.numeric(longitude), lat = ~as.numeric(latitude),
+#                    radius = 2, label = ~paste(study_id, habitat, sep = "; "))
 
 ## ... Standard QA Tests ####
 table_names <- c("methods", "cores", "depthseries", "impacts") # add other tables if present
@@ -404,7 +412,7 @@ library(RefManageR)
 study_dois <- read_csv("data/primary_studies/Maxwell_et_al_2023/intermediate/maxwell_study_citations.csv") %>% 
   bind_rows(read_xlsx("data/primary_studies/Maxwell_et_al_2023/intermediate/missing_maxwell_studies.xlsx")) %>% 
   drop_na(study_id) %>% 
-  filter(!(study_id %in% c("Markewich_et_al_1998", "Xia_et_al_2022", "Fu_et_al_2021", "Human_et_al_2022",
+  filter(!(study_id %in% c("Markewich_et_al_1998", "Xia_et_al_2022", "Fu_et_al_2021", "Human_et_al_2022", "Schile_et_al_2016",
                            # remove studies that have already partially been included via the Sanderman synthesis
                            # because they share a study ID, they will share the citation once synthesized
                            "Yando_et_al_2016", "Adame_et_al_2015", "Adame_et_al_2013"))) %>% 
@@ -451,10 +459,18 @@ markewich_citation <- data.frame(study_id = "Markewich_et_al_1998",
 
 
 # create an expanded table which assigns Maxwell 2023 as a synthesis source for all the studies
+# paper publication
 maxwell_synth <- data.frame(study_id = unique(dat$study_id)) %>% 
   bind_cols(as.data.frame(GetBibEntryWithDOI("10.1038/s41597-023-02633-x")) %>% remove_rownames()) %>% 
   mutate(bibliography_id = "Maxwell_et_al_2023_synthesis",
          publication_type = "synthesis source")
+
+# synthesized dataset
+maxwell_data <- data.frame(study_id = unique(dat$study_id)) %>% 
+  bind_cols(as.data.frame(GetBibEntryWithDOI("10.5281/zenodo.8414110")) %>% remove_rownames()) %>% 
+  mutate(bibliography_id = "Maxwell_et_al_2023_data",
+         publication_type = "synthesis dataset")
+# https://doi.org/10.5281/zenodo.8414110
 
 # Fu et al 2021 synthesis
 fu_synth <- data.frame(study_id = c("Wan_et_al_2017", "Wang_et_al_2017", "Loh_et_al_2018", "Lu_et_al_2019")) %>% 
@@ -474,6 +490,7 @@ synthesis_citations <- synthesis_bib %>%
          publication_type = ifelse(bibtype == "Article", "associated source", "primary dataset")) %>% 
   bind_rows(markewich_citation) %>% 
   bind_rows(maxwell_synth) %>% 
+  bind_rows(maxwell_data) %>% 
   bind_rows(fu_synth) %>% 
   bind_rows(xia_synth) %>% 
   arrange(study_id) %>% 
@@ -484,11 +501,12 @@ synthesis_citations <- synthesis_bib %>%
 
 write_excel_csv(synthesis_citations, "data/primary_studies/Maxwell_et_al_2023/derivative/Maxwell_et_al_2023_study_citations.csv")
 
-# Write .bib file
-# bib_file <- synthesis_citations %>%
-#   select(-study_id, -publication_type) %>%
-#   distinct() %>%
-#   column_to_rownames("bibliography_id")
+# Create .bib file
+# this is more of a test that bib IDs are unique
+bib_file <- synthesis_citations %>%
+  select(-study_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("bibliography_id")
 
 # as.BibEntry(bib_file)
 
