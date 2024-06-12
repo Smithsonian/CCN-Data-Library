@@ -1,0 +1,1302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="46f4ee08-e234-439b-b014-5742108e555a" system="uuid" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <dataset>
+    <title>Dataset: Contributions of organic and inorganic matter to sediment volume and accretion in tidal wetlands at steady state</title>
+    <creator>
+      <individualName>
+        <givenName>Beverly</givenName>
+        <surName>Johnson</surName>
+      </individualName>
+      <electronicMailAddress>bjohnso3@bates.edu</electronicMailAddress>
+    </creator>
+    <associatedParty>
+      <individualName>
+        <givenName>Beverly</givenName>
+        <surName>Johnson</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Ashley</givenName>
+        <surName>Kulesza</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Margaret</givenName>
+        <surName>Pickoff</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Daniel</givenName>
+        <surName>Stames</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Cailene</givenName>
+        <surName>Gunn</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Brianna</givenName>
+        <surName>Karboski</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Cameron</givenName>
+        <surName>Russ</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Jaxine</givenName>
+        <surName>Wolfe</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Phil</givenName>
+        <surName>Dostie</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <pubDate>2024</pubDate>
+    <abstract>This data release represents a synthesis of sediment cores collected from coastal wetlands in Maine between 2012 and 2020 for 6 individual senior thesis projects conducted at Bates College. Collectively, these studies estimated carbon stocks from 14 sites along the coast of Maine by measuring sediment carbon content and dry bulk density. These data were used in a larger analysis of U.S. tidal wetlands which is available in Earth's Future (Morris et al, 2016).</abstract>
+    <keywordSet>
+      <keyword>soil carbon stocks</keyword>
+      <keyword>coastal wetlands</keyword>
+      <keyword>tidal marsh</keyword>
+      <keyword>nitrogen</keyword>
+      <keyword>data synthesis</keyword>
+      <keyword>Maine</keyword>
+    </keywordSet>
+    <intellectualRights>This dataset is listed under a Creative Commons BY 4.0 and can be used with attribution. https://creativecommons.org/licenses/by/4.0/</intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Franklin</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-68.26833333</westBoundingCoordinate>
+          <eastBoundingCoordinate>-68.2677778</eastBoundingCoordinate>
+          <northBoundingCoordinate>44.52952778</northBoundingCoordinate>
+          <southBoundingCoordinate>44.52891667</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Harrington</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-67.80447</westBoundingCoordinate>
+          <eastBoundingCoordinate>-67.80378</eastBoundingCoordinate>
+          <northBoundingCoordinate>44.61853</northBoundingCoordinate>
+          <southBoundingCoordinate>44.61728</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Jasper Beach</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-67.3857166666666</westBoundingCoordinate>
+          <eastBoundingCoordinate>-67.3842333333333</eastBoundingCoordinate>
+          <northBoundingCoordinate>44.6287333333333</northBoundingCoordinate>
+          <southBoundingCoordinate>44.62825</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Little River</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-69.8390141666666</westBoundingCoordinate>
+          <eastBoundingCoordinate>-69.8390141666666</eastBoundingCoordinate>
+          <northBoundingCoordinate>43.7441963888888</northBoundingCoordinate>
+          <southBoundingCoordinate>43.7441963888888</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Long</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-69.9215594444444</westBoundingCoordinate>
+          <eastBoundingCoordinate>-69.9189622222222</eastBoundingCoordinate>
+          <northBoundingCoordinate>43.8422086111111</northBoundingCoordinate>
+          <southBoundingCoordinate>43.8301975</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Milbridge</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-67.855556</westBoundingCoordinate>
+          <eastBoundingCoordinate>-67.855556</eastBoundingCoordinate>
+          <northBoundingCoordinate>44.59152778</northBoundingCoordinate>
+          <southBoundingCoordinate>44.59108333</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Moody</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-70.5877</westBoundingCoordinate>
+          <eastBoundingCoordinate>-70.583667</eastBoundingCoordinate>
+          <northBoundingCoordinate>43.283083</northBoundingCoordinate>
+          <southBoundingCoordinate>43.27428</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Morse</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-69.817944</westBoundingCoordinate>
+          <eastBoundingCoordinate>-69.817944</eastBoundingCoordinate>
+          <northBoundingCoordinate>43.743778</northBoundingCoordinate>
+          <southBoundingCoordinate>43.743778</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Scarborough</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-70.3751666666666</westBoundingCoordinate>
+          <eastBoundingCoordinate>-70.3226</eastBoundingCoordinate>
+          <northBoundingCoordinate>43.5759333333333</northBoundingCoordinate>
+          <southBoundingCoordinate>43.5444</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Small Point</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-69.840306</westBoundingCoordinate>
+          <eastBoundingCoordinate>-69.7415811111111</eastBoundingCoordinate>
+          <northBoundingCoordinate>43.7966058333333</northBoundingCoordinate>
+          <southBoundingCoordinate>43.741031</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>South Thomaston</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-69.14305556</westBoundingCoordinate>
+          <eastBoundingCoordinate>-69.14194444</eastBoundingCoordinate>
+          <northBoundingCoordinate>44.07702778</northBoundingCoordinate>
+          <southBoundingCoordinate>44.07663889</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Sprague</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-69.83247222</westBoundingCoordinate>
+          <eastBoundingCoordinate>-69.8195263888889</eastBoundingCoordinate>
+          <northBoundingCoordinate>43.747306</northBoundingCoordinate>
+          <southBoundingCoordinate>43.7288</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Webhannet</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-70.574111</westBoundingCoordinate>
+          <eastBoundingCoordinate>-70.571444</eastBoundingCoordinate>
+          <northBoundingCoordinate>43.304278</northBoundingCoordinate>
+          <southBoundingCoordinate>43.291583</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>West Branch Pleasant River</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-67.7463</westBoundingCoordinate>
+          <eastBoundingCoordinate>-67.7463</eastBoundingCoordinate>
+          <northBoundingCoordinate>44.6182666666667</northBoundingCoordinate>
+          <southBoundingCoordinate>44.6182666666667</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2012</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2020</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Spartina patens</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Distichlis spicata</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Spartina alterniflora</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Typha latifolifa</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Typha angustifolia</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Juncus gerardii</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <contact>
+      <individualName>
+        <givenName>Beverly</givenName>
+        <surName>Johnson</surName>
+      </individualName>
+      <electronicMailAddress>bjohnso3@bates.edu</electronicMailAddress>
+    </contact>
+    <dataTable>
+      <entityName>Johnson_et_al_2024_methods</entityName>
+      <entityDescription>methods information for study</entityDescription>
+      <physical>
+        <objectName>Johnson_et_al_2024_methods.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>carbon_measured_or_modeled</attributeName>
+          <attributeDefinition>Code indicating whether fraction carbon was measured or estimated as a function of organic matter.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>measured</code>
+                    <definition>Fraction carbon was measured as opposed to modeled</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>modeled</code>
+                    <definition>Fraction carbon was modeled as opposed to measured.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>carbon_profile_notes</attributeName>
+          <attributeDefinition>Any other submitter defined notes describing methodologies for determining dry bulk density, organic matter fraction, and carbon fraction.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>carbonate_removal_method</attributeName>
+          <attributeDefinition>The method used to remove carbonates prior to measuring fraction carbon.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>carbonates not removed</code>
+                    <definition>Carbonates were not removed and low carbonate soil was not specified</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>carbonates_removed</attributeName>
+          <attributeDefinition>Whether or not carbonates were removed prior to calculating fraction organic carbon.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>FALSE</code>
+                    <definition>Carbonates were not removed before measuring organic carbon</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>compaction_flag</attributeName>
+          <attributeDefinition>Code indicating how the authors qualified or quantified compaction of the core.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>compaction quantified</code>
+                    <definition>Compaction was quantified and corrected for in core based measurements</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>not specified</code>
+                    <definition>Compaction was not specified.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>coring_method</attributeName>
+          <attributeDefinition>Code indicating what type of device was used to collect soil depth profiles.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>gouge auger</code>
+                    <definition>A half cylinder coring device in which the coring section is open, not sealed off by a fin</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>vibracore</code>
+                    <definition>A technique involving collecting a core by sinking a continuous pipe into sediment attaching a source of vibration, then recovering using a winch and pulley</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>dutch auger</code>
+                    <definition>A coring device with an open design which is ideal for collecting samples in mucky, boggy, or root-bound soils.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_flag</attributeName>
+          <attributeDefinition>Any notable codes regarding how the authors quantified dry bulk density.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>modeled</code>
+                    <definition>Bulk density was not measured, but was modeled from loss on ignition and assumptions about the particle densities of organic and inorganic matter</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>freeze dried</code>
+                    <definition>Bulk density was measured on freeze dried samples</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>not specified</code>
+                    <definition>No additional details regarding bulk density methodology were provided</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>time approximate</code>
+                    <definition>Bulk density time recorded herin is an approximate estimate</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_temperature_max</attributeName>
+          <attributeDefinition>Maximum temperature at which samples were dried to measure dry bulk density.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_temperature_min</attributeName>
+          <attributeDefinition>Minimum temperature at which samples were dried to measure dry bulk density.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_time</attributeName>
+          <attributeDefinition>Time over which samples were dried to measure dry bulk density.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>hour</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_time_max</attributeName>
+          <attributeDefinition>Maximum time over which samples were dried to measure dry bulk density.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>hour</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_time_min</attributeName>
+          <attributeDefinition>Minimum time over which samples were dried to measure dry bulk density.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>hour</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon_method</attributeName>
+          <attributeDefinition>Code indicating the method for which fraction carbon was measured or modeled (Note: regression based models are permitted, but the use of the Bemmelen factor [0.58 gOC gOM-1] is discouraged).</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>EA</code>
+                    <definition>Each sample presented was measured using Elemental Analysis</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>local regression</code>
+                    <definition>A regression model fit using a subset of measurements was used to predict fraction carbon as a function of fraction organic matter</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>not specified</code>
+                    <definition>No additional details were provided regarding fraction carbon methodologies</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon_type</attributeName>
+          <attributeDefinition>Code indicating whether fraction_carbon refers to organic or total carbon.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>total carbon</code>
+                    <definition>Author specified that fraction carbon measurements were of total carbon.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>loss_on_ignition_temperature</attributeName>
+          <attributeDefinition>Temperature at which samples were combusted to estimate fraction organic matter.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>loss_on_ignition_time</attributeName>
+          <attributeDefinition>Time over which samples were combusted to estimate fraction organic matter.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>hour</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>method_id</attributeName>
+          <attributeDefinition>Unique identification code used to distinguish cores or sampling intervals that were collected or processed using different methods.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>roots_flag</attributeName>
+          <attributeDefinition>Code indicating whether live roots were included or excluded from carbon assessments.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>roots and rhizomes included</code>
+                    <definition>Roots and rhizomes were included in dry bulk density and or organic matter and carbon measurements</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sediment_sieved_flag</attributeName>
+          <attributeDefinition>Code indicating whether or not sediment was sieved prior to carbon measurements.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>sediment not sieved</code>
+                    <definition>Sediment was not sieved prior to analysis for organics.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Johnson_et_al_2024_cores</entityName>
+      <entityDescription>cores information for study</entityDescription>
+      <physical>
+        <objectName>Johnson_et_al_2024_cores.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_length_flag</attributeName>
+          <attributeDefinition>Indicated whether or not the coring team believes they recovered a full sediment profile, down to bedrock, or other non-marsh interface.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>core depth represents deposit depth</code>
+                    <definition>Authors report that the depth of the core represents the depth of the wetland soil deposit</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_notes</attributeName>
+          <attributeDefinition>Any other relevant submitter generated notes on how cores were collected.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>habitat</attributeName>
+          <attributeDefinition>Habitat classification of the sampled location based on description or dominate vegetation.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>marsh</code>
+                    <definition>Wetland dominated by emergent vegetation, gramminoids or forbs.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>latitude</attributeName>
+          <attributeDefinition>Positional latitude of the core in decimal degree WGS84.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>longitude</attributeName>
+          <attributeDefinition>Positional longitude of the core in decimal degree WGS84.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>position_method</attributeName>
+          <attributeDefinition>Code indicating how latitude and longitude were determined.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>handheld</code>
+                    <definition>Conventional Commercially available hand-held GPS</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>salinity_class</attributeName>
+          <attributeDefinition>Code based on submitter field observation or measurement indicating average annual salinity (Note: Palustrine and freshwater should only include tidal wetlands, or wetlands that are potentially/formerly tidal but artificially freshened due to artificial tidal restrictions).</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>polyhaline</code>
+                    <definition>18-30 ppt.</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>mesohaline</code>
+                    <definition>5-18 ppt.</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>oligohaline</code>
+                    <definition>0.5-5 ppt.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>salinity_method</attributeName>
+          <attributeDefinition>Indicate whether salinity_class was determined using a field observation or a measurement.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>field observation</code>
+                    <definition>Salinity inferred by field observation such as vegetation</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>salinity_notes</attributeName>
+          <attributeDefinition>Any relevant submitter generated notes on how salinity_class was determined.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vegetation_class</attributeName>
+          <attributeDefinition>Code based on submitter field observations or measurement indicating dominant wetland vegetation type.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>emergent</code>
+                    <definition>Describes wetlands dominated by persistent emergent vascular plants</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vegetation_method</attributeName>
+          <attributeDefinition>Indicate whether vegetation_class was determined using a field observation or a measurement.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>field observation</code>
+                    <definition>Vegetation inferred by field observation</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vegetation_notes</attributeName>
+          <attributeDefinition>Any relevant submitter generated notes on how vegetation_class and/or dominant species were determined.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>year</attributeName>
+          <attributeDefinition>Year of core collection.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Johnson_et_al_2024_depthseries</entityName>
+      <entityDescription>depthseries information for study</entityDescription>
+      <physical>
+        <objectName>Johnson_et_al_2024_depthseries.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>C_umoles</attributeName>
+          <attributeDefinition>Carbon concentration in sample.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>micromole</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>N_umoles</attributeName>
+          <attributeDefinition>Nitrogen concentration in sample.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>micromole</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>carbon_density</attributeName>
+          <attributeDefinition>Measured mass of carbon per unit volume of a soil sample</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gramsPerCubicCentimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>cn_ratio</attributeName>
+          <attributeDefinition>Cabon to nitrogen molar ratio</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>compaction_notes</attributeName>
+          <attributeDefinition>Any submitter generated notes on compaction.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>delta_c13</attributeName>
+          <attributeDefinition>The isotopic signature of 13C. This is oftentimes measured along with c14_age and can be useful for analyzing carbon lability and provenance.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>permil</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>delta_n15</attributeName>
+          <attributeDefinition>The isotopic signature of delta N15. Air used as a standard.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>permil</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_max</attributeName>
+          <attributeDefinition>Maximum depth of a sampling increment.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_min</attributeName>
+          <attributeDefinition>Minimum depth of a sampling increment.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density</attributeName>
+          <attributeDefinition>Dry mass per unit volume of a soil sample. This does not include ash free bulk density.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gramsPerCubicCentimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon</attributeName>
+          <attributeDefinition>Mass of carbon relative to sample dry mass.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_h2o</attributeName>
+          <attributeDefinition>Water content calculated as wet weight - dry weight/wet weight</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_nitrogen</attributeName>
+          <attributeDefinition>Mass of nitrogen relative to sample dry mass</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_organic_matter</attributeName>
+          <attributeDefinition>Mass of organic matter relative to sample dry mass. Ash free bulk density should not be used here but should be expressed as a loss on ignition fraction.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>method_id</attributeName>
+          <attributeDefinition>Unique identification code used to distinguish cores or sampling intervals that were collected or processed using different methods.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>nitrogen_density</attributeName>
+          <attributeDefinition>Measured mass of nitrogen per unit volume of a soil sample</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gramsPerCubicCentimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sample_id</attributeName>
+          <attributeDefinition>Sample identification unique to the core. This should be used in the case that there are relevant lab specific sample codes, or in the case that there are multiple replicate samples.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Johnson_et_al_2024_species</entityName>
+      <entityDescription>species information for study</entityDescription>
+      <physical>
+        <objectName>Johnson_et_al_2024_species.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>species_code</attributeName>
+          <attributeDefinition>Code associated with a species or a vegetation assemblage.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="micromole" multiplierToSI="1e-06" name="micromole" parentSI="mole" unitType="amount">
+          <description>micromole of substance</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>
