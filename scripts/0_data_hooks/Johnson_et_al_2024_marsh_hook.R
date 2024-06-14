@@ -1,9 +1,10 @@
 ## CCN Data Library ########
 ## contact: Rose Cheney, cheneyr@si.edu 
 
-## Soil core data curation script for Johnson et al 2024 eelgrass dataset: Sediment carbon content of coastal Maine eelgrass beds
+## Soil core data curation script for Johnson et al 2024 marsh dataset: Sediment carbon content of Maine salt marshes
 
-## Dataset: https://doi.org/10.25573/serc.22779893.v1 
+#link to dataset: https://doi.org/10.25573/serc.17018816 
+
 
 # load necessary libraries
 library(tidyverse)
@@ -23,23 +24,28 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 
 
 #load in data 
-methods_raw <- read_csv("data/primary_studies/Johnson_et_al_seagrass_2024/original/johnson_et_al_2024_eelgrass_materials_and_methods.csv")
-cores_raw <- read_csv("data/primary_studies/Johnson_et_al_seagrass_2024/original/johnson_et_al_2024_eelgrass_cores.csv")
-depthseries_raw <- read_csv("data/primary_studies/Johnson_et_al_seagrass_2024/original/johnson_et_al_2024_eelgrass_depthseries.csv")
-species_raw <- read_csv("data/primary_studies/Johnson_et_al_seagrass_2024/original/johnson_et_al_2024_eelgrass_species.csv")
-study_citations_raw <- read_csv("data/primary_studies/Johnson_et_al_seagrass_2024/original/Johnson_et_al_2024_eelgrass_study_citations.csv")
+methods_raw <- read_csv("data/primary_studies/Johnson_et_al_2024_marsh/original/johnson_et_al_2024_materials_and_methods.csv")
+cores_raw <- read_csv("data/primary_studies/Johnson_et_al_2024_marsh/original/johnson_et_al_2024_cores.csv")
+depthseries_raw <- read_csv("data/primary_studies/Johnson_et_al_2024_marsh/original/johnson_et_al_2024_depthseries.csv")
+species_raw <- read_csv("data/primary_studies/Johnson_et_al_2024_marsh/original/johnson_et_al_2024_species.csv")
+study_citations_raw <- read_csv("data/primary_studies/Johnson_et_al_2024_marsh/original/johnson_et_al_2024_associated_publications.csv")
   
   
 ## 1. Curation ####
 
-id <- "Johnson_et_al_2024_eelgrass"
+id <- "Johnson_et_al_2024_marsh"
 
 
 ## ... Methods ####
 
 methods <- methods_raw %>% 
-  mutate(study_id = id,
-         fraction_carbon_type = "organic carbon") # fraction carbon == organic carbon 
+  mutate(method_id = study_id,
+         study_id = id,
+         dry_bulk_density_temperature = (dry_bulk_density_temperature_max + dry_bulk_density_temperature_min)/2,
+         dry_bulk_density_time = ifelse(is.na(dry_bulk_density_time), (dry_bulk_density_time_max + dry_bulk_density_time_min)/2, dry_bulk_density_time),
+         carbon_profile_notes = case_when(!is.na(dry_bulk_density_temperature) & !is.na(carbon_profile_notes) ~ paste0(carbon_profile_notes, " ", "Samples dried at 60-80 C. Time approximatley 24-48 hours."),
+                                          !is.na(dry_bulk_density_temperature) ~ "Samples dried at 60-80 C. Time approximately 24-48 hours.")) %>% 
+  select(-dry_bulk_density_time_min, -dry_bulk_density_time_max, -dry_bulk_density_temperature_min, -dry_bulk_density_temperature_max)
 
 methods <- reorderColumns("methods", methods)
 
@@ -48,7 +54,8 @@ methods <- reorderColumns("methods", methods)
 
 cores <- cores_raw %>% 
   mutate(study_id = id,
-         site_id = ifelse(grepl("Head", site_id), "Head_of_Bay", site_id))
+         site_id = str_replace(site_id, " ", "_"),
+         core_id = str_replace(core_id, " ", "_"))
 
 cores <- reorderColumns("cores", cores)
 
@@ -57,11 +64,12 @@ cores <- reorderColumns("cores", cores)
 ## ... Depthseries ####
 
 depthseries <- depthseries_raw %>% 
-  rename(fraction_carbon = fraction_organic_carbon) %>% #note in methods this is organic carbon
-  mutate(method_id = ifelse(study_id == "Doyle_2018", "Doyle_2018", "Sonshine_2012"),
-         study_id = id) %>% 
-    select(-fraction_inorganic_carbon, -total_cn_ratio, -fraction_total_carbon, -inorganic_cn_ratio,
-           -sample_volume, -sample_mass, -carbon_density, -pu_activity, -pu__unit) #remove uncontrolled variables 
+  mutate(method_id = study_id,
+         study_id = id,
+         core_id = str_replace(core_id, " ", "_"),
+         site_id = str_replace(site_id, " ", "_")) %>%  #update study id to published dataset id
+  select(-carbon_density, -fraction_nitrogen, -fraction_h2o, 
+         -cn_ratio, -nitrogen_density, -N_umoles, -C_umoles, -delta_n15) #remove uncontrolled variables
 
 depthseries <- reorderColumns("depthseries", depthseries)
 
@@ -70,11 +78,39 @@ depthseries <- reorderColumns("depthseries", depthseries)
 ## ... Species ####
 
 species <- species_raw %>% 
-  mutate(study_id = id)
+  mutate(study_id = id,
+         code_type = "Genus species",
+         core_id = str_replace(core_id, " ", "_"),
+         site_id = str_replace(site_id, " ", "_"))
 
 
 species <- reorderColumns("species", species)
 
+
+## ... Impacts ####
+
+#create impacts table from core notes 
+
+impacts <- cores %>% 
+  select(study_id, site_id, core_id, core_notes) %>% 
+  mutate(core_id = str_replace(core_id, " ", "_"),
+         site_id = str_replace(site_id, " ", "_"),
+         impact_class = case_when(grepl("ditch", core_notes) ~ "ditched",
+                                  grepl("Tidally restored", core_notes) ~ "tidally restored",
+                                  grepl("restrict", core_notes) ~ "tidally restricted",
+                                  grepl("tidal flow was restored", core_notes) ~ "restored", 
+                                  grepl("No anthropogenic", core_notes) ~ "natural",
+                                  grepl("dug channels", core_notes) ~ "ditched",
+                                  grepl("no history", core_notes) ~ "natural", 
+                                  grepl("Sampled cores were", core_notes) ~ "natural", # check if this should be natural or diked and drained 
+                                  TRUE ~ NA))
+
+
+impacts <- reorderColumns("impacts", impacts)
+
+
+#remove impacts from cores table before writing csvs 
+cores <- cores %>% select(-core_notes)
 
 
 ## 2. QAQC ####
@@ -111,10 +147,10 @@ test_numeric_vars(depthseries) ##testNumericCols producing error message
 ## 3. Write Curated Data ####
 
 # write data to final folder
-write_csv(methods, "data/primary_studies/Johnson_et_al_seagrass_2024/derivative/Johnson_et_al_2024_eelgrass_methods.csv")
-write_csv(cores, "data/primary_studies/Johnson_et_al_seagrass_2024/derivative/Johnson_et_al_2024_eelgrass_cores.csv")
-write_csv(depthseries, "data/primary_studies/Johnson_et_al_seagrass_2024/derivative/Johnson_et_al_2024_eelgrass_depthseries.csv")
-write_csv(species, "data/primary_studies/Johnson_et_al_seagrass_2024/derivative/Johnson_et_al_2024_eelgrass_species.csv")
+write_csv(methods, "data/primary_studies/Johnson_et_al_2024_marsh/derivative/Johnson_et_al_2024_marsh_methods.csv")
+write_csv(cores, "data/primary_studies/Johnson_et_al_2024_marsh/derivative/Johnson_et_al_2024_marsh_cores.csv")
+write_csv(depthseries, "data/primary_studies/Johnson_et_al_2024_marsh/derivative/Johnson_et_al_2024_marsh_depthseries.csv")
+write_csv(species, "data/primary_studies/Johnson_et_al_2024_marsh/derivative/Johnson_et_al_2024_marsh_species.csv")
 
 ## 4. Bibliography ####
 
@@ -137,17 +173,21 @@ write_csv(species, "data/primary_studies/Johnson_et_al_seagrass_2024/derivative/
 # WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
 
 study_citation <- data.frame(study_id = id, 
-                             bibliography_id = "Johnson_et_al_2024_eelgrass_data",
+                             bibliography_id = "Johnson_et_al_2024_marsh_data",
                              publication_type = "primary dataset",
                              bibtype = "Misc", 
-                             title = "Dataset: Sediment carbon content of coastal Maine eelgrass beds",
-                             author = "Beverly Johnson, Emily Sonshine, John Doyle",
-                             doi = "10.25573/serc.22779893",
-                             url = "https://doi.org/10.25573/serc.22779893.v1",
+                             title = "Dataset: Sediment carbon content of Maine salt marshes",
+                             author = "Beverly J Johnson, Ashley Kulesza, Margaret Pickoff, Daniel Stames, Cailene Gunn, Brianna Karboski, Cameron Russ, Jaxine Wolfe, Phil Dostie",
+                             doi = "10.25573/serc.17018816",
+                             url = "https://doi.org/10.25573/serc.17018816",
                              year = "2024")
 
-WriteBib(as.BibEntry(study_citation), "data/primary_studies/Johnson_et_al_seagrass_2024/derivative/Johnson_et_al_2024_eelgrass.bib")
-write_csv(study_citation, "data/primary_studies/Johnson_et_al_seagrass_2024/derivative/Johnson_et_al_2024_eelgrass.csv")
+WriteBib(as.BibEntry(study_citation), "data/primary_studies/Johnson_et_al_2024_marsh/derivative/Johnson_et_al_2024_marsh.bib")
+write_csv(study_citation, "data/primary_studies/Johnson_et_al_2024_marsh/derivative/Johnson_et_al_2024_marsh_study_citations.csv")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/
+
+## ... Write data vis report in docs folder ####
+writeDataVizReport(id)
+
