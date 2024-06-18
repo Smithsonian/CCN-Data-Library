@@ -1,34 +1,107 @@
 ## CCN Data Library ####
 
 ## Soil core data curation script for Adotey et al 2024
-## contact: Henry Betts, BettsH@si.edu
+## contact: Rose Cheney, cheneyr@si.edu
 
+# load necessary libraries
 library(tidyverse)
-library(RefManageR)
+library(readxl)
+library(lubridate)
+library(leaflet)
+
+# load in helper functions
+source("scripts/1_data_formatting/curation_functions.R") # For curation
+source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 
 
 ## Read files ####
-cores <- read.csv("data/primary_studies/Adotey_et_al_2024/original/adotey_et_al_2024_cores.csv")
-depthseries <- read.csv("data/primary_studies/Adotey_et_al_2024/original/adotey_et_al_2024_depthseries.csv")
-methods <- read.csv("data/primary_studies/Adotey_et_al_2024/original/adotey_et_al_2024_methods.csv")
-plot_summary <- read.csv("data/primary_studies/Adotey_et_al_2024/original/adotey_et_al_2024_plot_summary.csv")
-plant <- read.csv("data/primary_studies/Adotey_et_al_2024/original/adotey_et_al_2024_plant.csv")
-study_citations <- read.csv("data/primary_studies/Adotey_et_al_2024/original/adotey_et_al_2024_study_citations.csv") %>% 
-  add_row(study_id = "Adotey_et_al_2024", 
-          bibliography_id = "Adotey_et_al_2024_data",
-          publication_type = "primary dataset", 
-          bibtype = "misc", 
-          title = "Dataset: Carbon Stock Assessment in the Kakum and Amanzule Estuary Mangrove Forests, Ghana",
-          author = "Adotey J, Acheampong E, Aheto DW, Blay J.",
-          doi = "", 
-          url = "", 
-          year = 2024,
-          month = NA,
-          publisher = "Smithsonian Environmental Research Center",
-          volume = NA,
-          issue = NA,
-          journal = NA,
-          copyright = "Creative Commons Attribution 4.0 International")
+
+methods_raw <- read.csv("data/primary_studies/Adotey_et_al_2024/original/Adotey_et_al_2024_methods.csv")
+depthseries_raw <- read.csv("data/primary_studies/Adotey_et_al_2024/original/Adotey_et_al_2024_depthseries.csv")
+
+plot_summary_raw <- read.csv("data/primary_studies/Adotey_et_al_2024/original/Adotey_et_al_2024_plots.csv")
+plant_raw <- read.csv("data/primary_studies/Adotey_et_al_2024/original/Adotey_et_al_2024_plants.csv")
+
+## ... Curate methods ####
+methods <- methods_raw
+methods <- reorderColumns("methods", methods)
+
+
+## ... Curate depthseries ####
+depthseries <- depthseries_raw %>% 
+  select(-salinity, -pH, -percent_sand, -percent_silt, -percent_clay, -plot_id) 
+
+depthseries <- reorderColumns("depthseries", depthseries)
+
+
+
+## ... Curate cores ####
+#pull plot-level locations
+coords <- plot_summary_raw %>% select(site_id, plot_id, plot_center_latitude, plot_center_longitude)
+
+#curate cores
+cores <- depthseries %>% 
+  select(study_id, site_id, core_id) %>% distinct() %>% 
+  mutate(plot_id = str_sub(core_id, end = -3),
+         habitat = "mangrove",
+         salinity_class = "mesohaline",
+         salinity_method = "measurement",
+         position_method = "other low resolution",
+         position_notes = "position at plot-level",
+         vegetation_class = "forested", #mangroves
+         vegetation_method = "field observation") %>% 
+  full_join(coords) %>% 
+  rename(latitude = plot_center_latitude,
+         longitude = plot_center_longitude) %>% 
+  select(-plot_id)
+
+cores <- reorderColumns("cores", cores)
+
+
+#notes - include impacts table?
+# Kakum forest - unprotected, fuel wood and other degradation
+# Amanzule forest - protected lands 
+
+
+## ... Curate impacts ####
+impacts <- cores %>% 
+  select(study_id, site_id, core_id) %>% 
+  mutate(impact_class = ifelse(site_id == "Amanzule","natural", "firewood extraction"))
+
+
+## ... Curate plots ####
+plots <- plot_summary_raw %>% 
+  mutate(plot_shape = "rectangular",
+         plot_area = "5000", # 125m x 40m 
+         field_or_manipulation_code = "field",
+         soil_core_present = "Yes")
+
+  
+
+## ... Curate plants ####
+plants <- plant_raw %>% 
+  mutate(n_plants = 1, #each observation represents a single plant 
+         height_unit = "meter",
+         )
+  
+
+
+# study_citations <- 
+#    tbl(study_id = "Adotey_et_al_2024", 
+#           bibliography_id = "Adotey_et_al_2024_data",
+#           publication_type = "primary dataset", 
+#           bibtype = "misc", 
+#           title = "Dataset: Carbon Stock Assessment in the Kakum and Amanzule Estuary Mangrove Forests, Ghana",
+#           author = "Adotey J, Acheampong E, Aheto DW, Blay J.",
+#           doi = "", 
+#           url = "", 
+#           year = 2024,
+#           month = NA,
+#           publisher = "Smithsonian Environmental Research Center",
+#           volume = NA,
+#           issue = NA,
+#           journal = NA,
+#           copyright = "Creative Commons Attribution 4.0 International")
 
 ## Add allometric equations table
 allometric_eq <- data.frame(study_id = "Adotey_et_al_2024",
@@ -60,10 +133,13 @@ allometric_eq <- data.frame(study_id = "Adotey_et_al_2024",
 
 ## Write files ####
 write_csv(cores, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_cores.csv")
-write_csv(allometric_eq, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_allometric_eq.csv")
 write_csv(depthseries, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_depthseries.csv")
 write_csv(methods, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_methods.csv")
-write_csv(plot_summary, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_plot_summary.csv")
-write_csv(plant, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_plant.csv")
+write_csv(impacts, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_impacts.csv")
+
+write_csv(plots, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_plot_summary.csv")
+write_csv(plants, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_plant.csv")
+write_csv(allometric_eq, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_allometric_eq.csv")
+
 write_csv(study_citations, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_study_citations.csv")
 
