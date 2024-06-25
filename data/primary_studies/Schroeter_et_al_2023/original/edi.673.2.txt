@@ -1,0 +1,612 @@
+
+  
+    uid=EDI,o=EDI,dc=edirepository,dc=orgall
+      uid=dhuang,o=EDI,dc=edirepository,dc=org
+      all
+    
+    
+      public
+      read
+    
+  
+  
+        27-20230609154341
+    doi:10.6073/pasta/f45c73366967c532c57ea40c21a53dbaUCSB SONGS Wetland Process Study – Soil Properties
+    UCSB SONGS Mitigation Monitoring: Wetland Process Study – Soil Properties
+        
+      Stephen Schroeter
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5953
+      stephen.schroeter@lifesci.ucsb.edu
+    
+    
+      Henry Page
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      805-893-7568
+      mark.page@lifesci.ucsb.edu
+    
+    
+      Daniel Reed
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      805-893-8363
+      dan.reed@lifesci.ucsb.edu
+      https://orcid.org/0000-0003-3015-8717
+    
+    
+      Katherine Beheshti
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5953
+      katbeheshti@ucsb.edu
+    
+    
+      Rachel Smith
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5953
+      rssmith@ucsb.edu
+    
+    
+      Andres Deza
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5375
+      andres.deza@ucsb.edu
+    
+    
+      David Huang
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5375
+      davidhuang@ucsb.edu        
+    
+    
+            SONGS Mitigation Monitoring
+        			Marine Science Institute University of California
+			Santa Barbara, CA 93106  USA
+      songsmmp@lifesci.ucsb.edu
+        2023-06-09
+    English
+    
+      
+        
+        These data describe physical and chemical properties of soil samples collected as part of the San Onofre Nuclear Generating Station (SONGS) Mitigation Monitoring Program. Data collection began in 2019 at the San Dieguito Wetland in San Diego County, CA. Additional locations at Tijuana Estuary in San Diego County, CA, Carpinteria Salt Marsh is Santa Barbara County, CA, and Mugu Lagoon in Ventura County, CA were added in 2021. Sampling occurred sporadically at various locations in each wetland. All soil samples were characterized for organic matter content and particle size. Additional properties were characterized for select soil samples.
+        
+      
+    
+    
+      
+      This data package is released under the Creative Commons License
+      Attribution 4.0 International (CC BY 4.0, see
+      https://creativecommons.org/licenses/by/4.0/). This license states
+      that consumers ("Data Users" herein) may distribute, adapt,
+      reuse, remix, and build upon this work, as long as they give
+      appropriate credit, provide a link to the license, and indicate if
+      changes were made. If redistributed, a Data User may not apply
+      additional restrictions or technological measures that prevent access.
+      
+      
+      The Data User has an ethical obligation to cite the data source
+      appropriately in any publication or product that results from its use,
+      and notify the data contact or creator. Communication, collaboration,
+      or co-authorship (as appropriate) with the creators of this data
+      package is encouraged to prevent duplicate research or publication.
+      The Data User is urged to contact the authors of these data if any
+      questions about methodology or results occur. The Data User should
+      realize that these data may be actively used by others for ongoing
+      research and that coordination may be necessary to prevent duplication
+      or inappropriate use. The Data User should realize that
+      misinterpretation may occur if data are used outside of the context of
+      the original study. The Data User should be aware that data are
+      updated periodically and it is the responsibility of the Data User to
+      check for new versions of the data.
+      
+      
+      While substantial efforts are made to ensure the accuracy of data and
+      associated documentation, complete accuracy of data sets cannot be
+      guaranteed. This data package (with its components) is made available
+      “as is” and with no warranty of accuracy or fitness for use. The
+      creators of this data package and the repository where these data were
+      obtained shall not be liable for any damages resulting from
+      misinterpretation, use or misuse of the data package or its
+      components.
+      
+    
+    
+      
+        http://marinemitigation.msi.ucsb.edu/
+      
+    
+    https://doi.org/10.6073/pasta/f45c73366967c532c57ea40c21a53dba
+         
+      CSM: Carpinteria Salt Marsh, located in Santa Barbara County, California
+      
+        -119.537990            
+        -119.537990
+        34.401189
+        34.401189
+      
+    
+    
+      MUL: Mugu Lagoon, located in Ventura County, California
+      
+        -119.097011            
+        -119.097011
+        34.102007
+        34.102007
+      
+    
+    
+      SDW: San Dieguito Wetland, located in San Diego County, California
+      
+        -117.26047            
+        -117.26047
+        32.969545
+        32.969545
+      
+    
+    
+      TJE: Tijuana Estuary, located in San Diego County, California
+      
+        -117.126712            
+        -117.126712
+        32.569901
+        32.569901
+      
+    
+      
+        
+          
+            2019-08-09
+          
+          
+            2021-11-10
+          
+        
+      
+      
+        
+            Information Manager, SONGS Mitigation Monitoring Project
+      			Marine Science Institute
+			University of California
+			Santa Barbara, California 93106-6150  United States
+      760 438 5375
+      songsmmp@lifesci.ucsb.edu
+      http://marinemitigation.msi.ucsb.edu
+        
+    Environmental Data Initiativeinfo@edirepository.orghttps://edirepository.org0330j0z60Environmental Data Initiative
+            
+        
+          
+Overview
+
+The coastal development permit for the San Onofre Nuclear Generating Station (SONGS) Units 2 and 3 requires Southern California Edison to restore a coastal wetland (San Dieguito Wetlands) as mitigation for the loss of fish resources throughout the Southern California Bight caused by the operation of SONGS. 
+The permit establishes biological performance standards that must be met by the wetland for a period equivalent to the operating life of SONGS Units 2 and 3. 
+Soil properties were evaluated to assess their possible effect on these performance standards.
+
+
+
+Study Sites
+
+Data were collected from various locations at the San Dieguito Wetlands (32°58'33.17"N 117°14'53.68"W) and three reference sites (Tijuana Estuary 32.5699010N, 117.1267120W; Mugu Lagoon 34.1020070N, 119.0970110W; Carpinteria Salt Marsh 34.4011890N, 119.5379900W) as part of a long-term study to evaluate the performance of the restoration project. 
+The reference wetlands were chosen to represent relatively undisturbed, natural tidal wetlands within the Southern California Bight. 
+Samples were collected sporadically from multiple locations within each wetland.
+
+
+
+Sampling Methods
+
+In 2019, soil samples were collected at San Dieguito Wetlands from two regions in the easternmost zone of the wetland restoration project (32.978507960N, 117.242451970W 32.97704863, 117.240728520W). 
+Soil samples were collected at four locations spaced 10-20 m apart at four elevations (1.61, 1.76, 1.92, and 2.07 m MLLW). 
+At each sampling location (n=32), four soil cores (3.5 cm diameter x 10 cm deep) were collected from vegetated and non-vegetated patches and combined into a single sample. 
+
+In 2021, soil samples were collected at San Dieguito Wetlands, Tijuana Estuary, Mugu Lagoon, and Carpinteria Salt Marsh from six tidal creeks and six main channel locations used for annual fish and invertebrate monitoring (see EDI packages:  SONGS Mitigation Monitoring: Wetland Survey – Fish Abundance, SONGS Mitigation Monitoring: Wetland Survey – Invertebrate Abundance). 
+At each tidal creek / main channel location, samples were collected at three distances from the main waterway inlet at three relative elevations (low, medium, and high). 
+At each sampling location (n=54 at each wetland), four soil cores (3.5 cm diameter x 10 cm deep) were collected and combined into a single sample.
+
+All samples were sent to the University of California, Davis Soil Laboratory for analysis. 
+The methods for each of the measured soil parameters are reported in detail at https://anlab.ucdavis.edu/methods-of-analysis.
+
+
+        
+        
+          UCSB SONGS Wetland Process Study Methods – Soil Properties
+              
+      Stephen Schroeter
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5953
+      stephen.schroeter@lifesci.ucsb.edu
+    
+    
+      Henry Page
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      805-893-7568
+      mark.page@lifesci.ucsb.edu
+    
+    
+      Daniel Reed
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      805-893-8363
+      dan.reed@lifesci.ucsb.edu
+      https://orcid.org/0000-0003-3015-8717
+    
+    
+      Katherine Beheshti
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5953
+      katbeheshti@ucsb.edu
+    
+    
+      Rachel Smith
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5953
+      rssmith@ucsb.edu
+    
+    
+      Andres Deza
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5375
+      andres.deza@ucsb.edu
+    
+    
+      David Huang
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5375
+      davidhuang@ucsb.edu        
+    
+
+          
+            
+              https://static.msi-norco.ucsb.edu/datamart/method/wetland_process_soil_properties-2023-05-11.pdf
+            
+          
+        
+      
+      
+        
+      SONGS Mitigation Monitoring Project
+        
+      Stephen Schroeter
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5953
+      stephen.schroeter@lifesci.ucsb.edu
+      principalInvestigator
+    
+    
+      Henry Page
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      805-893-7568
+      mark.page@lifesci.ucsb.edu
+      principalInvestigator
+    
+    
+      Daniel Reed
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      805-893-8363
+      dan.reed@lifesci.ucsb.edu
+      https://orcid.org/0000-0003-3015-8717
+      principalInvestigator
+    
+    
+      Katherine Beheshti
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5953
+      katbeheshti@ucsb.edu
+      principalInvestigator
+    
+    
+      Rachel Smith
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5953
+      rssmith@ucsb.edu
+      principalInvestigator
+    
+    
+      Andres Deza
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5375
+      andres.deza@ucsb.edu
+      principalInvestigator
+    
+    
+      David Huang
+      			Marine Science Institute University of California
+			Santa Barbara, CA 93106-6150  US
+      760-438-5375
+      davidhuang@ucsb.edu        
+      pointOfContact
+    
+      
+        
+          
+          The San Onofre Nuclear Generating Station (SONGS) Mitigation Monitoring Program is based at the Marine Science Institute, University of California Santa Barbara.
+          Long-term monitoring and evaluation of the SONGS mitigation projects is a condition of the coastal development permit issued by the California Coastal Commission (CCC) for the operation of SONGS Units 2 and 3.
+          The Permit requires Southern California Edison (SCE) as majority owner and operating agent of SONGS to design and build mitigation projects that adequately compensate for the adverse effects of the power plant’s once-through seawater cooling system on coastal marine resources.
+          UCSB scientists working under the direction of the Executive Director of the CCC are responsible for designing and implementing monitoring programs aimed at determining the effectiveness of these mitigation projects.
+          
+        
+      
+      
+        
+          Funding for the SONGS Mitigation Monitoring Program is provided by SCE as a requirement of their coastal development permit for operating SONGS.
+        
+      
+    
+    
+Wetland process survey, soil properties, all years
+ This data table describes the physical and chemical properties of soil samples collected from various wetland locations.
+
+wetland_process_soil_properties-2023-06-02_17-44-20.csv
+213803
+        
+          
+            1
+            \n
+            column
+            
+              ,
+              no
+            
+          
+        
+        
+          
+            https://pasta.lternet.edu/package/data/eml/edi/673/2/f13eeb9caf2de3cc713bd6a2e4804d50
+          
+        
+
+
+      
+        
+          
+            2019-08-09
+          
+          
+            2021-11-10
+          
+        
+      
+      
+
+
+        
+          date
+          date
+          The date of data collection (YYYY-MM-DD).
+          date
+                    
+            
+              
+                        
+          text
+        
+              
+            
+          
+                  
+          -99999
+          value not recorded or not available
+        
+        
+        
+          spc_zone
+          state plane coordinate zone
+          State Plane Coordinate system zone.
+          varchar
+                    
+            
+              
+                        
+          text
+        
+              
+            
+          
+                  
+          -99999
+          value not recorded or not available
+        
+        
+        
+          waypoint_northing_spc_ussft
+          northing waypoint
+          Northing waypoint, State Plane Coordinate system, United States Survey feet.
+          decimal
+                    
+            
+              
+                        
+          text
+        
+              
+            
+          
+                  
+          -99999
+          value not recorded or not available
+        
+        
+        
+          waypoint_easting_spc_ussft
+          easting waypoint
+          Easting waypoint, State Plane Coordinate system, United States Survey feet.
+          decimal
+                    
+            
+              
+                        
+          text
+        
+              
+            
+          
+                  
+          -99999
+          value not recorded or not available
+        
+        
+        
+          elevation_mllw
+          elevation MLLW
+          The elevation expressed in Mean Low Low Water (MLLW).
+          decimal
+                  
+          
+            
+              foot
+            
+            
+              real
+                      
+          -0.344
+          6.304
+        
+
+            
+          
+        
+                
+          -99999
+          value not recorded or not available
+        
+        
+        
+          soil_property_code
+          soil property code
+          Soil property.
+          varchar
+                    
+            
+              
+                
+          
+            Bulk-Density
+            Builk Density (g/cm3): The ratio of the mass of dry solids to the bulk volume of soil.
+          
+          
+            C-Org-LOI
+            Organic Carbon: Loss-On-Ignition (percent): The proportion of soil organic carbon, based on gravimetric weight change associated with high temperature oxidation of organic matter.
+          
+          
+            Cu-DTPA
+            Copper: DTPA Extraction (ppm): The total amount of copper, based on DTPA extraction.
+          
+          
+            ECe
+            Estimated Soluble Salts: Saturated Paste Extract (dS/m): The amount of soluble salts, based on the electrical conductivity of saturated paste extract.
+          
+          
+            Fe-DTPA
+            Iron: DTPA Extraction (ppm): The total amount of iron, based on DTPA extraction.
+          
+          
+            Mn-DTPA
+            Manganese: DTPA Extraction (ppm): The total amount of manganese, based on DTPA extraction.
+          
+          
+            N-CM
+            Total Nitrogen And Carbon: Combustion Method (percent): The total amount of nitrogen and carbon in all forms in soil, based on the combustion method.
+          
+          
+            NH4-N-FIAM
+            Soil Extractable Ammonium: Flow Injection Analyzer Method (ppm): The total amount of soil extractable ammonium, based on the Flow Injection Analyzer Method.
+          
+          
+            NO3-N-FIAM
+            Soil Nitrate: Flow Injection Analyzer Method (ppm): The total amount of soil nitrate, based on Flow Injection Analyzer Method.
+          
+          
+            OM-LOI
+            Organic Matter: Loss-On-Ignition Method (percent): The proportion of soil organic matter, based on gravimetric weight change associated with high temperature oxidation of organic matter.
+          
+          
+            pH-SPE
+            pH: Saturated Paste Extract (pH): The pH of the soil sample.
+          
+          
+            PSA-Clay
+            Particle Size Analysis: Clay (percent): The physical proportion of clay, as determined by its settling rates in an aqueous solution using a hydrometer.
+          
+          
+            PSA-Sand
+            Particle Size Analysis: Sand (percent): The physical proportion of sand, as determined by its settling rates in an aqueous solution using a hydrometer.
+          
+          
+            PSA-Silt
+            Particle Size Analysis: Silt (percent): The physical proportion of silt, as determined by its settling rates in an aqueous solution using a hydrometer.
+          
+          
+            SM-15-ATM
+            Soil Moisture: 15 Atmosphere Pressure Potential (percent): The soil moisture content under constant preset pressure potential (ranging from -10 to -1500 kPa [0.1 atm to 15 atm]).
+          
+          
+            TOC-CM
+            Total Organic Carbon: Combustion Method (percent): The total amount of organic carbon, based on the oxidation of the sample by “flash combustion”.
+          
+          
+            Zn-DTPA
+            Zinc: DTPA Extraction (ppm): The total amount of zinc, based on DTPA extraction.
+          
+
+              
+            
+          
+                  
+          -99999
+          value not recorded or not available
+        
+        
+        
+          soil_property_value
+          soil property value
+          The value of the soil property.
+          decimal
+                    
+            
+              
+                        
+          text
+        
+              
+            
+          
+                  
+          -99999
+          value not recorded or not available
+        
+        
+
+
+3184
+
+  
+  
+    
+      
+        18
+        2023-06-03 16:20:01
+                
+          
+wetland_process_soil_properties
+2023-06-02 17:44:20
+
+
+              
+    
+  

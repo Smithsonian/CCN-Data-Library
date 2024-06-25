@@ -1,0 +1,548 @@
+
+   
+      
+         uid=FCE,o=lter,dc=ecoinformatics,dc=org
+         read
+      
+      
+         public
+         read
+      
+   
+   
+      ST_OMD_Saunders_002
+      doi:10.6073/pasta/0a012d9bffa94911109aad7b8447145cRadiometric Characteristics of Soil Sediments from Shark River Slough, Everglades National Park (FCE) from 2005 and 2006
+      
+         Dr. Colin Saunders
+         South Florida Water Management District, Everglades District
+         Research Scientist
+         			3301 Gun Club Road, MSC 4440
+			West Palm Beach, FL 33406  USA
+         561-682-6309
+         561-682-5892
+         CSaunder@sfwmd.gov
+         https://orcid.org/0000-0002-8533-7790
+      
+      
+         Florida Coastal Everglades LTER
+         			Florida International University
+			11200 SW 8th Street, OE 148
+			Miami, FL 33199  USA
+         305-348-6054
+         fcelter@fiu.edu
+         https://fcelter.fiu.edu
+         https://ror.org/03davk141
+      
+      
+         Colin Saunders
+         South Florida Water Management District, Everglades District
+         			3301 Gun Club Road, MSC 4440
+			West Palm Beach, FL 33406  USA
+         561-682-6309
+         561-682-5892
+         CSaunder@sfwmd.gov
+         http://www.sfwmd.gov/
+         Project Collaborator
+      
+      2024-02-16
+      
+         These data represent the results of radiometric dating of soil cores from Shark Slough sites, including FCE LTER sites SRS3 and SRS4 and FCE related site NE-SRS1 from November 18, 2005 to February 26, 2006. Soils from 1-cm depth increments were analyzed for bulk density and stratigraphy. These analyses contribute to a paleoecological study to quantify past changes in vegetation and soil accumulation in relation to past climate variation, fire occurrences and water management.
+      
+      
+         disturbance
+         LTER Core Research Areas
+      
+      
+         FCE
+         Florida Coastal Everglades LTER
+         ecological research
+         long-term monitoring
+         210-Lead
+         Shark River Slough
+         Everglades National Park
+         soils
+         137-Cesium
+         water
+         depth
+         rivers
+         organisms
+         nutrients
+         accumulation
+         cores
+         LTER Keyword Thesaurus
+      
+      
+         This information is released under the Creative Commons license - Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/). The consumer of these data ("Data User" herein) is required to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or co-authorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available "as is." The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. Thank you.
+      
+      
+         
+            http://fcelter.fiu.edu/perl/public_data_download.pl?datasetid=ST_OMD_Saunders_002.txt
+         
+      
+      https://doi.org/10.6073/pasta/0a012d9bffa94911109aad7b8447145c
+         
+            NE-SRS1
+            
+               -80.635
+               -80.635
+               25.698
+               25.698
+            
+         
+         
+            FCE LTER Site SRS3
+            
+               -80.853
+               -80.853
+               25.468
+               25.468
+            
+         
+         
+            FCE LTER Site SRS4
+            
+               -80.964
+               -80.964
+               25.41
+               25.41
+            
+         
+         
+            
+               
+                  2005-11-20
+               
+               
+                  2006-02-28
+               
+            
+         
+      
+      
+         
+            knb-lter-fce.1124.3: Updated to EML 2.2.0, added ORCID and ROR ids, changed data file extension to .csv (no changes to data)
+            knb-lter-fce.1124.2: Added new Data download URL and new FCE III Project information
+            knb-lter-fce.1124.1: This is a short-term organic matter dataset. This dataset replaces all previous versions of ST_OMD_Saunders_002.txt. The FCE program is discontinuing its practice of versioning data as of March 2013.
+         
+      
+      
+         Colin Saunders
+         South Florida Water Management District, Everglades District
+         Research Scientist
+         			3301 Gun Club Road, MSC 4440
+			West Palm Beach, FL 33406  USA
+         561-682-6309
+         561-682-5892
+         CSaunder@sfwmd.gov
+         http://www.sfwmd.gov/
+      
+      
+         Florida Coastal Everglades LTER
+         Information Manager
+         			Florida International University
+			11200 SW 8th Street, OE 148
+			Miami, FL 33199  USA
+         fcelter@fiu.edu
+         https://fcelter.fiu.edu
+      
+      
+         Environmental Data Initiative
+         info@edirepository.org
+         https://edirepository.org
+         0330j0z60
+      
+      Environmental Data Initiative
+      
+         
+            
+               Radiometric dating of soil cores collected at each sampling site. radiometric dating was performed by Dr. Christopher Craft (Indiana University)
+               
+               References:
+               Craft, C. B. , C. J. Richardson. 1993. Peat accretion and nitrogen,phosphorus and organic carbon accumulation in nutrient enriched and unenriched Everglades peatlands.. Ecological Applications, 3(3): 446-458.
+               
+               Craft, C. B. , C. J. Richardson. 1993. Peat accretion and phosphorus accumulation along a eutrophication gradient in the northern Everglades.. Biogeochemistry, 22: 133-156.
+               
+               Craft, C. B. , C. J. Richardson. 1998. Recent and long-term organic soil accretion and nutrient accumulation in the Everglades.. Soil Sci Soc Am J, 62: 834-843.
+            
+            digital calipers, Standard laboratory drying ovens, balances digital calipers
+         
+         
+            
+               
+                  The Study Extent of this dataset includes the FCE Shark River Slough research sites within Everglades National Park, South Florida
+               
+            
+            
+               Bulk density obtained as the dry weight of known sample volume of soil.
+            
+         
+         
+            
+         
+      
+      
+         Florida Coastal Everglades LTER: Coastal Oligotrophic Ecosystems Research-the Coastal Everglades
+         
+            Daniel Childers
+            Lead Principal Investigator
+         
+         
+            We are investigating how variability in regional climate, freshwater inputs, disturbance, and perturbations affect the coastal Everglades ecosystem. Our long term research program focuses on testing the following central idea and hypotheses: Regional processes mediated by water flow control population and ecosystem level dynamics at any location within the coastal Everglades landscape. This phenomenon is best exemplified in the dynamics of an estuarine oligohaline zone where fresh water draining phosphorus-limited Everglades marshes mixes with water from the more nitrogen-limited coastal ocean. Hypothesis 1: In nutrient-poor coastal systems, long-term changes in the quantity or quality of organic matter inputs will exert strong and direct controls on estuarine productivity, because inorganic nutrients are at such low levels. Hypothesis 2: Interannual and long-term changes in freshwater flow controls the magnitude of nutrients and organic matter inputs to the estuarine zone, while ecological processes in the freshwater marsh and coastal ocean control the quality and characteristics of those inputs. Hypothesis 3: Long-term changes in freshwater flow (primarily manifest through management and Everglades restoration) will interact with long-term changes in the climatic and disturbance (sea level rise, hurricanes, fires) regimes to modify ecological pattern and process across coastal landscapes.
+         
+         
+            National Science Foundation
+            https://ror.org/021nxhr62
+            9910514
+            Florida Coastal Everglades LTER: Coastal Oligotrophic Ecosystems Research-the Coastal Everglades
+            https://www.nsf.gov/awardsearch/showAward?AWD_ID=9910514
+         
+         
+            FCE LTER II: Coastal Oligotrophic Ecosystems Research
+            
+               Evelyn Gaiser
+               0000-0003-2065-4821
+               Lead Principal Investigator
+            
+            
+               Our FCE I research focused on understanding how dissolved organic matter from upstream oligotrophic marshes interacts with a marine source of phosphorus (P), the limiting nutrient, to control estuarine productivity where these two influences meet-in the oligohaline ecotone. This dynamic is affected by the interaction of local ecological processes and landscape-scale drivers (hydrologic, climatological, and human). During FCE I, our ideas about how these "upside-down" estuaries (Childers et al. 2006) function has evolved, and we have modified our central theme to reflect this new understanding. Our focus in FCE II will be even more strongly on the oligohaline ecotone region of our experimental transects. For FCE II, our overarching theme is: In the coastal Everglades landscape, population and ecosystem-level dynamics are controlled by the relative importance of water source, water residence time, and local biotic processes. This phenomenon is best exemplified in the oligohaline ecotone, where these 3 factors interact most strongly and vary over many [temporal and spatial] scales.Hypothesis 1: Increasing inputs of fresh water will enhance oligotrophy in nutrient-poor coastal systems, as long as the inflowing water has low nutrient content; this dynamic will be most pronounced in the oligohaline ecotone. Hypothesis 2: An increase in freshwater inflow will increase the physical transport of detrital organic matter to the oligohaline ecotone, which will enhance estuarine productivity. The quality of these allochthonous detrital inputs will be controlled by upstream ecological processes. Hypothesis 3: Water residence time, groundwater inputs, and tidal energy interact with climatic and disturbance regimes to modify ecological pattern and process in oligotrophic estuaries; this dynamic will be most pronounced in the oligohaline ecotone. Childers, D.L., J.N. Boyer, S.E. Davis, C.J. Madden, D.T. Rudnick, and F.H. Sklar, 2006. Relating precipitation and water management to nutrient concentration patterns in the oligotrophic "upside down" estuaries of the Florida Everglades. Limnology and Oceanography, 51(1): 602-616.
+            
+            
+               National Science Foundation
+               https://ror.org/021nxhr62
+               620409
+               FCE LTER II: Coastal Oligotrophic Ecosystems Research
+               https://www.nsf.gov/awardsearch/showAward?AWD_ID=0620409
+            
+         
+         
+            FCE LTER III: Coastal Oligotrophic Ecosystems Research
+            
+               Evelyn Gaiser
+               0000-0003-2065-4821
+               Lead Principal Investigator
+            
+            
+               Coastal ecosystems are being modified at unprecedented rates through interacting
+               pressures of global climate change and rapid human population growth, impacting natural coastal
+               resources and the services they provide. Located at the base of the shallow-sloping Florida peninsula, the Everglades wilderness and 6 million human residents are exceptionally exposed to both pressures. Further, freshwater drainage has accelerated saltwater intrusion over land and into the porous limestone aquifer, resulting in coastal ecosystem transgression and seasonal residential freshwater shortages. The unprecedented landscape-scale Everglades restoration process is expected to reverse some of these trends. However, it is not clear how uncertainties about climate change prognoses and their impacts (e.g., sea level rise (SLR), changes in storm activity or severity, and climate drivers of freshwater availability) may influence human activities (e.g., population growth, resource use, land-use change), and how their interaction will affect the restoration process that is already steeped in conflict. The Florida Coastal Everglades Long-Term Ecological Research (FCE LTER) program is dedicated to long-term coupled biophysical and cultural studies that expose and unravel complex feedbacks that generate distinctive patterns and processes in vulnerable coastal ecosystems. The overarching theme of FCE research is: In the coastal Everglades, climate change and resource management decisions interact to influence
+               freshwater availability, ecosystem dynamics, and the value and utilization of ecosystem services by people. Because they are highly sensitive to the balance of freshwater and marine influences,
+               coastal wetlands of the Florida Everglades provide an ideal system to examine how socio-ecological systems respond to and mitigate the effects of climate change and freshwater allocation decisions. The trans-disciplinary science conducted by the large FCE research team is revealing how estuary hydrodynamics and biogeochemistry may tilt on a fulcrum defined by the magnitude by which coastal pressures (SRL, storms) are mitigated by freshwater flows. We employ a socio-ecological framework to address how climate change interacts with political decisions to determine the sustainability of interconnected human-natural systems. In FCE I, we discovered how coastal nutrient supplies create an unusual “upside-down” productivity gradient in karstic estuaries. FCE II research used growing long-term datasets to reveal the sensitivity of this gradient to changes in hydrodynamics, nutrient availability, and salinity. In FCE III, we will use South Florida as an exemplary system for understanding how and why socio-ecological systems resist, adapt to, or mitigate the effects of climate change on ecosystem sustainability. We will examine how decisions about freshwater delivery to the Everglades influence -and are influenced by - the impact of SLR in this especially vulnerable landscape. Biophysical studies will focus on how this balance of fresh and marine sources influences biogeochemical cycling, primary production, organic matter dynamics, and trophic dynamics, to drive carbon gains and losses. We expand our spatio-temporal domain by employing powerful long-term datasets and experiments to determine legacies of past interactions, and to constrain models that will help guide a sustainable future for the FCE.
+            
+            
+               National Science Foundation
+               https://ror.org/021nxhr62
+               1237517
+               FCE LTER III: Coastal Oligotrophic Ecosystems Research
+               https://www.nsf.gov/awardsearch/showAward?AWD_ID=1237517
+            
+         
+         
+            FCE LTER IV: Drivers of Abrupt Change in the Florida Coastal Everglades
+            
+               Evelyn Gaiser
+               Lead Principal Investigator
+            
+            
+               Coastal ecosystems like the Florida Everglades provide many benefits to society. They protect coastlines from storms and store carbon. They provide habitat and food for important fisheries. They also support tourism and local economies, and store freshwater for millions of people. The Florida Coastal Everglades Long Term Ecological Research (FCE LTER) program addresses how and why coastal ecosystems are changing in response to sea level rise and the actions of people. Like many coastal ecosystems, the Florida Everglades are threatened by the diversion of freshwater to support urban and agricultural expansion. At the same time, sea level rise has caused coastal ecosystems to become saltier, threatening the freshwater supply, stressing freshwater plants, and causing the soils to collapse. When the soils beneath coastal wetlands disappear, seawater invades even more quickly. Researchers in the FCE LTER are continuing long-term studies and experiments to understand how these changes influence ecosystem functions and services. They are also developing tools for resource managers to create an effective freshwater restoration program. The science team includes an active community of graduate students. As a group, they reach the public through education and outreach activities, and regularly advise policy-makers on resource management decisions. The FCE LTER research program addresses how changing fresh and marine supplies of water influence coastal ecosystem dynamics through: (i) continued long-term assessment of changes in biogeochemistry, primary production, organic matter, and trophic dynamics in ecosystems along freshwater-to-marine gradients, (ii) maintenance of existing in situ and ex situ long-term experiments, (iii) use of high-resolution remote sensing, coupled with models to forecast landscape-scale changes, (iv) addition of synoptic satellite sites to capture discrete spatio-temporal responses to episodic disturbance, and (v) initiation of new experimental manipulations to determine drivers and mechanisms of resilience to saltwater intrusion. Data syntheses integrate month-to-annual and inter-annual data into models of water, nutrients, carbon, and species dynamics throughout the Everglades landscape to compare how ecosystems with different productivities and carbon stores respond (maintain, increase, or decline) to short- (pulses) and long-term changes (presses) in hydrologic connectivity. Understanding and predicting the drivers of abrupt changes in ecosystems is a key challenge in ecosystem ecology.
+            
+            
+               National Science Foundation
+               https://ror.org/021nxhr62
+               1832229
+               LTER: Drivers of Abrupt Change in the Florida Coastal Everglades
+               https://www.nsf.gov/awardsearch/showAward?AWD_ID=1832229&HistoricalAwards=false
+            
+         
+         
+            LTER: Coastal Oligotrophic Ecosystem Research
+            
+               John Kominoski
+               			Florida International University
+			11200 S.W. 8th Street
+			Miami, FL 33199  US
+               jkominos@fiu.edu
+               0000-0002-0978-3326
+               Lead Principal Investigator
+            
+            
+               James Fourqurean
+               Co-Principal Investigator
+            
+            
+               Evelyn Gaiser
+               Co-Principal Investigator
+            
+            
+               Jennifer Rehage
+               Co-Principal Investigator
+            
+            
+               Kevin Grove
+               Co-Principal Investigator
+            
+            
+               Coastal ecosystems like the Florida Everglades provide many benefits and services to society including protection from storms, habitat and food for important fisheries, support of tourism and local economies, filtration of fresh water, and burial and storage of carbon that offsets greenhouse gas emissions. The Florida Coastal Everglades Long Term Ecological Research (FCE LTER) program addresses how and why coastal ecosystems and their services are changing. Like many coastal ecosystems, the Florida Everglades has been threatened by diversion of fresh water to support urban and agricultural expansion. At the same time, sea-level rise has caused saltwater intrusion of coastal ecosystems which stresses freshwater species, causes elevation loss, and contaminates municipal water resources. However, restoration of seasonal pulses of fresh water may counteract these threats. Researchers in the FCE LTER are continuing long-term studies and experiments to understand how changes in freshwater supply, sea-level rise, and disturbances like tropical storms interact to influence ecosystems and their services. The science team is guided by a diversity and inclusion plan to attract diverse scientists at all career stages. The team includes resource managers – who use discoveries and knowledge from the FCE LTER to guide effective freshwater restoration – and an active community of academic and agency scientists, teachers and other educators, graduate, undergraduate, and high school students. The project has a robust education and outreach program that engages the research team with the general public to advance science discoveries and protection of coastal ecosystems.
+            
+            
+               National Science Foundation
+               https://ror.org/021nxhr62
+               2025954
+               LTER: Coastal Oligotrophic Ecosystem Research
+               https://www.nsf.gov/awardsearch/showAward?AWD_ID=2025954&HistoricalAwards=false
+            
+         
+      
+      
+         ST_OMD_Saunders_002
+         Radiometric Characteristics of Soil Sediments from Shark River Slough, Everglades National Park
+         
+            ST_OMD_Saunders_002.csv
+            9747
+            13bb6747c9ca26bbbc80b4aa1f115802
+            
+               
+                  1
+                  \n
+                  column
+                  
+                     ,
+                     "
+                  
+               
+            
+            
+               
+                  https://pasta.lternet.edu/package/data/eml/knb-lter-fce/1124/3/3bae2c51f5177f3ec58d25c375453144
+               
+            
+         
+         
+            
+               SITENAME
+               sitename
+               Name of LTER site
+               text
+               
+                  
+                     
+                        
+                           text
+                        
+                     
+                  
+               
+            
+            
+               Date
+               date
+               Collection date
+               datetime
+               
+                  
+                     YYYY-MM-DD
+                     1
+                     
+                        
+                           2005-11-20
+                           2006-02-28
+                        
+                     
+                  
+               
+            
+            
+               Core_ID
+               ID number
+               Name of Individual Soil Core
+               norminal
+               
+                  
+                     
+                        
+                           text
+                        
+                     
+                  
+               
+            
+            
+               Habitat
+               habitat type
+               Name of vegetation type (sawgrass or slough)
+               norminal
+               
+                  
+                     
+                        
+                           text
+                        
+                     
+                  
+               
+            
+            
+               SoilDepth_Interval
+               soil depth interval
+               nominal depth increment-2-cm or 3-cm intervals
+               norminal
+               
+                  
+                     
+                        
+                           text
+                        
+                     
+                  
+               
+            
+            
+               Depth
+               depth
+               Soil Collection Depth
+               data
+               
+                  
+                     
+                        centimeter
+                     
+                     0.01
+                     
+                        real
+                     
+                  
+               
+               
+                  -9999.00
+                  Value will never be recorded
+               
+            
+            
+               BulkDensity
+               density
+               Soil Bulk Density
+               data
+               
+                  
+                     
+                        gramsPerCubicCentimeter
+                     
+                     0.001
+                     
+                        real
+                     
+                  
+               
+               
+                  -9999.000
+                  Value will never be recorded
+               
+            
+            
+               Excess_Pb
+               exess 210-Pb
+               210-Pb concentration in soil in excess of background concentration
+               data
+               
+                  
+                     
+                        numberPerGramPerMinute
+                     
+                     0.00001
+                     
+                        real
+                     
+                  
+               
+               
+                  -9999.00000
+                  Value will never be recorded
+               
+            
+            
+               Year_210Pb_CF
+               predicted calendar year
+               Predicted calendar year
+               nominal
+               
+                  
+                     
+                        
+                           text
+                        
+                     
+                  
+               
+               
+                  -9999.0
+                  Value will never be recorded
+               
+            
+            
+               137Cs
+               137Cs concentration
+               137Cs concentration in soil sediments
+               data
+               
+                  
+                     
+                        picoCuriesPerGram
+                     
+                     0.00001
+                     
+                        real
+                     
+                  
+               
+               
+                  -9999.00000
+                  Value will never be recorded
+               
+            
+         
+         no
+         129
+      
+   
+   
+      
+         
+            
+               0
+            
+            
+               radioactivity concentration in soil sediments
+            
+         
+      
+   
+   
+      
+         
+            Short-Term
+            
+               2009-10-02
+            
+            
+               NE-SRS1, SRS3, SRS4
+            
+            
+               These short-term organic matter data replace original ST_OMD_Saunders_002.
+            
+         
+      
+   
+   
+      
+         
+      
+   
+   
+      
+         
+      
+   
+   
+      
+         
+      
+   
