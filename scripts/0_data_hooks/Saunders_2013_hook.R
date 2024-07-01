@@ -21,8 +21,9 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 # https://smithsonian.github.io/CCN-Community-Resources/soil_carbon_guidance.html
 
 # Read in data
-raw_data <- read.csv("./data/primary_studies/Saunders_2013/original/ST_OMD_Saunders_002")
-
+# raw_data <- read.csv("./data/primary_studies/Saunders_2013/original/ST_OMD_Saunders_002")
+raw_data <- read_csv("./data/primary_studies/Saunders_2013/original_2024/ST_OMD_Saunders_002.csv")
+# unique(raw_data == raw_data2)
 
 ## 2. Organize tables ####
 depth_raw <- raw_data %>% 
@@ -30,7 +31,7 @@ depth_raw <- raw_data %>%
          core_id = Core_ID,
          dry_bulk_density = BulkDensity,
          excess_pb210_activity = Excess_Pb,
-         cs137_activity = X137Cs,
+         cs137_activity = `137Cs`,
          habitat = Habitat,
          age = Year_210Pb_CF) %>% 
   separate(SoilDepth_Interval, into = c("depth_min", "depth_max"), sep = "-") %>% 
@@ -42,8 +43,8 @@ depth_raw <- raw_data %>%
          study_id = "Saunders_2013",
          site_id = gsub("-", "_", site_id),
          core_id = paste(site_id, core_id, sep = "_"),
-         habitat = ifelse(habitat == "sawgrass", "seagrass", # EDIT: double check
-                          ifelse(habitat == "slough", "swamp", "NA")),
+         habitat = case_when(habitat == "sawgrass" ~ "marsh",
+                             habitat == "slough" ~ "swamp", T ~ NA),
          age = ifelse(grepl("-", age), "NA", age),
          cs137_activity = ifelse(grepl("-", cs137_activity), "NA", cs137_activity),
          cs137_unit = "picocuriesPerGram",
@@ -61,16 +62,19 @@ cores <- depth_raw %>%
                             ifelse(site_id == "SRS3", -80.853,
                                    ifelse(site_id == "SRS4", -80.964, "NA")))),
          core_length_flag = "core depth limited by length of corer",
-         position_notes = "position listed at site level", # EDIT: position method?
+         position_method = "other low resolution",
+         position_notes = "position listed at site level",
          vegetation_method = "field observation",
-         vegetation_class = ifelse(habitat == "seagrass", "seagrass", "other")) %>% # EDIT: double check
-  select(study_id, site_id, core_id, year, month, day, latitude, longitude, 
+         vegetation_class = case_when(habitat == "marsh" ~ "emergent", 
+                                      habitat == "swamp" ~ "forested to emergent")) %>%
+  select(study_id, site_id, core_id, year, month, day, latitude, longitude, position_method,
          position_notes, vegetation_class, vegetation_method, habitat, core_length_flag) %>% 
   distinct()
 
-methods <- data.frame(study_id = "Saunders_2013",
-                      method_id = "single set of methods",
-                      coring_method = "")
+# methods aren't really provided?
+# methods <- data.frame(study_id = "Saunders_2013",
+#                       method_id = "single set of methods",
+#                       coring_method = "")
 
 
 ## 3. QAQC ####
@@ -81,7 +85,7 @@ leaflet(cores) %>%
   addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
 
 ## Table testing
-table_names <- c("cores", "depthseries", "methods")
+table_names <- c("cores", "depthseries")
 
 # Check col and varnames
 testTableCols(table_names)
@@ -105,15 +109,24 @@ fractionNotPercent(depthseries)
 
 
 ## 4. Bibliography ####
-study_citation <- data.frame(study_id = "Saunders_2013",
-                             bibliography_id = "Saunders_2013_data",
-                             title = "Radiometric Characteristics of Soil Sediments from Shark River Slough, Everglades National Park (FCE) from 2005 and 2006",
-                             author = "Saunders, Colin",
-                             publication_type = "primary dataset",
-                             doi = "10.6073/pasta/c0cb8ff0f150e429674ecf0db15bedc5",
-                             url = "https://doi.org/10.6073/pasta/c0cb8ff0f150e429674ecf0db15bedc5",
-                             bibtype = "Misc",
-                             year = "2013")
+bib <- as.data.frame(RefManageR::GetBibEntryWithDOI("10.6073/pasta/0a012d9bffa94911109aad7b8447145c"))
+
+study_citation <- bib %>% 
+  mutate(study_id = "Saunders_2013",
+          bibliography_id = "Saunders_2013_data",
+         publication_type = "primary dataset") %>% 
+  remove_rownames() %>% 
+  select(study_id, bibliography_id, everything())
+
+# study_citation <- data.frame(study_id = "Saunders_2013",
+#                              bibliography_id = "Saunders_2013_data",
+#                              title = "Radiometric Characteristics of Soil Sediments from Shark River Slough, Everglades National Park (FCE) from 2005 and 2006",
+#                              author = "Saunders, Colin",
+#                              publication_type = "primary dataset",
+#                              doi = "10.6073/pasta/0a012d9bffa94911109aad7b8447145c",
+#                              url = "https://doi.org/10.6073/pasta/0a012d9bffa94911109aad7b8447145c",
+#                              bibtype = "Misc",
+#                              year = "2013")
 
 bib_file <- study_citation %>%
   remove_rownames() %>% 
@@ -125,7 +138,7 @@ bib_file <- study_citation %>%
 write_csv(cores, "data/primary_studies/Saunders_2013/derivative/Saunders_2013_cores.csv") 
 write_csv(depthseries, "data/primary_studies/Saunders_2013/derivative/Saunders_2013_depthseries.csv")
 write_csv(methods, "data/primary_studies/Saunders_2013/derivative/Saunders_2013_methods.csv")
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Saunders_2013/derivative/Saunders_2013_study_citations.bib")
+# WriteBib(as.BibEntry(bib_file), "data/primary_studies/Saunders_2013/derivative/Saunders_2013_study_citations.bib")
 write_csv(study_citation, "data/primary_studies/Saunders_2013/derivative/Saunders_2013_study_citations.csv")
 
 
