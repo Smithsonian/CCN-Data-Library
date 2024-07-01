@@ -14,6 +14,9 @@ source("scripts/1_data_formatting/curation_functions.R") # For curation
 source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 
 
+#assign study id
+id <- "Adotey_et_al_2024"
+
 ## Read files ####
 
 methods_raw <- read.csv("data/primary_studies/Adotey_et_al_2024/original/Adotey_et_al_2024_methods.csv")
@@ -81,27 +84,8 @@ plots <- plot_summary_raw %>%
 ## ... Curate plants ####
 plants <- plant_raw %>% 
   mutate(n_plants = 1, #each observation represents a single plant 
-         height_unit = "meter",
-         )
+         height_unit = "meter")
   
-
-
-# study_citations <- 
-#    tbl(study_id = "Adotey_et_al_2024", 
-#           bibliography_id = "Adotey_et_al_2024_data",
-#           publication_type = "primary dataset", 
-#           bibtype = "misc", 
-#           title = "Dataset: Carbon Stock Assessment in the Kakum and Amanzule Estuary Mangrove Forests, Ghana",
-#           author = "Adotey J, Acheampong E, Aheto DW, Blay J.",
-#           doi = "", 
-#           url = "", 
-#           year = 2024,
-#           month = NA,
-#           publisher = "Smithsonian Environmental Research Center",
-#           volume = NA,
-#           issue = NA,
-#           journal = NA,
-#           copyright = "Creative Commons Attribution 4.0 International")
 
 ## Add allometric equations table
 allometric_eq <- data.frame(study_id = "Adotey_et_al_2024",
@@ -137,9 +121,62 @@ write_csv(depthseries, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey
 write_csv(methods, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_methods.csv")
 write_csv(impacts, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_impacts.csv")
 
-write_csv(plots, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_plot_summary.csv")
-write_csv(plants, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_plant.csv")
-write_csv(allometric_eq, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_allometric_eq.csv")
+#write_csv(plots, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_plot_summary.csv")
+#write_csv(plants, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_plant.csv")
+#write_csv(allometric_eq, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_allometric_eq.csv")
 
+
+## 4. Bibliography ####
+
+# There are three ways to approach this:
+# 1) download the article citation directly to the study's folder
+# 2) create the study citation in the curation script and output it to the data release folder
+# 3) create a study_citation table in an intermediate folder, read it in and output bib file to derivative folder
+
+# example study citation creation:
+# study_citation <- data.frame(bibliography_id = "Spera_et_al_2020",
+#                              title = "Spatial and temporal changes to a hydrologically-reconnected coastal wetland: Implications for restoration",
+#                              author = "Alina C. Spera and John R. White and Ron Corstanje",
+#                              bibtype = "Article",
+#                              doi = "10.1016/j.ecss.2020.106728",
+#                              url = "https://doi.org/10.1016/j.ecss.2020.106728", 
+#                              journal = "Estuarine, Coastal and Shelf Science",
+#                              year = "2020") %>% 
+#     column_to_rownames("bibliography_id")
+# 
+# WriteBib(as.BibEntry(study_citation), "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_associated_publications.bib")
+
+study_citation_data <- data.frame(study_id = id, 
+                             bibliography_id = "Adotey_et_al_2024_data",
+                             publication_type = "primary dataset",
+                             bibtype = "Misc", 
+                             title = "Dataset: Carbon Stock Assessment in the Kakum and Amanzule Estuary Mangrove Forests, Ghana",
+                             author = "Joshua Adotey, Denis Worlanyo Aheto, John Blay, Emmanuel Acheampong",
+                             doi = "10.25573/serc.25148561",
+                             url = "https://doi.org/10.25573/serc.25148561.v1",
+                             year = "2024")
+
+study_citation_paper <- data.frame(study_id = id, 
+                                   bibliography_id = "Adotey_et_al_2022",
+                                   publication_type = "article",
+                                   bibtype = "Misc", 
+                                   title = "Carbon Stock Assessment in the Kakum and Amanzule Estuary Mangrove Forests, Ghana",
+                                   author = "Joshua Adotey,Emmanuel Acheampong, Denis Worlanyo Aheto, and John Blay",
+                                   doi = " https://doi.org/10.3390/su141912782",
+                                   url = "https://www.mdpi.com/2071-1050/14/19/12782",
+                                   journal = "Sustainability",
+                                   year = "2022")
+
+study_citations <- full_join(study_citation_data, study_citation_paper)
+
+WriteBib(as.BibEntry(study_citations), "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_study_citations.csv")
 write_csv(study_citations, "data/primary_studies/Adotey_et_al_2024/derivative/Adotey_et_al_2024_study_citations.csv")
+
+# link to bibtex guide
+# https://www.bibtex.com/e/entry-types/
+
+
+
+
+
 

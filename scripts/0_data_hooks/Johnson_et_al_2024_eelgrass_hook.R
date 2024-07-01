@@ -23,11 +23,11 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 
 
 #load in data 
-methods_raw <- read_csv("data/primary_studies/Johnson_et_al_seagrass_2024/original/johnson_et_al_2024_eelgrass_materials_and_methods.csv")
-cores_raw <- read_csv("data/primary_studies/Johnson_et_al_seagrass_2024/original/johnson_et_al_2024_eelgrass_cores.csv")
-depthseries_raw <- read_csv("data/primary_studies/Johnson_et_al_seagrass_2024/original/johnson_et_al_2024_eelgrass_depthseries.csv")
-species_raw <- read_csv("data/primary_studies/Johnson_et_al_seagrass_2024/original/johnson_et_al_2024_eelgrass_species.csv")
-study_citations_raw <- read_csv("data/primary_studies/Johnson_et_al_seagrass_2024/original/Johnson_et_al_2024_eelgrass_study_citations.csv")
+methods_raw <- read_csv("data/primary_studies/Johnson_et_al_2024_seagrass/original/johnson_et_al_2024_eelgrass_materials_and_methods.csv")
+cores_raw <- read_csv("data/primary_studies/Johnson_et_al_2024_seagrass/original/johnson_et_al_2024_eelgrass_cores.csv")
+depthseries_raw <- read_csv("data/primary_studies/Johnson_et_al_2024_seagrass/original/johnson_et_al_2024_eelgrass_depthseries.csv")
+species_raw <- read_csv("data/primary_studies/Johnson_et_al_2024_seagrass/original/johnson_et_al_2024_eelgrass_species.csv")
+study_citations_raw <- read_csv("data/primary_studies/Johnson_et_al_2024_seagrass/original/Johnson_et_al_2024_eelgrass_study_citations.csv")
   
   
 ## 1. Curation ####
@@ -111,10 +111,10 @@ test_numeric_vars(depthseries) ##testNumericCols producing error message
 ## 3. Write Curated Data ####
 
 # write data to final folder
-write_csv(methods, "data/primary_studies/Johnson_et_al_seagrass_2024/derivative/Johnson_et_al_2024_eelgrass_methods.csv")
-write_csv(cores, "data/primary_studies/Johnson_et_al_seagrass_2024/derivative/Johnson_et_al_2024_eelgrass_cores.csv")
-write_csv(depthseries, "data/primary_studies/Johnson_et_al_seagrass_2024/derivative/Johnson_et_al_2024_eelgrass_depthseries.csv")
-write_csv(species, "data/primary_studies/Johnson_et_al_seagrass_2024/derivative/Johnson_et_al_2024_eelgrass_species.csv")
+write_csv(methods, "data/primary_studies/Johnson_et_al_2024_seagrass/derivative/Johnson_et_al_2024_eelgrass_methods.csv")
+write_csv(cores, "data/primary_studies/Johnson_et_al_2024_seagrass/derivative/Johnson_et_al_2024_eelgrass_cores.csv")
+write_csv(depthseries, "data/primary_studies/Johnson_et_al_2024_seagrass/derivative/Johnson_et_al_2024_eelgrass_depthseries.csv")
+write_csv(species, "data/primary_studies/Johnson_et_al_2024_seagrass/derivative/Johnson_et_al_2024_eelgrass_species.csv")
 
 ## 4. Bibliography ####
 
@@ -146,8 +146,8 @@ study_citation <- data.frame(study_id = id,
                              url = "https://doi.org/10.25573/serc.22779893.v1",
                              year = "2024")
 
-WriteBib(as.BibEntry(study_citation), "data/primary_studies/Johnson_et_al_seagrass_2024/derivative/Johnson_et_al_2024_eelgrass.bib")
-write_csv(study_citation, "data/primary_studies/Johnson_et_al_seagrass_2024/derivative/Johnson_et_al_2024_eelgrass.csv")
+WriteBib(as.BibEntry(study_citation), "data/primary_studies/Johnson_et_al_2024_seagrass/derivative/Johnson_et_al_2024_eelgrass.bib")
+write_csv(study_citation, "data/primary_studies/Johnson_et_al_2024_seagrass/derivative/Johnson_et_al_2024_eelgrass_study_citations.csv")
 
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/

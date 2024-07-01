@@ -48,7 +48,8 @@ methods <- reorderColumns("methods", methods)
 
 cores <- cores_raw %>% 
   mutate(vegetation_class = case_when(vegetation_class == "floating emergent" ~ "emergent", #classify this in veg notes 
-                                      TRUE ~ vegetation_class))
+                                      TRUE ~ vegetation_class),
+         habitat = ifelse(is.na(habitat), "marsh", habitat))
 
 
 cores <- reorderColumns("cores", cores)
