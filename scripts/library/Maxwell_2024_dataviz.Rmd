@@ -1,0 +1,181 @@
+---
+title: "Maxwell 2024 Data Visualization Report"
+author: "Coastal Carbon Network"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: html_document
+---
+<!-- --- -->
+<!-- title: "Data Visualization Report" -->
+<!-- subtitle: "`r study_id`" -->
+<!-- author: "Coastal Carbon Research Coordination Network" -->
+<!-- date: "`r format(Sys.time(), '%d %B %Y')`" -->
+<!-- output: -->
+<!--   html_document: -->
+<!--     code_folding: hide -->
+<!--     toc: true -->
+<!--     toc_float: true -->
+<!--     theme: spacelab -->
+<!--     highlight: tango -->
+<!-- --- -->
+
+```{r setup, include=FALSE}
+# this sets the working directory to start where the R project is located
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+# no warnings or messages
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+# load libraries
+library(leaflet)
+library(DT)
+```
+
+# Core-level
+
+## Core Locations
+```{r}
+# plot core locations
+leaflet(cores, width = "100%") %>% 
+  addTiles() %>% 
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
+  
+```
+
+# Depthseries
+
+## Bulk Density, Carbon, and OM
+``` {r bd and om}
+
+ds_cols <- names(depthseries)
+
+# OM ~ DBD
+if("fraction_organic_matter" %in% ds_cols & "dry_bulk_density" %in% ds_cols){
+  depthseries %>% drop_na(dry_bulk_density, fraction_organic_matter) %>%
+    ggplot(aes(x=fraction_organic_matter, dry_bulk_density, color = study_id)) +
+    geom_point(alpha = 0.6) +
+    xlab("Organic Matter (fraction)") +
+    ylab(expression(paste("Dry Bulk Density (g cm"^"-3",")", sep=""))) +
+    theme_bw() +
+    ggtitle("OM ~ DBD")
+}
+
+```
+
+```{r bd and c}
+# C ~ DBD
+if("fraction_carbon" %in% ds_cols & "dry_bulk_density" %in% ds_cols){
+  depthseries %>% drop_na(dry_bulk_density, fraction_carbon) %>% 
+    ggplot(aes(x=fraction_carbon, dry_bulk_density, color = study_id)) +
+    geom_point(alpha = 0.6) +
+    xlab("Carbon (fraction)") +
+    ylab(expression(paste("Dry Bulk Density (g cm"^"-3",")", sep=""))) +
+    theme_bw() +
+    ggtitle("C ~ DBD")
+}
+```
+
+``` {r om and oc}
+# visual inspection to determine whether there are modeled values
+if("fraction_carbon" %in% ds_cols & "fraction_organic_matter" %in% ds_cols){
+  depthseries %>% drop_na(fraction_organic_matter, fraction_carbon) %>% 
+    ggplot(aes(x = fraction_organic_matter, y = fraction_carbon, color=study_id)) +
+    geom_point(alpha = 0.6) + 
+    xlab("Organic Matter (fraction)") +
+    ylab("Organic Carbon (fraction)") +
+    theme_bw() +
+    ggtitle("Carbon ~ Organic Matter")
+}
+```
+
+## Depth Profiles
+
+<style>
+.vscroll-plot {
+    width: 1000px;
+    height: 450px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+</style>
+
+<div class="vscroll-plot">
+
+``` {r om depth profile, fig.height=12, fig.width=12}
+# Burden dataset problematic b/c there's only one 0-30 increment per core
+# if("fraction_organic_matter" %in% ds_cols){
+  # depthseries %>% drop_na(fraction_organic_matter) %>% 
+  #   ggplot(aes(x=depth_min, y=fraction_organic_matter)) +
+  #   geom_point(size = 2, pch=21, fill="white") +
+  #   geom_line() +
+  #   facet_wrap(~core_id, dir = "v") +
+  #   scale_x_reverse() +
+  #   ylab("Organic Matter (fraction)") +
+  #   xlab("Max Depth (cm)") +
+  #   coord_flip() +
+  #   theme_bw(base_size = 15) +
+  #   ggtitle("OM (LOI) Depth Profiles")
+# }
+
+
+# required_n_pages <- round(nrow(cores)/6)
+
+# for(i in 1:required_n_pages){
+  
+  # p <- 
+depthseries %>%
+  drop_na(fraction_organic_matter) %>%
+  add_count(core_id) %>% 
+  filter(n > 1) %>%
+  ggplot(aes(x = depth_min, y = fraction_organic_matter,)) +
+  geom_point(colour = "#009E73") +
+  geom_line(colour = "#009E73") +
+  scale_x_reverse() +
+  xlab("Depth (cm)") +
+  ylab("Fraction Organic Matter") +
+  coord_flip() +
+  facet_wrap(~core_id, ncol = 5)
+  #   facet_wrap_paginate(.~core_id,
+  #                       nrow = 2,
+  #                       ncol = 3,
+  #                       scales = "fixed",
+  #                       page = i) +
+  #   theme(legend.position = "none")
+  # 
+  # print(p)
+# }
+```
+
+</div>
+
+``` {r c depth profile}
+# if("fraction_carbon" %in% ds_cols){
+#   plot_c_profiles <- depthseries %>% drop_na(fraction_carbon) %>% 
+#     ggplot(aes(x=depth_min, y=fraction_carbon)) + 
+#     geom_line() +
+#     geom_point(size = 2, pch=21, fill="white") +
+#     facet_wrap(~core_id, dir = "v") +
+#     scale_x_reverse() +
+#     ylab("Carbon (fraction)") +
+#     xlab("Max Depth (cm)") +
+#     coord_flip() +
+#     theme_bw(base_size = 15) +
+#     ggtitle("C Depth Profiles")
+# }
+```
+
+
+``` {r bd depth profiles, fig.height=12, fig.width=12}
+# there should be DBD, shouldn't need if statement
+# depthseries %>% drop_na(dry_bulk_density) %>% 
+#   ggplot(aes(x=depth_min, y=dry_bulk_density)) +
+#   geom_line() +
+#   geom_point(size = 2, pch=21, fill="white") +
+#   facet_wrap(~core_id) +
+#   ylab(expression(paste("Dry Bulk Density (g cm"^"-3",")", sep=""))) +
+#   xlab("Max Depth (cm)") +
+#   scale_x_reverse() +
+#   coord_flip() +
+#   theme_bw(base_size = 15) +
+#   ggtitle("Bulk Density Profiles")
+```
