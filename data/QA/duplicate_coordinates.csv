@@ -307,6 +307,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "-41.1583009, 146.6007821",2,"KMB Tasmania Site 1.1, KMB Tasmania Site 1.2",Beasy_and_Ellison_2013,1
 "-45.84744491, 170.7118319",2,"Leduc_and_Probert_2011_4, Leduc_and_Probert_2011_5",Leduc_and_Probert_2011,1
 "-45.84746806, 170.711856",2,"Leduc_and_Probert_2011_1, Leduc_and_Probert_2011_2",Leduc_and_Probert_2011,1
+"-6.1847, 106.1939",21,"BAN_Fringe_1, BAN_Fringe_2, BAN_Fringe_3, BAN_Interior_1, BAN_Interior_2, BAN_Interior_3, BAN_Sparse_Silvofishery_1, BAN_Sparse_Silvofishery_2, BAN_Sparse_Silvofishery_3, BAN_Dense_Silvofishery_1, BAN_Dense_Silvofishery_2, BAN_Dense_Silvofishery_3, BAN_Dense_Silvofishery_4, BAN_Dense_Silvofishery_5, BAN_Dense_Silvofishery_6, BAN_Pond_1, BAN_Pond_2, BAN_Pond_3, BAN_Pond_4, BAN_Pond_5, BAN_Pond_6",Royna_et_al_2024,1
 "-6.75938056, 110.54598333",18,"DEM_MF0_1_1_1, DEM_MF0_1_2_1, DEM_MF0_1_3_1, DEM_MF0_1_4_1, DEM_MF0_1_5_1, DEM_MF0_1_6_1, DEM_MF0_2_1_1, DEM_MF0_2_2_1, DEM_MF0_2_3_1, DEM_MF0_2_4_1, DEM_MF0_2_5_1, DEM_MF0_2_6_1, DEM_MF0_3_1_1, DEM_MF0_3_2_1, DEM_MF0_3_3_1, DEM_MF0_3_4_1, DEM_MF0_3_5_1, DEM_MF0_3_6_1",SWAMP_Data_Soil_carbon_Berahan_kulon_2019,1
 "-6.90485278, 110.50518611",66,"TIM_MF1_1_1_1, TIM_MF1_1_2_1, TIM_MF1_1_3_1, TIM_MF1_1_4_1, TIM_MF1_1_5_1, TIM_MF1_1_6_1, TIM_MF1_2_1_1, TIM_MF1_2_2_1, TIM_MF1_2_3_1, TIM_MF1_2_4_1, TIM_MF1_2_5_1, TIM_MF1_2_6_1, TIM_MF1_3_1_1, TIM_MF1_3_2_1, TIM_MF1_3_3_1, TIM_MF1_3_4_1, TIM_MF1_3_5_1, TIM_MF1_3_6_1, TIM_MF4_1_1_1, TIM_MF4_1_2_1, TIM_MF4_1_3_1, TIM_MF4_1_4_1, TIM_MF4_1_5_1, TIM_MF4_1_6_1, TIM_MF4_2_1_1, TIM_MF4_2_2_1, TIM_MF4_2_3_1, TIM_MF4_2_4_1, TIM_MF4_2_5_1, TIM_MF4_2_6_1, TIM_MF4_3_1_1, TIM_MF4_3_2_1, TIM_MF4_3_3_1, TIM_MF4_3_4_1, TIM_MF4_3_5_1, TIM_MF4_3_6_1, TIM_AP4_1_1, TIM_AP4_2_1, TIM_AP4_3_1, TIM_PP0_1_1, TIM_PP0_2_1, TIM_PP0_3_1, TIM_Timika 5_1_1, TIM_Timika 5_2_1, TIM_Timika 5_3_1, TIM_Timika 5_4_1, TIM_Timika 5_5_1, TIM_Timika 5_6_1, TIM_Timika 6_1_1, TIM_Timika 6_2_1, TIM_Timika 6_3_1, TIM_Timika 6_4_1, TIM_Timika 6_5_1, TIM_Timika 6_6_1, TIM_Timika 7_1_1, TIM_Timika 7_2_1, TIM_Timika 7_3_1, TIM_Timika 7_4_1, TIM_Timika 7_5_1, TIM_Timika 7_6_1, TIM_Timika 8_1_1, TIM_Timika 8_2_1, TIM_Timika 8_3_1, TIM_Timika 8_4_1, TIM_Timika 8_5_1, TIM_Timika 8_6_1","SWAMP_Data_Soil_carbon_Timbulsloko_2019, SWAMP_Data_Soil_carbon_Timika_2011_Indonesia",2
 "-7.69103, 108.84653",2,"C41, C49",Kusumaningtyas_et_al_2018,1
@@ -1009,11 +1010,20 @@ lat_long,n,core_ids,study_ids,num_studies
 "34.4015, 33.0358",2,"Holmer_et_al_2007_10, Holmer_et_al_2007_9",Holmer_et_al_2007,1
 "34.6925, -76.6188",2,"Townsend_and_Fonseca_1998_17, Townsend_and_Fonseca_1998_18",Townsend_and_Fonseca_1998,1
 "34.88362396, -76.51596497",2,"NWCA11-2025-3403, NWCA11-2025-5400",Nahlik_and_Fennessy_2016,1
+"35.00663, -76.3196",2,"G1, G2",Tully_et_al_2024,1
+"35.14484, -75.8875",2,"G1, G2",Tully_et_al_2024,1
+"35.2818, -75.5179",3,"G1, G2, G3",Tully_et_al_2024,1
 "35.35002, -76.74558",2,"CFT93_BM_IF_JC, CFT93_SS_IF_JC",Craft_et_al_1993,1
+"35.35794, -76.109",4,"NBP, G2, G3, G5",Tully_et_al_2024,1
 "35.51, 14.33",6,"Borg_et_al_2010_19, Borg_et_al_2010_20, Borg_et_al_2010_21, Borg_et_al_2010_22, Borg_et_al_2010_23, Borg_et_al_2010_24",Borg_et_al_2010,1
+"35.53205, -75.4768",3,"G1, G2, G3",Tully_et_al_2024,1
 "35.56, 14.28",6,"Borg_et_al_2010_13, Borg_et_al_2010_14, Borg_et_al_2010_15, Borg_et_al_2010_16, Borg_et_al_2010_17, Borg_et_al_2010_18",Borg_et_al_2010,1
+"35.57395, -77.17309",2,"601, 601_PF",Quafisi_et_al_2024,1
+"35.57444, -77.17302",2,"603, 603_PF",Quafisi_et_al_2024,1
 "35.5788, -5.9897",12,"Mateo_and_Serrano_unpublished_27, Mateo_and_Serrano_unpublished_28, Mateo_and_Serrano_unpublished_29, Mateo_and_Serrano_unpublished_30, Mateo_and_Serrano_unpublished_31, Mateo_and_Serrano_unpublished_32, Mateo_and_Serrano_unpublished_33, Mateo_and_Serrano_unpublished_34, Mateo_and_Serrano_unpublished_35, Mateo_and_Serrano_unpublished_36, Mateo_and_Serrano_unpublished_37, Mateo_and_Serrano_unpublished_38",Mateo_and_Serrano_unpublished,1
 "35.58, 14.21",6,"Borg_et_al_2010_10, Borg_et_al_2010_11, Borg_et_al_2010_12, Borg_et_al_2010_7, Borg_et_al_2010_8, Borg_et_al_2010_9",Borg_et_al_2010,1
+"35.61907, -77.37577",3,"402, 403, 403_PF",Quafisi_et_al_2024,1
+"35.7696, -75.4707",2,"G1, G3",Tully_et_al_2024,1
 "35.78136, -75.54623",2,"CFT93_BM_RF_OI, CFT93_SS_RF_OI",Craft_et_al_1993,1
 "35.96, 14.43",3,"Mateo_unpublished_4, Mateo_unpublished_5, Mateo_unpublished_6",Mateo_unpublished,1
 "36.03, 14.17",6,"Borg_et_al_2010_1, Borg_et_al_2010_2, Borg_et_al_2010_3, Borg_et_al_2010_4, Borg_et_al_2010_5, Borg_et_al_2010_6",Borg_et_al_2010,1
@@ -1104,6 +1114,9 @@ lat_long,n,core_ids,study_ids,num_studies
 "39.8612, -75.1707",4,"WC1A_15, WC1A_30, WC1A_45, WC2A_15",Orson_1990,1
 "39.9, 2.56",12,"Holmer_et_al_2003_1, Holmer_et_al_2003_10, Holmer_et_al_2003_11, Holmer_et_al_2003_12, Holmer_et_al_2003_2, Holmer_et_al_2003_3, Holmer_et_al_2003_4, Holmer_et_al_2003_5, Holmer_et_al_2003_6, Holmer_et_al_2003_7, Holmer_et_al_2003_8, Holmer_et_al_2003_9",Holmer_et_al_2003,1
 "4.457111, 8.902583",5,"M0537, M0538, M0539, M0541, M0542",Nsombo_et_al_2016,1
+"4.945333, -2.377957",6,"AM_C_1, AM_C_2, AM_C_3, AM_C_4, AM_C_5, AM_C_6",Adotey_et_al_2024,1
+"4.948664, -2.39371",6,"AM_B_1, AM_B_2, AM_B_3, AM_B_4, AM_B_5, AM_B_6",Adotey_et_al_2024,1
+"4.962453, -2.409585",6,"AM_A_1, AM_A_2, AM_A_3, AM_A_4, AM_A_5, AM_A_6",Adotey_et_al_2024,1
 "40.029045000000004, -74.084554",2,"RC2, RC2U","Boyd_et_al_2017, Unger_et_al_2016",2
 "40.030725, -74.077599",2,"RC1, RC1U","Boyd_et_al_2017, Unger_et_al_2016",2
 "40.031056, -74.085961",2,"RC3, RC3U","Boyd_et_al_2017, Unger_et_al_2016",2
@@ -1210,6 +1223,9 @@ lat_long,n,core_ids,study_ids,num_studies
 "48.216, -122.37",2,"LM4_23, LM4_24",Poppe_and_Rybczyk_2019,1
 "48.217, -122.37",2,"HM4_21, HM4_22",Poppe_and_Rybczyk_2019,1
 "49.14115, -125.6698",2,"CBW_1, CBW_2",Kohfeld_et_al_2022,1
+"5.099167, -1.32172",6,"KA_C_1, KA_C_2, KA_C_3, KA_C_4, KA_C_5, KA_C_6",Adotey_et_al_2024,1
+"5.099584, -1.319424",6,"KA_B_1, KA_B_2, KA_B_3, KA_B_4, KA_B_5, KA_B_6",Adotey_et_al_2024,1
+"5.100941, -1.314746",6,"KA_A_1, KA_A_2, KA_A_3, KA_A_4, KA_A_5, KA_A_6",Adotey_et_al_2024,1
 "5.3, 162.9",12,"M1453, M1454, M1455, M1456, M1457, M1458, M1459, M1460, M1461, M1462, M1463, M1464",Donato_et_al_2011,1
 "5.3, 163",15,"M0975, M0976, M0977, M1441, M1442, M1443, M1444, M1445, M1446, M1447, M1448, M1449, M1450, M1451, M1452","Chmura_et_al_2003, Donato_et_al_2011",2
 "50.3025, -3.853485",2,"AM-20-06, AM-2","Smeaton_et_al_2022a, Smeaton_et_al_2022b",2

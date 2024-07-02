@@ -16,18 +16,14 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 source("scripts/1_data_formatting/cifor_utility_functions.R") # for CIFOR
 
 #curate alternative format CIFOR data 
-
-#create list/join all 
-cifor_soil <- synthCIFOR(data_type = "soil") 
-  
 #skipped -- files in SWAMP data format
 
-cifor_veg <- synthCIFOR(data_type = "vegetation")
-#skips files in SWAMP data format 
+#create list/join all 
+cifor_soil <- synthCIFOR(data_type = "soil") #sediment
+cifor_veg <- synthCIFOR(data_type = "vegetation") #biomass and necromass 
 
-#additional geographic coordinate sheets 
+#missing geographic coordinate sheets (brazil sites)
 geo_brazil <- read_xlsx("data/primary_studies/CIFOR/original/Kauffman_2019_BocaGrande_soil/Geographic Coordinate for SWAMP dataset-Mangrove soil carbon-Brazil-2017.xlsx",2)
-
 geo_brazil <- geo_brazil %>% dplyr::rename(latitude = Latitude,
                                     longitude = Longitude) %>% select(-No) %>% 
                              mutate(latitude = parse_lat(latitude),
@@ -46,10 +42,12 @@ geo_brazil <- geo_brazil %>% dplyr::rename(latitude = Latitude,
                                                      Site == "Marisma medium" ~ "Marisma Medium",
                                                      Site == "Marisma low" ~ "Marisma Low",
                                                      TRUE ~ Site)) %>% distinct()
+
+
 ## Depthseries ####
 
 
-#create depth min and max columns based on formatting of Depth Interval column
+#create depth min and max columns based on formatting of `Depth Interval`, 3 different formatting types
 cifor_depthseries <- cifor_soil %>%  
   filter(grepl("-",`Depth interval (cm)`)) %>% 
   separate(`Depth interval (cm)`, c("depth_min", "depth_max"), sep = "-", remove = FALSE) %>% 
@@ -86,7 +84,7 @@ cifor_depthseries2 <- cifor_soil %>%
 #join
 depthseries_join <- rbind(cifor_depthseries, cifor_depthseries2, cifor_depthseries3) 
 
-#create core id and curate 
+#create core id and standardize variable names
 depthseries_core_id <- depthseries_join %>% 
   mutate(subsite_code = paste(`Site ID`, Plot, `Sub-plot`, sep = "_")) %>% 
   group_by(`Site ID`, Plot, `Sub-plot`, depth_min) %>% 
@@ -106,15 +104,14 @@ depthseries_core_id <- depthseries_join %>%
   select(study_id, core_id, method_id, `Site ID`, fraction_carbon, dry_bulk_density, 
          depth_min, depth_max, depth_interval_notes, Plot, `Sub-plot`) 
 
-
+#spot fix depth interval error 
 depthseries <- depthseries_core_id %>% 
   mutate(depth_min = ifelse(depth_min == 1183, 183, depth_min),
          depth_max = ifelse(depth_max == 1233, 233, depth_max),
          site_id = `Site ID`) %>% 
   select(-Plot, -`Sub-plot`, -`Site ID`)
 
-
-
+#reorder columns 
 depthseries <- reorderColumns("depthseries", depthseries)
 
 
@@ -152,7 +149,7 @@ latlong.soil <- cifor_soil %>%
 
 
 #join to fill in position data from veg
-latlong.full <- left_join(latlong.soil, latlong.biomass, by = c("Site ID", "Plot", "Sub-plot"), all.x = TRUE) %>% 
+latlong.full <- left_join(latlong.soil, latlong.biomass, by = c("Site ID", "Plot", "Sub-plot")) %>% 
   mutate(Latitude = if_else(is.na(Latitude.x), Latitude.y, Latitude.x),
          Longitude = if_else(is.na(Longitude.x), Longitude.y, Longitude.x)) %>% 
                 rename(latitude = Latitude, 
@@ -162,15 +159,14 @@ latlong.full <- left_join(latlong.soil, latlong.biomass, by = c("Site ID", "Plot
 
 
 
-#formatting function
-#formatCores <- function(soil){
- # soil %>% mutate(core_id = paste(`Site ID`, Plot, `Sub-plot`, sep = "_")) %>% #pull year from study id? 
-    #          rename(latitude = Latitude, 
-    #                 longitude = Longitude,
-     #                site_id = `Site ID`) %>% 
-     #         select(-Plot, -`Sub-plot`) %>% distinct()
-#}
-
+                  #formatting function
+                  #formatCores <- function(soil){
+                   # soil %>% mutate(core_id = paste(`Site ID`, Plot, `Sub-plot`, sep = "_")) %>% #pull year from study id? 
+                      #          rename(latitude = Latitude, 
+                      #                 longitude = Longitude,
+                       #                site_id = `Site ID`) %>% 
+                       #         select(-Plot, -`Sub-plot`) %>% distinct()
+                  #}
 
 cifor_cores <- latlong.full %>% 
   mutate(latitude = case_when(site_id == "DEM" ~ "-6.75938056",
@@ -187,7 +183,8 @@ cifor_cores <- latlong.full %>%
 
 
 
-#Convert and standardize all coords to lat lon
+#Convert and standardize all coords to lat long
+  #extract each format, parse lat long, join 
 require(parzer)
 subset_1 <- cifor_cores[grepl("°", cifor_cores$latitude),] %>% 
   separate(latitude, c(NA, "latitude"), sep= " ") %>% 
@@ -276,8 +273,7 @@ cores <- cores_join %>%
          position_notes = ifelse(core_id == "BHI_BK1A_1_1", "position at site level", position_notes)) %>% 
   select(-latitude.x, -latitude.y, -longitude.x, -longitude.y) %>% distinct()
 
-
-##add year 
+##extract year 
 cores <- cores %>% 
   mutate(year = case_when(endsWith(study_id, "2017-Brazil") ~ 2017,
                           endsWith(study_id, "2019") ~ 2019,
@@ -294,44 +290,213 @@ cores <- cores %>%
 
 cores <- reorderColumns("cores", cores) 
 
-##  Species #####
-
-#species information comes from tree biomass measurements? 
-
 
 ## 5. Biomass #####
-#curate plot and plant table - structure based on current draft biomass structure 7/24
+#curate plot_summary, plant_plot_detail, and plant table - structure based on current draft biomass structure 7/24
 
-plot_summary <- cifor_veg %>% select(-filename) %>% 
+#extract dates, multiple formats
+curate_veg <- cifor_veg %>% 
+  janitor::remove_empty(which = "cols") %>% 
+  rename(study_id = filename,
+         site_id = `Site ID`) %>% 
+  mutate(year = case_when(grepl("2013",`Data collection date (dd/mm/yyyy)`) ~ 2013,
+                          grepl("2014",`Data collection date (dd/mm/yyyy)`) ~ 2014,
+                          grepl("2012",`Data collection date (dd/mm/yyyy)`) ~ 2012,
+                          grepl("2015",`Data collection date (dd/mm/yyyy)`) ~ 2015,
+                          grepl("2016",`Data collection date (dd/mm/yyyy)`) ~ 2016,
+                          grepl("2017",`Data collection date (dd/mm/yyyy)`) ~ 2017,
+                          grepl("2018", `Data collection date (dd/mm/yyyy)`) ~ 2018,
+                          grepl("2019", `Data collection date (dd/mm/yyyy)`) ~ 2019,
+                          grepl("2009", `Data collection date (dd/mm/yyyy)`) ~ 2009,
+                          grepl("2011", `Data collection date (dd/mm/yyyy)`) ~ 2011),
+         month = case_when(grepl("-05-",`Data collection date (dd/mm/yyyy)`) ~ 05,
+                           grepl("-02-",`Data collection date (dd/mm/yyyy)`) ~ 02,
+                           grepl("/02",`Data collection date (dd/mm/yyyy)`) ~ 02,
+                           grepl("-03-",`Data collection date (dd/mm/yyyy)`) ~ 03,
+                           grepl("-09-",`Data collection date (dd/mm/yyyy)`) ~ 09,
+                           grepl("-07-",`Data collection date (dd/mm/yyyy)`) ~ 07,
+                           grepl("-06-", `Data collection date (dd/mm/yyyy)`) ~ 06,
+                           grepl("-11-", `Data collection date (dd/mm/yyyy)`) ~ 11,
+                           TRUE ~ NA),
+         day = case_when(grepl("-18",`Data collection date (dd/mm/yyyy)`) ~ 18,
+                         grepl("-20",`Data collection date (dd/mm/yyyy)`) ~ 20,
+                         grepl("22/",`Data collection date (dd/mm/yyyy)`) ~ 22,
+                         grepl("-22",`Data collection date (dd/mm/yyyy)`) ~ 22,
+                         grepl("-06",`Data collection date (dd/mm/yyyy)`) ~ 06,
+                         grepl("-15",`Data collection date (dd/mm/yyyy)`) ~ 15,
+                         grepl("-19",`Data collection date (dd/mm/yyyy)`) ~ 19,
+                         grepl("19/",`Data collection date (dd/mm/yyyy)`) ~ 19,
+                         grepl("20/",`Data collection date (dd/mm/yyyy)`) ~ 20,
+                         grepl("-07",`Data collection date (dd/mm/yyyy)`) ~ 07,
+                         grepl("-21",`Data collection date (dd/mm/yyyy)`) ~ 21,
+                         grepl("-11",`Data collection date (dd/mm/yyyy)`) ~ 11,
+                         grepl("-16",`Data collection date (dd/mm/yyyy)`) ~ 16,
+                         grepl("-31",`Data collection date (dd/mm/yyyy)`) ~ 31,
+                         grepl("-17",`Data collection date (dd/mm/yyyy)`) ~ 17,
+                         grepl("-10",`Data collection date (dd/mm/yyyy)`) ~ 10,
+                         grepl("-14",`Data collection date (dd/mm/yyyy)`) ~ 14,
+                         grepl("-26",`Data collection date (dd/mm/yyyy)`) ~ 26,
+                         grepl("-29",`Data collection date (dd/mm/yyyy)`) ~ 29,
+                         grepl("-23",`Data collection date (dd/mm/yyyy)`) ~ 23,
+                         grepl("-24",`Data collection date (dd/mm/yyyy)`) ~ 24,
+                         grepl("-04",`Data collection date (dd/mm/yyyy)`) ~ 04,
+                         grepl("-31",`Data collection date (dd/mm/yyyy)`) ~ 31,
+                         grepl("-28",`Data collection date (dd/mm/yyyy)`) ~ 28,
+                         grepl("24/",`Data collection date (dd/mm/yyyy)`) ~ 24,
+                         grepl("25/",`Data collection date (dd/mm/yyyy)`) ~ 25,
+                         grepl("21/",`Data collection date (dd/mm/yyyy)`) ~ 21,
+                         grepl("-21",`Data collection date (dd/mm/yyyy)`) ~ 21,
+                         grepl("-13",`Data collection date (dd/mm/yyyy)`) ~ 13,
+                         grepl("-27",`Data collection date (dd/mm/yyyy)`) ~ 27,
+                         TRUE ~ NA))
+  
+#pull site locations not included in cifor_veg 
+site_locations <- latlong.full %>% 
+  rename(plot_id = Plot) %>% 
+  mutate(sub_plot_id = paste0(plot_id, "_", `Sub-plot`),
+         latitude = as.numeric(latitude),
+         longitude = as.numeric(longitude)) %>% 
+  select(site_id, plot_id, sub_plot_id, latitude, longitude) %>% 
+  filter(!is.na(longitude)) %>% 
+  filter(!is.na(latitude))
+
+
+#curate plot summary table 
+plot_summary <- curate_veg %>%  
             mutate(position_method = "other low resolution",
                    position_notes = "plot level position",
                    harvest_or_allometry = "allometry",
-                   plot_id = paste0(Plot, `Sub-plot`),
+                   plot_id = paste0(site_id, "_", Plot),
                    plot_shape = "circular",
                    plot_radius = 3.5,
                    plant_plot_detail_present = "yes",
                    coordinate_obscured_flag = "no obscuring",
-                   field_or_manipulation_code = "field") %>% 
+                   field_or_manipulation_code = "field",
+                   habitat = "mangrove",
+                   basal_area_unit = ifelse(!is.na(`Basal area (m2/ha) summed per plot`), "m2/ha", NA),
+                   stand_age = case_when(grepl("5 years", notes) ~ 5,
+                                         grepl("50 year old", notes) ~ 50,
+                                         grepl("25 years old", notes) ~ 25,
+                                         grepl("10 years old", notes) ~ 10,
+                                         notes == "Regenerated forest (15 years old)" ~ 15,
+                                         TRUE ~ NA)) %>% 
              #'soil_core_present' --> if matching study id in 'cores'
-            rename(site_id = `Site ID`,
-                   year = `Data collection date (dd/mm/yyyy)`,
-                   plot_area = `Sub-plot area (ha)`,
-                   aboveground_biomass = `AGB summed per plot (Mg/ha)`,
-                   belowground_biomass = `BGB summed per plot (Mg/ha)`) %>% distinct()
+            rename(aboveground_biomass = `AGB summed per plot (Mg/ha)`,
+                   belowground_biomass = `BGB summed per plot (Mg/ha)`,
+                   aboveground_carbon = `AGC summed per plot (MgC/ha)`,
+                   belowground_carbon = `BGC summed per plot (MgC/ha)`,
+                   basal_area = `Basal area (m2/ha) summed per plot`) %>% 
+  select(study_id, site_id, plot_id, plot_shape, plot_radius, coordinate_obscured_flag, year, 
+         month, day, stand_age, field_or_manipulation_code, habitat, plant_plot_detail_present, aboveground_biomass,
+         belowground_biomass, aboveground_carbon, belowground_carbon, basal_area, basal_area_unit,
+         plant_plot_detail_present) %>% distinct() 
+
+#curate plant plot detail 
+plant_plot_detail <- curate_veg %>%
+  rename(species = `Species name (scientific)`,
+         sub_plot_area = `Sub-plot area (ha)`,
+         longitude = Longitude,
+         latitude = Latitude) %>% 
+  separate(species, into = c("genus", "species"), sep = " ") %>% #species not categorized per sub-plot, included in `plant`
+  mutate(plot_id = paste0(site_id, "_", Plot),
+         plot_shape = "circular",
+         plot_radius = 3.5,
+         area_unit = "m",
+         alive_or_dead = ifelse(`Status (live/1/2/3)` == "live", "live", "dead"),
+         harvest_or_allometry = "allometry",
+         sub_plot_id = paste0(plot_id, "_", `Sub-plot`),
+         allometric_eq_present = "yes",
+         plant_measurements_present = "yes") %>% 
+  select(study_id, site_id, plot_id, sub_plot_id, sub_plot_area, area_unit, longitude, latitude,
+         year, month, day, genus, species, harvest_or_allometry, alive_or_dead, allometric_eq_present, plant_measurements_present) %>% distinct() 
 
 
+#curate plant 
+plant_curate <- curate_veg %>%
+  janitor::remove_empty(which = "cols") %>% 
+  rename(latitude = Latitude,
+         longitude = Longitude,
+         diameter = `DBH (cm)`,
+         sub_plot_area = `Sub-plot area (ha)`,
+         decay_class = `Status (live/1/2/3)`,
+         wood_mass = `Wood Mass AG (kg)`,
+         wood_density = `wood density (g/cm3)`,
+         wood_density_source = `source for density`,
+         allometric_eq_id = `source for allometry`,
+         aboveground_biomass = `Total AGB (kg)`, 
+         root_mass = `BG root mass (kg)`) %>% 
+  separate(`Species name (scientific)`, into = c("genus", "species"), sep = " ") %>% 
+  mutate(plot_id = paste0(site_id, "_", Plot),
+         sub_plot_id = paste0(plot_id, "_", `Sub-plot`),
+         basal_area = ifelse(!is.na(`Basal area per ha (m2)`), `Basal area per ha (m2)`, `Basal area per ha`),
+         basal_area_unit = ifelse(!is.na(basal_area), "m2", NA),
+         decay_class = case_when(decay_class == "live" ~ NA,
+                                 decay_class == "L" ~ NA,
+                                 TRUE ~ decay_class),
+         diameter_method = "dbh",
+         diameter_unit = "cm",
+         wood_density_unit = "g/cm3",
+         alive_or_dead = ifelse(is.na(decay_class), "live", "dead")) %>%
+  group_by(site_id, plot_id, sub_plot_id) %>% 
+  mutate(plant_rep = 1:n()) %>% 
+  ungroup() %>% 
+  mutate(plant_id = paste0(sub_plot_id, "_", plant_rep),
+         n_plants = 1) %>% # each measurement represents 1 plant 
+  select(-`Data collection date (dd/mm/yyyy)`, -`No ID`, -`Sub-plot`, -`AGB summed per plot (Mg/ha)`,
+         -`BGB summed per plot (Mg/ha)`, -`AGC summed per plot (MgC/ha)`, -`BGC summed per plot (MgC/ha)`, -plant_rep,
+         -`Basal area (m2/ha) summed per plot`, -notes, -`Sub-plot design`, -Macroscale_Typology, -Hydroperiod_Typology)
 
-plant <- cifor_veg %>% select(-filename) %>%
-                    rename(site_id = `Site ID`,
-                           latitude = Latitude,
-                           longitude = Longitude,
-                           plot_id = Plot,
-                           diameter_dbh = `DBH (cm)`,
-                           decay_class = `Status (live/1/2/3)`,
-                           biomass_aboveground = `AGB (Mg/ha)`,
-                           biomass_belowground = `BGB (Mg/ha)`,
-                           plot_radius = `Sub-plot design`) # %>% #divide diameter by 2 - how to handle the square plots??
-          #  mutate(year = year(`Data collection date (dd/mm/yyyy)`))
+#spot fix species name --> correcting spelling and fill in genus names 
+plant <- plant_curate %>% 
+  mutate(allometric_eq_present = ifelse(!is.na(allometric_eq_id), "yes", "no"),
+         genus = case_when(grepl("marina", species) ~ "Avicennia",
+                           grepl("agolocha", species) & genus == "A" ~ "Aquilaria",
+                           grepl("agolocha", species) & genus == "E" ~ "Excoecaria",
+                           grepl("alba", species) ~ "Avicennia",
+                           grepl("apiculata", species) ~ "Rhizophora", 
+                           grepl("conniculatum", species) ~ "Aegiceras", #spell check 
+                           grepl("agalorcha", species) ~ "Aquilaria",
+                           grepl("trifoliata", species) |grepl("trifuliata", species) ~ "Derris",
+                           grepl("spinosa", species) ~ "Delbergia",
+                           grepl("decandra", species) ~ "Ceriops",
+                           grepl("Achanhus", genus) ~ "Acanthus",
+                           grepl("Hibicus", genus) ~ "Hibiscus",
+                           grepl("agalocha", species) ~ "Excoecaria",
+                           grepl("A", genus) & grepl("cormiculatum", species) ~ "Aegiceras",
+                           genus == "Unidentified"| genus == "Unrecorded" ~ NA,
+                           TRUE ~ genus),
+         species = case_when(grepl("officinalis", species) ~ "officinalis",
+                             grepl("ilicifolius", species) ~ "ilicifolius",
+                             grepl("decandra", species) ~ "decandra",
+                             grepl("alba", species) ~ "alba",
+                             grepl("cormiculatum", species) ~ "corniculatum",
+                             grepl("trifuliata", species) ~ "trifoliata",
+                             TRUE ~ species)) %>% 
+  select(study_id, site_id, plot_id, sub_plot_id, plant_id, year, month, day, genus, species, alive_or_dead, n_plants,
+         diameter, diameter_method, diameter_unit, basal_area, basal_area_unit, wood_density, wood_density_unit,
+         wood_density_source, wood_mass, allometric_eq_id, allometric_eq_present)
+
+#list(unique(plant$genus))
+
+## allometric_eq table 
+allometric_eq <- plant %>% 
+  select(study_id, allometric_eq_id, genus, species, alive_or_dead) %>% distinct() %>% 
+  filter(!is.na(allometric_eq_id))
+
+
+#Allometric equations cited- 
+  # Komiyama et al. 2005
+  # Kauffman and Donato 2012
+  # Kauffman and Cole 2012
+  # Ong et al 2004
+  # Comley and McGuinness 2005
+  # Tarlan 2005
+  # "using equations of Fromard for AG and Rm and those of Smith and Whelan for LR"
+  # Komiyama et al. 2010
+  # Clough and Scott 1989
+  # Poungparn et al. 2002
+  # Tamai et al. 1986
+
 
   
 ##. Methods ####
@@ -396,13 +561,13 @@ test_numeric_vars(cores)
 # write data to final folder
 
 write_csv(methods, "data/primary_studies/CIFOR/derivative_ALT/cifor_alt_methods.csv")
-#write_csv(sites, "data/primary_studies/CIFOR/derivative/Author_et_al_YYYY_sites.csv")
 write_csv(cores, "data/primary_studies/CIFOR/derivative_ALT/cifor_alt_cores.csv")
 write_csv(depthseries, "data/primary_studies/CIFOR/derivative_ALT/cifor_alt_depthseries.csv")
-#write_csv(species, "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_species.csv")
-#write_csv(impacts, "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_impacts.csv")
-#write_csv(plot, "data/primary_studies/CIFOR/derivative/Author_et_al_YYYY_plot.csv")
-#write_csv(plant, "data/primary_studies/CIFOR/derivative/Author_et_al_YYYY_plant.csv")
+
+write_csv(plot_summary, "data/primary_studies/CIFOR/derivative_ALT/cifor_alt_plot_summary.csv")
+write_csv(plant_plot_detail, "data/primary_studies/CIFOR/derivative_ALT/cifor_alt_plant_plot_summary.csv")
+write_csv(plant, "data/primary_studies/CIFOR/derivative_ALT/cifor_alt_plant.csv")
+write_csv(allometric_eq, "data/primary_studies/CIFOR/derivative_ALT/cifor_alt_allometric_eq.csv")
 
 # MAKE SURE TO RUN THE FINAL SECTION OF CODE AFTER THIS
 

@@ -1,0 +1,17 @@
+study_id,site_id,core_id,year,month,day,latitude,longitude,position_method,salinity_class,salinity_method,vegetation_class,vegetation_method,habitat
+Gundersen_et_al_2024,BN,BN1,2016,7,1,35.9477,-76.3877,RTK,oligohaline,measurement,forested,field observation,swamp
+Gundersen_et_al_2024,BN,BN2,2016,7,1,35.9328,-76.3924,RTK,oligohaline,measurement,forested to emergent,field observation,marsh
+Gundersen_et_al_2024,BN,BN3,2016,7,1,35.9496,-76.3835,RTK,oligohaline,measurement,emergent,field observation,marsh
+Gundersen_et_al_2024,BN,BN4,2016,7,1,35.9496,-76.3828,RTK,oligohaline,measurement,emergent,field observation,unvegetated
+Gundersen_et_al_2024,PH,PH1,2016,6,1,35.9902,-76.0709,RTK,oligohaline,measurement,forested,field observation,swamp
+Gundersen_et_al_2024,PH,PH2,2016,6,1,35.9903,-76.07,RTK,oligohaline,measurement,forested to emergent,field observation,marsh
+Gundersen_et_al_2024,PH,PH3,2016,6,1,35.9874,-76.0726,RTK,oligohaline,measurement,emergent,field observation,marsh
+Gundersen_et_al_2024,PH,PH4,2016,6,1,35.9872,-76.0718,RTK,oligohaline,measurement,emergent,field observation,unvegetated
+Gundersen_et_al_2024,BH,BH1,2016,6,1,35.9101,-75.9403,RTK,oligohaline,measurement,forested,field observation,swamp
+Gundersen_et_al_2024,BH,BH2,2016,6,1,35.9146,-75.929,RTK,oligohaline,measurement,scrub shrub,field observation,marsh
+Gundersen_et_al_2024,BH,BH3,2016,6,1,35.9149,-75.9281,RTK,oligohaline,measurement,emergent,field observation,marsh
+Gundersen_et_al_2024,BH,BH4,2016,6,1,35.915,-75.9256,RTK,oligohaline,measurement,emergent,field observation,unvegetated
+Gundersen_et_al_2024,PP,PP1,2016,6,1,35.7681,-75.7686,RTK,mesohaline,measurement,forested to shrub,field observation,swamp
+Gundersen_et_al_2024,PP,PP2,2016,6,1,35.7703,-75.757,RTK,mesohaline,measurement,scrub shrub,field observation,marsh
+Gundersen_et_al_2024,PP,PP3,2016,6,1,35.7696,-75.7419,RTK,mesohaline,measurement,emergent,field observation,marsh
+Gundersen_et_al_2024,PP,PP4,2016,6,1,35.7697,-75.7414,RTK,mesohaline,measurement,emergent,field observation,unvegetated

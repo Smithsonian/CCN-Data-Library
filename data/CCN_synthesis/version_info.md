@@ -3,6 +3,50 @@
 This versioning document tracks the changes made to the CCN Data Library, including additions of new data or corrections to previously synthesized datasets.
 
 ***
+### Synthesis Version 1.3.0
+
+#### Version 1.3.0 Contents 
+
+This database contains tidal wetland soil carbon profiles and associated metadata. The data itself is housed in separate comma separated value (.csv) spreadsheets linked by common identifier attributes (study_id, site_id, and core_id).
+
+*Data Tables*
+
+- CCN_methods.csv - Contains information on materials and methods broken down by study 
+- CCN_sites.csv - Contains positional and descriptive information of the coring sites.
+- CCN_cores.csv - Contains positional and descriptive information on core locations.
+- CCN_depthseries.csv - Contains raw depth-series information for all cores.
+- CCN_species.csv - Contains information on the dominant plant species at coring locations.
+- CCN_impacts.csv - Contains information on the anthropogenic impacts at site or coring locations.
+
+*Metadata Tables*
+
+- CCN_database_structure.html - Is a simplified, visual and interactive version of metadata.xml for display purposes.
+- CCN_study_citations.csv - Contains bibliographic information for publications and associated sources, which can be related to the database tables via study_id.
+- CCN_bibliography.bib - Contains bibliographic information for publications and sources associated with this database.
+
+#### Version 1.3.0 Updates
+
+*New Datasets 1.3.0*
+
+This update adds 10 new studies and 298 new soil cores to the CCN Data Library, bringing the total number of cores to 15,265 from 536 unique studies. 
+
+Adotey et al 2024
+Gundersen et al 2024
+Johnson et al 2024 (eelgrass)
+Johnson et al 2024 (marsh)
+Quafisi et al 2024
+Royna et al 2024
+Schroeter et al 2023
+Strand et al 2024
+Tully et al 2024
+White and Spera 2024 
+
+
+*Corrections and Additions to previously synthesized datasets 1.3.0*
+
+1. Maxwell et al 2023: Removed duplicate cores, added additional associated publication information, resolved incorrect 'depth_min' values.
+2. Stevens et al 2024: Updated units in for cs137 and pb210 values in depthseries table.
+
 
 ### Synthesis Version 1.2.0
 
@@ -24,6 +68,7 @@ This database contains tidal wetland soil carbon profiles and associated metadat
 - CCN_database_structure.html - Is a simplified, visual and interactive version of metadata.xml for display purposes.
 - CCN_study_citations.csv - Contains bibliographic information for publications and associated sources, which can be related to the database tables via study_id.
 - CCN_bibliography.bib - Contains bibliographic information for publications and sources associated with this database.
+
 
 #### Version 1.2.0 Updates
 

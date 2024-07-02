@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml packageId="edi.673.2" system="https://pasta.edirepository.org"
+  xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0"
+  xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://nis.lternet.edu/schemas/EML/eml-2.2.0/xsd/eml.xsd">
+  <access
+    authSystem="https://pasta.edirepository.org/authentication"
+    order="allowFirst" scope="document"
+      system="https://pasta.edirepository.org">
+    <allow><principal>uid=EDI,o=EDI,dc=edirepository,dc=org</principal><permission>all</permission></allow><allow>
+      <principal>uid=dhuang,o=EDI,dc=edirepository,dc=org</principal>
+      <permission>all</permission>
+    </allow>
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+  </access>
+  <dataset>
+        <alternateIdentifier
+      system="https://msi-norco.ucsb.edu">27-20230609154341</alternateIdentifier>
+    <alternateIdentifier
+        system="https://doi.org">doi:10.6073/pasta/f45c73366967c532c57ea40c21a53dba</alternateIdentifier><shortName>UCSB SONGS Wetland Process Study – Soil Properties</shortName>
+    <title>UCSB SONGS Mitigation Monitoring: Wetland Process Study – Soil Properties</title>
+        <creator>
+      <individualName>
+        <givenName>Stephen</givenName>
+        <givenName>C</givenName>
+        <surName>Schroeter</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5953</phone>
+      <electronicMailAddress>stephen.schroeter@lifesci.ucsb.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Henry</givenName>
+        <givenName>M</givenName>
+        <surName>Page</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>805-893-7568</phone>
+      <electronicMailAddress>mark.page@lifesci.ucsb.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Daniel</givenName>
+        <givenName>C</givenName>
+        <surName>Reed</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>805-893-8363</phone>
+      <electronicMailAddress>dan.reed@lifesci.ucsb.edu</electronicMailAddress>
+      <userId
+          directory="https://orcid.org/">https://orcid.org/0000-0003-3015-8717</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Katherine</givenName>
+        <givenName>M</givenName>
+        <surName>Beheshti</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5953</phone>
+      <electronicMailAddress>katbeheshti@ucsb.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Rachel</givenName>
+        <givenName>S</givenName>
+        <surName>Smith</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5953</phone>
+      <electronicMailAddress>rssmith@ucsb.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Andres</givenName>
+        <givenName>A</givenName>
+        <surName>Deza</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5375</phone>
+      <electronicMailAddress>andres.deza@ucsb.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>David</givenName>
+        <givenName>Y</givenName>
+        <surName>Huang</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5375</phone>
+      <electronicMailAddress>davidhuang@ucsb.edu</electronicMailAddress>        
+    </creator>
+    <creator>
+            <organizationName>SONGS Mitigation Monitoring</organizationName>
+        <address>
+          <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+          <city>Santa Barbara</city>
+          <administrativeArea>CA</administrativeArea>
+          <postalCode>93106</postalCode>
+          <country>USA</country>
+        </address>
+      <electronicMailAddress>songsmmp@lifesci.ucsb.edu</electronicMailAddress>
+    </creator>    <pubDate>2023-06-09</pubDate>
+    <language>English</language>
+    <abstract>
+      <section>
+        <para>
+        These data describe physical and chemical properties of soil samples collected as part of the San Onofre Nuclear Generating Station (SONGS) Mitigation Monitoring Program. Data collection began in 2019 at the San Dieguito Wetland in San Diego County, CA. Additional locations at Tijuana Estuary in San Diego County, CA, Carpinteria Salt Marsh is Santa Barbara County, CA, and Mugu Lagoon in Ventura County, CA were added in 2021. Sampling occurred sporadically at various locations in each wetland. All soil samples were characterized for organic matter content and particle size. Additional properties were characterized for select soil samples.
+        </para>
+      </section>
+    </abstract>
+    <intellectualRights>
+      <para>
+      This data package is released under the Creative Commons License
+      Attribution 4.0 International (CC BY 4.0, see
+      https://creativecommons.org/licenses/by/4.0/). This license states
+      that consumers ("Data Users" herein) may distribute, adapt,
+      reuse, remix, and build upon this work, as long as they give
+      appropriate credit, provide a link to the license, and indicate if
+      changes were made. If redistributed, a Data User may not apply
+      additional restrictions or technological measures that prevent access.
+      </para>
+      <para>
+      The Data User has an ethical obligation to cite the data source
+      appropriately in any publication or product that results from its use,
+      and notify the data contact or creator. Communication, collaboration,
+      or co-authorship (as appropriate) with the creators of this data
+      package is encouraged to prevent duplicate research or publication.
+      The Data User is urged to contact the authors of these data if any
+      questions about methodology or results occur. The Data User should
+      realize that these data may be actively used by others for ongoing
+      research and that coordination may be necessary to prevent duplication
+      or inappropriate use. The Data User should realize that
+      misinterpretation may occur if data are used outside of the context of
+      the original study. The Data User should be aware that data are
+      updated periodically and it is the responsibility of the Data User to
+      check for new versions of the data.
+      </para>
+      <para>
+      While substantial efforts are made to ensure the accuracy of data and
+      associated documentation, complete accuracy of data sets cannot be
+      guaranteed. This data package (with its components) is made available
+      “as is” and with no warranty of accuracy or fitness for use. The
+      creators of this data package and the repository where these data were
+      obtained shall not be liable for any damages resulting from
+      misinterpretation, use or misuse of the data package or its
+      components.
+      </para>
+    </intellectualRights>
+    <distribution>
+      <online>
+        <url
+      function="information">http://marinemitigation.msi.ucsb.edu/</url>
+      </online>
+    </distribution>
+    <distribution
+      id="10.6073/pasta/f45c73366967c532c57ea40c21a53dba" scope="system"
+          system="https://pasta.edirepository.org"><online><url
+        function="information">https://doi.org/10.6073/pasta/f45c73366967c532c57ea40c21a53dba</url></online></distribution><coverage>
+         <geographicCoverage>
+      <geographicDescription>CSM: Carpinteria Salt Marsh, located in Santa Barbara County, California</geographicDescription>
+      <boundingCoordinates>
+        <westBoundingCoordinate>-119.537990</westBoundingCoordinate>            
+        <eastBoundingCoordinate>-119.537990</eastBoundingCoordinate>
+        <northBoundingCoordinate>34.401189</northBoundingCoordinate>
+        <southBoundingCoordinate>34.401189</southBoundingCoordinate>
+      </boundingCoordinates>
+    </geographicCoverage>
+    <geographicCoverage>
+      <geographicDescription>MUL: Mugu Lagoon, located in Ventura County, California</geographicDescription>
+      <boundingCoordinates>
+        <westBoundingCoordinate>-119.097011</westBoundingCoordinate>            
+        <eastBoundingCoordinate>-119.097011</eastBoundingCoordinate>
+        <northBoundingCoordinate>34.102007</northBoundingCoordinate>
+        <southBoundingCoordinate>34.102007</southBoundingCoordinate>
+      </boundingCoordinates>
+    </geographicCoverage>
+    <geographicCoverage>
+      <geographicDescription>SDW: San Dieguito Wetland, located in San Diego County, California</geographicDescription>
+      <boundingCoordinates>
+        <westBoundingCoordinate>-117.26047</westBoundingCoordinate>            
+        <eastBoundingCoordinate>-117.26047</eastBoundingCoordinate>
+        <northBoundingCoordinate>32.969545</northBoundingCoordinate>
+        <southBoundingCoordinate>32.969545</southBoundingCoordinate>
+      </boundingCoordinates>
+    </geographicCoverage>
+    <geographicCoverage>
+      <geographicDescription>TJE: Tijuana Estuary, located in San Diego County, California</geographicDescription>
+      <boundingCoordinates>
+        <westBoundingCoordinate>-117.126712</westBoundingCoordinate>            
+        <eastBoundingCoordinate>-117.126712</eastBoundingCoordinate>
+        <northBoundingCoordinate>32.569901</northBoundingCoordinate>
+        <southBoundingCoordinate>32.569901</southBoundingCoordinate>
+      </boundingCoordinates>
+    </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2019-08-09</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2021-11-10</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      
+    </coverage>    <contact>
+            <positionName>Information Manager, SONGS Mitigation Monitoring Project</positionName>
+      <address
+        scope="document">
+        <deliveryPoint>Marine Science Institute</deliveryPoint>
+        <deliveryPoint>University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>California</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>United States</country>
+      </address>
+      <phone
+        phonetype="voice">760 438 5375</phone>
+      <electronicMailAddress>songsmmp@lifesci.ucsb.edu</electronicMailAddress>
+      <onlineUrl>http://marinemitigation.msi.ucsb.edu</onlineUrl>
+    </contact>    
+    <publisher><organizationName>Environmental Data Initiative</organizationName><electronicMailAddress>info@edirepository.org</electronicMailAddress><onlineUrl>https://edirepository.org</onlineUrl><userId
+              directory="https://ror.org">0330j0z60</userId></publisher><pubPlace>Environmental Data Initiative</pubPlace><methods>
+            <methodStep>
+        <description>
+          <section>
+<title>Overview</title>
+<para>
+The coastal development permit for the San Onofre Nuclear Generating Station (SONGS) Units 2 and 3 requires Southern California Edison to restore a coastal wetland (San Dieguito Wetlands) as mitigation for the loss of fish resources throughout the Southern California Bight caused by the operation of SONGS. 
+The permit establishes biological performance standards that must be met by the wetland for a period equivalent to the operating life of SONGS Units 2 and 3. 
+Soil properties were evaluated to assess their possible effect on these performance standards.
+</para>
+</section>
+<section>
+<title>Study Sites</title>
+<para>
+Data were collected from various locations at the San Dieguito Wetlands (32°58'33.17"N 117°14'53.68"W) and three reference sites (Tijuana Estuary 32.5699010N, 117.1267120W; Mugu Lagoon 34.1020070N, 119.0970110W; Carpinteria Salt Marsh 34.4011890N, 119.5379900W) as part of a long-term study to evaluate the performance of the restoration project. 
+The reference wetlands were chosen to represent relatively undisturbed, natural tidal wetlands within the Southern California Bight. 
+Samples were collected sporadically from multiple locations within each wetland.
+</para>
+</section>
+<section>
+<title>Sampling Methods</title>
+<para>
+In 2019, soil samples were collected at San Dieguito Wetlands from two regions in the easternmost zone of the wetland restoration project (32.978507960N, 117.242451970W 32.97704863, 117.240728520W). 
+Soil samples were collected at four locations spaced 10-20 m apart at four elevations (1.61, 1.76, 1.92, and 2.07 m MLLW). 
+At each sampling location (n=32), four soil cores (3.5 cm diameter x 10 cm deep) were collected from vegetated and non-vegetated patches and combined into a single sample. 
+
+In 2021, soil samples were collected at San Dieguito Wetlands, Tijuana Estuary, Mugu Lagoon, and Carpinteria Salt Marsh from six tidal creeks and six main channel locations used for annual fish and invertebrate monitoring (see EDI packages:  SONGS Mitigation Monitoring: Wetland Survey – Fish Abundance, SONGS Mitigation Monitoring: Wetland Survey – Invertebrate Abundance). 
+At each tidal creek / main channel location, samples were collected at three distances from the main waterway inlet at three relative elevations (low, medium, and high). 
+At each sampling location (n=54 at each wetland), four soil cores (3.5 cm diameter x 10 cm deep) were collected and combined into a single sample.
+
+All samples were sent to the University of California, Davis Soil Laboratory for analysis. 
+The methods for each of the measured soil parameters are reported in detail at https://anlab.ucdavis.edu/methods-of-analysis.
+</para>
+</section>
+        </description>
+        <protocol>
+          <title>UCSB SONGS Wetland Process Study Methods – Soil Properties</title>
+              <creator>
+      <individualName>
+        <givenName>Stephen</givenName>
+        <givenName>C</givenName>
+        <surName>Schroeter</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5953</phone>
+      <electronicMailAddress>stephen.schroeter@lifesci.ucsb.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Henry</givenName>
+        <givenName>M</givenName>
+        <surName>Page</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>805-893-7568</phone>
+      <electronicMailAddress>mark.page@lifesci.ucsb.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Daniel</givenName>
+        <givenName>C</givenName>
+        <surName>Reed</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>805-893-8363</phone>
+      <electronicMailAddress>dan.reed@lifesci.ucsb.edu</electronicMailAddress>
+      <userId
+                directory="https://orcid.org/">https://orcid.org/0000-0003-3015-8717</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Katherine</givenName>
+        <givenName>M</givenName>
+        <surName>Beheshti</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5953</phone>
+      <electronicMailAddress>katbeheshti@ucsb.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Rachel</givenName>
+        <givenName>S</givenName>
+        <surName>Smith</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5953</phone>
+      <electronicMailAddress>rssmith@ucsb.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Andres</givenName>
+        <givenName>A</givenName>
+        <surName>Deza</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5375</phone>
+      <electronicMailAddress>andres.deza@ucsb.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>David</givenName>
+        <givenName>Y</givenName>
+        <surName>Huang</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5375</phone>
+      <electronicMailAddress>davidhuang@ucsb.edu</electronicMailAddress>        
+    </creator>
+
+          <distribution>
+            <online>
+              <url
+        function="download">https://static.msi-norco.ucsb.edu/datamart/method/wetland_process_soil_properties-2023-05-11.pdf</url>
+            </online>
+          </distribution>
+        </protocol>
+      </methodStep>
+      
+    </methods>    <project>
+      <title>SONGS Mitigation Monitoring Project</title>
+        <personnel
+        scope="document">
+      <individualName>
+        <givenName>Stephen</givenName>
+        <givenName>C</givenName>
+        <surName>Schroeter</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5953</phone>
+      <electronicMailAddress>stephen.schroeter@lifesci.ucsb.edu</electronicMailAddress>
+      <role>principalInvestigator</role>
+    </personnel>
+    <personnel
+        scope="document">
+      <individualName>
+        <givenName>Henry</givenName>
+        <givenName>M</givenName>
+        <surName>Page</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>805-893-7568</phone>
+      <electronicMailAddress>mark.page@lifesci.ucsb.edu</electronicMailAddress>
+      <role>principalInvestigator</role>
+    </personnel>
+    <personnel
+          scope="document">
+      <individualName>
+        <givenName>Daniel</givenName>
+        <givenName>C</givenName>
+        <surName>Reed</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>805-893-8363</phone>
+      <electronicMailAddress>dan.reed@lifesci.ucsb.edu</electronicMailAddress>
+      <userId
+        directory="https://orcid.org/">https://orcid.org/0000-0003-3015-8717</userId>
+      <role>principalInvestigator</role>
+    </personnel>
+    <personnel
+        scope="document">
+      <individualName>
+        <givenName>Katherine</givenName>
+        <givenName>M</givenName>
+        <surName>Beheshti</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5953</phone>
+      <electronicMailAddress>katbeheshti@ucsb.edu</electronicMailAddress>
+      <role>principalInvestigator</role>
+    </personnel>
+    <personnel
+        scope="document">
+      <individualName>
+        <givenName>Rachel</givenName>
+        <givenName>S</givenName>
+        <surName>Smith</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5953</phone>
+      <electronicMailAddress>rssmith@ucsb.edu</electronicMailAddress>
+      <role>principalInvestigator</role>
+    </personnel>
+    <personnel
+        scope="document">
+      <individualName>
+        <givenName>Andres</givenName>
+        <givenName>A</givenName>
+        <surName>Deza</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5375</phone>
+      <electronicMailAddress>andres.deza@ucsb.edu</electronicMailAddress>
+      <role>principalInvestigator</role>
+    </personnel>
+    <personnel
+      scope="document">
+      <individualName>
+        <givenName>David</givenName>
+        <givenName>Y</givenName>
+        <surName>Huang</surName>
+      </individualName>
+      <address>
+        <deliveryPoint>Marine Science Institute University of California</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93106-6150</postalCode>
+        <country>US</country>
+      </address>
+      <phone>760-438-5375</phone>
+      <electronicMailAddress>davidhuang@ucsb.edu</electronicMailAddress>        
+      <role>pointOfContact</role>
+    </personnel>
+      <abstract>
+        <section>
+          <para>
+          The San Onofre Nuclear Generating Station (SONGS) Mitigation Monitoring Program is based at the Marine Science Institute, University of California Santa Barbara.
+          Long-term monitoring and evaluation of the SONGS mitigation projects is a condition of the coastal development permit issued by the California Coastal Commission (CCC) for the operation of SONGS Units 2 and 3.
+          The Permit requires Southern California Edison (SCE) as majority owner and operating agent of SONGS to design and build mitigation projects that adequately compensate for the adverse effects of the power plant’s once-through seawater cooling system on coastal marine resources.
+          UCSB scientists working under the direction of the Executive Director of the CCC are responsible for designing and implementing monitoring programs aimed at determining the effectiveness of these mitigation projects.
+          </para>
+        </section>
+      </abstract>
+      <funding>
+        <section>
+          <para>Funding for the SONGS Mitigation Monitoring Program is provided by SCE as a requirement of their coastal development permit for operating SONGS.</para>
+        </section>
+      </funding>
+    </project>
+    <dataTable
+      id="f13eeb9caf2de3cc713bd6a2e4804d50" scope="document"
+          system="https://pasta.edirepository.org">
+<entityName>Wetland process survey, soil properties, all years</entityName>
+<entityDescription> This data table describes the physical and chemical properties of soil samples collected from various wetland locations.</entityDescription>
+<physical>
+<objectName>wetland_process_soil_properties-2023-06-02_17-44-20.csv</objectName>
+<size
+              unit="byte">213803</size>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <collapseDelimiters>no</collapseDelimiters>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url
+            function="download">https://pasta.lternet.edu/package/data/eml/edi/673/2/f13eeb9caf2de3cc713bd6a2e4804d50</url>
+          </online>
+        </distribution>
+</physical>
+<coverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2019-08-09</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2021-11-10</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      
+</coverage>
+<attributeList>
+        <attribute>
+          <attributeName>date</attributeName>
+          <attributeLabel>date</attributeLabel>
+          <attributeDefinition>The date of data collection (YYYY-MM-DD).</attributeDefinition>
+          <storageType
+            typeSystem="MySQL">date</storageType>
+                    <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                        <textDomain>
+          <definition>text</definition>
+        </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+                  <missingValueCode>
+          <code>-99999</code>
+          <codeExplanation>value not recorded or not available</codeExplanation>
+        </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>spc_zone</attributeName>
+          <attributeLabel>state plane coordinate zone</attributeLabel>
+          <attributeDefinition>State Plane Coordinate system zone.</attributeDefinition>
+          <storageType
+            typeSystem="MySQL">varchar</storageType>
+                    <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                        <textDomain>
+          <definition>text</definition>
+        </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+                  <missingValueCode>
+          <code>-99999</code>
+          <codeExplanation>value not recorded or not available</codeExplanation>
+        </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>waypoint_northing_spc_ussft</attributeName>
+          <attributeLabel>northing waypoint</attributeLabel>
+          <attributeDefinition>Northing waypoint, State Plane Coordinate system, United States Survey feet.</attributeDefinition>
+          <storageType
+            typeSystem="MySQL">decimal</storageType>
+                    <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                        <textDomain>
+          <definition>text</definition>
+        </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+                  <missingValueCode>
+          <code>-99999</code>
+          <codeExplanation>value not recorded or not available</codeExplanation>
+        </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>waypoint_easting_spc_ussft</attributeName>
+          <attributeLabel>easting waypoint</attributeLabel>
+          <attributeDefinition>Easting waypoint, State Plane Coordinate system, United States Survey feet.</attributeDefinition>
+          <storageType
+            typeSystem="MySQL">decimal</storageType>
+                    <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                        <textDomain>
+          <definition>text</definition>
+        </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+                  <missingValueCode>
+          <code>-99999</code>
+          <codeExplanation>value not recorded or not available</codeExplanation>
+        </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>elevation_mllw</attributeName>
+          <attributeLabel>elevation MLLW</attributeLabel>
+          <attributeDefinition>The elevation expressed in Mean Low Low Water (MLLW).</attributeDefinition>
+          <storageType
+                    typeSystem="MySQL">decimal</storageType>
+                  <measurementScale>
+          <ratio>
+            <unit>
+              <standardUnit>foot</standardUnit>
+            </unit>
+            <numericDomain>
+              <numberType>real</numberType>
+                      <bounds>
+          <minimum
+                    exclusive="false">-0.344</minimum>
+          <maximum
+            exclusive="false">6.304</maximum>
+        </bounds>
+
+            </numericDomain>
+          </ratio>
+        </measurementScale>
+                <missingValueCode>
+          <code>-99999</code>
+          <codeExplanation>value not recorded or not available</codeExplanation>
+        </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>soil_property_code</attributeName>
+          <attributeLabel>soil property code</attributeLabel>
+          <attributeDefinition>Soil property.</attributeDefinition>
+          <storageType
+                  typeSystem="MySQL">varchar</storageType>
+                    <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain
+            enforced="yes">
+          <codeDefinition>
+            <code>Bulk-Density</code>
+            <definition>Builk Density (g/cm3): The ratio of the mass of dry solids to the bulk volume of soil.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>C-Org-LOI</code>
+            <definition>Organic Carbon: Loss-On-Ignition (percent): The proportion of soil organic carbon, based on gravimetric weight change associated with high temperature oxidation of organic matter.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>Cu-DTPA</code>
+            <definition>Copper: DTPA Extraction (ppm): The total amount of copper, based on DTPA extraction.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>ECe</code>
+            <definition>Estimated Soluble Salts: Saturated Paste Extract (dS/m): The amount of soluble salts, based on the electrical conductivity of saturated paste extract.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>Fe-DTPA</code>
+            <definition>Iron: DTPA Extraction (ppm): The total amount of iron, based on DTPA extraction.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>Mn-DTPA</code>
+            <definition>Manganese: DTPA Extraction (ppm): The total amount of manganese, based on DTPA extraction.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>N-CM</code>
+            <definition>Total Nitrogen And Carbon: Combustion Method (percent): The total amount of nitrogen and carbon in all forms in soil, based on the combustion method.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>NH4-N-FIAM</code>
+            <definition>Soil Extractable Ammonium: Flow Injection Analyzer Method (ppm): The total amount of soil extractable ammonium, based on the Flow Injection Analyzer Method.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>NO3-N-FIAM</code>
+            <definition>Soil Nitrate: Flow Injection Analyzer Method (ppm): The total amount of soil nitrate, based on Flow Injection Analyzer Method.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>OM-LOI</code>
+            <definition>Organic Matter: Loss-On-Ignition Method (percent): The proportion of soil organic matter, based on gravimetric weight change associated with high temperature oxidation of organic matter.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>pH-SPE</code>
+            <definition>pH: Saturated Paste Extract (pH): The pH of the soil sample.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>PSA-Clay</code>
+            <definition>Particle Size Analysis: Clay (percent): The physical proportion of clay, as determined by its settling rates in an aqueous solution using a hydrometer.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>PSA-Sand</code>
+            <definition>Particle Size Analysis: Sand (percent): The physical proportion of sand, as determined by its settling rates in an aqueous solution using a hydrometer.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>PSA-Silt</code>
+            <definition>Particle Size Analysis: Silt (percent): The physical proportion of silt, as determined by its settling rates in an aqueous solution using a hydrometer.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>SM-15-ATM</code>
+            <definition>Soil Moisture: 15 Atmosphere Pressure Potential (percent): The soil moisture content under constant preset pressure potential (ranging from -10 to -1500 kPa [0.1 atm to 15 atm]).</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>TOC-CM</code>
+            <definition>Total Organic Carbon: Combustion Method (percent): The total amount of organic carbon, based on the oxidation of the sample by “flash combustion”.</definition>
+          </codeDefinition>
+          <codeDefinition>
+            <code>Zn-DTPA</code>
+            <definition>Zinc: DTPA Extraction (ppm): The total amount of zinc, based on DTPA extraction.</definition>
+          </codeDefinition>
+</enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+                  <missingValueCode>
+          <code>-99999</code>
+          <codeExplanation>value not recorded or not available</codeExplanation>
+        </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>soil_property_value</attributeName>
+          <attributeLabel>soil property value</attributeLabel>
+          <attributeDefinition>The value of the soil property.</attributeDefinition>
+          <storageType typeSystem="MySQL">decimal</storageType>
+                    <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                        <textDomain>
+          <definition>text</definition>
+        </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+                  <missingValueCode>
+          <code>-99999</code>
+          <codeExplanation>value not recorded or not available</codeExplanation>
+        </missingValueCode>
+        </attribute>
+
+</attributeList>
+<numberOfRecords>3184</numberOfRecords>
+</dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <compilation>
+        <cuid>18</cuid>
+        <plmts>2023-06-03 16:20:01</plmts>
+                <dents>
+          <dt>
+<base>wetland_process_soil_properties</base>
+<tdluts>2023-06-02 17:44:20</tdluts>
+</dt>
+
+        </dents>      </compilation>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>
