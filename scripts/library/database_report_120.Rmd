@@ -52,7 +52,12 @@ library(rnaturalearth)
 
 # read in table documenting figshare pubs with IDs
 versions <- read_csv("docs/synthesis_resources/synthesis_history.csv")
-core_versions <- versions %>% filter(table == "cores")
+core_versions <- versions %>% filter(table == "cores") %>% 
+  add_row(date = "3/29/24", 
+          version = "1.2.0",
+          filepath_id = "45374701",
+          source = "figshare",
+          table = "cores")
 
 # read in current version
 guess_max <- nrow(read_csv("data/CCN_synthesis/CCN_cores.csv"))
@@ -72,7 +77,7 @@ current_cores <- read_csv("data/CCN_synthesis/CCN_cores.csv", guess_max = guess_
 
 # View(current_cores %>% distinct(country, region, continent))
 
-current_version <- "1.2.0"
+current_version <- "1.3.0"
 ```
 
 ```{r}
