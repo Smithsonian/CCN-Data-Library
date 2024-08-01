@@ -49,25 +49,33 @@ methods <- reorderColumns("methods", methods)
 ## ... Cores ####
 
 cores <- cores_raw %>% 
-  mutate(study_id = id)
+  mutate(study_id = id,
+         core_id = paste0(site_id, "_", core_id))
+
 cores <- reorderColumns("cores", cores)
 
 
 ## ... Depthseries ####
 
 depthseries <- depthseries_raw %>% 
-  janitor::remove_empty(which = "cols")
+  janitor::remove_empty(which = "cols") %>% 
+  mutate(core_id = paste0(site_id, "_", core_id))
+
 depthseries <- reorderColumns("depthseries", depthseries)
 
 
 ## ... Species ####
 
-species <- species_raw
+species <- species_raw %>% 
+  mutate(core_id = paste0(site_id, "_", core_id))
+
 species <- reorderColumns("species", species)
 
 ## ... Impacts ####
 
-impacts <- impacts_raw
+impacts <- impacts_raw %>% 
+  mutate(core_id = paste0(site_id, "_", core_id)) 
+
 impacts <- reorderColumns("impacts", impacts)
 
 ## 2. QAQC ####

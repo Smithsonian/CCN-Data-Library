@@ -41,8 +41,10 @@ methods <- reorderColumns("methods", methods)
 ## ... Cores ####
 
 cores <- cores_raw %>% 
-  mutate(position_method = "other low resolution") %>% # check 
+  mutate(position_method = "other low resolution",
+         core_id = ifelse(grepl("marsh grab", core_notes), paste(site_id, core_id, sep = "_"), core_id)) %>% # check 
   select(-pb210_cfcs_accretion_rate, -pb210_cfcs_accretion_rate_se, -cs137_accretion_rate) #remove current uncontrolled attributes 
+
 cores <- reorderColumns("cores", cores)
 
 
@@ -50,7 +52,9 @@ cores <- reorderColumns("cores", cores)
 
 depthseries <- depthseries_raw %>%
   select(- fraction_nitrogen) %>% 
+  mutate(core_id = ifelse(grepl("marsh grab", method_id), paste(site_id, core_id, sep = "_"), core_id)) %>% 
   janitor::remove_empty(which = "cols")
+
 depthseries <- reorderColumns("depthseries", depthseries)
 
 
