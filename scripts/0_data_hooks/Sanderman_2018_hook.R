@@ -391,6 +391,16 @@ Eid_saudi_bib <- as.data.frame(GetBibEntryWithDOI("10.1007/s12210-016-0542-6")) 
   select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
   remove_rownames()
 
+# add missing original paper citation for Phang et al 2016 (RC 9/6/24)
+phang_bib <- as.data.frame(GetBibEntryWithDOI("10.1002/esp.3745")) %>% 
+  mutate(bibliography_id = "Phang_et_al_2015_article",
+         study_id = "Phang_et_al_2015_Saudi_Arabia",
+         publication_type = "synthesis source") %>%
+  select(study_id, bibliography_id, publication_type, bibtype, everything()) %>%
+  remove_rownames()
+  
+
+
 # bring in all primary associated articles
 primary_sources <- read_csv("data/primary_studies/Sanderman_2018/intermediate/Sanderman_2018_study_citations.csv") %>% 
   # filter(key != "Sanderman_2017") %>% 
@@ -401,7 +411,7 @@ primary_sources <- read_csv("data/primary_studies/Sanderman_2018/intermediate/Sa
                                      TRUE ~ paste0(bibliography_id, "_article"))) %>% 
   filter(bibliography_id != "Kristensen_et_al_2000_article") %>% 
   mutate_all(as.character) %>% 
-  bind_rows(Kristensen_citation, Eid_egypt_bib, Eid_saudi_bib)
+  bind_rows(Kristensen_citation, Eid_egypt_bib, Eid_saudi_bib, phang_bib)
 
 # there should be two entries per study: 
 # one for the primary study associated with the Study ID
