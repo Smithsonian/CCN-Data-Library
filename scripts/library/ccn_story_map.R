@@ -41,21 +41,37 @@ preBCI <- preproject_cores %>%
 
 #filter current cores (2024 V3.0.0)
 current <- current_cores %>% filter(current_cores$country %in% targets) %>% 
-  select(study_id, site_id, core_id, latitude, longitude, year, habitat, country, admin_division)
+  select(study_id, site_id, core_id, latitude, longitude, year, habitat, country, admin_division) %>% 
+  mutate()
   
 
-#get list of studies -- 186 in current version 
+#flag ccn-published studies? 
+# - Rovai et al 2022
+# - Costa et al 2023
+# - Cifuentes et al 2024 Nicoya
+# - Adotey et al 2024
+# Machite and Adams synthesis (South Africa) - Raw et al 2020, Adams and Human 2016, Bekker 2015, Bezuidenhout et al 2011,
+# Brown and Rajkaran 2020, Els 2017, Els 2019, Geldenhyus et al 2016, Hoppe-Speer et al 2013, Human et al 2022,
+# Johnson et al 2020, Lemley 2018, Matabane 2018, Mbense et al 2016, Mbense 2019, Naidoo 2014, Peer et al 2018,
+# Rajkaran and Adams 2011, Rautenbach 2015, Raw et al 2019, Veldkornet 2016 PhD, Veldkornet et al 2016, Verle 2013, 
+# Wooldridge et al 2016, Vromans 2010, 
+
+
+
+
+#get list of studies -- 186 studies in current version which include data from target countries
 studies_new <- current %>% select(study_id) %>% distinct()
 studies_old <- preBCI %>% select(study_id) %>% distinct()
+
+#count number of new studies 
+studies_added <- anti_join(studies_new, studies_old) %>% distinct()
 
 
 
 #get bib lists to pull primary associated publications
-bibs_new <- read_csv("data/CCN_synthesis/CCN_study_citations.csv")
-#bibs_old <- read_csv("") is there an accessible bibliography list from pre-1.0.0?
+bibs <- read_csv("data/CCN_synthesis/CCN_study_citations.csv")
 
-bib_list_new <- bibs_new %>% semi_join(studies_new) %>% 
-  filter(grepl("primary", publication_type))
+bib_list <- bibs %>% semi_join(studies_new) 
 
 
 #clean up tables, remove underscores from study_id 
@@ -78,8 +94,7 @@ new_core_count <- cores_added %>% count(country) %>%
 
 
 #From V 0.6.0 to V 3.0.0 there were 4,028 cores added from 20 NOAA target countries
-
-
+#Majority from South Africa (1,567), followed by Indonesia and Vietnam
 
 
 
@@ -88,17 +103,16 @@ new_core_count <- cores_added %>% count(country) %>%
 
 
 #current relevant cores and citations
-write_csv(currentBCI, "")
-#write_csv(bib_list_current, "")
+write_csv(currentBCI, "docs/story_map/CCN_BCI_current.csv")
+write_csv(bib_list, "docs/story_map/CCN_BCI_current_study_citations.csv")
 
 
 #pre-project relevant cores and citations
-write_csv(preBCI,"")
-#write_csv(,"")
+write_csv(preBCI,"docs/story_map/CCN_BCI_pre_project.csv")
 
 
 #cores added per country (throughout BCI project)
-write_csv(new_core_count,"")
+write_csv(new_core_count,"docs/story_map/CCN_BCI_new_cores_per_country.csv")
 
 
 
