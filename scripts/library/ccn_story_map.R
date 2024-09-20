@@ -21,7 +21,8 @@ targets <- c("Bangladesh","Brazil","Cambodia","Cameroon","Colombia",
              "Indonesia","Kiribati","Malaysia","Maldives","Marshall Islands",
              "Mexico","Nauru","Palau","Papua New Guinea","Philippines","Samoa", 
              "Senegal","Solomon Islands","South Africa","Sri Lanka","Thailand",
-             "Tonga","Tuvalu","Uganda","Vanuatu","Vietnam")
+             "Tonga","Tuvalu","Uganda","Vanuatu","Vietnam", "Antigua and Barbuda",
+             "Bahamas","Barbados","St. Kitts and Nevis","Trinidad and Tobago")
 
 
 ####.... filter current and pre-project cores ####
@@ -41,11 +42,14 @@ preBCI <- preproject_cores %>%
 
 #filter current cores (2024 V3.0.0)
 current <- current_cores %>% filter(current_cores$country %in% targets) %>% 
-  select(study_id, site_id, core_id, latitude, longitude, year, habitat, country, admin_division) %>% 
-  mutate()
+  select(study_id, site_id, core_id, latitude, longitude, year, habitat, country, admin_division) %>%
+  mutate(data_source_flag = case_when(study_id == "Rovai_et_al_2022"|study_id == "Costa_et_al_2023"|study_id == "Adotey_et_al_2024"|
+                                        study_id == "Cifuentes_et_al_2024_Nicoya" ~ "CCN data release",
+                                      country == "South Africa" ~ "CCN data release",
+                                      TRUE ~ "external publication"))
   
 
-#flag ccn-published studies? 
+#flag ccn-published studies?// data source flag - external publication vs CCN data release 
 # - Rovai et al 2022
 # - Costa et al 2023
 # - Cifuentes et al 2024 Nicoya
@@ -54,23 +58,21 @@ current <- current_cores %>% filter(current_cores$country %in% targets) %>%
 # Brown and Rajkaran 2020, Els 2017, Els 2019, Geldenhyus et al 2016, Hoppe-Speer et al 2013, Human et al 2022,
 # Johnson et al 2020, Lemley 2018, Matabane 2018, Mbense et al 2016, Mbense 2019, Naidoo 2014, Peer et al 2018,
 # Rajkaran and Adams 2011, Rautenbach 2015, Raw et al 2019, Veldkornet 2016 PhD, Veldkornet et al 2016, Verle 2013, 
-# Wooldridge et al 2016, Vromans 2010, 
+# Wooldridge et al 2016, Vromans 2010 <- all of the available south africa data???
 
 
 
-
-#get list of studies -- 186 studies in current version which include data from target countries
+#get list of studies -- 187 studies in current version which include data from target countries
 studies_new <- current %>% select(study_id) %>% distinct()
 studies_old <- preBCI %>% select(study_id) %>% distinct()
 
-#count number of new studies 
+#create list of new studies 
 studies_added <- anti_join(studies_new, studies_old) %>% distinct()
 
 
 
 #get bib lists to pull primary associated publications
 bibs <- read_csv("data/CCN_synthesis/CCN_study_citations.csv")
-
 bib_list <- bibs %>% semi_join(studies_new) 
 
 
@@ -93,9 +95,16 @@ new_core_count <- cores_added %>% count(country) %>%
   rename(new_cores_added = n)
 
 
-#From V 0.6.0 to V 3.0.0 there were 4,028 cores added from 20 NOAA target countries
-#Majority from South Africa (1,567), followed by Indonesia and Vietnam
 
+#From V 0.6.0 to V 3.0.0 there were 4,030 cores added from 21 of X NOAA target countries
+#Majority of these cores from South Africa (1,567), followed by Indonesia and Vietnam
+
+
+#get stats for story map blurbs
+country_count <- current_cores %>% count(country) # 71 unique countries, 1 NA with 3 observations 
+habitat_count <- current_cores %>% count(habitat) # 11 unique habitats, 1 NA with 4 observations 
+
+country_count_old <- preBCI %>% count(country) #12 countries on the target list included in CCA as of 2021 
 
 
 
@@ -103,12 +112,12 @@ new_core_count <- cores_added %>% count(country) %>%
 
 
 #current relevant cores and citations
-write_csv(currentBCI, "docs/story_map/CCN_BCI_current.csv")
-write_csv(bib_list, "docs/story_map/CCN_BCI_current_study_citations.csv")
+write_csv(currentBCI, "docs/story_map/CCN_BCI_current_cores.csv")
+write_csv(bib_list, "docs/story_map/CCN_BCI_study_citations.csv")
 
 
 #pre-project relevant cores and citations
-write_csv(preBCI,"docs/story_map/CCN_BCI_pre_project.csv")
+write_csv(preBCI,"docs/story_map/CCN_BCI_pre_project_cores.csv")
 
 
 #cores added per country (throughout BCI project)
