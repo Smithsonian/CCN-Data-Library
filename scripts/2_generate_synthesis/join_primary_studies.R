@@ -5,8 +5,8 @@
 # RUN SCRIPT WITH A CLEAN R SESSION #
 # if you experience an error, restart Rstudio and try again # 
 
-past_version_code <- "1.2.0"
-new_version_code <- "1.3.0"
+past_version_code <- "1.3.0"
+new_version_code <- "1.4.0"
 
 ## 1. Synthesis background and description ###############
 
@@ -221,14 +221,20 @@ if(join_status == TRUE){
 ## 6. Synthesis Metrics & Change Log ####
 
 # dev branch synthesis will be compared with the version of the synthesis on the main branch
+
+prev_synthesis <- read_csv("https://raw.githubusercontent.com/Smithsonian/CCN-Data-Library/refs/heads/main/data/CCN_synthesis/CCN_cores.csv")
+prev_species <- read_csv("https://raw.githubusercontent.com/Smithsonian/CCN-Data-Library/refs/heads/main/data/CCN_synthesis/CCN_species.csv")
 # synthesis_log <- readr::read_csv("docs/synthesis_resources/synthesis_log.csv")
 # 
-# synth_diff <- anti_join(ccrcn_synthesis$cores %>%
-#                           select(study_id, site_id, core_id),
-#                         synthesis_log) %>%
-#   mutate(version = new_version_code,
-#          date = format(Sys.time(), "%Y-%m-%d")) %>%
-#   select(date, version, everything())
+synth_diff <- anti_join(ccrcn_synthesis$cores %>% 
+                          select(study_id, site_id, core_id, habitat, country, max_depth),
+                        prev_synthesis)
+
+new_species <- anti_join(distinct(ccrcn_synthesis$species, species_code), 
+                         distinct(prev_species, species_code))
+  # mutate(version = new_version_code,
+  #        date = format(Sys.time(), "%Y-%m-%d")) %>%
+  # select(date, version, everything())
 # 
 # # stash results in additive list, documenting version, and date
 # synthesis_log_filemame <- paste0("docs/synthesis_resources/synthesis_", 
@@ -250,7 +256,6 @@ formated_date <- format(Sys.time(), "%Y/%m/%d-%H:%M")
   
 # Needs updating
 # REQUIRES: file paths, join status, warning summary, etc
-# map cores w habitat?
 # save qa_results
 rmarkdown::render(input = "./scripts/2_generate_synthesis/synthesis_report.Rmd",
                   # output_format = "html_document",
