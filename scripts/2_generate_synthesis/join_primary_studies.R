@@ -216,6 +216,7 @@ if(join_status == TRUE){
   source("scripts/3_post_processing/4_max_depths.R")
   source("scripts/3_post_processing/5_core_attributes.R")
   source("scripts/3_post_processing/7_resolve_taxonomy.R")
+  source("scripts/3_post_processing/8_soil_carbon_stock.R")
 }
 
 ## 6. Synthesis Metrics & Change Log ####

@@ -449,6 +449,16 @@ lat_long,n,core_ids,study_ids,num_studies
 "22.3, 89.6",2,"M1379, M1434",Donato_et_al_2011,1
 "22.493027, 114.029298",3,"M0260, M0261, M0262",Liu_et_al_2014,1
 "22.5317972, 113.9850889",2,"M0480, M0481",Mao_et_al_2011,1
+"23.49614, -75.70761",3,"S1_C2, S1_C3, S1_Pb",Fu_et_al_2023,1
+"23.51049, -75.75391",2,"S4_C2, S4_C3",Fu_et_al_2023,1
+"23.53387, -75.80477",3,"S2_C2, S2_C3, S2_Pb",Fu_et_al_2023,1
+"23.58456, -75.86002",3,"S3_C2, S3_C3, S3_Pb",Fu_et_al_2023,1
+"23.72511, -76.026",2,"S9_C2, S9_Pb",Fu_et_al_2023,1
+"23.72584, -76.03386",2,"S10_C3, S10_Pb",Fu_et_al_2023,1
+"23.73557, -76.04701",3,"S6_C2, S6_C3, S6_Pb",Fu_et_al_2023,1
+"23.74173, -76.07485",3,"S5_C2, S5_C3, S5_Pb",Fu_et_al_2023,1
+"23.7691, -76.10755",2,"S7_C2, S7_Pb",Fu_et_al_2023,1
+"23.7831, -76.12758",2,"S8_C2, S8_Pb",Fu_et_al_2023,1
 "23.9167, 117.45",6,"Zhangjiang River Estuary 10, Zhangjiang River Estuary 12, Zhangjiang River Estuary 2, Zhangjiang River Estuary 4, Zhangjiang River Estuary 6, Zhangjiang River Estuary 8",Xia_et_al_2022,1
 "24.15131667, 52.0476",3,"Jazirat_seagrass_1, Jazirat_seagrass_2, Jazirat_seagrass_3",Campbell_et_al_2015,1
 "24.15199, -110.360199",3,"Baja-Mogote III-3, Baja-Mogote III-4, Baja-Mogote III-5",Costa_et_al_2023,1
@@ -1485,4 +1495,4 @@ lat_long,n,core_ids,study_ids,num_studies
 "9.96677907531132, -85.10665234760737",3,"Jicaral_Camaronera_10_1, Jicaral_Camaronera_10_2, Jicaral_Camaronera_10_3",Cifuentes_et_al_2024_Nicoya,1
 "9.96894954420873, -85.05045723911242",3,"Lepanto_Camaronera_7_1, Lepanto_Camaronera_7_2, Lepanto_Camaronera_7_3",Cifuentes_et_al_2024_Nicoya,1
 "9.968966354089195, -85.04798593204679",3,"Lepanto_Camaronera_8_1, Lepanto_Camaronera_8_2, Lepanto_Camaronera_8_3",Cifuentes_et_al_2024_Nicoya,1
-"NA, NA",31,"SB1, SS1, S1_C2, S1_C3, S2_C2, S2_C3, S3_C2, S3_C3, S4_C2, S4_C3, S5_C2, S5_C3, S6_C2, S6_C3, S7_C2, S8_C2, S9_C2, S10_C3, Coastal_EDU_Field_2, Santa_Cruz_(El_Chuflar)_4_6, Santa_Cruz_(El_Chuflar)_4_5, Santa_Cruz_(El_Chuflar)_4_4, Santa_Cruz_(El_Chuflar)_4_3, Santa_Cruz_(El_Chuflar)_4_2, Santa_Cruz_(El_Chuflar)_4_1, Santa_Cruz_El_Chuflar_4_6, Santa_Cruz_El_Chuflar_4_5, Santa_Cruz_El_Chuflar_4_4, Santa_Cruz_El_Chuflar_4_3, Santa_Cruz_El_Chuflar_4_2, Santa_Cruz_El_Chuflar_4_1","Thom_1992, Fu_et_al_2023, Drexler_et_al_2013, Cifuentes_et_al_2024_ElSalvador",4
+"NA, NA",15,"SB1, SS1, Coastal_EDU_Field_2, Santa_Cruz_(El_Chuflar)_4_6, Santa_Cruz_(El_Chuflar)_4_5, Santa_Cruz_(El_Chuflar)_4_4, Santa_Cruz_(El_Chuflar)_4_3, Santa_Cruz_(El_Chuflar)_4_2, Santa_Cruz_(El_Chuflar)_4_1, Santa_Cruz_El_Chuflar_4_6, Santa_Cruz_El_Chuflar_4_5, Santa_Cruz_El_Chuflar_4_4, Santa_Cruz_El_Chuflar_4_3, Santa_Cruz_El_Chuflar_4_2, Santa_Cruz_El_Chuflar_4_1","Thom_1992, Drexler_et_al_2013, Cifuentes_et_al_2024_ElSalvador",3

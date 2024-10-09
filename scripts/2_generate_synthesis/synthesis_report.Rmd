@@ -181,11 +181,14 @@ ds_uncontrolled <- ccrcn_synthesis$depthseries %>%
   join_uncontrolled_attributes <- bind_rows(join_uncontrolled_attributes, ds_uncontrolled)
 }
 
+join_uncontrolled_attributes <- join_uncontrolled_attributes %>% 
+    filter(!(attribute_name %in% c("stock_MgHa_total", "stock_MgHa_1m")))
+
 if(nrow(join_uncontrolled_attributes) > 0){
   join_uncontrolled_attributes <- join_uncontrolled_attributes %>% 
   mutate(value = case_when(grepl("[...]", attribute_name) ~ "row number index", # highlight row number index columns with a flag
                            grepl("([0-9]+).*$", value) ~ "numeric value", # replace numeric values with a flag
-                           T ~ value)) %>% 
+                           T ~ value)) %>%
   distinct() %>% arrange(study_id)
 }
 ```
