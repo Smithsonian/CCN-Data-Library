@@ -1,7 +1,7 @@
 ## CCRCN Data Library ########
 ## contact: cheneyr@si.edu
 
-## Hook script for Dataset: 
+## Hook script for Dataset: Cifuentes et al 2024 (El Salvador)
 # 
 
 # load necessary libraries
@@ -56,9 +56,10 @@ cores <- raw_plots %>%
   rename(core_id = plot_id) %>%  ## 1 core/sediment sample per plot 
   mutate(vegetation_class = "forested",
          year = 2014,
-         position_method = "", #CHECK
+         position_method = "other low resolution",
          position_notes = "position at plot level",
-         vegetation_method = "field observation") %>% 
+         vegetation_method = "field observation",
+         core_id = str_remove_all(string = core_id, pattern = "\\(|\\)")) %>% 
   select(-field_or_manipulation_code, -land_use_class, -land_use_status)
 
 cores <- reorderColumns("cores", cores)
@@ -73,7 +74,8 @@ impacts <- raw_plots %>%
   mutate(impact_class = case_when(impact_class == "cattle farm" ~ "farmed",
                                   impact_class == "low disturbance" ~ "natural",
                                   impact_class == "salt pond" ~ "agro-industrial deforestation", 
-                                  TRUE ~ impact_class)) %>%
+                                  TRUE ~ impact_class),
+         core_id = str_remove_all(string = core_id, pattern = "\\(|\\)")) %>%
   select(- land_use_status) %>% 
   filter(!is.na(impact_class))
 
@@ -89,10 +91,18 @@ species <- raw_plants %>%
   select(study_id, site_id, plot_id, plant_id, genus, species) %>% 
   rename(core_id = plot_id) %>% 
   mutate(code_type = "Genus species",
-         species_code = paste(genus, species, sep = " ")) %>% 
+         species_code = paste(genus, species, sep = " "),
+         core_id = str_remove_all(string = core_id, pattern = "\\(|\\)")) %>% 
   select(-genus, -species, -plant_id) %>% distinct()
 
 species <- reorderColumns("species", species)
+
+
+#clean up tables, remove any information relating to ONLY plants tables and not cores tables 
+depthseries <- semi_join(depthseries, cores, by = "core_id")
+impacts <- semi_join(impacts, cores, by = "core_id")
+species <- semi_join(species, cores, by = "core_id")
+
 
 
 ## 2. QAQC ####
