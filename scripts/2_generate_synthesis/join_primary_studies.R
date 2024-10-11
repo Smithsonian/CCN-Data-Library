@@ -216,7 +216,7 @@ if(join_status == TRUE){
   source("scripts/3_post_processing/4_max_depths.R")
   source("scripts/3_post_processing/5_core_attributes.R")
   source("scripts/3_post_processing/7_resolve_taxonomy.R")
-  source("scripts/3_post_processing/8_soil_carbon_stock.R")
+  # source("scripts/3_post_processing/8_soil_carbon_stock.R")
 }
 
 ## 6. Synthesis Metrics & Change Log ####
@@ -229,7 +229,14 @@ prev_species <- read_csv("https://raw.githubusercontent.com/Smithsonian/CCN-Data
 # 
 synth_diff <- anti_join(ccrcn_synthesis$cores %>% 
                           select(study_id, site_id, core_id, habitat, country, max_depth),
-                        prev_synthesis)
+                        prev_synthesis) %>% 
+  # if we change a core ID this gets logged falsly as a new entry
+  # however, there are cases where we're adding in more data for an existing study 
+  # or adding new information to existing cores
+  # need an automated way to detect these different cases or at least flag them
+  mutate(change_flag = case_when(study_id %in% unique(prev_synthesis$study_id) ~ "core ID modification or new core for existing study",
+                                 T ~ "new core from new study"))
+
 
 new_species <- anti_join(distinct(ccrcn_synthesis$species, species_code), 
                          distinct(prev_species, species_code))

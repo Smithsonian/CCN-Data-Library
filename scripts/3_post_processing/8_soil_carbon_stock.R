@@ -31,7 +31,7 @@ tc_seagrass <- c("Danovaro_1996",
 
 # take a look at duplicate intervals
 # dup_intervals <- ds %>%
-#   left_join(cores_clean %>%  select(study_id, site_id, core_id, habitat, country)) %>%
+#   left_join(cores_with_typology %>%  select(study_id, site_id, core_id, habitat, country)) %>%
 #   filter_at(vars(fraction_organic_matter, fraction_carbon, dry_bulk_density), all_vars(!is.na(.))) %>%
 #   add_count(study_id, site_id, core_id, method_id, habitat, country, depth_min, depth_max) %>%
 #   filter(n > 1) %>% arrange(study_id, core_id, depth_min) %>%
@@ -48,7 +48,7 @@ typologies <- read_csv("docs/post_processing/core_typology_lookup.csv")
 
 # Prepare core and depthseries tables
 
-cores_clean <- cores %>% left_join(typologies)
+cores_with_typology <- cores %>% left_join(typologies)
   # the following belongs in the geography assignment script
   # mutate(country = case_when(country == "Netherlands" ~ "Bonaire",
   #                            country == "France" & study_id != "Lallier-Verges_et_al_1998" ~ "French Guiana",
@@ -66,7 +66,7 @@ ds_clean <- ds %>%
                              core_id %in% c("G12", "G13") ~ paste(core_id, method_id, sep = " "),
                              T ~ core_id)) %>%
   select(study_id:compaction_notes, depth_interval_notes) %>%
-  left_join(cores_clean %>% select(study_id, site_id, core_id, habitat, country), multiple = "all") %>%
+  left_join(cores_with_typology %>% select(study_id, site_id, core_id, habitat, country), multiple = "all") %>%
   mutate(habitat = case_when(study_id == "Schieder_and_Kirwan_2019" ~ "marsh", T ~ habitat)) %>%
   # convert some cols to numeric as needed 
   mutate_at(vars(representative_depth_min, representative_depth_max, depth_min, depth_max, 
@@ -124,7 +124,7 @@ ds_clean <- ds %>%
 testing <- FALSE
 
 # chosen_cores <- leave_out
-# chosen_cores <- sample(cores_clean$core_id, 7)
+# chosen_cores <- sample(cores_with_typology$core_id, 7)
 # chosen_cores <- typologies$core_id
 chosen_cores <- c("Channel Caye_1_1_mangrove", "MPW1", "M0006", "Humboldt Bay 684", "Burns_and_Swart_1992_1",
                   "ClamShack", "CPF_2", "MT06")
