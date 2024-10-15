@@ -47,6 +47,8 @@ The CCN clearinghouse provides a synthesized and curated set of coastal carbon d
 
 **Report date: `r formated_date`**
 
+**Version: `r new_version_code`**
+
 **Synthesis status: `r if(join_status) {"Successful"} else "Failed"`**
 
 **Contact: Jaxine Wolfe (wolfejax@si.edu)**
@@ -181,8 +183,8 @@ ds_uncontrolled <- ccrcn_synthesis$depthseries %>%
   join_uncontrolled_attributes <- bind_rows(join_uncontrolled_attributes, ds_uncontrolled)
 }
 
-join_uncontrolled_attributes <- join_uncontrolled_attributes %>% 
-    filter(!(attribute_name %in% c("stock_MgHa_total", "stock_MgHa_1m")))
+# join_uncontrolled_attributes <- join_uncontrolled_attributes %>% 
+#     filter(!(attribute_name %in% c("stock_MgHa_total", "stock_MgHa_1m")))
 
 if(nrow(join_uncontrolled_attributes) > 0){
   join_uncontrolled_attributes <- join_uncontrolled_attributes %>% 
