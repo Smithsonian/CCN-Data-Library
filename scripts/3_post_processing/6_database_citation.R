@@ -29,9 +29,9 @@ db_bib <- db_citation %>% select(-publication_type) %>%
 ccrcn_synthesis$study_citations <- bind_rows(ccrcn_synthesis$study_citations, db_citation)
 bib_file <- bind_rows(bib_file, db_bib)
 
-readMeFile <- readLines("data/CCN_synthesis/README.md")
+readMeFile <- readLines("data/CCN_synthesis/README.txt")
 readMeFile<-str_replace(readMeFile, past_version_code, new_version_code)
-writeLines(readMeFile, "data/CCN_synthesis/README.md")
+writeLines(readMeFile, "data/CCN_synthesis/README.txt")
 
 readMeFile2 <- readLines("README.md")
 readMeFile2<-str_replace(readMeFile2, past_version_code, new_version_code)

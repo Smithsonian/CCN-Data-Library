@@ -237,8 +237,8 @@ depthseries <- berau_depth %>% full_join(kongsi_depth) %>%
                        depth_max = depth_max * 100,
                        pb210_unit = "becquerelsPerKilogram", 
                        pb214_unit = "becquerelsPerKilogram",
-                       cs137_unit = "becquerelsPerKilogram",
-                       delta_c13 = delta_c13/1000000) %>% #convert to ppm
+                       cs137_unit = "becquerelsPerKilogram") %>% 
+                       #delta_c13 = delta_c13/1000000) %>% conversion not needed 
                 rename(total_pb210_activity = `210Pb [Bq/kg] (total, High resolution, low b...)`,
                        total_pb210_activity_se = `Uncertainty [¬±] (Pb-210 (total), 1 sigma, High...)`,
                        pb214_activity = `214Pb [Bq/kg] (High resolution, low backgrou...)`,

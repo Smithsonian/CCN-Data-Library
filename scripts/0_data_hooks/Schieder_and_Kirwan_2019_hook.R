@@ -7,10 +7,10 @@ library(tidyverse)
 library(RefManageR)
 
 ## Read files ####
-cores <- read.csv("data/primary_studies/Schieder_and_Kirwan_2019/original/schieder_and_kirwan_2019_cores.csv")
-methods <- read.csv("data/primary_studies/Schieder_and_Kirwan_2019/original/schieder_and_kirwan_2019_methods.csv")
+cores_raw <- read.csv("data/primary_studies/Schieder_and_Kirwan_2019/original/schieder_and_kirwan_2019_cores.csv")
+methods_raw <- read.csv("data/primary_studies/Schieder_and_Kirwan_2019/original/schieder_and_kirwan_2019_methods.csv")
 
-depthseries <- read.csv("data/primary_studies/Schieder_and_Kirwan_2019/original/schieder_and_kirwan_2019_depthseries.csv") %>% 
+depthseries_raw <- read.csv("data/primary_studies/Schieder_and_Kirwan_2019/original/schieder_and_kirwan_2019_depthseries.csv") %>% 
   rename(cs137_activity = cs137_activity_661keV,
          cs137_activity_se = cs137_activity_se_661keV,
          total_pb210_activity = pb210_activity_46.5keV,
@@ -21,6 +21,25 @@ depthseries <- read.csv("data/primary_studies/Schieder_and_Kirwan_2019/original/
     select(study_id, site_id, core_id, method_id, depth_min, depth_max, sample_id, dry_bulk_density, fraction_organic_matter,
            cs137_activity, cs137_activity_se, cs137_unit, total_pb210_activity, total_pb210_activity_se, pb210_unit,
            ra226_activity, ra226_activity_se, ra226_unit)
+
+
+#RC spotfixes 
+# G12 and G13 have a second replicate core with the same core id?
+
+methods <- methods_raw
+
+cores <- cores_raw
+
+
+depthseries <- depthseries_raw %>% 
+  mutate(core_id = case_when(sample_id == "replicate_2" ~ paste0(core_id,"_2"),
+                             sample_id == "replicate_1" ~ paste0(core_id, "_1"),
+                             TRUE ~ core_id))
+
+
+
+
+
 
 study_citations <- read.csv("data/primary_studies/Schieder_and_Kirwan_2019/original/schieder_and_kirwan_2019_associated_publications.csv") %>% 
   add_row(study_id = "Schieder_and_Kirwan_2019", 

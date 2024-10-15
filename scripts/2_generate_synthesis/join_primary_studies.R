@@ -5,8 +5,8 @@
 # RUN SCRIPT WITH A CLEAN R SESSION #
 # if you experience an error, restart Rstudio and try again # 
 
-past_version_code <- "1.2.0"
-new_version_code <- "1.3.0"
+past_version_code <- "1.3.0"
+new_version_code <- "1.4.0"
 
 ## 1. Synthesis background and description ###############
 
@@ -216,19 +216,33 @@ if(join_status == TRUE){
   source("scripts/3_post_processing/4_max_depths.R")
   source("scripts/3_post_processing/5_core_attributes.R")
   source("scripts/3_post_processing/7_resolve_taxonomy.R")
+  # source("scripts/3_post_processing/8_soil_carbon_stock.R")
 }
 
 ## 6. Synthesis Metrics & Change Log ####
 
 # dev branch synthesis will be compared with the version of the synthesis on the main branch
+
+prev_synthesis <- read_csv("https://raw.githubusercontent.com/Smithsonian/CCN-Data-Library/refs/heads/main/data/CCN_synthesis/CCN_cores.csv")
+prev_species <- read_csv("https://raw.githubusercontent.com/Smithsonian/CCN-Data-Library/refs/heads/main/data/CCN_synthesis/CCN_species.csv")
 # synthesis_log <- readr::read_csv("docs/synthesis_resources/synthesis_log.csv")
 # 
-# synth_diff <- anti_join(ccrcn_synthesis$cores %>%
-#                           select(study_id, site_id, core_id),
-#                         synthesis_log) %>%
-#   mutate(version = new_version_code,
-#          date = format(Sys.time(), "%Y-%m-%d")) %>%
-#   select(date, version, everything())
+synth_diff <- anti_join(ccrcn_synthesis$cores %>% 
+                          select(study_id, site_id, core_id, habitat, country, max_depth),
+                        prev_synthesis) %>% 
+  # if we change a core ID this gets logged falsly as a new entry
+  # however, there are cases where we're adding in more data for an existing study 
+  # or adding new information to existing cores
+  # need an automated way to detect these different cases or at least flag them
+  mutate(change_flag = case_when(study_id %in% unique(prev_synthesis$study_id) ~ "core ID modification or new core for existing study",
+                                 T ~ "new core from new study"))
+
+
+new_species <- anti_join(distinct(ccrcn_synthesis$species, species_code), 
+                         distinct(prev_species, species_code))
+  # mutate(version = new_version_code,
+  #        date = format(Sys.time(), "%Y-%m-%d")) %>%
+  # select(date, version, everything())
 # 
 # # stash results in additive list, documenting version, and date
 # synthesis_log_filemame <- paste0("docs/synthesis_resources/synthesis_", 
@@ -250,7 +264,6 @@ formated_date <- format(Sys.time(), "%Y/%m/%d-%H:%M")
   
 # Needs updating
 # REQUIRES: file paths, join status, warning summary, etc
-# map cores w habitat?
 # save qa_results
 rmarkdown::render(input = "./scripts/2_generate_synthesis/synthesis_report.Rmd",
                   # output_format = "html_document",

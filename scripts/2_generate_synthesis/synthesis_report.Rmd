@@ -37,6 +37,7 @@ custom_opts <- list(searching = TRUE,
 # load libraries
 library(leaflet)
 library(DT)
+library(RColorBrewer)
 ```
   
 ## Introduction 
@@ -45,6 +46,8 @@ The CCN clearinghouse provides a synthesized and curated set of coastal carbon d
 ***
 
 **Report date: `r formated_date`**
+
+**Version: `r new_version_code`**
 
 **Synthesis status: `r if(join_status) {"Successful"} else "Failed"`**
 
@@ -180,11 +183,14 @@ ds_uncontrolled <- ccrcn_synthesis$depthseries %>%
   join_uncontrolled_attributes <- bind_rows(join_uncontrolled_attributes, ds_uncontrolled)
 }
 
+# join_uncontrolled_attributes <- join_uncontrolled_attributes %>% 
+#     filter(!(attribute_name %in% c("stock_MgHa_total", "stock_MgHa_1m")))
+
 if(nrow(join_uncontrolled_attributes) > 0){
   join_uncontrolled_attributes <- join_uncontrolled_attributes %>% 
   mutate(value = case_when(grepl("[...]", attribute_name) ~ "row number index", # highlight row number index columns with a flag
                            grepl("([0-9]+).*$", value) ~ "numeric value", # replace numeric values with a flag
-                           T ~ value)) %>% 
+                           T ~ value)) %>%
   distinct() %>% arrange(study_id)
 }
 ```
@@ -209,7 +215,7 @@ datatable(join_uncontrolled_attributes,
 
 ### Uncontrolled Variables
 
-```{r}
+```{r, echo=FALSE, eval=FALSE}
 
 uc_vars <- str_split(toString(
   qa_results %>% 
@@ -496,11 +502,57 @@ ccrcn_synthesis$depthseries %>%
 
 ## Change Log
 
-**COMING SOON**
+There are `r nrow(synth_diff)` new cores in this synthesis compared to the previous version. These come from `r length(unique(synth_diff$study_id))` studies, `r length(unique(synth_diff$habitat))` habitats, and `r length(unique(synth_diff$country))` countries. 
 
-The following table summarizes which entries across the range of synthesis tables changed compared to the previous synthesis. Study IDs associated with the "forward" change type represent data that was not present in the previous synthesis, while "backward" indicates that study ID is no longer in the given table. If a study ID in a table is associated with both backward and forward change types, it is likely that one or more values were altered for that row in the new synthesis. 
+### Habitats with New Data
 
 ```{r, echo=FALSE}
+synth_diff %>% count(habitat) %>% 
+  ggplot(aes(y = n, x = habitat, fill = habitat)) + 
+  geom_col(alpha = 0.8) +
+  ylab("Number of Cores") + xlab("") +
+  geom_text(aes(label = n, vjust = -0.5))
+  # scale_fill_brewer(palette = "Dark2", na.value = "grey50")
+  
+```
+
+New species: `r new_species$species_code`
+
+**Distribution of max sampling depths in the new data:**
+
+```{r, echo=FALSE}
+synth_diff %>% filter(!is.na(max_depth)) %>% 
+  ggplot(aes(max_depth, col = habitat)) + 
+  geom_density() + geom_rug() + 
+  facet_wrap(~habitat, scales = "free")
+```
+
+### Countries with New Data
+
+```{r, echo=FALSE}
+synth_diff %>% count(country) %>% 
+  ggplot(aes(y = n, x = country, fill = country)) + 
+  geom_col(alpha = 0.8) +
+  ylab("Number of Cores") + xlab("") +
+  geom_text(aes(label = n, vjust = -0.5)) +
+    scale_fill_brewer(palette = "Accent", na.value = "grey50")
+  
+```
+
+### Table of New Cores
+
+```{r, echo=FALSE}
+
+datatable(synth_diff,
+          # extensions = "FixedColumns",
+          options = list(searching = TRUE,
+                         paging = FALSE,
+                         info = FALSE,
+                         scrollY = 300,
+                         scrollX = 300,
+                         scrollCollapse = TRUE),
+          rownames = TRUE)
+
 
   # # data table of change log results 
   # datatable(change_log_results)

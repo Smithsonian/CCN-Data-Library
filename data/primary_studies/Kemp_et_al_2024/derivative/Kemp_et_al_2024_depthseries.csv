@@ -1,152 +1,152 @@
 study_id,site_id,core_id,method_id,depth_min,depth_max,sample_id,dry_bulk_density,fraction_organic_matter,cs137_activity,cs137_activity_se,cs137_unit,excess_pb210_activity,excess_pb210_activity_se,total_pb210_activity,total_pb210_activity_se,pb210_unit,ra226_activity,ra226_activity_se,ra226_unit,c14_age,c14_age_se,c14_material,c14_notes,delta_c13
-Kemp_et_al_2024,SP,1,single set of methods,4,6,NA,NA,0.03,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,8,10,NA,NA,0.04,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,14,16,NA,0.31,0.02,11.45,1.5,bequerelsPerKilogram,51.19,4.42,56.36,2.87,bequerelsPerKilogram,5.17,5.27,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,16,18,NA,0.31,NA,24.15,3.22,bequerelsPerKilogram,80.62,5.41,85.79,4.24,bequerelsPerKilogram,5.17,6.88,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,18,20,NA,0.31,0.07,25.18,2.89,bequerelsPerKilogram,70.67,5.04,75.84,3.75,bequerelsPerKilogram,5.17,6.28,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,20,22,NA,0.25,NA,42.04,3.17,bequerelsPerKilogram,72.72,5.16,77.88,3.92,bequerelsPerKilogram,5.17,6.48,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,22,24,NA,0.16,NA,94.92,3.7,bequerelsPerKilogram,72.1,5.09,77.27,3.82,bequerelsPerKilogram,5.17,6.37,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,24,26,NA,0.14,0.19,40.8,2.98,bequerelsPerKilogram,55.08,4.58,60.24,3.12,bequerelsPerKilogram,5.17,5.54,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,26,28,NA,0.11,NA,18.71,2.94,bequerelsPerKilogram,52.45,4.49,57.62,2.98,bequerelsPerKilogram,5.17,5.39,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2023,SP,1,single set of methods,26,28,OS 70455,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-1073,17,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
-Kemp_et_al_2024,SP,1,single set of methods,28,30,NA,0.1,0.24,7.45,3.03,bequerelsPerKilogram,34.44,3.99,39.61,2.16,bequerelsPerKilogram,5.17,4.54,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2023,SP,1,single set of methods,28,30,OS 70456,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-542.75,13.503,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
-Kemp_et_al_2023,SP,1,single set of methods,28,30,OS 70457,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-761.24,18.246,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
-Kemp_et_al_2024,SP,1,single set of methods,30,32,NA,0.1,NA,6.84,1.86,bequerelsPerKilogram,24.51,3.76,29.68,1.7,bequerelsPerKilogram,5.17,4.13,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2023,SP,1,single set of methods,30,32,OS 70461,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,214.92,0.131,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
-Kemp_et_al_2024,SP,1,single set of methods,32,34,NA,0.09,NA,6.66,2.53,bequerelsPerKilogram,19.26,3.66,24.42,1.46,bequerelsPerKilogram,5.17,3.95,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,34,36,NA,0.08,0.29,6.6,2.67,bequerelsPerKilogram,24.68,3.8,29.85,1.78,bequerelsPerKilogram,5.17,4.2,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,36,38,NA,NA,0.24,1.68,2.84,bequerelsPerKilogram,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,38,40,NA,0.08,NA,3.47,2.81,bequerelsPerKilogram,22.79,3.8,27.96,1.78,bequerelsPerKilogram,5.17,4.2,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,40,42,NA,0.08,NA,0.17,2.17,bequerelsPerKilogram,21.47,3.83,26.64,1.83,bequerelsPerKilogram,5.17,4.25,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,42,44,NA,0.07,NA,0.17,2.12,bequerelsPerKilogram,20.49,3.71,25.66,1.57,bequerelsPerKilogram,5.17,4.03,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,44,46,NA,0.09,0.33,NA,NA,NA,19.54,3.65,24.7,1.5,bequerelsPerKilogram,5.17,3.94,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,46,48,NA,0.12,NA,NA,NA,NA,19.82,3.83,24.99,1.42,bequerelsPerKilogram,5.17,4.09,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,48,50,NA,0.1,0.24,NA,NA,NA,15.38,3.67,20.54,1.5,bequerelsPerKilogram,5.17,3.96,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,50,52,NA,0.1,NA,NA,NA,NA,17.55,3.67,22.71,1.67,bequerelsPerKilogram,5.17,4.03,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,52,54,NA,0.09,NA,NA,NA,NA,11.82,3.33,16.98,1.5,bequerelsPerKilogram,5.17,3.66,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,54,56,NA,0.1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,56,58,NA,0.12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,58,60,NA,0.1,0.27,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2023,SP,1,single set of methods,60,60,OS 70395,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,230,15,organic,Plant macrofossil remains identifiable to the species level.,NA
-Kemp_et_al_2023,SP,1,single set of methods,60,60,OS 70396,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,370,36,organic,Plant macrofossil remains identifiable to the species level.,NA
-Kemp_et_al_2023,SP,1,single set of methods,60,60,OS 70397,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,175,14,organic,Plant macrofossil remains identifiable to the species level.,NA
-Kemp_et_al_2024,SP,1,single set of methods,60,62,OS70396,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-11.9
-Kemp_et_al_2024,SP,1,single set of methods,60,62,OS70397,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-13.4
-Kemp_et_al_2024,SP,1,single set of methods,62,64,NA,0.07,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,64,66,NA,0.07,0.36,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,68,70,NA,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,70,72,NA,NA,0.53,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,74,76,NA,NA,0.49,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,78,80,NA,NA,0.6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2023,SP,1,single set of methods,80,80,OS 70398,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,341,13,organic,Plant macrofossil remains identifiable to the species level.,NA
-Kemp_et_al_2023,SP,1,single set of methods,80,80,OS 70399,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,153,18,organic,Plant macrofossil remains identifiable to the species level.,NA
-Kemp_et_al_2023,SP,1,single set of methods,80,80,OS 70400,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,335,13,organic,Plant macrofossil remains identifiable to the species level.,NA
-Kemp_et_al_2024,SP,1,single set of methods,80,82,OS 70399,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-23.3
-Kemp_et_al_2024,SP,1,single set of methods,80,82,OS 70400,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-23.8
-Kemp_et_al_2024,SP,1,single set of methods,84,86,NA,NA,0.62,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2023,SP,1,single set of methods,87,87,OS 58902,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,315,25,organic,Juncus roemerianus sub-surface stem,NA
-Kemp_et_al_2024,SP,1,single set of methods,88,90,NA,NA,0.45,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,94,96,NA,NA,0.75,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,98,100,NA,NA,0.76,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2023,SP,1,single set of methods,99,99,OS 58897,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,535,30,organic,Juncus roemerianus sub-surface stem,NA
-Kemp_et_al_2024,SP,1,single set of methods,104,106,NA,NA,0.65,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,108,110,NA,NA,0.74,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,114,116,NA,NA,0.74,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,118,120,NA,NA,0.76,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,124,126,NA,NA,0.67,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,128,130,NA,NA,0.67,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,134,136,NA,NA,0.57,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,138,140,NA,NA,0.68,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,142,144,NA,NA,0.74,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,148,150,NA,NA,0.54,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,154,156,NA,NA,0.48,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,158,160,NA,NA,0.44,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,164,166,NA,NA,0.56,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,168,170,NA,NA,0.4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,174,176,NA,NA,0.4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,178,180,NA,NA,0.49,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,184,186,NA,NA,0.58,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,188,190,NA,NA,0.68,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,194,196,NA,NA,0.59,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,198,200,NA,NA,0.64,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,202,204,NA,NA,0.72,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,208,210,NA,NA,0.53,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,214,216,NA,NA,0.52,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,218,220,NA,NA,0.64,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,224,226,NA,NA,0.55,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,228,230,NA,NA,0.73,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,234,236,NA,NA,0.7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,238,240,NA,NA,0.72,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,244,246,NA,NA,0.63,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,248,250,NA,NA,0.47,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,254,256,NA,NA,0.4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,258,260,NA,NA,0.51,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,264,266,NA,NA,0.29,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,268,270,NA,NA,0.18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,274,276,NA,NA,0.07,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,278,280,NA,NA,0.05,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,284,286,NA,NA,0.06,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,288,290,NA,NA,0.06,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,292,294,NA,NA,0.22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,298,300,NA,NA,0.04,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,304,306,NA,NA,0.04,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,308,310,NA,NA,0.03,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,314,316,NA,NA,0.02,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,316,318,NA,NA,0.02,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,324,326,NA,NA,0.02,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,SP,1,single set of methods,328,330,NA,NA,0.03,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,0,2,NA,1.14,NA,NA,NA,NA,102.94,11.03,110.11,11.03,bequerelsPerKilogram,7.17,15.6,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,2,4,NA,1.14,NA,NA,NA,NA,111.25,11.86,118.41,11.86,bequerelsPerKilogram,7.17,16.77,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,4,6,NA,1.14,NA,NA,NA,NA,152.53,15.95,159.69,15.95,bequerelsPerKilogram,7.17,22.56,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2023,TP,1,single set of methods,6,6,OS 70428,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-1122,13.96,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
-Kemp_et_al_2024,TP,1,single set of methods,6,8,NA,1.14,NA,NA,NA,NA,162.32,16.92,169.48,16.92,bequerelsPerKilogram,7.17,23.92,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2023,TP,1,single set of methods,7,7,OS 70429,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-791.87,28.338,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
-Kemp_et_al_2023,TP,1,single set of methods,8,8,OS 70430,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-901.76,17.214,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
-Kemp_et_al_2024,TP,1,single set of methods,8,10,NA,1.14,NA,NA,NA,NA,142.43,14.97,149.6,14.97,bequerelsPerKilogram,7.17,21.17,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,10,12,NA,1.14,NA,9.18,1.99,bequerelsPerKilogram,103.92,11.15,111.08,11.15,bequerelsPerKilogram,7.17,15.77,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,12,14,NA,1.14,NA,26.46,2.23,bequerelsPerKilogram,111.1,11.84,118.27,11.84,bequerelsPerKilogram,7.17,16.75,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2023,TP,1,single set of methods,14,14,OS 70434,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-1565.7,14.53,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
-Kemp_et_al_2024,TP,1,single set of methods,14,16,NA,1.14,NA,87.47,1.72,bequerelsPerKilogram,111.89,11.93,119.06,11.93,bequerelsPerKilogram,7.17,16.87,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2023,TP,1,single set of methods,15,15,OS 70435,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-927.56,12.872,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
-Kemp_et_al_2024,TP,1,single set of methods,16,18,NA,1.14,NA,48.42,1.96,bequerelsPerKilogram,58.32,6.6,65.49,6.6,bequerelsPerKilogram,7.17,9.33,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,18,20,NA,1.14,NA,10.1,1.16,bequerelsPerKilogram,39.2,4.71,46.37,4.71,bequerelsPerKilogram,7.17,6.66,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,20,22,NA,1.14,NA,7.73,2.08,bequerelsPerKilogram,30.87,3.93,38.04,3.93,bequerelsPerKilogram,7.17,5.55,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,22,24,NA,1.14,NA,7.96,1.66,bequerelsPerKilogram,29.07,3.7,36.24,3.7,bequerelsPerKilogram,7.17,5.23,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,24,26,NA,1.14,NA,5.25,1.99,bequerelsPerKilogram,24.36,3.32,31.53,3.32,bequerelsPerKilogram,7.17,4.69,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,26,28,NA,1.14,NA,2.94,2.99,bequerelsPerKilogram,16.5,2.49,23.67,2.49,bequerelsPerKilogram,7.17,3.52,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,28,30,NA,1.14,NA,NA,NA,NA,14.46,2.67,21.63,2.67,bequerelsPerKilogram,7.17,3.78,bequerelsPerKilogram,NA,NA,NA,NA,NA
-Kemp_et_al_2023,TP,1,single set of methods,32,32,OS 70393,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,90,14,organic,Plant macrofossil remains identifiable to the species level.,NA
-Kemp_et_al_2023,TP,1,single set of methods,32,32,OS 70422,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,97,17,organic,Plant macrofossil remains identifiable to the species level.,NA
-Kemp_et_al_2024,TP,1,single set of methods,32,34,OS 70422,1.14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-25.3
-Kemp_et_al_2023,TP,1,single set of methods,35,35,OS70424,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,30,16,organic,Plant macrofossil remains identifiable to the species level.,NA
-Kemp_et_al_2023,TP,1,single set of methods,47,47,OS 70423,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,111,16,organic,Plant macrofossil remains identifiable to the species level.,NA
-Kemp_et_al_2023,TP,1,single set of methods,49,49,OS 70394,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,206,19,organic,Plant macrofossil remains identifiable to the species level.,NA
-Kemp_et_al_2023,TP,1,single set of methods,58,58,OS 66915,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,185,30,organic,Juncus roemerianus sub-surface stem,NA
-Kemp_et_al_2023,TP,1,single set of methods,66,66,OS 59677,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,385,30,organic,"Distichlis spicata sub-surface stem,",NA
-Kemp_et_al_2023,TP,1,single set of methods,77,77,OS 59728,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,350,35,organic,Juncus roemerianus sub-surface stem,NA
-Kemp_et_al_2024,TP,1,single set of methods,208,210,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,214,216,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,218,220,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,224,226,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,228,230,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,234,236,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,238,240,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,244,246,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,248,250,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,254,256,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,258,260,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,264,266,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,268,270,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,274,276,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,278,280,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,284,286,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,288,290,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,292,294,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,298,300,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,304,306,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,308,310,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,314,316,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,316,318,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,324,326,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kemp_et_al_2024,TP,1,single set of methods,328,330,NA,NA,0.01,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,4,6,NA,NA,0.03,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,8,10,NA,NA,0.04,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,14,16,NA,0.31,0.02,11.45,1.5,bequerelsPerKilogram,51.19,4.42,56.36,2.87,bequerelsPerKilogram,5.17,5.27,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,16,18,NA,0.31,NA,24.15,3.22,bequerelsPerKilogram,80.62,5.41,85.79,4.24,bequerelsPerKilogram,5.17,6.88,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,18,20,NA,0.31,0.07,25.18,2.89,bequerelsPerKilogram,70.67,5.04,75.84,3.75,bequerelsPerKilogram,5.17,6.28,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,20,22,NA,0.25,NA,42.04,3.17,bequerelsPerKilogram,72.72,5.16,77.88,3.92,bequerelsPerKilogram,5.17,6.48,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,22,24,NA,0.16,NA,94.92,3.7,bequerelsPerKilogram,72.1,5.09,77.27,3.82,bequerelsPerKilogram,5.17,6.37,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,24,26,NA,0.14,0.19,40.8,2.98,bequerelsPerKilogram,55.08,4.58,60.24,3.12,bequerelsPerKilogram,5.17,5.54,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,26,28,NA,0.11,NA,18.71,2.94,bequerelsPerKilogram,52.45,4.49,57.62,2.98,bequerelsPerKilogram,5.17,5.39,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2023,SP,SP_1,single set of methods,26,28,OS 70455,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-1073,17,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,28,30,NA,0.1,0.24,7.45,3.03,bequerelsPerKilogram,34.44,3.99,39.61,2.16,bequerelsPerKilogram,5.17,4.54,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2023,SP,SP_1,single set of methods,28,30,OS 70456,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-542.75,13.503,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
+Kemp_et_al_2023,SP,SP_1,single set of methods,28,30,OS 70457,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-761.24,18.246,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,30,32,NA,0.1,NA,6.84,1.86,bequerelsPerKilogram,24.51,3.76,29.68,1.7,bequerelsPerKilogram,5.17,4.13,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2023,SP,SP_1,single set of methods,30,32,OS 70461,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,214.92,0.131,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,32,34,NA,0.09,NA,6.66,2.53,bequerelsPerKilogram,19.26,3.66,24.42,1.46,bequerelsPerKilogram,5.17,3.95,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,34,36,NA,0.08,0.29,6.6,2.67,bequerelsPerKilogram,24.68,3.8,29.85,1.78,bequerelsPerKilogram,5.17,4.2,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,36,38,NA,NA,0.24,1.68,2.84,bequerelsPerKilogram,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,38,40,NA,0.08,NA,3.47,2.81,bequerelsPerKilogram,22.79,3.8,27.96,1.78,bequerelsPerKilogram,5.17,4.2,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,40,42,NA,0.08,NA,0.17,2.17,bequerelsPerKilogram,21.47,3.83,26.64,1.83,bequerelsPerKilogram,5.17,4.25,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,42,44,NA,0.07,NA,0.17,2.12,bequerelsPerKilogram,20.49,3.71,25.66,1.57,bequerelsPerKilogram,5.17,4.03,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,44,46,NA,0.09,0.33,NA,NA,NA,19.54,3.65,24.7,1.5,bequerelsPerKilogram,5.17,3.94,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,46,48,NA,0.12,NA,NA,NA,NA,19.82,3.83,24.99,1.42,bequerelsPerKilogram,5.17,4.09,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,48,50,NA,0.1,0.24,NA,NA,NA,15.38,3.67,20.54,1.5,bequerelsPerKilogram,5.17,3.96,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,50,52,NA,0.1,NA,NA,NA,NA,17.55,3.67,22.71,1.67,bequerelsPerKilogram,5.17,4.03,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,52,54,NA,0.09,NA,NA,NA,NA,11.82,3.33,16.98,1.5,bequerelsPerKilogram,5.17,3.66,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,54,56,NA,0.1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,56,58,NA,0.12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,58,60,NA,0.1,0.27,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2023,SP,SP_1,single set of methods,60,60,OS 70395,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,230,15,organic,Plant macrofossil remains identifiable to the species level.,NA
+Kemp_et_al_2023,SP,SP_1,single set of methods,60,60,OS 70396,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,370,36,organic,Plant macrofossil remains identifiable to the species level.,NA
+Kemp_et_al_2023,SP,SP_1,single set of methods,60,60,OS 70397,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,175,14,organic,Plant macrofossil remains identifiable to the species level.,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,60,62,OS70396,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-11.9
+Kemp_et_al_2024,SP,SP_1,single set of methods,60,62,OS70397,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-13.4
+Kemp_et_al_2024,SP,SP_1,single set of methods,62,64,NA,0.07,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,64,66,NA,0.07,0.36,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,68,70,NA,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,70,72,NA,NA,0.53,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,74,76,NA,NA,0.49,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,78,80,NA,NA,0.6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2023,SP,SP_1,single set of methods,80,80,OS 70398,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,341,13,organic,Plant macrofossil remains identifiable to the species level.,NA
+Kemp_et_al_2023,SP,SP_1,single set of methods,80,80,OS 70399,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,153,18,organic,Plant macrofossil remains identifiable to the species level.,NA
+Kemp_et_al_2023,SP,SP_1,single set of methods,80,80,OS 70400,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,335,13,organic,Plant macrofossil remains identifiable to the species level.,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,80,82,OS 70399,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-23.3
+Kemp_et_al_2024,SP,SP_1,single set of methods,80,82,OS 70400,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-23.8
+Kemp_et_al_2024,SP,SP_1,single set of methods,84,86,NA,NA,0.62,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2023,SP,SP_1,single set of methods,87,87,OS 58902,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,315,25,organic,Juncus roemerianus sub-surface stem,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,88,90,NA,NA,0.45,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,94,96,NA,NA,0.75,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,98,100,NA,NA,0.76,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2023,SP,SP_1,single set of methods,99,99,OS 58897,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,535,30,organic,Juncus roemerianus sub-surface stem,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,104,106,NA,NA,0.65,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,108,110,NA,NA,0.74,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,114,116,NA,NA,0.74,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,118,120,NA,NA,0.76,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,124,126,NA,NA,0.67,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,128,130,NA,NA,0.67,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,134,136,NA,NA,0.57,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,138,140,NA,NA,0.68,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,142,144,NA,NA,0.74,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,148,150,NA,NA,0.54,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,154,156,NA,NA,0.48,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,158,160,NA,NA,0.44,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,164,166,NA,NA,0.56,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,168,170,NA,NA,0.4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,174,176,NA,NA,0.4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,178,180,NA,NA,0.49,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,184,186,NA,NA,0.58,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,188,190,NA,NA,0.68,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,194,196,NA,NA,0.59,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,198,200,NA,NA,0.64,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,202,204,NA,NA,0.72,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,208,210,NA,NA,0.53,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,214,216,NA,NA,0.52,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,218,220,NA,NA,0.64,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,224,226,NA,NA,0.55,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,228,230,NA,NA,0.73,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,234,236,NA,NA,0.7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,238,240,NA,NA,0.72,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,244,246,NA,NA,0.63,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,248,250,NA,NA,0.47,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,254,256,NA,NA,0.4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,258,260,NA,NA,0.51,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,264,266,NA,NA,0.29,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,268,270,NA,NA,0.18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,274,276,NA,NA,0.07,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,278,280,NA,NA,0.05,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,284,286,NA,NA,0.06,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,288,290,NA,NA,0.06,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,292,294,NA,NA,0.22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,298,300,NA,NA,0.04,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,304,306,NA,NA,0.04,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,308,310,NA,NA,0.03,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,314,316,NA,NA,0.02,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,316,318,NA,NA,0.02,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,324,326,NA,NA,0.02,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,SP,SP_1,single set of methods,328,330,NA,NA,0.03,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,0,2,NA,1.14,NA,NA,NA,NA,102.94,11.03,110.11,11.03,bequerelsPerKilogram,7.17,15.6,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,2,4,NA,1.14,NA,NA,NA,NA,111.25,11.86,118.41,11.86,bequerelsPerKilogram,7.17,16.77,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,4,6,NA,1.14,NA,NA,NA,NA,152.53,15.95,159.69,15.95,bequerelsPerKilogram,7.17,22.56,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2023,TP,TP_1,single set of methods,6,6,OS 70428,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-1122,13.96,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,6,8,NA,1.14,NA,NA,NA,NA,162.32,16.92,169.48,16.92,bequerelsPerKilogram,7.17,23.92,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2023,TP,TP_1,single set of methods,7,7,OS 70429,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-791.87,28.338,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
+Kemp_et_al_2023,TP,TP_1,single set of methods,8,8,OS 70430,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-901.76,17.214,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,8,10,NA,1.14,NA,NA,NA,NA,142.43,14.97,149.6,14.97,bequerelsPerKilogram,7.17,21.17,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,10,12,NA,1.14,NA,9.18,1.99,bequerelsPerKilogram,103.92,11.15,111.08,11.15,bequerelsPerKilogram,7.17,15.77,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,12,14,NA,1.14,NA,26.46,2.23,bequerelsPerKilogram,111.1,11.84,118.27,11.84,bequerelsPerKilogram,7.17,16.75,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2023,TP,TP_1,single set of methods,14,14,OS 70434,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-1565.7,14.53,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,14,16,NA,1.14,NA,87.47,1.72,bequerelsPerKilogram,111.89,11.93,119.06,11.93,bequerelsPerKilogram,7.17,16.87,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2023,TP,TP_1,single set of methods,15,15,OS 70435,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-927.56,12.872,organic,Plant macrofossil remains identifiable to the species level. Converted from fraction modern carbon to radiocarbon age using rintcal.,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,16,18,NA,1.14,NA,48.42,1.96,bequerelsPerKilogram,58.32,6.6,65.49,6.6,bequerelsPerKilogram,7.17,9.33,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,18,20,NA,1.14,NA,10.1,1.16,bequerelsPerKilogram,39.2,4.71,46.37,4.71,bequerelsPerKilogram,7.17,6.66,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,20,22,NA,1.14,NA,7.73,2.08,bequerelsPerKilogram,30.87,3.93,38.04,3.93,bequerelsPerKilogram,7.17,5.55,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,22,24,NA,1.14,NA,7.96,1.66,bequerelsPerKilogram,29.07,3.7,36.24,3.7,bequerelsPerKilogram,7.17,5.23,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,24,26,NA,1.14,NA,5.25,1.99,bequerelsPerKilogram,24.36,3.32,31.53,3.32,bequerelsPerKilogram,7.17,4.69,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,26,28,NA,1.14,NA,2.94,2.99,bequerelsPerKilogram,16.5,2.49,23.67,2.49,bequerelsPerKilogram,7.17,3.52,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,28,30,NA,1.14,NA,NA,NA,NA,14.46,2.67,21.63,2.67,bequerelsPerKilogram,7.17,3.78,bequerelsPerKilogram,NA,NA,NA,NA,NA
+Kemp_et_al_2023,TP,TP_1,single set of methods,32,32,OS 70393,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,90,14,organic,Plant macrofossil remains identifiable to the species level.,NA
+Kemp_et_al_2023,TP,TP_1,single set of methods,32,32,OS 70422,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,97,17,organic,Plant macrofossil remains identifiable to the species level.,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,32,34,OS 70422,1.14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,-25.3
+Kemp_et_al_2023,TP,TP_1,single set of methods,35,35,OS70424,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,30,16,organic,Plant macrofossil remains identifiable to the species level.,NA
+Kemp_et_al_2023,TP,TP_1,single set of methods,47,47,OS 70423,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,111,16,organic,Plant macrofossil remains identifiable to the species level.,NA
+Kemp_et_al_2023,TP,TP_1,single set of methods,49,49,OS 70394,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,206,19,organic,Plant macrofossil remains identifiable to the species level.,NA
+Kemp_et_al_2023,TP,TP_1,single set of methods,58,58,OS 66915,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,185,30,organic,Juncus roemerianus sub-surface stem,NA
+Kemp_et_al_2023,TP,TP_1,single set of methods,66,66,OS 59677,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,385,30,organic,"Distichlis spicata sub-surface stem,",NA
+Kemp_et_al_2023,TP,TP_1,single set of methods,77,77,OS 59728,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,350,35,organic,Juncus roemerianus sub-surface stem,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,208,210,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,214,216,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,218,220,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,224,226,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,228,230,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,234,236,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,238,240,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,244,246,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,248,250,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,254,256,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,258,260,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,264,266,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,268,270,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,274,276,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,278,280,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,284,286,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,288,290,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,292,294,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,298,300,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,304,306,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,308,310,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,314,316,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,316,318,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,324,326,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Kemp_et_al_2024,TP,TP_1,single set of methods,328,330,NA,NA,0.01,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

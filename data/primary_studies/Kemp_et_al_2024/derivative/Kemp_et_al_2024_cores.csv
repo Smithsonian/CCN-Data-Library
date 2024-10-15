@@ -1,3 +1,3 @@
 study_id,site_id,core_id,year,month,day,latitude,longitude,position_method,elevation,elevation_method,elevation_notes,salinity_class,salinity_method,vegetation_class,vegetation_method,habitat,inundation_class,inundation_method
-Kemp_et_al_2024,SP,1,2007,5,15,35.901,-75.649,handheld,0.33,other high resolution,The surface elevation of the core is 0.33 m above present mean sea level,estuarine,field observation,emergent,field observation,marsh,low,field observation
-Kemp_et_al_2024,TP,1,2007,5,1,34.978,-76.381,handheld,0.17,RTK,The surface elevation of the core is 0.17 m above MSL.,estuarine,field observation,emergent,field observation,marsh,low,field observation
+Kemp_et_al_2024,SP,SP_1,2007,5,15,35.901,-75.649,handheld,0.33,other high resolution,The surface elevation of the core is 0.33 m above present mean sea level,estuarine,field observation,emergent,field observation,marsh,low,field observation
+Kemp_et_al_2024,TP,TP_1,2007,5,1,34.978,-76.381,handheld,0.17,RTK,The surface elevation of the core is 0.17 m above MSL.,estuarine,field observation,emergent,field observation,marsh,low,field observation
