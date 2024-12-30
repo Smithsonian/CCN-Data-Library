@@ -202,3 +202,20 @@ diff <- full_join(v1_cores, v2_cores) %>%
 
 v2 <- read_csv("https://ndownloader.figshare.com/files/43694076", guess_max = 11000) %>% filter(!(study_id %in% v1_studies))
 
+
+## 
+# Identify studies that have been published by the CCN ####
+
+# read in 
+
+ccn_pubs <- ccrcn_synthesis$study_citations %>% 
+  # mostly SI figshare but Piazza dataset was published to ScienceBase
+  filter(grepl("SERC|serc|P9D8WTQW", doi)) %>% 
+  distinct(study_id) %>% 
+  pull(study_id)
+
+nrow(ccrcn_synthesis$cores %>% filter(study_id %in% ccn_pubs))
+
+# percentage of CCN-published cores in library
+nrow(ccrcn_synthesis$cores %>% filter(study_id %in% ccn_pubs))/nrow(ccrcn_synthesis$cores) *100
+

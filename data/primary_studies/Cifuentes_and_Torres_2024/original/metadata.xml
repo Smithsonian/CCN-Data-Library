@@ -1,0 +1,1829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="99e92c5f-6516-494c-aab2-2ac00f1fb9e1" system="uuid" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <dataset>
+    <title>Dataset: Evaluation of carbon in the National Forest of Térraba-Sierpe, Costa Rica.</title>
+    <creator>
+      <individualName>
+        <givenName>Miguel</givenName>
+        <surName>Cifuentes-Jara</surName>
+      </individualName>
+      <electronicMailAddress>miguel.cifuentes.jara@outlook.com</electronicMailAddress>
+    </creator>
+    <associatedParty>
+      <individualName>
+        <givenName>Miguel</givenName>
+        <surName>Cifuentes-Jara</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Danilo</givenName>
+        <surName>Torres Gómes</surName>
+      </individualName>
+      <role>author</role>
+    </associatedParty>
+    <pubDate>2024</pubDate>
+    <abstract>
+
+This dataset contains the findings of a carbon stock inventory conducted by CATIE 
+(Centro Agronómico Tropical de Investigación y Enseñanza) in 2012. The aim of this project
+was to measure and quantify carbon stocks at the ecosystem level (up to 3m deep) in the mangroves
+located in the Térraba-Sierpe National Forest, Costa Rica. Fieldwork was carried out across 4 different sites, and
+140 plots, where vegetation was surveyed and soils were sampled to provide estimates of total ecosystem carbon stock.
+
+</abstract>
+    <keywordSet>
+      <keyword>mangrove</keyword>
+      <keyword>carbon stock assessment</keyword>
+      <keyword>sediment</keyword>
+      <keyword>biomass</keyword>
+      <keyword>Costa Rica</keyword>
+    </keywordSet>
+    <intellectualRights>This dataset is listed under a Creative Commons BY 4.0 and can be used with attribution. https://creativecommons.org/licenses/by/4.0/</intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Boca Chica</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-83.6132271297989</westBoundingCoordinate>
+          <eastBoundingCoordinate>-83.6047474643711</eastBoundingCoordinate>
+          <northBoundingCoordinate>8.93520517381602</northBoundingCoordinate>
+          <southBoundingCoordinate>8.92531755078202</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Boca Guarumal</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-83.5809842810343</westBoundingCoordinate>
+          <eastBoundingCoordinate>-83.5484239872568</eastBoundingCoordinate>
+          <northBoundingCoordinate>8.86364570089295</northBoundingCoordinate>
+          <southBoundingCoordinate>8.83808556838457</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Boca Sierpe</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-83.6151312050701</westBoundingCoordinate>
+          <eastBoundingCoordinate>-83.5332100746253</eastBoundingCoordinate>
+          <northBoundingCoordinate>8.81824447384105</northBoundingCoordinate>
+          <southBoundingCoordinate>8.78963530136615</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Boca Zacate</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-83.5800147369917</westBoundingCoordinate>
+          <eastBoundingCoordinate>-83.5568152293554</eastBoundingCoordinate>
+          <northBoundingCoordinate>8.90332901912713</northBoundingCoordinate>
+          <southBoundingCoordinate>8.87630312276747</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2012</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2012</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Rhizophora mangle</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Pelliciera rhizophorae</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Rhizophora racemosa</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Laguncularia racemosa</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Mora oleifera</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+          <taxonRankValue>Acrostichum aureum</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <contact>
+      <individualName>
+        <givenName>Miguel</givenName>
+        <surName>Cifuentes-Jara</surName>
+      </individualName>
+      <electronicMailAddress>miguel.cifuentes.jara@outlook.com</electronicMailAddress>
+    </contact>
+    <dataTable>
+      <entityName>Cifuentes_and_Torres_2024_methods</entityName>
+      <entityDescription>methods information for study</entityDescription>
+      <physical>
+        <objectName>Cifuentes_and_Torres_2024_methods.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>coring_method</attributeName>
+          <attributeDefinition>Code indicating what type of device was used to collect soil depth profiles.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>gouge auger</code>
+                    <definition>A half cylinder coring device in which the coring section is open, not sealed off by a fin</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>roots_flag</attributeName>
+          <attributeDefinition>Code indicating whether live roots were included or excluded from carbon assessments.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>roots and rhizomes separated</code>
+                    <definition>Roots and rhizomes were separated from soil before dry bulk density and or organic matter and carbon measurements.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sediment_sieved_flag</attributeName>
+          <attributeDefinition>Code indicating whether or not sediment was sieved prior to carbon measurements.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>sediment sieved</code>
+                    <definition>Sediment was sieved prior to analysis for organics</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sediment_sieve_size</attributeName>
+          <attributeDefinition>If sediment was sieved, the size of sieve used.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>millimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_temperature</attributeName>
+          <attributeDefinition>Temperature at which samples were dried to measure dry bulk density. This can include either samples that were freeze dried or oven dried.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density_sample_volume</attributeName>
+          <attributeDefinition>Sample volume used for bulk density measurements, if held constant.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>cubicCentimeter</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon_method</attributeName>
+          <attributeDefinition>Code indicating the method for which fraction carbon was measured or modeled (Note: regression based models are permitted, but the use of the Bemmelen factor [0.58 gOC gOM-1] is discouraged).</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>EA</code>
+                    <definition>Each sample presented was measured using Elemental Analysis</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon_type</attributeName>
+          <attributeDefinition>Code indicating whether fraction_carbon refers to organic or total carbon.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>total carbon</code>
+                    <definition>Author specified that fraction carbon measurements were of total carbon.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>carbon_profile_notes</attributeName>
+          <attributeDefinition>Any other submitter defined notes describing methodologies for determining dry bulk density, organic matter fraction, and carbon fraction.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Cifuentes_and_Torres_2024_plots</entityName>
+      <entityDescription>plots information for study</entityDescription>
+      <physical>
+        <objectName>Cifuentes_and_Torres_2024_plots.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>year</attributeName>
+          <attributeDefinition>Year of observation or sample collection.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>latitude</attributeName>
+          <attributeDefinition>Positional latitude of the core in decimal degree WGS84.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>longitude</attributeName>
+          <attributeDefinition>Positional longitude of the core in decimal degree WGS84.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>position_method</attributeName>
+          <attributeDefinition>Code indicating how latitude and longitude were determined.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>handheld</code>
+                    <definition>Conventional Commercially available hand-held GPS</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>position_notes</attributeName>
+          <attributeDefinition>Any relevant submitter generated notes on how latitude and longitude were determined.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_length_flag</attributeName>
+          <attributeDefinition>Indicated whether or not the coring team believes they recovered a full sediment profile, down to bedrock, or other non-marsh interface.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>core depth limited by length of corer</code>
+                    <definition>The total depth of the core was limited by the length of the coring device</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>impact_class</attributeName>
+          <attributeDefinition>Code indicating any major anthropogenic impacts historically and currently affecting the coring location.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>natural</code>
+                    <definition>No disturbance or management has occurred.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>transect_id</attributeName>
+          <attributeDefinition>The transect identifier which plots are established along within each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plot_id</attributeName>
+          <attributeDefinition>The identifier of the circular plot which occurs along the sampling transect within a site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plot_basal_density</attributeName>
+          <attributeDefinition>The total tree basal area in the plot.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meterSquaredPerHectare</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AGC_trees</attributeName>
+          <attributeDefinition>Aboveground carbon, summarized for each 7m radius forest plot.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>BGC_trees</attributeName>
+          <attributeDefinition>Belowground carbon, summarized for each 7m radius forest plot.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>total_C_trees</attributeName>
+          <attributeDefinition>Total carbon, summarized for each 7m radius forest plot.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AGC_saplings</attributeName>
+          <attributeDefinition>Aboveground carbon, summarized for each 2m radius sapling plot.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>BGC_saplings</attributeName>
+          <attributeDefinition>Belowground carbon, summarized for each 2m radius sapling plot.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>total_C_saplings</attributeName>
+          <attributeDefinition>Total carbon, summarized for each 2m radius sapling plot.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>understory_carbon</attributeName>
+          <attributeDefinition>Carbon calculated from the understory cover in each plot.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AGC_total</attributeName>
+          <attributeDefinition>Total aboveground carbon for the plot, summarized across trees, saplings, fallen debris, and understory cover.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>root_carbon</attributeName>
+          <attributeDefinition>Belowground root carbon for the plot, summarized across trees and samplngs.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AGCK_trees</attributeName>
+          <attributeDefinition>Aboveground carbon, summarized for each 7m radius forest plot. Underlying AGB calculated using Komiyama et al. (2005) equations.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>total_C_trees_K</attributeName>
+          <attributeDefinition>Total carbon, summarized for each 7m radius forest plot. Underlying AGB calculated using Komiyama et al. (2005) equations.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AGCK_saplings</attributeName>
+          <attributeDefinition>Aboveground carbon, summarized for each 2m radius sapling plot. Underlying AGB calculated using Komiyama et al. (2005) equations.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>total_C_saplings_K</attributeName>
+          <attributeDefinition>Total carbon, summarized for each 2m radius sapling plot. Underlying AGB calculated using Komiyama et al. (2005) equations.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>litter_carbon</attributeName>
+          <attributeDefinition>Carbon calculated from the debris pieces measured in each plot that were &lt;2.5cm.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>downed_wood_carbon</attributeName>
+          <attributeDefinition>Carbon calculated from the debris pieces measured in each plot that were &gt;2.5cm.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AGCK_total</attributeName>
+          <attributeDefinition>Total aboveground carbon for the plot, summarized across trees, saplings, fallen debris, and understory cover. Underlying AGB calculated using Komiyama et al. (2005) equations.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plot_plant_carbon</attributeName>
+          <attributeDefinition>Total plant carbon for the plot above and belowground, summarized across trees, saplings, fallen debris, and understory cover.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plot_plant_carbon_K</attributeName>
+          <attributeDefinition>Total plant carbon for the plot above and belowground, summarized across trees, saplings, fallen debris, and understory cover. Underlying AGB calculated using Komiyama et al. (2005) equations.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>soil_carbon_stock</attributeName>
+          <attributeDefinition>Calculated sediment carbon stock.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>TEC</attributeName>
+          <attributeDefinition>Total ecosystem carbon, calculated by summarizing the above and belowground carbon.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>TECK</attributeName>
+          <attributeDefinition>Total ecosystem carbon, calculated by summarizing the above and belowground carbon. Underlying AGB calculated using Komiyama et al. (2005) equations.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Cifuentes_and_Torres_2024_depthseries</entityName>
+      <entityDescription>depthseries information for study</entityDescription>
+      <physical>
+        <objectName>Cifuentes_and_Torres_2024_depthseries.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>core_id</attributeName>
+          <attributeDefinition>Core identification code unique to each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_min</attributeName>
+          <attributeDefinition>Minimum depth of a sampling increment.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_max</attributeName>
+          <attributeDefinition>Maximum depth of a sampling increment.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_bulk_density</attributeName>
+          <attributeDefinition>Dry mass per unit volume of a soil sample. This does not include ash free bulk density.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gramsPerCubicCentimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_carbon</attributeName>
+          <attributeDefinition>Mass of carbon relative to sample dry mass.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>soil_carbon</attributeName>
+          <attributeDefinition>Soil carbon calculated as the product of the fraction carbon content, dry bulk density, and depth interval.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gramsPerCubicCentimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fraction_nitrogen</attributeName>
+          <attributeDefinition>Mass of nitrogen relative to sample dry mass.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>transect_id</attributeName>
+          <attributeDefinition>The transect identifier which plots are established along within each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plot_id</attributeName>
+          <attributeDefinition>The identifier of the circular plot which occurs along the sampling transect within a site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>cn_ratio</attributeName>
+          <attributeDefinition>Carbon to nitrogen molar ratio.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dry_weight</attributeName>
+          <attributeDefinition>Sample dry weight.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gram</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Cifuentes_and_Torres_2024_plants</entityName>
+      <entityDescription>plants information for study</entityDescription>
+      <physical>
+        <objectName>Cifuentes_and_Torres_2024_plants.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>transect_id</attributeName>
+          <attributeDefinition>The transect identifier which plots are established along within each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plot_id</attributeName>
+          <attributeDefinition>The identifier of the circular plot which occurs along the sampling transect within a site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>basal_area</attributeName>
+          <attributeDefinition>Basal area calculated for the plant, based on it's diameter.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>basal_density</attributeName>
+          <attributeDefinition>Basal area density, calculated with respect to the plot area.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meterSquaredPerHectare</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>wood_density</attributeName>
+          <attributeDefinition>The density, or specific gravity, of the wood for a given sample (source Zanne et al. 2009).</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>gramsPerSquareCentimeter</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plot_radius</attributeName>
+          <attributeDefinition>Radius of the circular plot. A 7-meter radius plot was used to measure individuals with a DHB &gt; 5cm, and a 2-meter radius plot was used to measure individuals with DBH &lt; 5cm.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>species</attributeName>
+          <attributeDefinition>Species of the plant.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>family</attributeName>
+          <attributeDefinition>Family of the plant.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>diameter</attributeName>
+          <attributeDefinition>Diameter of the trunk or stem.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>alive_or_dead</attributeName>
+          <attributeDefinition>Code indicating whether the plant measured was alive or dead.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>alive</code>
+                    <definition>Plant measured was alive.</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>dead</code>
+                    <definition>Plant measured was dead.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>height</attributeName>
+          <attributeDefinition>Height measurement or estimate.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_AGB_kg</attributeName>
+          <attributeDefinition>Mass of plant organic matter aboveground.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>kilogram</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_BGB_kg</attributeName>
+          <attributeDefinition>Mass of plant organic matter belowground.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>kilogram</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_AGB_MgHa</attributeName>
+          <attributeDefinition>Aboveground plant organic matter, expressed in Mg/Ha.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_BGB_MgHa</attributeName>
+          <attributeDefinition>Belowground plant organic matter, expressed in Mg/Ha.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_mass_total_MgHa</attributeName>
+          <attributeDefinition>Total plant organic matter, expressed in Mg/Ha.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_aboveground_carbon</attributeName>
+          <attributeDefinition>Aboveground plant organic carbon, expressed in Mg/Ha.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_belowground_carbon</attributeName>
+          <attributeDefinition>Belowground plant organic carbon, expressed in Mg/Ha.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_total_carbon</attributeName>
+          <attributeDefinition>Total plant organic carbon, expressed in Mg/Ha.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>carbon_conversion_factor</attributeName>
+          <attributeDefinition>Factor used to convert organic matter to organic carbon, based on the percent carbon for a given tree species or biomass component.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>tree_id</attributeName>
+          <attributeDefinition>The identifier of each tree measured within each plot.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>decay_reduction_factor</attributeName>
+          <attributeDefinition>Reduction factor applied to the determined biomass of a dead tree that accounts for its decay status.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_AGBK_kg</attributeName>
+          <attributeDefinition>Mass of plant organic matter aboveground, calculated using Komiyama et al. (2005) equations.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>kilogram</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_AGBK_MgHa</attributeName>
+          <attributeDefinition>Aboveground plant organic matter, expressed in Mg/Ha. Underlying AGB calculated using Komiyama et al. (2005) equations.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_mass_totalK_MgHa</attributeName>
+          <attributeDefinition>Total plant organic matter, expressed in Mg/Ha. Underlying AGB calculated using Komiyama et al. (2005) equations.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_aboveground_carbon_K</attributeName>
+          <attributeDefinition>Aboveground plant organic carbon, expressed in Mg/Ha. Underlying AGB calculated using Komiyama et al. (2005) equations.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_total_carbon_K</attributeName>
+          <attributeDefinition>Total plant organic carbon, expressed in Mg/Ha. Underlying AGB calculated using Komiyama et al. (2005) equations.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Cifuentes_and_Torres_2024_debris</entityName>
+      <entityDescription>debris information for study</entityDescription>
+      <physical>
+        <objectName>Cifuentes_and_Torres_2024_debris.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>transect_id</attributeName>
+          <attributeDefinition>The transect identifier which plots are established along within each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plot_id</attributeName>
+          <attributeDefinition>The identifier of the circular plot which occurs along the sampling transect within a site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>subtransect_id</attributeName>
+          <attributeDefinition>Subtransect identification code unique to each plot.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>size_class</attributeName>
+          <attributeDefinition>Size class of debris piece, based on its diameter</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>2.5-7.5</code>
+                    <definition>Downed wood with a diameter between 2.5-7.5 cm.</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>&gt;7.5</code>
+                    <definition>Downed wood with a diameter greater than 7.5 cm.</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>&lt;2.5</code>
+                    <definition>Downed wood with a diameter less than 2.5cm</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>debris_transect_length</attributeName>
+          <attributeDefinition>The length of transect along which downed pieces of debris were measured.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>debris_diameter</attributeName>
+          <attributeDefinition>Diameter of the debris piece where it crosses the transect.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>debris_class</attributeName>
+          <attributeDefinition>The decay status assigned to fallen pieces of wood debris.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>sound</code>
+                    <definition>Debris piece is hard, indicating higher wood density.</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>intermediate</code>
+                    <definition>Debris piece is deteriorated but not yet rotten, indicating intermediate wood density.</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>rotten</code>
+                    <definition>Debris piece is deteriorated, indicating lower wood density.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>diameter_squared</attributeName>
+          <attributeDefinition>The square of the diameter of each measured debris piece.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Cifuentes_and_Torres_2024_understory</entityName>
+      <entityDescription>understory information for study</entityDescription>
+      <physical>
+        <objectName>Cifuentes_and_Torres_2024_understory.csv</objectName>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>study_id</attributeName>
+          <attributeDefinition>Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>Site identification code unique to each study.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>transect_id</attributeName>
+          <attributeDefinition>The transect identifier which plots are established along within each site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plot_id</attributeName>
+          <attributeDefinition>The identifier of the circular plot which occurs along the sampling transect within a site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>percent_understory_cover</attributeName>
+          <attributeDefinition>Percent of understory in the subplot.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>percent</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vegetation_type</attributeName>
+          <attributeDefinition>Description of the type of vegetation surveyed.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Free text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>understory_area</attributeName>
+          <attributeDefinition>Understory cover area, calculated as the product of the percent cover and plot area.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>understory_biomass_Mg</attributeName>
+          <attributeDefinition>Understory biomass.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>megagram</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>understory_biomass_Mgha</attributeName>
+          <attributeDefinition>Understory biomass, expressed in Mg/Ha.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>megagramsPerHectare</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="gramsPerSquareCentimeter" multiplierToSI="100" name="gramsPerSquareCentimeter" parentSI="gramsPerSquareMeter" unitType="massPerArealMassDensity">
+          <description>grams per square centimeter</description>
+        </unit>
+        <unit id="cubicCentimeter" multiplierToSI="1e-06" name="cubicCentimeter" parentSI="cubicMeter" unitType="volume">
+          <description>cubic centimeter</description>
+        </unit>
+        <unit id="megagramsPerHectare" multiplierToSI="1000" name="megagramsPerHectare" parentSI="kilogramsPerHectare" unitType="arealMassDensity">
+          <description>megagrams per hectare</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>

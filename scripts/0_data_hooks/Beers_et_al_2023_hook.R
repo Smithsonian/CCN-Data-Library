@@ -48,6 +48,7 @@ cores <- beers_cores %>%
   mutate(habitat = case_when(vegetation_class == "emergent" ~ "marsh",
                              vegetation_class == "forested" ~ "mangrove",
                              vegetation_class == "seagrass" ~ "seagrass",
+                             grepl("Rhizophora", vegetation_notes) ~ "mangrove",
                              TRUE ~ "scrub/shrub"))
 
 ## ... Depthseries ####

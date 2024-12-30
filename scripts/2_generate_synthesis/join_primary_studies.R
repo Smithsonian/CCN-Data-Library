@@ -5,8 +5,8 @@
 # RUN SCRIPT WITH A CLEAN R SESSION #
 # if you experience an error, restart Rstudio and try again # 
 
-past_version_code <- "1.3.0"
-new_version_code <- "1.4.0"
+past_version_code <- "1.4.0"
+new_version_code <- "2.0.0"
 
 ## 1. Synthesis background and description ###############
 
@@ -57,7 +57,8 @@ final_dirs <- list.dirs("data/primary_studies")[grepl("derivative|final", list.d
 # }
 
 # Index of table names
-tables <- c("depthseries", "cores", "sites", "species", "impacts", "methods", "study_citations")
+tables <- c("depthseries", "cores", "sites", "species", "impacts", "methods",
+            "plots", "plants","study_citations")
 # Other objects that we will need to track
 trackers <- c(
             # .bib file paths stored in a list 
@@ -131,7 +132,7 @@ for(i in seq_along(tables)){
   for(j in seq_along(file_paths[[tables[i]]])){
     # Use tryCatch to keep loop running if there's an error and record
     tryCatch(
-      #ccrcn_synthesis[[i]] <- as.data.frame(read.csv(file_paths[[tables[i]]][j])) %>%
+      # plyr::rbind.fill(lapply(plot_lst, function(i){read.csv(i)}))
       ccrcn_synthesis[[i]] <- as.data.frame(read_csv(file_paths[[tables[i]]][j], col_types = cols(.default = "c"))) %>%
         mutate_if(is.factor, as.character) %>%
         bind_rows(ccrcn_synthesis[[i]]),
@@ -214,9 +215,9 @@ if(join_status == TRUE){
   source("scripts/3_post_processing/2_assign_habitat.R")
   source("scripts/3_post_processing/3_assign_data_tiers.R")
   source("scripts/3_post_processing/4_max_depths.R")
-  source("scripts/3_post_processing/5_core_attributes.R")
+  source("scripts/3_post_processing/8_soil_carbon_stock.R")
+  source("scripts/3_post_processing/5_core_attributes.R") # no new attributes can be added after this step
   source("scripts/3_post_processing/7_resolve_taxonomy.R")
-  # source("scripts/3_post_processing/8_soil_carbon_stock.R")
 }
 
 ## 6. Synthesis Metrics & Change Log ####
