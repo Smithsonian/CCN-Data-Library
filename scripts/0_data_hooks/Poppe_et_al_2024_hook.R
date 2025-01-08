@@ -42,10 +42,15 @@ methods <- poppe_methods %>% select(-corer_diameter)
 
 ## ... Cores ####
 
-id_lookup <- poppe_cores %>% distinct(core_id, PNWBCWG_id)
+id_lookup <- poppe_cores %>% distinct(core_id, PNWBCWG_id) %>% 
+  # combine the two for a new core ID
+  mutate(new_core_id = paste(core_id, PNWBCWG_id, sep = "-"),
+         new_core_id = gsub(",", "", new_core_id))
 
 # curate core-level data table
 cores <- poppe_cores %>% 
+  full_join(id_lookup) %>% select(-core_id, -PNWBCWG_id) %>% rename(core_id = new_core_id) %>% 
+  select(study_id, site_id, core_id, everything()) %>% 
   mutate(core_notes = site_description, 
          position_method = case_when(position_method == "RTK or handheld" ~ "other moderate resolution",
                                      grepl("Averaged coordinates", position_notes) ~ "other low resolution", 
@@ -59,20 +64,29 @@ cores <- poppe_cores %>%
                              vegetation_notes == "Former tidal wetland, now in agriculture" ~ "marsh", # double check
                              T ~ habitat),
          salinity_method = recode(salinity_method, "groundwater well" = "measurement")) %>% 
-  select(-c(project, impact_class, estuary, site_description, salinity_measurement))
+  select(-c(project, impact_class, estuary, site_description, salinity_measurement)) 
 
 ## ... Depthseries ####
 
 # curate core depthseries data table
-depthseries <- poppe_ds
+depthseries <- poppe_ds %>% 
+  full_join(id_lookup) %>% select(-core_id, -PNWBCWG_id) %>% rename(core_id = new_core_id) %>% 
+  select(study_id, site_id, core_id, everything())
 
 ## ... Species ####
 
-species <- poppe_species
+species <- poppe_species %>%   
+  full_join(id_lookup) %>% select(-core_id, -PNWBCWG_id) %>% rename(core_id = new_core_id) %>% 
+  select(study_id, site_id, core_id, everything()) %>% 
+  mutate(code_type = case_when(grepl("[.]", species_code) ~ "Genus",
+                               species_code == "None" ~ NA, 
+                               T ~ "Genus species"))
 
 ## ... Sites ####
 
 impacts <- poppe_cores %>% 
+  full_join(id_lookup) %>% select(-core_id, -PNWBCWG_id) %>% rename(core_id = new_core_id) %>% 
+  select(study_id, site_id, core_id, everything()) %>% 
   distinct(study_id, site_id, core_id, impact_class)
 
 ## 2. QAQC ####
@@ -100,6 +114,7 @@ testUniqueCoords(cores)
 # test relational structure of data tables
 testIDs(cores, depthseries, by = "site")
 testIDs(cores, depthseries, by = "core")
+testIDs(cores, impacts, by = "core")
 
 # test numeric attribute ranges
 fractionNotPercent(depthseries)
@@ -109,29 +124,30 @@ testNumericCols(depthseries)
 
 # write data to final folder
 write_csv(methods, "data/primary_studies/Poppe_et_al_2024/derivative/Poppe_et_al_2024_methods.csv")
-write_csv(sites, "data/primary_studies/Poppe_et_al_2024/derivative/Poppe_et_al_2024_sites.csv")
+# write_csv(sites, "data/primary_studies/Poppe_et_al_2024/derivative/Poppe_et_al_2024_sites.csv")
 write_csv(cores, "data/primary_studies/Poppe_et_al_2024/derivative/Poppe_et_al_2024_cores.csv")
 write_csv(depthseries, "data/primary_studies/Poppe_et_al_2024/derivative/Poppe_et_al_2024_depthseries.csv")
 write_csv(species, "data/primary_studies/Poppe_et_al_2024/derivative/Poppe_et_al_2024_species.csv")
-# write_csv(impacts, "data/primary_studies/Poppe_et_al_2024/derivative/Poppe_et_al_2024_impacts.csv")
+write_csv(impacts, "data/primary_studies/Poppe_et_al_2024/derivative/Poppe_et_al_2024_impacts.csv")
 
 ## 4. Bibliography ####
 
-# library(RefManageR)
-# 
-# poppe_datapub <- as.data.frame(GetBibEntryWithDOI("10.25573/serc.11971527")) %>% 
+library(RefManageR)
+
+poppe_datapub <- as.data.frame(GetBibEntryWithDOI("10.25573/serc.27156465")) %>%
+  mutate(study_id = "Poppe_et_al_2024",
+         bibliography_id = "Poppe_et_al_2024_data",
+         publication_type = "primary dataset") %>%
+  select(-keywords)
+
+# poppe_bib <- as.data.frame(ReadBib("data/primary_studies/Poppe_et_al_2024/original/Poppe_et_al_2024_associated_publications.bib")) %>%
 #   mutate(study_id = "Poppe_et_al_2024",
-#          bibliography_id = "Poppe_et_al_2024_data", 
-#          publication_type = "primary dataset") %>% 
-#   select(-keywords)
-# 
-# poppe_bib <- as.data.frame(ReadBib("data/primary_studies/Poppe_et_al_2024/original/Poppe_et_al_2024_associated_publications.bib")) %>% 
-#   mutate(study_id = "Poppe_et_al_2024",
-#          bibliography_id = "Rogers_et_al_2019_article", 
+#          bibliography_id = "Rogers_et_al_2019_article",
 #          publication_type = "associated source")
-# 
-# study_citations <-  bind_rows(poppe_bib, poppe_datapub) %>% 
-#   select(study_id, bibliography_id, everything()) %>% 
-#   remove_rownames() 
-# 
-# write_csv(study_citations, "data/primary_studies/Poppe_et_al_2024/derivative/Poppe_et_al_2024_study_citations.csv")
+
+study_citations <-  poppe_datapub %>% 
+  # bind_rows(poppe_bib, poppe_datapub) %>%
+  select(study_id, bibliography_id, everything()) %>%
+  remove_rownames()
+
+write_csv(study_citations, "data/primary_studies/Poppe_et_al_2024/derivative/Poppe_et_al_2024_study_citations.csv")

@@ -6,7 +6,7 @@
 # if you experience an error, restart Rstudio and try again # 
 
 past_version_code <- "1.4.0"
-new_version_code <- "2.0.0"
+new_version_code <- "1.5.0"
 
 ## 1. Synthesis background and description ###############
 
@@ -215,7 +215,7 @@ if(join_status == TRUE){
   source("scripts/3_post_processing/2_assign_habitat.R")
   source("scripts/3_post_processing/3_assign_data_tiers.R")
   source("scripts/3_post_processing/4_max_depths.R")
-  source("scripts/3_post_processing/8_soil_carbon_stock.R")
+  # source("scripts/3_post_processing/8_soil_carbon_stock.R")
   source("scripts/3_post_processing/5_core_attributes.R") # no new attributes can be added after this step
   source("scripts/3_post_processing/7_resolve_taxonomy.R")
 }

@@ -1157,16 +1157,22 @@ lat_long,n,core_ids,study_ids,num_studies
 "41.26251, -72.71495",2,"ANF99_LT1_restric, ANF99_LT2_restric",Anisfeld_et_al_1999,1
 "41.26666966, -72.50269329",2,"NWCA11-1180-4353, NWCA11-1180-4691",Nahlik_and_Fennessy_2016,1
 "41.27049, -72.65656",2,"ANF99_ET1_ref, ANF99_ET2_ref",Anisfeld_et_al_1999,1
+"41.2712, -72.6556",2,"GUL2_core, GUL_B6",Yellen_2024,1
 "41.27212, -72.66681",2,"ANF99_SC1_restric, ANF99_SC2_restric",Anisfeld_et_al_1999,1
 "41.27355, -72.80412",2,"ANF99_BF1_rest, ANF99_BF2_rest",Anisfeld_et_al_1999,1
+"41.43568, -72.4434",2,"CHP_A2_core, CHP A2",Yellen_2024,1
 "41.70993455, -71.30472843",2,"NWCA11-2382-4404, NWCA11-2382-4551",Nahlik_and_Fennessy_2016,1
 "42.0289, -73.9221",2,"Tivoli_South_1_subtidal, Tivoli_South_2_fringe_marsh",Merrill_1999,1
 "42.0362, -73.9236",4,"Tivoli_North_1, Tivoli_North_2, Tivoli_North_3, Tivoli_North_4_subtidal",Merrill_1999,1
 "42.046, 3.217",2,"Mateo_et_al_1997_12, Mateo_et_al_1997_13",Mateo_et_al_1997,1
+"42.12832, -70.68933",2,"SR_BD_19a, SR_BD_19b",Yellen_2024,1
 "42.293, 3.293",2,"Mateo_and_Serrano_unpublished_1, Serrano_unpublished_1","Mateo_and_Serrano_unpublished, Serrano_unpublished",2
 "42.294, 3.289",3,"Mateo_et_al_1997_10, Mateo_et_al_1997_8, Mateo_et_al_1997_9",Mateo_et_al_1997,1
 "42.75021, -70.80011",11,"PR_M1, PR_M2, PR_M3, PR_M4, PR_M5, PR_M6, PR_M7, PR_M8, PR_M9, PR_M10, PR_M_A",Drake_et_al_2024,1
 "42.76693, -70.80017",11,"PR_U1, PR_U2, PR_U3, PR_U4, PR_U5, PR_U6, PR_U7, PR_U8, PR_U9, PR_U10, PR_U_A",Drake_et_al_2024,1
+"42.86798, -70.83048",2,"HSB_002_10m_core, HSB_002_10",Yellen_2024,1
+"42.86821, -70.83074",2,"HSB_002_40m_core, HSB_002_40",Yellen_2024,1
+"42.8686, -70.83101",2,"HSB_002_110m_core, HSB_002_110m",Yellen_2024,1
 "43.04805555555556, -70.72361111111111",9,"SCM_Q1, SCM_Q2, SCM_Q3, SCM_Q4, SCM_Q5, SCM_Q6, SCM_Q7, SCM_Q8, SCM_Q9",Morgan_et_al_2024,1
 "43.05583333333333, -70.73138888888889",9,"LHF_Q2, LHF_Q3, LHF_Q4, LHF_Q5, LHF_Q6, LHF_Q7, LHF_Q8, LHF_Q9, LHF_Q1",Morgan_et_al_2024,1
 "43.08555555555556, -70.76638888888888",8,"ICCF_Q1, ICCF_Q2, ICCF_Q3, ICCF_Q4, ICCF_Q5, ICCF_Q6, ICCF_Q7, ICCF_Q8",Morgan_et_al_2024,1
@@ -1179,6 +1185,7 @@ lat_long,n,core_ids,study_ids,num_studies
 "43.33038711547851, -70.55243682861328",100,"Drakes Island1, Drakes Island2, Drakes Island3, Drakes Island4, Drakes Island5, Drakes Island6, Drakes Island7, Drakes Island8, Drakes Island9, Drakes Island10, Drakes Island11, Drakes Island12, Drakes Island13, Drakes Island14, Drakes Island15, Drakes Island16, Drakes Island17, Drakes Island18, Drakes Island19, Drakes Island20, Drakes Island21, Drakes Island22, Drakes Island23, Drakes Island24, Drakes Island25, Drakes Island26, Drakes Island27, Drakes Island28, Drakes Island29, Drakes Island30, Drakes Island31, Drakes Island32, Drakes Island33, Drakes Island34, Drakes Island35, Drakes Island36, Drakes Island37, Drakes Island38, Drakes Island39, Drakes Island40, Drakes Island41, Drakes Island42, Drakes Island43, Drakes Island44, Drakes Island45, Drakes Island46, Drakes Island47, Drakes Island48, Drakes Island49, Drakes Island50, Drakes Island51, Drakes Island52, Drakes Island53, Drakes Island54, Drakes Island55, Drakes Island56, Drakes Island57, Drakes Island58, Drakes Island59, Drakes Island60, Drakes Island61, Drakes Island62, Drakes Island63, Drakes Island64, Drakes Island65, Drakes Island66, Drakes Island67, Drakes Island68, Drakes Island69, Drakes Island70, Drakes Island71, Drakes Island72, Drakes Island73, Drakes Island74, Drakes Island75, Drakes Island76, Drakes Island77, Drakes Island78, Drakes Island79, Drakes Island80, Drakes Island81, Drakes Island82, Drakes Island83, Drakes Island84, Drakes Island85, Drakes Island86, Drakes Island87, Drakes Island88, Drakes Island89, Drakes Island90, Drakes Island91, Drakes Island92, Drakes Island93, Drakes Island94, Drakes Island95, Drakes Island96, Drakes Island97, Drakes Island98, Drakes Island99, Drakes Island100",Vincent_and_Dionne_2023,1
 "43.34, -70.54416666666667",8,"LRM_Q1, LRM_Q3, LRM_Q4, LRM_Q5, LRM_Q6, LRM_Q7, LRM_Q8, LRM_Q9",Morgan_et_al_2024,1
 "43.341182708740234, -70.54179382324219",100,"Little River1, Little River2, Little River3, Little River4, Little River5, Little River6, Little River7, Little River8, Little River9, Little River10, Little River11, Little River12, Little River13, Little River14, Little River15, Little River16, Little River17, Little River18, Little River19, Little River20, Little River21, Little River22, Little River23, Little River24, Little River25, Little River26, Little River27, Little River28, Little River29, Little River30, Little River31, Little River32, Little River33, Little River34, Little River35, Little River36, Little River37, Little River38, Little River39, Little River40, Little River41, Little River42, Little River43, Little River44, Little River45, Little River46, Little River47, Little River48, Little River49, Little River50, Little River51, Little River52, Little River53, Little River54, Little River55, Little River56, Little River57, Little River58, Little River59, Little River60, Little River61, Little River62, Little River63, Little River64, Little River65, Little River66, Little River67, Little River68, Little River69, Little River70, Little River71, Little River72, Little River73, Little River74, Little River75, Little River76, Little River77, Little River78, Little River79, Little River80, Little River81, Little River82, Little River83, Little River84, Little River85, Little River86, Little River87, Little River88, Little River89, Little River90, Little River91, Little River92, Little River93, Little River94, Little River95, Little River96, Little River97, Little River98, Little River99, Little River100",Vincent_and_Dionne_2023,1
+"43.34271, -70.54638",2,"WEL003_0to100cm_core, WEL_003_10m",Yellen_2024,1
 "43.346944444444446, -70.51083333333334",9,"MRM_Q1, MRM_Q2, MRM_Q3, MRM_Q4, MRM_Q5, MRM_Q6, MRM_Q7, MRM_Q8, MRM_Q9",Morgan_et_al_2024,1
 "43.36819, -3.428633",3,"MS1A1, MS1A3, MS1_a2",Mazarrasa_et_al_2023,1
 "43.3738, -4.315541",3,"R_M1, R_M2, R_M3",Mazarrasa_et_al_2023,1
@@ -1199,6 +1206,8 @@ lat_long,n,core_ids,study_ids,num_studies
 "43.45416666666667, -70.37472222222222",9,"UNEM_Q1, UNEM_Q2, UNEM_Q3, UNEM_Q4, UNEM_Q5, UNEM_Q6, UNEM_Q7, UNEM_Q8, UNEM_Q9",Morgan_et_al_2024,1
 "43.460436, -70.386058",17,"SRF_Q1, SRF_Q2, SRF_Q3, SRF_Q4, SRF_Q5, SRF_Q6, SRF_Q7, SRF_Q8, SRF_Q9, UNEF_Q1, UNEF_Q2, UNEF_Q3, UNEF_Q4, UNEF_Q5, UNEF_Q6, UNEF_Q7, UNEF_Q8",Morgan_et_al_2024,1
 "43.73666, -65.98588",2,"CMHG_04_Core_7, CMHG_04_Core_8",Chmura_and_Hung_2004,1
+"43.76344, -69.7705",2,"HED002_16m_core, HED_002_80m",Yellen_2024,1
+"43.76487, -69.76843",2,"SAG_003_40m, HED_003_40m",Yellen_2024,1
 "44.2, 9.12",28,"Danovaro_1996_1, Danovaro_1996_10, Danovaro_1996_11, Danovaro_1996_12, Danovaro_1996_13, Danovaro_1996_14, Danovaro_1996_15, Danovaro_1996_2, Danovaro_1996_3, Danovaro_1996_4, Danovaro_1996_5, Danovaro_1996_6, Danovaro_1996_7, Danovaro_1996_8, Danovaro_1996_9, Danovaro_and_Gambi_2002_1, Danovaro_and_Gambi_2002_10, Danovaro_and_Gambi_2002_11, Danovaro_and_Gambi_2002_12, Danovaro_and_Gambi_2002_13, Danovaro_and_Gambi_2002_2, Danovaro_and_Gambi_2002_3, Danovaro_and_Gambi_2002_4, Danovaro_and_Gambi_2002_5, Danovaro_and_Gambi_2002_6, Danovaro_and_Gambi_2002_7, Danovaro_and_Gambi_2002_8, Danovaro_and_Gambi_2002_9","Danovaro_1996, Danovaro_and_Gambi_2002",2
 "44.333, 9.233",18,"Danovaro_et_al_1994_1, Danovaro_et_al_1994_10, Danovaro_et_al_1994_11, Danovaro_et_al_1994_12, Danovaro_et_al_1994_13, Danovaro_et_al_1994_14, Danovaro_et_al_1994_15, Danovaro_et_al_1994_16, Danovaro_et_al_1994_17, Danovaro_et_al_1994_18, Danovaro_et_al_1994_2, Danovaro_et_al_1994_3, Danovaro_et_al_1994_4, Danovaro_et_al_1994_5, Danovaro_et_al_1994_6, Danovaro_et_al_1994_7, Danovaro_et_al_1994_8, Danovaro_et_al_1994_9",Danovaro_et_al_1994,1
 "44.39, -1.09",6,"Boschker_et_al_2000_10, Boschker_et_al_2000_11, Boschker_et_al_2000_12, Boschker_et_al_2000_4, Boschker_et_al_2000_5, Boschker_et_al_2000_6",Boschker_et_al_2000,1
@@ -1417,10 +1426,10 @@ lat_long,n,core_ids,study_ids,num_studies
 "8.30017, -82.4285",6,"Los Algarrobos_1, Los Algarrobos_2, Los Algarrobos_3, Los Algarrobos_4, Los Algarrobos_5, Los Algarrobos_6",Cifuentes_et_al_2023_Panama,1
 "8.30401, -82.3656",6,"El Represo_1, El Represo_2, El Represo_3, El Represo_4, El Represo_5, El Represo_6",Cifuentes_et_al_2023_Panama,1
 "8.307105, -82.281247",3,"CQ1-C1, CQ1-C2, CQ1-C3",Rovai_et_al_2022,1
-"8.30711, -82.2813",6,"Batipa_1, Batipa_2, Batipa_3, Batipa_5, Batipa_6, Batipa_4",Cifuentes_et_al_2023_Panama,1
+"8.30711, -82.2813",6,"Batipa_1, Batipa_2, Batipa_3, Batipa_4, Batipa_5, Batipa_6",Cifuentes_et_al_2023_Panama,1
 "8.31768, -82.4038",6,"Resbaloso_1, Resbaloso_2, Resbaloso_3, Resbaloso_4, Resbaloso_5, Resbaloso_6",Cifuentes_et_al_2023_Panama,1
 "8.317855, -82.440367",3,"CQ3-C1, CQ3-C2, CQ3-C3",Rovai_et_al_2022,1
-"8.31786, -82.4404",6,"Las Matita_5, Las Matita_6, Las Matita_3, Las Matita_4, Las Matita_1, Las Matita_2",Cifuentes_et_al_2023_Panama,1
+"8.31786, -82.4404",6,"Las Matita_1, Las Matita_2, Las Matita_3, Las Matita_4, Las Matita_5, Las Matita_6",Cifuentes_et_al_2023_Panama,1
 "8.33466, -82.4212",6,"El Río_1, El Río_2, El Río_3, El Río_4, El Río_5, El Río_6",Cifuentes_et_al_2023_Panama,1
 "8.33622, -82.4348",6,"Boca del Río_1, Boca del Río_2, Boca del Río_3, Boca del Río_4, Boca del Río_5, Boca del Río_6",Cifuentes_et_al_2023_Panama,1
 "8.34034, -82.3915",4,"Boca Ternero_1, Boca Ternero_2, Boca Ternero_3, Boca Ternero_4",Cifuentes_et_al_2023_Panama,1
