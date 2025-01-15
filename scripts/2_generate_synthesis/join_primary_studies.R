@@ -8,6 +8,8 @@
 past_version_code <- "1.4.0"
 new_version_code <- "1.5.0"
 
+# keep_objects <- c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results", "join_status", "file_paths", "new_version_code")
+
 ## 1. Synthesis background and description ###############
 
 # The CCRCN clearinghouse synthesis combines data and metadata for each curated study
@@ -236,7 +238,8 @@ synth_diff <- anti_join(ccrcn_synthesis$cores %>%
   # or adding new information to existing cores
   # need an automated way to detect these different cases or at least flag them
   mutate(change_flag = case_when(study_id %in% unique(prev_synthesis$study_id) ~ "core ID modification or new core for existing study",
-                                 T ~ "new core from new study"))
+                                 T ~ "new core from new study")) %>% 
+  select(change_flag, everything())
 
 
 new_species <- anti_join(distinct(ccrcn_synthesis$species, species_code), 

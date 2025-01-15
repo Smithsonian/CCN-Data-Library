@@ -53,8 +53,9 @@ cores <- raw_plots %>%
   select(study_id, site_id, plot_id, year, latitude, longitude, position_method, habitat) %>% 
   mutate(habitat = "mangrove", # going to assign all as mangrove habitat (even for sites that were formally mangrove)
          core_id = plot_id) %>% 
-  relocate(core_id, .after = plot_id)
-  # rename(core_id = plot_id) ## 1 core/sediment sample per plot 
+  select(-plot_id)
+  # relocate(core_id, .after = plot_id) 
+  ## 1 core/sediment sample per plot 
 
 cores <- reorderColumns("cores", cores)
 

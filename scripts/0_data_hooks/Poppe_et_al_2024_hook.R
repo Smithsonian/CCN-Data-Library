@@ -48,11 +48,18 @@ id_lookup <- poppe_cores %>% distinct(core_id, PNWBCWG_id) %>%
          new_core_id = gsub(",", "", new_core_id))
 
 # curate core-level data table
+
+veg_notes <- poppe_species %>% distinct(site_id, species_notes) %>% 
+  rename(site_description = site_id) %>% 
+  mutate(species_notes = recode(species_notes, 
+                                "veg for core vicinity" = "species noted at core-level",       
+                                "veg for site - stocks project"  = "species noted at site-level"))
+
 cores <- poppe_cores %>% 
   full_join(id_lookup) %>% select(-core_id, -PNWBCWG_id) %>% rename(core_id = new_core_id) %>% 
   select(study_id, site_id, core_id, everything()) %>% 
-  mutate(core_notes = site_description, 
-         position_method = case_when(position_method == "RTK or handheld" ~ "other moderate resolution",
+  full_join(veg_notes) %>% # patch in
+  mutate(position_method = case_when(position_method == "RTK or handheld" ~ "other moderate resolution",
                                      grepl("Averaged coordinates", position_notes) ~ "other low resolution", 
                                      T ~ position_method),
          elevation_method = case_when(grepl("Averaged elevation", elevation_notes) ~ "other low resolution", 
@@ -63,24 +70,33 @@ cores <- poppe_cores %>%
          habitat = case_when(vegetation_notes == "non-tidal pasture/grassland" ~ "upland", 
                              vegetation_notes == "Former tidal wetland, now in agriculture" ~ "marsh", # double check
                              T ~ habitat),
-         salinity_method = recode(salinity_method, "groundwater well" = "measurement")) %>% 
-  select(-c(project, impact_class, estuary, site_description, salinity_measurement)) 
+         salinity_method = recode(salinity_method, "groundwater well" = "measurement"),
+         vegetation_notes = case_when(!is.na(vegetation_notes) ~ paste(vegetation_notes, species_notes, sep = "; "), 
+                                      T ~ species_notes),
+         core_notes = site_description) %>% 
+  select(-c(project, impact_class, estuary, salinity_measurement, species_notes, site_description)) 
 
 ## ... Depthseries ####
 
 # curate core depthseries data table
 depthseries <- poppe_ds %>% 
   full_join(id_lookup) %>% select(-core_id, -PNWBCWG_id) %>% rename(core_id = new_core_id) %>% 
-  select(study_id, site_id, core_id, everything())
+  select(study_id, site_id, core_id, everything()) %>% 
+  mutate(study_id = id)
 
 ## ... Species ####
 
 species <- poppe_species %>%   
   full_join(id_lookup) %>% select(-core_id, -PNWBCWG_id) %>% rename(core_id = new_core_id) %>% 
-  select(study_id, site_id, core_id, everything()) %>% 
-  mutate(code_type = case_when(grepl("[.]", species_code) ~ "Genus",
-                               species_code == "None" ~ NA, 
-                               T ~ "Genus species"))
+  rename(site_description = site_id) %>% 
+  left_join(cores %>% distinct(site_id, site_description), multiple = "all") %>% 
+  mutate(species_code = na_if(species_code, "None"),
+         code_type = case_when(grepl("[.]", species_code) ~ "Genus",
+                               is.na(species_code) ~ NA, 
+                               T ~ "Genus species")) %>% 
+  drop_na(species_code) %>% 
+  select(study_id, site_id, core_id, species_code, code_type) 
+  
 
 ## ... Sites ####
 

@@ -76,7 +76,8 @@ cores <- plots %>%
   select(study_id, site_id, plot_id, core_id, latitude, longitude, position_method, position_notes, year) %>% 
   mutate(habitat = "mangrove",
          vegetation_class = "forested",
-         vegetation_method = "measurement") 
+         vegetation_method = "measurement") %>% 
+  select(-plot_id)
 
 #get site level latitude and longitude
 # latlong <- raw_plots %>% 
@@ -112,12 +113,19 @@ impacts <- plots %>%
                                # generalize harvesting impact
                                "firewood extraction" = "wood harvesting",
                                "bark extraction" = "wood harvesting")) %>% 
-  select(-land_use_class)
+  select(-land_use_class, -plot_id)
 
 # impacts <- reorderColumns("impacts", impacts)
   
           ## need to recategorize the rest of listed impact classes 
 
+## Species ####
+
+species <- plants %>% 
+  distinct(study_id, site_id, plot_id, species) %>% 
+  rename(core_id = plot_id,
+         species_code = species) %>% 
+  mutate(code_type = "Genus species")
 
 ## 2. QAQC ####
 
@@ -164,4 +172,5 @@ write_excel_csv(methods, "data/primary_studies/Cifuentes_2023_Panama/derivative/
 write_excel_csv(impacts, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_et_al_2023_Panama_impacts.csv")
 write_excel_csv(plots, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_2023_Panama_plots.csv")
 write_excel_csv(plants, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_2023_Panama_plants.csv")
+write_excel_csv(species, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_2023_Panama_species.csv")
 

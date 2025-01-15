@@ -24,12 +24,7 @@ nrcs_ds <- readxl::read_xlsx("data/primary_studies/NRCS_NJ/original/NJTWMN_SoilS
 
 ## 1. Curation ####
 
-# this study ID must match the name of the dataset folder
-# include this id in a study_id column for every curated table
 id <- "NRCS"
-# if there are only two authors: Author_and_Author_year
-# "year" will be exchanged with "unpublished" in some cases
-
 
 ## ... Depthseries ####
 
@@ -47,6 +42,8 @@ depthseries <- nrcs_ds %>%
   reorderColumns("depthseries",.) %>% 
   select(-c(...2:...21))
 
+limited_sampling_depth <- depthseries %>% filter(!is.na(depth_interval_notes)) %>% pull(core_id)
+  
 ## ... Cores ####
 
 cores <- nrcs_sites %>% 
@@ -59,11 +56,18 @@ cores <- nrcs_sites %>%
          year = year(as.Date(`Description / Sampling Date`)),
          month = month(as.Date(`Description / Sampling Date`)),
          day = day(as.Date(`Description / Sampling Date`)),
-         salinity_class = recode(tolower(`Fresh / Salt`), "salt" = "estuarine")) %>% 
+         salinity_class = recode(tolower(`Fresh / Salt`), "salt" = "estuarine"),
+         vegetation_class = "emergent", 
+         habitat = "marsh", 
+         # need more clarity here
+         core_length_flag = "not specified"
+           # case_when(core_id %in% limited_sampling_depth ~ "core depth limited by length of corer",
+                                      # T ~ "core depth represents deposit depth")
+         ) %>% 
   full_join(depthseries %>% distinct(site_id, core_id)) %>% 
   reorderColumns("cores", .) %>% 
   select(-c(State:`Fresh / Salt`)) %>% 
-  select(study_id:salinity_class)
+  select(-c(Organization:Source))
 
 leaflet(cores) %>% 
   addTiles() %>% 
@@ -84,7 +88,7 @@ leaflet(cores) %>%
 #                       dry_bulk_density_flag = "to constant mass",
 #                       carbon_measured_or_modeled = "measured", 
 #                       fraction_carbon_method = "EA", 
-#                       fraction_carbon_type = "organic carbon")
+#                       fraction_carbon_type = "total carbon")
 
 ## Table testing
 table_names <- c("cores", "depthseries")
@@ -132,15 +136,16 @@ write_excel_csv(depthseries, "data/primary_studies/NRCS_NJ/derivative/NRCS_depth
 
 # Test workflow to webscrape information for each pedon ID from the lab data mart
 # https://stackoverflow.com/questions/55092329/extract-table-from-webpage-using-r
-# library(rvest)
+library(rvest)
 # 
-url <- cores %>% pull(`KSSL Analyses Link`)
+url <- cores %>% pull(core_notes)
 
 # df <- url[1] %>%
 #   read_html() %>%
 #   html_nodes("table") %>%
 #   html_table(fill = T)
 
+# scrape information for each core and compile  
 pedon_info <- map(url, 
                   . %>% read_html() %>%
                     html_nodes("table") %>%
@@ -149,3 +154,6 @@ pedon_info <- map(url,
 ## pull methods codes
 pedon_info %>% map(c(4, 3, 5))
 ## its all the same: 1B1A, 2A1, 2B
+
+# pull a table
+test <- pedon_info[[1]][[26]]

@@ -55,7 +55,7 @@ core_plot <- plots_raw %>%
   
 # divvy into core and plot level tables
 cores <- core_plot %>% 
-  select(-c(transect_id, section_n, max_depth, pH, ORP, tree_count, dominant_species, 
+  select(-c(transect_id, plot_id, section_n, max_depth, pH, ORP, tree_count, dominant_species, 
             salinity, protection_status, protection_notes, ecosystem_health, ecotype,
             inundation_notes, plot_notes, contains("_carbon")))
 

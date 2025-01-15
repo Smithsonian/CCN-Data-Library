@@ -523,7 +523,7 @@ New species: `r new_species$species_code`
 ```{r, echo=FALSE}
 synth_diff %>% filter(!is.na(max_depth)) %>% 
   ggplot(aes(max_depth, col = habitat)) + 
-  geom_density() + geom_rug() + 
+  geom_density() + geom_rug() +
   facet_wrap(~habitat, scales = "free")
 ```
 

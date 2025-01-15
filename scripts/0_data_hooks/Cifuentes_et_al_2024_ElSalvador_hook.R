@@ -56,11 +56,15 @@ cores <- raw_plots %>%
   rename(core_id = plot_id) %>%  ## 1 core/sediment sample per plot 
   mutate(vegetation_class = "forested",
          year = 2014,
+         habitat = "mangrove",
          position_method = "other low resolution",
          position_notes = "position at plot level",
          vegetation_method = "field observation",
          core_id = str_remove_all(string = core_id, pattern = "\\(|\\)")) %>% 
-  select(-field_or_manipulation_code, -land_use_class, -land_use_status)
+  select(-field_or_manipulation_code, -land_use_class, -land_use_status) %>% 
+  # why are there duplicates?
+  distinct() %>% 
+  filter(site_id != "Santa_Cruz_El_Chuflar") # these cores have no coordinates - leave out for now
 
 cores <- reorderColumns("cores", cores)
 
@@ -99,10 +103,12 @@ species <- reorderColumns("species", species)
 
 
 #clean up tables, remove any information relating to ONLY plants tables and not cores tables 
-depthseries <- semi_join(depthseries, cores, by = "core_id")
-impacts <- semi_join(impacts, cores, by = "core_id")
-species <- semi_join(species, cores, by = "core_id")
 
+# need to revisit the data release and sort this out
+depthseries <- semi_join(depthseries, select(cores, site_id, core_id))
+cores <- semi_join(cores, distinct(depthseries, site_id, core_id)) %>% distinct()
+impacts <- semi_join(impacts, select(cores, site_id, core_id))
+species <- semi_join(species, select(cores, site_id, core_id))
 
 
 ## 2. QAQC ####
@@ -110,7 +116,7 @@ species <- semi_join(species, cores, by = "core_id")
 ## Mapping
 leaflet(cores) %>%
   addTiles() %>% 
-  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 3, label = ~core_id)
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, radius = 2, label = ~core_id)
           #leaflet does not like special character in some site names 
 
 #table names
@@ -123,7 +129,7 @@ testRequired(table_names)
 testConditional(table_names)
 
 testUniqueCoords(cores)
-testIDs(cores, depthseries, by = "core_id")
+testIDs(cores, depthseries, by = "core")
 fraction_not_percent(depthseries)
 results <- test_numeric_vars(depthseries)
 
