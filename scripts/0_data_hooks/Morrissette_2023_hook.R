@@ -62,70 +62,73 @@ cores <- core_plot %>%
 # plot summary
 plots <- core_plot %>%
   rename(plant_count = tree_count,
-         ecosystem_type = ecotype,
-         plot_center_latitude = latitude,
-         plot_center_longitude = longitude,
+         environmental_setting = ecotype,
+         ecosystem_condition = ecosystem_health,
+         
+         # plot_center_latitude = latitude,
+         # plot_center_longitude = longitude,
          max_soil_depth_reporting = max_depth,
-         plot_total_carbon = total_ecosystem_carbon,
-         plot_vegetation_carbon = plot_biomass_carbon) %>% 
-  mutate(plot_shape = "circle",
-         coordinates_obscured_flag = "not obscured",
+         plot_soil_carbon_total = plot_sediment_carbon,
+         plot_soil_carbon_100cm = plot_sediment_carbon_1m,
+         plot_plant_carbon = plot_biomass_carbon) %>% 
+  mutate(plot_shape = "circular",
+         # coordinates_obscured_flag = "not obscured",
          field_or_manipulation_code = "field",
          salinity_class = assignSalinityClass(salinity),
-         plant_plot_detail_present = TRUE,
+         plant_allometry_present = TRUE,
          soil_core_present = TRUE) %>% 
   select(study_id, site_id, plot_id, year, month, day, everything()) %>% 
-  select(-c(core_id, section_n, pH, ORP, 
+  select(-c(core_id, section_n, pH, ORP, total_ecosystem_carbon,
             # protection_status, protection_notes, 
-            inundation_notes,
-            plot_sediment_carbon_1m, total_ecosystem_carbon_1m,
-            transect_id))
+            inundation_notes, total_ecosystem_carbon_1m, transect_id))
 
 # some of these would go into to plant_plot_detail table, and merge
 # some info from the biomass allometry table as well
 
-
-## ... Plot Detail ####
-
-plot_detail <- biomass_raw %>% 
-  drop_na(plot_radius) %>% 
-  # using count instead of distinct to tally tree observations
-  count(study_id, site_id, transect_id, plot_id, plot_radius, plot_density, name = "tree_count") %>% 
-  mutate(subplot_id = str_c(transect_id, plot_id, plot_radius, sep = "_"),
-         plant_mass_flag = "modeled")
-
 ## ... Plant Allometry ####
 
 plant <- biomass_raw %>% 
-  rename(basal_width = diameter_base,
+  filter(biomass_flag != "debris") %>% 
+  rename(species = species_code, 
+         basal_width = diameter_base,
          height = tree_height,
+         alive_or_dead = biomass_flag,
          debris_count = debris_number,
-         plant_organic_matter_above_kg = biomass_aboveground, # kg
-         plant_organic_matter_above = biomass_aboveground_scaled, # MgC ha-1
-         plant_organic_carbon_above = biomass_aboveground_carbon, # MgC ha-1
-         plant_organic_matter_below_kg = biomass_belowground, # kg
-         plant_organic_matter_below = biomass_belowground_scaled, # MgC ha-1
-         plant_organic_carbon_below = biomass_belowground_carbon, # MgC ha-1
+         plant_aboveground_mass = biomass_aboveground, # kg
+         # plant_organic_matter_above = biomass_aboveground_scaled, # MgC ha-1
+         plant_aboveground_carbon = biomass_aboveground_carbon, # MgC ha-1
+         plant_belowground_mass = biomass_belowground, # kg
+         # plant_organic_matter_below = biomass_belowground_scaled, # MgC ha-1
+         plant_belowground_carbon = biomass_belowground_carbon, # MgC ha-1
          plant_organic_matter_total = biomass_total, # MgC ha-1
          plant_organic_carbon_total = biomass_total_carbon) %>% # MgC ha-1
-  separate_wider_delim(species_code, names = c("genus", "species"), delim = " ") %>% 
+  # separate_wider_delim(species_code, names = c("genus", "species"), delim = " ") %>% 
   mutate(plot_id = str_c(site_id, transect_id, plot_id, sep = "_"),
          plot_area = pi*(plot_radius^2),
+         alive_or_dead = recode(alive_or_dead, "live" = "alive"),
          # plant_mass_unit = "kilogram",
          diameter_flag = case_when(!is.na(diameter_qmd) ~ "QMD",
                                    !is.na(diameter_dbh) ~ "DBH"),
          diameter = coalesce(diameter_dbh, diameter_qmd),
-         diameter_unit = ifelse(!is.na(diameter), "centimeter", NA),
-         canopy_width_unit = ifelse(!is.na(canopy_width), "centimeter", NA),
-         carbon_conversion_factor = case_when(biomass_flag == "debris" ~ 0.5,
-                                              # Using an aboveground carbon conversion factor of 0.48
-                                              # Using a belowground carbon conversion factor of 0.39
-                                              T ~ NA_real_)) %>% 
-  select(-c(transect_id, diameter_dbh, diameter_qmd))
+         # diameter_unit = ifelse(!is.na(diameter), "centimeter", NA),
+         aboveground_carbon_conversion = 0.48,
+         belowground_carbon_conversion = 0.39
+           # case_when(biomass_flag == "debris" ~ 0.5,
+         #                                      # Using an aboveground carbon conversion factor of 0.48
+         #                                      # Using a belowground carbon conversion factor of 0.39
+         #                                      T ~ NA_real_),
+         # canopy_width_unit = ifelse(!is.na(canopy_width), "centimeter", NA)
+         ) %>% 
+  select_if(function(x) {!all(is.na(x))}) %>%
+  select(-c(transect_id, diameter_dbh, contains("scaled"), contains("decay_3"), plant_organic_carbon_total))
 
 names(plant)
 # which attributes to drop/retain?
-# add? plot shape is circle
+
+## ... Debris ####
+
+debris <- biomass_raw %>% 
+  filter(biomass_flag == "debris")
 
 ## ... Species ####
 
@@ -133,7 +136,7 @@ species <- plots_raw %>%
   rename(species_code = dominant_species) %>% 
   mutate(plot_id = str_c(site_id, transect_id, plot_id, sep = "_"),
          species_code = strsplit(species_code, split = ", ")) %>% 
-  select(study_id, site_id, core_id, habitat, species_code) %>% 
+  distinct(study_id, site_id, habitat, species_code) %>% 
   unnest(species_code) %>% 
   mutate(code_type = "Genus species")
 
@@ -142,8 +145,8 @@ sort(unique(species$species_code))
 ## ... Impacts ####
 
 # create impacts table from plot level
-# impacts <- plots_raw %>% 
-#   select(contains("_id"), ecosystem_health) %>% 
+# impacts <- plots %>%
+#   select(contains("_id"), ecosystem_health) %>%
 #   distinct()
 # unique impacts at the site and transect level
 # this is more related to the aboveground
@@ -197,10 +200,11 @@ test <- test_numeric_vars(depthseries) ##testNumericCols producing error message
 
 # write data to final folder
 write_csv(methods, "data/primary_studies/Morrissette_et_al_2023/derivative/Morrissette_et_al_2023_methods.csv")
-  #write_csv(sites, "data/primary_studies/Morrissette_et_al_2023/derivative/Author_et_al_YYYY_sites.csv")
+write_csv(plots, "data/primary_studies/Morrissette_et_al_2023/derivative/Morrissette_et_al_2023_plots.csv")
 write_csv(cores, "data/primary_studies/Morrissette_et_al_2023/derivative/Morrissette_et_al_2023_cores.csv")
 write_csv(depthseries, "data/primary_studies/Morrissette_et_al_2023/derivative/Morrissette_et_al_2023_depthseries.csv")
 write_csv(species, "data/primary_studies/Morrissette_et_al_2023/derivative/Morrissette_et_al_2023_species.csv")
+write_csv(plant, "data/primary_studies/Morrissette_et_al_2023/derivative/Morrissette_et_al_2023_plants.csv")
   #write_csv(impacts, "data/primary_studies/Author_et_al_YYYY/derivative/Author_et_al_YYYY_impacts.csv")
 
 ## 4. Bibliography ####

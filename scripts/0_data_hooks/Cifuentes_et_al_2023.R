@@ -35,6 +35,28 @@ guidance <- read_csv("docs/ccrcn_database_structure.csv")
 methods <- raw_methods %>% 
   mutate(method_id = "single set of methods")
 
+## ...Plots ####
+plots <- raw_plots %>% 
+  mutate(plot_id = paste(site_id, plot_id, sep = "_"),
+         plot_shape = "circular", 
+         habitat = "mangrove") %>% 
+  rename(
+    # plant_plot_carbon = total_C_trees,
+         # sapling_carbon = total_C_saplings,
+         aboveground_plant_carbon = AGC_total,
+         belowground_plant_carbon = root_carbon) %>% 
+  select(-c(AGC_saplings, BGC_saplings, total_C_saplings, AGC_trees, BGC_trees, total_C_trees,
+            soil_carbon_50cm, BGC_50cm:TEC_300cm))
+
+## ... Vegetation ####
+
+plants <- raw_plants %>% 
+  mutate(plot_id = paste(site_id, plot_id, sep = "_")) %>% 
+  rename(plant_belowground_mass = plant_BGB_kg,
+         plant_aboveground_mass = plant_AGB_kg) %>% 
+  select(-c(family, plant_AGB_MgHa:plant_total_carbon)) 
+  
+equation_input <- raw_plants %>% distinct(species, wood_density, carbon_conversion_factor)
 
 ## ... Core Depthseries ####
 
@@ -48,42 +70,62 @@ depthseries <- reorderColumns("depthseries", depthseries)
 
 ## ... Core-Level ####
 
-#get site level latitude and longitude
-latlong <- raw_plots %>% 
-  select(site_id, plot_id, latitude, longitude, position_method, position_notes, year) %>% 
-  distinct()
-
-# curate core-level data
-cores_raw <- raw_depthseries %>% 
-  select(study_id, site_id, core_id, plot_id) %>% 
-  distinct()
-
-cores <- full_join(cores_raw, latlong, by = c("site_id", "plot_id")) %>% 
+cores <- plots %>% 
+  filter(plot_id %in% unique(depthseries$core_id)) %>% 
+  mutate(core_id = plot_id) %>% 
+  select(study_id, site_id, plot_id, core_id, latitude, longitude, position_method, position_notes, year) %>% 
   mutate(habitat = "mangrove",
          vegetation_class = "forested",
          vegetation_method = "measurement") %>% 
-  select(-plot_id) %>% 
-  drop_na() #remove plots that are not included in depthseries table
+  select(-plot_id)
 
-cores <- reorderColumns("cores", cores)
+#get site level latitude and longitude
+# latlong <- raw_plots %>% 
+#   select(site_id, plot_id, latitude, longitude, position_method, position_notes, year) %>% 
+#   distinct()
+# 
+# # curate core-level data
+# cores_raw <- raw_depthseries %>% 
+#   select(study_id, site_id, core_id, plot_id) %>% 
+#   distinct()
+# 
+# cores <- full_join(cores_raw, latlong, by = c("site_id", "plot_id")) %>% 
+#   mutate(habitat = "mangrove",
+#          vegetation_class = "forested",
+#          vegetation_method = "measurement") %>% 
+#   select(-plot_id) %>% 
+#   drop_na() #remove plots that are not included in depthseries table
+
+# cores <- reorderColumns("cores", cores)
 
 ## ... Impacts #####
 
 #core list 
-core.list <- cores_raw %>% 
-  select(site_id, plot_id, core_id)
+# core.list <- cores_raw %>% 
+#   select(site_id, plot_id, core_id)
 
-impacts <- raw_plots %>% 
-  select(study_id, plot_id, site_id, land_use_class) %>% 
-  right_join(core.list, by = c("site_id", "plot_id")) %>% 
-  mutate(impact_class = case_when(land_use_class == "no disturbance" ~ "natural",
-                                  TRUE ~ land_use_class)) %>% 
-  select(-plot_id, -land_use_class)
+impacts <- plots %>% 
+  select(study_id, site_id, plot_id, land_use_class) %>% 
+  # right_join(core.list, by = c("site_id", "plot_id")) %>% 
+  mutate(core_id = plot_id,
+         impact_class = recode(land_use_class, 
+                               "no disturbance" = "natural",
+                               # generalize harvesting impact
+                               "firewood extraction" = "wood harvesting",
+                               "bark extraction" = "wood harvesting")) %>% 
+  select(-land_use_class, -plot_id)
 
-impacts <- reorderColumns("impacts", impacts)
+# impacts <- reorderColumns("impacts", impacts)
   
           ## need to recategorize the rest of listed impact classes 
 
+## Species ####
+
+species <- plants %>% 
+  distinct(study_id, site_id, plot_id, species) %>% 
+  rename(core_id = plot_id,
+         species_code = species) %>% 
+  mutate(code_type = "Genus species")
 
 ## 2. QAQC ####
 
@@ -94,7 +136,6 @@ leaflet(cores) %>%
           #leaflet does not like special character in some site names 
 
 #table names
-table_names <- c("methods", "cores", "depthseries", "impacts")
 
 
 # Check col and varnames
@@ -129,6 +170,7 @@ write_excel_csv(cores, "data/primary_studies/Cifuentes_2023_Panama/derivative/Ci
 write_excel_csv(depthseries, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_et_al_2023_Panama_depthseries.csv")
 write_excel_csv(methods, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_et_al_2023_Panama_methods.csv")
 write_excel_csv(impacts, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_et_al_2023_Panama_impacts.csv")
-# write_csv(species, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_species.csv")
-# write_csv(impacts, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_impacts.csv")
+write_excel_csv(plots, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_2023_Panama_plots.csv")
+write_excel_csv(plants, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_2023_Panama_plants.csv")
+write_excel_csv(species, "data/primary_studies/Cifuentes_2023_Panama/derivative/Cifuentes_2023_Panama_species.csv")
 

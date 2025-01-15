@@ -1,0 +1,579 @@
+﻿"study_id","site_id","plot_id","plot_radius","species","diameter","diameter_flag","alive_or_dead","decay_class","height","wood_density","carbon_conversion_factor","basal_area","basal_density","plant_aboveground_carbon","plant_belowground_carbon","plant_belowground_mass","plant_aboveground_mass","plant_notes"
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_1",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_1",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_1",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_1",7,"Rhizophora mangle",9.4,"DBH","alive",NA,NA,0.898,0.4752,0.00694,0.45082,1.07783,0.80672,26.13318,34.91576,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_1",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_1",7,"Rhizophora mangle",13,"DBH","alive",NA,NA,0.898,0.4752,0.01327,0.86224,1.88931,1.65704,53.67879,61.20306,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_1",7,"Rhizophora mangle",16,"DBH","alive",NA,NA,0.898,0.4752,0.02011,1.30612,2.70645,2.62739,85.1128,87.67361,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_1",7,"Rhizophora mangle",16.6,"DBH","alive",NA,NA,0.898,0.4752,0.02164,1.40592,2.88453,2.85114,92.36096,93.44247,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_1",7,"Rhizophora mangle",32,"DBH","alive",NA,NA,0.898,0.4752,0.08042,5.22449,8.98426,12.24086,396.53493,291.03942,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_2",7,"Rhizophora mangle",5.2,"DBH","dead",3,1.3,0.898,0.4752,0.00212,0.13796,0.19339,0.21672,7.02063,6.26483,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_2",7,"Rhizophora mangle",5.2,"DBH","alive",NA,NA,0.898,0.4752,0.00212,0.13796,0.38678,0.21672,7.02063,12.52965,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_2",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_2",7,"Rhizophora mangle",7.7,"DBH","alive",NA,NA,0.898,0.4752,0.00466,0.3025,0.7631,0.51807,16.78255,24.72024,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_2",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_2",7,"Rhizophora mangle",8.3,"DBH","alive",NA,NA,0.898,0.4752,0.00541,0.35148,0.86894,0.61197,19.82448,28.1489,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_2",7,"Rhizophora mangle",8.5,"DBH","alive",NA,NA,0.898,0.4752,0.00567,0.36862,0.90551,0.64519,20.90059,29.33333,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_2",7,"Rhizophora mangle",10.2,"DBH","alive",NA,NA,0.898,0.4752,0.00817,0.53082,1.24152,0.9671,31.32859,40.21834,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_2",7,"Rhizophora mangle",10.3,"DBH","alive",NA,NA,0.898,0.4752,0.00833,0.54128,1.26267,0.98827,32.01453,40.90331,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_2",7,"Rhizophora mangle",11.4,"DBH","alive",NA,NA,0.898,0.4752,0.01021,0.66306,1.50512,1.23796,40.10304,48.75728,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_2",7,"Rhizophora mangle",11.5,"DBH","alive",NA,NA,0.898,0.4752,0.01039,0.67474,1.52804,1.2622,40.88817,49.5,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_2",7,"Rhizophora mangle",13.6,"DBH","alive",NA,NA,0.898,0.4752,0.01453,0.94367,2.04279,1.83162,59.33417,66.17486,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_2",7,"Rhizophora mangle",41.5,"DBH","alive",NA,NA,0.898,0.4752,0.13527,8.78699,14.08993,21.79946,706.17978,456.43449,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",7,"Rhizophora mangle",5.4,"DBH","dead",3,NA,0.898,0.4752,0.00229,0.14878,0.20645,0.23566,7.63418,6.68776,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_3",7,"Rhizophora mangle",5.5,"DBH","dead",3,18,0.898,0.4752,0.00238,0.15434,0.21311,0.24546,7.95158,6.90359,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_1",7,"Rhizophora mangle",5.7,"DBH","dead",3,NA,0.898,0.4752,0.00255,0.16577,0.2267,0.26572,8.60777,7.3439,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Limones","Limones_2",7,"Rhizophora mangle",6,"DBH","dead",1,NA,0.898,0.4752,0.00283,0.18367,0.48312,0.29777,9.64593,15.65026,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_3",7,"Rhizophora mangle",53,"DBH","alive",NA,NA,0.898,0.4752,0.22062,14.33163,21.51737,37.52074,1215.46073,697.04165,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_4",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_4",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",7,"Rhizophora mangle",6,"DBH","dead",3,NA,0.898,0.4752,0.00283,0.18367,0.24775,0.29777,9.64593,8.02578,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_4",7,"Rhizophora mangle",16,"DBH","alive",NA,NA,0.898,0.4752,0.02011,1.30612,2.70645,2.62739,85.1128,87.67361,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_4",7,"Rhizophora mangle",16,"DBH","alive",NA,NA,0.898,0.4752,0.02011,1.30612,2.70645,2.62739,85.1128,87.67361,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_4",7,"Rhizophora mangle",18,"DBH","alive",NA,NA,0.898,0.4752,0.02545,1.65306,3.31852,3.41259,110.54866,107.50135,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_4",7,"Rhizophora mangle",19,"DBH","alive",NA,NA,0.898,0.4752,0.02835,1.84184,3.6441,3.8478,124.6469,118.04828,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_4",7,"Rhizophora mangle",23,"DBH","alive",NA,NA,0.898,0.4752,0.04155,2.69898,5.07246,5.88051,190.49531,164.31911,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_4",7,"Rhizophora mangle",28,"DBH","alive",NA,NA,0.898,0.4752,0.06158,4,7.13014,9.1006,294.80805,230.97648,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_4",7,"Rhizophora mangle",51,"DBH","alive",NA,NA,0.898,0.4752,0.20428,13.27041,20.13129,34.44965,1115.97456,652.1405,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_5",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_5",7,"Rhizophora mangle",8.6,"DBH","alive",NA,NA,0.898,0.4752,0.00581,0.37735,0.92403,0.66216,21.45038,29.93326,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_5",7,"Rhizophora mangle",10.4,"DBH","alive",NA,NA,0.898,0.4752,0.00849,0.55184,1.28396,1.0097,32.70864,41.59316,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_5",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_5",7,"Rhizophora mangle",12,"DBH","alive",NA,NA,0.898,0.4752,0.01131,0.73469,1.64487,1.38727,44.93977,53.28438,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_5",7,"Rhizophora mangle",12.4,"DBH","alive",NA,NA,0.898,0.4752,0.01208,0.78449,1.74093,1.49202,48.3331,56.39624,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_5",7,"Rhizophora mangle",20,"DBH","alive",NA,NA,0.898,0.4752,0.03142,2.04082,3.98245,4.31187,139.68028,129.00903,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_6",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_6",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_6",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_6",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_6",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_6",7,"Rhizophora mangle",18,"DBH","alive",NA,NA,0.898,0.4752,0.02545,1.65306,3.31852,3.41259,110.54866,107.50135,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_6",7,"Rhizophora mangle",32,"DBH","alive",NA,NA,0.898,0.4752,0.08042,5.22449,8.98426,12.24086,396.53493,291.03942,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_6",7,"Rhizophora mangle",37.6,"DBH","alive",NA,NA,0.898,0.4752,0.11104,7.21306,11.8773,17.5104,567.23826,384.75773,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_1",7,"Pelliciera rhizophorae",5.6,"DBH","alive",NA,NA,0.811,0.4669,0.00246,0.16,0.42768,0.22904,7.55162,14.10058,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_1",7,"Rhizophora mangle",14,"DBH","alive",NA,NA,0.898,0.4752,0.01539,1,2.14791,1.95336,63.278,69.58006,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_1",7,"Rhizophora mangle",29,"DBH","alive",NA,NA,0.898,0.4752,0.06605,4.29082,7.57667,9.8379,318.69266,245.44158,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_1",7,"Rhizophora mangle",29.2,"DBH","alive",NA,NA,0.898,0.4752,0.06697,4.3502,7.66735,9.98916,323.59249,248.37902,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_1",7,"Rhizophora mangle",39.6,"DBH","alive",NA,NA,0.898,0.4752,0.12316,8.00082,12.99206,19.64546,636.40241,420.86961,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_2",7,"Rhizophora mangle",6.8,"DBH","alive",NA,NA,0.898,0.4752,0.00363,0.23592,0.61538,0.39314,12.73557,19.93472,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_2",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_2",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",7,"Rhizophora mangle",6,"DBH","dead",3,NA,0.898,0.4752,0.00283,0.18367,0.24775,0.29777,9.64593,8.02578,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",7,"Rhizophora mangle",6,"DBH","dead",3,NA,0.898,0.4752,0.00283,0.18367,0.24775,0.29777,9.64593,8.02578,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_2",7,"Rhizophora mangle",34,"DBH","alive",NA,NA,0.898,0.4752,0.09079,5.89796,9.97833,14.00432,453.66126,323.24157,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_2",7,"Rhizophora mangle",47.3,"DBH","alive",NA,NA,0.898,0.4752,0.17572,11.41474,17.67064,29.14545,944.14834,572.42927,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_3",7,"Rhizophora mangle",37,"DBH","alive",NA,NA,0.898,0.4752,0.10752,6.98469,11.55114,16.89611,547.33892,374.1919,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_3",7,"Rhizophora mangle",41,"DBH","alive",NA,NA,0.898,0.4752,0.13203,8.57653,13.79738,21.22067,687.43029,446.95732,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_3",7,"Rhizophora mangle",42,"DBH","alive",NA,NA,0.898,0.4752,0.13854,9,14.38508,22.38682,725.2069,465.9955,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_4",7,"Pelliciera rhizophorae",6,"DBH","alive",NA,NA,0.811,0.4669,0.00283,0.18367,0.50679,0.26695,8.80154,16.70885,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_4",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_4",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_4",7,"Rhizophora mangle",7.3,"DBH","alive",NA,NA,0.898,0.4752,0.00419,0.27189,0.69579,0.46021,14.9082,22.53975,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_4",7,"Rhizophora mangle",8.2,"DBH","alive",NA,NA,0.898,0.4752,0.00528,0.34306,0.8509,0.59572,19.29813,27.56443,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_4",7,"Rhizophora mangle",13,"DBH","alive",NA,NA,0.898,0.4752,0.01327,0.86224,1.88931,1.65704,53.67879,61.20306,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_4",7,"Rhizophora mangle",29.5,"DBH","alive",NA,NA,0.898,0.4752,0.06835,4.44005,7.80422,10.21842,331.01935,252.81283,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_4",7,"Rhizophora mangle",54,"DBH","alive",NA,NA,0.898,0.4752,0.22902,14.87755,22.22497,39.11048,1266.95926,719.96402,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_4",7,"Rhizophora mangle",58,"DBH","alive",NA,NA,0.898,0.4752,0.26421,17.16327,25.15136,45.83414,1484.76817,814.76254,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_4",7,"Rhizophora mangle",58,"DBH","alive",NA,NA,0.898,0.4752,0.26421,17.16327,25.15136,45.83414,1484.76817,814.76254,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_5",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_5",7,"Rhizophora mangle",7.4,"DBH","alive",NA,NA,0.898,0.4752,0.0043,0.27939,0.71237,0.47432,15.36537,23.07689,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_5",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_5",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_5",7,"Rhizophora mangle",64,"DBH","alive",NA,NA,0.898,0.4752,0.3217,20.89796,29.82395,57.02936,1847.43023,966.12814,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_6",7,"Rhizophora mangle",22,"DBH","alive",NA,NA,0.898,0.4752,0.03801,2.46939,4.69679,5.32792,172.59446,152.14962,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_6",7,"Rhizophora mangle",27,"DBH","alive",NA,NA,0.898,0.4752,0.05726,3.71939,6.69512,8.39473,271.94186,216.88418,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_1",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",7,"Rhizophora mangle",6,"DBH","dead",3,NA,0.898,0.4752,0.00283,0.18367,0.24775,0.29777,9.64593,8.02578,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_1",7,"Rhizophora mangle",9.4,"DBH","alive",NA,NA,0.898,0.4752,0.00694,0.45082,1.07783,0.80672,26.13318,34.91576,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_1",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_1",7,"Rhizophora mangle",15,"DBH","alive",NA,NA,0.898,0.4752,0.01767,1.14796,2.42037,2.27668,73.75154,78.40634,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_1",7,"Rhizophora mangle",15,"DBH","alive",NA,NA,0.898,0.4752,0.01767,1.14796,2.42037,2.27668,73.75154,78.40634,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_1",7,"Rhizophora mangle",20,"DBH","alive",NA,NA,0.898,0.4752,0.03142,2.04082,3.98245,4.31187,139.68028,129.00903,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_1",7,"Rhizophora mangle",26,"DBH","alive",NA,NA,0.898,0.4752,0.05309,3.44898,6.27172,7.72004,250.08597,203.16835,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_1",7,"Rhizophora mangle",35,"DBH","alive",NA,NA,0.898,0.4752,0.09621,6.25,10.49179,14.93517,483.81526,339.87481,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",7,"Rhizophora mangle",6,"DBH","dead",3,NA,0.898,0.4752,0.00283,0.18367,0.24775,0.29777,9.64593,8.02578,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_2",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_2",7,"Rhizophora mangle",12,"DBH","alive",NA,NA,0.898,0.4752,0.01131,0.73469,1.64487,1.38727,44.93977,53.28438,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_2",7,"Rhizophora mangle",15,"DBH","alive",NA,NA,0.898,0.4752,0.01767,1.14796,2.42037,2.27668,73.75154,78.40634,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_2",7,"Rhizophora mangle",20,"DBH","alive",NA,NA,0.898,0.4752,0.03142,2.04082,3.98245,4.31187,139.68028,129.00903,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_3",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_3",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_3",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_3",7,"Pelliciera rhizophorae",9.5,"DBH","alive",NA,NA,0.811,0.4669,0.00709,0.46046,1.56954,0.74044,24.41233,51.74813,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_3",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_3",7,"Rhizophora mangle",13,"DBH","alive",NA,NA,0.898,0.4752,0.01327,0.86224,1.88931,1.65704,53.67879,61.20306,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_3",7,"Rhizophora mangle",14,"DBH","alive",NA,NA,0.898,0.4752,0.01539,1,2.14791,1.95336,63.278,69.58006,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_3",7,"Rhizophora mangle",17,"DBH","alive",NA,NA,0.898,0.4752,0.0227,1.47449,3.0059,3.00591,97.37447,97.37428,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_2",7,"Rhizophora mangle",6,"DBH","dead",1,NA,0.898,0.4752,0.00283,0.18367,0.48312,0.29777,9.64593,15.65026,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_3",7,"Rhizophora mangle",26,"DBH","alive",NA,NA,0.898,0.4752,0.05309,3.44898,6.27172,7.72004,250.08597,203.16835,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Pelliciera rhizophorae",5.3,"DBH","alive",NA,NA,0.811,0.4669,0.00221,0.14332,0.3735,0.20269,6.68275,12.3144,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Pelliciera rhizophorae",5.8,"DBH","alive",NA,NA,0.811,0.4669,0.00264,0.17163,0.46624,0.2476,8.16344,15.3719,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Pelliciera rhizophorae",7,"DBH","alive",NA,NA,0.811,0.4669,0.00385,0.25,0.74048,0.37589,12.39311,24.41382,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Pelliciera rhizophorae",7,"DBH","alive",NA,NA,0.811,0.4669,0.00385,0.25,0.74048,0.37589,12.39311,24.41382,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Pelliciera rhizophorae",7,"DBH","alive",NA,NA,0.811,0.4669,0.00385,0.25,0.74048,0.37589,12.39311,24.41382,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Pelliciera rhizophorae",8,"DBH","alive",NA,NA,0.811,0.4669,0.00503,0.32653,1.02843,0.50559,16.6695,33.90751,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Pelliciera rhizophorae",8.4,"DBH","alive",NA,NA,0.811,0.4669,0.00554,0.36,1.15958,0.56343,18.57645,38.23152,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Pelliciera rhizophorae",9,"DBH","alive",NA,NA,0.811,0.4669,0.00636,0.41327,1.37407,0.65669,21.65116,45.30344,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Pelliciera rhizophorae",9,"DBH","alive",NA,NA,0.811,0.4669,0.00636,0.41327,1.37407,0.65669,21.65116,45.30344,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Pelliciera rhizophorae",9,"DBH","alive",NA,NA,0.811,0.4669,0.00636,0.41327,1.37407,0.65669,21.65116,45.30344,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Pelliciera rhizophorae",10,"DBH","alive",NA,NA,0.811,0.4669,0.00785,0.5102,1.78063,0.82974,27.35664,58.70763,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Pelliciera rhizophorae",11,"DBH","alive",NA,NA,0.811,0.4669,0.0095,0.61735,2.25112,1.02526,33.80295,74.21994,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Pelliciera rhizophorae",24,"DBH","alive",NA,NA,0.811,0.4669,0.04524,2.93878,15.34236,5.79442,191.04329,505.84124,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_1",7,"Rhizophora mangle",6,"DBH","dead",3,NA,0.898,0.4752,0.00283,0.18367,0.24775,0.29777,9.64593,8.02578,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_5",7,"Rhizophora racemosa",9,"DBH","alive",NA,NA,0.88,0.5,0.00636,0.41327,1.25853,0.75681,23.30029,38.74722,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_5",7,"Rhizophora racemosa",35,"DBH","alive",NA,NA,0.88,0.5,0.09621,6.25,42.99431,15.43114,475.088,1323.69182,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_6",7,"Rhizophora racemosa",8.6,"DBH","alive",NA,NA,0.88,0.5,0.00581,0.37735,1.11823,0.68415,21.06345,34.42754,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_6",7,"Rhizophora racemosa",18,"DBH","alive",NA,NA,0.88,0.5,0.02545,1.65306,7.63032,3.52592,108.55453,234.91918,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_6",7,"Rhizophora racemosa",40,"DBH","alive",NA,NA,0.88,0.5,0.12566,8.16327,60.84011,20.75584,639.02254,1873.12149,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_6",7,"Rhizophora racemosa",48,"DBH","alive",NA,NA,0.88,0.5,0.18096,11.7551,97.7375,31.11162,957.8523,3009.10392,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",5.5,"DBH","alive",NA,NA,0.898,0.4752,0.00238,0.15434,0.42622,0.24546,7.95158,13.80718,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",6.2,"DBH","alive",NA,NA,0.898,0.4752,0.00302,0.19612,0.52444,0.32025,10.37428,16.98898,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",7.8,"DBH","alive",NA,NA,0.898,0.4752,0.00478,0.31041,0.78034,0.53312,17.27025,25.2786,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",8.4,"DBH","alive",NA,NA,0.898,0.4752,0.00554,0.36,0.88715,0.62846,20.35863,28.73854,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",8.5,"DBH","alive",NA,NA,0.898,0.4752,0.00567,0.36862,0.90551,0.64519,20.90059,29.33333,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",7,"Rhizophora mangle",6.4,"DBH","dead",3,NA,0.898,0.4752,0.00322,0.20898,0.27704,0.34364,11.13187,8.97439,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_1",7,"Rhizophora mangle",7,"DBH","dead",2,NA,0.898,0.4752,0.00385,0.25,0.51763,0.41927,13.58208,16.76841,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",7,"DBH","dead",3,NA,0.898,0.4752,0.00385,0.25,0.32352,0.41927,13.58208,10.48026,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",7,"DBH","dead",3,NA,0.898,0.4752,0.00385,0.25,0.32352,0.41927,13.58208,10.48026,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",7,"DBH","dead",3,54.6,0.898,0.4752,0.00385,0.25,0.32352,0.41927,13.58208,10.48026,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Pelliciera rhizophorae",10,"DBH","alive",NA,NA,0.811,0.4669,0.00785,0.5102,1.78063,0.82974,27.35664,58.70763,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Pelliciera rhizophorae",11,"DBH","alive",NA,NA,0.811,0.4669,0.0095,0.61735,2.25112,1.02526,33.80295,74.21994,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",7,"DBH","dead",3,NA,0.898,0.4752,0.00385,0.25,0.32352,0.41927,13.58208,10.48026,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",7,"Rhizophora mangle",7,"DBH","dead",3,NA,0.898,0.4752,0.00385,0.25,0.32352,0.41927,13.58208,10.48026,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",15,"DBH","alive",NA,NA,0.898,0.4752,0.01767,1.14796,2.42037,2.27668,73.75154,78.40634,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",66,"DBH","alive",NA,NA,0.898,0.4752,0.34212,22.22449,31.45562,61.06137,1978.04442,1018.9849,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_5",7,"Pelliciera rhizophorae",7,"DBH","dead",3,NA,0.811,0.4669,0.00385,0.25,0.37024,0.37589,12.39311,12.20691,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",7,"Rhizophora mangle",7.5,"DBH","alive",NA,NA,0.898,0.4752,0.00442,0.28699,0.72912,0.48867,15.83013,23.61937,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",7,"Rhizophora mangle",8,"DBH","dead",3,NA,0.898,0.4752,0.00503,0.32653,0.40765,0.56395,18.26873,13.20553,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",8,"DBH","dead",3,NA,0.898,0.4752,0.00503,0.32653,0.40765,0.56395,18.26873,13.20553,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Pelliciera rhizophorae",8,"DBH","dead",3,NA,0.811,0.4669,0.00503,0.32653,0.51421,0.50559,16.6695,16.95376,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",7,"Pelliciera rhizophorae",14,"DBH","alive",NA,NA,0.811,0.4669,0.01539,1,4.07425,1.75124,57.73871,134.32893,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",7,"Pelliciera rhizophorae",29,"DBH","alive",NA,NA,0.811,0.4669,0.06605,4.29082,24.43833,8.81991,290.79463,805.73764,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",7,"Rhizophora mangle",5.5,"DBH","dead",1,NA,0.898,0.4752,0.00238,0.15434,0.41557,0.24546,7.95158,13.462,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",7,"Rhizophora mangle",7.8,"DBH","alive",NA,NA,0.898,0.4752,0.00478,0.31041,0.78034,0.53312,17.27025,25.2786,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",8,"DBH","dead",3,NA,0.898,0.4752,0.00503,0.32653,0.40765,0.56395,18.26873,13.20553,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",8,"DBH","dead",3,NA,0.898,0.4752,0.00503,0.32653,0.40765,0.56395,18.26873,13.20553,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",8,"DBH","dead",3,NA,0.898,0.4752,0.00503,0.32653,0.40765,0.56395,18.26873,13.20553,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",7,"Pelliciera rhizophorae",11,"DBH","alive",NA,NA,0.811,0.4669,0.0095,0.61735,2.25112,1.02526,33.80295,74.21994,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",7,"Rhizophora mangle",8,"DBH","dead",3,NA,0.898,0.4752,0.00503,0.32653,0.40765,0.56395,18.26873,13.20553,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",7,"Rhizophora mangle",22,"DBH","alive",NA,NA,0.898,0.4752,0.03801,2.46939,4.69679,5.32792,172.59446,152.14962,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_4",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_4",7,"Rhizophora mangle",6.4,"DBH","alive",NA,NA,0.898,0.4752,0.00322,0.20898,0.55407,0.34364,11.13187,17.94877,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_4",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_4",7,"Pelliciera rhizophorae",17,"DBH","alive",NA,NA,0.811,0.4669,0.0227,1.47449,6.56866,2.69487,88.85041,216.57031,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",6.8,"DBH","alive",NA,NA,0.898,0.4752,0.00363,0.23592,0.61538,0.39314,12.73557,19.93472,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",7,"Rhizophora mangle",8.5,"DBH","dead",3,NA,0.898,0.4752,0.00567,0.36862,0.45275,0.64519,20.90059,14.66666,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",7,"Rhizophora mangle",8.5,"DBH","dead",3,NA,0.898,0.4752,0.00567,0.36862,0.45275,0.64519,20.90059,14.66666,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Pelliciera rhizophorae",9.4,"DBH","alive",NA,NA,0.811,0.4669,0.00694,0.45082,1.52921,0.72324,23.84551,50.4184,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",15,"DBH","alive",NA,NA,0.898,0.4752,0.01767,1.14796,2.42037,2.27668,73.75154,78.40634,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",25,"DBH","alive",NA,NA,0.898,0.4752,0.04909,3.18878,5.86006,7.07629,229.23204,189.83284,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_1",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Pelliciera rhizophorae",9.4,"DBH","alive",NA,NA,0.811,0.4669,0.00694,0.45082,1.52921,0.72324,23.84551,50.4184,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Pelliciera rhizophorae",12,"DBH","alive",NA,NA,0.811,0.4669,0.01131,0.73469,2.78842,1.24372,41.00579,91.93491,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Pelliciera rhizophorae",9,"DBH","dead",3,NA,0.811,0.4669,0.00636,0.41327,0.68704,0.65669,21.65116,22.65172,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Pelliciera rhizophorae",15,"DBH","alive",NA,NA,0.811,0.4669,0.01767,1.14796,4.82789,2.0411,67.29541,159.17654,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Pelliciera rhizophorae",16,"DBH","alive",NA,NA,0.811,0.4669,0.02011,1.30612,5.65858,2.35552,77.66211,186.56481,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Rhizophora mangle",16,"DBH","alive",NA,NA,0.898,0.4752,0.02011,1.30612,2.70645,2.62739,85.1128,87.67361,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Pelliciera rhizophorae",16,"DBH","alive",NA,NA,0.811,0.4669,0.02011,1.30612,5.65858,2.35552,77.66211,186.56481,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Rhizophora mangle",17,"DBH","alive",NA,NA,0.898,0.4752,0.0227,1.47449,3.0059,3.00591,97.37447,97.37428,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Rhizophora mangle",49,"DBH","alive",NA,NA,0.898,0.4752,0.18857,12.25,18.78439,31.52204,1021.1365,608.50845,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_1",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_1",7,"Rhizophora mangle",7.6,"DBH","alive",NA,NA,0.898,0.4752,0.00454,0.29469,0.74603,0.50325,16.30252,24.16715,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_1",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_1",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_1",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_4",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",9,"DBH","dead",3,51.67999999999999,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_1",7,"Rhizophora mangle",12,"DBH","alive",NA,NA,0.898,0.4752,0.01131,0.73469,1.64487,1.38727,44.93977,53.28438,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_1",7,"Rhizophora mangle",19,"DBH","alive",NA,NA,0.898,0.4752,0.02835,1.84184,3.6441,3.8478,124.6469,118.04828,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_1",7,"Rhizophora mangle",21,"DBH","alive",NA,NA,0.898,0.4752,0.03464,2.25,4.3334,4.80514,155.65939,140.37792,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",5.4,"DBH","alive",NA,NA,0.898,0.4752,0.00229,0.14878,0.4129,0.23566,7.63418,13.37552,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Pelliciera rhizophorae",7,"DBH","alive",NA,NA,0.811,0.4669,0.00385,0.25,0.74048,0.37589,12.39311,24.41382,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Pelliciera rhizophorae",7.6,"DBH","alive",NA,NA,0.811,0.4669,0.00454,0.29469,0.90651,0.45118,14.87541,29.88794,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",12,"DBH","alive",NA,NA,0.898,0.4752,0.01131,0.73469,1.64487,1.38727,44.93977,53.28438,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",12,"DBH","alive",NA,NA,0.898,0.4752,0.01131,0.73469,1.64487,1.38727,44.93977,53.28438,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",12,"DBH","alive",NA,NA,0.898,0.4752,0.01131,0.73469,1.64487,1.38727,44.93977,53.28438,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",13,"DBH","alive",NA,NA,0.898,0.4752,0.01327,0.86224,1.88931,1.65704,53.67879,61.20306,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Pelliciera rhizophorae",14,"DBH","alive",NA,NA,0.811,0.4669,0.01539,1,4.07425,1.75124,57.73871,134.32893,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",17,"DBH","alive",NA,NA,0.898,0.4752,0.0227,1.47449,3.0059,3.00591,97.37447,97.37428,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",17,"DBH","alive",NA,NA,0.898,0.4752,0.0227,1.47449,3.0059,3.00591,97.37447,97.37428,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",18,"DBH","alive",NA,NA,0.898,0.4752,0.02545,1.65306,3.31852,3.41259,110.54866,107.50135,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",7,"Pelliciera rhizophorae",6,"DBH","alive",NA,NA,0.811,0.4669,0.00283,0.18367,0.50679,0.26695,8.80154,16.70885,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",7,"Pelliciera rhizophorae",6.2,"DBH","alive",NA,NA,0.811,0.4669,0.00302,0.19612,0.54936,0.28711,9.46613,18.11249,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_4",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",7,"Rhizophora mangle",17,"DBH","alive",NA,NA,0.898,0.4752,0.0227,1.47449,3.0059,3.00591,97.37447,97.37428,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",7,"Rhizophora mangle",20,"DBH","alive",NA,NA,0.898,0.4752,0.03142,2.04082,3.98245,4.31187,139.68028,129.00903,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_4",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_4",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_4",7,"Rhizophora mangle",6.8,"DBH","alive",NA,NA,0.898,0.4752,0.00363,0.23592,0.61538,0.39314,12.73557,19.93472,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_4",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_4",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_4",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_4",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_5",7,"Pelliciera rhizophorae",9,"DBH","dead",3,NA,0.811,0.4669,0.00636,0.41327,0.68704,0.65669,21.65116,22.65172,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_4",7,"Rhizophora mangle",40,"DBH","alive",NA,NA,0.898,0.4752,0.12566,8.16327,13.22006,20.08872,650.76125,428.25559,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_4",7,"Rhizophora mangle",48,"DBH","alive",NA,NA,0.898,0.4752,0.18096,11.7551,18.12576,30.11165,975.44784,587.1726,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_4",7,"Rhizophora mangle",49,"DBH","alive",NA,NA,0.898,0.4752,0.18857,12.25,18.78439,31.52204,1021.1365,608.50845,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_2",7,"Pelliciera rhizophorae",9,"DBH","dead",3,NA,0.811,0.4669,0.00636,0.41327,0.68704,0.65669,21.65116,22.65172,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_3",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_5",7,"Rhizophora mangle",9,"DBH","dead",3,NA,0.898,0.4752,0.00636,0.41327,0.49984,0.73248,23.72831,16.19202,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",9.4,"DBH","dead",3,48,0.898,0.4752,0.00694,0.45082,0.53892,0.80672,26.13318,17.45788,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",10,"DBH","dead",3,NA,0.898,0.4752,0.00785,0.5102,0.59984,0.92551,29.98116,19.43154,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",10,"DBH","dead",3,NA,0.898,0.4752,0.00785,0.5102,0.59984,0.92551,29.98116,19.43154,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",10,"DBH","dead",3,NA,0.898,0.4752,0.00785,0.5102,0.59984,0.92551,29.98116,19.43154,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",7,"Rhizophora mangle",10,"DBH","dead",3,NA,0.898,0.4752,0.00785,0.5102,0.59984,0.92551,29.98116,19.43154,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",10,"DBH","dead",3,NA,0.898,0.4752,0.00785,0.5102,0.59984,0.92551,29.98116,19.43154,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_1",7,"Rhizophora mangle",10,"DBH","dead",3,NA,0.898,0.4752,0.00785,0.5102,0.59984,0.92551,29.98116,19.43154,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",12,"DBH","alive",NA,NA,0.898,0.4752,0.01131,0.73469,1.64487,1.38727,44.93977,53.28438,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_1",7,"Rhizophora mangle",10,"DBH","dead",3,NA,0.898,0.4752,0.00785,0.5102,0.59984,0.92551,29.98116,19.43154,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",14,"DBH","alive",NA,NA,0.898,0.4752,0.01539,1,2.14791,1.95336,63.278,69.58006,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",15,"DBH","alive",NA,NA,0.898,0.4752,0.01767,1.14796,2.42037,2.27668,73.75154,78.40634,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",5.4,"DBH","alive",NA,NA,0.898,0.4752,0.00229,0.14878,0.4129,0.23566,7.63418,13.37552,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",10,"DBH","dead",3,NA,0.898,0.4752,0.00785,0.5102,0.59984,0.92551,29.98116,19.43154,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",10,"DBH","dead",3,NA,0.898,0.4752,0.00785,0.5102,0.59984,0.92551,29.98116,19.43154,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",10,"DBH","dead",3,NA,0.898,0.4752,0.00785,0.5102,0.59984,0.92551,29.98116,19.43154,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",8.5,"DBH","alive",NA,NA,0.898,0.4752,0.00567,0.36862,0.90551,0.64519,20.90059,29.33333,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",10,"DBH","dead",3,NA,0.898,0.4752,0.00785,0.5102,0.59984,0.92551,29.98116,19.43154,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_5",7,"Rhizophora mangle",10,"DBH","dead",3,NA,0.898,0.4752,0.00785,0.5102,0.59984,0.92551,29.98116,19.43154,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",7,"Rhizophora mangle",10,"DBH","dead",3,NA,0.898,0.4752,0.00785,0.5102,0.59984,0.92551,29.98116,19.43154,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",11,"DBH","dead",3,NA,0.898,0.4752,0.0095,0.61735,0.70744,1.14359,37.04591,22.91701,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",11,"DBH","dead",3,NA,0.898,0.4752,0.0095,0.61735,0.70744,1.14359,37.04591,22.91701,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",12,"DBH","alive",NA,NA,0.898,0.4752,0.01131,0.73469,1.64487,1.38727,44.93977,53.28438,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_3",7,"Rhizophora mangle",11,"DBH","dead",2,NA,0.898,0.4752,0.0095,0.61735,1.1319,1.14359,37.04591,36.66721,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",13,"DBH","alive",NA,NA,0.898,0.4752,0.01327,0.86224,1.88931,1.65704,53.67879,61.20306,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",13,"DBH","alive",NA,NA,0.898,0.4752,0.01327,0.86224,1.88931,1.65704,53.67879,61.20306,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",17,"DBH","alive",NA,NA,0.898,0.4752,0.0227,1.47449,3.0059,3.00591,97.37447,97.37428,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",7,"Rhizophora mangle",5.3,"DBH","alive",NA,NA,0.898,0.4752,0.00221,0.14332,0.39975,0.22608,7.32388,12.94967,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_5",7,"Rhizophora mangle",11,"DBH","dead",3,NA,0.898,0.4752,0.0095,0.61735,0.70744,1.14359,37.04591,22.91701,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_3",7,"Rhizophora mangle",11.2,"DBH","dead",2,NA,0.898,0.4752,0.00985,0.64,1.16776,1.19026,38.55782,37.82889,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_4",7,"Rhizophora mangle",12,"DBH","dead",1,30.6,0.898,0.4752,0.01131,0.73469,1.60374,1.38727,44.93977,51.95227,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",12,"DBH","dead",3,NA,0.898,0.4752,0.01131,0.73469,0.82243,1.38727,44.93977,26.64219,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",7,"Rhizophora mangle",12,"DBH","dead",3,NA,0.898,0.4752,0.01131,0.73469,0.82243,1.38727,44.93977,26.64219,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",12,"DBH","dead",3,NA,0.898,0.4752,0.01131,0.73469,0.82243,1.38727,44.93977,26.64219,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",7,"Pelliciera rhizophorae",18,"DBH","alive",NA,NA,0.811,0.4669,0.02545,1.65306,7.56037,3.05947,100.87134,249.26709,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",7,"Pelliciera rhizophorae",22,"DBH","alive",NA,NA,0.811,0.4669,0.03801,2.46939,12.38603,4.7766,157.48572,408.37051,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",12,"DBH","dead",3,NA,0.898,0.4752,0.01131,0.73469,0.82243,1.38727,44.93977,26.64219,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_6",7,"Rhizophora mangle",12,"DBH","dead",3,NA,0.898,0.4752,0.01131,0.73469,0.82243,1.38727,44.93977,26.64219,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",7,"Pelliciera rhizophorae",12,"DBH","alive",NA,NA,0.811,0.4669,0.01131,0.73469,2.78842,1.24372,41.00579,91.93491,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",7,"Pelliciera rhizophorae",17,"DBH","alive",NA,NA,0.811,0.4669,0.0227,1.47449,6.56866,2.69487,88.85041,216.57031,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",7,"Pelliciera rhizophorae",19,"DBH","alive",NA,NA,0.811,0.4669,0.02835,1.84184,8.63588,3.44964,113.73544,284.72686,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",7,"Rhizophora mangle",22,"DBH","alive",NA,NA,0.898,0.4752,0.03801,2.46939,4.69679,5.32792,172.59446,152.14962,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",7,"Pelliciera rhizophorae",13,"DBH","alive",NA,NA,0.811,0.4669,0.01327,0.86224,3.39526,1.48558,48.97981,111.94256,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",7,"Rhizophora mangle",16,"DBH","alive",NA,NA,0.898,0.4752,0.02011,1.30612,2.70645,2.62739,85.1128,87.67361,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",7,"Rhizophora mangle",38,"DBH","alive",NA,NA,0.898,0.4752,0.11341,7.36735,12.09687,17.92663,580.72174,391.87053,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",7,"Rhizophora mangle",46,"DBH","alive",NA,NA,0.898,0.4752,0.16619,10.79592,16.83843,27.3969,887.50517,545.47017,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",7,"Rhizophora mangle",52,"DBH","alive",NA,NA,0.898,0.4752,0.21237,13.79592,20.81946,35.96718,1165.13413,674.43327,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_4",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_4",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_4",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_4",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",7,"Rhizophora mangle",12,"DBH","dead",3,NA,0.898,0.4752,0.01131,0.73469,0.82243,1.38727,44.93977,26.64219,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_4",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",7,"Rhizophora mangle",12,"DBH","dead",3,NA,0.898,0.4752,0.01131,0.73469,0.82243,1.38727,44.93977,26.64219,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_4",7,"Pelliciera rhizophorae",12,"DBH","alive",NA,NA,0.811,0.4669,0.01131,0.73469,2.78842,1.24372,41.00579,91.93491,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_4",7,"Pelliciera rhizophorae",14,"DBH","alive",NA,NA,0.811,0.4669,0.01539,1,4.07425,1.75124,57.73871,134.32893,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_4",7,"Pelliciera rhizophorae",15,"DBH","alive",NA,NA,0.811,0.4669,0.01767,1.14796,4.82789,2.0411,67.29541,159.17654,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_4",7,"Pelliciera rhizophorae",17,"DBH","alive",NA,NA,0.811,0.4669,0.0227,1.47449,6.56866,2.69487,88.85041,216.57031,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_5",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_5",7,"Rhizophora racemosa",7,"DBH","alive",NA,NA,0.88,0.5,0.00385,0.25,0.65477,0.4332,13.33708,20.15881,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",7,"Rhizophora mangle",12,"DBH","dead",3,NA,0.898,0.4752,0.01131,0.73469,0.82243,1.38727,44.93977,26.64219,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_5",7,"Rhizophora racemosa",10,"DBH","alive",NA,NA,0.88,0.5,0.00785,0.5102,1.65514,0.95624,29.44035,50.95772,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_5",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_5",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_5",7,"Pelliciera rhizophorae",14,"DBH","alive",NA,NA,0.811,0.4669,0.01539,1,4.07425,1.75124,57.73871,134.32893,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_5",7,"Pelliciera rhizophorae",14,"DBH","alive",NA,NA,0.811,0.4669,0.01539,1,4.07425,1.75124,57.73871,134.32893,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_1",7,"Rhizophora mangle",12,"DBH","dead",2,NA,0.898,0.4752,0.01131,0.73469,1.31589,1.38727,44.93977,42.62751,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_5",7,"Rhizophora mangle",27,"DBH","alive",NA,NA,0.898,0.4752,0.05726,3.71939,6.69512,8.39473,271.94186,216.88418,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",7,"Rhizophora mangle",12.4,"DBH","dead",3,NA,0.898,0.4752,0.01208,0.78449,0.87046,1.49202,48.3331,28.19812,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",7,"Pelliciera rhizophorae",10,"DBH","alive",NA,NA,0.811,0.4669,0.00785,0.5102,1.78063,0.82974,27.35664,58.70763,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",7,"Rhizophora mangle",27,"DBH","alive",NA,NA,0.898,0.4752,0.05726,3.71939,6.69512,8.39473,271.94186,216.88418,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_1",7,"Rhizophora mangle",8.4,"DBH","alive",NA,NA,0.898,0.4752,0.00554,0.36,0.88715,0.62846,20.35863,28.73854,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_1",7,"Rhizophora mangle",8.5,"DBH","alive",NA,NA,0.898,0.4752,0.00567,0.36862,0.90551,0.64519,20.90059,29.33333,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_1",7,"Rhizophora mangle",9.4,"DBH","alive",NA,NA,0.898,0.4752,0.00694,0.45082,1.07783,0.80672,26.13318,34.91576,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_1",7,"Rhizophora mangle",12,"DBH","alive",NA,NA,0.898,0.4752,0.01131,0.73469,1.64487,1.38727,44.93977,53.28438,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_1",7,"Rhizophora mangle",15,"DBH","alive",NA,NA,0.898,0.4752,0.01767,1.14796,2.42037,2.27668,73.75154,78.40634,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_1",7,"Rhizophora mangle",16,"DBH","alive",NA,NA,0.898,0.4752,0.02011,1.30612,2.70645,2.62739,85.1128,87.67361,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_1",7,"Rhizophora mangle",37,"DBH","alive",NA,NA,0.898,0.4752,0.10752,6.98469,11.55114,16.89611,547.33892,374.1919,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_5",7,"Rhizophora mangle",13,"DBH","dead",3,NA,0.898,0.4752,0.01327,0.86224,0.94466,1.65704,53.67879,30.60153,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_2",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_2",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_2",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_2",7,"Rhizophora mangle",25,"DBH","alive",NA,NA,0.898,0.4752,0.04909,3.18878,5.86006,7.07629,229.23204,189.83284,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_2",7,"Rhizophora mangle",51,"DBH","alive",NA,NA,0.898,0.4752,0.20428,13.27041,20.13129,34.44965,1115.97456,652.1405,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_3",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_3",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_3",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_3",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_5",7,"Rhizophora mangle",13,"DBH","dead",2,NA,0.898,0.4752,0.01327,0.86224,1.51145,1.65704,53.67879,48.96245,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_3",7,"Rhizophora mangle",14,"DBH","alive",NA,NA,0.898,0.4752,0.01539,1,2.14791,1.95336,63.278,69.58006,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_3",7,"Rhizophora mangle",18,"DBH","alive",NA,NA,0.898,0.4752,0.02545,1.65306,3.31852,3.41259,110.54866,107.50135,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_3",7,"Rhizophora mangle",39.6,"DBH","alive",NA,NA,0.898,0.4752,0.12316,8.00082,12.99206,19.64546,636.40241,420.86961,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_4",7,"Rhizophora mangle",6.5,"DBH","alive",NA,NA,0.898,0.4752,0.00332,0.21556,0.56914,0.35567,11.52169,18.437,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_4",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_4",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_4",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_4",7,"Rhizophora mangle",15,"DBH","alive",NA,NA,0.898,0.4752,0.01767,1.14796,2.42037,2.27668,73.75154,78.40634,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_5",7,"Rhizophora mangle",14,"DBH","dead",3,NA,0.898,0.4752,0.01539,1,1.07395,1.95336,63.278,34.79003,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",7,"Rhizophora mangle",15,"DBH","dead",3,NA,0.898,0.4752,0.01767,1.14796,1.21018,2.27668,73.75154,39.20317,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_5",7,"Rhizophora mangle",17,"DBH","dead",2,NA,0.898,0.4752,0.0227,1.47449,2.40472,3.00591,97.37447,77.89943,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_3",7,"Rhizophora mangle",18,"DBH","dead",3,NA,0.898,0.4752,0.02545,1.65306,1.65926,3.41259,110.54866,53.75067,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_5",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_5",7,"Rhizophora mangle",10,"DBH","alive",NA,NA,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_5",7,"Rhizophora mangle",17,"DBH","alive",NA,NA,0.898,0.4752,0.0227,1.47449,3.0059,3.00591,97.37447,97.37428,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_3",7,"Rhizophora mangle",19,"DBH","dead",1,NA,0.898,0.4752,0.02835,1.84184,3.553,3.8478,124.6469,115.09708,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_3",7,"Rhizophora mangle",20,"DBH","dead",3,NA,0.898,0.4752,0.03142,2.04082,1.99123,4.31187,139.68028,64.50452,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",7,"Rhizophora mangle",20,"DBH","dead",3,NA,0.898,0.4752,0.03142,2.04082,1.99123,4.31187,139.68028,64.50452,"cut for firewood"
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_6",7,"Rhizophora mangle",15,"DBH","alive",NA,NA,0.898,0.4752,0.01767,1.14796,2.42037,2.27668,73.75154,78.40634,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_6",7,"Rhizophora mangle",18,"DBH","alive",NA,NA,0.898,0.4752,0.02545,1.65306,3.31852,3.41259,110.54866,107.50135,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_6",7,"Rhizophora mangle",27,"DBH","alive",NA,NA,0.898,0.4752,0.05726,3.71939,6.69512,8.39473,271.94186,216.88418,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_6",7,"Rhizophora mangle",33,"DBH","alive",NA,NA,0.898,0.4752,0.08553,5.55612,9.47579,13.10629,424.57014,306.96215,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_6",7,"Rhizophora mangle",50,"DBH","alive",NA,NA,0.898,0.4752,0.19635,12.7551,19.45292,32.96798,1067.97703,630.165,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_6",7,"Rhizophora mangle",58,"DBH","alive",NA,NA,0.898,0.4752,0.26421,17.16327,25.15136,45.83414,1484.76817,814.76254,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_1",7,"Rhizophora mangle",5.4,"DBH","alive",NA,NA,0.898,0.4752,0.00229,0.14878,0.4129,0.23566,7.63418,13.37552,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_4",7,"Rhizophora mangle",22,"DBH","dead",2,NA,0.898,0.4752,0.03801,2.46939,3.75743,5.32792,172.59446,121.71969,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_1",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_1",7,"Rhizophora mangle",6,"DBH","alive",NA,NA,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_1",7,"Rhizophora mangle",6.5,"DBH","alive",NA,NA,0.898,0.4752,0.00332,0.21556,0.56914,0.35567,11.52169,18.437,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_1",7,"Rhizophora mangle",22,"DBH","dead",3,NA,0.898,0.4752,0.03801,2.46939,2.3484,5.32792,172.59446,76.07481,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_1",7,"Mora oleifera",23,"DBH","alive",NA,NA,0.806,0.5,0.04155,2.69898,12.12618,5.61446,172.85585,373.33599,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_3",7,"Rhizophora mangle",24.5,"DBH","dead",3,NA,0.898,0.4752,0.04714,3.0625,2.82933,6.76593,219.17813,91.65448,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_1",7,"Pelliciera rhizophorae",28,"DBH","alive",NA,NA,0.811,0.4669,0.06158,4,22.41719,8.1589,269.00085,739.10022,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_1",7,"Pelliciera rhizophorae",26,"DBH","dead",3,NA,0.811,0.4669,0.05309,3.44898,9.34065,6.9212,228.1937,307.96334,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_2",7,"Mora oleifera",7,"DBH","alive",NA,NA,0.806,0.5,0.00385,0.25,0.63628,0.4003,12.3244,19.58962,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_2",7,"Mora oleifera",7,"DBH","alive",NA,NA,0.806,0.5,0.00385,0.25,0.63628,0.4003,12.3244,19.58962,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_2",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_2",7,"Rhizophora mangle",8,"DBH","alive",NA,NA,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_2",7,"Rhizophora mangle",13,"DBH","alive",NA,NA,0.898,0.4752,0.01327,0.86224,1.88931,1.65704,53.67879,61.20306,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_2",7,"Mora oleifera",14,"DBH","alive",NA,NA,0.806,0.5,0.01539,1,3.5564,1.86499,57.41859,109.49292,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_2",7,"Pelliciera rhizophorae",31,"DBH","alive",NA,NA,0.811,0.4669,0.07548,4.90306,28.79534,10.22736,337.19862,949.38932,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_2",7,"Pelliciera rhizophorae",38,"DBH","alive",NA,NA,0.811,0.4669,0.11341,7.36735,47.51603,16.07164,529.88596,1566.61479,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_3",7,"Rhizophora mangle",7,"DBH","alive",NA,NA,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_3",7,"Rhizophora mangle",8.5,"DBH","alive",NA,NA,0.898,0.4752,0.00567,0.36862,0.90551,0.64519,20.90059,29.33333,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_3",7,"Rhizophora mangle",11,"DBH","alive",NA,NA,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_2",7,"Rhizophora mangle",30,"DBH","dead",1,NA,0.898,0.4752,0.07069,4.59184,7.83374,10.60689,343.60359,253.76908,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_3",7,"Rhizophora mangle",12,"DBH","alive",NA,NA,0.898,0.4752,0.01131,0.73469,1.64487,1.38727,44.93977,53.28438,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_4",7,"Rhizophora mangle",30,"DBH","dead",3,NA,0.898,0.4752,0.07069,4.59184,4.0173,10.60689,343.60359,130.13799,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_3",7,"Rhizophora mangle",32,"DBH","dead",3,NA,0.898,0.4752,0.08042,5.22449,4.49213,12.24086,396.53493,145.51971,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_3",7,"Rhizophora mangle",51,"DBH","alive",NA,NA,0.898,0.4752,0.20428,13.27041,20.13129,34.44965,1115.97456,652.1405,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_3",7,"Rhizophora mangle",64,"DBH","alive",NA,NA,0.898,0.4752,0.3217,20.89796,29.82395,57.02936,1847.43023,966.12814,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_4",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_4",7,"Rhizophora mangle",9,"DBH","alive",NA,NA,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_4",7,"Mora oleifera",11,"DBH","alive",NA,NA,0.806,0.5,0.0095,0.61735,1.95198,1.09185,33.61554,60.09685,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_4",7,"Rhizophora mangle",19,"DBH","alive",NA,NA,0.898,0.4752,0.02835,1.84184,3.6441,3.8478,124.6469,118.04828,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_4",7,"Pelliciera rhizophorae",20,"DBH","alive",NA,NA,0.811,0.4669,0.03142,2.04082,9.7973,3.86569,127.45281,323.01922,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_2",7,"Rhizophora mangle",33,"DBH","dead",3,NA,0.898,0.4752,0.08553,5.55612,4.73789,13.10629,424.57014,153.48107,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_4",7,"Rhizophora mangle",40,"DBH","alive",NA,23,0.898,0.4752,0.12566,8.16327,13.22006,20.08872,650.76125,428.25559,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_4",7,"Rhizophora mangle",57,"DBH","alive",NA,22,0.898,0.4752,0.25518,16.57653,24.40546,44.09823,1428.53433,790.59957,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_5",7,"Pelliciera rhizophorae",6,"DBH","alive",NA,6,0.811,0.4669,0.00283,0.18367,0.50679,0.26695,8.80154,16.70885,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_4",7,"Rhizophora mangle",35,"DBH","dead",1,15,0.898,0.4752,0.09621,6.25,10.22949,14.93517,483.81526,331.37794,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_5",7,"Rhizophora mangle",11,"DBH","alive",NA,10,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_5",7,"Rhizophora mangle",11,"DBH","alive",NA,7.5,0.898,0.4752,0.0095,0.61735,1.41488,1.14359,37.04591,45.83402,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_1",7,"Pelliciera rhizophorae",36,"DBH","dead",3,12,0.811,0.4669,0.10179,6.61224,20.7992,14.25385,469.95295,685.7546,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_5",7,"Rhizophora mangle",13,"DBH","alive",NA,10,0.898,0.4752,0.01327,0.86224,1.88931,1.65704,53.67879,61.20306,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_3",7,"Pelliciera rhizophorae",36,"DBH","dead",3,3,0.811,0.4669,0.10179,6.61224,20.7992,14.25385,469.95295,685.7546,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_5",7,"Rhizophora mangle",15,"DBH","alive",NA,13.5,0.898,0.4752,0.01767,1.14796,2.42037,2.27668,73.75154,78.40634,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_5",7,"Rhizophora mangle",16,"DBH","alive",NA,15,0.898,0.4752,0.02011,1.30612,2.70645,2.62739,85.1128,87.67361,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_5",7,"Rhizophora mangle",26,"DBH","alive",NA,16,0.898,0.4752,0.05309,3.44898,6.27172,7.72004,250.08597,203.16835,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_5",7,"Pelliciera rhizophorae",36,"DBH","alive",NA,20,0.811,0.4669,0.10179,6.61224,41.5984,14.25385,469.95295,1371.50921,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",7,"Rhizophora mangle",10,"DBH","alive",NA,8,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",7,"Rhizophora mangle",12,"DBH","alive",NA,10,0.898,0.4752,0.01131,0.73469,1.64487,1.38727,44.93977,53.28438,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",7,"Pelliciera rhizophorae",15,"DBH","alive",NA,19,0.811,0.4669,0.01767,1.14796,4.82789,2.0411,67.29541,159.17654,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",7,"Rhizophora mangle",21,"DBH","alive",NA,10,0.898,0.4752,0.03464,2.25,4.3334,4.80514,155.65939,140.37792,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",7,"Rhizophora mangle",31,"DBH","alive",NA,12,0.898,0.4752,0.07548,4.90306,8.50383,11.4078,369.54852,275.47633,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",7,"Rhizophora mangle",80,"DBH","alive",NA,26,0.898,0.4752,0.50265,32.65306,43.88503,93.59201,3031.85393,1421.62799,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_1",7,"Pelliciera rhizophorae",6,"DBH","alive",NA,16,0.811,0.4669,0.00283,0.18367,0.50679,0.26695,8.80154,16.70885,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_1",7,"Rhizophora mangle",6,"DBH","alive",NA,8,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_1",7,"Rhizophora mangle",7,"DBH","alive",NA,1.7,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_5",7,"Rhizophora mangle",37,"DBH","dead",2,22,0.898,0.4752,0.10752,6.98469,9.24091,16.89611,547.33892,299.35352,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_2",7,"Rhizophora mangle",6,"DBH","alive",NA,5,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_2",7,"Rhizophora mangle",6,"DBH","alive",NA,7.5,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_2",7,"Rhizophora mangle",6,"DBH","alive",NA,5.5,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_2",7,"Rhizophora mangle",7,"DBH","alive",NA,8,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_2",7,"Rhizophora mangle",7,"DBH","alive",NA,55,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_2",7,"Rhizophora mangle",7.2,"DBH","alive",NA,6,0.898,0.4752,0.00407,0.26449,0.67938,0.44633,14.45861,22.00796,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_2",7,"Rhizophora mangle",8,"DBH","alive",NA,5,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_2",7,"Pelliciera rhizophorae",8.5,"DBH","alive",NA,19,0.811,0.4669,0.00567,0.36862,1.19383,0.57843,19.07097,39.36091,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_2",7,"Rhizophora mangle",9,"DBH","alive",NA,9,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_4",7,"Rhizophora racemosa",40,"DBH","dead",2,15,0.88,0.5,0.12566,8.16327,48.67209,20.75584,639.02254,1498.49719,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_2",7,"Rhizophora mangle",10,"DBH","alive",NA,1.9,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_2",7,"Rhizophora mangle",13,"DBH","alive",NA,16,0.898,0.4752,0.01327,0.86224,1.88931,1.65704,53.67879,61.20306,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_2",7,"Rhizophora mangle",14,"DBH","alive",NA,8,0.898,0.4752,0.01539,1,2.14791,1.95336,63.278,69.58006,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_3",7,"Rhizophora mangle",6,"DBH","alive",NA,4,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_3",7,"Rhizophora mangle",8,"DBH","alive",NA,8,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_3",7,"Rhizophora mangle",8,"DBH","alive",NA,7,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_4",7,"Rhizophora mangle",46,"DBH","dead",2,15,0.898,0.4752,0.16619,10.79592,13.47074,27.3969,887.50517,436.37613,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_3",7,"Rhizophora mangle",9,"DBH","alive",NA,6,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_3",7,"Rhizophora mangle",9,"DBH","alive",NA,8,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_3",7,"Rhizophora mangle",10,"DBH","alive",NA,7,0.898,0.4752,0.00785,0.5102,1.19969,0.92551,29.98116,38.86308,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_3",7,"Rhizophora mangle",14,"DBH","alive",NA,10,0.898,0.4752,0.01539,1,2.14791,1.95336,63.278,69.58006,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_3",7,"Rhizophora mangle",14,"DBH","alive",NA,10,0.898,0.4752,0.01539,1,2.14791,1.95336,63.278,69.58006,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_5",7,"Rhizophora mangle",50,"DBH","dead",3,6,0.898,0.4752,0.19635,12.7551,9.72646,32.96798,1067.97703,315.0825,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_3",7,"Rhizophora mangle",51,"DBH","alive",NA,25,0.898,0.4752,0.20428,13.27041,20.13129,34.44965,1115.97456,652.1405,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_4",7,"Rhizophora mangle",5.6,"DBH","alive",NA,6,0.898,0.4752,0.00246,0.16,0.43972,0.25548,8.2761,14.24461,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_4",7,"Rhizophora mangle",7,"DBH","alive",NA,6.5,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_4",7,"Rhizophora mangle",7,"DBH","alive",NA,8,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_4",7,"Rhizophora mangle",8,"DBH","alive",NA,7.5,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_4",7,"Rhizophora mangle",8,"DBH","alive",NA,8,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_4",7,"Rhizophora mangle",8,"DBH","alive",NA,6,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_4",7,"Rhizophora mangle",9,"DBH","alive",NA,8.5,0.898,0.4752,0.00636,0.41327,0.99968,0.73248,23.72831,32.38404,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_4",7,"Rhizophora mangle",15,"DBH","alive",NA,12,0.898,0.4752,0.01767,1.14796,2.42037,2.27668,73.75154,78.40634,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_4",7,"Rhizophora mangle",17,"DBH","alive",NA,11,0.898,0.4752,0.0227,1.47449,3.0059,3.00591,97.37447,97.37428,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_4",7,"Rhizophora mangle",32,"DBH","alive",NA,18,0.898,0.4752,0.08042,5.22449,8.98426,12.24086,396.53493,291.03942,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_5",7,"Rhizophora mangle",6,"DBH","alive",NA,6,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_5",7,"Rhizophora mangle",7,"DBH","alive",NA,9,0.898,0.4752,0.00385,0.25,0.64704,0.41927,13.58208,20.96051,NA
+"Cifuentes_et_al_2023_Panama","Batipa","Batipa_3",7,"Rhizophora mangle",50.2,"DBH","dead",3,6,0.898,0.4752,0.19792,12.85735,9.7939,33.26145,1077.48381,317.26732,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_4",7,"Rhizophora mangle",55,"DBH","dead",2,20,0.898,0.4752,0.23758,15.43367,18.35378,40.73654,1319.63454,594.55906,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_5",7,"Rhizophora mangle",13,"DBH","alive",NA,2.3,0.898,0.4752,0.01327,0.86224,1.88931,1.65704,53.67879,61.20306,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_5",7,"Rhizophora mangle",15,"DBH","alive",NA,10.5,0.898,0.4752,0.01767,1.14796,2.42037,2.27668,73.75154,78.40634,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_5",7,"Rhizophora mangle",18,"DBH","alive",NA,12.5,0.898,0.4752,0.02545,1.65306,3.31852,3.41259,110.54866,107.50135,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_5",7,"Rhizophora mangle",23,"DBH","alive",NA,11,0.898,0.4752,0.04155,2.69898,5.07246,5.88051,190.49531,164.31911,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_5",7,"Rhizophora mangle",31,"DBH","alive",NA,15,0.898,0.4752,0.07548,4.90306,8.50383,11.4078,369.54852,275.47633,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",7,"Rhizophora mangle",5.4,"DBH","alive",NA,5,0.898,0.4752,0.00229,0.14878,0.4129,0.23566,7.63418,13.37552,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",7,"Rhizophora mangle",6,"DBH","alive",NA,6,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",7,"Rhizophora mangle",6,"DBH","alive",NA,5,0.898,0.4752,0.00283,0.18367,0.4955,0.29777,9.64593,16.05155,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",7,"Rhizophora mangle",8,"DBH","alive",NA,7,0.898,0.4752,0.00503,0.32653,0.8153,0.56395,18.26873,26.41107,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_5",7,"Rhizophora mangle",63,"DBH","dead",2,32,0.898,0.4752,0.31172,20.25,23.21754,55.06999,1783.95758,752.11747,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",7,"Rhizophora mangle",12,"DBH","alive",NA,8.5,0.898,0.4752,0.01131,0.73469,1.64487,1.38727,44.93977,53.28438,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",7,"Rhizophora mangle",13,"DBH","alive",NA,12,0.898,0.4752,0.01327,0.86224,1.88931,1.65704,53.67879,61.20306,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",7,"Rhizophora mangle",14,"DBH","alive",NA,10,0.898,0.4752,0.01539,1,2.14791,1.95336,63.278,69.58006,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",7,"Rhizophora mangle",18,"DBH","alive",NA,16,0.898,0.4752,0.02545,1.65306,3.31852,3.41259,110.54866,107.50135,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",7,"Rhizophora mangle",49,"DBH","alive",NA,22,0.898,0.4752,0.18857,12.25,18.78439,31.52204,1021.1365,608.50845,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",7,"Rhizophora mangle",54,"DBH","alive",NA,25,0.898,0.4752,0.22902,14.87755,22.22497,39.11048,1266.95926,719.96402,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_2",2,"Rhizophora mangle",3.4,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,9.08352,4.13484,2.73358,6.0052,NA
+"Cifuentes_et_al_2023_Panama","Isla Mono","Isla Mono_2",2,"Rhizophora mangle",4,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,12.03455,5.93128,3.92122,7.95615,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_2",2,"Pelliciera rhizophorae",3.5,"DBH","alive",NA,NA,0.811,0.4669,NA,NA,6.59442,4.23364,2.6600799999999998,4.43713,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_2",2,"Pelliciera rhizophorae",4,"DBH","alive",NA,NA,0.811,0.4669,NA,NA,9.15876,5.69451,3.57796,6.16257,NA
+"Cifuentes_et_al_2023_Panama","Limones","Limones_3",2,"Pelliciera rhizophorae",4,"DBH","alive",NA,NA,0.811,0.4669,NA,NA,9.15876,5.69451,3.57796,6.16257,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",2,"Rhizophora mangle",3,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,7.3141,3.13173,2.07042,4.83542,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_1",2,"Rhizophora mangle",4,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,12.03455,5.93128,3.92122,7.95615,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",2,"Rhizophora mangle",1.4,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,1.95529,0.57674,0.38129,1.29266,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_2",2,"Rhizophora mangle",1.9,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,3.31731,1.13608,0.75107,2.19311,NA
+"Cifuentes_et_al_2023_Panama","Boca del Río","Boca del Río_3",2,"Rhizophora mangle",5,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,17.70848,9.73394,6.4352,11.70723,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_1",2,"Rhizophora mangle",4,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,12.03455,5.93128,3.92122,7.95615,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_2",2,"Pelliciera rhizophorae",0.3,"DBH","alive",NA,NA,0.811,0.4669,NA,NA,0.01565,0.01812,0.01138,0.01053,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_3",2,"Pelliciera rhizophorae",5,"DBH","alive",NA,NA,0.811,0.4669,NA,NA,15.85752,9.34537,5.87187,10.66991,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_4",2,"Rhizophora mangle",5,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,17.70848,9.73394,6.4352,11.70723,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",2,"Rhizophora mangle",2.3,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,4.61759,1.73625,1.14785,3.05273,NA
+"Cifuentes_et_al_2023_Panama","Las Matita","Las Matita_6",2,"Rhizophora mangle",3.5,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,9.55094,4.40967,2.91528,6.31421,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",2,"Pelliciera rhizophorae",1,"DBH","alive",NA,NA,0.811,0.4669,NA,NA,0.30253,0.26235,0.16484,0.20356,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",2,"Rhizophora mangle",2,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,3.62533,1.2731,0.84166,2.39674,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",2,"Rhizophora mangle",3,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,7.3141,3.13173,2.07042,4.83542,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_1",2,"Rhizophora mangle",5,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,17.70848,9.73394,6.4352,11.70723,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",2,"Rhizophora mangle",1.8,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,3.02093,1.00758,0.66612,1.99716,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",2,"Rhizophora mangle",2.3,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,4.61759,1.73625,1.14785,3.05273,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",2,"Rhizophora mangle",2.5,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,5.33456,2.08931,1.38126,3.52672,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",2,"Rhizophora mangle",3,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,7.3141,3.13173,2.07042,4.83542,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_2",2,"Rhizophora mangle",4,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,12.03455,5.93128,3.92122,7.95615,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",2,"Rhizophora mangle",1,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,1.0921,0.27326,0.18065,0.722,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",2,"Rhizophora mangle",1,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,1.0921,0.27326,0.18065,0.722,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_3",2,"Rhizophora mangle",5,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,17.70848,9.73394,6.4352,11.70723,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",2,"Rhizophora mangle",1,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,1.0921,0.27326,0.18065,0.722,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",2,"Rhizophora mangle",1,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,1.0921,0.27326,0.18065,0.722,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",2,"Rhizophora mangle",1,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,1.0921,0.27326,0.18065,0.722,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",2,"Rhizophora mangle",1,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,1.0921,0.27326,0.18065,0.722,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",2,"Rhizophora mangle",1.5,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,2.20332,0.6722,0.4444,1.45664,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",2,"Rhizophora mangle",1.8,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,3.02093,1.00758,0.66612,1.99716,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",2,"Rhizophora mangle",2,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,3.62533,1.2731,0.84166,2.39674,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",2,"Rhizophora mangle",3.5,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,9.55094,4.40967,2.91528,6.31421,NA
+"Cifuentes_et_al_2023_Panama","Los Algarrobos","Los Algarrobos_6",2,"Rhizophora mangle",5,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,17.70848,9.73394,6.4352,11.70723,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_3",2,"Rhizophora mangle",3,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,7.3141,3.13173,2.07042,4.83542,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_4",2,"Rhizophora mangle",2,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,3.62533,1.2731,0.84166,2.39674,NA
+"Cifuentes_et_al_2023_Panama","El Represo","El Represo_5",2,"Rhizophora mangle",3,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,7.3141,3.13173,2.07042,4.83542,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_2",2,"Pelliciera rhizophorae",3,"DBH","alive",NA,NA,0.811,0.4669,NA,NA,4.51323,3.00672,1.88917,3.03678,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_2",2,"Rhizophora mangle",3,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,7.3141,3.13173,2.07042,4.83542,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_5",2,"Rhizophora mangle",3,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,7.3141,3.13173,2.07042,4.83542,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",2,"Rhizophora mangle",0.5,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,0.32899,0.05865,0.03878,0.2175,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",2,"Rhizophora mangle",0.6,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,0.45107,0.08792,0.05812,0.29821,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",2,"Rhizophora mangle",0.8,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,0.74219,0.16651,0.11008,0.49067,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",2,"Rhizophora mangle",1,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,1.0921,0.27326,0.18065,0.722,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",2,"Rhizophora mangle",1.4,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,1.95529,0.57674,0.38129,1.29266,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",2,"Rhizophora mangle",1.5,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,2.20332,0.6722,0.4444,1.45664,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",2,"Rhizophora mangle",2,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,3.62533,1.2731,0.84166,2.39674,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",2,"Rhizophora mangle",2,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,3.62533,1.2731,0.84166,2.39674,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",2,"Rhizophora mangle",2,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,3.62533,1.2731,0.84166,2.39674,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",2,"Pelliciera rhizophorae",3,"DBH","alive",NA,NA,0.811,0.4669,NA,NA,4.51323,3.00672,1.88917,3.03678,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",2,"Pelliciera rhizophorae",3,"DBH","alive",NA,NA,0.811,0.4669,NA,NA,4.51323,3.00672,1.88917,3.03678,NA
+"Cifuentes_et_al_2023_Panama","El Río","El Río_6",2,"Rhizophora mangle",3.8,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,11.01208,5.29292,3.49919,7.28019,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_1",2,"Rhizophora mangle",4,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,12.03455,5.93128,3.92122,7.95615,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_4",2,"Rhizophora mangle",5,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,17.70848,9.73394,6.4352,11.70723,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_5",2,"Rhizophora mangle",1.8,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,3.02093,1.00758,0.66612,1.99716,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_5",2,"Rhizophora mangle",2.5,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,5.33456,2.08931,1.38126,3.52672,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",2,"Rhizophora mangle",1,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,1.0921,0.27326,0.18065,0.722,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",2,"Rhizophora mangle",2,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,3.62533,1.2731,0.84166,2.39674,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",2,"Rhizophora mangle",3,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,7.3141,3.13173,2.07042,4.83542,NA
+"Cifuentes_et_al_2023_Panama","Resbaloso","Resbaloso_6",2,"Rhizophora mangle",4,"DBH","alive",NA,NA,0.898,0.4752,NA,NA,12.03455,5.93128,3.92122,7.95615,NA

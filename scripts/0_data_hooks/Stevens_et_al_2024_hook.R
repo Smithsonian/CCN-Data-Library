@@ -14,7 +14,9 @@ source("scripts/1_data_formatting/qa_functions.R") # For QAQC
 species <- read.csv("data/primary_studies/Stevens_et_al_2024/original/Stevens_et_al_2024_species.csv")
 impacts <- read.csv("data/primary_studies/Stevens_et_al_2024/original/Stevens_et_al_2024_impacts.csv")
 methods <- read.csv("data/primary_studies/Stevens_et_al_2024/original/Stevens_et_al_2024_methods.csv")
-cores <- read.csv("data/primary_studies/Stevens_et_al_2024/original/Stevens_et_al_2024_cores.csv")
+cores <- read.csv("data/primary_studies/Stevens_et_al_2024/original/Stevens_et_al_2024_cores.csv") %>% 
+  # jaxine edit
+  mutate(vegetation_class = recode(vegetation_class, "seagrass" = "emergent"))
 depthseries <- read.csv("data/primary_studies/Stevens_et_al_2024/original/Stevens_et_al_2024_depthseries.csv")
 sites <- read.csv("data/primary_studies/Stevens_et_al_2024/original/Stevens_et_al_2024_sites.csv")
 study_citations <- read.csv("data/primary_studies/Stevens_et_al_2024/original/Stevens_et_al_2024_study_citations.csv") 

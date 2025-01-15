@@ -15,7 +15,7 @@ source("scripts/1_data_formatting/curation_functions.R")
 ## References and Codes ####
 
 # read in reference workbook
-# refs <- readExcelWorkbook("./data/primary_studies/CIFOR/CIFOR_docs/Ref_Tables_2020-05-12.xlsx")
+refs <- readExcelWorkbook("./data/primary_studies/CIFOR/CIFOR_docs/Ref_Tables_2020-05-12.xlsx")
 
 # SWAMP_veg_converter <- function(swamp_type) {
 ref_path <- "./data/primary_studies/CIFOR/CIFOR_docs/Ref_Tables_2020-05-12.xlsx"
@@ -167,7 +167,8 @@ subplot_table <- swamp_veg$Plot %>%
 # get look up table values and define terms
 clean_subplot <- subplot_table %>%
   rename(elevation = ELEVATION,
-         disturbance_note = DISTURBANCE_NOTES,
+         disturbance_notes = DISTURBANCE_NOTES,
+         site_notes = PLOT_DESCRIPTION,
          disturbance_year = DYEAR,
          position_accuracy = ACCURACY,
          method_id = PROTOID,
@@ -177,6 +178,7 @@ clean_subplot <- subplot_table %>%
          tree_basal_area = TREE_BA,
          AGC_saplings = SAP_AGC,
          BGC_saplings = SAP_BGC,
+         plot_sapling_area = SAP_AREA,
          sapling_basal_area = SAP_BA) %>% 
   
   # assign study_ids based on bibliography structure
@@ -195,13 +197,19 @@ mutate(site_name = gsub(" ", "_", getsiteid[SITEID]),
        habitat = getlandcov[LANDCOVID],
        ecosystem_condition = getecocond[ECOID],
        disturbance_class = getdisturb[DISTRUBID],
-       geomorphic_id = getgeo[GEOID],
+       ecotype = getgeo[GEOID],
        year = year(MDATE),
        month = month(MDATE),
        day = day(MDATE),
        plot_shape = "circular",
        site_id = site_name, # paste(site_name, PLOTID, sep = "_"),
        plot_id = paste(site_id, SUBPID, sep = "_"),
+       plot_notes = coalesce(PLOT_NOTES, SUBP_DESCRIPTION),
+       
+       # biomass and carbon
+       aboveground_plant_carbon = AGC_trees + AGC_saplings,
+       belowground_plant_carbon = BGC_trees + BGC_saplings,
+       basal_area = tree_basal_area + sapling_basal_area,
        # plant_plot_detail_present = "yes",
        # detailed_plot_notes = "sapling plot area is nested within the total plot and is 12.57m2",
        # allometric_eq_present = "yes",
@@ -219,9 +227,17 @@ mutate(site_name = gsub(" ", "_", getsiteid[SITEID]),
   select(study_id, site_id, plot_id, year, month, day, latitude, longitude, everything()) %>% 
   select(-c(SITEID, LANDCOVID, ECOID, DISTRUBID, GEOID, MDATE, PLOTID, PLOT, MEAS, PROJID, 
             AUTHOR, SUBP, DISTURBN, TOPOID, ID, CITID, subplot_latitude, subplot_longitude, 
-            plot_latitude, plot_longitude))
+            plot_latitude, plot_longitude, PLOT_NOTES, SUBP_DESCRIPTION,
+            AGC_trees, AGC_saplings, BGC_trees, BGC_saplings, tree_basal_area, sapling_basal_area))
   
   
+
+# creat final plot table
+plots <- clean_subplot %>% 
+  # rename() %>% 
+  select(-c(filename, COUNTRY, SUBPID, site_name, UND_AREA, SUBPLOT_NOTES))
+
+
   # plot level biomass summary across alive/dead and above/belowground
   # group_by(alive_or_dead, above_or_belowground, plot_id) %>% 
   # mutate(aboveground_biomass = case_when(alive_or_dead == "alive" & above_or_belowground == "aboveground" ~ sum(plant_mass_organic_matter),
@@ -256,7 +272,8 @@ tree_table <- bind_rows(swamp_veg$Tree %>% mutate(plant_id = paste(ID, "tree", s
          height_deadbreak = DEADBREAK_HGT,
          diameter = DBH,
          basal_diameter = DBASE,
-         basal_area = BA) %>% 
+         basal_area = BA,
+         plant_notes = NOTES) %>% 
   mutate(wood_density = getgrav[SGID, "SG"],
     wood_density_source = getsource[getgrav[SGID, "CITID"]],
 
@@ -267,9 +284,10 @@ tree_table <- bind_rows(swamp_veg$Tree %>% mutate(plant_id = paste(ID, "tree", s
     alive_or_dead = case_when(decay_class > 0 ~ "dead",
                               decay_class == 0 ~ "alive",
                               T ~ NA_character_),
-    n_plants = 1,
-    height_unit = "meters",
+    # n_plants = 1,
+    # height_unit = "meters",
     species_code = getspecies[SPECID],
+    species_code = na_if(species_code, "NA"),
     code_type = case_when(grepl("spp", species_code) ~ "Genus",
                           NA ~ NA_character_,
                           T ~ "Genus species")) %>% 
@@ -322,9 +340,30 @@ tree_biomass <- bind_rows(swamp_veg$TreeBiomass %>% mutate(plant_id = paste(ID, 
   select(filename, plant_id, everything()) %>% 
   select(-c(COMP_BIOGRPID, C_CONCID, EQID, ID, TREEID, COMPID, SAPID))
 
+tree_biomass_above <- tree_biomass %>% filter(above_or_belowground == "aboveground") %>% 
+  select(filename, plant_id, plant_mass_organic_matter, plant_mass_organic_carbon, 
+         carbon_conversion_factor) %>% 
+  rename(plant_aboveground_mass = plant_mass_organic_matter, 
+         plant_aboveground_carbon = plant_mass_organic_carbon,
+         aboveground_carbon_conversion = carbon_conversion_factor)
+
+tree_biomass_below <- tree_biomass %>% filter(above_or_belowground == "belowground") %>% 
+  select(filename, plant_id, plant_mass_organic_matter, plant_mass_organic_carbon, 
+         carbon_conversion_factor) %>% 
+  rename(plant_belowground_mass = plant_mass_organic_matter, 
+         plant_belowground_carbon = plant_mass_organic_carbon,
+         belowground_carbon_conversion = carbon_conversion_factor)
+
+## Join Biomass and Carbon measurements to plant table
+
+plants <- tree_table %>% 
+  left_join(tree_biomass_above) %>% 
+  left_join(tree_biomass_below) %>% 
+  select(-c(SUBPID, TREEN, filename))
+
 # Output Biomass tables for synthesis 
-write_csv(clean_subplot, "data/primary_studies/CIFOR/derivative_SWAMP/cifor_swamp_plots.csv")
-write_csv(tree_table, "data/primary_studies/CIFOR/derivative_SWAMP/cifor_swamp_plants.csv")
+write_csv(plots, "data/primary_studies/CIFOR/derivative_SWAMP/cifor_swamp_plots.csv")
+write_csv(plants, "data/primary_studies/CIFOR/derivative_SWAMP/cifor_swamp_plants.csv")
 
 ## Veg Tables ####
 # plot_summary <- SWAMP_veg_converter(swamp_veg) %>% 

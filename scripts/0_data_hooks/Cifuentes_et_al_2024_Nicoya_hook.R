@@ -33,7 +33,6 @@ methods <- raw_methods %>%
 
 methods <- reorderColumns("methods", methods)
 
-
 ## ... Core Depthseries ####
 
 # curate depthseries-level data
@@ -46,36 +45,54 @@ depthseries <- raw_depthseries %>%
 ## soil_carbon = Soil carbon calculated as the product of the fraction carbon content, dry bulk density, and depth interval. (g/cm3)
 ## plot_id --> core_id?
 
-
 depthseries <- reorderColumns("depthseries", depthseries)
 
-## ... Plot -Level//Cores? ####
+## ... Cores ####
 
 cores <- raw_plots %>% 
   select(study_id, site_id, plot_id, year, latitude, longitude, position_method, habitat) %>% 
-  mutate(habitat = "mangrove") %>% # going to assign all as mangrove habitat (even for sites that were formally mangrove)
-  rename(core_id = plot_id) ## 1 core/sediment sample per plot 
+  mutate(habitat = "mangrove", # going to assign all as mangrove habitat (even for sites that were formally mangrove)
+         core_id = plot_id) %>% 
+  select(-plot_id)
+  # relocate(core_id, .after = plot_id) 
+  ## 1 core/sediment sample per plot 
 
 cores <- reorderColumns("cores", cores)
 
 ## missing lat long for site 
     # Buenaventura_Camaronera_4_x
 
+## ... Plots ####
+
+plots <- raw_plots %>% 
+  mutate(habitat = "mangrove",
+         land_use_class = recode(land_use_class, "low disturbance" = "natural"),
+         plot_plant_carbon = AGC_total + root_carbon) %>% 
+  select(-c(AGC_trees:TEC_300cm))
+
+## ... Vegetation ####
+
+plants <- raw_plants %>% 
+  # removing derived values for now 
+  select(-c(wood_density:plant_total_carbon)) %>% 
+  select(-c(family, height_canopy))
+
 ## ... Impacts #####
 
 impacts <- raw_plots %>% 
   select(study_id, site_id, plot_id, land_use_class, land_use_status) %>% 
-  rename(core_id = plot_id,
-         impact_class = land_use_class) %>% 
-  mutate(impact_class = case_when(impact_class == "shrimp pond" ~ "farmed", #check impact classes 
-                                  impact_class == "low disturbance" ~ "natural",
-                                  impact_class == "salt pond" ~ "agro-industrial deforestation"),
+  rename(core_id = plot_id) %>% 
+  # lets just have farmed and natural for now, 
+  # agro-industrial deforestation was the conversion event that allowed for the farming
+  mutate(impact_class = case_when(land_use_class == "shrimp pond" ~ "farmed", #check impact classes 
+                                  land_use_class == "low disturbance" ~ "natural",
+                                  land_use_class == "salt pond" ~ "agro-industrial deforestation"),
          impact_class2 = case_when(startsWith(core_id, "Buenaventura_Camaronera") ~ "agro-industrial deforestation",
                                    startsWith(core_id, "Isla Chira_Camaronera") ~ "agro-industrial deforestation",
                                    startsWith(core_id, "Jicaral_Camaronera") ~ "agro-industrial deforestation",
                                    startsWith(core_id, "Lepanto_Camaronera") ~ "agro-industrial deforestation")) %>%
-  pivot_longer(cols = c(impact_class, impact_class2), values_to = "impact_class") %>% 
-  select(- land_use_status, -name) %>% 
+  # pivot_longer(cols = c(impact_class, impact_class2), values_to = "impact_class") %>% 
+  select(-c(land_use_status, land_use_class, impact_class2)) %>% 
   filter(!is.na(impact_class))
 
 impacts <- reorderColumns("impacts", impacts)
@@ -129,7 +146,7 @@ write_excel_csv(cores, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivat
 write_excel_csv(depthseries, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_depthseries.csv")
 write_excel_csv(methods, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_methods.csv")
 write_excel_csv(impacts, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_impacts.csv")
-# write_csv(species, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_species.csv")
-# write_csv(impacts, "data/primary_studies/Author_et_al_####/derivative/Author_et_al_####_impacts.csv")
+write_excel_csv(plants, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_plants.csv")
+write_excel_csv(plots, "data/primary_studies/Cifuentes_et_al_2024_Nicoya/derivative/Cifuentes_et_al_2024_Nicoya_plots.csv")
 
 

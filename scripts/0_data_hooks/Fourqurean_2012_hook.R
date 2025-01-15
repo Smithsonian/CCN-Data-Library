@@ -272,6 +272,7 @@ species <- Fourqurean %>%
   mutate(species_code = str_trim(species_code, "both")) %>%
   # recode some species codes
   mutate(species_code = recode(species_code, 
+                               "Thassia hemprichii" = "Thalassia hemprichii",
                                "Syringodium filiform" = "Syringodium filiforme", 
                                "amphibolis antartica" = "Amphibolis antarctica", 
                                "Halopohila ovalis" = "Halophila ovalis", 

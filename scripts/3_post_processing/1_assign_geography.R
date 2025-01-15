@@ -130,7 +130,9 @@ assigned_geography <- sp_points_country_and_admin %>%
 # merge with core table
 core_geography <- left_join(ccrcn_synthesis$cores, 
                             unique(assigned_geography),
-                            by = c("study_id", "site_id", "core_id"))
+                            by = c("study_id", "site_id", "core_id")) %>% 
+  # Jaxine: spot correction to admin division
+  mutate(admin_division = recode(admin_division, "Ngöbe-Buglé" = "Bocas del Toro"))
 
 # isolate all cores with no assigned country
 # na_country <- core_geography %>% 

@@ -47,8 +47,9 @@ methods <- reorderColumns("methods", methods)
 
 ## ... Sites ####
 
-sites <- sites_raw
-
+# there's no information here that isn't present at core-leve resolution
+# probly a result of the author trying to fill out all the templates
+# sites <- sites_raw
 
 ## ... Cores ####
 
@@ -58,8 +59,8 @@ cores <- cores_raw %>%
   select(-pb210_profile_max_age)# uncontrolled attribute
 
 
-cores <- reorderColumns("cores", cores)
-
+cores <- reorderColumns("cores", cores) %>% 
+  mutate(core_notes = unique(impacts_raw$impact_notes))
 
 ## ... Depthseries ####
 
@@ -75,10 +76,9 @@ species <- reorderColumns("species", species)
 
 ## ... Impacts ####
 
-impacts <- impacts_raw
+impacts <- impacts_raw %>% mutate(impact_class = "natural") %>% 
+  select(-impact_notes)
 impacts <- reorderColumns("impacts", impacts)
-
-
 
 ## 2. QAQC ####
 
@@ -110,8 +110,6 @@ testIDs(cores, depthseries, by = "core")
 fractionNotPercent(depthseries)
       #testNumericCols(depthseries)
 test_numeric_vars(depthseries) ##testNumericCols producing error message 
-
-
 
 
 ### 3. Write Data vis report ####
