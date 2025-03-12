@@ -48,7 +48,7 @@ cores <- orig_plots %>%
   mutate(core_id = paste(site_id, transect_id, plot_id, sep = "_"), 
          habitat = "mangrove", 
          vegetation_class = "forested") %>% 
-  select(-c(transect_id, plot_id)) %>% 
+  select(-c(transect_id)) %>% 
   select(study_id, site_id, core_id, everything())
 
 ## ... Depthseries ####
@@ -80,8 +80,10 @@ impacts <- orig_plots %>%
 
 ## ... Plants ####
 plants <- orig_plants %>% 
+  rename(plant_id = tree_id) %>% 
+  separate(species, into = c("genus", "species"), sep = " ") %>% 
   mutate(plot_id = paste(transect_id, plot_id, sep = "_")) %>% 
-  select(-transect_id)
+  select(-transect_id, -family)
 
 ## ... Plots ####
 

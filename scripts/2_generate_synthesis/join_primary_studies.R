@@ -218,6 +218,7 @@ if(join_status == TRUE){
   source("scripts/3_post_processing/3_assign_data_tiers.R")
   source("scripts/3_post_processing/4_max_depths.R")
   # source("scripts/3_post_processing/8_soil_carbon_stock.R")
+  # source("scripts/3_post_processing/tidy_biomass.R")
   source("scripts/3_post_processing/5_core_attributes.R") # no new attributes can be added after this step
   source("scripts/3_post_processing/7_resolve_taxonomy.R")
 }
@@ -288,6 +289,10 @@ if(join_status == TRUE){
   write_csv(ccrcn_synthesis$impacts, "./data/CCN_synthesis/CCN_impacts.csv")
   write_csv(ccrcn_synthesis$methods, "./data/CCN_synthesis/CCN_methods.csv")
   write_csv(ccrcn_synthesis$species, "./data/CCN_synthesis/CCN_species.csv")
+  # vegetation
+  write_csv(ccrcn_synthesis$plots, "./data/CCN_synthesis/CCN_plots.csv")
+  write_csv(ccrcn_synthesis$plants, "./data/CCN_synthesis/CCN_plants.csv")
+  # bibs
   write_excel_csv(ccrcn_synthesis$study_citations %>% select(-keywords, -abstract), 
             "./data/CCN_synthesis/CCN_study_citations.csv")
   
