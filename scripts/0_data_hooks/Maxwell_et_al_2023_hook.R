@@ -76,7 +76,9 @@ dat_revised <- dat_raw %>%
   bind_rows(dat_kumar) %>% 
   bind_rows(dat_knysna) %>% 
   # remove duplicate studies
-  filter(!(Source %in% c("Ward et al 2021", "Burden et al 2018", "Schile et al 2016")))
+  filter(!(Source %in% c("Ward et al 2021", "Burden et al 2018", "Schile et al 2016", 
+                         # removing studies that were recently included more comprehensively by the PNW database
+                         "Adame et al 2015", "Adame et al 2021")))
 
 # 16432 rows currently 
 dat <- dat_revised %>% 
