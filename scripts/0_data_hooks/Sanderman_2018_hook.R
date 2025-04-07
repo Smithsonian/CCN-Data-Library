@@ -410,6 +410,7 @@ primary_sources <- read_csv("data/primary_studies/Sanderman_2018/intermediate/Sa
                                      bibliography_id == "Alongi_et_al_2008" ~ paste0(bibliography_id, "_article_", month),
                                      TRUE ~ paste0(bibliography_id, "_article"))) %>% 
   filter(bibliography_id != "Kristensen_et_al_2000_article") %>% 
+  filter(study_id != "Adame_et_al_2015") %>% 
   mutate_all(as.character) %>% 
   bind_rows(Kristensen_citation, Eid_egypt_bib, Eid_saudi_bib, phang_bib)
 

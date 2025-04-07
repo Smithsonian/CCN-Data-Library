@@ -36,6 +36,7 @@ depthseries <- nrcs_ds %>%
          depth_interval_notes = ...19) %>% 
   separate(Pedon, into = c("core_id", "site_id"), sep = " - ") %>% 
   mutate(study_id = id, 
+         method_id = "see original source",
          core_id = recode(core_id, "S2019011001" = "S2019NJ011001"),
          # TC seems to match OC (though OC looks to be rounded to the tenths place)
          fraction_carbon = `Total C`/100) %>% 
@@ -45,6 +46,8 @@ depthseries <- nrcs_ds %>%
 limited_sampling_depth <- depthseries %>% filter(!is.na(depth_interval_notes)) %>% pull(core_id)
   
 ## ... Cores ####
+
+# !!! needs position method !!!
 
 cores <- nrcs_sites %>% 
   drop_na(Lat) %>% 
@@ -131,6 +134,38 @@ write_excel_csv(depthseries, "data/primary_studies/NRCS_NJ/derivative/NRCS_depth
 
 # misc - A fallback type for entries which do not fit into any other category. Required fields:
   # author/editor, title, year/date
+
+# combine all citations 
+synthesis_citations <- data.frame(study_id = id,
+                                  bibliography_id = "NRCS_data",
+                                  bibtype = "Misc",
+                                  publication_type = "primary dataset", 
+                                  title = "National Cooperative Soil Survey Soil Characterization Database",
+                                  author = "National Cooperative Soil Survey",
+                                  url = "http://ncsslabdatamart.sc.egov.usda.gov/",
+                                  note = "Accessed Wednesday, January 8, 2025") %>% 
+  # bind_rows(xia_synth) %>% 
+  arrange(study_id) %>% 
+  # select(-c(keywords, copyright)) %>%  # editor, language
+  select(study_id, bibliography_id, publication_type, everything())
+
+# unique(cores$study_id)[!(unique(cores$study_id) %in% unique(synthesis_citations$study_id))]
+
+# Create .bib file
+# this is more of a test that bib IDs are unique
+bib_file <- synthesis_citations %>%
+  select(-study_id, -publication_type) %>%
+  distinct() %>%
+  column_to_rownames("bibliography_id")
+# link to bibtex guide
+# https://www.bibtex.com/e/entry-types/
+
+write_excel_csv(synthesis_citations, "data/primary_studies/NRCS_NJ/derivative/NRCS_study_citations.csv")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/NRCS_NJ/derivative/NRCS_2025.bib")
+
+
+
+
 
 ## ... Webscraping ####
 

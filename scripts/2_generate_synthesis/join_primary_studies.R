@@ -5,8 +5,8 @@
 # RUN SCRIPT WITH A CLEAN R SESSION #
 # if you experience an error, restart Rstudio and try again # 
 
-past_version_code <- "1.4.0"
-new_version_code <- "1.5.0"
+past_version_code <- "1.5.0"
+new_version_code <- "1.6.0"
 
 # keep_objects <- c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results", "join_status", "file_paths", "new_version_code")
 

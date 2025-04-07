@@ -261,7 +261,7 @@ depthseries <- pnw_ds %>%
   separate(SampInterval, into = c("depth_min", "depth_max"), sep = "-") %>%
   separate(ExtrapInterval, into = c("representative_depth_min", "representative_depth_max"), sep = "-") %>%
   # drop extrapolated and interpolated data
-  mutate(method_id = "no documented methods",
+  mutate(method_id = "see original source",
          dry_bulk_density = case_when(BD_type %in% c("I", "E") ~ NA, T ~ dry_bulk_density),
          depth_min = gsub("~", "", depth_min),
          PercC = case_when(C_type %in% c("I", "E") ~ NA, 
@@ -353,32 +353,50 @@ rough_citations <- studies %>%
 # write_excel_csv(rough_citations, "data/primary_studies/Janousek_et_al_2025/new_study_citations.csv")
 # rough citations needs cleaning
 
-data_bib <- rough_citations %>% select(study_id) %>% 
+data_bib <- rough_citations %>% distinct(study_id) %>% 
   bind_cols(as.data.frame(GetBibEntryWithDOI("10.25573/serc.28127486")) %>% remove_rownames()) %>% 
-  mutate(bibliography_id = "Janousek_et_al_2025_synthesis",
-         publication_type = "synthesis source")
+  mutate(bibliography_id = "Janousek_et_al_2025_synthesis")
 
-# xia_synth <- data.frame(study_id = c("Gao_et_al_2016", "Liu_et_al_2017", "Xia_et_al_2022")) %>% 
-#   bind_cols(as.data.frame(GetBibEntryWithDOI("10.1111/gcb.16325")) %>% remove_rownames()) %>% 
-#   mutate(bibliography_id = "Xia_et_al_2022_synthesis",
-#          publication_type = "associated source")
+# read in curated study citations
+synth_studies <- read_csv("data/primary_studies/Janousek_et_al_2025/synthesis_study_citations.csv", col_types = "c") %>% 
+  drop_na(url) %>% select(-citation)
+
+# add citations for studies that aren't articles
+misc_bib <- synth_studies %>% filter(bibtype != "Article") %>% 
+  filter(study_id != "Drexler_et_al_2021") %>% 
+  mutate(year = as.character(year))
+
+study_dois <- synth_studies %>% drop_na(doi) %>% select(study_id, doi)
+synthesis_bib <- data.frame()
+
+for (i in 1:nrow(study_dois)) {
+  temp_df <- as.data.frame(GetBibEntryWithDOI(study_dois$doi[i])) %>% 
+    remove_rownames() %>% 
+    mutate(study_id = study_dois$study_id[i])
+  
+  synthesis_bib <- bind_rows(synthesis_bib, temp_df)
+}
 
 # combine all citations 
-synthesis_citations <- bind_rows(rough_citations, data_bib) %>% 
-  mutate(bibliography_id = case_when(!is.na(bibliography_id) ~ bibliography_id,
+synthesis_citations <- bind_rows(synthesis_bib, data_bib) %>% 
+  bind_rows(misc_bib) %>% 
+  
+  mutate(study_id = case_when(grepl("Aldana-Gut", study_id) ~ "Aldana-Gutiérrez_et_al_2021",
+                              grepl("Garc", study_id) ~ "García-García_et_al_2013",
+                              grepl("Ochoa", study_id) ~ "Ochoa-Gómez_et_al_2019", 
+                              T ~ study_id),
+         bibliography_id = case_when(!is.na(bibliography_id) ~ bibliography_id,
                                      bibtype == "Misc" ~ paste0(study_id, "_data"),
                                      bibtype == "Article" ~ paste0(study_id, "_article")),
-         publication_type = case_when(!is.na(publication_type) ~ publication_type,
-                                      bibtype == "Article" ~ "associated source", 
+         publication_type = case_when(bibtype %in% c("Article", "TechReport", "Mastersthesis", "Phdthesis") ~ "associated source", 
+                                      bibliography_id == "Janousek_et_al_2025_synthesis" ~ "synthesis source",
                                       bibtype == "Misc" ~ "primary dataset")) %>% 
   # bind_rows(xia_synth) %>% 
   arrange(study_id) %>% 
   select(-c(keywords, copyright)) %>%  # editor, language
   select(study_id, bibliography_id, publication_type, everything())
 
-# unique(dat$study_id)[!(unique(dat$study_id) %in% unique(synthesis_citations$study_id))]
-
-write_excel_csv(synthesis_citations, "data/primary_studies/Janousek_et_al_2025/derivative/Janousek_et_al_2025_study_citations.csv")
+# unique(cores$study_id)[!(unique(cores$study_id) %in% unique(synthesis_citations$study_id))]
 
 # Create .bib file
 # this is more of a test that bib IDs are unique
@@ -388,3 +406,8 @@ bib_file <- synthesis_citations %>%
   column_to_rownames("bibliography_id")
 # link to bibtex guide
 # https://www.bibtex.com/e/entry-types/
+
+write_excel_csv(synthesis_citations, "data/primary_studies/Janousek_et_al_2025/derivative/Janousek_et_al_2025_study_citations.csv")
+WriteBib(as.BibEntry(bib_file), "data/primary_studies/Janousek_et_al_2025/derivative/Janousek_et_al_2025.bib")
+
+
