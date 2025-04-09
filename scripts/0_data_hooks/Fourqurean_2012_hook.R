@@ -196,7 +196,10 @@ synthesis_depthseries <- Fourqurean %>%
                             depth_min)) %>%
   mutate(depth_max = ifelse(core_id == "Gonneea_et_al_2004_1", 
                             depth_center + thickness / 2,
-                            depth_max)) %>%
+                            depth_max),
+         depth_interval_notes = case_when(is.na(depth_max) ~ "surface sample, depth interval unknown",
+                                          # "Townsend_and_Fonseca_1998" surface sample in bioturbation pits close to seagrass beds
+                                          T ~ NA)) %>%
   
   rename(# dry bulk density was measured in g/mL, which is the same as g/c3
          dry_bulk_density = "Dry Bulk density (g/ml)",
@@ -238,7 +241,7 @@ synthesis_depthseries <- Fourqurean %>%
 # Join site_ids from core_data
 depthseries <- left_join(synthesis_depthseries, 
                          core_data %>% select(core_id, site_id)) %>%
-  mutate(method_id = "single set of methods")
+  mutate(method_id = "see original source")
 
 ## ....3e. Materials and Methods data ##############
 
@@ -333,7 +336,7 @@ bib_file <- study_citations %>%
   column_to_rownames("bibliography_id")
 
 WriteBib(as.BibEntry(bib_file), "data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012.bib") # there might be some improper utf characters present
-write_csv(study_citations, "data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")
+write_excel_csv(study_citations, "data/primary_studies/Fourqurean_2012/derivative/Fourqurean_2012_study_citations.csv")
 
 # -----
 ## ARCHIVED DATA CITATION WORKFLOW ##

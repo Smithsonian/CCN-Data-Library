@@ -36,11 +36,10 @@ id <- "Lerberg_et_al_2025"
 ## ... Methods ####
 
 methods <- methods_raw %>% 
+  mutate(dating_notes = "Pb-214 activities are an average of measurements made at KeV 352 and 295 respectively, and standard error was derived using the sum of squares.") %>% 
   select(-c(scale_error, detector_time, attenuated_counts_time)) 
 
 methods <- reorderColumns("methods", methods)
-
-
 
 ## ... Cores ####
 
@@ -57,9 +56,18 @@ cores <- reorderColumns("cores", cores)
 ## ... Depthseries ####
 
 depthseries <- depthseries_raw %>% 
+  rename(total_pb210_activity_se = total_pb210_activity_ae,
+         cs137_activity_se = cs137_activity_ae,
+         bi214_activity_se = bi214_activity_ae) %>% 
   mutate(fraction_organic_matter = percent_organic_matter/100,
-         excess_pb210_activity = excess_pb210_activity_corrected, #using author-corrected values for dates
-         cs137_activity = cs137_activity_corrected) %>% 
+         excess_pb210_activity = excess_pb210_activity_corrected, # using author-corrected values for dates
+         cs137_activity = cs137_activity_corrected,
+         # Jaxine edit, per Jim's suggestion
+         pb214_activity = mean(c(pb214_295_activity, pb214_352_activity), na.rm = T),
+         # sum of squares for pb214 SE
+         pb214_activity_se = sqrt(pb214_352_activity_ae^2 + pb214_295_activity_ae^2) / 2
+         ) %>% 
+  # remove uncontrolled variables
   select(-c(percent_organic_matter, pan_weight, pan_wet_sample, pan_dry_sample, pan_combustion_sample, porosity, 
             percent_gravel, percent_very_coarse_sand, percent_coarse_sand, percent_med_sand, percent_fine_sand, 
             percent_very_fine_sand, percent_total_sand, percent_silt, percent_clay, days_of_decay,
@@ -70,7 +78,12 @@ depthseries <- depthseries_raw %>%
             cs137_net_peak_area, excess_pb210_activity_stdev, excess_pb210_activity_ae, pb214_295_counts_re, 
             pb214_295_net_peak_area, pb214_295_counts_re, pb214_352_net_peak_area, pb214_352_counts_re,
             pb210_support_stdev, pb210_support_ae, cs137_counts_re, pb210_support_value, pb210_support_stdev, 
-            pb210_support_se, pb210_support_ae)) #remove uncontrolled variables, convert errors to se 
+            pb210_support_se, pb210_support_ae)) %>% 
+  # Jaxine edit
+  select(-c(total_pb210_activity_re, 
+            pb214_295_activity, pb214_295_activity_re, pb214_295_activity_ae, 
+            pb214_352_activity, pb214_352_activity_re, pb214_352_activity_ae, 
+            bi214_activity_re))
   
 #using values from pb214 295 keV or pb214 352 keV? 
 

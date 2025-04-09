@@ -148,5 +148,4 @@ core_geography <- left_join(ccrcn_synthesis$cores,
 ccrcn_synthesis$cores <- core_geography # will overwrite initial synthesis core table with updated geography
 
 ## Clear variables taking up memory ####
-
-rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results", "join_status", "file_paths"))])
+rm(list= ls()[!(ls() %in% c("keep", keep))])

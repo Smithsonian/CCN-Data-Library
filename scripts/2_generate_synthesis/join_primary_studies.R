@@ -209,6 +209,10 @@ qa_numeric_results <- testNumericVariables()
 #   bind_rows(testVariableNames(tables, ccrcn_synthesis)) 
 
 ## 5. Synthesis Post-processing ###########
+
+# this list contains the objects in the global environment that should be retained through the post-processing steps
+keep <- c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results", "join_status", "file_paths", "new_version_code")
+
 if(join_status == TRUE){
   
   # run post-processing on the cores table

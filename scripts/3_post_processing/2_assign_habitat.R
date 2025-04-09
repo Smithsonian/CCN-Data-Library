@@ -130,4 +130,4 @@ ccrcn_synthesis$cores <- cores_with_habitat
 # write_csv(cores_with_habitat, "data/CCRCN_synthesis/derivative/CCRCN_cores.csv")
 
 # clear workspace of unnecessary variables
-rm(list= ls()[!(ls() %in% c("ccrcn_synthesis", "bib_file", "qa_numeric_results", "qa_results", "join_status", "file_paths"))])
+rm(list= ls()[!(ls() %in% c("keep", keep))])

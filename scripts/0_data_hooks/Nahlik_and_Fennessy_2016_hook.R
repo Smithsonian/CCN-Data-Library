@@ -145,6 +145,7 @@ cores <- soil_marine %>%
 ## Depthseries
 
 depthseries <- soil_marine %>%
+  arrange(sample_id) %>% 
   rename("dry_bulk_density_notes" = "BULK_DEN_DBF_FLAG",
          "representative_depth_max" = "DEPTH") %>%
   group_by(study_id, site_id, core_id) %>% 
@@ -164,6 +165,8 @@ depthseries <- soil_marine %>%
          dry_bulk_density, fraction_carbon, depth_interval_notes)
 
 depthseries$depth_interval_notes[which(depthseries$depth_interval_notes == "")] <- NA
+
+# View(depthseries %>% filter(is.na(representative_depth_max))) # figure these out at some point
 
 # test <- depthseries %>%
 #   add_count(dry_bulk_density_notes, name = "count") %>%
