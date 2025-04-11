@@ -287,15 +287,15 @@ if(join_status == TRUE){
   
   # Write new synthesis data
   # to derivative folder (eventually, get rid of the derivative folder, just write to CCRCN_synthesis)
-  write_csv(ccrcn_synthesis$cores, "./data/CCN_synthesis/CCN_cores.csv")
-  write_csv(ccrcn_synthesis$depthseries, "./data/CCN_synthesis/CCN_depthseries.csv")
-  write_csv(ccrcn_synthesis$sites, "./data/CCN_synthesis/CCN_sites.csv")
-  write_csv(ccrcn_synthesis$impacts, "./data/CCN_synthesis/CCN_impacts.csv")
-  write_csv(ccrcn_synthesis$methods, "./data/CCN_synthesis/CCN_methods.csv")
-  write_csv(ccrcn_synthesis$species, "./data/CCN_synthesis/CCN_species.csv")
+  write_excel_csv(ccrcn_synthesis$cores, "./data/CCN_synthesis/CCN_cores.csv")
+  write_excel_csv(ccrcn_synthesis$depthseries, "./data/CCN_synthesis/CCN_depthseries.csv")
+  write_excel_csv(ccrcn_synthesis$sites, "./data/CCN_synthesis/CCN_sites.csv")
+  write_excel_csv(ccrcn_synthesis$impacts, "./data/CCN_synthesis/CCN_impacts.csv")
+  write_excel_csv(ccrcn_synthesis$methods, "./data/CCN_synthesis/CCN_methods.csv")
+  write_excel_csv(ccrcn_synthesis$species, "./data/CCN_synthesis/CCN_species.csv")
   # vegetation
-  write_csv(ccrcn_synthesis$plots, "./data/CCN_synthesis/CCN_plots.csv")
-  write_csv(ccrcn_synthesis$plants, "./data/CCN_synthesis/CCN_plants.csv")
+  write_excel_csv(ccrcn_synthesis$plots, "./data/CCN_synthesis/CCN_plots.csv")
+  write_excel_csv(ccrcn_synthesis$plants, "./data/CCN_synthesis/CCN_plants.csv")
   # bibs
   write_excel_csv(ccrcn_synthesis$study_citations %>% select(-keywords, -abstract), 
             "./data/CCN_synthesis/CCN_study_citations.csv")
