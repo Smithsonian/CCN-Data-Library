@@ -52,7 +52,11 @@ cores <- reorderColumns("cores", cores)
 
 depthseries <- depthseries_raw %>%
   select(- fraction_nitrogen) %>% 
-  mutate(core_id = ifelse(grepl("marsh grab", method_id), paste(site_id, core_id, sep = "_"), core_id)) %>% 
+  mutate(core_id = ifelse(grepl("marsh grab", method_id), paste(site_id, core_id, sep = "_"), core_id),
+         # jaxine edit
+         depth_min = case_when(method_id == "marsh grab" ~ 0, T ~ depth_min),
+         depth_max = case_when(method_id == "marsh grab" ~ 10, T ~ depth_max)
+         ) %>% 
   janitor::remove_empty(which = "cols")
 
 depthseries <- reorderColumns("depthseries", depthseries)

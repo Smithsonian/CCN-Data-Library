@@ -108,7 +108,8 @@ radiocarbon <- dating %>% select(`Core ID`,`Raw age`,`Age error`, Depth) %>%
                             na.omit(core_id) %>% 
                             mutate(c14_material = "shell",
                                    site_id = "False bay",
-                                   depth_min = as.numeric(Depth)) %>% select(-Depth)
+                                   depth_min = as.numeric(Depth),
+                                   depth_max = depth_min) %>% select(-Depth)
 
 
 depthseries <- data %>% select(site_id, core_id, `Dry bulk density`, `Organic carbon`, `Total -210Pb`, se,
@@ -141,7 +142,8 @@ depthseries <- rbind.fill(depthseries, radiocarbon) %>%
 
             
 #reorder columns 
-depthseries <- reorderColumns("depthseries", depthseries)
+depthseries <- reorderColumns("depthseries", depthseries) %>% 
+  arrange(site_id, core_id, depth_max)
 
 
 

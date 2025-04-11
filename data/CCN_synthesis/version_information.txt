@@ -4,6 +4,49 @@ This versioning document tracks the changes made to the CCN Data Library, includ
 
 ***
 
+### Synthesis Version 1.5.0
+
+#### Version Contents
+
+This database contains tidal wetland soil carbon profiles and associated metadata. The data itself is housed in separate comma separated value (.csv) spreadsheets linked by common identifier attributes (study_id, site_id, and core_id).
+
+*Data Tables*
+
+- CCN_methods.csv - Contains information on materials and methods broken down by study 
+- CCN_sites.csv - Contains positional and descriptive information of the coring sites.
+- CCN_cores.csv - Contains positional and descriptive information on core locations.
+- CCN_depthseries.csv - Contains raw depth-series information for all cores.
+- CCN_species.csv - Contains information on the dominant plant species at coring locations.
+- CCN_impacts.csv - Contains information on the anthropogenic impacts at site or coring locations.
+
+*Metadata Tables*
+
+- CCN_database_structure.html - Is a simplified, visual and interactive version of metadata.xml for display purposes.
+- CCN_study_citations.csv - Contains bibliographic information for publications and associated sources, which can be related to the database tables via study_id.
+- CCN_bibliography.bib - Contains bibliographic information for publications and sources associated with this database.
+
+#### Version Updates
+
+*New Datasets*
+
+This update adds 4 new studies and 837 new soil cores to the CCN Data Library, bringing the total number of cores to 16,168.
+
+Poppe et al 2024
+Cifuentes and Torres 2024
+Cifuentes et al 2024 (El Salvador)
+Yellen et al 2024
+
+*Corrections and Additions to previously synthesized datasets*
+ 
+- Beers et al 2023: change cores sampled in dwarf Rhizophora from scrub shrub to mangrove habitat
+- Stevens et al 2024: corrected vegetation class of three marsh cores that had been labeled as seagrass
+- Agawin_et_al_1996 (Fourqurean synthesis): corrected species spelling for Thalassia hemprichii
+- Cifuentes et al 2023 (Panama): Add species table
+- Palinkas_and_Engelhardt_2024: Add impact class and site history notes
+
+
+***
+
 ### Synthesis Version 1.4.0 
 
 #### Version 1.4.0 Contents

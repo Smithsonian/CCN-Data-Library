@@ -229,7 +229,9 @@ internatl_depthseries_data %>%
 source("./scripts/1_data_formatting/qa_functions.R")
 
 # remove data that has since been published independently
+# studies_to_remove <- c("Breithaupt_et_al_2014", "Adame_et_al_2015")
 studies_to_remove <- "Breithaupt_et_al_2014"
+
 
 depthseries <- internatl_depthseries_data %>%
   filter(!(study_id %in% studies_to_remove)) %>%
@@ -358,7 +360,7 @@ testTableCols(table_names)
 testTableVars(table_names)
 testRequired(table_names)
 
-test_unique_cores(cores)
+testUniqueCores(cores)
 test_unique_coords(cores)
 test_core_relationships(cores, depthseries)
 fraction_not_percent(depthseries)
@@ -410,6 +412,7 @@ primary_sources <- read_csv("data/primary_studies/Sanderman_2018/intermediate/Sa
                                      bibliography_id == "Alongi_et_al_2008" ~ paste0(bibliography_id, "_article_", month),
                                      TRUE ~ paste0(bibliography_id, "_article"))) %>% 
   filter(bibliography_id != "Kristensen_et_al_2000_article") %>% 
+  # filter(study_id != "Adame_et_al_2015") %>% 
   mutate_all(as.character) %>% 
   bind_rows(Kristensen_citation, Eid_egypt_bib, Eid_saudi_bib, phang_bib)
 
@@ -439,15 +442,15 @@ bib_file <- study_citations %>%
   distinct() %>%
   column_to_rownames("bibliography_id")
 
-WriteBib(as.BibEntry(bib_file), "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018.bib")
-write_csv(study_citations, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_study_citations.csv")
+# WriteBib(as.BibEntry(bib_file), "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018.bib")
+write_excel_csv(study_citations, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_study_citations.csv")
 
 ## Write data ###############
 
 # write_csv(internatl_study_metadata, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_corresponding_authors.csv")
-write_csv(cores, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_cores.csv")
-write_csv(species, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species.csv")
-write_csv(depthseries, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries.csv")
+write_excel_csv(cores, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_cores.csv")
+write_excel_csv(species, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_species.csv")
+write_excel_csv(depthseries, "data/primary_studies/Sanderman_2018/derivative/Sanderman_2018_depthseries.csv")
 
 #-----
 

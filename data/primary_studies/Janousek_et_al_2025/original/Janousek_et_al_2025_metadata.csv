@@ -1,0 +1,61 @@
+﻿"table","attribute_name","attribute_description","data_type","unit_or_code"
+"cores","SampID","Unique core number","character",NA
+"cores","StudyID","Unique primary study number","character",NA
+"cores","Ecosystem","Ecosystem type","character",NA
+"cores","State","State in the United States or province in Canada or Mexico","character",NA
+"cores","Estuary","Estuary name (identified by 3 letter code)","character",NA
+"cores","EstType","Estuary type","factor","TDE = Tide-dominated estuary; EMB = Embayment or bay; RD = River-dominated estuary; WDE = Wave-dominated estuary (lagoon)"
+"cores","Lat","Latitude","numeric","decimalDegrees"
+"cores","Long","Longitude","numeric","decimalDegrees"
+"cores","LatLongType","Measurement type for latitude and longitude","factor","SPEC = Specific coordinates; GEN = General coordinates"
+"cores","Lvl1EcoReg","US EPA/CEC level one ecoregion for North America","character",NA
+"cores","KGzone","Koppen-Geiger climate zone","character",NA
+"cores","Cdepth","Depth to which carbon data available in the core","numeric","centimeter"
+"cores","StkMeth","Method use to determine total sediment carbon stock","character",NA
+"cores","Stk30","Total sediment carbon stocks to 30 cm depth","numeric","megagramsPerHectare"
+"cores","Stk50","Total sediment carbon stocks to 50 cm depth","numeric","megagramsPerHectare"
+"cores","Stk100","Total sediment carbon stocks to 100 cm depth","numeric","megagramsPerHectare"
+"cores","PercFines","Percent fines (silt and clay) in the sediment sample","numeric","percent"
+"cores","GrainType","The depth range from which sediment grain size was computed","character",NA
+"cores","Elev_z","Wetland elevation at core location, in z-star","numeric","dimensionless"
+"cores","Elev_zlow","Wetland elevation at core location, in z-star (low)","numeric","dimensionless"
+"cores","Elev_zhigh","Wetland elevation at core location, in z-star (high)","numeric","dimensionless"
+"cores","VegGrp","Vegetation class at the core location","factor","Br-grm = Brackish, graminoid-dominated marsh; Br-mix = Brackish, mixed graminoid and forb marsh; ZosMar = Zostera marina; NanJap = Nanozostera japonica; Hardwood = Hardwood tree species; PicSit = Picea sitchensis; Fr-grm = Freshwater, graminoid-dominated marsh; Sl-suc = Saline, succulent-dominated marsh; ThuPli = Thuja plicata; Fr-mix = Freshwater, mixed graminoid and forb marsh; RhiMan = Rhizophora mangle; AviGer = Avicennia germinans; Sl-grm = Saline, graminoid dominated marsh; Mixed = Mixed mangrove species; LagRac = Laguncularia racemosa"
+"estuaries","Estuary","Estuary name","character",NA
+"estuaries","Code","Three-letter code to identify the estuary","character",NA
+"estuaries","State","State in the United States or province in Canada or Mexico","character",NA
+"estuaries","Latitude","General latitude for the estuary","numeric","decimalDegrees"
+"estuaries","Longitude","General longitude for the estuary","numeric","decimalDegrees"
+"estuaries","Notes","Additional notes about the estuary","character",NA
+"depthseries","SubSampID","Unique subsample identification. Numbers refer to individual cores (SampID)","character",NA
+"depthseries","StudyID","Unique study identification","character",NA
+"depthseries","StudySampID","Core name as used by primary authors","character",NA
+"depthseries","Ecosystem","Wetland ecosystem type","factor","EM = Emergent marsh; SG = Seagrass; FL = Tideflat; TS = Tidal swamp; MG = Mangrove"
+"depthseries","SampInterval","Depth interval sampled in the sediment column for bulk density and carbon or organic matter","numeric","centimeter"
+"depthseries","ExtrapInterval","Depth interval over which bulk density and carbon or organic matter data applied","numeric","centimeter"
+"depthseries","SampLength","The length of the depth interval","numeric","centimeter"
+"depthseries","BD_type","Type of bulk density value (M= measured; E = extrapolated; I = interpolated; O = modeled)","factor","M = measured; E = extrapolated; I = interpolated; O = modeled"
+"depthseries","BD","Bulk density","numeric","gramsPerCubicCentimeter"
+"depthseries","C method","Method used to determine carbon content","character",NA
+"depthseries","OM_type","Type of organic matter value (M= measured; E = extrapolated; I = interpolated; O = modeled)","factor","M = measured; E = extrapolated; I = interpolated; O = modeled"
+"depthseries","C_type","Type of carbon value (M= measured; E = extrapolated; I = interpolated; O = modeled)","factor","M = measured; E = extrapolated; I = interpolated; O = modeled"
+"depthseries","PercOM","Percent organic matter in the sample","character",NA
+"depthseries","PercC","Percent carbon content in the sample","character",NA
+"depthseries","Calc_CD_C","Carbon density calculated from bulk density and percent carbon","numeric","gramsPerCubicCentimeter"
+"depthseries","Calc_CN_OM","Carbon density calculated from bulk density and organic matter","numeric","gramsPerCubicCentimeter"
+"depthseries","Density and stocks notes","Additional subsample notes","character",NA
+"sources","StudyID","Unique  core identification","character",NA
+"sources","SampleID","Unique study identification","character",NA
+"sources","Citation (or dataset description)","Citation for published study","character",NA
+"sources","Sampling design","How cores locations were selected in the study","character",NA
+"sources","Coring method(s)","Devices/methods used to collect soil cores","character",NA
+"sources","Core compaction","Amount of sediment compaction observed during core collection","numeric","centimeter"
+"sources","C method(s)","Method(s) used to determine core carbon content","character",NA
+"sources","Inorganic carbon method","Method, if any, to determine core inorganic carbon content","character",NA
+"sources","CHN analyzer","Model of CHN analyzer used for analysis","character",NA
+"sources","Core root treatment","How roots were treated in core samples","character",NA
+"sources","LOI duration","Duration of loss-on-ignition","numeric","hour"
+"sources","LOI temperature","Temperature of loss-on-ignition","numeric","celsius"
+"sources","Link to study","If available, a link to publication","character",NA
+"sources","Link to data","If available, a link to the author's original dataset","character",NA
+"sources","Notes","Additional notes about the dataset","character",NA
