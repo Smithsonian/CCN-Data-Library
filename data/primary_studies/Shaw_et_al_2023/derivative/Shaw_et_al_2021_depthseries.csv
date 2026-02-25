@@ -1,43 +1,43 @@
 study_id,site_id,core_id,depth_min,depth_max,sample_id,dry_bulk_density,fraction_organic_matter,cs137_activity,cs137_activity_se,excess_pb210_activity,excess_pb210_activity_se,c14_age,c14_age_se,delta_c13,marker_date,marker_date_se,marker_type,marker_notes,method_id,cs137_unit,pb210_unit,c14_material
-Shaw_et_al_2020,GCREW,CB109,0,1,NA,NA,NA,NA,NA,27.75,1.8,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,becquerelsPerKilogram,NA
+Shaw_et_al_2020,GCREW,CB109,0,1,NA,NA,NA,NA,NA,27.75,1.8,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,disintegrationsPerMinutePerGram,NA
 Shaw_et_al_2020,GCREW,CB109,0,5,CB109_C_0,0.107403433,0.7568630000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,NA,NA
-Shaw_et_al_2020,GCREW,CB109,1,2,NA,NA,NA,NA,NA,21.51,1.4,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,becquerelsPerKilogram,NA
-Shaw_et_al_2020,GCREW,CB109,2,3,NA,NA,NA,NA,NA,23.99,1.6,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,becquerelsPerKilogram,NA
-Shaw_et_al_2020,GCREW,CB109,3,4,NA,NA,NA,NA,NA,22.41,1.5,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,becquerelsPerKilogram,NA
-Shaw_et_al_2020,GCREW,CB109,4,5,NA,NA,NA,NA,NA,25.76,1.7,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,becquerelsPerKilogram,NA
-Shaw_et_al_2020,GCREW,CB109,5,6,NA,NA,NA,NA,NA,18.23,1.2,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,becquerelsPerKilogram,NA
+Shaw_et_al_2020,GCREW,CB109,1,2,NA,NA,NA,NA,NA,21.51,1.4,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,disintegrationsPerMinutePerGram,NA
+Shaw_et_al_2020,GCREW,CB109,2,3,NA,NA,NA,NA,NA,23.99,1.6,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,disintegrationsPerMinutePerGram,NA
+Shaw_et_al_2020,GCREW,CB109,3,4,NA,NA,NA,NA,NA,22.41,1.5,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,disintegrationsPerMinutePerGram,NA
+Shaw_et_al_2020,GCREW,CB109,4,5,NA,NA,NA,NA,NA,25.76,1.7,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,disintegrationsPerMinutePerGram,NA
+Shaw_et_al_2020,GCREW,CB109,5,6,NA,NA,NA,NA,NA,18.23,1.2,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,disintegrationsPerMinutePerGram,NA
 Shaw_et_al_2020,GCREW,CB109,5,10,CB109_C_5,0.112553648,0.734807,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,NA,NA
-Shaw_et_al_2020,GCREW,CB109,6,7,NA,NA,NA,0.12,0.31,18.71,1.3,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
-Shaw_et_al_2020,GCREW,CB109,7,8,NA,NA,NA,1.2216,1.5148,16.26,1.1,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
-Shaw_et_al_2020,GCREW,CB109,8,10,NA,NA,NA,2.7508,0.4552,12.13,0.8,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
+Shaw_et_al_2020,GCREW,CB109,6,7,NA,NA,NA,0.12,0.31,18.71,1.3,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
+Shaw_et_al_2020,GCREW,CB109,7,8,NA,NA,NA,1.2216,1.5148,16.26,1.1,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
+Shaw_et_al_2020,GCREW,CB109,8,10,NA,NA,NA,2.7508,0.4552,12.13,0.8,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
 Shaw_et_al_2020,GCREW,CB109,8,12,CB109_horizon_1,NA,NA,NA,NA,NA,NA,NA,NA,NA,1980,5,pollution,206Pb:207Pb (decline),single set of methods,NA,NA,NA
-Shaw_et_al_2020,GCREW,CB109,10,12,NA,NA,NA,3.1624,0.7974,8.27,0.7,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
+Shaw_et_al_2020,GCREW,CB109,10,12,NA,NA,NA,3.1624,0.7974,8.27,0.7,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
 Shaw_et_al_2020,GCREW,CB109,10,15,CB109_C_10,0.119206009,0.747178,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,NA,NA
-Shaw_et_al_2020,GCREW,CB109,12,14,NA,NA,NA,5.0129,0.9112,9.22,0.7,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
+Shaw_et_al_2020,GCREW,CB109,12,14,NA,NA,NA,5.0129,0.9112,9.22,0.7,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
 Shaw_et_al_2020,GCREW,CB109,12,22,CB109_horizon_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,1974,5,pollution,Lead pollution (peak),single set of methods,NA,NA,NA
 Shaw_et_al_2020,GCREW,CB109,13,17,CB109_horizon_3,NA,NA,NA,NA,NA,NA,NA,NA,NA,1963,1,pollution,137CS (peak),single set of methods,NA,NA,NA
-Shaw_et_al_2020,GCREW,CB109,14,16,NA,NA,NA,5.9629,0.6343,10.5,0.8,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
+Shaw_et_al_2020,GCREW,CB109,14,16,NA,NA,NA,5.9629,0.6343,10.5,0.8,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
 Shaw_et_al_2020,GCREW,CB109,15,20,CB109_C_15,0.158476395,0.800412,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,NA,NA
 Shaw_et_al_2020,GCREW,CB109,15,19,CB109_horizon_4,NA,NA,NA,NA,NA,NA,NA,NA,NA,1954,3,pollution,137CS (onset),single set of methods,NA,NA,NA
-Shaw_et_al_2020,GCREW,CB109,16,18,NA,NA,NA,3.362,0.3761,6.69,0.5,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
-Shaw_et_al_2020,GCREW,CB109,18,20,NA,NA,NA,0.3126,0.2873,7.51,0.6,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
-Shaw_et_al_2020,GCREW,CB109,20,22,NA,NA,NA,0.2676,0.3456,6.23,0.5,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
+Shaw_et_al_2020,GCREW,CB109,16,18,NA,NA,NA,3.362,0.3761,6.69,0.5,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
+Shaw_et_al_2020,GCREW,CB109,18,20,NA,NA,NA,0.3126,0.2873,7.51,0.6,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
+Shaw_et_al_2020,GCREW,CB109,20,22,NA,NA,NA,0.2676,0.3456,6.23,0.5,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
 Shaw_et_al_2020,GCREW,CB109,20,25,CB109_C_20,0.097532189,0.76,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,NA,NA
-Shaw_et_al_2020,GCREW,CB109,22,24,NA,NA,NA,0.3129,0.2791,4.04,0.4,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
-Shaw_et_al_2020,GCREW,CB109,24,26,NA,NA,NA,0.21,0.266,2.95,0.3,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
+Shaw_et_al_2020,GCREW,CB109,22,24,NA,NA,NA,0.3129,0.2791,4.04,0.4,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
+Shaw_et_al_2020,GCREW,CB109,24,26,NA,NA,NA,0.21,0.266,2.95,0.3,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
 Shaw_et_al_2020,GCREW,CB109,25,30,CB109_C_25,0.111695279,0.7224670000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,NA,NA
-Shaw_et_al_2020,GCREW,CB109,26,28,NA,NA,NA,0.218,0.268,2.75,0.3,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
-Shaw_et_al_2020,GCREW,CB109,28,30,NA,NA,NA,0.2055,0.2744,1.24,0.2,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
+Shaw_et_al_2020,GCREW,CB109,26,28,NA,NA,NA,0.218,0.268,2.75,0.3,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
+Shaw_et_al_2020,GCREW,CB109,28,30,NA,NA,NA,0.2055,0.2744,1.24,0.2,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
 Shaw_et_al_2020,GCREW,CB109,28,38,CB109_horizon_5,NA,NA,NA,NA,NA,NA,NA,NA,NA,1880,20,pollution,206Pb:207Pb (decline UMV),single set of methods,NA,NA,NA
 Shaw_et_al_2020,GCREW,CB109,28,36,CB109_horizon_7,NA,NA,NA,NA,NA,NA,NA,NA,NA,1850,20,pollen,Ambrosia pollen (peak),single set of methods,NA,NA,NA
-Shaw_et_al_2020,GCREW,CB109,30,32,NA,NA,NA,0.2346,0.3319,0.94,0.1,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
+Shaw_et_al_2020,GCREW,CB109,30,32,NA,NA,NA,0.2346,0.3319,0.94,0.1,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
 Shaw_et_al_2020,GCREW,CB109,30,35,CB109_C_30,0.127253219,0.68472,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,NA,NA
-Shaw_et_al_2020,GCREW,CB109,32,34,NA,NA,NA,0.22,0.3682,0.59,0.1,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
-Shaw_et_al_2020,GCREW,CB109,34,36,NA,NA,NA,0.195,0.311,0.43,0.1,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
+Shaw_et_al_2020,GCREW,CB109,32,34,NA,NA,NA,0.22,0.3682,0.59,0.1,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
+Shaw_et_al_2020,GCREW,CB109,34,36,NA,NA,NA,0.195,0.311,0.43,0.1,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
 Shaw_et_al_2020,GCREW,CB109,35,40,CB109_C_35,0.095493562,0.755556,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,NA,NA
-Shaw_et_al_2020,GCREW,CB109,36,38,NA,NA,NA,0.11818212,0.365291707,0.22,0.1,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
+Shaw_et_al_2020,GCREW,CB109,36,38,NA,NA,NA,0.11818212,0.365291707,0.22,0.1,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
 Shaw_et_al_2020,GCREW,CB109,36,46,CB109_horizon_6,NA,NA,NA,NA,NA,NA,NA,NA,NA,1858,5,pollution,206Pb:207Pb (peak UMV),single set of methods,NA,NA,NA
-Shaw_et_al_2020,GCREW,CB109,38,40,NA,NA,NA,0.017263679,0.16112774,0.04,0.1,NA,NA,NA,NA,NA,NA,NA,single set of methods,becquerelsPerKilogram,becquerelsPerKilogram,NA
+Shaw_et_al_2020,GCREW,CB109,38,40,NA,NA,NA,0.017263679,0.16112774,0.04,0.1,NA,NA,NA,NA,NA,NA,NA,single set of methods,disintegrationsPerMinutePerGram,disintegrationsPerMinutePerGram,NA
 Shaw_et_al_2020,GCREW,CB109,40,45,CB109_C_40,0.092381974,0.7431690000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,NA,NA
 Shaw_et_al_2020,GCREW,CB109,45,50,CB109_C_45,0.114914163,0.7431,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,single set of methods,NA,NA,NA
 Shaw_et_al_2020,GCREW,CB109,48,56,CB109_horizon_8,NA,NA,NA,NA,NA,NA,NA,NA,NA,1780,20,pollen,Quercus:Ambrosia pollen (<1:1),single set of methods,NA,NA,NA

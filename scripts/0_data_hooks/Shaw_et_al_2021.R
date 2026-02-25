@@ -65,9 +65,10 @@ depthseries <- shaw_ds %>%
   select(-c(k40_activity, k40_activity_se))  %>% 
   select(-c(pb210_age)) %>% 
   rename(marker_date_se = marker_age_se) %>% 
-  mutate(cs137_unit = ifelse(!is.na(cs137_activity), "becquerelsPerKilogram", NA),
+  # These units are in a figure they sent
+  mutate(cs137_unit = ifelse(!is.na(cs137_activity), "disintegrationsPerMinutePerGram", NA),
          
-         pb210_unit = ifelse(!is.na(excess_pb210_activity), "becquerelsPerKilogram", NA),
+         pb210_unit = ifelse(!is.na(excess_pb210_activity), "disintegrationsPerMinutePerGram", NA),
          c14_material = ifelse(!is.na(c14_age), "plant macrofossils", NA))
 
 
