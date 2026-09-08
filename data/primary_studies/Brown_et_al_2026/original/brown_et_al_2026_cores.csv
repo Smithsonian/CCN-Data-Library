@@ -1,0 +1,84 @@
+study_id,site_id,core_id,year,month,day,latitude,longitude,position_method,elevation,elevation_datum,elevation_method,elevation_notes,salinity_class,vegetation_class,vegetation_method,inundation_class,core_length_flag
+Brown_et_al_2026,Bodega Bay,BOD13-02,2013,7,23,38.3156,-123.03665,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Bolinas Lagoon,BOL13-01,2013,7,22,37.91953333,-122.6884,handheld,1.72522,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,high,not specified
+Brown_et_al_2026,Bolinas Lagoon,BOL13-02,2013,7,22,37.91855,-122.6879667,handheld,1.59668,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,high,not specified
+Brown_et_al_2026,Bolinas Lagoon,BOL13-03,2013,7,22,37.91853333,-122.6875667,handheld,NA,NA,NA,NA,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Bolinas Lagoon,BOL13-04,2013,7,22,37.9177,-122.6885833,handheld,1.58503,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Bolinas Lagoon,BOL13-05,2013,7,22,37.91636667,-122.6879333,handheld,NA,NA,NA,NA,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Eureka,ERK13-01,2013,7,24,40.80676667,-124.1380667,handheld,NA,NA,NA,NA,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Hookton Slough,HKS16-01,2016,7,19,40.6775833,-124.2176,handheld,NA,NA,NA,NA,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Hookton Slough,HKS16-02,2016,7,19,40.67775,-124.2172,handheld,NA,NA,NA,NA,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Hookton Slough,HKS17-03,2016,7,1,40.67743,-124.21741,other low resolution,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Jacoby,JCB13-01,2013,7,24,40.84571667,-124.0837,handheld,NA,NA,NA,NA,saline,emergent,measurement,mid,not specified
+Brown_et_al_2026,Mission Bay,MB16-01,2016,11,6,32.79546401,-117.229373,handheld,NA,NA,NA,NA,saline,emergent,measurement,high,not specified
+Brown_et_al_2026,Mission Bay,MB16-02,2016,11,6,32.79454703,-117.2290048,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Mission Bay,MB16-03,2016,11,6,32.7945327,-117.2290229,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Mission Bay,MB17-05,2017,6,11,32.793113,-117.2308632,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Mission Bay,MB17-08,2017,6,11,32.79309609,-117.2307201,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Mugu,MGL13-01,2013,1,18,34.10411,-119.09179,handheld,1.41687,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,mid,not specified
+Brown_et_al_2026,Mugu,MGL13-05,2013,1,18,34.10286,-119.08872,handheld,1.37897,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,mid,not specified
+Brown_et_al_2026,Mugu,MGL13-06,2013,1,18,34.10284,-119.08863,handheld,1.40496,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,mid,not specified
+Brown_et_al_2026,Mugu,MGL13-08,2013,1,18,34.10522,-119.08797,handheld,1.58953,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,high,not specified
+Brown_et_al_2026,Mugu,MGL14-10,2014,NA,NA,34.10339,-119.086,other low resolution,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Morro,MOB13-01,2013,3,1,35.341,-120.8367,handheld,1.3985,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,mid,not specified
+Brown_et_al_2026,Morro,MOB13-02,2013,3,1,35.341,-120.8366,handheld,1.39153,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,mid,not specified
+Brown_et_al_2026,Morro,MOB13-03,2013,3,1,35.3429,-120.836,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Morro,MOB13-04,2013,3,1,35.3446,-120.8342,handheld,1.64559,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,mid,not specified
+Brown_et_al_2026,Morro,MOB13-06,2013,3,1,35.3459,-120.8334,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Morro,MOB13-07,2013,3,1,35.3471,-120.8327,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Morro,MOB13-08,2013,3,1,35.3471,-120.8325,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Morro,MOB13-09,2013,3,1,35.3471,-120.8325,handheld,NA,NA,NA,NA,saline,emergent,measurement,high,not specified
+Brown_et_al_2026,Morro,MOB13-10,2013,3,1,35.3426,-120.8392,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Morro,MOB13-11,2013,3,1,35.3418,-120.8409,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Mad River High,MRH14-01,2014,7,15,40.873017,-124.151013,handheld,2.14143,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,high,not specified
+Brown_et_al_2026,Mad River High,MRH14-02,2014,7,15,40.872803,-124.150885,handheld,NA,NA,NA,NA,saline,emergent,measurement,high,not specified
+Brown_et_al_2026,Mad River Low,MRL13-01,2013,7,24,40.8638,-124.1508667,handheld,NA,NA,NA,NA,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Mad River Low,MRL13-03,2013,7,24,40.8638,-124.1508667,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Mad River Low,MRL14-04,2014,7,15,40.8622778,-124.1537222,handheld,NA,NA,NA,NA,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Mad River Low,MRL14-05,2014,7,15,40.8622778,-124.1537222,handheld,NA,NA,NA,NA,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Mad River Low,MRL14-06,2014,7,15,40.8622778,-124.1537222,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Mad River Low,MRL14-10,2014,7,15,40.86382,-124.15084,handheld,NA,NA,NA,NA,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Mad River Low,MRL16-12,2016,6,18,40.8629,-124.1489333,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Mad River Low,MRL16-13,2016,6,18,40.8628333,-124.1491,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Petaluma,PTL15-01,2015,7,10,38.1945278,-122.55325,handheld,1.80263,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Petaluma,PTL15-02,2015,6,10,38.1670278,-122.5513333,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Petaluma,PTL16-02,2016,6,16,38.1670278,-122.5513333,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Petaluma,PTL16-03,2016,6,16,38.1689,-122.5510333,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Seal Beach,SB14-01,2014,2,22,33.7331,-118.0828,handheld,1.2478,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Seal Beach,SB14-02,2014,2,22,33.73328333,-118.0826,handheld,1.26412,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Seal Beach,SB14-04,2014,2,22,33.73368333,-118.0676167,handheld,1.29191,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,high,not specified
+Brown_et_al_2026,Seal Beach,SB14-05,2014,2,22,33.73433333,-118.0705,handheld,1.28947,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,mid,not specified
+Brown_et_al_2026,Seal Beach,SB15-06,2015,11,5,33.73495,-118.0837,handheld,1.22084,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Seal Beach,SB15-08,2015,11,5,33.73475,-118.0831333,handheld,1.15726,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Seal Beach,SB15-09,2015,11,5,33.7359167,-118.0822667,handheld,1.28494,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Seal Beach,SB15-10,2015,11,5,33.7355667,-118.0824,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Seal Beach,SB15-11,2015,11,5,33.7351833,-118.0826667,handheld,1.22911,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Seal Beach,SB15-14,2015,11,12,33.73672,-118.0776,handheld,1.32902,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Seal Beach,SB15-16,2015,11,12,33.73655,-118.07844,handheld,1.29344,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Seal Beach,SB15-18,2015,11,12,33.73624,-118.0787,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Seal Beach,SB15-19,2015,11,20,33.7359,-118.0785833,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Seal Beach,SB15-20,2015,11,20,33.73545,-118.0785333,handheld,1.29438,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Seal Beach,SB15-21,2015,11,20,33.7356,-118.07954,handheld,1.34452,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Seal Beach,SB15-23,2015,11,20,33.73609,-118.07856,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Tijuana,TJE12-01,2012,9,6,32.5733,-117.1291,handheld,1.40111,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Tijuana,TJE12-02,2012,9,6,32.5733,-117.1291,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Tijuana,TJE12-03,2012,9,6,32.5741,-117.1288,handheld,NA,NA,NA,NA,saline,emergent,measurement,mid,not specified
+Brown_et_al_2026,Tijuana,TJE12-04,2012,9,6,32.5741,-117.1288,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Tijuana,TJE12-06,2012,9,6,32.5747,-117.1288,handheld,1.60381,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,high,not specified
+Brown_et_al_2026,Tijuana,TJE12-07,2012,9,6,32.5752,-117.1283,handheld,1.35991,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Tijuana,TJE12-08,2012,9,6,32.5752,-117.1283,handheld,1.35991,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Triangle,TRM16-01,2016,6,14,37.4577167,-121.9769667,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Triangle,TRM16-02,2016,6,14,37.4582667,-121.97655,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Triangle,TRM16-03,2016,6,14,37.45895,-121.9760167,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Triangle,TRM16-04,2016,6,14,37.4587667,-121.97975,handheld,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified
+Brown_et_al_2026,Upper Newport,UNB13-01,2013,2,6,33.6518,-117.8836,handheld,1.50907,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,high,not specified
+Brown_et_al_2026,Upper Newport,UNB13-02,2013,2,6,33.6515,-117.8835,handheld,1.44568,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,high,not specified
+Brown_et_al_2026,Upper Newport,UNB13-03,2013,2,6,33.6512,-117.8811,handheld,1.4791,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,high-mid,not specified
+Brown_et_al_2026,Upper Newport,UNB13-04,2014,2,21,33.65,-117.8822,handheld,1.48861,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,mid,not specified
+Brown_et_al_2026,Upper Newport,UNB14-05,2014,2,21,33.64835,-117.8846833,handheld,1.31156,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Upper Newport,UNB14-06,2014,2,21,33.64838333,-117.8847667,handheld,NA,NA,NA,NA,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,Upper Newport,UNB14-07,2014,2,21,33.65158333,-117.88115,handheld,1.54597,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,high,not specified
+Brown_et_al_2026,Upper Newport,UNB14-08,2014,2,21,33.65165,-117.8814,handheld,1.57011,NAVD88,DEM,Handheld GPS interpolation from Thorne/Freeman DEM,saline,emergent,measurement,high,not specified
+Brown_et_al_2026,White Slough,WTS16-01,2016,6,19,40.7041167,-124.2161667,handheld,NA,NA,NA,NA,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,White Slough,WTS16-02,2016,6,19,40.7040167,-124.2159167,handheld,NA,NA,NA,NA,saline,emergent,measurement,low,not specified
+Brown_et_al_2026,White Slough,WTS17-03,2017,7,1,40.70428,-124.21486,other low resolution,NA,NA,NA,NA,NA,emergent,measurement,NA,not specified

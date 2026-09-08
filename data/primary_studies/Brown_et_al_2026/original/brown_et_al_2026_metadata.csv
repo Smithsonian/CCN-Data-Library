@@ -1,0 +1,104 @@
+﻿table,attribute,definition,"variable definitions, units, or form"
+methods,study_id,"Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.",
+methods,coring_method,Code indicating what type of device was used to collect soil depth profiles.,russian corer = A half cylinder coring device with the coring section sealed off by a fin attached to a rotating pivot point
+methods,roots_flag,Code indicating whether live roots were included or excluded from carbon assessments.,roots and rhizomes included = Roots and rhizomes were included in dry bulk density and or organic matter and carbon measurements
+methods,compaction_flag,Code indicating how the authors qualified or quantified compaction of the core.,corer limits compaction = Authors specified that the coring device's design minimized compaction
+methods,dry_bulk_density_temperature,Temperature at which samples were dried to measure dry bulk density.,celsius
+methods,dry_bulk_density_sample_volume,"Sample volume used for bulk density measurements, if held constant.",cubic centimeter
+methods,dry_bulk_density_flag,Any notable codes regarding how the authors quantified dry bulk density.,"to constant mass = Bulk density methodology did not specify drying temperature or length, only that samples were dried to a constant mass"
+methods,loss_on_ignition_temperature,Temperature at which samples were combusted to estimate fraction organic matter.,celsius
+methods,loss_on_ignition_time,Time over which samples were combusted to estimate fraction organic matter.,hour
+methods,cs137_counting_method,Code indicating the method used for determining radiocesium activity.,gamma = Gamma counting method used.
+methods,pb210_counting_method,Code indicating the method used for determining lead 210 activity.,gamma = Gamma counting method used.
+methods,c14_counting_method,Code indicating the method used for determining radiocarbon activity.,AMS = Accelerator mass spectroscopy used
+site,site_id,Site identification code unique to each study.,
+site,latitude,Mean positional latitude of the site in decimal degree WGS84.,
+site,longitude,Mean positional longitude of the site in decimal degree WGS84.,
+site,n,Number of cores per site.,
+site,n_elevations,Number of cores with elevation data per site.,
+site,elevation_mean,Mean elevation of cores measured at site in meters reletive to North American Vertical Datum of 1988.,
+site,elevation_min,"In case where more than three cores were measured, minimum elevation of cores measured at site in meters reletive to North American Vertical Datum of 1988.",
+site,elevation_max,"In case where more than three cores were measured, maximum elevation of cores measured at site in meters reletive to North American Vertical Datum of 1988.",
+site,species_present,List of dominant species observed at the site.,
+site,Nearest_NOAA_Station_ID,Station code of the nearest NOAA tide gauge to the site.,
+site,Nearest_NOAA_Station_Name,Station name of the nearest NOAA tide gauge to the site.,
+site,daily_tidal_range,Daily tidal range (MHHW-MLLW) at the nearest NOAA tide gauge in meters.,
+core,study_id,"Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.",
+core,site_id,Site identification code unique to each study.,
+core,core_id,Core identification code unique to each site.,
+core,year,Year of core collection.,YYYY
+core,month,Numeric month of year of core collection.,MM
+core,day,Numeric day of month of core collection.,DD
+core,latitude,Positional latitude of the core in decimal degree WGS84.,degree
+core,longitude,Positional longitude of the core in decimal degree WGS84.,degree
+core,position_method,Code indicating how latitude and longitude were determined.,handheld = Conventional Commercially available hand-held GPS; other low resolution = Any other technique resulting in positional error > 30 meters.
+core,elevation,Surface elevation of the core relative to defined datum.,meter
+core,elevation_datum,The datum relative to which the core elevation was measured against.,"NAVD88 = A gravity-based geodetic datum, North American Vertical Datum of 1988"
+core,elevation_method,Code indicating how elevation was determined,DEM = Handheld GPS matched to another digital elevation model; other low resolution = Any other technique resulting in positional error > 5 cm of random error.
+core,elevation_notes,Any relevant submitter generated notes on how elevation was determined.,
+core,salinity_class,Code based on submitter field observation or measurement indicating average annual salinity.,saline = 30-50 ppt.
+core,vegetation_class,Code based on submitter field observations or measurement indicating dominant wetland vegetation type.,emergent = Describes wetlands dominated by persistent emergent vascular plants
+core,vegetation_method,Indicate whether vegetation_class was determined using a field observation or a measurement.,measurement = Vegetation measured by counts or plots.
+core,inundation_class,Code based on submitter field observation or measurement indicating how often the coring location is inundated.,"high = Study-specific definition of an elevation relatively high in the tidal frame, typically defined by vegetation type; mid = Study-specific definition of an elevation in the relative middle of the tidal frame, typically defined by vegetation type; low = Study-specific definition of an elevation in relatively low in the tidal frame, typically defined by vegetation type; high-mid = Core was collected from the mid to high zone of the tidal frame."
+core,core_length_flag,"Indicated whether or not the coring team believes they recovered a full sediment profile, down to bedrock, or other non-marsh interface.",not specified = Authors did not specify whether or not the depth of the core represents the depth of the wetland soil deposit.
+depth series,study_id,"Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.",
+depth series,site_id,Site identification code unique to each study.,
+depth series,core_id,Core identification code unique to each site.,
+depth series,depth_min,Minimum depth of a sampling increment.,centimeter
+depth series,depth_max,Maximum depth of a sampling increment.,centimeter
+depth series,sample_id,Sample identification unique to the core. This should be used in the case that there are relevant lab-specific sample codes or in the case that there are multiple replicate samples.,
+depth series,dry_bulk_density,Dry mass per unit volume of a soil sample. This does not include ash-free bulk density.,grams per cubic centimeter
+depth series,fraction_organic_matter,Mass of organic matter relative to sample dry mass. Ash free bulk density should not be used here but should be expressed as a loss on ignition fraction.,dimensionless
+depth series,cs137_activity,Radioactivity counts per unit dry weight for radiocesium (137Cs).,becquerels per kilogram
+depth series,cs137_activity_se,1 standard error of uncertainty associated with cs137_activity.,becquerels per kilogram
+depth series,excess_pb210_activity,Excess radioactivity counts per unit dry weight for excess lead-210 (210Pb).,becquerels per kilogram
+depth series,excess_pb210_activity_se,1 standard error of uncertainty associated with excess_pb210_activity.,becquerels per kilogram
+depth series,total_pb210_activity,Total radioactivity counts per unit dry weight for excess lead-210 (210Pb).,becquerels per kilogram
+depth series,total_pb210_activity_se,1 standard error of uncertainty associated with total_pb210_activity.,becquerels per kilogram
+depth series,ra226_activity,Total radioactivity counts per unit dry weight for Radium-226 (226Ra) if measured as part of the_210Pb dating process.,becquerels per kilogram
+depth series,ra226_activity_se,1 standard error of uncertainty associated with ra226_activity.,becquerels per kilogram
+depth series,c14_age,Radiocarbon age as estimated from AMS measurements.,radiocarbon year
+depth series,c14_age_se,Estimated uncertainty in c14_age.,radiocarbon year
+depth series,c14_material,Description of the material selected for radiocarbon (14C) dating.,
+depth series,c14_notes,Any relevant submitter generated notes on 14C dating process.,
+depth series,fraction_modern,Ratio between fraction modern in the sample and fraction modern in contemporary carbon in the year of sampling.,dimensionless
+depth series,fraction_modern_se,Estimated uncertainty in fraction_modern.,dimensionless
+depth series,delta_c14,The isotopic signature of delta 14C.,dimensionless
+depth series,delta_c14_se,Estimated uncertainty in delta_c14.,dimensionless
+depth series,am241_activity,Radioactivity counts per unit dry weight for†241Am.,becquerels per kilogram
+depth series,am241_activity_se,Estimated uncertainty in am_241_activity.,becquerels per kilogram
+species,study_id,"Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.",
+species,site_id,Site identification code unique to each study.,
+species,core_id,Core identification code unique to each site.,
+species,species_code,Code associated with a species or a vegetation assemblage.,
+derivative values,study_id,"Unique identifier for the study made up of the first author's family name, as well as the second author's family name or et al. if more than three, then publication year separated by underscores.",
+derivative values,site_id,Site identification code unique to each study.,
+derivative values,core_id,Core identification code unique to each site.,
+derivative values,year,Year of core collection.,YYYY
+derivative values,month,Numeric month of year of core collection.,MM
+derivative values,day,Numeric day of month of core collection.,DD
+derivative values,latitude,Positional latitude of the core in decimal degree WGS84.,degree
+derivative values,longitude,Positional longitude of the core in decimal degree WGS84.,degree
+derivative values,position_method,Code indicating how latitude and longitude were determined.,handheld = Conventional Commercially available hand-held GPS; other low resolution = Any other technique resulting in positional error > 30 meters.
+derivative values,elevation,Surface elevation of the core relative to defined datum.,meter
+derivative values,elevation_datum,The datum relative to which the core elevation was measured against.,"NAVD88 = A gravity-based geodetic datum, North American Vertical Datum of 1988"
+derivative values,elevation_method,Code indicating how elevation was determined.,DEM = Handheld GPS matched to another digital elevation model; other low resolution = Any other technique resulting in positional error > 5 cm of random error.
+derivative values,elevation_notes,Any relevant submitter generated notes on how elevation was determined.,
+derivative values,salinity_class,Code based on submitter field observation or measurement indicating average annual salinity.,saline = 30-50 ppt.
+derivative values,vegetation_class,Code based on submitter field observations or measurement indicating dominant wetland vegetation type.,emergent = Describes wetlands dominated by persistent emergent vascular plants
+derivative values,vegetation_method,Indicate whether vegetation_class was determined using a field observation or a measurement.,measurement = Vegetation measured by counts or plots.
+derivative values,inundation_class,Code based on submitter field observation or measurement indicating how often the coring location is inundated.,"high = Study-specific definition of an elevation relatively high in the tidal frame, typically defined by vegetation type; mid = Study-specific definition of an elevation in the relative middle of the tidal frame, typically defined by vegetation type; low = Study-specific definition of an elevation in relatively low in the tidal frame, typically defined by vegetation type; high-mid = Core was collected from the mid to high zone of the tidal frame."
+derivative values,fraction_organic_matter_mean,"Mean organic matter content per core, expressed as mass of organic matter relative to sample dry mass. ",dimensionless
+derivative values,dry_bulk_density_mean,"Mean dry bulk density by core, expressed as dry mass per unit volume of a soil sample.",grams per cubic centimeter
+derivative values,carbon_stock_kgC_m2,Carbon stock estimate per core estimated to 1 m depth.,kilograms carbon per square meter
+derivative values,cs137_depth_med,Median depth of 137Cs peak.,centimeters
+derivative values,cs137_depth_age_min,Minimum possible age of 137Cs dated depth increment.,years CE
+derivative values,cs137_depth_age_max,Maximum possible age of 137Cs dated depth increment.,years CE
+derivative values,plum_accretion_rate_yr_cm_mean,Accretion rate mean estimated using 210Pb dating with the PLUM algorithm.,years per centimeter
+derivative values,plum_accretion_rate_yr_cm_se,Accretion rate standard error  estimated using 210Pb dating with the PLUM algorithm.,years per centimeter
+derivative values,plum_accretion_rate_yr_cm_lower_CI,Accretion rate lower 95% credible interval estimated using 210Pb dating with the PLUM algorithm.,years per centimeter
+derivative values,plum_accretion_rate_yr_cm_upper_CI,Accretion rate upper  95% credible interval estimated using 210Pb dating with the PLUM algorithm.,years per centimeter
+derivative values,carbon_accumulation_rate_gC_m2_year_mean,Carbon accumulation rate mean estimated using 210Pb dating with the PLUM algorithm.,grams carbon per square meter per year
+derivative values,carbon_accumulation_rate_gC_m2_year_se,Carbon accumulation standard error estimated using 210Pb dating with the PLUM algorithm.,grams carbon per square meter per year
+derivative values,carbon_accumulation_rate_gC_m2_year_lower_CI,Carbon accumulation rate lower 95% credible interval estimated using 210Pb dating with the PLUM algorithm.,grams carbon per square meter per year
+derivative values,carbon_accumulation_rate_gC_m2_year_upper_CI,Carbon accumulation rate upper 95% credible interval estimated using 210Pb dating with the PLUM algorithm.,grams carbon per square meter per year

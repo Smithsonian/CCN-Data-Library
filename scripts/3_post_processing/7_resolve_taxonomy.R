@@ -49,9 +49,10 @@ taxa_index <- which(!(taxa %in% taxa_db$species_code))
 # resolve the taxa which are not present in the database
 if(length(taxa_index) > 0){
   
-  taxa_resolved <- resolveTaxa(taxa[taxa_index])
+  taxa_resolved <- taxize::resolve(taxa[taxa_index],
+                                   verbose = F)
   
-  if(!is_empty(taxa_resolved)){
+  if(!all(grepl(taxa_resolved, "Error: no data found"))){
     clean_resolved <- taxa_resolved %>% 
       rename(species_code = submittedName,
              resolved_taxa = matchedCanonicalFull,
