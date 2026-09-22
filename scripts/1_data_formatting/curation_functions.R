@@ -7,6 +7,8 @@
 # https://stackoverflow.com/questions/2643939/remove-columns-from-dataframe-where-all-values-are-na
 notAllNA <- function(x) any(!is.na(x))
 
+## Calculate plot area from the radius of a circular plot
+plotAreaHa <- function(radius_m){round((pi*(as.numeric(radius_m)^2))/10000, 5)}
 
 ## Convert disintegration/min/gram to becquerel/kilogram ###########
 convert_dpm_g_to_bec_kg <- function(col_input) {
