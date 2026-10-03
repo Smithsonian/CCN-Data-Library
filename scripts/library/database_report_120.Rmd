@@ -877,3 +877,31 @@ habitat_change %>%
   theme_bw()
 ```
 
+```{r}
+# current_cores %>% 
+#   # filter(country == "United States") %>% 
+#   mutate(habitat = recode(habitat, 
+#                           "sabkha" = "unvegetated", 
+#                           "mudflat" = "unvegetated", 
+#                           "microbial mat" = "unvegetated")) %>% 
+#   filter(habitat != "upland") %>% 
+#   group_by(habitat) %>%
+#   tally() %>%
+#   ungroup() %>%
+#   mutate(percent = 100*(n/sum(n))) %>% 
+#   mutate(habitat = fct_reorder(habitat, percent)) %>% 
+#   filter(!is.na(habitat)) %>% 
+#   ggplot(aes(habitat, percent, fill = percent)) + 
+#   geom_col(fill = "darkgreen") + 
+#   coord_flip() + 
+#   # scale_color_brewer(palette = "BuGn") +
+#   xlab("Habitat Type") + ylab("Proportion of Cores (%)") +
+#   geom_text(aes(label = paste0("n=", n)), size = 3.5, hjust = -0.2) +
+#   # geom_text(aes(label = paste0(round(percent, 1), "%")), size = 3.5, hjust = -0.2) +
+#   ylim(0, 65) +
+#   # theme_bw()
+#   theme_bw(base_size = 15)
+#   # ggtitle("Habitat Sampling Proportions (US)")
+# ggsave("habitat_proportions.jpg")
+```
+
