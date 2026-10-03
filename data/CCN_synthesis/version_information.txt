@@ -27,11 +27,11 @@ CCN_bibliography.bib - Contains bibliographic information for publications and s
 
 _New Datasets_
 
-
 _Corrections and Additions to previously synthesized datasets_
 
 Corrected radioactivity units in Shaw et al. 2023 from becquerels per kilogram to disintegrations per minute per gram.  
 Added core year (2019) to Smith and Kirwan, 2011. 
+Corrected data in Okeefe-Suttles et al., 2021. Cs-137 and Ra-226 data had been mistakenly duplicated between cores PIB and MDA. This was traced back to a hand edit of the file that we did to recalculate Total Pb-210 from Ra 226 and Excess Pb-210 given that original file columns did not add up. Out of caution, we have removed all total Pb-210 columns from the RI datasets.  
 
 ***
 
